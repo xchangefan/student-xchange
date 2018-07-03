@@ -1,0 +1,1703 @@
+::Neighbours <300,625>
+<<nobr>>
+	<<set $Neighbour1Update = 1>>
+	<<set $Neighbour2Update = 1>>
+
+	<<if !$PlayerNeighbourSet>>
+		<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
+		<<switch $PlayerRollDice>>
+			<<case 1>>
+				<<set $NeighbourJerk = 1>>
+				<<set $Neighbour2 = 1>>
+			<<case 2 3 4 5>>
+				<<set $NeighbourPlayer = 1>>
+				<<set $Neighbour2 = 2>>
+			<<case 6 7 8 9 10>>
+				<<set $NeighbourNerd = 1>>
+				<<set $Neighbour2 = 3>>
+			<<case 11 12 13 14 15 16 17>>
+				<<set $NeighbourThrillSeeker = 1>>
+				<<set $Neighbour2 = 4>>
+			<<case 18 19 20>>
+				<<set $NeighbourJosh = 1>>
+				<<set $Neighbour2 = 5>>
+		<</switch>>
+
+		<<if !$NeighbourEmilyBoyfriend>>
+			<<silently>>
+				<<repeat 50ms>>
+					<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
+					<<switch $PlayerRollDice>>
+						<<case 1>>
+							<<if !$NeighbourJerk>>
+								<<set $NeighbourJerk = 1>>
+								<<set $PlayerNeighbourSet = 1>>
+								<<set $Neighbour1 = 1>>
+								<<set $Neighbour1Update = 1>>
+								<<stop>>
+							<</if>>
+						<<case 2 3 4 5>>
+							<<if !$NeighbourPlayer>>
+								<<set $NeighbourPlayer = 1>>
+								<<set $PlayerNeighbourSet = 1>>
+								<<set $Neighbour1 = 2>>
+								<<set $Neighbour1Update = 1>>
+								<<stop>>
+							<</if>>
+						<<case 6 7 8 9 10>>
+							<<if !$NeighbourNerd>>
+								<<set $NeighbourNerd = 1>>
+								<<set $PlayerNeighbourSet = 1>>
+								<<set $Neighbour1 = 3>>
+								<<set $Neighbour1Update = 1>>
+								<<stop>>
+							<</if>>
+						<<case 11 12 13 14 15 16 17>>
+							<<if !$NeighbourThrillSeeker>>
+								<<set $NeighbourThrillSeeker = 1>>
+								<<set $PlayerNeighbourSet = 1>>
+								<<set $Neighbour1 = 4>>
+								<<set $Neighbour1Update = 1>>
+								<<stop>>
+							<</if>>
+						<<case 18 19 20>>
+							<<if !$NeighbourJosh>>
+								<<set $NeighbourJosh = 1>>
+								<<set $PlayerNeighbourSet = 1>>
+								<<set $Neighbour1 = 5>>
+								<<set $Neighbour1Update = 1>>
+								<<stop>>
+							<</if>>
+					<</switch>>
+				<</repeat>>
+			<</silently>>
+		<<else>>
+			<<set $PlayerNeighbourSet = 1>>
+			<<set $Neighbour1 = 6>>
+		<</if>>
+	<</if>>
+	
+	<span style="font-size: 150%"><<print "Neighbours">></span>
+<</nobr>>
+
+<img src="Part5/Neighbours1.jpg" hspace="10" vspace="10" height="400">
+<<nobr>>
+	<<print "As you go to your room in the dormitory, your neighbors are already there. When they hear you two come in, they come out of their room to introduce themselves. One of them ">>
+		<span id="Neighbour1"><<print " is Emily‘s boyfriend">></span>
+	<<print " and the other seems to be ">>
+		<span id="Neighbour2">"."</span>
+<</nobr>>
+
+<<link [[You approach them to find out more.|Neighbours2]]>><</link>>
+
+<<nobr>>
+	<<silently>>
+		<<repeat 100ms>>
+			<<if $Neighbour2Update>>
+				<<replace "#Neighbour2">>
+					<<switch $Neighbour2>>
+						<<case 1>>
+							<<link " a Jerk.">>
+								<<set $NeighbourJerk = 0>>
+								<<set $Neighbour2Update = 1>>
+								<<if $Neighbour1 != 2>>
+									<<set $NeighbourPlayer = 1>>
+									<<set $Neighbour2 = 2>>
+								<<else>>
+									<<set $NeighbourNerd = 1>>
+									<<set $Neighbour2 = 3>>
+								<</if>>
+							<</link>>
+						<<case 2>>
+							<<link " a Player.">>
+								<<set $NeighbourPlayer = 0>>
+								<<set $Neighbour2Update = 1>>
+								<<if $Neighbour1 != 3>>
+									<<set $NeighbourNerd = 1>>
+									<<set $Neighbour2 = 3>>
+								<<else>>
+									<<set $NeighbourThrillSeeker = 1>>
+									<<set $Neighbour2 = 4>>
+								<</if>>
+							<</link>>
+						<<case 3>>
+							<<link " a Nerd.">>
+								<<set $NeighbourNerd = 0>>
+								<<set $Neighbour2Update = 1>>
+								<<if $Neighbour1 != 4>>
+									<<set $NeighbourThrillSeeker = 1>>
+									<<set $Neighbour2 = 4>>
+								<<else>>
+									<<set $NeighbourJosh = 1>>
+									<<set $Neighbour2 = 5>>
+								<</if>>
+							<</link>>
+						<<case 4>>
+							<<link " a Thrill-Seeker.">>
+								<<set $NeighbourThrillSeeker = 0>>
+								<<set $Neighbour2Update = 1>>
+								<<if $Neighbour1 != 5>>
+									<<set $NeighbourJosh = 1>>
+									<<set $Neighbour2 = 5>>
+								<<else>>
+									<<set $NeighbourJerk = 1>>
+									<<set $Neighbour2 = 1>>
+								<</if>>
+							<</link>>
+						<<case 5>>
+							<<link " a Regular Guy.">>
+								<<set $NeighbourJosh = 0>>
+								<<set $Neighbour2Update = 1>>
+								<<if $Neighbour1 != 1>>
+									<<set $NeighbourJerk = 1>>
+									<<set $Neighbour2 = 1>>
+								<<else>>
+									<<set $NeighbourPlayer = 1>>
+									<<set $Neighbour2 = 2>>
+								<</if>>
+							<</link>>
+					<</switch>>
+					<<set $Neighbour2Update = 0>>
+				<</replace>>
+			<</if>>
+			<<if $Neighbour1Update>>
+				<<replace "#Neighbour1">>
+					<<switch $Neighbour1>>
+						<<case 1>>
+							<<link " a Jerk.">>
+								<<set $NeighbourJerk = 0>>
+								<<set $Neighbour1Update = 1>>
+								<<if $Neighbour2 != 2>>
+									<<set $NeighbourPlayer = 1>>
+									<<set $Neighbour1 = 2>>
+								<<else>>
+									<<set $NeighbourNerd = 1>>
+									<<set $Neighbour1 = 3>>
+								<</if>>
+							<</link>>
+						<<case 2>>
+							<<link " a Player.">>
+								<<set $NeighbourPlayer = 0>>
+								<<set $Neighbour1Update = 1>>
+								<<if $Neighbour2 != 3>>
+									<<set $NeighbourNerd = 1>>
+									<<set $Neighbour1 = 3>>
+								<<else>>
+									<<set $NeighbourThrillSeeker = 1>>
+									<<set $Neighbour1 = 4>>
+								<</if>>
+							<</link>>
+						<<case 3>>
+							<<link " a Nerd.">>
+								<<set $NeighbourNerd = 0>>
+								<<set $Neighbour1Update = 1>>
+								<<if $Neighbour2 != 4>>
+									<<set $NeighbourThrillSeeker = 1>>
+									<<set $Neighbour1 = 4>>
+								<<else>>
+									<<set $NeighbourJosh = 1>>
+									<<set $Neighbour1 = 5>>
+								<</if>>
+							<</link>>
+						<<case 4>>
+							<<link " a Thrill-Seeker.">>
+								<<set $NeighbourThrillSeeker = 0>>
+								<<set $Neighbour1Update = 1>>
+								<<if $Neighbour2 != 5>>
+									<<set $NeighbourJosh = 1>>
+									<<set $Neighbour1 = 5>>
+								<<else>>
+									<<set $NeighbourJerk = 1>>
+									<<set $Neighbour1 = 1>>
+								<</if>>
+							<</link>>
+						<<case 5>>
+							<<link " a Regular Guy.">>
+								<<set $NeighbourJosh = 0>>
+								<<set $Neighbour1Update = 1>>
+								<<if $Neighbour2 != 1>>
+									<<set $NeighbourJerk = 1>>
+									<<set $Neighbour1 = 1>>
+								<<else>>
+									<<set $NeighbourPlayer = 1>>
+									<<set $Neighbour1 = 2>>
+								<</if>>
+							<</link>>
+						<<case 6>>
+							<<set $Neighbour1Update = 0>>
+					<</switch>>
+					<<set $Neighbour1Update = 0>>
+				<</replace>>
+			<</if>>
+		<</repeat>>
+	<</silently>>
+<</nobr>>
+
+::Neighbours2 <500,625>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Neighbours">></span>
+<</nobr>>
+
+<<switch $Neighbour1>>
+	<<case 1>>\
+		<img src="Part5/Neighbours2A.jpg" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to this guy you realize he is indeed a Misogynistic Jerk. His name is Barry and you knew guys like this when you were a guy. You didn’t like them then and like them even less now.">>
+
+		<<print "He hasn’t said anything you could report him for, but you expect it’s onlya matter of time. You can quickly tell he’s only interested in one thing from you, and it’s not your opinion.">>
+	<<case 2>>\
+		<img src="Part5/Neighbours2B.png" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to this guy you realize he is indeed a Player. His name is James and he’s quite charming, and says all the right things. You know it’s an act though. Once he charms your pants off, he’ll bore quickly and move on to the next girl.">>
+
+		<<print "But he might be good for a little fun, if that’s all you’re looking for too.">>
+	<<case 3>>\
+		<img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to this guy you realize he is indeed a Nerd. His name is Peter and he’s very shy, especially when he’s talking to you. You get the feeling that he’s always nervous around girls, especially ones he thinks are pretty. He seems nice though.">>
+
+		<<print "You’re pretty sure if you helped him come out of his shell a bit more he could make someone (else) a decent boyfriend someday.">>
+	<<case 4>>\
+		<img src="Part5/Neighbours2D.jpg" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to this guy you realize he is indeed a Thrill-Seeker. His name is Zack and he lives for adventure. Rock climbing, skydiving, you-name-it, he loves anything that gets the adrenaline going.">>
+
+		<<print "You’re not sure how long he’ll be here before he bores of this place and leaves to go summit Everest or something, but you expect he’ll keep things exciting until then.">>
+	<<case 5>>\
+		<img src="Part5/Neighbours2E.jpg" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to this guy you realize he is indeed just a Regular Guy. His name is Josh and he seems like most 18 year old guys - a bit immature, but friendly and polite. If you were still a guy, you’re pretty sure you guys would become good friends.">>
+
+		<<print "As you get to know him more you find out he’s the first in his family to go to college. He’s excited, and nervous about it all, and wants to make the best of it.">>
+	<<case 6>>\
+		<<print "You try to talk with Emily‘s boyfriend, but she keeps all his attention for herself. Regardless, he seems quite normal.">>
+<</switch>>\
+<<switch $Neighbour2>>
+	<<case 1>>\
+		<img src="Part5/Neighbours2A.jpg" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to the other guy you realize he is indeed a Misogynistic Jerk. His name is Barry and you knew guys like this when you were a guy. You didn’t like them then and like them even less now.">>
+
+		<<print "He hasn’t said anything you could report him for, but you expect it’s onlya matter of time. You can quickly tell he’s only interested in one thing from you, and it’s not your opinion.">>
+	<<case 2>>\
+		<img src="Part5/Neighbours2B.png" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to the other guy you realize he is indeed a Player. His name is James and he’s quite charming, and says all the right things. You know it’s an act though. Once he charms your pants off, he’ll bore quickly and move on to the next girl.">>
+
+		<<print "But he might be good for a little fun, if that’s all you’re looking for too.">>
+	<<case 3>>\
+		<img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to the other guy you realize he is indeed a Nerd. His name is Peter and he’s very shy, especially when he’s talking to you. You get the feeling that he’s always nervous around girls, especially ones he thinks are pretty. He seems nice though.">>
+
+		<<print "You’re pretty sure if you helped him come out of his shell a bit more he could make someone (else) a decent boyfriend someday.">>
+	<<case 4>>\
+		<img src="Part5/Neighbours2D.jpg" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to the other guy you realize he is indeed a Thrill-Seeker. His name is Zack and he lives for adventure. Rock climbing, skydiving, you-name-it, he loves anything that gets the adrenaline going.">>
+
+		<<print "You’re not sure how long he’ll be here before he bores of this place and leaves to go summit Everest or something, but you expect he’ll keep things exciting until then.">>
+	<<case 5>>\
+		<img src="Part5/Neighbours2E.jpg" hspace="10" vspace="10" height="400">
+		
+		<<print "As you talk to the other guy you realize he is indeed just a Regular Guy. His name is Josh and he seems like most 18 year old guys - a bit immature, but friendly and polite. If you were still a guy, you’re pretty sure you guys would become good friends.">>
+
+		<<print "As you get to know him more you find out he’s the first in his family to go to college. He’s excited, and nervous about it all, and wants to make the best of it.">>
+<</switch>>\
+<<if !$NeighbourEmilyBoyfriend>>	
+	<<nobr>>
+		<<print "As you prepare to go shopping with ">>
+				<<if $MentorFaith>>Faith<</if>>
+				<<if $MentorOlivia>>Olivia<</if>>
+				<<if $MentorSamantha>>Sam<</if>>
+				<<if $MentorHannah>>Hannah<</if>>
+		<<print ", you keep thinking about how much you didn't like:">>
+	<</nobr>>
+	<<nobr>>
+	<<if $NeighbourJerk>>
+		<<link "Barry, the jerk.">>
+			<<set $NeighbourJerkDislike = 1>>
+			<<nobr>>
+				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
+				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
+				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
+				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+			<</nobr>>
+		<</link>>
+	<</if>>
+	<</nobr>>
+	<<nobr>>
+	<<if $NeighbourPlayer>>
+		<<link "James, the player.">>
+			<<set $NeighbourPlayerDislike = 1>>
+			<<nobr>>
+				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
+				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
+				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
+				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+			<</nobr>>
+		<</link>>
+	<</if>>
+	<</nobr>>
+	<<nobr>>
+	<<if $NeighbourNerd>>
+		<<link "Peter, the nerd.">>
+			<<set $NeighbourNerdDislike = 1>>
+			<<nobr>>
+				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
+				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
+				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
+				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+			<</nobr>>
+		<</link>>
+	<</if>>
+	<</nobr>>
+	<<nobr>>
+	<<if $NeighbourThrillSeeker>>
+		<<link "Zack, the thrill-seeker.">>
+			<<set $NeighbourThrillSeekerDislike = 1>>
+			<<nobr>>
+				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
+				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
+				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
+				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+			<</nobr>>
+		<</link>>
+	<</if>>
+	<</nobr>>
+	<<nobr>>
+	<<if $NeighbourJosh>>
+		<<link "Josh, the regular guy.">>
+			<<set $NeighbourJoshDislike = 1>>
+			<<nobr>>
+				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
+				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
+				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
+				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+			<</nobr>>
+		<</link>>
+	<</if>>
+	<</nobr>>
+<<else>>
+	<<print "After you finish talking with him, ">>[[you go shopping with Emily.|Emily2]]
+<</if>>
+
+::Part5Andrew <0,3125>
+<<nobr>>
+	<<set $PlayerClothesDressLong = 0>>
+	<<set $PlayerUnderwearCotton = 0>>
+	<<set $PlayerSleepwearRegular = 0>>
+	<<set $PlayerClothesDressShort = 1>>
+	<<set $PlayerUnderwearSexy = 1>>
+	<<set $PlayerSleepwearSexy = 1>>
+	<<set $RoommateAndrew = 1>>
+	<<set $RoommateFaith = 0>>
+	
+	<span style="font-size: 150%"><<print "Andrew’s Apartment">></span>
+<</nobr>>
+
+<<print "You promised Andrew, and yourself, that you’d be faithful. But you’re horny all the time though, and you can’t even try to masturbate with Faith in the next bed.">>
+
+<<print "You spend every weekend with Andrew, but it’s not enough. Eventually you find yourself waking up horny and half awake thinking how easy it would be to convince one of the guys next door to help you out…">>
+<img src="Part5/Master1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You decide you can’t stay there anymore if you’re going to keep your promise and you start spending every night at Andrew’s apartment. Eventually his dad makes a call to the university and they waive the freshman dorm requirement for you.">>
+
+<<nobr>>
+	<<print "Some of the boxes of your stuff got lost in the move, but Andrew helped you buy new stuff to replace it with. (Including some sexier clothes than what Faith picked out.)">>
+	<<if $PlayerProtectionCondoms == 1>>
+		<<print "Your condoms were also in one of the boxes that went missing. But you’ve forgotten about it and haven’t been using any protection at all since the move.">>
+		<<set $PlayerProtectionNone = 1>>
+		<<set $PlayerProtectionCondoms = 0>>
+	<</if>>
+		<<print "Your birth control pills were also in one of the boxes that went missing. But you’ve forgotten about it and haven’t been using any protection at all since the move.">>
+		<<if $PlayerProtectionPill == 1>>
+		<<set $PlayerProtectionNone = 1>>
+		<<set $PlayerProtectionPill = 0>>
+	<</if>>
+<</nobr>>
+
+<<print "Of course, you still wake up horny every morning, but Andrew certainly doesn’t mind.">>
+
+[[Spend some time on campus.|Part6Start1]]
+
+::Part5Kate <1750,3125>
+<<nobr>>
+	<<set $SexKate += 1>>
+	<<set $SexFemaleCount += 1>>
+	<<set $SexCount += 1>>
+	
+	<span style="font-size: 150%"><<print "Mistress Kate">></span>
+<</nobr>>
+
+<<print "The time between your lessons with Mistress Kate are agony. The X-Change and the thoughts of your next visit together leave you horny all the time. But you’re not allowed to satisfy your own needs, or allow anyone else but Mistress Kate to either. So your need only builds until she returns to town.">>
+
+<video src="Part5/Master2.mp4" autoplay loop muted height="650"></video>
+
+
+<<print "Of course she doesn’t have to deny herself. In fact, whenever she’s out of town, what you most look forward to is one of her phone calls. You listen as she pleasures herself, describing every touch in great detail for you to imagine. You can almost feel the pleasure yourself when you hear her orgasm over the phone. Almost.">>
+
+<<print "Thankfully she usually rewards you for being such a good girl when she gets home.">>
+
+[[Spend some time on campus.|Part6Start1]]
+
+::Part5Faith1 <875,2500>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You try not think about sex, but you can’t help it, you still wake up ever morning incredibly horny. And you can’t even try to masturbate with Faith’s in the next bed over.">>
+<img src="Part5/Faith1.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<print "You can ">>
+	<<link "try sneaking over the guys room">>
+		<<if $NeighbourJerk and !$NeighbourJerkDislike>><<goto [[Part5Jerk1]]>><</if>>
+		<<if $NeighbourPlayer and !$NeighbourPlayerDislike>><<goto [[Part5Player1]]>><</if>>
+		<<if $NeighbourNerd and !$NeighbourNerdDislike>><<goto [[Part5Nerd1]]>><</if>>
+		<<if $NeighbourThrillSeeker and !$NeighbourThrillSeekerDislike>><<goto [[Part5Thrill1]]>><</if>>
+		<<if $NeighbourJosh and !$NeighbourJoshDislike>><<goto [[Part5Regular1]]>><</if>>
+	<</link>>
+	<<print " after she goes to sleep and seeing if the guy you prefer is willing to help, or you can ">>
+	[[try to endure your horniness.|Part5Faith2]]
+<</nobr>>
+
+::Part5Emily1 <1050,2500>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "Your suspicions were correct, Emily’s boyfriend spends far more time in your room with her than he does in his own. At first you try to give them some space, but you need a room too.">>
+<img src="Part5/Emily1.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<print "You could just give up on sharing a room with Emily and ">>
+	<<link "start sleeping in the room her boyfriend is supposed to be in">>
+		<<set $RoommateEmily = 0>>
+		<<set $NeighbourEmily = 1>>
+		<<if $NeighbourJerk>><<set $RoommateJerk = 1>><<goto [[Part5Jerk1]]>><</if>>
+		<<if $NeighbourPlayer>><<set $RoommatePlayer = 1>><<goto [[Part5Player1]]>><</if>>
+		<<if $NeighbourNerd>><<set $RoommateNerd = 1>><<goto [[Part5Nerd1]]>><</if>>
+		<<if $NeighbourThrillSeeker>><<set $RoommateThrillSeeker = 1>><<goto [[Part5Thrill1]]>><</if>>
+		<<if $NeighbourJosh>><<set $RoommateJosh = 1>><<goto [[Part5Regular1]]>><</if>>
+	<</link>>
+	<<print " and letting Emily and him have your room to themselves.">>
+<</nobr>>
+
+<<print "Or you can stop trying to ‘give them space’ and ">>[[just try to ignore them.|Part5Emily2]]
+
+::Part5Olivia1 <2625,2500>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<nobr>>
+	<<print "You’ve noticed Olivia’s master has upgraded her collar to a thicker, more secure one. And he’s added cuffs on her wrists and ankles to go with it. ">>
+	<<if $OliviaChastityBelt>>
+		<<print "You’re not sure if the new hardware she wears is a punishment for you getting out of your chastity belt.">>
+	<<else>>
+		<<print "You’re not sure if the new hardware she wears is a reward to her for getting that chastity belt on you or not.">>
+	<</if>>
+<</nobr>>
+<img src="Part5/Olivia1.jpg" hspace="10" vspace="10" height="650">
+
+<<if $OliviaChastityBelt>>[[It doesn’t matter though because she loves wearing it.|Part5OliviaHelp]]<<else>>[[It doesn’t matter though because she loves wearing it.|Part5OliviaChastity]]<</if>>
+
+::Part5Samantha1 <1400,2500>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You can usually get your needs taken care of elsewhere, but sometimes you just can’t wait anymore and you need to get off now. This is one of those times.">>
+
+<<print "It started with you and Sam just horsing around innocently, but your body didn’t care if you were just playing. It got turned on, and now it needs an orgasm.">>
+<img src="Part5/Sam1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You know Sam offered to help with any issues like this. ">>[[You can ask her for help if you want.|Part5Samantha2]]
+
+<<print "Or maybe you’d rather ">>[[go next door and see if one of the guys could help.|Part5SamanthaNeighbours]]
+
+::Part5Hannah1 <2275,2500>
+<<nobr>>	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You can usually get your needs taken care of elsewhere, but sometimes it doesn’t work out and you find yourself at home, horny, and alone. Tonight’s one of those nights. You’d been talking to Hannah about how X-Change has done this to you. She’s not sure it was the X-Change causing it, but understood the problem.">>
+
+<<print "She’s gone on her date now, but sends you a text asking if you were able to “solve your problem” yet.">>
+<img src="Part5/Hannah1.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<print "You can reply: ">>
+	[[“Nope, still horny”.|Part5HannahHorny]]
+	<<print "Or, you can reply: ">>
+	[[“Not yet, going next door to see if one of they guys can help”.|Part5HannahNeighbour1]]
+	<<if !$PlayerSideEffectMasturbationBlock and !$PlayerSideEffectOrgasmBlock>><<print "Or, you can decide to ignore her text so ">>[[you can focus on taking care of your horniness problem yourself and masturbate.|Part5HannahMasturbate]]<</if>>
+<</nobr>>
+
+::Part5Veronica1 <1925,2500>
+<<nobr>>
+	<<set $MasterOlivia = 0>>
+	
+	<span style="font-size: 150%"><<print "Veronica">></span>
+<</nobr>>
+
+<<print "After Olivia let her master know you’re in an exclusive relationship, he gave the key to your belt to Veronica. He said the thought of a beautiful woman keeping another locked in chastity is worth far more to him than the cost of the belt.">>
+
+
+<<nobr>>
+	<<print "When you were alone though, she handed you the key and gave you a choice. ">>
+	<span id="Veronica1Span1">
+		<<link "You could take off the belt,">>
+			<<set $PlayerChastityBelt = 0>>
+			<<replace "#Veronica1Span1">>
+				<<print "You could take off the belt,">>
+			<</replace>>
+			<<replace "#Veronica1Span2">>
+				<<print "Or you could hand the key back to her,">>
+			<</replace>>
+			<<replace "#Veronica1Span3">>
+				[[But she never makes you wait too long…|Part5Veronica2]]
+			<</replace>>
+		<</link>>
+	</span>
+	<<print " and it would go in the closet - just an occasional toy the two of you might take out as an occasional game.">>
+<</nobr>>
+<img src="Part5/Master3.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<span id="Veronica1Span2">
+		<<link "Or you could hand the key back to her,">>
+			<<set $VeronicaKey = 1>>
+			<<replace "#Veronica1Span1">>
+				<<print "You could take off the belt,">>
+			<</replace>>
+			<<replace "#Veronica1Span2">>
+				<<print "Or you could hand the key back to her,">>
+			<</replace>>
+			<<replace "#Veronica1Span3">>
+				[[But she never makes you wait too long…|Part5Veronica2]]
+			<</replace>>
+		<</link>>
+	</span>
+	<<print " and she would keep it, and decide when it comes off and when it doesn’t. Your orgasms would be hers to control from now on. It was completely up to you which you choose.">>
+<</nobr>>
+
+<<print "With either choice, she loves when you wake up next to her horny, and she brings you to the edge of an orgasm, and then stops and locks the belt on you. You then spend your day out with her, horny, and wondering if she’s going to let you cum that night, or make you wait even longer.">>
+
+<span id="Veronica1Span3"><<print "But she never makes you wait too long…">></span>
+
+::Part5Veronica2 <1925,3125>
+<<nobr>>
+	<<set $SexVeronica += 1>>
+	<<set $SexFemaleCount += 1>>
+	<<set $SexCount += 1>>
+	
+	<span style="font-size: 150%"><<print "Veronica">></span>
+<</nobr>>
+
+<<print "When you and Veronica aren’t in class you are usually together, on the field practicing or cheering, walking around campus hand-in-hand, or alone together back in her room. Of course that last one is your favorite.">>
+
+<<print "She loves how horny you are all the time, and loves teasing you and making you beg for an orgasm. But she loves watching you cum too much to ever make you wait that long.">>
+
+<img src="Part5/Master4.jpg" hspace="10" vspace="10" height="650">
+
+<<print "But it’s not just the sex, you really care for her too.">>
+
+<<print "You know the tough act she gives for everyone else is just that, an act. You’re both able to be who you really are with each other though.">>
+
+<<print "The two of you plan on getting an apartment together next year, once you are required to live in the dorms any longer. You look forward to when you’ll be able to wake up next to her every morning.">>
+
+<<if $JobWebModelSide>>[[You decide to do some more web posing in order to save more money.|JobWebModel4]]<<else>>[[Spend some time on campus.|Part6Start1]]<</if>>
+
+::Part5Faith2 <700,2500>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Constantly Horny">></span>
+<</nobr>>
+
+<<print "You are trying to be good, like Faith.">>
+<img src="Part5/Faith2.jpg" hspace="10" vspace="10" height="650">
+
+<<print "But the more you try to suppress the urges you have, the stronger they seem to get.">>
+
+[[You find yourself thinking about sex all the time now.|Part5Faith3]]
+
+::Part5Faith3 <525,2500>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Constantly Horny">></span>
+<</nobr>>
+
+<<print "At night, when you try to sleep, your thoughts are filled with images of men in your bed.">>
+<img src="Part5/Faith3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Your roommates, friends, professors - everyone.">>
+
+[[You wish you’d at least orgasm in your sleep so you might get some relief, but it never happens.|Part5Faith4]]
+
+::Part5Faith4 <350,2500>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Constantly Horny">></span>
+<</nobr>>
+
+<<print "Now the same thoughts are filling your mind during the day.">>
+<img src="Part5/Faith4.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You find it difficult to concentrate when you talk to men now.">>
+
+[[Their words become a haze as you imagine them naked and erect, and you on your knees in front of them.|Part5Faith5]]
+
+::Part5Faith5 <175,2500>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Dormitory Shower">></span>
+<</nobr>>
+
+<<print "At first you think it’s another waking fantasy, but you realize this is real, you’ve just walked in on one of the guys next door showering.">>
+<img src="Part5/Faith5.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Your mind was in such a fog you didn’t even hear the water running.">>
+
+<<print "You should leave, but instead you stare as he rinses the soap from his body.">>
+
+<<nobr>>
+	<<print "When he finishes he leaves the shower and turns. He sees you standing there, ">>
+	<<link "watching him, with your hand in your panties.">>
+		<<if $NeighbourJerk and $NeighbourJerkDislike>><<goto [[Part5Jerk1]]>><</if>>
+		<<if $NeighbourPlayer and $NeighbourPlayerDislike>><<goto [[Part5Player1]]>><</if>>
+		<<if $NeighbourNerd and $NeighbourNerdDislike>><<goto [[Part5Nerd1]]>><</if>>
+		<<if $NeighbourThrillSeeker and $NeighbourThrillSeekerDislike>><<goto [[Part5Thrill1]]>><</if>>
+		<<if $NeighbourJosh and $NeighbourJoshDislike>><<goto [[Part5Regular1]]>><</if>>
+	<</link>>
+<</nobr>>
+
+::Part5Emily2 <1050,2750>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You never knew two people could fuck as much as the two of them do. They usually start off trying to be quiet while you try to sleep. But more often than not you’re left struggling to sleep over the sounds of Emily’s moans.">>
+<img src="Part5/Emily2.gif" hspace="10" vspace="10" height="600">
+
+<<print "You try not to, but sometimes you can’t help but peek one eye open and watch the two of them. It only makes the horniness you already had worse though. You can’t ignore it anymore and need to do something.">>
+
+<<print "You can ">>[[ask Emily if she’d be open to a threesome|Part5EmilyThree]]<<if !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock>><<print " or you can ">>[[You can try quietly masturbating while you watch them|Part5EmilyWatch]]<</if>><<print ".">>
+
+::Part5EmilyWatch <1225,3125>
+<<nobr>>
+	<<set $PlayerItemWand = 1>>
+	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You do your best to stay quiet as you explore your body while you watch them go at it. You try to stay quiet so the don’t know you are watching, or masturbating.">>
+
+<video src="Part5/Emily3.webm" autoplay loop muted height="600"></video>
+
+
+<<print "You imagine you are Emily with her boyfriend fucking you, you imagine it’s the three of you all intertwined together, before long you are covering your mouth trying to muffle the sound of your orgasm. Thankfully they were far to focused on each other to notice you at all.">>
+
+<<print "The next evening though, there’s a wrapped present from Emily on your bed. When you open it you see it’s one of those ‘magic wand’ vibrators. “It was so hot last night with you watching us.”, Emily tells you, “But I could tell the other vibrator we’d picked up on our shopping trip wasn’t working for you, so I picked up this one for you. it’s a bit noisy, but it’ll definitely get the job done. We’ll try to put on a good show for you tonight so you can try it out.”">>
+
+<<nobr>>
+	<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
+	<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5EmilyThree <1050,3125>
+<<nobr>>
+	<<set $SexEmily = +1>>
+	<<set $SexDifferentFemaleCount += 1>>
+	<<set $SexFemaleCount += 1>>
+	<<set $SexCount += 1>>
+	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "Your horniness finally overcomes your inhibitions, and you ask Emily if she’d be open to a threesome.">>
+
+<<print "At first you see a flash of jealousy on Emily’s face when she thinks you have a crush on her boyfriend. But as you explain to her that it’s not that at all, she’s far more understanding.">>
+<img src="Part5/Emily4.jpg" hspace="10" vspace="10" height="650">
+
+<<print "When you explain how their constant lovemaking is making your already high libido even worse, she starts trying to think of how to best help you with your problem.">>
+
+<<print "She’s still not willing to share her boyfriend, but she does come up with a way to help you. You’re very happy with her solution. Her boyfriend doesn’t seem to mind it either.">>
+
+<<nobr>>
+	<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
+	<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5HannahMasturbate <2275,3125>
+<<nobr>>
+	<<set $SexHannah = +1>>
+	<<set $SexDifferentFemaleCount += 1>>
+	<<set $SexFemaleCount += 1>>
+	<<set $SexCount += 1>>
+	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "With Hannah out, you have the room to yourself until she stumbles in tomorrow morning. You begin exploring your body and feel your need building. It takes much longer than it ever did when you were a guy, but it feels amazing. You’re getting pretty close to an orgasm when you hear the door start to open. You quickly scramble under the covers and act innocent.">>
+
+<<print "“What-cha Doin’…?”, Hannah asks with a huge grin on her face. She closes and locks the door behind her as she comes in. “Don’t stop because of me. My date wasn’t really my type, so I  didn’t go home with him. So I guess we’re both horny and frustrated now.”, then she pauses for a moment. “Actually… I have an idea…”">>
+
+<video src="Part5/Hannah2.mp4" autoplay loop muted height="650"></video>
+
+
+<<print "At that she lays down next to you and starts to play with herself. She tells you how good it feels and encourages you to do the same. It isn’t long until you both are coming and then collapsing beside each other.">>
+
+<<print "“I don’t want you to get the wrong idea.”, she tells you, “I still prefer guys. But us roommates have to help each other out sometimes though, right?”">>
+
+<<nobr>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	<<if $JobCallGirl>>[[You go to work as a Call Girl.|JobCall3]]<</if>>
+	<<if $JobCallGirlSide and !$JobAthlete and !$JobEngineer and !$JobTestSubject and !$JobLibrary and !$JobFitnessMassage and !$JobFitnessYoga>>[[You go to work as a Call Girl.|JobCall3]]<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobCheerleader and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5HannahHorny <2450,3125>
+<<nobr>>
+	<<set $SexHannah = +1>>
+	<<set $SexTom = 1>>
+	<<set $SexTomVaginal = 1>>
+	<<set $SexDifferentFemaleCount += 1>>
+	<<set $SexFemaleCount += 1>>
+	<<set $SexCount += 1>>
+	<<set $SexDifferentMaleCount += 1>>
+	<<set $SexVaginalCount += 1>>
+	<<set $SexDifferentMaleVaginalCount += 1>>
+	<<set $SexMaleCount += 1>>
+	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "“Don’t worry, I’ll be there soon with a solution for you.”, she replies back. You wait, not sure what to expect. You were thinking a vibrator or something, but she walks through the door with her date.">>
+
+<<print "“When I asked Tom if he was willing to help you with your little problem, he was more than happy to help.”">>
+<img src="Part5/Hannah3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Tom spends several hours with the two of you. By the time Hannah sends him home, all three of you are quite satisfied.">>
+
+<<print "“Thank you for being so… ummm… generous, sharing your date with me.”, you say.">>
+
+<<print "“Oh, don’t worry about it. I actually thought he was pretty boring on the date and I was going to call it a night and come home alone before I got your text. This way was much more fun for all of us.”">>
+
+<<nobr>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	<<if $JobCallGirl>>[[You go to work as a Call Girl.|JobCall3]]<</if>>
+	<<if $JobCallGirlSide and !$JobAthlete and !$JobEngineer and !$JobTestSubject and !$JobLibrary and !$JobFitnessMassage and !$JobFitnessYoga>>[[You go to work as a Call Girl.|JobCall3]]<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobCheerleader and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5HannahNeighbour1 <2100,2875>
+<<nobr>>
+	<<set $SexDifferentMaleCount += 1>>
+	<<set $SexMaleCount += 1>>
+	<<set $SexCount += 1>>
+	<<if $NeighbourJerk>><<set $SexJerk += 1>><</if>>
+	<<if $NeighbourPlayer>><<set $SexPlayer += 1>><</if>>
+	<<if $NeighbourNerd>><<set $SexNerd += 1>><</if>>
+	<<if $NeighbourThrillSeeker>><<set $SexThrillSeeker += 1>><</if>>
+	<<if $NeighbourJosh>><<set $SexJosh += 1>><</if>>
+	
+	<span style="font-size: 150%"><<print "Neighbour’s Bedroom">></span>
+<</nobr>>
+
+<<print "Before you knock on their door, you try to think of how to invite one of the guys back to your room, but then you come up with a better idea.">>
+
+<<print "You tell them both how horny you are and that you plan on taking one of them back to your room to fuck you. You then tell them you want to make sure whichever one it is can last long enough to satisfy you. You tell them you’ll stroke them both off and whichever one cums first loses.">>
+
+<video src="Part5/Hannah4.mp4" autoplay loop muted height="600"></video>
+
+
+<<print "Of course, you know who you want to win, so you just squeeze a bit tighter, stroke a bit deeper, and make sure the other one ‘loses’. He probably never had more fun losing before though.">>
+
+<<nobr>>
+	<<if $NeighbourJerk and !$NeighbourJerkDislike>><<print "The Jerk ">><</if>>
+	<<if $NeighbourPlayer and !$NeighbourPlayerDislike>><<print "The Player ">><</if>>
+	<<if $NeighbourNerd and !$NeighbourNerdDislike>><<print "The Nerd ">><</if>>
+	<<if $NeighbourThrillSeeker and !$NeighbourThrillSeekerDislike>><<print "The Thrill-Seeker ">><</if>>
+	<<if $NeighbourJosh and !$NeighbourJoshDislike>><<print "Josh ">><</if>>
+	<<print "was really close to cumming, but he held back. You head back to your room with him. You’ll make sure he eats you out long enough that he’s not so close to an orgasm ">>
+	[[when he finally starts fucking you.|Part5HannahNeighbour2]]
+<</nobr>>
+
+::Part5HannahNeighbour2 <2100,3125>
+<<nobr>>
+	<<set $SexCount += 1>>
+	<<set $SexHannah = 1>>
+	<<set $SexVaginalCount += 1>>
+	<<set $SexDifferentMaleVaginalCount += 1>>
+	<<set $SexMaleCount += 1>>
+	<<if $NeighbourJerk and !$NeighbourJerkDislike>><<set $SexJerk += 1>><<set $SexJerkVaginal += 1>><</if>>
+	<<if $NeighbourPlayer and !$NeighbourPlayerDislike>><<set $SexPlayer += 1>><<set $SexPlayerVaginal += 1>><</if>>
+	<<if $NeighbourNerd and !$NeighbourNerdDislike>><<set $SexNerd += 1>><<set $SexNerdVaginal += 1>><</if>>
+	<<if $NeighbourThrillSeeker and !$NeighbourThrillSeekerDislike>><<set $SexThrillSeeker += 1>><<set $SexThrillSeekerVaginal += 1>><</if>>
+	<<if $NeighbourJosh and !$NeighbourJoshDislike>><<set $SexJosh += 1>><<set $SexJoshVaginal += 1>><</if>>
+	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You and your neighbor are barely in your room when Hannah walks in. Her date didn’t go well so she ended it when she saw your text. “I saw your text and figured I’d take whichever guy you didn’t.”, she says, “But now that I see how horny and frustrated you have this one already, I want to play too.”’You tell her you’d be happy to share.">>
+<img src="Part5/Hannah5.gif" hspace="10" vspace="10" height="600">
+
+<<print "You and her have hours of fun with him. You take turns, one rides his face while the other teases his cock. You and Hannah have came many times, but you make sure to keep him on the edge of an orgasm, but never let him cum. As he’s eating Hannah out for the final time he begs for you to let him cum this time.">>
+
+<<print "This final time instead of teasing him again, you climb on top of him. You’re sure his roommate next door had to hear the moan he made as you slide his cock inside you. You grind slowly, teasing him inside you, until after he gets Hannah off again. When she’s satisfied, then you begin riding him in earnest. He doesn’t last very long after that.">>
+
+<<nobr>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	<<if $JobCallGirl>>[[You go to work as a Call Girl.|JobCall3]]<</if>>
+	<<if $JobCallGirlSide and !$JobAthlete and !$JobEngineer and !$JobTestSubject and !$JobLibrary and !$JobFitnessMassage and !$JobFitnessYoga>>[[You go to work as a Call Girl.|JobCall3]]<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobCheerleader and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5Samantha2 <1575,3125>
+<<nobr>>
+	<<set $SexSamantha = +1>>
+	<<set $SexDifferentFemaleCount += 1>>
+	<<set $SexFemaleCount += 1>>
+	<<set $SexCount += 1>>
+	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "Sam said she’d help out when the effects of the X-Change got to much for you. You were thinking your playful wrestling might continue, but with a little more action, but she had something else in mind.">>
+
+<<print "Her touches were gentle at first, getting you even more worked up. She made sure you were ready before you even felt the first finger slide in. You were begging for more before she slid the second finger in.">>
+<img src="Part5/Sam2.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Before she’d finished, her whole hand was inside you. You felt it moving back and forth, filling you. You couldn’t speak, or think, all you could do was cry out in pleasure. When you finally came, you came harder than you ever had before, soaking your comforter in the process.">>
+
+<<print "You hadn’t realized how loud you’d been until a couple minutes later when the dorm RA knocked on your door to make sure everyone was alright after he had gotten calls about someone screaming.">>
+
+<<nobr>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobBartender or $JobBartenderBi or $JobBartenderGirls or $JobBartenderGuys>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5SamanthaNeighbours <1400,3125>
+<<nobr>>
+	<<set $SexDifferentMaleCount += 2>>
+	<<set $SexMaleCount += 2>>
+	<<set $SexCount += 2>>
+	<<set $SexVaginalCount += 5>>
+	<<set $SexDifferentMaleVaginalCount += 1>>
+	<<if $NeighbourJerk>><<set $SexJerk += 1>><<set $SexJerkVaginal += 1>><</if>>
+	<<if $NeighbourPlayer>><<set $SexPlayer += 1>><<set $SexPlayerVaginal += 1>><</if>>
+	<<if $NeighbourNerd>><<set $SexNerd += 1>><<set $SexNerdVaginal += 1>><</if>>
+	<<if $NeighbourThrillSeeker>><<set $SexThrillSeeker += 1>><<set $SexThrillSeekerVaginal += 1>><</if>>
+	<<if $NeighbourJosh>><<set $SexJosh += 1>><<set $SexJoshVaginal += 1>><</if>>
+	
+	<span style="font-size: 150%"><<print "Neighbours’s Bedroom">></span>
+<</nobr>>
+
+<<print "You knocked on the door to the guys room not knowing what you were going to say. You couldn’t invite one one of them back to your room, since Sam was still there, and you couldn’t ask one of them to leave his own room so you could fuck his roommate, could you? And you were far too horny to wait any longer…">>
+<img src="Part5/Sam3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Before you know it you have one of their cocks in your mouth and the other is sliding into your pussy from behind you. Your moans are nearly silent, suppressed by the cock in your mouth. Your moans are less muffled later though as one of the guys moves to fuck your ass instead.">>
+
+<<print "Hours later when you finally head back to your room, you can feel them both leaking out of you still. Sam sees you smiling from more orgasm than you can count and just says, “It looks like someone had a good time.” then you collapse on your bed, exhausted.">>
+
+<<nobr>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobBartender or $JobBartenderBi or $JobBartenderGirls or $JobBartenderGuys>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5OliviaHelp <2800,3125>
+<<nobr>>
+	<<set $SexOlivia = +1>>
+	<<set $SexDifferentFemaleCount += 1>>
+	<<set $SexFemaleCount += 1>>
+	<<set $SexCount += 1>>
+	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "Olivia now wears a chastity belt all the time. You know her master hasn’t let her cum since you took your belt off. But since you don’t have a belt on anymore, you can take your pleasure almost anywhere, and you do.">>
+
+<video src="Part5/Olivia2.webm" autoplay loop muted height="650"></video>
+
+
+<<print "It’s still convenient having Olivia in the next bed over though whenever you feel the slightest desire for an orgasm. You love it not just for the pleasure she gives you, but also to remind her of what she can’t have. Your little revenge for her putting that belt on you in the first place.">>
+
+<<nobr>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	<<if $JobWebModel>>[[You go and do more web posing.|JobWebModel4]]<</if>>
+	<<if $JobWebModelSide and !$JobAthlete and !$JobEngineer and !$JobTestSubject and !$JobLibrary and !$JobFitnessMassage and !$JobFitnessYoga>>[[You go and do more web posing.|JobWebModel4]]<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobCheerleader and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5OliviaChastity <2625,3125>
+<<nobr>>
+	<<set $SexDifferentMaleCount += 2>>
+	<<set $SexMaleCount += 2>>
+	<<set $SexCount += 2>>
+	<<if $NeighbourJerk>><<set $SexJerk += 1>><</if>>
+	<<if $NeighbourPlayer>><<set $SexPlayer += 1>><</if>>
+	<<if $NeighbourNerd>><<set $SexNerd += 1>><</if>>
+	<<if $NeighbourThrillSeeker>><<set $SexThrillSeeker += 1>><</if>>
+	<<if $NeighbourJosh>><<set $SexJosh += 1>><</if>>
+	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "Every night you struggle to go to sleep, your pussy aching to be filled. And every morning you wake up even hornier than the night before.">>
+
+<<print "It drives you even more insane with lust knowing there are two willing cocks only feet away from you the whole time. If only you weren’t in this damn belt.">>
+
+<video src="Part5/Olivia3.mp4" autoplay loop muted height="650"></video>
+
+
+<<print "You have to at least suck one, or both, of them off before you can even function in the morning. It doesn’t help much, but it helps a little. Luckily they are both more than willing to help you start your day.">>
+
+<<nobr>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	<<if $JobWebModel>>[[You go and do more web posing.|JobWebModel4]]<</if>>
+	<<if $JobWebModelSide and !$JobAthlete and !$JobEngineer and !$JobTestSubject and !$JobLibrary and !$JobFitnessMassage and !$JobFitnessYoga>>[[You go and do more web posing.|JobWebModel4]]<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobCheerleader and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5Jerk1 <700,2750>
+<<nobr>>
+	<<set $SexCount += 5>>
+	<<set $SexVaginalCount += 5>>
+	<<set $SexDifferentMaleVaginalCount += 1>>
+	<<set $SexDifferentMaleCount += 1>>
+	<<set $SexMaleCount += 5>>
+	<<set $SexJerk += 5>>
+	<<set $SexJerkVaginal += 5>>
+	<<set $FWBJerk = 1>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></span>
+<</nobr>>
+<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him…">><br><br><</if>>
+<<print "He calls you a pathetic slut. You want to get mad and scream at him, but some part of you believes what he’s saying. And as much as you hate to admit it, you need a cock right now. Even if it’s his.">>
+
+<<print "He says he’ll fuck you, since that’s all you’re good for anyway. Before he does, he calls you horrible names. And he makes you agree and repeat all the horrible things he says back to him.">>
+<img src="Part5/GoNeighbour1.gif" hspace="10" vspace="10" height="500">
+
+<<print "Finally he makes you say you need to be punished for being such a slut. Only after your ass is on fire from his belt does he finally fuck you.">>
+
+<<print "You crawl back into your bed, ashamed and humiliated. You can’t even look at him for days.">>
+
+<<print "But soon you feel the same hunger building up inside you again. You can’t help it and it isn’t long before ">>[[your need forced you back to him again.|Part5Jerk2]]
+
+::Part5Player1 <175,2750>
+<<nobr>>
+	<<set $SexCount += 5>>
+	<<set $SexVaginalCount += 5>>
+	<<set $SexDifferentMaleVaginalCount += 1>>
+	<<set $SexDifferentMaleCount += 1>>
+	<<set $SexMaleCount += 5>>
+	<<set $SexPlayer += 5>>
+	<<set $SexPlayerVaginal += 5>>
+	<<set $FWBPlayer = 1>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "James’s Bedroom">><</if>></span>
+<</nobr>>
+<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him…">><br><br><</if>>
+<<print "You’ve seen more girls than you can count head into his room and, you’ve heard their moans through the wall too. So you don’t have any illusions when your need finally drives you to him.">>
+
+<video src="Part5/GoNeighbour3.mp4" autoplay loop muted height="600"></video>
+
+
+<<print "And he knows why you’re there. He doesn’t bother with the promises or lies he tells the others, he knows you’re there for the same thing he is.">>
+
+<<print "When you’ve gotten your fill, you head back to your bed with a big smile on your face. ">>[[And he lets you know his cock is ready whenever you need it again.|Part5Player2]]
+
+::Part5Nerd1 <525,2750>
+<<nobr>>
+	<<set $SexCount += 1>>
+	<<set $SexMaleCount += 1>>
+	<<set $SexNerd += 1>>
+	<<set $DatingNerd = 1>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
+<</nobr>>
+<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him…">><br><br><</if>>
+<<print "You need something to help with the need you are feeling. He may be shy and a bit awkward, but you’ve seen how hard he gets when you leave the bathroom after your shower, wearing just a towel. You know he’ll be willing to help.">>
+<img src="Part5/GoNeighbour5.jpg" hspace="10" vspace="10" height="650">
+
+<<print "This morning the others are gone and it’s just the two of you in the dorm. You drop your towel and push him onto his bed.">>
+
+<<print "It seems to be his first time eating a girl out, but he listens well and improves fast. ">>[[It isn’t long before you are grinding into his face as you cum.|Part5Nerd2]]
+
+::Part5Thrill1 <350,2750>
+<<nobr>>
+	<<set $SexCount += 5>>
+	<<set $SexVaginalCount += 5>>
+	<<set $SexDifferentMaleVaginalCount += 1>>
+	<<set $SexDifferentMaleCount += 1>>
+	<<set $SexMaleCount += 5>>
+	<<set $SexThrillSeeker += 5>>
+	<<set $SexThrillSeekerVaginal += 5>>
+	<<set $FWBThrillSeeker = 1>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Zack’s Bedroom">><</if>></span>
+<</nobr>>
+<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him…">><br><br><</if>>
+<<print "As your late night visits to his bed become more frequent, the activities when you get there become more adventurous.">>
+<img src="Part5/GoNeighbour9.jpg" hspace="10" vspace="10" height="650">
+
+<<print "This time you were bound to his bed again. As he held the candle over your body, your heart raced as you waited for the first drop of wax to hit your breast.">>
+
+<<print "Once the shock of the first flash of pain passed, there was still the anticipation of not knowing when or where the next drop would hit. Would it be the dull pain on your chest again? or the sharp, intense pain when it lands on your nipple? ">>[[Or will he put the candle aside to soothe your pain with pleasure again.|Part5Thrill2]]
+
+::Part5Regular1 <875,2750>
+<<nobr>>
+	<<set $SexCount += 1>>
+	<<set $SexVaginalCount += 5>>
+	<<set $SexDifferentMaleVaginalCount += 1>>
+	<<set $SexDifferentMaleCount += 1>>
+	<<set $SexMaleCount += 5>>
+	<<set $SexJosh += 5>>
+	<<set $SexJoshVaginal += 5>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Neighbour’s Bedroom">><</if>></span>
+<</nobr>>
+<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him…">><br><br><</if>>
+<<print "When your need finally overwhelms you, you find your way to Josh’s bed. Once he gets over the shock of what is happening, he’s a very attentive lover. You’ve already came several times before you climb on top of him and slide his cock into you.">>
+<img src="Part5/GoNeighbour12.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You and him talk a bit as you lie next to him afterwards. Once he falls asleep, you quietly sneak back to your own bed.">>
+
+<<print "The next morning, you are embarrassed and flustered and worried what you might have done to your friendship. “Let’s just pretend like last night never happened.”, you ask him. ">>
+
+[[“Whatever you think is best.”, he says.|Part5Regular2]]
+
+::Part5Jerk2 <700,3125>
+<<nobr>>
+	<<set $SexCount += 6>>
+	<<set $SexDifferentMaleCount += 5>>
+	<<set $SexMaleCount += 6>>
+	<<set $SexJerk += 1>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></span>
+<</nobr>>
+
+<<print "This time he tells you he’s bored of fucking you, but that he’ll make use of your mouth. He says maybe he’ll fuck your “used up cunt” later if you please him though.">>
+
+<<print "He ties you to his bed post and blindfolds you. You struggle for breath as he fucks your face. You don’t have any choice but to swallow every drop as he shoots down your throat as he cums. When he’s done he leaves you there and starts messaging his friends.">>
+<img src="Part5/GoNeighbour2.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You don’t know how many of his friends are in the room, but they remove your bra. They slap your breasts, and call you horrible names as they write on you with markers.">>
+
+<<print "And they fuck your mouth, of course. They don’t all make you swallow like he did though. Some prefer to cover your chest, your face, your hair.">>
+
+<<print "Only after they’ve all enjoyed you multiple times does one of them reach down between your legs to finally give you some relief.">>
+
+<<print "When his friends leave, he orders you back to your bed without showering. You feel dry cum all over you and have things like “Whore”, “Slut”, “Fuckpig”, and worse written on you, but you obey.">>
+
+<<print "“Let me know when you get horny again slut. You still have one hole left for us to try next time.”">>
+
+<<nobr>>
+	<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
+	<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobBarista>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5Player2 <175,3125>
+<<nobr>>
+	<<set $SexCount += 1>>
+	<<set $SexVaginalCount += 1>>
+	<<set $SexFemaleCount += 1>>
+	<<set $SexDifferentFemaleCount += 1>>
+	<<set $SexMaleCount += 1>>
+	<<set $SexPlayer += 1>>
+	<<set $SexPlayerVaginal += 1>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "James’s Bedroom">><</if>></span>
+<</nobr>>
+
+<<print "Your need sends you to him again, you know he’ll be ready and willing. You’re already half naked before you realize there’s someone in bed with him.">>
+<img src="Part5/GoNeighbour4.gif" hspace="10" vspace="10" height="600">
+
+<<print "Embarrassed, you start to pick up your clothes and leave, but he tells you to stay, and she tells you to join them. You smile, drop your clothes, and climb into bed with them.">>
+
+<<nobr>>
+	<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
+	<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobBarista>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5Nerd2 <525,2875>
+<<nobr>>
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
+<</nobr>>
+
+<<print "You start to repay the favor, slowly at first. You planned on just a quick blowjob, but once you taste his precum you forget about that and want him inside you.">>
+<img src="Part5/GoNeighbour6.jpg" hspace="10" vspace="10" height="650">
+
+<<print "He closes his eyes in bliss as your tongue licks the precum from his cock. Your other hand is sifting through his nightstand looking for the box of condoms you assume every college guy has in there, when you find something else.">>
+
+[[Pulling it out you recognize it, and start asking him about it.|Part5Nerd3]]
+
+::Part5Nerd3 <525,3000>
+<<nobr>>
+	<<set $PlayerItemNerdKey = 1>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
+<</nobr>>
+
+<<print "He’s horribly embarrassed about you discovering his cock cage, but an occasional stroke of his cock is enough to ensure he keeps talking and telling you all about it.">>
+
+<<print "He’s only ever held the key himself. Wearing it to class or out with friends, and leaving the key in his room, is the only time he’s been locked without the key.">>
+
+<<print "You can see how excited he is when you suggest him wearing it now for you.">>
+<img src="Part5/GoNeighbour7.jpg" hspace="10" vspace="10" height="650">
+
+<<print "It takes some time, but eventually he manages to get in it. As soon as you start looking at it you can see how well it prevents him from getting hard.">>
+
+<<print "You worry his cock is going to crack the plastic when you suggest he give you the keys.">>
+
+[[You hide one somewhere safe, but the other you wear on an anklet so he can see it every day.|Part5Nerd4]]
+
+::Part5Nerd4 <525,3125>
+<<nobr>>
+	<<set $SexCount += 1>>
+	<<set $SexMaleCount += 1>>
+	<<set $SexNerd += 1>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
+<</nobr>>
+
+<<print "But it’s the nights he really looks forward to. He hopes it’s one of the many nights you crawl into his bed to make use of his tongue.">>
+
+<<print "He hopes even more it’s one of the special nights where you take his cock out of it’s cage. and tease it a while. He knows how good you make it feel, even though he’s not allowed to cum.">>
+<img src="Part5/GoNeighbour8.gif" hspace="10" vspace="10" height="600">
+
+<<print "But the night he really looks forward to is when you decide to unlock him and let his cock feel the inside of a woman for the first time. Maybe tonight will be the night you finally let him cum. ">>
+
+<<nobr>>
+	<<print "You haven’t decided yet. But it won’t be tonight. ">>
+	<span id="Nerd4Span1">
+		<<link "Maybe next month for his birthday.">>
+			<<set $NerdBirthdaySex = 1>>
+			<<replace "#Nerd4Span1">>
+				<<print "Maybe next month for his birthday.">>
+			<</replace>>
+			<<replace "#Nerd4Span2">>
+				<<print "locked up forever instead.">>
+			<</replace>>
+			<<replace "#Nerd4Span3">>
+				<<nobr>>
+					<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
+					<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
+					<<if $JobAthlete>>
+						<<link "You go to train at the Gym.">>
+							<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+								<<goto [[AthleteOral]]>>
+							<<else>>
+								<<if $PlayerChastityBelt>>
+									<<goto [[AthleteChastity]]>>
+								<<else>>
+									<<if $PlayerSideEffectPheromones>>
+										<<goto [[AthletePheromones]]>>
+									<<else>>
+										<<goto [[AthleteRelief]]>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</link>>
+					<</if>>
+					
+					<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+					<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+					<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+					<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+					<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+					<<if $JobBarista>>[[Spend some time on campus.|Part6Start1]]<</if>>
+					<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+					<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+					<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+				<</nobr>>
+			<</replace>>
+		<</link>>
+	</span>
+	<<print " Or, you might just decide to keep your horny, virgin plaything ">>
+	<span id="Nerd4Span2">
+		<<link "locked up forever instead.">>
+			<<replace "#Nerd4Span1">>
+				<<print "Maybe next month for his birthday.">>
+			<</replace>>
+			<<replace "#Nerd4Span2">>
+				<<print "locked up forever instead.">>
+			<</replace>>
+			<<replace "#Nerd4Span3">>
+				<<nobr>>
+					<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
+					<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
+					<<if $JobAthlete>>
+						<<link "You go to train at the Gym.">>
+							<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+								<<goto [[AthleteOral]]>>
+							<<else>>
+								<<if $PlayerChastityBelt>>
+									<<goto [[AthleteChastity]]>>
+								<<else>>
+									<<if $PlayerSideEffectPheromones>>
+										<<goto [[AthletePheromones]]>>
+									<<else>>
+										<<goto [[AthleteRelief]]>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</link>>
+					<</if>>
+					
+					<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+					<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+					<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+					<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+					<<if $JobBarista>>[[Spend some time on campus.|Part6Start1]]<</if>>
+					<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+					<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+					<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+				<</nobr>>
+			<</replace>>
+		<</link>>
+	</span>
+<</nobr>>
+
+<span id="Nerd4Span3"></span>
+
+::Part5Thrill2 <350,2875>
+<<nobr>>
+	<<set $PlayerClothesLeatherJeans = 1>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Zack’s Bedroom">><</if>></span>
+<</nobr>>
+
+<<print "While your adventures in bed continue to explore new areas, the fun has started to expand outside the bedroom as well.">>
+
+<<print "You knew he was buying you clothes of some sort when he took all those measurements, but you were still surprised when you opened his gift. The jeans he’d bought you fit perfectly, though they did take you quite a while to actually squeeze into them.">>
+<img src="Part5/GoNeighbour10.jpg" hspace="10" vspace="10" height="650">
+
+<<print "After he told you that he wanted you to wear this to class tomorrow, ">>[[your heart was racing again imagining the reactions you are going to get.|Part5Thrill3]]
+
+::Part5Thrill3 <350,3125>
+<<nobr>>
+	<<set $PlayerItemsVibratingPanties = 1>>
+	
+	<span style="font-size: 150%"><<print "Classroom">></span>
+<</nobr>>
+
+<<print "You thought his next purchase was more tame than the last. Sure it had two dildos that would be inside you all day, but no one would know except the two of you.">>
+
+<<print "Zack smiled as you lubed them up and slid them in. Then he watched you finish dressing, with normal clothes over it, and head to class.">>
+<img src="Part5/GoNeighbour11.jpg" hspace="10" vspace="10" height="650">
+
+<<print "As you walk to class and feel each step move the dildos inside you see why he bought these. But you manage to hold back your orgasm and make it to class. You sit down, and breathe, and the feeling passes after a while.">>
+
+<<print "But a few minutes into class you start to feel something, it’s small at first, but soon the vibrations are unmistakable. “How’s class going ;-)”, he texts you. The vibrations increase again right after his text.">>
+
+<<print "You know if you stand and walk out of class the motion will push you over the edge and you’ll cum immediately. So you stay at your desk and try to hold back the orgasm you know is coming, hoping he doesn’t use the remote to increase the vibrations again.">>
+
+<<nobr>>
+	<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
+	<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+	
+	<<if $JobBarista>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
+::Part5Regular2 <875,2875>
+<<nobr>>
+	<<set $DatingJosh = 1>>
+	
+	<span style="font-size: 150%"><<print "Date with Josh">></span>
+<</nobr>>
+
+<<print "Your friendship with Josh is back to normal. He hasn’t mentioned your night together once since then. But you feel those same urges building up again and you start to wonder if you shouldn’t have backed away like you did.">>
+
+<<print "Maybe Josh senses your change in interest, because not long after you start having thoughts about him again, he asks you out. Not as friends, but as a date. You eagerly accept.">>
+<img src="Part5/GoNeighbour13.jpg" hspace="10" vspace="10" height="650">
+
+<<print "The date goes wonderfully. And you are thankful there’s no reason to be coy about sleeping with him on the first date, ">>[[so the night goes wonderfully as well.|Part5Regular3]]
+
+::Part5Regular3 <875,3125>
+<<nobr>>
+	<<set $SexCount += 5>>
+	<<set $SexVaginalCount += 5>>
+	<<set $SexMaleCount += 5>>
+	<<set $SexJosh += 5>>
+	<<set $SexJoshVaginal += 5>>
+	<<set $CheatedJosh = 0>>
+	
+	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Neighbour’s Bedroom">><</if>></span>
+<</nobr>>
+
+<<print "Your relationship with Josh has continued to grow, and you are seeing him exclusively now.">>
+<img src="Part5/GoNeighbour14.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Your bed lies unused most nights as you spend every night in Josh’s.">>
+<<if $MentorEmily>><<print "Emily loves that you and her can go on double dates now. And she’s happy that no one is complaining about who is in which bedroom anymore.">><br><br><</if>><<if $MentorFaith>><<print "Faith is annoyed at first but eventually decides you and Josh are destined to get married eventually, so it’s ok. Josh’s roommate is alternatively annoyed or aroused by what goes on in Josh’s bed, depending on the day.">><br><br><</if>>
+<<nobr>>
+	<<if $JobOfficeManager>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>	
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobBarista>>
+		<<if $SexAndrew>>
+			[[You go to work at the restaurant.|JobBaristaJosh]]
+		<<else>>
+			[[Spend some time on campus.|Part6Start1]]
+		<</if>>
+	<</if>>
+	<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobOfficeIntern>><<goto [[Spend some time on campus.|Part6Start1]]>><</if>>
+	
+	<<if $JobOfficePA or $JobOfficeIntern>><<print "You think your job might be an issue in your relationship, however even if you wanted, there is no other job available. Do you tell Josh about The sexual favours you do for your boss?">><</if>>
+	<<if $JobCheerleaderFundraiser>><<print "You think your job might be an issue in your relationship, do you tell Josh about your job as a cheerleader fundraiser?">><</if>>
+	<<if $JobFitnessYoga>><<print "You think your job might be an issue in your relationship, do you tell Josh about your job as natural yoga instructor?">><</if>>
+	<<if $JobFitnessMassage>><<print "You think your job might be an issue in your relationship, do you tell Josh about your job as masseuse?">><</if>>
+<</nobr>>
+<<nobr>>
+	<<if $JobOfficePA>>* [[Tell him about your boss before going to work.|JobOfficeProJosh]]<</if>>
+	<<if $JobOfficeIntern>>* [[Tell him about your job.|Part5JoshFWB]]<</if>>
+	<<if $JobFitnessMassage>>* [[Tell him about your job.|Part5JoshFWB]]<</if>>
+	<<if $JobCheerleaderFundraiser>>* [[Tell him about your job.|Part5JoshFWB]]<</if>>
+	<<if $JobFitnessYoga>>* [[Tell him about your job.|Part5JoshFWB]]<</if>>
+<</nobr>>
+<<nobr>>
+	<<if $JobOfficePA or $JobFitnessMassage>>
+		* <<link "Pretend that you have a normal job and go to work.">>
+			<<set $HideJobJosh = 1>>
+			<<if $JobOfficePA>><<goto [[JobOfficeBlowjob2]]>><</if>>
+			<<if $JobFitnessMassage>><<goto [[JobFitnessMassage2]]>><</if>>
+			<<if $JobFitnessYoga>><<goto [[JobFitnessYoga3]]>><</if>>
+		<</link>>
+	<<else>>
+		<<if $JobCheerleaderFundraiser or $JobOfficeIntern>>* <<link [[Pretend that you have a normal job and spend some time on campus.|Part6Start1]]>><<set $HideJobJosh = 1>><</link>><</if>>
+	<</if>>
+<</nobr>>
+<<nobr>>
+	<<if $JobFitnessMassage or $JobCheerleaderFundraiser or $JobFitnessYoga>>
+		<<if $MentorFaith>>* [[Talk with Faith about a new job.|JobBarista1]]<</if>>
+		<<if $MentorEmily>>* [[Talk with Emily about a new job.|JobOffice1]]<</if>>
+	<</if>>
+<</nobr>>

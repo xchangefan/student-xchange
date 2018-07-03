@@ -1,0 +1,1368 @@
+::Part9Start2 <900,8925>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You are pregnant and about 10 weeks along. Since your periods weren’t on a regular schedule yet, they are sure about the dates yet. But they should be more sure in a few weeks after your ultrasound.">>
+
+<video src="Part9/Start4.mp4" autoplay loop muted height="650"></video>
+
+
+<<print "No one that you haven’t told about the pregnancy can really tell yet, but you are starting to notice your clothes fitting differently. You wonder how much longer it’ll be before you have to start looking for maternity clothes.">>
+
+<<print "You can’t help checking yourself in the mirror and wondering how long it will be before you start to show.">>
+
+<<if $ProfessorNewJob>>[[Daddy has found some jobs you can switch to.|Part9JobSelect]]<<else>>[[Find out more about sororities.|Part9Greek1]]<</if>>
+
+::Part9Greek1 <1500,8950>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Greek Week">></span>
+<</nobr>>
+
+<<print "You attend the big Greek recruitment event on campus. The slide show they give beforehand explains the benefits of fraternities and sororities. Your eyes gloss over a bit as they go on and on about “networking” and “leadership opportunities”.">>
+<img src="Part9/Greek1.png" hspace="10" vspace="10" height="650">
+
+<<print "You are more interested later when they are talking about being able to live in the sorority house instead of the dorms. You find out it costs about the same as the dorms would, so the X-Change scholarship covers it.">>
+
+<<print "You have a couple days to check out their websites and to ask among your friends and classmates as you try to ">>[[decide what you want to do.|Part9Greek2]]
+
+::Part9SororityEndNo <700,9950>
+<<nobr>>
+	<<set $SororityDTD = 0>>
+	<<set $SororitySEX = 0>>
+	<<set $SororityELP = 0>>
+
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You’ve decided that maybe sorority life isn’t for you. You’ve been having fun and meeting people since you got here.">>
+<img src="Part9/End3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Why would you need some sorority to help with that.">>
+
+<<if $PlayerPregnant>>[[You should go for another doctor visit.|Part95Start1]]<<else>>[[Continue.|Part10Start]]<</if>>
+
+::Part9Prof1 <200,8925>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You are retaking the class you failed again this term, and you have the same professor this term. You decide to pay him a visit near the end of his office hours. You’ve heard the rumors about him, and are prepared to do whatever it takes to get your grade changed.">>
+<img src="Part9/Start2.jpg" hspace="10" vspace="10" height="650">
+
+[[You prepare yourself, and head to his office.|Part9Prof2]]<<print " You expect that your pride won’t be the only thing you’ll need to swallow this afternoon.">>
+
+::Part9Prof2 <500,8925>
+<<nobr>>
+	<<set $AcademicProbation = 0>>
+	
+	<span style="font-size: 150%"><<print "Professor’s Office">></span>
+<</nobr>>
+
+<<print "After you explain your situation and tell him you’ll ‘do whatever it takes’ to get off academic probation, you wait for his response. As he thinks about your request, you notice a photo of a girl about your age on his desk. Is that his daughter? His girlfriend? You are pretty sure you recognize her from somewhere…">>
+<img src="Part9/Start3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You are pleasantly surprised by the deal he offers. He’s not expecting any sexual favors at all! Nothing like that. You wonder if the rumors about him were just a vicious lie from a bad student.">>
+
+<<print "He says he’ll change your grade from last term to “Incomplete”. It won’t count against your GPA anymore, and when you pass his class this term, it’ll disappear off your transcript completely. You are very thankful and promise to be a better student this term. When you check online later, it’s showing you are no longer on probation!">>
+
+<<if $PlayerPregnant>>[[You check yourself in the mirror.|Part9Start2]]<<else>>[[Find out more about sororities.|Part9Greek1]]<</if>>
+
+::Part9Greek2 <1300,9075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Greek Week">></span>
+<</nobr>>
+<p style="clear: both;"><img src="Part9/Greek2.jpg" hspace="10" vspace="10" height="400" align="left">
+<<nobr>>
+	<<if !$LikeFemales and !$DatingVeronica>>
+		<<link "Delta Tau Digamma">>
+			<<set $SororityDTD = 1>>
+			<<goto [[Part9DTF1]]>>
+		<</link>>
+	<<else>>
+		<<print "Delta Tau Digamma">>
+	<</if>>
+<</nobr>>
+<<print "Δ Τ F">>
+
+<<print "No one has anything bad to say about the Deltas. Well one girl called them “a bunch of sluts” but you’re pretty sure it’s just because her boyfriend’s ex was a Delta, so that doesn’t really count. The other girls you talked thought they were fine. The guys that had an opinion said all the Deltas they knew were friendly and outgoing.">>
+
+<<print "Their website seems to focus on how much fun your college years should be and about all the new friends you’ll make as a Delta.">>\
+<<if $LikeFemales and !$DatingVeronica>><br><br><<print "You get the impression that you wouldn’t really fit in with the Deltas. You feel like they are interested in you just so they can claim they are ‘diverse’, but that you’d never really feel like you fit in there, so you rule out the Deltas.">><</if>></p>
+
+
+
+<p style="clear: both;"><img src="Part9/Greek3.jpg" hspace="10" vspace="10" height="400" align="left">
+<<nobr>>
+	<<if !$DatingAndrew and !$DatingJosh and !$DatingProfessor>>
+		<<link "Sigma Epsilon Xi">>
+			<<set $SororitySEX = 1>>
+			<<goto [[Part9SEX1]]>>
+		<</link>>
+	<<else>>
+		<<print "Sigma Epsilon Xi">>
+	<</if>>
+<</nobr>>
+<<print "Σ Ε Ξ">>
+
+<<print "You get some mixed reports about the Sigmas. Most of the girls you talk to have good things to say about them and how they stick together, though one did say she’d heard something about hazing there. You didn’t see any complaints on the university’s website, so it’s probably just a rumor.">>
+
+<<print "Their website seems to focus on the life-long bonds you’ll form with your sorority sisters and how they are a close-knit community.">>\
+<<if $DatingAndrew or $DatingJosh or $DatingProfessor>><br><br><<print "Your boyfriend is worried about you after hearing the hazing rumors about the Sigmas, so he talks you out of pledging the Sigmas.">><</if>>\
+<<if $DatingVeronica>><br><br><<print "You and Veronica both are excited at the opportunity to move in together finally, and want to pledge the same sorority. You don’t consider the Etas since they don’t have a house. And she got the same vibe from the Deltas as you did, so you both agree to pledge the Sigmas.">><br><br><</if>></p>
+
+
+
+<p style="clear: both;"><img src="Part9/Greek4.jpg" hspace="10" vspace="10" height="400" align="left">
+<<nobr>>
+	<<if !$DatingVeronica>>
+		<<link "Eta Lambda Phi">>
+			<<set $SororityELP = 1>>
+			<<goto [[Part9HAP1]]>>
+		<</link>>
+	<<else>>
+		<<print "Eta Lambda Phi">>
+	<</if>>
+<</nobr>>
+<<print "Η Λ Ρ">>
+
+<<print "The Etas are a service sorority, so they are more focused on community service and not so much on the social aspects. Though it still sounds like a good way to make friends and ’network’ and all that other stuff they talked about.">>
+
+<<print "Most of what you’ve heard asking around is very positive and talking about the wonderful work they do, except for one guy that tells you they aren a ‘real sorority’ if they don’t have parties or their own house.">>
+
+<<print "Their website focuses on the people they are helping in the community. Since they don’t have a sorority house, living there wouldn’t be an option.">></p>
+
+<p style="clear: both;"><<if !$DatingVeronica>>[[Or you can decide not to pledge.|Part9SororityEndNo]]<</if>></p>
+
+::Part9DTF1 <500,9075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Δ Τ F">></span>
+<</nobr>>
+
+<<print "The Deltas say you aren’t allowed to skip a single class this week.">>
+
+<<print "You wonder why they are so concerned about your studies, since that doesn’t exactly fit their reputation.">>
+
+<<print "But you see the real reason for their rule when they show you the clothes they’ve picked out for you to wear this week.">>
+<img src="Part9/Delta1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "They want to be sure you don’t hide away in your room instead of going to class in what they’ve chosen for you to wear.">>
+
+<<print "Your professors are used to things like this during pledge week as they don’t say anything. You think they rather enjoy it, in fact.">>
+
+<<print "You are a bit more careful of how you sit in class though, once you realize the desks are open in the front and offer a clear view to your instructors.">>
+
+[[Especially since the Delta’s wardrobe selections didn’t include any underwear.|Part9DTF2]]
+
+::Part9SEX1 <1050,9075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "Your future sorority sisters made a mess cooking for the welcome ceremony. You and your fellow pledges are required to cleanup the kitchen afterwards. They have you strip down so you “don’t ruin your clothes”.">>
+<img src="Part9/Sigma1.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<if $JobCheerleader>>
+		<<if $DatingVeronica>> 
+			<<print "You and Veronica agree to do whatever you need to do to make it in, and give each other a ‘pass’ for any hazing-related activities. ">>
+			<<if $PlayerChastityBelt>><<print "She unlocks you for pledge week.">><</if>>
+		<<else>>
+			<<if !$SexFootball>> 
+				<<print "Veronica is one of the other pledges, which leads to some awkward looks between the two of you. ">>
+			<<else>>
+				<<print "Veronica is one of the other pledges, you think you better do your best to avoid her. ">>
+			<</if>>
+		<</if>>
+	<<else>>
+		<<print "You notice one girl named Veronica, you think you have seen her before on campus dressed as a cheerleader.">>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<link "You are presented with your pledge tasks.">>
+		<<if $PlayerChastityBelt and !$DatingVeronica>>
+			<<goto [[Part9SEX3]]>>
+		<<else>>
+			<<goto [[Part9SEX2]]>>
+		<</if>>
+	<</link>>
+<</nobr>>
+
+::Part9HAP1 <100,9075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Η Λ Ρ">></span>
+<</nobr>>
+
+<<print "You aren’t looking to live in a sorority house, and you aren’t looking for wild parties or any kind of crazy hazing.">>
+
+<<print "You just want to make some new friends, and give back to the community. So you sign up for the Etas.">>
+<img src="Part9/Eta1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "They don’t have any elaborate tasks for you to perform, or hazing, or initiation to endure.">>
+
+<<print "You’re immediately welcomed in, and they start introducing you and the other new members around.">>
+
+<<print "They let you know about the events they have coming up. ">>[[You are looking forward to the charity fashion show this weekend,|Part9HAP2]]<<print " and then the team building event the following weekend.">>
+
+::Part9HAP2 <100,9200>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Η Λ Ρ">></span>
+<</nobr>>
+
+<<print "At the charity fashion show, people from around the university bought tickets to the show to watch the girls from the sorority, and even a few guys from your brother fraternity, take turns modeling on stage.">>
+
+<<print "The outfits were all donated to the cause by local stores.  In addition to the tickets and other donations people are making, there’s also a silent auction for the clothing items.">>
+
+<<print "The casual clothes are easy to find volunteers to model. There’s not much trouble finding someone to wear the formal wear items either. But there’s one item no one is volunteering for, the bikini. You decide to give it a shot.">>
+
+<video src="Part9/Eta2.webm" autoplay loop muted height="650"></video>
+
+
+<<print "You are nervous at first, but once you are up there showing off, you really enjoy it, especially with the crowd cheering you on.">>
+
+<<print "Later, when they are looking at auction results you see people kept outbidding each other on the bikini, and it’s final price was almost $300, many times more than it would cost at the store.">>
+<<if $DatingAndrew>><br><<print "You find out it was Andrew that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you. And the money was for charity after all, so he didn’t mind paying too much for it.">><br><<else>><<if $DatingProfessor>><br><<print "You find out it was Daddy that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you. And the money was for charity after all, so he didn’t mind paying too much for it.">><br><</if>><</if>>
+[[Attend the team building event the following weekend.|Part9HAP3]]
+
+::Part9HAP3 <100,9325>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Η Λ Ρ">></span>
+<</nobr>>
+
+<<print "You and your new sisters have a blast at the team building outing. Your favorite part was the mud obstacle course at the end of the day.">>
+
+<video src="Part9/Eta3.webm" autoplay loop muted height="650"></video>
+
+
+<<print "You laughed a bit as you all walked across campus to the showers, seeing the looks you got. You guess seeing a couple dozen mud-covered women strolling across campus is not something you see every day.">>
+
+[[You definitely made the right choice with this sorority.|Part9SororityEndYes]]
+
+::Part9SororityEndYes <100,10075>
+<<nobr>>
+	<<if $SororityDTD>><span style="font-size: 150%"><<print "Δ Τ F">></span><</if>>
+	<<if $SororitySEX>><span style="font-size: 150%"><<print "Σ Ε Ξ">></span><</if>>
+	<<if $SororityELP>><span style="font-size: 150%"><<print "Η Λ Ρ">></span><</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $SororityDTD>><<print "Your sorority life is full of wild parties, and you love the time you are able to spend with all the new friends you’ve made.">><</if>>
+	<<if $SororityELP>><<print "Your sorority life is full of volunteering at a soup kitchen, and you love the time you are able to spend with all the new friends you’ve made.">><</if>>
+	<<if $SororitySEX>><<print "Your sorority life is full spending time with your new sisters, and you love the time you are able to spend with all the new friends you’ve made.">><</if>>
+<</nobr>>
+<<if $SororityELP>><img src="Part9/End2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part9/End1.jpg" hspace="10" vspace="10" height="650"><</if>>
+
+<<print "You already know some of you will be friends for life.">>
+
+<<if $PlayerPregnant>>[[You should go for another doctor visit.|Part95Start1]]<<else>>[[Continue.|Part10Start]]<</if>>
+
+::Part9DTF2 <500,9200>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Δ Τ F">></span>
+<</nobr>>
+
+<<print "You are told you need to gather ‘recommendations’ from around campus. You soon realize that their recommendations are actually sex reviews! You might need to adapt your strategy about getting those recommendations based on your situation:">>
+<img src="Part9/Delta2a.jpg" hspace="10" vspace="10" height="650"><img src="Part9/Delta2b.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<if $DatingAndrew or $DatingJosh or $DatingProfessor>>
+		<<print "If already have a boyfriend, so you only want one recommendation, ">>[[a glowing one from him.|Part9DTFBoyfriend1]]
+	<<else>>
+		<<if $MasterKate>>
+			<<print "You are hoping for just a recommendation from Mistress Kate, but she says “No. Not after your behavior over Christmas.” She does tell you it shouldn’t be too hard for you to find guys on campus willing to ">>[[trade blowjobs for recommendations though.|Part9DTFBlowjob1]]
+		<<else>>
+			<<if $PlayerChastityBelt>>
+				<<print "As you are in a chastity belt, ">>
+				<<if $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker>>
+					<<print "blowjobs are going to be your only option for earning recommendations ">>
+					[[and you already have someone in mind with whom you could start.|Part9DTFBlowjobFWB]]
+				<<else>>
+					[[blowjobs are going to be your only option for earning recommendations.|Part9DTFBlowjob1]]
+				<</if>>
+			<<else>>
+				<<if $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker>>
+					[[You already have someone in mind with whom you could start.|Part9DTFSexFWB]]
+				<<else>>
+					[[Finding guys willing to have sex with you should be easy.|Part9DTFSex1]]
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+<<if !$DatingAndrew and !$DatingJosh and !$DatingProfessor and !$MasterKate>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
+
+::Part9DTFBoyfriend1 <500,9325>
+<<nobr>>
+	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+<</nobr>>
+
+<<print "There’s only one ‘recommendation’ that you plan on getting, and if that’s not good enough then you figure the Deltas aren’t right for you anyway.">>
+
+<video src="Part9/Delta3a.mp4" autoplay loop muted height="500"></video>
+<video src="Part9/Delta3b.mp4" autoplay loop muted height="500"></video>
+
+
+<<print "You know he’s going to give you a great recommendation anyway, but you still find yourself working extra hard to ">>[[make him happy this week.|Part9DTFBoyfriend2]]
+
+::Part9DTFBlowjob1 <700,9325>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You aren’t allowed to have sex with any of them, but it’s not hard to find guys willing to sit back and enjoy a blow job.">>
+<img src="Part9/Delta5.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You know some aren’t going to fill out the survey like they promised, so you make sure to get more than enough. The quick ones that don’t even want to bother with taking your clothes off make it even easier to ">>[[squeeze more into your day.|Part9DTFBlowjob2]]
+
+::Part9DTFSex1 <300,9200>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You quickly work through the list of guys you knew that were interested in you, and also all the ones that expressed an interest after your recent wardrobe change.">>
+
+<<print "So, you have to start finding strangers to help you earn even more recommendations.">>
+<img src="Part9/Delta8.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Thankfully, you find that with most of the guys on campus, it doesn’t take much more than a look and an offer and you and him are ">>[[heading back to his room.|Part9DTFSex2]]
+
+<<print "Or maybe just to the nearest broom closet.">>
+
+::Part9DTFBoyfriend2 <500,9450>
+<<nobr>>
+	<<set $DTFSqueaky = 1>>
+
+	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+<</nobr>>
+
+<<print "The Deltas read your boyfriend’s recommendation aloud to everyone. It’s much more detailed than the other recommendations, providing far more information than was asked for.">>
+
+<<print "It’s embarrassingly graphic in parts, describing in detail how exquisite your blowjobs are, for example. But it’s also surprisingly touching in other parts, talking about how much he cares about you.">>
+
+<video src="Part9/Delta3c.mp4" autoplay loop muted height="500"></video>
+<video src="Part9/Delta3d.mp4" autoplay loop muted height="500"></video>
+
+
+<<print "He even describes how much he loves that squeaky little moan you make just before you orgasm. You quickly realize that your new nickname at your sorority is going to be “Squeaky”.">>
+
+<<print "If your boyfriend was in Delta’s brother fraternity, the letter would be enough. But they tell you they’ll need a little more from you since he’s not. But not to worry, it won’t be anything your boyfriend would object to. ">>[[Well probably not anyway.|Part9DTFBoyfriend3]]
+
+::Part9DTFBoyfriend3 <500,9575>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Δ Τ F">></span>
+<</nobr>>
+
+<<print "You are relieved when they inform you your additional task is just that you have to clean the frat house. But then you see the ‘maid outfit’ you’ll have to wear.">>
+<img src="Part9/Delta4.png" hspace="10" vspace="10" height="650">
+
+<<print "But they assure you that although the frat guys will be watching you closely to supervise your cleaning, they won’t touch you at all.">>
+
+<<print "Your boyfriend accepts their assurances, and yours, that nothing will happen. And if he had any remaining objections, they vanish when he learns that the outfit is yours to keep afterwards. ">><<if $PlayerChastityBelt>><<print "He even sends you unlocked from your chastity belt.">><</if>>
+
+<<print "The frat lives up to their promise and keep their hands off you. Though, considering how turned on your got with them watching you crawl on your hands and knees, you almost wish they had broken it.">>
+
+<<print "Thankfully when you get home and wear the outfit for your boyfriend, he doesn’t have any ‘no touch’ policy.">>
+
+[[It is time for your sorority initiation.|Part9DTFInitiation1]]
+
+::Part9DTFInitiation1 <500,9700>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Δ Τ F">></span>
+<</nobr>>
+
+<<print "You’ve been accepted and just have the initiation ceremony to go through and you’ll be officially a Delta!">>
+<img src="Part9/Delta12.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<if $DTFSqueaky>>
+		<<print "“And don’t worry Squeaky, we had your boyfriend send over his measurements, ">>[[so your dildo should be just his size.”|Part9DTFInitiation2]]
+	<<else>>
+		<<if $DTFTextbook>>
+			<<print "“Textbook, that big one at the end has your name on it. ">>[[I’m sure you can handle it.”|Part9DTFInitiation3]]
+		<<else>>
+			<<if $DTFCupake>>
+				<<print "“Cupcake, you’ll be sitting on the sidelines for much of the activities, so you can get us started now. Show the other recruits some of your techniques.” When it’s their turn, you walk behind them and give their heads a little push if they need it. ">>[[Some of them aren’t as good at taking the whole thing as you are.|Part9DTFInitiation4]]
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+::Part9DTFBlowjob2 <700,9450>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You want the best possible ratings in your recommendations, so you do your best to find out exactly what each guy likes and give him what he wants.">>
+<img src="Part9/Delta6.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Like, for example, how some guys want you to take their cock deep into your throat as they cum, and others prefer to pull out and cover your face with their cum.">>
+
+<<print "You don’t even object when some of the guys ask if they can take a photo to remember the experience. You know if they enjoyed it that much, ">>[[then they’ll be sure to give you a high rating.|Part9DTFBlowjob3]]
+
+::Part9DTFBlowjob3 <700,9575>
+<<nobr>>
+	<<set $DTFCupake = 1>>
+
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "When they are reading out the recommendations, you have quite a few, and they are mostly positive.">>
+
+<<print "A few complain about ‘only a blowjob’ and no sex, but your sisters understand your situation and don’t count those against you.">>
+
+<<print "Everyone really enjoys the photos some reviewers decided to send along.">>
+<img src="Part9/Delta7.jpg" hspace="10" vspace="10" height="650">
+
+<<print "One of the Deltas comments that the cum dripping down your face or breasts in some of the pictures makes you look like a cupcake with icing on top.">>
+
+[[You soon realize your new nickname is going to be “Cupcake”.|Part9DTFInitiation1]]
+
+::Part9DTFSex2 <300,9325>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You want to get as many recommendations as you can, so unless the guy seems to be enjoying the foreplay as much as you are, you quickly move things along.">>
+<img src="Part9/Delta9.jpg" hspace="10" vspace="10" height="650">
+
+<<if $PlayerEasytoOrgasm>><<print "Fortunately, you X-Change side effects allows you to orgasm easily, so speed is never a problem for you.">><<else>><<print "That usually means he’ll be cumming long before you do. You don’t want him feeling bad about that and maybe giving you a poor rating, so you fake your orgasms most of the time.">><</if>>
+
+<<if $PlayerEasytoOrgasm>><<print "The session leaves you still horny and unsatisfied, that’s probably better anyway. It means you’ll want to go out to find another guy ">>[[to earn another recommendation that much faster.|Part9DTFSex3]]<<else>><<print "You enjoy every session so much, and it still makes you ">>[[eager for the next one.|Part9DTFSex3]]<</if>>
+
+::Part9DTFSex3 <300,9450>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<if $PlayerSideEffectAnal>><<print "Some guys seem to be very eager to try anal. And they quickly pick up on how willing you are to do whatever they want in bed.">><<else>><<print "You don’t always love it, but some guys seem to be very eager to try anal. But you just think about the high marks he’s going to give and wait as he lubes up his cock.">><</if>>
+<img src="Part9/Delta10.jpg" hspace="10" vspace="10" height="650">
+
+<<if !$PlayerSideEffectAnal>><<print "Once he slides in though, you forget about all that. ">><</if>><<print "All you can think about is how small and submissive you feel with him on top of you, and how full your ass feels with his cock inside it.">>
+
+<<print "You just know that you have to ">>[[get even more recommendations.|Part9DTFSex4]]
+
+::Part9DTFSex4 <300,9575>
+<<nobr>>
+	<<set $DTFTextbook = 1>>
+	
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "You realize sticking to one guy at a time is slowing you down, so you decide to start working more efficiently.">>
+
+<<print "You find it doesn’t take that long to work your way through an entire frat house if you take them two or three at a time.">>
+
+<video src="Part9/Delta11.mp4" autoplay loop muted height="650"></video>
+
+
+<<print "When your Delta sisters are going through the recommendations at the end of the week, you quickly realize you have, by far, the most recommendations, and they are overwhelmingly positive. It’s more than enough to be accepted.">>
+
+<<print "One of your sisters comments on the stack of recommendations for you and says that she’s had textbooks smaller than that. ">>[[You soon realize your new nickname is going to be “textbook”.|Part9DTFInitiation1]]
+
+::Part9DTFInitiation2 <300,9700>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Δ Τ F">></span>
+<</nobr>>
+
+<<print "No, take her gag off. We wouldn’t want to miss out on hearing how Squeaky earned her nickname, now would we?">>
+<img src="Part9/Delta13.jpg" hspace="10" vspace="10" height="650">
+
+[[Everyone takes turns performing different sexual tasks on the dildos.|Part9DTFInitiation4]]
+
+::Part9DTFInitiation3 <700,9700>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Δ Τ F">></span>
+<</nobr>>
+
+<<print "“Textbook, you’re the expert on this. Show Kitten how to please two cocks at once.”">>
+<img src="Part9/Delta14.jpg" hspace="10" vspace="10" height="650">
+
+<<print "“I think she’s feeling a bit shy in front of the group, why don’t you reach down and give her a little encouragement to help her along.”">>
+
+[[Everyone takes turns performing different sexual tasks on the dildos.|Part9DTFInitiation4]]
+
+::Part9DTFInitiation4 <500,9825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Δ Τ F">></span>
+<</nobr>>
+
+<<print "You and your fellow pledges sit together on the initiate bench as you are formal welcomed as Delta sisters. As the ceremony continues on for a while, most of you fidget in your seat eliciting soft moans from some of the more sensitive girls.">>
+<img src="Part9/Delta15.jpg" hspace="10" vspace="10" height="650">
+<<if $DTFSqueaky>><br><<print "Well everyone, except for you. You are accepted as well, but you sit at the end on a bare part of the bench looking enviously at the others.">><br><</if>>
+<<print "At the end of the night, ">>[[you are all Delta sisters!|Part9SororityEndYes]]<<print " And almost everyone gets to take home an added souvenir, one they’ve became very acquainted with throughout the evening.">>
+
+::Part9SEX2 <1050,9200>
+<<nobr>>	
+	<<set $SexTaskCount = 0>>
+	<<if $PlayerSideEffectOral>><<set $SexTaskOral = 1>><<set $SexTaskCount += 1>><</if>>
+	<<if $PlayerSideEffectExhibitionist>><<set $SexTaskExhibitionist = 1>><<set $SexTaskCount += 1>><</if>>
+	<<if $LikeFemales or $LikeBoth>><<set $SexTaskLesbian = 1>><<set $SexTaskCount += 1>><</if>>
+	<<if $PlayerSideEffectAnal>><<set $SexTaskAnal = 1>><<set $SexTaskCount += 1>><</if>>
+	<<if $PlayerSideEffectExhibitionist>><<set $SexTaskStrip = 1>><<set $SexTaskCount += 1>><</if>>
+	<<if $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive>><<set $SexTaskBondage = 1>><<set $SexTaskCount += 1>><</if>>
+	<<if $PlayerSideEffectLibido > 1>>
+		<<if !$SexTaskOral>><<set $SexTaskRandomOral = 1>><</if>><<set $SexTaskOral = 1>>
+		<<if !$SexTaskExhibitionist>><<set $SexTaskRandomExhibitionist = 1>><</if>><<set $SexTaskExhibitionist = 1>>
+		<<if !$SexTaskLesbian>><<set $SexTaskRandomLesbian = 1>><</if>><<set $SexTaskLesbian = 1>>
+		<<if !$SexTaskAnal>><<set $SexTaskRandomAnal = 1>><</if>><<set $SexTaskAnal = 1>>
+		<<if !$SexTaskStrip>><<set $SexTaskRandomStrip = 1>><</if>><<set $SexTaskStrip = 1>>
+		<<if !$SexTaskBondage>><<set $SexTaskRandomBondage = 1>><</if>><<set $SexTaskBondage = 1>>
+	<<else>>
+		<<if !$SexTaskCount>><<set $SexTaskCountRandom = 1>><</if>>
+		<<if $PlayerSideEffectLibido and $SexTaskCount < 3>><<set $SexTaskCountRandom = 3>><<set $SexTaskCountRandom -= $SexTaskCount>><</if>>
+	<</if>>
+	<<if $SexTaskCountRandom>>
+		<<set $PlayerRollDiceArray = []>>
+		<<if !$SexTaskOral>><<set $PlayerRollDiceArray.push(1)>><</if>>
+		<<if !$SexTaskExhibitionist>><<set $PlayerRollDiceArray.push(2)>><</if>>
+		<<if !$SexTaskLesbian>><<set $PlayerRollDiceArray.push(3)>><</if>>
+		<<if !$SexTaskAnal>><<set $PlayerRollDiceArray.push(4)>><</if>>
+		<<if !$SexTaskStrip>><<set $PlayerRollDiceArray.push(5)>><</if>>
+		<<if !$SexTaskBondage>><<set $PlayerRollDiceArray.push(6)>><</if>>
+		<<set $PlayerRollDice = either($PlayerRollDiceArray)>>
+		<<switch $PlayerRollDice>>
+			<<case 1>><<set $SexTaskRandomOral = 1>><<set $SexTaskOral = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 2>><<set $SexTaskRandomExhibitionist = 1>><<set $SexTaskExhibitionist = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 3>><<set $SexTaskRandomLesbian = 1>><<set $SexTaskLesbian = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 4>><<set $SexTaskRandomAnal = 1>><<set $SexTaskAnal = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 5>><<set $SexTaskRandomStrip = 1>><<set $SexTaskStrip = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 6>><<set $SexTaskRandomBondage = 1>><<set $SexTaskBondage = 1>><<set $SexTaskCountRandom -= 1>>
+		<</switch>>
+	<</if>>
+	<<if $SexTaskCountRandom>>
+		<<set $PlayerRollDiceArray = []>>
+		<<if !$SexTaskOral>><<set $PlayerRollDiceArray.push(1)>><</if>>
+		<<if !$SexTaskExhibitionist>><<set $PlayerRollDiceArray.push(2)>><</if>>
+		<<if !$SexTaskLesbian>><<set $PlayerRollDiceArray.push(3)>><</if>>
+		<<if !$SexTaskAnal>><<set $PlayerRollDiceArray.push(4)>><</if>>
+		<<if !$SexTaskStrip>><<set $PlayerRollDiceArray.push(5)>><</if>>
+		<<if !$SexTaskBondage>><<set $PlayerRollDiceArray.push(6)>><</if>>
+		<<set $PlayerRollDice = either($PlayerRollDiceArray)>>
+		<<switch $PlayerRollDice>>
+			<<case 1>><<set $SexTaskRandomOral = 1>><<set $SexTaskOral = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 2>><<set $SexTaskRandomExhibitionist = 1>><<set $SexTaskExhibitionist = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 3>><<set $SexTaskRandomLesbian = 1>><<set $SexTaskLesbian = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 4>><<set $SexTaskRandomAnal = 1>><<set $SexTaskAnal = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 5>><<set $SexTaskRandomStrip = 1>><<set $SexTaskStrip = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 6>><<set $SexTaskRandomBondage = 1>><<set $SexTaskBondage = 1>><<set $SexTaskCountRandom -= 1>>
+		<</switch>>
+	<</if>>
+	<<if $SexTaskCountRandom>>
+		<<set $PlayerRollDiceArray = []>>
+		<<if !$SexTaskOral>><<set $PlayerRollDiceArray.push(1)>><</if>>
+		<<if !$SexTaskExhibitionist>><<set $PlayerRollDiceArray.push(2)>><</if>>
+		<<if !$SexTaskLesbian>><<set $PlayerRollDiceArray.push(3)>><</if>>
+		<<if !$SexTaskAnal>><<set $PlayerRollDiceArray.push(4)>><</if>>
+		<<if !$SexTaskStrip>><<set $PlayerRollDiceArray.push(5)>><</if>>
+		<<if !$SexTaskBondage>><<set $PlayerRollDiceArray.push(6)>><</if>>
+		<<set $PlayerRollDice = either($PlayerRollDiceArray)>>
+		<<switch $PlayerRollDice>>
+			<<case 1>><<set $SexTaskRandomOral = 1>><<set $SexTaskOral = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 2>><<set $SexTaskRandomExhibitionist = 1>><<set $SexTaskExhibitionist = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 3>><<set $SexTaskRandomLesbian = 1>><<set $SexTaskLesbian = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 4>><<set $SexTaskRandomAnal = 1>><<set $SexTaskAnal = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 5>><<set $SexTaskRandomStrip = 1>><<set $SexTaskStrip = 1>><<set $SexTaskCountRandom -= 1>>
+			<<case 6>><<set $SexTaskRandomBondage = 1>><<set $SexTaskBondage = 1>><<set $SexTaskCountRandom -= 1>>
+		<</switch>>
+	<</if>>
+
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "The Sigmas say they have a series of tasks for the pledges to perform, but they want to make sure each pledge gets tasks that they’ll enjoy.">>
+<img src="Part9/Sigma2.jpg" hspace="10" vspace="10" height="650">
+
+<<print "They take some of the paper towels left over from the kitchen cleaning. They have you sit on one of them while you watch different porn videos they play for you. At the end of each video, they collect everyone’s towels and try to judge which of you were ">>[[the most turned on by each video.|Part9SEX4]]
+
+::Part9SEX3 <900,9200>
+<<nobr>>
+	<<set $SexTaskOral = 1>>
+	<<set $SexTaskChastity = 1>>
+
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "Everyone looks at your belt and teases you about how you must get insanely horny, and you admit that you do.">>
+<img src="Part9/Sigma3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "But when it comes time to do the testing, they decide they can’t test you with the belt on. “We’ll just mark you down as ‘Oral’, since that’s really your only option anyway.”.">>
+
+[[You still have you watch all the videos.|Part9SEX4]]<<print " They want you to imagine all the things you can’t experience with your belt on.">>
+
+::Part9SEX4 <900,9325>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "The first video is of a girl giving a guy a slow, sensual blowjob. You watch closely until the end when he cums in her mouth. You watch as she lets some of it sloppily drip from her mouth afterwards.">>
+<img src="Part9/Sigma4.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<if $SexTaskOral>>
+		<<if $SexTaskChastity>>
+			[[You would have definitely “won” this one anyway if you weren’t in chastity.|Part9SEX5]]
+		<<else>>
+			<<if $SexTaskRandomOral>>
+				[[You are not sure why, but you feel like this one made you particularly horny.|Part9SEX5]]
+			<<else>>
+				[[You definitely “win” this one.|Part9SEX5]]
+			<</if>>
+		<</if>>
+	<<else>>
+		[[You finish watching the video.|Part9SEX5]]
+	<</if>>
+<</nobr>>
+
+::Part9SEX5 <1050,9325>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "You watch as a beautiful woman strips on empty train platform. She’s all alone as she begins masturbating. But, as she starts to get close to her orgasm, a train pulls into the station.">>
+<img src="Part9/Sigma5.jpg" hspace="10" vspace="10" height="650">
+
+<<print "She’s too close to want to stop, and keeps going, finally cumming as people are exiting the train all around her.">>
+
+<<nobr>>
+	<<if $SexTaskExhibitionist>>
+		<<if $SexTaskRandomExhibitionist>>
+			[[You are not sure why, but you feel like this one made you particularly horny.|Part9SEX6]]
+		<<else>>
+			[[You definitely “win” this one.|Part9SEX6]]
+		<</if>>
+	<<else>>
+		[[You finish watching the video.|Part9SEX6]]
+	<</if>>
+<</nobr>>
+
+::Part9SEX6 <1200,9325>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "Two beautiful woman explore each other’s bodies. You watch intently as they slowly bring each other closer and closer to orgasm.">>
+<img src="Part9/Sigma6.jpg" hspace="10" vspace="10" height="650">
+
+<<print "They both show no signs of stopping after their first orgasms, but, sadly, your sisters stop the video at that point.">>
+
+<<nobr>>
+	<<if $SexTaskLesbian>>
+		<<if $SexTaskRandomLesbian>>
+			[[You are not sure why, but you feel like this one made you particularly horny.|Part9SEX7]]
+		<<else>>
+			[[You definitely “win” this one.|Part9SEX7]]
+		<</if>>
+	<<else>>
+		[[You finish watching the video.|Part9SEX7]]
+	<</if>>
+<</nobr>>
+
+<<print "You notice that Veronica was one of the winners of this video.">>
+
+::Part9SEX7 <1350,9325>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "You watch as the girl’s tiny ass is stretched by the porn stars cock.">>
+<img src="Part9/Sigma7.jpg" hspace="10" vspace="10" height="650">
+
+<<print "As you watch, you wonder just what a big cock would feel like in your ass.">>
+
+<<nobr>>
+	<<if $SexTaskAnal>>
+		<<if $SexTaskRandomAnal>>
+			[[You are not sure why, but you feel like this one made you particularly horny.|Part9SEX8]]
+		<<else>>
+			[[You definitely “win” this one.|Part9SEX8]]
+		<</if>>
+	<<else>>
+		[[You finish watching the video.|Part9SEX8]]
+	<</if>>
+<</nobr>>
+
+::Part9SEX8 <1500,9325>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "You watch as a woman dances on stage, shedding one piece of clothing after another. When her songs finish, she’s topless and wearing only a tiny g-string.">>
+<img src="Part9/Sigma8.jpg" hspace="10" vspace="10" height="650">
+
+<<print "One of the men that had been dancing for her pays for a private dance and she leads him to a room in back.">>
+
+<<print "She drops the g-string and dance nude for him, moaning as she grinds against his jeans.">>
+
+<<print "Eventually he pays her more money and she pulls his jeans down and slides his cock into her and begins riding it.">>
+
+<<nobr>>
+	<<if $SexTaskStrip>>
+		<<if $SexTaskRandomStrip>>
+			[[You are not sure why, but you feel like this one made you particularly horny.|Part9SEX9]]
+		<<else>>
+			[[You definitely “win” this one.|Part9SEX9]]
+		<</if>>
+	<<else>>
+		[[You finish watching the video.|Part9SEX9]]
+	<</if>>
+<</nobr>>
+
+::Part9SEX9 <1650,9325>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "You watch as young women are led into a number of small booths. Some of these have glory holes, others larger openings. The woman the camera is following is led to one with a larger opening.">>
+<img src="Part9/Sigma9.jpg" hspace="10" vspace="10" height="650">
+
+<<print "She is made to lie down on a bench. Her legs are fed through the opening and someone outside secures them to the wall. Inside the booth, her arms are secured to the bench. A gag is placed in her mouth and she is left to wait. She doesn’t have to wait long though.">>
+
+<<print "After a few moments men begin to enter. They examine each woman, deciding which they want to use. The woman inside the booth moans as one of the men begins teasing her clit before sliding his cock into her.">>
+
+<<print "You watch in wonder, imagining if such a place really exists, and wondering what it would be like to be bound and helpless and used like that. To be fucked by a man without ever knowing what he looked like.">>
+
+<<nobr>>
+	<<if $SexTaskBondage>>
+		<<if $SexTaskRandomBondage>>
+			[[You are not sure why, but you feel like this one made you particularly horny.|Part9SEXTask1]]
+		<<else>>
+			[[You definitely “win” this one.|Part9SEXTask1]]
+		<</if>>
+	<<else>>
+		[[You finish watching the video.|Part9SEXTask1]]
+	<</if>>
+<</nobr>>
+
+::Part9SEXTask1 <1500,9450>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "You don’t think you’ve ever watched that much porn before without touching yourself. ">><<if $SexTaskChastity>><<print "Not that you had much of a choice anyway.">><</if>>
+<<if $SexTaskChastity>><img src="Part9/Task2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part9/Task1.jpg" hspace="10" vspace="10" height="650"><</if>>
+
+<<print "When you are finished, the start listing the tasks and who has been matched to each. You listen closely for your name and the other pledges that will be joining you.">>
+
+<<print "They tell you each task is supposed to teach a lesson about being a sorority sister here, but they want your learning to be fun, so they’ve tried to match each pledge with a task or tasks that she’ll enjoy.">>
+<<if $SexTaskCount == 6>><br><<print "The sigmas write your name on one of the soaked paper towels and save it to frame and send to their brother fraternity. You aren’t sure if they are joking or not, but you are marked as ‘winner’ for every video.">><br><</if>>
+<<nobr>>
+	<<link "It is time to start your tasks.">>
+		<<if $SexTaskOral>><<goto [[Part9Task2]]>>
+		<<else>><<if $SexTaskBondage>><<goto [[Part9Task3]]>>
+			<<else>><<if $SexTaskExhibitionist>><<goto [[Part9Task4]]>>
+				<<else>><<if $SexTaskBondage or $SexTaskLesbian>><<goto [[Part9Task8]]>>
+					<<else>><<if $SexTaskLesbian>><<goto [[Part9Task9]]>>
+						<<else>><<if $SexTaskAnal>><<goto [[Part9Task10]]>>
+							<<else>><<if $SexTaskStrip>><<goto [[Part9Task11]]>>
+								<<else>><<goto [[Part9Task14]]>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+<</nobr>>
+
+<<if $DatingVeronica>><<print "Veronica reminds you about sharing a room, and talks you out of any thoughts of chickening out of it at this point.">><<else>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
+
+::Part9Task2 <900,9825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "You and Jessica are sent over to the sorority’s brother fraternity. Lily and Kayla are assigned the same task, but sent to visit the football team instead.">>
+<img src="Part9/Task3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You and Jessica have to give each frat brother that wants one a blowjob. You could get the job twice as fast if you each took half of the guys by yourself. But you are supposed to do the job right, and you both have to team up to service each cock.">>
+
+<<if $SexTaskChastity>><<print "You can only look on in jealousy as some of the guys use their hands to entertain Jessica while she works their cock.">><<else>><<print "Some of the guys use their hands to entertain Jessica and you while you work their cocks. You try to keep focused on your work as you enjoy the added encouragement.">><</if>>
+
+<<nobr>>
+	<<link "You continue your tasks.">>
+		<<if $SexTaskBondage>><<goto [[Part9Task3]]>>
+		<<else>><<if $SexTaskExhibitionist>><<goto [[Part9Task4]]>>
+			<<else>><<if $SexTaskBondage or $SexTaskLesbian>><<goto [[Part9Task8]]>>
+				<<else>><<if $SexTaskLesbian>><<goto [[Part9Task9]]>>
+					<<else>><<if $SexTaskAnal>><<goto [[Part9Task10]]>>
+						<<else>><<if $SexTaskStrip>><<goto [[Part9Task11]]>>
+							<<else>><<goto [[Part9Task14]]>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+<</nobr>>
+
+::Part9Task3 <1050,9825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "The Sigmas want to thank the guys that serve as tutors for the sorority.">>
+
+<<print "So they bring you over to the dorm room of one of the tutors.">>
+
+<<print "They pin your arms and legs back like you are some sort of science fair butterfly, so the tutor and his friends can study you ‘for educational purposes’.">>
+<img src="Part9/Task4.jpg" hspace="10" vspace="10" height="650">
+
+<<print "“We’ll be back for her in a few hours, have fun guys!”, your sisters say as they leave you.">>
+
+<<print "From the erections you can already see, you know it won’t be long before one of them is fumbling at the button on your jeans to get them off you.">>
+
+<<print "At least you hope it won’t be very long.">>
+
+<<nobr>>
+	<<link "You continue your tasks.">>
+		<<if $SexTaskExhibitionist>><<goto [[Part9Task4]]>>
+		<<else>><<if $SexTaskBondage or $SexTaskLesbian>><<goto [[Part9Task8]]>>
+			<<else>><<if $SexTaskLesbian>><<goto [[Part9Task9]]>>
+				<<else>><<if $SexTaskAnal>><<goto [[Part9Task10]]>>
+					<<else>><<if $SexTaskStrip>><<goto [[Part9Task11]]>>
+						<<else>><<goto [[Part9Task14]]>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+<</nobr>>
+
+::Part9Task4 <1200,9575>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Campus">></span>
+<</nobr>>
+
+<<print "Several of the older sisters pair off with you and the other girls selected for this task. You aren’t sure where the other girls go, but your ‘big’, Rebecca, takes you to the science building and has you wait by the stairs.">>
+
+<<print "You have to ask the next person leaving the building if they want to fuck you. If they say yes, then you are to fuck them, right then and there. Rebecca sits on a bench not far away making sure you don’t cheat.">>
+
+<video src="Part9/Task5.webm" autoplay loop muted height="650"></video>
+
+
+<<print "He says yes to fucking you but tries to talk you into going back to his dorm instead. When you begin stripping down and pulling his cock out, he quickly decides he doesn’t care about being seen after all. You do your best to get him off as quick as you can though ">>[[before anyone else comes out.|Part9Task5]]
+
+::Part9Task5 <1200,9700>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Campus">></span>
+<</nobr>>
+
+<<print "Right after he cums, the guy you were fucking pulls up his pants and runs off. You realize a moment later why, when a campus police officer approaches.">>
+
+<<print "You quickly pull your panties up and straighten your clothes, but you already know it’s too late, the officer has seen you and is heading right toward you.">>
+<img src="Part9/Task6.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You glance over at the bench to see if Rebecca can rescue you somehow, but she’s no longer there. The officer handcuffs you and puts you in his car and heads back to the station.">>
+
+<<if $DatingVeronica>>[[You choose to keep quiet about the sororities involvement.|Part9Task7]]<<else>>[[You can tell him that you are a victim of hazing|Part9Task6]]<<print "and hope that the school won’t punish you. Or, you can ">>[[choose to keep quiet about the sororities involvement.|Part9Task7]]<</if>>
+
+::Part9Task6 <900,9950>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Campus">></span>
+<</nobr>>
+
+<<print "You tell him about the hazing you’ve already been put through by the Sigmas and tell him this was part of it as well. They look into the complaint even though you can tell they don’t really want to. All the Sigmas, including the other new pledges, deny the whole thing, so it’s your word against everyone else’s.">>
+
+<<print "There’s also a note on your file with the campus police that the X-Change people left. It lets the university that your pill might have side-effects that could cause you to behave inappropriately at times and asks them to be understanding if you break any rules because of it.">>
+
+<<print "The note gets you out of trouble, but it convinces the university that you were acting on your own, not due to hazing, and they throw out your complaint.">>
+<img src="Part9/Task7.jpg" hspace="10" vspace="10" height="650">
+
+<<print "A few weeks later you find the windshield on your car destroyed. The campus police say it was probably just an accident from kids playing ball nearby, but you’re pretty sure ">>[[it is revenge from the Sigmas for ratting them out.|Part9SororityEndNo]]
+
+::Part9Task7 <1200,9825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Campus">></span>
+<</nobr>>
+
+<<print "The officer know it’s pledge week and asks you if this was some sort of hazing thing.">>
+
+<<print "You don’t want to get the Sigmas in trouble, so you tell him you don’t know what he’s talking about, that you were just really horny and used poor judgement and that you are really sorry. You are worried you’ll be suspended or something though and wonder if there’s a way out of this mess.">>
+
+<<print "You tell him that maybe it’s from being handcuffed, or just how buff he is, but you’re still feeling really horny. You ask him if there’s any way he can just forget this ever happened.">>
+
+<video src="Part9/Task8.webm" autoplay loop muted height="650"></video>
+
+
+<<print "After you suck his cock for a while, he fucks you from behind. Once he’s added his cum to what the guy earlier left, he uncuffs you and you head back to the sorority house to clean up.">>
+
+<<nobr>>
+	<<link "You continue your tasks.">>
+		<<if $SexTaskBondage or $SexTaskLesbian>><<goto [[Part9Task8]]>>
+		<<else>><<if $SexTaskLesbian>><<goto [[Part9Task9]]>>
+			<<else>><<if $SexTaskAnal>><<goto [[Part9Task10]]>>
+				<<else>><<if $SexTaskStrip>><<goto [[Part9Task11]]>>
+					<<else>><<goto [[Part9Task14]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+<</nobr>>
+
+::Part9Task8 <1350,9825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<if !$SexTaskLesbian>><<print "They tie up Sophia, one of the non-lesbian girls chosen for the “Bondage” video and have you bring her to orgasm after orgasm while the rest of the sorority watches. Veronica and Amy are similarly paired off together.">><<else>><<print "They tie you up and have Veronica, who was chosen for the lesbian video, force you to orgasm again and again while the rest of the sorority watches. Caitlin and Sophie are similarly paired off together.">><</if>>
+
+<video src="Part9/Task9.webm" autoplay loop muted height="650"></video>
+
+
+<<nobr>>
+	<<link "You continue your tasks.">>
+		<<if $SexTaskLesbian>><<goto [[Part9Task9]]>>
+		<<else>><<if $SexTaskAnal>><<goto [[Part9Task10]]>>
+			<<else>><<if $SexTaskStrip>><<goto [[Part9Task11]]>>
+				<<else>><<goto [[Part9Task14]]>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+<</nobr>>
+
+::Part9Task9 <1500,9825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "They pair you and the other lesbian “winner”, Veronica, up together and put the two of you in a room together. They station one of the ‘bigs’ outside the room and tell her not to let you two out until she’s heard plenty of orgasms through the door.">>
+
+<video src="Part9/Task10.webm" autoplay loop muted height="650"></video>
+
+
+<<nobr>>
+	<<if $JobCheerleader>>
+		<<if $DatingVeronica>> 
+			<<print "As you are dating, you obviously enjoy yourselves to the fullest.">>
+		<<else>>
+			<<if !$SexFootball>> 
+				<<print "You put aside your differences for an hour to get through the task. It reminds you both how great the sex was between you two. But nothing has changed about why you broke up, so it’s just a one-time event for the sake of the task.">>
+			<<else>>
+				<<print "You quickly work through your differences and spend an hour enjoying each other, and wishing you’d done this months ago.">>
+			<</if>>
+		<</if>>
+	<<else>>
+		<<print "You and her quickly become acquainted with each other and do your best to ensure your hall monitor hears all the orgasms she’s expecting more and more.">>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<link "You continue your tasks.">>
+		<<if $SexTaskAnal>><<goto [[Part9Task10]]>>
+		<<else>><<if $SexTaskStrip>><<goto [[Part9Task11]]>>
+			<<else>><<goto [[Part9Task14]]>>
+			<</if>>
+		<</if>>
+	<</link>>
+<</nobr>>
+
+::Part9Task10 <1650,9825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Student Activities Office">></span>
+<</nobr>>
+
+<<print "Your sorority president pulls you aside and tells you she has a special, secret task for you. The sorority has some friends in the student activities office. They are willing to look the other way about some of the unpleasant rumors that sometimes circulate about the sorority.">>
+
+<video src="Part9/Task11.webm" autoplay loop muted height="650"></video>
+
+
+<<print "She wants you to pay them a visit to thank them personally for being so understanding and flexible.">>
+
+<<nobr>>
+	<<link "You continue your tasks.">>
+		<<if $SexTaskStrip>><<goto [[Part9Task11]]>>
+			<<else>><<goto [[Part9Task14]]>>
+		<</if>>
+	<</link>>
+<</nobr>>
+
+::Part9Task11 <1800,9575>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Strip Club">></span>
+<</nobr>>
+
+<<print "The sorority is raising money to support their favorite charity.">>
+
+<<print "Tonight is amateur night at the local strip club, and you’ll be dancing.">>
+<img src="Part9/Task12.jpg" hspace="10" vspace="10" height="650">
+
+[[All your tips will go towards the fundraiser.|Part9Task12]]
+
+<<print "They help you find the perfect outfit and help you practice. That night you are introduced as a sexy young coed named “Charity”. Another pledge, Brooke, is introduced as “Cherry”.">>
+
+::Part9Task12 <1800,9700>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Strip Club">></span>
+<</nobr>>
+
+<<print "At first you are nervous and your dancing a bit awkward, but quickly you get used to dancing on the stage.">>
+
+<<print "The looks you are getting from the guys watching excites you as well and soon you are almost as turned on as they are.">>
+<img src="Part9/Task13.jpg" hspace="10" vspace="10" height="650">
+
+<<print "As you take turns with guys around the stage, dancing up close and letting them slide money into your panty string, one of them asks for a private dance when your set is done. It means even more money for the cause so you, of course, accept.">>
+
+[[As you continue dancing,|Part9Task13]]<<print " you wonder if he offers even more money like in the video you watched, ">>[[if you’ll be willing to do even more to help the cause.|Part9Task13b]]
+
+::Part9Task13 <1800,9825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Strip Club">></span>
+<</nobr>>
+
+<<print "At the end of the night, you’ve collected quite a stack of cash for the fundraiser. (Much more than Brooke/Cherry did). Your sororities sisters are thrilled at how much you were able to make.">>
+<img src="Part9/Task14.jpg" hspace="10" vspace="10" height="650">
+
+<<print "The manager of the club also noticed how popular you were tonight, and offered you a job working a few nights a week. Of course the money then will be going to you, not your sororities pet cause.">>
+
+<<nobr>>
+	<<link "You continue your tasks.">>
+		<<goto [[Part9Task14]]>>
+	<</link>>
+<</nobr>>
+
+::Part9Task14 <1500,10075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "After all the tasks are complete, you wait at the house for Zoe and Laura to return from their task.">>
+
+<<print "Eventually everyone is back. Ashely, the sorority president, calls everyone together. She calls up Rebecca and chastises her for letting the “little” she was supposed to be look-out for get caught by the campus police. Everyone is relieved to hear that the ‘little’ involved was able to do what was needed in order to keep the sorority out of trouble.">>
+<img src="Part9/Task15.jpg" hspace="10" vspace="10" height="650">
+
+<<print "She then bends Rebecca over her knee and spanks her bottom until it’s bright red. She then sends her back with the other older members feeling ashamed of herself.">>
+
+<<print "“I know Rebecca is not the only one deserving of punishment tonight though. Not all of you have tried as hard as you could have this week. Some of you might have even cheated. Each of you has a piece of paper. I want you to write down the name of a pledge that should be spanked like Rebecca was. Let me know when everyone is finished and we’ll proceed.”">>
+
+<<print "Do you ">><<link "write one of your sisters name">><<set $SisterSEXBetray = 1>><<goto [[Part9Task15]]>><</link>><<print " or perhaps just ">>[[write your own name instead?|Part9Task15]]
+
+::Part9Task15 <1300,10075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "“Look at the name on your paper. If it’s your own name, stand up and come over here. You won’t be punished, since you already understand this lesson.”">>
+
+<<print "“Did anyone write down my name, ‘Ashley’? If so, come up here. I’ll spank you myself, by hand, for being a little smart-ass.”">>
+<img src="Part9/Task16.jpg" hspace="10" vspace="10" height="650">
+
+<<print "“As for the rest of you… You wrote down the name of one of your sisters. Sigma sisters watch out for each other, they don’t turn each other in. It doesn’t matter which sister’s name you wrote or why, *you* are the one being punished for betraying one of your sister.”">>
+
+[[Before dealing with the other girls,|Part9Task16]]<<print " Ashley spanks the smart ass by hand. She goes a bit easier on her than she did Rebecca though.">>
+
+::Part9Task16 <1100,10075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<if $SisterSEXBetray>><<print "The pledges that betrayed one of their sisters are stripped and told to bend over. You don’t get a soft, loving hand on your assess. Your offense is much worse than the smart-ass or even Rebecca’s was. You get the paddle.">><<else>><<print "The pledges that betrayed one of their sisters are stripped and told to bend over. They don’t get a soft, loving hand on their ass. Their offense is much worse than the smart-ass or even Rebecca’s was. They get the paddle.">><</if>>
+<img src="Part9/Task17.jpg" hspace="10" vspace="10" height="650">
+
+[[Before Ashley stops swinging,|Part9Task17]]<<if $SisterSEXBetray>><<print " tears are running down many of the girls’ faces. including yours. “I hope this lesson will ensure all of you remember that Sisters Always Come First.”, she says.">><<else>><<print " tears are running down many of the girls’ faces. “I hope this lesson will ensure all of you remember that Sisters Always Come First.”, she says.">><</if>>
+
+::Part9Task17 <900,10075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+<</nobr>>
+
+<<print "After the punishments are handed out, you are all given robes to wear for the rest of the evening. Besides the ceremony, you suspect part of the reason for the robes is because many of the girls’ asses are still too sensitive to put their clothes back on yet.">>
+<img src="Part9/Task18.jpg" hspace="10" vspace="10" height="650">
+
+<<print "When the final ceremony is complete, you are all welcomed as official Sigma sisters!">>
+
+<<nobr>>
+	<<if $JobCheerleader>>
+		<<if $DatingVeronica>> 
+			<<print "You and Veronica requested a room together and now are ">>[[finally together all the time!|Part9SororityEndYes]]
+		<<else>>
+			<<if !$SexFootball>> 
+				<<print "You and Veronica both made sure you do not end up in the same room and ">>[[you are assigned a random roommate from your sisters.|Part9SororityEndYes]]
+			<<else>>
+				<<if $SexTaskLesbian>>
+					<<print "You are sure Veronica would ">>
+					<<link "accept dating you, should you ask her">>
+						<<set $DatingVeronica = 1>>
+						<<if $PlayerPregnant>>
+						<<goto [[Part9SororityPregnant]]>>
+						<<else>>
+						<<goto [[Part9SororityEndYes]]>>
+						<</if>>
+					<</link>>
+					<<print " and that the sorority would give you a room together in that case.">>
+				<<else>>
+					[[You are assigned a random roommate from your sisters.|Part9SororityEndYes]]
+				<</if>>
+			<</if>>
+		<</if>>
+	<<else>>
+		<<if $SexTaskLesbian>>
+			<<print "You are sure Veronica would ">>
+			<<link "accept dating you, should you ask her">>
+				<<set $DatingVeronica = 1>>
+				<<if $PlayerPregnant>>
+				<<goto [[Part9SororityPregnant]]>>
+				<<else>>
+				<<goto [[Part9SororityEndYes]]>>
+				<</if>>
+			<</link>>
+			<<print " and that the sorority would give you a room together in that case.">>
+		<<else>>
+			[[You are assigned a random roommate from your sisters.|Part9SororityEndYes]]
+		<</if>>
+	<</if>>
+<</nobr>>
+
+::Part10Start <0,10725>
+Part 10 coming hopefully soon.
+
+::Part9Task13b <2000,9825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Strip Club">></span>
+<</nobr>>
+
+<<print "He seems like a rich guy, so you decide to pull out and start stroking his cock.">>
+
+<<print "As it looks like it would take a while like this and as you are already quite horny, you just straddle him and start giving him a different kind of lap dance.">>
+
+<video src="Part9/Task13b.mp4" autoplay loop muted height="650"></video>
+
+
+<<print "Eventually he tells you he is about to cum, so you get off and finish him on your face.">>
+
+<<print "You smile as he pulls out his wallet and ">>[[gives you a large wad of cash.|Part9Task13]]
+
+::Part9JobLibrary <1200,8825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Campus Library">></span>
+<</nobr>>
+
+<<print "Most people probably wouldn’t find your job exciting. You spend most of your workday putting books back up on the shelves.">>
+
+<<print "But eventually you start liking your new ‘sexy librarians’ look.">>
+<img src="Part9/JobLibrary.jpg" hspace="10" vspace="10" height="650">
+
+<<print "And as Daddy`s office is close to the library, you soon realize that he can sneak in during his breaks to have some fun with you.">>
+
+<<print "And he does seem to have a lot of breaks. You probably will be spending most of your work hours naked than clothed at this rate.">>
+
+[[Find out more about sororities.|Part9Greek1]]
+
+::Part9JobSelect <1500,8700>
+<<nobr>>
+	<<if $JobCheerleaderFundraiser>><<set $JobCheerleaderFundraiser =　0>><</if>>\
+	<<if $JobOfficePA>><<set $JobOfficePA =　0>><</if>>\
+	<<if $JobPornOral>><<set $JobPornOral =　0>><</if>>\
+	<<if $JobPornAnal>><<set $JobPornAnal =　0>><</if>>\
+	<<if $JobPornGang>><<set $JobPornGang =　0>><</if>>\
+	<<if $JobPorn>><<set $JobPorn =　0>><</if>>\
+	<<if $JobCallGirl>><<set $JobCallGirl =　0>><</if>>\
+	
+	<span style="font-size: 150%"><<print "Student Job Office">></span>
+<</nobr>>
+
+<<print "Daddy has asked around on campus and convinced some departments to make an exception for you and let you join mid-year, should you wish to.">>
+
+<<nobr>>
+	<<link "Student Athlete">>
+		<<set $JobAthlete = 1>>
+		<<goto [[Part9JobAthlete]]>>
+	<</link>>
+<</nobr>>
+
+<<print "You’ll be training or competing 5 or 6 days a week. You’ll have access to state-of-the-art training facilities and the help of the university’s trainers. So you’re sure to stay in peak condition.">>
+<img src="Part3/JobAthleteA.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobAthleteB.jpg" hspace="10" vspace="10" height="550">
+
+<<print "The partial scholarship from the athletic department will free up some of the X-Change stipend that was paying for tuition, so you will have some spending money available.">>
+
+<span id="CheerJob"></span>
+<span style="font-size: 120%"><<print "On-Campus Employment">></span>
+<p style="clear: both;"><img src="Part3/JobOnCampusA.jpg" hspace="10" vspace="10" height="350" align="left">
+
+<<nobr>>
+	<<link "Campus Fitness Center Assistant">>
+		<<set $JobFitnessYoga = 1>>
+		<<goto [[Part9JobFitness]]>>
+	<</link>>
+<</nobr>>
+
+<<print "Entry level yoga instructor position available. You will help keep our athletes in top condition!">></p>
+<p style="clear: both;"><img src="Part3/JobOnCampusB.jpg" hspace="10" vspace="10" height="350" align="left">
+
+<<nobr>>
+	<<link "Campus Library">>
+		<<set $JobLibrary = 1>>
+		<<goto [[Part9JobLibrary]]>>
+	<</link>>
+<</nobr>>
+
+<<print "Duties will include processing check outs and returns, refiling returned books.">>
+
+<<print "You’ll be helping people check out and refiling returned books.">></p>
+<p style="clear: both;">
+
+
+<<nobr>>
+	<<print "If you have not decided on a job, then ">>
+	<<link "Daddy can choose one for you. (Random)">>
+		<<if $PlayerBodyStandard>>
+			<<set $PlayerRollDice to either(1,3,4,7)>>
+		<<else>>
+			<<set $PlayerRollDice to either(1,3,4)>>
+		<</if>>
+		<<switch $PlayerRollDice>>
+			<<case 1>>
+				<<set $JobAthlete = 1>>
+				<<goto [[Part9JobAthlete]]>>
+			<<case 2>>
+				<<set $JobFitnessYoga = 1>>
+				<<goto [[Part9JobFitness]]>>
+			<<case 4>>
+				<<set $JobLibrary = 1>>
+				<<goto [[Part9JobLibrary]]>>
+			<<case 7>>
+				<<set $JobCheerleader = 1>>
+				<<goto [[Part9JobCheerleader]]>>
+		<</switch>>
+	<</link>>
+<</nobr>></p>
+
+<<silently>>
+	<<repeat 100ms>>
+	<<if $PlayerBodyStandard>>
+		<<replace "#CheerJob">>
+			<<nobr>>
+				<<link "Cheerleader">>
+					<<set $JobCheerleader = 1>>
+					<<goto [[Part9JobCheerleader]]>>
+				<</link>>
+			<</nobr>>
+
+			<<print "You’ll be practicing or working out 4 days a week, and then going to games to cheer on Saturdays. You’ll also be expected to attend university fundraising events occasionally.">>
+			<img src="Part3/JobCheerleaderA.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobCheerleaderB.jpg" hspace="10" vspace="10" height="550">
+			
+		<</replace>>
+		<<stop>>
+	<</if>>
+	<</repeat>>
+<</silently>>
+
+::Part9JobAthlete <1400,8825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Campus Library">></span>
+<</nobr>>
+
+<<print "You start training at the gym, mostly doing weightlifting and running.">>
+
+<<if $PlayerSideEffectPheromones>><<print "Being around so many sweaty men for so long excites you so much. ">><<if $PlayerChastityBelt>><<print "However your chastity belt will at least prevent you from going to far once you can no longer contain your excitement.">><<else>><<print "You know that eventually you will no longer be able to keep you excitement contained.">><</if>><<else>><<print "Knowing that Daddy will enjoy your toned body makes the effort so much more rewarding.">><</if>>
+<<if !$PlayerSideEffectPheromones>><img src="Part9/Gym1.jpg" hspace="10" vspace="10" height="650"><<else>><br><video src="Part9/Gym2.mp4" autoplay loop muted height="650"></video><br><</if>>
+
+<<if $PlayerSideEffectPheromones>><<print "For now, you have somehow managed to limit yourself to just flashing some of the hot guys from time to time.">><<else>><<print "Most of the day you think about him finally squeezing your plumb butt.">><</if>>
+
+[[Find out more about sororities.|Part9Greek1]]
+
+::Part9JobFitness <1600,8825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Yoga Class">></span>
+<</nobr>>
+
+<<print "As all of the female athletes had already picked their favorite instructors last semester, they weren’t really interested in signing up for your class. And the male athletes were so focused on strength training that it was hard to convince them to take an interest in yoga. You were starting to worry that your job would be cut and you’d be unemployed. But then you had an idea.">>
+
+<video src="Part9/Yoga.mp4" autoplay loop muted height="650"></video><br>
+
+
+<<print "You have decided to start offering blowjobs to new male students, and that has helped bring up the numbers. After all, Daddy does not need to know everything you do.">>
+
+<<print "You are not yet sure how you will manage to keep their interest in the class however.">>
+
+[[Find out more about sororities.|Part9Greek1]]
+
+::Part9JobCheerleader <1800,8825>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Locker Room">></span>
+<</nobr>>
+
+<<print "You quickly become acquainted with Veronica, the squad leader. She doesn’t have the power to kick you of the squad, but you’re not sure if you want to make her your enemy either.">>
+
+<<print "She tells you that unless you want to have a bad time on the squad, you have to have sex with one of the footbal team`s players. Luckily she didn’t mention how.">>
+
+<<print "You figure out that the fastest way is to just blow one of them in their locker rooms.">>
+
+<video src="Part9/Cheerleader.mp4" autoplay loop muted height="650"></video><br>
+
+
+<<print "As you prepare to enter, you are not sure how to approach the player inside, so you decide to just jump him and that way he will get the idea.">>
+
+<<print "After you finish and Veronica confirms your story with the guy, you are happy to see that everyone on the team is nice to you.">>
+
+[[Find out more about sororities.|Part9Greek1]]
+
+::Part9DTFBlowjobFWB <700,9200>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Δ Τ F">></span>
+<</nobr>>
+
+<<nobr>>
+	<<print "You decide it would be better to start with people you know, and ">>
+	<<if $FWBJosh>>
+		<<print "Josh">>
+	<<else>>
+		<<if $FWBPlayerr>>
+			<<print "James">>
+		<<else>>
+			<<if $FWBThrillSeeker>>
+				<<print "Zack">>
+			<<else>>
+				<<print "David">>
+			<</if>>
+		<</if>>
+	<</if>>
+	<<print " is more than happy with helping you with your task.">>
+<</nobr>>
+
+<video src="Part9/Delta16.webm" autoplay loop muted height="650"></video>
+
+
+<<print "You make sure to put as much effort into the blowjob as you can, listening closely to any instructions he gives you during it, in order to get the best recommendation possible.">>
+
+<<print "After you finish with him and he gives you a stellar review, despite only giving him a blowjob, ">>[[it is time to start thinking about who next to approach.|Part9DTFBlowjob1]]
+
+::Part9DTFSexFWB <300,9075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Δ Τ F">></span>
+<</nobr>>
+
+<<nobr>>
+	<<print "You decide it would be better to start with people you know, and ">>
+	<<if $FWBJosh>>
+		<<print "Josh">>
+	<<else>>
+		<<if $FWBPlayerr>>
+			<<print "James">>
+		<<else>>
+			<<if $FWBThrillSeeker>>
+				<<print "Zack">>
+			<<else>>
+				<<print "David">>
+			<</if>>
+		<</if>>
+	<</if>>
+	<<print " is more than happy with helping you with your task.">>
+<</nobr>>
+
+<video src="Part9/Delta17.webm" autoplay loop muted height="650"></video>
+
+
+<<print "You want to make your first recommendation count so you tell him that you will work his cock really good. All he has to do is lay back and enjoy the pleasure.">>
+
+<<print "After you finish with him and he gives you a stellar review, ">>[[it is time to start thinking about who next to approach.|Part9DTFSex1]]

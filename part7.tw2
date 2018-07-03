@@ -1,0 +1,544 @@
+::Part7Start1 <1200,5600>
+<<nobr>>
+	<<set $PlayerRollDice to either(1,2,3,4,5,6)>>
+	<<set $PlayerRollDice += $AcademicPoints>>
+	<<if not $PlayerProfessorVisit and $PlayerRollDice < 11>><<set $AcademicProbation to 1>><</if>>
+	
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "You’re all done with your classes for the semester.">>
+
+<<print "You just have your check-up at the clinic today, before heading home for winter break tomorrow evening.">>
+<img src="Part7/Start1A.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You’ve always hated filling out forms, but checking the box labeled “Female”, makes you happier than you would have thought it would.">>
+<img src="Part7/Start1B.png" hspace="10" vspace="10" height="130">
+
+<<nobr>>
+	<<if !$PlayerProtectionPermanent and !$PlayerProtectionPerfect>>
+		<<print "Your mood changes though when you get to the question that asks ">>
+		[[“Date of Last Menstruation”.|Part7Start2]]
+	<<else>>
+		<<print "The next question asks you the “Date of Last Menstruation”, however your implant has helped you a lot in that regard, ">>[[so you continue filling out the form.|Part7Start3]]
+	<</if>>
+<</nobr>>
+
+::Part7Start2 <1000,5625>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "You remember it clearly. It was actually your first one. They had told you it might take a while for them to start.">>
+<img src="Part7/Start2.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You’d been worried about the blood, but you were able to manage that ok. The cramps though, were horrible. You were so glad when it finally passed.">>
+
+<<print "But you realize that was almost two months ago now. And you haven’t had one since.">>
+
+<<if $PlayerProtectionTry>><<print "But you also remember them telling you that they might be irregular at first, so maybe you shouldn't get your hopes up.">><<else>><<print "You start to worry. But you also remember them telling you that they might be irregular at first, so maybe you’re overeacting.">><</if>>
+
+[[You continue filling out the form.|Part7Start3]]
+
+::Part7Start3 <1200,5725>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "You get to the “Contraception” box and then think about what you’ve been using the past month or two.">>
+<<nobr>>
+	<<if $PlayerProtectionWithdraw or $PlayerProtectionNone>><img src="Part7/Start3A.jpg" hspace="10" vspace="10" height="650">
+		<<else>><<if $PlayerProtectionCondoms>><img src="Part7/Start3B.jpg" hspace="10" vspace="10" height="650">
+			<<else>><img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
+		<</if>>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>[[You write “Implant”.|Part7Start4]]<</if>>
+	<<if $PlayerProtectionPill>>[[You write “Pill”.|Part7Start4]]<</if>>
+	<<if $PlayerProtectionCondoms>>[[You write “Condoms”.|Part7Start4]]<</if>>
+	<<if $PlayerProtectionWithdraw>>[[You write “Withdrawal Method”.|Part7Start4]]<</if>>
+	<<if $PlayerProtectionNone or $PlayerProtectionTry>>[[You write “None”.|Part7Start4]]<</if>>
+<</nobr>>
+
+::Part7Start4 <1000,5750>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "The next question asks you how often you have had sex and with how many different guys.">>
+<<nobr>>
+	<<if $SexDifferentMaleVaginalCount == 1 and $SexVaginalCount == 1>>
+		<img src="Part7/Start5A.jpg" hspace="10" vspace="10" height="650">
+		<<else>><<if $SexDifferentMaleVaginalCount == 1 and $SexVaginalCount > 1>>
+			<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="650">
+			<<else>><<if $SexDifferentMaleVaginalCount == 2>>
+				<img src="Part7/Start5A.jpg" hspace="10" vspace="10" height="350">
+				<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="350">
+				<<else>><<if $SexDifferentMaleVaginalCount > 2>>
+					<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="450">
+					<img src="Part7/Start5B.jpg" hspace="10" vspace="10" height="450">
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+[[You write your answer and wait for a nurse to come in.|Part7Start5]]
+
+::Part7Start5 <800,5750>
+<<nobr>>
+	<<set $PlayerPregnantCheck = 0>>
+	<<if $SexDifferentMaleVaginalCount == 1 and $SexVaginalCount == 1>>
+		<<if $PlayerProtectionTry or $PlayerProtectionNone>><<set $PlayerPregnantCheck = 4>><</if>>
+		<<if $PlayerProtectionWithdraw or $PlayerProtectionCondoms>><<set $PlayerPregnantCheck = 1>><</if>>
+		<<if $PlayerProtectionPermanent or $PlayerProtectionPill>><<set $PlayerPregnantCheck = 0>><</if>>
+	<</if>>	
+	<<if $SexDifferentMaleVaginalCount > 1 or $SexVaginalCount > 1>>
+		<<if $PlayerProtectionTry>><<set $PlayerPregnantCheck = 20>><</if>>
+		<<if $PlayerProtectionNone>><<set $PlayerPregnantCheck = 17>><</if>>
+		<<if $PlayerProtectionWithdraw>><<set $PlayerPregnantCheck = 3>><</if>>
+		<<if $PlayerProtectionCondoms>><<set $PlayerPregnantCheck = 4>><</if>>
+		<<if $PlayerProtectionPermanent or $PlayerProtectionPill>><<set $PlayerPregnantCheck = 2>><</if>>
+	<</if>>
+	<<if !$SexDifferentMaleVaginalCount>><<set $PlayerPregnantCheck = 0>><</if>>
+	<<if $DatingProfessor and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>><<set $PlayerPregnantCheck = 0>><</if>>
+	<<if $PlayerProtectionPerfect>><<set $PlayerPregnantCheck = 0>><</if>>
+	
+	
+	<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19)>>
+	<<if $PlayerPregnantCheck > $PlayerRollDice>><</if>>
+	
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "You give them a urine sample, and they take it off to test it. How it’s likely to come back ‘positive’ obviously depends on what kind of protection you’ve been using and how often you’ve had vaginal intercourse.">>
+<img src="Part7/Start4.jpg" hspace="10" vspace="10" height="500">
+
+<<nobr>>
+	<<if !$SexDifferentMaleVaginalCount>>
+		<<if $PlayerProtectionTry>>[[you know you will be disappointed by the results.|Part7Start6]]<<else>>[[you are not worried about the results.|Part7Start6]]<</if>>
+	<<else>>
+		<<if $PlayerProtectionPerfect>>
+			<<print "But as you opted for the implant and it worked perfectly, ">>[[you are not worried about the results.|Part7Start6]]
+		<<else>>
+			<<if $DatingProfessor and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>>
+				<<print "“Daddy” has been very diligent about having you use birth control properly, ">>[[you are not worried about the results.|Part7Start6]]
+			<<else>>
+				<<if $PlayerProtectionTry>>
+					<<if $SexDifferentMaleVaginalCount > 2 or $SexVaginalCount > 4>><<print "You’ve had sex more than a few times recently with a guy. Maybe much more than a few times. You are anxious and a bit excited about what the results are going to be. ">><</if>>
+					<<link "You nervously await the results of your test.">>
+						<<if $PlayerPregnantCheck > $PlayerRollDice>>
+							<<goto [[Part7Preg1]]>>
+						<<else>>
+							<<goto [[Part7Start6]]>>
+						<</if>>
+					<</link>>
+				<<else>>
+					<<if $SexDifferentMaleVaginalCount > 2 or $SexVaginalCount > 4>><<print "You’ve had sex more than a few times recently with a guy. Maybe much more than a few times. You are more concerned about what the results are going to be. ">><</if>>
+					<<link "You nervously await the results of your test.">>
+						<<if $PlayerPregnantCheck > $PlayerRollDice>>
+							<<goto [[Part7Preg1]]>>
+						<<else>>
+							<<goto [[Part7Start6]]>>
+						<</if>>
+					<</link>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+::Part7Start6 <1200,6000>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<if $PlayerProtectionTry>><<print "You are a bit disappointed to hear them confirm that you are not pregnant.">><<else>><<print "You are relieved to hear them confirm that you are not pregnant.">><</if>>
+<img src="Part7/Start6.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<if !$PlayerProtectionPerfect>>
+		<<print "They let you know that an irregular cycle is fairly normal at first, but that from the tests it looks like yours has normalized now. ">>
+		<<if $PlayerProtectionPill or $PlayerProtectionPermanent>>
+			<<print "You probably won’t have to worry about the cramps and bleeding again.">>
+		<<else>>
+			<<set $PlayerMenstruation = 1>>
+			<<if !$PlayerProtectionFertile>>
+				<<print "You can get them to prescribe ">>
+				<span id="NotPregSpan1">
+				<<link "birth control pills">>
+						<<set $PlayerProtectionTry = 0>>
+						<<set $PlayerProtectionNone = 0>>
+						<<set $PlayerProtectionWithdraw = 0>>
+						<<set $PlayerProtectionCondoms = 0>>
+						<<set $PlayerProtectionPill = 1>>
+						<<replace "#NotPregSpan1">>
+							<<print "birth control pills">>
+						<</replace>>
+					<</link>>
+				</span>
+				<<print " for you now. You’ll start taking them once your period starts up, which should be soon.">>
+			<<else>>
+				<<if !$PlayerProtectionCondoms>>
+					<<print "As birth control pills don`t work on you, she also suggests reconsidering ">>
+					<span id="NotPregSpan2">
+						<<link "using condoms for protection.">>
+							<<set $PlayerProtectionTry = 0>>
+							<<set $PlayerProtectionNone = 0>>
+							<<set $PlayerProtectionWithdraw = 0>>
+							<<set $PlayerProtectionCondoms = 1>>
+							<<replace "#NotPregSpan2">>
+								<<print "using condoms for protection.">>
+							<</replace>>
+						<</link>>
+					</span>
+					<<print " to decrease your risk of getting pregnant in the future.">>
+				<</if>>
+			<</if>>
+		<</if>>
+	<<else>>
+		<<print "As the implant has prevented you from getting periods so far, she assures you that it will continue working properly in the future.">>
+	<</if>>
+<</nobr>>
+
+[[You can start packing for your winter holiday.|Part7Pack1]]
+
+::Part7Preg1 <600,5750>
+<<nobr>>
+	<<set $PlayerSideEffectPermanent = 1>>
+	<<set $PlayerPregnant = 1>>
+	
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "The doctor comes in with the news. You are either shocked or ecstatic (maybe both) depending on whether this was something you were hoping for or not.">>
+<img src="Part7/Preg1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Regardless of whether this was wanted or not, or what you decide to do now, one thing is certain. This is the body you’ll have from now on. They explained when you got your implant that it’d be permanent if you got pregnant, and here you are. Any side-effects the implant gave you will also be something you’ll have to deal with for the rest of your life as well.">>
+
+<<print "They go over your options with you in detail, but you already knew what they were.">>
+
+<<print "Do you want to ">>[[end the pregnancy now,|Part7Preg2]]<<print " or do you want to ">>[[carry the baby to term,|Part7Preg3]]<<print " regardless of if you are planing on rasing the baby yourself or putting it up for adoption later.">>
+
+::Part7Pack1 <600,6175>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+<<if $PlayerProtectionTry>><br><<if $PlayerAbortion>><<print "While the ending of your pregnancy upset you, you do realize that you have yet to find the right time and guy to go through with it. ">><<else>><<print "Although you have yet to manage to get pregnant, you do hope that it will happen in the future. ">><</if>><br><</if>>
+<<print "You start packing your bags for the holiday break. You are excited about seeing your family and friends again. But you are also nervous as this will be the first time any of them has seen the new you in person.">>
+<<if $PlayerPregnant or $PlayerProtectionPermanent or $PlayerProtectionPill or $PlayerProtectionPerfect>><img src="Part7/Pack3.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part7/Pack1.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<if $PlayerMenstruation>><br><<print "You realize you’ve just started your period. You put in a tampon, and are thankful that the cramps, while unpleasant, don’t seem to be as bad as last time. Still, it makes packing much more of a chore.">><br><</if>>
+<<nobr>>
+	<<if !$PlayerAbortion>>
+		[[You finish packing your bags, and you head home for winter break.|Part8Start1]]
+	<<else>>
+		[[You are not feeling very well.|Part7Pack2]]
+	<</if>>
+<</nobr>>
+
+::Part7Pack2 <300,6200>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "The second pill you took has kicked in. The bleeding has been bad all day, more than your previous period. The cramps have been horrible too. You’ve been in bed most of the day.">>
+<img src="Part7/Pack2.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Thankfully they have both eased up now and it’s about the same as a heavy period. You are eventually able to gather enough energy to pack.">>
+
+[[Once you finally finish packing your bags, you head home for winter break.|Part8Start1]]
+
+::Part8Start1 <0,6200>
+<<nobr>>
+	<<set $PlayerMoney = 0>>
+	<<set $PlayerMoneySet = 1>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<print "Before you leave for home, you check how much money you have left. You know you won’t be getting paid again until after New Years. You have a credit card now though, so you can spend more if you need to, but you want to avoid doing that… again.">>
+<img src="Part8/Start1.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<if $ProfessorAllowance>><<set $PlayerMoney += 500>><<print "You have saved $500 from your Daddy`s allowance.">><</if>>
+	<<if $JobEngineer>><<set $PlayerMoney += 700>><<print "You have saved $700 from working as an engineer.">><</if>>
+	<<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<set $PlayerMoney += 700>><<print "You have saved $700 from working at the office.">><</if>>
+	<<if $JobCallGirl>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a call girl.">><</if>>
+	<<if $JobWebModel>><<set $PlayerMoney += 500>><<print "You have saved $500 from working as a web model.">><</if>>
+	<<if $JobPornOral or $JobPornAnal or $JobPorn or $JobPornGang>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a porn actress.">><</if>>
+	<<if !$ProfessorAllowance and !$JobEngineer and !$JobOfficePA and !$JobOfficeManager and !$JobOfficeIntern and !$JobCallGirl and !$JobWebModel and !$JobPornOral and !$JobPornAnal and !$JobPorn and !$JobPornGang>><<set $PlayerMoney += 500>><<print "You have saved $500 from working at your job.">><</if>>
+	<<if $JobCallGirlSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a call girl.">><</if>>
+	<<if $JobWebModelSide>><<set $PlayerMoney += 300>><<print " You have also saved $300 from occasionally working as a web model.">><</if>>
+	<<if $JobPornOralSide or $JobPornAnalSide or $JobPornSide or $JobPornGangSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a porn actress.">><</if>>
+	<<if $BossPregnancyMoney>><<set $PlayerMoney += 500>><<print " You have an additional $500 from your former boss at the office to keep quiet about your pregnancy.">><</if>>
+<</nobr>>
+
+<<print "In total, you have $">>$PlayerMoney<<print " saved.">>
+
+<<nobr>>
+	<<if $VeronicaKey>>
+		[[You should ask Veronica about your chastity belt.|Part8StartChastity]]
+	<<else>>
+		<<if $PlayerChastityBelt>>
+			[[You should ask Master about your chastity belt.|Part8StartChastity]]
+		<<else>>
+			[[Start driving home.|Part8Start2]]
+		<</if>>
+	<</if>>
+<</nobr>>
+
+::Part7Preg3 <200,5750>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "The initial shock has passed, and now you are excited thinking about how there is a life growing inside you. A little scared too still.">>
+<img src="Part7/Preg3A.jpg" hspace="10" vspace="10" height="650">
+
+<<print "The doctor helps you estimate that you’re about five weeks along. But it could be a couple weeks more or less. She also explains what the next few weeks will be like. You aren’t looking forward to the morning sickness, which you’ll probably be starting soon.">>
+
+<<print "Afterwards one of the aids comes in and helps you find an obstetrician near campus for your later visits, and helps you fill out some additional forms.">>
+
+<<print "When she gets to the questions about the father:">>
+
+<<print "If you aren’t sure which of the ones below is the father, you give her the answer you want to be true. You think or hope that the father is:">>
+<<if $SexAndrewVaginal>><<if $SexAndrewVaginal == 1>>* <<link "Andrew, your boss, from that one night stand.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoss]]>><</link>><<else>>* <<link "Andrew, your boyfriend.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoyfriend]]>><</link>><</if>><br><</if>>\
+<<if $SexJoshVaginal>><<if $DatingJosh == 1>>* [[Josh, your boyfriend.|Part7Josh]]<<else>>* [[Josh, your neighbour, from that one time you had fun.|Part7Josh]]<</if>><br><</if>>\
+<<if $SexOfficeBossVaginal>>* [[Your office boss, from all the times you had to pleasure him.|Part7OfficeBoss1]]<br><</if>>\
+<<if $SexProfessorVaginal>>* <<link "Your Daddy, the Professor.">><<set $FatherRealProfessor = 1>><<goto [[Part7Professor]]>><</link>><br><</if>>\
+<<if $SexJerkVaginal>><<if $SexJerkVaginal == 1>>* [[Barry, the jerk, from that one time you had fun.|Part7Unknown]]<<else>>* [[Barry, your the jerk, from all the times he humiliated you.|Part7Unknown]]<</if>><br><</if>>\
+<<if $SexPlayerVaginal>><<if $SexPlayerVaginal == 1>>* [[James, the player , from that one time you had fun.|Part7Unknown]]<<else>>* [[James, the player, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
+<<if $SexNerdVaginal>><<if $DatingNerd>>* <<link "Peter, the nerd, from that birthday gift.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><<else>>* <<link "Peter, the nerd, from all the times you had fun.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><</if>><br><</if>>\
+<<if $SexThrillSeekerVaginal>><<if $SexThrillSeekerVaginal == 1>>* [[Zack, the thrill-seeker, from that one time you had fun.|Part7Unknown]]<<else>>* [[Zack, the thrill-seeker, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
+<<if $SexTomVaginal>>* [[Tom, the guy Hannah dated once.|Part7Unknown]]<br><</if>>\
+<<if $SexTroyVaginal>>* [[Troy, your colleague, from that one night stand.|Part7Unknown]]<br><</if>>\
+<<if $SexDavidVaginal>>* [[David, from all the times you had fun.|Part7Unknown]]<br><</if>>\
+<<if $SexCoachVaginal>>* [[The Coach, from that time you had to audition.|Part7Unknown]]<br><</if>>\
+<<if $SexFootballVaginal>>* [[One of the football team members, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexBarGuyVaginal>>* [[One of the guys you picked at the bar, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexBarBrotherVaginal>>* [[One of the guys you picked at the bar, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexAthleteVaginal>>* [[One of gym colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexYogaStudentVaginal>>* [[One of your yoga students, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexLibraryGuyVaginal>>* [[One of the guys you picked in the library, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexFundraiserVaginal>>* [[One of the guys at the fundraiser events, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexSchoolColleagueVaginal>>* [[One of your school colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexMassageClientVaginal>>* [[One of your massage clients, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexCallClientVaginal>>* [[One of call girl clients, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexPornVaginal>>* [[One of your porn colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if $SexKidnapVaginal>><<if $SexDifferentMaleVaginalCount == 3>>* [[You realize in horror that this can only be from whatever happened during your memory lapse.|Part7Unknown]]<<else>>* [[You realize in horror that this can also be related to your memory lapse.|Part7Unknown]]<</if>><br><</if>>\
+
+
+<<if $SexKidnapVaginal>><<if $SexDifferentMaleVaginalCount > 3>>* [[You really are not sure.|Part7Unknown]]<</if>><<else>><<if $SexDifferentMaleVaginalCount > 1>>* [[You really are not sure.|Part7Unknown]]<</if>><</if>>
+
+::Part7Preg2 <1000,6000>
+<<nobr>>
+	<<set $PlayerPregnant = 0>>
+	<<set $PlayerAbortion = 1>>
+	<<set $PlayerMenstruation = 1>>
+	
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "You decide you aren’t ready for this.">>
+<img src="Part7/Preg2.jpg" hspace="10" vspace="10" height="600">
+
+<<print "After going over everything in great detail with the doctor and signing a bunch of forms, the doctor gives you a pill which you take right then.">>
+
+<<nobr>>
+	<<print "She also gives you another one to take tomorrow morning. She tells you to expect bleeding and cramps, like a period, but worse. ">>
+	<<if $PlayerProtectionPill>>
+		<<print "She also gives you a new supply of birth control pills to start with tomorrow.">>
+	<<else>>
+		<<if !$PlayerProtectionPermanent>>
+			<<if !$PlayerProtectionFertile>>
+				<<print "If you want to ">>
+				<span id="AbortSpan1">
+					<<link "start using birth control pills,">>
+						<<set $PlayerProtectionTry = 0>>
+						<<set $PlayerProtectionNone = 0>>
+						<<set $PlayerProtectionWithdraw = 0>>
+						<<set $PlayerProtectionCondoms = 0>>
+						<<set $PlayerProtectionPill = 1>>
+						<<replace "#AbortSpan1">>
+							<<print "start using birth control pills,">>
+						<</replace>>
+					<</link>>
+				</span>
+				<<print "she can also give you a supply of those to start with tomorrow.">>
+			<<else>>
+				<<if !$PlayerProtectionCondoms>>
+					<<print "As birth control pills don`t work on you, she recomends starting to ">>
+					<span id="NotPregSpan2">
+						<<link "use condoms for protection.">>
+							<<set $PlayerProtectionTry = 0>>
+							<<set $PlayerProtectionNone = 0>>
+							<<set $PlayerProtectionWithdraw = 0>>
+							<<set $PlayerProtectionCondoms = 1>>
+							<<replace "#NotPregSpan2">>
+								<<print "use condoms for protection,">>
+							<</replace>>
+						<</link>>
+					</span>
+					<<print " so that you don't end up in the same situation again.">>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+[[You can start packing for your winter holiday.|Part7Pack1]]
+
+::Part7AndrewBoss <800,5900>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Andrew">></span>
+<</nobr>>
+
+<<print "You meet Andrew at his apartment and let him know about the pregnancy. He’s a little freaked out at first, but less than you were.">>
+<img src="Part7/Preg4.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<print "Do you plan on ">>
+	<span id="AndrewBossSpan1">
+		<<link "putting the baby up for adoption,">>
+			<<replace "#AndrewBossSpan1">>
+				<<print "putting the baby up for adoption,">>
+			<</replace>>
+			<<replace "#AndrewBossSpan2">>
+				<<print "keeping the baby after it’s born?">>
+			<</replace>>
+			<<replace "#AndrewBossSpan3">>
+				<<print "After talking over the issues it would cause with HR (not to mention his father), you both decide to keep it quiet that he’s the father. Andrew will help you with money and time off from work during the pregnancy, but neither of you are going to say he’s the father. ">>	
+				<<if $DatingJosh>>
+					<<print "You decide to postpone telling Josh about your pregnancy until after the holidays. ">>	
+				<</if>>
+			<</replace>>
+			<<replace "#AndrewBossSpan4">>
+				<<print "You contact the doctor and have them ">>[[change the form to say “Unknown”.|Part7Unknown]]
+			<</replace>>
+		<</link>>
+	</span>
+	<<print "or on ">>
+	<span id="AndrewBossSpan2">
+		<<link "keeping the baby after it’s born?">>
+			<<set $DatingAndrew = 1>>
+			<<replace "#AndrewBossSpan1">>
+				<<print "putting the baby up for adoption,">>
+			<</replace>>
+			<<replace "#AndrewBossSpan2">>
+				<<print "keeping the baby after it’s born?">>
+			<</replace>>
+			<<replace "#AndrewBossSpan3">>
+				<<print "Your relationship had started out as just “no strings” fun, but you’d both been kidding yourself that that was all it was still. You both drop the pretenses and stop pretending you aren’t dating. ">>	
+				<<if $DatingJosh>>
+					<<set $DatingJosh = 0>>
+					<<print "You expected Josh to be angry when you tell him that you are breaking up with him, but instead he seems reliefed to know that he isn`t going to be a father any time soon. ">>	
+				<</if>>
+			<</replace>>
+			<<replace "#AndrewBossSpan4">>
+				<<print "He was planning on meeting his parents for dinner today, and he calls to see if he can ">>[[bring you along to introduce you to them.|Part7AndrewBoss2]]<<print " You both decide to wait to tell them about the pregnancy though.">>
+			<</replace>>
+		<</link>>
+	</span>
+<</nobr>>
+
+<span id="AndrewBossSpan3"></span>
+
+<span id="AndrewBossSpan4"></span>
+
+::Part7AndrewBoyfriend <200,6025>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Andrew">></span>
+<</nobr>>
+
+<<print "You can barely contain your excitement on the way home. When you tell Andrew, he’s as excited as you are. He says that the two of you had always talked about starting a family, but he’d never expected to start so soon. He places his hand on your stomach, but obviously there’s nothing to feel yet.">>
+<img src="Part7/Preg6.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You both decide to keep the news just between the two of you for now. Maybe after the holidays you might start thinking of telling others.">>
+
+<<print "You both spend the rest of the imagining how to convert the extra bedroom into a nursery, talking about baby names, and trying to imagine what it’s going to be like. Well, that’s not all you spend the day doing, a good deal of it is spent in the main bedroom too.">>
+
+[[You can start packing for your winter holiday.|Part7Pack1]]
+
+::Part7Josh <400,5900>
+<<nobr>>
+	<<set $DatingJosh = 0>>
+	<<set $RoommateJosh = 0>>
+	<<set $NeighbourJosh = 0>>
+	<<set $FWBJosh = 0>>
+	<<set $JoshFlee = 1>>
+	
+	<span style="font-size: 150%"><<print "Josh">></span>
+<</nobr>>
+
+<<print "Josh is in shock when you first tell him about your pregnancy. Once he calms down he offers to pay for your abortion and to drive you there if you need a ride. When you let him know that you’ve already decided against getting an abortion, he goes silent. After a while he says he needs some time to process everything, and says you can talk about it after you both get back from the holiday break.">>
+<img src="Part7/Preg7.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You will try calling and texting him over the holidays, but won’t get ahold of him.">>
+
+<<print "You find out from friends of his that he freaked out about “his life being ruined” and has left town for a different university. ">>[[You’re on your own for the pregnancy.|Part7Unknown]]<<print " You might be able to get some help with expenses afterwards if you go after him for child support though.">>
+
+::Part7OfficeBoss1 <600,5900>
+<<nobr>>
+	<<set $DatingOfficeBoss = 0>>
+	<<set $JobOfficePA = 0>>
+	<<set $JobOfficeManager = 1>>
+	<<set $BossPregnancyMoney = 1>>
+	
+	<span style="font-size: 150%"><<print "Office Boss">></span>
+<</nobr>>
+
+<<print "He’s been talking about finally divorcing his wife so he can be with you. You are sure he’s finally going to do it when you tell him about your pregnancy. But he won’t commit to it. He tells you how much it turns him on knowing you’re carrying his baby and tries to turn the conversation to sex. That’s when you realize he’s never going to leave her. Not unless you do something.">>
+<img src="Part7/Preg9.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You say you are going to go tell his wife that you’ve been sleeping with him for months, and that now you’re pregnant with his baby. You tell him, then she’ll want a divorce and he’ll be free. He begs you not to do that. If she finds out about everything, she’ll take him for everything he has. And HR will probably see that he’s fired. When you imagine him without his money or power, you realize that’s all you really found attractive about him anyway, so doing that wouldn’t help at all.">>
+
+[[Instead you agree to lie on the forms and say the father is “Unknown”.|Part7Unknown]]<<print " He’ll give you get a generous payment every month. And he knows a paternity test awaits if the payments ever stop.">>
+
+<<print "Angry at him leading you on, and turned off by how pitiful he seems to you now, you decide you don’t want a relationship with him after all. You’ll stay silent as long as the money keeps coming though. He gives you a transfer to a new, and more professional, boss.">>
+
+::Part7Professor <0,6025>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Daddy">></span>
+<</nobr>>
+
+<<print "This was either something the two of you were trying for, or a possibility he’d talked to you about when he’d notice you hadn’t had period lately. Either way he’s as excited as you are.">>
+<img src="Part7/Preg8.jpg" hspace="10" vspace="10" height="650">
+
+<<print "For now the two of you are planning on keeping this a secret between the two of you. Once the holiday break is over, and you’ve moved in with him, fewer people will question the timeline of your pregnancy. Hopefully no one that matters will realize (or care) that you were one of his students when the baby was conceived.">>
+
+<<print "But for now, you are proceeding with your planned trip home for the break. Of course, you enjoy an evening with your “Daddy” before then though.">>
+
+[[You can start packing for your winter holiday.|Part7Pack1]]
+
+::Part7Unknown <400,6025>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+<<if $DatingVeronica>><br><<print "Veronica figures out you’ve been cheating on her, and she breaks up with you.">><br><<set $DatingVeronica = 0>><</if>>
+<<print "You’ve either decided to keep the father out of this, or you don’t even know which guy it might be.">>
+
+<<print "You know you’ll be on your own with this pregnancy, and the thought is overwhelming you a bit. You need to take your mind off the stress of learning all this today.">>
+<img src="Part7/Preg10.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Maybe you decide to enjoy that you can have zero-risk sex (since what more could happen now), or maybe you stay home for a nice hot bath. Either way, it only takes your mind off things for a bit. Soon you are back to where you were a few hours before, trying to imagine all the way your life is about to change.">>
+
+<<print "You decide that you don’t want to share the news with anyone else just yet. It’ll be obvious enough to everyone later. You’ll probably tell your mentor after the holiday, but for now it’s your secret. ">>
+
+[[You put off packing for your trip home until tomorrow.|Part7Pack1]]
+
+::Part7AndrewBoss2 <600,6025>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Andrew’s Parents">></span>
+<</nobr>>
+
+<<print "Andrew’s parents seem very nice and seem to like you. His father seems happy that Andrew has “finally settled down with a nice, respectable, young woman”. You think his mom has noticed that you never take a sip of your wine, but she doesn’t say anything.">>
+<img src="Part7/Preg5.jpg" hspace="10" vspace="10" height="650">
+
+<<print "His dad also promotes him to a position at the corporate office. You suspect this is at least in part to make it so that he isn’t both your boyfriend and your boss to avoid HR issues.">>
+
+<<print "As you say goodbye to his parents you can’t help but wonder if you’ll be obviously pregnant the next time you meet them, and how they will react.">>
+
+<<print "You and Andrew decide that you should move in with him after the holiday. You want to be close to each other, and he’ll be able to help later when you need it. You’re sure his dad can pull some strings if the university complains about the dorm requirement.">>
+
+[[You can start packing for your winter holiday.|Part7Pack1]]
