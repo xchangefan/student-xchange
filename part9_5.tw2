@@ -1,0 +1,444 @@
+::Part95Start1 <150,10225>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "This is your first doctor visit after finding out about your pregnancy, and are both excited and nervous about it. ">>
+<img src="Part9.5/Start1.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<if $DatingAndrew>>
+		<<print "You didn’t want to go alone so you bring Andrew with you for support.">>
+		<<set $DoctorAndrew = 1>>
+	<<else>>
+		<<if $DatingJosh == 1>> 
+			<<print "You didn’t want to go alone, but you haven’t told Josh about your pregnancy, so you bring ">> 
+			<<if $MentorFaith>><<print "Faith">><<set $DoctorFaith = 1>><</if>>
+			<<if $MentorEmily>><<print "Emily">><<set $DoctorEmily = 1>><</if>>
+			<<if $MentorHannah>><<print "Hannah">><<set $DoctorHannah = 1>><</if>>
+			<<if $MentorSamantha>><<print "Sam">><<set $DoctorSamantha = 1>><</if>>
+			<<if $MentorOlivia>><<print "Olivia">><<set $DoctorOlivia = 1>><</if>>
+			<<print " with you for support instead.">>
+		<<else>>
+			<<if $DatingProfessor>>
+				<<if $FatherRealProfessor == 1>>
+					<<print "You didn’t want to go alone so you bring Daddy with you for support. You make an effort to call him by his given name, Aaron, during your appointment to avoid another embarrassing situation where someone thinks he’s your actual father.">>
+					<<set $DoctorDaddy = 1>>
+				<<else>>
+					<<print "You didn’t want to go alone, but you haven’t told Daddy about your pregnancy, so you bring ">> 
+					<<if $NerdFriendZone>>
+						<<print "Peter">>
+						<<set $DoctorNerd = 1>>
+					<<else>>
+						<<if $MentorFaith>><<print "Faith">><<set $DoctorFaith = 1>><</if>>
+						<<if $MentorEmily>><<print "Emily">><<set $DoctorEmily = 1>><</if>>
+						<<if $MentorHannah>><<print "Hannah">><<set $DoctorHannah = 1>><</if>>
+						<<if $MentorSamantha>><<print "Sam">><<set $DoctorSamantha = 1>><</if>>
+						<<if $MentorOlivia>><<print "Olivia">><<set $DoctorOlivia = 1>><</if>>
+					<</if>>
+					<<print " with you for support instead.">>
+				<</if>>
+			<<else>>
+				<<if $DatingNerd>>
+					<<set $DoctorNerd = 1>>
+					<<print "You didn’t want to go alone so you bring Andrew with you for support,">>
+					<<if $FatherRealNerd>><<print " even though you haven’t told him that he might be the father.">><<else>><<print " even though you doubt that he is the father. ">><</if>>
+					<<print "Besides you enjoy the fact that the visit itself subtly teases him, proving that another man has done things to you he could only fantasize about.">>
+				<<else>>
+					<<if $DatingVeronica>>
+						<<set $DoctorVeronica = 1>>
+						<<print "You didn’t want to go alone so you bring Veronica with you for support.">>
+					<<else>>
+						<<print "You didn’t want to go alone so you bring ">> 
+						<<if $MentorFaith>><<print "Faith">><<set $DoctorFaith = 1>><</if>>
+						<<if $MentorEmily>><<print "Emily">><<set $DoctorEmily = 1>><</if>>
+						<<if $MentorHannah>><<print "Hannah">><<set $DoctorHannah = 1>><</if>>
+						<<if $MentorSamantha>><<print "Sam">><<set $DoctorSamantha = 1>><</if>>
+						<<if $MentorOlivia>><<print "Olivia">><<set $DoctorOlivia = 1>><</if>>
+						<<print " with you for support.">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+[[You are told to enter the waiting room.|Part95Start2]]
+
+::Part95Start2 <300,10225>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "As you sit in the waiting room, you look around at other women there. Some aren’t showing, or maybe aren’t pregnant. But others clearly are, and are much further along than you are.">>
+<img src="Part9.5/Start2.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You can’t help but imagine that that’s what you are going to look like in a few months.">>
+
+<<print "As they struggle to get out of their chair when their names are called, you know that’s ">>[[going to be you before too long.|Part95Start3]]
+
+::Part95Start3 <450,10225>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "After a long wait in the waiting room your name is finally called.">>
+<img src="Part9.5/Start3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Before taking you to the exam room, one of the doctor’s assistants checks your weight.">>
+
+<<nobr>>
+	<<if $PlayerWeightControl>>
+		<<print "If you had the “weight control” option on your implant, It’s about 5 pounds higher than what it’s supposed to be. The assistant sees your surprise and tells you, “Your implant’s weight control feature deactivates during pregnancy so you can gain as much as the baby needs. But don’t worry, it’ll reactivate and slowly adjust back to normal after you deliver.”">>
+	<<else>>
+		<<if $JobAthlete or $JobCheerleader>>
+			<<print "You’ve been keeping in shape, but are up about 5 pounds. You realize you might have to put your athletics on hold for a while soon.">>
+		<<else>>
+			<<print "You realize you’ve put on about 20 pounds since your change. You wonder how much is from the pregnancy, and how much is just that you’ve been eating like you used to even though your new body needs fewer calories.">>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+<<print "You know it’ll be going up over the coming months. You’ll worry about getting it back to where you want it ">>[[after the baby is born, not now.|Part95Start4]]
+
+::Part95Start4 <600,10225>
+<<nobr>>
+	<<set $PlayerRollDice = either(1,2)>>
+	<<if $PlayerRollDice == 1>><<set $BabyBoy = 1>><<else>><<set $BabyGirl = 2>><</if>>
+	<<set $BabyKnow = 0>>
+	
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "After you change into the gown they give you, the assistant takes some blood so she can run some tests on you and the baby.">>
+<img src="Part9.5/Start4.jpg" hspace="10" vspace="10" height="650">
+
+<<link "“Do you want to know the baby’s sex?”,">><<set $BabyKnow = 1>><<goto [[Part95Exam1]]>><</link>><<print " she asks.">>
+
+<<print "When she sees your confused look she adds, “The cffDNA tests we do these days can show that easily enough, but some people still ">>[[don’t want to know until the baby is born.|Part95Exam1]]<<print " We’ll still do all the other tests either way. We just skip that one if you want to be surprised.”">>
+
+<<print "You give her your answer and she leaves with the vials of your blood">>
+
+::Part95Exam1 <750,10225>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "The doctor comes in and introduces himself and congratulates you. He checks your vital signs and checks you over externally.">>
+
+<<print "They told you to have a full bladder for your appointment and so you have to concentrate to suppress the urge to pee as he press around on you.">>
+
+<<print "He has you put your feet into the stirrups to continue his check.">>
+<img src="Part9.5/Exam1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You gasp a bit as you feel the cold metal of the speculum.">>
+
+<<nobr>>
+	<<print "You feel very awkward, vulnerable and exposed as he checks to make sure everything is at it should be. ">>
+	<<if $DoctorAndrew>><<print "You hold the Andrew’s hand, as you sense he is feeling a bit uncomfortable being here, but you are grateful that he is here supporting you.">><</if>>
+	<<if $DoctorDaddy>><<print "You hold the Daddy’s hand, as you sense he is feeling a bit uncomfortable being here, but you are grateful that he is here supporting you.">><</if>>
+	<<if $DoctorNerd>><<print "You hold the Peter’s hand, as you sense he is feeling a bit uncomfortable being here, but you are grateful that he is here supporting you.">><</if>>
+	<<if $DoctorFaith>><<print "You hold the Faith’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorEmily>><<print "You hold the Emily’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorHannah>><<print "You hold the Hannah’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorSamantha>><<print "You hold the Sam’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorOlivia>><<print "You hold the Olivia’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorVeronica>><<print "You hold the Veronica’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+<</nobr>>
+
+<<print "When the doctor is done looking you over he tells you. “Everything looks good so far. ">>[[You can wait here and Nancy will be in to do your ultrasound.|Part95Exam2]]<<print " I’ll be back after that, we should have your blood work finished by then.">>
+
+::Part95Exam2 <900,10225>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<p style="clear: both;"><img src="Part9.5/Exam2a.jpg" hspace="10" vspace="10" height="400" align="left">
+
+<<print "Nancy, the sonographer, comes in and gets you into position for your test. She sees the worried look in your eye when you see the long probe next to her. “Oh, don’t worry, you’re far enough long, we shouldn’t need that one.”">>
+
+<<print "She squirts some cold gel onto your stomach and begins moving the ‘normal’ wand around, checking out various parts of you. You again have to hold back on the urge to pee. Finally, she stops checking on you and moves on to the baby.">></p>
+
+<p style="clear: both;"><img src="Part9.5/Exam2b.jpg" hspace="10" vspace="10" height="300" align="left">
+
+<<print "“There we go.”, she says as you finally see a tiny image of your baby for the first time.">>
+
+<<print "You are already staring in wonder, but a few clicks later and the ">>[[image zooms in showing your baby in more detail.|Part95Exam3]]</p>
+
+::Part95Exam3 <1050,10225>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<nobr>>
+	<<print "You gasp and cover your mouth excitedly as you see your baby for the first time.">>
+	<<if $DoctorAndrew>><<print "Andrew holds your hand tighter and you notice him watching the screen in wonder.">><</if>>
+	<<if $DoctorDaddy>><<print "Daddy holds your hand tighter and you notice him watching the screen in wonder.">><</if>>
+<</nobr>>
+<img src="Part9.5/Exam3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Nancy clicks on various buttons on her console. Some cause images to be saved or printed, others make measurement lines appear on the image. She glances down at your chart. You hear her make a “Hmm?” sound.">>
+
+<<print "“What? Is something wrong?”, you ask worriedly.">>
+
+<<print "“No. Everything looks great.”, she says. “Your baby looks great. He or she is about 3 1/2 inches (9 cm) now. That’s about the size of a lemon.">>
+
+<<print "Finally she finishes. “The doctor will be in a moment to go over everything with you. You can take a moment to use the restroom before then if you want.”">>
+
+<<print "You quickly head to the restroom to empty your bladder and to wipe the remaining gel from your stomach before ">>[[returning to wait for the doctor.|Part95Exam4]]
+
+::Part95Exam4 <1200,10225>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "The doctor comes in, looking through your results.">>
+
+<img src="Part9.5/Exam4.jpg" hspace="10" vspace="10" height="650">
+
+<<print "“Well, everything looks good on the tests and on the ultrasound. But it looks like pregnancy is just a little further along than the other doctor had thought.”">>
+
+<<print "“That’s not uncommon when your cycle is irregular, like yours had been. Anyway, based on everything I see here, I’m pretty confident you are at about 14 weeks now.” You’re mentally trying to calculate the dates in your head when he continues.">>
+
+<<print "“That would put conception around October 31st. ">>[[Trick or Treat!|Part95Halloween1]]<<print " Though it could be a few days in either direction. And I’m estimating your due date as July 24th. Though we might need to fine tune that date later on.”">>
+
+::Part95Halloween1 <1350,10225>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Halloween">></span>
+<</nobr>>
+
+<<print "You think back to Halloween.">>
+<img src="Part9.5/Halloween1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You remember the sexy costume you wore, and the fun you had at the party.">>
+
+<<link "But it’s really the fun you had *after* the party that’s at issue, isn’t it.">><<if $DoctorNerd>><<goto [[Part95Halloween3]]>><<else>><<goto [[Part95Halloween2]]>><</if>><</link>>
+
+::Part95Halloween2 <1350,10400>
+<<nobr>>
+	<<if $DatingProfessor>><<set $FatherProfessor = 1>><</if>>
+	<<if $DatingAndrew>><<set $FatherAndrew = 1>><</if>>
+	<<if $DatingJosh>><<set $FatherJosh = 1>><</if>>
+	
+	<span style="font-size: 150%"><<print "Halloween">></span>
+<</nobr>>
+
+<<print "You think you know when it happened.">>
+
+<<nobr>>
+	<<if $DatingAndrew or $BreakUpAndrew>><<print "You remember it all. You remember how good it felt riding Andrew’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
+	<<if $DatingProfessor or $BreakUpProfessor>><<print "You remember it all. You remember how good it felt riding Daddy’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
+	<<if $DatingJosh or $BreakUpJosh or $JoshFlee>><<print "You remember it all. You remember how good it felt riding Josh’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
+	<<if !$DatingAndrew and !$BreakUpAndrew and !$DatingProfessor and !$BreakUpProfessor and !$DatingJosh and !$BreakUpJosh and !$JoshFlee>><<print "You remember it all. You were drunk and hooked up with a random colleague, whom you cannot even remember. You do remember however how good it felt riding his cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
+<</nobr>>
+
+<video src="Part9.5/Halloween2.mp4" autoplay loop muted height="650"></video>
+
+
+<<print "You remember hearing him tell you he was going to cum, hearing him moan, feeling his cock twitch inside you. You remember how that pushed you over the edge as well.">>
+
+<<print "And you remember curling up next to him afterwards, not ever imagining ">>[[what had just started.|Part95Result1]]
+
+<<nobr>>
+	<<if $DatingProfessor and !$DoctorDaddy>><<print "You are happy to realize that Daddy is the father, and are anxious to finally tell him the news.">><</if>>
+	<<if $DatingJosh>><<print "You are happy to realize that Josh is the father, and are anxious to finally tell him the news.">><</if>>
+	<<if $BreakUpAndrew>><<print "You are sad to realize that Andrew is indeed the father, but the two of you have already broken up.">><</if>>
+	<<if $BreakUpJosh>><<print "You are sad to realize that Josh is indeed the father, but the two of you have already broken up.">><</if>>
+	<<if $BreakUpProfessor>><<print "You are sad to realize that Daddy is indeed the father, but the two of you have already broken up.">><</if>>
+	<<if $JoshFlee>><<print "You are angry to realize that Josh is indeed the father, but he has ran away from you.">><</if>>
+<</nobr>>
+
+::Part95Result1 <1200,10350>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Medical Clinic">></span>
+<</nobr>>
+
+<<print "The doctor then lets you listen to the baby’s heartbeat. You can’t believe how fast it is. But the doctor said its supposed to sound like that. You still can’t believe it’s coming from a tiny baby growing inside *you*.">>
+<img src="Part9.5/Result1.jpg" hspace="10" vspace="10" height="650">
+<p style="clear: both;"><<if $BabyKnow>><<if $BabyBoy>><img src="Part9.5/Result2a.jpg" hspace="10" vspace="10" height="400" align="left"><<else>><img src="Part9.5/Result2b.png" hspace="10" vspace="10" height="400" align="left"><</if>><br><</if>>
+<<nobr>>
+	<<if $BabyKnow>>
+		<<if $BabyBoy>>
+			<<print "As you wanted to know the gender, the doctor tells you now that it’s a boy.">>
+		<<else>>
+			<<print "As you wanted to know the gender, the doctor tells you now that it’s a girl.">>
+		<</if>>
+	<<else>>
+		<<print "As you did not want to know the gender, the doctor keeps that a secret from you.">>
+	<</if>>
+<</nobr>>
+
+<<print "On you way out, you schedule your next appointment for a month from now.">>
+
+<<nobr>>
+	<<if !$FatherProfessor and !$FatherAndrew and !$FatherJosh and !$FatherNerd and !$DatingVeronica>>
+		<<print "You know you should start thinking whether you ">>
+		[[want to keep the baby|Part95Result2]]
+		<<print " after it is born, or you">>
+		<<link "want to give it for adoption.">>
+			<<set $BabyAdoption = 1>>
+			<<goto [[Part95Result2]]>>
+		<</link>>
+	<<else>>
+		<<if $FatherProfessor and !$FatherRealProfessor>>
+			[[You should tell Daddy the good news.|Part95Professor]]
+		<<else>>
+			<<if $FatherJosh>>
+				[[You should tell Josh the good news.|Part95Josh]]
+			<<else>>
+				[[You know it wont be long until other people notice your pregnancy.|Part95Result2]]
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>></p>
+
+::Part95Halloween3 <1500,10225>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Halloween">></span>
+<</nobr>>
+
+<<print "You remember wanting to give Peter a special treat for Halloween.">>
+
+<<print "You remember letting him lick you to several orgasms that night while you were still in your costume.">>
+<img src="Part9.5/Halloween3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "His orgasms aren’t that important to you, it’s usually more fun denying them. So you have a harder time remembering if he even came that night.">>
+
+<<print "But you can tell from the look on Peters face after the doctor estimated the conception date ">>[[that he did.|Part95Halloween4]]
+
+::Part95Halloween4 <1500,10350>
+<<nobr>>
+	<<if $DatingNerd>><<set $FatherNerd = 1>><</if>>
+	<<if $DatingProfessor>><<set $FatherProfessor = 1>><</if>>
+	
+	<span style="font-size: 150%"><<print "Halloween">></span>
+<</nobr>>
+
+<<print "As you think harder about what happened that night after the Halloween party…">>
+<img src="Part9.5/Halloween4.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You remember leaving him locked, and leting him try to fuck you with his cage still on. You remember how much you teased him after that pitiful half-orgasm he leaked out inside you? Well, it appears the joke is on both of you now.">>
+
+<<print "You never promised Peter you’d be faithful, you even promised him you wouldn’t be. So maybe there’s other guys it could have been too.">>
+
+<<if $DatingProfessor>><<print "If you want it, they can do a quick test of Peter’s DNA, and they confirm he’s the father. Or, if you’d rather Peter never be completely sure whether he’s really the father or not, then you can skip the test.">><<else>><<print "If you want it, they can do a quick test of Peter’s DNA, ">>[[and they confirm he’s the father.|Part95Result1]]<<print " Or, if you’d rather Peter never be completely sure whether he’s really the father or not, ">>[[then you can skip the test.|Part95Result1]]<</if>>
+
+<<nobr>>
+	<<if $DatingProfessor>>
+		<<print "You decide it is more fun ">>[[having Peter never know the answer,|Part95Result1]]<<print " and that you will tell Daddy about your pregnancy and that he is the father.">>
+	<<else>>
+		<<print "Whether you confirm it or not though, Peter and you both agree to acknowledge him as the father, at least on paper when the time comes.">>
+	<</if>>
+<</nobr>>
+
+::Part95Result2 <900,10475>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Bedroom">></span>
+<</nobr>>
+
+<<nobr>>
+	<<if $BabyAdoption>>
+		<<print "You realize you can’t hide this any longer, so you decide to let your family and close friends know.">>
+	<<else>>
+		<<print "You realize you can’t hide this any longer, so you decide to let your family and friends know.">>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $BabyAdoption>>
+		<<print "You let your mom tell the rest of your relatives quietly about the situation, and don’t make a formal announcement.">>
+	<<else>>
+		<<print "You start by calling your parents, then your brother and sister. Your mother and sister are both excited for you. (If they have any concerns they keep them to themselves). Your father and brother seemed to be a bit stunned, both that their son/brother is really gone for good now, and that their new daughter/sister is pregnant on top of it. Buy you’re sure they’ll be ok once the shock wears off.">>
+	<</if>>
+<</nobr>>
+<<if !$BabyAdoption>><img src="Part9.5/Result4.jpeg" hspace="10" vspace="10" height="650"><br><</if>>
+<<nobr>>
+	<<if $BabyAdoption>>
+		<<print "You send a discrete message to your closest friends, and they all reply saying that you have their full support.">>
+	<<else>>
+		<<print "You make a post on social media to let everyone else know:">>
+	<</if>>
+<</nobr>>
+
+<<if !$BabyAdoption>><<print "As you all know, my life has changed quite a bit over the last few months. Well, there’s one more change that’s coming, and it’s going to be a big one…">><</if>>
+<<if !$BabyAdoption>><img src="Part9.5/Result3.png" hspace="10" vspace="10" height="650"><</if>>
+
+<<if !$BabyAdoption>><<nobr>>
+	<<if $FatherNerd or $FatherProfessor or $FatherAndrew or $DatingVeronica>> 
+		<<if $FatherProfessor>><<print "Aaron">><</if>>
+		<<if $FatherAndrew>><<print "Andrew">><</if>>
+		<<if $FatherNerd>><<print "Peter">><</if>>
+		<<if $DatingVeronica>><<print "Veronica">><</if>>
+		<<print " and I will have our hands full starting this July! We’ll be sure to keep you all updated.">>
+	<<else>>
+		<<print "I’ll have my hands full starting this July! I’ll be sure to keep you all updated.">>
+	<</if>>
+<</nobr>><</if>>
+
+[[Continue.|Part10Start]]
+
+::Part95Professor <1050,10350>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Daddy">></span>
+<</nobr>>
+
+<<print "This was either something the two of you were trying for, or a possibility he’d talked to you about when he’d notice you hadn’t had period lately. Either way he’s as excited as you are.">>
+<img src="Part7/Preg8.jpg" hspace="10" vspace="10" height="650">
+
+<<print "He is a bit disappointed that you haven’t told him earlier, but understands that you wanted to be sure that he is the father, even though he would have cared for you even if he wasn’t.">>
+
+<<print "A you’ve moved in with him, few people will question the timeline of your pregnancy. Hopefully no one that matters will realize (or care) that you were one of his students when the baby was conceived.">>
+
+[[And you know it wont be long until other people notice your pregnancy.|Part95Result2]]
+
+::Part95Josh <1050,10475>
+<<nobr>>
+	<<set $DatingJosh = 0>>
+	<<set $RoommateJosh = 0>>
+	<<set $NeighbourJosh = 0>>
+	<<set $FWBJosh = 0>>
+	<<set $JoshFlee = 1>>
+	
+	<span style="font-size: 150%"><<print "Josh">></span>
+<</nobr>>
+
+<<print "You are excited to tell Josh about your pregnancy, but he is in shock when you first tell him. Once he calms down he offers to pay for your abortion and to drive you there if you need a ride. When you let him know that the pregnancy is already so far ahead, he freaks out even more and tells you he needs a few days to calm down and then everything will be all right.">>
+<img src="Part7/Preg7.jpg" hspace="10" vspace="10" height="650">
+
+<<print "After a few days you find that he has emptied his room and is nower to be found. You try calling and texting him, but can’t get ahold of him.">>
+
+<<print "You find out from friends of his that he freaked out about “his life being ruined” and has left town for a different university. You’re on your own for the pregnancy. You might be able to get some help with expenses afterwards if you go after him for child support though.">>
+
+<<nobr>>
+	<<print "But for now you should start thinking whether you ">>
+	[[want to keep the baby|Part95Result2]]
+	<<print " and raise it alone, or you">>
+	<<link "want to give it for adoption">>
+		<<set $BabyAdoption = 1>>
+		<<goto [[Part95Result2]]>>
+	<</link>>
+	<<print " after it is born.">>
+<</nobr>>
+
+::Part9SororityPregnant <700,10075>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Veronica">></span>
+<</nobr>>
+
+<<print "You approach Veronica to ask your relationship and she quickly answers that she wants to be your girlfriend.">>
+
+<<print "She is surprised when she sees you nervous after her response and asks you what is wrong.">>
+
+<<print "You confess that you are actually pregnant and that maybe that is too much for her to handle.">>
+<img src="Part9/Veronica.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<print "You are relieved when she hugs you and tells you that no matter if you.">>
+	[[plan to keep the baby|Part9SororityEndYes]]
+	<<print " after it is born, or you">>
+	<<link "want to give it for adoption">>
+		<<set $BabyAdoption = 1>>
+		<<goto [[Part9SororityEndYes]]>>
+	<</link>>
+	<<print "she will be with you all the way.">>
+<</nobr>>
