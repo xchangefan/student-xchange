@@ -1,0 +1,66 @@
+::StoryTitle
+Student X-Change Program 1.09.60
+
+::Configuration [twee2]
+Twee2::build_config.story_ifid = '1848c7b4-9d60-43a7-a637-8388fc843649'
+
+::StoryCSS [stylesheet]
+#passages {
+	margin-left: 2em;
+	max-width: 75em
+}
+
+#ui-bar {
+	width: 20em;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+video {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+::Start <0,0>
+<span style="font-size: 150%"><<print "Home">></span><<set $ImageSizeH = 650>>
+
+<<print "You’ll be graduating high school in just a few months. You know what university you are hoping to attend, but you’ve applied to several others as well.">>
+
+<<print "Most of the schools have responded already, but from your first-choice school, you’ve only received a notice saying your application is still being reviewed. You figure that at least it’s not a rejection, but you are really hoping for an acceptance letter soon.">>
+
+<<print "As you look over the responses you see:">>
+
+* <<link "Mostly acceptance letters. You’ve always been a good student.">><<set $PlayerGoodStudent = 1>><<goto [[Start1]]>><</link>>
+* <<link "Only acceptance letters from your ‘safety’ school choices. You’re an average student, you knew some of those others were a stretch anyway.">><<set $PlayerAverageStudent = 1>><<goto [[Start1]]>><</link>>
+* <<link "All rejection letters so far. You’ve never been that great of a student.  You hope to turn things around when you get to college. If you get to college, that is.">><<set $PlayerLazyStudent = 1>><<goto [[Start1]]>><</link>>
+
+* <<nobr>>
+	<<link "That you actually haven't received any response yet. (Random)">>
+		<<set $PlayerRollDice = either(1,2,3)>>
+		<<switch $PlayerRollDice>>
+			<<case 1>>
+				<<set $PlayerGoodStudent = 1>>
+				<<goto [[Start1]]>>
+			<<case 2>>
+				<<set $PlayerAverageStudent = 1>>
+				<<goto [[Start1]]>>
+			<<case 3>>
+				<<set $PlayerLazyStudent = 1>>
+				<<goto [[Start1]]>>
+		<</switch>>
+	<</link>>
+<</nobr>>
+
+::StoryIncludes
+part1.tw2
+part2.tw2
+part3.tw2
+part5.tw2
+part6.tw2
+part7.tw2
+part8.tw2
+part9.tw2
+

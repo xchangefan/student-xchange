@@ -1,0 +1,1543 @@
+::Start2 <400,0>
+<span style="font-size: 150%"><<print "Freshman Orientation">></span>
+
+<<print "In a moment, you’ll be asked to sign the disclosure and consent form.  I won’t go over everything since I’m sure you all closely read the disclosure documents we mailed you, right? But as a reminder, here are the key parts…">>
+
+<<print "The implant you are about to receive will release X-Change continually into your system throughout your time at the University.">>
+
+<<print "For the next four years, you’ll experience all the joys and all of the difficulties of being a woman. Just like each of our students that were born that way.">>
+
+<<print "After graduation, what you do will be up to you.">>
+<img src="Part1/Start2A.jpg" hspace="10" vspace="10" height="550"><img src="Part1/Start2B.jpg" hspace="10" vspace="10" height="550"><img src="Part1/Start2C.jpg" hspace="10" vspace="10" height="550">
+
+<<print "Keep in mind, you’ll have all the concerns of any other woman now.  In particular, this includes the possibility of getting pregnant.">>
+
+<<print "Remember, if you do get pregnant, we won’t be able to change you back to your male body after graduation.">>
+
+<<print "We do have an on-campus daycare though, so at least you’ll be able to continue your studies.">>
+
+[[After your forms are complete, you can head over to the implantation specialists to discuss your new body.|Body]]
+
+<<print "They can also discuss your options for preventing pregnancy.">>
+
+::Body <600,0>
+<<nobr>>
+	<<set $PlayerBodySet = 1>>
+	<<set $PlayerSideEffects = 0>>
+	<<set $PlayerRollDice = 0>>
+
+	<span style="font-size: 150%"><<print "Body Type">></span>
+<</nobr>>
+
+<<print "We won’t know for sure what your body type will be until after your change, and then you’ll have that body for at least the next four years Normally your eye color won’t change, nor your skin color, or natural hair color. The rest is really up to your DNA and how the X-Change interacts with it.">>
+
+<<print "I think they all turn out beautifully, but some people are hoping for something specific. Or wanting what they know their DNA isn’t going to give them.  If that’s what you want, then I can tweak some settings a bit and get you what you want. It works every time, but it causes side effects. They won’t affect what you look like though, and most of them aren’t too bad. It’s up to you though.">>
+
+<<nobr>>
+	<<link [[Roll a 20 sided die if you are letting X-Change and DNA decide|PregnancyPrevention]]>>
+		<<set $PlayerRollDice = either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
+		<<switch $PlayerRollDice>>
+			<<case 1 2 3 4 5 6 7 8>>
+				<<set $PlayerBodyStandard = 1>>
+			<<case 9 10 11 12>>
+				<<set $PlayerBodyPlus = 1>>
+			<<case 13 14 15 16>>
+				<<set $PlayerBodyPetite = 1>>
+			<<case 17 18 19 20>>
+				<<set $PlayerBodyFit = 1>>
+		<</switch>>
+	<</link>>
+	<<print "   — or —  You get 2 side effect points if you choose yourself.">>
+<</nobr>>
+<p style="clear: both;"><img src="Part1/BodyStandard1.jpg" align="left" hspace="10" vspace="10" height="500"><img src="Part1/BodyStandard2.jpg" align="right" hspace="10" vspace="10" height="500">
+
+
+<<link [[1-8 Standard X-Change Body.|PregnancyPrevention]]>><<set $PlayerBodyStandard = 1>><<set $PlayerSideEffects += 2>><</link>>
+
+<<print "Average to tall for a woman, the traditionally beautiful, X-Change look.">></p>
+<p style="clear: both;"><img src="Part1/BodyCurvy1.jpg" align="left" hspace="10" vspace="10" height="500"><img src="Part1/BodyCurvy2.jpg" align="right" hspace="10" vspace="10" height="500">
+
+
+<<link [[9-12 Plus-size.|PregnancyPrevention]]>><<set $PlayerBodyPlus = 1>><<set $PlayerSideEffects += 2>><</link>>
+
+<<print "Heavier than the traditional X-Change look. Some people think that’s better though.">></p>
+<p style="clear: both;"><img src="Part1/BodyPetite1.jpg" align="left" hspace="10" vspace="10" height="500"><img src="Part1/BodyPetite2.jpg" align="right" hspace="10" vspace="10" height="500">
+
+
+<<link [[13-16 Petite.|PregnancyPrevention]]>><<set $PlayerBodyPetite = 1>><<set $PlayerSideEffects += 2>><</link>>
+
+<<print "Shorter and smaller chested than the thetraditional look.">>
+
+<<print "But trust me, your back will thank you.">></p>
+<p style="clear: both;"><img src="Part1/BodyFit.jpg" align="left" hspace="10" vspace="10" height="500">
+
+
+<<link [[17-20 Fit.|PregnancyPrevention]]>><<set $PlayerBodyFit = 1>><<set $PlayerSideEffects += 2>><</link>>
+
+<<print "You probably want to talk to the athletic department they’ll put your body to use, and help you keep it fit.">></p>
+
+::PregnancyPrevention <800,0>
+<<nobr>>
+	<<set $PlayerProtectionSet = 1>>
+	<<set $PlayerRollDice = 0>>
+
+	<span style="font-size: 150%"><<print "Pregnancy Prevention">></span>
+<</nobr>>
+
+<<print "I hope you are each thrilled with your new body.  I think you each turned out as beautiful young women.  But now that you are young women, there’s something I need to discuss with you: pregnancy.  Maybe you weren’t interested in men before, so you think this discussion doesn’t apply to you. Trust me, you might feel differently now.  Or maybe not, everyone is different.">>
+<img src="Part1/PregPrevent1.jpg" hspace="10" vspace="10" height="450"><img src="Part1/PregPrevent2.jpg" hspace="10" vspace="10" height="450">
+
+<<print "But if you’re going to be having sex with men, at all, and want the chance to change back to your old body after graduation, then you’ll need to avoid getting pregnant in your new body. Or maybe you actually do ">><<link [[want to get pregnant.|BodyOptionalFeatures]]>><<set $PlayerProtectionTry = 1>><</link>>
+<img src="Part1/PregPrevent3.jpg" hspace="10" vspace="10" height="450"><img src="Part1/PregPrevent4.jpg" hspace="10" vspace="10" height="450">
+
+<<print "Even if you know already that you want this body forever, I’d recommend waiting on motherhood until after graduation. College can be stressful enough without starting a family at the same time.">>
+
+<<nobr>>
+	<<print "With the trial you are participating in, your only options are ">>
+	<<link [[condoms|BodyOptionalFeatures]]>><<set $PlayerProtectionCondoms = 1>><</link>>
+	<<print " and ">>
+	<<link [[birth control pills|BodyOptionalFeatures]]>><<set $PlayerProtectionPill = 1>><</link>>
+	<<print ".  Let us know what you choose. Make sure you are diligent about whichever you use though. One time without a condom, or a single missed pill could be all it takes. If you get pregnant, let us know and we’ll go over your options. But changing back won’t be one of them.">>
+<</nobr>>
+<img src="Part1/PregPrevent5.jpg" hspace="10" vspace="10" height="450"><img src="Part1/PregPrevent6.jpg" hspace="10" vspace="10" height="450">
+
+<<nobr>>
+	<<print "Some might also prefer to just ">>
+	<<link [[ask the guy to pull out|BodyOptionalFeatures]]>><<set $PlayerProtectionWithdraw = 1>><</link>>
+	<<print " or even to ">>
+	<<link [[trust their partner to do the right thing.|BodyOptionalFeatures]]>><<set $PlayerProtectionNone = 1>><</link>>
+<</nobr>>
+
+<<nobr>>
+	<<print "There is one additional option.  There’s an experimental feature on your implant we can activate for you.  It might prevent pregnancy and eliminate your periods.  There’s a good chance it will help, and a small chance that it will make things worse.  Let us know if ">>
+	<<link "we should try it for you.">>
+		<<goto [[ExperimentalPregnancy]]>>
+	<</link>>
+<</nobr>>
+
+<<nobr>>
+	<<print "You are not really sure what the best option is, ">>
+	<<link "but you have to pick something. (Random)">>
+		<<set $PlayerRollDice = either(1,2,3,4,5,6)>>
+		<<switch $PlayerRollDice>>
+			<<case 1>>
+				<<set $PlayerProtectionTry = 1>><<goto [[BodyOptionalFeatures]]>>
+			<<case 2>>
+				<<set $PlayerProtectionNone = 1>><<goto [[BodyOptionalFeatures]]>>
+			<<case 3>>
+				<<set $PlayerProtectionWithdraw = 1>><<goto [[BodyOptionalFeatures]]>>
+			<<case 4>>
+				<<set $PlayerProtectionCondoms = 1>><<goto [[BodyOptionalFeatures]]>>
+			<<case 5>>
+				<<set $PlayerProtectionPill = 1>><<goto [[BodyOptionalFeatures]]>>
+			<<case 6>>
+				<<goto [[ExperimentalPregnancy]]>>
+		<</switch>>
+	<</link>>
+<</nobr>>
+
+::BodyOptionalFeatures <800,125>
+<<nobr>>
+	<<set $PlayerSideEffectPermanent = 0>>
+	<<set $PlayerSideEffectOrgasmBlock = 0>>
+	<<set $PlayerSideEffectMasturbationBlock = 0>>
+	<<set $PlayerSideEffectExhibitionist = 0>>
+	<<set $PlayerSideEffectSubmissive= 0>>
+	<<set $PlayerSideEffectPheromones = 0>>
+	<<set $PlayerSideEffectOral = 0>>
+	<<set $PlayerSideEffectAnal = 0>>
+	<<set $PlayerSideEffectLibido = 0>>
+	<<set $PlayerSideEffectDreams = 0>>
+	<<set $PlayerPowerfulOrgasms = 0>>
+	<<set $PlayerEasytoOrgasm = 0>>
+	<<set $PlayerNoBodyHair = 0>>
+	<<set $PlayerNoBodyHairUpdate = 1>>
+	<<set $PlayerWeightControl = 0>>
+	<<set $PlayerWeightControlUpdate = 1>>
+	<<set $PlayerReducedSleep = 0>>
+	<<set $PlayerReducedSleepUpdate = 1>>
+	<<set $PlayerEasytoOrgasm = 0>>
+	<<set $PlayerEasytoOrgasmUpdate = 1>>
+	<<set $PlayerPowerfulOrgasms = 0>>
+	<<set $PlayerPowerfulOrgasmsUpdate = 1>>
+	<<set $PlayerSideEffectReset = 5>>
+	<<set $PlayerSuperOrgasms = 0>>
+
+	<span style="font-size: 150%"><<print "Optional ‘Features’">></span>
+<</nobr>>
+
+<<print "Your implant also has several options that can make your experience as a woman either a little easier, or more fun. Don’t worry, unlike the birth control one, these always work as intended.  But they also usually cause side effects.">>
+
+<<print "Let me know if you want me to activate any of these.  After I’ve done that, we’ll run some tests and see if your implant has given you any side-effects you’ll want to know about.">>
+
+<p style="clear: both;"><img src="Part1/BodyFeatureNoHair.jpg" hspace="10" vspace="10" height="350" align="left">
+
+<span id="NoBodyHair"><<print "No Body Hair (not selected)">></span>
+
+<<print "Unlike most women, you won’t have to worry about shaving your legs, or anything else. The hair on your head is all that will ever grow.">></p>
+
+<p style="clear: both;"><img src="Part1/BodyFeatureWeight.jpg" hspace="10" vspace="10" height="350" align="left">
+
+<span id="WeightControl"><<print "Weight Control (not selected)">></span>
+
+<<print "The implant will control your metabolism. You tell us what weight to set it at, and no matter how much you eat, you won’t gain past that.">></p>
+
+<p style="clear: both;"><img src="Part1/BodyFeatureLowSleep.jpg" hspace="10" vspace="10" height="350" align="left">
+
+<span id="ReducedSleep"><<print "Reduced Sleep (not selected)">></span>
+
+<<print "The university suggested this one to them. You’ll only need a couple hours sleep each night. You can use all the extra time you have to study more. (Ha ha, sorry, I have to say that part.)">></p>
+
+<p style="clear: both;"><img src="Part1/BodyFeatureEasyO.jpg" hspace="10" vspace="10" height="350" align="left">
+
+<span id="EasytoOrgasm"><<print "Easy to Orgasm (not selected)">></span>
+
+<<print "It’s usually harder to orgasm as a woman than as a man. But you won’t ever have that problem.">></p>
+
+<p style="clear: both;"><img src="Part1/BodyFeaturePowerfulO.jpg" hspace="10" vspace="10" height="350" align="left">
+
+<span id="PowerfulOrgasms"><<print "Powerful Orgasms (not selected)">></span>
+
+<<print "You’ll be amazed when you have your first orgasm as a woman anyway. But if you pick this option, it’ll be even more powerful whenever you orgasm.">></p>
+
+<p style="clear: both;">
+<<nobr>>
+	<<link "Select all of them.">>
+		<<if !$PlayerNoBodyHair>><<set $PlayerSideEffects++>><</if>>
+		<<if !$PlayerWeightControl>><<set $PlayerSideEffects++>><</if>>
+		<<if !$PlayerReducedSleep>><<set $PlayerSideEffects++>><</if>>
+		<<if !$PlayerEasytoOrgasm>><<set $PlayerSideEffects++>><</if>>
+		<<if !$PlayerPowerfulOrgasms>><<set $PlayerSideEffects++>><</if>>
+		<<set $PlayerNoBodyHair = 1>>
+		<<set $PlayerNoBodyHairUpdate = 1>>
+		<<set $PlayerWeightControl = 1>>
+		<<set $PlayerWeightControlUpdate = 1>>
+		<<set $PlayerReducedSleep = 1>>
+		<<set $PlayerReducedSleepUpdate = 1>>
+		<<set $PlayerEasytoOrgasm = 1>>
+		<<set $PlayerEasytoOrgasmUpdate = 1>>
+		<<set $PlayerPowerfulOrgasms = 1>>
+		<<set $PlayerPowerfulOrgasmsUpdate = 1>>
+	<</link>>
+	<<print " | ">>
+	<<link "De-select all of them.">>
+		<<if $PlayerNoBodyHair>><<set $PlayerSideEffects-->><</if>>
+		<<if $PlayerWeightControl>><<set $PlayerSideEffects-->><</if>>
+		<<if $PlayerReducedSleep>><<set $PlayerSideEffects-->><</if>>
+		<<if $PlayerEasytoOrgasm>><<set $PlayerSideEffects-->><</if>>
+		<<if $PlayerPowerfulOrgasms>><<set $PlayerSideEffects-->><</if>>
+		<<set $PlayerNoBodyHair = 0>>
+		<<set $PlayerNoBodyHairUpdate = 1>>
+		<<set $PlayerWeightControl = 0>>
+		<<set $PlayerWeightControlUpdate = 1>>
+		<<set $PlayerReducedSleep = 0>>
+		<<set $PlayerReducedSleepUpdate = 1>>
+		<<set $PlayerEasytoOrgasm = 0>>
+		<<set $PlayerEasytoOrgasmUpdate = 1>>
+		<<set $PlayerPowerfulOrgasms = 0>>
+		<<set $PlayerPowerfulOrgasmsUpdate = 1>>
+	<</link>>
+<</nobr>>
+<<nobr>>
+	<<link "Select randomly.">>
+		<<set $PlayerRollMultiplier = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if !$PlayerNoBodyHair>><<set $PlayerSideEffects++>><</if>>
+			<<set $PlayerNoBodyHair = 1>>
+			<<set $PlayerNoBodyHairUpdate = 1>>
+		<</if>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if !$PlayerWeightControl>><<set $PlayerSideEffects++>><</if>>
+			<<set $PlayerWeightControl = 1>>
+			<<set $PlayerWeightControlUpdate = 1>>
+		<</if>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if !$PlayerReducedSleep>><<set $PlayerSideEffects++>><</if>>
+			<<set $PlayerReducedSleep = 1>>
+			<<set $PlayerReducedSleepUpdate = 1>>
+		<</if>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if !$PlayerEasytoOrgasm>><<set $PlayerSideEffects++>><</if>>
+			<<set $PlayerEasytoOrgasm = 1>>
+			<<set $PlayerEasytoOrgasmUpdate = 1>>
+		<</if>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if !$PlayerPowerfulOrgasms>><<set $PlayerSideEffects++>><</if>>
+			<<set $PlayerPowerfulOrgasms = 1>>
+			<<set $PlayerPowerfulOrgasmsUpdate = 1>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "De-select randomly.">>
+		<<set $PlayerRollMultiplier = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if $PlayerNoBodyHair>><<set $PlayerSideEffects-->><</if>>
+			<<set $PlayerNoBodyHair = 0>>
+			<<set $PlayerNoBodyHairUpdate = 1>>
+		<</if>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if $PlayerWeightControl>><<set $PlayerSideEffects-->><</if>>
+			<<set $PlayerWeightControl = 0>>
+			<<set $PlayerWeightControlUpdate = 1>>
+		<</if>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if $PlayerReducedSleep>><<set $PlayerSideEffects-->><</if>>
+			<<set $PlayerReducedSleep = 0>>
+			<<set $PlayerReducedSleepUpdate = 1>>
+		<</if>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if $PlayerEasytoOrgasm>><<set $PlayerSideEffects-->><</if>>
+			<<set $PlayerEasytoOrgasm = 0>>
+			<<set $PlayerEasytoOrgasmUpdate = 1>>
+		<</if>>
+		<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10)>>
+		<<set $PlayerRollDice += $PlayerRollMultiplier>>
+		<<if $PlayerRollDice > 9>>
+			<<if $PlayerPowerfulOrgasms>><<set $PlayerSideEffects-->><</if>>
+			<<set $PlayerPowerfulOrgasms = 0>>
+			<<set $PlayerPowerfulOrgasmsUpdate = 1>>
+		<</if>>
+	<</link>>
+<</nobr>>
+
+<<nobr>>
+	<<print "You will gain ">><span id="PlayerSideEffects">$PlayerSideEffects</span><<print " ">>
+	<<link "side effects.">>
+		<<if $PlayerSideEffects > 0>>
+			<<goto [[BodySideEffects]]>>
+		<<else>>
+			<<goto [[EndPart1]]>>
+		<</if>>
+	<</link>>
+	<<print "If you get the same side effect more than once, it intensifies the effect. We can reverse some of the side effects, however that will most likely cause even more side effects, and there is a limit on how many times we can do it before it is no longer safe. (5 times)">>
+	<<print " There is also an experimental way that will let you ">>
+	<<link "choose the side effects,">>
+		<<set $PlayerSideEffects += 3>>
+		<<goto [[BodySideEffectsChoose1]]>>
+	<</link>>
+	<<print "however it will most likely cause you to gain 3 additional side effects. (Not recommended for first playthrough)">>
+	
+	<<silently>>
+		<<repeat 200ms>>
+			<<if $PlayerNoBodyHairUpdate>>
+				<<if !$PlayerNoBodyHair>>
+					<<replace "#NoBodyHair">>
+						<<link "No Body Hair (not selected)">>
+							<<if !$PlayerNoBodyHair>><<set $PlayerSideEffects++>><</if>>
+							<<set $PlayerNoBodyHair = 1>>
+							<<set $PlayerNoBodyHairUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<<else>>
+					<<replace "#NoBodyHair">>
+						<<link "No Body Hair (selected)">>
+							<<if $PlayerNoBodyHair>><<set $PlayerSideEffects-->><</if>>
+							<<set $PlayerNoBodyHair = 0>>
+							<<set $PlayerNoBodyHairUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<</if>>
+				<<set $PlayerNoBodyHairUpdate = 0>>
+				<<replace "#PlayerSideEffects">>$PlayerSideEffects<</replace>>
+			<</if>>
+			<<if $PlayerWeightControlUpdate>>
+				<<if !$PlayerWeightControl>>
+					<<replace "#WeightControl">>
+						<<link "Weight Control (not selected)">>
+							<<if !$PlayerWeightControl>><<set $PlayerSideEffects++>><</if>>
+							<<set $PlayerWeightControl = 1>>
+							<<set $PlayerWeightControlUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<<else>>
+					<<replace "#WeightControl">>
+						<<link "Weight Control (selected)">>
+							<<if $PlayerWeightControl>><<set $PlayerSideEffects-->><</if>>
+							<<set $PlayerWeightControl = 0>>
+							<<set $PlayerWeightControlUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<</if>>
+				<<set $PlayerWeightControlUpdate = 0>>
+				<<replace "#PlayerSideEffects">>$PlayerSideEffects<</replace>>
+			<</if>>
+			<<if $PlayerReducedSleepUpdate>>
+				<<if !$PlayerReducedSleep>>
+					<<replace "#ReducedSleep">>
+						<<link "Reduced Sleep (not selected)">>
+							<<if !$PlayerReducedSleep>><<set $PlayerSideEffects++>><</if>>
+							<<set $PlayerReducedSleep = 1>>
+							<<set $PlayerReducedSleepUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<<else>>
+					<<replace "#ReducedSleep">>
+						<<link "Reduced Sleep (selected)">>
+							<<if $PlayerReducedSleep>><<set $PlayerSideEffects-->><</if>>
+							<<set $PlayerReducedSleep = 0>>
+							<<set $PlayerReducedSleepUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<</if>>
+				<<set $PlayerReducedSleepUpdate = 0>>
+				<<replace "#PlayerSideEffects">>$PlayerSideEffects<</replace>>
+			<</if>>
+			<<if $PlayerEasytoOrgasmUpdate>>
+				<<if !$PlayerEasytoOrgasm>>
+					<<replace "#EasytoOrgasm">>
+						<<link "Easy to Orgasm (not selected)">>
+							<<if !$PlayerEasytoOrgasm>><<set $PlayerSideEffects++>><</if>>
+							<<set $PlayerEasytoOrgasm = 1>>
+							<<set $PlayerEasytoOrgasmUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<<else>>
+					<<replace "#EasytoOrgasm">>
+						<<link "Easy to Orgasm (selected)">>
+							<<if $PlayerEasytoOrgasm>><<set $PlayerSideEffects-->><</if>>
+							<<set $PlayerEasytoOrgasm = 0>>
+							<<set $PlayerEasytoOrgasmUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<</if>>
+				<<set $PlayerEasytoOrgasmUpdate = 0>>
+				<<replace "#PlayerSideEffects">>$PlayerSideEffects<</replace>>
+			<</if>>
+			<<if $PlayerPowerfulOrgasmsUpdate>>
+				<<if !$PlayerPowerfulOrgasms>>
+					<<replace "#PowerfulOrgasms">>
+						<<link "Powerful Orgasms (not selected)">>
+							<<if !$PlayerPowerfulOrgasms>><<set $PlayerSideEffects++>><</if>>
+							<<set $PlayerPowerfulOrgasms = 1>>
+							<<set $PlayerPowerfulOrgasmsUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<<else>>
+					<<replace "#PowerfulOrgasms">>
+						<<link "Powerful Orgasms (selected)">>
+							<<if $PlayerPowerfulOrgasms>><<set $PlayerSideEffects-->><</if>>
+							<<set $PlayerPowerfulOrgasms = 0>>
+							<<set $PlayerPowerfulOrgasmsUpdate = 1>>
+						<</link>>
+					<</replace>>
+				<</if>>
+				<<set $PlayerPowerfulOrgasmsUpdate = 0>>
+				<<replace "#PlayerSideEffects">>$PlayerSideEffects<</replace>>
+			<</if>>
+		<</repeat>>
+	<</silently>>
+<</nobr>></p>
+
+::ExperimentalPregnancy <1000,0>
+<<nobr>>
+	<<set $PlayerRollDice = either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
+
+	<span style="font-size: 150%"><<print "Experimental Birth Control">></span>
+<</nobr>>
+<<switch $PlayerRollDice>>
+	<<case 1>>
+		<<print "I’m so sorry but remember that ‘small chance’ of making things worse that I mentioned? Well, it did. ">>
+
+		<<print "Your cycles are going to continue like normal.  Well… not normal exactly.  Your fertile period is going to be a much longer portion of your cycle than it’d normally be.  So that makes it more likely you’ll get pregnant if you’re not careful.">>
+		
+		<video src="Part1/ExperimentalPregnancy1.webm" autoplay loop muted height="650"></video><<set $PlayerProtectionFertile = 1>>
+
+		
+		<<print "And, the birth control pills I mentioned earlier.  Those won’t be effective on you.  Really your only option if you want to be with men and not get pregnant, is going to be ">><<link [[condoms|BodyOptionalFeatures]]>><<set $PlayerProtectionCondoms = 1>><</link>><<print ". Unless you changed your mind and decided that you actually do ">><<link [[want to get pregnant.|BodyOptionalFeatures]]>><<set $PlayerProtectionTry = 1>><</link>>
+
+		<<print "To be honest though, most of the girls that this has happened to decided against condoms and were pregnant in a few months.  I’m not sure if that’s the X-Change implant making them want to get pregnant, or if they just gave up after being so unlucky.  Maybe you can let me know in a few months.">>
+
+		<<nobr>>
+			<<print "You can also risk it and just decide to ">>
+			<<link [[ask the guy to pull out|BodyOptionalFeatures]]>><<set $PlayerProtectionWithdraw = 1>><</link>>
+			<<print " instead or even to ">>
+			<<link [[trust their partner to do the right thing.|BodyOptionalFeatures]]>><<set $PlayerProtectionNone = 1>><</link>>
+		<</nobr>>
+
+		<<nobr>>
+			<<print "Or maybe, you really have no idea what the best option is anymore, ">>
+			<<link "but you have to pick something. (Random)">>
+				<<set $PlayerRollDice = either(1,2,3,4)>>
+				<<switch $PlayerRollDice>>
+					<<case 1>>
+						<<set $PlayerProtectionTry = 1>><<goto [[BodyOptionalFeatures]]>>
+					<<case 2>>
+						<<set $PlayerProtectionNone = 1>><<goto [[BodyOptionalFeatures]]>>
+					<<case 3>>
+						<<set $PlayerProtectionWithdraw = 1>><<goto [[BodyOptionalFeatures]]>>
+					<<case 4>>
+						<<set $PlayerProtectionCondoms = 1>><<goto [[BodyOptionalFeatures]]>>
+				<</switch>>
+			<</link>>
+		<</nobr>>		
+	<<case 2 3 4 5 6>>
+		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted height="650"></video>
+	
+		<<print "Oh well, it didn’t work.  Luckily no side effects though.  You can pick one of the other options though.">>
+
+		<<nobr>>
+			<<print "With the trial you are participating in, those are ">>
+			<<link [[condoms|BodyOptionalFeatures]]>><<set $PlayerProtectionCondoms = 1>><</link>>
+			<<print " and ">>
+			<<link [[birth control pills.|BodyOptionalFeatures]]>><<set $PlayerProtectionPill = 1>><</link>>
+			<<print " Or you might just prefer to">>
+			<<link [[ask the guy to pull out|BodyOptionalFeatures]]>><<set $PlayerProtectionWithdraw = 1>><</link>>
+			<<print " or even to ">>
+			<<link [[trust their partner to do the right thing.|BodyOptionalFeatures]]>><<set $PlayerProtectionNone = 1>><</link>>
+		<</nobr>>
+		
+		<<nobr>>
+			<<print "Or maybe you really have no idea what the best option is anymore, ">>
+			<<link "but you have to pick something. (Random)">>
+				<<set $PlayerRollDice = either(1,2,3,4,5)>>
+				<<switch $PlayerRollDice>>
+					<<case 1>>
+						<<set $PlayerProtectionTry = 1>><<goto [[BodyOptionalFeatures]]>>
+					<<case 2>>
+						<<set $PlayerProtectionNone = 1>><<goto [[BodyOptionalFeatures]]>>
+					<<case 3>>
+						<<set $PlayerProtectionWithdraw = 1>><<goto [[BodyOptionalFeatures]]>>
+					<<case 4>>
+						<<set $PlayerProtectionCondoms = 1>><<goto [[BodyOptionalFeatures]]>>
+					<<case 5>>
+						<<set $PlayerProtectionPill = 1>><<goto [[BodyOptionalFeatures]]>>
+				<</switch>>
+			<</link>>
+		<</nobr>>
+	<<case 7 8 9 10 11 12 13>>
+		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted height="650"></video>
+		
+		<<nobr>>
+			<<set $PlayerProtectionPermanent = 1>>
+			<<print "Well, ">>
+			[[it kinda worked.|BodyOptionalFeatures]]
+			<<print "  There’s still a small chance of pregnancy - it’s about as much as if you’d taken the pill, but now you don’t have to worry about forgetting it.  And, your periods will probably be very light.">>
+		<</nobr>>
+			
+		<<print "However if you ever decide that you to want to get pregnant, let us know and we’ll deactivate the birth control feature for you and you’ll be back to normal cycles in a month or two.">>
+	<<case 14 15 16 17 18 19 20>>
+		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted height="650"></video>
+	
+		<<nobr>>
+			<<set $PlayerProtectionPerfect = 1>>
+			[[It worked perfectly.|BodyOptionalFeatures]]
+			<<print "  There’s almost no chance you’ll get pregnant now. And, you’re not going to have to deal with periods!">>
+		<</nobr>>
+		
+		<<print "However if you ever decide that you to want to get pregnant, let us know and we’ll deactivate the birth control feature for you and you’ll be back to normal cycles in a month or two.">>
+<</switch>>
+
+::BodySideEffects <600,125>
+<<nobr>>
+	<<set $PlayerRollDiceArray = []>>
+	<<set $PlayerSideEffects -= 1>>
+	<<if !$PlayerSideEffectPermanentReset>>
+		<<if !$PlayerSideEffectPermanent>><<set $PlayerRollDiceArray.push(1,2,3,4,5)>><</if>>
+	<</if>>
+
+	<<if !$PlayerSideEffectOrgasmBlockReset>>
+		<<if !$PlayerSideEffectOrgasmBlock>>
+			<<set $PlayerRollDiceArray.push(6,7,8,9,10,11,12,13,14,15)>>
+		<<else>>
+			<<if $PlayerSideEffectOrgasmBlock > 2>>
+				<<set $PlayerRollDiceArray.push(6)>>
+			<<else>>
+				<<if $PlayerSideEffectOrgasmBlock > 1>>
+					<<set $PlayerRollDiceArray.push(6,7)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(6,7,8,9)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	<<if !$PlayerSideEffectMasturbationBlockReset>>
+		<<if !$PlayerSideEffectMasturbationBlock>>
+			<<set $PlayerRollDiceArray.push(16,17,18,19,20,21,22,23,24,25)>>
+		<<else>>
+			<<if $PlayerSideEffectMasturbationBlock > 2>>
+				<<set $PlayerRollDiceArray.push(16)>>
+			<<else>>
+				<<if $PlayerSideEffectMasturbationBlock > 1>>
+					<<set $PlayerRollDiceArray.push(16,17)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(16,17,18,19)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	<<if !$PlayerSideEffectSubmissiveReset>>
+		<<if !$PlayerSideEffectSubmissive>>
+			<<set $PlayerRollDiceArray.push(26,27,28,29,30,31,32,33,34,35)>>
+		<<else>>
+			<<if $PlayerSideEffectSubmissive > 2>>
+				<<set $PlayerRollDiceArray.push(26)>>
+			<<else>>
+				<<if $PlayerSideEffectSubmissive > 1>>
+					<<set $PlayerRollDiceArray.push(26,27)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(26,27,28,29)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	<<if !$PlayerSideEffectExhibitionistReset>>
+		<<if !$PlayerSideEffectExhibitionist>>
+			<<set $PlayerRollDiceArray.push(36,37,38,39,40,41,42,43,44,45)>>
+		<<else>>
+			<<if $PlayerSideEffectExhibitionist > 2>>
+				<<set $PlayerRollDiceArray.push(36)>>
+			<<else>>
+				<<if $PlayerSideEffectExhibitionist > 1>>
+					<<set $PlayerRollDiceArray.push(36,37)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(36,37,38,39)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	<<if !$PlayerSideEffectPheromonesReset>>
+		<<if !$PlayerSideEffectPheromones>>
+			<<set $PlayerRollDiceArray.push(46,47,48,49,50,51,52,53,54,55)>>
+		<<else>>
+			<<if $PlayerSideEffectPheromones > 2>>
+				<<set $PlayerRollDiceArray.push(46)>>
+			<<else>>
+				<<if $PlayerSideEffectPheromones > 1>>
+					<<set $PlayerRollDiceArray.push(46,47)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(46,47,48,49)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	<<if !$PlayerSideEffectOralReset>>
+		<<if !$PlayerSideEffectOral>>
+			<<set $PlayerRollDiceArray.push(56,57,58,59,60,61,62,63,64,65)>>
+		<<else>>
+			<<if $PlayerSideEffectOral > 2>>
+				<<set $PlayerRollDiceArray.push(56)>>
+			<<else>>
+				<<if $PlayerSideEffectOral > 1>>
+					<<set $PlayerRollDiceArray.push(56,57)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(56,57,58,59)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	<<if !$PlayerSideEffectAnalReset>>
+		<<if !$PlayerSideEffectAnal>>
+			<<set $PlayerRollDiceArray.push(66,67,68,69,70,71,72,73,74,75)>>
+		<<else>>
+			<<if $PlayerSideEffectAnal > 2>>
+				<<set $PlayerRollDiceArray.push(66)>>
+			<<else>>
+				<<if $PlayerSideEffectAnal > 1>>
+					<<set $PlayerRollDiceArray.push(66,67)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(66,67,68,69)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	<<if !$PlayerSideEffectLibidoReset>>
+		<<if !$PlayerSideEffectLibido>>
+			<<set $PlayerRollDiceArray.push(76,77,78,79,80,81,82,83,84,85)>>
+		<<else>>
+			<<if $PlayerSideEffectLibido > 2>>
+				<<set $PlayerRollDiceArray.push(76)>>
+			<<else>>
+				<<if $PlayerSideEffectLibido > 1>>
+					<<set $PlayerRollDiceArray.push(76,77)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(76,77,78,79)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	<<if !$PlayerSideEffectDreamsReset>>
+		<<if !$PlayerSideEffectDreams>>
+			<<set $PlayerRollDiceArray.push(86,87,88,89,90,91,92,93,94,95)>>
+		<<else>>
+			<<if $PlayerSideEffectDreams > 2>>
+				<<set $PlayerRollDiceArray.push(86)>>
+			<<else>>
+				<<if $PlayerSideEffectDreams > 1>>
+					<<set $PlayerRollDiceArray.push(86,87)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(86,87,88,89)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	<<if !$PlayerSuperOrgasmsReset>>	
+		<<if !$PlayerSuperOrgasms>>	
+			<<set $PlayerRollDiceArray.push(96,97,98,99,100)>>
+		<<else>>
+			<<if $PlayerSuperOrgasms > 2>>
+				<<set $PlayerRollDiceArray.push(96)>>
+			<<else>>
+				<<if $PlayerSuperOrgasms > 1>>
+					<<set $PlayerRollDiceArray.push(96,97)>>
+				<<else>>
+					<<set $PlayerRollDiceArray.push(96,97,98,99)>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+	
+	<<set $PlayerRollDice = either($PlayerRollDiceArray)>>
+<</nobr>><<switch $PlayerRollDice>>
+	<<case 1 2 3 4 5>><span style="font-size: 150%"><<print "Side-Effect: Permanent">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectPermanent = 1>>
+			<<set $PlayerSideEffects += 1>>
+			<img src="Part1/SideEffectPermanent.jpg" hspace="10" vspace="10" height="650">
+		<</nobr>>
+		
+		<<print "Your change is permanent. We won’t be able to change you back after graduation. Or ever.">>
+
+		<<print "You also have at least one other side effect.">>
+		
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<print "We can ">>
+				<<link [[revert this side effect,|BodySideEffects]]>>
+					<<set $PlayerSideEffectPermanent -= 1>>
+					<<set $PlayerSideEffectReset -= 1>>
+					<<set $PlayerSideEffects += 3>>
+					<<set $PlayerSideEffectPermanentReset = 1>>
+				<</link>>
+				<<print "if you desire; however due to how much it has altered your DNA, it will take a heavy toll on your body and most likely cause multiple othe side effects. And of course, should you ever get pregnant, your changes would become permanent regardless.">>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 6 7 8 9 10 11 12 13 14 15>><span style="font-size: 150%"><<print "Side-Effect: Orgasm Denial">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectOrgasmBlock += 1>>
+			<video src="Part1/OrgasmBlock.mp4" autoplay loop muted height="650"></video>
+		<</nobr>>
+		
+		
+		<<nobr>>
+			<<if $PlayerSideEffectOrgasmBlock == 1>>
+				<<print "Each time that your would normally orgasm there’s a chance that you won’t. (5% chance if it’s during sex, 50% chance if it’s not)">>
+			<<else>>
+				<<if $PlayerSideEffectOrgasmBlock == 2>>
+					<<print "Each time that your would normally orgasm there’s an even higher chance that you won’t. (10% chance if it’s during sex, 60% chance if it’s not)">>
+				<<else>>
+					<<if $PlayerSideEffectOrgasmBlock == 3>>
+						<<print "Each time that your would normally orgasm there’s an even higher chance that you won’t. (20% chance if it’s during sex, 75% chance if it’s not)">>
+					<<else>>
+						<<set $PlayerSideEffectOrgasmBlockReset = 1>>
+						<<print "Each time that your would normally orgasm there’s an even higher chance that you won’t. (40% chance if it’s during sex, 90% chance if it’s not)">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</nobr>>
+
+		<<print "When it happens, it will leave you extremely frustrated and you won’t be able to cum for the next 24-72 hours.	You’ll keep trying though, because you won’t be able to think of much else but how horny you are.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSideEffectOrgasmBlock == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerSideEffectOrgasmBlock -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectOrgasmBlockReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerSideEffectOrgasmBlock -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectOrgasmBlockReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 16 17 18 19 20 21 22 23 24 25>><span style="font-size: 150%"><<print "Side-Effect: Masturbation Denial">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectMasturbationBlock += 1>>
+			<video src="Part1/MasturbationBlock.mp4" autoplay loop muted height="650"></video>
+		<</nobr>>
+		
+		<<nobr>>
+			<<if $PlayerSideEffectMasturbationBlock == 1>>
+				<<print "You won’t be able to orgasm by masturbation. Either with your hand or a toy, if you’re controlling it, then it’ll feel good, but you will never get off that way. You can get really close, but you’ll never quite be able to cum. The longer you try, the hornier and more desperate to cum it will make you.">>
+			<<else>>
+				<<if $PlayerSideEffectMasturbationBlock == 2>>
+					<<print "Not only will you not be able to orgasm by masturbation, but even trying to masturbate will immediately make you horny and desperate to cum.">>
+				<<else>>
+					<<if $PlayerSideEffectMasturbationBlock == 3>>
+						<<print "Not only will you not be able to orgasm by masturbation, but even just touching yourself accidently is enough to make you horny and desperate to cum.">>
+					<<else>>
+						<<set $PlayerSideEffectMasturbationBlockReset = 1>>
+						<<print "Not only will you not be able to orgasm by masturbation, but even just thinking about masturbation is enough to make you horny and desperate to cum.">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</nobr>>
+		
+		<<print "With a partner though, as long as your not controlling the action, you’ll be able to orgasm just fine.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSideEffectMasturbationBlock == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerSideEffectMasturbationBlock -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectMasturbationBlockReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerSideEffectMasturbationBlock -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectMasturbationBlockReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 26 27 28 29 30 31 32 33 34 35>><span style="font-size: 150%"><<print "Side-Effect: Submissive">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectSubmissive += 1>>
+			<video src="Part1/SideEffectSubmissive.mp4" autoplay loop muted height="650"></video>
+		<</nobr>>
+		
+		
+		<<nobr>>
+			<<if $PlayerSideEffectSubmissive == 1>>
+				<<print "You’ll find that you are much more submissive than you would have been, especially in sexually situations.">>
+			<<else>>
+				<<if $PlayerSideEffectSubmissive == 2>>
+					<<print "You are so much more submissive that when you are already horny you can never refuse anything sexual that is asked of you.">>
+				<<else>>
+					<<if $PlayerSideEffectSubmissive == 3>>
+						<<print "You are so much more submissive that you can never refuse anything sexual that is asked of you.">>
+					<<else>>
+						<<set $PlayerSideEffectSubmissiveReset = 1>>
+						<<print "You are so much more submissive that you can never refuse anything that is asked of you.">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</nobr>>
+
+		<<print "Gagged, tied, held down, or commanded by your ‘master’, it won’t matter. The more helpless you feel, the more it will excite you.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSideEffectSubmissive == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerSideEffectSubmissive -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectSubmissiveReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerSideEffectSubmissive -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectSubmissiveReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 36 37 38 39 40 41 42 43 44 45>><span style="font-size: 150%"><<print "Side-Effect: Exhibitionist">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectExhibitionist += 1>>
+			<video src="Part1/SideEffectExhibitionist.mp4" autoplay loop muted height="650"></video>
+		<</nobr>>
+		
+		
+		<<nobr>>
+			<<if $PlayerSideEffectExhibitionist == 1>>
+				<<print "You’re going to crave the risk of being exposed in public. You’ll love the thought of being caught having sex where you shouldn’t, of being naked where you shouldn’t.">>
+			<<else>>
+				<<if $PlayerSideEffectExhibitionist == 2>>
+					<<print "Not only will you crave the risk of being exposed in public, but wearing any clothes that cover you too much will constantly make you feel unconforable.">>
+				<<else>>
+					<<if $PlayerSideEffectExhibitionist == 3>>
+						<<print "Not only will you crave the risk of being exposed in public, but wearing any clothes will constantly make you feel unconforable.">>
+					<<else>>
+						<<set $PlayerSideEffectExhibitionistReset = 1>>
+						<<print "Not only will you crave the risk of being exposed in public, but being naked will make you accept sex with anyone who is asking.">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</nobr>>
+
+		<<print "We’ll get the university to go easy on you if you get caught, but make sure you don’t get arrested off-campus.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSideEffectExhibitionist == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerSideEffectExhibitionist -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectExhibitionistReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerSideEffectExhibitionist -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectExhibitionistReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 46 47 48 49 50 51 52 53 54 55>><span style="font-size: 150%"><<print "Side-Effect: Pheromones">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectPheromones += 1>>
+			<img src="Part1/SideEffectPheromones.jpg" hspace="10" vspace="10" height="650">
+		<</nobr>>
+		
+		<<nobr>>
+			<<if $PlayerSideEffectPheromones == 1>>
+				<<print "Have you heard of pheromones? Well, people have them too, but they are usually too weak to be noticed. But not for you. You’ll notice them on men, especially if he’s been sweating.">>
+			<<else>>
+				<<if $PlayerSideEffectPheromones == 2>>
+					<<print "Pheromones will cause staying too long next to a man will now make you horny for hours after.">>
+				<<else>>
+					<<if $PlayerSideEffectPheromones == 3>>
+						<<print "Pheromones will now instantly make you horny if there are more than one guy in the same room.">>
+					<<else>>
+						<<set $PlayerSideEffectPheromonesReset = 1>>
+						<<print "Pheromones will now instantly make you horny if there is any guy next to you in the same room.">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</nobr>>
+
+		<<print "A trip to the gym will probably fill your mind with lustful thoughts of every guy you smell. And be careful, the effect is especially strong around the time you ovulate.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSideEffectPheromones == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerSideEffectPheromones -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectPheromonesReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerSideEffectPheromones -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectPheromonesReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 56 57 58 59 60 61 62 63 64 65>><span style="font-size: 150%"><<print "Side-Effect: Oral Lover">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectOral += 1>>
+			<video src="Part1/SideEffectOral.mp4" autoplay loop muted height="650"></video>
+		<</nobr>>
+		
+		
+		<<nobr>>
+			<<if $PlayerSideEffectOral == 1>>
+				<<print "Most of us like oral sex, right? We’ll not as much as you will. Whether your interested in girls or guys, the thought of feeling them on your lips, your tongue, or hearing them moan is going to give you almost as much pleasure as you’re giving them.">>
+			<<else>>
+				<<if $PlayerSideEffectOral == 2>>
+					<<print "You like oral sex so much that you can never refuse anyone asking for it or even suggesting it.">>
+				<<else>>
+					<<if $PlayerSideEffectOral == 3>>
+						<<print "You like oral sex so much that you will always suggest it as a reward to people helping you.">>
+					<<else>>
+						<<set $PlayerSideEffectOralReset = 1>>
+						<<print "You like oral sex so much that you can no longer orgasm if you haven’t also pleasured your lover orally.">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</nobr>>
+
+		<<print "And if you like guys, from what other girls with this side effect have told me about the taste of cum… Well, you’re going to love it. Even if girls are you thing, you’ll probably be finding a guy to blow now and then.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSideEffectOral == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerSideEffectOral -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectOralReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerSideEffectOral -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectOralReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 66 67 68 69 70 71 72 73 74 75>><span style="font-size: 150%"><<print "Side-Effect: Anal Lover">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectAnal += 1>>
+			<video src="Part1/SideEffectAnal.mp4" autoplay loop muted height="650"></video>
+		<</nobr>>
+		
+		
+		<<nobr>>
+			<<if $PlayerSideEffectAnal == 1>>
+				<<print "Some women like anal sex, some women hate it, and some women love it. Guess which you’re going to be.">>
+			<<else>>
+				<<if $PlayerSideEffectAnal == 2>>
+					<<print "You like anal sex so much that you can never refuse anyone asking for it or even suggesting it.">>
+				<<else>>
+					<<if $PlayerSideEffectAnal == 3>>
+						<<print "You like anal sex so much that you can no longer orgasm if your lover doesn`t also play with your ass.">>
+					<<else>>
+						<<set $PlayerSideEffectAnalReset = 1>>
+						<<print "You like anal sex so much that you will constantly feel the need to have something in your ass.">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</nobr>>
+
+		<<print "It’s going to feel amazing for you, You’ll probably be begging any guy you’re with to try it. But don’t worry, most will be happy to oblige.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSideEffectAnal == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerSideEffectAnal -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectAnalReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerSideEffectAnal -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectAnalReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 76 77 78 79 80 81 82 83 84 85>><span style="font-size: 150%"><<print "Side-Effect: Increased Libido">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectLibido += 1>>
+			<video src="Part1/SideEffectLibido.mp4" autoplay loop muted height="650"></video>
+		<</nobr>>
+		
+		
+		<<nobr>>
+			<<if $PlayerSideEffectLibido == 1>>
+				<<print "Your libido is going to be much, much higher than normal. You probably feel a near-irresistible need for an orgasm growing within you several times a day.">>
+			<<else>>
+				<<if $PlayerSideEffectLibido == 2>>
+						<<print "Your need for sex will be so strong that you will often choose sex when given the choice.">>
+				<<else>>
+					<<if $PlayerSideEffectLibido == 3>>
+						<<print "Your need for sex will be so strong that you will always accept people asking you for sex.">>
+					<<else>>
+						<<set $PlayerSideEffectLibidoReset = 1>>
+						<<print "You can now get so horny that sometimes you will just orgasm randomly, regardless of what you are doing.">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</nobr>>
+
+		<<print "If you feel the need growing during class, you’ll probably think about quietly pleasuring yourself. Don’t. Trust me, you’ll only start off quiet. It’s better to find a classmate you can pull into a broom closet for a few minutes, just to take the edge off then you can get back to class and focus on your studies.">>
+
+		<<print "If class is almost over, maybe you can wait it out and hurry back to your dorm instead. But don’t try to ignore the need for too long. It will always win. Eventually it’ll overcome your judgement, and who knows what you’ll do to satisfy it, or where you’ll do it.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSideEffectLibido == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerSideEffectLibido -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectLibidoReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerSideEffectLibido -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectLibidoReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 86 87 88 89 90 91 92 93 94 95>><span style="font-size: 150%"><<print "Side-Effect: Erotic Dreams">></span>
+		
+		<<nobr>>
+			<<set $PlayerSideEffectDreams += 1>>
+			<video src="Part1/SideEffectDreams.mp4" autoplay loop muted height="650"></video>
+		<</nobr>>
+		
+		
+		<<nobr>>
+			<<if $PlayerSideEffectDreams == 1>>
+				<<print "Nearly every night you’ll have highly erotic dreams. Sometimes they’ll be passionate or romantic and filled with guys or girls you know. Other times they’ll be dark and disturbing fantasies you didn’t even know you had. Sometimes they’ll be both. Either way, you won’t be able to help but think about them all day.">>
+			<<else>>
+				<<if $PlayerSideEffectDreams == 2>>
+					<<print "You will now have erotic dreams every night. Sometimes they’ll be passionate or romantic and filled with guys or girls you know. Other times they’ll be dark and disturbing fantasies you didn’t even know you had. Sometimes they’ll be both. Either way, you won’t be able to help but think about them all day.">>
+				<<else>>
+					<<if $PlayerSideEffectDreams == 3>>
+						<<print "Not only will you have erotic dreams every night, but the more erotic they are, the hornier you will be during the day.">>
+					<<else>>
+						<<set $PlayerSideEffectDreamsReset = 1>>
+						<<print "Not only will you have erotic dreams every night, but they will be so realistic that you will find it hard to realize if you are dreaming or are awake.">>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</nobr>>
+
+		<<print "But the dreams will always leave you unsatisfied when you wake up. Every morning you’ll start the day extremely horny. You might want to sleep with a friend to help you start the day. Or if not, make sure you always have a fresh supply of batteries. And try not to be late for class.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSideEffectDreams == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerSideEffectDreams -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectDreamsReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerSideEffectDreams -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSideEffectDreamsReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+	<<case 96 97 98 99 100>><span style="font-size: 150%"><<print "Side-Effect: Enhanced Orgasms">></span>
+		
+		<<nobr>>
+			<<set $PlayerPowerfulOrgasms += 1>>
+			<<set $PlayerEasytoOrgasm += 1>>
+			<<set $PlayerSuperOrgasms += 1>>
+			<video src="Part1/SideEffectOrgasm.mp4" autoplay loop muted height="650"></video>
+		<</nobr>>
+		
+		<<if $PlayerSuperOrgasms == 3>><<set $PlayerSuperOrgasmsReset = 1>><</if>>
+		<<print "Oh wow, you really lucked out. You’re going to find it much easier to orgasm, and when you do, it’s going to much more intense than it is for the average woman.">>
+		<<if $PlayerEasytoOrgasm > 1 or $PlayerPowerfulOrgasms > 1>><br><<print "It’s going to be even more intense than it was supposed to be. You might even find guys losing patience with how often they have to stop and let you recover from another orgasm during sex.">><br><</if>>
+		<<print "If it gets to be a problem, just tell them to hold you down and don’t stop until they cum. They’ll love counting how many times they can make you cum before they do.  But you’ll probably need quite a while to recover after they’ve finished.">>
+	
+		<<nobr>>	
+			<<if $PlayerSideEffectReset>>
+				<<if $PlayerSuperOrgasms == 1>>
+					<<print "We can ">>
+					<<link [[revert this side effect,|BodySideEffects]]>>
+						<<set $PlayerPowerfulOrgasms -= 1>>
+						<<set $PlayerEasytoOrgasm -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSuperOrgasmsReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<<else>>
+					<<print "We can`t revese this side effect, but we can">>
+					<<link [[make it less powerful,|BodySideEffects]]>>
+						<<set $PlayerPowerfulOrgasms -= 1>>
+						<<set $PlayerEasytoOrgasm -= 1>>
+						<<set $PlayerSideEffectReset -= 1>>
+						<<set $PlayerSideEffects += 2>>
+						<<set $PlayerSuperOrgasmsReset = 1>>
+					<</link>>
+					<<print "if you desire, but it will cause additional side effects.">>
+				<</if>>
+			<<else>>
+				<<print "It's not safe to attempt to reverse any more side effects.">>
+			<</if>>
+		<</nobr>>
+<</switch>>
+<<nobr>>
+	<<if $PlayerSideEffects > 0>>
+		<<print "You will gain ">><span id="PlayerSideEffects">$PlayerSideEffects</span><<print " ">>[[more side effects.|BodySideEffects]]
+	<<else>>
+		[[Those were all the side effects.|EndPart1]]
+	<</if>>
+<</nobr>>
+
+::EndPart1 <800,250>
+<span style="font-size: 150%"><<print "Freshman Orientation">></span>
+
+<<print "Now that you know all about the body you’re going to have for the next four years (at least), you can take a few minutes to meet some of the other girls in the program and tell each other a bit about yourself and how you plan on making the most of the next four years.">>
+<img src="Part1/EndPart1A.jpg" hspace="10" vspace="10" height="430"><img src="Part1/EndPart1B.jpg" hspace="10" vspace="10" height="430"><img src="Part1/EndPart1C.jpg" hspace="10" vspace="10" height="430">
+
+<<print "We’re going to plug you all into the computer so it can match you up with roommates for the upcoming year. Then we’ll come back and tell you about your dorms and who you’ll be sharing them with.">>
+
+<<print "Later in the afternoon, they’ll be booths set up for various student activities, and some on and off-campus employers.  But I’ll leave you to get to know one another, ">>[[see you in a bit.|Part2Start]]
+
+::StoryCaption <0,10900>
+A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
+<div style="font-size: 90%">\
+<<if $PlayerSideEffectPermanent>><br><<print "Your changes are permanent. ">><</if>><<if $PlayerPregnant>><<print "Your are pregnant. ">><</if>><<if $PlayerMother>><<print "Your have become a mother.">><</if>>\
+\
+<<if $PlayerBodyStandard>><br><<print "Your have a Standard size body. ">><</if>>\
+<<if $PlayerBodyPlus>><br><<print "Your have a Plus-size body. ">><</if>>\
+<<if $PlayerBodyPetite>><br><<print "Your have a Petite body. ">><</if>>\
+<<if $PlayerBodyFit>><br><<print "Your have a Fit body. ">><</if>>\
+<<if $PlayerNoBodyHair>><<print "You have no body hair. ">><</if>>\
+<<if $PlayerWeightControl>><<print "You have perfect weight. ">><</if>>\
+<<if $PlayerReducedSleep>><<print "You don't need much sleep. ">><</if>>\
+<<if $PlayerSideEffectDreams>>\
+	<<if $PlayerSideEffectDreams >3>><<print "Your dreams are always erotic and you have trouble distinguishing them from reality. ">>\
+		<<else>><<if $PlayerSideEffectDreams >2>><<print "Your dreams are always erotic and will affect you during the day. ">>\
+			<<else>><<if $PlayerSideEffectDreams >1>><<print "Your dreams are always erotic. ">>\
+				<<else>><<print "Your dreams are sometimes erotic. ">><</if>><</if>><</if>><</if>>\
+\
+<<if $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock>><br>\
+	<<if $PlayerEasytoOrgasm>>\
+		<<if $PlayerEasytoOrgasm >3>><<print "Sex is one continuous orgasm for you. ">>\
+			<<else>><<if $PlayerEasytoOrgasm >2>><<print "You always have multiple orgasms.  ">>\
+				<<else>><<if $PlayerEasytoOrgasm >1>><<print "It takes you only a few minutes to reach orgasm.  ">>\
+					<<else>><<print "It is easier for you to reach orgasm.  ">><</if>><</if>><</if>><</if>>\
+	<<if $PlayerPowerfulOrgasms>>\
+		<<if $PlayerPowerfulOrgasms >3>><<print "Your orgasms are so  powerful and long that you often pass out. ">>\
+			<<else>><<if $PlayerPowerfulOrgasms >2>><<print "Your orgasms are so powerful and long that your mind goes blank. ">>\
+				<<else>><<if $PlayerPowerfulOrgasms >1>><<print "Your orgasms are stronger and longer than normal. ">>\
+					<<else>><<print "Your orgasms are stronger than normal. ">><</if>><</if>><</if>><</if>>\
+	<<if $PlayerSideEffectOrgasmBlock>>\
+		<<if $PlayerSideEffectOrgasmBlock >3>><<print "There is a 40% chance not to orgasm during sex (90% chance outside of it). ">>\
+			<<else>><<if $PlayerSideEffectOrgasmBlock >2>><<print "There is a 20% chance not to orgasm during sex (75% chance outside of it). ">>\
+				<<else>><<if $PlayerSideEffectOrgasmBlock >1>><<print "There is a 10% chance not to orgasm during sex (60% chance outside of it). ">>\
+					<<else>><<print "There is a 5% chance not to orgasm during sex (50% chance outside of it). ">><</if>><</if>><</if>><</if>>\
+	<<if $PlayerSideEffectMasturbationBlock>>\
+		<<if $PlayerSideEffectMasturbationBlock >3>><<print "You cannot orgasm from masturbating, touching or thinking about it will make you horny. ">>\
+			<<else>><<if $PlayerSideEffectMasturbationBlock >2>><<print "You cannot orgasm from masturbating, just touching yourself is enough to make you horny. ">>\
+				<<else>><<if $PlayerSideEffectMasturbationBlock >1>><<print "You cannot orgasm from masturbating, trying to will make you horny. ">>\
+					<<else>><<print "You cannot orgasm from masturbating. ">><</if>><</if>><</if>><</if>>\
+<</if>>\
+\
+<<if $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectLibido>><br>\
+	<<if $PlayerSideEffectExhibitionist>>\
+		<<if $PlayerSideEffectExhibitionist >3>><<print "You crave always being naked, you dislike wearing clothes, you cannot refuse sex when naked. ">>\
+			<<else>><<if $PlayerSideEffectExhibitionist >2>><<print "You crave being naked in public, you dislike wearing clothes. ">>\
+				<<else>><<if $PlayerSideEffectExhibitionist >1>><<print "You like the thought of being naked in public, you want to wear revealing clothes. ">>\
+					<<else>><<print "You like the thought of being naked in public. ">><</if>><</if>><</if>><</if>>\
+	<<if $PlayerSideEffectSubmissive>>\
+		<<if $PlayerSideEffectSubmissive >3>><<print "You are submissive in sexual situations, you can never refuse anything. ">>\
+			<<else>><<if $PlayerSideEffectSubmissive >2>><<print "You are submissive in sexual situations, you can never refuse sex. ">>\
+				<<else>><<if $PlayerSideEffectSubmissive >1>><<print "You are submissive in sexual situations, you can never refuse sex if you are already horny. ">>\
+					<<else>><<print "You are submissive in sexual situations. ">><</if>><</if>><</if>><</if>>\
+	<<if $PlayerSideEffectPheromones>>\
+		<<if $PlayerSideEffectPheromones >3>><<print "Being next to any man will instantly excite you. ">>\
+			<<else>><<if $PlayerSideEffectPheromones >2>><<print "The smell of sweating men excites you, being next to multiple men will instantly excite you. ">>\
+				<<else>><<if $PlayerSideEffectPheromones >1>><<print "The smell of sweating men excites you, regular men will excite you if you stay too long next to them. ">>\
+					<<else>><<print "The smell of sweating men excites you. ">><</if>><</if>><</if>><</if>>\
+	<<if $PlayerSideEffectLibido>>\
+		<<if $PlayerSideEffectLibido >3>><<print "Your libido is much higher, causing you to orgasm randomly, you can never refuse sex. ">>\
+			<<else>><<if $PlayerSideEffectLibido >2>><<print "Your libido is much higher, you can never refuse sex. ">>\
+				<<else>><<if $PlayerSideEffectLibido >1>><<print "Your libido is much higher, you will often accept or suggest sex. ">>\
+					<<else>><<print "You get excited much faster. ">><</if>><</if>><</if>><</if>>\
+<</if>>\
+\
+<<if $PlayerSideEffectOral or $PlayerSideEffectAnal>><br>\
+	<<if $PlayerSideEffectOral>>\
+		<<if $PlayerSideEffectOral >3>><<print "You love oral sex, you cannot orgasm without it, and can never refuse it, you sometimes suggest it as a reward. ">>\
+			<<else>><<if $PlayerSideEffectOral >2>><<print "You love oral sex and can never refuse it, you sometimes suggest it as a reward. ">>\
+				<<else>><<if $PlayerSideEffectOral >1>><<print "You love oral sex and can never refuse it. ">>\
+					<<else>><<print "You love oral sex. ">><</if>><</if>><</if>><</if>>\
+	<<if $PlayerSideEffectAnal>>\
+		<<if $PlayerSideEffectAnal >3>><<print "You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm, you constantly need something in your ass. ">>\
+			<<else>><<if $PlayerSideEffectAnal >2>><<print "You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm. ">>\
+				<<else>><<if $PlayerSideEffectAnal >1>><<print "You love anal sex and can never refuse it. ">>\
+					<<else>><<print "You love anal sex. ">><</if>><</if>><</if>><</if>>\
+<</if>>\
+\
+<<if $PlayerProtectionTry>><br><br><<print "You want to get pregnant. ">><</if>>\
+<<if $PlayerProtectionNone>><br><br><<print "You are not using any birth control. ">><</if>>\
+<<if $PlayerProtectionWithdraw>><br><br><<print "You always ask guys to pull out during sex. ">><</if>>\
+<<if $PlayerProtectionCondoms>><br><br><<print "You always use condoms. ">><</if>>\
+<<if $PlayerProtectionPill>><br><br><<print "You always use birth control pills. ">><</if>>\
+<<if $PlayerProtectionPermanent>><br><br><<print "Your body has a permanent pill implant. ">><</if>>\
+<<if $PlayerProtectionPerfect>><br><br><<print "Your body has a permanent perfect pill implant. ">><</if>>\
+<<if $PlayerProtectionFertile>><<print "Your body is extra fertile. ">><</if>>\
+\
+<<if $PlayerMoneySet>><br><br><<print "Money: $">>$PlayerMoney<</if>>\
+<<if $PlayerClothesSet>><br><br><<print "Wardrobe: ">><</if>>\
+<<if $PlayerClothesShirt>><<print "Shirts. ">><</if>>\
+<<if $PlayerClothesBlouse>><<print "Blouses. ">><</if>>\
+<<if $PlayerClothesTopLeather>><<print "Leather Top. ">><</if>>\
+<<if $PlayerClothesSweat>><<print "Sweat Pants. ">><</if>>\
+<<if $PlayerClothesJeans>><<print "Jeans. ">><</if>>\
+<<if $PlayerClothesLeatherJeans>><<print "Leather Jeans. ">><</if>>\
+<<if $PlayerClothesSkirt>><<print "Skirts. ">><</if>>\
+<<if $PlayerClothesSkirtLeather>><<print "Leather Skirts. ">><</if>>\
+<<if $PlayerClothesDressCasual>><<print "Casual Dresses. ">><</if>>\
+<<if $PlayerClothesDressLong>><<print "Long Dresses. ">><</if>>\
+<<if $PlayerClothesDressShort>><<print "Short Dresses. ">><</if>>\
+<<if $PlayerClothesDressLeather>><<print "Leather Dresses. ">><</if>>\
+<<if $PlayerClothesDressPink>><<print "Pink Dresses. ">><</if>>\
+<<if $PlayerClothesOutfitLatexPink>><<print "Pink Latex Suit. ">><</if>>\
+<<if $PlayerUnderwearCotton>><<print "Cotton Underwear. ">><</if>>\
+<<if $PlayerUnderwearRegular>><<print "Regular Underwear. ">><</if>>\
+<<if $PlayerUnderwearSexy>><<print "Sexy Underwear. ">><</if>>\
+<<if $PlayerUnderwearErotic>><<print "Erotic Underwear. ">><</if>>\
+<<if $PlayerUnderwearPink>><<print "Pink Underwear. ">><</if>>\
+<<if $PlayerSleepwearComfy>><<print "Comfy Sleepwear. ">><</if>>\
+<<if $PlayerSleepwearRegular>><<print "Regular Sleepwear. ">><</if>>\
+<<if $PlayerSleepwearSexy>><<print "Sexy Sleepwear. ">><</if>>\
+\
+<<if $PlayerPiercedSet>><br><br><<print "Piercings: ">><</if>>\
+<<if $PlayerEarsRegular>><<print "Stud Earrings. ">><</if>>\
+<<if $PlayerEarsDiamond>><<print "Diamond Earrings. ">><</if>>\
+<<if $PlayerEarsMultiple>><<print "Multiple Earrings. ">><</if>>\
+<<if $PlayerEarsHeart>><<print "Heart Earrings. ">><</if>>\
+<<if $PlayerPiercedTongue>><<print "Tongue. ">><</if>>\
+<<if $PlayerPiercedButton>><<print "Belly button. ">><</if>>\
+<<if $PlayerPiercedBreasts>><<print "Breasts. ">><</if>>\
+<<if $PlayerPiercedClit>><<print "Clit hood. ">><</if>>\
+\
+<<if $PlayerInventorySet>><br><br><<print "Items: ">><</if>>\
+<<if $PlayerItemTeddy>><<print "Teddy Bear. ">><</if>>\
+<<if $PlayerCuffs>><<print "Cuffs. ">><</if>>\
+<<if $PlayerThighBands>><<print "Thigh Bands. ">><</if>>\
+<<if $PlayerCollar>><<print "Collar. ">><</if>>\
+<<if $PlayerCollarPink>><<print "Pink Collar. ">><</if>>\
+<<if $PlayerGagPink>><<print "Pink Gag. ">><</if>>\
+<<if $PlayerBondageRope>><<print "Bondage Ropes. ">><</if>>\
+<<if $PlayerItemsVibratingPanties>><<print "Vibrating panties. ">><</if>>\
+<<if $PlayerChastityBeltInventory>><<print "Chastity Belt. ">><</if>>\
+<<if $PlayerItemVibrator>><<print "Vibrator. ">><</if>>\
+<<if $PlayerItemSpecialVibrator>><<print "Remote Vibrator. ">><</if>>\
+<<if $ItemWand>><<print "Magic Wand. ">><</if>>\
+<<if $PlayerItemNerdKey>><<print "Peter's Key. ">><</if>>\
+\
+<<if $PlayerChastityBelt>><br><br><<print "You are currently locked in a chastity belt. ">><</if>>\
+<<if $VeronicaKey>><<print "Veronica has your key. ">><</if>>\
+<<if $AndrewKey>><<print "Andrew has your key. ">><</if>>\
+<<if $JoshKey>><<print "Josh has your key. ">><</if>>\
+<<if $KateKey>><<print "Mistress Kate has your key. ">><</if>>\
+<<if $ProfessorKey>><<print "Daddy has your key. ">><</if>>\
+\
+<<if $MentorFaith>><br><br><<print "Faith is your mentor">><<if $RoommateFaith>><<print " and roommate">><</if>><<if $NeighbourFaith>><<print " and neighbour">><</if>><<print ". ">><</if>>\
+<<if $MentorEmily>><br><br><<print "Emily is your mentor">><<if $RoommateEmily>><<print " and roommate">><</if>><<if $NeighbourEmily and $NeighbourEmilyBoyfriend>><<print ". She and her boyfriend are your neighbours">><</if>><<print ". ">><</if>>\
+<<if $MentorHannah>><br><br><<print "Hannah is your mentor">><<if $RoommateHannah>><<print " and roommate">><</if>><<if $NeighbourHannah>><<print " and neighbour">><</if>><<print ". ">><</if>>\
+<<if $MentorSamantha>><br><br><<print "Samantha is your mentor">><<if $RoommateSamantha>><<print " and roommate">><</if>><<if $NeighbourSamantha>><<print " and neighbour">><</if>><<print ". ">><</if>>\
+<<if $MentorOlivia>><br><br><<print "Olivia is your mentor">><<if $RoommateOlivia>><<print " and roommate">><</if>><<if $NeighbourOlivia>><<print " and neighbour">><</if>><<print ". ">><</if>><<if $OliviaChastityBelt>><<print "She is currently locked in a chastity belt.">><</if>>\
+\
+<<if $PlayerNeighbourSet>><br>\
+	<<if $RoommateFaith or $RoommateEmily or $RoommateHannah or $RoommateSamantha or $RoommateOlivia>><<print "Your Neighbours are ">>\
+		<<if $NeighbourEmilyBoyfriend >><<print "Emily's boyfriend and ">>\
+			<<if $NeighbourJerk >><<print "Barry.">><</if>>\
+			<<if $NeighbourPlayer >><<print "James.">><</if>>\
+			<<if $NeighbourNerd >><<print "Peter.">><</if>>\
+			<<if $NeighbourThrillSeeker >><<print "Zack.">><</if>>\
+			<<if $NeighbourJosh >><<print "Josh.">><</if>>\
+		<<else>>\
+			<<if $NeighbourJerk >><<print "Barry and ">>\
+				<<if $NeighbourPlayer >><<print "James.">><</if>>\
+				<<if $NeighbourNerd >><<print "Peter.">><</if>>\
+				<<if $NeighbourThrillSeeker >><<print "Zack.">><</if>>\
+				<<if $NeighbourJosh >><<print "Josh.">><</if>>\
+			<<else>>\
+				<<if $NeighbourPlayer >><<print "James and ">>\
+					<<if $NeighbourNerd >><<print "Peter.">><</if>>\
+					<<if $NeighbourThrillSeeker >><<print "Zack.">><</if>>\
+					<<if $NeighbourJosh >><<print "Josh.">><</if>>\
+				<<else>>\
+					<<if $NeighbourNerd >><<print "Peter and ">>\
+						<<if $NeighbourThrillSeeker >><<print "Zack.">><</if>>\
+						<<if $NeighbourJosh >><<print "Josh.">><</if>>\
+					<<else>>\
+						<<print "Zack and Josh.">>\
+					<</if>>\
+				<</if>>\
+			<</if>>\
+		<</if>>\
+	<<else>>\
+		<<if !$RoommateAndrew and !$RoommateAssistant>>\
+			<<if $RoommateJerk >><<print "Your roommate is Barry.">><</if>>\
+			<<if $RoommatePlayer >><<print "Your roommate is James.">><</if>>\
+			<<if $RoommateNerd >><<print "Your roommate is Peter.">><</if>>\
+			<<if $RoommateThrillSeeker >><<print "Your roommate is Zack.">><</if>>\
+			<<if $RoommateJosh >><<print "Your roommate is Josh.">><</if>>\
+		<</if>>\
+	<</if>>\
+<</if>>\
+<<if $MasterKate>><br><<print "You are Mistress Kate's pet. ">><</if>>\
+<<if $MasterKen>><br><<print "Ken, the artist, is your ">><<if $HusbandKen>><<print "husband">><<else>><<print "master">><</if>><<print " and you are living in his loft, together with his assistants. ">><</if>>\
+<<if $MasterOlivia>><br><<print "You are a slave to Olivia's master. ">><</if>>\
+\
+<<if $DatingAndrew>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
+	<<if $RoommateAndrew>><<print " and living together">><<print ". ">><</if>><</if>>\
+<<if $DatingOfficeBoss>><br><<print "You are your boss's mistress. ">><</if>>\
+<<if $DatingVeronica>><br><<print "You in a relationship with your chearleader colleague, Veronica. ">><</if>>\
+<<if $DatingJosh>><br><<print "You in a relationship with Josh. ">><</if>>\
+<<if $DatingProfessor>><br><<print "The Professor is your Daddy and you are his Baby Girl. ">><</if>>\
+<<if $FWBJosh>><br><<print "You are friends with benefits with Josh. ">><</if>>\
+<<if $FWBThrillSeeker>><br><<print "You are friends with benefits with Zack. ">><</if>>\
+<<if $DatingNerd or $NerdFriendZone>><br><<print "Peter is your boy toy. ">><</if>>\
+<<if $FWBJerk>><br><<print "Barry likes to humiliate you. ">><</if>>\
+<<if $FWBDavid>><br><<print "You are friends with benefits with David. ">><</if>>\
+<<if $FWBPlayer>><br><<print "You are friends with benefits with James. ">><</if>>\
+\
+<<if $PlayerJobSet>><br><br><</if>>\
+<<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>\
+<<if $JobCheerleader>><<print "You are a Cheerleader. ">><</if>>\
+<<if $JobCheerleaderFundraiser>><<print "You are a Fundraiser for the Cheerleaders.">><</if>>\
+<<if $JobFitness>><<print "You work as a Fitness Instructor. ">><</if>>\
+<<if $JobFitnessYoga>><<print "You work as a Natural Yoga Instructor. ">><</if>>\
+<<if $JobFitnessMassage>><<print "You work as a Masseuse. ">><</if>>\
+<<if $JobLibrary>><<print "You work as a Librarian. ">><</if>>\
+<<if $JobEngineer>><<print "You work as an Engineer. ">><</if>>\
+<<if $JobTestSubject>><<print "You are a test subject at the lab. ">><</if>>\
+<<if $JobArt>><<print "You work as an Art Model. ">><</if>>\
+<<if $JobBarista>><<print "You work as a Barista. ">><</if>>\
+<<if $JobOffice>><<print "You are an Office Worker. ">><</if>>\
+<<if $JobOfficePA>><<print "You work as an Office Personal Assistant. ">><</if>>\
+<<if $JobOfficeManager>><<print "You work as an Office Manager. ">><</if>>\
+<<if $JobOfficeIntern>><<print "You work as an Office Intern. ">><</if>>\
+<<if $JobCallGirl>><<print "You work as a Call Girl. ">><</if>>\
+<<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>\
+<<if $JobBartender>><<print "You work as a Bartender. ">><</if>>\
+<<if $JobBartenderGirls>><<print "You work as a Bartender, usually picking up girls. ">><</if>>\
+<<if $JobBartenderGuys>><<print "You work as a Bartender, usually picking up guys. ">><</if>>\
+<<if $JobBartenderBi>><<print "You work as a Bartender, usually picking up girls or guys. ">><</if>>\
+<<if $JobBartenderSub>><<print "You work as a Bartender, usually letting people pikc you up. ">><</if>>\
+<<if $JobWebModel>><<print "You work as a Web Model. ">><</if>>\
+<<if $JobWebModelSide>><<print "You are also working as a Web Model. ">><</if>>\
+<<if $JobPornOral>><<print "You work as an Oral Porn Actress. ">><</if>>\
+<<if $JobPornOralSide>><<print "You sometimes also work as an Oral Porn Actress. ">><</if>>\
+<<if $JobPornAnal>><<print "You work as an Anal Porn Actress. ">><</if>>\
+<<if $JobPornAnalSide>><<print "You sometimes also work as an Anal Porn Actress. ">><</if>>\
+<<if $JobPornGang>><<print "You work as a Porn Actress. ">><</if>>\
+<<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
+<<if $JobPorn>><<print "You work as an Porn Actress. ">><</if>>\
+<<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
+<<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>\
+\
+<<if $PlayerPointsSet>><br><br><<print "Student life balance:">><</if>>\
+<<nobr>>
+	<<if $PlayerPointsSet>>
+		<<if $FunPoints > 10>><<print "You are a total party animal. ">>
+		<<else>><<if $FunPoints > 8>><<print "You are a the life of every party. ">>
+			<<else>><<if $FunPoints > 6>><<print "You like fun just like everyone else. ">>
+				<<else>><<if $FunPoints > 4>><<print "You like fun, but only occasionaly. ">>
+					<<else>><<if $FunPoints > 2>><<print "You are not a complete recluse. ">>
+						<<else>><<print "You are completely boring. ">>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+		<<if $AcademicPoints > 11>><<print "You are an excellent student.">>
+		<<else>><<if $AcademicPoints > 9>><<print "You are a good student.">>
+			<<else>><<if $AcademicPoints > 6>><<print "You are an okay student.">>
+				<<else>><<if $AcademicPoints > 4 >><<print "You are an average student.">>
+					<<else>><<if $AcademicPoints > 2>><<print "You are a below average student.">>
+						<<else>><<if $AcademicPoints > 0>><<print "You are a really bad student.">>
+							<<else>><<print "You are the laziest student.">>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>\
+<<if $AcademicProbation>><br><<print "You are on academic probation. ">><</if>>\
+<br><br></div>
+<div style="font-size: 70%"><<print "Debug: Current: ">><<print passage()>><<print " | Previous: ">><<print previous()>><<print " | ">>[[Variables List|VariablesMasterDebugger]]</div>

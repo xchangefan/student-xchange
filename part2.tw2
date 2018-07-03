@@ -1,0 +1,453 @@
+::Part2Start <600,375>
+<<nobr>>
+	<<set $PlayerMentorPick = 0>>
+	
+	<span style="font-size: 150%"><<print "Dormitories">></span>
+<</nobr>>
+
+<<print "Now, we are going to go over where you’ll be staying your first year here. All freshman stay on-campus in dormitories, so that makes it simpler.">>
+<img src="Part2/Start.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Our dorm rooms are all mixed-gender suites. You’ll be sharing a bedroom with another female student. ">>[[She’ll be your mentor.|Mentor]]<<print " She has years of experience living with a female body and will be able to help you with any day-to-day difficulties your new body may present for you.">>
+
+<<print "Next door will be a different bedroom with two male students. They won’t be aware of your participation the Student X-Change Program, unless you choose to tell them.">>
+
+<<print "The four of you will all share a common living room and bathroom.">>
+
+::Mentor <400,375>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Mentors">></span>
+<</nobr>>
+<<switch $PlayerMentorPick>> \
+	<<case 0>> \
+	<<print "When you hear your name, come on up and meet your mentor. We’ll give the two of you some time to get to know each other.">>
+	<img src="Part2/Mentor.jpg" hspace="10" vspace="10" height="650">
+	
+	<<print "Your mentor will also have a gift card provided by the folks at X-Change. She’ll take you out and buy some basic hygiene and beauty products for you, along with some clothes she’ll help you pick out. And maybe even your first trip to the jewelry store at the end!">>
+	
+	<<print "Of course you’ll probably be buying lots more for yourself once you settle in and have a bit of money. This is just a gift to get you started.">>
+	
+	<<nobr>>
+		<<print "Normally, our mentors will come up and ">>
+		<<link "call out who they were paired with.">>
+			<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19)>>
+			<<switch $PlayerRollDice>>
+				<<case 1 2 3 4>>
+					<<goto [[Faith1]]>>
+				<<case 5 6 7 8>>
+					<<goto [[Emily]]>>
+				<<case 9 10 11 12>>
+					<<goto [[Hannah]]>>
+				<<case 13 14 15 16>>
+					<<goto [[Samantha]]>>
+				<<case 17 18 19>>
+					<<goto [[Olivia]]>>
+			<</switch>>
+		<</link>>
+		<<print "However this time there are a lot quite a few extra mentors available so we can also ">>
+		<<link [[let you choose, if you want.|Mentor]]>><<set $PlayerMentorPick = 1>><</link>>
+	<</nobr>>	
+<<case 1>>
+	<<print "We have 5 mentors, whom we think would fit you nicely, so all you have to do now is pick the one you like the most.">>
+	<p style="clear: both;"><img src="Part2/Faith1.jpg" hspace="10" vspace="10" height="350" align="left">
+	
+	
+	[[Faith,|Faith1]]<<print " a proper-looking girl who grew up in small town in the midwest. You think she might have a religious background.">></p>
+	<p style="clear: both;"><img src="Part2/Emily1.jpg" hspace="10" vspace="10" height="350" align="left">
+	
+	
+	[[Emily,|Emily]]<<print " a normal-looking girl from Denver. She’s been hanging since the moment you arrived with one guy, her boyfriend perhaps?">></p>
+	<p style="clear: both;"><img src="Part2/Hannah1.jpg" hspace="10" vspace="10" height="350" align="left">
+	
+	
+	[[Hannah,|Hannah]]<<print " a really energetic girl, whom you’ve overheard talking about guys and sex quite openly.">></p>
+	<p style="clear: both;"><img src="Part2/Samantha1.jpg" hspace="10" vspace="10" height="350" align="left">
+	
+	
+	[[Samantha,|Samantha]]<<print " whom you think looks normal, but you can swear that it looks like she’s flirting with some of the other girls.">></p>
+	<p style="clear: both;"><img src="Part2/Olivia1.jpg" hspace="10" vspace="10" height="350" align="left">
+	
+	
+	[[Olivia,|Olivia]]<<print " a goth looking girl, she doesn’t look as friendly as the other and you’ve heard her mention the word master a couple of times, whatever that means..">></p>
+<</switch>>
+
+::Faith1 <0,500>
+<<nobr>>
+	<<set $MentorFaith = 1>>
+	<<set $RoommateFaith = 1>>
+	
+	<span style="font-size: 150%"><<print "Faith">></span>
+<</nobr>>
+
+<<print "Hi, my name’s Faith. I grew up in small town in the midwest. Trust me, you’ve never heard of it, but I loved it. Now, I know that X-Change has a bad reputation, but I want to help you show people it doesn’t have to be like that. You have it in you to the kind of woman God wants you to be, and I’ll do what I can to help you.">>
+<img src="Part2/Faith1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You didn’t get any of those side effects that make you extra ‘horny’ that they mentioned did you? If you did, you shouldn’t see it as some sort of punishment. Or an excuse to act all slutty either. I’ll do what I can to help you deal with it though.">>
+
+<<print "Oh god - I can tell from the way you’re looking at me what you thought I meant. No, I don’t meant that! I wouldn’t even touch *myself* like that! I just meant that I know several guys from the campus ministry that are looking to meet someone to settle down with and start a family right away.">>
+
+<<print "(blushing) If… if it gets too much for you to take, I’m sure God would probably forgive you and him if you didn’t wait until you were actually married, as long as that’s where it was heading between you.">>
+
+<<print "Before we go shopping, how about we go and ">>[[meet our neighbours?|Neighbours]]
+
+::Emily <200,500>
+<<nobr>>
+	<<set $MentorEmily = 1>>
+	<<set $RoommateEmily = 1>>
+	<<set $NeighbourEmilyBoyfriend = 1>>
+	
+	<span style="font-size: 150%"><<print "Emily">></span>
+<</nobr>>
+
+<<print "Hi, I’m Emily. And I’m going to be your mentor this year. I’m from Denver originally. But I doubt that’s were we will move after we graduate. Oh, by “we”, I mean my boyfriend and me. We’ve been dating since freshman year, and we’re practically inseparable. When we graduate next year we’ll be moving in together. We just haven’t decided on the city yet.">>
+<img src="Part2/Emily1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "I might not have to wait until next year though. I have a friend in the housing office. I got her to assign my boyfriend to the room next to ours! I’m so excited!">>
+
+<<print "(Your mind wanders as she goes on and on about her relationship. You can already see how this is going to go. For a week or two you’ll try to manage sharing a room with her, but nearly every night the two of them will be going at it a few feet away on her bed. First the sound will turn you on, and you’ll lie in bed trying to quietly pleasure yourself. After a while it’ll just keep you from sleeping or studying. You’ll eventually switch rooms with him. Hopefully things don’t get weird between you and the guy in his assigned room. Since you’ll be sleeping in the bed next to him now).">>
+
+<<print "Oh god, I’m sorry, today’s supposed to be about getting you started, not me going on and on about my boyfriend. Let’s go and meet ">>[[my boyfriend’s roommate,|Neighbours]]<<print " after which we can head to the mall and get you setup.">>
+
+::Hannah <400,500>
+<<nobr>>
+	<<set $MentorHannah = 1>>
+	<<set $RoommateHannah = 1>>
+	
+	<span style="font-size: 150%"><<print "Hannah">></span>
+<</nobr>>
+
+<<print "Hey, my name’s Hannah, and we’re going to be roommates this year! I’m so excited. I’m really looking forward to helping your learn and watching as you experience everything about being a woman for the first time!">>
+<img src="Part2/Hannah1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "I know people sometimes think of X-Change girls as slutty or something, but I don’t think that’s fair at all. I mean I love sex too, and I was born a woman. You’re 18 and I’m 20, and we’re on a campus full of guys, and everyone’s hormones are going full tilt. What are they expecting is going to happen? Just enjoy it. Whether you’re changing back after graduation or not, you’ll probably never have more fun than you do the next four years.">>
+
+<<print "Some girls want to get a boyfriend right away when they get to college. I think that’s silly. I don’t know what I want yet, and you certainly don’t yet either. We’re too young to settle down. Now’s the time to try lots of things, see what you like, see what you don’t. If you’re shy, don’t worry, I’ll help you along.">>
+
+<<print "And, if you’re nervous about sex at first, and want some help, just let me know. I don’t think the two of us would have any trouble at all finding a guy wanting a threesome. And he won’t mind being a teaching aid for me to show you all I know.">>
+
+<<print "Before then though. If you have any of those side- effects that are giving you trouble. Just let me know if I can help. Guys are more my thing, but helping my roommate out in her moment of need sounds like it could be fun from time-to-time too.">>
+
+<<print "Before we go shopping, how about we go and ">>[[meet our neighbours?|Neighbours]]
+
+::Samantha <600,500>
+<<nobr>>
+	<<set $MentorSamantha = 1>>
+	<<set $RoommateSamantha = 1>>
+	
+	<span style="font-size: 150%"><<print "Samantha">></span>
+<</nobr>>
+
+<<print "Hi, I’m Samantha. But you can just call me Sam if you like. Congratulations on your change! I’m not sure if you’re planning on changing back after graduation or not, but I’m pretty sure once you see how wonderful being a woman is, you won’t have any interest in going back to being a man.">>
+<img src="Part2/Samantha1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Personally, I think the world would be a much better place if every guy just took a pink Plus pill, and everyone was a woman. (I guess we’d have to keep a few blue pills around for baby making, but that’s about it.) Unfortunately that’s not going to happen. But I’m happy to be doing my small part and helping you with your transition at least.">>
+
+<<print "Sadly, a lot of the women on X-Change start having desires for men, even if that didn’t afflict them before the X-Change. If you’re one of them, then you have my condolences. But if it didn’t, or if you end up bi, I can certainly show you around town and all the best places to meet someone. Whether you’re looking for Ms Right, or Ms Right Now.">>
+
+<<print "It’s probably better we keep thing as friends between us, no matter which way you end up. Things can get awkward if relationships don’t work out, and we’re going to be together all year. But I certainly wouldn’t mind giving you a few pointers as you learn how to pleasure you new body. There’s nothing more amazing than watching a woman’s first orgasm. And if you end up in a bad way from any of those side effects they mentioned, I’ll try to help out if I can.">>
+
+<<print "Before we go shopping, how about we go and ">>[[meet our neighbours?|Neighbours]]
+
+::Olivia <800,500>
+<<nobr>>
+	<<set $MentorOlivia = 1>>
+	<<set $RoommateOlivia = 1>>
+	
+	<span style="font-size: 150%"><<print "Olivia">></span>
+<</nobr>>
+
+<<print "I’m Olivia, and I’ll be your roommate this year. You must be so excited and nervous, starting out in a whole new life! I’ll do as best I can to make sure everything works out well for you.">>
+<img src="Part2/Olivia1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "I know the questions everyone always has when they see me, so I’ll answer them for you. No, there’s no way for me to get the collar off. It’s locked and I don’t have the key - someone very special to me does. He locked this on me, with my permission, and he’s the only one that can take it off. But I hope he never does. You’ll get to meet him. The group we’re in is having a meeting in a few weeks, and he told me I should bring you along. Trust me, you’ll have a great time.">>
+
+<<print "Anyway, I know a lot of new girls can have a rough start right after their change. My master gave me some suggestions to help you get started and make sure that doesn’t happen to you.">>
+
+<<print "If you have any of those side effects they mentioned, I won’t be able to help you until after you meet my master. But if he says it’s ok, I can certainly help you after that. But any more traditional girl issues you have - let me know, and I can absolutely help with those.">>
+
+<<print "Before we go shopping, let’s go and ">>[[meet our neighbours?|Neighbours]]
+
+::Faith2 <25,750>
+<<nobr>>
+	<<set $PlayerClothesSet = 1>>
+	<<set $PlayerClothesDressLong = 1>>
+	
+	<span style="font-size: 150%"><<print "Faith">></span>
+<</nobr>>
+
+<<print "Now you’ll probably go out and pick up some more casual clothes later too. Simple blouses and jeans and such. I’ll let you do that on your own later.But I’d recommend you stay  away from those “skinny jeans” I see a lot of girls wearing though. They’re so tight, sometimes it’s almost like they aren’t wearing much at all.">>
+<img src="Part2/Faith2A.jpg" hspace="10" vspace="10" height="550"><img src="Part2/Faith2B.jpg" hspace="10" vspace="10" height="550"><img src="Part2/Faith2C.jpg" hspace="10" vspace="10" height="550">
+
+<<print "I think it’s better to look pretty, but not to show too much. I think a ">>[[nice dress|Faith3]]<<print " is perfect. Trust me, you’ll feel so beautiful wearing one. And the guys love seeing a girl wearing a nice dress too. Besides which would you rather have: a guy staring at your butt in skinny jeans imagining what your bare butt looks like, or him seeing you in a beautiful dress and thinking about taking you home to meet his family? I know which one I’d prefer.">>
+
+::Faith3 <25,1000>
+<<nobr>>
+	<<set $PlayerUnderwearCotton = 1>>
+	<<set $PlayerSleepwearRegular = 1>>
+	
+	<span style="font-size: 150%"><<print "Faith">></span>
+<</nobr>>
+
+<p style="clear: both;"><img src="Part2/Faith3A.jpg" hspace="10" vspace="10" height="650" align="left">
+
+<<print "I think simple cotton underwear is great. They are so comfortable and easy to clean. It’s not like anyone else is going to see it on you anyway. Well, except me at home of course. And they are so inexpensive, I have some money left over for a little treat for you if you want.">></p>
+<p style="clear: both;"><img src="Part2/Faith3B.jpg" hspace="10" vspace="10" height="400" align="left">
+
+<<nobr>>
+	<<print "They suggested taking you to get your ">>
+	<<link [[ears pierced if you want.|EndPart2]]>>
+		<<set $PlayerEarsDiamond = 1>>
+		<<set $PlayerPiercedSet = 1>>
+	<</link>>
+	<<print "With the extra we have left, I can get you some small diamond earrings instead of the plain ones they normally give you! Trust me, they’ll look beautiful on you no matter what you’re wearing.">>
+<</nobr>>
+
+<<print "If you don’t want your ears pierce I think that would be a shame, but ">>[[we can head for home.|EndPart2]]</p>
+
+::EndPart2 <400,1125>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Campus">></span>
+<</nobr>>
+
+<<print "Welcome back ladies. I hope everyone had a good time shopping and getting to know their new roommates. Some of you might have hit it off right away. Some of you it might take a while for you to grow on each other. But if you have any difficulties, remember, your mentor is only trying to look out for you, as best she sees how.">>
+
+<<print "Now, you can all take a few minutes to show off whatever new outfits you’re wearing or earrings you’ve bought, or anything else you want to share. And then tell us how your afternoon went.">>
+
+<<print "After we’re finished here, we have a little job/activity fair setup for all of you. They’ll be tables from several campus organizations and local businesses. ">>[[Hopefully they’ll be something to interest everyone.|Part3Start]]
+
+::Emily2 <200,750>
+<<nobr>>
+	<<set $PlayerClothesSet = 1>>
+	<<set $PlayerClothesJeans = 1>>
+	<<set $PlayerClothesShirt = 1>>
+	
+	<span style="font-size: 150%"><<print "Emily">></span>
+<</nobr>>
+
+<<print "Unless you’ve tried X-Change before, you probably don’t know what kind of styles you’ll like now.">>
+<img src="Part2/Emily2A.jpg" hspace="10" vspace="10" height="550"><img src="Part2/Emily2B.jpg" hspace="10" vspace="10" height="550">
+<img src="Part2/Emily2C.jpg" hspace="10" vspace="10" height="550"><img src="Part2/Emily2D.jpg" hspace="10" vspace="10" height="550">
+
+<<print "And I don’t want to be like some of those other mentors I saw, and force my style on you, so I’ll just help you ">>[[get a few practical things|Emily3]]<<print " you can wear around campus. Then you can go buy whatever you want after you settle in.">>
+
+::Emily3 <200,875>
+<<nobr>>
+	<<set $PlayerInventorySet = 1>>
+	<<set $PlayerItemVibrator = 1>>
+	<<set $PlayerUnderweaRegular = 1>>
+	<<set $PlayerSleepwearComfy = 1>>
+	
+	<span style="font-size: 150%"><<print "Emily">></span>
+<</nobr>>
+
+<<print "We’ll grab you some underwear too, but I should probably get you some ">>[[comfy sleepwear too.|Emily4]]<<print " I’m sure neither of us want you in your underwear when my boyfriend comes over, right?">>
+<img src="Part2/Emily3A.jpg" hspace="10" vspace="10" height="500"><img src="Part2/Emily3B.jpg" hspace="10" vspace="10" height="500"><img src="Part2/Emily3C.jpg" hspace="10" vspace="10" height="500">
+
+<<print "I know a lot of the new girls ended up with side effects that will make them horny all the time. I’ll help you pick out the perfect vibrator to take the edge off until you meet a guy (or a girl, whatever you want). If that doesn’t help for you, maybe you could talk to my boyfriend’s roommate and see if he can help out.">>
+
+::Emily4 <200,1000>
+<<nobr>>
+	
+	<span style="font-size: 150%"><<print "Emily">></span>
+<</nobr>>
+
+<<nobr>>
+	<<print "They gave us money for ">>
+	<<link [[getting your ears pierced.|EndPart2]]>>
+		<<set $PlayerEarsRegular = 1>>
+		<<set $PlayerPiercedSet = 1>>
+	<</link>>
+	<<print "We could do that, but I have a better idea.">>
+<</nobr>>
+<img src="Part2/Emily4.jpg" hspace="10" vspace="10" height="400" align="left">
+
+<<nobr>>
+	<<print "You can ">>
+	<<link [[get your tongue pierced!|EndPart2]]>>
+		<<set $PlayerPiercedTongue = 1>>
+		<<set $PlayerPiercedSet = 1>>
+	<</link>>
+	<<print " I got mine done last year. And, oh my god, does my boyfriend love how the piercing feels when I suck his cock. He always loved me giving him head, but he loves it even more now.">>
+<</nobr>>
+
+<<print "But even when I’m not doing that, I still love feeling it in my mouth and thinking about it. And I can sometimes see his guy friends notice it and get jealous of him. And that always makes me a little happy too.">>
+
+<<print "Come on, lets go. It only hurts for a second.">>
+
+::Hannah2 <400,750>
+<<nobr>>
+	<<set $PlayerClothesSet = 1>>
+	<<set $PlayerClothesBlouse = 1>>
+	<<set $PlayerClothesSkirt = 1>>
+	
+	<span style="font-size: 150%"><<print "Hannah">></span>
+<</nobr>>
+
+<<print "You’ll have lots of time to build your whole wardrobe out, but I think the most basic thing you need are some nice skirts.">>
+<img src="Part2/Hannah2A.jpg" hspace="10" vspace="10" height="650"><img src="Part2/Hannah2B.jpg" hspace="10" vspace="10" height="650">
+
+<<print "You can wear a mid-length one almost anytime. You can even get long ones if you are trying to look ‘respectable’ or something that day. Or you can wear one as short as you date to if you want to crank up the sexy that day.">>
+
+<<print "And best of all, no matter which length it is. If you feel a certain need, and find the right guy, it only takes a second to hike up your skirt and let him get to work.">>
+
+<video src="Part2/Hannah2C.mp4" autoplay loop muted height="450"></video>
+
+
+<<print "Ha - I can see you thinking about it right now. ">>[[We’re going to make great roommates this year!|Hannah3]]
+
+::Hannah3 <400,875>
+<<nobr>>
+	<<set $PlayerSleepwearRegular = 1>>
+	<<set $PlayerUnderwearSexy = 1>>
+	
+	<span style="font-size: 150%"><<print "Hannah">></span>
+<</nobr>>
+
+<<print "I’m supposed to help you pick out some underwear too. Now, I know a lot of girls that have two different sets of underwear: boring, everyday stuff they normally wear, and then their sexy underwear they only wear when they plan on going home with someone.">>
+<img src="Part2/Hannah3A.jpg" hspace="10" vspace="10" height="650"><img src="Part2/Hannah3C.jpg" hspace="10" vspace="10" height="650">
+
+<<print "I’d rather wear the sexy stuff every day. Even if I don’t end up going home with someone that day, it still makes me feel sexy all day wearing it. I have a bunch of Angel Rewards points saved up that I’ll use on you today, so we can splurge a bit and get you enough so you can wear ">>[[something sexy every day too.|Hannah4]]
+
+::Hannah4 <400,1000>
+<<nobr>>
+	<<set $PlayerPiercedSet = 1>>
+	<<set $PlayerEarsRegular = 1>>
+	
+	<span style="font-size: 150%"><<print "Hannah">></span>
+<</nobr>>
+
+<<nobr>>
+	<<print "They have some money here to get your ears pierced. We’ll do that, but I hooked with a body piercer a few weeks ago. I know he’ll give us a deal if you want a second piercing. Here, look what I had him do with my navel, ">>
+	<<link [[maybe you can get one too.|EndPart2]]>>
+		<<set $PlayerPiercedButton = 1>>
+		<<set $PlayerPiercedSet = 1>>
+	<</link>>
+<</nobr>>
+<img src="Part2/Hannah4A.jpg" hspace="10" vspace="10" height="400">
+
+<<nobr>>
+	<<print "Or wait. No! I have an even better idea! I’ve been thinking about a clit hood piercing. ">>
+	<<link [[Why don’t we both get one!|EndPart2]]>>
+		<<set $PlayerPiercedClit = 1>>
+		<<set $PlayerPiercedSet = 1>>
+	<</link>>
+	<<print " I’ve heard it’s amazing how it feels. The bar will rest right against your clit and all day long you’ll feel it when you walk or run, or whatever.">>
+<</nobr>>
+<img src="Part2/Hannah4B.jpg" hspace="10" vspace="10" height="400">
+
+<<print "That’s probably a bit much to ask him as favor though. Unless we both give him something return. I’m sure we can find someway to make it worth his time.">>
+
+::Samantha2 <600,750>
+<<nobr>>
+	<<set $PlayerClothesSet = 1>>
+	<<set $PlayerClothesDressCasual = 1>>
+	<<set $PlayerClothesJeans = 1>>
+	<<set $PlayerClothesShirt = 1>>
+	
+	<span style="font-size: 150%"><<print "Samantha">></span>
+<</nobr>>
+
+<<print "Most of the former guys I know tend to be fairly fem, so why don’t we get some casual dresses for you. Once you find your own style we can go shopping again. But these should get you by until then.">>
+<img src="Part2/Samantha2A.jpg" hspace="10" vspace="10" height="550"><img src="Part2/Samantha2B.jpg" hspace="10" vspace="10" height="550"><img src="Part2/Samantha2C.jpg" hspace="10" vspace="10" height="550">
+
+<<print "But we’ll also pick you up some jeans and t-shirts. They’re great too. I’m guessing you probably already have a closet full of them. But guess what, they won’t fit now.">>
+
+<<print "Now you get to buy the same things again, but this time for twice the cost. You might be tempted to shop in the mens section because it’s cheaper (and from habit, I suppose). ">>[[I wouldn’t recommend it,|Samantha3]]<<print " at least at first. Even at the same size, things just don’t fit the same.">>
+
+::Samantha3 <600,1000>
+<<nobr>>
+	<<set $PlayerUnderwearSexy = 1>>
+	<<set $PlayerUnderwearRegular = 1>>
+	<<set $PlayerSleepwearComfy = 1>>
+	
+	<span style="font-size: 150%"><<print "Samantha">></span>
+<</nobr>>
+
+<<print "I don’t know what you’re going to prefer, so we’ll get a couple different styles of underwear for you. But there’s one important thing that a lot of women overlook - even ones born as women. And that’s how important it is to have a bra that fits. I’ll take you to a shop I like that will measure you accurately. Trust me, you’ll thank me later for this.">>
+<img src="Part2/Samantha3A.jpg" hspace="10" vspace="10" height="550"><img src="Part2/Samantha3B.jpg" hspace="10" vspace="10" height="550"><img src="Part2/Samantha3C.jpg" hspace="10" vspace="10" height="550">
+
+<<nobr>>
+	<<print "They gave us some money to get your ears pierced too. ">>
+	<<link [[They probably just meant the lobes.|EndPart2]]>>
+		<<set $PlayerEarsRegular = 1>>
+		<<set $PlayerPiercedSet = 1>>
+	<</link>>
+	<<print " But we have enough money left, you could go for something a bit more.">>
+<</nobr>>
+<img src="Part2/Samantha3D.jpg" hspace="10" vspace="10" height="400" align="left">
+
+<<nobr>>
+	<<print "Maybe a helix or an industrial? Why don’t we have the piercer take a look at your ear and then you two can talk about what you want and ">>
+	<<link [[what would work well for your ear.|EndPart2]]>>
+		<<set $PlayerEarsMultiple = 1>>
+		<<set $PlayerPiercedSet = 1>>
+	<</link>>
+<</nobr>>
+
+::Olivia2 <800,750>
+<<nobr>>
+	<<set $PlayerClothesSet = 1>>
+	<<set $PlayerClothesSweat = 1>>
+	<<set $PlayerClothesDressLeather = 1>>
+	
+	<span style="font-size: 150%"><<print "Olivia">></span>
+<</nobr>>
+
+<<print "We’ll use the gift card they gave me we’ll use to get you some regular, boring clothes first. You can wear those to class or whatever. But we have some more fun shopping to do. My master gave me his credit card to buy you some other things too. He said it made him sad thinking of a girl, new to the world, with nothing to wear but sweat pants and t-shirts. ">>[[He said you don’t have to pay him back.|Olivia3]]<<print " But you can thank him when you meet him if you want.">>
+<img src="Part2/Olivia2A.jpg" hspace="10" vspace="10" height="550">
+<img src="Part2/Olivia2B.jpg" hspace="10" vspace="10" height="550"><img src="Part2/Olivia2C.jpg" hspace="10" vspace="10" height="550">
+
+<<print "Some you can technically wear to class, though it might turn a few heads. But probably no more than my collar does. Some of the others you’ll want to save for special occasions.">>
+
+::Olivia3 <800,875>
+<<nobr>>
+	<<set $PlayerUnderwearErotic = 1>>
+	<<set $PlayerUnderwearRegular = 1>>
+	
+	<span style="font-size: 150%"><<print "Olivia">></span>
+<</nobr>>
+
+<<print "Oh god, you look so hot in all of these. You have those plain ones to wear every day if you want, but think how fun it would be sitting in class, knowing you’re wearing something like this underneath your regular clothes.">>
+<img src="Part2/Olivia3A.jpg" hspace="10" vspace="10" height="600"><img src="Part2/Olivia3B.jpg" hspace="10" vspace="10" height="600">
+<img src="Part2/Olivia3C.jpg" hspace="10" vspace="10" height="400"><img src="Part2/Olivia3D.jpg" hspace="10" vspace="10" height="400">
+
+<<print "Ok. There’s one more thing ">>[[I want you to try on.|Olivia4]]<<print " It’s not underwear really, but I think it’ll look so hot on you…">>
+
+::Olivia4 <1000,875>
+<<nobr>>
+	<<set $PlayerInventorySet = 1>>
+	<<set $PlayerChastityBelt = 1>>
+	<<set $PlayerChastityBeltInventory = 1>>
+	
+	<span style="font-size: 150%"><<print "Olivia">></span>
+<</nobr>>
+
+<<print "Oh god, yes. Seeing you like that, and thinking about how it would keep you from having sex, or even masturbating. Just thinking about how horny it would make me is getting me so wet right now. Oh don’t bother taking it off, it’s another treat from my master.">>
+<img src="Part2/Olivia4.jpg" hspace="10" vspace="10" height="650" align="left">
+
+<<print "It’s not like those keys you have would work anyway. I switched the locks out when you were trying to get it on. The ones you just locked on there aren’t the ones from the box you tested first, they are ones my master gave me. Ones only he has the key to. Don’t worry, like I said earlier, you’ll get to meet him in a couple weeks.">>
+
+<<print "I’m sorry I tricked you like that, but really it’s for your own good. So many of the new X-Change girls run around like crazy their first couple weeks. You wouldn’t believe how many are pregnant at their first monthly check-up!">>
+
+<<print "He didn’t say it, but I think he also wanted you in the belt so you’d be more willing to obey when you meet him. I know from experience, a couple weeks of not getting off and you’ll do just about anything he asks for a chance at an orgasm.">>
+
+<<print "But trust me, that’s a good thing. He’ll take very good care of you. ">>[[Well, lets go. We have one more stop to make.|Olivia5]]
+
+::Olivia5 <800,1000>
+<<nobr>>
+	<<set $PlayerPiercedSet = 1>>
+	<<set $PlayerEarsRegular = 1>>
+	<<set $PlayerPiercedBreasts = 1>>
+	<<set $PlayerPiercedSet = 1>>
+	
+	<span style="font-size: 150%"><<print "Olivia">></span>
+<</nobr>>
+
+<<print "We’ll get your ears pierced from the gift card, but master also told me to get your nipples pierced too. It’s technically your choice, but if you want any chance of getting that belt off when you meet him, you don’t want to start disobeying him already.">>
+<img src="Part2/Olivia5.jpg" hspace="10" vspace="10" height="650" align="left">
+
+<<print "They look so hot on you! And you might not have noticed yet, but those bars have little weights in them. They’ll gently vibrate as you move around. Mine have that too. It feels amazing!">>
+
+<<print "You’ll probably get wet just walking to class.">>
+
+<<print "And like the piercer said, you’ll want to keep them in for a while. ">>[[But It’s not like you have a choice.|EndPart2]]<<print " Those need a special tool to take off, and he’s sending that directly to master, not home with us.">>
