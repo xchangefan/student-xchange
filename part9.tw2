@@ -40,7 +40,17 @@
 
 <<print "Why would you need some sorority to help with that.">>
 
-<<if $PlayerPregnant>>[[You should go for another doctor visit.|Part95Start1]]<<else>>[[Continue.|Part10Start]]<</if>>
+<<nobr>>
+	<<if $PlayerPregnant>>
+		[[You should go for another doctor visit.|Part95Start1]]>>
+	<<elseif $PlayerItemNerdKey>>
+		[[Continue.|Part10StartPeter]]
+	<<elseif $PlayerChastityBelt>>
+		[[Continue.|Part10StartChastity]]
+	<<else>>
+		[[Continue.|Part10Start]]
+	<</if>>
+<</nobr>>
 
 ::Part9Prof1 <200,8925>
 <<nobr>>
@@ -255,7 +265,17 @@
 
 <<print "You already know some of you will be friends for life.">>
 
-<<if $PlayerPregnant>>[[You should go for another doctor visit.|Part95Start1]]<<else>>[[Continue.|Part10Start]]<</if>>
+<<nobr>>
+	<<if $PlayerPregnant>>
+		[[You should go for another doctor visit.|Part95Start1]]>>
+	<<elseif $PlayerItemNerdKey>>
+		[[Continue.|Part10StartPeter]]
+	<<elseif $PlayerChastityBelt>>
+		[[Continue.|Part10StartChastity]]
+	<<else>>
+		[[Continue.|Part10Start]]
+	<</if>>
+<</nobr>>
 
 ::Part9DTF2 <500,9200>
 <<nobr>>
@@ -1122,9 +1142,6 @@
 		<</if>>
 	<</if>>
 <</nobr>>
-
-::Part10Start <0,10725>
-Part 10 coming hopefully soon.
 
 ::Part9Task13b <2000,9825>
 <<nobr>>
