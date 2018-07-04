@@ -1,19 +1,151 @@
 ::Part10StartPeter
-TODO Text
-TODO Image
-TODO Go to [[Part10StartChastity|Part10StartChastity]] or [[Part10Start|Part10Start]]
+<<nobr>>
+	<span style="font-size: 150%"><<print "Peter's Key">></span>
+<</nobr>>
+
+<img src="Part10/Keyholder.jpg" hspace="10" vspace="10" height="400" align="left">
+
+<<print "It’s the start of February, and you realize you haven’t let Peter cum at all this year yet.  Once a week, you’ve unlocked him though.  But it’s just been for a tease before locking him back up again.">>
+
+<<print "You had planned to let him cum today.  But when you realized Valentine’s Day is only a few weeks away, you decided to wait until then instead.">>
+
+<<if $PlayerChastityBelt>>
+[[Continue.|Part10StartChastity]]
+<<else>>
+  <<print "Of course he’s still taking care of your needs whenever you ask.">>
+  [[Continue.|Part10Start]]
+<</if>>
 
 ::Part10StartChastity
-TODO Text
-TODO Image
-TODO Go to [[Part10Start]]
+<<nobr>>
+<<if $VeronicaKey>>
+  <<set $KeyholderPronoun = "she">>
+  <<set $KeyholderName = "Veronica">>
+<<elseif $AndrewKey>>
+  <<set $KeyholderPronoun = "he">>
+  <<set $KeyholderName = "Andrew">>
+<<elseif $JoshKey>>
+  <<set $KeyholderPronoun = "he">>
+  <<set $KeyholderName = "Josh">>
+<<elseif $ProfessorKey>>
+  <<set $KeyholderPronoun = "he">>
+  <<set $KeyholderName = "Daddy">>
+<<elseif $KateKey>>
+  <<set $KeyholderPronoun = "she">>
+  <<set $KeyholderName = "Mistress">>
+<<else>>
+  <<set $MasterKey = 1 >>
+  <<set $KeyholderPronoun = "he">>
+  <<set $KeyholderName = "Master">>
+<</if>>
+<</nobr>>
+
+<<if $MasterKey>>
+  You haven't been able to cum since Oliva put this belt on you, and you're horny all the time! \
+  She said her master might be generous around Valentine's day, but that's weeks away!  If he \
+  even lets you out then!
+
+  You are always willing to give someone else an orgasm.  Though making a beautiful woman write \
+  on the floor in exstacy would make anyone happy.  But you can't help but also feel a bit of \
+  jealous, wondering when you'll have a chance
+
+  <img src="Part10/ChastityFemaleKH.jpg" hspace="10" vspace="10" height="400" >
+
+  <img src="Part10/ChastityMaleKH.jpg" hspace="10" vspace="10" height="400" align="left">
+  Of course, you also love the feel of a guy's cock as it twitches then fills your mouth with \
+  it's warm cum.  Though you always feel an ache inside, as your body tries to tell you where \
+  it'd rather have that cock.
+
+  [[Continue.|Part10Start]]
+<<else>>
+  <<print $KeyholderName + " hasn’t let you cum in weeks and you’re horny all the time now!  You think " + $KeyholderPronoun + " might be making you wait until Valentine’s Day a few weeks from now.  God, you hope " + $KeyholderPronoun + " won’t make you wait any longer than that.  But you know better than to beg for release.">>
+
+  <<if $KeyholderPronoun eq "he">>
+    <img src="Part10/ChastityMaleKH.jpg" hspace="10" vspace="10" height="400" align="left" />
+    <<print "You are always willing to give him an orgasm though.  Feeling him fill your mouth when he cums makes you so happy.  But it also makes you ache for when you’ll be able to cum again too.">>
+  <<else>>
+    <img src="Part10/ChastityFemaleKH.jpg" hspace="10" vspace="10" height="400" align="left" />
+    <<print "You are always willing to give her an orgasm though.  Seeing her writhe on the floor as she cums would make anyone happy.  But it also makes you ache for when you’ll be able to cum again too.">>
+  <</if>>
+
+  [[Continue.|Part10Start]]
+<</if>>
 
 ::Part10Start
-TODO Text (Credit Card)
-TODO Image
-TODO Go to [[Part10Disability]], [[Part10LivingTogether]], [[Part10StripPregnant]], [[Part10StripAlready]], [[Part10ExtraMoney]], or [[Part10Responsible]]
+<img src="Part10/PayingBills.jpg" hspace="10" vspace="10" height="400" />
+
+You got the email about your credit card statement days ago, but you’ve just been leaving it \
+in your inbox unopened.
+
+<<if $PlayerMoney gte 0 >>
+  Your due date is still a couple weeks away, but you want to make sure you don't forget it.  \
+  You've mainly just been using the card for shopping online occasionally anyway, and you've \
+  been careful to leave enough asside to pay it in full every month.
+
+  That's what you do this time too.  You click on the "Pay Current Balance" button, and \
+  then forget about it for another month.
+
+  <<set $NeedSideJob to 0>>
+<<else>>
+  Today though you’ve decided to try to act like an adult and quit ignoring it or hiding from \
+  it, and open it.
+
+  <<set $NeedSideJob to 1>>
+<</if>>
+
+<<if $PlayerPregnant and $JobAthlete>>
+  You've been putting it off, but you know it's probably time to [[let your coach know|Part10Disability]] \
+  about your pregnancy.
+  <<set $NeedSideJob to 1>>
+<<elseif $PlayerPregnant and $JobStripper>>
+  You were pregnant when you started at the strip club, so you knew it wouldn't last long. Now that \
+  you've stared to show, you'll [[have to stop|Part10StripPregnant]], at least for now.  The extra \
+  money had been nice though.
+<<elseif $RoommateAndrew>>
+  <<set $NeedSideJob to 0>>
+  <<if $PlayerMoney lt 0>>
+    Now that you aren't paying for a dorm, and Andrew is [[paying the rent|Part10LivingTogether]], \
+    you haven't been using your credit card bill as much.  You should have the balance you'd ran up \
+    payed off pretty soon.
+  <</if>>
+  Since you're living with Andrew now
+<<elseif $DatingProfessor>>
+  <<set $NeedSideJob to 0>>
+  <<if $PlayerMoney lt 0>>
+    Daddy helped you set up a budget, so you've stopped running up your credit card bill every \
+    month and started paying it down.  Making a budget is a lot easier with Daddy \
+    [[taking care of most of your expenses|Part10LivingTogether]] though.
+  <</if>>
+<<elseif $JobStripper>>
+  <<set $NeedSideJob to 0>>
+  Since you started [[dancing at strip club|Part10StripAlready]], you've had much more money coming \
+  in, so you have more than enough to cover your credit card bill.
+<<elseif $NeedSideJob>>
+  You click on the "Pay Minimum Payment" box again.  You are a bit worried as you know the \
+  total balance keeps going up and up, and the "Available Credit" keeps dropping.  You can't keep \
+  going like this every month, your card will be maxed out soon.  You're going to need to find a way \
+  to [[get more money coming in|Part10ExtraMoney]].
+<<else>>
+  If makes you feel like a real adult, [[paying your bills off|Part10Responsible]] ahead of time.
+<</if>>
 
 ::Part10Disability
+TODO
+<img src="Part10/CoachTalk.jpg" hspace="10" vspace="10" height="400" />
+You realize that you’re not going to be able to compete or cheer much longer, you go talk to the
+athletic director about sitting out the rest of the year.  You are worried you might lose your scholarship
+or stipend, maybe even have to drop out.  But you are relieved to hear that they can put you on the
+temporary disability list for the rest of the semester.
+
+You won’t be getting as much money as you were before, but at least it’s something.  One downside
+though is that you aren’t allowed to work another job if you want to get the disability payments.  At
+least not any official job, that is.
+
+But you still need more than you have coming in to make ends meet.  If you’d started working at the
+strip club, then you have to put that on hold too for now.
+
+If you’ve moved in with Andrew or your “Daddy” Aaron, then go to “Living Together”, otherwise go to
+“Extra Money”
 TODO Text
 TODO Image
 TODO Go to [[Part10LivingTogether]], [[Part10StripPregnantDisability]], or [[Part10ExtraMoney]]
@@ -35,49 +167,134 @@ TODO Image
 TODO Go to [[Part10End]] or [[Part10ExtraMoney]]
 
 ::Part10StripPregnant
+If you started working at the strip club after
+visiting there on amateur night, then skip to
+“Strip Club”.  (Unless you’re pregnant, in
+which case you decide to put that job on
+hold, at least until after the baby is born.)
 TODO Text
 TODO Image
-TODO Go to ???
+TODO Go to [[Part10ExtraMoney]]
 
 ::Part10StripPregnantDisability
 TODO Text
 TODO Image
-TODO Go to ???
+TODO Go to [[Part10ExtraMoney]]
 
 ::Part10ExtraMoney
-TODO Text
-TODO Image
-TODO Go to [[Part10ExtraMoneyCallGirl]], [[Part10ExtraMoneyCallGirlAlready]], or [[Part10ExtraMoney2]]
+You start trying to think of ways to earn a little extra money on the side.
+
+<img src="Part10/CallGirl1.jpg" hspace="10" vspace="10" height="400" align="left" />
+
+<<if $MentorHannah>>
+  Hannah had offered to help get you started as a call girl.  You know Hannah is never \
+  short on money, and she seems to love her job.  You weren't interested when she \
+  suggested it back at the begining of the school year, but you've changed quote a \
+  bit since then.
+<<else>>
+  Hannah, one of the other X-Change mentors, mentioned to you at one of the X-Change \
+  support group meetings her job as a call girl.  You were curious about what it was \
+  like for her, so you talked to her in private about it after the meeting.  She said \
+  she could always help you get started with the same agency if you were interested.
+<</if>>
+
+You can [[take Hannah up on her offer|Part10ExtraMoneyCallGirl]] or you \
+can [[try to think of something else|Part10ExtraMoney2]].
+
+TODO Handle when already a call girl
 
 ::Part10ExtraMoneyCallGirl
+TODO Handle Call girl when pregnant
 TODO Text
 TODO Image
 TODO Go to [[Part10CallGirl]]
 
 ::Part10ExtraMoneyCallGirlAlready
+If you are already working as a
+call girl, then you could start seeing
+more clients than you have been
+to make a bit more.
+TODO Handle Call girl when pregnant
 TODO Text
 TODO Image
 TODO Go to [[Part10CallGirl]]
 
 ::Part10ExtraMoney2
-TODO Text
-TODO Image
-TODO Go to [[Part10WebModel]], or [[Part10ExtraMoney3]]
+<img src="Part10/WebModel.jpg" hspace="10" vspace="10" height="400" align="left" />
+<<if $MentorOlivia>>
+Olivia had mentioned to you about a job modellling for her master's website.  But \
+you know she finished with that quite a while ago, so you assume that's out of the \
+question now.
+
+You'll just have to keep thinking to see if you [[have any other ideas|Part10ExtraMoney3]].
+<<else>>
+You remember one of the other girls from the X-Change support group mentioning a \
+web modelling job that her mentor had got for her.  You could [[give Olivia a call|Part10WebModel]] \
+to see if that's still available.  Or you see if you can [[think of anything else|Part10ExtraMoney3]].
+<</if>>
 
 ::Part10ExtraMoney3
-TODO Text
-TODO Image
-TODO Go to [[Part10StripHire]], or [[Part10StudentLoanReconsider]]
+<img src="Part10/StripClub1.jpg" hspace="10" vspace="10" height="400" align="left" />
+You’ve seen the strip club in town.  Maybe you’ve even paid it a visit before.  You wonder how much \
+you could make a night working there.
+
+<<if $PlayerPregnant>>
+<<nobr>>
+Of course, that's really not an option in your current condition.
+<<if $JobAthlete>>Besides, if you weren't pregnant, it wouldn't be allowed while you were on disability leave.<</if>>
+<</nobr>>
+You'll have to try to [[think of something else|Part10StudentLoanReconsider]].
+<<elseif $PlayerChastityBelt>>
+  <<if $VeronicaKey>>
+    Veronica is skeptical at first.  She's not real excited aobu the thought of you grinding on top of strange \
+    men.  And she's heard that sometimes much more than that goes on too.
+
+    After you promise that it'll just be dancing, nothing more, she says she'll unlock your belt if you want \
+    to [[go in for an interview|Part10StripHire]].  Or you can \
+    [[see if you can think of anything else|Part10StudentLoanReconsider]].
+  <<else>>
+    You dismiss that idea of course.  Stripping is rather difficult when your clothes are locked on and you \
+    don't have the key.  Well, not all your clothes.  But the chastity belt certainly prevents you from \
+    showing your customers all that they'd want to see.  You'll have to \
+    [[come up with another idea|Part10StudentLoanReconsider]].
+  <</if>>
+<<else>>
+You can put on something sexy, and head down there to [[see about getting a job|Part10StripHire]].  Or, you \
+can see if you can [[come up with any other ideas|Part10StudentLoanReconsider]]
+<</if>>
 
 ::Part10StudentLoanReconsider
-TODO Text
-TODO Image
-TODO Go to ??? 
+<img src="Part10/StudentLoan.jpg" hspace="10" vspace="10" height="400" align="left" />
+You are out of ideas.  Well, except for the one that you’d been hoping to avoid: \
+student loans.
+
+<<if $NeedSideJob>>
+  You know it’ll make things easier now, but you also know you’ll be paying it back \
+  for years and years.  Maybe those other ideas weren’t so bad after all.
+
+  You can [[change your mind|Part10ExtraMoney]] and pick one of the options you rejected.  \
+  Or you can [[decide to get the loan|Part10StudentLoan]].
+<<else>>
+  You don't really need the money.  You aren't going to sign up for a student loan now, \
+  after you've worked so hard to stay out of debt.
+
+  You can [[change your mind|Part10ExtraMoney]] about one of the jobs you already rejected, \
+  or you can just [[forget about the extra money|Part10End]], and think about something else \
+  besides money.
+<</if>>
 
 ::Part10StudentLoan
-TODO Text
-TODO Image
-TODO Go to [[Part10End]]
+<img src="Part10/StudentLoan.jpg" hspace="10" vspace="10" height="400" align="left" />
+You stop by the financial aid office, and fill out the paper-work.  It takes a few weeks \
+before the money comes in, but you’re able to pay off your credit card bill when it does.
+
+You don’t have much left over after that, so you know you’ll be in the same situation \
+when next semester starts and will be needing to visit the financial aid office again then.
+
+Paying back the money is future-you's problem.  Today, you're happy you aren't living on
+the financial edge anymore.
+
+Now you can [[think about something more fun|Part10End]].
 
 ::Part10CallGirl
 TODO Text
@@ -230,6 +447,26 @@ TODO Image
 TODO Go to [[Part10End]]
 
 ::Part10End
+You keep checking to
+see how many days it
+is until Valentine’s Day.
+
+It can’t seem to come
+soon enough.
+
+Maybe it’s because
+you are hoping to
+spend it with
+someone special.
+
+Or maybe you are just
+ready for the stores to
+stop bombarding you
+with ads about the cute
+dresses you should buy.
+
+Though it’s probably
+a bit of both.
 TODO Text
 TODO Image
 TODO Go to [[Part11Start]]
