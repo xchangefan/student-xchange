@@ -52,15 +52,14 @@ weeks away, you decided to wait until then instead.
     even lets you out then!
   <</nobr>>
 
-  <img src="Part10/ChastityFemaleKH.jpg" hspace="10" vspace="10" height="400" align="left">
+  <img src="Part10/ChastityFemaleKH.jpg" hspace="10" vspace="10" height="600" >
   <<nobr>>
     You are always willing to give someone else an orgasm.  Though making a beautiful woman write
-    on the floor in exstacy would make anyone happy.  But you can't help but also feel a bit of
+    on the floor in exstacy would make anyone happy.  But you can't help but also feel a bit
     jealous, wondering when you'll have a chance
   <</nobr>>
 
-  <img src="Part0/none.png" hspace="10" vspace="10" height="300">
-  <img src="Part10/ChastityMaleKH.jpg" hspace="10" vspace="10" height="400" align="left">
+  <img src="Part10/ChastityMaleKH.jpg" hspace="10" vspace="10" height="600" align="left">
 
   <<nobr>>
     Of course, you also love the feel of a guy's cock as it twitches then fills your mouth with
@@ -98,10 +97,14 @@ weeks away, you decided to wait until then instead.
 You got the email about your credit card statement days ago, but you’ve just been leaving it in your inbox unopened.
 
 <<nobr>>
+  <<if $PlayerPregnant or $PlayerChastityBelt>>
+    <<set $cantWorkStripper to 1>>
+  <</if>>
+
   <<if $PlayerMoney gte 0 >>
     Your due date is still a couple weeks away, but you want to make sure you don't forget it.
     You've mainly just been using the card for shopping online occasionally anyway, and you've 
-    been careful to leave enough asside to pay it in full every month. That's what you do this
+    been careful to leave enough aside to pay it in full every month. That's what you do this
     time too.  You click on the "Pay Current Balance" button, and then forget about it for
     another month.
 
@@ -152,8 +155,8 @@ You got the email about your credit card statement days ago, but you’ve just b
     Working as a call girl works out great for you.  How many hours you work or how many clients
     you want to see each week, is always up to you.  Whether money is running low, you want some
     extra cash to spurge on something nice, or you just want to make as much as you can to save
-    for the future, the answer is the same.  It just takes a quick call to your agency letting
-    them know to send you a [[few more clients|Part10CallGirlAlready]] this week. 
+    for the future, the answer is the same. All it takes to give yourself a raise is
+    [[one little phone call|Part10CallGirlAlready]].
   <<elseif $JobStripper>>
     <<set $NeedSideJob to 0>>
     Since you started [[dancing at strip club|Part10StripAlready]], you've had much more money coming
@@ -249,55 +252,56 @@ that’s what you had in mind anyway.
 [[Continue|Part10End]]
 
 ::Part10Responsible
-<img src="Part10/Responsible.jpg" hspace="10" vspace="10" height="400" />
-Maybe you’ve been thrifty,
-saving money when you
-can… however you can.
+<img src="Part10/Responsible.jpg" hspace="10" vspace="10" height="800" align="left"/>
 
+<<nobr>>
+  Maybe you’ve been thrifty, saving money when you can… however you can.  Or maybe your job just
+  pays well enough that money hasn’t been a big problem for you.  Either way, you've been living
+  within your means, and paying off your credit card bill in full every month.  You've even put
+  aside enough for the occasional new outfit.
+<</nobr>>
 
-Or maybe your job just
-pays well enough that
-money hasn’t been a big
-problem for you.
-
-
-You’ve been living within
-your means, and paying
-off your credit card bill in
-full every month.  You
-even put aside enough for
-the occasional new outfit.
-
-
-If you decide to keep going
-like you have been, then
-you can skip to “Waiting for
-Valentines Day”.
-
-
-If you’d rather earn a little
-extra money on the side,
-either to save or to spend,
-then you can Continue to
-“Extra Money”.
-TODO Text
-TODO Go to [[Part10End]] or [[Part10ExtraMoney]] or [[Part10CallGirlAlready]]
+<<nobr>>
+  You could just [[keep going like you have been|Part10End]].  Though it might be nice to have
+  a [[some extra money|Part10ExtraMoney]] to splurge now and then, or even just to save for
+  a rainy day.
+<</nobr>>
 
 ::Part10StripPregnant
+<<set $JobStripper to 0>>
+<<set $ExStripper to 1>>  
 <img src="Part10/StripClub1.jpg" hspace="10" vspace="10" height="600" align="left" />
-If you started working at the strip club after
-visiting there on amateur night, then skip to
-“Strip Club”.  (Unless you’re pregnant, in
-which case you decide to put that job on
-hold, at least until after the baby is born.)
-Mention disability if relevant
-TODO Text
-TODO Go to [[Part10ExtraMoney]]
+
+<<nobr>>
+  You've were pregnant when you started at the strip club, so you knew it was only
+  going to be for a little while.  It's hard to hide a baby bump when your clothes
+  are in a pile next to you.
+  <<if $JobAthlete>>
+    Besides that, it wouldn't be allowed while you were on disability leave.
+  <</if>>
+  You realize it's time to put your dancing on hold at least until after the baby
+  is born.
+<</nobr>>
+
+<<nobr>>
+  <<if $JobCallGirl or $JobCallGirlSide>>
+    You didn't actually get that much money working at the club anyway compared
+    to your other job.  It was a nice place to find clients though.  Anytime
+    a horny guy would ask for 'extras' while getting a dance, you could just
+    tell him to give the agency a call and book you at your other job.  But
+    it's not like you'll be running short of clients any time soon, so
+    [[you aren't worried|Part10End]].
+  <<else>>
+    Of course, you'd gotten used to that money coming in.  You're going to
+    have to figure out some way to make some [[extra money|Part10ExtraMoney]]
+    to make up for it.
+  <</if>>
+<</nobr>>
 
 ::Part10ExtraMoney
 You start trying to think of ways to earn a little extra money on the side...
 
-<img src="Part10/CallGirl1.jpg" hspace="10" vspace="10" height="400" align="left" />
+<img src="Part10/CallGirl1.jpg" hspace="10" vspace="10" height="800" align="left" />
 
 <<nobr>>
   <<if $MentorHannah>>
@@ -313,8 +317,16 @@ You start trying to think of ways to earn a little extra money on the side...
   <</if>>
 <</nobr>>
 
-You can [[take Hannah up on her offer|Part10CallGirlStart]] or you \
-can [[try to think of something else|Part10ExtraMoney2]].
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    Of course, it be rather difficult to be a call girl with this belt locked on you.
+    You doubt that Hannah's agency would want to deal with a girl who is only able to
+    give blowjobs and handjobs.  You'll have to [[think of something else|Part10ExtraMoney2]].
+  <<else>>
+    You can [[take Hannah up on her offer|Part10CallGirlStart]] or you
+    can [[try to think of something else|Part10ExtraMoney2]].
+  <</if>>
+<</nobr>>
 
 ::Part10CallGirlStart
 <video src="Part10/CallGirl2.mp4" autoplay loop muted height="640"></video>
@@ -331,29 +343,61 @@ can [[try to think of something else|Part10ExtraMoney2]].
 <</nobr>>
 
 ::Part10CallGirlAlready
-<video src="Part10/CallGirl2.mp4" autoplay loop muted height="640"></video>
-If you are already working as a
-call girl, then you could start seeing
-more clients than you have been
-to make a bit more.
-TODO Handle Call girl when pregnant
-TODO Text
-TODO Go to [[Part10CallGirl]]
+<<set $JobCallGirl to 1>><<set $JobCallGirlSide to 0>>
+<<if $PlayerPregnant>>
+  <img src="Part10/CallGirlPregnant.jpg" hspace="10" vspace="10" height="600" />
+
+  <<nobr>>
+    You let your agency know about your pregnancy. You're worried that they won't be sending many
+    clients your way now.  But they let you know that they actually get quite a few men that specifically
+    request a pregnant woman, and they especially like a college-aged girl.
+  <</nobr>>
+
+  <<nobr>>
+    You are also worried you might lose some of your regular clients for a while too.  But they keep coming
+    back.  You think they each imagine that the baby is theirs.  Who knows, maybe one of them is right.
+  <</nobr>>
+
+  <<nobr>>
+    A few potential new clients choose someone else, but for most of the others, you are a
+    [[warm, wet place to put their cock|Part10CallGirl]] and they don't care whether you are
+    pregnant or not.
+  <</nobr>>
+<<else>>>
+  <video src="Part10/CallGirl2.mp4" autoplay loop muted height="640"></video>
+
+  <<nobr>>
+    You give your agency a call and let them know you'd like them to send more clients your way.  They
+    are happy to do so.
+  <</nobr>>
+
+  <<nobr>>
+    Some of their girls are unwilling to provide some 'services' that clients want. But the agency knows
+    that they can send them to you and the client will be able to get exactly [[what he wants|Part10CallGirl]].
+  <</nobr>>
+<</if>>
+
 
 ::Part10ExtraMoney2
-<img src="Part10/WebModel.jpg" hspace="10" vspace="10" height="400" align="left" />
+<img src="Part10/WebModel.jpg" hspace="10" vspace="10" height="600" align="left" />
 
-<<if $MentorOlivia>>
-Olivia had mentioned to you about a job modellling for her master's website.  But \
-you know she finished with that quite a while ago, so you assume that's out of the \
-question now.
-
-You'll just have to keep thinking to see if you [[have any other ideas|Part10ExtraMoney3]].
-<<else>>
-You remember one of the other girls from the X-Change support group mentioning a \
-web modelling job that her mentor had got for her.  You could [[give Olivia a call|Part10WebModel]] \
-to see if that's still available.  Or you see if you can [[think of anything else|Part10ExtraMoney3]].
-<</if>>
+<<nobr>>
+  <<if $MentorOlivia>>
+    Olivia had mentioned to you about a job modellling for her master's website.  But
+    you know she finished with that quite a while ago, so you assume that's out of the
+    question now. You'll just have to
+  <<else>>
+    You remember one of the other girls from the X-Change support group mentioning a
+    web modelling job that her mentor had got for her.  You could [[give Olivia a call|Part10WebModel]]
+    to see if that's still available.  Or you can
+  <</if>>
+  keep thinking to see if you
+  <<if $ExStripper>>
+    [[have any other ideas|Part10StudentLoanReconsider]].
+  <<else>>
+    [[have any other ideas|Part10ExtraMoney3]].
+  <</if>>
+<</nobr>>
 
 ::Part10ExtraMoney3
 <img src="Part10/StripClub1.jpg" hspace="10" vspace="10" height="400" align="left" />
@@ -368,21 +412,16 @@ to see if that's still available.  Or you see if you can [[think of anything els
     <<if $JobAthlete>>
       Besides, even if they wanted a pregnant dancer, it wouldn't be allowed while you were on disability leave.
     <</if>>
-    <<set $cantWorkStripper to 1>>
   <<elseif $PlayerChastityBelt>>
     <<if $VeronicaKey>>
       Veronica is skeptical at first.  She's not real excited aobu the thought of you grinding on top of strange
       men.  And she's heard that sometimes much more than that goes on too.  After you promise that it'll just be
       dancing, nothing more, she says she'll unlock your belt if you want to give it a try.
-      <<set $cantWorkStripper to 0>>
     <<else>>
       You dismiss that idea of course.  Stripping is rather difficult when your clothes are locked on and you
       don't have the key.  Well, not all your clothes.  But the chastity belt certainly prevents you from
       showing your customers all that they'd want to see.
-      <<set $cantWorkStripper to 1>>
     <</if>>
-  <<else>>
-    <<set $cantWorkStripper to 0>>
   <</if>>
 <</nobr>>
 
@@ -409,8 +448,8 @@ to see if that's still available.  Or you see if you can [[think of anything els
 <</nobr>>
 
 <<nobr>>
-  <<if $NeedSideJob>>
-    If you really wan to go through with it, you can
+  <<if $NeedSideJob or $ExStripper>>
+    If you really want to go through with it, you can
     [[head over to the financial aid office|Part10StudentLoan]].  But is that really what
     you want to do?
   <<else>>
@@ -420,23 +459,30 @@ to see if that's still available.  Or you see if you can [[think of anything els
 <</nobr>>
 
 <<nobr>>
-  You could always change your mind and talk to Hannah about working as a [[call girll|Part10CallGirlStart]]
-  <<if $MentorOlivia || $cantWorkStore>>
-    .
-  <<elseif $refusedBelt>>
-    or you could go back to the store and tell Master Robert you've reconsidered and that you will wear that
-    chastity belt and [[work at the store|Part10WebModel4]].  A little horniness now is better than years of
-    debt, right?
+  <<if $PlayerChastityBelt and $MasterKey>>
+    You realize your only option to earn extra money is if Olivia's master will hire you.  You can
+    [[double check with her|Part10WebModel]] about openings.
+  <<elseif $PlayerChastityBelt>>
+    You realize you don't really have any options for extra income with the chastity belt locked on you.
   <<else>>
-    or you could ask Olivia about [[that modelling job|Part10WebModel]].
+    You could always change your mind and talk to Hannah about working as a [[call girl|Part10CallGirlStart]]
+    <<if $MentorOlivia or $cantWorkStore>>
+      .
+    <<elseif $refusedBelt>>
+      or you could go back to the store and tell Master Robert you've reconsidered and that you will wear that
+      chastity belt and [[work at the store|Part10WebModel4]].  A little horniness now is better than years of
+      debt, right?
+    <<else>>
+      or you could ask Olivia about [[that modelling job|Part10WebModel]].
+    <</if>>
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  <<if !$cantWorkStripper>>
+  <<if !$cantWorkStripper and !$ExStripper>>
     You could also get a job dancing at the [[strip club|Part10StripHire]] if you wanted.
   <</if>>
-  <<if !$NeedSideJob>>
+  <<if !$NeedSideJob and !$ExStripper>>
     Of course, just [[forgetting about the extra money|Part10End]] is an option too.  You don't
     really need it.
   <</if>>
@@ -499,13 +545,21 @@ Now you can [[think about something more fun|Part10End]].
 <</nobr>>
 
 <<nobr>>
-  But until then, it’s [[back to school|Part10End]] and your other clients when the trip is
-  over.  You may not be a rich trophy wife, but at least money is a problem for you now.
+  But until then, it’s [[back to school|Part10End]] and your other clients when the trip is over.
+  You may not be a rich trophy wife...yet, but at least money isn't a problem for you now.
 <</nobr>>
 
 ::Part10WebModel
-<img src="Part10/Store1.jpg" hspace="10" vspace="10" height="400" align="left" />
-You get Olivia’s number and give her a call.
+<img src="Part10/Store1.jpg" hspace="10" vspace="10" height="600" />
+
+<<nobr>>
+  <<if $MentorOlivia>>
+    Desperate for money, you reluctantly ask Olivia if her Master has any modelling openings still available.
+  <<else>>
+    You get Olivia’s number and give her a call.
+  <</if>>
+<</nobr>>
+
 <<nobr>>
   You’re disappointed to hear that most of the modeling work is done.  But she
   says new things come in all the time, and her “Master” likes new and eager
@@ -521,9 +575,12 @@ You get Olivia’s number and give her a call.
 <</nobr>>
 
 ::Part10WebModel2
-<img src="Part10/Store2.jpg" hspace="10" vspace="10" height="400" align="left" />
+<img src="Part10/Store2.jpg" hspace="10" vspace="10" height="600" />
 <<nobr>>
-  Master Robert (you are expected to call him that at work, even if he isn’t your Master)
+  Master Robert
+  <<if !$PlayerChastityBelt or !$MasterKey>>
+    (you are expected to call him that at work, even if he isn’t your Master)
+  <</if>>
   lets you know that there’s not much modeling work right now.  He can certainly use you,
   but it’d only be a few hours a week and so not much money, but it’d be in cash and you’d
   usually get to keep what you model.
@@ -533,19 +590,31 @@ You get Olivia’s number and give her a call.
   He can see your disappointment, and tells that there’s another opening working in the
   store that he thinks you’d be perfect for.  As you look at all the products they sell
   here, working as a clerk sounds like it might be interesting.  He says this job pays in
-  cash too, which sounds great to you.  There’s [[just one catch...|Part10WebModel3]]
+  cash too, which
+  <<if $PlayerChastityBelt and $MasterKey>>
+    [[sounds great to you|Part10WebModel3]].
+  <</else>>
+    sounds great to you. There’s [[just one catch...|Part10WebModel3]]
+  <</if>>
 <</nobr>>
 
 ::Part10WebModel3
-<img src="Part10/Store3.jpg" hspace="10" vspace="10" height="400" align="left" />
+<img src="Part10/Store3.jpg" hspace="10" vspace="10" height="800" align="left" />
 <<nobr>>
-  After hearing the other girls talk at the X-Change meetings, you’re not particularly
-  shocked to find that Master Robert will require you to wear a chastity belt if you
-  are going to work here.
+  <<if $PlayerChastityBelt and $MasterKey>>
+    You'll, of course, still be locked in the chastity belt while at work.  But you
+    hope that maybe if you [[work for him at the store|Part10WebModel5]], he might let you out every
+    now and then.  Maybe if he needs to test out some new toy...
+  <<else>>
+    After hearing the other girls talk at the X-Change meetings, you’re not particularly
+    shocked to find that Master Robert will require you to wear a chastity belt if you
+    are going to work here.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerChastityBelt>>
+  <<if $PlayerChastityBelt and $MasterKey>>
+  <<elseif $PlayerChastityBelt>>
     Robert smiles when you lift up your skirt to show the belt you already wear.  He is
     happy that you are securely belted, but there is no way $KeyholderName is going to
     hand over the key to Robert, nor would you want $KeyholderPronoun to.
@@ -560,13 +629,15 @@ You get Olivia’s number and give her a call.
     <<set $cantWorkStore to 1>>
   <<elseif $JobCallGirl or $JobCallGirlSide>>
     You couldn't very well keep working as a call girl if you were locked in a chastity
-    belt, and that job pay much better than this one would.
+    belt, and that job pays much better than this one would.
     <<set $cantWorkStore to 1>>
   <<else>>
     <<set $cantWorkStore to 0>>
   <</if>>
 <</nobr>>  
-<<if $cantWorkStore>>Since this job isn't going to work for you, you'll have to [[think of something else|Part10ExtraMoney3]].
+
+<<if $PlayerChastityBelt and $MasterKey>>
+<<elseif $cantWorkStore>>Since this job isn't going to work for you, you'll have to [[think of something else|Part10ExtraMoney3]].
 <<else>>
   <<nobr>>
     You try to negotiate, and see if it could be just a uniform at work, that you can take off
@@ -599,9 +670,9 @@ You get Olivia’s number and give her a call.
       You stop for a moment to think about whether you want to [[agree to wear the belt|Part10WebModel4]].
       You've already decided against taking out a student loan, so your only other
       <<if $cantWorkStripper>>
-        option for extra money is to talk to Hannah about working as a [[call girll|Part10CallGirlStart]].
+        option for extra money is to talk to Hannah about working as a [[call girl|Part10CallGirlStart]].
       <<else>>
-        options for extra money are to talk to Hannah about working as a [[call girll|Part10CallGirlStart]] or to
+        options for extra money are to talk to Hannah about working as a [[call girl|Part10CallGirlStart]] or to
         start dancing at the [[strip club|Part10StripHire]].
       <</if>>
       <<if !$NeedSideJob>>
@@ -618,6 +689,8 @@ You get Olivia’s number and give her a call.
 <</if>>
 
 ::Part10WebModel4
+<<set $PlayerChastityBelt to 1>>
+<<set $MasterKey to 1>>
 <img src="Part10/Store4.jpg" hspace="10" vspace="10" height="600" align="left" />
 <<nobr>>
   He says you won’t be starting work for a couple days, so you are planning on spending that time
@@ -656,15 +729,19 @@ You get Olivia’s number and give her a call.
 
 <<nobr>>
   You’re expecting to be working behind the counter, but you find out that is Olivia’s job.  Your
-  job is cleaning out the booths.  The back of the store has video booths.  Guys go back there
-  and watch porn and jerk off.  You wonder why they don’t just do it at home for free like
-  normal people, but it doesn’t matter.
+  job is cleaning out the booths.  The back of the store has video booths where guys go to watch
+  porn and jerk off.  You wonder why they don’t just do it at home for free like normal people,
+  but it doesn’t matter.
 <</nobr>>
 
 <<nobr>>
-  As you start cleaning the disgusting mess in one of the booths you think about how little
-  you are getting paid for this, especially with part of your pay going to pay back the advance
-  and part going to pay for the cost of the belt.
+  As you start cleaning the disgusting mess in one of the booths, you think about how little
+  you are getting paid for this, especially with part of your pay going to pay back the
+  <<if $MentorOlivia>>
+    advance.
+  <<else>>
+     advance and part going to pay for the cost of the belt.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -697,7 +774,7 @@ You get Olivia’s number and give her a call.
 <</nobr>>
 
 ::Part10WebModel6
-<img src="Part10/Store6.jpg" hspace="10" vspace="10" height="600" align="left" />
+<img src="Part10/Store6.jpg" hspace="10" vspace="10" height="800" align="left" />
 <<nobr>>
   After you leave the booth, Olivia tosses you some knee pads from one of
   the displays. She tells you, “You’re going to need these.  The booths will
@@ -706,24 +783,34 @@ You get Olivia’s number and give her a call.
 <</nobr>>
 
 <<nobr>>
-  You wonder if you've made a mistake putting on this belt, but you know that you
-  couldn't back out now, even if you wanted to.  So you just try not to think about
-  it and [[think about something else instead|Part10End]].
+  You wonder if you've made a mistake
+  <<if $MentorOlivia>>
+    coming to work for Master Robert.  But what other option did you have?
+  <<else>>
+    putting on this belt, but you know that you couldn't back out now, even if you wanted to. 
+  <</if>>
+  So you just try not to think about it and [[think about something else instead|Part10End]].
 <</nobr>>
 
 ::Part10StripAlready
-<img src="Part10/StripClub2.png" hspace="10" vspace="10" height="400" align="left" />
-When you first start working at the club, you focus on your dance moves and your pole work.
-You watch some of the other girls when you aren’t on stage to try to learn.
+<img src="Part10/StripClub2.png" hspace="10" vspace="10" height="600" />
+<<nobr>>
+  Nobody expected you to be that skilled on stage back when it was amateur night.  They were just
+  excited to see a beautiful young woman stripping for the first time.  Once you started working
+  at the club for real, the expectations were higher  You did your best to focus on your dance
+  moves and your pole work.  You also frequently watch the other girls when you aren't on stage
+  to try to learn from them.
+<</nobr>>
 
-Well, that’s not the only reason you watch them, you may be a woman now, but they are
-still beautiful and it turns you on watching them.  And you admire how they move even more
-now that you know how difficult it can be.
+<<nobr>>
+  Well, that’s not the only reason you watch them.  You may be a woman now, but they are still
+  beautiful and it still turns you on watching them.  And you admire how they move even more
+  now that you know how difficult it can be.
+<</nobr>>
 
-Thankfully, after a few nights, you are getting better and don’t feel so awkward on stage
-anymore.
-TODO Text
-TODO Go to [[Part10Strip]]
+<<nobr>>
+  Thankfully, you've started [[getting better|Part10Strip]] and don’t feel so awkward on stage anymore.
+<</nobr>>
 
 ::Part10StripHire
 <img src="Part10/StripClub2.png" hspace="10" vspace="10" height="600" />
@@ -1149,7 +1236,7 @@ it when they decide to put the two of you together. The guests always [[love it 
 <</nobr>>
 
 ::Part10End
-<img src="Part10/WaitingVDay.jpg" hspace="10" vspace="10" height="600" align="left" />
+<img src="Part10/WaitingVDay.jpg" hspace="10" vspace="10" height="800" align="left" />
 
 You keep checking to see how many days it is until Valentine’s Day. \
 It can’t seem to come soon enough.
