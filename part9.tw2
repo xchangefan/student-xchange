@@ -1,3 +1,14 @@
+::Part9Start1
+<<nobr>>
+	<span style="font-size: 150%"><<print "Class">></span>
+<</nobr>>
+
+<<print "Classes have started back up and you are making an effort to study harder this term. You do still want to enjoy your time at college though, and you see there’s a big recruitment event coming up for fraternities and sororities. You are considering joining a sorority.">>
+<img src="Part9/Start1.jpeg" hspace="10" vspace="10" height="650">
+
+<<if $AcademicProbation>><<print "You failed a class last semester your GPA dropped too low and you ended up on academic probation. You find out that means you can’t join sororities, or participate in a lot of other activities on campus until you manage to pull your GPA up.">><<else>><<if $PlayerPregnant>>[[You check yourself in the mirror.|Part9Start2]]<<else>><<if $ProfessorNewJob>>[[Daddy has found some jobs you can switch to.|Part9JobSelect]]<<else>>[[Find out more about sororities.|Part9Greek1]]<</if>><</if>><</if>>
+<<if $AcademicProbation>><<print "You can either decide to ">>[[swallow you pride|Part9Prof1]]<<print " and go to the professors office to do whatever it takes to get your grade changed, or">>[[accept that you will be on probation|Part9SororityEndNo]]<<print " and not part of any sorority.">><</if>>
+
 ::Part9Start2 <900,8925>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Bedroom">></span>
@@ -220,19 +231,55 @@
 	<span style="font-size: 150%"><<print "Η Λ Ρ">></span>
 <</nobr>>
 
-<<print "At the charity fashion show, people from around the university bought tickets to the show to watch the girls from the sorority, and even a few guys from your brother fraternity, take turns modeling on stage.">>
+<<nobr>>
+	At the charity fashion show, people from around the university bought tickets to the show to watch the girls from the sorority,
+	and even a few guys from your brother fraternity, take turns modeling on stage.
+<</nobr>>
 
-<<print "The outfits were all donated to the cause by local stores.  In addition to the tickets and other donations people are making, there’s also a silent auction for the clothing items.">>
+<<nobr>>
+	The outfits were all donated to the cause by local stores.  In addition to the tickets and other donations people are making,
+	there’s also a silent auction for the clothing items.
+<</nobr>>
 
-<<print "The casual clothes are easy to find volunteers to model. There’s not much trouble finding someone to wear the formal wear items either. But there’s one item no one is volunteering for, the bikini. You decide to give it a shot.">>
+<<nobr>>
+	The casual clothes are easy to find volunteers to model. There’s not much trouble finding someone to wear the formal wear
+	items either. But there’s one item no one is volunteering for, the bikini.
+	<<if $PlayerChastityBelt>>
+		Thankfully, your keyholder has unlocked you for the evening so you can partcipate in the event, so you decide to give it a shot.
+	<<else>>
+		You decide to give it a shot.
+	<</if>>
+<</nobr>>
 
 <video src="Part9/Eta2.webm" autoplay loop muted height="640"></video>
 
+<<nobr>>
+	You are nervous at first, but once you are up there showing off, you really enjoy it, especially with the crowd cheering you on.
+	<<if $PlayerChastityBelt>>
+		Your mind can help but think about how you are finally unlocked, at least until the show is over.  You could get yourself off
+		right now if only all these people weren't watching you.
+		<<if $PlayerSideEffectExhibitionist>>
+			Of course, thinking of them watching you just turns you on more.  But you remind yourself that this is supposed to be a
+			family-friendly, charity event, and you reluctantly hold back on trying anything.
+		<</if>>
+	<</if>>
+<</nobr>>
 
-<<print "You are nervous at first, but once you are up there showing off, you really enjoy it, especially with the crowd cheering you on.">>
-
-<<print "Later, when they are looking at auction results you see people kept outbidding each other on the bikini, and it’s final price was almost $300, many times more than it would cost at the store.">>
-<<if $DatingAndrew>><br><<print "You find out it was Andrew that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you. And the money was for charity after all, so he didn’t mind paying too much for it.">><br><<else>><<if $DatingProfessor>><br><<print "You find out it was Daddy that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you. And the money was for charity after all, so he didn’t mind paying too much for it.">><br><</if>><</if>>
+<<nobr>>
+	Later, when they are looking at auction results you see people kept outbidding each other on the bikini, and it’s final price was
+	almost $300, many times more than it would cost at the store.
+	<<if $DatingAndrew>>
+		<br>
+		You find out it was Andrew that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you.
+		And the money was for charity after all, so he didn’t mind paying too much for it.
+		<br>
+	<<elseif $DatingProfessor>>
+		<br>
+		You find out it was Daddy that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you.
+		And the money was for charity after all, so he didn’t mind paying too much for it.
+		<br>
+	<</if>>
+<</nobr>>
 [[Attend the team building event the following weekend.|Part9HAP3]]
 
 ::Part9HAP3 <100,9325>

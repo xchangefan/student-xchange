@@ -44,7 +44,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <span style="font-size: 50%">*Please see the enclosed disclosures regarding the risks of your participation including risks of permanency and possibility of side effects. Also enclosed are required financial disclosures regarding compensation the university receives for facilitating the trial.</span>
 </blockquote>
 
-::Start2 <400,0>
+::Start2
 <h1>Freshman Orientation</h1>
 <<nobr>>
 	In a moment, you’ll be asked to sign the disclosure and consent form.  I won’t go over everything again since I’m sure you all closely read the
@@ -142,7 +142,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	You probably want to talk to the athletic department they’ll put your body to use, and help you keep it fit.
 </p>
 
-::PregnancyPrevention <800,0>
+::PregnancyPrevention
 <<nobr>>
 	<<set $PlayerProtectionSet = 1>>
 	<<set $PlayerRollDice = 0>>
@@ -427,7 +427,12 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			however it will most likely cause you to gain 3 additional side effects. (Not recommended for first playthrough)
 		<</if>>
 	<</nobr>
-	
+<</nobr>></p>
+<<include [[BodyOptionalFeatures_Updates]]>>
+
+
+::BodyOptionalFeatures_Updates
+<<nobr>>
 	<<silently>>
 		<<repeat 200ms>>
 			<<if $PlayerNoBodyHairUpdate>>
@@ -537,9 +542,9 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			<</if>>
 		<</repeat>>
 	<</silently>>
-<</nobr>></p>
+<</nobr>>
 
-::ExperimentalPregnancy <1000,0>
+::ExperimentalPregnancy
 <<nobr>>
 	<<set $PlayerRollDice = either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
 
@@ -551,7 +556,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 		<<print "Your cycles are going to continue like normal.  Well… not normal exactly.  Your fertile period is going to be a much longer portion of your cycle than it’d normally be.  So that makes it more likely you’ll get pregnant if you’re not careful.">>
 		
-		<video src="Part1/ExperimentalPregnancy1.mp4" autoplay loop muted height="640"></video><<set $PlayerProtectionFertile = 1>>
+		<video src="Part1/ExperimentalPregnancy1.mp4" autoplay loop muted width="854"></video><<set $PlayerProtectionFertile = 1>>
 
 		
 		<<print "And, the birth control pills I mentioned earlier.  Those won’t be effective on you.  Really your only option if you want to be with men and not get pregnant, is going to be ">><<link [[condoms|BodyOptionalFeatures]]>><<set $PlayerProtectionCondoms = 1>><</link>><<print ". Unless you changed your mind and decided that you actually do ">><<link [[want to get pregnant.|BodyOptionalFeatures]]>><<set $PlayerProtectionTry = 1>><</link>>
@@ -562,7 +567,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			<<print "You can also risk it and just decide to ">>
 			<<link [[ask the guy to pull out|BodyOptionalFeatures]]>><<set $PlayerProtectionWithdraw = 1>><</link>>
 			<<print " instead or even to ">>
-			<<link [[trust their partner to do the right thing.|BodyOptionalFeatures]]>><<set $PlayerProtectionNone = 1>><</link>>
+			<<link [[not bother using birth control.|BodyOptionalFeatures]]>><<set $PlayerProtectionNone = 1>><</link>>
 		<</nobr>>
 
 		<<nobr>>
@@ -582,7 +587,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			<</link>>
 		<</nobr>>		
 	<<case 2 3 4 5 6>>
-		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
 	
 		<<print "Oh well, it didn’t work.  Luckily no side effects though.  You can pick one of the other options though.">>
 
@@ -594,7 +599,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			<<print " Or you might just prefer to">>
 			<<link [[ask the guy to pull out|BodyOptionalFeatures]]>><<set $PlayerProtectionWithdraw = 1>><</link>>
 			<<print " or even to ">>
-			<<link [[trust their partner to do the right thing.|BodyOptionalFeatures]]>><<set $PlayerProtectionNone = 1>><</link>>
+			<<link [[not bother using birth control.|BodyOptionalFeatures]]>><<set $PlayerProtectionNone = 1>><</link>>
 		<</nobr>>
 		
 		<<nobr>>
@@ -616,7 +621,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			<</link>>
 		<</nobr>>
 	<<case 7 8 9 10 11 12 13>>
-		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
 		
 		<<nobr>>
 			<<set $PlayerProtectionPermanent = 1>>
@@ -627,7 +632,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			
 		<<print "However if you ever decide that you to want to get pregnant, let us know and we’ll deactivate the birth control feature for you and you’ll be back to normal cycles in a month or two.">>
 	<<case 14 15 16 17 18 19 20>>
-		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
 	
 		<<nobr>>
 			<<set $PlayerProtectionPerfect = 1>>
@@ -765,7 +770,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<h1>Side-Effect: Orgasm Denial</h1>
 		<<set $PlayerSideEffectOrgasmBlock += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/OrgasmBlock.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/OrgasmBlock.mp4" autoplay loop muted width="854"></video>
 	<</nobr>>
 	
 	<<nobr>>
@@ -812,7 +817,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<h1>Side-Effect: Masturbation Denial</h1>
 		<<set $PlayerSideEffectMasturbationBlock += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/MasturbationBlock.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/MasturbationBlock.mp4" autoplay loop muted width="854"></video>
 	<</nobr>>
 
 	<<nobr>>
@@ -860,7 +865,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<h1>Side-Effect: Submissive</h1>
 		<<set $PlayerSideEffectSubmissive += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/SideEffectSubmissive.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/SideEffectSubmissive.mp4" autoplay loop muted width="854"></video>
 	<</nobr>>
 
 	<<nobr>>
@@ -906,7 +911,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<h1>Side-Effect: Exhibitionist</h1>
 		<<set $PlayerSideEffectExhibitionist += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/SideEffectExhibitionist.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/SideEffectExhibitionist.mp4" autoplay loop muted width="854"></video>
 	<</nobr>>
 
 	<<nobr>>
@@ -953,7 +958,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<h1>Side-Effect: Pheromonesl</h1>
 		<<set $PlayerSideEffectPheromones += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/SideEffectPheromones.mp4" autoplay loop muted height="640"></video>
+		<img src="Part1/SideEffectPheromones.jpg" hspace="10" vspace="10" height="650" align="left">
 	<</nobr>>
 
 	<<nobr>>
@@ -1001,7 +1006,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<h1>Side-Effect: Oral Lover</h1>
 		<<set $PlayerSideEffectOral += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/SideEffectOral.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/SideEffectOral.mp4" autoplay loop muted width="854"></video>
 	<</nobr>>
 
 	<<nobr>>
@@ -1049,7 +1054,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<h1>Side-Effect: Anal Lover</h1>
 		<<set $PlayerSideEffectAnal += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/SideEffectAnal.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/SideEffectAnal.mp4" autoplay loop muted width="854"></video>
 	<</nobr>>
 
 	<<nobr>>
@@ -1095,7 +1100,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<h1>Side-Effect: Increased Libido</h1>
 		<<set $PlayerSideEffectLibido += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/SideEffectLibido.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/SideEffectLibido.mp4" autoplay loop muted width="854"></video>
 	<</nobr>>
 
 	<<nobr>>
@@ -1144,7 +1149,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<h1>Side-Effect: Erotic Dreams</h1>
 		<<set $PlayerSideEffectDreams += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/SideEffectDreams.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/SideEffectDreams.mp4" autoplay loop muted width="854"></video>
 	<</nobr>>
 
 	<<nobr>>
@@ -1197,7 +1202,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<<set $PlayerEasytoOrgasm += 1>>
 		<<set $PlayerSuperOrgasms += 1>>
 		<<set $PlayerSideEffects -= 1>>
-		<video src="Part1/SideEffectOrgasm.mp4" autoplay loop muted height="640"></video>
+		<video src="Part1/SideEffectOrgasm.mp4" autoplay loop muted width="854"></video>
 	<</nobr>>
 
 	<<nobr>>
@@ -1205,9 +1210,11 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			Oh wow, you really lucked out. You’re going to find it much easier to orgasm, and when you do,
 			it’s going to much more intense than it is for the average woman.
 		<<else>>
-			It’s going to be even more intense than it was supposed to be. You might even find guys losing patience with how often they have to stop and let you
-			recover from another orgasm during sex.  If it gets to be a problem, just tell them to hold you down and don’t stop until they cum. They’ll love
-			counting how many times they can make you cum before they do.  But you’ll probably need quite a while to recover after they’ve finished.
+			Your orgasms are going to be even more intense than I mentioned earlier, and come even easier for you.
+			You might even find guys losing patience with how often they have to stop and let you recover from
+			another orgasm during sex.  If it gets to be a problem, just tell them to hold you down and don’t
+			stop until they cum. They’ll love counting how many times they can make you cum before they do.
+			But you’ll probably need quite a while to recover after they’ve finished.
 		<</if>>
 	<</nobr>>
 

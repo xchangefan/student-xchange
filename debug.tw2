@@ -1,4 +1,4 @@
-::VariablesMasterDebugger <200,10900>
+::VariablesMasterDebugger
 Dice Roll   Dice Roll
 PlayerRollDice   $PlayerRollDice
 PlayerRollDiceArray   $PlayerRollDiceArray
@@ -345,3 +345,886 @@ RideBrad   $RideBrad
 LikeFemales   $LikeFemales
 HomeMasturbate   $HomeMasturbate
 UncleChair   $UncleChair
+
+
+::BodySideEffectsChoose1 <1000,125>
+<<nobr>>
+	<span style="font-size: 150%"><<print "Side Effects.">></span>
+<</nobr>>
+
+<<print "You need to select ">><span id="PlayerSideEffects2">$PlayerSideEffects</span><<print " side effects. Having more than 1 level in Anal or Enhanced Orgasms effect doesn`t do much at the moment gameplay-wise, but you can use it as a way of avoiding multiple side effects.">>
+<<nobr>>
+	* <<print "Side-Effect: Permanent - Level: ">><span id="PlayerSideEffectPermanentSpan">$PlayerSideEffectPermanent</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectPermanent != 1>>
+			<<set $PlayerSideEffectPermanent++>>
+			<<replace "#PlayerSideEffectPermanentSpan">><<print $PlayerSideEffectPermanent>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectPermanent != 0>>
+			<<set $PlayerSideEffectPermanent-->>
+			<<replace "#PlayerSideEffectPermanentSpan">><<print $PlayerSideEffectPermanent>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " ) (Does not reduce side effects count.)">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Orgasm Denial - Level: ">><span id="PlayerSideEffectOrgasmBlockSpan">$PlayerSideEffectOrgasmBlock</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectOrgasmBlock < 4 and $PlayerSideEffects>>
+			<<set $PlayerSideEffectOrgasmBlock++>><<set $PlayerSideEffects-->>
+			<<replace "#PlayerSideEffectOrgasmBlockSpan">><<print $PlayerSideEffectOrgasmBlock>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectOrgasmBlock != 0>>
+			<<set $PlayerSideEffectOrgasmBlock-->><<set $PlayerSideEffects++>>
+			<<replace "#PlayerSideEffectOrgasmBlockSpan">><<print $PlayerSideEffectOrgasmBlock>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Masturbation Denial - Level: ">><span id="PlayerSideEffectMasturbationBlockSpan">$PlayerSideEffectMasturbationBlock</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectMasturbationBlock < 4 and $PlayerSideEffects>>
+			<<set $PlayerSideEffectMasturbationBlock++>><<set $PlayerSideEffects-->>
+			<<replace "#PlayerSideEffectMasturbationBlockSpan">><<print $PlayerSideEffectMasturbationBlock>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectMasturbationBlock != 0>>
+			<<set $PlayerSideEffectMasturbationBlock-->><<set $PlayerSideEffects++>>
+			<<replace "#PlayerSideEffectMasturbationBlockSpan">><<print $PlayerSideEffectMasturbationBlock>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Submissive - Level: ">><span id="PlayerSideEffectSubmissiveSpan">$PlayerSideEffectSubmissive</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectSubmissive < 4 and $PlayerSideEffects>>
+			<<set $PlayerSideEffectSubmissive++>><<set $PlayerSideEffects-->>
+			<<replace "#PlayerSideEffectSubmissiveSpan">><<print $PlayerSideEffectSubmissive>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectSubmissive != 0>>
+			<<set $PlayerSideEffectSubmissive-->><<set $PlayerSideEffects++>>
+			<<replace "#PlayerSideEffectSubmissiveSpan">><<print $PlayerSideEffectSubmissive>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Exhibitionist - Level: ">><span id="PlayerSideEffectExhibitionistSpan">$PlayerSideEffectExhibitionist</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectExhibitionist < 4 and $PlayerSideEffects>>
+			<<set $PlayerSideEffectExhibitionist++>><<set $PlayerSideEffects-->>
+			<<replace "#PlayerSideEffectExhibitionistSpan">><<print $PlayerSideEffectExhibitionist>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectExhibitionist != 0>>
+			<<set $PlayerSideEffectExhibitionist-->><<set $PlayerSideEffects++>>
+			<<replace "#PlayerSideEffectExhibitionistSpan">><<print $PlayerSideEffectExhibitionist>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Male Pheromones - Level: ">><span id="PlayerSideEffectPheromonesSpan">$PlayerSideEffectPheromones</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectPheromones < 4 and $PlayerSideEffects>>
+			<<set $PlayerSideEffectPheromones++>><<set $PlayerSideEffects-->>
+			<<replace "#PlayerSideEffectPheromonesSpan">><<print $PlayerSideEffectPheromones>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectPheromones != 0>>
+			<<set $PlayerSideEffectPheromones-->><<set $PlayerSideEffects++>>
+			<<replace "#PlayerSideEffectPheromonesSpan">><<print $PlayerSideEffectPheromones>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Oral Lover - Level: ">><span id="PlayerSideEffectOralSpan">$PlayerSideEffectOral</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectOral < 4 and $PlayerSideEffects>>
+			<<set $PlayerSideEffectOral++>><<set $PlayerSideEffects-->>
+			<<replace "#PlayerSideEffectOralSpan">><<print $PlayerSideEffectOral>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectOral != 0>>
+			<<set $PlayerSideEffectOral-->><<set $PlayerSideEffects++>>
+			<<replace "#PlayerSideEffectOralSpan">><<print $PlayerSideEffectOral>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Anal Lover - Level: ">><span id="PlayerSideEffectAnalSpan">$PlayerSideEffectAnal</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectAnal < 4 and $PlayerSideEffects>>
+			<<set $PlayerSideEffectAnal++>><<set $PlayerSideEffects-->>
+			<<replace "#PlayerSideEffectAnalSpan">><<print $PlayerSideEffectAnal>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectAnal != 0>>
+			<<set $PlayerSideEffectAnal-->><<set $PlayerSideEffects++>>
+			<<replace "#PlayerSideEffectAnalSpan">><<print $PlayerSideEffectAnal>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Increased Libido - Level: ">><span id="PlayerSideEffectLibidoSpan">$PlayerSideEffectLibido</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectLibido < 4 and $PlayerSideEffects>>
+			<<set $PlayerSideEffectLibido++>><<set $PlayerSideEffects-->>
+			<<replace "#PlayerSideEffectLibidoSpan">><<print $PlayerSideEffectLibido>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectLibido != 0>>
+			<<set $PlayerSideEffectLibido-->><<set $PlayerSideEffects++>>
+			<<replace "#PlayerSideEffectLibidoSpan">><<print $PlayerSideEffectLibido>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Erotic Dreams - Level: ">><span id="PlayerSideEffectDreamsSpan">$PlayerSideEffectDreams</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSideEffectDreams < 4 and $PlayerSideEffects>>
+			<<set $PlayerSideEffectDreams++>><<set $PlayerSideEffects-->>
+			<<replace "#PlayerSideEffectDreamsSpan">><<print $PlayerSideEffectDreams>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSideEffectDreams != 0>>
+			<<set $PlayerSideEffectDreams-->><<set $PlayerSideEffects++>>
+			<<replace "#PlayerSideEffectDreamsSpan">><<print $PlayerSideEffectDreams>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+<<nobr>>
+	* <<print "Side-Effect: Enhanced Orgasms - Level: ">><span id="PlayerSuperOrgasmsSpan">$PlayerSuperOrgasms</span><<print " (">>
+	<<link "[+]">>
+		<<if $PlayerSuperOrgasms < 3 and $PlayerSideEffects>>
+			<<set $PlayerSuperOrgasms++>><<set $PlayerSideEffects-->>
+			<<set $PlayerPowerfulOrgasms += 1>>
+			<<set $PlayerEasytoOrgasm += 1>>
+			<<replace "#PlayerSuperOrgasmsSpan">><<print $PlayerSuperOrgasms>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<if !$PlayerSideEffects>>
+				<<replace "#PlayerSideEffectsFinish">>[[Finished selection.|BodySideEffectsChoose2]]<</replace>>
+				<<if $PlayerSideEffectPermanent and !$PlayerSideEffectPermanentShow>>
+					<<set $PlayerSideEffectPermanentShow = 1>>
+					<<set $PlayerRollDice = 1>>
+					<<else>>
+					<<if $PlayerSideEffectOrgasmBlock and !$PlayerSideEffectOrgasmBlockShow>>
+						<<set $PlayerSideEffectOrgasmBlockShow = 1>>
+						<<set $PlayerRollDice = 2>>
+						<<else>>
+						<<if $PlayerSideEffectMasturbationBlock and !$PlayerSideEffectMasturbationBlockShow>>
+							<<set $PlayerSideEffectMasturbationBlockShow = 1>>
+							<<set $PlayerRollDice = 3>>
+							<<else>>
+							<<if $PlayerSideEffectSubmissive and !$PlayerSideEffectSubmissiveShow>>
+								<<set $PlayerSideEffectSubmissiveShow = 1>>
+								<<set $PlayerRollDice = 4>>
+								<<else>>
+								<<if $PlayerSideEffectExhibitionist and !$PlayerSideEffectExhibitionistShow>>
+									<<set $PlayerSideEffectExhibitionistShow = 1>>
+									<<set $PlayerRollDice = 5>>
+									<<else>>
+									<<if $PlayerSideEffectPheromones and !$PlayerSideEffectPheromonesShow>>
+										<<set $PlayerSideEffectPheromonesShow = 1>>
+										<<set $PlayerRollDice = 6>>
+										<<else>>
+										<<if $PlayerSideEffectOral and !$PlayerSideEffectOralShow>>
+											<<set $PlayerSideEffectOralShow = 1>>
+											<<set $PlayerRollDice = 7>>
+											<<else>>
+											<<if $PlayerSideEffectAnal and !$PlayerSideEffectAnalShow>>
+												<<set $PlayerSideEffectAnalShow = 1>>
+												<<set $PlayerRollDice = 8>>
+												<<else>>
+												<<if $PlayerSideEffectLibido and !$PlayerSideEffectLibidoShow>>
+													<<set $PlayerSideEffectLibidoShow = 1>>
+													<<set $PlayerRollDice = 9>>
+													<<else>>
+													<<if $PlayerSideEffectDreams and !$PlayerSideEffectDreamsShow>>
+														<<set $PlayerSideEffectDreamsShow = 1>>
+														<<set $PlayerRollDice = 10>>
+														<<else>>
+														<<if $PlayerSuperOrgasms and !$PlayerSuperOrgasmsShow>>
+															<<set $PlayerSuperOrgasmsShow = 1>>
+															<<set $PlayerRollDice = 11>>
+														<<else>>
+															<<set $PlayerRollDice = 12>>
+														<</if>>
+													<</if>>
+												<</if>>
+											<</if>>
+										<</if>>
+									<</if>>
+								<</if>>
+							<</if>>
+						<</if>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</link>>
+	<<print " | ">>
+	<<link "[-]">>
+		<<if $PlayerSuperOrgasms != 0>>
+			<<set $PlayerSuperOrgasms-->><<set $PlayerSideEffects++>>
+			<<set $PlayerPowerfulOrgasms -= 1>>
+			<<set $PlayerEasytoOrgasm -= 1>>
+			<<replace "#PlayerSuperOrgasmsSpan">><<print $PlayerSuperOrgasms>><</replace>>
+			<<replace "#PlayerSideEffects2">><<print $PlayerSideEffects>><</replace>>
+			<<replace "#PlayerSideEffectsFinish">><</replace>>
+		<</if>>
+	<</link>> 
+	<<print " )">>
+<</nobr>>
+
+<span id="PlayerSideEffectsFinish"></span>
