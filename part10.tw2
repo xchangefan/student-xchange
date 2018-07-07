@@ -171,6 +171,20 @@ You got the email about your credit card statement days ago, but you’ve just b
   <</if>>
 <</nobr>>
 
+<<nobr>>
+  <<if $PlayerPregnant and $JobCheerleaderFundraiser >>
+    You are happy that at least your 'cheerleading' stipend isn't going to be affected by your pregnancy.
+    As long as you keep up your fundraising activities, and don't ask any of the university's donors
+    to take a paternity test, the athletic department doesn't mind.  It's not like this is an unexpected
+    outcome given their fundraising methods.
+  <<elseif $PlayerPregnant and $JobCheerleader >>
+    You are happy that your pregnancy isn't going to be affect your cheerleading stipend.  Obviously you
+    won't be out on the field on top of a pyramid for a while.  But they still have you helping in
+    other ways.  Unsurprisingly, you aren't the first cheerleader that this has happened to.  After
+    the baby, your spot on the squad will be waiting for you.
+  <</if>>
+<</nobr>>
+
 ::Part10Disability
 <img src="Part10/CoachTalk.jpg" hspace="10" vspace="10" height="400" />
 <<nobr>>
@@ -591,9 +605,9 @@ Now you can [[think about something more fun|Part10End]].
   store that he thinks you’d be perfect for.  As you look at all the products they sell
   here, working as a clerk sounds like it might be interesting.  He says this job pays in
   cash too, which
-  <<if $PlayerChastityBelt and $MasterKey>>
+  <<if $PlayerChastityBelt and $MasterKey >>
     [[sounds great to you|Part10WebModel3]].
-  <</else>>
+  <<else>>
     sounds great to you. There’s [[just one catch...|Part10WebModel3]]
   <</if>>
 <</nobr>>

@@ -319,7 +319,6 @@
 <<nobr>>
 	<<if $DatingNerd>><<set $FatherNerd = 1>><</if>>
 	<<if $DatingProfessor>><<set $FatherProfessor = 1>><</if>>
-	
 	<span style="font-size: 150%"><<print "Halloween">></span>
 <</nobr>>
 
@@ -342,48 +341,49 @@
 
 ::Part95Result2
 <<nobr>>
-	<span style="font-size: 150%"><<print "Bedroom">></span>
-<</nobr>>
-
-<<nobr>>
+	<h1>Bedroom</h1>
 	<<if $BabyAdoption>>
-		<<print "You realize you can’t hide this any longer, so you decide to let your family and close friends know.">>
+		You realize you can’t hide this any longer, so you decide to let your family and close friends know.
+		You let your mom tell the rest of your relatives quietly about the situation, and don’t make a formal announcement.
 	<<else>>
-		<<print "You realize you can’t hide this any longer, so you decide to let your family and friends know.">>
+		You realize you can’t hide this any longer, so you decide to let your family and friends know.
+		You start by calling your parents, then your brother and sister. Your mother and sister are both excited for you.
+		(If they have any concerns they keep them to themselves). Your father and brother seemed to be a bit stunned, both
+		that their son/brother is really gone for good now, and that their new daughter/sister is pregnant on top of it.
+		Buy you’re sure they’ll be ok once the shock wears off.
 	<</if>>
 <</nobr>>
-
 <<nobr>>
 	<<if $BabyAdoption>>
-		<<print "You let your mom tell the rest of your relatives quietly about the situation, and don’t make a formal announcement.">>
+		<img src="Part9.5/Adoption.jpg" hspace="10" vspace="10" height="250">
 	<<else>>
-		<<print "You start by calling your parents, then your brother and sister. Your mother and sister are both excited for you. (If they have any concerns they keep them to themselves). Your father and brother seemed to be a bit stunned, both that their son/brother is really gone for good now, and that their new daughter/sister is pregnant on top of it. Buy you’re sure they’ll be ok once the shock wears off.">>
+		<img src="Part9.5/Result4.jpeg" hspace="10" vspace="10" height="300">
 	<</if>>
 <</nobr>>
-<<if !$BabyAdoption>><img src="Part9.5/Result4.jpeg" hspace="10" vspace="10" height="650"><br><</if>>
 <<nobr>>
 	<<if $BabyAdoption>>
 		<<print "You send a discrete message to your closest friends, and they all reply saying that you have their full support.">>
 	<<else>>
-		<<print "You make a post on social media to let everyone else know:">>
+		You make a post on social media to let everyone else know:
+		<blockquote>
+			As you all know, my life has changed quite a bit over the last few months.<br>
+			Well, there’s one more change that’s coming, and it’s going to be a big one...
+			<img src="Part9.5/Result3.png" hspace="10" vspace="10" height="300">
+			<br>
+			<<if $FatherProfessor>>
+				Aaron and I will have our hands full starting this July! We’ll be sure to keep you all updated.
+			<<elseif $FatherAndrew>>
+				Andrew and I will have our hands full starting this July! We’ll be sure to keep you all updated.
+			<<elseif $FatherNerd>>
+				Peter and I will have our hands full starting this July! We’ll be sure to keep you all updated.
+			<<elseif $DatingVeronica>>
+				Veronica and I will have our hands full starting this July! We’ll be sure to keep you all updated.
+			<<else>>
+				I’ll have my hands full starting this July! I’ll be sure to keep you all updated.
+			<</if>>
+		</blockquote>
 	<</if>>
 <</nobr>>
-
-<<if !$BabyAdoption>><<print "As you all know, my life has changed quite a bit over the last few months. Well, there’s one more change that’s coming, and it’s going to be a big one…">><</if>>
-<<if !$BabyAdoption>><img src="Part9.5/Result3.png" hspace="10" vspace="10" height="650"><</if>>
-
-<<if !$BabyAdoption>><<nobr>>
-	<<if $FatherNerd or $FatherProfessor or $FatherAndrew or $DatingVeronica>> 
-		<<if $FatherProfessor>><<print "Aaron">><</if>>
-		<<if $FatherAndrew>><<print "Andrew">><</if>>
-		<<if $FatherNerd>><<print "Peter">><</if>>
-		<<if $DatingVeronica>><<print "Veronica">><</if>>
-		<<print " and I will have our hands full starting this July! We’ll be sure to keep you all updated.">>
-	<<else>>
-		<<print "I’ll have my hands full starting this July! I’ll be sure to keep you all updated.">>
-	<</if>>
-<</nobr>><</if>>
-
 [[Continue.|Part10Start]]
 
 ::Part95Professor
