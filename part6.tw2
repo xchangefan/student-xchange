@@ -1930,10 +1930,42 @@ Might add something here in the future. Or not.
 	<span style="font-size: 150%"><<print "Barista">></span>
 <</nobr>>
 
-<<if $DatingAndrew>><<print "You are not sure if how long you want to keep working as a barista, but for the moment you do enjoy it. Living with Andrew has made you so happy that you could probably enjoy any work.">><<else>><<if $DatingAndrew>><<print "You are not sure if how long you want to keep working as a barista, but for the moment you do enjoy it. You look forward the most to the moments when Josh pops in to get a coffee from you.">><<else>><<print "You are not sure if how long you want to keep working as a barista, but for the moment you have found ways to make the most fun out it, even though you find things such as latte art extremely boring. Who needs it anyway when you can get much bigger tips from flirting with the clients or showing them some skin now and then?">><</if>><</if>>
-<<if $DatingAndrew or $DatingJosh>><img src="Part6/Barista1.jpg" hspace="10" vspace="10" height="640"><<else>><br><video src="Part6/Barista2.mp4" autoplay loop muted height="640"></video><br><</if>>
+<<nobr>>
+	<<if $DatingAndrew>>
+		You are not sure if how long you want to keep working as a barista, but for the moment you do enjoy it.
+		Living with Andrew has made you so happy that you could probably enjoy any work.
+	<<elseif $DatingJosh>>
+			You are not sure if how long you want to keep working as a barista, but for the moment you do enjoy it.
+			You look forward the most to the moments when Josh pops in to get a coffee from you.
+	<<else>>
+			You are not sure if how long you want to keep working as a barista, but for the moment you have found
+			ways to make the most fun out it, even though you find things such as latte art extremely boring. Who needs it
+			anyway when you can get much bigger tips from flirting with the clients or showing them some skin now and then?
+	<</if>>
+<</nobr>>
+<<nobr>>
+	<<if $DatingAndrew or $DatingJosh>>
+		<img src="Part6/Barista1.jpg" hspace="10" vspace="10" height="640">
+	<<else>>
+		<br>
+		<video src="Part6/Barista2.mp4" autoplay loop muted height="640"></video>
+		<br>
+	<</if>>
+<</nobr>>
 
-<<if $DatingAndrew>><<print "You spend lots of time practising latte art and you can say that you have become quite skillful at it. You use it as way to share part of the happiness in your life with the customers that come into the cafe.">><<if $DatingAndrew>><<print "You spend lots of time practising latte art and you can say that you have become quite skillful at it. You are sure that Josh appreciates the extra effort you put into his daily coffee.">><<else>><<else>><<print "But of course, the most you enjoy the occasional fuck you have with Andrew, sometimes in his office, sometimes behind the counter’s wall. The thought that customers could catch you in the act makes it even more thrilling.">><</if>><</if>>
+<<nobr>>
+<<if $DatingAndrew>>
+	You spend lots of time practising latte art and you can say that you have become quite skillful at it.
+	You use it as way to share part of the happiness in your life with the customers that come into the cafe.
+<<elseif $DatingJosh>>
+		You spend lots of time practising latte art and you can say that you have become quite skillful at it.
+		You are sure that Josh appreciates the extra effort you put into his daily coffee.
+<<elseif $SexAndrew>>
+		But of course, your favorite part at work is the occasional fuck you have with Andrew, sometimes in his office,
+		sometimes behind the counter’s wall. The thought that customers could catch you in the act makes it
+		even more thrilling.
+<</if>>
+<</nobr>>
 
 [[You join a study group.|Part6StudyGroup]]
 

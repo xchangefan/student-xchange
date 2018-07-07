@@ -1,0 +1,7 @@
+VERSION=1.10.00
+HTML_FILENAME=student-xchange-program-$VERSION.html
+ZIP_FILENAME=student-xchange-program-$VERSION.zip
+twee2 build combined.tw2 build/$HTML_FILENAME --format SugarCube2_25
+zip build/$ZIP_FILENAME -j -9 build/$HTML_FILENAME
+cd ..
+zip src/build/$ZIP_FILENAME -9 Part*/* 
