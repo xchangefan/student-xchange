@@ -580,17 +580,12 @@
 
 <<nobr>>
 	<<if $DatingVeronica>><<print "You send your picture to Veronica, and tell her how much you miss her. ">>[[You promise to text more tonight.|Part8Text4]]
-	<<else>><<if $DatingAndrew>><<print "You send your picture to Andrew, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
-		<<else>><<if $DatingJosh>><<print "You send your picture to Josh, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
-			<<else>><<if $DatingProfessor>><<print "You send your picture to Daddy, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
-				<<else>><<if $DatingNerd>><<print "You send it to Peter with a teasing message and ">>[[promise more fun tonight.|Part8Text3]]
-					<<else>><<if $NumberCody>><<link "You send it to Cody.">><<if $PlayerChastityBelt>><<goto [[Part8TextChastity1]]>><<else>><<goto [[Part8Text5]]>><</if>><</link>>
-						<<else>><<print "You just save the picture on your phone and don’t send it to anyone. ">>[[You go to sleep.|Part8Arrival1]]
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<elseif $DatingAndrew>><<print "You send your picture to Andrew, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
+	<<elseif $DatingJosh>><<print "You send your picture to Josh, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
+	<<elseif $DatingProfessor>><<print "You send your picture to Daddy, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
+	<<elseif $DatingNerd>><<print "You send it to Peter with a teasing message and ">>[[promise more fun tonight.|Part8Text3]]
+	<<elseif $NumberCody>><<link "You send it to Cody.">><<if $PlayerChastityBelt>><<goto [[Part8TextChastity1]]>><<else>><<goto [[Part8Text5]]>><</if>><</link>>
+	<<else>><<print "You just save the picture on your phone and don’t send it to anyone. ">>[[You go to sleep.|Part8Arrival1]]
 	<</if>>
 <</nobr>>
 
@@ -705,6 +700,7 @@
 
 ::Part8Text6 <1200,6750>
 <<nobr>>
+	<<set $CodySexting to 1>>
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
 
