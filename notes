@@ -1,7 +1,35 @@
 ====================
 Immediate fixes before next release
 
-(None)
+- Add coords for Part 11 when finished with it
+- Add month/year to side bar, pregnancy state?
+- Bug on Part10Start Andrew or Professor and $0 nothing happens.  (See :mrgreen: below from tfgames)
+- Bug on Part7Start5 broken endif (See :centerflag982: below from tfgames)
+- Bug on Part95Start1  still incorrectly refers to Andrew if Peter's the one coming with you. (See :centerflag982: below from tfgames)
+-----
+:mrgreen:
+In "Part10Start" if $RoommateAndrew or $DatingProfessor and $PlayerMoney > 0 then nothing happens. Those two if.../if blocks need:
+CODE: SELECT ALL
+	<<else>>
+	  It makes you feel like a real adult, [[paying your bills off|Part10Responsible]] ahead of time.
+inside the $PlayerMoney check (which should probably be "<<if $PlayerMoney <= 0>>" instead of "<<if $PlayerMoney lt 0>>", and earlier "<<if $PlayerMoney gte 0 >>" should probably be "<<if $PlayerMoney gt 0 >>", since you can't pay off the credit card if you have $0).
+-----
+:centerflag982:
+Another bug for ya: Part7Start5 has a broken endif toward the end:
+CODE: SELECT ALL
+
+<<if $DatingProfessor and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>>
+			<<set $PlayerPregnantCheck = 0>>
+		<</if>>
+	<</if>
+		
+	<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19)>>
+	
+It doesn't visibly break anything, but it does cause the dice-roll line not to execute, meaning $PlayerPregnantCheck later winds up being compared to the last dice roll from (as far as I can tell) the side-effect passage.
+-----
+:centerflag982:
+Also, Part95Start1 still incorrectly refers to Andrew if Peter's the one coming with you.
+-----
 
 ====================
 Cleanup Fixes
@@ -29,6 +57,13 @@ Look at Stats
 - Adjust stats calculation for part 10
 - Also should adjust implied sex between pages
 
+Kidnapped path
+- Change inventory and birth control and job
+
+Pregnancy when Peter is the father
+  - from :centerflag982:  On a somewhat related note, I really hope that there will eventually be a distinct pregnancy-reaction scene for when
+    Peter's the father, rather than the generic "You know you’ll be on your own..." scene. I mean, the
+
 Earlier Parts:
 - Veronica Cheerleader path: Ended up with a dead end after the Veronica cheerleader part where no options from the first classroom pic
   Looks like it was something with setting a variable inside of a Link tag.  Try to eliminate doing that
@@ -40,7 +75,7 @@ Earlier Parts:
 Debug Mode
 - add option somewhere to enable/disable debug Mode
 - Debug mode re-enables side-effect picker
-- Move mentor and neighbor selection to debug mode?
+- Move mentor and neighbor selection to debug mode? (probably just the neighbor)
 
 Sidebar
 - side effects: Look at text for higher levels.  They don't have any effect currently beyond the base level

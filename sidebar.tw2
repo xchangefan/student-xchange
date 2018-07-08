@@ -1,4 +1,4 @@
-::StoryCaption
+::StoryCaption <100,0>
 A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <div style="font-size: 90%">\
   <<include [[SideBarBody]]>>\
@@ -18,7 +18,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 </div>
 <<include [[SideBarDebug]]>>
 
-::SideBarBody
+::SideBarBody <200,0>
 <<if $PlayerSideEffectPermanent>><br><<print "Your changes are permanent. ">><</if>><<if $PlayerPregnant>><<print "Your are pregnant. ">><</if>><<if $PlayerMother>><<print "Your have become a mother.">><</if>>\
 \
 <<if $PlayerBodyStandard>><br><<print "Your have a Standard size body. ">><</if>>\
@@ -30,7 +30,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $PlayerReducedSleep>><<print "You don't need much sleep. ">><</if>>\
 \
 
-::SideBarSideEffects
+::SideBarSideEffects <300,0>
 <<nobr>>
   <<if $PlayerSideEffectDreams >3 >>
     Your dreams are always erotic and you have trouble distinguishing them from reality.
@@ -153,7 +153,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
 <</nobr>> \
 
-::SideBarBirthControl
+::SideBarBirthControl <400,0>
 <<if $PlayerProtectionTry>><br><br><<print "You want to get pregnant. ">><</if>>\
 <<if $PlayerProtectionNone>><br><br><<print "You are not using any birth control. ">><</if>>\
 <<if $PlayerProtectionWithdraw>><br><br><<print "You always ask guys to pull out during sex. ">><</if>>\
@@ -164,7 +164,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $PlayerProtectionFertile>><<print "Your body is extra fertile. ">><</if>>\
 \
 
-::SideBarClothing
+::SideBarClothing <500,0>
 <<if $PlayerMoneySet>><br><br><<print "Money: $">>$PlayerMoney<</if>>\
 <<if $PlayerClothesSet>><br><br><<print "Wardrobe: ">><</if>>\
 <<if $PlayerClothesShirt>><<print "Shirts. ">><</if>>\
@@ -191,7 +191,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $PlayerSleepwearSexy>><<print "Sexy Sleepwear. ">><</if>>\
 \
 
-::SideBarPiercing
+::SideBarPiercing <600,0>
 <<if $PlayerPiercedSet>><br><br><<print "Piercings: ">><</if>>\
 <<if $PlayerEarsRegular>><<print "Stud Earrings. ">><</if>>\
 <<if $PlayerEarsDiamond>><<print "Diamond Earrings. ">><</if>>\
@@ -203,7 +203,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $PlayerPiercedClit>><<print "Clit hood. ">><</if>>\
 \
 
-::SideBarOtherInventory
+::SideBarOtherInventory <700,0>
 <<if $PlayerInventorySet>><br><br><<print "Items: ">><</if>>\
 <<if $PlayerItemTeddy>><<print "Teddy Bear. ">><</if>>\
 <<if $PlayerCuffs>><<print "Cuffs. ">><</if>>\
@@ -220,7 +220,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $PlayerItemNerdKey>><<print "Peter's Key. ">><</if>>\
 \
 
-::SideBarChastity
+::SideBarChastity <800,0>
 <<if $PlayerChastityBelt>><br><br><<print "You are currently locked in a chastity belt. ">><</if>>\
 <<if $VeronicaKey>><<print "Veronica has your key. ">><</if>>\
 <<if $AndrewKey>><<print "Andrew has your key. ">><</if>>\
@@ -229,7 +229,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $ProfessorKey>><<print "Daddy has your key. ">><</if>>\
 \
 
-::SideBarMentor
+::SideBarMentor <900,0>
 <<if $MentorFaith>><br><br><<print "Faith is your mentor">><<if $RoommateFaith>><<print " and roommate">><</if>><<if $NeighbourFaith>><<print " and neighbour">><</if>><<print ". ">><</if>>\
 <<if $MentorEmily>><br><br><<print "Emily is your mentor">><<if $RoommateEmily>><<print " and roommate">><</if>><<if $NeighbourEmily and $NeighbourEmilyBoyfriend>><<print ". She and her boyfriend are your neighbours">><</if>><<print ". ">><</if>>\
 <<if $MentorHannah>><br><br><<print "Hannah is your mentor">><<if $RoommateHannah>><<print " and roommate">><</if>><<if $NeighbourHannah>><<print " and neighbour">><</if>><<print ". ">><</if>>\
@@ -237,7 +237,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $MentorOlivia>><br><br><<print "Olivia is your mentor">><<if $RoommateOlivia>><<print " and roommate">><</if>><<if $NeighbourOlivia>><<print " and neighbour">><</if>><<print ". ">><</if>><<if $OliviaChastityBelt>><<print "She is currently locked in a chastity belt.">><</if>>\
 \
 
-::SideBarNeighbors
+::SideBarNeighbors <1000,0>
 <<if $PlayerNeighbourSet>><br>\
 	<<if $RoommateFaith or $RoommateEmily or $RoommateHannah or $RoommateSamantha or $RoommateOlivia>><<print "Your Neighbours are ">>\
 		<<if $NeighbourEmilyBoyfriend >><<print "Emily's boyfriend and ">>\
@@ -278,7 +278,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 	<</if>>\
 <</if>>\
 
-::SideBarRelationship
+::SideBarRelationship <1100,0>
 <<if $MasterKate>><br><<print "You are Mistress Kate's pet. ">><</if>>\
 <<if $MasterKen>><br><<print "Ken, the artist, is your ">><<if $HusbandKen>><<print "husband">><<else>><<print "master">><</if>><<print " and you are living in his loft, together with his assistants. ">><</if>>\
 <<if $MasterOlivia>><br><<print "You are a slave to Olivia's master. ">><</if>>\
@@ -300,7 +300,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 
-::SideBarJob
+::SideBarJob <1200,0>
 <<if $PlayerJobSet>><br><br><</if>>\
 <<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>\
 <<if $JobCheerleader>><<print "You are a Cheerleader. ">><</if>>\
@@ -338,7 +338,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 
-::SideBarStudentLifeBalance
+::SideBarStudentLifeBalance <1300,0>
 <<if $PlayerPointsSet>><br><br><<print "Student life balance:">><</if>>\
 <<nobr>>
 	<<if $PlayerPointsSet>>
@@ -375,7 +375,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <</nobr>>\
 <<if $AcademicProbation>><br><<print "You are on academic probation. ">><</if>>\
 
-::SideBarDebug
+::SideBarDebug <1400,0>
 <div style="font-size: 70%">
   <<print "Debug: Current: ">><<print passage()>><<print " | Previous: ">><<print previous()>><<print " | ">>[[Variables List|VariablesMasterDebugger]]
 </div>

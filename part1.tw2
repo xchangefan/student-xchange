@@ -1,4 +1,4 @@
-::Start1
+::Start1 <0,200>
 <h1>Acceptance Letter</h1>
 <<nobr>>
 	You are excited when the response from your first-choice school arrives.
@@ -35,7 +35,7 @@ You continue reading their letter:
 <blockquote>
 	Congratulations on your acceptance to our university. And thank you for your willingness to participate in our Student X-Change Program.
 
-	This program serves several purposes. First, it is an FDA trail of a new implantable form of X-Change being offered by the X-Change Corporation.(*). But also it also helps promote understanding between genders and helps balance campus demographics.
+	This program serves several purposes. First, it is an FDA trial of a new implantable form of X-Change being offered by the X-Change Corporation.(*). But also it also helps promote understanding between genders and helps balance campus demographics.
 </blockquote>
 The letter goes on and on for a while, your eyes skim over most of it until the end:
 <blockquote>
@@ -44,7 +44,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <span style="font-size: 50%">*Please see the enclosed disclosures regarding the risks of your participation including risks of permanency and possibility of side effects. Also enclosed are required financial disclosures regarding compensation the university receives for facilitating the trial.</span>
 </blockquote>
 
-::Start2
+::Start2 <200,200>
 <h1>Freshman Orientation</h1>
 <<nobr>>
 	In a moment, you’ll be asked to sign the disclosure and consent form.  I won’t go over everything again since I’m sure you all closely read the
@@ -74,7 +74,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	[[After your forms are complete, you can head over to the implantation specialists to discuss your new body|Body]].  They can also discuss your options for preventing pregnancy.
 <</nobr>>
 
-::Body
+::Body <400,200>
 <<nobr>>
 	<<set $PlayerBodySet = 1>>
 	<<set $PlayerSideEffects = 0>>
@@ -142,7 +142,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	You probably want to talk to the athletic department they’ll put your body to use, and help you keep it fit.
 </p>
 
-::PregnancyPrevention
+::PregnancyPrevention <600,200>
 <<nobr>>
 	<<set $PlayerProtectionSet = 1>>
 	<<set $PlayerRollDice = 0>>
@@ -212,7 +212,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</switch>>
 <</nobr>>
 
-::BodyOptionalFeatures
+::BodyOptionalFeatures <800,200>
 <<nobr>>
 	<<set $PreventSideEffectCount to 0>>
 	<<set $PlayerSideEffectPermanent to 0>>
@@ -431,7 +431,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <<include [[BodyOptionalFeatures_Updates]]>>
 
 
-::BodyOptionalFeatures_Updates
+::BodyOptionalFeatures_Updates <1000,200>
 <<nobr>>
 	<<silently>>
 		<<repeat 200ms>>
@@ -544,7 +544,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</silently>>
 <</nobr>>
 
-::ExperimentalPregnancy
+::ExperimentalPregnancy <1200,200>
 <<nobr>>
 	<<set $PlayerRollDice = either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
 
@@ -644,7 +644,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <</switch>>
 
 
-::BodySideEffects
+::BodySideEffects <1400,200>
 	<<nobr>>
 		<<set $validOptionsThisRoll = []>>
 		<<if !$PlayerSideEffectPermanent>>
@@ -737,10 +737,10 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<<default>> <<include [[BodySideEffectFail]]>>
 	<</switch>>
 
-::BodySideEffectFail
+::BodySideEffectFail <1600,200>
 	Actually, it looks like there weren't quite as many as I had thought.  That was [[your last side effect.|EndPart1]]
 
-::BodySideEffectPermanent
+::BodySideEffectPermanent <1800,200>
 	<<nobr>>
 		<h1>Side-Effect: Permanent</h1>
 		<<set $PlayerSideEffectPermanent = 1>>
@@ -765,7 +765,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectOrgasmBlock
+::BodySideEffectOrgasmBlock <2000,200>
 	<<nobr>>
 		<h1>Side-Effect: Orgasm Denial</h1>
 		<<set $PlayerSideEffectOrgasmBlock += 1>>
@@ -812,7 +812,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectMasturbationBlock
+::BodySideEffectMasturbationBlock <2200,200>
 	<<nobr>>
 		<h1>Side-Effect: Masturbation Denial</h1>
 		<<set $PlayerSideEffectMasturbationBlock += 1>>
@@ -860,7 +860,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectSubmissive
+::BodySideEffectSubmissive <2400,200>
 	<<nobr>>
 		<h1>Side-Effect: Submissive</h1>
 		<<set $PlayerSideEffectSubmissive += 1>>
@@ -906,7 +906,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectExhibitionist
+::BodySideEffectExhibitionist <2600,200>
 	<<nobr>>
 		<h1>Side-Effect: Exhibitionist</h1>
 		<<set $PlayerSideEffectExhibitionist += 1>>
@@ -953,7 +953,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectPheromones
+::BodySideEffectPheromones <2800,200>
 	<<nobr>>
 		<h1>Side-Effect: Pheromonesl</h1>
 		<<set $PlayerSideEffectPheromones += 1>>
@@ -1001,7 +1001,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectOral
+::BodySideEffectOral <3000,200>
 	<<nobr>>
 		<h1>Side-Effect: Oral Lover</h1>
 		<<set $PlayerSideEffectOral += 1>>
@@ -1049,7 +1049,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectAnal
+::BodySideEffectAnal <3200,200>
 	<<nobr>>
 		<h1>Side-Effect: Anal Lover</h1>
 		<<set $PlayerSideEffectAnal += 1>>
@@ -1095,7 +1095,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectLibido
+::BodySideEffectLibido <3400,200>
 	<<nobr>>
 		<h1>Side-Effect: Increased Libido</h1>
 		<<set $PlayerSideEffectLibido += 1>>
@@ -1144,7 +1144,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectDreams
+::BodySideEffectDreams <3600,200>
 	<<nobr>>
 		<h1>Side-Effect: Erotic Dreams</h1>
 		<<set $PlayerSideEffectDreams += 1>>
@@ -1195,7 +1195,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectSuperOrgasm
+::BodySideEffectSuperOrgasm <3800,200>
 	<<nobr>>
 		<h1>Side-Effect: Enhanced Orgasms</h1>
 		<<set $PlayerPowerfulOrgasms += 1>>
@@ -1230,7 +1230,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::EndPart1
+::EndPart1 <4000,200>
 <h1>Freshman Orientation</h1>
 <<nobr>>
 	Now that you know all about the body you’re going to have for 
