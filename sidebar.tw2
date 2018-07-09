@@ -1,171 +1,240 @@
-::StoryCaption <100,0>
+::StoryCaption <200,0>
 A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <div style="font-size: 90%">\
-  <<include [[SideBarBody]]>>\
-  <<include [[SideBarSideEffects]]>>\
-  <<include [[SideBarBirthControl]]>>\
-  <<include [[SideBarClothing]]>>\
-  <<include [[SideBarPiercing]]>>\
-  <<include [[SideBarOtherInventory]]>>\
-  <<include [[SideBarChastity]]>>\
-  <<include [[SideBarMentor]]>>\
-  <<include [[SideBarNeighbors]]>>\
-  <<include [[SideBarRelationship]]>>\
-  <<include [[SideBarJob]]>>\
-  <<include [[SideBarStudentLifeBalance]]>>\
-  <br>
+  <<if $female>>
+    <<include [[SideBarBody]]>>
+    <<include [[SideBarBirthControl]]>>
+
+    <<if $PlayerMoneySet>><<print "Money: $">>$PlayerMoney<</if>>
+    [[Inventory|SideBarInventory]]
+    <<include [[SideBarChastity]]>>\
+    <<include [[SideBarMentor]]>>\
+    <<include [[SideBarNeighbors]]>>\
+    <<include [[SideBarRelationship]]>>\
+    <<include [[SideBarJob]]>>\
+    <<include [[SideBarStudentLifeBalance]]>>\
+  <<else>>
+    <<include [[SideBarMale]]>>
+  <</if>>
   <br>
 </div>
 <<include [[SideBarDebug]]>>
 
+::SideBarMale <100,0>
+
+
 ::SideBarBody <200,0>
-<<if $PlayerSideEffectPermanent>><br><<print "Your changes are permanent. ">><</if>><<if $PlayerPregnant>><<print "Your are pregnant. ">><</if>><<if $PlayerMother>><<print "Your have become a mother.">><</if>>\
-\
-<<if $PlayerBodyStandard>><br><<print "Your have a Standard size body. ">><</if>>\
-<<if $PlayerBodyPlus>><br><<print "Your have a Plus-size body. ">><</if>>\
-<<if $PlayerBodyPetite>><br><<print "Your have a Petite body. ">><</if>>\
-<<if $PlayerBodyFit>><br><<print "Your have a Fit body. ">><</if>>\
-<<if $PlayerNoBodyHair>><<print "You have no body hair. ">><</if>>\
-<<if $PlayerWeightControl>><<print "You have perfect weight. ">><</if>>\
-<<if $PlayerReducedSleep>><<print "You don't need much sleep. ">><</if>>\
-\
-
-::SideBarSideEffects <300,0>
 <<nobr>>
+  You are
+  <<if $PlayerBodyStandard>>
+    a beautiful,
+  <<elseif $PlayerBodyPlus>>
+    a curvy,
+  <<elseif $PlayerBodyPetite>>
+    a petite,
+  <<elseif $PlayerBodyFit>>
+    an athletic,
+  <<else>>
+    a mysterious,
+  <</if>>
+  <<if $PlayerPregnant>>
+    pregnant,
+  <</if>>
+  young
+  <<if $PlayerMother>>
+    mother.
+  <<else>>
+    woman.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  This body is yours for
+  <<if $PlayerSideEffectPermanent>>
+    the rest of your life.
+  <<else>>
+    at least the next few years.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You are 
+  <<if  $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
+    trying to adjust to the [[side effects|SideBarSideEffects]] your implant gave your new body.
+  <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep or $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
+    enjoying the [[features|SideBarSideEffects]] of your new body.
+  <<else>>
+    enjoying your new body.
+  <</if>>
+<</nobr>>
+
+::SideBarSideEffects <400,0>
+<h1>Implant Effects</h1>
+<ul>
+<<nobr>>
+  <<if $PlayerNoBodyHair>>
+    <li>You have no body hair.</li>
+  <</if>>
+
+  <<if $PlayerWeightControl>>
+    <li>You have perfect
+    <<if $PlayerPregnant>>
+      weight, when you aren't pregnant.
+    <<else>>
+      weight.
+    <</if>>
+    </li>
+  <</if>>
+
+  <<if $PlayerReducedSleep>>
+    <li>You don't need much sleep.</li>
+  <</if>>
+
   <<if $PlayerSideEffectDreams >3 >>
-    Your dreams are always erotic and you have trouble distinguishing them from reality.
+    <li>Your dreams are always erotic and you have trouble distinguishing them from reality.</li>
   <<elseif $PlayerSideEffectDreams >2 >>
-    Your dreams are always erotic and will affect you during the day.
+    <li>Your dreams are always erotic and will affect you during the day.</li>
   <<elseif $PlayerSideEffectDreams >1 >>
-    Your dreams are always erotic.
+    <li>Your dreams are always erotic.</li>
   <<elseif $PlayerSideEffectDreams>>
-    Your dreams are sometimes erotic.
+    <li>Your dreams are sometimes erotic.</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerEasytoOrgasm >3 >>
-    Sex is one continuous orgasm for you.
+    <li>Sex is one continuous orgasm for you.</li>
   <<elseif $PlayerEasytoOrgasm >2 >>
-    You always have multiple orgasms.
+    <li>You always have multiple orgasms.</li>
   <<elseif $PlayerEasytoOrgasm >1 >>
-    It takes you only a few minutes to reach orgasm.
+    <li>It takes you only a few minutes to reach orgasm.</li>
   <<elseif $PlayerEasytoOrgasm>>
-    It is easier for you to reach orgasm. 
+    <li>It is easier for you to reach orgasm.</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerPowerfulOrgasms >3 >>
-    Your orgasms are so  powerful and long that you often pass out.
+    <li>Your orgasms are so  powerful and long that you often pass out.</li>
   <<elseif $PlayerPowerfulOrgasms >2 >>
-    Your orgasms are so powerful and long that your mind goes blank.
+    <li>Your orgasms are so powerful and long that your mind goes blank.</li>
   <<elseif $PlayerPowerfulOrgasms >1 >>
-    Your orgasms are stronger and longer than normal.
+    <li>Your orgasms are stronger and longer than normal.</li>
   <<elseif $PlayerPowerfulOrgasms>>
-    Your orgasms are stronger than normal.
+    <li>Your orgasms are stronger than normal.</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerSideEffectOrgasmBlock >3 >>
-    There is a 40% chance not to orgasm during sex (90% chance outside of it).
+    <li>There is a 40% chance not to orgasm during sex (90% chance outside of it).</li>
   <<elseif $PlayerSideEffectOrgasmBlock >2 >>
-    There is a 20% chance not to orgasm during sex (75% chance outside of it).
+    <li>There is a 20% chance not to orgasm during sex (75% chance outside of it).</li>
   <<elseif $PlayerSideEffectOrgasmBlock >1 >>
-    There is a 10% chance not to orgasm during sex (60% chance outside of it).
+    <li>There is a 10% chance not to orgasm during sex (60% chance outside of it).</li>
   <<elseif $PlayerSideEffectOrgasmBlock>>
-    There is a 5% chance not to orgasm during sex (50% chance outside of it). 
+    <li>There is a 5% chance not to orgasm during sex (50% chance outside of it).</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerSideEffectMasturbationBlock >3 >>
-    You cannot orgasm from masturbating, touching or thinking about it will make you horny.
+    <li>You cannot orgasm from masturbating, touching or thinking about it will make you horny.</li>
   <<elseif $PlayerSideEffectMasturbationBlock >2 >>
-    You cannot orgasm from masturbating, just touching yourself is enough to make you horny.
+    <li>You cannot orgasm from masturbating, just touching yourself is enough to make you horny.</li>
   <<elseif $PlayerSideEffectMasturbationBlock >1 >>
-    You cannot orgasm from masturbating, trying to will make you horny.
+    <li>You cannot orgasm from masturbating, trying to will make you horny.</li>
   <<elseif $PlayerSideEffectMasturbationBlock>>
-    You cannot orgasm from masturbating.
+    <li>You cannot orgasm from masturbating.</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerSideEffectExhibitionist >3 >>
-    You crave always being naked, you dislike wearing clothes, you cannot refuse sex when naked.
+    <li>You crave always being naked, you dislike wearing clothes, you cannot refuse sex when naked.</li>
   <<elseif $PlayerSideEffectExhibitionist >2 >>
-    You crave being naked in public, you dislike wearing clothes.
+    <li>You crave being naked in public, you dislike wearing clothes.</li>
   <<elseif $PlayerSideEffectExhibitionist >1 >>
-    You like the thought of being naked in public, you want to wear revealing clothes.
+    <li>You like the thought of being naked in public, you want to wear revealing clothes.</li>
   <<elseif $PlayerSideEffectExhibitionist>>
-    You like the thought of being naked in public.
+    <li>You like the thought of being naked in public.</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerSideEffectSubmissive >3 >>
-    You are submissive in sexual situations, you can never refuse anything.
+    <li>You are submissive in sexual situations, you can never refuse anything.</li>
   <<elseif $PlayerSideEffectSubmissive >2 >>
-    You are submissive in sexual situations, you can never refuse sex.
+    <li>You are submissive in sexual situations, you can never refuse sex.</li>
   <<elseif $PlayerSideEffectSubmissive >1 >>
-    You are submissive in sexual situations, you can never refuse sex if you are already horny.
+    <li>You are submissive in sexual situations, you can never refuse sex if you are already horny.</li>
   <<elseif $PlayerSideEffectSubmissive>>
-    You are submissive in sexual situations.
+    <li>You are submissive in sexual situations.</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerSideEffectPheromones >3 >>
-    Being next to any man will instantly excite you.
+    <li>Being next to any man will instantly excite you.</li>
   <<elseif $PlayerSideEffectPheromones >2 >>
-    The smell of sweating men excites you, being next to multiple men will instantly excite you.
+    <li>The smell of sweating men excites you, being next to multiple men will instantly excite you.</li>
   <<elseif $PlayerSideEffectPheromones >1 >>
-    The smell of sweating men excites you, regular men will excite you if you stay too long next to them.
+    <li>The smell of sweating men excites you, regular men will excite you if you stay too long next to them.</li>
   <<elseif $PlayerSideEffectPheromones>>
-    The smell of sweating men excites you.
+    <li>The smell of sweating men excites you.</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerSideEffectLibido >3 >>
-    Your libido is much higher, causing you to orgasm randomly, you can never refuse sex.
+    <li>Your libido is much higher, causing you to orgasm randomly, you can never refuse sex.</li>
   <<elseif $PlayerSideEffectLibido >2 >>
-    Your libido is much higher, you can never refuse sex. 
+    <li>Your libido is much higher, you can never refuse sex.</li>
   <<elseif $PlayerSideEffectLibido >1 >>
-    Your libido is much higher, you will often accept or suggest sex.
+    <li>Your libido is much higher, you will often accept or suggest sex.</li>
   <<elseif $PlayerSideEffectLibido>>
-    You get excited much faster.
+    <li>You get excited much faster.</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerSideEffectOral >3 >>
-    You love oral sex, you cannot orgasm without it, and can never refuse it, you sometimes suggest it as a reward.
+    <li>You love oral sex, you cannot orgasm without it, and can never refuse it, you sometimes suggest it as a reward.</li>
   <<elseif $PlayerSideEffectOral >2 >>
-    You love oral sex and can never refuse it, you sometimes suggest it as a reward.
+    <li>You love oral sex and can never refuse it, you sometimes suggest it as a reward.</li>
   <<elseif $PlayerSideEffectOral >1 >>
-    You love oral sex and can never refuse it.
+    <li>You love oral sex and can never refuse it.</li>
   <<elseif $PlayerSideEffectOral>>
-    You love oral sex.
+    <li>You love oral sex.</li>
   <</if>>
-<</nobr>> \
-<<nobr>>
+
   <<if $PlayerSideEffectAnal >3 >>
-    You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm, you constantly need something in your ass.
+    <li>You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm, you constantly need something in your ass.</li>
   <<elseif $PlayerSideEffectAnal >2 >>
-    You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm. 
+    <li>You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm.</li>
   <<elseif $PlayerSideEffectAnal >1 >>
-    You love anal sex and can never refuse it.
+    <li>You love anal sex and can never refuse it.</li>
   <<elseif $PlayerSideEffectAnal>>
-    You love anal sex.
+    <li>You love anal sex.</li>
   <</if>>
-<</nobr>> \
+<</nobr>>
+</ul>
 
-::SideBarBirthControl <400,0>
-<<if $PlayerProtectionTry>><br><br><<print "You want to get pregnant. ">><</if>>\
-<<if $PlayerProtectionNone>><br><br><<print "You are not using any birth control. ">><</if>>\
-<<if $PlayerProtectionWithdraw>><br><br><<print "You always ask guys to pull out during sex. ">><</if>>\
-<<if $PlayerProtectionCondoms>><br><br><<print "You always use condoms. ">><</if>>\
-<<if $PlayerProtectionPill>><br><br><<print "You always use birth control pills. ">><</if>>\
-<<if $PlayerProtectionPermanent>><br><br><<print "Your body has a permanent pill implant. ">><</if>>\
-<<if $PlayerProtectionPerfect>><br><br><<print "Your body has a permanent perfect pill implant. ">><</if>>\
-<<if $PlayerProtectionFertile>><<print "Your body is extra fertile. ">><</if>>\
-\
+::SideBarBirthControl <600,0>
+<<nobr>>
+  <<if $PlayerPregnant>>
+  <<elseif $PlayerProtectionTry>>
+    You are trying to get pregnant.
+  <<elseif $PlayerProtectionNone>>
+    You are not using any birth control.
+  <<elseif $PlayerProtectionWithdraw>>
+    You always ask guys to pull out during sex.
+  <<elseif $PlayerProtectionCondoms>>
+    You always use condoms.
+  <<elseif $PlayerProtectionPill>>
+    You always use birth control pills.
+  <<elseif $PlayerProtectionPermanent>>
+    Your body has a permanent pill implant.
+  <<elseif $PlayerProtectionPerfect>>
+    Your implant prevents pregnancy.
+  <<else>>
+    You aren't sure what sort of birth control to use yet.
+  <</if>>
+  <<if $PlayerProtectionFertile>>
+    You are especially fertile.
+  <</if>>
+<</nobr>>
 
-::SideBarClothing <500,0>
-<<if $PlayerMoneySet>><br><br><<print "Money: $">>$PlayerMoney<</if>>\
+::SideBarInventory <800,0>
+<h1>Inventory</h1>
+<<include [[SideBarClothing]]>>\
+<<include [[SideBarPiercing]]>>\
+<<include [[SideBarOtherInventory]]>>\
+
+
+::SideBarClothing <1000,0>
 <<if $PlayerClothesSet>><br><br><<print "Wardrobe: ">><</if>>\
 <<if $PlayerClothesShirt>><<print "Shirts. ">><</if>>\
 <<if $PlayerClothesBlouse>><<print "Blouses. ">><</if>>\
@@ -191,7 +260,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $PlayerSleepwearSexy>><<print "Sexy Sleepwear. ">><</if>>\
 \
 
-::SideBarPiercing <600,0>
+::SideBarPiercing <1200,0>
 <<if $PlayerPiercedSet>><br><br><<print "Piercings: ">><</if>>\
 <<if $PlayerEarsRegular>><<print "Stud Earrings. ">><</if>>\
 <<if $PlayerEarsDiamond>><<print "Diamond Earrings. ">><</if>>\
@@ -203,7 +272,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $PlayerPiercedClit>><<print "Clit hood. ">><</if>>\
 \
 
-::SideBarOtherInventory <700,0>
+::SideBarOtherInventory <1400,0>
 <<if $PlayerInventorySet>><br><br><<print "Items: ">><</if>>\
 <<if $PlayerItemTeddy>><<print "Teddy Bear. ">><</if>>\
 <<if $PlayerCuffs>><<print "Cuffs. ">><</if>>\
@@ -220,7 +289,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $PlayerItemNerdKey>><<print "Peter's Key. ">><</if>>\
 \
 
-::SideBarChastity <800,0>
+::SideBarChastity <1600,0>
 <<if $PlayerChastityBelt>><br><br><<print "You are currently locked in a chastity belt. ">><</if>>\
 <<if $VeronicaKey>><<print "Veronica has your key. ">><</if>>\
 <<if $AndrewKey>><<print "Andrew has your key. ">><</if>>\
@@ -229,7 +298,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $ProfessorKey>><<print "Daddy has your key. ">><</if>>\
 \
 
-::SideBarMentor <900,0>
+::SideBarMentor <1800,0>
 <<if $MentorFaith>><br><br><<print "Faith is your mentor">><<if $RoommateFaith>><<print " and roommate">><</if>><<if $NeighbourFaith>><<print " and neighbour">><</if>><<print ". ">><</if>>\
 <<if $MentorEmily>><br><br><<print "Emily is your mentor">><<if $RoommateEmily>><<print " and roommate">><</if>><<if $NeighbourEmily and $NeighbourEmilyBoyfriend>><<print ". She and her boyfriend are your neighbours">><</if>><<print ". ">><</if>>\
 <<if $MentorHannah>><br><br><<print "Hannah is your mentor">><<if $RoommateHannah>><<print " and roommate">><</if>><<if $NeighbourHannah>><<print " and neighbour">><</if>><<print ". ">><</if>>\
@@ -237,7 +306,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $MentorOlivia>><br><br><<print "Olivia is your mentor">><<if $RoommateOlivia>><<print " and roommate">><</if>><<if $NeighbourOlivia>><<print " and neighbour">><</if>><<print ". ">><</if>><<if $OliviaChastityBelt>><<print "She is currently locked in a chastity belt.">><</if>>\
 \
 
-::SideBarNeighbors <1000,0>
+::SideBarNeighbors <2000,0>
 <<if $PlayerNeighbourSet>><br>\
 	<<if $RoommateFaith or $RoommateEmily or $RoommateHannah or $RoommateSamantha or $RoommateOlivia>><<print "Your Neighbours are ">>\
 		<<if $NeighbourEmilyBoyfriend >><<print "Emily's boyfriend and ">>\
@@ -278,7 +347,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 	<</if>>\
 <</if>>\
 
-::SideBarRelationship <1100,0>
+::SideBarRelationship <2200,0>
 <<if $MasterKate>><br><<print "You are Mistress Kate's pet. ">><</if>>\
 <<if $MasterKen>><br><<print "Ken, the artist, is your ">><<if $HusbandKen>><<print "husband">><<else>><<print "master">><</if>><<print " and you are living in his loft, together with his assistants. ">><</if>>\
 <<if $MasterOlivia>><br><<print "You are a slave to Olivia's master. ">><</if>>\
@@ -300,7 +369,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 
-::SideBarJob <1200,0>
+::SideBarJob <2400,0>
 <<if $PlayerJobSet>><br><br><</if>>\
 <<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>\
 <<if $JobCheerleader>><<print "You are a Cheerleader. ">><</if>>\
@@ -338,7 +407,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 
-::SideBarStudentLifeBalance <1300,0>
+::SideBarStudentLifeBalance <2600,0>
 <<if $PlayerPointsSet>><br><br><<print "Student life balance:">><</if>>\
 <<nobr>>
 	<<if $PlayerPointsSet>>
@@ -375,7 +444,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <</nobr>>\
 <<if $AcademicProbation>><br><<print "You are on academic probation. ">><</if>>\
 
-::SideBarDebug <1400,0>
+::SideBarDebug <2800,0>
 <div style="font-size: 70%">
   <<print "Debug: Current: ">><<print passage()>><<print " | Previous: ">><<print previous()>><<print " | ">>[[Variables List|VariablesMasterDebugger]]
 </div>

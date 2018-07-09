@@ -169,18 +169,28 @@
 <<print "You try to make up for lost time and drive fast the whole way. Between gas and tolls you spend $100 on your trip. But your speeding eventually gets you pulled over going considerably over the speed limit.">><<set $PlayerMoney -= 100>>
 <img src="Part8/Road4.jpg" hspace="10" vspace="10" height="650">
 
-<<print "The officer explains that for someone going as fast as you were, he has to arrest you. But as soon as the judge sets bail you can pay it and be on your way. You’ve heard of women crying their way out of a ticket, but you’re pretty sure that won’t help here.">>
+<<print "The officer explains that for someone going as fast as you were, he has to arrest you. But as soon as the judge sets bail you can pay it and be on your way.">><<if !$KidnapEscape>>You’ve heard of women crying their way out of a ticket, but you’re pretty sure that won’t help here.<</if>>
 
-<<print "From the way the officer is looking at you, you suspect that something else might though.">>
+<<if $KidnapEscape>>
+	<<nobr>>
+		<<set $PlayerMoney -= 150>>
+		<<if $PlayerMoney < 0>><<set $PlayerCredit = 1>><</if>>
+		You start sobbing uncontrollably at the thought of being in handcuffs and then locked in a cell.  The officer sees how upset you are, and has been doing
+		this long enough to realize it's not an act.  He tells you that he'll put it down as a much lower speeding ticket.  You'll be able to the pay $150 online when
+		you get home and he won't need to arrest you at all.  You thank him as you try to wipe away your tears. [[You’re careful to stay under the speed limit the rest of your trip.|Part8Home1]]
+	<</nobr>>
+<<else>>
+	<<print "From the way the officer is looking at you, you suspect that something else might though.">>
 
-<<nobr>>
-	<<if !$PlayerChastityBelt>>
-		<<print "If you tell the officer you’re really sorry for speeding, ">>
-		[[that you’d do *anything* to make this just go away,|Part8Road5]]
-		<<print " and ask if maybe there’s somewhere private you could go to make it up to him for wasting his time like this. ">>
-	<</if>>
-	[[Or you would rather just pay for your crime.|Part8Jail]]
-<</nobr>>
+	<<nobr>>
+		<<if !$PlayerChastityBelt>>
+			<<print "If you tell the officer you’re really sorry for speeding, ">>
+			[[that you’d do *anything* to make this just go away,|Part8Road5]]
+			<<print " and ask if maybe there’s somewhere private you could go to make it up to him for wasting his time like this. ">>
+		<</if>>
+		[[Or you would rather just pay for your crime.|Part8Jail]]
+	<</nobr>>
+<</if>>
 
 ::Part8Road2 <600,6325>
 <<nobr>>
@@ -190,13 +200,26 @@
 	<span style="font-size: 150%"><<print "Road Home">></span>
 <</nobr>>
 
-<<print "Even though he was going this way anyway, it’s a long drive and you feel guilty not paying your own way.">><<if $PlayerSideEffectPheromones > 2 or $PlayerSideEffectDreams > 3 or $PlayerSideEffectLibido > 2 or $PlayerSideEffectExhibitionist > 2 or ( $PlayerSideEffectPheromones > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectLibido > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectDreams > 2 and $PlayerSideEffectExhibitionist > 1)>><<print " Sitting in the car so long next to him eventually makes you so excited that you start making your outfit more revealing bit by bit.">><</if>>
-<<if $PlayerSideEffectPheromones > 2 or $PlayerSideEffectDreams > 3 or $PlayerSideEffectLibido > 2 or $PlayerSideEffectExhibitionist > 2 or ( $PlayerSideEffectPheromones > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectLibido > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectDreams > 2 and $PlayerSideEffectExhibitionist > 1)>><br><video src="Part8/Road6.webm" autoplay loop muted height="600"></video><br><<else>><img src="Part8/Road2.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<nobr>>
+	<<print "Even though he was going this way anyway, it’s a long drive and you feel guilty not paying your own way.">>
+	<<if !$KidnapEscape and ($PlayerSideEffectPheromones > 2 or $PlayerSideEffectDreams > 3 or $PlayerSideEffectLibido > 2 or $PlayerSideEffectExhibitionist > 2 or ( $PlayerSideEffectPheromones > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectLibido > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectDreams > 2 and $PlayerSideEffectExhibitionist > 1))>>
+		<<print " Sitting in the car so long next to him eventually makes you so excited that you start making your outfit more revealing bit by bit.">>
+	<</if>>
+	<<if !$KidnapEscape and ($PlayerSideEffectPheromones > 2 or $PlayerSideEffectDreams > 3 or $PlayerSideEffectLibido > 2 or $PlayerSideEffectExhibitionist > 2 or ( $PlayerSideEffectPheromones > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectLibido > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectDreams > 2 and $PlayerSideEffectExhibitionist > 1))>>
+		<br><video src="Part8/Road6.webm" autoplay loop muted height="600"></video><br>
+	<<else>>
+		<img src="Part8/Road2.jpg" hspace="10" vspace="10" height="650">
+	<</if>>
+<</nobr>>
 
-<<nobr>>	
-	<<print "You figure you should probably ">>
-	<<if $PlayerSideEffectPheromones > 2 or $PlayerSideEffectDreams > 3 or $PlayerSideEffectLibido > 2 or $PlayerSideEffectExhibitionist > 2 or ( $PlayerSideEffectPheromones > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectLibido > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectDreams > 2 and $PlayerSideEffectExhibitionist > 1)>><<print "pay him $50 for part of the gas.">><<else>><<link [[pay him $50 for part of the gas.|Part8Home1]]>><<set $PlayerMoney -= 50>><</link>><</if>>
-	<<print " But then you think, there’s an ">>[[alternative means of payment|Part8Road3]]<<print " that Brad would probably appreciate more. And that might make the ride more fun for both of you.">>
+<<nobr>>
+	You figure you should probably
+	<<if $KidnapEscape>>
+		<<link [[pay him $50 for part of the gas.|Part8Home1]]>><<set $PlayerMoney -= 50>><</link>>
+	<<else>>
+		<<if $PlayerSideEffectPheromones > 2 or $PlayerSideEffectDreams > 3 or $PlayerSideEffectLibido > 2 or $PlayerSideEffectExhibitionist > 2 or ( $PlayerSideEffectPheromones > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectLibido > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectDreams > 2 and $PlayerSideEffectExhibitionist > 1)>><<print "pay him $50 for part of the gas.">><<else>><<link [[pay him $50 for part of the gas.|Part8Home1]]>><<set $PlayerMoney -= 50>><</link>><</if>>
+		<<print " But then you think, there’s an ">>[[alternative means of payment|Part8Road3]]<<print " that Brad would probably appreciate more. And that might make the ride more fun for both of you.">>
+	<</if>>
 <</nobr>>
 
 ::Part8Road3 <1000,6300>
@@ -305,11 +328,11 @@
 <<print "Being back home must be having an effect on you. You dream that you are back in high school. But it’s not like it really was. Everything else looks the same. The classmates and teachers are all the same. But you are in the body you have now, not the one you were actually in back then.">>
 <img src="Part8/Home3.jpg" hspace="10" vspace="10" height="650">
 
-<<if $PlayerSideEffectDreams>>[[Still in your dream, it’s time for gym class.|Part8Home4]]<<else>><<print "When you wake you realize that the clothes you were wearing were definitely not on the school dress code, but they seemed perfectly normal to you in your dream.">><</if>>
+<<if !$KidnapEscape and $PlayerSideEffectDreams>>[[Still in your dream, it’s time for gym class.|Part8Home4]]<<else>><<print "When you wake you realize that the clothes you were wearing were definitely not on the school dress code, but they seemed perfectly normal to you in your dream.">><</if>>
 
-<<if !$PlayerSideEffectDreams>><<print "Your dream also makes you wonder later what high school would have really been like if you could have made this change four years earlier.">><</if>>
+<<if $KidnapEscape or !$PlayerSideEffectDreams>><<print "Your dream also makes you wonder later what high school would have really been like if you could have made this change four years earlier.">><</if>>
 
-<<if !$PlayerSideEffectDreams>>[[You should take a shower.|Part8HomeShower]]<</if>>
+<<if $KidnapEscape or !$PlayerSideEffectDreams>>[[You should take a shower.|Part8HomeShower]]<</if>>
 
 ::Part8Home4 <800,6500>
 <<nobr>>
@@ -341,92 +364,108 @@
 <<print "“Oh my goodness! Let’s take a look at you!”, your mom says when you join them near the kitchen table. They both complement you on your new appearance and pepper you with questions about how you’ve been adjusting, and with more general questions about how school has been going too. After a while she stops with her questions to comment on what a beautiful young woman you’ve become.">>
 <img src="Part8/Home7.jpg" hspace="10" vspace="10" height="650">
 
-<<print "You blush but don’t answer when your sister slaps your ass jokingly and says, “yeah, I bet those college boys are lining up for a piece of that, aren’t they ‘Sis’?”.">>
-
-<<print "“Cassandra Grace!”, your mom yells at Cassie, “Don’t tease your sister.” Then she turns to you and starts with new questions. “But I am wondering though, they said whether you like boys or girls changes sometimes after your body changes. It’s fine either way, I’m just curious I guess. I’m guessing you would have figured out by now…”">>
-
-<<print "You answer: ">>
 <<nobr>>
-	<<if !$DatingVeronica and !$MasterKate>>
-		<span id="MorningSpan1">
-			* <<link "“I’m attracted to men.”">>
+	<<if $KidnapEscape>>
+		You're clearly uncomfortable after your sister slaps your ass jokingly and says,
+		“yeah, I bet those college boys are lining up for a piece of that, aren’t they ‘Sis’?”.
+	<<else>>
+		You blush but don’t answer when your sister slaps your ass jokingly and says,
+		“yeah, I bet those college boys are lining up for a piece of that, aren’t they ‘Sis’?”.
+	<</if>>
+<</nobr>>
+
+<<if $KidnapEscape>>
+	<<nobr>>
+		Your mom sees that your sister's teasing has upset you and tells her to stop.  She tells your sister,
+		 "Clearly this change has been difficult for her.  It's a big adjustment. I know you like to tease
+		 Cassandra, but give her some time for now before you start."
+		 You want to change the subject, so you [[mention that you need to do some shopping.|Part8HomeMall1]]
+	<</nobr>>
+<<else>>
+	<<print "“Cassandra Grace!”, your mom yells at Cassie, “Don’t tease your sister.” Then she turns to you and starts with new questions. “But I am wondering though, they said whether you like boys or girls changes sometimes after your body changes. It’s fine either way, I’m just curious I guess. I’m guessing you would have figured out by now…”">>
+
+	<<print "You answer: ">>
+	<<nobr>>
+		<<if !$DatingVeronica and !$MasterKate>>
+			<span id="MorningSpan1">
+				* <<link "“I’m attracted to men.”">>
+					<<replace "#MorningSpan1">>
+						<<print "“I’m attracted to men.”">>
+					<</replace>>
+					<<replace "#MorningSpan2">>
+						<<print "">>
+					<</replace>>
+					<<replace "#MorningSpan3">>
+						<<print "">>				
+					<</replace>>
+					<<replace "#MorningSpan4">>
+						<<print "Mom: “I guess that’s normal. Most women prefer men after all.”">>
+						<br><br>
+						<<print "Sister: “I’m guessing you’ve already figured out a good man is hard to find, but a hard man is …”">>
+						<br><br>
+						<<print "Mom: “Cassandra!”">>
+						<br><br>
+						<<if $PlayerChastityBelt>>[[Your mom leaves the room for a bit.|Part8HomeMorning3]]<<else>>[[Mention that you need to do some shopping.|Part8HomeMall1]]<</if>>
+					<</replace>>
+				<</link>>
+			</span>
+		<<else>>
+			<span id="MorningSpan1"></span>
+		<</if>>
+	<</nobr>>
+	<<nobr>>
+		<<if !$DatingAndrew and !$DatingJosh and !$DatingProfessor and !$FWBThrillSeeker and !$DatingNerd and !$FWBPlayer and !$FWBJosh and !$DatingOfficeBoss>>
+			<span id="MorningSpan2">
+				* <<link "“I’m still attracted to women.”">>
+					<<set $LikeFemales = 1>>
+					<<replace "#MorningSpan1">>
+						<<print "">>
+					<</replace>>
+					<<replace "#MorningSpan2">>
+						<<print "“I’m still attracted to women.”">>
+					<</replace>>
+					<<replace "#MorningSpan3">>
+						<<print "">>				
+					<</replace>>
+					<<replace "#MorningSpan4">>
+						<<print "Mom: “I guess that makes sense. X-Change just changed your body, not the person inside.”">>
+						<br><br>
+						<<print "Sister: “Yep, and she’s still my horny little brother on the inside, right?”">>
+						<br><br>
+						<<if $PlayerChastityBelt>>[[Your mom leaves the room for a bit.|Part8HomeMorning3]]<<else>>[[Mention that you need to do some shopping.|Part8HomeMall1]]<</if>>
+					<</replace>>
+				<</link>>
+			</span>
+		<<else>>
+			<span id="MorningSpan2"></span>
+		<</if>>
+	<</nobr>>
+	<<nobr>>
+		<span id="MorningSpan3">
+			* <<link "“I’m attracted to both.”">>
+				<<set $LikeBoth = 1>>
 				<<replace "#MorningSpan1">>
-					<<print "“I’m attracted to men.”">>
+					<<print "">>
 				<</replace>>
 				<<replace "#MorningSpan2">>
 					<<print "">>
 				<</replace>>
 				<<replace "#MorningSpan3">>
-					<<print "">>				
+					<<print "“I’m attracted to both.”">>				
 				<</replace>>
 				<<replace "#MorningSpan4">>
-					<<print "Mom: “I guess that’s normal. Most women prefer men after all.”">>
+					<<print "Mom: “I guess that would make sense. You probably know more than most that it’s who someone is on the inside that matters anyway.”">>
 					<br><br>
-					<<print "Sister: “I’m guessing you’ve already figured out a good man is hard to find, but a hard man is …”">>
+					<<print "Sister: (She holds her hand up for a high five.) “Maybe it’s genetic.”">>
 					<br><br>
-					<<print "Mom: “Cassandra!”">>
+					<<print "Mom: (Looks away nervously, avoiding eye contact)">>
 					<br><br>
 					<<if $PlayerChastityBelt>>[[Your mom leaves the room for a bit.|Part8HomeMorning3]]<<else>>[[Mention that you need to do some shopping.|Part8HomeMall1]]<</if>>
 				<</replace>>
 			<</link>>
 		</span>
-	<<else>>
-		<span id="MorningSpan1"></span>
-	<</if>>
-<</nobr>>
-<<nobr>>
-	<<if !$DatingAndrew and !$DatingJosh and !$DatingProfessor and !$FWBThrillSeeker and !$DatingNerd and !$FWBPlayer and !$FWBJosh and !$DatingOfficeBoss>>
-		<span id="MorningSpan2">
-			* <<link "“I’m still attracted to women.”">>
-				<<set $LikeFemales = 1>>
-				<<replace "#MorningSpan1">>
-					<<print "">>
-				<</replace>>
-				<<replace "#MorningSpan2">>
-					<<print "“I’m still attracted to women.”">>
-				<</replace>>
-				<<replace "#MorningSpan3">>
-					<<print "">>				
-				<</replace>>
-				<<replace "#MorningSpan4">>
-					<<print "Mom: “I guess that makes sense. X-Change just changed your body, not the person inside.”">>
-					<br><br>
-					<<print "Sister: “Yep, and she’s still my horny little brother on the inside, right?”">>
-					<br><br>
-					<<if $PlayerChastityBelt>>[[Your mom leaves the room for a bit.|Part8HomeMorning3]]<<else>>[[Mention that you need to do some shopping.|Part8HomeMall1]]<</if>>
-				<</replace>>
-			<</link>>
-		</span>
-	<<else>>
-		<span id="MorningSpan2"></span>
-	<</if>>
-<</nobr>>
-<<nobr>>
-	<span id="MorningSpan3">
-		* <<link "“I’m attracted to both.”">>
-			<<set $LikeBoth = 1>>
-			<<replace "#MorningSpan1">>
-				<<print "">>
-			<</replace>>
-			<<replace "#MorningSpan2">>
-				<<print "">>
-			<</replace>>
-			<<replace "#MorningSpan3">>
-				<<print "“I’m attracted to both.”">>				
-			<</replace>>
-			<<replace "#MorningSpan4">>
-				<<print "Mom: “I guess that would make sense. You probably know more than most that it’s who someone is on the inside that matters anyway.”">>
-				<br><br>
-				<<print "Sister: (She holds her hand up for a high five.) “Maybe it’s genetic.”">>
-				<br><br>
-				<<print "Mom: (Looks away nervously, avoiding eye contact)">>
-				<br><br>
-				<<if $PlayerChastityBelt>>[[Your mom leaves the room for a bit.|Part8HomeMorning3]]<<else>>[[Mention that you need to do some shopping.|Part8HomeMall1]]<</if>>
-			<</replace>>
-		<</link>>
-	</span>
-<</nobr>>
-
+	<</nobr>>
+<</if>>
 <span id="MorningSpan4"></span>
 
 ::Part8HomeMorning1 <400,6600>
@@ -437,7 +476,7 @@
 <<print "You put on something casual and get ready to head downstairs. You are still a bit nervous about how your family is going to react, but before you can head down a couple of old friends come by your room to visit.">>
 <img src="Part8/Home6.jpg" hspace="10" vspace="10" height="650">
 
-<<print "They are a bit confused at first, but you are soon as good of friends as ever.">>
+<<print "They are a bit confused at first, but you are soon as good of friends as ever.">> <<if $KidnapEscape>>After everything that has happened to you, it's nice to just hold and pet your old friend for a bit and just forget about everything else.<</if>>
 
 <<print "After spending a bit of time with them, your confidence is boosted and you head downstairs. You find that your brother, Dylan, won’t be home for a few days and your dad is at work, so just ">>[[your mom and your sister, Cassie, are here now.|Part8HomeMorning2]]
 
@@ -490,10 +529,26 @@
 	<span style="font-size: 150%"><<print "Shopping Mall">></span>
 <</nobr>>
 
-<<print "As you and Cassie walk from store to store, a cute guy starts flirting with you. Even if you wouldn’t normally, your sister’s prodding encourages you to flirt back.">>
+<<nobr>>
+	As you and Cassie walk from store to store, a cute guy starts flirting with you.
+	<<if $KidnapEscape>>
+		Your sister tries to get you to flirt back at him, but you don't.  She decides to flirt back with him instead.
+	<<else>>
+		Even if you wouldn’t normally, your sister’s prodding encourages you to flirt back.
+	<</if>>
+<</nobr>>
 <img src="Part8/Mall3.jpg" hspace="10" vspace="10" height="650">
 
-<<print "You are having fun playfully flirting with him. But seeing the next store you are going into, you know he’s not going to follow. ">>[[You flash him a last, teasing smile as you walk in.|Part8HomeMall4]]
+<<nobr>>
+	<<if $KidnapEscape>>
+		You're not sure why, but her flirtiness is annoying you slightly.  But seeing the next store she's taking you to, you at least
+		know he [[won't be following you there.|Part8HomeMall4]]
+	<<else>>
+		You are having fun playfully flirting with him. But seeing the next store you are going into, you know he’s not going to follow.
+		[[You flash him a last, teasing smile as you walk in.|Part8HomeMall4]]
+	<</if>>
+<</nobr>>
+
 
 ::Part8HomeMall4 <1600,6600>
 <<nobr>>
@@ -506,11 +561,11 @@
 
 <<print "The cute guy just watches as Cassie and you disappear into the Victoria’s Secret store.">>
 
-<<print "She helps you pick out a few things that you both think look sexy on you. You also help her find a couple things for herself as well. It’s an odd feeling at first, watching your sister try on lingerie, but it doesn’t take you long to adjust.">>
+<<print "She helps you pick out a few things that you both think look <<if $KidnapEscape>>pretty<<else>>sexy<</if>> on you. You also help her find a couple things for herself as well. It’s an odd feeling at first, watching your sister try on lingerie, but it doesn’t take you long to adjust.">>
 <img src="Part8/Mall4.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<print "You are shocked as your small bag of purchases totals up to $150. (Ok, so maybe it was more than one bag. But you look so sexy in them all, and you just couldn’t decide on just one.) ">>
+	<<print "You are shocked as your small bag of purchases totals up to $150. (Ok, so maybe it was more than one bag. But you look so <<if $KidnapEscape>>beautiful<<else>>sexy<</if>> in them all, and you just couldn’t decide on just one.) ">>
 	<<if $DatingProfessor>>
 		<<print "“Daddy” has given you a credit card to use for purchases just like this, so you use that.">>
 		<<else>>
@@ -525,7 +580,7 @@
 	<</if>>
 <</nobr>>
 
-<<print "When you leave, you look around and are a bit disappointed ">>[[to see the cute guy is long gone.|Part8HomeMall5]]
+<<print "When you leave, <<if $KidnapEscape>>Cassie looks around and is a bit disappointed<<else>>you look around and are a bit disappointed <</if>>">> [[to see the cute guy is long gone.|Part8HomeMall5]]
 
 ::Part8HomeMall5 <1800,6600>
 <<nobr>>
@@ -534,14 +589,22 @@
 
 <<print "Your sister and you stop at the coffee shop near the mall before heading home. While you are there, Cassie points out the guy from earlier, at another table drinking a latte and looking at his phone.">>
 
-<<print "He glances up and sees the two of you looking over at him and comes over to introduce himself. Your sister says she is going back to the counter to pick up a drink for your mom, and invites him to take her seat.">>
+<<nobr>>
+	He glances up and sees the two of you looking over at him and comes over to introduce himself. 
+	<<if $KidnapEscape>>
+		You head up to the counter to get your mom's drink and to let the two of them be alone for a bit.  You sit over at a different table and play on your phone
+		until your sister finally sends him on his way and [[joins you|Part8Home5]]. 
+	<<else>>
+		Your sister says she is going back to the counter to pick up a drink for your mom, and invites him to take her seat.
+	<</if>>
+<</nobr>>
 <img src="Part8/Mall5.jpg" hspace="10" vspace="10" height="650">
 
-<<print "You have a very pleasant conversation with him. When you have completely finished with your drink, you realize that your sister has been gone quite a while. When you look around the shop, you see her at another table, finished with her drink and holding your mom’s.">>
+<<if !$KidnapEscape>><<print "You have a very pleasant conversation with him. When you have completely finished with your drink, you realize that your sister has been gone quite a while. When you look around the shop, you see her at another table, finished with her drink and holding your mom’s.">><</if>>
 
-<<print "When you tell Cody that your sister is waiting and that you probably need to get going, he says goodbye and asks you for your number.">>
+<<if !$KidnapEscape>><<print "When you tell Cody that your sister is waiting and that you probably need to get going, he says goodbye and asks you for your number.">><</if>>
 
-<<link [[If you give him yours,|Part8Home5]]>><<set $NumberCody = 1>><</link>><<print " Cody gives you his in return. Otherwise, he is disappointed, but gracious when ">>[[you politely decline.|Part8Home5]]
+<<if !$KidnapEscape>><<link [[If you give him yours,|Part8Home5]]>><<set $NumberCody = 1>><</link>><<print " Cody gives you his in return. Otherwise, he is disappointed, but gracious when ">>[[you politely decline.|Part8Home5]]<</if>>
 
 ::Part8Home5 <0,6750>
 <<nobr>>
@@ -550,16 +613,16 @@
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
 
-<<print "That night you think about the day and what a fun time it was. But then you think of ways it could have been even more fun. Whichever of the ideas that flood your mind excites you the most, you linger on that one, imagining it in great detail:">>
+<<print "That night you think about the day and what a fun time <<if $KidnapEscape>>[[it was.|Part8Text1]]<<else>>it was.  But then you think of ways it could have been even more fun. Whichever of the ideas that flood your mind excites you the most, you linger on that one, imagining it in great detail:<</if>>">>
 
-<<print "What if you’d gone home with Cody instead of your sister. What would have happened at his house.">><<if $NumberCody>><<print " What if you called him right now and asked to come over now?">><</if>>
-<<if !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><video src="Part8/Home9.mp4" autoplay loop muted height="640"></video><br><<else>><img src="Part8/Home10.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<if !$KidnapEscape>><<print "What if you’d gone home with Cody instead of your sister. What would have happened at his house.">><<if $NumberCody>><<print " What if you called him right now and asked to come over now?">><</if>><</if>>
+<<if !$KidnapEscape and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><video src="Part8/Home9.mp4" autoplay loop muted height="640"></video><br><<else>><img src="Part8/Home10.jpg" hspace="10" vspace="10" height="650"><</if>>
 
-<<print "You remember that cute shop girl that helped you find a bra that fit. What if she had followed you into the changing booth and helped you in other ways.">>
+<<if !$KidnapEscape>><<print "You remember that cute shop girl that helped you find a bra that fit. What if she had followed you into the changing booth and helped you in other ways.">><</if>>
 
-<<print "You remember the black lace panties your sister bought today. You wonder if she’s wearing them right now. You wonder if she’s wearing anything else.">>
+<<if !$KidnapEscape>><<print "You remember the black lace panties your sister bought today. You wonder if she’s wearing them right now. You wonder if she’s wearing anything else.">><</if>>
 
-<<if !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><<print "Your hand soon finds its way between your legs and you masturbate as you imagine what might have been. ">>[[You go to sleep relaxed and satisfied.|Part8Text1]]<<set $HomeMasturbate = 1>><<else>>[[You go to sleep horny and frustrated, yet again.|Part8Text1]]<</if>>
+<<if !$KidnapEscape>><<if !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><<print "Your hand soon finds its way between your legs and you masturbate as you imagine what might have been. ">>[[You go to sleep relaxed and satisfied.|Part8Text1]]<<set $HomeMasturbate = 1>><<else>>[[You go to sleep horny and frustrated, yet again.|Part8Text1]]<</if>><</if>>
 
 ::Part8Text1 <200,6750>
 <<nobr>>
@@ -569,6 +632,7 @@
 <<print "You have a lot of time to yourself over the next few days. ">>[[You spend plenty of it on your phone,|Part8Text2]]<<print " staying in touch with everyone that matters to you back at school.">>
 <img src="Part8/Text1.jpg" hspace="10" vspace="10" height="650">
 <<if $NumberCody>><br><<print "You text quite a bit with Cody as well.">><</if>>
+<<if $KidnapEscape>><br>Spending time with family is helping you take your mind off recent events and you are feeling a bit better.<</if>>
 
 ::Part8Text2 <400,6750>
 <<nobr>>
@@ -682,7 +746,9 @@
 <<print "As you head back out to the car, he can’t help saying over and over how he can’t believe his brother is a girl now.">>
 
 <<nobr>>
-	<<if $PlayerSideEffectExhibitionist>>
+	<<if $KidnapEscape>>
+		You [[head home with your brother|Part8Arrival3]].
+	<<elseif $PlayerSideEffectExhibitionist>>
 		[[You decide to have a little fun with him.|Part8Arrival2]]
 	<<else>>
 		<<print "Maybe you could tease him and ">>
@@ -813,22 +879,37 @@
 
 <<print "“Well, it’s different now. And maybe if you were wearing some underwear now…”, He replies.">>
 
-<<print "““Of course I am.”, you cut him off as you flip up your skirt to make it clear you have a thong on. ">>[[“Anyway, tell mom, I’ll be right down.”|Part8Arrival4]]
+<<nobr>>
+	<<if $KidnapEscape>>
+		<<set $BrotherThong = 0>>
+		You get angry at him, "It's my damn room.  Maybe if you'd learned how to knock.  Or if you weren't such a perv about it it wouldn't be a problem!".  He leaves
+		without saying anything.  A few minutes later you hear your mom yelling from downstairs telling you to [[come down for lunch.|Part8Arrival4]].
+	<<else>>
+		<<print "““Of course I am.”, you cut him off as you flip up your skirt to make it clear you have a thong on. ">>[[“Anyway, tell mom, I’ll be right down.”|Part8Arrival4]]
+	<</if>>
+<</nobr>>
 
 ::Part8Arrival4 <350,7000>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Woods">></span>
 <</nobr>>
 
-<<print "After lunch, you and your brother go for a hike in the woods near the house. He has tons of questions about your change and what it’s been like. And how college in general has been.">>
+<<nobr>>
+	<<if $KidnapEscape>>
+		After lunch, your brother reluctantly agres to go a hike in the woods near the house.  You tell him that you've been going through a lot lately, and that’s
+		why you got so upset earlier.  You tell him you realize his brother suddenly being a woman is probably an adjustment, so you'll try to be more patient with
+		him.
+	<<else>>
+		<<print "After lunch, you and your brother go for a hike in the woods near the house. He has tons of questions about your change and what it’s been like. And how college in general has been.">>
+	<</if>>
+<</nobr>>
+
 <img src="Part8/Arrival4.jpg" hspace="10" vspace="10" height="650">
 
-<<print "You know if you hadn’t changed he’d be asking about relationships and who you’d been with, but he avoids that topic entirely.">>
-
-<<print "You don’t mention it either.">>
+<<print "You know if you hadn’t changed he’d be asking about relationships and who you’d been with, but he avoids that topic entirely.  You don’t mention it either.">>
 
 <<nobr>>
-	<<if $BrotherFlashed or $BrotherThong or $PlayerPiercedTongue>>
+	<<if !$KidnapEscape and ($BrotherFlashed or $BrotherThong or $PlayerPiercedTongue)>>
 		<<set $BrotherCrush = 1>>
 		<<print "You can tell he has a bit of crush on you or something making him uncomfortable, probably ">>
 		<<if $BrotherFlashed>>
@@ -842,7 +923,7 @@
 		[[The rest of your hike continues pleasantly.|Part8Evening]]
 	<</if>>
 <</nobr>>
-<<if $BrotherCrush>>
+<<if !$KidnapEscape and $BrotherCrush>>
 	<<print "You’re a bit freaked out by this at first, but then you realize that’s a perfectly normal reaction for him. He’s never seen you before today. He may know that you’re his brother, but in another way, you’re just a pretty girl he’s just met.">>
 	
 	<<nobr>>
@@ -867,17 +948,23 @@
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
 
-<<print "That night a familiar aching need to to be filled is making sleep difficult to find. You toss and turn, and after a while, you get up for a bit to use the bathroom.">>
+<<nobr>>
+	<<if $KidnapEscape>>
+		That night sleep is difficult to find. You toss and turn, and after a while, you get up for a bit to use the bathroom.
+	<<else>>
+		<<print "That night a familiar aching need to to be filled is making sleep difficult to find. You toss and turn, and after a while, you get up for a bit to use the bathroom.">>
+	<</if>>
+<</nobr>>
 <img src="Part8/Evening1.jpg" hspace="10" vspace="10" height="650">
 
 <<print "On the way back you see the light on in your sisters room. ">>[[You can go talk to her for a while|Part8EveningSister1]]<<print " to see if that takes your mind off it.">>\
-<<if $BrotherFlirt>><br><br><<print "You also look at your brother’s door and wonder if he’s jerking off right now, thinking of you in your hot new body. ">>[[You can peek into his room to see if you want.|Part8EveningBrother1]]<</if>>\
-<<if $DatingVeronica>><br><br><<print "You could ">>[[text Veronica|Part8EveningCall]]<<print " and tell her how much you wish she were here next to you.">><</if>>\
-<<if $DatingAndrew>><br><br><<print "You could ">>[[text Andrew|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
-<<if $DatingJosh>><br><br><<print "You could ">>[[text Josh|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
-<<if $DatingProfessor>><br><br><<print "You could ">>[[text Daddy|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
-<<if $NumberCody>><br><br><<print "You could check on Cody, and see if he’s up for a late-night booty-call, maybe ">>[[text him to see if he’s receptive to the idea.|Part8EveningBooty1]]<</if>>\
-<<if !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><br><<print "Or you can ">>[[try masturbating to see if that helps.|Part8EveningMasturbate]]<</if>>\
+<<if !$KidnapEscape and $BrotherFlirt>><br><br><<print "You also look at your brother’s door and wonder if he’s jerking off right now, thinking of you in your hot new body. ">>[[You can peek into his room to see if you want.|Part8EveningBrother1]]<</if>>\
+<<if !$KidnapEscape and $DatingVeronica>><br><br><<print "You could ">>[[text Veronica|Part8EveningCall]]<<print " and tell her how much you wish she were here next to you.">><</if>>\
+<<if !$KidnapEscape and $DatingAndrew>><br><br><<print "You could ">>[[text Andrew|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
+<<if !$KidnapEscape and $DatingJosh>><br><br><<print "You could ">>[[text Josh|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
+<<if !$KidnapEscape and $DatingProfessor>><br><br><<print "You could ">>[[text Daddy|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
+<<if !$KidnapEscape and $NumberCody>><br><br><<print "You could check on Cody, and see if he’s up for a late-night booty-call, maybe ">>[[text him to see if he’s receptive to the idea.|Part8EveningBooty1]]<</if>>\
+<<if !$KidnapEscape and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><br><<print "Or you can ">>[[try masturbating to see if that helps.|Part8EveningMasturbate]]<</if>>\
 
 ::Part8EveningSister1 <1050,7125>
 <<nobr>>
@@ -891,13 +978,24 @@
 <<print "The two of you sit in bed for a while as you tell her all about what you’ve gone through since your change. You talk about any side effects your implant has given you and how you’ve coped with them. She seems very understanding of it all, and you feel much better after finally having someone to tell it all to.">>
 <<if $PlayerPregnant>><br><<print "You want to tell her that you are pregnant, but you just can’t find the words so you don’t mention it.">><br><</if>>
 <<nobr>>
-	<<if $PlayerChastityBelt or $PlayerSideEffectLibido or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock>>
+  <<if $KidnapEscape>>
+		She senses something has been bothering you though and asks you about it.  After a long pause you tell her the whole story of your kidnapping, what you
+		know of it anyway.  She listens in shock and horror imagining what must have happened to you that you don't remember.  She does her best to comfort you.
+		You ask her to not tell your parents, brother, or anyone else about it.
+	<<elseif $PlayerChastityBelt or $PlayerSideEffectLibido or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock>>
 		<<print "She senses the need you have and tells you she feels a similar need and knows just how to help you with yours. ">>
 		[[You put your arm around her and kiss her.|Part8EveningSister2]]
 	<<else>>
 		<<print "You thank her for listening to everything and head back to your room. ">>
 		[[Before you fall asleep|Part8Christmas1]]
 		<<print " you think you hear her car pull out of the driveway.">>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $KidnapEscape>>
+		She sends someone a text cancelling whatever her other plans were and the two of stay awake for hours talking.  You finally
+		[[fall asleep in her bed|Part8Christmas1]].
 	<</if>>
 <</nobr>>
 
@@ -1026,7 +1124,7 @@
 
 <<print "But as your lips slide over the head and he feels them and your tongue slide down the length of his cock his eyes roll back and all doubts disappear.">>
 
-<<print "It isn’t long before he’s warning you he’s about to cum. You take his cock deep into your mouth and it into your throat. After you feel his cum slide down the back of your throat, you continue sucking his cock, hungry for every last drop, as he squirms and struggles. When you gotten the last, you finally stop.">>
+<<print "It isn’t long before he’s warning you he’s about to cum. You take his cock deep into your mouth and it into your throat. After you feel his cum slide down the back of your throat, you continue sucking his cock, hungry for every last drop, as he squirms and struggles. When you've gotten the last, you finally stop.">>
 
 <<print "“Merry Christmas”, you whisper before you sneak back out of his room and back to your own room. ">>[[You quickly fall asleep with a smile on your face and a familiar taste in your mouth.|Part8Christmas1]]
 
@@ -1299,12 +1397,20 @@
 <<print "When you walk into the kitchen your mom and sister are talking about the day’s plans and whether you should join them at the family dinner. They include you in the discussion when you walk in. Your mom repeats the last bit for you.">>
 <img src="Part8/Christmas3.jpg" hspace="10" vspace="10" height="650">
 
-<<print "You ask Cassie what’s she’s planning to do and she tells you, “Being at Aunt Kim and Mike’s house always creeped me out. I think it was how she always called him ‘Sir’ when they were at home. Anyway, three years of them being married was enough for me. I’m just fine with not going there ever again.”. A moment later she adds, “But I know you and him got along well, so do what you want.”">>
+<<nobr>>
+	<<if $KidnapEscape>>
+		Your mom tells you, "I was going to send you over to your uncle's house to watch the football game.  You've been in a mood lately and I didn't want my parents saying something rude and making it worse.
+		But Cassandra was pretty insistent that you join us at the [[family Christmas|Part8Christmas4]].  Try not to let anything they say upset you though.
+	<<else>>
+		<<print "You ask Cassie what’s she’s planning to do and she tells you, “Being at Aunt Kim and Mike’s house always creeped me out. I think it was how she always called him ‘Sir’ when they were at home. Anyway, three years of them being married was enough for me. I’m just fine with not going there ever again.”. A moment later she adds, “But I know you and him got along well, so do what you want.”">>
+	<</if>>
+<</nobr>>
 
-<<print "“Of course, you are welcome at the family Christmas. I just know how judgmental my parents can be sometimes, and I didn’t want you to be miserable all day.”">>
+<<if $KidnapEscape>><<print "“Of course, you are welcome at the family Christmas. I just know how judgmental my parents can be sometimes, and I didn’t want you to be miserable all day.”">><</if>>
 
 <<nobr>>
-	<<if !$ChristmasEveOrgasm>>
+	<<if $KidnapEscape>>
+	<<elseif !$ChristmasEveOrgasm>>
 		<<print "You’ve been crabby all morning from being so aroused last night but not getting any release. Your mom doesn’t know what has you so on edge, but decides the added stress of your grandparents isn’t a good idea. She decides for you that it’ll be better to">>
 		[[go to your uncle’s to watch football.|Part8Uncle1]]
 	<<else>>
@@ -1346,7 +1452,7 @@
 
 <<print "You spend most of the afternoon in the kitchen with her, your mom, and your sister. And you do your best to avoid your grandfather who you know will be less accepting.">>
 
-[[Eventually, you finish and go into the dinning room.|Part8Christmas5]]
+[[Eventually, you finish and go into the dining room.|Part8Christmas5]]
 
 ::Part8Christmas5 <600,7525>
 <<nobr>>
@@ -1564,17 +1670,39 @@
 <<print "Brad picks you up to give you a ride back to school. You want to compensate him for his trouble and gas again.">>
 <<if !$SexBrad>><img src="Part8/Return2.jpg" hspace="10" vspace="10" height="640"><<else>><br><video src="Part8/Road7.webm" autoplay loop muted height="640"></video><br><</if>>
 
-<<if $SexBrad>><<print "He is certainly hoping for more of the ">>[[same kind of payment as last time.|Part8Return3]]<<else>><<print "You can ">><<link [[pay him another $50|Part8Return6]]>><<set $PlayerMoney -= 50>><</link>><<print " for the ride back. Although he certainly wouldn’t mind if you decided to ">>[[pay him a different way instead.|Part8Return3]]<</if>>
+<<nobr>>
+	<<if $SexBrad>>
+		<<print "He is certainly hoping for more of the ">>[[same kind of payment as last time.|Part8Return3]]
+	<<elseif $KidnapEscape>>
+		You <<link [[pay him another $50|Part8Return6]]>><<set $PlayerMoney -= 50>><</link>> for the ride back.
+	<<else>>
+		<<print "You can ">><<link [[pay him another $50|Part8Return6]]>><<set $PlayerMoney -= 50>><</link>><<print " for the ride back. Although he certainly wouldn’t mind if you decided to ">>[[pay him a different way instead.|Part8Return3]]
+	<</if>>
+<</nobr>>
 
 ::Part8Return8 <200,7900>
 <<nobr>>
 	<span style="font-size: 150%"><<if $DatingAndrew>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></span>
 <</nobr>>
 
-<<print "You are so happy to finally be back at school. You think of this more as your home now than where you grew up.">>
+<<nobr>>
+	<<if $KidnapEscape>>
+		You are feeling much better after your trip.  You're glad to be back at school now though.
+	<<else>>
+		<<print "You are so happy to finally be back at school.">>
+	<</if>>
+	You think of this more as your home now than where you grew up.
+<</nobr>>
 <img src="Part8/Return8.jpg" hspace="10" vspace="10" height="650">
 
-<<print "You try on the purchases you made, especially the sexier ones you couldn’t show off at your parents.">>
+<<nobr>>
+	You try on the purchases you made,
+	<<if $KidnapEscape>>
+		looking in the mirror and seeing how beautiful makes you excited for the new year, and ready to forget the old one.
+	<<else>>
+		especially the sexier ones you couldn’t show off at your parents.
+	<</if>>
+<</nobr>>
 
 <<nobr>>
 	<<if $DatingVeronica>><<print "Veronica is very happy with your new purchase as well.">>
@@ -1586,7 +1714,7 @@
 						<<else>><<if $FWBPlayer>><<print "James is very happy with your new purchase as well.">>
 							<<else>><<if $MasterKate>><<print "Mistress Kate is very happy with your new purchase as well.">>
 								<<else>><<if $MasterOlivia>><<print "Master is very happy with your new purchase as well.">>
-									<<else>><<print "You just smile to yourself as you wear your new purchases under your regular clothes as you take care of errands around campus.">>
+									<<else>><<print "You smile to yourself as you wear your new purchases under your regular clothes as you take care of errands around campus.">>
 									<</if>>
 								<</if>>
 							<</if>>
@@ -1621,10 +1749,7 @@
 
 ::Part8Return6 <1000,7775>
 <<nobr>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMechanic = 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexCount += 1>>
+
 	
 	<span style="font-size: 150%"><<print "Mechanic">></span>
 <</nobr>>
@@ -1634,10 +1759,24 @@
 
 <<nobr>>
 	<<print "Now you get the total and it’s $150 for the tire AND another $300 for the turbo-whatever. He notices the shocked look on your face at the large total and hints that he might be able to ">>
-	[[‘work something out’|Part8Return7]]
+	<<link [[‘work something out’|Part8Return7]]>>
+		<<set $SexDifferentMaleCount += 1>>
+		<<set $SexMechanic = 1>>
+		<<set $SexMaleCount += 1>>
+		<<set $SexCount += 1>>	<</link>>
 	<<print " to lower that amount for you. ">>
 	<<if $PlayerMoney < 450>>
-		<<print " You ask him about paying him on credit, but he insists on cash only. And you really need your car back.">>
+		<<if $KidnapEscape>>
+			You ask him about paying on credit, but he insists on cash only, and you really need your car back.
+			You could go to the ATM and get a
+			<<link [[cash advance from your credit card.|Part8Return8]]>>
+						<<set $PlayerMoney -= 500>>
+						<<set $PlayerCredit = 1>>
+			<</link>>
+			They'll probably charge you another $50 in fees on top of the $450.
+		<<else>>
+			<<print " You ask him about paying him on credit, but he insists on cash only, and you really need your car back.">>
+		<</if>>
 	<<else>>
 		<<link [[Or you can just pay the $450 total.|Part8Return8]]>>
 			<<set $PlayerMoney -= 450>>
@@ -1699,19 +1838,39 @@
 <</nobr>>
 
 <<print "You have a really fun time at the big New Year’s Party.">>
-<<if $DatingVeronica>><img src="Part8/NewYear2.jpg" hspace="10" vspace="10" height="650"><<else>><<if $DatingAndrew or $DatingJosh>><img src="Part8/NewYear1.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8/NewYear3.jpg" hspace="10" vspace="10" height="650"><</if>><</if>>
-
 <<nobr>>
-	<<if $DatingVeronica>><<print "You enjoy a romantic kiss with Veronica as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear2]]
-	<<else>><<if $DatingAndrew>><<print "You enjoy a romantic kiss with Andrew as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear3]]
-		<<else>><<if $DatingJosh>><<print "You enjoy a romantic kiss with Josh as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear3]]
-			<<else>><<print "As the clock strikes twelve, you can kiss one of the ">>[[guys|Part8NewYear3]]<<print " or ">>[[girls|Part8NewYear2]]<<print " you were dancing with at midnight, and later go home together.">>
-			<</if>>
-		<</if>>
+	<<if $DatingVeronica>>
+		<img src="Part8/NewYear2.jpg" hspace="10" vspace="10" height="650">
+	<<elseif $DatingAndrew or $DatingJosh>>
+		<img src="Part8/NewYear1.jpg" hspace="10" vspace="10" height="650">
+	<<else>>
+		<img src="Part8/NewYear3.jpg" hspace="10" vspace="10" height="650">
 	<</if>>
 <</nobr>>
 
-<<if !$DatingVeronica and !$DatingAndrew and !$DatingJosh and $PlayerSideEffectLibido < 3 and $PlayerSideEffectPheromones < 3>><<if $PlayerPregnant>><<print "Or you can stay at the party for ">>[[some more dancing.|Part8NewYear4]]<<else>><<print "Or you can stay at the party for ">>[[a bit more champagne.|Part8NewYear4]]<</if>><</if>>
+<<nobr>>
+	<<if $DatingVeronica>>
+		<<print "You enjoy a romantic kiss with Veronica as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear2]]
+	<<elseif $DatingAndrew>>
+		<<print "You enjoy a romantic kiss with Andrew as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear3]]
+	<<elseif $DatingJosh>>
+		<<print "You enjoy a romantic kiss with Josh as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear3]]
+	<<elseif $KidnapEscape>>
+		<<print "You cheer as the clock strikes twelve, then you stay at the party for [[a bit more champagne.|Part8NewYear4]]">>
+	<<else>>
+		<<print "As the clock strikes twelve, you can kiss one of the ">>[[guys|Part8NewYear3]]<<print " or ">>[[girls|Part8NewYear2]]<<print " you were dancing with at midnight, and later go home together.">>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if !$KidnapEscape and !$DatingVeronica and !$DatingAndrew and !$DatingJosh and $PlayerSideEffectLibido < 3 and $PlayerSideEffectPheromones < 3>>
+		<<if $PlayerPregnant>>
+			<<print "Or you can stay at the party for ">>[[some more dancing.|Part8NewYear4]]
+		<<else>>
+			<<print "Or you can stay at the party for ">>[[a bit more champagne.|Part8NewYear4]]
+		<</if>>
+	<</if>>
+<</nobr>>
 
 ::Part8Return9 <400,7900>
 <<nobr>>
@@ -1901,11 +2060,12 @@
 
 <<nobr>>
 	<<if $PlayerPregnant>><<print "You wake up the next morning with your legs sore, ">><<else>><<print "You wake up the next morning with a bit of hangover, ">><</if>>
+	<<if $KidnapEscape>>ready to move on from last year,<</if>>
 	<<link "but excited about what the new year might hold.">>
 		<<if $MasterKate or $DatingNerd or $DatingProfessor>>
 			<<goto [[Part85Talk1]]>>
 		<<else>>
-			<<if $FWBJerk>>
+			<<if !$KidnapEscape and $FWBJerk>>
 				<<goto [[Part85Jerk]]>>
 			<<else>>
 				<<goto [[Part9Start1]]>>

@@ -22,28 +22,7 @@ weeks away, you decided to wait until then instead.
 ::Part10StartChastity <200,10300>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Chastity">></span>
-<</nobr>>
-<<nobr>>
-<<if $VeronicaKey>>
-  <<set $KeyholderPronoun = "she">>
-  <<set $KeyholderName = "Veronica">>
-<<elseif $AndrewKey>>
-  <<set $KeyholderPronoun = "he">>
-  <<set $KeyholderName = "Andrew">>
-<<elseif $JoshKey>>
-  <<set $KeyholderPronoun = "he">>
-  <<set $KeyholderName = "Josh">>
-<<elseif $ProfessorKey>>
-  <<set $KeyholderPronoun = "he">>
-  <<set $KeyholderName = "Daddy">>
-<<elseif $KateKey>>
-  <<set $KeyholderPronoun = "she">>
-  <<set $KeyholderName = "Mistress">>
-<<else>>
-  <<set $MasterKey = 1 >>
-  <<set $KeyholderPronoun = "he">>
-  <<set $KeyholderName = "Master">>
-<</if>>
+  <<include [[SetChastityVariables]]>>
 <</nobr>>
 <<if $MasterKey>>
   <<nobr>>
@@ -101,7 +80,7 @@ You got the email about your credit card statement days ago, but you’ve just b
     <<set $cantWorkStripper to 1>>
   <</if>>
 
-  <<if $PlayerMoney gte 0 >>
+  <<if $PlayerMoney > 0 >>
     Your due date is still a couple weeks away, but you want to make sure you don't forget it.
     You've mainly just been using the card for shopping online occasionally anyway, and you've 
     been careful to leave enough aside to pay it in full every month. That's what you do this
@@ -129,23 +108,23 @@ You got the email about your credit card statement days ago, but you’ve just b
       It makes you feel like a real adult, paying your bills off ahead of time. But the thing
       you've really been avoiding isn't your bills, but telling your coach about your pregnancy.
       But you realize you need to [[tell him now|Part10Disability]] before it's obvious to everyone.
-    <</if>
-    <<  set $NeedSideJob to 1>>
+    <</if>>
+    <<set $NeedSideJob to 1>>
   <<elseif $PlayerPregnant and $JobStripper>>
     You were pregnant when you started at the strip club, so you knew it wouldn't last long. Now that
     you've stared to show, you'll [[have to stop|Part10StripPregnant]], at least for now.  The extra
     money had been nice though.
   <<elseif $RoommateAndrew>>
     <<set $NeedSideJob to 0>>
-    <<if $PlayerMoney lt 0>>
+    <<if $PlayerMoney <= 0>>
       Now that you aren't paying for a dorm, and Andrew is [[paying the rent|Part10LivingTogether]],
       you haven't been using your credit card bill as much.  You should have the balance you'd ran up
-      payed off pretty soon.
+      paid off pretty soon.
     <</if>>
     Since you're living with Andrew now
   <<elseif $DatingProfessor>>
     <<set $NeedSideJob to 0>>
-    <<if $PlayerMoney lt 0>>
+    <<if $PlayerMoney <= 0>>
       Daddy helped you set up a budget, so you've stopped running up your credit card bill every
       month and started paying it down.  Making a budget is a lot easier with Daddy
       [[taking care of most of your expenses|Part10LivingTogether]] though.
@@ -333,7 +312,7 @@ You start trying to think of ways to earn a little extra money on the side...
 
 <<nobr>>
   <<if $PlayerChastityBelt>>
-    Of course, it be rather difficult to be a call girl with this belt locked on you.
+    Of course, it would be rather difficult to be a call girl with this belt locked on you.
     You doubt that Hannah's agency would want to deal with a girl who is only able to
     give blowjobs and handjobs.  You'll have to [[think of something else|Part10ExtraMoney2]].
   <<else>>
@@ -428,6 +407,7 @@ You start trying to think of ways to earn a little extra money on the side...
     <</if>>
   <<elseif $PlayerChastityBelt>>
     <<if $VeronicaKey>>
+    <<set $cantWorkStripper to 0>>
       Veronica is skeptical at first.  She's not real excited aobu the thought of you grinding on top of strange
       men.  And she's heard that sometimes much more than that goes on too.  After you promise that it'll just be
       dancing, nothing more, she says she'll unlock your belt if you want to give it a try.

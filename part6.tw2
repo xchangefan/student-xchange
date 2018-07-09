@@ -1166,9 +1166,10 @@ Might add something here in the future. Or not.
 <img src="Part6/Grades1.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $AcademicPoints > 9>><<print "You’re doing great and have nothing to worry about.">><</if>>
-	<<if $AcademicPoints < 5>><<print "You’re going to fail, there’s no way to pull your grade up enough to pass now.">><</if>>
-	<<if $AcademicPoints < 10 and $AcademicPoints > 4>><<print "You are in-between, it could go either way ">>[[depending on how you do the rest of the term.|Part6Professor1]]<</if>>
+	<<if $AcademicPoints > 9>><<print "You’re doing great and have nothing to worry about.">>
+	<<elseif $AcademicPoints < 5>><<print "You’re going to fail, there’s no way to pull your grade up enough to pass now.">>
+	<<elseif $KidnapEscape>>You are in-between, it could go either way.  You know missing so much class didn't help.  You stop by to [[talk to the professor|Part6ProfessorRecover]] to see if there is anything you can do to pass.
+	<<else>>$AcademicPoints < 10 and $AcademicPoints > 4>><<print "You are in-between, it could go either way ">>[[depending on how you do the rest of the term.|Part6Professor1]]<</if>>
 <</nobr>>
 
 <<if $AcademicPoints > 9 or $AcademicPoints < 5>>[[Eventually it is time for you semester finals.|Part6Exam]]<</if>>
@@ -1296,12 +1297,29 @@ Might add something here in the future. Or not.
 
 <<print "You hope that you have prepared enough for this day in all the ways which you could.">>
 <img src="Part6/Grades3.jpg" hspace="10" vspace="10" height="650">
-
-<<print "You wish you could party a bit more, but you cannot afford any time to do so during these days.">>
-
+<<if !$KidnapEscape>><<print "You wish you could party a bit more, but you cannot afford any time to do so during these days.">>
+<</if>>
 <<print "Once you finish, you are at least happy that you will not have to worry about studying for at least a while.">>
 
 [[All you can do now is wait for your final results.|Part6Grades2]]
+
+::Part6ProfessorRecover <1100,5300>
+<img src="Part9/Start3.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+	You don't go into too many details, really you don't remember much anyway.  You try to keep from crying as you tell him what you do know,
+	about waking up in the hospital, and about what the doctors told you had happened to you.
+<</nobr>>
+
+<<nobr>>
+	He listens to your story, and does his best to comfort you.  He tells you not to worry about the your grade this term.  He does say
+	that you'll need to know the material you missed though, since you plan on taking the course after this as well.  So he sets up a few
+	more office visits with you to help you [[get caught up|Part6Exam]].
+<</nobr>>
+
+<<nobr>>
+	You feel very releived when you leave his office.  You can't believe some of those rumors you've heard about him.  He's not like
+	that at all.
+<</nobr>>
 
 ::Part6Professor1 <1200,5300>
 <<nobr>>
@@ -1817,6 +1835,7 @@ Might add something here in the future. Or not.
 
 ::Part6KidnappedResist5 <975,5125>
 <<nobr>>
+	<<set $KidnapEscape to 1>>
 	<<set $AcademicPoints += 2>>
 	<span style="font-size: 150%"><<print "Hospital">></span>
 <</nobr>>
@@ -2074,7 +2093,7 @@ Might add something here in the future. Or not.
 <<nobr>>
 	<<set $PlayerRollDice to either(1,2,3,4,5,6)>>
 	<<set $PlayerRollDice += $AcademicPoints>>
-	<<if not $PlayerProfessorVisit and $PlayerRollDice < 11>><<set $AcademicProbation to 1>><</if>>
+	<<if !$KidnapEscape and !$PlayerProfessorVisit and $PlayerRollDice < 11>><<set $AcademicProbation to 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Campus">></span>
 <</nobr>>

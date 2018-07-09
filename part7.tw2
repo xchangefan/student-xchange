@@ -125,11 +125,9 @@
 		<<if $DatingProfessor and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>>
 			<<set $PlayerPregnantCheck = 0>>
 		<</if>>
-	<</if>
+	<</if>>
 		
 	<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19)>>
-	<<if $PlayerPregnantCheck > $PlayerRollDice>><</if>>
-	
 	<span style="font-size: 150%"><<print "Medical Clinic">></span>
 <</nobr>>
 
@@ -243,6 +241,7 @@
 <<print "Do you want to ">>[[end the pregnancy now,|Part7Preg2]]<<print " or do you want to ">>[[carry the baby to term,|Part7Preg3]]<<print " regardless of if you are planing on rasing the baby yourself or putting it up for adoption later.">>
 
 ::Part7Pack1 <600,6175>
+DEBUG TODO <<set $PlayerAbortion to 1>><<set $PlayerProtectionCondoms to 1>><<set $PlayerProtectinPerfect to 0>>
 <<nobr>>
 	<h1>Bedroom</h1>
 	<<if $PlayerProtectionTry>>

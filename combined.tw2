@@ -30,8 +30,10 @@ h1 {
 }
 
 ::Start <0,0>
-<h1>Home</h1><<set $debugMode to 0>>
+<<set $female to 0>>
+<h1>Home</h1>
 <<nobr>>
+	<<include [[ModeDebug]]>>
 	You’ll be graduating high school in just a few months. You know what university you are hoping to attend, but you’ve applied to several others as well.
 <</nobr>>
 
@@ -58,7 +60,7 @@ As you look over the responses you see:
 	<</switch>>
 <</nobr>>
 
-::StoryIncludes <50,0>
+::StoryIncludes <100,100>
 sidebar.tw2
 part1.tw2
 part2.tw2
@@ -76,3 +78,41 @@ part11.tw2
 part12.tw2
 debug.tw2
 
+::SetChastityVariables <200,100>
+<<nobr>>
+	<<if $PlayerChastityBelt>>
+		<<if $VeronicaKey>>
+			<<set $KeyholderPronoun = "she">>
+			<<set $KeyholderName = "Veronica">>
+		<<elseif $AndrewKey>>
+			<<set $KeyholderPronoun = "he">>
+			<<set $KeyholderName = "Andrew">>
+		<<elseif $JoshKey>>
+			<<set $KeyholderPronoun = "he">>
+			<<set $KeyholderName = "Josh">>
+		<<elseif $ProfessorKey>>
+			<<set $KeyholderPronoun = "he">>
+			<<set $KeyholderName = "Daddy">>
+		<<elseif $KateKey>>
+			<<set $KeyholderPronoun = "she">>
+			<<set $KeyholderName = "Mistress">>
+		<<else>>
+			<<set $MasterKey = 1 >>
+			<<set $KeyholderPronoun = "he">>
+			<<set $KeyholderName = "Master">>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+::ModeDebug <300,100>
+<<set $gameMode = 'debug'>>
+<<set Config.history.controls = true;>>
+
+::ModeStandard <400,100>
+<<set $gameMode = 'standard'>>
+<<set Config.history.controls = true;>>
+
+::ModeHarcore <500,100>
+Don't use this yet. turning off the history control would currently get you stuck if you went to any of the side bar pages
+<<set $gameMode = 'hardcore'>>
+<<set Config.history.controls = false;>>

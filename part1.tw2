@@ -143,6 +143,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 </p>
 
 ::PregnancyPrevention <600,200>
+<<set $female to 1>>
 <<nobr>>
 	<<set $PlayerProtectionSet = 1>>
 	<<set $PlayerRollDice = 0>>
@@ -418,7 +419,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</nobr>
 
 	<<nobr>>
-		<<if $debugMode>>
+		<<if $gameMode == 'debug'>>
 			There is also an experimental way that will let you
 			<<link "choose the side effects,">>
 				<<set $PlayerSideEffects += 3>>
