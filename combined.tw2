@@ -104,6 +104,22 @@ debug.tw2
 	<</if>>
 <</nobr>>
 
+::AutoNav [script]
+$(document).on(':passagedisplay', function (e) {
+	if ($("#passages a").length === 1) {
+			$("#passages a")[0].id = "NextLink";
+	}
+});
+
+$(document).on('keyup', function (e) {
+	if ((e.key == "ArrowRight") && $('#NextLink') && (time() > 200) && (!tags().includes("DisableClick"))) {
+		$('#NextLink').trigger('click');
+	}
+	if (e.key == "ArrowLeft") {
+		Engine.backward();
+	}
+});
+
 ::ModeDebug <300,100>
 <<set $gameMode = 'debug'>>
 <<set Config.history.controls = true;>>
