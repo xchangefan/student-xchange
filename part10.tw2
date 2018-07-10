@@ -120,6 +120,9 @@ You got the email about your credit card statement days ago, but you’ve just b
       Now that you aren't paying for a dorm, and Andrew is [[paying the rent|Part10LivingTogether]],
       you haven't been using your credit card bill as much.  You should have the balance you'd ran up
       paid off pretty soon.
+    <<else>>
+      You were doing alright already, and now that you aren't paying for a dorm, and Andrew is
+      [[paying the rent|Part10LivingTogether]], it's even easier to make your money last.
     <</if>>
     Since you're living with Andrew now
   <<elseif $DatingProfessor>>
@@ -128,6 +131,9 @@ You got the email about your credit card statement days ago, but you’ve just b
       Daddy helped you set up a budget, so you've stopped running up your credit card bill every
       month and started paying it down.  Making a budget is a lot easier with Daddy
       [[taking care of most of your expenses|Part10LivingTogether]] though.
+    <<else>>
+      You were doing alright already, and now that you aren't paying for a dorm, and Andrew is
+      [[paying the rent|Part10LivingTogether]], it's even easier to make your money last.
     <</if>>
   <<elseif $JobCallGirl or $JobCallGirlSide>>
     <<set $NeedSideJob to 0>>
@@ -203,13 +209,18 @@ You got the email about your credit card statement days ago, but you’ve just b
 
 ::Part10LivingTogether <800,10300>
 <img src="Part10/LivingTogether1.jpg" hspace="10" vspace="10" height="400" />
-You offered to help pay your share of the household expenses, but he says he’d have to pay it even \
-if you weren’t there, so he doesn’t think you should have to pay anything.  You know the money is \
-much less of a problem for him than it would be for you, so you don’t argue.  Besides, you think he \
-enjoys ‘taking care of you’.
+<<nobr>>
+  <<set $PlayerMoneySet to 0>>
+  You offered to help pay your share of the household expenses, but he says he’d have to pay it even
+  if you weren’t there, so he doesn’t think you should have to pay anything.  You know the money is
+  much less of a problem for him than it would be for you, so you don’t argue.  Besides, you think he
+  enjoys ‘taking care of you’.
+<</nobr>>
 
-That means you’re only left paying for your personal expenses.  So, money hasn't been that much of a \
-problem for you lately.
+<<nobr>>
+  That means you’re only left paying for your personal expenses.  So, money hasn't been that much of a
+  problem for you lately.
+<</nobr>>
 
 <<nobr>>
 You use some of the extra you usually have left over to
@@ -248,7 +259,8 @@ that’s what you had in mind anyway.
 <img src="Part10/Responsible.jpg" hspace="10" vspace="10" height="800" align="left"/>
 
 <<nobr>>
-  Maybe you’ve been thrifty, saving money when you can… however you can.  Or maybe your job just
+  <<set $PlayerMoneySet to 0>>
+  Maybe you’ve been thrifty, saving money when you can... however you can.  Or maybe your job just
   pays well enough that money hasn’t been a big problem for you.  Either way, you've been living
   within your means, and paying off your credit card bill in full every month.  You've even put
   aside enough for the occasional new outfit.
@@ -322,8 +334,10 @@ You start trying to think of ways to earn a little extra money on the side...
 <</nobr>>
 
 ::Part10CallGirlStart <2000,10300>
+<<set $JobCallGirl to 1>>
 <video src="Part10/CallGirl2.mp4" autoplay loop muted height="640"></video>
 <<nobr>>
+  <<set $PlayerMoneySet to 0>>
   You're shocked to find out how much guys are willing to pay to be with you for a few hours.  But what
   really surprised you was when Hannah had told you how many of the men had wives waiting for them back
   home.
@@ -336,7 +350,8 @@ You start trying to think of ways to earn a little extra money on the side...
 <</nobr>>
 
 ::Part10CallGirlAlready <2200,10300>
-<<set $JobCallGirl to 1>><<set $JobCallGirlSide to 0>>
+<<set $JobCallGirl to 1>><<set $JobCallGirlSide to 0>><<set $PlayerMoneySet to 0>>
+
 <<if $PlayerPregnant>>
   <img src="Part10/CallGirlPregnant.jpg" hspace="10" vspace="10" height="600" />
 
@@ -485,6 +500,7 @@ You start trying to think of ways to earn a little extra money on the side...
 ::Part10StudentLoan <3000,10300>
 <img src="Part10/StudentLoan.jpg" hspace="10" vspace="10" height="400" align="left" />
 <<nobr>>
+  <<set $PlayerMoneySet to 0>>
   You stop by the financial aid office, and fill out the paper-work.  It takes a few weeks
   before the money comes in, but you’re able to pay off your credit card bill when it does.
 <</nobr>>
@@ -683,10 +699,11 @@ Now you can [[think about something more fun|Part10End]].
 <</if>>
 
 ::Part10WebModel4 <400,10300>
-<<set $PlayerChastityBelt to 1>>
-<<set $MasterKey to 1>>
 <img src="Part10/Store4.jpg" hspace="10" vspace="10" height="600" align="left" />
 <<nobr>>
+  <<set $PlayerMoneySet to 0>>
+  <<set $PlayerChastityBelt to 1>>
+  <<set $MasterKey to 1>>
   He says you won’t be starting work for a couple days, so you are planning on spending that time
   <<if $PlayerSideEffectMasturbationBlock>>
     fucking like crazy.
@@ -789,6 +806,7 @@ Now you can [[think about something more fun|Part10End]].
 ::Part10StripAlready <4600,10300>
 <img src="Part10/StripClub2.png" hspace="10" vspace="10" height="600" />
 <<nobr>>
+  <<set $PlayerMoneySet to 0>>
   Nobody expected you to be that skilled on stage back when it was amateur night.  They were just
   excited to see a beautiful young woman stripping for the first time.  Once you started working
   at the club for real, the expectations were higher.  You did your best to focus on your dance
@@ -809,6 +827,7 @@ Now you can [[think about something more fun|Part10End]].
 ::Part10StripHire <4700,10300>
 <img src="Part10/StripClub2.png" hspace="10" vspace="10" height="600" />
 <<nobr>>
+  <<set $PlayerMoneySet to 0>>
   When you first start working at the club, you focus on your dance moves and your pole work.
   You watch some of the other girls when you aren’t on stage to try to learn. 
 <</nobr>>
@@ -1137,7 +1156,7 @@ Now you can [[think about something more fun|Part10End]].
 <</nobr>>
 
 <<nobr>>
-  He seems nervous, but you try to reassure him.  "Don’t worry, I’ll be gentle… probably.
+  He seems nervous, but you try to reassure him.  "Don’t worry, I’ll be gentle... probably.
   And I’m giving you the [[first one for free|Part10StripPeterNeighbor2]]".
 <</nobr>>
 
@@ -1152,7 +1171,7 @@ Now you can [[think about something more fun|Part10End]].
 
 <<nobr>>
   You sit on his laps with your legs on either side of him, his caged cock pressed against you.
-  Then you nibble on his ear and whisper, “do you have the key with you?”.  “N….no.”, he
+  Then you nibble on his ear and whisper, “do you have the key with you?”.  “N....no.”, he
   struggles to say.
 <</nobr>>
 
