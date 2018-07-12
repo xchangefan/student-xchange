@@ -1,29 +1,40 @@
 ::StoryCaption <200,0>
 A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
-<div style="font-size: 90%">\
-  <<if $female>>
-    <<include [[SideBarBody]]>>
-    <<include [[SideBarBirthControl]]>>
-
-    <<if $PlayerMoneySet>><<print "Money: $">>$PlayerMoney<</if>>
-    [[Inventory|SideBarInventory]]
-    <<include [[SideBarChastity]]>>\
-    <<include [[SideBarMentor]]>>\
-    <<include [[SideBarNeighbors]]>>\
-    <<include [[SideBarRelationship]]>>\
-    <<include [[SideBarJob]]>>\
-    <<include [[SideBarStudentLifeBalance]]>>\
-  <<else>>
-    <<include [[SideBarMale]]>>
-  <</if>>
-  <br>
-</div>
+<<if $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
+<br>
+<<include [[SideBarNavigation]]>>
 <<include [[SideBarDebug]]>>
 
-::SideBarMale <100,0>
+::SideBarFemale <250,0>
+<div style="font-size: 90%">\
+  <<include [[SideBarBody]]>>
+  <<include [[SideBarBirthControl]]>>
 
+  <<if $PlayerMoneySet>><<print "Money: $">>$PlayerMoney<</if>>
+  [[Inventory|SideBarInventory]]
+  <<include [[SideBarChastity]]>>\
+  <<include [[SideBarMentor]]>>\
+  <<include [[SideBarNeighbors]]>>\
+  <<include [[SideBarRelationship]]>>\
+  <<include [[SideBarJob]]>>\
+  <<include [[SideBarStudentLifeBalance]]>>\
+</div>
 
-::SideBarBody <200,0>
+::SideBarMale <300,0>
+
+::SideBarHorniness <350,0>
+<div style="font-size: 90%">\
+  <<include [[SideBarBody]]>>
+  <<include [[SideBarBirthControl]]>>
+  [[Inventory|SideBarInventory]]
+</div>
+
+<div style="font-size: 125%">\
+  <<include [[SideBarHorninessLevel]]>>\
+  <<include [[SideBarMasterPartyTime]]>>\
+</div>
+
+::SideBarBody <425,0>
 <<nobr>>
   You are
   <<if $PlayerBodyStandard>>
@@ -41,7 +52,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     pregnant,
   <</if>>
   young
-  <<if $PlayerMother>>
+  <<if $PlayerCumslut>>
+    cumslut.
+  <<elseif $PlayerMother>>
     mother.
   <<else>>
     woman.
@@ -68,7 +81,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
 <</nobr>>
 
-::SideBarSideEffects <400,0>
+::SideBarSideEffects <500,0>
 <h1>Implant Effects</h1>
 <ul>
 <<nobr>>
@@ -181,13 +194,13 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
 
   <<if $PlayerSideEffectOral >3 >>
-    <li>You love oral sex, you cannot orgasm without it, and can never refuse it, you sometimes suggest it as a reward.</li>
+    <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex, you cannot orgasm without it, and can never refuse it, you sometimes suggest it as a reward.</li>
   <<elseif $PlayerSideEffectOral >2 >>
-    <li>You love oral sex and can never refuse it, you sometimes suggest it as a reward.</li>
+    <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex and can never refuse it, you sometimes suggest it as a reward.</li>
   <<elseif $PlayerSideEffectOral >1 >>
-    <li>You love oral sex and can never refuse it.</li>
+    <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex and can never refuse it.</li>
   <<elseif $PlayerSideEffectOral>>
-    <li>You love oral sex.</li>
+    <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex.</li>
   <</if>>
 
   <<if $PlayerSideEffectAnal >3 >>
@@ -290,7 +303,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 ::SideBarChastity <1600,0>
-<<if $PlayerChastityBelt>><br><br><<print "You are currently locked in a chastity belt. ">><</if>>\
+<<if $PlayerChastityBelt and $PlayerCumslut>><br><br><<print "You are locked in a chastity belt, as you should be. ">><</if>>\
+<<if $PlayerChastityBelt and !$PlayerCumslut>><br><br><<print "You are currently locked in a chastity belt. ">><</if>>\
 <<if $VeronicaKey>><<print "Veronica has your key. ">><</if>>\
 <<if $AndrewKey>><<print "Andrew has your key. ">><</if>>\
 <<if $JoshKey>><<print "Josh has your key. ">><</if>>\
@@ -444,7 +458,49 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <</nobr>>\
 <<if $AcademicProbation>><br><<print "You are on academic probation. ">><</if>>\
 
+::SideBarHorninessLevel <<2700,0>>
+<<nobr>>
+  This is your horniness level - TODO
+<</nobr>>
+<br>
+
+::SideBarMasterPartyTime <<2750,0>>
+<<nobr>>
+  Party Time - TODO
+<</nobr>>
+
 ::SideBarDebug <2800,0>
 <div style="font-size: 70%">
   <<print "Debug: Current: ">><<print passage()>><<print " | Previous: ">><<print previous()>><<print " | ">>[[Variables List|VariablesMasterDebugger]]
 </div>
+
+::SideBarNavigation
+<div style="font-size: 70%">[[One-handed navigation|SideBarNavigationHelp]]</div>
+
+::SideBarNavigationHelp <3000,0>
+<h1>One-handed Navigation</h1>
+
+In addition to the standard click navigation, the following is supported for one-handed navigation.
+(That way your other hand will be free to hold your coffee... or whatever.)
+
+<ul>
+  <li>For pages of the story that have just a single option:
+    <ul>
+      <li>You can press the right arrow key to proceed with that 'choice'.</li>
+      <li>You can press the '1' key to proceed.</li>
+    </ul>
+  </li>
+  <li>For pages with multiple options:
+    <ul>
+      <li>There will be a small number to the right of the link ( Example<sup>[1]</sup> )</li>
+      <li>You can then select any of the options by pressing the corresponding number.</li>
+      <li>If you want to randomly select any of the options displayed, you can press '.'</li>
+    </ul>
+  </li>
+  <li>For either of these, or with standard navigation, you can press the left arrow to go back.
+      (Like you need to do now to get back to whichever page you just came from)</li>
+</ul>
+
+<<nobr>>
+  <i>I'd ask for a round of applause for <strong>"HiEv"</strong> who provided the code for this feature, but it's hard to clap with just one hand.</i>
+<</nobr>>
