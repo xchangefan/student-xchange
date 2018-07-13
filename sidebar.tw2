@@ -460,13 +460,45 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarHorninessLevel <<2700,0>>
 <<nobr>>
-  This is your horniness level - TODO
+  <<if $PartyHorniness <= 0>>
+    Your need is satisfied.  For the moment.
+  <<elseif $PartyHorniness < 5>>
+    You can feel how wet you are getting.
+  <<elseif $PartyHorniness < 10>>
+    You could really use an orgasm right now.
+  <<elseif $PartyHorniness < 15>>
+    Everyone can see the hunger in your eyes,
+    and the wetness between your legs.
+  <<elseif $PartyHorniness < 20>>
+    You see all these guys around you,
+    you ache for one of them to fuck you.
+  <<elseif $PartyHorniness < 25>>
+    You can't think straight.  All you
+    can think about is how much you need
+    a cock right now.
+  <<else>>
+    You'd do anything for a chance to cum right now.
+  <</if>>
 <</nobr>>
 <br>
 
 ::SideBarMasterPartyTime <<2750,0>>
 <<nobr>>
-  Party Time - TODO
+  <<if $PartyTime < 0>>
+    The party hasn't started yet.
+  <<elseif $PartyTime < 60>>
+    The party is just getting started.
+  <<elseif $PartyTime < 120>>
+    You're not sure how long you've been here.
+  <<elseif $PartyTime < 150>>
+    You've been bound here for a while.
+  <<elseif $PartyTime < 180>>
+    The party seems to be ending soon.
+  <<elseif $PartyTime < 215>>
+    The party is wrapping up.
+  <<else>>
+    The party ended a while ago.
+  <</if>>
 <</nobr>>
 
 ::SideBarDebug <2800,0>

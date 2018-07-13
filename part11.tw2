@@ -789,8 +789,10 @@ TODO Image, Text, Links
 
 ::Part11Master
 <<nobr>>
-  <img src="Part11/Master1.jpg" hspace="10" vspace="10" height="800" align="left"/>
   <<set $ShowHorniness to 1>>
+  <<set $PartyHorniness to 2>>
+  <<set $PartyTime to -30>>
+  <img src="Part11/Master1.jpg" hspace="10" vspace="10" height="800" align="left"/>
   Master is having a party for Valentine’s Day and he’s invited you.  Though, of
   course, you’ll be one of the party’s ‘attractions’, not an actual guest.
 <</nobr>>
@@ -814,11 +816,15 @@ TODO Image, Text, Links
   [[powerless to stop them|Part11Master2]].
 <</nobr>>
 
-TODO (Start out with a ‘horniness level’ of 2)
-
 ::Part11Master2
 <video src="Part11/Master2.mp4" autoplay loop muted height="480"></video>
 <<nobr>>
+  <<set $PartyTime += 15>>
+  <<if $PlayerSideEffectLibido>>
+    <<set $PartyHornyPerTime to (1 + $PlayerSideEffectLibido)>>
+  <<else>>
+    <<set $PartyHornyPerTime to 1>>
+  <</if>>
   You have a view across the room to where Olivia and another girl are on display.  You watch as Master tests the
   control panel the guests will use.  You can hear as he explains it to them:
 <</nobr>>
@@ -833,15 +839,18 @@ TODO (Start out with a ‘horniness level’ of 2)
 <<nobr>>
   He then resets the knob in the middle and turns the machine off until the guests arrive.
   [[For the rest of the night|Part11Master3]], you find your eyes returning again and again to Olivia and her companion as you
-  watch them orgasm so many times throughout the evening.
+  watch them orgasm so many times throughout the evening.  You can't help but get turned on watching them.
 <</nobr>>
-
-TODO (Your horniness level goes up by 1 every 30 minutes from watching them. Additionally, if you have the
-“Increased Libido” side effect, then your horniness level goes up by an additional 1 every 30 minutes for
-each level of the side effect you have)
 
 ::Part11Master3
 <<nobr>>
+  <<set $PartyTime += 15>>
+  <<if $PlayerSideEffectSubmissive>>
+    <<set $PartyHornyPerTime += 2>>
+  <</if>>
+  <<if $PlayerSideEffectExhibitionist>>
+    <<set $PartyHornyPerTime += 2>>
+  <</if>>
   <img src="Part11/Master3.jpg" hspace="10" vspace="10" height="600" align="left"/>
   You get nervous as master begins laying out an assortment of lubes and sex toys on the table near you.  “You only get
   to decide IF they can use your body.”, he tells you, “If you allow them to use it, then what they do with it is completely
@@ -854,92 +863,177 @@ each level of the side effect you have)
   at the perfect level to see that [[their interests in your body|Part11MasterHandsOn]] are more than just aesthetic.
 <</nobr>>
 
-TODO (If you are submissive, then your horniness level goes up by an additional 2 every 30 minutes)
-
-TODO (If you are an exhibitionist, then your horniness level goes up by an additional 2 every 30 minutes)
+<<nobr>>
+  <<if $PlayerSideEffectSubmissive and $PlayerSideEffectExhibitionist>>
+    Everyone can see how wet being helpless and unable to move is making you.
+    And knowing they are all looking at you is turning you one even more.
+  <<elseif $PlayerSideEffectSubmissive>>
+    Everyone can see how wet being helpless and unable to move is making you.
+  <<elseif $PlayerSideEffectExhibitionist>>
+    Being on display for everyone is making you wet.  And knowing they can see that
+    turns you on even more.
+  <</if>>
+<</nobr>>
 
 ::Part11MasterHandsOn
 <<nobr>>
-  <img src="Part11/Master4.jpg" hspace="10" vspace="10" height="600" align="left"/>
-  The female guests and most of the male guests are content to only look and admire.  But a
-  couple times an hour one comes by that is more interested in you, and are perhaps a bit
-  bolder.  They want to do more than just look.
+  <<set $PartyHorniness += $PartyHornyPerTime>>
+  <<set $PartyTime += 30>>
+  <<if $PartyHorniness < 5>>
+    <<if $PartyTime < 90>>
+      <img src="Part11/Master4.jpg" hspace="10" vspace="10" height="600" align="left"/>
+    <<else>>
+      <img src="Part11/Master4A.jpg" hspace="10" vspace="10" height="600" align="left"/>
+    <</if>>
+  <<elseif $PartyHoriness < 10>>
+    <img src="Part11/Master4B.jpg" hspace="10" vspace="10" height="600" align="left"/>
+  <<else>>
+    <img src="Part11/Master4C.jpg" hspace="10" vspace="10" height="600" align="left"/>
+  <</if>>
+  <<if $PartyTime < 60>>
+    Most of the guests are content to only look and admire.  But every so often
+    one comes by that is more interested in you, and are perhaps a bit bolder.
+    They want to do more than just look.
+  <<elseif $PartyTime < 120>>
+    You can't see it, but you know there's a puddle underneath you.  You can feel
+    how wet you are, and you can only imagine how much has dripped down.
+    <<if $PartySex>>
+      And that doesn't even include all the cum that's leaked out of you.
+    <</if>>
+    <<if $PartyNippleClamp>>
+      Though the cum that's dripped down off your face onto the floor in front of you
+      is easy enough to see.
+    <</if>>
+  <<elseif $PartyTime < 180>>
+    You wonder how long the party has been going on.  You feel like you've been
+    here for hours.  You asked if you could go pee a little while ago, thinking they
+    would let you out for a minute, but they just said, "Well, what's stopping
+    you?".  Now there's an even bigger puddle beneath you.
+  <<else>>
+    You know the party is almost over.  Some of the guests have started to leave already.
+    But the ones that remain seem interested in exploring you a bit closer.  Maybe they
+    didn't want a big audience.  Or maybe they just know you're probably to eager to
+    say no at this point.
+  <</if>>
 <</nobr>>
-
-TODO (Horniness level >10 then have to say yes), (If >25 then begging for it instead)
-
-TODO If side effects prevent you from saying no, then text for that
 
 <<nobr>>
-  The guests have started to leave.  Of course, you're still here, unable to move until
-  [[master comes by to release you|Part11MasterEndOfNight]]
+  <<if $PartyHorniness > 25>>
+    You can't take it any longer, and you start [[begging to be allowed to cum|Part11MasterBegging]].
+  <<elseif $PartyTime > 180>>
+    The guests have started to leave.  Of course, you're still here, unable to move until
+    [[master comes by to release you|Part11MasterEndOfNight]]
+  <<elseif $PartyHorniness > 10>>
+    You are desperate for any chance to orgasm, you can't help but say
+    <<set $YesText to "Yes!">>
+  <<elseif ($PlayerSideEffectSubmissive > 2) or ($PlayerSideEffectSubmissive > 1 and $PartyHorniness > 5)>>
+    Master said you could tell them no, but the thought of how helpless you are, and that you
+    couldn't really stop them from doing anything they wanted to you.  You can't help but tell
+    him to
+    <<set $YesText to "use your body however he wants.">>
+  <<elseif $PlayerSideEffectExhibitionist > 3>>
+    Knowing that whatever he does to you will be right here, in front of everyone, is just too
+    exciting for you.  You can't help but
+    <<set $YesText to "let him put on a show for everyone.">>
+  <<elseif $PlayerSideEffectPheromones > 2>>
+    The smell of all these excited men surrounding you is too much for you.  You can't help but
+    say
+    <<set $YesText to "Yes.">>
+  <<elseif $PlayerSideEffectLibido > 2>>
+    Your libido is so high all the time, and now that you are out of that belt, at least for the moment...
+    Of course you say
+    <<set $YesText to "Yes!">>
+  <<elseif $PartyOrgasm>>
+    You've had an orgasm finally tonight, and your body greedily cries out for another one.
+    <<set $YesText to "You say Yes! and hope for another one.">>
+  <<else>>
+    You wonder if it'd be safe to [[tell him no|Part11MasterNo]].  But you went so long without and
+    orgasm, and now your body cries out for one.  You really want to tell him
+    <<set $YesText to "Yes.">>
+  <</if>>
+  <<if $YesText>>
+    <<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
+    <<switch $PlayerRollDice>>
+      <<case 1 2 3 4 5>>
+        [[$YesText|Part11MasterTeased]]
+      <<case 16 17 18 19 20>>
+        [[$YesText|Part11MasterSex]]
+      <<default>>
+        [[$YesText|Part11MasterOral]]
+    <</switch>>
+    <<unset $YesText>>
+  <</if>>
 <</nobr>>
-
-<<nobr>>
-  You are desperate for any chance to orgasm, you can't help but say [[Yes!|Part11MasterYes]]
-<</nobr>>
-
-<<nobr>>
-  You've been in the belt so long, and you want to cum now that you finally can.  So you
-  want to [[let him use your body,|Part11MasterYes]] hoping that you will.  But you look
-  at the toys next to you and wonder if you should [[tell him no|Part11MasterNo]] instead.
-<</nobr>>
-
-<<nobr>>
-  You can't take it any longer, and you start [[begging to be allowed to cum|Part11MasterBegging]].
-<</nobr>>
-
-[[Part11MasterEndOfNight]]
-TODO (If you are back here again, then increase your horniness level as 30 minutes have passed.  If
-3 hours or more have passed, then go to “End of the Night”. If at any point your horniness
-level goes above 25, then go to “Begging for It”)
 
 ::Part11MasterNo
-<<nobr>>
-  <<set $PartyNo to 1>>
-  <img src="Part11/MasterNo.jpg" hspace="10" vspace="10" height="600" align="left"/>
-  The guest is disappointed, but he respects your wishes.  You watch as he heads over to play
-  with the dials controlling the pleasure going to Olivia or her companion.  Watching
-  them twist and moan in ecstasy make you wonder if you made the right choice. 
-<</nobr>>
+<<if !$PartyNo>><<set $PartyNo to 0>><</if>>
+<<set $PartyNo += 1>>
+<<if $PartyNo == 2>>
+  <img src="Part11/MasterNoA.gif" hspace="10" vspace="10" height="600" align="left"/> \
 
-<<nobr>>
-  It's too late to change your mind now though.  Buy you know another guest will [[probably be along soon|Part11MasterHandsOn]]
-<</nobr>>
+  Master notices you turning down the guests.  He doesn't chastise you, it's your choice after all. \
+  But he does position one of the other girls in front of you.  Now you can watch as Master's \
+  guest bring her to orgasm after orgasm.  You feel yourself getting wetter as you watch, imagining \
+  it were you.  Maybe you'll give the [[next guest|Part11MasterHandsOn]] a different answer. \
+  <<set $PartyHornyPerTime += 3>>
+<<else>>
+  <img src="Part11/MasterNo.jpg" hspace="10" vspace="10" height="600" align="left"/> \
 
-TODO (Increase horniness level)
-
-::Part11MasterYes
-TODO Move this into the Hands On Passage Instead
-
-<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>\
-<<switch $PlayerRollDice>>
-  <<case 1 2 3 4 5>>
-    <<include [[Part11MasterTeased]]>>
-  <<case 16 17 18 19 20>>
-    <<include [[Part11MasterSex]]>>
-  <<default>>
-    <<include [[Part11MasterOral]]>>
-<</switch>>
+  The guest is disappointed, but he respects your wishes.  You watch as he heads over to play \
+  with the dials controlling the pleasure going to Olivia or her companion.  Watching \
+  them twist and moan in ecstasy make you wonder if you made the right choice.  It's too late \
+  to change your mind now though.  But you know another guest will [[probably be along soon|Part11MasterHandsOn]]
+<</if>>
 
 ::Part11MasterTeased
 <<nobr>>
-  <img src="Part11/Master5.jpg" hspace="10" vspace="10" height="600" align="left"/>
-  You are hopeful as his hands start to roam your body.  You feel the orgasm you desperately crave getting nearer as dozens of
+  <<if !$PartyTease>>
+    <<set $PartyTease to 1>>
+    <img src="Part11/Master5.jpg" hspace="10" vspace="10" height="600" align="left"/>
+  <<elseif $PartyTease == 1>>
+    <<set $PartyTease to 2>>
+    <img src="Part11/Master5B.gif" hspace="10" vspace="10" height="600" align="left"/>
+  <<elseif $PartyTease == 2>>
+    <<set $PartyTease to 3>>
+    <img src="Part11/Master5C.gif" hspace="10" vspace="10" height="600" align="left"/>
+  <<else>>
+    <<set $PartyTease += 1>>
+    <video src="Part11/Master5D.mp4" autoplay loop muted height="480"></video>
+    <br>
+  <</if>>
+  <<set $PartyHorniness += 3>>
+  You are hopeful as his hands start to roam your body.
+  <<if $PartyTease > 1>>
+    Maybe this one will let you cum.
+  <</if>>
+  You feel the orgasm you desperately crave getting nearer as dozens of
   onlookers watch.  But his hands pull away before you can cum and head to the bench.
 <</nobr>>
 
 <<nobr>>
-  You are hoping to feel one of the toys sliding into you, but instead you feel the sharp sting of a riding crop on your ass.
-  You whimper and squirm to avoid the next blow, but it’s no use.
+  You are hoping to feel one of the toys sliding into you, but instead you feel the sharp sting from one of the
+  toys on your ass. You whimper and squirm to avoid the next blow, but it’s no use.
 <</nobr>>
 
 <<nobr>>
-  After a few swats he returns to his teasing touches again.  The cycle repeats until he loses interest.  When he leaves you
-  ass is still stinging, and you are [[left unsatisfied and hornier than you were before|Part11MasterHandsOn]].
+  After a few swats he returns to his teasing touches again.  The cycle repeats until he loses interest.  When he leaves,
+  your ass is still stinging, and you are [[left unsatisfied and hornier than you were before|Part11MasterHandsOn]].
 <</nobr>>
 
-TODO (Your horniness has gone up by 3.)
+<<nobr>>
+  <<if !$PartyButtplug and either(1,2) == 1>>
+    <img src="Part11/Master5A.gif" hspace="10" vspace="10" height="300"/>
+    <br/>
+    <<set $PartyButtplug to 1>>
+    After he finish teasing you, he grabs a shiny butt plug from the table next to you.  You can't help but moan slightly as
+    he lubes it up and slowly slides it into your ass.  He leaves it there and walks away.
+    <<set $PartyHoriness += 3>>
+    <<if $PlayerSideEffectAnal>>
+      You wish it were a cock and feeling it inside you excites you more than you already were.
+      <<set $PartyHornyPerTime += 2>>
+    <</if>>
+  <</if>>
+<</nobr>>
 
 ::Part11MasterOral
 <img src="Part11/Master6.jpg" hspace="10" vspace="10" height="600"/>
@@ -957,23 +1051,36 @@ TODO (Your horniness has gone up by 3.)
 
 <<nobr>>
   <<if $PlayerSideEffectOral>>
+    <<set $PartyHorniness += 4>>
     Everyone can see how turned on you are from servicing him.  This attracts other guests to come and request the same.
-    You eagerly agree each time.  You spend the next 15 minutes with one guy after another using your mouth.  When they’ve
-    all been satisfied, they leave your face a sticky mess before moving on to the other ‘exhibits’.
+    You eagerly agree each time.  You spend most of the next 30 minutes with one guy after another using your mouth.
+    When they’ve all been satisfied, they leave your face a sticky mess before moving on to the other ‘exhibits’.
+    You're left wondering how long it will be before you can taste the next cock.
   <<else>>
     As you catch your breath, you feel some of his cum slowly trickling down, and the rest drying and sticking to your face.
-    There’s nothing you can do to clean up either though.  He clearly enjoyed himself, but it didn’t do very much to relieve
+    There’s nothing you can do to clean up either though.  He clearly enjoyed himself, but it didn’t do much to relieve
     your need.
+    <<set $PartyHorniness -= 0>>
   <</if>>
   You are left [[waiting for the next guest|Part11MasterHandsOn]] that wants to use you.
 <</nobr>>
 
-TODO If you have the “Oral” side effect: (Your horniness goes up by 4)
-TODO If you do not have the “Oral” side effect: (Your horniness goes down by 1).
+<<nobr>>
+  <<if !$PartyNippleClamp>>
+    <<set $PartyNippleClamp to 1>>
+    <img src="Part11/Master6A.png" hspace="10" vspace="10" height="400" align="left"/>
+    As he walks away, his wife walks up.  She grabs the pair of nipple clamps from the table next to you.  You wince for
+    a moment as she attaches them to your nipples.  Then she presses a button on each and you feel them both start to vibrate,
+    making you get even more arroused than you already were.
+    <<set $PartyHornyPerTime += 5>>
+  <</if>>
+<</nobr>>
 
 ::Part11MasterSex
 <video src="Part11/Master7.mp4" autoplay loop muted height="480"></video>
 <<nobr>>
+  <<if !$PartySex>><<set $PartySex to 0>><</if>>
+  <<set $PartySex += 1>>
   You can’t see him, but you feel his hand stroke your bare ass.  When you hear
   the familiar sound of his pants unzipping you know what is coming next.  Luckily,
   you are already wet and eager to feel him inside you as he doesn’t bother with
@@ -981,28 +1088,35 @@ TODO If you do not have the “Oral” side effect: (Your horniness goes down by
 <</nobr>>
 
 <<nobr>>
+  <<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
   If your hands were free, you could reach down and play with your clit to make
   sure you get off too, but you can’t.  He could reach under you and play with it
   too if he cared whether or not you got off, but he doesn’t.  He’s only concerned
-  with how good your body feels wrapped around his cock.
+  with how good your body feels
+  <<if !$PlayerSideEffectSubmissive>><<set $PlayerSideEffectSubmissive to 0>><</if>>
+  <<if !$PlayerSideEffectExhibitionist>><<set $PlayerSideEffectExhibitionist to 0>><</if>>
+  <<if $PlayerEasytoOrgasm or ($PlayerSideEffectExhibitionist + $PlayerSideEffectSubmissive + $PlayerRollDice >= 20)>>
+    <<if $PlayerSideEffectOrgasmBlock>>
+      [[wrapped around his cock.|Part11MasterDenied]]
+    <<else>>
+      [[wrapped around his cock.|Part11MasterOrgasm]]
+    <</if>>
+  <<else>>
+    [[wrapped around his cock.|Part11MasterNoOrgasm]]
+  <</if>>
 <</nobr>>
 
-
-TODO Roll (d20) to see if you orgasm.
-If you are submissive then him fucking you while you are helpless turns you on
-more making your orgasm easier.  (add 1 to your roll)
-
-If you are an exhibitionist, then all the people watching him fuck you turns you
-on, making your orgasm easier. (add 1 to your roll)
-
-If you have the “Easy Orgasms” side effect, or if your roll (including any
-bonuses) is a 20 or better, go to “Orgasm”, otherwise Continue to “No Orgasm”.
-If you have the Denial Side Effect, skip this and Continue to “Denied”
-TODO [[Part11MasterNoOrgasm]] [[Part11MasterOrgasm]] [[Part11MasterDenied]]
+<<nobr>>
+  <<if $PartyNippleClamp>>
+    You feel the clamps tug at your nipples as the sway back and forth with each of this thrusts.
+    <<set $PartyHorniness += 2>>
+  <</if>>
+<</nobr>>
 
 ::Part11MasterNoOrgasm
 <img src="Part11/Master8.jpg" hspace="10" vspace="10" height="600"/>
 <<nobr>>
+  <<set $PartyHorniness += 5>>
   You feel yourself getting close, but you whimper in
   frustration as he pulls out too soon.  It feels like you
   just needed a couple more thrusts and you’d have
@@ -1017,12 +1131,12 @@ TODO [[Part11MasterNoOrgasm]] [[Part11MasterOrgasm]] [[Part11MasterDenied]]
   nearby prefer to watch you squirm and whimper in frustration for a while.
 <</nobr>>
 
-TODO Your horniness level goes up by 5.
-TODO Adjust Horniness Level
-
 ::Part11MasterOrgasm
 <img src="Part11/Master9.gif" hspace="10" vspace="10" height="480"/>
 <<nobr>>
+  <<set $PartyHorniness to 0>>
+  <<if !$PartyOrgasm>><<set $PartyOrgasm to 0>><</if>>
+  <<set $PartyOrgasm += 1>>
   You feel yourself getting closer and closer, until finally you cry out as an
   orgasm washes over you.
 <</nobr>>
@@ -1040,12 +1154,10 @@ TODO Adjust Horniness Level
   [[next guest|Part11MasterHandsOn]] with a smile on your face.
 <</nobr>>
 
-TODO Your horniness level drops to 0, at least for the moment
-TODO Adjust Horniness Level
-
 ::Part11MasterDenied
 <img src="Part11/Master10.jpg" hspace="10" vspace="10" height="600"/>
 <<nobr>>
+  <<set $PartyHorniness += 10>>
   <<set $PartyDenial to 1>>
   You feel your orgasm building.  Finally you feel yourself cresting and know your orgasm is
   about to wash over you.  And then… nothing.  You still feel his cock thrusting inside you but
@@ -1066,37 +1178,64 @@ TODO Adjust Horniness Level
   chance to cum, you’re [[too horny to say no|Part11MasterHandsOn]] to anyone right now.
 <</nobr>>
 
-TODO Your horniness level goes up by 10.
-TODO Adjust Horniness Level
-TODO You don’t orgasm the rest of the night, even if you otherwise would have. 
-TODO Denied for the rest of the night (including End of Night and Begging)
-
 ::Part11MasterEndOfNight
 <img src="Part11/Master11.jpg" hspace="10" vspace="10" height="600"/>
 <<nobr>>
-  After a couple hours, the evening’s events are ending.  Master has someone come by and release you and help
-  you clean up a bit and put any clothes the guests removed back on.  Then she brings you over to talk to him.
+  After a couple hours, the evening’s events are ending.  Master has someone come by and release you.
+  <<if $PartyNippleClamp>>
+    <<unset $PartyNippleClamp>>
+    You wince as the nipple clamps are removed.
+  <</if>>  
+  She then help you clean up a bit and put any clothes the guests removed back on.  Then she brings you over to talk to him.
 <</nobr>>
 
 <<nobr>>
   He tells you what a good girl you were tonight.  He gives your clit a few, teasing strokes as he complements you
-  on your ‘performance’ this evening, then he locks your belt back on sealing it away from you before you before
-  you [[head home|Part11MasterBackHome]].
+  on your ‘performance’ this evening.
+  <<if $PartyHorniness > 20>>
+    You beg him for just one
+    <<if $PartyOrgasm>>
+      more
+    <</if>>
+    orgasm before he locks your belt on.  But he just pats your ass and tells you that your chance for that is
+    over for a while.  Then
+  <<elseif $PartyHorniness > 10>>
+    You ache for just one
+    <<if $PartyOrgasm>>
+      more
+    <</if>>
+    orgasm before he locks your belt on.  But you know your chance for that is over now as
+  <<else>>
+    You meekly wait as
+  <</if>>
+  he
+  <<if $PartyButtplug>>
+    pulls the butt plug out of your ass and
+  <</if>>
+  puts your belt back, clicking the lock shut before [[sending you home|Part11MasterBackHome]].
 <</nobr>>
-
-TODO Something about horniness level now
 
 ::Part11MasterBegging
 <video src="Part11/Master12.mp4" autoplay loop muted height="640"></video>
+<<set $PartyTime to 230>>
 <<nobr>>
-Eventually your horniness and frustration become too much and you can’t just stay quiet or still any longer.
-You begin begging for someone, anyone, to fuck you.  Master comes over and sees your desperation and
-takes mercy on you.
+  <<if !$PartySex>><<set $PartySex to 0>><</if>>
+  <<set $PartySex += random(10, 15, 20)>>
+  Eventually your horniness and frustration become too much and you can’t just stay quiet or still any longer.
+  You begin begging for someone, anyone, to fuck you.  Master comes over and sees your desperation and
+  takes mercy on you.
 <</nobr>>
 
 <<nobr>>
 He gags you to stop your begging, but he promises you won’t need to beg much longer.  He removes you from
-the pillory and takes you a room nearby.  After your arms are secured above your head, master calls someone
+the 
+<<if $PartyNippleClamp>>
+  <<unset $PartyNippleClamp>>
+  pillory, removes the nipple clips,
+<<else>>
+  pillory
+<</if>>  
+and takes you to a room nearby.  After your arms are secured above your head, master calls someone
 into the room.
 <</nobr>>
 
@@ -1110,8 +1249,8 @@ there are plenty of guests here that are eager to fuck you but that didn’t wan
 You spend the rest of the night, long after the main party has ended, being fucked by one guy after another.
 You’re even used by a few women, using strap-ons, or their own fist.
 <</nobr>>
-
 <<if !$PartyDenial and $PlayerSideEffectOrgasmBlock>>
+
   <<nobr>>
       <<set $PartyDenial to 1>>
       You whimper in frustration, realizing the “Denial” side effect of your X-Change implant must
@@ -1125,8 +1264,8 @@ You’re even used by a few women, using strap-ons, or their own fist.
     tonight at all, no matter how hard you try!  And you know even though you don’t have any
     chance to cum, you’re [[too horny to say no|Part11MasterHandsOn]] to anyone right now.
   <</nobr>>
-<</if>>
 
+<</if>>
 <<nobr>>
   <<if $PartyDenial>>
     You aren’t going to be able to cum tonight, but each time you get close you can’t help but hope that it will be
@@ -1134,7 +1273,8 @@ You’re even used by a few women, using strap-ons, or their own fist.
     will listen to fuck you.  Or at least you would if they could understand what you are saying through the gag.
     When the last of the guests have left you are still horny and unsatisfied.
   <<else>>
-    <<set $PartyOrgasm += random(5, 10)>>
+    <<if !$PartyOrgasm>><<set $PartyOrgasm to 0>><</if>>
+    <<set $PartyOrgasm += random(5, 6, 7, 10)>>
     You’ve lost track of how many orgasms you’ve have tonight.  You know if the ropes weren't holding you up,
     you would have collapsed onto the floor a while ago.
   <</if>>
@@ -1142,13 +1282,20 @@ You’re even used by a few women, using strap-ons, or their own fist.
 
 <<nobr>>
   When everyone is done, Master comes to retrieve you.  He comments on the impressive pool of cum leaking out of
-  you onto the floor.  He locks your belt back on you before sending you [[back home|Part11MasterBackHome]].
+  you onto the floor.  He
+  <<if $PartyButtplug>>
+    pulls the butt plug out of your ass and
+  <</if>>
+  locks your belt back on you before sending you [[back home|Part11MasterBackHome]].
 <</nobr>>
 
 ::Part11MasterBackHome
 <<nobr>>
   <img src="Part11/Master13.jpg" hspace="10" vspace="10" height="600" align="left"/>
   <<unset $ShowHorniness>>
+  <<unset $PartyButtplug>>
+  <<unset $PartyTease>>
+
   After Master has locked you back in your chastity belt, you head back home. You don’t
   know when you’ll be out of the belt again.  You do your best to clean yourself up with the belt on.
 <</nobr>>
@@ -1355,7 +1502,6 @@ TODO Image, Text, Links
 <</nobr>>
 
 ::Part11CumslutCollar
-DEBUG TODO <<set $PlayerSideEffectOral to 1>>
 <img src="Part11/Chastity7.jpg" hspace="10" vspace="10" height="600" align="left"/>
 <<nobr>>
   When you open the package you see a collar inside, with “CUMSLUT” printed on it.  You put it on
