@@ -183,7 +183,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li>You like the thought of being naked in public.</li>
   <</if>>
 
-  <<if $PlayerSideEffectSubmissive >3 >>
+  <<if $PlayerSideEffectDominant>>
+    <li>You are usually dominant in sexual situations.</li>
+  <<elseif $PlayerSideEffectSubmissive >3 >>
     <li>You are submissive in sexual situations, you can never refuse anything.</li>
   <<elseif $PlayerSideEffectSubmissive >2 >>
     <li>You are submissive in sexual situations, you can never refuse sex.</li>
@@ -424,7 +426,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 			<</if>>\
 		<</if>>\
 	<<else>>\
-		<<if !$RoommateAndrew and !$RoommateAssistant>>\
+		<<if !$RoommateAndrew and !$RoommateAssistant and !$RoommateKate>>\
 			<<if $RoommateJerk >><<print "Your roommate is Barry.">><</if>>\
 			<<if $RoommatePlayer >><<print "Your roommate is James.">><</if>>\
 			<<if $RoommateNerd >><<print "Your roommate is Peter.">><</if>>\
@@ -475,11 +477,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $JobOfficeIntern>><<print "You work as an Office Intern. ">><</if>>\
 <<if $JobCallGirl>><<print "You work as a Call Girl. ">><</if>>\
 <<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>\
-<<if $JobBartender>><<print "You work as a Bartender. ">><</if>>\
-<<if $JobBartenderGirls>><<print "You work as a Bartender, usually picking up girls. ">><</if>>\
-<<if $JobBartenderGuys>><<print "You work as a Bartender, usually picking up guys. ">><</if>>\
-<<if $JobBartenderBi>><<print "You work as a Bartender, usually picking up girls or guys. ">><</if>>\
-<<if $JobBartenderSub>><<print "You work as a Bartender, usually letting people pikc you up. ">><</if>>\
+<<if $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>><<print "You work as a Bartender. ">><</if>>\
 <<if $JobWebModel>><<print "You work as a Web Model. ">><</if>>\
 <<if $JobWebModelSide>><<print "You are also working as a Web Model. ">><</if>>\
 <<if $JobPornOral>><<print "You work as an Oral Porn Actress. ">><</if>>\

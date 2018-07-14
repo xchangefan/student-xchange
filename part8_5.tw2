@@ -78,8 +78,27 @@
 	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
-<<if $MasterKate or $DatingVeronica>><<print "You talk to her about how much you missed her while you were away and how awkward it was with your relatives at Christmas.">><<else>><<print "You talk to him about how much you missed him while you were away and how awkward it was with your relatives at Christmas.">><</if>>
-<<if $DatingVeronica>><img src="Part8.5/Faithfull2.jpg" hspace="10" vspace="10" height="650"><<else>><<if $MasterKate>><br><video src="Part8.5/Faithfull4a.mp4" autoplay loop muted height="640"></video><br><<else>><<if $DatingProfessor>><br><video src="Part8.5/Faithfull5.webm" autoplay loop muted height="640"></video><br><<else>><img src="Part8.5/Faithfull1.jpg" hspace="10" vspace="10" height="650"><</if>><</if>><</if>>
+<<nobr>>
+	<<if $DatingVeronica>>
+		<img src="Part8.5/Faithfull2.jpg" hspace="10" vspace="10" height="650" align="left">
+	<<elseif $MasterKate>>
+		<br><video src="Part8.5/Faithfull4a.mp4" autoplay loop muted height="640"></video><br>
+	<<elseif $DatingProfessor>>
+		<br><video src="Part8.5/Faithfull5.webm" autoplay loop muted height="640"></video><br>
+	<<elseif $DatingNerd>>
+		<img src="Part8.5/Faithfull6.gif" hspace="10" vspace="10" height="650" align="left">
+	<<else>>
+		<img src="Part8.5/Faithfull1.jpg" hspace="10" vspace="10" height="650" align="left">
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $MasterKate or $DatingVeronica>>
+		<<print "You talk to her about how much you missed her while you were away and how awkward it was with your relatives at Christmas.">>
+	<<else>>
+		<<print "You talk to him about how much you missed him while you were away and how awkward it was with your relatives at Christmas.">>
+	<</if>>
+<</nobr>>
 
 <<nobr>>
 	<<if $MasterKate or $DatingVeronica>>

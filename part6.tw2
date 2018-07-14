@@ -9,7 +9,7 @@
 	<span style="font-size: 150%"><<print "Campus">></span>
 <</nobr>>
 
-<<print "It’s so hard for you to focus sometimes">><<if $PlayerChastityBelt>><<print "Your chastity belt keeps ">><<else>><<print "your mistress’s orders keep ">><</if>><<print "you from the orgasms you so desperately want. Your constant need keeps you from concentrating on your studies as much as you should be.">>
+<<print "It’s so hard for you to focus sometimes, ">><<if $PlayerChastityBelt>><<print "your chastity belt keeps ">><<else>><<print "your mistress’s orders keep ">><</if>><<print "you from the orgasms you so desperately want. Your constant need keeps you from concentrating on your studies as much as you should be.">>
 
 <video src="Part6/Start2.mp4" autoplay loop muted height="640"></video>
 
@@ -1949,7 +1949,7 @@ Might add something here in the future. Or not.
 
 ::Part6Barista <1300,4175>
 <<nobr>>
-	<<if !$DatingAndrew and !$DatingJosh>>
+	<<if !$DatingAndrew and !$DatingJosh and $SexAndrew>>
 		<<set $SexAndrew += 1>>
 		<<set $SexAndrewVaginal += 1>>
 		<<set $SexCount += 1>>
@@ -1976,10 +1976,12 @@ Might add something here in the future. Or not.
 <<nobr>>
 	<<if $DatingAndrew or $DatingJosh>>
 		<img src="Part6/Barista1.jpg" hspace="10" vspace="10" height="640">
-	<<else>>
+	<<elseif $SexAndrew>>
 		<br>
 		<video src="Part6/Barista2.mp4" autoplay loop muted height="640"></video>
 		<br>
+	<<else>>
+		<img src="Part6/Barista3.jpg" hspace="10" vspace="10" height="640">
 	<</if>>
 <</nobr>>
 
@@ -1987,17 +1989,20 @@ Might add something here in the future. Or not.
 <<if $DatingAndrew>>
 	You spend lots of time practising latte art and you can say that you have become quite skillful at it.
 	You use it as way to share part of the happiness in your life with the customers that come into the cafe.
+		<br>
 <<elseif $DatingJosh>>
-		You spend lots of time practising latte art and you can say that you have become quite skillful at it.
-		You are sure that Josh appreciates the extra effort you put into his daily coffee.
+	You spend lots of time practising latte art and you can say that you have become quite skillful at it.
+	You are sure that Josh appreciates the extra effort you put into his daily coffee.
+	<br>
 <<elseif $SexAndrew>>
-		But of course, your favorite part at work is the occasional fuck you have with Andrew, sometimes in his office,
-		sometimes behind the counter’s wall. The thought that customers could catch you in the act makes it
-		even more thrilling.
+	But of course, your favorite part at work is the occasional fuck you have with Andrew, sometimes in his office,
+	sometimes behind the counter’s wall. The thought that customers could catch you in the act makes it
+	even more thrilling.
+	<br>
 <</if>>
+[[You join a study group.|Part6StudyGroup]]
 <</nobr>>
 
-[[You join a study group.|Part6StudyGroup]]
 
 ::Part6StartJosh2 <0,5125>
 <<nobr>>
