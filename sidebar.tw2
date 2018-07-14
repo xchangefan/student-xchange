@@ -1,6 +1,7 @@
 ::StoryCaption <200,0>
 A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
-<<if $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
+
+<<if $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
 <br>
 <<include [[SideBarNavigation]]>>
 <<include [[SideBarDebug]]>>
@@ -34,50 +35,69 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<include [[SideBarMasterPartyTime]]>>\
 </div>
 
+::SideBarSlave <388,0>
+<div style="font-size: 90%">\
+  <<include [[SideBarBody]]>>
+  <<include [[SideBarBirthControl]]>>
+
+  [[Inventory|SideBarInventory]]
+</div>
+
+
 ::SideBarBody <425,0>
 <<nobr>>
   You are
-  <<if $PlayerBodyStandard>>
-    a beautiful,
-  <<elseif $PlayerBodyPlus>>
-    a curvy,
-  <<elseif $PlayerBodyPetite>>
-    a petite,
-  <<elseif $PlayerBodyFit>>
-    an athletic,
+  <<if $PlayerSlave > 1>>
+    an obedient slave.
+  <<elseif $PlayerSlave>>
+    a slave.
   <<else>>
-    a mysterious,
-  <</if>>
-  <<if $PlayerPregnant>>
-    pregnant,
-  <</if>>
-  young
-  <<if $PlayerCumslut>>
-    cumslut.
-  <<elseif $PlayerMother>>
-    mother.
-  <<else>>
-    woman.
-  <</if>>
-<</nobr>>
-
-<<nobr>>
-  This body is yours for
-  <<if $PlayerSideEffectPermanent>>
-    the rest of your life.
-  <<else>>
-    at least the next few years.
+    <<if $PlayerBodyStandard>>
+      a beautiful,
+    <<elseif $PlayerBodyPlus>>
+      a curvy,
+    <<elseif $PlayerBodyPetite>>
+      a petite,
+    <<elseif $PlayerBodyFit>>
+      an athletic,
+    <<else>>
+      a mysterious,
+    <</if>>
+    <<if $PlayerPregnant>>
+      pregnant,
+    <</if>>
+    young
+    <<if $PlayerCumslut>>
+      cumslut.
+    <<elseif $PlayerMother>>
+      mother.
+    <<else>>
+      woman.
+    <</if>>
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  You are 
-  <<if  $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
-    trying to adjust to the [[side effects|SideBarSideEffects]] your implant gave your new body.
-  <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep or $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
-    enjoying the [[features|SideBarSideEffects]] of your new body.
+  This body
+  <<if $PlayerSlave>>
+    doesn't belong to you anymore.
+  <<elseif $PlayerSideEffectPermanent>>
+    is yours for the rest of your life.
   <<else>>
-    enjoying your new body.
+    is yours for at least the next few years.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerSlave>>
+    You are 
+    <<if  $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
+      trying to adjust to the [[side effects|SideBarSideEffects]] your implant gave your new body.
+    <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep or $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
+      enjoying the [[features|SideBarSideEffects]] of your new body.
+    <<else>>
+      enjoying your new body.
+    <</if>>
   <</if>>
 <</nobr>>
 
@@ -217,7 +237,13 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarBirthControl <600,0>
 <<nobr>>
-  <<if $PlayerPregnant>>
+  <<if $PlayerSlave>>
+    Your new owner will decide whether he wants to breed you or not.
+    <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+      Though he'll have to deal with your implant if he does decide
+      to breed you.
+    <</if>>
+  <<elseif $PlayerPregnant>>
   <<elseif $PlayerProtectionTry>>
     You are trying to get pregnant.
   <<elseif $PlayerProtectionNone>>
@@ -242,9 +268,13 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarInventory <800,0>
 <h1>Inventory</h1>
-<<include [[SideBarClothing]]>>\
-<<include [[SideBarPiercing]]>>\
-<<include [[SideBarOtherInventory]]>>\
+<<if $PlayerSlave>>
+  You own nothing.
+<<else>>
+  <<include [[SideBarClothing]]>>\
+  <<include [[SideBarPiercing]]>>\
+  <<include [[SideBarOtherInventory]]>>\
+<</if>>
 
 
 ::SideBarClothing <1000,0>
@@ -313,12 +343,55 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 ::SideBarMentor <1800,0>
-<<if $MentorFaith>><br><br><<print "Faith is your mentor">><<if $RoommateFaith>><<print " and roommate">><</if>><<if $NeighbourFaith>><<print " and neighbour">><</if>><<print ". ">><</if>>\
-<<if $MentorEmily>><br><br><<print "Emily is your mentor">><<if $RoommateEmily>><<print " and roommate">><</if>><<if $NeighbourEmily and $NeighbourEmilyBoyfriend>><<print ". She and her boyfriend are your neighbours">><</if>><<print ". ">><</if>>\
-<<if $MentorHannah>><br><br><<print "Hannah is your mentor">><<if $RoommateHannah>><<print " and roommate">><</if>><<if $NeighbourHannah>><<print " and neighbour">><</if>><<print ". ">><</if>>\
-<<if $MentorSamantha>><br><br><<print "Samantha is your mentor">><<if $RoommateSamantha>><<print " and roommate">><</if>><<if $NeighbourSamantha>><<print " and neighbour">><</if>><<print ". ">><</if>>\
-<<if $MentorOlivia>><br><br><<print "Olivia is your mentor">><<if $RoommateOlivia>><<print " and roommate">><</if>><<if $NeighbourOlivia>><<print " and neighbour">><</if>><<print ". ">><</if>><<if $OliviaChastityBelt>><<print "She is currently locked in a chastity belt.">><</if>>\
-\
+<br><br>
+<<nobr>>
+  <<if $MentorFaith>>
+    Faith is your mentor
+    <<if $RoommateFaith>>
+      and roommate
+    <<elseif $NeighbourFaith>>
+      and neighbour
+    <</if>>
+    <<print ". ">>
+  <<elseif $MentorEmily>>
+    Emily is your mentor
+    <<if $RoommateEmily>>
+      and roommate
+    <<elseif $NeighbourEmily and $NeighbourEmilyBoyfriend>>
+      . She and her boyfriend are your neighbours
+    <<elseif $NeighbourEmily>>
+      and neighbour
+    <</if>>
+    <<print ". ">>
+  <<elseif $MentorHannah>>
+    Hannah is your mentor
+    <<if $RoommateHannah>>
+      and roommate
+    <<elseif $NeighbourHannah>>
+      and neighbour
+    <</if>>
+    <<print ". ">>
+  <<elseif $MentorSamantha>>
+    Samantha is your mentor
+    <<if $RoommateSamantha>>
+      and roommate
+    <<elseif $NeighbourSamantha>>
+      and neighbour
+    <</if>>
+    <<print ". ">>
+  <<elseif $MentorOlivia>>
+    Olivia is your mentor
+    <<if $RoommateOlivia>>
+      and roommate
+    <<elseif $NeighbourOlivia>>
+      and neighbour
+    <</if>>
+    <<print ". ">>
+    <<if $OliviaChastityBelt>>
+      She is currently locked in a chastity belt.
+    <</if>>
+  <</if>>
+<</nobr>>
 
 ::SideBarNeighbors <2000,0>
 <<if $PlayerNeighbourSet>><br>\

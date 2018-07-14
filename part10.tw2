@@ -326,10 +326,21 @@ You start trying to think of ways to earn a little extra money on the side...
   <<if $PlayerChastityBelt>>
     Of course, it would be rather difficult to be a call girl with this belt locked on you.
     You doubt that Hannah's agency would want to deal with a girl who is only able to
-    give blowjobs and handjobs.  You'll have to [[think of something else|Part10ExtraMoney2]].
+    give blowjobs and handjobs.  You'll have to 
+    <<if $JobWebModel or $JobWebModelSide or $JobPorn or $JobPornSide or $JobPornOral or $JobPornOralSide or $JobPornAnal or $JobPornAnalSide or $JobPornGang or $JobPornGangSide>>
+      [[think of something else|Part10ExtraMoney3]].
+    <<else>>
+      [[think of something else|Part10ExtraMoney2]].
+    <</if>>
+
   <<else>>
     You can [[take Hannah up on her offer|Part10CallGirlStart]] or you
-    can [[try to think of something else|Part10ExtraMoney2]].
+    can 
+        <<if $JobWebModel or $JobWebModelSide or $JobPorn or $JobPornSide or $JobPornOral or $JobPornOralSide or $JobPornAnal or $JobPornAnalSide or $JobPornGang or $JobPornGangSide>>
+          [[try to think of something else|Part10ExtraMoney3]].
+        <<else>>
+          [[try to think of something else|Part10ExtraMoney2]].
+        <</if>>
   <</if>>
 <</nobr>>
 
@@ -468,7 +479,9 @@ You start trying to think of ways to earn a little extra money on the side...
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerChastityBelt and $MasterKey>>
+  <<if $PlayerChastityBelt and ($JobWebModel or $JobWebModelSide or $JobPorn or $JobPornSide or $JobPornOral or $JobPornOralSide or $JobPornAnal or $JobPornAnalSide or $JobPornGang or $JobPornGangSide)>>
+    You can't really think of any way to earn extra money with this belt locked on you.
+  <<elseif $PlayerChastityBelt and $MasterKey>>
     You realize your only option to earn extra money is if Olivia's master will hire you.  You can
     [[double check with her|Part10WebModel]] about openings.
   <<elseif $PlayerChastityBelt>>
@@ -492,7 +505,7 @@ You start trying to think of ways to earn a little extra money on the side...
     You could also get a job dancing at the [[strip club|Part10StripHire]] if you wanted.
   <</if>>
   <<if !$NeedSideJob and !$ExStripper>>
-    Of course, just [[forgetting about the extra money|Part10End]] is an option too.  You don't
+    Of course, just [[forgetting about the extra money|Part10End]] is an option too since you don't
     really need it.
   <</if>>
 <</nobr>>

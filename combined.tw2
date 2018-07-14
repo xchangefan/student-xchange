@@ -118,7 +118,7 @@ function UpdateLinks() {
 		var Links = $("#passages a");
 		if (Links.length === 1) {
 			Links[0].id = "NextLink";
-		} else if (Links.length >= 1) {
+		} else if (Links.length >= 1 && Links.length <= 10) {
 			var n = 1;
 			for (var i = 0; i < Links.length; i++) {
 				if (!Links[i].id.includes("Link")) {

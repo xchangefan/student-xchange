@@ -926,6 +926,7 @@
 ::Part6TroyHelp <500,5125>
 <<nobr>>
 	<<set $AcademicPoints -= 2>>
+	<<set $TroyHelp to 1>>
 	
 	<span style="font-size: 150%"><<print "Troy’s Bedroom">></span>
 <</nobr>>
@@ -961,8 +962,6 @@
 
 ::Part6Dance4 <700,5000>
 <<nobr>>
-	<<set $PlayerChastityBelt = 0>>
-
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 <</nobr>>
 
@@ -988,7 +987,17 @@
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 <</nobr>>
 
-<<print "Your two captors ignore your muffled cries as they bend you over something and cut away your panties. You can do nothing to stop them as you feel the cock of one of them poke around, searching.">>
+<<nobr>>
+	Your two captors ignore your muffled cries as they bend you over something and cut away
+	<<if $PlayerChastityBelt>>
+		<<set $PlayerChastityBelt = 0>>
+		<<set $PlayerChastityBeltInventory to 0>>
+		your chastiy belt.
+	<<else>>
+		your panties.
+	<</if>>
+	You can do nothing to stop them as you feel the cock of one of them poke around, searching.
+<</nobr>>
 <img src="Part6/Slave1.jpg" hspace="10" vspace="10" height="650">
 
 <<print "A moment later you gasp into your gag as he pushes into you, the condom he’s wearing to hide evidence of the encounter lubricating his path slightly.  When you feel him thrust one last time into you and then pull out, you only have a moment before you feel the other one approach. And it all repeats.">>
@@ -1045,6 +1054,7 @@
 ::Part6Kidnapped5 <1225,4750>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Dungeon">></span>
+	<<set $PlayerSlave to 1>>
 <</nobr>>
 
 <<print "The pain in your arms, and everywhere else, was unbearable. You knew you couldn’t hold on much longer. You cried, defeated, and said what he wanted: “I’m a worthless slave” and then begged him to fuck you. He made you repeated it over and over, louder each time, until he finally removed the rope from your neck.">>
@@ -1080,6 +1090,7 @@
 
 ::Part6Kidnapped7 <1225,5000>
 <<nobr>>
+	<<set $PlayerSlave += 1>>
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 <</nobr>>
 
@@ -1759,7 +1770,7 @@ Might add something here in the future. Or not.
 <video src="Part6/Slave15.mp4" autoplay loop muted height="640"></video>
 
 
-<<print "You dumb bitch wouldn't give in and you passed out, so we used this to wake you up.">>
+<<print "You dumb bitch, you wouldn't give in and you passed out, so we used this to wake you up.">>
 
 <<print "While I`ve been trying to break you, my assistants have searched around to find out more about you.">>
 
@@ -1780,7 +1791,7 @@ Might add something here in the future. Or not.
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 <</nobr>>
 
-<<print "When the finally arrives, you see them arguing whether the implant could have a tracking device in it or not.">>
+<<print "When he finally arrives, you see them arguing whether the implant could have a tracking device in it or not.">>
 
 <<print "They tell him to run tests on you and try to find out as quickly as possible..">>
 

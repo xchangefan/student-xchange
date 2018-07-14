@@ -100,7 +100,7 @@
 							<<link " a Jerk.">>
 								<<set $NeighbourJerk = 0>>
 								<<set $Neighbour2Update = 1>>
-								<<if $Neighbour1 != 2>>
+								<<if !$Neighbour1 != 2>>
 									<<set $NeighbourPlayer = 1>>
 									<<set $Neighbour2 = 2>>
 								<<else>>
@@ -160,7 +160,7 @@
 					<<set $Neighbour2Update = 0>>
 				<</replace>>
 			<</if>>
-			<<if $Neighbour1Update>>
+			<<if !$NeighbourEmilyBoyfriend and $Neighbour1Update>>
 				<<replace "#Neighbour1">>
 					<<switch $Neighbour1>>
 						<<case 1>>
