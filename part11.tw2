@@ -917,8 +917,7 @@ You can only nod your agreement.
 ::Part11MistressMovingIn <9000,10500>
 <img src="Part11/Mistress9.jpg" hspace="10" vspace="10" height="800" align="left"/>
 <<nobr>>
-  <<set $RoommateSamantha to 0>>
-  <<set $RommmateKate to 1>>
+  <<set $Rommmate = 'Kate'>>
   You are so excited to move out of your dorm or sorority house and in with Mistress Kate.
   You love being able to [[spend as much time with her|Part11MistressMovingIn2]] as possible.
   She’s still away for work a lot, but you love greeting her at the door wearing something sexy.
@@ -1974,7 +1973,7 @@ You’re even used by a few women, using strap-ons, or their own fist.
 <</nobr>>
 
 <<nobr>>
-  <<if ($ValentineFWB=='Josh' and $RoommateJosh) or ($ValentineFWB=='James' and $RoommatePlayer) or ($ValentineFWB=='Zack' and $RoommateThrillSeeker)>>
+  <<if $ValentineFWB==$Roommate>>
     You head to the shower to clean up.  You're thankful he's gone for a while when you get back,
     avoiding any awkward moments.
   <<else>>
@@ -2149,7 +2148,7 @@ Kim: Oh, is that what I typed?
 <<nobr>>
   When you know you are ready, you don't even have him get up.  You just lower yourself down onto his cock.
   You love the way his eyes roll back as he feels you slide down around his cock.
-  <<if $PlayerBodyFit>>
+  <<if $BodyType == 'Fit'>>
     Your thrusts start to get more erratic as you get close to your orgasm.  Troy rolls you over onto your
     back.  As you feel his cock slide in and out of you unrelentingly, you know you are going to cum soon.
   <<else>>
@@ -2463,17 +2462,17 @@ Kim: Oh, is that what I typed?
   As you scroll down you can even see random guys making crude comments about them and about you.
   As you read comment you get angrier and angrier:
   <ul>
-    <<if $PlayerBodyPlus>>
+    <<if $BodyType == 'Plus'>>
       <li>"Thicc!"</li>
     <</if>>
-    <<if $PlayerBodyPetite>>
+    <<if $BodyType == 'Petite'>>
       <li>"I'd fuck that spinner"</li>
       <li>"Mods!!!"</li>
     <</if>>
-    <<if $PlayerBodyFit>>
+    <<if $BodyType == 'Fit'>>
       <li>"Death by Snu Snu!"</li>
     <</if>>
-    <<if $PlayerBodyStandard>>
+    <<if $BodyType == 'Standard'>>
       <li>"6/10 would not bang"</li>
     <</if>>
     <<if $PlayerSideEffectExhibitionist>>
@@ -2496,7 +2495,7 @@ Kim: Oh, is that what I typed?
     <<if $PlayerSideEffectAnal and setup.haveFucked('Cody') and !$PlayerChastityBelt>>
       <li>"Looks like he tore that ass up before he took that one"</li>
     <</if>>
-    <<if $PlayerBodyPlus>>
+    <<if $BodyType == 'Plus'>>
       <li>"2/10 I would let her suck my cock, except I'd worry she'd eat it."</li>
       <li>"I could die happy between those thighs"</li>
     <</if>>

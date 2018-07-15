@@ -74,7 +74,7 @@
 ::Faith1 <400,400>
 <<nobr>>
 	<<set $Mentor to 'Faith'>>
-	<<set $RoommateFaith = 1>>
+	<<set $Roommate to 'Faith'>>
 	
 	<span style="font-size: 150%"><<print "Faith">></span>
 <</nobr>>
@@ -92,7 +92,6 @@
 
 ::Faith2 <600,400>
 <<nobr>>
-	<<set $PlayerClothesSet = 1>>
 	<<set $PlayerClothesDressLong = 1>>
 	
 	<span style="font-size: 150%"><<print "Faith">></span>
@@ -120,7 +119,6 @@
 	<<print "They suggested taking you to get your ">>
 	<<link [[ears pierced if you want.|EndPart2]]>>
 		<<set $PlayerEarsDiamond = 1>>
-		<<set $PlayerPiercedSet = 1>>
 	<</link>>
 	<<print "With the extra we have left, I can get you some small diamond earrings instead of the plain ones they normally give you! Trust me, they’ll look beautiful on you no matter what you’re wearing.">>
 <</nobr>>
@@ -130,8 +128,8 @@
 ::Emily <1000,400>
 <<nobr>>
 	<<set $Mentor to 'Emily'>>
-	<<set $RoommateEmily = 1>>
-	<<set $NeighbourEmilyBoyfriend = 1>>
+	<<set $Roommate to 'Emily'>>
+	<<set setup.addNeighbour("Emily's Boyfriend")
 	
 	<span style="font-size: 150%"><<print "Emily">></span>
 <</nobr>>
@@ -147,7 +145,6 @@
 
 ::Emily2 <1200,400>
 <<nobr>>
-	<<set $PlayerClothesSet = 1>>
 	<<set $PlayerClothesJeans = 1>>
 	<<set $PlayerClothesShirt = 1>>
 	
@@ -162,7 +159,6 @@
 
 ::Emily3 <1400,400>
 <<nobr>>
-	<<set $PlayerInventorySet = 1>>
 	<<set $PlayerItemVibrator = 1>>
 	<<set $PlayerUnderweaRegular = 1>>
 	<<set $PlayerSleepwearComfy = 1>>
@@ -185,7 +181,6 @@
 	<<print "They gave us money for ">>
 	<<link [[getting your ears pierced.|EndPart2]]>>
 		<<set $PlayerEarsRegular = 1>>
-		<<set $PlayerPiercedSet = 1>>
 	<</link>>
 	<<print "We could do that, but I have a better idea.">>
 <</nobr>>
@@ -195,7 +190,6 @@
 	<<print "You can ">>
 	<<link [[get your tongue pierced!|EndPart2]]>>
 		<<set $PlayerPiercedTongue = 1>>
-		<<set $PlayerPiercedSet = 1>>
 	<</link>>
 	<<print " I got mine done last year. And, oh my god, does my boyfriend love how the piercing feels when I suck his cock. He always loved me giving him head, but he loves it even more now.">>
 <</nobr>>
@@ -207,7 +201,7 @@
 ::Hannah <1800,400>
 <<nobr>>
 	<<set $Mentor to 'Hannah'>>
-	<<set $RoommateHannah = 1>>
+	<<set $Roommate to 'Hannah'>>
 	
 	<span style="font-size: 150%"><<print "Hannah">></span>
 <</nobr>>
@@ -227,7 +221,6 @@
 
 ::Hannah2 <2000,400>
 <<nobr>>
-	<<set $PlayerClothesSet = 1>>
 	<<set $PlayerClothesBlouse = 1>>
 	<<set $PlayerClothesSkirt = 1>>
 	
@@ -261,7 +254,6 @@
 
 ::Hannah4 <2400,400>
 <<nobr>>
-	<<set $PlayerPiercedSet = 1>>
 	<<set $PlayerEarsRegular = 1>>
 	
 	<span style="font-size: 150%"><<print "Hannah">></span>
@@ -271,7 +263,6 @@
 	<<print "They have some money here to get your ears pierced. We’ll do that, but I hooked with a body piercer a few weeks ago. I know he’ll give us a deal if you want a second piercing. Here, look what I had him do with my navel, ">>
 	<<link [[maybe you can get one too.|EndPart2]]>>
 		<<set $PlayerPiercedButton = 1>>
-		<<set $PlayerPiercedSet = 1>>
 	<</link>>
 <</nobr>>
 <img src="Part2/Hannah4A.jpg" hspace="10" vspace="10" height="400">
@@ -280,7 +271,6 @@
 	<<print "Or wait. No! I have an even better idea! I’ve been thinking about a clit hood piercing. ">>
 	<<link [[Why don’t we both get one!|EndPart2]]>>
 		<<set $PlayerPiercedClit = 1>>
-		<<set $PlayerPiercedSet = 1>>
 	<</link>>
 	<<print " I’ve heard it’s amazing how it feels. The bar will rest right against your clit and all day long you’ll feel it when you walk or run, or whatever.">>
 <</nobr>>
@@ -291,7 +281,7 @@
 ::Samantha <2600,400>
 <<nobr>>
 	<<set $Mentor to 'Samantha'>>
-	<<set $RoommateSamantha = 1>>
+	<<set $Roommate = 'Samantha'>>
 	
 	<span style="font-size: 150%"><<print "Samantha">></span>
 <</nobr>>
@@ -309,7 +299,6 @@
 
 ::Samantha2 <2800,400>
 <<nobr>>
-	<<set $PlayerClothesSet = 1>>
 	<<set $PlayerClothesDressCasual = 1>>
 	<<set $PlayerClothesJeans = 1>>
 	<<set $PlayerClothesShirt = 1>>
@@ -340,7 +329,6 @@
 	<<print "They gave us some money to get your ears pierced too. ">>
 	<<link [[They probably just meant the lobes.|EndPart2]]>>
 		<<set $PlayerEarsRegular = 1>>
-		<<set $PlayerPiercedSet = 1>>
 	<</link>>
 	<<print " But we have enough money left, you could go for something a bit more.">>
 <</nobr>>
@@ -350,14 +338,13 @@
 	<<print "Maybe a helix or an industrial? Why don’t we have the piercer take a look at your ear and then you two can talk about what you want and ">>
 	<<link [[what would work well for your ear.|EndPart2]]>>
 		<<set $PlayerEarsMultiple = 1>>
-		<<set $PlayerPiercedSet = 1>>
 	<</link>>
 <</nobr>>
 
 ::Olivia <3200,400>
 <<nobr>>
 	<<set $Mentor to 'Olivia'>>
-	<<set $RoommateOlivia = 1>>
+	<<set $Roommate to 'Olivia'>>
 	
 	<span style="font-size: 150%"><<print "Olivia">></span>
 <</nobr>>
@@ -375,7 +362,6 @@
 
 ::Olivia2 <3400,400>
 <<nobr>>
-	<<set $PlayerClothesSet = 1>>
 	<<set $PlayerClothesSweat = 1>>
 	<<set $PlayerClothesDressLeather = 1>>
 	
@@ -404,7 +390,6 @@
 
 ::Olivia4 <3800,400>
 <<nobr>>
-	<<set $PlayerInventorySet = 1>>
 	<<set $PlayerChastityBelt = 1>>
 	<<set $PlayerChastityBeltInventory = 1>>
 	
@@ -424,10 +409,8 @@
 
 ::Olivia5 <4000,400>
 <<nobr>>
-	<<set $PlayerPiercedSet = 1>>
 	<<set $PlayerEarsRegular = 1>>
 	<<set $PlayerPiercedBreasts = 1>>
-	<<set $PlayerPiercedSet = 1>>
 	
 	<span style="font-size: 150%"><<print "Olivia">></span>
 <</nobr>>

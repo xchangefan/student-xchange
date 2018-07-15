@@ -15,7 +15,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   [[Inventory|SideBarInventory]]
   <<include [[SideBarChastity]]>>\
   <<include [[SideBarMentor]]>>\
-  <<include [[SideBarNeighbors]]>>\
+  <<include [[SideBarNeighbours]]>>\
   <<include [[SideBarRelationship]]>>\
   <<include [[SideBarJob]]>>\
   <<include [[SideBarStudentLifeBalance]]>>\
@@ -52,13 +52,13 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<elseif $PlayerSlave>>
     a slave.
   <<else>>
-    <<if $PlayerBodyStandard>>
+    <<if $BodyType == 'Standard'>>
       a beautiful,
-    <<elseif $PlayerBodyPlus>>
+    <<elseif $BodyType == 'Plus'>>
       a curvy,
-    <<elseif $PlayerBodyPetite>>
+    <<elseif $BodyType == 'Petite'>>
       a petite,
-    <<elseif $PlayerBodyFit>>
+    <<elseif $BodyType == 'Fit'>>
       an athletic,
     <<else>>
       a mysterious,
@@ -280,7 +280,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 
 ::SideBarClothing <1000,0>
-<<if $PlayerClothesSet>><br><br><<print "Wardrobe: ">><</if>>\
+<br><br>Wardrobe: \
 <<if $PlayerClothesShirt>><<print "Shirts. ">><</if>>\
 <<if $PlayerClothesBlouse>><<print "Blouses. ">><</if>>\
 <<if $PlayerClothesTopLeather>><<print "Leather Top. ">><</if>>\
@@ -306,7 +306,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 ::SideBarPiercing <1200,0>
-<<if $PlayerPiercedSet>><br><br><<print "Piercings: ">><</if>>\
+<br><br>Piercings: \
 <<if $PlayerEarsRegular>><<print "Stud Earrings. ">><</if>>\
 <<if $PlayerEarsDiamond>><<print "Diamond Earrings. ">><</if>>\
 <<if $PlayerEarsMultiple>><<print "Multiple Earrings. ">><</if>>\
@@ -318,7 +318,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 ::SideBarOtherInventory <1400,0>
-<<if $PlayerInventorySet>><br><br><<print "Items: ">><</if>>\
+<br><br>Items: \
 <<if $PlayerItemTeddy>><<print "Teddy Bear. ">><</if>>\
 <<if $PlayerCuffs>><<print "Cuffs. ">><</if>>\
 <<if $PlayerThighBands>><<print "Thigh Bands. ">><</if>>\
@@ -349,43 +349,43 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<nobr>>
   <<if $Mentor == 'Faith'>>
     Faith is your mentor
-    <<if $RoommateFaith>>
+    <<if $Roommate == 'Faith'>>
       and roommate
-    <<elseif $NeighbourFaith>>
+    <<elseif setup.isNeighbour('Faith')>>
       and neighbour
     <</if>>
     <<print ". ">>
   <<elseif $Mentor == 'Emily'>>
     Emily is your mentor
-    <<if $RoommateEmily>>
+    <<if $Roommate == 'Emily'>>
       and roommate
-    <<elseif $NeighbourEmily and $NeighbourEmilyBoyfriend>>
+    <<elseif setup.isNeighbour('Emily') and setup.isNeighbour("Emily's Boyfriend")>>
       . She and her boyfriend are your neighbours
-    <<elseif $NeighbourEmily>>
+    <<elseif setup.isNeighbour('Emily')>>
       and neighbour
     <</if>>
     <<print ". ">>
   <<elseif $Mentor == 'Hannah'>>
     Hannah is your mentor
-    <<if $RoommateHannah>>
+    <<if $Roommate == 'Hannah'>>
       and roommate
-    <<elseif $NeighbourHannah>>
+    <<elseif setup.isNeighbour('Hannah')>>
       and neighbour
     <</if>>
     <<print ". ">>
   <<elseif $Mentor == 'Samantha'>>
     Samantha is your mentor
-    <<if $RoommateSamantha>>
+    <<if $Roommate == 'Samantha'>>
       and roommate
-    <<elseif $NeighbourSamantha>>
+    <<elseif setup.isNeighbour('Samantha')>>
       and neighbour
     <</if>>
     <<print ". ">>
   <<elseif $Mentor == 'Olivia'>>
     Olivia is your mentor
-    <<if $RoommateOlivia>>
+    <<if $Roommate == 'Olivia'>>
       and roommate
-    <<elseif $NeighbourOlivia>>
+    <<elseif setup.isNeighbour('Olivia')>>
       and neighbour
     <</if>>
     <<print ". ">>
@@ -395,46 +395,14 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
 <</nobr>>
 
-::SideBarNeighbors <2000,0>
-<<if $PlayerNeighbourSet>><br>\
-	<<if $RoommateFaith or $RoommateEmily or $RoommateHannah or $RoommateSamantha or $RoommateOlivia>><<print "Your Neighbours are ">>\
-		<<if $NeighbourEmilyBoyfriend >><<print "Emily's boyfriend and ">>\
-			<<if $NeighbourJerk >><<print "Barry.">><</if>>\
-			<<if $NeighbourPlayer >><<print "James.">><</if>>\
-			<<if $NeighbourNerd >><<print "Peter.">><</if>>\
-			<<if $NeighbourThrillSeeker >><<print "Zack.">><</if>>\
-			<<if $NeighbourJosh >><<print "Josh.">><</if>>\
-		<<else>>\
-			<<if $NeighbourJerk >><<print "Barry and ">>\
-				<<if $NeighbourPlayer >><<print "James.">><</if>>\
-				<<if $NeighbourNerd >><<print "Peter.">><</if>>\
-				<<if $NeighbourThrillSeeker >><<print "Zack.">><</if>>\
-				<<if $NeighbourJosh >><<print "Josh.">><</if>>\
-			<<else>>\
-				<<if $NeighbourPlayer >><<print "James and ">>\
-					<<if $NeighbourNerd >><<print "Peter.">><</if>>\
-					<<if $NeighbourThrillSeeker >><<print "Zack.">><</if>>\
-					<<if $NeighbourJosh >><<print "Josh.">><</if>>\
-				<<else>>\
-					<<if $NeighbourNerd >><<print "Peter and ">>\
-						<<if $NeighbourThrillSeeker >><<print "Zack.">><</if>>\
-						<<if $NeighbourJosh >><<print "Josh.">><</if>>\
-					<<else>>\
-						<<print "Zack and Josh.">>\
-					<</if>>\
-				<</if>>\
-			<</if>>\
-		<</if>>\
-	<<else>>\
-		<<if !$RoommateAndrew and !$RoommateAssistant and !$RoommateKate>>\
-			<<if $RoommateJerk >><<print "Your roommate is Barry.">><</if>>\
-			<<if $RoommatePlayer >><<print "Your roommate is James.">><</if>>\
-			<<if $RoommateNerd >><<print "Your roommate is Peter.">><</if>>\
-			<<if $RoommateThrillSeeker >><<print "Your roommate is Zack.">><</if>>\
-			<<if $RoommateJosh >><<print "Your roommate is Josh.">><</if>>\
-		<</if>>\
-	<</if>>\
-<</if>>\
+::SideBarNeighbours <2000,0>
+<<nobr>>
+  <<if $Neighbours and $Neighbours.length == 1>>
+   Your neighbour is $Neighbours[0]
+  <<elseif $Neighbours and $Neighbours.length > 1>>
+     Your neighbours are <<print $Neighbours.join(" and ")>>
+  <</if>>
+<</nobr>>
 
 ::SideBarRelationship <2200,0>
 <<if $MasterKate>><br><<print "You are Mistress Kate's pet. ">><</if>>\
@@ -443,7 +411,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 <<if $AndrewEngaged>><<print "You are engaged to Andrew and living together">><</if>>\
 <<if !$AndrewEngaged and $DatingAndrew>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
-<<if $RoommateAndrew>><<print " and living together">><<print ". ">><</if>><</if>>\
+<<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>><</if>>\
 <<if $DatingOfficeBoss>><br><<print "You are your boss's mistress. ">><</if>>\
 <<if $DatingVeronica and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>\
 <<if $DatingVeronica and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>

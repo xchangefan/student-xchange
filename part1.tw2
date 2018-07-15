@@ -76,13 +76,8 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 ::Body <400,200>
 <<nobr>>
-	<<set $PlayerBodySet = 1>>
 	<<set $PlayerSideEffects = 0>>
 	<<set $PlayerRollDice = 0>>
-	<<set $PlayerBodyStandard to 0>>
-	<<set $PlayerBodyPlus to 0>>
-	<<set $PlayerBodyPetite to 0>>
-	<<set $PlayerBodyFit to 0>>
 	<h1>Body Type</h1>
 <</nobr>>
 <<nobr>>
@@ -103,13 +98,13 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	You can
 	<<switch $PlayerRollDice>>
 		<<case 1 2 3 4 5 6 7 8>>
-			[[let X-Change and DNA decide|PregnancyPrevention][$PlayerBodyStandard to 1]]
+			[[let X-Change and DNA decide|PregnancyPrevention][$BodyType to 'Standard']]
 		<<case 9 10 11 12>>
-			[[let X-Change and DNA decide|PregnancyPrevention][$PlayerBodyPlus to 1]]
+			[[let X-Change and DNA decide|PregnancyPrevention][$BodyType to 'Plus']]
 		<<case 13 14 15 16>>
-			[[let X-Change and DNA decide|PregnancyPrevention][$PlayerBodyPetite to 1]]
+			[[let X-Change and DNA decide|PregnancyPrevention][$BodyType to 'Petite']]
 		<<case 17 18 19 20>>
-			[[let X-Change and DNA decide|PregnancyPrevention][$PlayerBodyFit to 1]]
+			[[let X-Change and DNA decide|PregnancyPrevention][$BodyType to 'Fit']]
 	<</switch>>
 	, or you can customize your appearance.  If you want something custom let me know where to start from and I'll start programming it in for you:
 <</nobr>>
@@ -117,7 +112,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <p style="clear: both;">
 	<img src="Part1/BodyStandard1.jpg" align="left" hspace="10" vspace="10" height="500">
 	<img src="Part1/BodyStandard2.jpg" align="right" hspace="10" vspace="10" height="500">
-	<<link [[Standard X-Change Body|PregnancyPrevention]]>><<set $PlayerBodyStandard = 1>><<set $PlayerSideEffects += 2>><</link>>
+	<<link [[Standard X-Change Body|PregnancyPrevention]]>><<set $BodyType to 'Standard'>><<set $PlayerSideEffects += 2>><</link>>
 
 	Average to tall for a woman, the traditionally beautiful, X-Change look.
 </p>
@@ -125,7 +120,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <p style="clear: both;">
 	<img src="Part1/BodyCurvy1.jpg" align="left" hspace="10" vspace="10" height="500">
 	<img src="Part1/BodyCurvy2.jpg" align="right" hspace="10" vspace="10" height="500">
-	<<link [[Plus-size|PregnancyPrevention]]>><<set $PlayerBodyPlus = 1>><<set $PlayerSideEffects += 2>><</link>>
+	<<link [[Plus-size|PregnancyPrevention]]>><<set $BodyType to 'Plus'>><<set $PlayerSideEffects += 2>><</link>>
 	
 	Heavier than the traditional X-Change look. Some people think that’s better though.
 </p>
@@ -133,7 +128,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <p style="clear: both;">
 	<img src="Part1/BodyPetite1.jpg" align="left" hspace="10" vspace="10" height="500">
 	<img src="Part1/BodyPetite2.jpg" align="right" hspace="10" vspace="10" height="500">
-	<<link [[Petite|PregnancyPrevention]]>><<set $PlayerBodyPetite = 1>><<set $PlayerSideEffects += 2>><</link>>
+	<<link [[Petite|PregnancyPrevention]]>><<set $BodyType to 'Petite'>><<set $PlayerSideEffects += 2>><</link>>
 
 	Shorter and smaller chested than the the traditional look.
 	But trust me, your back will thank you.
@@ -141,7 +136,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 <p style="clear: both;">
 	<img src="Part1/BodyFit.jpg" align="left" hspace="10" vspace="10" height="500">
-	<<link [[Fit|PregnancyPrevention]]>><<set $PlayerBodyFit = 1>><<set $PlayerSideEffects += 2>><</link>>
+	<<link [[Fit|PregnancyPrevention]]>><<set $BodyType to 'Fit'>><<set $PlayerSideEffects += 2>><</link>>
 
 	You probably want to talk to the athletic department they’ll put your body to use, and help you keep it fit.
 </p>
@@ -149,7 +144,6 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 ::PregnancyPrevention <600,200>
 <<set $female to 1>>
 <<nobr>>
-	<<set $PlayerProtectionSet = 1>>
 	<<set $PlayerRollDice = 0>>
 	<h1>Pregnancy Prevention</h1>
 <</nobr>>
@@ -242,7 +236,6 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<<set $PlayerEasytoOrgasmUpdate to 1>>
 	<<set $PlayerPowerfulOrgasms to 0>>
 	<<set $PlayerPowerfulOrgasmsUpdate to 1>>
-	<<set $PlayerSideEffectReset to 5>>
 	<<set $PlayerSuperOrgasms to 0>>
 	<h1>Optional ‘Features’</h1>
 <</nobr>>

@@ -1,38 +1,49 @@
 ::VariablesMasterDebugger <1600,0>
-Dice Roll   Dice Roll
-PlayerRollDice   $PlayerRollDice
-PlayerRollDiceArray   $PlayerRollDiceArray
-PlayerRollDice1   $PlayerRollDice1
-PlayerRollDice2   $PlayerRollDice2
-PlayerRollMultiplier   $PlayerRollMultiplier
-   
-Sex   [[Sexual History|DebugSexualHistory]]
-SexCount   $sex.length
+Mentor   $Mentor
+Roommate   $Roommate
+Neighbours  $Neighbours
+NeighbourDislike : $NeighbourDislike
+Body Type: $BodyType
 
-SexMaleCount <<print setup.sexMaleCount()>>
-SexFemaleCount <<print setup.sexFemaleCount()>>
-SexVaginalCount <<print setup.sexVaginalCount()>>
+Sexual History [[(Details)|DebugSexualHistory]]
+Summary:
+<table>
+	<tr>
+		<td></td>
+		<td>Male (V)</td>
+		<td>Female</td>
+		<td>Total</td>
+	</tr>
+	<tr>
+		<td>Overall</td>
+		<td><<print setup.sexMaleCount()>> (<<print setup.sexVaginalCount()>>)</td>
+		<td><<print setup.sexFemaleCount()>></td>
+		<td>$sex.length</td>
+	</tr>
+	<tr>
+		<td>Unique Partners</td>
+		<td><<print setup.sexUniqueMaleCount()>> (<<print setup.sexUniqueVaginalCount()>>)</td>
+		<td><<print setup.sexUniqueFemaleCount()>></td>
+		<td><<print setup.sexUniqueMaleCount() + setup.sexUniqueFemaleCount()>></td>
+	</tr>
+</table>
 
-SexDifferentMaleCount  <<print setup.sexUniqueMaleCount()>>
-SexDifferentFemaleCount  <<print setup.sexUniqueFemaleCount()>>
-SexDifferentMaleVaginalCount <<print setup.sexUniqueVaginalCount()>>
+Pregnancy:
+PlayerPregnantCheck $PlayerPregnantCheck
+PlayerPregnant   $PlayerPregnant
+PlayerMother   $PlayerMother
+PlayerAbortion   $PlayerAbortion
+PlayerMenstruation   $PlayerMenstruation
 
-Student type   Student type
+Student type
 PlayerGoodStudent   $PlayerGoodStudent
 PlayerAverageStudent   $PlayerAverageStudent
 PlayerLazyStudent   $PlayerLazyStudent
-   
-Body variables   Body variables
-PlayerBodySet   $PlayerBodySet
-PlayerBodyStandard   $PlayerBodyStandard
-PlayerBodyPlus   $PlayerBodyPlus
-PlayerBodyPetite   $PlayerBodyPetite
-PlayerBodyFit   $PlayerBodyFit
-   
-Side effects   Side effects
+  
+
+Side effects
 PlayerNoBodyHair   $PlayerNoBodyHair
 PlayerSideEffectPermanent   $PlayerSideEffectPermanent
-PlayerSideEffectReset   $PlayerSideEffectReset
 PlayerSideEffects   $PlayerSideEffects
 PlayerWeightControl   $PlayerWeightControl
 PlayerReducedSleep   $PlayerReducedSleep
@@ -49,17 +60,6 @@ PlayerSideEffectAnal   $PlayerSideEffectAnal
 PlayerSideEffectLibido   $PlayerSideEffectLibido
 PlayerSideEffectDreams   $PlayerSideEffectDreams
 
-PlayerSuperOrgasmsReset   $PlayerSuperOrgasmsReset
-PlayerSideEffectOrgasmBlockReset   $PlayerSideEffectOrgasmBlockReset
-PlayerSideEffectMasturbationBlockReset   $PlayerSideEffectMasturbationBlockReset
-PlayerSideEffectExhibitionistReset   $PlayerSideEffectExhibitionistReset
-PlayerSideEffectSubmissiveReset   $PlayerSideEffectSubmissiveReset
-PlayerSideEffectPheromonesReset   $PlayerSideEffectPheromonesReset
-PlayerSideEffectOralReset   $PlayerSideEffectOralReset
-PlayerSideEffectAnalReset   $PlayerSideEffectAnalReset
-PlayerSideEffectLibidoReset   $PlayerSideEffectLibidoReset
-PlayerSideEffectDreamsReset   $PlayerSideEffectDreamsReset
-
 PlayerSideEffectPermanentShow   $PlayerSideEffectPermanentShow
 PlayerSideEffectOrgasmBlockShow   $PlayerSideEffectOrgasmBlockShow
 PlayerSideEffectMasturbationBlockShow   $PlayerSideEffectMasturbationBlockShow
@@ -72,8 +72,7 @@ PlayerSideEffectLibidoShow   $PlayerSideEffectLibidoShow
 PlayerSideEffectDreamsShow   $PlayerSideEffectDreamsShow
 PlayerSuperOrgasmsShow   $PlayerSuperOrgasmsShow
    
-Birth Control   Birth Control
-PlayerProtectionSet    $PlayerProtectionSet 
+Birth Control
 PlayerProtectionTry   $PlayerProtectionTry
 PlayerProtectionNone   $PlayerProtectionNone
 PlayerProtectionWithdraw   $PlayerProtectionWithdraw
@@ -83,8 +82,7 @@ PlayerProtectionPermanent   $PlayerProtectionPermanent
 PlayerProtectionPerfect   $PlayerProtectionPerfect
 PlayerProtectionFertile   $PlayerProtectionFertile
    
-Clothes   Clothes
-PlayerClothesSet   $PlayerClothesSet
+Clothes
 PlayerClothesShirt   $PlayerClothesShirt
 PlayerClothesBlouse   $PlayerClothesBlouse
 PlayerClothesTopLeather   $PlayerClothesTopLeather
@@ -107,8 +105,7 @@ PlayerSleepwearComfy   $PlayerSleepwearComfy
 PlayerSleepwearRegular   $PlayerSleepwearRegular
 PlayerSleepwearSexy   $PlayerSleepwearSexy
    
-Piercing   Piercing
-PlayerPiercedSet   $PlayerPiercedSet
+Piercing
 PlayerEarsRegularEarrings   $PlayerEarsRegularEarrings
 PlayerEarsDiamond   $PlayerEarsDiamond
 PlayerEarsMultiple  $PlayerEarsMultiple
@@ -118,8 +115,7 @@ PlayerPiercedButtonBelly   $PlayerPiercedButtonBelly
 PlayerPiercedBreasts   $PlayerPiercedBreasts
 PlayerPiercedClit   $PlayerPiercedClit
    
-Items   Items
-PlayerInventorySet   $PlayerInventorySet
+Items
 PlayerItemTeddy   $PlayerItemTeddy
 PlayerCuffs   $PlayerCuffs
 PlayerBondageRope   $PlayerBondageRope
@@ -137,51 +133,15 @@ PlayerMoneySet   $PlayerMoneySet
 PlayerMoney   $PlayerMoney
 PlayerCredit   $PlayerCredit
    
-Master   Master
+Master
 MasterKate   $MasterKate
 MasterKen   $MasterKen
 MasterOlivia   $MasterOlivia
    
-Mentor   $Mentor
 
-TODO Change Roommate and Neighbors to be variables (probably array for Neighbor)
+TODO Make Dating a variables  (also exes)
 
-Roommate   Roommate
-RoommateFaith   $RoommateFaith
-RoommateEmily   $RoommateEmily
-RoommateHannah   $RoommateHannah
-RoommateSamantha   $RoommateSamantha
-RoommateOlivia   $RoommateOlivia
-RoommateAndrew   $RoommateAndrew
-RoommateJerk   $RoommateJerk
-RoommatePlayer   $RoommatePlayer
-RoommateNerd   $RoommateNerd
-RoommateThrillSeeker   $RoommateThrillSeeker
-RoommateJosh   $RoommateJosh
-RoommateAssistant   $RoommateAssistant
-   
-Neighbour   Neighbour
-PlayerNeighbourSet   $PlayerNeighbourSet
-NeighbourFaith   $NeighbourFaith
-NeighbourEmily   $NeighbourEmily
-NeighbourHannah   $NeighbourHannah
-NeighbourSamantha   $NeighbourSamantha
-NeighbourOlivia   $NeighbourOlivia
-NeighbourEmilyBoyfriend   $NeighbourEmilyBoyfriend
-NeighbourJerk   $NeighbourJerk
-NeighbourPlayer   $NeighbourPlayer
-NeighbourNerd   $NeighbourNerd
-NeighbourThrillSeeker   $NeighbourThrillSeeker
-NeighbourJosh   $NeighbourJosh
-NeighbourJerkDislike   $NeighbourJerkDislike
-NeighbourPlayerDislike   $NeighbourPlayerDislike
-NeighbourNerdDislike   $NeighbourNerdDislike
-NeighbourThrillSeekerDislike   $NeighbourThrillSeekerDislike
-NeighbourJoshDislike   $NeighbourJoshDislike
-
-TODO Make Dating a variables
-
-Dating   Dating
+Dating
 DatingAndrew   $DatingAndrew
 DatingOfficeBoss   $DatingOfficeBoss
 DatingVeronica   $DatingVeronica
@@ -189,7 +149,7 @@ DatingJosh   $DatingJosh
 DatingNerd   $DatingNerd
 DatingProfessor   $DatingProfessor
 
-TODO Make FWB and array
+TODO Make FWB an array
 
 FWBDavid   $FWBDavid
 FWBJosh   $FWBJosh
@@ -199,7 +159,7 @@ FWBJerk   $FWBJerk
 NerdFriendZone   $NerdFriendZone
    
 
-TODO Make Job and array
+TODO Make Job an array
 TODO Eliminate side jobs?
 Jobs   Jobs
 PlayerJobSet   $PlayerJobSet
@@ -248,11 +208,6 @@ PlayerPointsSet   $PlayerPointsSet
 FunPoints   $FunPoints
 AcademicPoints   $AcademicPoints
 AcademicProbation   $AcademicProbation
-PlayerPregnantCheck $PlayerPregnantCheck
-PlayerPregnant   $PlayerPregnant
-PlayerMother   $PlayerMother
-PlayerAbortion   $PlayerAbortion
-PlayerMenstruation   $PlayerMenstruation
 CheatedJosh   $CheatedJosh
 HideJobJosh   $HideJobJosh
 EngineerJosh   $EngineerJosh
@@ -270,7 +225,16 @@ LikeFemales   $LikeFemales
 HomeMasturbate   $HomeMasturbate
 UncleChair   $UncleChair
 
+Dice Roll   Dice Roll
+PlayerRollDice   $PlayerRollDice
+PlayerRollDiceArray   $PlayerRollDiceArray
+PlayerRollDice1   $PlayerRollDice1
+PlayerRollDice2   $PlayerRollDice2
+PlayerRollMultiplier   $PlayerRollMultiplier
+
 ::DebugSexualHistory <1750,0>
+TODO Need to fix birth control here
+TODO Do something to make the kidnapping part fuzzy or otherwise indicate you don't remember it
 <<print setup.sexualHistoryTable()>>
 
 ::BodySideEffectsChoose1  <1800,0>

@@ -33,6 +33,7 @@ h1 {
 <h1>Home</h1>
 <<nobr>>
 	<<set $sex to []>>
+	<<set $Neighbours to []>>
 	<<set $female to 0>>
 	
 	<<include [[ModeDebug]]>>
@@ -278,7 +279,23 @@ setup.haveFuckedVaginal = function (name) {
 
 setup.fuckedVaginalCount = function (name) {
 	return state.active.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)})
-} 
+}
+
+::NeighbourFunctions [script] <350,50>
+setup.addNeighbour = function (name) {
+	return state.active.variables.Neighbours.push(name)
+}
+
+setup.isNeighbour = function (name) {
+	return state.active.variables.Neighbours.indexOf(name) >= 0
+}
+
+setup.removeNeighbour = function (name) {
+	var pos = state.active.variables.Neighbours.indexOf(name)
+	if (pos >= 0) {
+		return state.active.variables.Neighbours = state.active.variables.Neighbours.splice(0, pos).concat(state.active.variables.Neighbours.splice(pos + 1, state.active.variables.Neighbours.length))
+	}
+}
 
 ::ModeDebug <300,100>
 <<set $gameMode = 'debug'>>

@@ -113,7 +113,7 @@
 <<nobr>>
 	<<print "If you have not decided on a job, then ">>
 	<<link "we can assign one for you. (Random)">>
-		<<if !$PlayerBodyPlus>>
+		<<if $BodyType != 'Plus'>>
 			<<set $PlayerRollDice to either(1,2,3,4,5,6,7)>>
 		<<else>>
 			<<set $PlayerRollDice to either(1,2,3,4,5,6)>>
@@ -147,7 +147,7 @@
 
 <<silently>>
 	<<repeat 100ms>>
-	<<if !$PlayerBodyPlus>>
+	<<if $BodyType != 'Plus'>>
 		<<replace "#CheerJob">>
 			<<nobr>>
 				<<link "Cheerleader">>
@@ -385,7 +385,7 @@
 					<<nobr>>
 						<<print "If you have not decided on a job, then ">>
 						<<link "we can assign one for you. (Random)">>
-							<<if !$PlayerBodyPlus>>
+							<<if $BodyType != 'Plus'>>
 								<<set $PlayerRollDice to either(1,2,3,4,5,6)>>
 							<<else>>
 								<<set $PlayerRollDice to either(1,2,3,4,5)>>
@@ -409,7 +409,7 @@
 					<</nobr>></p>
 					<<silently>>
 						<<repeat 100ms>>
-						<<if !$PlayerBodyPlus>>
+						<<if $BodyType != 'Plus'>>
 							<<replace "#CheerJob">>
 								<<nobr>>
 									<<link "Cheerleader">>
@@ -641,7 +641,7 @@
 ::JobAthlete1 <2100,1500>
 <<nobr>>
 	<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
-	<<if $PlayerBodyFit>><<set $PlayerRollDice += 12>><</if>>
+	<<if $BodyType == 'Fit'>><<set $PlayerRollDice += 12>><</if>>
 	<<if $PlayerReducedSleep>><<set $PlayerRollDice += 5>><</if>>
 	
 	<span style="font-size: 150%"><<print "Athlete Trials">></span>
@@ -649,7 +649,7 @@
 
 <<nobr>>
 	<<print "You show up at tryouts and do your best to qualify for your chosen sport.">>
-	<<if $PlayerBodyFit>>
+	<<if $BodyType == 'Fit'>>
 		<<print "X-Change has gifted you with a body in peak condition. Still, you haven’t had much time to train, at least in this body.">>
 		<<if $PlayerReducedSleep>><<print " You’ve also been using your extra free time to put it as much training as you could prior to today. That should give you an edge.">><</if>>
 	<<else>>
@@ -732,7 +732,7 @@
 <img src="Part3/JobCheerleader1.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $PlayerBodyStandard>>
+	<<if $BodyType == 'Standard'>>
 		<<print "You are sorted into ">>[[‘“A” squad|JobCheerleaderA]]<<print " and you are excited to find that you’ll be cheering at all the big sporting events and competing in cheerleading competitions.">>
 	<<else>>
 		<<print "You are a bit disappointed that you don’t make “A” squad. But you are relieved to find you do make it onto ">>[[“D” squad.|JobCheerleaderD]]<<print " You’ll be cheering for some of the less popular sports and helping out with fundraising. Well, at least you made the team. Head outside to join the rest of the squad.">>

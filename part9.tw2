@@ -1281,7 +1281,7 @@
 <<nobr>>
 	<<print "If you have not decided on a job, then ">>
 	<<link "Daddy can choose one for you. (Random)">>
-		<<if $PlayerBodyStandard>>
+		<<if $BodyType == 'Standard'>>
 			<<set $PlayerRollDice to either(1,3,4,7)>>
 		<<else>>
 			<<set $PlayerRollDice to either(1,3,4)>>
@@ -1305,7 +1305,7 @@
 
 <<silently>>
 	<<repeat 100ms>>
-	<<if $PlayerBodyStandard>>
+	<<if $BodyType == 'Standard'>>
 		<<replace "#CheerJob">>
 			<<nobr>>
 				<<link "Cheerleader">>

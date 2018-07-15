@@ -962,12 +962,11 @@
 <<print "“You were in control when you gave him your phone number, weren’t you? Why would you have done that if you weren’t planning to cheat from the moment you met him?” You try to calm them down, but it doesn’t help. “If I can’t trust you for a week or two at your parents, then how can I ever trust you?”">>
 
 <<nobr>>
-	<<if $DatingAndrew>><<print "You try to salvage the relationship over the next few days, but he soon makes it clear it’s over between the two of you. You move out and are back in your old dorm room.">><<set $RoommateAndrew = 0>><<set $RoommateFaith = 1>><<set $DatingAndrew = 0>><<set $BreakUpAndrew = 0>><</if>>
-	<<if $DatingJosh>><<print "You try to salvage the relationship over the next few days, but he soon makes it clear it’s over between the two of you. ">><<if $NeighbourEmily>>		
+	<<if $DatingAndrew>><<print "You try to salvage the relationship over the next few days, but he soon makes it clear it’s over between the two of you. You move out and are back in your old dorm room.">><<set $Roommate to "Faith">><<set $DatingAndrew = 0>><<set $BreakUpAndrew = 0>><</if>>
+	<<if $DatingJosh>><<print "You try to salvage the relationship over the next few days, but he soon makes it clear it’s over between the two of you. ">><<if setup.isNeighbour('Emily')>>		
 	<<print "Emily isn’t entirelly thrilled when you decide to move back to your old room, but she is still supportive of you.">>
-	<<set $RoommateEmily = 1>>
-	<<set $NeighbourEmily = 0>>
-	<<set $RoommateJosh = 0>>
+	<<set $Roommate to 'Emily'>>
+	<<set setup.removeNeighbour('Emily')>>
 <</if>><<set $DatingJosh = 0>><<set $BreakUpJosh = 0>><</if>>
 	<<if $DatingVeronica>><<print "You try to salvage the relationship over the next few days, but she soon makes it clear it’s over between the two of you.">><<set $DatingVeronica = 0>><</if>>
 <</nobr>>
@@ -1020,9 +1019,9 @@
 
 <<nobr>>
 	<<if $MasterKate>><<set $MasterKate = 0>><</if>>
-	<<if $DatingAndrew>><<print "You move out and back into your old dorm room.">><<set $RoommateAndrew = 0>><<set $RoommateFaith = 1>><<set $DatingAndrew = 0>><<set $BreakUpAndrew = 0>><</if>>
+	<<if $DatingAndrew>><<print "You move out and back into your old dorm room.">><<set $Roommate to "Faith">><<set $DatingAndrew = 0>><<set $BreakUpAndrew = 0>><</if>>
 	<<if $DatingJosh>>
-		<<if $NeighbourEmily>>
+		<<if setup.isNeighbour('Emily')>>
 			<<print "The two of you still live next to each other. ">>
 		<</if>>
 		<<print "You decide to occasionally sleep together as ‘friends with benefits’, but any pretense of a relationship is gone now.">>
@@ -1031,11 +1030,10 @@
 		<<set $BreakUpJosh = 0>>
 	<</if>>
 	<<if $DatingNerd>>
-		<<if $NeighbourEmily>>
+		<<if setup.isNeighbour('Emily')>>
 			<<print "Emily isn’t entirelly thrilled when you decide to move back to your old room, but she is still supportive of you.">>
-			<<set $RoommateEmily = 1>>
-			<<set $NeighbourEmily = 0>>
-			<<set $RoommateNerd = 0>>
+			<<set $Roommate to 'Emily'>>
+			<<set setup.removeNeighbour('Emily')>>
 		<</if>>
 		<<set $DatingNerd = 0>>
 		<<set $BreakUpNerd = 0>>

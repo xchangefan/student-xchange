@@ -115,7 +115,7 @@ You got the email about your credit card statement days ago, but you’ve just b
     You were pregnant when you started at the strip club, so you knew it wouldn't last long. Now that
     you've stared to show, you'll [[have to stop|Part10StripPregnant]], at least for now.  The extra
     money had been nice though.
-  <<elseif $RoommateAndrew>>
+  <<elseif $Roommate == 'Andrew'>>
     <<set $NeedSideJob to 0>>
     <<if $PlayerMoney <= 0>>
       Now that you aren't paying for a dorm, and Andrew is [[paying the rent|Part10LivingTogether]],
@@ -194,7 +194,7 @@ You got the email about your credit card statement days ago, but you’ve just b
     You're not that worried about the drop in income from being put on the disability list.  You
     know you have [[another source of income|Part10CallGirlAlready]] to help cover
     your expenses.
-  <<elseif $RoommateAndrew>>
+  <<elseif $Roommate == 'Andrew'>>
     Thankfully, you aren't paying for a dorm anymore and Andrew is [[paying the rent|Part10LivingTogether]].
     Your spending had already dropped quite a bit, and Andrew will definitely be willing to
     cover even more during your pregnancy.  So the disabiity payment should be enough.
@@ -1060,9 +1060,9 @@ Now you can [[think about something more fun|Part10End]].
   <<if $PlayerItemNerdKey>>
     Of course, he's here because you ordered him to come watch you.  You wanted him to see you dance for
     other men, and to make his cock strain at its cage as you [[dance for him|Part10StripPeterOrdered]].
-  <<elseif $RoommateNerd or $NeighbourNerd>>
+  <<elseif $Roommate == 'Peter' or setup.isNeighbour('Peter')>>
     Of course you know him very well since he was assigned the dorm room next to yours.  You know how shy
-    he is so you plan on [[leading the action|Part10StripPeterNeighbor]] for him.
+    he is so you plan on [[leading the action|Part10StripPeterNeighbour]] for him.
   <<else>>
     You know he's a student at your univeristy, but you've [[seen him here|Part10StripPeterRegular]] at
     the club more times than you've seen him on campus.
@@ -1161,8 +1161,8 @@ Now you can [[think about something more fun|Part10End]].
   <</if>>
 <</nobr>>
 
-::Part10StripPeterNeighbor <7600,10300>
-<img src="Part10/StripPeterNeighbor1.jpg" hspace="10" vspace="10" height="600" />
+::Part10StripPeterNeighbour <7600,10300>
+<img src="Part10/StripPeterNeighbour1.jpg" hspace="10" vspace="10" height="600" />
 <<nobr>>
   When you spot Peter at the stage watching you, you smile seductively and crawl across the
   stage towards him. The club isn’t crowded yet, so you spend most of your set entertaining
@@ -1171,12 +1171,12 @@ Now you can [[think about something more fun|Part10End]].
 
 <<nobr>>
   He seems nervous, but you try to reassure him.  "Don’t worry, I’ll be gentle... probably.
-  And I’m giving you the [[first one for free|Part10StripPeterNeighbor2]]".
+  And I’m giving you the [[first one for free|Part10StripPeterNeighbour2]]".
 <</nobr>>
 
-::Part10StripPeterNeighbor2 <7800,10300>
+::Part10StripPeterNeighbour2 <7800,10300>
 <<set $PlayerItemNerdKey to 1>>
-<img src="Part10/StripPeterNeighbor2.jpg" hspace="10" vspace="10" height="600" />
+<img src="Part10/StripPeterNeighbour2.jpg" hspace="10" vspace="10" height="600" />
 <<nobr>>
   Once you start grinding against him, you notice there’s something different about the bulge
   in his pants and you’re pretty sure you know what it is.  You smile and unzip his pants.

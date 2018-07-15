@@ -7,62 +7,62 @@
 		<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
 		<<switch $PlayerRollDice>>
 			<<case 1>>
-				<<set $NeighbourJerk = 1>>
+				<<set setup.addNeighbour('Barry')>>
 				<<set $Neighbour2 = 1>>
 			<<case 2 3 4 5>>
-				<<set $NeighbourPlayer = 1>>
+				<<set setup.addNeighbour('James')>>
 				<<set $Neighbour2 = 2>>
 			<<case 6 7 8 9 10>>
-				<<set $NeighbourNerd = 1>>
+				<<set setup.addNeighbour('Peter')>>
 				<<set $Neighbour2 = 3>>
 			<<case 11 12 13 14 15 16 17>>
-				<<set $NeighbourThrillSeeker = 1>>
+				<<set setup.addNeighbour('Zack')>>
 				<<set $Neighbour2 = 4>>
 			<<case 18 19 20>>
-				<<set $NeighbourJosh = 1>>
+				<<set setup.addNeighbour('Josh')>>
 				<<set $Neighbour2 = 5>>
 		<</switch>>
 
-		<<if !$NeighbourEmilyBoyfriend>>
+		<<if !setup.isNeighbour("Emily's Boyfriend")>>
 			<<silently>>
 				<<repeat 50ms>>
 					<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
 					<<switch $PlayerRollDice>>
 						<<case 1>>
-							<<if !$NeighbourJerk>>
-								<<set $NeighbourJerk = 1>>
+							<<if !setup.isNeighbour('Barry')>>
+								<<set setup.addNeighbour('Barry')>>
 								<<set $PlayerNeighbourSet = 1>>
 								<<set $Neighbour1 = 1>>
 								<<set $Neighbour1Update = 1>>
 								<<stop>>
 							<</if>>
 						<<case 2 3 4 5>>
-							<<if !$NeighbourPlayer>>
-								<<set $NeighbourPlayer = 1>>
+							<<if !setup.isNeighbour('James')>>
+								<<set setup.addNeighbour('James')>>
 								<<set $PlayerNeighbourSet = 1>>
 								<<set $Neighbour1 = 2>>
 								<<set $Neighbour1Update = 1>>
 								<<stop>>
 							<</if>>
 						<<case 6 7 8 9 10>>
-							<<if !$NeighbourNerd>>
-								<<set $NeighbourNerd = 1>>
+							<<if !setup.isNeighbour('Peter')>>
+								<<set setup.addNeighbour('Peter')>>
 								<<set $PlayerNeighbourSet = 1>>
 								<<set $Neighbour1 = 3>>
 								<<set $Neighbour1Update = 1>>
 								<<stop>>
 							<</if>>
 						<<case 11 12 13 14 15 16 17>>
-							<<if !$NeighbourThrillSeeker>>
-								<<set $NeighbourThrillSeeker = 1>>
+							<<if !setup.isNeighbour('Zack')>>
+								<<set setup.addNeighbour('Zack')>>
 								<<set $PlayerNeighbourSet = 1>>
 								<<set $Neighbour1 = 4>>
 								<<set $Neighbour1Update = 1>>
 								<<stop>>
 							<</if>>
 						<<case 18 19 20>>
-							<<if !$NeighbourJosh>>
-								<<set $NeighbourJosh = 1>>
+							<<if !setup.isNeighbour('Josh')>>
+								<<set setup.addNeighbour('Josh')>>
 								<<set $PlayerNeighbourSet = 1>>
 								<<set $Neighbour1 = 5>>
 								<<set $Neighbour1Update = 1>>
@@ -82,7 +82,7 @@
 
 <img src="Part5/Neighbours1.jpg" hspace="10" vspace="10" height="400">
 <<nobr>>
-	<<print "As you go to your room in the dormitory, your neighbors are already there. When they hear you two come in, they come out of their room to introduce themselves. One of them ">>
+	<<print "As you go to your room in the dormitory, your neighbours are already there. When they hear you two come in, they come out of their room to introduce themselves. One of them ">>
 		<span id="Neighbour1"><<print " is Emily‘s boyfriend">></span>
 	<<print " and the other seems to be ">>
 		<span id="Neighbour2">"."</span>
@@ -98,61 +98,61 @@
 					<<switch $Neighbour2>>
 						<<case 1>>
 							<<link " a Jerk.">>
-								<<set $NeighbourJerk = 0>>
+								<<set setup.removeNeighbour('Barry')>>
 								<<set $Neighbour2Update = 1>>
 								<<if !$Neighbour1 != 2>>
-									<<set $NeighbourPlayer = 1>>
+									<<set setup.addNeighbour('James')>>
 									<<set $Neighbour2 = 2>>
 								<<else>>
-									<<set $NeighbourNerd = 1>>
+									<<set setup.addNeighbour('Peter')>>
 									<<set $Neighbour2 = 3>>
 								<</if>>
 							<</link>>
 						<<case 2>>
 							<<link " a Player.">>
-								<<set $NeighbourPlayer = 0>>
+								<<set setup.removeNeighbour('James')>>
 								<<set $Neighbour2Update = 1>>
 								<<if $Neighbour1 != 3>>
-									<<set $NeighbourNerd = 1>>
+									<<set setup.addNeighbour('Peter')>>
 									<<set $Neighbour2 = 3>>
 								<<else>>
-									<<set $NeighbourThrillSeeker = 1>>
+									<<set setup.addNeighbour('Zack')>>
 									<<set $Neighbour2 = 4>>
 								<</if>>
 							<</link>>
 						<<case 3>>
 							<<link " a Nerd.">>
-								<<set $NeighbourNerd = 0>>
+								<<set setup.removeNeighbour('Peter')>>
 								<<set $Neighbour2Update = 1>>
 								<<if $Neighbour1 != 4>>
-									<<set $NeighbourThrillSeeker = 1>>
+									<<set setup.addNeighbour('Zack')>>
 									<<set $Neighbour2 = 4>>
 								<<else>>
-									<<set $NeighbourJosh = 1>>
+									<<set setup.addNeighbour('Josh')>>
 									<<set $Neighbour2 = 5>>
 								<</if>>
 							<</link>>
 						<<case 4>>
 							<<link " a Thrill-Seeker.">>
-								<<set $NeighbourThrillSeeker = 0>>
+								<<set setup.removeNeighbour('Zack')>>
 								<<set $Neighbour2Update = 1>>
 								<<if $Neighbour1 != 5>>
-									<<set $NeighbourJosh = 1>>
+									<<set setup.addNeighbour('Josh')>>
 									<<set $Neighbour2 = 5>>
 								<<else>>
-									<<set $NeighbourJerk = 1>>
+									<<set setup.addNeighbour('Barry')>>
 									<<set $Neighbour2 = 1>>
 								<</if>>
 							<</link>>
 						<<case 5>>
 							<<link " a Regular Guy.">>
-								<<set $NeighbourJosh = 0>>
+								<<set setup.removeNeighbour('Josh')>>
 								<<set $Neighbour2Update = 1>>
 								<<if $Neighbour1 != 1>>
-									<<set $NeighbourJerk = 1>>
+									<<set setup.addNeighbour('Barry')>>
 									<<set $Neighbour2 = 1>>
 								<<else>>
-									<<set $NeighbourPlayer = 1>>
+									<<set setup.addNeighbour('James')>>
 									<<set $Neighbour2 = 2>>
 								<</if>>
 							<</link>>
@@ -160,66 +160,66 @@
 					<<set $Neighbour2Update = 0>>
 				<</replace>>
 			<</if>>
-			<<if !$NeighbourEmilyBoyfriend and $Neighbour1Update>>
+			<<if !setup.isNeighbour("Emily's Boyfriend") and $Neighbour1Update>>
 				<<replace "#Neighbour1">>
 					<<switch $Neighbour1>>
 						<<case 1>>
 							<<link " a Jerk.">>
-								<<set $NeighbourJerk = 0>>
+								<<set setup.removeNeighbour('Barry')>>
 								<<set $Neighbour1Update = 1>>
 								<<if $Neighbour2 != 2>>
-									<<set $NeighbourPlayer = 1>>
+									<<set setup.addNeighbour('James')>>
 									<<set $Neighbour1 = 2>>
 								<<else>>
-									<<set $NeighbourNerd = 1>>
+									<<set setup.addNeighbour('Peter')>>
 									<<set $Neighbour1 = 3>>
 								<</if>>
 							<</link>>
 						<<case 2>>
 							<<link " a Player.">>
-								<<set $NeighbourPlayer = 0>>
+								<<set setup.removeNeighbour('James')>>
 								<<set $Neighbour1Update = 1>>
 								<<if $Neighbour2 != 3>>
-									<<set $NeighbourNerd = 1>>
+									<<set setup.addNeighbour('Peter')>>
 									<<set $Neighbour1 = 3>>
 								<<else>>
-									<<set $NeighbourThrillSeeker = 1>>
+									<<set setup.addNeighbour('Zack')>>
 									<<set $Neighbour1 = 4>>
 								<</if>>
 							<</link>>
 						<<case 3>>
 							<<link " a Nerd.">>
-								<<set $NeighbourNerd = 0>>
+								<<set setup.removeNeighbour('Peter')>>
 								<<set $Neighbour1Update = 1>>
 								<<if $Neighbour2 != 4>>
-									<<set $NeighbourThrillSeeker = 1>>
+									<<set setup.addNeighbour('Zack')>>
 									<<set $Neighbour1 = 4>>
 								<<else>>
-									<<set $NeighbourJosh = 1>>
+									<<set setup.addNeighbour('Josh')>>
 									<<set $Neighbour1 = 5>>
 								<</if>>
 							<</link>>
 						<<case 4>>
 							<<link " a Thrill-Seeker.">>
-								<<set $NeighbourThrillSeeker = 0>>
+								<<set setup.removeNeighbour('Zack')>>
 								<<set $Neighbour1Update = 1>>
 								<<if $Neighbour2 != 5>>
-									<<set $NeighbourJosh = 1>>
+									<<set setup.addNeighbour('Josh')>>
 									<<set $Neighbour1 = 5>>
 								<<else>>
-									<<set $NeighbourJerk = 1>>
+									<<set setup.addNeighbour('Barry')>>
 									<<set $Neighbour1 = 1>>
 								<</if>>
 							<</link>>
 						<<case 5>>
 							<<link " a Regular Guy.">>
-								<<set $NeighbourJosh = 0>>
+								<<set setup.removeNeighbour('Josh')>>
 								<<set $Neighbour1Update = 1>>
 								<<if $Neighbour2 != 1>>
-									<<set $NeighbourJerk = 1>>
+									<<set setup.addNeighbour('Barry')>>
 									<<set $Neighbour1 = 1>>
 								<<else>>
-									<<set $NeighbourPlayer = 1>>
+									<<set setup.addNeighbour('James')>>
 									<<set $Neighbour1 = 2>>
 								<</if>>
 							<</link>>
@@ -238,145 +238,107 @@
 	<span style="font-size: 150%"><<print "Neighbours">></span>
 <</nobr>>
 
-<<switch $Neighbour1>>
-	<<case 1>>\
+<<switch $Neighbours[0]>>
+	<<case 'Barry'>>\
 		<img src="Part5/Neighbours2A.jpg" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to this guy you realize he is indeed a Misogynistic Jerk. His name is Barry and you knew guys like this when you were a guy. You didn’t like them then and like them even less now.">>
 
 		<<print "He hasn’t said anything you could report him for, but you expect it’s onlya matter of time. You can quickly tell he’s only interested in one thing from you, and it’s not your opinion.">>
-	<<case 2>>\
+	<<case 'James'>>\
 		<img src="Part5/Neighbours2B.png" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to this guy you realize he is indeed a Player. His name is James and he’s quite charming, and says all the right things. You know it’s an act though. Once he charms your pants off, he’ll bore quickly and move on to the next girl.">>
 
 		<<print "But he might be good for a little fun, if that’s all you’re looking for too.">>
-	<<case 3>>\
+	<<case 'Peter'>>\
 		<img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to this guy you realize he is indeed a Nerd. His name is Peter and he’s very shy, especially when he’s talking to you. You get the feeling that he’s always nervous around girls, especially ones he thinks are pretty. He seems nice though.">>
 
 		<<print "You’re pretty sure if you helped him come out of his shell a bit more he could make someone (else) a decent boyfriend someday.">>
-	<<case 4>>\
+	<<case 'Zack'>>\
 		<img src="Part5/Neighbours2D.jpg" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to this guy you realize he is indeed a Thrill-Seeker. His name is Zack and he lives for adventure. Rock climbing, skydiving, you-name-it, he loves anything that gets the adrenaline going.">>
 
 		<<print "You’re not sure how long he’ll be here before he bores of this place and leaves to go summit Everest or something, but you expect he’ll keep things exciting until then.">>
-	<<case 5>>\
+	<<case 'Josh'>>\
 		<img src="Part5/Neighbours2E.jpg" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to this guy you realize he is indeed just a Regular Guy. His name is Josh and he seems like most 18 year old guys - a bit immature, but friendly and polite. If you were still a guy, you’re pretty sure you guys would become good friends.">>
 
 		<<print "As you get to know him more you find out he’s the first in his family to go to college. He’s excited, and nervous about it all, and wants to make the best of it.">>
-	<<case 6>>\
+	<<case "Emily's Boyfriend">>\
 		<<print "You try to talk with Emily‘s boyfriend, but she keeps all his attention for herself. Regardless, he seems quite normal.">>
-<</switch>>\
-<<switch $Neighbour2>>
-	<<case 1>>\
+<</switch>>
+
+<<switch $Neighbours[1]>>
+	<<case 'Barry'>>\
 		<img src="Part5/Neighbours2A.jpg" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to the other guy you realize he is indeed a Misogynistic Jerk. His name is Barry and you knew guys like this when you were a guy. You didn’t like them then and like them even less now.">>
 
 		<<print "He hasn’t said anything you could report him for, but you expect it’s onlya matter of time. You can quickly tell he’s only interested in one thing from you, and it’s not your opinion.">>
-	<<case 2>>\
+	<<case 'James'>>\
 		<img src="Part5/Neighbours2B.png" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to the other guy you realize he is indeed a Player. His name is James and he’s quite charming, and says all the right things. You know it’s an act though. Once he charms your pants off, he’ll bore quickly and move on to the next girl.">>
 
 		<<print "But he might be good for a little fun, if that’s all you’re looking for too.">>
-	<<case 3>>\
+	<<case 'Peter'>>\
 		<img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to the other guy you realize he is indeed a Nerd. His name is Peter and he’s very shy, especially when he’s talking to you. You get the feeling that he’s always nervous around girls, especially ones he thinks are pretty. He seems nice though.">>
 
 		<<print "You’re pretty sure if you helped him come out of his shell a bit more he could make someone (else) a decent boyfriend someday.">>
-	<<case 4>>\
+	<<case 'Zack'>>\
 		<img src="Part5/Neighbours2D.jpg" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to the other guy you realize he is indeed a Thrill-Seeker. His name is Zack and he lives for adventure. Rock climbing, skydiving, you-name-it, he loves anything that gets the adrenaline going.">>
 
 		<<print "You’re not sure how long he’ll be here before he bores of this place and leaves to go summit Everest or something, but you expect he’ll keep things exciting until then.">>
-	<<case 5>>\
+	<<case 'Josh'>>\
 		<img src="Part5/Neighbours2E.jpg" hspace="10" vspace="10" height="400">
 		
 		<<print "As you talk to the other guy you realize he is indeed just a Regular Guy. His name is Josh and he seems like most 18 year old guys - a bit immature, but friendly and polite. If you were still a guy, you’re pretty sure you guys would become good friends.">>
 
 		<<print "As you get to know him more you find out he’s the first in his family to go to college. He’s excited, and nervous about it all, and wants to make the best of it.">>
-<</switch>>\
-<<if !$NeighbourEmilyBoyfriend>>	
-	<<nobr>>
-		<<print "As you prepare to go shopping with">>$Mentor
-		<<print ", you keep thinking about how much you didn't like:">>
-	<</nobr>>
-	<<nobr>>
-	<<if $NeighbourJerk>>
-		<<link "Barry, the jerk.">>
-			<<set $NeighbourJerkDislike = 1>>
-			<<nobr>>
-				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
-				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
-				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
-				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
-			<</nobr>>
-		<</link>>
+<</switch>>
+
+<<nobr>>
+	<<if !setup.isNeighbour("Emily's Boyfriend")>>
+		As you prepare to go shopping with $Mentor, you keep thinking how:
+		<ul>
+			<li><<print $Neighbours[0]>>
+				<<if $Mentor == 'Faith'>><<link [[was fine,|Faith2]]>><<set $NeighbourDislike to $Neighbours[1]>><</link>>
+				<<elseif $Mentor == 'Olivia'>><<link [[was fine,|Olivia2]]>><<set $NeighbourDislike to $Neighbours[1]>><</link>>
+				<<elseif $Mentor == 'Samantha'>><<link [[was fine,|Samantha2]]>><<set $NeighbourDislike to $Neighbours[1]>><</link>>
+				<<elseif $Mentor == 'Hannah'>><<link [[was fine,|Hannah2]]>><<set $NeighbourDislike to $Neighbours[1]>><</link>>
+				<</if>>	
+				but you didn't really like $Neighbours[1]
+			</li>
+			<li><<print $Neighbours[1]>> was fine, but
+				<<if $Mentor == 'Faith'>><<link [[you didn't really like|Faith2]]>><<set $NeighbourDislike to $Neighbours[0]>><</link>>
+				<<elseif $Mentor == 'Olivia'>><<link [[you didn't really like|Olivia2]]>><<set $NeighbourDislike to $Neighbours[0]>><</link>>
+				<<elseif $Mentor == 'Samantha'>><<link [[you didn't really like|Samantha2]]>><<set $NeighbourDislike to $Neighbours[0]>><</link>>
+				<<elseif $Mentor == 'Hannah'>><<link [[you didn't really like|Hannah2]]>><<set $NeighbourDislike to $Neighbours[0]>><</link>>
+				<</if>>	
+				$Neighbours[0]
+			</li>
+			<li>You 
+				<<if $Mentor == 'Faith'>><<link [[don't really care|Faith2]]>><<set $NeighbourDislike to $Neighbours[either(0,1)]>><</link>>
+				<<elseif $Mentor == 'Olivia'>><<link [[don't really care|Olivia2]]>><<set $NeighbourDislike to $Neighbours[either(0,1)]>><</link>>
+				<<elseif $Mentor == 'Samantha'>><<link [[don't really care|Samantha2]]>><<set $NeighbourDislike to $Neighbours[either(0,1)]>><</link>>
+				<<elseif $Mentor == 'Hannah'>><<link [[don't really care|Hannah2]]>><<set $NeighbourDislike to $Neighbours[either(0,1)]>><</link>>
+				<</if>>
+				one way or the other beteen them
+			</li>
+		</ul>
+	<<else>>
+		<<print "After you finish talking with him, ">>[[you go shopping with Emily.|Emily2]]
 	<</if>>
-	<</nobr>>
-	<<nobr>>
-	<<if $NeighbourPlayer>>
-		<<link "James, the player.">>
-			<<set $NeighbourPlayerDislike = 1>>
-			<<nobr>>
-				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
-				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
-				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
-				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
-			<</nobr>>
-		<</link>>
-	<</if>>
-	<</nobr>>
-	<<nobr>>
-	<<if $NeighbourNerd>>
-		<<link "Peter, the nerd.">>
-			<<set $NeighbourNerdDislike = 1>>
-			<<nobr>>
-				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
-				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
-				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
-				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
-			<</nobr>>
-		<</link>>
-	<</if>>
-	<</nobr>>
-	<<nobr>>
-	<<if $NeighbourThrillSeeker>>
-		<<link "Zack, the thrill-seeker.">>
-			<<set $NeighbourThrillSeekerDislike = 1>>
-			<<nobr>>
-				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
-				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
-				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
-				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
-			<</nobr>>
-		<</link>>
-	<</if>>
-	<</nobr>>
-	<<nobr>>
-	<<if $NeighbourJosh>>
-		<<link "Josh, the regular guy.">>
-			<<set $NeighbourJoshDislike = 1>>
-			<<nobr>>
-				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
-				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
-				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
-				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
-			<</nobr>>
-		<</link>>
-	<</if>>
-	<</nobr>>
-<<else>>
-	<<print "After you finish talking with him, ">>[[you go shopping with Emily.|Emily2]]
-<</if>>
+<</nobr>>
 
 ::Part5Andrew <0,3125>
 <<nobr>>
@@ -386,8 +348,7 @@
 	<<set $PlayerClothesDressShort = 1>>
 	<<set $PlayerUnderwearSexy = 1>>
 	<<set $PlayerSleepwearSexy = 1>>
-	<<set $RoommateAndrew = 1>>
-	<<set $RoommateFaith = 0>>
+	<<set $Roommate to "Andrew">>
 	
 	<span style="font-size: 150%"><<print "Andrew’s Apartment">></span>
 <</nobr>>
@@ -446,11 +407,11 @@
 <<nobr>>
 	<<print "You can ">>
 	<<link "try sneaking over the guys room">>
-		<<if $NeighbourJerk and !$NeighbourJerkDislike>><<goto [[Part5Jerk1]]>><</if>>
-		<<if $NeighbourPlayer and !$NeighbourPlayerDislike>><<goto [[Part5Player1]]>><</if>>
-		<<if $NeighbourNerd and !$NeighbourNerdDislike>><<goto [[Part5Nerd1]]>><</if>>
-		<<if $NeighbourThrillSeeker and !$NeighbourThrillSeekerDislike>><<goto [[Part5Thrill1]]>><</if>>
-		<<if $NeighbourJosh and !$NeighbourJoshDislike>><<goto [[Part5Regular1]]>><</if>>
+		<<if setup.isNeighbour('Barry') and $NeighbourDislike != 'Barry'>><<goto [[Part5Jerk1]]>>
+		<<elseif setup.isNeighbour('James') and $NeighbourDislike != 'James'>><<goto [[Part5Player1]]>>
+		<<elseif setup.isNeighbour('Peter') and $NeighbourDislike != 'Peter'>><<goto [[Part5Nerd1]]>>
+		<<elseif setup.isNeighbour('Josh') and $NeighbourDislike != 'Josh'>><<goto [[Part5Regular1]]>>
+		<<else>><<goto [[Part5Thrill1]]>><</if>>
 	<</link>>
 	<<print " after she goes to sleep and seeing if the guy you prefer is willing to help, or you can ">>
 	[[try to endure your horniness.|Part5Faith2]]
@@ -467,13 +428,11 @@
 <<nobr>>
 	<<print "You could just give up on sharing a room with Emily and ">>
 	<<link "start sleeping in the room her boyfriend is supposed to be in">>
-		<<set $RoommateEmily = 0>>
-		<<set $NeighbourEmily = 1>>
-		<<if $NeighbourJerk>><<set $RoommateJerk = 1>><<goto [[Part5Jerk1]]>><</if>>
-		<<if $NeighbourPlayer>><<set $RoommatePlayer = 1>><<goto [[Part5Player1]]>><</if>>
-		<<if $NeighbourNerd>><<set $RoommateNerd = 1>><<goto [[Part5Nerd1]]>><</if>>
-		<<if $NeighbourThrillSeeker>><<set $RoommateThrillSeeker = 1>><<goto [[Part5Thrill1]]>><</if>>
-		<<if $NeighbourJosh>><<set $RoommateJosh = 1>><<goto [[Part5Regular1]]>><</if>>
+		<<set setup.removeNeighbour("Emily's Boyfriend")>>
+		<<set $Roommate to $Neighbours[0]>>
+	  <<set setup.removeNeighbour($Roommate)>>
+		<<set setup.addNeighbour("Emily")>>
+		<<set setup.addNeighbour("Emily's Boyfriend")>>
 	<</link>>
 	<<print " and letting Emily and him have your room to themselves.">>
 <</nobr>>
@@ -652,11 +611,11 @@
 <<nobr>>
 	<<print "When he finishes he leaves the shower and turns. He sees you standing there, ">>
 	<<link "watching him, with your hand in your panties.">>
-		<<if $NeighbourJerk and $NeighbourJerkDislike>><<goto [[Part5Jerk1]]>><</if>>
-		<<if $NeighbourPlayer and $NeighbourPlayerDislike>><<goto [[Part5Player1]]>><</if>>
-		<<if $NeighbourNerd and $NeighbourNerdDislike>><<goto [[Part5Nerd1]]>><</if>>
-		<<if $NeighbourThrillSeeker and $NeighbourThrillSeekerDislike>><<goto [[Part5Thrill1]]>><</if>>
-		<<if $NeighbourJosh and $NeighbourJoshDislike>><<goto [[Part5Regular1]]>><</if>>
+		<<if setup.isNeighbour('Barry') and $NeighbourDislike == 'Barry'>><<goto [[Part5Jerk1]]>>
+		<<elseif setup.isNeighbour('James') and $NeighbourDislike == 'James'>><<goto [[Part5Player1]]>>
+		<<elseif setup.isNeighbour('Peter') and $NeighbourDislike == 'Peter'>><<goto [[Part5Nerd1]]>>
+		<<elseif setup.isNeighbour('Josh') and $NeighbourDislike == 'Josh'>><<goto [[Part5Regular1]]>>
+		<<else>><<goto [[Part5Thrill1]]>><</if>>
 	<</link>>
 <</nobr>>
 
@@ -869,12 +828,8 @@
 
 ::Part5HannahNeighbour1 <2100,2875>
 <<nobr>>
-	<<if $NeighbourJerk>><<set $sex.push({sex: 'male', name: 'Barry'})>><</if>>
-	<<if $NeighbourPlayer>><<set $sex.push({sex: 'male', name: 'James'})>><</if>>
-	<<if $NeighbourNerd>><<set $sex.push({sex: 'male', name: 'Peter'})>><</if>>
-	<<if $NeighbourThrillSeeker>><<set $sex.push({sex: 'male', name: 'Zack'})>><</if>>
-	<<if $NeighbourJosh>><<set $sex.push({sex: 'male', name: 'Josh'})>><</if>>
-	
+	<<set $sex.push({sex: 'male', name: $Neighbours[0]})>>
+	<<set $sex.push({sex: 'male', name: $Neighbours[1]})>>
 	<span style="font-size: 150%"><<print "Neighbour’s Bedroom">></span>
 <</nobr>>
 
@@ -888,11 +843,12 @@
 <<print "Of course, you know who you want to win, so you just squeeze a bit tighter, stroke a bit deeper, and make sure the other one ‘loses’. He probably never had more fun losing before though.">>
 
 <<nobr>>
-	<<if $NeighbourJerk and !$NeighbourJerkDislike>><<print "The Jerk ">><</if>>
-	<<if $NeighbourPlayer and !$NeighbourPlayerDislike>><<print "The Player ">><</if>>
-	<<if $NeighbourNerd and !$NeighbourNerdDislike>><<print "The Nerd ">><</if>>
-	<<if $NeighbourThrillSeeker and !$NeighbourThrillSeekerDislike>><<print "The Thrill-Seeker ">><</if>>
-	<<if $NeighbourJosh and !$NeighbourJoshDislike>><<print "Josh ">><</if>>
+	<<if setup.isNeighbour('Barry') and $NeighbourDislike == 'Barry'>><<set $strokeWinner to 'Barry'>>
+	<<elseif setup.isNeighbour('James') and $NeighbourDislike == 'James'>><<set $strokeWinner to 'James'>>
+	<<elseif setup.isNeighbour('Peter') and $NeighbourDislike == 'Peter'>><<set $strokeWinner to 'Peter'>>
+	<<elseif setup.isNeighbour('Josh') and $NeighbourDislike == 'Josh'>><<set $strokeWinner to 'Josh'>>
+	<<else>><<set $strokeWinner to 'Zack'>><</if>>
+	$strokeWinner
 	<<print "was really close to cumming, but he held back. You head back to your room with him. You’ll make sure he eats you out long enough that he’s not so close to an orgasm ">>
 	[[when he finally starts fucking you.|Part5HannahNeighbour2]]
 <</nobr>>
@@ -900,16 +856,11 @@
 ::Part5HannahNeighbour2 <2100,3125>
 <<nobr>>
 	<<set $sex.push({sex: 'female', name: 'Hannah'})>>
-	<<if $NeighbourJerk and !$NeighbourJerkDislike>><<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>><</if>>
-	<<if $NeighbourPlayer and !$NeighbourPlayerDislike>><<set $sex.push({sex: 'male', name: 'James', vaginal:true})>><</if>>
-	<<if $NeighbourNerd and !$NeighbourNerdDislike>><<set $sex.push({sex: 'male', name: 'Peter', vaginal:true})>><</if>>
-	<<if $NeighbourThrillSeeker and !$NeighbourThrillSeekerDislike>><<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>><</if>>
-	<<if $NeighbourJosh and !$NeighbourJoshDislike>><<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>><</if>>
-	
+	<<set $sex.push({sex: 'male', name: $strokeWinner, vaginal:true})>>
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
 
-<<print "You and your neighbor are barely in your room when Hannah walks in. Her date didn’t go well so she ended it when she saw your text. “I saw your text and figured I’d take whichever guy you didn’t.”, she says, “But now that I see how horny and frustrated you have this one already, I want to play too.”’You tell her you’d be happy to share.">>
+<<print "You and your neighbour are barely in your room when Hannah walks in. Her date didn’t go well so she ended it when she saw your text. “I saw your text and figured I’d take whichever guy you didn’t.”, she says, “But now that I see how horny and frustrated you have this one already, I want to play too.”’You tell her you’d be happy to share.">>
 <img src="Part5/Hannah5.gif" hspace="10" vspace="10" height="600">
 
 <<print "You and her have hours of fun with him. You take turns, one rides his face while the other teases his cock. You and Hannah have came many times, but you make sure to keep him on the edge of an orgasm, but never let him cum. As he’s eating Hannah out for the final time he begs for you to let him cum this time.">>
@@ -996,12 +947,8 @@
 
 ::Part5SamanthaNeighbours <1400,3125>
 <<nobr>>
-	<<if $NeighbourJerk>><<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>><</if>>
-	<<if $NeighbourPlayer>><<set $sex.push({sex: 'male', name: 'James', vaginal:true})>><</if>>
-	<<if $NeighbourNerd>><<set $sex.push({sex: 'male', name: 'Peter', vaginal:true})>><</if>>
-	<<if $NeighbourThrillSeeker>><<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>><</if>>
-	<<if $NeighbourJosh>><<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>><</if>>
-	
+	<<set $sex.push({sex: 'male', name: $Neighbours[0], vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: $Neighbours[1], vaginal:true})>>
 	<span style="font-size: 150%"><<print "Neighbours’s Bedroom">></span>
 <</nobr>>
 
@@ -1090,12 +1037,8 @@
 
 ::Part5OliviaChastity <2625,3125>
 <<nobr>>
-	<<if $NeighbourJerk>><<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>><</if>>
-	<<if $NeighbourPlayer>><<set $sex.push({sex: 'male', name: 'James', vaginal:true})>><</if>>
-	<<if $NeighbourNerd>><<set $sex.push({sex: 'male', name: 'Peter', vaginal:true})>><</if>>
-	<<if $NeighbourThrillSeeker>><<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>><</if>>
-	<<if $NeighbourJosh>><<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>><</if>>
-	
+	<<set $sex.push({sex: 'male', name: $Neighbour[0]})
+	<<set $sex.push({sex: 'male', name: $Neighbour[1]})
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
 

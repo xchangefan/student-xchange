@@ -15,26 +15,17 @@
 <<print "The only pleasure you are allowed is what you give to others. Sometimes the joy you get from making someone else orgasm helps you forget about your own, if only for a moment or two. But soon your thoughts return to wondering when you will be allowed to cum again.">>
 
 <<nobr>>
-	<<if $NeighbourNerd>>[[You spend some time with Peter.|Part6Nerd]]
-		<<else>><<if $NeighbourThrillSeeker>>[[You spend some time with Zack.|Part6Thrill]]
-			<<else>><<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-				<<else>><<if $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-					<<else>><<if $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-						<<else>><<if $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-							<<else>><<if $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-								<<else>><<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-									<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-										<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-											<<else>>[[You join a study group.|Part6StudyGroup]]
-										<</if>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<if setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
+	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
 
@@ -50,37 +41,22 @@
 
 <<nobr>>
 	<<if $DatingAndrew>>[[You spend some time with Andrew.|Part6StartAndrew]]
-		<<else>><<if $DatingVeronica>>[[You spend some time with Veronica.|Part6StartVeronica]]
-			<<else>><<if $DatingJosh>>[[You spend some time with Josh.|Part6StartJosh1]]
-				<<else>><<if $NeighbourNerd>>[[You spend some time with Peter.|Part6Nerd]]
-					<<else>><<if $NeighbourThrillSeeker>>[[You spend some time with Zack.|Part6Thrill]]
-						<<else>><<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-							<<else>><<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-								<<else>><<if $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-									<<else>><<if $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-										<<else>><<if $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-											<<else>><<if $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-												<<else>><<if $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
-													<<else>><<if $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-														<<else>><<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-															<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-																<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-																	<<else>>[[You join a study group.|Part6StudyGroup]]
-																<</if>>
-															<</if>>
-														<</if>>
-													<</if>>
-												<</if>>
-											<</if>>
-										<</if>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<elseif $DatingVeronica>>[[You spend some time with Veronica.|Part6StartVeronica]]
+	<<elseif $DatingJosh>>[[You spend some time with Josh.|Part6StartJosh1]]
+	<<elseif setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
+	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
+	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
 
@@ -97,37 +73,22 @@
 
 <<nobr>>
 	<<if $DatingAndrew>>[[You spend some time with Andrew.|Part6StartAndrew]]
-		<<else>><<if $DatingVeronica>>[[You spend some time with Veronica.|Part6StartVeronica]]
-			<<else>><<if $DatingJosh>>[[You spend some time with Josh.|Part6StartJosh1]]
-				<<else>><<if $NeighbourNerd>>[[You spend some time with Peter.|Part6Nerd]]
-					<<else>><<if $NeighbourThrillSeeker>>[[You spend some time with Zack.|Part6Thrill]]
-						<<else>><<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-							<<else>><<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-								<<else>><<if $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-									<<else>><<if $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-										<<else>><<if $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-											<<else>><<if $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-												<<else>><<if $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
-													<<else>><<if $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-														<<else>><<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-															<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-																<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-																	<<else>>[[You join a study group.|Part6StudyGroup]]
-																<</if>>
-															<</if>>
-														<</if>>
-													<</if>>
-												<</if>>
-											<</if>>
-										<</if>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<elseif $DatingVeronica>>[[You spend some time with Veronica.|Part6StartVeronica]]
+	<<elseif $DatingJosh>>[[You spend some time with Josh.|Part6StartJosh1]]
+	<<elseif setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
+	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
+	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
 
@@ -145,37 +106,22 @@
 
 <<nobr>>
 	<<if $DatingAndrew>>[[You spend some time with Andrew.|Part6StartAndrew]]
-		<<else>><<if $DatingVeronica>>[[You spend some time with Veronica.|Part6StartVeronica]]
-			<<else>><<if $DatingJosh>>[[You spend some time with Josh.|Part6StartJosh1]]
-				<<else>><<if $NeighbourNerd>>[[You spend some time with Peter.|Part6Nerd]]
-					<<else>><<if $NeighbourThrillSeeker>>[[You spend some time with Zack.|Part6Thrill]]
-						<<else>><<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-							<<else>><<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-								<<else>><<if $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-									<<else>><<if $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-										<<else>><<if $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-											<<else>><<if $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-												<<else>><<if $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
-													<<else>><<if $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-														<<else>><<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-															<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-																<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-																	<<else>>[[You join a study group.|Part6StudyGroup]]
-																<</if>>
-															<</if>>
-														<</if>>
-													<</if>>
-												<</if>>
-											<</if>>
-										<</if>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<elseif $DatingVeronica>>[[You spend some time with Veronica.|Part6StartVeronica]]
+	<<elseif $DatingJosh>>[[You spend some time with Josh.|Part6StartJosh1]]
+	<<elseif setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
+	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
+	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
 
@@ -381,12 +327,10 @@
 <<print "But she does remind you from time to time about the need to stay off academic probation if you want to stay on the squad. So you both remember to take some time away from the fun to hit the books occasionally.">>
 
 <<nobr>>
-	<<if $NeighbourNerd>>[[You spend some time with Peter.|Part6Nerd]]
-		<<else>><<if $NeighbourThrillSeeker>>[[You spend some time with Zack.|Part6Thrill]]
-			<<else>><<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-				<<else>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-			<</if>>
-		<</if>>
+	<<if setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
+	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<else>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
 	<</if>>
 <</nobr>>
 
@@ -399,7 +343,6 @@
 	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
-	
 	<span style="font-size: 150%"><<print "Josh">></span>
 <</nobr>>
 
@@ -411,24 +354,16 @@
 <<print "You and him both try to balance studying with the occasional night out. Of course, what you do at the end of the night is pretty similar either way.">>
 
 <<nobr>>
-	<<if $NeighbourNerd>>[[You spend some time with Peter.|Part6Nerd]]
-		<<else>><<if $NeighbourThrillSeeker>>[[You spend some time with Zack.|Part6Thrill]]
-			<<else>><<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-				<<else>><<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-					<<else>><<if $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-						<<else>><<if $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-							<<else>><<if $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-								<<else>><<if $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-									<<else>><<if $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-										<<else>>[[You join a study group.|Part6StudyGroup]]
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<if setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
+	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
+	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
 
@@ -505,30 +440,19 @@
 <<if $DatingNerd>><br><<print "But you make sure your virgin toy has a little fun sometimes too. You love hearing him wince on the dance floor as you grind against him and his cock struggles to get hard in it’s cage. ">> [[And you planned something special for his birthday.|Part6NerdBirthday]]<br><</if>>
 <<nobr>>
 	<<if !$DatingNerd>>
-		<<if $NeighbourThrillSeeker>>[[You spend some time with Zack.|Part6Thrill]]
-			<<else>><<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-				<<else>><<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-					<<else>><<if $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-						<<else>><<if $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-							<<else>><<if $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-								<<else>><<if $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-									<<else>><<if $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
-										<<else>><<if $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-											<<else>><<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-												<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-													<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-														<<else>>[[You join a study group.|Part6StudyGroup]]
-													<</if>>
-												<</if>>
-											<</if>>
-										<</if>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
+		<<if setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+		<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+		<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
+		<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+		<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+		<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
+		<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+		<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
+		<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+		<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+		<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+		<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+		<<else>>[[You join a study group.|Part6StudyGroup]]
 		<</if>>
 	<</if>>
 <</nobr>>
@@ -1660,24 +1584,16 @@ Might add something here in the future. Or not.
 <<if $NerdBirthdaySex>><<print "You think about punishing him for it, but then just the fact that he is going to be locked for months before he ever gets the same chance again, if ever, is punishment enough.">><<else>><<print "You tell him that he is allowed to look, but not touch, as you use him for your pleasure only.">><</if>>
 
 <<nobr>>
-	<<if $NeighbourThrillSeeker>>[[You spend some time with Zack.|Part6Thrill]]
-		<<else>><<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-			<<else>><<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-				<<else>><<if $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-					<<else>><<if $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-						<<else>><<if $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-							<<else>><<if $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-								<<else>><<if $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
-									<<else>><<if $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-										<<else>>[[You join a study group.|Part6StudyGroup]]
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<if setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
+	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
 

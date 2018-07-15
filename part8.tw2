@@ -1871,15 +1871,8 @@
 
 ::Part8NewYear3 <1000,7900>
 <<nobr>>
-	<<if $Andrew>>
-	  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-	<<else>>
-		<<if $MasterKate or $DatingProfessor>><<set $SexNewYearMale = 1>><</if>>
-		<<if $Andrew>>
-		  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-		<<else>>
-		  <<set $sex.push({sex: 'male', anon:"New Year's Eve hookup", vaginal: true})>>
-		<</if>>
+	<<if $MasterKate or $DatingProfessor>>
+		<<set $SexNewYearMale = 1>><</if>>
 	<</if>>
 
 	<span style="font-size: 150%"><<if $DatingAndrew>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></span>
@@ -1888,15 +1881,17 @@
 <<nobr>>
 	<<if $DatingAndrew>>
 		<<print "You and Andrew spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
+	  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+	<<elseif $DatingJosh>>
+		<<print "You and Josh spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
+		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
 	<<else>>
-		<<if $DatingJosh>>
-			<<print "You and Josh spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
+		<<if $PlayerChastityBelt>>
+		  <<set $sex.push({sex: 'male', name: 'New Year's Eve hookup'})>>
+			<<print "You spend the first hours of the new year giving the pleasure you yearn for. Seeing and hearing the joy you are giving him is the only pleasure you can have today though.">>
 		<<else>>
-			<<if $PlayerChastityBelt>>
-				<<print "You spend the first hours of the new year giving the pleasure you yearn for. Seeing and hearing the joy you are giving him is the only pleasure you can have today though.">>
-			<<else>>
-				<<print "You and him spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
-			<</if>>
+		  <<set $sex.push({sex: 'male', name: 'New Year's Eve hookup', vaginal: true})>>
+			<<print "You and him spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
 		<</if>>
 	<</if>>
 <</nobr>>
