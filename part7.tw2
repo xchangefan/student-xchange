@@ -65,19 +65,18 @@
 
 <<print "The next question asks you how often you have had sex and with how many different guys.">>
 <<nobr>>
-	<<if $SexDifferentMaleVaginalCount == 1 and $SexVaginalCount == 1>>
+	<<if setup.sexUniqueVaginalCount() == 1 and setup.sexVaginalCount() == 1>>
 		<img src="Part7/Start5A.jpg" hspace="10" vspace="10" height="650">
-		<<else>><<if $SexDifferentMaleVaginalCount == 1 and $SexVaginalCount > 1>>
-			<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="650">
-			<<else>><<if $SexDifferentMaleVaginalCount == 2>>
-				<img src="Part7/Start5A.jpg" hspace="10" vspace="10" height="350">
-				<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="350">
-				<<else>><<if $SexDifferentMaleVaginalCount > 2>>
-					<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="450">
-					<img src="Part7/Start5B.jpg" hspace="10" vspace="10" height="450">
-				<</if>>
-			<</if>>
-		<</if>>
+	<<elseif setup.sexUniqueVaginalCount() == 1 and setup.sexVaginalCount() > 1>>
+		<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="650">
+	<<elseif setup.sexUniqueVaginalCount() == 2>>
+		<img src="Part7/Start5A.jpg" hspace="10" vspace="10" height="350">
+		<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="350">
+	<<elseif setup.sexUniqueVaginalCount() > 2>>
+		<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="450">
+		<img src="Part7/Start5B.jpg" hspace="10" vspace="10" height="450">
+	<<else>>
+		TODO Need image for no guys at all
 	<</if>>
 <</nobr>>
 
@@ -85,11 +84,11 @@
 
 ::Part7Start5 <800,5750>
 <<nobr>>
-	<<set $SexVaginalEffectiveCount to $SexVaginalCount - $SexVaginalExcludedCount>>
+	<<set $SexVaginalEffectiveCount to setup.sexVaginalCount() - $SexVaginalExcludedCount>>
 	<<if $PlayerProtectionPerfect or $SexVaginalEffectiveCount <= 0>>
 			<<set $PlayerPregnantCheck = 0>>
 	<<else>>
-		<<if $SexDifferentMaleVaginalCount == 1 and $SexVaginalCount == 1>>
+		<<if setup.sexUniqueVaginalCount() == 1 and setup.sexVaginalCount() == 1>>
 			<<if $PlayerProtectionTry or $PlayerProtectionNone>>
 				<<set $PlayerPregnantCheck = 4>>
 			<</if>>
@@ -100,7 +99,7 @@
 				<<set $PlayerPregnantCheck = 0>>
 			<</if>>
 		<</if>>	
-		<<if $SexDifferentMaleVaginalCount > 1 or $SexVaginalCount > 1>>
+		<<if setup.sexUniqueVaginalCount() > 1 or setup.sexVaginalCount() > 1>>
 			<<if $PlayerProtectionTry>>
 				<<set $PlayerPregnantCheck = 20>>
 			<</if>>
@@ -131,7 +130,7 @@
 <img src="Part7/Start4.jpg" hspace="10" vspace="10" height="500">
 
 <<nobr>>
-	<<if !$SexDifferentMaleVaginalCount>>
+	<<if !setup.sexUniqueVaginalCount()>>
 		<<if $PlayerProtectionTry>>[[you know you will be disappointed by the results.|Part7Start6]]<<else>>[[you are not worried about the results.|Part7Start6]]<</if>>
 	<<else>>
 		<<if $PlayerProtectionPerfect>>
@@ -141,7 +140,7 @@
 				<<print "“Daddy” has been very diligent about having you use birth control properly, ">>[[you are not worried about the results.|Part7Start6]]
 			<<else>>
 				<<if $PlayerProtectionTry>>
-					<<if $SexDifferentMaleVaginalCount > 2 or $SexVaginalCount > 4>><<print "You’ve had sex more than a few times recently with a guy. Maybe much more than a few times. You are anxious and a bit excited about what the results are going to be. ">><</if>>
+					<<if setup.sexUniqueVaginalCount() > 2 or setup.sexVaginalCount() > 4>><<print "You’ve had sex more than a few times recently with a guy. Maybe much more than a few times. You are anxious and a bit excited about what the results are going to be. ">><</if>>
 					<<link "You nervously await the results of your test.">>
 						<<if $PlayerPregnantCheck > $PlayerRollDice>>
 							<<goto [[Part7Preg1]]>>
@@ -150,7 +149,7 @@
 						<</if>>
 					<</link>>
 				<<else>>
-					<<if $SexDifferentMaleVaginalCount > 2 or $SexVaginalCount > 4>><<print "You’ve had sex more than a few times recently with a guy. Maybe much more than a few times. You are more concerned about what the results are going to be. ">><</if>>
+					<<if setup.sexUniqueVaginalCount() > 2 or setup.sexVaginalCount() > 4>><<print "You’ve had sex more than a few times recently with a guy. Maybe much more than a few times. You are more concerned about what the results are going to be. ">><</if>>
 					<<link "You nervously await the results of your test.">>
 						<<if $PlayerPregnantCheck > $PlayerRollDice>>
 							<<goto [[Part7Preg1]]>>
@@ -354,33 +353,32 @@
 <<print "When she gets to the questions about the father:">>
 
 <<print "If you aren’t sure which of the ones below is the father, you give her the answer you want to be true. You think or hope that the father is:">>
-<<if $SexAndrewVaginal>><<if $SexAndrewVaginal == 1>>* <<link "Andrew, your boss, from that one night stand.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoss]]>><</link>><<else>>* <<link "Andrew, your boyfriend.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoyfriend]]>><</link>><</if>><br><</if>>\
-<<if $SexJoshVaginal>><<if $DatingJosh == 1>>* [[Josh, your boyfriend.|Part7Josh]]<<else>>* [[Josh, your neighbour, from that one time you had fun.|Part7Josh]]<</if>><br><</if>>\
-<<if $SexOfficeBossVaginal>>* [[Your office boss, from all the times you had to pleasure him.|Part7OfficeBoss1]]<br><</if>>\
-<<if $SexProfessorVaginal>>* <<link "Your Daddy, the Professor.">><<set $FatherRealProfessor = 1>><<goto [[Part7Professor]]>><</link>><br><</if>>\
-<<if $SexJerkVaginal>><<if $SexJerkVaginal == 1>>* [[Barry, the jerk, from that one time you had fun.|Part7Unknown]]<<else>>* [[Barry, your the jerk, from all the times he humiliated you.|Part7Unknown]]<</if>><br><</if>>\
-<<if $SexPlayerVaginal>><<if $SexPlayerVaginal == 1>>* [[James, the player , from that one time you had fun.|Part7Unknown]]<<else>>* [[James, the player, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
-<<if $SexNerdVaginal>><<if $DatingNerd>>* <<link "Peter, the nerd, from that birthday gift.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><<else>>* <<link "Peter, the nerd, from all the times you had fun.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><</if>><br><</if>>\
-<<if $SexThrillSeekerVaginal>><<if $SexThrillSeekerVaginal == 1>>* [[Zack, the thrill-seeker, from that one time you had fun.|Part7Unknown]]<<else>>* [[Zack, the thrill-seeker, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
-<<if $SexTomVaginal>>* [[Tom, the guy Hannah dated once.|Part7Unknown]]<br><</if>>\
-<<if $SexTroyVaginal>>* [[Troy, your colleague, from that one night stand.|Part7Unknown]]<br><</if>>\
-<<if $SexDavidVaginal>>* [[David, from all the times you had fun.|Part7Unknown]]<br><</if>>\
-<<if $SexCoachVaginal>>* [[The Coach, from that time you had to audition.|Part7Unknown]]<br><</if>>\
-<<if $SexFootballVaginal>>* [[One of the football team members, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexBarGuyVaginal>>* [[One of the guys you picked at the bar, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexBarBrotherVaginal>>* [[One of the guys you picked at the bar, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexAthleteVaginal>>* [[One of gym colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexYogaStudentVaginal>>* [[One of your yoga students, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexLibraryGuyVaginal>>* [[One of the guys you picked in the library, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexFundraiserVaginal>>* [[One of the guys at the fundraiser events, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexSchoolColleagueVaginal>>* [[One of your school colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexMassageClientVaginal>>* [[One of your massage clients, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexCallClientVaginal>>* [[One of call girl clients, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexPornVaginal>>* [[One of your porn colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if $SexKidnapVaginal>><<if $SexDifferentMaleVaginalCount == 3>>* [[You realize in horror that this can only be from whatever happened during your memory lapse.|Part7Unknown]]<<else>>* [[You realize in horror that this can also be related to your memory lapse.|Part7Unknown]]<</if>><br><</if>>\
+<<if setup.daddyCheck('Andrew')>><<if setup.fuckedVaginalCount('Andrew') == 1>>* <<link "Andrew, your boss, from that one night stand.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoss]]>><</link>><<else>>* <<link "Andrew, your boyfriend.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoyfriend]]>><</link>><</if>><br><</if>>\
+<<if setup.daddyCheck('Josh')>><<if $DatingJosh == 1>>* [[Josh, your boyfriend.|Part7Josh]]<<else>>* [[Josh, your neighbour, from that one time you had fun.|Part7Josh]]<</if>><br><</if>>\
+<<if setup.daddyCheck('Office Boss')>>* [[Your office boss, from all the times you had to pleasure him.|Part7OfficeBoss1]]<br><</if>>\
+<<if setup.daddyCheck('Aaron')>>* <<link "Your Daddy, the Professor.">><<set $FatherRealProfessor = 1>><<goto [[Part7Professor]]>><</link>><br><</if>>\
+<<if setup.daddyCheck('Barry')>><<if setup.fuckedVaginalCount('Barry') == 1>>* [[Barry, the jerk, from that one time you had fun.|Part7Unknown]]<<else>>* [[Barry, your the jerk, from all the times he humiliated you.|Part7Unknown]]<</if>><br><</if>>\
+<<if setup.daddyCheck('James')>><<if setup.fuckedVaginalCount('James') == 1>>* [[James, the player , from that one time you had fun.|Part7Unknown]]<<else>>* [[James, the player, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
+<<if setup.daddyCheck('Peter')>><<if $DatingNerd>>* <<link "Peter, the nerd, from that birthday gift.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><<else>>* <<link "Peter, the nerd, from all the times you had fun.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><</if>><br><</if>>\
+<<if setup.daddyCheck('Zack')>><<if setup.fuckedVaginalCount('Zack') == 1>>* [[Zack, the thrill-seeker, from that one time you had fun.|Part7Unknown]]<<else>>* [[Zack, the thrill-seeker, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
+<<if setup.daddyCheck('Tom')>>* [[Tom, the guy Hannah dated once.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Troy')>>* [[Troy, your colleague, from that one night stand.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('David')>>* [[David, from all the times you had fun.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Coach')>>* [[The Coach, from that time you had to audition.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Football Player')>>* [[One of the football team members, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Bar Patron')>>* [[One of the guys you picked at the bar, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Athlete')>>* [[One of gym colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Athlete (yoga)')>>* [[One of your yoga students, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('guy at the library')>>* [[One of the guys you picked in the library, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Uniersity Donor') || setup.daddyCheck('Tony')>>* [[One of the guys at the fundraiser events, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Classmate')>>* [[One of your school colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Athlete (massage client)')>>* [[One of your massage clients, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Call Girl Client')>>* [[One of call girl clients, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Porn Costar')>>* [[One of your porn colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
+<<if setup.daddyCheck('Kidnapper 1') || setup.daddyCheck('Kidnapper 2') || setup.daddyCheck('Kidnapper Doctor')>><<if setup.sexUniqueVaginalCount() == 3>>* [[You realize in horror that this can only be from whatever happened during your memory lapse.|Part7Unknown]]<<else>>* [[You realize in horror that this can also be related to your memory lapse.|Part7Unknown]]<</if>><br><</if>>\
 
 
-<<if $SexKidnapVaginal>><<if $SexDifferentMaleVaginalCount > 3>>* [[You really are not sure.|Part7Unknown]]<</if>><<else>><<if $SexDifferentMaleVaginalCount > 1>>* [[You really are not sure.|Part7Unknown]]<</if>><</if>>
+<<if $SexKidnapVaginal>><<if setup.sexUniqueVaginalCount() > 3>>* [[You really are not sure.|Part7Unknown]]<</if>><<else>><<if setup.sexUniqueVaginalCount() > 1>>* [[You really are not sure.|Part7Unknown]]<</if>><</if>>
 
 ::Part7Preg2 <1000,6000>
 <<nobr>>

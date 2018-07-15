@@ -12,7 +12,7 @@
 <<elseif $MasterOlivia >><<include [[Part11Master]]>>
 <<elseif $PlayerItemNerdKey >><<include [[Part11Peter]]>>
 <<elseif $PlayerChastityBelt >><<include [[Part11Chastity]]>>
-<<elseif $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker or $FWBJerk or $SexBecky or $SexKim or $SexTroy or $TroyHelp>><<include [[Part11FWB]]>>
+<<elseif $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker or $FWBJerk or setup.haveFucked('Kim') or setup.haveFucked('Becky') or setup.haveFucked('Troy') or $TroyHelp>><<include [[Part11FWB]]>>
 <<else>><<include [[Part11Single]]>><</if>>
 
 ::Part11Andrew <200,10500>
@@ -1913,20 +1913,20 @@ You’re even used by a few women, using strap-ons, or their own fist.
     <<if $FWBJerk>>
       <li>[[Barry|Part11FWBJerk]]</li>
     <</if>>
-    <<if $SexTroy>>
+    <<if setup.haveFucked('Troy')>>
       <li><<link Troy Part11FWBGuy>><<set $ValentineFWB to "Troy">><</link>></li>
     <</if>>
   </ul>
 <</nobr>>
 <<nobr>>
-  <<if $SexBecky or $SexKim>>
+  <<if setup.haveFucked('Kim') or setup.haveFucked('Becky')>>
     <br>
     You weren't going to call Becky or Kim, since you figured they'd be doing something together.  But you get a text from them
     that implies that [[what they want to together tonight is You.|Part11FWBGirls]]
   <</if>>
 <</nobr>>
 <<nobr>>
-  <<if !$SexTroy and $TroyHelp>>
+  <<if !setup.haveFucked('Troy') and $TroyHelp>>
     <br>
     You haven't hooked up with him, but you did pass out that one night a Troy's house.  You could [[give him a call|Part11FWBTroyHelp]].   
   <</if>>
@@ -2207,7 +2207,7 @@ Kim: Oh, is that what I typed?
 <<nobr>>
   The suction cup makes sure it doesn’t move as you first tease the dildo and then take more and more of it
   into your mouth.
-  <<if $SexFemaleCount > $SexMaleCount >>
+  <<if setup.sexFemaleCount() > setup.sexMaleCount() >>
     You imagine it's a strap-on being worn by a beautiful woman.  Soon all you can think about is how good
     it would feel when she fucked you with it.
   <<else>>
@@ -2223,7 +2223,7 @@ Kim: Oh, is that what I typed?
 
 <<nobr>>
   <<if ($PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock)>>
-    <<if $SexFemaleCount > $SexMaleCount >>
+    <<if setup.sexFemaleCount() > setup.sexMaleCount() >>
       You suck her strap-on a while longer.  As you do, your fingers find their way to your clit, pleasuring
       yourself without your lips ever the dildo.  You ache for an orgasm, but you already know that won't
       be possible for you tonight.  You suck the dildo a while longer, until you pull away.  Your lover pats
@@ -2242,7 +2242,7 @@ Kim: Oh, is that what I typed?
     You keep your lips on the dildo, taking all of it into your mouth and down your throat.  Your hand finds it
     way to your clit, and you pleasure yourself without ever taking your lips off.  As your orgasm gets close, you
     take the dildo deep into your throat.  You imagine
-    <<if $SexFemaleCount > $SexMaleCount >>
+    <<if setup.sexFemaleCount() > setup.sexMaleCount() >>
       her holding your head there until you cum.
     <<else>>
       him holding your head there as he cums.
@@ -2260,7 +2260,7 @@ Kim: Oh, is that what I typed?
   <<if $PlayerSideEffectDreams or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock>>
     That night after you fall asleep, you dream you'd gone to the club, and gone home with
     someone.  In your dream 
-    <<if $SexFemaleCount > $SexMaleCount >>
+    <<if setup.sexFemaleCount() > setup.sexMaleCount() >>
       she
     <<else>>
       he
@@ -2277,9 +2277,9 @@ Kim: Oh, is that what I typed?
 <img src="Part11/Single4.jpg" hspace="10" vspace="10" height="600" align="left"/>
 <<nobr>>
   You were 
-  <<if $SexFemaleCount > $SexMaleCount >>
+  <<if setup.sexFemaleCount() > setup.sexMaleCount() >>
     worried
-  <<elseif $SexFemaleCount * 3 > $SexMaleCount >>
+  <<elseif setup.sexFemaleCount() * 3 > setup.sexMaleCount() >>
     expecting
   <<else>>
     hoping
@@ -2385,7 +2385,7 @@ Kim: Oh, is that what I typed?
     Now you're really glad you didn't send him a copy of that selfie you'd taken.
   <<else>>
     You’d hoped he had got that all out of his system over break.
-    <<if $SexBrother>>
+    <<if setup.haveFucked('Dylan')>>
       You'd hoped maybe you'd gotten it out of your system as well.
     <</if>>
     You were hoping he could go back to just being your brother again.
@@ -2397,7 +2397,7 @@ Kim: Oh, is that what I typed?
     you.  He misses having a brother.  He's says he's fine with having
     two sisters, but it's just [[not the same anymore.|Part11End]]
   <</nobr>>
-<<elseif !$CodySexting and !$SexCody>>
+<<elseif !$CodySexting and !setup.haveFucked('Cody')>>
   <<nobr>>
     You think about the sexy selfie you'd taken over Christmas break.
     You'd thought about sending that to your brother, just to tease
@@ -2411,11 +2411,11 @@ Kim: Oh, is that what I typed?
   <</nobr>>
 
   <<nobr>>
-    <<if $CodySexting and $SexCody>>
+    <<if $CodySexting and setup.haveFucked('Cody')>>
       The first ones are the pictures of your body you had texted to Cody
       over Christmas break. Those are followed by the even more explicit
       ones you let him take of you back at his appartment.
-    <<elseif $SexCody>>
+    <<elseif setup.haveFucked('Cody')>>
       They are the pictures you let Cody take of you at his apartment.
       They are intimate, private pictures of you.  First with your lips
       around his cock looking up at him, and of then of you naked
@@ -2479,21 +2479,21 @@ Kim: Oh, is that what I typed?
     <<if $PlayerSideEffectExhibitionist>>
       <li>"What an attention whore."</li>
     <</if>>
-    <<if $PlayerSideEffectSubmissive and $SexCody>>
+    <<if $PlayerSideEffectSubmissive and setup.haveFucked('Cody')>>
       <li>"Looks like he spanked her ass good before that one."</li>
     <</if>>
     <li>"I went to high school with her!"</li>
     <li>-- "Sure you did"</li>
-    <<if $PlayerSideEffectPheromones and $SexCody>>
+    <<if $PlayerSideEffectPheromones and setup.haveFucked('Cody')>>
       <li>"Bitch looks like she's in heat - lol"</li>
     <</if>>
-    <<if ($PlayerSideEffectOral or $PlayerChastityBelt) and $SexCody>>
+    <<if ($PlayerSideEffectOral or $PlayerChastityBelt) and setup.haveFucked('Cody')>>
       <li>"Dumb whore, you're supposed to swallow it all, not let it drip down your chin"</li>
     <</if>>
-    <<if $PlayerChastityBelt && $SexCody>>
+    <<if $PlayerChastityBelt && setup.haveFucked('Cody')>>
       <li>"I get that he keeps his whore locked up, but he could at least take it off for the pictures"</li>
     <</if>>
-    <<if $PlayerSideEffectAnal and $SexCody and !$PlayerChastityBelt>>
+    <<if $PlayerSideEffectAnal and setup.haveFucked('Cody') and !$PlayerChastityBelt>>
       <li>"Looks like he tore that ass up before he took that one"</li>
     <</if>>
     <<if $PlayerBodyPlus>>
@@ -2519,7 +2519,7 @@ Kim: Oh, is that what I typed?
     <<if ($PlayerPiercedClit and !$PlayerChastityBelt) or $PlayerEarsMultiple or $PlayerPiercedTongue or $PlayerPiercedButtonBelly or $PlayerPiercedBreasts>>
       <li>"Piercings are disgusting, why would she do that to herself."</li>
     <</if>>
-    <<if $PlayerChastityBelt && $SexCody>>
+    <<if $PlayerChastityBelt && setup.haveFucked('Cody')>>
       <li>"OP's mom needs one of those chastity belts, then maybe she wouldn't be such a whore."</li>
       <li>-- "That wouldn't help.  It sure didn't for this slut."</li>
     <</if>>
@@ -2625,7 +2625,7 @@ Kim: Oh, is that what I typed?
   <<else>>
     But you also need to stop thinking of me as some pretty girl you
     just met. I’m your sister
-    <<if $SexBrother>>
+    <<if setup.haveFucked('Dylan')>>
       now.  I know I let things go way to far a Christmas, and I made things worse.  But lets move on from that."
     <<elseif $BrotherFlashed>>
       now.  I know my teasing at the airport didn't help, and probably made things worse. But lets move on from that."
@@ -2643,7 +2643,7 @@ Kim: Oh, is that what I typed?
   <<else>>
     There’s a long pause before he responds with “k, sis”.  You know he’s read the message, but
     you wonder if it’ll change anything.
-    <<if $SexBrother>>
+    <<if setup.haveFucked('Dylan')>>
       Deep down, you're not sure if you really want it to or not.  You know what happened was wrong, but you also know
       you enjoyed it.
     <</if>>

@@ -1,9 +1,10 @@
 ::Part8ChristmasSister <300,7650>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexSister += 5>>
-	<<set $SexFemaleCount += 5>>
-	
+	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
+	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
+	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
+	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
+	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
 	<span style="font-size: 150%"><<print "Cassie`s Bedroom">></span>
 <</nobr>>
 
@@ -16,7 +17,7 @@
 	<<if $PlayerChastityBelt>>
 		<<print "Cassie figured out that attaching a strapon to you chastity belt will at least make your time together more diversified. And you do enjoy the feeling of having her moan and squirm under you.">>
 	<<else>>
-		<<if $LikeFemales and !$SexDifferentMaleVaginalCount>>
+		<<if setup.isGoldStarLesbian()>>
 			<<print "Cassie even bought a strapon to show you what you are missing out on by not having sex with guys, and you can`t help it but moan and squirm under her.">>
 		<<else>>
 			<<print "Cassie even bought a strapon to make your time together even more enjoyable, and you can`t help it but moan and squirm under her.">>
@@ -79,16 +80,16 @@
 <</nobr>>
 
 <<nobr>>
-<<if $SexUncleVaginal>>
+<<if setup.haveFuckedVaginal('Mike')>>
 		<<print "You made another visit to your uncle’s house. This time you spent nearly the entire day in the ‘playroom’.">>
 	<<else>>
 		<<print "You made another visit to your uncle’s house. This time you spent nearly the entire day bound somewhere else in his house.">>
 	<</if>>
 <</nobr>>
-<<if $SexUncleVaginal>><img src="Part8/Christmas12.jpg" hspace="10" vspace="10" height="650"><<else>><br><video src="Part8/Christmas13.mp4" autoplay loop muted height="640"></video><br><</if>>
+<<if setup.haveFuckedVaginal('Mike')>><img src="Part8/Christmas12.jpg" hspace="10" vspace="10" height="650"><<else>><br><video src="Part8/Christmas13.mp4" autoplay loop muted height="640"></video><br><</if>>
 
 <<nobr>>
-<<if $SexUncleVaginal>>
+<<if setup.haveFuckedVaginal('Mike')>>
 		<<print "He tied you to a chair, blindfolded, and started fucking you stopping just before you orgasmed. And then he left you there to wait and cool down, before starting all over again.">>
 	<<else>>
 		<<print "He seemed much nicer this time and at gave you some sexy latex clothes to wear, but as he started using you this quickly changed.">>
@@ -96,7 +97,7 @@
 <</nobr>>
 
 <<nobr>>
-<<if $SexUncleVaginal>>
+<<if setup.haveFuckedVaginal('Mike')>>
 		<<print "Eventually you started beggin for him to let you cum, louder each time; except he didn`t. After what felt like hours of going insane, he finally allowed you to cum, in what felt like one of the strongest orgasms of your life.">>
 	<<else>>
 		<<print "He called you a naughty girl and all sorts of things. All you could do was sit there looking around with a gaping mouth. You squirmed and shifted, only getting wetter as time went on.">>
@@ -104,13 +105,13 @@
 <</nobr>>
 
 <<nobr>>
-		<<if !$SexSister and !$SexBrother and !$SexCody>>
+		<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
 			<<print "At the end of the day ">>[[you return home,|Part8ChristmasReturn]]<<print " feeling completely euphoric. ">>
 		<<else>>
 			<<print "At the end of the day you return home, feeling completely euphoric. ">>
-			<<if $SexSister>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
-			<<if $SexBrother>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>
-			<<if $SexCody>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>
+			<<if setup.haveFucked('Cassie')>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
+			<<if setup.haveFucked('Dylan')>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>
+			<<if setup.haveFucked('Cody')>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>
 		<</if>>
 <</nobr>>
 
@@ -194,8 +195,6 @@
 
 ::Part8Road2 <600,6325>
 <<nobr>>
-	<<set $SexBradVaginal = 0>>
-	<<set $SexBrad = 0>>
 	
 	<span style="font-size: 150%"><<print "Road Home">></span>
 <</nobr>>
@@ -224,11 +223,7 @@
 
 ::Part8Road3 <1000,6300>
 <<nobr>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexBrad += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexCount += 1>>
-	
+	<<set $sex.push({sex: 'male', name: 'Brad'})>>
 	<span style="font-size: 150%"><<print "Road Home">></span>
 <</nobr>>
 
@@ -274,14 +269,7 @@
 
 ::Part8Road5 <400,6475>
 <<nobr>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexPatrol = 1>>
-	<<set $SexPatrolVaginal = 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexVaginalCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexCount += 1>>
-	
+	<<set $sex.push({sex: 'male', name: 'Police Officer', vaginal: true})>>
 	<span style="font-size: 150%"><<print "Patrol Car">></span>
 <</nobr>>
 
@@ -498,8 +486,6 @@
 
 ::Part8HomeMall1 <1000,6600>
 <<nobr>>
-	<<set $SexCody = 0>>
-	<<set $SexCodyVaginal = 0>>
 	<<set $PlayerMoney -= 200>>
 	<<if $PlayerMoney < 0>><<set $PlayerCredit = 1>><</if>>
 	
@@ -608,8 +594,6 @@
 
 ::Part8Home5 <0,6750>
 <<nobr>>
-	<<set $SexSister = 0>>
-
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
 
@@ -732,9 +716,6 @@
 
 ::Part8Arrival1 <0,7000>
 <<nobr>>
-	<<set $SexBrother = 0>>
-	<<set $SexBrotherVaginal = 0>>
-	
 	<span style="font-size: 150%"><<print "Airport">></span>
 <</nobr>>
 
@@ -805,7 +786,7 @@
 
 <<print "You imagine wrapping your lips around it and hearing him moan as your lips slide down it. You imagine pushing him back onto the bed and slowly lowering yourself onto it.">>
 
-<<if $PlayerSideEffectOral or $SexBrad>><<print "You can’t stop thinking about wrapping your lips around Cody’s cock, ">>[[and you can’t help telling him that.|Part8Text8]]<<else>><<print "You are tempted to drive over to his house right now. But you have to pick up your brother at the airport early in the morning, and can’t. “Maybe some other time”, you think. You flirt a bit more with Cody, ">>[[but eventually end the call and fall asleep|Part8Arrival1]]<<print " fantasizing about Cody.">><</if>>
+<<if $PlayerSideEffectOral or setup.haveFucked('Brad')>><<print "You can’t stop thinking about wrapping your lips around Cody’s cock, ">>[[and you can’t help telling him that.|Part8Text8]]<<else>><<print "You are tempted to drive over to his house right now. But you have to pick up your brother at the airport early in the morning, and can’t. “Maybe some other time”, you think. You flirt a bit more with Cody, ">>[[but eventually end the call and fall asleep|Part8Arrival1]]<<print " fantasizing about Cody.">><</if>>
 
 ::Part8Text8 <1600,6750>
 <<nobr>>
@@ -1026,11 +1007,7 @@
 
 ::Part8EveningBooty1 <1575,7125>
 <<nobr>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexCody += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexCount += 1>>
-	
+	<<set $sex.push({sex: 'male', name: 'Cody'})>>
 	<span style="font-size: 150%"><<print "Cody’s Apartment">></span>
 <</nobr>>
 
@@ -1092,11 +1069,7 @@
 
 ::Part8EveningBrother2 <525,7250>
 <<nobr>>
-	<<set $SexBrother += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexCount += 1>>
-	
+	<<set $sex.push({sex: 'male', name: 'Dylan'})>>
 	<span style="font-size: 150%"><<print "Dylan`s Bedroom">></span>
 <</nobr>>
 
@@ -1111,11 +1084,7 @@
 
 ::Part8EveningBrother3 <700,7250>
 <<nobr>>
-	<<set $SexBrother += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexCount += 1>>
-	
+	<<set $sex.push({sex: 'male', name: 'Dylan'})>>
 	<span style="font-size: 150%"><<print "Dylan`s Bedroom">></span>
 <</nobr>>
 
@@ -1130,12 +1099,8 @@
 
 ::Part8EveningBrother4 <875,7250>
 <<nobr>>
-	<<set $SexBrother += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
 	<<set $ChristmasEveOrgasm = 1>>
-	<<set $SexCount += 1>>
-	
+	<<set $sex.push({sex: 'male', name: 'Dylan'})>>
 	<span style="font-size: 150%"><<print "Dylan`s Bedroom">></span>
 <</nobr>>
 
@@ -1159,7 +1124,7 @@
 <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="650">
 
 <<print "But you love the gifts you get too though. Your sister must had made another trip to the mall after the trip with you, as several of the gifts she has for you are the very items she’d had you try on a few days ago. ">>
-<<if $SexCodyVaginal>><br><<print "You hope that your turtleneck hides your hickey from last night. Cassie isn’t fooled though. When you are alone, she pulls the colllar a bit to verify her suspicion that you were hiding something. “Hmm, looks like I wasn’t the only one that snuck out last night.”">><br><</if>>
+<<if $CodyHickey>><br><<print "You hope that your turtleneck hides your hickey from last night. Cassie isn’t fooled though. When you are alone, she pulls the colllar a bit to verify her suspicion that you were hiding something. “Hmm, looks like I wasn’t the only one that snuck out last night.”">><br><</if>>
 <<nobr>>
 	<<if $DatingProfessor>>
 		When no one is paying attention, [[you sneak back into your room.|Part8Christmas2]]
@@ -1191,19 +1156,10 @@
 ::Part8EveningSister3 <1400,7250>
 <<nobr>>
 	<<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectPheromones > 3 or $PlayerSideEffectExhibitionist > 3 or $PlayerSideEffectMasturbationBlock > 3 or $PlayerSideEffectDreams > 3 or !$LikeFemales>>
-		<<set $SexDifferentMaleVaginalCount += 1>>
-		<<set $SexDifferentMaleCount += 1>>
-		<<set $SexSisterBoyfriend = 1>>
-		<<set $SexSisterBoyfriendVaginal = 1>>
-		<<set $SexCount += 2>>
-		<<set $SexMaleCount += 1>>
-		<<set $SexVaginalCount += 1>>
-		<<set $SexSister += 1>>
-		<<set $SexFemaleCount += 1>>
-		<<set $SexDifferentFemaleCount += 1>>
+	  <<set $sex.push({sex: 'female', name: 'Cassie'})>>
+	  <<set $sex.push({sex: 'male', name: "Cassie's Boyfriend"})>>
 		<<set $ChristmasEveOrgasm = 1>>
 	<</if>>
-	
 	<span style="font-size: 150%"><<print "Sister`s Boyfriend House">></span>
 <</nobr>>
 
@@ -1242,17 +1198,10 @@
 
 ::Part8EveningSister5 <1050,7250>
 <<nobr>>
-	<<set $SexSister += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexCount += 1>>
+	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
 	<<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectPheromones > 3 or $PlayerSideEffectOral > 2 or $PlayerSideEffectMasturbationBlock > 3 or $PlayerSideEffectDreams > 3 or !$LikeFemales>>
-		<<set $SexDifferentMaleCount += 1>>
-		<<set $SexSisterBoyfriend = 1>>
-		<<set $SexMaleCount += 1>>
-		<<set $SexCount += 1>>
+		<<set $sex.push({sex: 'male', name: "Cassie's Boyfriend"})>>
 	<</if>>
-	
 	<span style="font-size: 150%"><<print "Cassie`s Boyfriend House">></span>
 <</nobr>>
 
@@ -1297,13 +1246,8 @@
 <<nobr>>
 	<<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectPheromones > 3 or $PlayerSideEffectExhibitionist > 3 or $PlayerSideEffectMasturbationBlock > 3 or $PlayerSideEffectDreams > 3 or !$LikeFemales>>
 	<<else>>
-		<<set $SexDifferentMaleCount += 1>>
-		<<set $SexSisterBoyfriend = 1>>
-		<<set $SexCount += 2>>
-		<<set $SexMaleCount += 1>>
-		<<set $SexSister += 1>>
-		<<set $SexFemaleCount += 1>>
-		<<set $SexDifferentFemaleCount += 1>>
+		<<set $sex.push({sex: 'female', name: 'Cassie'})>>
+		<<set $sex.push({sex: 'male', name: "Cassie's Boyfriend"})>>
 		<<set $ChristmasEveOrgasm = 1>>
 	<</if>>
 	
@@ -1349,12 +1293,9 @@
 
 ::Part8EveningBooty2 <1575,7250>
 <<nobr>>
-	<<set $SexCodyVaginal += 1>>
-	<<set $SexVaginalCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
 	<<set $ChristmasEveOrgasm = 1>>
-	<<set $SexCount += 1>>
-	
+  <<set $sex.push({sex: 'male', name: 'Cody', vaginal: true})>>
+	<<set $CodyHickey to 1>>
 	<span style="font-size: 150%"><<print "Cody’s Apartment">></span>
 <</nobr>>
 
@@ -1423,9 +1364,6 @@
 
 ::Part8Uncle1 <600,7400>
 <<nobr>>
-	<<set $SexUncle = 0>>
-	<<set $SexUncleVaginal = 0>>
-
 	<span style="font-size: 150%"><<print "Uncle Mike’s House">></span>
 <</nobr>>
 
@@ -1465,15 +1403,15 @@
 <<print "You and several of your relatives exchange glances and silently decide to not correct your grandfather’s confusion. “He had to step out for a bit.”, your mom tells him and your grandfather soon loses interest.">>
 
 <<nobr>>
-	<<if !$SexSister and !$SexBrother and !$SexCody>>
+	<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
 		<<print "You are grateful that the rest of the evening passes uneventfully, ">>[[and you head back home at the end of the day.|Part8ChristmasReturn]]
 	<<else>>
 		<<print "You are grateful that the rest of the evening passes uneventfully, and you head back home at the end of the day.">>
 	<</if>>
 <</nobr>>
-<<if $SexSister>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>\
-<<if $SexBrother>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>\
-<<if $SexCody>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>\
+<<if setup.haveFucked('Cassie')>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>\
+<<if setup.haveFucked('Dylan')>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>\
+<<if setup.haveFucked('Cody')>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>\
 
 ::Part8ChristmasReturn <0,7775>
 <<nobr>>
@@ -1481,7 +1419,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if !$SexSister and !$SexBrother and !$SexCody>>
+	<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
 		<<print "You visit with your family for a few more days.">>
 	<<else>>
 		<<print "You make sure to spend a bit of time with your mother as well. ">>
@@ -1508,7 +1446,7 @@
 		<<print "The handcuffs aren`t the only things locking you, so you realize that you can only ">>
 		[[agree to whatever he may ask from you.|Part8Uncle3]]
 	<<else>>
-		<<if $DatingVeronica or $DatingAndrew or $DatingJosh or $DatingProfessor or $MasterKate or $MasterOlivia or $DatingNerd or !$SexDifferentMaleVaginalCount>>
+		<<if $DatingVeronica or $DatingAndrew or $DatingJosh or $DatingProfessor or $MasterKate or $MasterOlivia or $DatingNerd or !setup.sexUniqueVaginalCount()>>
 			<<if $PlayerSideEffectSubmissive > 1>>
 				<<print "You wonder if you should say something about it before you get carried away. ">>
 				[[But the thought of being bound in this dungeon is too enticing.|Part8Uncle5]]
@@ -1539,11 +1477,7 @@
 
 ::Part8Uncle3 <800,7525>
 <<nobr>>
-	<<set $SexUncle = 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexCount += 1>>
-	
+  <<set $sex.push({sex: 'male', name: 'Mike'})>>
 	<span style="font-size: 150%"><<print "Uncle Mike’s Playroom">></span>
 <</nobr>>
 
@@ -1558,13 +1492,13 @@
 	<<if !$DatingVeronica and !$DatingAndrew and !$DatingJosh and !$DatingProfessor and !$MasterKate and !$MasterOlivia and !$DatingNerd>>
 		<<print "When the game is finally over he has ample time to make use of both before he releases you and you return home. You know it won`t be long before you ">>[[visit him again.|Part8Uncle7]]
 	<<else>>
-		<<if !$SexSister and !$SexBrother and !$SexCody>>
+		<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
 			<<print "When the game is finally over he has ample time to make use of both before he releases you and ">>[[you return home.|Part8ChristmasReturn]]
 		<<else>>
 			<<print "When the game is finally over he has ample time to make use of both before he releases you and you return home. ">>
-			<<if $SexSister>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
-			<<if $SexBrother>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>
-			<<if $SexCody>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>
+			<<if setup.haveFucked('Cassie')>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
+			<<if setup.haveFucked('Dylan')>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>
+			<<if setup.haveFucked('Cody')>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>
 		<</if>>
 	<</if>>
 <</nobr>>
@@ -1589,7 +1523,7 @@
 
 <<nobr>>
 	<<print "When he undoes the straps and releases you from the chair, you look back and see what a mess you’ve left for him on it. (Your panties, you already knew were soaked through.). ">>
-	<<if !$SexSister and !$SexBrother and !$SexCody>>
+	<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
 		[[As you leave to head home,|Part8ChristmasReturn]]
 	<<else>>
 		<<print "As you leave to head home,">>
@@ -1602,9 +1536,9 @@
 	<<if $DatingNerd>><<print " talk Peter into into purchasing as well. ">><</if>>
 	<<if $MasterKate>><<print " talk your Mistress into into purchasing as well. ">><</if>>
 	<<if $MasterOlivia>><<print " talk your Master into into purchasing as well. ">><</if>>
-	<<if $SexSister>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
-	<<if $SexBrother>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>
-	<<if $SexCody>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>
+	<<if setup.haveFucked('Cassie')>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
+	<<if setup.haveFucked('Dylan')>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>
+	<<if setup.haveFucked('Cody')>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>
 <</nobr>>
 
 ::Part8Uncle5 <1200,7400>
@@ -1627,14 +1561,7 @@
 
 ::Part8Uncle6 <1200,7525>
 <<nobr>>
-	<<set $SexUncle = 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexUncleVaginal = 1>>
-	<<set $SexVaginalCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexCount += 1>>
-	
+  <<set $sex.push({sex: 'male', name: 'Mike', vaginal: true})>>
 	<span style="font-size: 150%"><<print "Uncle Mike’s Playroom">></span>
 <</nobr>>
 
@@ -1651,13 +1578,13 @@
 	<<if !$DatingVeronica and !$DatingAndrew and !$DatingJosh and !$DatingProfessor and !$MasterKate and !$MasterOlivia and !$DatingNerd>>
 		<<print "After you dress and return upstairs. Before you leave, the two of you watch the highlight reel from game you’d missed, just in case anyone asks how it was. You know it won`t be long before you ">>[[visit him again.|Part8Uncle7]]
 	<<else>>
-		<<if !$SexSister and !$SexBrother and !$SexCody>>
+		<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
 			<<print "After you dress and return upstairs. ">>[[Before you leave,|Part8ChristmasReturn]]<<print " the two of you watch the highlight reel from game you’d missed, just in case anyone asks how it was.">>
 		<<else>>
 			<<print "After you dress and return upstairs. Before you leave, the two of you watch the highlight reel from game you’d missed, just in case anyone asks how it was. ">>
-			<<if $SexSister>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
-			<<if $SexBrother>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>
-			<<if $SexCody>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>
+			<<if setup.haveFucked('Cassie')>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
+			<<if setup.haveFucked('Dylan')SexBrother>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>
+			<<if setup.haveFucked('Cody')>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>
 		<</if>>
 	<</if>>
 <</nobr>>
@@ -1668,10 +1595,10 @@
 <</nobr>>
 
 <<print "Brad picks you up to give you a ride back to school. You want to compensate him for his trouble and gas again.">>
-<<if !$SexBrad>><img src="Part8/Return2.jpg" hspace="10" vspace="10" height="640"><<else>><br><video src="Part8/Road7.webm" autoplay loop muted height="640"></video><br><</if>>
+<<if !setup.haveFucked('Brad')>><img src="Part8/Return2.jpg" hspace="10" vspace="10" height="640"><<else>><br><video src="Part8/Road7.webm" autoplay loop muted height="640"></video><br><</if>>
 
 <<nobr>>
-	<<if $SexBrad>>
+	<<if setup.haveFucked('Brad')>>
 		<<print "He is certainly hoping for more of the ">>[[same kind of payment as last time.|Part8Return3]]
 	<<elseif $KidnapEscape>>
 		You <<link [[pay him another $50|Part8Return6]]>><<set $PlayerMoney -= 50>><</link>> for the ride back.
@@ -1730,10 +1657,7 @@
 
 ::Part8Return3 <400,7775>
 <<nobr>>
-	<<if !$SexBrad>><<set $SexDifferentMaleCount += 1>><</if>>
-	<<set $SexBrad += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexCount += 1>>
+  <<set $sex.push({sex: 'male', name: 'Brad'})>>
 	
 	<span style="font-size: 150%"><<print "Road to School">></span>
 <</nobr>>
@@ -1760,10 +1684,8 @@
 <<nobr>>
 	<<print "Now you get the total and it’s $150 for the tire AND another $300 for the turbo-whatever. He notices the shocked look on your face at the large total and hints that he might be able to ">>
 	<<link [[‘work something out’|Part8Return7]]>>
-		<<set $SexDifferentMaleCount += 1>>
-		<<set $SexMechanic = 1>>
-		<<set $SexMaleCount += 1>>
-		<<set $SexCount += 1>>	<</link>>
+	  <<set $sex.push({sex: 'male', name: 'Mechanic'})>>
+	<</link>>
 	<<print " to lower that amount for you. ">>
 	<<if $PlayerMoney < 450>>
 		<<if $KidnapEscape>>
@@ -1800,12 +1722,7 @@
 
 ::Part8Return4 <600,7775>
 <<nobr>>
-	<<set $SexBrad += 1>>
-	<<set $SexBradVaginal += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexVaginalCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexCount += 1>>
+  <<set $sex.push({sex: 'male', name: 'Brad', vaginal: true})>>
 	
 	<span style="font-size: 150%"><<print "Road to School">></span>
 <</nobr>>
@@ -1887,15 +1804,10 @@
 ::Part8NewYear2 <800,7900>
 <<nobr>>
 	<<if $DatingVeronica>>
-		<<set $SexVeronica += 1>>
-		<<set $SexCount += 1>>
-		<<set $SexFemaleCount += 1>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<<else>>
 		<<if $MasterKate or $DatingProfessor>><<set $SexNewYearFemale = 1>><</if>>
-		<<set $SexCount += 1>>
-		<<set $SexFemaleCount += 1>>
-		<<set $SexDifferentFemaleCount += 1>>
-		<<set $SexSchoolColleague += 1>>
+	  <<set $sex.push({sex: 'female', anon:"New Year's Eve hookup"})>>
 	<</if>>
 
 	<span style="font-size: 150%"><<print "Bedroom">></span>
@@ -1960,26 +1872,13 @@
 ::Part8NewYear3 <1000,7900>
 <<nobr>>
 	<<if $Andrew>>
-		<<set $SexAndrew += 1>>
-		<<set $SexAndrewVaginal += 1>>
-		<<set $SexCount += 1>>
-		<<set $SexMaleCount += 1>>
-		<<set $SexVaginalCount += 1>>
+	  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
 	<<else>>
 		<<if $MasterKate or $DatingProfessor>><<set $SexNewYearMale = 1>><</if>>
 		<<if $Andrew>>
-			<<set $SexAndrew += 1>>
-			<<set $SexAndrewVaginal += 1>>
-			<<set $SexCount += 1>>
-			<<set $SexMaleCount += 1>>
-			<<set $SexVaginalCount += 1>>
+		  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
 		<<else>>
-			<<set $SexCount += 1>>
-			<<set $SexMaleCount += 1>>
-			<<set $SexDifferentMaleCount += 1>>
-			<<set $SexDifferentMaleVaginalCount += 1>>
-			<<set $SexSchoolColleagueVaginal += 1>>
-			<<set $SexVaginalCount += 1>>
+		  <<set $sex.push({sex: 'male', anon:"New Year's Eve hookup", vaginal: true})>>
 		<</if>>
 	<</if>>
 

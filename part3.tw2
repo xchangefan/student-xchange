@@ -1,34 +1,6 @@
 ::Part3Start <400,1250>
 <<nobr>>
-	<<set $SexCount = 0>>
-	<<set $SexMaleCount = 0>>
-	<<set $SexDifferentMaleCount = 0>>
-	<<set $SexFemaleCount = 0>>
-	<<set $SexDifferentFemaleCount = 0>>
-	<<set $SexVaginalCount = 0>>
-	<<set $SexVaginalExcludedCount = 0>>
-	<<set $SexDifferentMaleVaginalCount = 0>>
-	<<set $SexSchoolColleague = 0>>
-	<<set $SexSchoolColleagueVaginal = 0>>
-	
-	<<set $SexJerk = 0>>
-	<<set $SexPlayer = 0>>
-	<<set $SexNerd = 0>>
-	<<set $SexThrillSeeker = 0>>
-	<<set $SexJosh = 0>>
-	
-	<<set $SexJerkVaginal = 0>>
-	<<set $SexPlayerVaginal = 0>>
-	<<set $SexNerdVaginal = 0>>
-	<<set $SexThrillSeekerVaginal = 0>>
-	<<set $SexJoshVaginal = 0>>
-	
-	<<set $SexOlivia = 0>>
-	<<set $SexFaith = 0>>
-	<<set $SexEmily = 0>>
-	<<set $SexSamantha = 0>>
-	<<set $SexHannah = 0>>
-
+	<<set $SexVaginalExcludedCount = 0>> TODO Fix This
 	<span style="font-size: 150%"><<print "Job/Activity Fair">></span>
 <</nobr>>
 
@@ -53,7 +25,7 @@
 <<nobr>>
 	<<link "Student Athlete">>
 		<<set $JobAthlete = 1>>
-		<<if $MentorHannah or $MentorOlivia>>
+		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
 			<<set $JobSide = 2>>
 			<<goto [[JobList2]]>>
 		<<else>>
@@ -76,7 +48,7 @@
 <<nobr>>
 	<<link "Campus Fitness Center Assistant">>
 		<<set $JobFitness = 1>>
-		<<if $MentorHannah or $MentorOlivia>>
+		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
 			<<set $JobSide = 2>>
 			<<goto [[JobList2]]>>
 		<<else>>
@@ -91,7 +63,7 @@
 <<nobr>>
 	<<link "Campus Library">>
 		<<set $JobLibrary = 1>>
-		<<if $MentorHannah or $MentorOlivia>>
+		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
 			<<set $JobSide = 2>>
 			<<goto [[JobList2]]>>
 		<<else>>
@@ -108,7 +80,7 @@
 <<nobr>>
 	<<link "Engineering Department Assistant">>
 		<<set $JobEngineer = 1>>
-		<<if $MentorHannah or $MentorOlivia>>
+		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
 			<<set $JobSide = 2>>
 			<<goto [[JobList2]]>>
 		<<else>>
@@ -125,7 +97,7 @@
 <<nobr>>
 	<<link "Art Department Model">>
 		<<set $JobArt = 1>>
-		<<if $MentorHannah or $MentorOlivia>>
+		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
 			<<set $JobSide = 2>>
 			<<goto [[JobList2]]>>
 		<<else>>
@@ -158,17 +130,17 @@
 			<<case 5>>
 				<<set $JobArt = 1>>
 			<<case 6>>
-				<<if $MentorFaith>><<set $JobBarista = 1>><</if>>
-				<<if $MentorEmily>><<set $JobOffice = 1>><</if>>
-				<<if $MentorSamantha>><<set $JobBartender = 1>><</if>>
-				<<if $MentorHannah>><<set $JobCallGirl = 1>><</if>>
-				<<if $MentorOlivia>><<set $JobWebModel = 1>><</if>>
+				<<if $Mentor == 'Faith'>><<set $JobBarista = 1>><</if>>
+				<<if $Mentor == 'Emily'>><<set $JobOffice = 1>><</if>>
+				<<if $Mentor == 'Samantha'>><<set $JobBartender = 1>><</if>>
+				<<if $Mentor == 'Hannah'>><<set $JobCallGirl = 1>><</if>>
+				<<if $Mentor == 'Olivia'>><<set $JobWebModel = 1>><</if>>
 			<<case 7>>
 				<<set $JobCheerleader = 1>>
 		<</switch>>
 		<<set $PlayerRollDice to either(1,2,3)>>
-		<<if $MentorHannah and !$JobCallGirl and $PlayerRollDice == 1>><<set $JobCallGirlSide = 1>><</if>>
-		<<if $MentorOlivia and !$JobWebModel and $PlayerRollDice == 1>><<set $JobWebModelSide = 1>><</if>>
+		<<if $Mentor == 'Hannah' and !$JobCallGirl and $PlayerRollDice == 1>><<set $JobCallGirlSide = 1>><</if>>
+		<<if $Mentor == 'Olivia' and !$JobWebModel and $PlayerRollDice == 1>><<set $JobWebModelSide = 1>><</if>>
 		<<goto [[JobDecided]]>>
 	<</link>>
 <</nobr>></p>
@@ -180,7 +152,7 @@
 			<<nobr>>
 				<<link "Cheerleader">>
 					<<set $JobCheerleader = 1>>
-					<<if $MentorHannah or $MentorOlivia>>
+					<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
 						<<set $JobSide = 2>>
 						<<goto [[JobList2]]>>
 					<<else>>
@@ -203,7 +175,7 @@
 <</silently>>
 <<silently>>
 	<<repeat 100ms>>
-	<<if $MentorFaith>>
+	<<if $Mentor == 'Faith'>>
 		<<replace "#JobsMentor">>\
 			<<nobr>>
 				<<link [[Faith's Recommendation (Barista)|JobDecided]]>>
@@ -226,7 +198,7 @@
 		<</replace>>\
 		<<stop>>
 	<</if>>
-	<<if $MentorEmily>>
+	<<if $Mentor == 'Emily'>>
 		<<replace "#JobsMentor">>\
 			<<nobr>>
 				<<link [[Emily's Recommendation (Office Worker)|JobDecided]]>>
@@ -243,7 +215,7 @@
 		<</replace>>
 		<<stop>>
 	<</if>>
-	<<if $MentorHannah>>
+	<<if $Mentor == 'Hannah'>>
 		<<replace "#JobsMentor">>\
 			<<nobr>>
 				<<link [[Hannah's Recommendation (Call Girl)|JobDecided]]>>
@@ -276,7 +248,7 @@
 		<</replace>>
 		<<stop>>
 	<</if>>
-	<<if $MentorSamantha>>
+	<<if $Mentor == 'Samantha'>>
 		<<replace "#JobsMentor">>\
 			<<nobr>>
 				<<link [[Samantha's Recommendation (Bartender)|JobDecided]]>>
@@ -297,7 +269,7 @@
 		<</replace>>
 		<<stop>>
 	<</if>>
-	<<if $MentorOlivia>>
+	<<if $Mentor == 'Olivia'>>
 		<<replace "#JobsMentor">>\
 			<<nobr>>
 				<<link [[Olivia's Master's request (Web Model)|JobDecided]]>>
@@ -465,7 +437,7 @@
 					<span id="JobsMentor"></span>\
 					<<silently>>
 						<<repeat 100ms>>
-							<<if $MentorHannah>>
+							<<if $Mentor == 'Hannah'>>
 								<<replace "#JobsMentor">>\
 									<<nobr>>
 										<<link [[Hannah's Recommendation (Call Girl).|JobDecided]]>>
@@ -484,7 +456,7 @@
 								<</replace>>
 								<<stop>>
 							<</if>>
-							<<if $MentorOlivia>>
+							<<if $Mentor == 'Olivia'>>
 								<<replace "#JobsMentor">>\
 									<<nobr>>
 										<<link [[Olivia's Master's request (Web Model).|JobDecided]]>>
@@ -509,9 +481,6 @@
 
 ::JobBarista1 <0,1625>
 <<nobr>>
-	<<set $SexAndrew = 0>>
-	<<set $SexAndrewVaginal = 0>>
-	
 	<span style="font-size: 150%"><<print "Barista - Interview">></span>
 <</nobr>>
 
@@ -528,9 +497,6 @@
 
 ::JobOffice1 <600,1625>
 <<nobr>>
-	<<set $SexOfficeBossVaginal = 0>>
-	<<set $SexOfficeBoss = 0>>
-	
 	<span style="font-size: 150%"><<print "Office Interview">></span>
 <</nobr>>
 
@@ -703,20 +669,20 @@
 					<<set $JobWebModel = 1>>
 					<<goto [[JobWebModel3]]>>
 				<</if>>
-				<<if $MentorEmily>>
+				<<if $Mentor == 'Emily'>>
 					<<set $JobOffice = 1>>
 					<<goto [[JobOffice1]]>>
 				<</if>>
-				<<if $MentorHannah>>
+				<<if $Mentor == 'Hannah'>>
 					<<set $JobCallGirl = 1>>
 					<<set $JobCallGirlSide = 0>>
 					<<goto [[JobCall1]]>>
 				<</if>>
-				<<if $MentorFaith>>
+				<<if $Mentor == 'Faith'>>
 					<<set $JobBarista = 1>>
 					<<goto [[JobBarista1]]>>
 				<</if>>
-				<<if $MentorSamantha>>
+				<<if $Mentor == 'Samantha'>>
 					<<set $JobBartender = 1>>
 					<<goto [[JobBar1]]>>
 				<</if>>
@@ -730,20 +696,20 @@
 					<<set $JobWebModel = 1>>
 					<<goto [[JobWebModel3]]>>
 				<</if>>
-			<<if $MentorEmily>>
+			<<if $Mentor == 'Emily'>>
 				<<set $JobOffice = 1>>
 				<<goto [[JobOffice1]]>>
 			<</if>>
-			<<if $MentorHannah>>
+			<<if $Mentor == 'Hannah'>>
 				<<set $JobCallGirl = 1>>
 				<<set $JobCallGirlSide = 0>>
 				<<goto [[JobCall1]]>>
 			<</if>>
-			<<if $MentorFaith>>
+			<<if $Mentor == 'Faith'>>
 				<<set $JobBarista = 1>>
 				<<goto [[JobBarista1]]>>
 			<</if>>
-			<<if $MentorSamantha>>
+			<<if $Mentor == 'Samantha'>>
 				<<set $JobBartender = 1>>
 				<<goto [[JobBar1]]>>
 			<</if>>
@@ -883,14 +849,8 @@
 
 ::AthleteReconsider <2100,1875>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexVaginalCount += 1>>
+	<<set $sex.push({sex: 'male', type: 'coach', vaginal: true, birthcontrol : 'exclude'})>>
 	<<set $SexVaginalExcludedCount += 1>>
-	<<set $SexCoach = 1>>
-	<<set $SexCoachVaginal = 1>>
 	
 	<span style="font-size: 150%"><<print "Coach Persuasion">></span>
 <</nobr>>
@@ -933,11 +893,11 @@
 <<nobr>>
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>
 		<<link "Spend time in your dormitory.">>
-			<<if $MentorEmily>><<goto [[Part5Emily1]]>><</if>>
-			<<if $MentorSamantha>><<goto [[Part5Samantha1]]>><</if>>
-			<<if $MentorFaith>><<goto [[Part5Faith1]]>><</if>>
-			<<if $MentorOlivia>><<goto [[Part5Olivia1]]>><</if>>
-			<<if $MentorHannah>><<goto [[Part5Hannah1]]>><</if>>
+			<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
+			<<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
+			<<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
+			<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
+			<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
 		<</link>>
 	<<else>>
 		<<if $JobWebModelSide>>[[For now, you have to go to also work as a Web Model.|JobWebModel3]]<</if>>
@@ -947,10 +907,11 @@
 
 ::AthleteOral <400,3300>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexAthlete = 5>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
 	<<if $DatingJosh>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Gym">></span>
@@ -997,13 +958,11 @@
 
 ::AthletePheromones <800,3300>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexAthlete += 5>>
-	<<set $SexAthleteVaginal += 5>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
 	<<if $DatingJosh>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Gym">></span>
@@ -1036,9 +995,7 @@
 
 ::AthleteRelief <1000,3300>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexFemaleCount += 1>>
+	<<set $sex.push({sex: 'female', anon: 'Masseuse'})>>
 	
 	<span style="font-size: 150%"><<print "Gym">></span>
 <</nobr>>
@@ -1110,20 +1067,20 @@
 			<<set $JobWebModel = 1>>
 			<<goto [[JobWebModel3]]>>
 		<</if>>
-		<<if $MentorEmily>>
+		<<if $Mentor == 'Emily'>>
 			<<set $JobOffice = 1>>
 			<<goto [[JobOffice1]]>>
 		<</if>>
-		<<if $MentorHannah>>
+		<<if $Mentor == 'Hannah'>>
 			<<set $JobCallGirl = 1>>
 			<<set $JobCallGirlSide = 0>>
 			<<goto [[JobCall1]]>>
 		<</if>>
-		<<if $MentorFaith>>
+		<<if $Mentor == 'Faith'>>
 			<<set $JobBarista = 1>>
 			<<goto [[JobBarista1]]>>
 		<</if>>
-		<<if $MentorSamantha>>
+		<<if $Mentor == 'Samantha'>>
 			<<set $JobBartender = 1>>
 			<<goto [[JobBar1]]>>
 		<</if>>
@@ -1132,13 +1089,22 @@
 
 ::JobCheerleaderBitch <1650,1875>
 <<nobr>>
-	<<set $SexCount += 15>>
-	<<set $SexDifferentMaleCount += 15>>
-	<<set $SexMaleCount += 15>>
-	<<set $SexDifferentMaleVaginalCount += 10>>
-	<<set $SexVaginalCount += 10>>
-	<<set $SexFootball = 15>>
-	<<set $SexFootballVaginal = 10>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
+
 	
 	<span style="font-size: 150%"><<print "Chearleaders Hazing">></span>
 <</nobr>>
@@ -1162,11 +1128,11 @@
 	<<print "When you are finally done, you ">>
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>
 		<<link "decide to spend some time in your dormitory.">>
-			<<if $MentorEmily>><<goto [[Part5Emily1]]>><</if>>
-			<<if $MentorSamantha>><<goto [[Part5Samantha1]]>><</if>>
-			<<if $MentorFaith>><<goto [[Part5Faith1]]>><</if>>
-			<<if $MentorOlivia>><<goto [[Part5Olivia1]]>><</if>>
-			<<if $MentorHannah>><<goto [[Part5Hannah1]]>><</if>>
+			<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
+			<<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
+			<<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
+			<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
+			<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
 		<</link>>
 	<<else>>
 		<<if $JobWebModelSide>>[[have to go to also work as a Web Model.|JobWebModel3]]<</if>>
@@ -1176,11 +1142,7 @@
 
 ::JobCheerleaderNice1 <1500,1875>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexVeronica = 1>>
-	
+	<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<span style="font-size: 150%"><<print "Chearleaders Hazing">></span>
 <</nobr>>
 
@@ -1203,11 +1165,8 @@
 
 ::JobCheerleaderNice2 <1925,2375>
 <<nobr>>
-	<<set $SexCount += 1>>
+	<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<<set $DatingVeronica = 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexVeronica += 1>>
-	
 	<span style="font-size: 150%"><<print "Cheerleaders - Veronica">></span>
 <</nobr>>
 
@@ -1241,10 +1200,7 @@
 
 ::JobCheerleaderFundraiser2 <1800,1750>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexFundraiser = 1>>
+	<<set $sex.push({sex: 'male', name: 'University Donor'})>>
 	
 	<span style="font-size: 150%"><<print "Chearleaders “Fundraising”">></span>
 <</nobr>>
@@ -1260,13 +1216,11 @@
 
 ::JobCheerleaderFundraiser3 <1800,1875>
 <<nobr>>
-	<<set $SexDifferentMaleVaginalCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexFundraiser = 5>>
-	<<set $SexFundraiserVaginal = 5>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', vaginal: true})>>
+	<<set $sex.push({sex: 'male', name: 'Tony', vaginal: true})>>
+	<<set $sex.push({sex: 'male', name: 'Tony', vaginal: true})>>
 	
 	<span style="font-size: 150%"><<print "Chearleaders “Fundraising”">></span>
 <</nobr>>
@@ -1285,11 +1239,11 @@
 <<nobr>>
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>
 		<<link "Spend some time in your dormitory.">>
-			<<if $MentorEmily>><<goto [[Part5Emily1]]>><</if>>
-			<<if $MentorSamantha>><<goto [[Part5Samantha1]]>><</if>>
-			<<if $MentorFaith>><<goto [[Part5Faith1]]>><</if>>
-			<<if $MentorOlivia>><<goto [[Part5Olivia1]]>><</if>>
-			<<if $MentorHannah>><<goto [[Part5Hannah1]]>><</if>>
+			<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
+			<<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
+			<<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
+			<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
+			<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
 		<</link>>
 	<<else>>
 		<<if $JobWebModelSide>>[[Next, you have to go to also work as a Web Model.|JobWebModel3]]<</if>>
@@ -1323,13 +1277,11 @@
 
 ::JobFitnessMassage1 <3450,1875>
 <<nobr>>
-	<<set $SexMassageClient = 5>>
-	<<set $SexMassageClientVaginal = 5>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 5>>
-	<<set $SexVaginalCount += 5>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
 	<<set $JobFitness = 0>>
 	<<set $JobFitnessMassage = 1>>
 	
@@ -1352,11 +1304,11 @@
 		<<if $JobCallGirlSide>>[[have to go to also work as a Call Girl.|JobCall1]]<</if>>
 		<<if !$JobWebModelSide and !$JobCallGirlSide>>
 			<<link "decide to spend some time in your dormitory.">>
-				<<if $MentorEmily>><<goto [[Part5Emily1]]>><</if>>
-				<<if $MentorSamantha>><<goto [[Part5Samantha1]]>><</if>>
-				<<if $MentorFaith>><<goto [[Part5Faith1]]>><</if>>
-				<<if $MentorOlivia>><<goto [[Part5Olivia1]]>><</if>>
-				<<if $MentorHannah>><<goto [[Part5Hannah1]]>><</if>>
+				<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
+				<<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
+				<<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
+				<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
+				<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
 			<</link>>
 		<</if>>
 	<</nobr>>
@@ -1364,13 +1316,9 @@
 
 ::JobFitnessYoga2 <3300,1875>
 <<nobr>>	
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexVaginalCount += 1>>
-	<<set $SexYogaStudent = 1>>
-	<<set $SexYogaStudentVaginal = 1>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete (yoga)', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete (yoga)', vaginal: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete (yoga)', vaginal: true})>>
 	
 	<span style="font-size: 150%"><<print "Yoga Class">></span>
 <</nobr>>
@@ -1391,11 +1339,11 @@
 		<<if $JobCallGirlSide>>[[have to go to also work as a Call Girl.|JobCall1]]<</if>>
 		<<if !$JobWebModelSide and !$JobCallGirlSide>>
 			<<link "decide to spend some time in your dormitory.">>
-				<<if $MentorEmily>><<goto [[Part5Emily1]]>><</if>>
-				<<if $MentorSamantha>><<goto [[Part5Samantha1]]>><</if>>
-				<<if $MentorFaith>><<goto [[Part5Faith1]]>><</if>>
-				<<if $MentorOlivia>><<goto [[Part5Olivia1]]>><</if>>
-				<<if $MentorHannah>><<goto [[Part5Hannah1]]>><</if>>
+				<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
+				<<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
+				<<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
+				<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
+				<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
 			<</link>>
 		<</if>>
 	<</nobr>>
@@ -1403,9 +1351,7 @@
 
 ::JobFitnessMassage2 <1600,3300>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
+	<<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
 	
 	<span style="font-size: 150%"><<print "Fitness Centre">></span>
 <</nobr>>
@@ -1430,9 +1376,7 @@
 
 ::JobFitnessMassage3 <900,4175>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexFemaleCount += 1>>
+	<<set $sex.push({sex: 'female', anon: 'Athlete (massage client)'})>>
 	
 	<span style="font-size: 150%"><<print "Fitness Centre">></span>
 <</nobr>>
@@ -1464,11 +1408,7 @@
 
 ::JobLibrary3 <3600,1875>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexLibraryBoss = 1>>
-	
+	<<set $sex.push({sex: 'male', name: 'library boss'})>>
 	<span style="font-size: 150%"><<print "Campus Library - Boss Office">></span>
 <</nobr>>
 
@@ -1510,11 +1450,11 @@
 
 <<nobr>>
 	<<link "Spend time in your dormitory.">>
-		<<if $MentorEmily>><<goto [[Part5Emily1]]>><</if>>
-		<<if $MentorSamantha>><<goto [[Part5Samantha1]]>><</if>>
-		<<if $MentorFaith>><<goto [[Part5Faith1]]>><</if>>
-		<<if $MentorOlivia>><<goto [[Part5Olivia1]]>><</if>>
-		<<if $MentorHannah>><<goto [[Part5Hannah1]]>><</if>>
+		<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
+		<<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
+		<<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
+		<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
+		<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
 	<</link>>
 <</nobr>>
 
@@ -1542,25 +1482,24 @@
 ::JobLibrary5 <1800,3300>
 <<nobr>>
 	<<if $DatingJosh>>
-		<<set $SexCount += 5>>
-		<<set $SexMaleCount += 5>>
-		<<set $SexVaginalCount += 5>>
-		<<set $SexJosh = +5>>
-		<<set $SexJoshVaginal = +5>>
+	  <<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	  <<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	  <<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	  <<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	  <<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
 	<<else>>
-		<<if !$SexVaginalCount>>
-			<<set $SexCount += 5>>
-			<<set $SexDifferentFemaleCount += 5>>
-			<<set $SexFemaleCount += 5>>
-			<<set $SexLibraryGirl = 5>>
+		<<if setup.isGoldStarLesbian()>>
+		  <<set $sex.push({sex: 'female', anon: 'girl at the library'})>>
+		  <<set $sex.push({sex: 'female', anon: 'girl at the library'})>>
+		  <<set $sex.push({sex: 'female', anon: 'girl at the library'})>>
+		  <<set $sex.push({sex: 'female', anon: 'girl at the library'})>>
+		  <<set $sex.push({sex: 'female', anon: 'girl at the library'})>>
 		<<else>>
-			<<set $SexCount += 5>>
-			<<set $SexDifferentMaleCount += 5>>
-			<<set $SexMaleCount += 5>>
-			<<set $SexDifferentMaleVaginalCount += 5>>
-			<<set $SexVaginalCount += 5>>
-			<<set $SexLibraryGuy = 5>>
-			<<set $SexLibraryGuyVaginal = 5>>
+		  <<set $sex.push({sex: 'male', anon: 'guy at the library', vaginal:true})>>
+		  <<set $sex.push({sex: 'male', anon: 'guy at the library', vaginal:true})>>
+		  <<set $sex.push({sex: 'male', anon: 'guy at the library', vaginal:true})>>
+		  <<set $sex.push({sex: 'male', anon: 'guy at the library', vaginal:true})>>
+		  <<set $sex.push({sex: 'male', anon: 'guy at the library', vaginal:true})>>
 		<</if>>
 	<</if>>
 	
@@ -1569,7 +1508,7 @@
 
 <<print "Working at the library, you know all the rarely visited corners, where two people could grab a moment alone and not get caught... probably.">>
 
-<<if !$SexVaginalCount>><video src="Part3/JobLibrary6.mp4" autoplay loop muted height="600"></video><<else>><video src="Part3/JobLibrary6.mp4" autoplay loop muted height="600"></video><</if>>
+<<if setup.isGoldStarLesbian()>><video src="Part3/JobLibrary6.mp4" autoplay loop muted height="600"></video><<else>><video src="Part3/JobLibrary6.mp4" autoplay loop muted height="600"></video><</if>>
 
 
 <<nobr>>
@@ -1577,7 +1516,7 @@
 	<<if $DatingJosh>>
 		<<print "You love calling Josh over and taking him to one of those spots.">>
 	<<else>>
-		<<if !$SexVaginalCount>>
+		<<if setup.isGoldStarLesbian()>>
 			<<print "You love finding a girl and taking her to one of those spots. Of course, you could have her take you back to her dorm, or maybe yours, but that would be boring.">>
 		<<else>>
 			<<print "You love finding a guy and taking him to one of those spots. Of course, you could have him take you back to his dorm, or maybe yours, but that would be boring.">>
@@ -1623,9 +1562,7 @@
 
 ::JobEngineer2 <2950,1875>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexFemaleCount += 1>>
+	<<set $sex.push({sex: 'female', anon: 'Engineering Subject'})>>
 	
 	<span style="font-size: 150%"><<print "Engineering Department">></span>
 <</nobr>>
@@ -1659,11 +1596,11 @@
 	<<print "After you finish, ">>
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>
 		<<link "you spend some time in your dormitory.">>
-			<<if $MentorEmily>><<goto [[Part5Emily1]]>><</if>>
-			<<if $MentorSamantha>><<goto [[Part5Samantha1]]>><</if>>
-			<<if $MentorFaith>><<goto [[Part5Faith1]]>><</if>>
-			<<if $MentorOlivia>><<goto [[Part5Olivia1]]>><</if>>
-			<<if $MentorHannah>><<goto [[Part5Hannah1]]>><</if>>
+			<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
+			<<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
+			<<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
+			<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
+			<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
 		<</link>>
 	<<else>>
 		<<if $JobWebModelSide>>[[you have to go to also work as a Web Model.|JobWebModel3]]<</if>>
@@ -1685,20 +1622,21 @@
 <<if !$PlayerSideEffectMasturbationBlock>><<set $PlayerSideEffectMasturbationBlock = 1>><br><<print "After a while though, it seems to get harder and harder to get off with some of the equipment - or even just masturbating. You make a visit to the health center, and after some tests they let you know that all of the masturbation you’ve been doing for work (and otherwise) has activated some latent side-effect of your X-Change. You can still orgasm as well as you could before, but just not with you in control.">><br><</if>>
 <<nobr>>
 	<<link "Spend time in your dormitory.">>
-		<<if $MentorEmily>><<goto [[Part5Emily1]]>><</if>>
-		<<if $MentorSamantha>><<goto [[Part5Samantha1]]>><</if>>
-		<<if $MentorFaith>><<goto [[Part5Faith1]]>><</if>>
-		<<if $MentorOlivia>><<goto [[Part5Olivia1]]>><</if>>
-		<<if $MentorHannah>><<goto [[Part5Hannah1]]>><</if>>
+		<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
+		<<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
+		<<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
+		<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
+		<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
 	<</link>>
 <</nobr>>
 
 ::JobEngineer4 <1200,3300>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexEngineerCoworker = 1>>
+	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
+	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
+	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
+	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
+	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
 	<<if $DatingJosh>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Engineering Department">></span>
@@ -1849,14 +1787,7 @@
 
 ::JobBaristaFun1 <200,2000>
 <<nobr>>	
-	<<set $SexAndrew += 1>>
-	<<set $SexAndrewVaginal += 1>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexVaginalCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	
+	<<set $sex.push({sex: 'male', name: 'Andrew', vaginal:true})>>
 	<span style="font-size: 150%"><<print "Andrew - One Night Stand">></span>
 <</nobr>>
 
@@ -1889,14 +1820,11 @@
 
 ::JobBaristaRomance2 <0,2300>
 <<nobr>>
-	<<set $SexAndrew += 5>>
-	<<set $SexAndrewVaginal += 5>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal:true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal:true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal:true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal:true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal:true})>>
 	<span style="font-size: 150%"><<print "Andrew - Date">></span>
 <</nobr>>
 
@@ -1929,9 +1857,7 @@
 <<nobr>>
 	<<set $JobOffice = 0>>
 	<<set $JobOfficePA = 1>>
-	<<set $SexCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexOfficeBoss += 1>>
+	<<set $sex.push({sex: 'male', name: 'Office Boss'})>>
 	<<if $DatingJosh>><<set $CheatedJosh += 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Office Oral Demonstrastion">></span>
@@ -2007,13 +1933,11 @@
 ::JobOfficeBlowjob2 <0,3300>
 <<nobr>>
 	<<set $DatingOfficeBoss = 1>>
-	<<set $SexCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexOfficeBoss += 5>>
-	<<set $SexOfficeBossVaginal += 5>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexVaginalCount += 1>>
-	
+	<<set $sex.push({sex: 'male', name: 'Office Boss', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Office Boss', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Office Boss', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Office Boss', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Office Boss', vaginal:true})>>
 	<span style="font-size: 150%"><<print "Office">></span>
 <</nobr>>
 
@@ -2030,10 +1954,8 @@
 
 ::JobOfficePro2 <200,3300>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
+	<<set $sex.push({sex: 'male', name: 'Office Coworker'})>>
+	<<set $sex.push({sex: 'male', name: 'Office Coworker'})>>
 	
 	<span style="font-size: 150%"><<print "Office">></span>
 <</nobr>>
@@ -2053,13 +1975,11 @@
 
 ::JobCall2 <2850,2125>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexCallClient = 5>>
-	<<set $SexCallClientVaginal = 5>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Call Girl - First Client">></span>
 <</nobr>>
@@ -2074,7 +1994,7 @@
 <<print "On your way to the elevator, you call the service to let them know you’ve left, and to tell them it went well, and to let them know what your schedule is going to be.">>
 
 <<nobr>>
-	<<if $JobCheerleader and $SexVeronica>>[[You go for Cheerleaders practice the next day.|JobCheerleaderNice2]]<</if>>
+	<<if $JobCheerleader and setup.haveFucked('Veronica')>>[[You go for Cheerleaders practice the next day.|JobCheerleaderNice2]]<</if>>
 	<<if $JobAthlete>>[[Spend some time in your dormitory.|Part5Hannah1]]<</if>>
 	<<if $JobArt>>[[Pose for Ken.|JobArt5]]<</if>>
 	<<if $JobLibrary>>
@@ -2090,20 +2010,18 @@
 	<<if $JobFitnessMassage>>[[Spend some time in your dormitory.|Part5Hannah1]]<</if>>
 	<<if $JobCheerleaderFundraiser>>[[Spend some time in your dormitory.|Part5Hannah1]]<</if>>
 	<<if !$JobCallGirlSide>>[[Spend some time in your dormitory.|Part5Hannah1]]<</if>>
-	<<if $JobCheerleader and !$SexVeronica>>[[Spend some time in your dormitory.|Part5Hannah1]]<</if>>
+	<<if $JobCheerleader and !setup.haveFucked('Veronica')>>[[Spend some time in your dormitory.|Part5Hannah1]]<</if>>
 	<<if $JobFitnessYoga>>[[Spend some time in your dormitory.|Part5Hannah1]]<</if>>
 	<<if $JobTestSubject>>[[Spend some time in your dormitory.|Part5Hannah1]]<</if>>
 <</nobr>>
 
 ::JobCall3 <1800,3425>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 4>>
-	<<set $SexVaginalCount += 4>>
-	<<set $SexCallClient += 5>>
-	<<set $SexCallClientVaginal += 4>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client')>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Call Girl">></span>
 <</nobr>>
@@ -2121,13 +2039,11 @@
 
 ::JobCall4 <800,4325>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 4>>
-	<<set $SexVaginalCount += 4>>
-	<<set $SexCallClient += 5>>
-	<<set $SexCallClientVaginal += 4>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client'})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Call Girl">></span>
 <</nobr>>
@@ -2144,10 +2060,7 @@
 ::JobBarSub <1350,1750>
 <<nobr>>
 	<<set $MasterKate = 1>>
-	<<set $SexKate = 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentFemaleCount += 1>>
+	<<set $sex.push({sex: 'female', name: 'Kate'})>>
 	<<set $JobBartender = 0>>
 	<<set $JobBartenderSub = 1>>
 
@@ -2169,9 +2082,11 @@
 
 ::JobBarGirl <1050,1750>
 <<nobr>>
-	<<set $SexFemaleCount += 5>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentFemaleCount += 5>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
 	<<set $JobBartender = 0>>
 	<<set $JobBartenderGirls = 1>>
 
@@ -2189,17 +2104,18 @@
 
 ::JobBarGuy <1200,1750>
 <<nobr>>
-	<<set $SexFemaleCount += 5>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentFemaleCount += 5>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
+  <<set $sex.push({sex: 'male', anon: 'Bar Patron', vaginal:true})>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
+  <<set $sex.push({sex: 'male', anon: 'Bar Patron', vaginal:true})>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
+  <<set $sex.push({sex: 'male', anon: 'Bar Patron', vaginal:true})>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
+  <<set $sex.push({sex: 'male', anon: 'Bar Patron', vaginal:true})>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
+  <<set $sex.push({sex: 'male', anon: 'Bar Patron', vaginal:true})>>
 	<<set $JobBartender = 0>>
 	<<set $JobBartenderGuys = 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexBarGuy = 5>>
-	<<set $SexBarGuyVaginal = 5>>
 
 	<span style="font-size: 150%"><<print "Bar Hookup">></span>
 <</nobr>>
@@ -2219,9 +2135,7 @@
 
 ::JobBarUnsure1 <900,1750>
 <<nobr>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentFemaleCount += 1>>
+  <<set $sex.push({sex: 'female', anon: 'Bar Patron'})>>
 	<<set $JobBartender = 0>>
 	<<set $JobBartenderBi = 1>>
 
@@ -2241,13 +2155,11 @@
 
 ::JobBarUnsure2 <900,1875>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexBarBrother = 5>>
-	<<set $SexBarBrotherVaginal = 5>>
+  <<set $sex.push({sex: 'male', name: "Sarah's Brother", vaginal:true})>>
+  <<set $sex.push({sex: 'male', name: "Sarah's Brother", vaginal:true})>>
+  <<set $sex.push({sex: 'male', name: "Sarah's Brother", vaginal:true})>>
+  <<set $sex.push({sex: 'male', name: "Sarah's Brother", vaginal:true})>>
+  <<set $sex.push({sex: 'male', name: "Sarah's Brother", vaginal:true})>>
 
 	<span style="font-size: 150%"><<print "Bar Hookup">></span>
 <</nobr>>
@@ -2329,7 +2241,7 @@
 
 <<nobr>>
 	<<print "In the meantime, you ">>
-	<<if $JobCheerleader and $SexVeronica>>[[decide to spend some time with Veronica.|JobCheerleaderNice2]]<</if>>
+	<<if $JobCheerleader and setup.haveFucked('Veronica')>>[[decide to spend some time with Veronica.|JobCheerleaderNice2]]<</if>>
 	<<if $JobAthlete>>[[go home for now.|Part5Olivia1]]<</if>>
 	<<if $JobArt>>[[decide to pose for Ken.|JobArt5]]<</if>>
 	<<if $JobLibrary>>
@@ -2345,7 +2257,7 @@
 	<<if $JobFitnessMassage>>[[go home for now.|Part5Olivia1]]<</if>>
 	<<if $JobCheerleaderFundraiser>>[[go home for now.|Part5Olivia1]]<</if>>
 	<<if !$JobWebModelSide>>[[go home for now.|Part5Olivia1]]<</if>>
-	<<if $JobCheerleader and !$SexVeronica>>[[go home for now.|Part5Olivia1]]<</if>>
+	<<if $JobCheerleader and !setup.haveFucked('Veronica')>>[[go home for now.|Part5Olivia1]]<</if>>
 	<<if $JobFitnessYoga>>[[go home for now.|Part5Olivia1]]<</if>>
 	<<if $JobTestSubject>>[[go home for now.|Part5Olivia1]]<</if>>
 <</nobr>>
@@ -2393,13 +2305,16 @@
 <<nobr>>
 	<<if $JobWebModel>><<set $JobWebModel = 0>><<set $JobPornOral = 1>>
 	<<else>><<set $JobWebModelSide = 0>><<set $JobPornGangOral = 1>><</if>>
-	<<set $SexCount += 10>>
-	<<set $SexDifferentMaleCount += 10>>
-	<<set $SexMaleCount += 8>>
-	<<set $SexDifferentMaleVaginalCount += 10>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexPorn += 10>>
-	<<set $SexPornVaginal += 5>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Porn Shooting">></span>
 <</nobr>>
@@ -2421,13 +2336,16 @@
 <<nobr>>
 	<<if $JobWebModel>><<set $JobWebModel = 0>><<set $JobPornAnal = 1>>
 	<<else>><<set $JobWebModelSide = 0>><<set $JobPornAnalSide = 1>><</if>>
-	<<set $SexCount += 10>>
-	<<set $SexDifferentMaleCount += 10>>
-	<<set $SexMaleCount += 10>>
-	<<set $SexDifferentMaleVaginalCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexPorn += 10>>
-	<<set $SexPornVaginal += 5>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Porn Shooting">></span>
 <</nobr>>
@@ -2447,13 +2365,16 @@
 
 ::JobPornOther <2200,3550>
 <<nobr>>
-	<<set $SexCount += 10>>
-	<<set $SexDifferentMaleCount += 10>>
-	<<set $SexMaleCount += 10>>
-	<<set $SexDifferentMaleVaginalCount += 8>>
-	<<set $SexVaginalCount += 8>>
-	<<set $SexPorn += 8>>
-	<<set $SexPornVaginal += 8>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
 	<<if $JobWebModel>><<set $JobWebModel = 0>><<set $JobPorn = 1>><<else>>
 	<<set $JobWebModelSide = 0>><<set $JobPornSide = 1>><</if>>
 	
@@ -2475,10 +2396,11 @@
 
 ::JobPornOral2 <1000,4325>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexPorn += 5>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
 	
 	<span style="font-size: 150%"><<print "Porn Shooting">></span>
 <</nobr>>
@@ -2498,10 +2420,8 @@
 
 ::JobPornOral3 <500,5250>
 <<nobr>>
-	<<set $SexCount += 2>>
-	<<set $SexDifferentMaleCount += 2>>
-	<<set $SexMaleCount += 2>>
-	<<set $SexPorn += 2>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
 	
 	<span style="font-size: 150%"><<print "Porn Shooting">></span>
 <</nobr>>
@@ -2660,8 +2580,11 @@
 
 ::JobFitnessYoga3 <2000,3300>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexFemaleCount += 5>>
+  <<set $sex.push({sex: 'female', anon: "Athlete's Girlfriend (Yoga)"})>>
+  <<set $sex.push({sex: 'female', anon: "Athlete's Girlfriend (Yoga)"})>>
+  <<set $sex.push({sex: 'female', anon: "Athlete's Girlfriend (Yoga)"})>>
+  <<set $sex.push({sex: 'female', anon: "Athlete's Girlfriend (Yoga)"})>>
+  <<set $sex.push({sex: 'female', anon: "Athlete's Girlfriend (Yoga)"})>>
 	
 	<span style="font-size: 150%"><<print "Yoga Class">></span>
 <</nobr>>
@@ -2728,13 +2651,16 @@
 <<nobr>>
 	<<if $JobWebModel>><<set $JobWebModel = 0>><<set $JobPornGang = 1>>
 	<<else>><<set $JobWebModelSide = 0>><<set $JobPornGangSide = 1>><</if>>
-	<<set $SexCount += 10>>
-	<<set $SexDifferentMaleCount += 10>>
-	<<set $SexMaleCount += 10>>
-	<<set $SexDifferentMaleVaginalCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexPorn += 10>>
-	<<set $SexPornVaginal += 5>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Porn Shooting">></span>
 <</nobr>>
@@ -2756,13 +2682,12 @@
 
 ::JobPornGang2 <1200,4325>
 <<nobr>>
-	<<set $SexCount += 6>>
-	<<set $SexDifferentMaleCount += 6>>
-	<<set $SexMaleCount += 6>>
-	<<set $SexPorn += 6>>
-	<<set $SexDifferentMaleVaginalCount += 3>>
-	<<set $SexVaginalCount += 3>>
-	<<set $SexPornVaginal += 3>>
+	<<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Porn Shooting">></span>
 <</nobr>>
@@ -2780,13 +2705,16 @@
 
 ::JobPornGang3 <700,5250>
 <<nobr>>
-	<<set $SexCount += 10>>
-	<<set $SexDifferentMaleCount += 10>>
-	<<set $SexMaleCount += 10>>
-	<<set $SexPorn += 10>>
-	<<set $SexDifferentMaleVaginalCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexPornVaginal += 5>>
+	<<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar", vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Porn Shooting">></span>
 <</nobr>>

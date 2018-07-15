@@ -189,10 +189,10 @@
 			<<print "You and Veronica agree to do whatever you need to do to make it in, and give each other a ‘pass’ for any hazing-related activities. ">>
 			<<if $PlayerChastityBelt>><<print "She unlocks you for pledge week.">><</if>>
 		<<else>>
-			<<if !$SexFootball>> 
-				<<print "Veronica is one of the other pledges, which leads to some awkward looks between the two of you. ">>
-			<<else>>
+			<<if haveFucked('Football Player')>> 
 				<<print "Veronica is one of the other pledges, you think you better do your best to avoid her. ">>
+			<<else>>
+				<<print "Veronica is one of the other pledges, which leads to some awkward looks between the two of you. ">>
 			<</if>>
 		<</if>>
 	<<else>>
@@ -1012,10 +1012,10 @@
 		<<if $DatingVeronica>> 
 			<<print "As you are dating, you obviously enjoy yourselves to the fullest.">>
 		<<else>>
-			<<if !$SexFootball>> 
-				<<print "You put aside your differences for an hour to get through the task. It reminds you both how great the sex was between you two. But nothing has changed about why you broke up, so it’s just a one-time event for the sake of the task.">>
-			<<else>>
+			<<if haveFucked('Football Player')>> 
 				<<print "You quickly work through your differences and spend an hour enjoying each other, and wishing you’d done this months ago.">>
+			<<else>>
+				<<print "You put aside your differences for an hour to get through the task. It reminds you both how great the sex was between you two. But nothing has changed about why you broke up, so it’s just a one-time event for the sake of the task.">>
 			<</if>>
 		<</if>>
 	<<else>>
@@ -1153,9 +1153,7 @@
 		<<if $DatingVeronica>> 
 			<<print "You and Veronica requested a room together and now are ">>[[finally together all the time!|Part9SororityEndYes]]
 		<<else>>
-			<<if !$SexFootball>> 
-				<<print "You and Veronica both made sure you do not end up in the same room and ">>[[you are assigned a random roommate from your sisters.|Part9SororityEndYes]]
-			<<else>>
+			<<if haveFucked('Football Player')>> 
 				<<if $SexTaskLesbian>>
 					<<print "You are sure Veronica would ">>
 					<<link "accept dating you, should you ask her">>
@@ -1171,6 +1169,8 @@
 				<<else>>
 					[[You are assigned a random roommate from your sisters.|Part9SororityEndYes]]
 				<</if>>
+			<<else>>
+				<<print "You and Veronica both made sure you do not end up in the same room and ">>[[you are assigned a random roommate from your sisters.|Part9SororityEndYes]]
 			<</if>>
 		<</if>>
 	<<else>>

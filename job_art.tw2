@@ -91,17 +91,17 @@
 
 <<nobr>>
 	<<print "But are you ready to take that kind of commitment? Or should you stop going to the art class and ">>
-	<<if $MentorFaith>><<print "Ask Faith">><<link " about that barista job she was suggesting?">><<set $JobBarista = 1>><<set $JobArt = 0>><<goto [[JobBarista1]]>><</link>><</if>>
-	<<if $MentorEmily>><<print "Ask Emily">><<link " about that office job she was suggesting?">><<set $JobOffice = 1>><<set $JobArt = 0>><<goto [[JobOffice1]]>><</link>><</if>>
-	<<if $MentorSamantha>><<print "Ask Sam">><<link " about that bartender job she was suggesting?">><<set $JobBartender = 1>><<set $JobArt = 0>><<goto [[JobBar1]]>><</link>><</if>>
-	<<if $MentorHannah>>
+	<<if $Mentor == 'Faith'>><<print "Ask Faith">><<link " about that barista job she was suggesting?">><<set $JobBarista = 1>><<set $JobArt = 0>><<goto [[JobBarista1]]>><</link>><</if>>
+	<<if $Mentor == 'Emily'>><<print "Ask Emily">><<link " about that office job she was suggesting?">><<set $JobOffice = 1>><<set $JobArt = 0>><<goto [[JobOffice1]]>><</link>><</if>>
+	<<if $Mentor == 'Samantha'>><<print "Ask Sam">><<link " about that bartender job she was suggesting?">><<set $JobBartender = 1>><<set $JobArt = 0>><<goto [[JobBar1]]>><</link>><</if>>
+	<<if $Mentor == 'Hannah'>>
 		<<if $JobCallGirlSide>>
 			<<link "just focus on your call girl job?">><<set $JobArt = 0>><<set $JobCallGirl = 1>><<set $JobCallGirlSide = 0>><<goto [[Part5Hannah1]]>><</link>>
 		<<else>>
 			<<print "Ask Hannah">><<link " about that call girl job she was suggesting?">><<set $JobCallGirl = 1>><<set $JobArt = 0>><<goto [[JobCall1]]>><</link>>
 		<</if>>
 	<</if>>
-	<<if $MentorOlivia>>
+	<<if $Mentor == 'Olivia'>>
 		<<if $JobWebModelSide>>
 			<<link "just focus on your web model job?">><<set $JobArt = 0>><<set $JobWebModel = 1>><<set $JobWebModelSide = 0>><<goto [[Part5Olivia1]]>><</link>>
 		<<else>>
@@ -194,11 +194,11 @@
 <img src="Part3/JobArt9.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $MentorFaith>><<print "Faith">><</if>>
-	<<if $MentorEmily>><<print "Emily">><</if>>
-	<<if $MentorHannah>><<print "Hannah">><</if>>
-	<<if $MentorSamantha>><<print "Sam">><</if>>
-	<<if $MentorOlivia>><<print "Olivia">><</if>>
+	<<if $Mentor == 'Faith'>><<print "Faith">><</if>>
+	<<if $Mentor == 'Emily'>><<print "Emily">><</if>>
+	<<if $Mentor == 'Hannah'>><<print "Hannah">><</if>>
+	<<if $Mentor == 'Samantha'>><<print "Sam">><</if>>
+	<<if $Mentor == 'Olivia'>><<print "Olivia">><</if>>
 	<<print " is thrilled to be your maid of honor. She even catches the bouquet.">>
 <</nobr>>
 

@@ -1,10 +1,8 @@
 ::Part6StartBeltMaster <500,3875>
 <<nobr>>
 	<<set $FunPoints += 2>>
-	<<set $SexCount += 2>>
-	<<set $SexDifferentMaleCount += 2>>
-	<<set $SexSchoolColleague += 2>>
-	<<set $SexMaleCount += 2>>
+	<<set $sex.push({sex: 'male', anon:'Classmate'})>>
+	<<set $sex.push({sex: 'male', anon:'Classmate'})>>
 	
 	<span style="font-size: 150%"><<print "Campus">></span>
 <</nobr>>
@@ -238,7 +236,7 @@
 <<print "Of course, you might want to use the extra time for something more fun than studying.">>
 <<if $DatingVeronica>><br><video src="Part6/SleepVeronica.webm" autoplay loop muted height="640"></video><br>\
 <<else>><<if $DatingJosh or $DatingAndrew>><img src="Part6/SleepBoyfriend.jpg" hspace="10" vspace="10" height="650">\
-<<else>><<if $SexVaginalCount>><<if !$PlayerChastityBelt>><img src="Part6/SleepColleagues1.jpg" hspace="10" vspace="10" height="650">\
+<<else>><<if !setup.isGoldStarLesbian()>><<if !$PlayerChastityBelt>><img src="Part6/SleepColleagues1.jpg" hspace="10" vspace="10" height="650">\
 <<else>><img src="Part6/SleepColleagues3.jpg" hspace="10" vspace="10" height="650"><</if>>\
 <<else>><<if !$PlayerChastityBelt>><br><video src="Part6/SleepColleagues4.mp4" autoplay loop muted height="640"></video><br>
 <<else>><br><video src="Part6/SleepColleagues2.mp4" autoplay loop muted height="640"></video><br><</if>><</if>><</if>><</if>>
@@ -246,25 +244,27 @@
 <<nobr>>
 	<<if $DatingVeronica>>
 		<<print "You have fun with Veronica, but she will probably fall asleep as soon as you finish.">>
-		<<set $SexVeronica += 5>>
-		<<set $SexCount += 5>>
-		<<set $SexFemaleCount += 5>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<</if>>
 	<<if $DatingJosh>>
 		<<print "You have fun with Josh, but he will probably fall asleep as soon as you finish.">>
-		<<set $SexJosh += 5>>
-		<<set $SexJoshVaginal += 5>>
-		<<set $SexCount += 5>>
-		<<set $SexMaleCount += 5>>
-		<<set $SexVaginalCount += 5>>
+		<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+		<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+		<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+		<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+		<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
 	<</if>>
 	<<if $DatingAndrew>>
 		<<print "You have fun with Andrew, but he will probably fall asleep as soon as you finish.">>
-		<<set $SexAndrew += 5>>
-		<<set $SexAndrewVaginal += 5>>
-		<<set $SexCount += 5>>
-		<<set $SexMaleCount += 5>>
-		<<set $SexVaginalCount += 5>>
+		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
 	<</if>>
 	<<if !$DatingAndrew and !$DatingJosh and !$DatingVeronica>>
 		<<if $PlayerChastityBelt>>
@@ -272,23 +272,21 @@
 		<<else>>
 			<<print "You have fun with some of your colleagues, but they will probably fall asleep as soon as you finish.">>
 		<</if>>
-		<<set $SexCount += 6>>
-		<<if $SexVaginalCount>>
-			<<set $SexMaleCount += 3>>
-			<<set $SexVaginalCount += 3>>
-			<<set $SexFemaleCount += 3>>
-			<<set $SexDifferentMaleCount += 3>>
-			<<set $SexDifferentFemaleCount += 3>>
-			<<if !$PlayerChastityBelt>>
-				<<set $SexVaginalCount += 3>>
-				<<set $SexDifferentMaleVaginalCount += 3>>
-				<<set $SexSchoolColleagueVaginal += 3>>
-			<</if>>
+		<<if !setup.isGoldStarLesbian()>>
+			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'male', anon:'Classmate', vaginal:!$PlayerChastityBelt})>>
+			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'male', anon:'Classmate', vaginal:!$PlayerChastityBelt})>>
+			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'male', anon:'Classmate', vaginal:!$PlayerChastityBelt})>>
 		<<else>>
-			<<set $SexFemaleCount += 6>>
-			<<set $SexDifferentFemaleCount += 6>>
+			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'female', anon:'Classmate')>>
 		<</if>>
-		<<set $SexSchoolColleague += 6>>
 	<</if>>
 	<span id="Sleep2Span1">
 		<<link "unless you never finish and just have fun the whole night.">>
@@ -301,19 +299,13 @@
 			<</replace>>
 			<<replace "#Sleep2Span3">>
 				<<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-				<<else>><<if $JobEngineer>>[[You have to work at the Lab the next day.|JobEngineer5]]
-					<<else>><<if $JobTestSubject>>[[You have to work at the Lab the next day.|JobEngineerSubject3]]
-						<<else>><<if $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work at the Bar the next day.|Part6Bar]]
-							<<else>><<if $JobFitnessMassage>>[[You have to work at the Fitness Centre the next day.|JobFitnessMassage3]]
-								<<else>><<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl the next day.|JobCall4]]
-									<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie the next day.|JobPornOral2]]
-										<<else>>[[You join a study group the next day.|Part6StudyGroup]]
-										<</if>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
+				<<elseif $JobEngineer>>[[You have to work at the Lab the next day.|JobEngineer5]]
+				<<elseif $JobTestSubject>>[[You have to work at the Lab the next day.|JobEngineerSubject3]]
+				<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work at the Bar the next day.|Part6Bar]]
+				<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre the next day.|JobFitnessMassage3]]
+				<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl the next day.|JobCall4]]
+				<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie the next day.|JobPornOral2]]
+				<<else>>[[You join a study group the next day.|Part6StudyGroup]]
 				<</if>>
 			<</replace>>
 		<</link>>
@@ -331,25 +323,16 @@
 			<</replace>>
 			<<replace "#Sleep2Span3">>
 				<<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-				<<else>><<if $JobEngineer>>[[You have to work at the Lab the next day.|JobEngineer5]]
-					<<else>><<if $JobTestSubject>>[[You have to work at the Lab the next day.|JobEngineerSubject3]]
-						<<else>><<if $JobBarista>>[[You have to work at the cafe the next day.|Part6Barista]]
-							<<else>><<if $JobCheerleader>>[[You have to cheer for the football team’s derby the next day.|Part6Cheerleader]]
-								<<else>><<if $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work at the Bar the next day.|Part6Bar]]
-									<<else>><<if $JobFitnessMassage>>[[You have to work at the Fitness Centre the next day.|JobFitnessMassage3]]
-										<<else>><<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl the next day.|JobCall4]]
-											<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie the next day.|JobPornOral2]]
-													<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-														<<else>>[[You join a study group.|Part6StudyGroup]]
-													<</if>>
-												<</if>>
-											<</if>>
-										<</if>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
+				<<elseif $JobEngineer>>[[You have to work at the Lab the next day.|JobEngineer5]]
+				<<elseif $JobTestSubject>>[[You have to work at the Lab the next day.|JobEngineerSubject3]]
+				<<elseif $JobBarista>>[[You have to work at the cafe the next day.|Part6Barista]]
+				<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby the next day.|Part6Cheerleader]]
+				<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work at the Bar the next day.|Part6Bar]]
+				<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre the next day.|JobFitnessMassage3]]
+				<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl the next day.|JobCall4]]
+				<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie the next day.|JobPornOral2]]
+				<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+				<<else>>[[You join a study group.|Part6StudyGroup]]
 				<</if>>
 			<</replace>>
 		<</link>>
@@ -362,11 +345,11 @@
 <<nobr>>
 	<<set $AcademicPoints += 2>>
 	<<set $FunPoints += 1>>
-	<<set $SexAndrew += 5>>
-	<<set $SexAndrewVaginal += 5>>
-	<<set $SexCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexVaginalCount += 5>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Andrew">></span>
 <</nobr>>
@@ -388,10 +371,7 @@
 <<nobr>>
 	<<set $AcademicPoints += 1>>
 	<<set $FunPoints += 2>>
-	<<set $SexVeronica += 1>>
-	<<set $SexCount += 1>>
-	<<set $SexFemaleCount += 1>>
-	
+	<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<span style="font-size: 150%"><<print "Veronica">></span>
 <</nobr>>
 
@@ -414,11 +394,11 @@
 <<nobr>>
 	<<set $AcademicPoints += 1>>
 	<<set $FunPoints += 1>>
-	<<set $SexJosh += 5>>
-	<<set $SexJoshVaginal += 5>>
-	<<set $SexCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexVaginalCount += 5>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Josh">></span>
 <</nobr>>
@@ -719,11 +699,7 @@
 
 ::Part6ClubPersuade <500,4625>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexClubBouncer += 1>>
-	
+	<<set $sex.push({sex: 'male', name:'Club Bouncer'})>>
 	<span style="font-size: 150%"><<print "Club">></span>
 <</nobr>>
 
@@ -789,11 +765,8 @@
 
 ::Part6Shots2 <500,4875>
 <<nobr>>
-	<<set $SexCount += 2>>
-	<<set $SexDifferentFemaleCount += 2>>
-	<<set $SexFemaleCount += 2>>
-	<<set $SexBecky = 1>>
-	<<set $SexKim = 1>>
+	<<set $sex.push({sex: 'female', name:'Becky'})>>
+	<<set $sex.push({sex: 'female', name:'Kim'})>>
 	
 	<<set $AcademicPoints -= 1>>
 	<<set $FunPoints += 1>>
@@ -871,16 +844,7 @@
 
 ::Part6TroyHook <900,4750>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexTroy += 1>>
-	<<if !$PlayerChastityBelt>>
-		<<set $SexTroyVaginal += 1>>
-		<<set $SexVaginalCount += 1>>
-		<<set $SexDifferentMaleVaginalCount += 1>>
-	<</if>>
-	
+	<<set $sex.push({sex: 'male', name:'Troy', vaginal:!$PlayerChastityBelt})>>
 	<span style="font-size: 150%"><<print "Troy’s Bedroom">></span>
 <</nobr>>
 
@@ -976,12 +940,9 @@
 
 ::Part6Kidnapped1 <975,4500>
 <<nobr>>
-	<<set $SexCount += 2>>
-	<<set $SexDifferentMaleCount += 2>>
-	<<set $SexMaleCount += 2>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
 	<<set $SexKidnap = 2>>
-	<<set $SexDifferentMaleVaginalCount += 2>>
-	<<set $SexVaginalCount += 2>>
 	<<set $SexKidnapVaginal = 2>>
 	
 	<span style="font-size: 150%"><<print "Dungeon">></span>
@@ -1053,6 +1014,7 @@
 
 ::Part6Kidnapped5 <1225,4750>
 <<nobr>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 	<<set $PlayerSlave to 1>>
 <</nobr>>
@@ -1090,6 +1052,25 @@
 
 ::Part6Kidnapped7 <1225,5000>
 <<nobr>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
 	<<set $PlayerSlave += 1>>
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 <</nobr>>
@@ -1107,6 +1088,26 @@
 
 ::Part6Kidnapped8 <1225,5125>
 <<nobr>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 <</nobr>>
 
@@ -1121,6 +1122,34 @@
 
 ::Part6Kidnapped9 <1350,5125>
 <<nobr>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 4'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 4', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 4'})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 4', vaginal:true})>>
 	<span style="font-size: 150%"><<print "Your new life">></span>
 <</nobr>>
 
@@ -1167,9 +1196,6 @@ Might add something here in the future. Or not.
 
 ::Part6Grades1 <1000,5425>
 <<nobr>>
-	<<set $SexProfessor = 0>>
-	<<set $SexProfessorVaginal = 0>>
-	
 	<span style="font-size: 150%"><<print "Campus">></span>
 <</nobr>>
 
@@ -1215,13 +1241,11 @@ Might add something here in the future. Or not.
 
 ::Part6David2 <400,5550>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexDavid = 5>>
-	<<set $SexDavidVaginal = 5>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 
 	<span style="font-size: 150%"><<print "Frat Party">></span>
 <</nobr>>
@@ -1235,11 +1259,11 @@ Might add something here in the future. Or not.
 
 ::Part6David3 <600,5550>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexDavid = 5>>
-	<<set $SexDavidVaginal = 5>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 	<<set $FWBDavid = 1>>
 
 	<span style="font-size: 150%"><<print "Frat Party">></span>
@@ -1258,11 +1282,9 @@ Might add something here in the future. Or not.
 
 ::Part6FratChastity <800,5550>
 <<nobr>>
-	<<set $SexCount += 3>>
-	<<set $SexDifferentMaleCount += 3>>
-	<<set $SexSchoolColleague += 3>>
-	<<set $SexMaleCount += 3>>
-
+	<<set $sex.push({sex: 'male', anon:'Frat guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat guy'})>>
 	<span style="font-size: 150%"><<print "Frat Party">></span>
 <</nobr>>
 
@@ -1277,13 +1299,9 @@ Might add something here in the future. Or not.
 
 ::Part6FratForfeit <700,5400>
 <<nobr>>
-	<<set $SexCount += 3>>
-	<<set $SexDifferentMaleCount += 3>>
-	<<set $SexSchoolColleague += 3>>
-	<<set $SexMaleCount += 3>>
-	<<set $SexDifferentMaleVaginalCount += 3>>
-	<<set $SexSchoolColleagueVaginal += 3>>
-	<<set $SexVaginalCount += 3>>
+	<<set $sex.push({sex: 'male', anon:'Frat guy', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'Frat guy', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'Frat guy', vaginal:true})>>
 
 	<span style="font-size: 150%"><<print "Frat Party">></span>
 <</nobr>>
@@ -1348,13 +1366,8 @@ Might add something here in the future. Or not.
 
 ::Part6Professor2 <1400,5300>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexProfessor = 1>>
-	
+	<<set $sex.push({sex: 'male', name:'Aaron'})>>
 	<<set $PlayerProfessorVisit = 1>>
-	
 	<span style="font-size: 150%"><<print "Professor’s Office">></span>
 <</nobr>>
 <<if $DatingVeronica>><br><<print "You’ve already talked to Veronica and she understands you have to do what you have to do to stay on the squad.">><br><</if>><br><<if $DatingAndrew or $DatingJosh>><<print "You decide that what your boyfriend doesn’t know, won’t hurt him, and keep this to yourself.">><br><</if>>
@@ -1365,10 +1378,7 @@ Might add something here in the future. Or not.
 
 ::Part6Professor3 <1600,5300>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexProfessor = 1>>
-	
+	<<set $sex.push({sex: 'male', name:'Aaron'})>>
 	<span style="font-size: 150%"><<print "Professor’s Office">></span>
 <</nobr>>
 
@@ -1381,10 +1391,7 @@ Might add something here in the future. Or not.
 
 ::Part6Professor4 <1800,5300>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexProfessor = 1>>
-	
+	<<set $sex.push({sex: 'male', name:'Aaron'})>>
 	<span style="font-size: 150%"><<print "Professor’s Office">></span>
 <</nobr>>
 
@@ -1513,13 +1520,11 @@ Might add something here in the future. Or not.
 
 ::Part6Professor8 <1200,5425>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexProfessor += 5>>
-	<<set $SexProfessorVaginal += 5>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
 	<<set $PlayerUnderwearPink = 1>>
 	<<set $PlayerEarsHeart = 1>>
 	
@@ -1639,14 +1644,7 @@ Might add something here in the future. Or not.
 
 ::Part6NerdBirthday <200,4025>
 <<nobr>>
-	<<if $NerdBirthdaySex>>
-		<<set $SexDifferentMaleVaginalCount += 1>>
-		<<set $SexDifferentMaleCount += 1>>
-		<<set $SexVaginalCount += 1>>
-		<<set $SexNerdVaginal += 1>>
-	<</if>>
-	<<set $SexNerd += 1>>
-	
+	<<set $sex.push({sex: 'male', name:'Peter', vaginal:$NerdBirthdaySex})>>
 	<span style="font-size: 150%"><<print "Peter">></span>
 <</nobr>>
 
@@ -1780,12 +1778,8 @@ Might add something here in the future. Or not.
 
 ::Part6KidnappedResist2 <975,4750>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper Doctor', vaginal:true})>>
 	<<set $SexKidnap += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexVaginalCount += 1>>
 	<<set $SexKidnapVaginal += 1>>
 	
 	<span style="font-size: 150%"><<print "Dungeon">></span>
@@ -1806,10 +1800,8 @@ Might add something here in the future. Or not.
 
 ::Part6KidnappedResist3 <975,4875>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexMaleCount += 1>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
 	<<set $SexKidnap += 1>>
-	<<set $SexVaginalCount += 1>>
 	<<set $SexKidnapVaginal += 1>>
 	
 	<span style="font-size: 150%"><<print "Van">></span>
@@ -1865,23 +1857,25 @@ Might add something here in the future. Or not.
 ::Part6ClubDate2 <300,5000>
 <<nobr>>
 	<<if $DatingVeronica>>
-		<<set $SexVeronica += 5>>
-		<<set $SexCount += 5>>
-		<<set $SexFemaleCount += 5>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<</if>>
 	<<if $DatingJosh>>
-		<<set $SexJosh += 5>>
-		<<set $SexJoshVaginal += 5>>
-		<<set $SexCount += 5>>
-		<<set $SexMaleCount += 5>>
-		<<set $SexVaginalCount += 5>>
+		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
+		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
+		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
+		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
+		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
 	<</if>>
 	<<if $DatingAndrew>>
-		<<set $SexAndrew += 5>>
-		<<set $SexAndrewVaginal += 5>>
-		<<set $SexCount += 5>>
-		<<set $SexMaleCount += 5>>
-		<<set $SexVaginalCount += 5>>
+		<<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+		<<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+		<<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+		<<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+		<<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
 	<</if>>
 
 	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
@@ -1949,14 +1943,9 @@ Might add something here in the future. Or not.
 
 ::Part6Barista <1300,4175>
 <<nobr>>
-	<<if !$DatingAndrew and !$DatingJosh and $SexAndrew>>
-		<<set $SexAndrew += 1>>
-		<<set $SexAndrewVaginal += 1>>
-		<<set $SexCount += 1>>
-		<<set $SexMaleCount += 1>>
-		<<set $SexVaginalCount += 1>>
+	<<if !$DatingAndrew and !$DatingJosh and setup.haveFucked('Andrew')>>
+		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
 	<</if>>
-	
 	<span style="font-size: 150%"><<print "Barista">></span>
 <</nobr>>
 
@@ -1976,7 +1965,7 @@ Might add something here in the future. Or not.
 <<nobr>>
 	<<if $DatingAndrew or $DatingJosh>>
 		<img src="Part6/Barista1.jpg" hspace="10" vspace="10" height="640">
-	<<elseif $SexAndrew>>
+	<<elseif setup.haveFucked('Andrew')>>
 		<br>
 		<video src="Part6/Barista2.mp4" autoplay loop muted height="640"></video>
 		<br>
@@ -1994,7 +1983,7 @@ Might add something here in the future. Or not.
 	You spend lots of time practising latte art and you can say that you have become quite skillful at it.
 	You are sure that Josh appreciates the extra effort you put into his daily coffee.
 	<br>
-<<elseif $SexAndrew>>
+<<elseif setup.haveFucked('Andrew')>>
 	But of course, your favorite part at work is the occasional fuck you have with Andrew, sometimes in his office,
 	sometimes behind the counter’s wall. The thought that customers could catch you in the act makes it
 	even more thrilling.
@@ -2007,11 +1996,11 @@ Might add something here in the future. Or not.
 ::Part6StartJosh2 <0,5125>
 <<nobr>>
 	<<set $FunPoints += 1>>
-	<<set $SexJosh += 5>>
-	<<set $SexJoshVaginal += 5>>
-	<<set $SexCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexVaginalCount += 5>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Josh">></span>
 <</nobr>>
@@ -2092,7 +2081,7 @@ Might add something here in the future. Or not.
 		<<if $PlayerSideEffectMasturbationBlock>>
 			<<print "You know you have to control yourself, otherwise you would end up just making things even worse. Or would losing control maybe make things better?">>
 		<<else>>
-			<<print "You make sure to tell your co-workes that you are taking a nap, so that they don’t catch you in the act. Hopefully you won’t forget to lock your office door one day.">>
+			<<print "You make sure to tell your co-workers that you are taking a nap, so that they don’t catch you in the act. Hopefully you won’t forget to lock your office door one day.">>
 		<</if>>
 	<<else>>
 		<<if $JobOfficePA>>

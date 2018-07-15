@@ -310,7 +310,7 @@ You start trying to think of ways to earn a little extra money on the side...
 <img src="Part10/CallGirl1.jpg" hspace="10" vspace="10" height="800" align="left" />
 
 <<nobr>>
-  <<if $MentorHannah>>
+  <<if $Mentor == 'Hannah'>>
     Hannah had offered to help get you started as a call girl.  You know Hannah is never
     short on money, and she seems to love her job.  You weren't interested when she
     suggested it back at the begining of the school year, but you've changed quote a
@@ -402,7 +402,7 @@ You start trying to think of ways to earn a little extra money on the side...
 <img src="Part10/WebModel.jpg" hspace="10" vspace="10" height="600" align="left" />
 
 <<nobr>>
-  <<if $MentorOlivia>>
+  <<if $Mentor == 'Olivia'>>
     Olivia had mentioned to you about a job modellling for her master's website.  But
     you know she finished with that quite a while ago, so you assume that's out of the
     question now. You'll just have to
@@ -489,7 +489,7 @@ You start trying to think of ways to earn a little extra money on the side...
     You realize you don't really have any options for extra income with the chastity belt locked on you.
   <<else>>
     You could always change your mind and talk to Hannah about working as a [[call girl|Part10CallGirlStart]]
-    <<if $MentorOlivia or $cantWorkStore>>
+    <<if $Mentor == 'Olivia' or $cantWorkStore>>
       .
     <<elseif $refusedBelt>>
       or you could go back to the store and tell Master Robert you've reconsidered and that you will wear that
@@ -577,7 +577,7 @@ Now you can [[think about something more fun|Part10End]].
 <img src="Part10/Store1.jpg" hspace="10" vspace="10" height="600" />
 
 <<nobr>>
-  <<if $MentorOlivia>>
+  <<if $Mentor == 'Olivia'>>
     Desperate for money, you reluctantly ask Olivia if her Master has any modelling openings still available.
   <<else>>
     You get Olivia’s number and give her a call.
@@ -762,7 +762,7 @@ Now you can [[think about something more fun|Part10End]].
 <<nobr>>
   As you start cleaning the disgusting mess in one of the booths, you think about how little
   you are getting paid for this, especially with part of your pay going to pay back the
-  <<if $MentorOlivia>>
+  <<if $Mentor == 'Olivia'>>
     advance.
   <<else>>
      advance and part going to pay for the cost of the belt.
@@ -809,7 +809,7 @@ Now you can [[think about something more fun|Part10End]].
 
 <<nobr>>
   You wonder if you've made a mistake
-  <<if $MentorOlivia>>
+  <<if $Mentor == 'Olivia'>>
     coming to work for Master Robert.  But what other option did you have?
   <<else>>
     putting on this belt, but you know that you couldn't back out now, even if you wanted to. 
@@ -1300,15 +1300,15 @@ it when they decide to put the two of you together. The guests always [[love it 
     You're not sure what you are going to do that evening yet.  If you can't find anything better to do, you could
     always have some fun toying with Peter.  He probably hopes you are going to let him orgasm that night since it's
     a special occasion.
-  <<elseif $SexFemaleCount > $SexMaleCount >>
+  <<elseif setup.sexFemaleCount() > setup.sexMaleCount() >>
     You aren't sure what you're going to do that evening yet.  Maybe you'll see if you can find a woman to spend
     the night with.  Or you might just stay at home to avoid all the couples everywhere.  Either way, at least
     all the shopping ads flooding your email with Valentine's Day specials should stop.
-  <<elseif $SexFemaleCount * 3 > $SexMaleCount >>
+  <<elseif setup.sexFemaleCount() * 3 > setup.sexMaleCount() >>
     You aren't sure what you're going to do that evening yet.  Maybe you'll see if you can find someone to spend
     the night with.  Or you might just stay at home to avoid all the couples everywhere.  Either way, at least
     all the shopping ads flooding your email with Valentine's Day specials should stop.
-  <<elseif $SexDifferentMaleCount > 10 >>
+  <<elseif setup.sexUniqueMaleCount() > 10 >>
     You aren't sure what you're going to do that evening yet.  Maybe you'll see if you can find a guy or two to spend
     the night with.  Or you might just stay at home to avoid all the couples everywhere.  Either way, at least
     all the shopping ads flooding your email with Valentine's Day specials should stop.

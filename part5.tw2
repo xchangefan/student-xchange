@@ -306,11 +306,7 @@
 <</switch>>\
 <<if !$NeighbourEmilyBoyfriend>>	
 	<<nobr>>
-		<<print "As you prepare to go shopping with ">>
-				<<if $MentorFaith>>Faith<</if>>
-				<<if $MentorOlivia>>Olivia<</if>>
-				<<if $MentorSamantha>>Sam<</if>>
-				<<if $MentorHannah>>Hannah<</if>>
+		<<print "As you prepare to go shopping with">>$Mentor
 		<<print ", you keep thinking about how much you didn't like:">>
 	<</nobr>>
 	<<nobr>>
@@ -318,10 +314,10 @@
 		<<link "Barry, the jerk.">>
 			<<set $NeighbourJerkDislike = 1>>
 			<<nobr>>
-				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
-				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
-				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
-				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
+				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
+				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
+				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
 			<</nobr>>
 		<</link>>
 	<</if>>
@@ -331,10 +327,10 @@
 		<<link "James, the player.">>
 			<<set $NeighbourPlayerDislike = 1>>
 			<<nobr>>
-				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
-				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
-				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
-				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
+				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
+				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
+				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
 			<</nobr>>
 		<</link>>
 	<</if>>
@@ -344,10 +340,10 @@
 		<<link "Peter, the nerd.">>
 			<<set $NeighbourNerdDislike = 1>>
 			<<nobr>>
-				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
-				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
-				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
-				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
+				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
+				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
+				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
 			<</nobr>>
 		<</link>>
 	<</if>>
@@ -357,10 +353,10 @@
 		<<link "Zack, the thrill-seeker.">>
 			<<set $NeighbourThrillSeekerDislike = 1>>
 			<<nobr>>
-				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
-				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
-				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
-				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
+				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
+				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
+				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
 			<</nobr>>
 		<</link>>
 	<</if>>
@@ -370,10 +366,10 @@
 		<<link "Josh, the regular guy.">>
 			<<set $NeighbourJoshDislike = 1>>
 			<<nobr>>
-				<<if $MentorFaith>><<goto [[Faith2]]>><</if>>
-				<<if $MentorOlivia>><<goto [[Olivia2]]>><</if>>
-				<<if $MentorSamantha>><<goto [[Samantha2]]>><</if>>
-				<<if $MentorHannah>><<goto [[Hannah2]]>><</if>>
+				<<if $Mentor == 'Faith'>><<goto [[Faith2]]>><</if>>
+				<<if $Mentor == 'Olivia'>><<goto [[Olivia2]]>><</if>>
+				<<if $Mentor == 'Samantha'>><<goto [[Samantha2]]>><</if>>
+				<<if $Mentor == 'Hannah'>><<goto [[Hannah2]]>><</if>>
 			<</nobr>>
 		<</link>>
 	<</if>>
@@ -423,9 +419,7 @@
 
 ::Part5Kate <1750,3125>
 <<nobr>>
-	<<set $SexKate += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexCount += 1>>
+  <<set $sex.push({sex: 'female', name: 'Kate'})>>
 	
 	<span style="font-size: 150%"><<print "Mistress Kate">></span>
 <</nobr>>
@@ -589,10 +583,7 @@
 
 ::Part5Veronica2 <1925,3125>
 <<nobr>>
-	<<set $SexVeronica += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexCount += 1>>
-	
+	<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<span style="font-size: 150%"><<print "Veronica">></span>
 <</nobr>>
 
@@ -731,10 +722,7 @@
 
 ::Part5EmilyThree <1050,3125>
 <<nobr>>
-	<<set $SexEmily = +1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexCount += 1>>
+  <<set $sex.push({sex: 'female', name: 'Emily'})>>
 	
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
@@ -782,10 +770,7 @@
 
 ::Part5HannahMasturbate <2275,3125>
 <<nobr>>
-	<<set $SexHannah = +1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexCount += 1>>
+  <<set $sex.push({sex: 'female', name: 'Hannah'})>>
 	
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
@@ -834,16 +819,8 @@
 
 ::Part5HannahHorny <2450,3125>
 <<nobr>>
-	<<set $SexHannah = +1>>
-	<<set $SexTom = 1>>
-	<<set $SexTomVaginal = 1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexVaginalCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexMaleCount += 1>>
+  <<set $sex.push({sex: 'female', name: 'Hannah'})>>
+  <<set $sex.push({sex: 'female', name: 'Hannah'})>>
 	
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
@@ -892,14 +869,11 @@
 
 ::Part5HannahNeighbour1 <2100,2875>
 <<nobr>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexCount += 1>>
-	<<if $NeighbourJerk>><<set $SexJerk += 1>><</if>>
-	<<if $NeighbourPlayer>><<set $SexPlayer += 1>><</if>>
-	<<if $NeighbourNerd>><<set $SexNerd += 1>><</if>>
-	<<if $NeighbourThrillSeeker>><<set $SexThrillSeeker += 1>><</if>>
-	<<if $NeighbourJosh>><<set $SexJosh += 1>><</if>>
+	<<if $NeighbourJerk>><<set $sex.push({sex: 'male', name: 'Barry'})>><</if>>
+	<<if $NeighbourPlayer>><<set $sex.push({sex: 'male', name: 'James'})>><</if>>
+	<<if $NeighbourNerd>><<set $sex.push({sex: 'male', name: 'Peter'})>><</if>>
+	<<if $NeighbourThrillSeeker>><<set $sex.push({sex: 'male', name: 'Zack'})>><</if>>
+	<<if $NeighbourJosh>><<set $sex.push({sex: 'male', name: 'Josh'})>><</if>>
 	
 	<span style="font-size: 150%"><<print "Neighbour’s Bedroom">></span>
 <</nobr>>
@@ -925,16 +899,12 @@
 
 ::Part5HannahNeighbour2 <2100,3125>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexHannah = 1>>
-	<<set $SexVaginalCount += 1>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<if $NeighbourJerk and !$NeighbourJerkDislike>><<set $SexJerk += 1>><<set $SexJerkVaginal += 1>><</if>>
-	<<if $NeighbourPlayer and !$NeighbourPlayerDislike>><<set $SexPlayer += 1>><<set $SexPlayerVaginal += 1>><</if>>
-	<<if $NeighbourNerd and !$NeighbourNerdDislike>><<set $SexNerd += 1>><<set $SexNerdVaginal += 1>><</if>>
-	<<if $NeighbourThrillSeeker and !$NeighbourThrillSeekerDislike>><<set $SexThrillSeeker += 1>><<set $SexThrillSeekerVaginal += 1>><</if>>
-	<<if $NeighbourJosh and !$NeighbourJoshDislike>><<set $SexJosh += 1>><<set $SexJoshVaginal += 1>><</if>>
+	<<set $sex.push({sex: 'female', name: 'Hannah'})>>
+	<<if $NeighbourJerk and !$NeighbourJerkDislike>><<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>><</if>>
+	<<if $NeighbourPlayer and !$NeighbourPlayerDislike>><<set $sex.push({sex: 'male', name: 'James', vaginal:true})>><</if>>
+	<<if $NeighbourNerd and !$NeighbourNerdDislike>><<set $sex.push({sex: 'male', name: 'Peter', vaginal:true})>><</if>>
+	<<if $NeighbourThrillSeeker and !$NeighbourThrillSeekerDislike>><<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>><</if>>
+	<<if $NeighbourJosh and !$NeighbourJoshDislike>><<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>><</if>>
 	
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
@@ -979,11 +949,8 @@
 
 ::Part5Samantha2 <1575,3125>
 <<nobr>>
-	<<set $SexSamantha = +1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexCount += 1>>
-	
+	<<set $sex.push({sex: 'female', name: 'Samantha'})>>
+
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
 
@@ -1029,16 +996,11 @@
 
 ::Part5SamanthaNeighbours <1400,3125>
 <<nobr>>
-	<<set $SexDifferentMaleCount += 2>>
-	<<set $SexMaleCount += 2>>
-	<<set $SexCount += 2>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<if $NeighbourJerk>><<set $SexJerk += 1>><<set $SexJerkVaginal += 1>><</if>>
-	<<if $NeighbourPlayer>><<set $SexPlayer += 1>><<set $SexPlayerVaginal += 1>><</if>>
-	<<if $NeighbourNerd>><<set $SexNerd += 1>><<set $SexNerdVaginal += 1>><</if>>
-	<<if $NeighbourThrillSeeker>><<set $SexThrillSeeker += 1>><<set $SexThrillSeekerVaginal += 1>><</if>>
-	<<if $NeighbourJosh>><<set $SexJosh += 1>><<set $SexJoshVaginal += 1>><</if>>
+	<<if $NeighbourJerk>><<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>><</if>>
+	<<if $NeighbourPlayer>><<set $sex.push({sex: 'male', name: 'James', vaginal:true})>><</if>>
+	<<if $NeighbourNerd>><<set $sex.push({sex: 'male', name: 'Peter', vaginal:true})>><</if>>
+	<<if $NeighbourThrillSeeker>><<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>><</if>>
+	<<if $NeighbourJosh>><<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>><</if>>
 	
 	<span style="font-size: 150%"><<print "Neighbours’s Bedroom">></span>
 <</nobr>>
@@ -1083,10 +1045,7 @@
 
 ::Part5OliviaHelp <2800,3125>
 <<nobr>>
-	<<set $SexOlivia = +1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexCount += 1>>
+	<<set $sex.push({sex: 'female', name: 'Olivia'})>>
 	
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
@@ -1131,14 +1090,11 @@
 
 ::Part5OliviaChastity <2625,3125>
 <<nobr>>
-	<<set $SexDifferentMaleCount += 2>>
-	<<set $SexMaleCount += 2>>
-	<<set $SexCount += 2>>
-	<<if $NeighbourJerk>><<set $SexJerk += 1>><</if>>
-	<<if $NeighbourPlayer>><<set $SexPlayer += 1>><</if>>
-	<<if $NeighbourNerd>><<set $SexNerd += 1>><</if>>
-	<<if $NeighbourThrillSeeker>><<set $SexThrillSeeker += 1>><</if>>
-	<<if $NeighbourJosh>><<set $SexJosh += 1>><</if>>
+	<<if $NeighbourJerk>><<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>><</if>>
+	<<if $NeighbourPlayer>><<set $sex.push({sex: 'male', name: 'James', vaginal:true})>><</if>>
+	<<if $NeighbourNerd>><<set $sex.push({sex: 'male', name: 'Peter', vaginal:true})>><</if>>
+	<<if $NeighbourThrillSeeker>><<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>><</if>>
+	<<if $NeighbourJosh>><<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>><</if>>
 	
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
@@ -1185,18 +1141,16 @@
 
 ::Part5Jerk1 <700,2750>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexJerk += 5>>
-	<<set $SexJerkVaginal += 5>>
+	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
 	<<set $FWBJerk = 1>>
 	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></span>
 <</nobr>>
-<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
+<<if $Mentor == 'Emily'>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
 <<print "He calls you a pathetic slut. You want to get mad and scream at him, but some part of you believes what he’s saying. And as much as you hate to admit it, you need a cock right now. Even if it’s his.">>
 
 <<print "He says he’ll fuck you, since that’s all you’re good for anyway. Before he does, he calls you horrible names. And he makes you agree and repeat all the horrible things he says back to him.">>
@@ -1210,18 +1164,16 @@
 
 ::Part5Player1 <175,2750>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexPlayer += 5>>
-	<<set $SexPlayerVaginal += 5>>
+	<<set $sex.push({sex: 'male', name: 'James', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'James', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'James', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'James', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'James', vaginal:true})>>
 	<<set $FWBPlayer = 1>>
 	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "James’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "James’s Bedroom">><</if>></span>
 <</nobr>>
-<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
+<<if $Mentor == 'Emily'>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
 <<print "You’ve seen more girls than you can count head into his room and, you’ve heard their moans through the wall too. So you don’t have any illusions when your need finally drives you to him.">>
 
 <video src="Part5/GoNeighbour3.mp4" autoplay loop muted height="600"></video>
@@ -1233,14 +1185,12 @@
 
 ::Part5Nerd1 <525,2750>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexNerd += 1>>
+	<<set $sex.push({sex: 'male', name: 'Peter'})>>
 	<<set $DatingNerd = 1>>
 	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
 <</nobr>>
-<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
+<<if $Mentor == 'Emily'>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
 <<print "You need something to help with the need you are feeling. He may be shy and a bit awkward, but you’ve seen how hard he gets when you leave the bathroom after your shower, wearing just a towel. You know he’ll be willing to help.">>
 <img src="Part5/GoNeighbour5.jpg" hspace="10" vspace="10" height="650">
 
@@ -1250,18 +1200,16 @@
 
 ::Part5Thrill1 <350,2750>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexThrillSeeker += 5>>
-	<<set $SexThrillSeekerVaginal += 5>>
+	<<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>>
 	<<set $FWBThrillSeeker = 1>>
 	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Zack’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Zack’s Bedroom">><</if>></span>
 <</nobr>>
-<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
+<<if $Mentor == 'Emily'>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
 <<print "As your late night visits to his bed become more frequent, the activities when you get there become more adventurous.">>
 <img src="Part5/GoNeighbour9.jpg" hspace="10" vspace="10" height="650">
 
@@ -1271,17 +1219,15 @@
 
 ::Part5Regular1 <875,2750>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexDifferentMaleVaginalCount += 1>>
-	<<set $SexDifferentMaleCount += 1>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexJosh += 5>>
-	<<set $SexJoshVaginal += 5>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
 	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Neighbour’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Neighbour’s Bedroom">><</if>></span>
 <</nobr>>
-<<if $MentorEmily>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
+<<if $Mentor == 'Emily'>><br><<print "You try to ignore him, but you can hear Emily’s moans from next door through the thin walls. And you know the guy next to you would love to help you make just as much noise back. Eventually you give up trying to suppress your urges and give in to them.">><br><br><<print "You know it’s probably a mistake, but you can’t help it, so you tell one of the guys just exactly what you need from him...">><br><br><</if>>
 <<print "When your need finally overwhelms you, you find your way to Josh’s bed. Once he gets over the shock of what is happening, he’s a very attentive lover. You’ve already came several times before you climb on top of him and slide his cock into you.">>
 <img src="Part5/GoNeighbour12.jpg" hspace="10" vspace="10" height="650">
 
@@ -1293,12 +1239,12 @@
 
 ::Part5Jerk2 <700,3125>
 <<nobr>>
-	<<set $SexCount += 6>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 6>>
-	<<set $SexJerk += 1>>
-	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></span>
+	<<set $sex.push({sex: 'male', name: 'Barry'})>>
+	<<set $sex.push({sex: 'male', anon: "Barry's Friend"})>>
+	<<set $sex.push({sex: 'male', anon: "Barry's Friend"})>>
+	<<set $sex.push({sex: 'male', anon: "Barry's Friend"})>>
+	<<set $sex.push({sex: 'male', anon: "Barry's Friend"})>>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></span>
 <</nobr>>
 
 <<print "This time he tells you he’s bored of fucking you, but that he’ll make use of your mouth. He says maybe he’ll fuck your “used up cunt” later if you please him though.">>
@@ -1351,15 +1297,9 @@
 
 ::Part5Player2 <175,3125>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexVaginalCount += 1>>
-	<<set $SexFemaleCount += 1>>
-	<<set $SexDifferentFemaleCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexPlayer += 1>>
-	<<set $SexPlayerVaginal += 1>>
-	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "James’s Bedroom">><</if>></span>
+	<<set $sex.push({sex: 'female', anon: 'Some girl James brought home'})>>
+	<<set $sex.push({sex: 'male', name: 'James', vaginal:true})>>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "James’s Bedroom">><</if>></span>
 <</nobr>>
 
 <<print "Your need sends you to him again, you know he’ll be ready and willing. You’re already half naked before you realize there’s someone in bed with him.">>
@@ -1402,7 +1342,7 @@
 
 ::Part5Nerd2 <525,2875>
 <<nobr>>
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
 <</nobr>>
 
 <<print "You start to repay the favor, slowly at first. You planned on just a quick blowjob, but once you taste his precum you forget about that and want him inside you.">>
@@ -1416,7 +1356,7 @@
 <<nobr>>
 	<<set $PlayerItemNerdKey = 1>>
 	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
 <</nobr>>
 
 <<print "He’s horribly embarrassed about you discovering his cock cage, but an occasional stroke of his cock is enough to ensure he keeps talking and telling you all about it.">>
@@ -1434,11 +1374,9 @@
 
 ::Part5Nerd4 <525,3125>
 <<nobr>>
-	<<set $SexCount += 1>>
-	<<set $SexMaleCount += 1>>
-	<<set $SexNerd += 1>>
+	<<set $sex.push({sex: 'male', name: 'Peter'})>>
 	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
 <</nobr>>
 
 <<print "But it’s the nights he really looks forward to. He hopes it’s one of the many nights you crawl into his bed to make use of his tongue.">>
@@ -1547,7 +1485,7 @@
 <<nobr>>
 	<<set $PlayerClothesLeatherJeans = 1>>
 	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Zack’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Zack’s Bedroom">><</if>></span>
 <</nobr>>
 
 <<print "While your adventures in bed continue to explore new areas, the fun has started to expand outside the bedroom as well.">>
@@ -1624,21 +1562,21 @@
 
 ::Part5Regular3 <875,3125>
 <<nobr>>
-	<<set $SexCount += 5>>
-	<<set $SexVaginalCount += 5>>
-	<<set $SexMaleCount += 5>>
-	<<set $SexJosh += 5>>
-	<<set $SexJoshVaginal += 5>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
 	<<set $CheatedJosh = 0>>
 	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Neighbour’s Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Neighbour’s Bedroom">><</if>></span>
 <</nobr>>
 
 <<print "Your relationship with Josh has continued to grow, and you are seeing him exclusively now.">>
 <img src="Part5/GoNeighbour14.jpg" hspace="10" vspace="10" height="650">
 
 <<print "Your bed lies unused most nights as you spend every night in Josh’s.">>
-<<if $MentorEmily>><<print "Emily loves that you and her can go on double dates now. And she’s happy that no one is complaining about who is in which bedroom anymore.">><br><br><</if>><<if $MentorFaith>><<print "Faith is annoyed at first but eventually decides you and Josh are destined to get married eventually, so it’s ok. Josh’s roommate is alternatively annoyed or aroused by what goes on in Josh’s bed, depending on the day.">><br><br><</if>>
+<<if $Mentor == 'Emily'>><<print "Emily loves that you and her can go on double dates now. And she’s happy that no one is complaining about who is in which bedroom anymore.">><br><br><</if>><<if $Mentor == 'Faith'>><<print "Faith is annoyed at first but eventually decides you and Josh are destined to get married eventually, so it’s ok. Josh’s roommate is alternatively annoyed or aroused by what goes on in Josh’s bed, depending on the day.">><br><br><</if>>
 <<nobr>>
 	<<if $JobOfficeManager>>[[Spend some time on campus.|Part6Start1]]<</if>>
 	<<if $JobAthlete>>
@@ -1662,7 +1600,7 @@
 	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
 	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
 	<<if $JobBarista>>
-		<<if $SexAndrew>>
+		<<if setup.haveFucked('Andrew')>>
 			[[You go to work at the restaurant.|JobBaristaJosh]]
 		<<else>>
 			[[Spend some time on campus.|Part6Start1]]
@@ -1697,7 +1635,7 @@
 <</nobr>>
 <<nobr>>
 	<<if $JobFitnessMassage or $JobCheerleaderFundraiser or $JobFitnessYoga>>
-		<<if $MentorFaith>>* [[Talk with Faith about a new job.|JobBarista1]]<</if>>
-		<<if $MentorEmily>>* [[Talk with Emily about a new job.|JobOffice1]]<</if>>
+		<<if $Mentor == 'Faith'>>* [[Talk with Faith about a new job.|JobBarista1]]<</if>>
+		<<if $Mentor == 'Emily'>>* [[Talk with Emily about a new job.|JobOffice1]]<</if>>
 	<</if>>
 <</nobr>>

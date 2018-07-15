@@ -6,6 +6,17 @@ PlayerRollDice1   $PlayerRollDice1
 PlayerRollDice2   $PlayerRollDice2
 PlayerRollMultiplier   $PlayerRollMultiplier
    
+Sex   [[Sexual History|DebugSexualHistory]]
+SexCount   $sex.length
+
+SexMaleCount <<print setup.sexMaleCount()>>
+SexFemaleCount <<print setup.sexFemaleCount()>>
+SexVaginalCount <<print setup.sexVaginalCount()>>
+
+SexDifferentMaleCount  <<print setup.sexUniqueMaleCount()>>
+SexDifferentFemaleCount  <<print setup.sexUniqueFemaleCount()>>
+SexDifferentMaleVaginalCount <<print setup.sexUniqueVaginalCount()>>
+
 Student type   Student type
 PlayerGoodStudent   $PlayerGoodStudent
 PlayerAverageStudent   $PlayerAverageStudent
@@ -131,14 +142,10 @@ MasterKate   $MasterKate
 MasterKen   $MasterKen
 MasterOlivia   $MasterOlivia
    
-Mentor   Mentor
-PlayerMentorSet   $PlayerMentorSet
-MentorFaith   $MentorFaith
-MentorEmily   $MentorEmily
-MentorHannah   $MentorHannah
-MentorSamantha   $MentorSamantha
-MentorOlivia   $MentorOlivia
-   
+Mentor   $Mentor
+
+TODO Change Roommate and Neighbors to be variables (probably array for Neighbor)
+
 Roommate   Roommate
 RoommateFaith   $RoommateFaith
 RoommateEmily   $RoommateEmily
@@ -223,95 +230,6 @@ JobEngineer   $JobEngineer
 JobTestSubject   $JobTestSubject
 JobArt   $JobArt
    
-Sex   Sex
-SexCount   $SexCount
-SexMaleCount   $SexMaleCount
-SexDifferentMaleCount   $SexDifferentMaleCount
-SexFemaleCount   $SexFemaleCount
-SexDifferentFemaleCount   $SexDifferentFemaleCount
-SexVaginalCount   $SexVaginalCount
-SexDifferentMaleVaginalCount   $SexDifferentMaleVaginalCount
-   
-SexAndrew   $SexAndrew
-SexAndrewVaginal   $SexAndrewVaginal
-SexJerk   $SexJerk
-SexJerkVaginal   $SexJerkVaginal
-SexPlayer   $SexPlayer
-SexPlayerVaginal   $SexPlayerVaginal
-SexNerd   $SexNerd
-SexNerdVaginal   $SexNerdVaginal
-SexThrillSeeker   $SexThrillSeeker
-SexThrillSeekerVaginal   $SexThrillSeekerVaginal
-SexJosh   $SexJosh
-SexJoshVaginal   $SexJoshVaginal
-   
-SexVeronica   $SexVeronica
-SexKate   $SexKate
-SexOlivia    $SexOlivia 
-SexFaith   $SexFaith
-SexEmily   $SexEmily
-SexSamantha   $SexSamantha
-SexHannah   $SexHannah
-SexSchoolColleague   $SexSchoolColleague
-SexSchoolColleagueVaginal   $SexSchoolColleagueVaginal
-SexClubBouncer   $SexClubBouncer
-SexBecky   $SexBecky
-SexKim   $SexKim
-   
-SexOfficeBoss   $SexOfficeBoss
-SexOfficeBossVaginal   $SexOfficeBossVaginal
-   
-SexTom   $SexTom
-SexTomVaginal   $SexTomVaginal
-SexMassageClient   $SexMassageClient
-SexMassageClientVaginal   $SexMassageClientVaginal
-SexYogaStudent   $SexYogaStudent
-SexYogaStudentVaginal   $SexYogaStudentVaginal
-SexCallClient   $SexCallClient
-SexCallClientVaginal   $SexCallClientVaginal
-SexPorn   $SexPorn
-SexPornVaginal   $SexPornVaginal
-SexVaginal   $SexVaginal
-SexCoachVaginal   $SexCoachVaginal
-SexFundraiser   $SexFundraiser
-SexFundraiserVaginal   $SexFundraiserVaginal
-SexFootball   $SexFootball
-SexFootballVaginal   $SexFootballVaginal
-SexBarGuy   $SexBarGuy
-SexBarGuyVaginal   $SexBarGuyVaginal
-SexBarBrother   $SexBarBrother
-SexBarBrotherVaginal   $SexBarBrotherVaginal
-SexAthlete   $SexAthlete
-SexAthleteVaginal   $SexAthleteVaginal
-SexProfessor   $SexProfessor
-SexProfessorVaginal   $SexProfessorVaginal
-SexCody   $SexCody
-SexCodyVaginal   $SexCodyVaginal
-   
-SexLibraryBoss   $SexLibraryBoss
-SexEngineerCoworker   $SexEngineerCoworker
-SexLibraryGuy   $SexLibraryGuy
-SexLibraryGuyVaginal   $SexLibraryGuyVaginal
-SexLibraryGirl   $SexLibraryGirl
-SexTroy   $SexTroy
-SexTroyVaginal   $SexTroyVaginal
-SexDavid   $SexDavid
-SexDavidVaginal   $SexDavidVaginal
-SexBrad   $SexBrad
-SexBradVaginal   $SexBradVaginal
-SexPatrol   $SexPatrol
-SexPatrolVaginal   $SexPatrolVaginal
-SexBrother   $SexBrother
-SexBrotherVaginal   $SexBrotherVaginal
-SexSister   $SexSister
-SexSisterBoyfriend   $SexSisterBoyfriend
-SexSisterBoyfriendVaginal   $SexSisterBoyfriendVaginal
-SexUncle   $SexUncle
-SexUncleVaginal   $SexUncleVaginal
-SexMechanic   $SexMechanic
-
-
-   
 Other   Other
 OliviaChastityBelt   $OliviaChastityBelt
 PlayerChastityBelt   $PlayerChastityBelt
@@ -346,6 +264,8 @@ LikeFemales   $LikeFemales
 HomeMasturbate   $HomeMasturbate
 UncleChair   $UncleChair
 
+::DebugSexualHistory <1750,0>
+<<print setup.sexualHistoryTable()>>
 
 ::BodySideEffectsChoose1  <1800,0>
 <<nobr>>

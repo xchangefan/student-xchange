@@ -26,32 +26,24 @@
 <<if $MasterKate or $DatingVeronica>><img src="Part8.5/Talk2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Talk1.jpg" hspace="10" vspace="10" height="650"><</if>>
 
 <<nobr>>
-	<<if !$SexSister and !$SexSisterBoyfriend and !$SexUncle and !$SexBrad and !$SexBrother and !$SexPatrol and !$SexCody and !$SexMechanic and !$HomeMasturbate and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+	<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !$setup.haveFucked('Dylan') and !setup.haveFucked('Police Officer') and !setup.haveFucked('Cody') and !setup.haveFucked('Mechanic') and !$HomeMasturbate and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 		<<print "You tell ">><<if $MasterKate or $DatingVeronica>><<print "her">><<else>><<print "him">><</if>><<print " that you ">>[[were completely faithful|Part85Faithful]]<<print " while you were away">><<if $MasterKate>><<print "and that you did not disobey her.">><<else>><<print ".">><</if>>
 	<<else>>
-		<<if !$SexSister and !$SexSisterBoyfriend and !$SexUncle and !$SexBrad and !$SexBrother and !$SexPatrol and !$SexCody and !$SexMechanic and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+		<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Police Officer') and !setup.haveFucked('Cody') and !setup.haveFucked('Mechanic') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 			<<if $MasterKate>><<print "You tell her you’ve been masturbating when you were told not to, ">>[[but did not do anything worse.|Part85Sticky]]<<else>><<print "You tell ">><<if $DatingVeronica>><<print "her">><<else>><<print "him">><</if>><<print " that you ">>[[were completely faithful|Part85Faithful]]<<print " while you were away.">><</if>>
 		<<else>>
 			<<print "You’ve explained how the X-Change has affected you, and ">>
 			<<if $MasterKate or $DatingVeronica>><<print "she said she’ll try to be understanding. But you know that even her understanding has a limit, and you hope that you haven’t crossed it. You try to gauge her reaction ">><<else>><<print "he said he’ll try to be understanding. But you know that even his understanding has a limit, and you hope that you haven’t crossed it. You try to gauge his reaction ">><</if>>
 			<<link "as you tell your story">>
-				<<if $SexMechanic>><<goto [[Part85Mechanic]]>>
-				<<else>><<if $SexPatrol>><<goto [[Part85Patrol]]>>
-					<<else>><<if $SexBrad>><<goto [[Part85Brad]]>>
-						<<else>><<if $SexBrother>><<goto [[Part85Brother]]>>
-							<<else>><<if $SexSister>><<goto [[Part85Sister1]]>>
-								<<else>><<if $SexCody>><<goto [[Part85Cody]]>>
-									<<else>><<if $UncleChair>><<goto [[Part85Uncle2]]>>
-										<<else>><<if $SexUncle>><<goto [[Part85Uncle1]]>>
-											<<else>><<if $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
-												<</if>>
-											<</if>>
-										<</if>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
+				<<if setup.haveFucked('Mechanic')>><<goto [[Part85Mechanic]]>>
+				<<elseif setup.haveFucked('Police Officer')>><<goto [[Part85Patrol]]>>
+				<<elseif setup.haveFucked('Brad')>><<goto [[Part85Brad]]>>
+				<<elseif setup.haveFucked('Dylan')>><<goto [[Part85Brother]]>>
+				<<elseif setup.haveFucked('Cassie')>><<goto [[Part85Sister1]]>>
+				<<elseif setup.haveFucked('Cody')>><<goto [[Part85Cody]]>>
+				<<elseif $UncleChair>><<goto [[Part85Uncle2]]>>
+				<<elseif setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
+				<<elseif $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 				<</if>>
 			<</link>>
 			<<if $MasterKate or $DatingVeronica>><<print " and she pictures the events in her mind.">><<else>><<print " and he pictures the events in his mind.">><</if>>
@@ -184,7 +176,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if !$SexSister and !$SexSisterBoyfriend and !$SexUncle and !$SexBrad and !$SexBrother and !$SexPatrol and !$SexCody and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+	<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Police Officer') and !setup.haveFucked('Cody') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 		<<if $MasterKate>>[[Luckly, that is all you did so she will not punish you for being gullible.|Part85Together]]<</if>>
 		<<if $DatingAndrew>>[[Luckly, that is all you did so he will not get mad at you for getting in trouble.|Part85Together]]<</if>>
 		<<if $DatingJosh>>[[Luckly, that is all you did so he will not get mad at you for trying to save money.|Part85Together]]<</if>>
@@ -193,21 +185,14 @@
 		<<if $DatingProfessor>>[[As he unzips his pants he adds, “Thankfully this isn’t one of those times.”|Part85Daddy]]<</if>>
 	<<else>>
 		<<link "You continue telling your story.">>
-			<<if $SexPatrol>><<goto [[Part85Patrol]]>>
-			<<else>><<if $SexBrad>><<goto [[Part85Brad]]>>
-				<<else>><<if $SexBrother>><<goto [[Part85Brother]]>>
-					<<else>><<if $SexSister>><<goto [[Part85Sister1]]>>
-						<<else>><<if $SexCody>><<goto [[Part85Cody]]>>
-							<<else>><<if $SexUncle>><<goto [[Part85Uncle1]]>>
-								<<else>><<if $UncleChair>><<goto [[Part85Uncle2]]>>
-									<<else>><<if $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
-										<</if>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
+			<<if setup.haveFucked('Police Officer')>><<goto [[Part85Patrol]]>>
+			<<elseif setup.haveFucked('Brad')>><<goto [[Part85Brad]]>>
+			<<elseif setup.haveFucked('Dylan')>><<goto [[Part85Brother]]>>
+			<<elseif setup.haveFucked('Cassie')>><<goto [[Part85Sister1]]>>
+			<<elseif setup.haveFucked('Cody')>><<goto [[Part85Cody]]>>
+			<<elseif setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
+			<<elseif $UncleChair>><<goto [[Part85Uncle2]]>>
+			<<elseif $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 			<</if>>
 		<</link>>
 	<</if>>
@@ -259,7 +244,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if !$SexSister and !$SexSisterBoyfriend and !$SexUncle and !$SexBrad and !$SexBrother and !$SexCody and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+	<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 		<<if $MasterKate>>[[Luckly, that is all you did so she will not punish you for getting in trouble.|Part85Together]]<</if>>
 		<<if $DatingAndrew>>[[Luckly, that is all you did so he will not get mad at you for getting in trouble.|Part85Together]]<</if>>
 		<<if $DatingJosh>>[[Luckly, that is all you did so he will not get mad at you for getting in trouble.|Part85Together]]<</if>>
@@ -268,19 +253,13 @@
 		<<if $DatingProfessor>>[[As he unzips his pants he adds, “Though, I suppose that’s not always a bad thing.”|Part85Daddy]]<</if>>
 	<<else>>
 		<<link "You continue telling your story.">>
-			<<if $SexBrad>><<goto [[Part85Brad]]>>
-			<<else>><<if $SexBrother>><<goto [[Part85Brother]]>>
-				<<else>><<if $SexSister>><<goto [[Part85Sister1]]>>
-					<<else>><<if $SexCody>><<goto [[Part85Cody]]>>
-						<<else>><<if $SexUncle>><<goto [[Part85Uncle1]]>>
-							<<else>><<if $UncleChair>><<goto [[Part85Uncle2]]>>
-								<<else>><<if $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
+			<<if setup.haveFucked('Brad')>><<goto [[Part85Brad]]>>
+			<<elseif setup.haveFucked('Dylan')>><<goto [[Part85Brother]]>>
+			<<elseif setup.haveFucked('Cassie')>><<goto [[Part85Sister1]]>>
+			<<elseif setup.haveFucked('Cody')>><<goto [[Part85Cody]]>>
+			<<elseif setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
+			<<elseif $UncleChair>><<goto [[Part85Uncle2]]>>
+			<<elseif $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 			<</if>>
 		<</link>>
 	<</if>>
@@ -324,40 +303,35 @@
 
 
 <<nobr>>
-	<<if $MasterKate>><<if $SexBradVaginal>><<print "“If you wanted to thank him, you should have just given him his pleasure. Fucking him was not necessary.”">><<else>><<print "“If you wanted to thank him, you should have just given him his pleasure. Yours belongs to me. I’ll let it go this time, unless there is more, but don’t let it happen again.”">><</if>><</if>>
-	<<if $DatingAndrew>><<if $SexBradVaginal>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... But... Did you really need to fuck him?”">><<else>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... Just...Please, don’t do anything like that again.”">><</if>><</if>>
+	<<if $MasterKate>><<if haveFuckedVaginal('Brad')>><<print "“If you wanted to thank him, you should have just given him his pleasure. Fucking him was not necessary.”">><<else>><<print "“If you wanted to thank him, you should have just given him his pleasure. Yours belongs to me. I’ll let it go this time, unless there is more, but don’t let it happen again.”">><</if>><</if>>
+	<<if $DatingAndrew>><<if haveFuckedVaginal('Brad')>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... But... Did you really need to fuck him?”">><<else>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... Just...Please, don’t do anything like that again.”">><</if>><</if>>
 	<<if $DatingJosh>><<print "“I understand, I know with your side-effects things can get out of control sometimes. But I’ll expect the same in-car fun for me on our next road-trip.”">><</if>>
-	<<if $DatingVeronica>><<if $SexBradVaginal>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... why didn’t you stop with just blowjobs... Whatever.”">><<else>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... just... Whatever.”">><</if>><</if>>
+	<<if $DatingVeronica>><<if haveFuckedVaginal('Brad')>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... why didn’t you stop with just blowjobs... Whatever.”">><<else>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... just... Whatever.”">><</if>><</if>>
 	<<if $DatingNerd>><<print "“Wow that sounds so hot. I wish I could get at least part of that pleasure one day.”">><</if>>
 	<<if $DatingProfessor>><<print "“It was good that you wanted to thank him for helping you, but you let things go to far. I will go easy on your punishment this time, unless there is more, but I want you to think about what you’ve done.”">><</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if $SexBradVaginal and !$DatingNerd and !$DatingProfessor and !$DatingJosh>>
+	<<if haveFuckedVaginal('Brad') and !$DatingNerd and !$DatingProfessor and !$DatingJosh>>
 		<<set $TalkUpset = 1>>
 		<<set $TalkPunishSevere = 1>>
-		<<if !$SexSister and !$SexSisterBoyfriend and !$SexUncle and !$SexBrother and !$SexCody and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+		<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 			<<if $MasterKate>>[[“You disobeyed my orders and need to be severely punished.”|Part85Punish2]]<</if>>
 			<<if $DatingAndrew>>[[He is clearly upset from this confession.|Part85Upset1]]<</if>>
 			<<if $DatingVeronica>>[[She is clearly upset from this confession.|Part85Upset1]]<</if>>
 		<<else>>
 			<<link "You continue telling your story.">>
-				<<if $SexBrother>><<goto [[Part85Brother]]>>
-				<<else>><<if $SexSister>><<goto [[Part85Sister1]]>>
-					<<else>><<if $SexCody>><<goto [[Part85Cody]]>>
-						<<else>><<if $SexUncle>><<goto [[Part85Uncle1]]>>
-							<<else>><<if $UncleChair>><<goto [[Part85Uncle2]]>>
-								<<else>><<if $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
+				<<if setup.haveFucked('Dylan')>><<goto [[Part85Brother]]>>
+				<<elseif setup.haveFucked('Cassie')>><<goto [[Part85Sister1]]>>
+				<<elseif setup.haveFucked('Cody')>><<goto [[Part85Cody]]>>
+				<<elseif setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
+				<<elseif $UncleChair>><<goto [[Part85Uncle2]]>>
+				<<elseif $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 				<</if>>
 			<</link>>
 		<</if>>
 	<<else>>
-		<<if !$SexSister and !$SexSisterBoyfriend and !$SexUncle and !$SexBrother and !$SexCody and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+		<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 			<<if $MasterKate>>[[Luckly, that is all you did so she will not punish you for trying to save money.|Part85Together]]<</if>>
 			<<if $DatingAndrew>>[[He is upset for a bit, but there aren’t any lasting repercussions just from this confession.|Part85Together]]<</if>>
 			<<if $DatingJosh>>[[He is upset for a bit, but there aren’t any lasting repercussions just from this confession.|Part85Together]]<</if>>
@@ -366,17 +340,12 @@
 			<<if $DatingProfessor>>[[You see him starting to unbuckle his belt.|Part85Punish1]]<</if>>
 		<<else>>
 			<<link "You continue telling your story.">>
-				<<if $SexBrother>><<goto [[Part85Brother]]>>
-				<<else>><<if $SexSister>><<goto [[Part85Sister1]]>>
-					<<else>><<if $SexCody>><<goto [[Part85Cody]]>>
-						<<else>><<if $SexUncle>><<goto [[Part85Uncle1]]>>
-							<<else>><<if $UncleChair>><<goto [[Part85Uncle2]]>>
-								<<else>><<if $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
+				<<if setup.haveFucked('Dylan')>><<goto [[Part85Brother]]>>
+				<<elseif setup.haveFucked('Cassie')>><<goto [[Part85Sister1]]>>
+				<<elseif setup.haveFucked('Cody')>><<goto [[Part85Cody]]>>
+				<<elseif setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
+				<<elseif $UncleChair>><<goto [[Part85Uncle2]]>>
+				<<elseif $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 				<</if>>
 			<</link>>
 		<</if>>
@@ -428,7 +397,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if !$SexUncle and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+	<<if !setup.haveFucked('Mike') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 		<<if $MasterKate>>[[She is clearly upset from this confession.|Part85Punish2]]<</if>>
 		<<if $DatingAndrew>>[[He is clearly upset from this confession.|Part85Upset1]]<</if>>
 		<<if $DatingJosh>>[[He is clearly upset from this confession.|Part85Upset1]]<</if>>
@@ -437,7 +406,7 @@
 		<<if $DatingProfessor>>[[You see him going towards the closet.|Part85Punish2]]<</if>>
 	<<else>>
 		<<link "You continue telling your story.">>
-			<<if $SexUncle>><<goto [[Part85Uncle1]]>>
+			<<if setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
 			<<else>><<if $UncleChair>><<goto [[Part85Uncle2]]>>
 				<<else>><<if $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 					<</if>>
@@ -494,7 +463,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if !$SexUncle and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+	<<if !setup.haveFucked('Mike') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 		<<if $DatingAndrew>><<print "He’s a little upset at first. But as you talk about how hot it will be, sharing him with your sister, he soon forgets about his objections to what happened over the break. ">>[[Instead he’s interested in when your sister will be able to come through on her part of the bargain.|Part85Sister2]]<</if>>
 		<<if $DatingJosh>><<print "He’s a little upset at first. But as you talk about how hot it will be, sharing him with your sister, he soon forgets about his objections to what happened over the break. ">>[[Instead he’s interested in when your sister will be able to come through on her part of the bargain.|Part85Sister2]]<</if>>
 		<<if $MasterKate>>[[She is clearly upset from this confession.|Part85Punish2]]<</if>>
@@ -504,7 +473,7 @@
 	<<else>>
 		<<if $DatingAndrew or $DatingJosh>><<print "He’s a little upset at first. But as you talk about how hot it will be, sharing him with your sister, he soon forgets about his objections to what happened with your sister. ">><</if>>
 		<<link "You continue telling your story.">>
-			<<if $SexUncle>><<goto [[Part85Uncle1]]>>
+			<<if setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
 			<<else>><<if $UncleChair>><<goto [[Part85Uncle2]]>>
 				<<else>><<if $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 					<</if>>
@@ -564,13 +533,13 @@
 		<<if $DatingVeronica>><<print "Veronica">><</if>>
 		<<print "does not want to continue hearing about your holidays and ">>[[is clearly furious with your actions|Part85BreakUp2]]
 	<<else>>
-		<<if !$SexUncle and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+		<<if !setup.haveFucked('Mike') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 			<<if $MasterKate>>[[She is clearly upset from this confession.|Part85Punish2]]<</if>>
 			<<if $DatingNerd>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
 			<<if $DatingProfessor>>[[You see him going towards the closet.|Part85Punish2]]<</if>>
 		<<else>>
 			<<link "You continue telling your story.">>
-				<<if $SexUncle>><<goto [[Part85Uncle1]]>>
+				<<if setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
 				<<else>><<if $UncleChair>><<goto [[Part85Uncle2]]>>
 					<<else>><<if $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 						<</if>>
@@ -720,8 +689,8 @@
 <</nobr>>
 
 <<nobr>>
-		<<if $DatingAndrew>><<if $TalkUpset>>[[Even so, your other actions did upset him.|Part85Upset1]]<<else>><<if $SexSister>>[[Eventually, you have to keep that promise regarding your sister.|Part85Sister2]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>><</if>>
-		<<if $DatingJosh>><<if $TalkUpset>>[[Even so, your other actions did upset him.|Part85Upset1]]<<else>><<if $SexSister>>[[Eventually, you have to keep that promise regarding your sister.|Part85Sister2]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>><</if>>
+		<<if $DatingAndrew>><<if $TalkUpset>>[[Even so, your other actions did upset him.|Part85Upset1]]<<else>><<if setup.haveFucked('Cassie')>>[[Eventually, you have to keep that promise regarding your sister.|Part85Sister2]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>><</if>>
+		<<if $DatingJosh>><<if $TalkUpset>>[[Even so, your other actions did upset him.|Part85Upset1]]<<else>><<if setup.haveFucked('Cassie')>>[[Eventually, you have to keep that promise regarding your sister.|Part85Sister2]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>><</if>>
 		<<if $DatingVeronica>><<if $TalkUpset>>[[Even so, your other actions did upset her.|Part85Upset1]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>>
 	<<if !$SexNewYearMale and !$SexNewYearFemale>>
 		<<if $DatingNerd>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
@@ -824,16 +793,16 @@
 	<<if $DatingJosh>><<print "Josh is very upset that you cheated on him. You try to explain that your new body, and the X-Change, and being away from him, it all made you so horny and you couldn’t control yourself.">><</if>>
 	<<if $DatingVeronica>><<print "Veronica is very upset that you cheated on her. You try to explain that your new body, and the X-Change, and being away from her, it all made you so horny and you couldn’t control yourself.">><</if>>
 <</nobr>>
-<<if $SexUncle>><br><<if $SexBrother or $SexSister>><<print "You’d misbehaved with your uncle as well, but what happened with your sibling troubles your partner much more.">><<else>><<print "You’d misbehaved with your uncle as well, but what happened with Brad troubles your partner much more.">><</if>><br><</if>>
+<<if setup.haveFucked('Mike')>><br><<if setup.haveFucked('Dylan') or setup.haveFucked('Cassie')>><<print "You’d misbehaved with your uncle as well, but what happened with your sibling troubles your partner much more.">><<else>><<print "You’d misbehaved with your uncle as well, but what happened with Brad troubles your partner much more.">><</if>><br><</if>>
 <<if $DatingVeronica>><img src="Part8.5/Upset2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Upset1.jpg" hspace="10" vspace="10" height="650"><</if>>
 <<nobr>>
-	<<if $SexBrother or $SexSister>>
+	<<if setup.haveFucked('Dylan') or setup.haveFucked('Cassie')>>
 		<<if $DatingAndrew>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some feelings you’d always had for your sibling but repressed, all contributed to what happened. But he is still furious.">><</if>>
 		<<if $DatingJosh>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some feelings you’d always had for your sibling but repressed, all contributed to what happened. But he is still furious.">><</if>>
 		<<if $DatingVeronica>><<print "She believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some feelings you’d always had for your sibling but repressed, all contributed to what happened. But she is still furious.">><</if>>
 	<<else>>
-		<<if $DatingAndrew>><<if $SexDifferentMaleVaginalCount == 1>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about seeing if sex with another man feels different, but repressed, all contributed to what happened. But he is still furious.">><<else>><print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about still sleeping with multiple men, but repressed, all contributed to what happened. But he is still furious.">><</if>><</if>>
-		<<if $DatingJosh>><<if $SexDifferentMaleVaginalCount == 1>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about seeing if sex with another man feels different, but repressed, all contributed to what happened. But he is still furious.">><<else>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about still sleeping with multiple men, but repressed, all contributed to what happened. But he is still furious.">><</if>><</if>>
+		<<if $DatingAndrew>><<if setup.sexUniqueVaginalCount() == 1>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about seeing if sex with another man feels different, but repressed, all contributed to what happened. But he is still furious.">><<else>><print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about still sleeping with multiple men, but repressed, all contributed to what happened. But he is still furious.">><</if>><</if>>
+		<<if $DatingJosh>><<if setup.sexUniqueVaginalCount() == 1>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about seeing if sex with another man feels different, but repressed, all contributed to what happened. But he is still furious.">><<else>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about still sleeping with multiple men, but repressed, all contributed to what happened. But he is still furious.">><</if>><</if>>
 		<<if $DatingVeronica>><<print "She believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about trying sex with a man, but repressed, all contributed to what happened. But she is still furious.">><</if>>
 	<</if>>
 <</nobr>>
@@ -893,7 +862,7 @@
 <<print "“No. Put it on now.” You get a familiar exhilarating feeling of helplessness as you click the locks closed.">>
 <<if $PlayerChastityBeltInventory>><br><<print "You see that the high-security locks on your belt are well beyond your skills.">><br><</if>><<set $PlayerChastityBeltInventory = 1>><<set $PlayerChastityBelt = 1>>
 <<nobr>>
-	<<if $SexSister and ($DatingJosh or $DatingAndrew)>>
+	<<if setup.haveFucked('Cassie') and ($DatingJosh or $DatingAndrew)>>
 		<<print "“You’ll be wearing that from now on whenever we are apart. And often when we are together as well. Tonight, for instance, you will wear it while you attend to my pleasure, and thank me for being so generous and forgiving.” ">>
 		[[He wastes no time on asking you when your sister will be able to come through on her part of the bargain.|Part85Sister2]]
 	<<else>>
@@ -943,7 +912,7 @@
 				<<replace "#UpsetSpan2">>
 					<<print "Or you can be thrilled that now they’ll finally be able to trust you again">>
 				<</replace>>
-				<<if $SexSister and ($DatingJosh or $DatingAndrew)>>
+				<<if setup.haveFucked('Cassie') and ($DatingJosh or $DatingAndrew)>>
 					<<replace "#UpsetSpan3">>
 						<<print "You feel your heart race as you click the locks closed. ">>
 						[[He wastes no time on asking you when your sister will be able to come through on her part of the bargain.|Part85Sister2]]
@@ -964,7 +933,7 @@
 	<<if $PlayerSideEffectSubmissive < 3>>
 		<span id="UpsetSpan3"><<print "">></span>
 	<<else>>
-		<<if $SexSister and ($DatingJosh or $DatingAndrew)>>
+		<<if setup.haveFucked('Cassie') and ($DatingJosh or $DatingAndrew)>>
 			<<print "You feel your heart race as you click the locks closed. ">>
 			[[He wastes no time on asking you when your sister will be able to come through on her part of the bargain.|Part85Sister2]]
 		<<else>>
@@ -1153,12 +1122,12 @@
 
 ::Part85Jerk <1000,8600>
 <<nobr>>
-	<<set $SexCount += 6>>
-	<<set $SexDifferentMaleCount += 5>>
-	<<set $SexMaleCount += 6>>
-	<<set $SexJerk += 1>>
-	
-	<span style="font-size: 150%"><<if $MentorEmily>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></span>
+	<<set $sex.push({sex: 'male', name: 'Barry', vaginal: true})>>
+	<<set $sex.push({sex: 'male', name: 'Barry'})>>
+	<<set $sex.push({sex: 'male', vaginal: true})>>
+	<<set $sex.push({sex: 'male', vaginal: true})>>
+	<<set $sex.push({sex: 'male', vaginal: true})>>
+	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></span>
 <</nobr>>
 
 <<print "Unforunately not everything in the new year is that great. Barry tells him that his friends are coming over to play cards and that you need to join.">>
