@@ -269,7 +269,7 @@
 
 ::Part8Road5 <400,6475>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name: 'Police Officer', vaginal: true})>>
+	<<set $sex.push({sex: 'male', name: 'Police Officer', vaginal: true, birthControlOverride:'cycle'})>>
 	<span style="font-size: 150%"><<print "Patrol Car">></span>
 <</nobr>>
 
@@ -374,7 +374,7 @@
 
 	<<print "You answer: ">>
 	<<nobr>>
-		<<if !$DatingVeronica and !$MasterKate>>
+		<<if !setup.areDating('Veronica') and !$MasterKate>>
 			<span id="MorningSpan1">
 				* <<link "“I’m attracted to men.”">>
 					<<replace "#MorningSpan1">>
@@ -402,7 +402,7 @@
 		<</if>>
 	<</nobr>>
 	<<nobr>>
-		<<if !$DatingAndrew and !$DatingJosh and !$DatingProfessor and !$FWBThrillSeeker and !$DatingNerd and !$FWBPlayer and !$FWBJosh and !$DatingOfficeBoss>>
+		<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !setup.isFWB('Zack') and !setup.areDating('Peter') and !setup.isFWB('James') and !setup.isFWB('Josh') and !setup.areDating('Office Boss')>>
 			<span id="MorningSpan2">
 				* <<link "“I’m still attracted to women.”">>
 					<<set $LikeFemales = 1>>
@@ -538,7 +538,7 @@
 
 ::Part8HomeMall4 <1600,6600>
 <<nobr>>
-	<<if !$DatingProfessor>><<set $PlayerMoney -= 150>><</if>>
+	<<if !setup.areDating('Aaron')>><<set $PlayerMoney -= 150>><</if>>
 	<<if !$PlayerUnderwearSexy>><<set $PlayerUnderwearSexy = 1>><<else>><<set $PlayerUnderwearErotic = 1>><</if>>
 	<<set $PlayerItemSpecialVibrator = 1>>
 
@@ -552,7 +552,7 @@
 
 <<nobr>>
 	<<print "You are shocked as your small bag of purchases totals up to $150. (Ok, so maybe it was more than one bag. But you look so <<if $KidnapEscape>>beautiful<<else>>sexy<</if>> in them all, and you just couldn’t decide on just one.) ">>
-	<<if $DatingProfessor>>
+	<<if setup.areDating('Aaron')>>
 		<<print "“Daddy” has given you a credit card to use for purchases just like this, so you use that.">>
 		<<else>>
 		<<if $PlayerMoney < 0>>
@@ -627,11 +627,11 @@
 <img src="Part8/Text2.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $DatingVeronica>><<print "You send your picture to Veronica, and tell her how much you miss her. ">>[[You promise to text more tonight.|Part8Text4]]
-	<<elseif $DatingAndrew>><<print "You send your picture to Andrew, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
-	<<elseif $DatingJosh>><<print "You send your picture to Josh, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
-	<<elseif $DatingProfessor>><<print "You send your picture to Daddy, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
-	<<elseif $DatingNerd>><<print "You send it to Peter with a teasing message and ">>[[promise more fun tonight.|Part8Text3]]
+	<<if setup.areDating('Veronica')>><<print "You send your picture to Veronica, and tell her how much you miss her. ">>[[You promise to text more tonight.|Part8Text4]]
+	<<elseif setup.areDating('Andrew')>><<print "You send your picture to Andrew, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
+	<<elseif setup.areDating('Josh')>><<print "You send your picture to Josh, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
+	<<elseif setup.areDating('Aaron')>><<print "You send your picture to Daddy, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
+	<<elseif setup.areDating('Peter')>><<print "You send it to Peter with a teasing message and ">>[[promise more fun tonight.|Part8Text3]]
 	<<elseif $NumberCody>><<link "You send it to Cody.">><<if $PlayerChastityBelt>><<goto [[Part8TextChastity1]]>><<else>><<goto [[Part8Text5]]>><</if>><</link>>
 	<<else>><<print "You just save the picture on your phone and don’t send it to anyone. ">>[[You go to sleep.|Part8Arrival1]]
 	<</if>>
@@ -660,37 +660,37 @@
 
 <<nobr>>
 	<<print "Hundreds of miles away, ">>
-	<<if $DatingVeronica>><<print "Veronica">><</if>>
-	<<if $DatingAndrew>><<print "Andrew">><</if>>
-	<<if $DatingJosh>><<print "Josh">><</if>>
-	<<if $DatingProfessor>><<print "Daddy">><<else>><<if $DatingNerd>><<print "Peter">><<else>><</if>><</if>>
+	<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+	<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+	<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+	<<if setup.areDating('Aaron')>><<print "Daddy">><<else>><<if setup.areDating('Peter')>><<print "Peter">><<else>><</if>><</if>>
 	<<print " fires up the app on their phone to control the toy inside you. You feel the vibrator start to slowly twist and throb inside you and the soft (for now) buzz against your clit.">>
 <</nobr>>
 <img src="Part8/Text4.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $DatingVeronica>><<print "Veronica">><</if>>
-	<<if $DatingAndrew>><<print "Andrew">><</if>>
-	<<if $DatingJosh>><<print "Josh">><</if>>
-	<<if $DatingProfessor>><<print "Daddy">><<else>><<if $DatingNerd>><<print "Peter">><<else>><</if>><</if>>
+	<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+	<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+	<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+	<<if setup.areDating('Aaron')>><<print "Daddy">><<else>><<if setup.areDating('Peter')>><<print "Peter">><<else>><</if>><</if>>
 	<<print " continues and watches as you begin to quietly moan and writhe in pleasure.">>
 <</nobr>>
 
 <<nobr>>
 	<<print "With ">>
-	<<if $DatingVeronica>><<print "her other hand she tends to her own pleasure.">><</if>>
-	<<if $DatingAndrew>><<print "his other hand he tends to his own pleasure.">><</if>>
-	<<if $DatingJosh>><<print "his other hand he tends to his own pleasure.">><</if>>
-	<<if $DatingProfessor>><<print "his other hand he tends to his own pleasure.">><<else>><<if $DatingNerd>><<print "his other hand he tugs at his chastity cage and wishes that he could tend to his own pleasure.">><<else>><</if>><</if>>
+	<<if setup.areDating('Veronica')>><<print "her other hand she tends to her own pleasure.">><</if>>
+	<<if setup.areDating('Andrew')>><<print "his other hand he tends to his own pleasure.">><</if>>
+	<<if setup.areDating('Josh')>><<print "his other hand he tends to his own pleasure.">><</if>>
+	<<if setup.areDating('Aaron')>><<print "his other hand he tends to his own pleasure.">><<else>><<if setup.areDating('Peter')>><<print "his other hand he tugs at his chastity cage and wishes that he could tend to his own pleasure.">><<else>><</if>><</if>>
 	<<print " Your hands are free to roam your body, imagining that they are the hands of your lover instead.">>
 <</nobr>>
 
 <<nobr>>
 	<<print "The ">>
-	<<if $DatingVeronica>><<print "moans">><</if>>
-	<<if $DatingAndrew>><<print "moans">><</if>>
-	<<if $DatingJosh>><<print "moans">><</if>>
-	<<if $DatingProfessor>><<print "moans">><<else>><<if $DatingNerd>><<print "frustrated whimpers">><<else>><</if>><</if>>
+	<<if setup.areDating('Veronica')>><<print "moans">><</if>>
+	<<if setup.areDating('Andrew')>><<print "moans">><</if>>
+	<<if setup.areDating('Josh')>><<print "moans">><</if>>
+	<<if setup.areDating('Aaron')>><<print "moans">><<else>><<if setup.areDating('Peter')>><<print "frustrated whimpers">><<else>><</if>><</if>>
 	<<print " you hear amplify the pleasure for you, and soon your hands move to cover your mouth as the first of several orgasms rock your body.">>
 <</nobr>>
 
@@ -940,10 +940,10 @@
 
 <<print "On the way back you see the light on in your sisters room. ">>[[You can go talk to her for a while|Part8EveningSister1]]<<print " to see if that takes your mind off it.">>\
 <<if !$KidnapEscape and $BrotherFlirt>><br><br><<print "You also look at your brother’s door and wonder if he’s jerking off right now, thinking of you in your hot new body. ">>[[You can peek into his room to see if you want.|Part8EveningBrother1]]<</if>>\
-<<if !$KidnapEscape and $DatingVeronica>><br><br><<print "You could ">>[[text Veronica|Part8EveningCall]]<<print " and tell her how much you wish she were here next to you.">><</if>>\
-<<if !$KidnapEscape and $DatingAndrew>><br><br><<print "You could ">>[[text Andrew|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
-<<if !$KidnapEscape and $DatingJosh>><br><br><<print "You could ">>[[text Josh|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
-<<if !$KidnapEscape and $DatingProfessor>><br><br><<print "You could ">>[[text Daddy|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
+<<if !$KidnapEscape and setup.areDating('Veronica')>><br><br><<print "You could ">>[[text Veronica|Part8EveningCall]]<<print " and tell her how much you wish she were here next to you.">><</if>>\
+<<if !$KidnapEscape and setup.areDating('Andrew')>><br><br><<print "You could ">>[[text Andrew|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
+<<if !$KidnapEscape and setup.areDating('Josh')>><br><br><<print "You could ">>[[text Josh|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
+<<if !$KidnapEscape and setup.areDating('Aaron')>><br><br><<print "You could ">>[[text Daddy|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
 <<if !$KidnapEscape and $NumberCody>><br><br><<print "You could check on Cody, and see if he’s up for a late-night booty-call, maybe ">>[[text him to see if he’s receptive to the idea.|Part8EveningBooty1]]<</if>>\
 <<if !$KidnapEscape and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><br><<print "Or you can ">>[[try masturbating to see if that helps.|Part8EveningMasturbate]]<</if>>\
 
@@ -1057,10 +1057,10 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingVeronica>><<print "You text Veronica, telling her how much you miss her, how much you wish she were here. You tell her what you’d do to to her if she were here, and she texts back telling you what she would do to you.">><</if>>
-	<<if $DatingAndrew>><<print "You text Andrew, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.">><</if>>
-	<<if $DatingJosh>><<print "You text Josh, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.">><</if>>
-	<<if $DatingProfessor>><<print "You text Daddy, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.">><</if>>
+	<<if setup.areDating('Veronica')>><<print "You text Veronica, telling her how much you miss her, how much you wish she were here. You tell her what you’d do to to her if she were here, and she texts back telling you what she would do to you.">><</if>>
+	<<if setup.areDating('Andrew')>><<print "You text Andrew, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.">><</if>>
+	<<if setup.areDating('Josh')>><<print "You text Josh, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.">><</if>>
+	<<if setup.areDating('Aaron')>><<print "You text Daddy, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.">><</if>>
 <</nobr>>
 <img src="Part8/Evening13.jpg" hspace="10" vspace="10" height="650">
 
@@ -1126,7 +1126,7 @@
 <<print "But you love the gifts you get too though. Your sister must had made another trip to the mall after the trip with you, as several of the gifts she has for you are the very items she’d had you try on a few days ago. ">>
 <<if $CodyHickey>><br><<print "You hope that your turtleneck hides your hickey from last night. Cassie isn’t fooled though. When you are alone, she pulls the colllar a bit to verify her suspicion that you were hiding something. “Hmm, looks like I wasn’t the only one that snuck out last night.”">><br><</if>>
 <<nobr>>
-	<<if $DatingProfessor>>
+	<<if setup.areDating('Aaron')>>
 		When no one is paying attention, [[you sneak back into your room.|Part8Christmas2]]
 	<<else>>
 		[[Everyone goes into the kitchen.|Part8Christmas3]]
@@ -1294,7 +1294,7 @@
 ::Part8EveningBooty2 <1575,7250>
 <<nobr>>
 	<<set $ChristmasEveOrgasm = 1>>
-  <<set $sex.push({sex: 'male', name: 'Cody', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Cody', vaginal: true, birthControlOverride:'cycle'})>>
 	<<set $CodyHickey to 1>>
 	<span style="font-size: 150%"><<print "Cody’s Apartment">></span>
 <</nobr>>
@@ -1446,7 +1446,7 @@
 		<<print "The handcuffs aren`t the only things locking you, so you realize that you can only ">>
 		[[agree to whatever he may ask from you.|Part8Uncle3]]
 	<<else>>
-		<<if $DatingVeronica or $DatingAndrew or $DatingJosh or $DatingProfessor or $MasterKate or $MasterOlivia or $DatingNerd or !setup.sexUniqueVaginalCount()>>
+		<<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Aaron') or $MasterKate or $MasterOlivia or setup.areDating('Peter') or !setup.sexUniqueVaginalCount()>>
 			<<if $PlayerSideEffectSubmissive > 1>>
 				<<print "You wonder if you should say something about it before you get carried away. ">>
 				[[But the thought of being bound in this dungeon is too enticing.|Part8Uncle5]]
@@ -1489,7 +1489,7 @@
 <<print "Your position does allow you to watch the game with him. Whenever there is a commercial break, you know he will be over beside your cage. You just don’t know if he’ll be at the front for it making use of your mouth, or at the back making use of his riding crop on your bare ass.">>
 
 <<nobr>>
-	<<if !$DatingVeronica and !$DatingAndrew and !$DatingJosh and !$DatingProfessor and !$MasterKate and !$MasterOlivia and !$DatingNerd>>
+	<<if !setup.areDating('Veronica') and !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !$MasterKate and !$MasterOlivia and !setup.areDating('Peter')>>
 		<<print "When the game is finally over he has ample time to make use of both before he releases you and you return home. You know it won`t be long before you ">>[[visit him again.|Part8Uncle7]]
 	<<else>>
 		<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
@@ -1529,11 +1529,11 @@
 		<<print "As you leave to head home,">>
 	<</if>>
 	<<print " you wonder if he made the chair himself, or if it is something you could find online and ">>
-	<<if $DatingVeronica>><<print " talk Veronica into into purchasing as well. ">><</if>>
-	<<if $DatingAndrew>><<print " talk Andrew into into purchasing as well. ">><</if>>
-	<<if $DatingJosh>><<print " talk Josh into into purchasing as well. ">><</if>>
-	<<if $DatingProfessor>><<print " talk Daddy into into purchasing as well. ">><</if>>
-	<<if $DatingNerd>><<print " talk Peter into into purchasing as well. ">><</if>>
+	<<if setup.areDating('Veronica')>><<print " talk Veronica into into purchasing as well. ">><</if>>
+	<<if setup.areDating('Andrew')>><<print " talk Andrew into into purchasing as well. ">><</if>>
+	<<if setup.areDating('Josh')>><<print " talk Josh into into purchasing as well. ">><</if>>
+	<<if setup.areDating('Aaron')>><<print " talk Daddy into into purchasing as well. ">><</if>>
+	<<if setup.areDating('Peter')>><<print " talk Peter into into purchasing as well. ">><</if>>
 	<<if $MasterKate>><<print " talk your Mistress into into purchasing as well. ">><</if>>
 	<<if $MasterOlivia>><<print " talk your Master into into purchasing as well. ">><</if>>
 	<<if setup.haveFucked('Cassie')>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
@@ -1561,7 +1561,7 @@
 
 ::Part8Uncle6 <1200,7525>
 <<nobr>>
-  <<set $sex.push({sex: 'male', name: 'Mike', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Mike', vaginal: true, birthControlOverride:'cycle'})>>
 	<span style="font-size: 150%"><<print "Uncle Mike’s Playroom">></span>
 <</nobr>>
 
@@ -1575,7 +1575,7 @@
 <<print "He removes the condom and goes around to the other end of the bench to have you clean his cock with your tongue and mouth before he finally unbuckles the straps holding you down.">>
 
 <<nobr>>
-	<<if !$DatingVeronica and !$DatingAndrew and !$DatingJosh and !$DatingProfessor and !$MasterKate and !$MasterOlivia and !$DatingNerd>>
+	<<if !setup.areDating('Veronica') and !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !$MasterKate and !$MasterOlivia and !setup.areDating('Peter')>>
 		<<print "After you dress and return upstairs. Before you leave, the two of you watch the highlight reel from game you’d missed, just in case anyone asks how it was. You know it won`t be long before you ">>[[visit him again.|Part8Uncle7]]
 	<<else>>
 		<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
@@ -1609,7 +1609,7 @@
 
 ::Part8Return8 <200,7900>
 <<nobr>>
-	<span style="font-size: 150%"><<if $DatingAndrew>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if setup.areDating('Andrew')>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></span>
 <</nobr>>
 
 <<nobr>>
@@ -1632,28 +1632,20 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingVeronica>><<print "Veronica is very happy with your new purchase as well.">>
-	<<else>><<if $DatingAndrew>>[[Andrew is very happy with your new purchase as well.|Part8Return9]]
-		<<else>><<if $DatingJosh>><<print "Josh is very happy with your new purchase as well.">>
-			<<else>><<if $DatingProfessor>><<print "Daddy is very happy with your new purchase as well.">>
-				<<else>><<if $DatingNerd>><<print "Peter is very happy with your new purchase as well.">>
-					<<else>><<if $FWBThrillSeeker>><<print "Zack is very happy with your new purchase as well.">>
-						<<else>><<if $FWBPlayer>><<print "James is very happy with your new purchase as well.">>
-							<<else>><<if $MasterKate>><<print "Mistress Kate is very happy with your new purchase as well.">>
-								<<else>><<if $MasterOlivia>><<print "Master is very happy with your new purchase as well.">>
-									<<else>><<print "You smile to yourself as you wear your new purchases under your regular clothes as you take care of errands around campus.">>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<if setup.areDating('Veronica')>><<print "Veronica is very happy with your new purchase as well.">>
+	<<elseif setup.areDating('Andrew')>>[[Andrew is very happy with your new purchase as well.|Part8Return9]]
+	<<elseif setup.areDating('Josh')>><<print "Josh is very happy with your new purchase as well.">>
+	<<elseif setup.areDating('Aaron')>><<print "Daddy is very happy with your new purchase as well.">>
+	<<elseif setup.areDating('Peter')>><<print "Peter is very happy with your new purchase as well.">>
+	<<elseif setup.isFWB('Zack')>><<print "Zack is very happy with your new purchase as well.">>
+	<<elseif setup.isFWB('James')>><<print "James is very happy with your new purchase as well.">>
+	<<elseif $MasterKate>><<print "Mistress Kate is very happy with your new purchase as well.">>
+	<<elseif $MasterOlivia>><<print "Master is very happy with your new purchase as well.">>
+	<<else>><<print "You smile to yourself as you wear your new purchases under your regular clothes as you take care of errands around campus.">>
 	<</if>>
 <</nobr>>
 
-<<if !$DatingAndrew>>[[Eventually, it`s time for the New Year’s Party.|Part8NewYear1]]<</if>>
+<<if !setup.areDating('Andrew')>>[[Eventually, it`s time for the New Year’s Party.|Part8NewYear1]]<</if>>
 
 ::Part8Return3 <400,7775>
 <<nobr>>
@@ -1667,7 +1659,7 @@
 <video src="Part8/Return3.webm" autoplay loop muted height="640"></video>
 
 
-<<if $PlayerChastityBelt>><<print "He keeps driving and you wait until he’s ready for another blowjob and then give him a repeat performance.">><<else>><<if $DatingVeronica or $DatingAndrew or $DatingJosh or $DatingProfessor or $MasterKate or $MasterOlivia or $DatingNerd>><<print "Or, maybe you should try to stay somewhat more faithful and resist the urge to do more with Brad, and instead give him a little show as you ">>[[try to take care of your needs yourself.|Part8Return5]]<</if>><</if>>
+<<if $PlayerChastityBelt>><<print "He keeps driving and you wait until he’s ready for another blowjob and then give him a repeat performance.">><<else>><<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Aaron') or $MasterKate or $MasterOlivia or setup.areDating('Peter')>><<print "Or, maybe you should try to stay somewhat more faithful and resist the urge to do more with Brad, and instead give him a little show as you ">>[[try to take care of your needs yourself.|Part8Return5]]<</if>><</if>>
 
 <<if $PlayerChastityBelt>>[[You eventually arrive at your destination.|Part8Return6]]<</if>>
 
@@ -1722,7 +1714,7 @@
 
 ::Part8Return4 <600,7775>
 <<nobr>>
-  <<set $sex.push({sex: 'male', name: 'Brad', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Brad', vaginal: true, birthControlOverride:'cycle'})>>
 	
 	<span style="font-size: 150%"><<print "Road to School">></span>
 <</nobr>>
@@ -1756,9 +1748,9 @@
 
 <<print "You have a really fun time at the big New Year’s Party.">>
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<img src="Part8/NewYear2.jpg" hspace="10" vspace="10" height="650">
-	<<elseif $DatingAndrew or $DatingJosh>>
+	<<elseif setup.areDating('Andrew') or setup.areDating('Josh')>>
 		<img src="Part8/NewYear1.jpg" hspace="10" vspace="10" height="650">
 	<<else>>
 		<img src="Part8/NewYear3.jpg" hspace="10" vspace="10" height="650">
@@ -1766,11 +1758,11 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<<print "You enjoy a romantic kiss with Veronica as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear2]]
-	<<elseif $DatingAndrew>>
+	<<elseif setup.areDating('Andrew')>>
 		<<print "You enjoy a romantic kiss with Andrew as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear3]]
-	<<elseif $DatingJosh>>
+	<<elseif setup.areDating('Josh')>>
 		<<print "You enjoy a romantic kiss with Josh as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear3]]
 	<<elseif $KidnapEscape>>
 		<<print "You cheer as the clock strikes twelve, then you stay at the party for [[a bit more champagne.|Part8NewYear4]]">>
@@ -1780,7 +1772,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if !$KidnapEscape and !$DatingVeronica and !$DatingAndrew and !$DatingJosh and $PlayerSideEffectLibido < 3 and $PlayerSideEffectPheromones < 3>>
+	<<if !$KidnapEscape and !setup.areDating('Veronica') and !setup.areDating('Andrew') and !setup.areDating('Josh') and $PlayerSideEffectLibido < 3 and $PlayerSideEffectPheromones < 3>>
 		<<if $PlayerPregnant>>
 			<<print "Or you can stay at the party for ">>[[some more dancing.|Part8NewYear4]]
 		<<else>>
@@ -1803,10 +1795,10 @@
 
 ::Part8NewYear2 <800,7900>
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<<else>>
-		<<if $MasterKate or $DatingProfessor>><<set $SexNewYearFemale = 1>><</if>>
+		<<if $MasterKate or setup.areDating('Aaron')>><<set $SexNewYearFemale = 1>><</if>>
 	  <<set $sex.push({sex: 'female', anon:"New Year's Eve hookup"})>>
 	<</if>>
 
@@ -1814,7 +1806,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<<print "You and Veronica spend the first few hours of the new year with your bodies intertwined, trying to discover all the way to give each other pleasure.">>
 	<<else>>
 		<<if $PlayerChastityBelt>>
@@ -1825,7 +1817,7 @@
 	<</if>>
 <</nobr>>
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<img src="Part8/NewYear5.jpg" hspace="10" vspace="10" height="650">
 	<<else>>
 		<<if $PlayerChastityBelt>>
@@ -1837,7 +1829,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<<print "Finally, the two of you are exhausted and fall asleep curled up next to each other. You wake up the next morning excited for what ">>
 		<<link "the new year might hold.">>
 			<<goto [[Part85Talk1]]>>
@@ -1846,7 +1838,7 @@
 		<<if $PlayerChastityBelt>>
 			<<print "You wake up the next morning, aching with need, but excited for what ">>
 			<<link "the new year might hold.">>
-				<<if $MasterKate or $DatingVeronica or $DatingNerd or $DatingProfessor>>
+				<<if $MasterKate or setup.areDating('Veronica') or setup.areDating('Peter') or setup.areDating('Aaron')>>
 					<<goto [[Part85Talk1]]>>
 				<<else>>
 					<<goto [[Part9Start1]]>>
@@ -1855,10 +1847,10 @@
 		<<else>>
 			<<print "Finally, the two of you are exhausted and fall asleep curled up next to each other. You wake up the next morning excited for what ">>
 			<<link "the new year might hold.">>
-				<<if $MasterKate or $DatingVeronica or $DatingNerd or $DatingProfessor>>
+				<<if $MasterKate or setup.areDating('Veronica') or setup.areDating('Peter') or setup.areDating('Aaron')>>
 					<<goto [[Part85Talk1]]>>
 				<<else>>
-					<<if $FWBJerk>>
+					<<if setup.isFWB('Barry')>>
 						<<goto [[Part85Jerk]]>>
 					<<else>>
 						<<goto [[Part9Start1]]>>
@@ -1871,18 +1863,18 @@
 
 ::Part8NewYear3 <1000,7900>
 <<nobr>>
-	<<if $MasterKate or $DatingProfessor>>
-		<<set $SexNewYearMale = 1>><</if>>
+	<<if $MasterKate or setup.areDating('Aaron')>>
+		<<set $SexNewYearMale = 1>>
 	<</if>>
 
-	<span style="font-size: 150%"><<if $DatingAndrew>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></span>
+	<span style="font-size: 150%"><<if setup.areDating('Andrew')>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></span>
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingAndrew>>
+	<<if setup.areDating('Andrew')>>
 		<<print "You and Andrew spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
 	  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-	<<elseif $DatingJosh>>
+	<<elseif setup.areDating('Josh')>>
 		<<print "You and Josh spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
 		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
 	<<else>>
@@ -1890,12 +1882,12 @@
 		  <<set $sex.push({sex: 'male', name: 'New Year's Eve hookup'})>>
 			<<print "You spend the first hours of the new year giving the pleasure you yearn for. Seeing and hearing the joy you are giving him is the only pleasure you can have today though.">>
 		<<else>>
-		  <<set $sex.push({sex: 'male', name: 'New Year's Eve hookup', vaginal: true})>>
+		  <<set $sex.push({sex: 'male', name: 'New Year's Eve hookup', vaginal: true, noPullout: true})>>
 			<<print "You and him spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
 		<</if>>
 	<</if>>
 <</nobr>>
-<<if $DatingAndrew or $DatingJosh>>\
+<<if setup.areDating('Andrew') or setup.areDating('Josh')>>\
 	<br><video src="Part8/NewYear6.webm" autoplay loop muted height="640"><br></video>\
 <<else>>\
 	<<if $PlayerChastityBelt>>\
@@ -1910,7 +1902,7 @@
 	<<if $PlayerChastityBelt>>
 		<<print "You wake up the next morning, aching with need, ">>
 		<<link "but excited for what the new year might hold.">>
-			<<if $MasterKate or $DatingAndrew or $DatingJosh or $DatingNerd or $DatingProfessor>>
+			<<if $MasterKate or setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Peter') or setup.areDating('Aaron')>>
 				<<goto [[Part85Talk1]]>>
 			<<else>>
 				<<goto [[Part9Start1]]>>
@@ -1919,10 +1911,10 @@
 	<<else>>
 		<<print "You wake the next morning excited for what ">>
 		<<link "the new year might hold.">>
-			<<if $MasterKate or $DatingAndrew or $DatingJosh or $DatingNerd or $DatingProfessor>>
+			<<if $MasterKate or setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Peter') or setup.areDating('Aaron')>>
 				<<goto [[Part85Talk1]]>>
 			<<else>>
-				<<if $FWBJerk>>
+				<<if setup.isFWB('Barry')>>
 					<<goto [[Part85Jerk]]>>
 				<<else>>
 					<<goto [[Part9Start1]]>>
@@ -1933,7 +1925,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingAndrew or $DatingJosh>>
+	<<if setup.areDating('Andrew') or setup.areDating('Josh')>>
 		<<print "He wakes when you do. When you notice his morning erection pressed against you, you can’t think of a better way to start the first day of the new year and ease yourself back, smiling as you feel it slide inside you.">>
 	<<else>>
 		<<if $PlayerChastityBelt>>
@@ -1956,10 +1948,10 @@
 	<<if $PlayerPregnant>><<print "You wake up the next morning with your legs sore, ">><<else>><<print "You wake up the next morning with a bit of hangover, ">><</if>>
 	<<if $KidnapEscape>>ready to move on from last year,<</if>>
 	<<link "but excited about what the new year might hold.">>
-		<<if $MasterKate or $DatingNerd or $DatingProfessor>>
+		<<if $MasterKate or setup.areDating('Peter') or setup.areDating('Aaron')>>
 			<<goto [[Part85Talk1]]>>
 		<<else>>
-			<<if !$KidnapEscape and $FWBJerk>>
+			<<if !$KidnapEscape and setup.isFWB('Barry')>>
 				<<goto [[Part85Jerk]]>>
 			<<else>>
 				<<goto [[Part9Start1]]>>

@@ -238,7 +238,7 @@
 	<span style="font-size: 150%"><<print "Neighbours">></span>
 <</nobr>>
 
-<<switch $Neighbours[0]>>
+<<switch $neighbours[0]>>
 	<<case 'Barry'>>\
 		<img src="Part5/Neighbours2A.jpg" hspace="10" vspace="10" height="400">
 		
@@ -273,7 +273,7 @@
 		<<print "You try to talk with Emily‘s boyfriend, but she keeps all his attention for herself. Regardless, he seems quite normal.">>
 <</switch>>
 
-<<switch $Neighbours[1]>>
+<<switch $neighbours[1]>>
 	<<case 'Barry'>>\
 		<img src="Part5/Neighbours2A.jpg" hspace="10" vspace="10" height="400">
 		
@@ -310,27 +310,27 @@
 	<<if !setup.isNeighbour("Emily's Boyfriend")>>
 		As you prepare to go shopping with $Mentor, you keep thinking how:
 		<ul>
-			<li><<print $Neighbours[0]>>
-				<<if $Mentor == 'Faith'>><<link [[was fine,|Faith2]]>><<set $NeighbourDislike to $Neighbours[1]>><</link>>
-				<<elseif $Mentor == 'Olivia'>><<link [[was fine,|Olivia2]]>><<set $NeighbourDislike to $Neighbours[1]>><</link>>
-				<<elseif $Mentor == 'Samantha'>><<link [[was fine,|Samantha2]]>><<set $NeighbourDislike to $Neighbours[1]>><</link>>
-				<<elseif $Mentor == 'Hannah'>><<link [[was fine,|Hannah2]]>><<set $NeighbourDislike to $Neighbours[1]>><</link>>
+			<li><<print $neighbours[0]>>
+				<<if $Mentor == 'Faith'>><<link [[was fine,|Faith2]]>><<set $NeighbourDislike to $neighbours[1]>><</link>>
+				<<elseif $Mentor == 'Olivia'>><<link [[was fine,|Olivia2]]>><<set $NeighbourDislike to $neighbours[1]>><</link>>
+				<<elseif $Mentor == 'Samantha'>><<link [[was fine,|Samantha2]]>><<set $NeighbourDislike to $neighbours[1]>><</link>>
+				<<elseif $Mentor == 'Hannah'>><<link [[was fine,|Hannah2]]>><<set $NeighbourDislike to $neighbours[1]>><</link>>
 				<</if>>	
-				but you didn't really like $Neighbours[1]
+				but you didn't really like $neighbours[1]
 			</li>
-			<li><<print $Neighbours[1]>> was fine, but
-				<<if $Mentor == 'Faith'>><<link [[you didn't really like|Faith2]]>><<set $NeighbourDislike to $Neighbours[0]>><</link>>
-				<<elseif $Mentor == 'Olivia'>><<link [[you didn't really like|Olivia2]]>><<set $NeighbourDislike to $Neighbours[0]>><</link>>
-				<<elseif $Mentor == 'Samantha'>><<link [[you didn't really like|Samantha2]]>><<set $NeighbourDislike to $Neighbours[0]>><</link>>
-				<<elseif $Mentor == 'Hannah'>><<link [[you didn't really like|Hannah2]]>><<set $NeighbourDislike to $Neighbours[0]>><</link>>
+			<li><<print $neighbours[1]>> was fine, but
+				<<if $Mentor == 'Faith'>><<link [[you didn't really like|Faith2]]>><<set $NeighbourDislike to $neighbours[0]>><</link>>
+				<<elseif $Mentor == 'Olivia'>><<link [[you didn't really like|Olivia2]]>><<set $NeighbourDislike to $neighbours[0]>><</link>>
+				<<elseif $Mentor == 'Samantha'>><<link [[you didn't really like|Samantha2]]>><<set $NeighbourDislike to $neighbours[0]>><</link>>
+				<<elseif $Mentor == 'Hannah'>><<link [[you didn't really like|Hannah2]]>><<set $NeighbourDislike to $neighbours[0]>><</link>>
 				<</if>>	
-				$Neighbours[0]
+				$neighbours[0]
 			</li>
 			<li>You 
-				<<if $Mentor == 'Faith'>><<link [[don't really care|Faith2]]>><<set $NeighbourDislike to $Neighbours[either(0,1)]>><</link>>
-				<<elseif $Mentor == 'Olivia'>><<link [[don't really care|Olivia2]]>><<set $NeighbourDislike to $Neighbours[either(0,1)]>><</link>>
-				<<elseif $Mentor == 'Samantha'>><<link [[don't really care|Samantha2]]>><<set $NeighbourDislike to $Neighbours[either(0,1)]>><</link>>
-				<<elseif $Mentor == 'Hannah'>><<link [[don't really care|Hannah2]]>><<set $NeighbourDislike to $Neighbours[either(0,1)]>><</link>>
+				<<if $Mentor == 'Faith'>><<link [[don't really care|Faith2]]>><<set $NeighbourDislike to $neighbours[either(0,1)]>><</link>>
+				<<elseif $Mentor == 'Olivia'>><<link [[don't really care|Olivia2]]>><<set $NeighbourDislike to $neighbours[either(0,1)]>><</link>>
+				<<elseif $Mentor == 'Samantha'>><<link [[don't really care|Samantha2]]>><<set $NeighbourDislike to $neighbours[either(0,1)]>><</link>>
+				<<elseif $Mentor == 'Hannah'>><<link [[don't really care|Hannah2]]>><<set $NeighbourDislike to $neighbours[either(0,1)]>><</link>>
 				<</if>>
 				one way or the other beteen them
 			</li>
@@ -429,7 +429,7 @@
 	<<print "You could just give up on sharing a room with Emily and ">>
 	<<link "start sleeping in the room her boyfriend is supposed to be in">>
 		<<set setup.removeNeighbour("Emily's Boyfriend")>>
-		<<set $Roommate to $Neighbours[0]>>
+		<<set $Roommate to $neighbours[0]>>
 	  <<set setup.removeNeighbour($Roommate)>>
 		<<set setup.addNeighbour("Emily")>>
 		<<set setup.addNeighbour("Emily's Boyfriend")>>
@@ -828,8 +828,8 @@
 
 ::Part5HannahNeighbour1 <2100,2875>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name: $Neighbours[0]})>>
-	<<set $sex.push({sex: 'male', name: $Neighbours[1]})>>
+	<<set $sex.push({sex: 'male', name: $neighbours[0]})>>
+	<<set $sex.push({sex: 'male', name: $neighbours[1]})>>
 	<span style="font-size: 150%"><<print "Neighbour’s Bedroom">></span>
 <</nobr>>
 
@@ -947,8 +947,8 @@
 
 ::Part5SamanthaNeighbours <1400,3125>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name: $Neighbours[0], vaginal:true})>>
-	<<set $sex.push({sex: 'male', name: $Neighbours[1], vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: $neighbours[0], vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: $neighbours[1], vaginal:true})>>
 	<span style="font-size: 150%"><<print "Neighbours’s Bedroom">></span>
 <</nobr>>
 
@@ -1085,11 +1085,11 @@
 ::Part5Jerk1 <700,2750>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true})>>
-	<<set $FWBJerk = 1>>
+	<<set $sex.push({sex: 'male', name: 'Barry', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set setup.makeFWB('Barry')>>
 	
 	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></span>
 <</nobr>>
@@ -1112,7 +1112,7 @@
 	<<set $sex.push({sex: 'male', name: 'James', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name: 'James', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name: 'James', vaginal:true})>>
-	<<set $FWBPlayer = 1>>
+	<<set setup.makeFWB('James')>>
 	
 	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "James’s Bedroom">><</if>></span>
 <</nobr>>
@@ -1129,7 +1129,7 @@
 ::Part5Nerd1 <525,2750>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'Peter'})>>
-	<<set $DatingNerd = 1>>
+	<<set setup.startDating('Peter')>>
 	
 	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Peter’s Bedroom">><</if>></span>
 <</nobr>>
@@ -1148,7 +1148,7 @@
 	<<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name: 'Zack', vaginal:true})>>
-	<<set $FWBThrillSeeker = 1>>
+	<<set setup.makeFWB('Zack')>>
 	
 	<span style="font-size: 150%"><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Zack’s Bedroom">><</if>></span>
 <</nobr>>
@@ -1491,8 +1491,7 @@
 
 ::Part5Regular2 <875,2875>
 <<nobr>>
-	<<set $DatingJosh = 1>>
-	
+	<<set setup.startDating('Josh')>>
 	<span style="font-size: 150%"><<print "Date with Josh">></span>
 <</nobr>>
 

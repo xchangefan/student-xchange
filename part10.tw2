@@ -73,8 +73,15 @@ weeks away, you decided to wait until then instead.
 <</if>>
 
 ::Part10Start <400,10300>
+<<nobr>>
+  <span style="font-size: 150%">Paying Bills</span>
+<</nobr>>
+
 <img src="Part10/PayingBills.jpg" hspace="10" vspace="10" height="400" />
-You got the email about your credit card statement days ago, but you’ve just been leaving it in your inbox unopened.
+
+<<nobr>>
+  You got the email about your credit card statement days ago, but you’ve just been leaving it in your inbox unopened.
+<</nobr>>
 
 <<nobr>>
   <<if $PlayerPregnant or $PlayerChastityBelt>>
@@ -126,7 +133,7 @@ You got the email about your credit card statement days ago, but you’ve just b
       [[paying the rent|Part10LivingTogether]], it's even easier to make your money last.
     <</if>>
     Since you're living with Andrew now
-  <<elseif $DatingProfessor>>
+  <<elseif setup.areDating('Aaron')>>
     <<set $NeedSideJob to 0>>
     <<if $PlayerMoney <= 0>>
       Daddy helped you set up a budget, so you've stopped running up your credit card bill every
@@ -198,7 +205,7 @@ You got the email about your credit card statement days ago, but you’ve just b
     Thankfully, you aren't paying for a dorm anymore and Andrew is [[paying the rent|Part10LivingTogether]].
     Your spending had already dropped quite a bit, and Andrew will definitely be willing to
     cover even more during your pregnancy.  So the disabiity payment should be enough.
-  <<elseif $DatingProfessor>>
+  <<elseif setup.areDating('Aaron')>>
     Daddy helped you set up a budget, so you'd already started improving your financial situation.  You
     don't really have that much you need to pay for since Daddy is
     [[taking care of most of your expenses|Part10LivingTogether]].  So the disabiity payment should be enough.
@@ -362,7 +369,25 @@ You start trying to think of ways to earn a little extra money on the side...
 <</nobr>>
 
 ::Part10CallGirlAlready <2200,10300>
-<<set $JobCallGirl to 1>><<set $JobCallGirlSide to 0>><<set $PlayerMoneySet to 0>>
+<<nobr>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client'})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client'})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client'})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client'})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client'})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client'})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+  <<set $JobCallGirl to 1>>
+  <<set $JobCallGirlSide to 0>>
+  <<set $PlayerMoneySet to 0>>
+<</nobr>>
 
 <<if $PlayerPregnant>>
   <img src="Part10/CallGirlPregnant.jpg" hspace="10" vspace="10" height="600" />
@@ -643,11 +668,11 @@ Now you can [[think about something more fun|Part10End]].
     happy that you are securely belted, but there is no way $KeyholderName is going to
     hand over the key to Robert, nor would you want $KeyholderPronounPosessive to.
     <<set $cantWorkStore to 1>>
-  <<elseif $DatingAndrew or $DatingOfficeBoss or $DatingJosh or $DatingProfessor>>
+  <<elseif setup.areDating('Andrew') or setup.areDating('Office Boss') or setup.areDating('Josh') or setup.areDating('Aaron')>>
     If you were going to wear a chastity belt, you'd want your boyfriend to have the
     key, not this guy.
     <<set $cantWorkStore to 1>>
-  <<elseif $DatingVeronica>>
+  <<elseif setup.areDating('Veronica')>>
     If you were going to wear a chastity belt, you'd want your Veronica to have the
     key, not this guy.
     <<set $cantWorkStore to 1>>
@@ -917,7 +942,7 @@ Now you can [[think about something more fun|Part10End]].
 <</nobr>>
 
 <<nobr>>
-  <<if $DatingVeronica>>
+  <<if setup.areDating('Veronica')>>
     You know if you sucked his cock, or took him to the VIP room for even more, then he'd pay you even more.
     But you promised Victoria, so you don't try for anything more.  Of course, you can't be blamed if his
     [[hands roam where they shouldn't|Part10StripHands]] can you?
@@ -929,7 +954,7 @@ Now you can [[think about something more fun|Part10End]].
 <</nobr>>
   
 <<nobr>>
-  <<if !$DatingVeronica>>
+  <<if !setup.areDating('Veronica')>>
     Of course, you could invite him to the [[VIP room|Part10StripVIP]] if he wants more action than you can get
     away with out here in the open.
   <</if>>
@@ -1118,7 +1143,7 @@ Now you can [[think about something more fun|Part10End]].
 <</nobr>>
 
 <<nobr>>
-  <<if $DatingVeronica>>
+  <<if setup.areDating('Veronica')>>
     After you are done with his dance, you [[head back out|Part10StripVeronica]] to continue your
     shift.  Peter heads home, straining against his cage, knowing someone else is in control of
     his cock for the first time.
@@ -1139,7 +1164,7 @@ Now you can [[think about something more fun|Part10End]].
 
 <<nobr>>
   Your favorite part though is when you lead some uncaged guy with a handful of cash off to for a private dance
-  <<if !$DatingVeronica>>
+  <<if !setup.areDating('Veronica')>>
     or a trip to the VIP room
   <</if>>
   . The way Peter bites his lip, imagining that guy was him, always gets you wet.
@@ -1153,7 +1178,7 @@ Now you can [[think about something more fun|Part10End]].
 
 <<nobr>>
   You don't worry about him too long though.  There's a room full of horny guys with full wallets,
-  <<if $DatingVeronica>>
+  <<if setup.areDating('Veronica')>>
     and you need to get [[back to work|Part10StripVeronica]].
   <<else>>
     and you going to make sure at least one of those isn't still true when they leave here tonight.
@@ -1197,7 +1222,7 @@ Now you can [[think about something more fun|Part10End]].
 <</nobr>>
 
 <<nobr>>
-  <<if $DatingVeronica>>
+  <<if setup.areDating('Veronica')>>
     After you are done with his dance, you [[head back out|Part10StripVeronica]] to continue your
     shift.  Peter heads home, wishing he was able to masturbate while he thinks of your dance.
   <<else>>
@@ -1212,7 +1237,7 @@ Now you can [[think about something more fun|Part10End]].
 <</nobr>>
 
 <<nobr>>
-  <<if !$DatingVeronica>>
+  <<if !setup.areDating('Veronica')>>
     While Peter can only think about when he'll be able to cum again, you have something
     [[more important to think about|Part10End]].  But then again, just about anything
     is more important to you than Peter's next orgasm.
@@ -1270,23 +1295,23 @@ it when they decide to put the two of you together. The guests always [[love it 
 <</nobr>>
 
 <<nobr>>
-  <<if $DatingAndrew >>
+  <<if setup.areDating('Andrew') >>
     You're excited about spending that evening out with Andrew.  You know he's made plans, but he hasn't told you what
     they are.  Whatever they are though, you know you are going to have a wonderful time.
-  <<elseif $DatingVeronica >>
+  <<elseif setup.areDating('Veronica') >>
     You're excited about spending that evening out with Veroncia.  You have plans to take her out for dinner and dancing.
     You are sure you are both going to have a wonderful time.
-  <<elseif $DatingJosh >>
+  <<elseif setup.areDating('Josh') >>
     You're excited about spending that evening with Josh.  You don't know if he has anything planned or not, but as
     long as you spend the evenning together, you know you'll have a wonderful time.
-  <<elseif $DatingProfessor >>
+  <<elseif setup.areDating('Aaron') >>
     You're excited about spending that evening with Daddy.  You know he's made plans, but he hasn't told you what
     they are.  Whatever they are though, you know you are going to have a wonderful time.
   <<elseif $JobCallGirl >>
     You don't have any specific plans, you'll just be glad when all the shopping ads stop flooding your email about
     it.  Maybe that evening you'll just relax at home and avoid all the romance.  Or, you could give your agency
     a call and let them know you are available for clients that evening.
-  <<elseif $DatingOfficeBoss >>
+  <<elseif setup.areDating('Office Boss') >>
     What you want to be doing is spending that evening with your boss, Paul.  Of course you know that won't happen.
     He's going to spend the evening with his wife, and you'll spend it alone at home.  But that doesn't stop you
     from fantasizing until then.

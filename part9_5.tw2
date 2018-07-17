@@ -7,11 +7,11 @@
 <img src="Part9.5/Start1.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $DatingAndrew>>
+	<<if setup.areDating('Andrew')>>
 		<<print "You didn’t want to go alone so you bring Andrew with you for support.">>
 		<<set $DoctorAndrew = 1>>
 	<<else>>
-		<<if $DatingJosh == 1>> 
+		<<if setup.areDating('Josh')>> 
 			<<print "You didn’t want to go alone, but you haven’t told Josh about your pregnancy, so you bring ">> 
 			<<if $Mentor == 'Faith'>><<print "Faith">><<set $DoctorFaith = 1>><</if>>
 			<<if $Mentor == 'Emily'>><<print "Emily">><<set $DoctorEmily = 1>><</if>>
@@ -20,13 +20,13 @@
 			<<if $Mentor == 'Olivia'>><<print "Olivia">><<set $DoctorOlivia = 1>><</if>>
 			<<print " with you for support instead.">>
 		<<else>>
-			<<if $DatingProfessor>>
+			<<if setup.areDating('Aaron')>>
 				<<if $FatherRealProfessor == 1>>
 					<<print "You didn’t want to go alone so you bring Daddy with you for support. You make an effort to call him by his given name, Aaron, during your appointment to avoid another embarrassing situation where someone thinks he’s your actual father.">>
 					<<set $DoctorDaddy = 1>>
 				<<else>>
 					<<print "You didn’t want to go alone, but you haven’t told Daddy about your pregnancy, so you bring ">> 
-					<<if $NerdFriendZone>>
+					<<if setup.isFriendzoned('Peter')>>
 						<<print "Peter">>
 						<<set $DoctorNerd = 1>>
 					<<else>>
@@ -39,13 +39,13 @@
 					<<print " with you for support instead.">>
 				<</if>>
 			<<else>>
-				<<if $DatingNerd>>
+				<<if setup.areDating('Peter')>>
 					<<set $DoctorNerd = 1>>
 					<<print "You didn’t want to go alone so you bring Peter with you for support,">>
 					<<if $FatherRealNerd>><<print " even though you haven’t told him that he might be the father.">><<else>><<print " even though you doubt that he is the father. ">><</if>>
 					<<print "Besides you enjoy the fact that the visit itself subtly teases him, proving that another man has done things to you he could only fantasize about.">>
 				<<else>>
-					<<if $DatingVeronica>>
+					<<if setup.areDating('Veronica')>>
 						<<set $DoctorVeronica = 1>>
 						<<print "You didn’t want to go alone so you bring Veronica with you for support.">>
 					<<else>>
@@ -225,9 +225,9 @@
 
 ::Part95Halloween2 <1800,9500>
 <<nobr>>
-	<<if $DatingProfessor>><<set $FatherProfessor = 1>><</if>>
-	<<if $DatingAndrew>><<set $FatherAndrew = 1>><</if>>
-	<<if $DatingJosh>><<set $FatherJosh = 1>><</if>>
+	<<if setup.areDating('Aaron')>><<set $FatherProfessor = 1>><</if>>
+	<<if setup.areDating('Andrew')>><<set $FatherAndrew = 1>><</if>>
+	<<if setup.areDating('Josh')>><<set $FatherJosh = 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Halloween">></span>
 <</nobr>>
@@ -235,10 +235,10 @@
 <<print "You think you know when it happened.">>
 
 <<nobr>>
-	<<if $DatingAndrew or $BreakUpAndrew>><<print "You remember it all. You remember how good it felt riding Andrew’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
-	<<if $DatingProfessor or $BreakUpProfessor>><<print "You remember it all. You remember how good it felt riding Daddy’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
-	<<if $DatingJosh or $BreakUpJosh or $JoshFlee>><<print "You remember it all. You remember how good it felt riding Josh’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
-	<<if !$DatingAndrew and !$BreakUpAndrew and !$DatingProfessor and !$BreakUpProfessor and !$DatingJosh and !$BreakUpJosh and !$JoshFlee>><<print "You remember it all. You were drunk and hooked up with a random colleague, whom you cannot even remember. You do remember however how good it felt riding his cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
+	<<if setup.haveDated('Andrew')>><<print "You remember it all. You remember how good it felt riding Andrew’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">>
+	<<elseif setup.haveDated('Aaron')>><<print "You remember it all. You remember how good it felt riding Daddy’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">>
+	<<elseif setup.haveDated('Josh') or $JoshFlee>><<print "You remember it all. You remember how good it felt riding Josh’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">>
+	<<else>><<print "You remember it all. You were drunk and hooked up with a random colleague, whom you cannot even remember. You do remember however how good it felt riding his cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
 <</nobr>>
 
 <video src="Part9.5/Halloween2.mp4" autoplay loop muted height="640"></video>
@@ -249,11 +249,11 @@
 <<print "And you remember curling up next to him afterwards, not ever imagining ">>[[what had just started.|Part95Result1]]
 
 <<nobr>>
-	<<if $DatingProfessor and !$DoctorDaddy>><<print "You are happy to realize that Daddy is the father, and are anxious to finally tell him the news.">><</if>>
-	<<if $DatingJosh>><<print "You are happy to realize that Josh is the father, and are anxious to finally tell him the news.">><</if>>
-	<<if $BreakUpAndrew>><<print "You are sad to realize that Andrew is indeed the father, but the two of you have already broken up.">><</if>>
-	<<if $BreakUpJosh>><<print "You are sad to realize that Josh is indeed the father, but the two of you have already broken up.">><</if>>
-	<<if $BreakUpProfessor>><<print "You are sad to realize that Daddy is indeed the father, but the two of you have already broken up.">><</if>>
+	<<if setup.areDating('Aaron') and !$DoctorDaddy>><<print "You are happy to realize that Daddy is the father, and are anxious to finally tell him the news.">><</if>>
+	<<if setup.areDating('Josh')>><<print "You are happy to realize that Josh is the father, and are anxious to finally tell him the news.">><</if>>
+	<<if setup.isEx('Andrew')>><<print "You are sad to realize that Andrew is indeed the father, but the two of you have already broken up.">><</if>>
+	<<if setup.isEx('Josh')>><<print "You are sad to realize that Josh is indeed the father, but the two of you have already broken up.">><</if>>
+	<<if setup.isEx('Aaron')>><<print "You are sad to realize that Aaron (who you used to call 'Daddy') is indeed the father, but the two of you have already broken up.">><</if>>
 	<<if $JoshFlee>><<print "You are angry to realize that Josh is indeed the father, but he has ran away from you.">><</if>>
 <</nobr>>
 
@@ -280,7 +280,7 @@
 <<print "On you way out, you schedule your next appointment for a month from now.">>
 
 <<nobr>>
-	<<if !$FatherProfessor and !$FatherAndrew and !$FatherJosh and !$FatherNerd and !$DatingVeronica>>
+	<<if !$FatherProfessor and !$FatherAndrew and !$FatherJosh and !$FatherNerd and !setup.areDating('Veronica')>>
 		<<print "You know you should start thinking whether you ">>
 		[[want to keep the baby|Part95Result2]]
 		<<print " after it is born, or you">>
@@ -317,8 +317,8 @@
 
 ::Part95Halloween4 <2400,9500>
 <<nobr>>
-	<<if $DatingNerd>><<set $FatherNerd = 1>><</if>>
-	<<if $DatingProfessor>><<set $FatherProfessor = 1>><</if>>
+	<<if setup.areDating('Peter')>><<set $FatherNerd = 1>><</if>>
+	<<if setup.areDating('Aaron')>><<set $FatherProfessor = 1>><</if>>
 	<span style="font-size: 150%"><<print "Halloween">></span>
 <</nobr>>
 
@@ -329,10 +329,10 @@
 
 <<print "You never promised Peter you’d be faithful, you even promised him you wouldn’t be. So maybe there’s other guys it could have been too.">>
 
-<<if $DatingProfessor>><<print "If you want it, they can do a quick test of Peter’s DNA, and they confirm he’s the father. Or, if you’d rather Peter never be completely sure whether he’s really the father or not, then you can skip the test.">><<else>><<print "If you want it, they can do a quick test of Peter’s DNA, ">>[[and they confirm he’s the father.|Part95Result1]]<<print " Or, if you’d rather Peter never be completely sure whether he’s really the father or not, ">>[[then you can skip the test.|Part95Result1]]<</if>>
+<<if setup.areDating('Aaron')>><<print "If you want it, they can do a quick test of Peter’s DNA, and they confirm he’s the father. Or, if you’d rather Peter never be completely sure whether he’s really the father or not, then you can skip the test.">><<else>><<print "If you want it, they can do a quick test of Peter’s DNA, ">>[[and they confirm he’s the father.|Part95Result1]]<<print " Or, if you’d rather Peter never be completely sure whether he’s really the father or not, ">>[[then you can skip the test.|Part95Result1]]<</if>>
 
 <<nobr>>
-	<<if $DatingProfessor>>
+	<<if setup.areDating('Aaron')>>
 		<<print "You decide it is more fun ">>[[having Peter never know the answer,|Part95Result1]]<<print " and that you will tell Daddy about your pregnancy and that he is the father.">>
 	<<else>>
 		<<print "Whether you confirm it or not though, Peter and you both agree to acknowledge him as the father, at least on paper when the time comes.">>
@@ -376,7 +376,7 @@
 				Andrew and I will have our hands full starting this July! We’ll be sure to keep you all updated.
 			<<elseif $FatherNerd>>
 				Peter and I will have our hands full starting this July! We’ll be sure to keep you all updated.
-			<<elseif $DatingVeronica>>
+			<<elseif setup.areDating('Veronica')>>
 				Veronica and I will have our hands full starting this July! We’ll be sure to keep you all updated.
 			<<else>>
 				I’ll have my hands full starting this July! I’ll be sure to keep you all updated.
@@ -402,9 +402,8 @@
 
 ::Part95Josh <3000,9500>
 <<nobr>>
-	<<set $DatingJosh = 0>>
+	<<set setup.breakupWith('Josh')>>
 	<<set setup.removeNeighbour('Josh')>>
-	<<set $FWBJosh = 0>>
 	<<set $JoshFlee = 1>>
 	
 	<span style="font-size: 150%"><<print "Josh">></span>

@@ -40,9 +40,9 @@
 <img src="Part6/Start3.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $DatingAndrew>>[[You spend some time with Andrew.|Part6StartAndrew]]
-	<<elseif $DatingVeronica>>[[You spend some time with Veronica.|Part6StartVeronica]]
-	<<elseif $DatingJosh>>[[You spend some time with Josh.|Part6StartJosh1]]
+	<<if setup.areDating('Andrew')>>[[You spend some time with Andrew.|Part6StartAndrew]]
+	<<elseif setup.areDating('Veronica')>>[[You spend some time with Veronica.|Part6StartVeronica]]
+	<<elseif setup.areDating('Josh')>>[[You spend some time with Josh.|Part6StartJosh1]]
 	<<elseif setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
 	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
 	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
@@ -72,9 +72,9 @@
 <img src="Part6/Start4.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $DatingAndrew>>[[You spend some time with Andrew.|Part6StartAndrew]]
-	<<elseif $DatingVeronica>>[[You spend some time with Veronica.|Part6StartVeronica]]
-	<<elseif $DatingJosh>>[[You spend some time with Josh.|Part6StartJosh1]]
+	<<if setup.areDating('Andrew')>>[[You spend some time with Andrew.|Part6StartAndrew]]
+	<<elseif setup.areDating('Veronica')>>[[You spend some time with Veronica.|Part6StartVeronica]]
+	<<elseif setup.areDating('Josh')>>[[You spend some time with Josh.|Part6StartJosh1]]
 	<<elseif setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
 	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
 	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
@@ -105,9 +105,9 @@
 <<print "But you didn’t like studying before, and the X-Change didn’t change that about your personality. So you find much more often you are spending your time doing something more fun than studying like... well, everything else.">>
 
 <<nobr>>
-	<<if $DatingAndrew>>[[You spend some time with Andrew.|Part6StartAndrew]]
-	<<elseif $DatingVeronica>>[[You spend some time with Veronica.|Part6StartVeronica]]
-	<<elseif $DatingJosh>>[[You spend some time with Josh.|Part6StartJosh1]]
+	<<if setup.areDating('Andrew')>>[[You spend some time with Andrew.|Part6StartAndrew]]
+	<<elseif setup.areDating('Veronica')>>[[You spend some time with Veronica.|Part6StartVeronica]]
+	<<elseif setup.areDating('Josh')>>[[You spend some time with Josh.|Part6StartJosh1]]
 	<<elseif setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
 	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
 	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
@@ -180,15 +180,15 @@
 <</nobr>>
 
 <<print "Of course, you might want to use the extra time for something more fun than studying.">>
-<<if $DatingVeronica>><br><video src="Part6/SleepVeronica.webm" autoplay loop muted height="640"></video><br>\
-<<else>><<if $DatingJosh or $DatingAndrew>><img src="Part6/SleepBoyfriend.jpg" hspace="10" vspace="10" height="650">\
+<<if setup.areDating('Veronica')>><br><video src="Part6/SleepVeronica.webm" autoplay loop muted height="640"></video><br>\
+<<else>><<if setup.areDating('Josh') or setup.areDating('Andrew')>><img src="Part6/SleepBoyfriend.jpg" hspace="10" vspace="10" height="650">\
 <<else>><<if !setup.isGoldStarLesbian()>><<if !$PlayerChastityBelt>><img src="Part6/SleepColleagues1.jpg" hspace="10" vspace="10" height="650">\
 <<else>><img src="Part6/SleepColleagues3.jpg" hspace="10" vspace="10" height="650"><</if>>\
 <<else>><<if !$PlayerChastityBelt>><br><video src="Part6/SleepColleagues4.mp4" autoplay loop muted height="640"></video><br>
 <<else>><br><video src="Part6/SleepColleagues2.mp4" autoplay loop muted height="640"></video><br><</if>><</if>><</if>><</if>>
 
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<<print "You have fun with Veronica, but she will probably fall asleep as soon as you finish.">>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
@@ -196,7 +196,7 @@
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<</if>>
-	<<if $DatingJosh>>
+	<<if setup.areDating('Josh')>>
 		<<print "You have fun with Josh, but he will probably fall asleep as soon as you finish.">>
 		<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
 		<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
@@ -204,7 +204,7 @@
 		<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
 		<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
 	<</if>>
-	<<if $DatingAndrew>>
+	<<if setup.areDating('Andrew')>>
 		<<print "You have fun with Andrew, but he will probably fall asleep as soon as you finish.">>
 		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
 		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
@@ -212,7 +212,7 @@
 		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
 		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
 	<</if>>
-	<<if !$DatingAndrew and !$DatingJosh and !$DatingVeronica>>
+	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica')>>
 		<<if $PlayerChastityBelt>>
 			<<print "You chastity belt prevents you from getting any pleasure of you own, but that doesn`t stop you to have fun with some of your colleagues. But they will probably fall asleep as soon as you finish.">>
 		<<else>>
@@ -369,7 +369,7 @@
 
 ::Part6Thrill <400,4025>
 <<nobr>>
-	<<if $FWBThrillSeeker>>
+	<<if setup.isFWB('Zack')>>
 		<<set $FunPoints += 4>>
 	<<else>>
 		<<set $FunPoints += 1>>
@@ -380,7 +380,7 @@
 
 <<print "He makes sure to include you on his adventures from time to time. You never know what to expect, but it’s always exciting.">>
 <img src="Part6/Start7.jpg" hspace="10" vspace="10" height="650">
-<<if $FWBThrillSeeker>><br><<print "He makes sure to that you join him as often as possible.">><br><</if>>
+<<if setup.isFWB('Zack')>><br><<print "He makes sure to that you join him as often as possible.">><br><</if>>
 <<nobr>>
 	<<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
 		<<else>><<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
@@ -409,7 +409,7 @@
 
 ::Part6Nerd <0,4025>
 <<nobr>>
-	<<if $DatingNerd>>
+	<<if setup.areDating('Peter')>>
 		<<set $AcademicPoints += 3>>
 		<<set $FunPoints += 1>>
 	<<else>>
@@ -424,22 +424,22 @@
 <</nobr>>
 
 <<print "He’s a great student, and willing to help you study or with any work you are struggling with, if he’s not too busy with his own work.">>
-<<if $DatingNerd>><img src="Part6/Start8.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<if setup.areDating('Peter')>><img src="Part6/Start8.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="650"><</if>>
 
 <<nobr>>
-	<<if !$DatingNerd and !$NerdSex>>
+	<<if !setup.areDating('Peter') and !$NerdSex>>
 		<<print "Unfortunately you are not that close so he he can find only so little time to help you.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 			<<print "You’ve had him buy a nice metal one so he can keep it on as long as you like. Of course, with you holding the key to his cock, he’s somehow able to always find the time to help you when you need it.">>
 		<<else>>
 			<<print "You are a bit close so he he can find only so he can find some time to help you.">>
 		<</if>>
 	<</if>>
 <</nobr>>
-<<if $DatingNerd>><br><<print "But you make sure your virgin toy has a little fun sometimes too. You love hearing him wince on the dance floor as you grind against him and his cock struggles to get hard in it’s cage. ">> [[And you planned something special for his birthday.|Part6NerdBirthday]]<br><</if>>
+<<if setup.areDating('Peter')>><br><<print "But you make sure your virgin toy has a little fun sometimes too. You love hearing him wince on the dance floor as you grind against him and his cock struggles to get hard in it’s cage. ">> [[And you planned something special for his birthday.|Part6NerdBirthday]]<br><</if>>
 <<nobr>>
-	<<if !$DatingNerd>>
+	<<if !setup.areDating('Peter')>>
 		<<if setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
 		<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
 		<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
@@ -507,10 +507,10 @@
 
 <<nobr>>
 	<<print "You can ">>
-	<<if $DatingAndrew>>[[call Andrew and go to the club together.|Part6Club1]]<</if>>
-	<<if $DatingVeronica>>[[call Veronica and go to the club together.|Part6Club1]]<</if>>
-	<<if $DatingJosh>>[[call Josh and go to the club together.|Part6Club1]]<</if>>
-	<<if !$DatingAndrew and !$DatingJosh and !$DatingVeronica>>[[go to the club with the group.|Part6Club1]]<</if>>	
+	<<if setup.areDating('Andrew')>>[[call Andrew and go to the club together.|Part6Club1]]<</if>>
+	<<if setup.areDating('Veronica')>>[[call Veronica and go to the club together.|Part6Club1]]<</if>>
+	<<if setup.areDating('Josh')>>[[call Josh and go to the club together.|Part6Club1]]<</if>>
+	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica')>>[[go to the club with the group.|Part6Club1]]<</if>>	
 	<<if $FunPoints >0>>
 		<<print "Or you can ">>
 		[[keep studying to improve your grades.|Part6Study2]]
@@ -534,7 +534,7 @@
 <<else>><br><video src="Part6/Study2.mp4" autoplay loop muted height="640"></video><br><</if>><</if>>
 <<if $PlayerChastityBeltor >><br><<print "Unfortunately you can’t ‘relax’ with your chastity belt on and have trouble sleeping at all.">><br><<else>><<if $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock>><</if>><br><<print "Unfortunately you can’t ‘relax’ and have trouble sleeping at all.">><br><</if>>
 <<nobr>>
-	<<if $FWBJosh>>[[You spend some time with Josh.|Part6StartJosh2]]
+	<<if setup.isFWB('Josh')>>[[You spend some time with Josh.|Part6StartJosh2]]
 		<<else>><<if $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
 			<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
 				<<else>><<if $JobPornOralSide or $JobPornOral>>[[You go and film another porn movie the next day.|JobPornOral3]]
@@ -558,21 +558,21 @@
 <img src="Part6/Club1.jpg" hspace="10" vspace="10" height="500">
 
 <<nobr>>
-	<<if $DatingAndrew or $DatingJosh or $DatingVeronica>>
-		<<if $DatingAndrew>><<print "Fortunately, Andrew ">><</if>>
-		<<if $DatingJosh>><<print "Fortunately, Josh ">><</if>>
-		<<if $DatingVeronica>><<print "Fortunately, Veronica ">><</if>>
+	<<if setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Veronica')>>
+		<<if setup.areDating('Andrew')>><<print "Fortunately, Andrew ">><</if>>
+		<<if setup.areDating('Josh')>><<print "Fortunately, Josh ">><</if>>
+		<<if setup.areDating('Veronica')>><<print "Fortunately, Veronica ">><</if>>
 		<<print "sees the worried look on your face and realizes the problem, then slips some cash to the bouncer and he looks the other way ">>
 		[[while you both enter the club.|Part6ClubDate1]]
 	<</if>>
-	<<if !$DatingAndrew and !$DatingJosh and !$DatingVeronica>>
+	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica')>>
 		<<print " You can see the way the bouncer is looking at you. You’re pretty sure you ">>
 		[[can ‘persuade’ him to let you in.|Part6ClubPersuade]]
 	<</if>>
-	<<if !$DatingAndrew and !$DatingJosh and !$DatingVeronica and !$PlayerSideEffectOral and $FunPoints < 4 and $PlayerSideEffectOral < 3>>
+	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica') and !$PlayerSideEffectOral and $FunPoints < 4 and $PlayerSideEffectOral < 3>>
 		<<print "Or you .">>
 		<<link "can just give up and go back home.">>
-			<<if $FWBJosh>><<goto [[Part6StartJosh2]]>>
+			<<if setup.isFWB('Josh')>><<goto [[Part6StartJosh2]]>>
 				<<else>><<if $JobTestSubject>><<goto [[JobEngineerSubject4]]>>
 					<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
 						<<else>><<if $JobPornOralSide or $JobPornOral>><<goto [[JobPornOral3]]>>
@@ -596,7 +596,7 @@
 <img src="Part6/Frat1.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $DatingVeronica or $DatingAndrew or $DatingJosh>>
+	<<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh')>>
 		<<print "You decide it’ll be a sausage fest, and ">>
 		[[toss the flyer when you get to your next class.|Part6Grades1]]
 	<<else>>
@@ -617,7 +617,7 @@
 <</nobr>>
 
 <<print "You have a few drinks with your date, then you hit the dance floor.">>
-<<if $DatingAndrew or $DatingJosh>><img src="Part6/Club2A.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part6/Club2B.jpg" hspace="10" vspace="10" height="600"><</if>>
+<<if setup.areDating('Andrew') or setup.areDating('Josh')>><img src="Part6/Club2A.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part6/Club2B.jpg" hspace="10" vspace="10" height="600"><</if>>
 
 <<print "You both have a great time, but eventually you’re ready to head home. While you two are dancing, you lean over to your partner’s ear and tell them exactly what you want them to do to you when you get back home. Moments later, the two of you are out the door and struggling to ">>[[keep your hands off each other on the way to the taxi.|Part6ClubDate2]]
 
@@ -657,7 +657,7 @@
 	<</if>>
 	<<print " Do you leave with them and ">>
 	<<link "go back home, ">>
-		<<if $FWBJosh>><<goto [[Part6StartJosh2]]>>
+		<<if setup.isFWB('Josh')>><<goto [[Part6StartJosh2]]>>
 			<<else>><<if $JobTestSubject>><<goto [[JobEngineerSubject4]]>>
 				<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
 					<<else>><<if $JobPornOralSide or $JobPornOral>><<goto [[JobPornOral3]]>>
@@ -706,7 +706,7 @@
 <<print "Before you headed back to campus to get ready for class, you made sure to exchange numbers with Becky and Kim so the three of you can do this again sometime soon.">>
 
 <<nobr>>
-	<<if $FWBJosh>>[[You spend some time with Josh the next day.|Part6StartJosh2]]
+	<<if setup.isFWB('Josh')>>[[You spend some time with Josh the next day.|Part6StartJosh2]]
 		<<else>><<if $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
 			<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
 				<<else>><<if $JobPornOralSide or $JobPornOral>>[[You have to film another porn movie the next day.|JobPornOral3]]
@@ -784,7 +784,7 @@
 <<print "“Ok, I admit, it was fun. Hopefully it won’t be weird in class after this.”, you think to yourself as you quietly dress and head back to your own dorm to clean up and get ready for class.">>
 
 <<nobr>>
-	<<if $FWBJosh>>[[You spend some time with Josh the next day.|Part6StartJosh2]]
+	<<if setup.isFWB('Josh')>>[[You spend some time with Josh the next day.|Part6StartJosh2]]
 		<<else>><<if $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
 			<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
 				<<else>><<if $JobPornOralSide or $JobPornOral>>[[You have to film another porn movie the next day.|JobPornOral3]]
@@ -835,7 +835,7 @@
 <<print "You drag yourself into class, fight through your hangover, and try your best on the final. But you know it wasn’t good.">>
 
 <<nobr>>
-	<<if $FWBJosh>>[[You spend some time with Josh the next day.|Part6StartJosh2]]
+	<<if setup.isFWB('Josh')>>[[You spend some time with Josh the next day.|Part6StartJosh2]]
 		<<else>><<if $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
 			<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
 				<<else>><<if $JobPornOralSide or $JobPornOral>>[[You have to film another porn movie the next day.|JobPornOral3]]
@@ -864,8 +864,8 @@
 
 ::Part6Kidnapped1 <975,4500>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $SexKidnap = 2>>
 	<<set $SexKidnapVaginal = 2>>
 	
@@ -938,7 +938,7 @@
 
 ::Part6Kidnapped5 <1225,4750>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 	<<set $PlayerSlave to 1>>
 <</nobr>>
@@ -976,25 +976,25 @@
 
 ::Part6Kidnapped7 <1225,5000>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 1'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $PlayerSlave += 1>>
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 <</nobr>>
@@ -1013,25 +1013,25 @@
 ::Part6Kidnapped8 <1225,5125>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 1'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
 	<span style="font-size: 150%"><<print "Dungeon">></span>
 <</nobr>>
 
@@ -1046,34 +1046,34 @@
 
 ::Part6Kidnapped9 <1350,5125>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 1'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 1'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 4'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 4', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 4', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 4'})>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 4', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 4', vaginal:true, noCondom: true, noPullout: true})>>
 	<span style="font-size: 150%"><<print "Your new life">></span>
 <</nobr>>
 
@@ -1168,8 +1168,6 @@ Might add something here in the future. Or not.
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 
 	<span style="font-size: 150%"><<print "Frat Party">></span>
 <</nobr>>
@@ -1186,9 +1184,7 @@ Might add something here in the future. Or not.
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
-	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
-	<<set $FWBDavid = 1>>
+	<<set setup.makeFWB('David')>>
 
 	<span style="font-size: 150%"><<print "Frat Party">></span>
 <</nobr>>
@@ -1294,7 +1290,7 @@ Might add something here in the future. Or not.
 	<<set $PlayerProfessorVisit = 1>>
 	<span style="font-size: 150%"><<print "Professor’s Office">></span>
 <</nobr>>
-<<if $DatingVeronica>><br><<print "You’ve already talked to Veronica and she understands you have to do what you have to do to stay on the squad.">><br><</if>><br><<if $DatingAndrew or $DatingJosh>><<print "You decide that what your boyfriend doesn’t know, won’t hurt him, and keep this to yourself.">><br><</if>>
+<<if setup.areDating('Veronica')>><br><<print "You’ve already talked to Veronica and she understands you have to do what you have to do to stay on the squad.">><br><</if>><br><<if setup.areDating('Andrew') or setup.areDating('Josh')>><<print "You decide that what your boyfriend doesn’t know, won’t hurt him, and keep this to yourself.">><br><</if>>
 <<print "When you start talking about wanting to make sure you pass his class, your professor starts mentioning extra work he could assign. You lock the door and explain that you had something else in mind.">>
 <img src="Part6/Professor2.jpg" hspace="10" vspace="10" height="650">
 
@@ -1327,13 +1323,13 @@ Might add something here in the future. Or not.
 <<print "Then he hands you some napkins and goes back to grading papers.">>
 
 <<nobr>>
-	<<if $DatingVeronica or $DatingAndrew or $DatingJosh>>
+	<<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh')>>
 		<<print "You just want to get it over with and pass this class: You have just a few more visits just like this one and then stop.">>
 	<<else>>
 		<<if $PlayerChastityBelt or $PlayerSideEffectOral or $MasterKate>>
 			<<print "You enjoy the meetings almost as much as he does. You keep having them long after you could have stopped. Eventually you drop the study portion completely.">>
 		<</if>>
-		<<if !$PlayerChastityBelt and !$PlayerSideEffectOral and !$DatingAndrew and !$DatingVeronica and !$DatingJosh and !$MasterKate>>
+		<<if !$PlayerChastityBelt and !$PlayerSideEffectOral and !setup.areDating('Andrew') and !setup.areDating('Veronica') and !setup.areDating('Josh') and !$MasterKate>>
 			<<print "You wonder why you keep coming back again and again. Eventually, you have to either get it over with and pass this class and ">>
 			[[have just a few more visits just like this one and then stop.|Part6Exam]]
 			<<print "or to ">>
@@ -1342,11 +1338,11 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-<<if $PlayerChastityBelt or $PlayerSideEffectOral or $DatingAndrew or $DatingVeronica or $DatingJosh or $MasterKate>>[[Eventually it is time for you semester finals.|Part6Exam]]<</if>>
+<<if $PlayerChastityBelt or $PlayerSideEffectOral or setup.areDating('Andrew') or setup.areDating('Veronica') or setup.areDating('Josh') or $MasterKate>>[[Eventually it is time for you semester finals.|Part6Exam]]<</if>>
 
 ::Part6Professor5 <1800,5425>
 <<nobr>>
-	<<set $DatingProfessor = 1>>
+	<<set setup.startDating('Aaron')>>
 	<<set $PlayerClothesDressPink = 1>>
 	<<set $PlayerCollarPink = 1>>
 	<<set $PlayerItemTeddy = 1>>
@@ -1358,17 +1354,13 @@ Might add something here in the future. Or not.
 <<print "After a while he has you stop meeting him at his office. Instead you start spending more and more time at his house.">>
 
 <<print "He has you stop calling him “Professor” and now you call him “Daddy”, at least when you aren’t at school.">>
-<<if $DatingNerd>><<set $DatingNerd = 0>><<set $NerdFriendZone = 1>>\
+<<if setup.areDating('Peter')>><<set setup.friendZone('Peter')>>\
 <br><<print "Eventually you tell him about the nerd next door and how you ended up with his chastity key a few months back, before your relationship with started. “I guess I should give it back now.”, you tell him.">><br><br>\
 <<print "“No, my baby doesn't have to give up her toy.”, he tells you. “Just make sure he stays in the 'friend zone' and it's fine. I'm sure he'd love for you to keep holding his key after you move in here with me. He'll love hearing about all the sex you and I have. You can even tease him a bit if you like, as long as it's 'look but don't touch'”">><br><</if>>\
 \
-<<if $FWBJerk>><<set $FWBJerk = 0>><<set $FWBJerkOld = 1>><br><<print "Eventually you tell him about the issues you have with Barry, and he promises you that after threatening to have him on academic probation he will stop bothering you.">><br><</if>>\
+<<if setup.isFWB('Barry')>><<set setup.breakupWith('Barry')>><br><<print "Eventually you tell him about the issues you have with Barry, and he promises you that after threatening to have him on academic probation he will stop bothering you.">><br><</if>>\
 \
-<<if $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker>><br><<print "You decide he doesn’t need to know about other guys you occasionally have fun with, especially since you plan to stop doing that from now on.">><br><</if>>\
-<<if $FWBDavid>><<set $FWBDavid = 0>><<set $FWBDavidOld = 1>><</if>>\
-<<if $FWBJosh>><<set $FWBJosh = 0>><<set $FWBJoshOld = 1>><</if>>\
-<<if $FWBPlayer>><<set $FWBPlayer = 0>><<set $FWBPlayerOld = 1>><</if>>\
-<<if $FWBThrillSeeker>><<set $FWBThrillSeeker = 0>><<set $FWBThrillSeekerOld = 1>><</if>>\
+<<if setup.isFWB('David') or setup.isFWB('Josh') or setup.isFWB('James') or setup.isFWB('Zack')>><br><<print "You decide he doesn’t need to know about other guys you occasionally have fun with, especially since you plan to stop doing that from now on.">><br><</if>>\
 
 <<print "This term you have to keep your relationship secret. But once you are done with his class, and you won’t have to hide. He’s even made you your own room at his house for when you can move it. It’s all decorated in pink just for you.">>
 
@@ -1437,10 +1429,10 @@ Might add something here in the future. Or not.
 			<</link>>
 		</span>
 	<</nobr>>\
-	<<print " instead. ">><<if $DatingOfficeBoss>><<print "He also forbids you from seeing your old boss again.">><<set $DatingOfficeBoss = 0>><</if>><br>\
+	<<print " instead. ">><<if setup.areDating('Office Boss')>><<print "He also forbids you from seeing your old boss again.">><<set setup.breakupWith('Office Boss')>><</if>><br>\
 <</if>>\
 
-<<if !$NerdFriendZone>><<print "When Daddy punishes you know it’s only because he loves you. ">>[[That’s probably part of why you get so wet whenever he does.|Part6Professor8]]<<else>><<print "When Daddy punishes you know it’s only because he loves you. That’s probably part of why you get so wet whenever he does. ">>[[Some times you ask Peter to help you find the right gift for your Daddy.|Part6Professor7]]<</if>>
+<<if !setup.isFriendzoned('Peter')>><<print "When Daddy punishes you know it’s only because he loves you. ">>[[That’s probably part of why you get so wet whenever he does.|Part6Professor8]]<<else>><<print "When Daddy punishes you know it’s only because he loves you. That’s probably part of why you get so wet whenever he does. ">>[[Some times you ask Peter to help you find the right gift for your Daddy.|Part6Professor7]]<</if>>
 
 ::Part6Professor8 <1200,5425>
 <<nobr>>
@@ -1614,15 +1606,15 @@ Might add something here in the future. Or not.
 ::Part85NewYear <1600,8175>
 <<nobr>>
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
 <</nobr>>
 
 <<nobr>>
 	<<print "You tell ">>
 	<<if $MasterKate>><<print "Mistress Kate">><</if>>
-	<<if $DatingProfessor>><<print "Daddy">><</if>>
-	<<if $DatingNerd>><<print "Peter”">><</if>>
+	<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
+	<<if setup.areDating('Peter')>><<print "Peter”">><</if>>
 	<<if $SexNewYearMale>>
 		<<print " of your new year party adventure, how you just found a random guy on the dance floor and then let him fuck you all night.">>
 	<<else>>
@@ -1635,7 +1627,7 @@ Might add something here in the future. Or not.
 
 <<nobr>>
 	<<if $MasterKate>><<print "“It sounds like you had a great deal of pleasure without my permission. I think you’ll agree you need to be punished.">><</if>>
-	<<if $DatingProfessor>>
+	<<if setup.areDating('Aaron')>>
 		<<if $SexNewYearMale>>
 			<<print "“You’ve been a very naughty girl and you need to be punished severely.”">>
 		<<else>>
@@ -1650,12 +1642,12 @@ Might add something here in the future. Or not.
 			<</if>>
 		<</if>>
 	<</if>>
-	<<if $DatingNerd>><<print "“Wow that sounds so hot. I wish I could have been with you at the party.”">><</if>>
+	<<if setup.areDating('Peter')>><<print "“Wow that sounds so hot. I wish I could have been with you at the party.”">><</if>>
 <</nobr>>
 
 <<nobr>>
 	<<if $MasterKate>>[[She is clearly upset from this confession.|Part85Punish2]]<</if>>
-	<<if $DatingProfessor>>
+	<<if setup.areDating('Aaron')>>
 		<<if $SexNewYearMale>>
 			[[You see him going towards the closet.|Part85Punish2]]
 		<<else>>
@@ -1694,7 +1686,7 @@ Might add something here in the future. Or not.
 
 ::Part6KidnappedResist2 <975,4750>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper Doctor', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper Doctor', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $SexKidnap += 1>>
 	<<set $SexKidnapVaginal += 1>>
 	
@@ -1716,7 +1708,7 @@ Might add something here in the future. Or not.
 
 ::Part6KidnappedResist3 <975,4875>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $SexKidnap += 1>>
 	<<set $SexKidnapVaginal += 1>>
 	
@@ -1772,21 +1764,21 @@ Might add something here in the future. Or not.
 
 ::Part6ClubDate2 <300,5000>
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
 	<</if>>
-	<<if $DatingJosh>>
+	<<if setup.areDating('Josh')>>
 		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
 		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
 		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
 		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
 		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
 	<</if>>
-	<<if $DatingAndrew>>
+	<<if setup.areDating('Andrew')>>
 		<<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
 		<<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
 		<<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
@@ -1794,9 +1786,9 @@ Might add something here in the future. Or not.
 		<<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
 	<</if>>
 
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
 <</nobr>>
 
 <<print "The two of you spend the ride back home kissing and touching yourself in the back of the cab.">>
@@ -1805,18 +1797,18 @@ Might add something here in the future. Or not.
 
 <<print "As you arrive home, you are both so excited that you just start undressing each other in the middle of the room, the bed just too far away to take a break from one another.">>
 
-<<if $DatingAndrew or $DatingJosh>><video src="Part6/Date1.mp4" autoplay loop muted height="640"></video><<else>><video src="Part6/Date2.webm" autoplay loop muted height="640"></video><</if>>
+<<if setup.areDating('Andrew') or setup.areDating('Josh')>><video src="Part6/Date1.mp4" autoplay loop muted height="640"></video><<else>><video src="Part6/Date2.webm" autoplay loop muted height="640"></video><</if>>
 
 
 <<nobr>>
-	<<if $DatingAndrew>><<print "You start by sucking on Andrew’s cock before he proceeds to pounding you on the floor.">><</if>>
-	<<if $DatingJosh>><<print "You start by sucking on Josh’s cock before he proceeds to pounding you on the floor.">><</if>>
-	<<if $DatingVeronica>><<print "You and Veronica spend the first few minutes kissing each other, but it doesn’t take long before she pushes you on the floor.">><</if>>
+	<<if setup.areDating('Andrew')>><<print "You start by sucking on Andrew’s cock before he proceeds to pounding you on the floor.">><</if>>
+	<<if setup.areDating('Josh')>><<print "You start by sucking on Josh’s cock before he proceeds to pounding you on the floor.">><</if>>
+	<<if setup.areDating('Veronica')>><<print "You and Veronica spend the first few minutes kissing each other, but it doesn’t take long before she pushes you on the floor.">><</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingAndrew or $DatingJosh>><<print "It doesn’t take long before both of you are close to cumming. The feeling of him throbbing inside of you finally pushes you over the edge, and you both orgasm together.">><</if>>
-	<<if $DatingVeronica>><<print "Veronica’s skilfull kisses bring you to orgasm soon enough and you know it will be your turn to return the favour, once you finally recover.">><</if>>
+	<<if setup.areDating('Andrew') or setup.areDating('Josh')>><<print "It doesn’t take long before both of you are close to cumming. The feeling of him throbbing inside of you finally pushes you over the edge, and you both orgasm together.">><</if>>
+	<<if setup.areDating('Veronica')>><<print "Veronica’s skilfull kisses bring you to orgasm soon enough and you know it will be your turn to return the favour, once you finally recover.">><</if>>
 <</nobr>>
 
 <<nobr>>
@@ -1829,7 +1821,7 @@ Might add something here in the future. Or not.
 
 ::Part6Cheerleader <1100,4175>
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<<set $FunPoints += 2>>
 	<<else>>
 		<<set $FunPoints += 1>>
@@ -1840,12 +1832,12 @@ Might add something here in the future. Or not.
 
 <<print "It’s the day you have been preparing for the most, the football team’s match against their biggest rival. The crowd gathered to watch the match is amazing.">>
 
-<<if $DatingVeronica>><<print "You have been training hard with the team, especially for this day, and you can’t wait to show everyone, and especially Veronica, how much your skills have improved.">><<else>><<print "Despite your bad relation in the beginning with, through training you were able to get friendly with most of the other girls on the team, except Veronica, whom you always do your best to avoid. All the football players are also very friendly to you, which is no surprised considering that they all got to fuck you.">><</if>>
+<<if setup.areDating('Veronica')>><<print "You have been training hard with the team, especially for this day, and you can’t wait to show everyone, and especially Veronica, how much your skills have improved.">><<else>><<print "Despite your bad relation in the beginning with, through training you were able to get friendly with most of the other girls on the team, except Veronica, whom you always do your best to avoid. All the football players are also very friendly to you, which is no surprised considering that they all got to fuck you.">><</if>>
 <img src="Part6/Cheerleader.jpg" hspace="10" vspace="10" height="650">
 
-<<if $DatingVeronica>><<print "Cheerleading for such a big event is so much fun, especially seeing how much the audience also enjoys your dance moves.">><<else>><<print "Seeing the audience enjoy your dance move so much helps you somewhat forget some of the bad memories, but also wish it had been like this from the beginning.">><</if>>
+<<if setup.areDating('Veronica')>><<print "Cheerleading for such a big event is so much fun, especially seeing how much the audience also enjoys your dance moves.">><<else>><<print "Seeing the audience enjoy your dance move so much helps you somewhat forget some of the bad memories, but also wish it had been like this from the beginning.">><</if>>
 
-<<if $DatingVeronica>><<print "It is a hard match, but in the end your team narrowly wins, and you hope your efforts helped support that victory. Everyone in the stadium is extatic and you see Veronica smiling at you affectionately. You know that you will have your own kind of celebration for this victory.">><<else>><<print "It is a hard match, but in the end your team narrowly wins, the stadium extatic, and you can say that overall it was a pleasant experience for you today.">><</if>>
+<<if setup.areDating('Veronica')>><<print "It is a hard match, but in the end your team narrowly wins, and you hope your efforts helped support that victory. Everyone in the stadium is extatic and you see Veronica smiling at you affectionately. You know that you will have your own kind of celebration for this victory.">><<else>><<print "It is a hard match, but in the end your team narrowly wins, the stadium extatic, and you can say that overall it was a pleasant experience for you today.">><</if>>
 
 <<nobr>>
 	<<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
@@ -1859,17 +1851,17 @@ Might add something here in the future. Or not.
 
 ::Part6Barista <1300,4175>
 <<nobr>>
-	<<if !$DatingAndrew and !$DatingJosh and setup.haveFucked('Andrew')>>
+	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and setup.haveFucked('Andrew')>>
 		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
 	<</if>>
 	<span style="font-size: 150%"><<print "Barista">></span>
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingAndrew>>
+	<<if setup.areDating('Andrew')>>
 		You are not sure if how long you want to keep working as a barista, but for the moment you do enjoy it.
 		Living with Andrew has made you so happy that you could probably enjoy any work.
-	<<elseif $DatingJosh>>
+	<<elseif setup.areDating('Josh')>>
 			You are not sure if how long you want to keep working as a barista, but for the moment you do enjoy it.
 			You look forward the most to the moments when Josh pops in to get a coffee from you.
 	<<else>>
@@ -1879,7 +1871,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 <<nobr>>
-	<<if $DatingAndrew or $DatingJosh>>
+	<<if setup.areDating('Andrew') or setup.areDating('Josh')>>
 		<img src="Part6/Barista1.jpg" hspace="10" vspace="10" height="640">
 	<<elseif setup.haveFucked('Andrew')>>
 		<br>
@@ -1891,11 +1883,11 @@ Might add something here in the future. Or not.
 <</nobr>>
 
 <<nobr>>
-<<if $DatingAndrew>>
+<<if setup.areDating('Andrew')>>
 	You spend lots of time practising latte art and you can say that you have become quite skillful at it.
 	You use it as way to share part of the happiness in your life with the customers that come into the cafe.
 		<br>
-<<elseif $DatingJosh>>
+<<elseif setup.areDating('Josh')>>
 	You spend lots of time practising latte art and you can say that you have become quite skillful at it.
 	You are sure that Josh appreciates the extra effort you put into his daily coffee.
 	<br>

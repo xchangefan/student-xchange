@@ -2,17 +2,17 @@
 <<nobr>>
   <h1>Valentine's Day</h1>
 <</nobr>>
-<<if $DatingAndrew >><<include [[Part11Andrew]]>>
-<<elseif $DatingVeronica >><<include [[Part11Veronica]]>>
-<<elseif $DatingJosh >><<include [[Part11Josh]]>>
-<<elseif $DatingProfessor >><<include [[Part11Professor]]>>
+<<if setup.areDating('Andrew') >><<include [[Part11Andrew]]>>
+<<elseif setup.areDating('Veronica') >><<include [[Part11Veronica]]>>
+<<elseif setup.areDating('Josh') >><<include [[Part11Josh]]>>
+<<elseif setup.areDating('Aaron') >><<include [[Part11Professor]]>>
 <<elseif $JobCallGirl or $JobCallGirlSide >><<include [[Part11CallGirl]]>>
-<<elseif $DatingOfficeBoss >><<include [[Part11Office]]>>
+<<elseif setup.areDating('Office Boss') >><<include [[Part11Office]]>>
 <<elseif $MasterKate >><<include [[Part11Mistress]]>>
 <<elseif $MasterOlivia >><<include [[Part11Master]]>>
 <<elseif $PlayerItemNerdKey >><<include [[Part11Peter]]>>
 <<elseif $PlayerChastityBelt >><<include [[Part11Chastity]]>>
-<<elseif $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker or $FWBJerk or setup.haveFucked('Kim') or setup.haveFucked('Becky') or setup.haveFucked('Troy') or $TroyHelp>><<include [[Part11FWB]]>>
+<<elseif setup.isFWB('David') or setup.isFWB('Josh') or setup.isFWB('James') or setup.isFWB('Zack') or setup.isFWB('Barry') or setup.haveFucked('Kim') or setup.haveFucked('Becky') or setup.haveFucked('Troy') or $TroyHelp>><<include [[Part11FWB]]>>
 <<else>><<include [[Part11Single]]>><</if>>
 
 ::Part11Andrew <200,10500>
@@ -1897,19 +1897,19 @@ You’re even used by a few women, using strap-ons, or their own fist.
   You pull out your phone and start scrolling through your contacts, looking for people you've hooked up with before.
   Well, assuming you saved their phone number that is.  You skip past ones you think might be busy:
   <ul>
-    <<if $FWBDavid>>
+    <<if setup.isFWB('David')>>
       <li><<link David Part11FWBGuy>><<set $ValentineFWB to "David">><</link>></li>
     <</if>>
-    <<if $FWBJosh>>
+    <<if setup.isFWB('Josh')>>
       <li><<link Josh Part11FWBGuy>><<set $ValentineFWB to "Josh">><</link>></li>
     <</if>>
-    <<if $FWBPlayer>>
+    <<if setup.isFWB('James')>>
       <li><<link James Part11FWBGuy>><<set $ValentineFWB to "James">><</link>></li>
     <</if>>
-    <<if $FWBThrillSeeker>>
+    <<if setup.isFWB('Zack')>>
       <li>[[Zack|Part11FWBThrill]]</li>
     <</if>>
-    <<if $FWBJerk>>
+    <<if setup.isFWB('Barry')>>
       <li>[[Barry|Part11FWBJerk]]</li>
     <</if>>
     <<if setup.haveFucked('Troy')>>
@@ -2122,7 +2122,7 @@ Kim: Oh, is that what I typed?
 ::Part11FWBTroyHelp <16600,10500>
 <<nobr>>
   <img src="Part11/FWB9.gif" hspace="10" vspace="10" height="800" align="left"/>
-  <<set $FWBTroy to 1>>
+  <<set setup.makeFWB('Troy')>>
   You'd never thought Troy was particularly attractive and you even find him a bit annoying at times.  But
   you remember that night you got black-out drunk and he let you sleep it off at his place.  Well, really
   you remember waking up there more than the rest.  But you remember he didn't take advantage of you, and
@@ -2366,7 +2366,7 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  <<if $DatingAndrew or $AndrewEngaged>>
+  <<if setup.areDating('Andrew') or $AndrewEngaged>>
     The next day, after you've talked to your mom and sister, you give your brother a call.
   <<else>>
     You talk to your mom and sister frequently, but not as often to your brother.  Today,

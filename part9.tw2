@@ -95,7 +95,7 @@
 <</nobr>>
 <p style="clear: both;"><img src="Part9/Greek2.jpg" hspace="10" vspace="10" height="400" align="left">
 <<nobr>>
-	<<if !$LikeFemales and !$DatingVeronica>>
+	<<if !$LikeFemales and !setup.areDating('Veronica')>>
 		<<link "Delta Tau Digamma">>
 			<<set $SororityDTD = 1>>
 			<<goto [[Part9DTF1]]>>
@@ -109,13 +109,13 @@
 <<print "No one has anything bad to say about the Deltas. Well one girl called them “a bunch of sluts” but you’re pretty sure it’s just because her boyfriend’s ex was a Delta, so that doesn’t really count. The other girls you talked thought they were fine. The guys that had an opinion said all the Deltas they knew were friendly and outgoing.">>
 
 <<print "Their website seems to focus on how much fun your college years should be and about all the new friends you’ll make as a Delta.">>\
-<<if $LikeFemales or $DatingVeronica>><br><br><<print "You get the impression that you wouldn’t really fit in with the Deltas. You feel like they are interested in you just so they can claim they are ‘diverse’, but that you’d never really feel like you fit in there, so you rule out the Deltas.">><</if>></p>
+<<if $LikeFemales or setup.areDating('Veronica')>><br><br><<print "You get the impression that you wouldn’t really fit in with the Deltas. You feel like they are interested in you just so they can claim they are ‘diverse’, but that you’d never really feel like you fit in there, so you rule out the Deltas.">><</if>></p>
 
 
 
 <p style="clear: both;"><img src="Part9/Greek3.jpg" hspace="10" vspace="10" height="400" align="left">
 <<nobr>>
-	<<if !$DatingAndrew and !$DatingJosh and !$DatingProfessor>>
+	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron')>>
 		<<link "Sigma Epsilon Xi">>
 			<<set $SororitySEX = 1>>
 			<<goto [[Part9SEX1]]>>
@@ -129,14 +129,14 @@
 <<print "You get some mixed reports about the Sigmas. Most of the girls you talk to have good things to say about them and how they stick together, though one did say she’d heard something about hazing there. You didn’t see any complaints on the university’s website, so it’s probably just a rumor.">>
 
 <<print "Their website seems to focus on the life-long bonds you’ll form with your sorority sisters and how they are a close-knit community.">>\
-<<if $DatingAndrew or $DatingJosh or $DatingProfessor>><br><br><<print "Your boyfriend is worried about you after hearing the hazing rumors about the Sigmas, so he talks you out of pledging the Sigmas.">><</if>>\
-<<if $DatingVeronica>><br><br><<print "You and Veronica both are excited at the opportunity to move in together finally, and want to pledge the same sorority. You don’t consider the Etas since they don’t have a house. And she got the same vibe from the Deltas as you did, so you both agree to pledge the Sigmas.">><br><br><</if>></p>
+<<if setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Aaron')>><br><br><<print "Your boyfriend is worried about you after hearing the hazing rumors about the Sigmas, so he talks you out of pledging the Sigmas.">><</if>>\
+<<if setup.areDating('Veronica')>><br><br><<print "You and Veronica both are excited at the opportunity to move in together finally, and want to pledge the same sorority. You don’t consider the Etas since they don’t have a house. And she got the same vibe from the Deltas as you did, so you both agree to pledge the Sigmas.">><br><br><</if>></p>
 
 
 
 <p style="clear: both;"><img src="Part9/Greek4.jpg" hspace="10" vspace="10" height="400" align="left">
 <<nobr>>
-	<<if !$DatingVeronica>>
+	<<if !setup.areDating('Veronica')>>
 		<<link "Eta Lambda Phi">>
 			<<set $SororityELP = 1>>
 			<<goto [[Part9HAP1]]>>
@@ -153,7 +153,7 @@
 
 <<print "Their website focuses on the people they are helping in the community. Since they don’t have a sorority house, living there wouldn’t be an option.">></p>
 
-<p style="clear: both;"><<if !$DatingVeronica>>[[Or you can decide not to pledge.|Part9SororityEndNo]]<</if>></p>
+<p style="clear: both;"><<if !setup.areDating('Veronica')>>[[Or you can decide not to pledge.|Part9SororityEndNo]]<</if>></p>
 
 ::Part9DTF1 <500,9075>
 <<nobr>>
@@ -185,7 +185,7 @@
 
 <<nobr>>
 	<<if $JobCheerleader>>
-		<<if $DatingVeronica>> 
+		<<if setup.areDating('Veronica')>> 
 			<<print "You and Veronica agree to do whatever you need to do to make it in, and give each other a ‘pass’ for any hazing-related activities. ">>
 			<<if $PlayerChastityBelt>><<print "She unlocks you for pledge week.">><</if>>
 		<<else>>
@@ -202,7 +202,7 @@
 
 <<nobr>>
 	<<link "You are presented with your pledge tasks.">>
-		<<if $PlayerChastityBelt and !$DatingVeronica>>
+		<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
 			<<goto [[Part9SEX3]]>>
 		<<else>>
 			<<goto [[Part9SEX2]]>>
@@ -271,10 +271,10 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingAndrew>>
+	<<if setup.areDating('Andrew')>>
 		You find out it was Andrew that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you.
 		And the money was for charity after all, so he didn’t mind paying too much for it.
-	<<elseif $DatingProfessor>>
+	<<elseif setup.areDating('Aaron')>>
 		You find out it was Daddy that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you.
 		And the money was for charity after all, so he didn’t mind paying too much for it.
 	<</if>>
@@ -332,7 +332,7 @@
 <img src="Part9/Delta2a.jpg" hspace="10" vspace="10" height="650"><img src="Part9/Delta2b.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $DatingAndrew or $DatingJosh or $DatingProfessor>>
+	<<if setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Aaron')>>
 		<<print "If already have a boyfriend, so you only want one recommendation, ">>[[a glowing one from him.|Part9DTFBoyfriend1]]
 	<<else>>
 		<<if $MasterKate>>
@@ -340,14 +340,14 @@
 		<<else>>
 			<<if $PlayerChastityBelt>>
 				<<print "As you are in a chastity belt, ">>
-				<<if $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker>>
+				<<if setup.isFWB('David') or setup.isFWB('Josh') or setup.isFWB('James') or setup.isFWB('Zack')>>
 					<<print "blowjobs are going to be your only option for earning recommendations ">>
 					[[and you already have someone in mind with whom you could start.|Part9DTFBlowjobFWB]]
 				<<else>>
 					[[blowjobs are going to be your only option for earning recommendations.|Part9DTFBlowjob1]]
 				<</if>>
 			<<else>>
-				<<if $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker>>
+				<<if setup.isFWB('David') or setup.isFWB('Josh') or setup.isFWB('James') or setup.isFWB('Zack')>>
 					[[You already have someone in mind with whom you could start.|Part9DTFSexFWB]]
 				<<else>>
 					[[Finding guys willing to have sex with you should be easy.|Part9DTFSex1]]
@@ -357,13 +357,19 @@
 	<</if>>
 <</nobr>>
 
-<<if !$DatingAndrew and !$DatingJosh and !$DatingProfessor and !$MasterKate>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
+<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !$MasterKate>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
 
 ::Part9DTFBoyfriend1 <500,9325>
 <<nobr>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<span style="font-size: 150%">$dating[0]’s Apartment</span>
+	<<set $sex.push({sex: 'male', name:$dating[0]})>>
+	<<set $sex.push({sex: 'male', name:$dating[0]}, vaginal:true)>>
+	<<set $sex.push({sex: 'male', name:$dating[0]}, vaginal:true)>>
+	<<set $sex.push({sex: 'male', name:$dating[0]})>>
+	<<set $sex.push({sex: 'male', name:$dating[0]}, vaginal:true)>>
+	<<set $sex.push({sex: 'male', name:$dating[0]})>>
+	<<set $sex.push({sex: 'male', name:$dating[0]})>>
+	<<set $sex.push({sex: 'male', name:$dating[0]}, vaginal:true)>>
 <</nobr>>
 
 <<print "There’s only one ‘recommendation’ that you plan on getting, and if that’s not good enough then you figure the Deltas aren’t right for you anyway.">>
@@ -377,6 +383,14 @@
 ::Part9DTFBlowjob1 <700,9325>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Bedroom">></span>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
 <</nobr>>
 
 <<print "You aren’t allowed to have sex with any of them, but it’s not hard to find guys willing to sit back and enjoy a blow job.">>
@@ -387,6 +401,10 @@
 ::Part9DTFSex1 <300,9200>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Bedroom">></span>
+	<<set $sex.push({sex: 'male', anon:'guy from your econ class', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'guy at the coffee shop', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'guy down the hall from you', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'guy from your math class', vaginal:true})>>
 <</nobr>>
 
 <<print "You quickly work through the list of guys you knew that were interested in you, and also all the ones that expressed an interest after your recent wardrobe change.">>
@@ -400,11 +418,18 @@
 
 ::Part9DTFBoyfriend2 <500,9450>
 <<nobr>>
-	<<set $DTFSqueaky = 1>>
+	<<set $DTFNickname to 'Squeaky'>>
 
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:$dating[0]})>>
+	<<set $sex.push({sex: 'male', name:$dating[0]})>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:$dating[0]})>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
 <</nobr>>
 
 <<print "The Deltas read your boyfriend’s recommendation aloud to everyone. It’s much more detailed than the other recommendations, providing far more information than was asked for.">>
@@ -446,13 +471,13 @@
 <img src="Part9/Delta12.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $DTFSqueaky>>
+	<<if $DTFNickname == 'Squeaky'>>
 		<<print "“And don’t worry Squeaky, we had your boyfriend send over his measurements, ">>[[so your dildo should be just his size.”|Part9DTFInitiation2]]
 	<<else>>
-		<<if $DTFTextbook>>
+		<<if $DTFNickname == 'Textbook'>>
 			<<print "“Textbook, that big one at the end has your name on it. ">>[[I’m sure you can handle it.”|Part9DTFInitiation3]]
 		<<else>>
-			<<if $DTFCupake>>
+			<<if $DTFNickname == 'Cupcake'>>
 				<<print "“Cupcake, you’ll be sitting on the sidelines for much of the activities, so you can get us started now. Show the other recruits some of your techniques.” When it’s their turn, you walk behind them and give their heads a little push if they need it. ">>[[Some of them aren’t as good at taking the whole thing as you are.|Part9DTFInitiation4]]
 			<</if>>
 		<</if>>
@@ -462,6 +487,15 @@
 ::Part9DTFBlowjob2 <700,9450>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Bedroom">></span>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
 <</nobr>>
 
 <<print "You want the best possible ratings in your recommendations, so you do your best to find out exactly what each guy likes and give him what he wants.">>
@@ -473,7 +507,13 @@
 
 ::Part9DTFBlowjob3 <700,9575>
 <<nobr>>
-	<<set $DTFCupake = 1>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $DTFNickname = 'Cupcake'>>
 
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
@@ -492,6 +532,15 @@
 ::Part9DTFSex2 <300,9325>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Bedroom">></span>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
 <</nobr>>
 
 <<print "You want to get as many recommendations as you can, so unless the guy seems to be enjoying the foreplay as much as you are, you quickly move things along.">>
@@ -504,6 +553,18 @@
 ::Part9DTFSex3 <300,9450>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Bedroom">></span>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer'})>>
 <</nobr>>
 
 <<if $PlayerSideEffectAnal>><<print "Some guys seem to be very eager to try anal. And they quickly pick up on how willing you are to do whatever they want in bed.">><<else>><<print "You don’t always love it, but some guys seem to be very eager to try anal. But you just think about the high marks he’s going to give and wait as he lubes up his cock.">><</if>>
@@ -515,9 +576,24 @@
 
 ::Part9DTFSex4 <300,9575>
 <<nobr>>
-	<<set $DTFTextbook = 1>>
+	<<set $DTFNickname to 'Textbook'>>
 	
 	<span style="font-size: 150%"><<print "Bedroom">></span>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
+	<<set $sex.push({sex: 'male', anon:'DTF Reviewer', vaginal:true})>>
 <</nobr>>
 
 <<print "You realize sticking to one guy at a time is slowing you down, so you decide to start working more efficiently.">>
@@ -560,7 +636,7 @@
 
 <<print "You and your fellow pledges sit together on the initiate bench as you are formal welcomed as Delta sisters. As the ceremony continues on for a while, most of you fidget in your seat eliciting soft moans from some of the more sensitive girls.">>
 <img src="Part9/Delta15.jpg" hspace="10" vspace="10" height="650">
-<<if $DTFSqueaky>><br><<print "Well everyone, except for you. You are accepted as well, but you sit at the end on a bare part of the bench looking enviously at the others.">><br><</if>>
+<<if $DTFNickname == 'Squeaky'>><br><<print "Well everyone, except for you. You are accepted as well, but you sit at the end on a bare part of the bench looking enviously at the others.">><br><</if>>
 <<print "At the end of the night, ">>[[you are all Delta sisters!|Part9SororityEndYes]]<<print " And almost everyone gets to take home an added souvenir, one they’ve became very acquainted with throughout the evening.">>
 
 ::Part9SEX2 <1050,9200>
@@ -837,11 +913,28 @@
 	<</link>>
 <</nobr>>
 
-<<if $DatingVeronica>><<print "Veronica reminds you about sharing a room, and talks you out of any thoughts of chickening out of it at this point.">><<else>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
+<<if setup.areDating('Veronica')>><<print "Veronica reminds you about sharing a room, and talks you out of any thoughts of chickening out of it at this point.">><<else>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
 
 ::Part9Task2 <900,9825>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
+	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
 <</nobr>>
 
 <<print "You and Jessica are sent over to the sorority’s brother fraternity. Lily and Kayla are assigned the same task, but sent to visit the football team instead.">>
@@ -872,6 +965,18 @@
 ::Part9Task3 <1050,9825>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+	<<set $sex.push({sex: 'male', name:'Tutor 1'})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 2'})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 3'})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 1'})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 2'})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 3', vaginal})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 1'})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 2', vaginal})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 3'})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 1', vaginal})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 2'})>>
+	<<set $sex.push({sex: 'male', name:'Tutor 3'})>>
 <</nobr>>
 
 <<print "The Sigmas want to thank the guys that serve as tutors for the sorority.">>
@@ -906,6 +1011,7 @@
 ::Part9Task4 <1200,9575>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Campus">></span>
+	<<set $sex.push({sex: 'male', anon:'Guy by the science building', vaginal:true})>>
 <</nobr>>
 
 <<print "Several of the older sisters pair off with you and the other girls selected for this task. You aren’t sure where the other girls go, but your ‘big’, Rebecca, takes you to the science building and has you wait by the stairs.">>
@@ -929,7 +1035,7 @@
 
 <<print "You glance over at the bench to see if Rebecca can rescue you somehow, but she’s no longer there. The officer handcuffs you and puts you in his car and heads back to the station.">>
 
-<<if $DatingVeronica>>[[You choose to keep quiet about the sororities involvement.|Part9Task7]]<<else>>[[You can tell him that you are a victim of hazing|Part9Task6]]<<print "and hope that the school won’t punish you. Or, you can ">>[[choose to keep quiet about the sororities involvement.|Part9Task7]]<</if>>
+<<if setup.areDating('Veronica')>>[[You choose to keep quiet about the sororities involvement.|Part9Task7]]<<else>>[[You can tell him that you are a victim of hazing|Part9Task6]]<<print "and hope that the school won’t punish you. Or, you can ">>[[choose to keep quiet about the sororities involvement.|Part9Task7]]<</if>>
 
 ::Part9Task6 <900,9950>
 <<nobr>>
@@ -948,6 +1054,7 @@
 ::Part9Task7 <1200,9825>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Campus">></span>
+	<<set $sex.push({sex: 'male', anon:'Campus Police Officer'})>>
 <</nobr>>
 
 <<print "The officer know it’s pledge week and asks you if this was some sort of hazing thing.">>
@@ -980,7 +1087,23 @@
 	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
 <</nobr>>
 
-<<if !$SexTaskLesbian>><<print "They tie up Sophia, one of the non-lesbian girls chosen for the “Bondage” video and have you bring her to orgasm after orgasm while the rest of the sorority watches. Veronica and Amy are similarly paired off together.">><<else>><<print "They tie you up and have Veronica, who was chosen for the lesbian video, force you to orgasm again and again while the rest of the sorority watches. Caitlin and Sophie are similarly paired off together.">><</if>>
+<<nobr>>
+	<<if !$SexTaskLesbian>>
+		<<set $sex.push({sex: 'female', name:'Veronica'})>>
+		<<set $sex.push({sex: 'female', name:'Veronica'})>>
+		<<set $sex.push({sex: 'female', name:'Veronica'})>>
+		<<set $sex.push({sex: 'female', name:'Veronica'})>>
+		They tie you up and have Veronica, who was chosen for the lesbian video, force you to orgasm again and again
+		while the rest of the sorority watches. Caitlin and Sophie are similarly paired off together.
+	<<else>>
+		<<set $sex.push({sex: 'female', name:'Sophia'})>>
+		<<set $sex.push({sex: 'female', name:'Sophia'})>>
+		<<set $sex.push({sex: 'female', name:'Sophia'})>>
+		<<set $sex.push({sex: 'female', name:'Sophia'})>>
+		They tie up Sophia, one of the non-lesbian girls chosen for the “Bondage” video and have you bring her to 
+		orgasm after orgasm while the rest of the sorority watches. Veronica and Amy are similarly paired off together.
+	<</if>>
+<</nobr>>
 
 <video src="Part9/Task9.webm" autoplay loop muted height="640"></video>
 
@@ -1000,6 +1123,12 @@
 ::Part9Task9 <1500,9825>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Σ Ε Ξ">></span>
+	<<set $sex.push({sex: 'female', name:'Veronica'})>>
+	<<set $sex.push({sex: 'female', name:'Veronica'})>>
+	<<set $sex.push({sex: 'female', name:'Veronica'})>>
+	<<set $sex.push({sex: 'female', name:'Veronica'})>>
+	<<set $sex.push({sex: 'female', name:'Veronica'})>>
+	<<set $sex.push({sex: 'female', name:'Veronica'})>>
 <</nobr>>
 
 <<print "They pair you and the other lesbian “winner”, Veronica, up together and put the two of you in a room together. They station one of the ‘bigs’ outside the room and tell her not to let you two out until she’s heard plenty of orgasms through the door.">>
@@ -1009,7 +1138,7 @@
 
 <<nobr>>
 	<<if $JobCheerleader>>
-		<<if $DatingVeronica>> 
+		<<if setup.areDating('Veronica')>> 
 			<<print "As you are dating, you obviously enjoy yourselves to the fullest.">>
 		<<else>>
 			<<if haveFucked('Football Player')>> 
@@ -1036,6 +1165,8 @@
 ::Part9Task10 <1650,9825>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Student Activities Office">></span>
+	<<set $sex.push({sex: 'male', name:'Student Activities Guy 1', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Student Activities Guy 2'})>>
 <</nobr>>
 
 <<print "Your sorority president pulls you aside and tells you she has a special, secret task for you. The sorority has some friends in the student activities office. They are willing to look the other way about some of the unpleasant rumors that sometimes circulate about the sorority.">>
@@ -1150,14 +1281,14 @@
 
 <<nobr>>
 	<<if $JobCheerleader>>
-		<<if $DatingVeronica>> 
+		<<if setup.areDating('Veronica')>> 
 			<<print "You and Veronica requested a room together and now are ">>[[finally together all the time!|Part9SororityEndYes]]
 		<<else>>
 			<<if haveFucked('Football Player')>> 
 				<<if $SexTaskLesbian>>
 					<<print "You are sure Veronica would ">>
 					<<link "accept dating you, should you ask her">>
-						<<set $DatingVeronica = 1>>
+						<<set setup.startDating('Veronica')>>
 						<<if $PlayerPregnant>>
 						<<goto [[Part9SororityPregnant]]>>
 						<<else>>
@@ -1177,7 +1308,7 @@
 		<<if $SexTaskLesbian>>
 			<<print "You are sure Veronica would ">>
 			<<link "accept dating you, should you ask her">>
-				<<set $DatingVeronica = 1>>
+				<<set setup.startDating('Veronica')>>
 				<<if $PlayerPregnant>>
 				<<goto [[Part9SororityPregnant]]>>
 				<<else>>
@@ -1195,6 +1326,7 @@
 ::Part9Task13b <2000,9825>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Strip Club">></span>
+	<<set $sex.push({sex: 'male', anon:'Strip Club Customer'})>>
 <</nobr>>
 
 <<print "He seems like a rich guy, so you decide to pull out and start stroking his cock.">>
@@ -1211,6 +1343,15 @@
 ::Part9JobLibrary <1200,8825>
 <<nobr>>
 	<span style="font-size: 150%"><<print "Campus Library">></span>
+	<<set $sex.push({sex: 'male', name:'Aaron'})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron'})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron'})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
 <</nobr>>
 
 <<print "Most people probably wouldn’t find your job exciting. You spend most of your workday putting books back up on the shelves.">>
@@ -1346,8 +1487,12 @@
 
 <video src="Part9/Yoga.mp4" autoplay loop muted height="640"></video><br>
 
-
 <<print "You have decided to start offering blowjobs to new male students, and that has helped bring up the numbers. After all, Daddy does not need to know everything you do.">>
+<<set $sex.push({sex: 'male', anon:'Athlete (yoga)'})>>
+<<set $sex.push({sex: 'male', anon:'Athlete (yoga)'})>>
+<<set $sex.push({sex: 'male', anon:'Athlete (yoga)'})>>
+<<set $sex.push({sex: 'male', anon:'Athlete (yoga)'})>>
+<<set $sex.push({sex: 'male', anon:'Athlete (yoga)'})>>
 
 <<print "You are not yet sure how you will manage to keep their interest in the class however.">>
 
@@ -1366,7 +1511,7 @@
 
 <video src="Part9/Cheerleader.mp4" autoplay loop muted height="640"></video><br>
 
-
+<<set $sex.push({sex: 'male', anon:'Athlete'})>>
 <<print "As you prepare to enter, you are not sure how to approach the player inside, so you decide to just jump him and that way he will get the idea.">>
 
 <<print "After you finish and Veronica confirms your story with the guy, you are happy to see that everyone on the team is nice to you.">>
@@ -1379,21 +1524,25 @@
 <</nobr>>
 
 <<nobr>>
-	<<print "You decide it would be better to start with people you know, and ">>
-	<<if $FWBJosh>>
-		<<print "Josh">>
+	You decide it would be better to start with people you know, and
+	<<if setup.isFWB('Josh')>>
+		<<set $sex.push({sex: 'male', name:'Josh'})>>
+		<<set $sex.push({sex: 'male', name:'Josh'})>>
+		Josh
+	<<elseif setup.isFWB('James')>>
+		<<set $sex.push({sex: 'male', name:'James'})>>
+		<<set $sex.push({sex: 'male', name:'James'})>>
+		James
+	<<elseif setup.isFWB('Zack')>>
+		<<set $sex.push({sex: 'male', name:'Zack'})>>
+		<<set $sex.push({sex: 'male', name:'Zack'})>>
+		Zack
 	<<else>>
-		<<if $FWBPlayerr>>
-			<<print "James">>
-		<<else>>
-			<<if $FWBThrillSeeker>>
-				<<print "Zack">>
-			<<else>>
-				<<print "David">>
-			<</if>>
-		<</if>>
+		<<set $sex.push({sex: 'male', name:'David'})>>
+		<<set $sex.push({sex: 'male', name:'David'})>>
+		David
 	<</if>>
-	<<print " is more than happy with helping you with your task.">>
+	is more than happy with helping you with your task.
 <</nobr>>
 
 <video src="Part9/Delta16.webm" autoplay loop muted height="640"></video>
@@ -1410,18 +1559,22 @@
 
 <<nobr>>
 	<<print "You decide it would be better to start with people you know, and ">>
-	<<if $FWBJosh>>
+	<<if setup.isFWB('Josh')>>
 		<<print "Josh">>
+			<<set $sex.push({sex: 'male', name:'James'})>>
+			<<set $sex.push({sex: 'male', name:'James', vaginal:true})>>
+	<<elseif setup.isFWB('James')>>
+		<<print "James">>
+		<<set $sex.push({sex: 'male', name:'James'})>>
+		<<set $sex.push({sex: 'male', name:'James', vaginal:true})>>
+	<<elseif setup.isFWB('Zack')>>
+		<<print "Zack">>
+		<<set $sex.push({sex: 'male', name:'Zack'})>>
+		<<set $sex.push({sex: 'male', name:'Zack', vaginal:true})>>
 	<<else>>
-		<<if $FWBPlayerr>>
-			<<print "James">>
-		<<else>>
-			<<if $FWBThrillSeeker>>
-				<<print "Zack">>
-			<<else>>
-				<<print "David">>
-			<</if>>
-		<</if>>
+		<<print "David">>
+		<<set $sex.push({sex: 'male', name:'David'})>>
+		<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 	<</if>>
 	<<print " is more than happy with helping you with your task.">>
 <</nobr>>

@@ -32,8 +32,13 @@ h1 {
 ::Start <0,0>
 <h1>Home</h1>
 <<nobr>>
+	<<set $body to {}>>
 	<<set $sex to []>>
-	<<set $Neighbours to []>>
+	<<set $neighbours to []>>
+	<<set $dating to []>>
+	<<set $exes to []>>
+	<<set $fwb to []>>
+	<<set $friendzone to []>>
 	<<set $female to 0>>
 	
 	<<include [[ModeDebug]]>>
@@ -112,6 +117,25 @@ debug.tw2
 		<</if>>
 	<</if>>
 <</nobr>>
+
+::GeneralFunctions [script] <200,50>
+setup.removeItem = function (arr, item) {
+	var index = arr.indexOf(item)
+	if (index < 0) {
+		return arr
+	} else {
+  	return arr.splice(0,index).concat(arr.splice(index+1))
+	}
+}
+
+setup.addIfNeeded = function (arr, item) {
+	var index = arr.indexOf(item)
+	if (index < 0) {
+		return arr.concat([item])
+	} else {
+		return arr
+	}
+}
 
 ::AutoNav [script] <250,50>
 var IntervalID = setInterval(UpdateLinks, 300);
@@ -257,7 +281,7 @@ setup.sexualHistoryTable = function () {
 			st += "<i>(Some guy)</i>"
 		}
 		st += "</td><td>" + fuck.sex + "</td><td>" + (fuck.vaginal ? "Y" : "") + "</td><td>"
-			 + (fuck.vaginal ? "TODO:Birth Control" : "")
+			 + (fuck.vaginal ? fuck.birthControl : "")
 			 + "</td></tr>\n"
 	})
   return st + "</table>\n"
@@ -281,21 +305,101 @@ setup.fuckedVaginalCount = function (name) {
 	return state.active.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)})
 }
 
+setup.addDetailsToRecentSex = function() {
+	if (!state.active.variables.sex) return;
+
+	alert(state.active.variables.sex.length); //todo
+
+	state.active.variables.sex.forEach(function(fuck) {
+		if(fuck.vaginal && !fuck.birthControl) {
+			if (state.active.variables.PlayerPregnant) {
+				fuck.birthControl = 'pregnant'
+			} else if (state.active.variables.PlayerProtectionPerfect) {
+				fuck.birthControl = 'implant-perfect'
+			} else if (fuck.birthControlOverride) {
+				fuck.birthControl = fuck.birthControlOverride
+			} else if (state.active.variables.PlayerProtectionPermanent) {
+				fuck.birthControl = 'implant-pill'
+			} else if (state.active.variables.PlayerProtectionPill && !fuck.noPill) {
+				fuck.birthControl = 'pill'
+			} else if (state.active.variables.PlayerProtectionCondoms && !fuck.noCondom) {
+				fuck.birthControl = 'condom'
+			} else if (state.active.variables.PlayerProtectionWithdraw && !fuck.noPullout) {
+				fuck.birthControl = 'pullout'
+			} else {
+				fuck.birthControl = 'none'
+			}
+		}
+	})
+}
+
 ::NeighbourFunctions [script] <350,50>
 setup.addNeighbour = function (name) {
-	return state.active.variables.Neighbours.push(name)
+	return state.active.variables.neighbours.push(name)
 }
 
 setup.isNeighbour = function (name) {
-	return state.active.variables.Neighbours.indexOf(name) >= 0
+	return state.active.variables.neighbours.indexOf(name) >= 0
 }
 
 setup.removeNeighbour = function (name) {
-	var pos = state.active.variables.Neighbours.indexOf(name)
-	if (pos >= 0) {
-		return state.active.variables.Neighbours = state.active.variables.Neighbours.splice(0, pos).concat(state.active.variables.Neighbours.splice(pos + 1, state.active.variables.Neighbours.length))
-	}
+	state.active.variables.neighbours = setup.removeItem(state.active.variables.neighbours, name)
 }
+
+::DatingFunctions [script] <400,50>
+setup.startDating = function (name) {
+	state.active.variables.exes = setup.removeItem(state.active.variables.exes, name)
+	state.active.variables.dating = setup.addIfNeeded(state.active.variables.dating, name)
+	state.active.variables.fwb = setup.removeItem(state.active.variables.fwb, name)
+	state.active.variables.friendzone = setup.removeItem(state.active.variables.friendzone, name)
+}
+
+setup.breakupWith = function (name) {
+	state.active.variables.exes = setup.addIfNeeded(state.active.variables.exes, name)
+	state.active.variables.dating = setup.removeItem(state.active.variables.dating, name)
+	state.active.variables.fwb = setup.removeItem(state.active.variables.fwb, name)
+	state.active.variables.friendzone = setup.removeItem(state.active.variables.friendzone, name)
+}
+
+setup.makeFWB = function(name) {
+	state.active.variables.exes = setup.removeItem(state.active.variables.exes, name)
+	state.active.variables.dating = setup.removeItem(state.active.variables.dating, name)
+	state.active.variables.fwb = setup.addIfNeeded(state.active.variables.fwb, name)
+	state.active.variables.friendzone = setup.removeItem(state.active.variables.friendzone, name)
+}
+
+setup.friendZone = function(name) {
+	state.active.variables.exes = setup.removeItem(state.active.variables.exes, name)
+	state.active.variables.dating = setup.removeItem(state.active.variables.dating, name)
+	state.active.variables.fwb = setup.removeItem(state.active.variables.fwb, name)
+	state.active.variables.friendzone = setup.addIfNeeded(state.active.variables.friendzone, name)
+}
+
+setup.areDating = function (name) {
+	return state.active.variables.dating.indexOf(name) >= 0
+}
+
+setup.isEx = function (name) {
+	return state.active.variables.exes.indexOf(name) >= 0
+}
+
+setup.haveDated = function (name) {
+	return setup.areDating(name) || setup.isEx(name)
+}
+
+setup.isFWB = function(name) {
+	return state.active.variables.fwb.indexOf(name) >= 0
+}
+
+setup.isFriendzoned = function(name) {
+	return state.active.variables.friendzone.indexOf(name) >= 0
+}
+
+::EventFunctions [script] <400,50>
+$(document).on(':passagestart', function (ev) {
+	setup.addDetailsToRecentSex()
+})
+
 
 ::ModeDebug <300,100>
 <<set $gameMode = 'debug'>>

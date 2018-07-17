@@ -117,7 +117,7 @@
 			<</if>>
 		<</if>>
 
-		<<if $DatingProfessor and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>>
+		<<if setup.areDating('Aaron') and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>>
 			<<set $PlayerPregnantCheck = 0>>
 		<</if>>
 	<</if>>
@@ -136,7 +136,7 @@
 		<<if $PlayerProtectionPerfect>>
 			<<print "But as you opted for the implant and it worked perfectly, ">>[[you are not worried about the results.|Part7Start6]]
 		<<else>>
-			<<if $DatingProfessor and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>>
+			<<if setup.areDating('Aaron') and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>>
 				<<print "“Daddy” has been very diligent about having you use birth control properly, ">>[[you are not worried about the results.|Part7Start6]]
 			<<else>>
 				<<if $PlayerProtectionTry>>
@@ -354,12 +354,12 @@
 
 <<print "If you aren’t sure which of the ones below is the father, you give her the answer you want to be true. You think or hope that the father is:">>
 <<if setup.daddyCheck('Andrew')>><<if setup.fuckedVaginalCount('Andrew') == 1>>* <<link "Andrew, your boss, from that one night stand.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoss]]>><</link>><<else>>* <<link "Andrew, your boyfriend.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoyfriend]]>><</link>><</if>><br><</if>>\
-<<if setup.daddyCheck('Josh')>><<if $DatingJosh == 1>>* [[Josh, your boyfriend.|Part7Josh]]<<else>>* [[Josh, your neighbour, from that one time you had fun.|Part7Josh]]<</if>><br><</if>>\
+<<if setup.daddyCheck('Josh')>><<if setup.areDating('Josh') == 1>>* [[Josh, your boyfriend.|Part7Josh]]<<else>>* [[Josh, your neighbour, from that one time you had fun.|Part7Josh]]<</if>><br><</if>>\
 <<if setup.daddyCheck('Office Boss')>>* [[Your office boss, from all the times you had to pleasure him.|Part7OfficeBoss1]]<br><</if>>\
 <<if setup.daddyCheck('Aaron')>>* <<link "Your Daddy, the Professor.">><<set $FatherRealProfessor = 1>><<goto [[Part7Professor]]>><</link>><br><</if>>\
 <<if setup.daddyCheck('Barry')>><<if setup.fuckedVaginalCount('Barry') == 1>>* [[Barry, the jerk, from that one time you had fun.|Part7Unknown]]<<else>>* [[Barry, your the jerk, from all the times he humiliated you.|Part7Unknown]]<</if>><br><</if>>\
 <<if setup.daddyCheck('James')>><<if setup.fuckedVaginalCount('James') == 1>>* [[James, the player , from that one time you had fun.|Part7Unknown]]<<else>>* [[James, the player, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
-<<if setup.daddyCheck('Peter')>><<if $DatingNerd>>* <<link "Peter, the nerd, from that birthday gift.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><<else>>* <<link "Peter, the nerd, from all the times you had fun.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><</if>><br><</if>>\
+<<if setup.daddyCheck('Peter')>><<if setup.areDating('Peter')>>* <<link "Peter, the nerd, from that birthday gift.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><<else>>* <<link "Peter, the nerd, from all the times you had fun.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><</if>><br><</if>>\
 <<if setup.daddyCheck('Zack')>><<if setup.fuckedVaginalCount('Zack') == 1>>* [[Zack, the thrill-seeker, from that one time you had fun.|Part7Unknown]]<<else>>* [[Zack, the thrill-seeker, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
 <<if setup.daddyCheck('Tom')>>* [[Tom, the guy Hannah dated once.|Part7Unknown]]<br><</if>>\
 <<if setup.daddyCheck('Troy')>>* [[Troy, your colleague, from that one night stand.|Part7Unknown]]<br><</if>>\
@@ -458,7 +458,7 @@
 			<</replace>>
 			<<replace "#AndrewBossSpan3">>
 				<<print "After talking over the issues it would cause with HR (not to mention his father), you both decide to keep it quiet that he’s the father. Andrew will help you with money and time off from work during the pregnancy, but neither of you are going to say he’s the father. ">>	
-				<<if $DatingJosh>>
+				<<if setup.areDating('Josh')>>
 					<<print "You decide to postpone telling Josh about your pregnancy until after the holidays. ">>	
 				<</if>>
 			<</replace>>
@@ -470,7 +470,7 @@
 	<<print "or on ">>
 	<span id="AndrewBossSpan2">
 		<<link "keeping the baby after it’s born?">>
-			<<set $DatingAndrew = 1>>
+			<<set setup.startDating('Andrew')>>
 			<<replace "#AndrewBossSpan1">>
 				<<print "putting the baby up for adoption,">>
 			<</replace>>
@@ -479,8 +479,8 @@
 			<</replace>>
 			<<replace "#AndrewBossSpan3">>
 				<<print "Your relationship had started out as just “no strings” fun, but you’d both been kidding yourself that that was all it was still. You both drop the pretenses and stop pretending you aren’t dating. ">>	
-				<<if $DatingJosh>>
-					<<set $DatingJosh = 0>>
+				<<if setup.areDating('Josh')>>
+					<<set setup.breakupWith('Josh')>>
 					<<print "You expected Josh to be angry when you tell him that you are breaking up with him, but instead he seems reliefed to know that he isn`t going to be a father any time soon. ">>	
 				<</if>>
 			<</replace>>
@@ -511,11 +511,9 @@
 
 ::Part7Josh <400,5900>
 <<nobr>>
-	<<set $DatingJosh = 0>>
+	<<set setup.breakupWith('Josh')>>
 	<<set setup.removeNeighbour('Josh')>>
-	<<set $FWBJosh = 0>>
 	<<set $JoshFlee = 1>>
-	
 	<span style="font-size: 150%"><<print "Josh">></span>
 <</nobr>>
 
@@ -528,7 +526,7 @@
 
 ::Part7OfficeBoss1 <600,5900>
 <<nobr>>
-	<<set $DatingOfficeBoss = 0>>
+	<<set setup.breakupWith('Office Boss')>>
 	<<set $JobOfficePA = 0>>
 	<<set $JobOfficeManager = 1>>
 	<<set $BossPregnancyMoney = 1>>
@@ -563,7 +561,7 @@
 <<nobr>>
 	<span style="font-size: 150%"><<print "Bedroom">></span>
 <</nobr>>
-<<if $DatingVeronica>><br><<print "Veronica figures out you’ve been cheating on her, and she breaks up with you.">><br><<set $DatingVeronica = 0>><</if>>
+<<if setup.areDating('Veronica')>><br><<print "Veronica figures out you’ve been cheating on her, and she breaks up with you.">><br><<set setup.breakupWith('Veronica')>><</if>>
 <<print "You’ve either decided to keep the father out of this, or you don’t even know which guy it might be.">>
 
 <<print "You know you’ll be on your own with this pregnancy, and the thought is overwhelming you a bit. You need to take your mind off the stress of learning all this today.">>

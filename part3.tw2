@@ -488,7 +488,7 @@
 <img src="Part3/JobBarista1.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if !$DatingJosh>>
+	<<if !setup.areDating('Josh')>>
 		<<print "When you arrive at the restaurant, it’s quickly obvious to you that she didn’t make that last part clear to Andrew. He’s clearly thinking of this as a date, not a business meeting. You can ">>[[let him know right away,|JobBaristaPro1]]<<print " or you can ">>[[go with it and see where it leads.|JobBaristaDate]]
 	<<else>>
 		<<print "When you arrive at the restaurant, it’s quickly obvious to you that she didn’t make that last part clear to Andrew. He’s clearly thinking of this as a date, not a business meeting. You can ">>[[let him know right away that this is strictly professional.|JobBaristaPro1]]
@@ -518,7 +518,7 @@
 				<</if>>
 			<</link>>
 			<<print " and tell him it was your friend’s idea, but now that it doesn’t hurt anymore, you’re glad you got it. You imply you just like the way it looks, and leave off any mention of it’s other benefits.">>
-			<<if !$DatingJosh>><<print " Or, if you want to try to make sure you get the job, you can tell him how it improves oral, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]<</if>>
+			<<if !setup.areDating('Josh')>><<print " Or, if you want to try to make sure you get the job, you can tell him how it improves oral, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]<</if>>
 		<<else>>
 			<<print "You want to try to make sure you get the job, so you tell him how it improves oral, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]
 		<</if>>
@@ -532,7 +532,7 @@
 				<</if>>
 			<</link>>
 			<<print " and try to answer the questions as best as you can.">>
-			<<if !$DatingJosh>><<print " Or, if you want to try to make sure you get the job, you can mention how your skills are more of an oral variety, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]<</if>>
+			<<if !setup.areDating('Josh')>><<print " Or, if you want to try to make sure you get the job, you can mention how your skills are more of an oral variety, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]<</if>>
 		<<else>>
 			<<print "You want to try to make sure you get the job, so you mention how your skills are more of an oral variety, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]
 		<</if>>
@@ -849,7 +849,7 @@
 
 ::AthleteReconsider <2100,1875>
 <<nobr>>
-	<<set $sex.push({sex: 'male', type: 'coach', vaginal: true, birthcontrol : 'exclude'})>>
+	<<set $sex.push({sex: 'male', type: 'coach', vaginal: true, birthControlOverride: 'vasectomy'})>>
 	<<set $SexVaginalExcludedCount += 1>>
 	
 	<span style="font-size: 150%"><<print "Coach Persuasion">></span>
@@ -912,7 +912,7 @@
 	<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
 	<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
 	<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
-	<<if $DatingJosh>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
+	<<if setup.areDating('Josh')>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Gym">></span>
 <</nobr>>
@@ -942,7 +942,7 @@
 
 <<nobr>>
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>
-		<<if $DatingJosh>>
+		<<if setup.areDating('Josh')>>
 			<<print "You wonder whether you should ">>
 			[[tell Josh about what happened,|Part5JoshFWB]]
 			<<print "or keep it a secret from him and ">>
@@ -963,7 +963,7 @@
 	<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
 	<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
 	<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
-	<<if $DatingJosh>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
+	<<if setup.areDating('Josh')>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Gym">></span>
 <</nobr>>
@@ -979,7 +979,7 @@
 
 <<nobr>>
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>
-		<<if $DatingJosh>>
+		<<if setup.areDating('Josh')>>
 			<<print "You wonder whether you should ">>
 			[[tell Josh about what happened,|Part5JoshFWB]]
 			<<print "or keep it a secret from him and ">>
@@ -1013,7 +1013,7 @@
 
 <<nobr>>
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>
-		<<if $DatingJosh>>
+		<<if setup.areDating('Josh')>>
 			<<print "You wonder whether you should ">>
 			[[tell Josh about what happened,|JobAthleteReliefJosh]]
 			<<print "or keep it a secret from him and ">>
@@ -1089,21 +1089,21 @@
 
 ::JobCheerleaderBitch <1650,1875>
 <<nobr>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
-	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Football Player', vaginal: true, repeat:true, noCondom: true, noPullout: true})>>
 
 	
 	<span style="font-size: 150%"><<print "Chearleaders Hazing">></span>
@@ -1166,7 +1166,7 @@
 ::JobCheerleaderNice2 <1925,2375>
 <<nobr>>
 	<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
-	<<set $DatingVeronica = 1>>
+	<<set setup.startDating('Veronica')>>
 	<span style="font-size: 150%"><<print "Cheerleaders - Veronica">></span>
 <</nobr>>
 
@@ -1481,7 +1481,7 @@
 
 ::JobLibrary5 <1800,3300>
 <<nobr>>
-	<<if $DatingJosh>>
+	<<if setup.areDating('Josh')>>
 	  <<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
 	  <<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
 	  <<set $sex.push({sex: 'male', name: 'Josh', vaginal:true})>>
@@ -1513,7 +1513,7 @@
 
 <<nobr>>
 	<<print "Even when you’re not working, you still like to visit the library sometimes. ">>
-	<<if $DatingJosh>>
+	<<if setup.areDating('Josh')>>
 		<<print "You love calling Josh over and taking him to one of those spots.">>
 	<<else>>
 		<<if setup.isGoldStarLesbian()>>
@@ -1637,7 +1637,7 @@
 	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
 	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
 	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
-	<<if $DatingJosh>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
+	<<if setup.areDating('Josh')>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Engineering Department">></span>
 <</nobr>>
@@ -1653,7 +1653,7 @@
 
 <<nobr>>
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>
-		<<if $DatingJosh>>
+		<<if setup.areDating('Josh')>>
 			<<print "You wonder whether you should ">>
 			[[tell Josh about what happened,|JobEngineerJosh]]
 			<<print "or keep it a secret from him and ">>
@@ -1778,7 +1778,7 @@
 <<print "You work diligently at your new job, and decide that you made the right decision to keep work and your love life separate. ">>
 
 <<nobr>>
-	<<if !$DatingJosh>>
+	<<if !setup.areDating('Josh')>>
 		<<print "You also decide to work hard to keep ">>[[any desires X-Change might have given you|Part5Faith1]]<<print " from interfering with your job. But... if something happens outside of work, with one of your attractive co-workers, you don’t think that would be so bad.">>
 	<<else>>
 		[[You also decide to work hard|Part6Start1]]<<print " to keep any desires X-Change might have given you from interfering with your job. But... if something happens outside of work, with one of your attractive co-workers, you don’t think that would be so bad.">>
@@ -1802,7 +1802,7 @@
 
 ::JobBaristaRomance1 <0,2000>
 <<nobr>>
-	<<set $DatingAndrew = 1>>
+	<<set setup.startDating('Andrew')>>
 	
 	<span style="font-size: 150%"><<print "Andrew - Date">></span>
 <</nobr>>
@@ -1858,7 +1858,7 @@
 	<<set $JobOffice = 0>>
 	<<set $JobOfficePA = 1>>
 	<<set $sex.push({sex: 'male', name: 'Office Boss'})>>
-	<<if $DatingJosh>><<set $CheatedJosh += 1>><</if>>
+	<<if setup.areDating('Josh')>><<set $CheatedJosh += 1>><</if>>
 	
 	<span style="font-size: 150%"><<print "Office Oral Demonstrastion">></span>
 <</nobr>>
@@ -1869,7 +1869,7 @@
 <<print "It isn’t that long until you begin to feel his cock twitch in your mouth. You swallow every drop of his warm cum, and then tease his cock with your tongue as you slide his cock from your mouth.">>
 
 <<nobr>>
-	<<if !$DatingJosh>>
+	<<if !setup.areDating('Josh')>>
 		<<print "You didn’t get the job you were interviewing for, ">>[[but you did get hired.|Part5Emily1]]<<print " You aren’t sure what a “Personal Assistant” does exactly, but you start on Monday.">>
 	<<else>>
 		<<print "You didn’t get the job you were interviewing for and you weren’t planning to cheat on Josh, but you did get hired. You aren’t sure what a “Personal Assistant” does exactly, but you start on Monday.">>
@@ -1901,7 +1901,7 @@
 
 <<nobr>>
 	<<print "You have a chat with his “assistant”. She seems happy with her role, ">>
-	<<if !$DatingJosh>>[[so you let things be there.|Part5Emily1]]<<else>>[[so you let things be there.|Part6Start1]]<</if>>
+	<<if !setup.areDating('Josh')>>[[so you let things be there.|Part5Emily1]]<<else>>[[so you let things be there.|Part6Start1]]<</if>>
 	<<print " But you let her know to come to you if she ever has a problem with him.">>
 <</nobr>>
 
@@ -1923,16 +1923,16 @@
 <<print "When he calls you into his office, you’re sure you’re about to be fired. But that’s not what he says.">>
 
 <<nobr>>
-	<<if !$DatingJosh>>
+	<<if !setup.areDating('Josh')>>
 		<<print "“I think firing you for a first offense would be too harsh. But you do deserve to be punished. I think a spanking is the appropriate punishment for a horny little girl like you, ">>[[don’t you agree?”|Part5Emily1]]
 	<<else>>
 		<<print "“I think firing you for a first offense would be too harsh. But you do deserve to be punished. I think a spanking is the appropriate punishment for a horny little girl like you, don’t you agree?”">>
 	<</if>>
-<</nobr>><<if $DatingJosh>><br><br><<print "Your submissive nature makes you ">>[[agree with him,|Part6Start1]]<<print " but you perhaps you should still ">>[[mention what happened to Josh.|JobOfficeProJosh]]<</if>>
+<</nobr>><<if setup.areDating('Josh')>><br><br><<print "Your submissive nature makes you ">>[[agree with him,|Part6Start1]]<<print " but you perhaps you should still ">>[[mention what happened to Josh.|JobOfficeProJosh]]<</if>>
 
 ::JobOfficeBlowjob2 <0,3300>
 <<nobr>>
-	<<set $DatingOfficeBoss = 1>>
+	<<set setup.startDating('Office Boss')>>
 	<<set $sex.push({sex: 'male', name: 'Office Boss', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name: 'Office Boss', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name: 'Office Boss', vaginal:true})>>
@@ -1975,11 +1975,11 @@
 
 ::JobCall2 <2850,2125>
 <<nobr>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
 	
 	<span style="font-size: 150%"><<print "Call Girl - First Client">></span>
 <</nobr>>
@@ -2017,10 +2017,10 @@
 
 ::JobCall3 <1800,3425>
 <<nobr>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client')>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client'})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true})>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
 	
 	<span style="font-size: 150%"><<print "Call Girl">></span>
@@ -2040,10 +2040,10 @@
 ::JobCall4 <800,4325>
 <<nobr>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client'})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
 	
 	<span style="font-size: 150%"><<print "Call Girl">></span>
 <</nobr>>
@@ -2280,7 +2280,7 @@
 
 <<nobr>>
 	<<print "He is already intimately aware of you sexual interests - those you were born with, those X-Change gave you, and those you have developed since. ">>
-	<<if !$DatingVeronica>>
+	<<if !setup.areDating('Veronica')>>
 		<<link "He helps you decide on which of the offers is best for you.">>
 			<<if $PlayerSideEffectOral and $PlayerSideEffectAnal and $PlayerRollDice > 3>>
 				<<goto [[JobPornGang1]]>>
@@ -2457,7 +2457,7 @@
 <<print "With all the other distractions you have now, it can be pretty tempting to blow off classwork and go have fun instead.">>
 
 <<nobr>>
-	<<if $PlayerChastityBelt and !$DatingVeronica>>
+	<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
 		[[You constantly feel horny.|Part6StartBeltMaster]]
 	<<else>>
 		<<if $MasterKate>>
@@ -2528,9 +2528,7 @@
 ::Part5JoshFWB <800,3450>
 <<nobr>>
 	<<set $HideJobJosh = 0>>
-	<<set $DatingJosh = 0>>
-	<<set $FWBJosh = 1>>
-	
+	<<set setup.makeFWB('Josh')>>
 	<span style="font-size: 150%"><<print "Josh">></span>
 <</nobr>>
 
@@ -2590,7 +2588,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingJosh>>
+	<<if setup.areDating('Josh')>>
 		<<print "You continue with your ‘natural yoga’, but you no longer have sex with the male students. You have no issue whatsoever with having them join in on some one on one practice.">>
 	<<else>>
 		<<print "Some of the guys in the class have convinced their more open girlfriends to join your class.">>
@@ -2601,7 +2599,7 @@
 
 
 <<nobr>>
-	<<if $DatingJosh>>
+	<<if setup.areDating('Josh')>>
 		<<print "However, being naked makes you so horny. Surely getting some ‘relief’ from some of your female students won’t count as cheating on Josh. The guys in your class are disappointed that you no longer keep anyone after class for any extra fun, but still enjoy the new type of show during class.">>
 	<<else>>
 		<<print "The guys in your class don’t mind at all the extra show during class, and they can’t wait to get their turn for some fun.">>

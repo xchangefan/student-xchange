@@ -6,34 +6,34 @@
 	<<set $TalkPunishSevere = 0>>
 	
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
 	<<print "After the holidays are over, you and ">>
 	<<if $MasterKate>><<print "Mistress Kate">><</if>>
-	<<if $DatingAndrew>><<print "Andrew">><</if>>
-	<<if $DatingJosh>><<print "Josh">><</if>>
-	<<if $DatingVeronica>><<print "Veronica">><</if>>
-	<<if $DatingNerd>><<print "Peter">><</if>>
-	<<if $DatingProfessor>><<print "Daddy">><</if>>
+	<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+	<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+	<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+	<<if setup.areDating('Peter')>><<print "Peter">><</if>>
+	<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 	<<print " finally have some time to sit down and talk about your time away from each other.">>
 <</nobr>>
-<<if $MasterKate or $DatingVeronica>><img src="Part8.5/Talk2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Talk1.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<if $MasterKate or setup.areDating('Veronica')>><img src="Part8.5/Talk2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Talk1.jpg" hspace="10" vspace="10" height="650"><</if>>
 
 <<nobr>>
 	<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Police Officer') and !setup.haveFucked('Cody') and !setup.haveFucked('Mechanic') and !$HomeMasturbate and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
-		<<print "You tell ">><<if $MasterKate or $DatingVeronica>><<print "her">><<else>><<print "him">><</if>><<print " that you ">>[[were completely faithful|Part85Faithful]]<<print " while you were away">><<if $MasterKate>><<print "and that you did not disobey her.">><<else>><<print ".">><</if>>
+		<<print "You tell ">><<if $MasterKate or setup.areDating('Veronica')>><<print "her">><<else>><<print "him">><</if>><<print " that you ">>[[were completely faithful|Part85Faithful]]<<print " while you were away">><<if $MasterKate>><<print "and that you did not disobey her.">><<else>><<print ".">><</if>>
 	<<else>>
 		<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Police Officer') and !setup.haveFucked('Cody') and !setup.haveFucked('Mechanic') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
-			<<if $MasterKate>><<print "You tell her you’ve been masturbating when you were told not to, ">>[[but did not do anything worse.|Part85Sticky]]<<else>><<print "You tell ">><<if $DatingVeronica>><<print "her">><<else>><<print "him">><</if>><<print " that you ">>[[were completely faithful|Part85Faithful]]<<print " while you were away.">><</if>>
+			<<if $MasterKate>><<print "You tell her you’ve been masturbating when you were told not to, ">>[[but did not do anything worse.|Part85Sticky]]<<else>><<print "You tell ">><<if setup.areDating('Veronica')>><<print "her">><<else>><<print "him">><</if>><<print " that you ">>[[were completely faithful|Part85Faithful]]<<print " while you were away.">><</if>>
 		<<else>>
 			<<print "You’ve explained how the X-Change has affected you, and ">>
-			<<if $MasterKate or $DatingVeronica>><<print "she said she’ll try to be understanding. But you know that even her understanding has a limit, and you hope that you haven’t crossed it. You try to gauge her reaction ">><<else>><<print "he said he’ll try to be understanding. But you know that even his understanding has a limit, and you hope that you haven’t crossed it. You try to gauge his reaction ">><</if>>
+			<<if $MasterKate or setup.areDating('Veronica')>><<print "she said she’ll try to be understanding. But you know that even her understanding has a limit, and you hope that you haven’t crossed it. You try to gauge her reaction ">><<else>><<print "he said he’ll try to be understanding. But you know that even his understanding has a limit, and you hope that you haven’t crossed it. You try to gauge his reaction ">><</if>>
 			<<link "as you tell your story">>
 				<<if setup.haveFucked('Mechanic')>><<goto [[Part85Mechanic]]>>
 				<<elseif setup.haveFucked('Police Officer')>><<goto [[Part85Patrol]]>>
@@ -46,38 +46,38 @@
 				<<elseif $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 				<</if>>
 			<</link>>
-			<<if $MasterKate or $DatingVeronica>><<print " and she pictures the events in her mind.">><<else>><<print " and he pictures the events in his mind.">><</if>>
+			<<if $MasterKate or setup.areDating('Veronica')>><<print " and she pictures the events in her mind.">><<else>><<print " and he pictures the events in his mind.">><</if>>
 		<</if>>
 	<</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if !$MasterKate and !$DatingProfessor>>
+	<<if !$MasterKate and !setup.areDating('Aaron')>>
 		<<print "Unless the time apart let you rethink your relationship ">>[[and you want to end it.|Part85BreakUp1]]
 	<<else>>
 		<<if $MasterKate and $PlayerSideEffectSubmissive < 2>><<print "Unless the time apart let you rethink your relationship ">>[[and you want to end it.|Part85BreakUp1]]<</if>>
-		<<if $DatingProfessor and $PlayerSideEffectSubmissive < 3>><<print "Unless the time apart let you rethink your relationship ">>[[and you want to end it.|Part85BreakUp1]]<</if>>
+		<<if setup.areDating('Aaron') and $PlayerSideEffectSubmissive < 3>><<print "Unless the time apart let you rethink your relationship ">>[[and you want to end it.|Part85BreakUp1]]<</if>>
 	<</if>>
 <</nobr>>
 
 ::Part85Faithful <0,8425>
 <<nobr>>
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingVeronica>>
+	<<if setup.areDating('Veronica')>>
 		<img src="Part8.5/Faithfull2.jpg" hspace="10" vspace="10" height="650" align="left">
 	<<elseif $MasterKate>>
 		<br><video src="Part8.5/Faithfull4a.mp4" autoplay loop muted height="640"></video><br>
-	<<elseif $DatingProfessor>>
+	<<elseif setup.areDating('Aaron')>>
 		<br><video src="Part8.5/Faithfull5.webm" autoplay loop muted height="640"></video><br>
-	<<elseif $DatingNerd>>
+	<<elseif setup.areDating('Peter')>>
 		<img src="Part8.5/Faithfull6.gif" hspace="10" vspace="10" height="650" align="left">
 	<<else>>
 		<img src="Part8.5/Faithfull1.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -85,7 +85,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $MasterKate or $DatingVeronica>>
+	<<if $MasterKate or setup.areDating('Veronica')>>
 		<<print "You talk to her about how much you missed her while you were away and how awkward it was with your relatives at Christmas.">>
 	<<else>>
 		<<print "You talk to him about how much you missed him while you were away and how awkward it was with your relatives at Christmas.">>
@@ -93,14 +93,14 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $MasterKate or $DatingVeronica>>
-		<<if $DatingVeronica>>
+	<<if $MasterKate or setup.areDating('Veronica')>>
+		<<if setup.areDating('Veronica')>>
 			<<print "She evidently missed you as much as you missed her. Soon the two of you stop discussing what you did during your time apart and ">>[[go back to enjoying your time together.|Part85Together]]
 		<<else>>
 			<<print "She evidently missed toying with you as much as you missed her. Soon the two of you stop discussing what you did during your time apart and she tells you that you deserve a reward for being so obedient to her while you were away.">>
 		<</if>>
 	<<else>>
-		<<if !$DatingProfessor>>
+		<<if !setup.areDating('Aaron')>>
 			<<print "He evidently missed you as much as you missed him. Soon the two of you stop discussing what you did during your time apart and ">>[[go back to enjoying your time together.|Part85Together]]
 		<<else>>
 			<<print "He evidently missed you as much as you missed him. Soon the two of you stop discussing what you did during your time apart and Daddy finally embraces you for the first time in so long.">>
@@ -111,7 +111,7 @@
 <<nobr>>
 	<<if $VeronicaKey>><<set $PlayerChastityBelt = 1>><<print "Later that night she locks you back in your chastity belt.">><</if>>
 	<<if $MasterKate>><<print "As you have your first orgasm in so long, ">>[[you realize just how happy you are to be with your mistress.|Part85Together]]<</if>>
-	<<if $DatingProfessor>><<print "After he finishes fucking you, ">>[[he mentions that he has prepared a gift for you.|Part85Daddy]]<</if>>
+	<<if setup.areDating('Aaron')>><<print "After he finishes fucking you, ">>[[he mentions that he has prepared a gift for you.|Part85Daddy]]<</if>>
 <</nobr>>
 
 ::Part85Sticky <1400,8425>
@@ -135,11 +135,11 @@
 	<<set $TalkEvent += 1>>
 
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
@@ -148,16 +148,16 @@
 		<<if $MasterKate>><<print "Mistress Kate">><</if>>
 		<<print "’s eyes as you describe kneeling on the dirty shop floor and sucking the mechanic’s cock in order to get your car back.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 			<<print "You can see the excited look in ">>
-			<<if $DatingNerd>><<print "Peter">><</if>>
+			<<if setup.areDating('Peter')>><<print "Peter">><</if>>
 			<<print "’s eyes as you describe kneeling on the dirty shop floor and sucking the mechanic’s cock in order to get your car back.">>
 		<<else>>
 			<<print "You can see the disgusted look in ">>
-			<<if $DatingAndrew>><<print "Andrew">><</if>>
-			<<if $DatingJosh>><<print "Josh">><</if>>
-			<<if $DatingVeronica>><<print "Veronica">><</if>>
-			<<if $DatingProfessor>><<print "Daddy">><</if>>
+			<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+			<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+			<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+			<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 			<<print "’s eyes as you describe kneeling on the dirty shop floor and sucking the mechanic’s cock in order to get your car back.">>
 		<</if>>
 	<</if>>
@@ -168,21 +168,21 @@
 
 <<nobr>>
 	<<if $MasterKate>><<print "She starts laughing, “that’s not even a real car part that he ‘fixed’. He just took advantage of you.”">><</if>>
-	<<if $DatingAndrew>><<print "“Oh god, I’m sorry you had to go through that. Next time call me, you should have to sell yourself like that!”">><</if>>
-	<<if $DatingJosh>><<print "“Your blowjobs are pretty good, but I’m glad you don’t charge me $300 for them.”">><</if>>
-	<<if $DatingVeronica>><<print "“Well, I don’t even like guys, but for $300, I'd probably blow someone too. But not that guy. Him I would have just laughed at, because that’s not even a real car part that he ‘fixed’. He just took advantage of you.”">><</if>>
-	<<if $DatingNerd>><<print "He pauses and says “that’s not even a real car part that he ‘fixed’. He just took advantage of you.”">><</if>>
-	<<if $DatingProfessor>><<print "“I’m not upset, but I am a bit disappointed in you. You should remember that not all life’s problems can be solved with a blowjob.”">><</if>>
+	<<if setup.areDating('Andrew')>><<print "“Oh god, I’m sorry you had to go through that. Next time call me, you should have to sell yourself like that!”">><</if>>
+	<<if setup.areDating('Josh')>><<print "“Your blowjobs are pretty good, but I’m glad you don’t charge me $300 for them.”">><</if>>
+	<<if setup.areDating('Veronica')>><<print "“Well, I don’t even like guys, but for $300, I'd probably blow someone too. But not that guy. Him I would have just laughed at, because that’s not even a real car part that he ‘fixed’. He just took advantage of you.”">><</if>>
+	<<if setup.areDating('Peter')>><<print "He pauses and says “that’s not even a real car part that he ‘fixed’. He just took advantage of you.”">><</if>>
+	<<if setup.areDating('Aaron')>><<print "“I’m not upset, but I am a bit disappointed in you. You should remember that not all life’s problems can be solved with a blowjob.”">><</if>>
 <</nobr>>
 
 <<nobr>>
 	<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Police Officer') and !setup.haveFucked('Cody') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 		<<if $MasterKate>>[[Luckly, that is all you did so she will not punish you for being gullible.|Part85Together]]<</if>>
-		<<if $DatingAndrew>>[[Luckly, that is all you did so he will not get mad at you for getting in trouble.|Part85Together]]<</if>>
-		<<if $DatingJosh>>[[Luckly, that is all you did so he will not get mad at you for trying to save money.|Part85Together]]<</if>>
-		<<if $DatingVeronica>>[[Luckly, that is all you did so she does not get mad at you for being gullible.|Part85Together]]<<print " But it does seem that she will enjoy making jokes abou it in the future.">><</if>>
-		<<if $DatingNerd>>[[He seems a bit disappointed that there isn`t anything more to your story.|Part85Together]]<</if>>
-		<<if $DatingProfessor>>[[As he unzips his pants he adds, “Thankfully this isn’t one of those times.”|Part85Daddy]]<</if>>
+		<<if setup.areDating('Andrew')>>[[Luckly, that is all you did so he will not get mad at you for getting in trouble.|Part85Together]]<</if>>
+		<<if setup.areDating('Josh')>>[[Luckly, that is all you did so he will not get mad at you for trying to save money.|Part85Together]]<</if>>
+		<<if setup.areDating('Veronica')>>[[Luckly, that is all you did so she does not get mad at you for being gullible.|Part85Together]]<<print " But it does seem that she will enjoy making jokes abou it in the future.">><</if>>
+		<<if setup.areDating('Peter')>>[[He seems a bit disappointed that there isn`t anything more to your story.|Part85Together]]<</if>>
+		<<if setup.areDating('Aaron')>>[[As he unzips his pants he adds, “Thankfully this isn’t one of those times.”|Part85Daddy]]<</if>>
 	<<else>>
 		<<link "You continue telling your story.">>
 			<<if setup.haveFucked('Police Officer')>><<goto [[Part85Patrol]]>>
@@ -203,11 +203,11 @@
 	<<set $TalkEvent += 1>>
 	
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
@@ -216,16 +216,16 @@
 		<<if $MasterKate>><<print "Mistress Kate">><</if>>
 		<<print "’s face as you tell of your speeding and what you had to do to avoid arrest.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 			<<print "You can see worry, then concern, and maybe anger (but not at you) cross ">>
-			<<if $DatingNerd>><<print "Peter">><</if>>
+			<<if setup.areDating('Peter')>><<print "Peter">><</if>>
 			<<print "’s face as you tell of your speeding and what you had to do to avoid arrest.">>
 		<<else>>
 			<<print "You can see worry, then concern, and maybe anger (but not at you) cross ">>
-			<<if $DatingAndrew>><<print "Andrew">><</if>>
-			<<if $DatingJosh>><<print "Josh">><</if>>
-			<<if $DatingVeronica>><<print "Veronica">><</if>>
-			<<if $DatingProfessor>><<print "Daddy">><</if>>
+			<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+			<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+			<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+			<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 			<<print "’s face as you tell of your speeding and what you had to do to avoid arrest.">>
 		<</if>>
 	<</if>>
@@ -236,21 +236,21 @@
 
 <<nobr>>
 	<<if $MasterKate>><<print "“It sounds like it went further than you expected, and besides it sounds like you didn’t get much pleasure out of the encounter. So I’ll forgo your punishment this time.”">><</if>>
-	<<if $DatingAndrew>><<print "“Oh god, I’m sorry you had to go through that. I can’t believe he abused his authority like that, that’s horrible!”">><</if>>
-	<<if $DatingJosh>><<print "“Wow. Right there in his police car... Well, I guess it’s better than going to jail.”">><</if>>
-	<<if $DatingVeronica>><<print "“I would have tried to get out of it too. Fucking some disgusting cop in the back of his car is better than jail, right?”">><</if>>
-	<<if $DatingNerd>><<print "“Wow. Right there in his police car... Well, I guess it’s better than going to jail.”">><</if>>
-	<<if $DatingProfessor>><<print "“I’m not upset, but I am a bit disappointed in you. You seem to have a habit of using sex to get out of trouble with authority figures.”">><</if>>
+	<<if setup.areDating('Andrew')>><<print "“Oh god, I’m sorry you had to go through that. I can’t believe he abused his authority like that, that’s horrible!”">><</if>>
+	<<if setup.areDating('Josh')>><<print "“Wow. Right there in his police car... Well, I guess it’s better than going to jail.”">><</if>>
+	<<if setup.areDating('Veronica')>><<print "“I would have tried to get out of it too. Fucking some disgusting cop in the back of his car is better than jail, right?”">><</if>>
+	<<if setup.areDating('Peter')>><<print "“Wow. Right there in his police car... Well, I guess it’s better than going to jail.”">><</if>>
+	<<if setup.areDating('Aaron')>><<print "“I’m not upset, but I am a bit disappointed in you. You seem to have a habit of using sex to get out of trouble with authority figures.”">><</if>>
 <</nobr>>
 
 <<nobr>>
 	<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 		<<if $MasterKate>>[[Luckly, that is all you did so she will not punish you for getting in trouble.|Part85Together]]<</if>>
-		<<if $DatingAndrew>>[[Luckly, that is all you did so he will not get mad at you for getting in trouble.|Part85Together]]<</if>>
-		<<if $DatingJosh>>[[Luckly, that is all you did so he will not get mad at you for getting in trouble.|Part85Together]]<</if>>
-		<<if $DatingVeronica>>[[Luckly, that is all you did so she does not get mad at for getting in trouble.|Part85Together]]<</if>>
-		<<if $DatingNerd>>[[He seems a bit disappointed that there isn`t anything more to your story.|Part85Together]]<</if>>
-		<<if $DatingProfessor>>[[As he unzips his pants he adds, “Though, I suppose that’s not always a bad thing.”|Part85Daddy]]<</if>>
+		<<if setup.areDating('Andrew')>>[[Luckly, that is all you did so he will not get mad at you for getting in trouble.|Part85Together]]<</if>>
+		<<if setup.areDating('Josh')>>[[Luckly, that is all you did so he will not get mad at you for getting in trouble.|Part85Together]]<</if>>
+		<<if setup.areDating('Veronica')>>[[Luckly, that is all you did so she does not get mad at for getting in trouble.|Part85Together]]<</if>>
+		<<if setup.areDating('Peter')>>[[He seems a bit disappointed that there isn`t anything more to your story.|Part85Together]]<</if>>
+		<<if setup.areDating('Aaron')>>[[As he unzips his pants he adds, “Though, I suppose that’s not always a bad thing.”|Part85Daddy]]<</if>>
 	<<else>>
 		<<link "You continue telling your story.">>
 			<<if setup.haveFucked('Brad')>><<goto [[Part85Brad]]>>
@@ -271,11 +271,11 @@
 	<<set $TalkPunishLight = 1>>
 	
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
@@ -284,16 +284,16 @@
 		<<if $MasterKate>><<print "Mistress Kate">><</if>>
 		<<print " about how you felt bad taking Brad out of his way and you wanted to thank him, and how that led to a blowjob, and how that led to even more.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 			<<print "You tell ">>
-			<<if $DatingNerd>><<print "Peter">><</if>>
+			<<if setup.areDating('Peter')>><<print "Peter">><</if>>
 			<<print " about how you felt bad taking Brad out of his way and you wanted to thank him, and how that led to a blowjob, and how that led to even more.">>
 		<<else>>
 			<<print "You tell ">>
-			<<if $DatingAndrew>><<print "Andrew">><</if>>
-			<<if $DatingJosh>><<print "Josh">><</if>>
-			<<if $DatingVeronica>><<print "Veronica">><</if>>
-			<<if $DatingProfessor>><<print "Daddy">><</if>>
+			<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+			<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+			<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+			<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 			<<print " about how you felt bad taking Brad out of his way and you wanted to thank him, and how that led to a blowjob, and how that led to even more.">>
 		<</if>>
 	<</if>>
@@ -304,21 +304,21 @@
 
 <<nobr>>
 	<<if $MasterKate>><<if haveFuckedVaginal('Brad')>><<print "“If you wanted to thank him, you should have just given him his pleasure. Fucking him was not necessary.”">><<else>><<print "“If you wanted to thank him, you should have just given him his pleasure. Yours belongs to me. I’ll let it go this time, unless there is more, but don’t let it happen again.”">><</if>><</if>>
-	<<if $DatingAndrew>><<if haveFuckedVaginal('Brad')>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... But... Did you really need to fuck him?”">><<else>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... Just...Please, don’t do anything like that again.”">><</if>><</if>>
-	<<if $DatingJosh>><<print "“I understand, I know with your side-effects things can get out of control sometimes. But I’ll expect the same in-car fun for me on our next road-trip.”">><</if>>
-	<<if $DatingVeronica>><<if haveFuckedVaginal('Brad')>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... why didn’t you stop with just blowjobs... Whatever.”">><<else>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... just... Whatever.”">><</if>><</if>>
-	<<if $DatingNerd>><<print "“Wow that sounds so hot. I wish I could get at least part of that pleasure one day.”">><</if>>
-	<<if $DatingProfessor>><<print "“It was good that you wanted to thank him for helping you, but you let things go to far. I will go easy on your punishment this time, unless there is more, but I want you to think about what you’ve done.”">><</if>>
+	<<if setup.areDating('Andrew')>><<if haveFuckedVaginal('Brad')>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... But... Did you really need to fuck him?”">><<else>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... Just...Please, don’t do anything like that again.”">><</if>><</if>>
+	<<if setup.areDating('Josh')>><<print "“I understand, I know with your side-effects things can get out of control sometimes. But I’ll expect the same in-car fun for me on our next road-trip.”">><</if>>
+	<<if setup.areDating('Veronica')>><<if haveFuckedVaginal('Brad')>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... why didn’t you stop with just blowjobs... Whatever.”">><<else>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... just... Whatever.”">><</if>><</if>>
+	<<if setup.areDating('Peter')>><<print "“Wow that sounds so hot. I wish I could get at least part of that pleasure one day.”">><</if>>
+	<<if setup.areDating('Aaron')>><<print "“It was good that you wanted to thank him for helping you, but you let things go to far. I will go easy on your punishment this time, unless there is more, but I want you to think about what you’ve done.”">><</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if haveFuckedVaginal('Brad') and !$DatingNerd and !$DatingProfessor and !$DatingJosh>>
+	<<if haveFuckedVaginal('Brad') and !setup.areDating('Peter') and !setup.areDating('Aaron') and !setup.areDating('Josh')>>
 		<<set $TalkUpset = 1>>
 		<<set $TalkPunishSevere = 1>>
 		<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 			<<if $MasterKate>>[[“You disobeyed my orders and need to be severely punished.”|Part85Punish2]]<</if>>
-			<<if $DatingAndrew>>[[He is clearly upset from this confession.|Part85Upset1]]<</if>>
-			<<if $DatingVeronica>>[[She is clearly upset from this confession.|Part85Upset1]]<</if>>
+			<<if setup.areDating('Andrew')>>[[He is clearly upset from this confession.|Part85Upset1]]<</if>>
+			<<if setup.areDating('Veronica')>>[[She is clearly upset from this confession.|Part85Upset1]]<</if>>
 		<<else>>
 			<<link "You continue telling your story.">>
 				<<if setup.haveFucked('Dylan')>><<goto [[Part85Brother]]>>
@@ -333,11 +333,11 @@
 	<<else>>
 		<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 			<<if $MasterKate>>[[Luckly, that is all you did so she will not punish you for trying to save money.|Part85Together]]<</if>>
-			<<if $DatingAndrew>>[[He is upset for a bit, but there aren’t any lasting repercussions just from this confession.|Part85Together]]<</if>>
-			<<if $DatingJosh>>[[He is upset for a bit, but there aren’t any lasting repercussions just from this confession.|Part85Together]]<</if>>
-			<<if $DatingVeronica>>[[She is upset for a bit, but there aren’t any lasting repercussions from this confession.|Part85Together]]<</if>>
-			<<if $DatingNerd>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
-			<<if $DatingProfessor>>[[You see him starting to unbuckle his belt.|Part85Punish1]]<</if>>
+			<<if setup.areDating('Andrew')>>[[He is upset for a bit, but there aren’t any lasting repercussions just from this confession.|Part85Together]]<</if>>
+			<<if setup.areDating('Josh')>>[[He is upset for a bit, but there aren’t any lasting repercussions just from this confession.|Part85Together]]<</if>>
+			<<if setup.areDating('Veronica')>>[[She is upset for a bit, but there aren’t any lasting repercussions from this confession.|Part85Together]]<</if>>
+			<<if setup.areDating('Peter')>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
+			<<if setup.areDating('Aaron')>>[[You see him starting to unbuckle his belt.|Part85Punish1]]<</if>>
 		<<else>>
 			<<link "You continue telling your story.">>
 				<<if setup.haveFucked('Dylan')>><<goto [[Part85Brother]]>>
@@ -358,11 +358,11 @@
 	<<set $TalkPunishSevere = 1>>
 	
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
@@ -371,16 +371,16 @@
 		<<if $MasterKate>><<print "Mistress Kate">><</if>>
 		<<print "listens in shock as you tell about your brother’s crush on you, how you flirted back at him to egg him on, and then how you creeped into your brothers room while he was masturbating, and all that followed that.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 		<<print "">>
-			<<if $DatingNerd>><<print "Peter">><</if>>
+			<<if setup.areDating('Peter')>><<print "Peter">><</if>>
 			<<print "listens in shock as you tell about your brother’s crush on you, how you flirted back at him to egg him on, and then how you creeped into your brothers room while he was masturbating, and all that followed that.">>
 		<<else>>
 		<<print "">>
-			<<if $DatingAndrew>><<print "Andrew">><</if>>
-			<<if $DatingJosh>><<print "Josh">><</if>>
-			<<if $DatingVeronica>><<print "Veronica">><</if>>
-			<<if $DatingProfessor>><<print "Daddy">><</if>>
+			<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+			<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+			<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+			<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 			<<print "listens in shock as you tell about your brother’s crush on you, how you flirted back at him to egg him on, and then how you creeped into your brothers room while he was masturbating, and all that followed that.">>
 		<</if>>
 	<</if>>
@@ -389,21 +389,21 @@
 
 <<nobr>>
 	<<if $MasterKate>><<print "“You disobeyed my orders and need to be severely punished.”">><</if>>
-	<<if $DatingAndrew>><<print "“With your brother? Is this the first time, or was this happening before your change... actually I don’t want to know.”">><</if>>
-	<<if $DatingJosh>><<print "“I try to be open minded, but that’s a bit much even for me.”">><</if>>
-	<<if $DatingVeronica>><<print "“Not just with a guy, but with your Brother?! Seriously?”">><</if>>
-	<<if $DatingNerd>><<print "“With your brother? That sounds so wrong, and yet so hot.”">><</if>>
-	<<if $DatingProfessor>><<print "“You’ve been a very naughty girl. You need to be punished severely.”">><</if>>
+	<<if setup.areDating('Andrew')>><<print "“With your brother? Is this the first time, or was this happening before your change... actually I don’t want to know.”">><</if>>
+	<<if setup.areDating('Josh')>><<print "“I try to be open minded, but that’s a bit much even for me.”">><</if>>
+	<<if setup.areDating('Veronica')>><<print "“Not just with a guy, but with your Brother?! Seriously?”">><</if>>
+	<<if setup.areDating('Peter')>><<print "“With your brother? That sounds so wrong, and yet so hot.”">><</if>>
+	<<if setup.areDating('Aaron')>><<print "“You’ve been a very naughty girl. You need to be punished severely.”">><</if>>
 <</nobr>>
 
 <<nobr>>
 	<<if !setup.haveFucked('Mike') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 		<<if $MasterKate>>[[She is clearly upset from this confession.|Part85Punish2]]<</if>>
-		<<if $DatingAndrew>>[[He is clearly upset from this confession.|Part85Upset1]]<</if>>
-		<<if $DatingJosh>>[[He is clearly upset from this confession.|Part85Upset1]]<</if>>
-		<<if $DatingVeronica>>[[She is clearly upset from this confession.|Part85Upset1]]<</if>>
-		<<if $DatingNerd>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
-		<<if $DatingProfessor>>[[You see him going towards the closet.|Part85Punish2]]<</if>>
+		<<if setup.areDating('Andrew')>>[[He is clearly upset from this confession.|Part85Upset1]]<</if>>
+		<<if setup.areDating('Josh')>>[[He is clearly upset from this confession.|Part85Upset1]]<</if>>
+		<<if setup.areDating('Veronica')>>[[She is clearly upset from this confession.|Part85Upset1]]<</if>>
+		<<if setup.areDating('Peter')>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
+		<<if setup.areDating('Aaron')>>[[You see him going towards the closet.|Part85Punish2]]<</if>>
 	<<else>>
 		<<link "You continue telling your story.">>
 			<<if setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
@@ -422,11 +422,11 @@
 	<<set $TalkPunishSevere = 1>>
 	
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
@@ -435,16 +435,16 @@
 		<<if $MasterKate>><<print "Mistress Kate">><</if>>
 		<<print " about your talk with your sister, and how horny you had been that night. You tell how your sister had sensed it and invited you along to her late night visit to her ex. And then you tell about the threesome at his house.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 			<<print "You tell ">>
-			<<if $DatingNerd>><<print "Peter">><</if>>
+			<<if setup.areDating('Peter')>><<print "Peter">><</if>>
 			<<print " about your talk with your sister, and how horny you had been that night. You tell how your sister had sensed it and invited you along to her late night visit to her ex. And then you tell about the threesome at his house.">>
 		<<else>>
 			<<print "You tell ">>
-			<<if $DatingAndrew>><<print "Andrew">><</if>>
-			<<if $DatingJosh>><<print "Josh">><</if>>
-			<<if $DatingVeronica>><<print "Veronica">><</if>>
-			<<if $DatingProfessor>><<print "Daddy">><</if>>
+			<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+			<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+			<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+			<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 			<<print " about your talk with your sister, and how horny you had been that night. You tell how your sister had sensed it and invited you along to her late night visit to her ex. And then you tell about the threesome at his house.">>
 		<</if>>
 	<</if>>
@@ -455,23 +455,23 @@
 
 <<nobr>>
 	<<if $MasterKate>><<print "“You disobeyed my orders and need to be severely punished.”">><</if>>
-	<<if $DatingAndrew>><<print "You tell your boyfriend about the threesome you had with your sister and her ex. But the way you explain it, it wasn’t cheating. It was the first part of a trade. Your sister will be returning the favor sometime soon and having a threesome with you and your boyfriend.">><</if>>
-	<<if $DatingJosh>><<print "You tell your boyfriend about the threesome you had with your sister and her ex. But the way you explain it, it wasn’t cheating. It was the first part of a trade. Your sister will be returning the favor sometime soon and having a threesome with you and your boyfriend.">><</if>>
-	<<if $DatingVeronica>><<print "“I can’t believe you let your sister talk you into that!”">><</if>>
-	<<if $DatingNerd>><<print "“With your sister? That sounds so wrong, and yet so hot.”">><</if>>
-	<<if $DatingProfessor>><<print "“You’ve been a very naughty girl. You need to be punished severely.”">><</if>>
+	<<if setup.areDating('Andrew')>><<print "You tell your boyfriend about the threesome you had with your sister and her ex. But the way you explain it, it wasn’t cheating. It was the first part of a trade. Your sister will be returning the favor sometime soon and having a threesome with you and your boyfriend.">><</if>>
+	<<if setup.areDating('Josh')>><<print "You tell your boyfriend about the threesome you had with your sister and her ex. But the way you explain it, it wasn’t cheating. It was the first part of a trade. Your sister will be returning the favor sometime soon and having a threesome with you and your boyfriend.">><</if>>
+	<<if setup.areDating('Veronica')>><<print "“I can’t believe you let your sister talk you into that!”">><</if>>
+	<<if setup.areDating('Peter')>><<print "“With your sister? That sounds so wrong, and yet so hot.”">><</if>>
+	<<if setup.areDating('Aaron')>><<print "“You’ve been a very naughty girl. You need to be punished severely.”">><</if>>
 <</nobr>>
 
 <<nobr>>
 	<<if !setup.haveFucked('Mike') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
-		<<if $DatingAndrew>><<print "He’s a little upset at first. But as you talk about how hot it will be, sharing him with your sister, he soon forgets about his objections to what happened over the break. ">>[[Instead he’s interested in when your sister will be able to come through on her part of the bargain.|Part85Sister2]]<</if>>
-		<<if $DatingJosh>><<print "He’s a little upset at first. But as you talk about how hot it will be, sharing him with your sister, he soon forgets about his objections to what happened over the break. ">>[[Instead he’s interested in when your sister will be able to come through on her part of the bargain.|Part85Sister2]]<</if>>
+		<<if setup.areDating('Andrew')>><<print "He’s a little upset at first. But as you talk about how hot it will be, sharing him with your sister, he soon forgets about his objections to what happened over the break. ">>[[Instead he’s interested in when your sister will be able to come through on her part of the bargain.|Part85Sister2]]<</if>>
+		<<if setup.areDating('Josh')>><<print "He’s a little upset at first. But as you talk about how hot it will be, sharing him with your sister, he soon forgets about his objections to what happened over the break. ">>[[Instead he’s interested in when your sister will be able to come through on her part of the bargain.|Part85Sister2]]<</if>>
 		<<if $MasterKate>>[[She is clearly upset from this confession.|Part85Punish2]]<</if>>
-		<<if $DatingVeronica>>[[She is clearly upset from this confession.|Part85Upset1]]<</if>>
-		<<if $DatingNerd>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
-		<<if $DatingProfessor>>[[You see him going towards the closet.|Part85Punish2]]<</if>>
+		<<if setup.areDating('Veronica')>>[[She is clearly upset from this confession.|Part85Upset1]]<</if>>
+		<<if setup.areDating('Peter')>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
+		<<if setup.areDating('Aaron')>>[[You see him going towards the closet.|Part85Punish2]]<</if>>
 	<<else>>
-		<<if $DatingAndrew or $DatingJosh>><<print "He’s a little upset at first. But as you talk about how hot it will be, sharing him with your sister, he soon forgets about his objections to what happened with your sister. ">><</if>>
+		<<if setup.areDating('Andrew') or setup.areDating('Josh')>><<print "He’s a little upset at first. But as you talk about how hot it will be, sharing him with your sister, he soon forgets about his objections to what happened with your sister. ">><</if>>
 		<<link "You continue telling your story.">>
 			<<if setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
 			<<else>><<if $UncleChair>><<goto [[Part85Uncle2]]>>
@@ -488,11 +488,11 @@
 	<<set $TalkPunishSevere = 1>>
 	
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
@@ -501,16 +501,16 @@
 		<<if $MasterKate>><<print "Mistress Kate">><</if>>
 			<<print " about flirting with Cody at the mall. You tell how you gave him your number at the  coffee shop. You confess the moment of weakness when you called him and then drove to meet him. And then you confess what happened after that.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 			<<print "You tell ">>
-			<<if $DatingNerd>><<print "Peter">><</if>>
+			<<if setup.areDating('Peter')>><<print "Peter">><</if>>
 			<<print " about flirting with Cody at the mall. You tell how you gave him your number at the  coffee shop. You confess the moment of weakness when you called him and then drove to meet him. And then you confess what happened after that.">>
 		<<else>>
 			<<print "You tell ">>
-			<<if $DatingAndrew>><<print "Andrew">><</if>>
-			<<if $DatingJosh>><<print "Josh">><</if>>
-			<<if $DatingVeronica>><<print "Veronica">><</if>>
-			<<if $DatingProfessor>><<print "Daddy">><</if>>
+			<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+			<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+			<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+			<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 			<<print " about flirting with Cody at the mall. You tell how you gave him your number at the  coffee shop. You confess the moment of weakness when you called him and then drove to meet him. And then you confess what happened after that.">>
 		<</if>>
 	<</if>>
@@ -519,24 +519,24 @@
 
 <<nobr>>
 	<<if $MasterKate>><<print "“You disobeyed my orders and need to be severely punished.”">><</if>>
-	<<if $DatingAndrew>><<print "“I can’t believe you cheated on me with some guy you’d just met!”">><</if>>
-	<<if $DatingJosh>><<print "“I can’t believe you cheated on me with some guy you’d just met!”">><</if>>
-	<<if $DatingVeronica>><<print "“I can’t believe you cheated on me with some guy you’d just met!”">><</if>>
-	<<if $DatingNerd>><<print "“You had sex with a guy you just met? That guys was so lucky.”">><</if>>
-	<<if $DatingProfessor>><<print "“You’ve been a very naughty girl. You need to be punished severely.”">><</if>>
+	<<if setup.areDating('Andrew')>><<print "“I can’t believe you cheated on me with some guy you’d just met!”">><</if>>
+	<<if setup.areDating('Josh')>><<print "“I can’t believe you cheated on me with some guy you’d just met!”">><</if>>
+	<<if setup.areDating('Veronica')>><<print "“I can’t believe you cheated on me with some guy you’d just met!”">><</if>>
+	<<if setup.areDating('Peter')>><<print "“You had sex with a guy you just met? That guys was so lucky.”">><</if>>
+	<<if setup.areDating('Aaron')>><<print "“You’ve been a very naughty girl. You need to be punished severely.”">><</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingJosh or $DatingAndrew or $DatingVeronica>>
-		<<if $DatingAndrew>><<print "Andrew">><</if>>
-		<<if $DatingJosh>><<print "Josh">><</if>>
-		<<if $DatingVeronica>><<print "Veronica">><</if>>
+	<<if setup.areDating('Josh') or setup.areDating('Andrew') or setup.areDating('Veronica')>>
+		<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+		<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+		<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
 		<<print "does not want to continue hearing about your holidays and ">>[[is clearly furious with your actions|Part85BreakUp2]]
 	<<else>>
 		<<if !setup.haveFucked('Mike') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 			<<if $MasterKate>>[[She is clearly upset from this confession.|Part85Punish2]]<</if>>
-			<<if $DatingNerd>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
-			<<if $DatingProfessor>>[[You see him going towards the closet.|Part85Punish2]]<</if>>
+			<<if setup.areDating('Peter')>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
+			<<if setup.areDating('Aaron')>>[[You see him going towards the closet.|Part85Punish2]]<</if>>
 		<<else>>
 			<<link "You continue telling your story.">>
 				<<if setup.haveFucked('Mike')>><<goto [[Part85Uncle1]]>>
@@ -559,11 +559,11 @@
 	<</if>>
 	
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
@@ -572,16 +572,16 @@
 		<<if $MasterKate>><<print "Mistress Kate">><</if>>
 			<<print " of your innocent mistake with the handcuffs, of being led to the dungeon, and being bound and helpless.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 			<<print "You tell ">>
-			<<if $DatingNerd>><<print "Peter">><</if>>
+			<<if setup.areDating('Peter')>><<print "Peter">><</if>>
 			<<print " of your innocent mistake with the handcuffs, of being led to the dungeon, and being bound and helpless.">>
 		<<else>>
 			<<print "You tell ">>
-			<<if $DatingAndrew>><<print "Andrew">><</if>>
-			<<if $DatingJosh>><<print "Josh">><</if>>
-			<<if $DatingVeronica>><<print "Veronica">><</if>>
-			<<if $DatingProfessor>><<print "Daddy">><</if>>
+			<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+			<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+			<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+			<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 			<<print " of your innocent mistake with the handcuffs, of being led to the dungeon, and being bound and helpless.">>
 		<</if>>
 	<</if>>
@@ -591,19 +591,19 @@
 <<nobr>>
 	<<print "“Were you gagged?”, ">>
 	<<if $MasterKate>><<print "Mistress Kate">><</if>>
-	<<if $DatingAndrew>><<print "Andrew">><</if>>
-	<<if $DatingJosh>><<print "Josh">><</if>>
-	<<if $DatingVeronica>><<print "Veronica">><</if>>
-	<<if $DatingNerd>><<print "Peter">><</if>>
-	<<if $DatingProfessor>><<print "Daddy">><</if>>
+	<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+	<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+	<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+	<<if setup.areDating('Peter')>><<print "Peter">><</if>>
+	<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 	<<print " asks. “Then did you ask him to stop?” “Why not?” You realize the answer now, even if you didn’t before. The thrill of being helpless and used was too much for you. As soon as those handcuffs clicked shut your submissive side took over your actions.">>
 <</nobr>>
 
 <<nobr>>
-	<<if $MasterKate or $DatingVeronica>>
+	<<if $MasterKate or setup.areDating('Veronica')>>
 		<<print "You tell her you wanted to be faithful, but you felt like you couldn’t help but do as he wanted you to do.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 			<<print "You tell him how you felt like you couldn’t help but do as he wanted you to do.">>
 		<<else>>
 			<<print "You tell him you wanted to be faithful, but you felt like you couldn’t help but do as he wanted you to do.">>
@@ -615,17 +615,17 @@
 
 <<nobr>>
 	<<if $MasterKate>><<print "When she asks, you are ashamed as you tell her how much you enjoyed it.">><</if>>
-	<<if $DatingAndrew>><<print "When he asks, you are ashamed as you ">>[[tell him how much you enjoyed it.|Part85Submissive1]]<</if>>
-	<<if $DatingJosh>><<print "When he asks, you are ashamed as you ">>[[tell him how much you enjoyed it.|Part85Submissive1]]<</if>>
-	<<if $DatingVeronica>><<print "When she asks, you are ashamed as you ">>[[tell her how much you enjoyed it.|Part85Submissive1]]<</if>>
-	<<if $DatingNerd>><<print "When he asks, you ">>[[tell him how much you enjoyed it.|Part85Together]]<</if>>
-	<<if $DatingProfessor>><<print "When he asks, you are ashamed as you tell him how much you enjoyed it.">><</if>>
+	<<if setup.areDating('Andrew')>><<print "When he asks, you are ashamed as you ">>[[tell him how much you enjoyed it.|Part85Submissive1]]<</if>>
+	<<if setup.areDating('Josh')>><<print "When he asks, you are ashamed as you ">>[[tell him how much you enjoyed it.|Part85Submissive1]]<</if>>
+	<<if setup.areDating('Veronica')>><<print "When she asks, you are ashamed as you ">>[[tell her how much you enjoyed it.|Part85Submissive1]]<</if>>
+	<<if setup.areDating('Peter')>><<print "When he asks, you ">>[[tell him how much you enjoyed it.|Part85Together]]<</if>>
+	<<if setup.areDating('Aaron')>><<print "When he asks, you are ashamed as you tell him how much you enjoyed it.">><</if>>
 <</nobr>>
 
 <<nobr>>
 	<<if !$SexNewYearMale and !$SexNewYearFemale>>
 		<<if $MasterKate>><br><<print "“You’ve been a very naughty girl. ">>[[You need to be punished severely.”|Part85Punish2]]<</if>>
-		<<if $DatingProfessor>><br><<print "“You’ve been a very naughty girl. ">>[[You need to be punished severely.”|Part85Punish2]]<</if>>
+		<<if setup.areDating('Aaron')>><br><<print "“You’ve been a very naughty girl. ">>[[You need to be punished severely.”|Part85Punish2]]<</if>>
 	<<else>>
 		<<print "“You’ve been a very naughty girl. ">>
 		<<link "You continue telling your story.">>
@@ -638,11 +638,11 @@
 ::Part85Uncle2 <1400,8175>
 <<nobr>>
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
@@ -651,16 +651,16 @@
 		<<if $MasterKate>><<print "Mistress Kate">><</if>>
 			<<print " of your innocent mistake with the handcuffs, of being led to the dungeon, and being bound and helpless.">>
 	<<else>>
-		<<if $DatingNerd>>
+		<<if setup.areDating('Peter')>>
 			<<print "You tell ">>
-			<<if $DatingNerd>><<print "Peter">><</if>>
+			<<if setup.areDating('Peter')>><<print "Peter">><</if>>
 			<<print " of your innocent mistake with the handcuffs, of being led to the dungeon, and being bound and helpless.">>
 		<<else>>
 			<<print "You tell ">>
-			<<if $DatingAndrew>><<print "Andrew">><</if>>
-			<<if $DatingJosh>><<print "Josh">><</if>>
-			<<if $DatingVeronica>><<print "Veronica">><</if>>
-			<<if $DatingProfessor>><<print "Daddy">><</if>>
+			<<if setup.areDating('Andrew')>><<print "Andrew">><</if>>
+			<<if setup.areDating('Josh')>><<print "Josh">><</if>>
+			<<if setup.areDating('Veronica')>><<print "Veronica">><</if>>
+			<<if setup.areDating('Aaron')>><<print "Daddy">><</if>>
 			<<print " of your innocent mistake with the handcuffs, of being led to the dungeon, and being bound and helpless.">>
 		<</if>>
 	<</if>>
@@ -681,22 +681,22 @@
 			<<print "“It sounds like you had a great deal of pleasure without my permission. ">>
 		<</if>>
 	<</if>>
-	<<if $DatingAndrew>><<print "“Man, and I thought my family was weird. I’m glad you stopped him before anything else happened though.”">><</if>>
-	<<if $DatingJosh>><<print "“Wow, that sounds intense. Maybe I could tie you up later and use your vibrator to make you cum until you beg me to stop. Wouldn’t that be hot! ”">><</if>>
-	<<if $DatingVeronica>><<print "“I’m glad you stopped him before it got out of control. That chair sounds pretty fun. Maybe when we get an apartment we can get one of those. I get the first turn though since you’ve had your fun.”">><</if>>
-	<<if $DatingNerd>><<print "“Wow, that sounds intense. That chair sounds pretty fun, maybe I can find it online for you.”">><</if>>
-	<<if $DatingProfessor>><<print "“Good girl, stopping him before things got out of control. And It sounds like you enjoyed that time-out chair. Maybe I’ll buy you one for your birthday. ”">><</if>>
+	<<if setup.areDating('Andrew')>><<print "“Man, and I thought my family was weird. I’m glad you stopped him before anything else happened though.”">><</if>>
+	<<if setup.areDating('Josh')>><<print "“Wow, that sounds intense. Maybe I could tie you up later and use your vibrator to make you cum until you beg me to stop. Wouldn’t that be hot! ”">><</if>>
+	<<if setup.areDating('Veronica')>><<print "“I’m glad you stopped him before it got out of control. That chair sounds pretty fun. Maybe when we get an apartment we can get one of those. I get the first turn though since you’ve had your fun.”">><</if>>
+	<<if setup.areDating('Peter')>><<print "“Wow, that sounds intense. That chair sounds pretty fun, maybe I can find it online for you.”">><</if>>
+	<<if setup.areDating('Aaron')>><<print "“Good girl, stopping him before things got out of control. And It sounds like you enjoyed that time-out chair. Maybe I’ll buy you one for your birthday. ”">><</if>>
 <</nobr>>
 
 <<nobr>>
-		<<if $DatingAndrew>><<if $TalkUpset>>[[Even so, your other actions did upset him.|Part85Upset1]]<<else>><<if setup.haveFucked('Cassie')>>[[Eventually, you have to keep that promise regarding your sister.|Part85Sister2]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>><</if>>
-		<<if $DatingJosh>><<if $TalkUpset>>[[Even so, your other actions did upset him.|Part85Upset1]]<<else>><<if setup.haveFucked('Cassie')>>[[Eventually, you have to keep that promise regarding your sister.|Part85Sister2]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>><</if>>
-		<<if $DatingVeronica>><<if $TalkUpset>>[[Even so, your other actions did upset her.|Part85Upset1]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>>
+		<<if setup.areDating('Andrew')>><<if $TalkUpset>>[[Even so, your other actions did upset him.|Part85Upset1]]<<else>><<if setup.haveFucked('Cassie')>>[[Eventually, you have to keep that promise regarding your sister.|Part85Sister2]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>><</if>>
+		<<if setup.areDating('Josh')>><<if $TalkUpset>>[[Even so, your other actions did upset him.|Part85Upset1]]<<else>><<if setup.haveFucked('Cassie')>>[[Eventually, you have to keep that promise regarding your sister.|Part85Sister2]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>><</if>>
+		<<if setup.areDating('Veronica')>><<if $TalkUpset>>[[Even so, your other actions did upset her.|Part85Upset1]]<<else>>[[You finish your story.|Part85Together]]<</if>><</if>>
 	<<if !$SexNewYearMale and !$SexNewYearFemale>>
-		<<if $DatingNerd>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
-		<<if $DatingProfessor>><<if $TalkPunishLight>>[[“But first you need to be punished.”|Part85Punish1]]<<else>><<if $TalkPunishSevere>>[[“But first you need to be punished.”|Part85Punish2]]<<else>>[[“But I have a different gift for you now.”|Part85Daddy]]<</if>><</if>><</if>>
+		<<if setup.areDating('Peter')>>[[You can tell that the last confession made him particularly excited.|Part85Together]]<</if>>
+		<<if setup.areDating('Aaron')>><<if $TalkPunishLight>>[[“But first you need to be punished.”|Part85Punish1]]<<else>><<if $TalkPunishSevere>>[[“But first you need to be punished.”|Part85Punish2]]<<else>>[[“But I have a different gift for you now.”|Part85Daddy]]<</if>><</if>><</if>>
 	<<else>>
-		<<if $DatingProfessor or $DatingNerd or $MasterKate>>
+		<<if setup.areDating('Aaron') or setup.areDating('Peter') or $MasterKate>>
 			<<link "You continue telling your story.">>
 				<<if $SexNewYearMale or $SexNewYearFemale>><<goto [[Part85NewYear]]>>
 				<</if>>
@@ -728,31 +728,31 @@
 ::Part85Together <600,8675>
 <<nobr>>
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<nobr>>
 	<<print "You are so happy being back with ">>
 	<<if $MasterKate>><<print "Mistress Kate, you hope you never have to be apart from her that long again.">><</if>>
-	<<if $DatingAndrew>><<print "Andrew, you hope you never have to be apart from him that long again.">><</if>>
-	<<if $DatingJosh>><<print "Josh, you hope you never have to be apart from him that long again.">><</if>>
-	<<if $DatingVeronica>><<print "Veronica, you hope you never have to be apart from her that long again.">><</if>>
-	<<if $DatingNerd>><<print "you boy toy, you certainly missed teasing him.">><</if>>
-	<<if $DatingProfessor>><<print "Daddy, you hope you never have to be apart from him that long again.">><</if>>
+	<<if setup.areDating('Andrew')>><<print "Andrew, you hope you never have to be apart from him that long again.">><</if>>
+	<<if setup.areDating('Josh')>><<print "Josh, you hope you never have to be apart from him that long again.">><</if>>
+	<<if setup.areDating('Veronica')>><<print "Veronica, you hope you never have to be apart from her that long again.">><</if>>
+	<<if setup.areDating('Peter')>><<print "you boy toy, you certainly missed teasing him.">><</if>>
+	<<if setup.areDating('Aaron')>><<print "Daddy, you hope you never have to be apart from him that long again.">><</if>>
 <</nobr>>
 <img src="Part8.5/Faithfull3.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
 	<<if $MasterKate>><<print "When you see how she is looking at you, you are pretty sure she feels the same way about you.">><</if>>
-	<<if $DatingAndrew>><<print "When you see how he is looking at you, you are pretty sure he feels the same way about you.">><</if>>
-	<<if $DatingJosh>><<print "When you see how he is looking at you, you are pretty sure he feels the same way about you.">><</if>>
-	<<if $DatingVeronica>><<print "When you see how she is looking at you, you are pretty sure she feels the same way about you.">><</if>>
-	<<if $DatingNerd>><<print "When you see how he is looking at you, you are pretty sure this is what he desires as well.">><</if>>
-	<<if $DatingProfessor>><<print "When you see how he is looking at you, you are pretty sure he feels the same way about you.">><</if>>
+	<<if setup.areDating('Andrew')>><<print "When you see how he is looking at you, you are pretty sure he feels the same way about you.">><</if>>
+	<<if setup.areDating('Josh')>><<print "When you see how he is looking at you, you are pretty sure he feels the same way about you.">><</if>>
+	<<if setup.areDating('Veronica')>><<print "When you see how she is looking at you, you are pretty sure she feels the same way about you.">><</if>>
+	<<if setup.areDating('Peter')>><<print "When you see how he is looking at you, you are pretty sure this is what he desires as well.">><</if>>
+	<<if setup.areDating('Aaron')>><<print "When you see how he is looking at you, you are pretty sure he feels the same way about you.">><</if>>
 <</nobr>>
 
 [[You are ready to face whatever challenges the new semester has in store for you together.|Part9Start1]]
@@ -783,40 +783,40 @@
 
 ::Part85Upset1 <600,8300>
 <<nobr>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingAndrew>><<print "Andrew is very upset that you cheated on him. You try to explain that your new body, and the X-Change, and being away from him, it all made you so horny and you couldn’t control yourself.">><</if>>
-	<<if $DatingJosh>><<print "Josh is very upset that you cheated on him. You try to explain that your new body, and the X-Change, and being away from him, it all made you so horny and you couldn’t control yourself.">><</if>>
-	<<if $DatingVeronica>><<print "Veronica is very upset that you cheated on her. You try to explain that your new body, and the X-Change, and being away from her, it all made you so horny and you couldn’t control yourself.">><</if>>
+	<<if setup.areDating('Andrew')>><<print "Andrew is very upset that you cheated on him. You try to explain that your new body, and the X-Change, and being away from him, it all made you so horny and you couldn’t control yourself.">><</if>>
+	<<if setup.areDating('Josh')>><<print "Josh is very upset that you cheated on him. You try to explain that your new body, and the X-Change, and being away from him, it all made you so horny and you couldn’t control yourself.">><</if>>
+	<<if setup.areDating('Veronica')>><<print "Veronica is very upset that you cheated on her. You try to explain that your new body, and the X-Change, and being away from her, it all made you so horny and you couldn’t control yourself.">><</if>>
 <</nobr>>
 <<if setup.haveFucked('Mike')>><br><<if setup.haveFucked('Dylan') or setup.haveFucked('Cassie')>><<print "You’d misbehaved with your uncle as well, but what happened with your sibling troubles your partner much more.">><<else>><<print "You’d misbehaved with your uncle as well, but what happened with Brad troubles your partner much more.">><</if>><br><</if>>
-<<if $DatingVeronica>><img src="Part8.5/Upset2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Upset1.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<if setup.areDating('Veronica')>><img src="Part8.5/Upset2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Upset1.jpg" hspace="10" vspace="10" height="650"><</if>>
 <<nobr>>
 	<<if setup.haveFucked('Dylan') or setup.haveFucked('Cassie')>>
-		<<if $DatingAndrew>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some feelings you’d always had for your sibling but repressed, all contributed to what happened. But he is still furious.">><</if>>
-		<<if $DatingJosh>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some feelings you’d always had for your sibling but repressed, all contributed to what happened. But he is still furious.">><</if>>
-		<<if $DatingVeronica>><<print "She believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some feelings you’d always had for your sibling but repressed, all contributed to what happened. But she is still furious.">><</if>>
+		<<if setup.areDating('Andrew')>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some feelings you’d always had for your sibling but repressed, all contributed to what happened. But he is still furious.">><</if>>
+		<<if setup.areDating('Josh')>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some feelings you’d always had for your sibling but repressed, all contributed to what happened. But he is still furious.">><</if>>
+		<<if setup.areDating('Veronica')>><<print "She believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some feelings you’d always had for your sibling but repressed, all contributed to what happened. But she is still furious.">><</if>>
 	<<else>>
-		<<if $DatingAndrew>><<if setup.sexUniqueVaginalCount() == 1>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about seeing if sex with another man feels different, but repressed, all contributed to what happened. But he is still furious.">><<else>><print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about still sleeping with multiple men, but repressed, all contributed to what happened. But he is still furious.">><</if>><</if>>
-		<<if $DatingJosh>><<if setup.sexUniqueVaginalCount() == 1>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about seeing if sex with another man feels different, but repressed, all contributed to what happened. But he is still furious.">><<else>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about still sleeping with multiple men, but repressed, all contributed to what happened. But he is still furious.">><</if>><</if>>
-		<<if $DatingVeronica>><<print "She believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about trying sex with a man, but repressed, all contributed to what happened. But she is still furious.">><</if>>
+		<<if setup.areDating('Andrew')>><<if setup.sexUniqueVaginalCount() == 1>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about seeing if sex with another man feels different, but repressed, all contributed to what happened. But he is still furious.">><<else>><print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about still sleeping with multiple men, but repressed, all contributed to what happened. But he is still furious.">><</if>><</if>>
+		<<if setup.areDating('Josh')>><<if setup.sexUniqueVaginalCount() == 1>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about seeing if sex with another man feels different, but repressed, all contributed to what happened. But he is still furious.">><<else>><<print "He believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about still sleeping with multiple men, but repressed, all contributed to what happened. But he is still furious.">><</if>><</if>>
+		<<if setup.areDating('Veronica')>><<print "She believes you that you couldn’t help it. The X-Change effects, being away from each other for so long, and probably some mixed feelings you’ve had about trying sex with a man, but repressed, all contributed to what happened. But she is still furious.">><</if>>
 	<</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingAndrew>><<print "The two of you have a big fight. At the end you are alone and crying wondering if your relationship can be saved. In the end, he does forgive you. Though you sense it will take a lot of time and a lot of work before you can ">>[[fully earn his trust back.|Part85Upset2]]<</if>>
-	<<if $DatingJosh>><<print "The two of you have a big fight. At the end you are alone and crying wondering if your relationship can be saved. In the end, he does forgive you. Though you sense it will take a lot of time and a lot of work before you can ">>[[fully earn his trust back.|Part85Upset2]]<</if>>
-	<<if $DatingVeronica>><<print "The two of you have a big fight. At the end you are alone and crying wondering if your relationship can be saved. In the end, she does forgive you. Though you sense it will take a lot of time and a lot of work before you can ">>[[fully earn her trust back.|Part85Upset2]]<</if>>
+	<<if setup.areDating('Andrew')>><<print "The two of you have a big fight. At the end you are alone and crying wondering if your relationship can be saved. In the end, he does forgive you. Though you sense it will take a lot of time and a lot of work before you can ">>[[fully earn his trust back.|Part85Upset2]]<</if>>
+	<<if setup.areDating('Josh')>><<print "The two of you have a big fight. At the end you are alone and crying wondering if your relationship can be saved. In the end, he does forgive you. Though you sense it will take a lot of time and a lot of work before you can ">>[[fully earn his trust back.|Part85Upset2]]<</if>>
+	<<if setup.areDating('Veronica')>><<print "The two of you have a big fight. At the end you are alone and crying wondering if your relationship can be saved. In the end, she does forgive you. Though you sense it will take a lot of time and a lot of work before you can ">>[[fully earn her trust back.|Part85Upset2]]<</if>>
 <</nobr>>
 
 ::Part85Punish2 <400,8425>
 <<nobr>>
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><<set $KateKey = 1>><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><<set $ProfessorKey = 1>><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><<set $ProfessorKey = 1>><</if>>
 <</nobr>>
 
 <<print "You are told that since you can’t control your desires, you will have to have them controlled for you. Then you are ordered to lock the chastity belt you are given onto yourself.">>
@@ -829,7 +829,7 @@
 
 <<print "When your punishment is complete, your ass and legs are red and inflamed. You promise to yourself you aren’t going to cheat ever again. But then you remember, you couldn’t now even if you wanted to.">>
 
-<<if $DatingProfessor>>[[Eventually he tells you that he has also prepared a gift for you.|Part85Daddy]]<<else>>[[She tells you that you will have to be extremely obedient from now on if you ever want to orgasm again.|Part85Together]]<</if>>
+<<if setup.areDating('Aaron')>>[[Eventually he tells you that he has also prepared a gift for you.|Part85Daddy]]<<else>>[[She tells you that you will have to be extremely obedient from now on if you ever want to orgasm again.|Part85Together]]<</if>>
 
 ::Part85Sister2 <800,8425>
 <<nobr>>
@@ -845,9 +845,9 @@
 
 ::Part85Submissive1 <1200,8300>
 <<nobr>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><<set $AndrewKey = 1>><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Bedroom">></span><<set $JoshKey = 1>><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Bedroom">></span><<set $VeronicaKey = 1>><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><<set $AndrewKey = 1>><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Bedroom">></span><<set $JoshKey = 1>><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Bedroom">></span><<set $VeronicaKey = 1>><</if>>
 <</nobr>>
 
 <<print "“I knew you had this side to your personality. But I guess I under-estimated how powerful it was. I’ll have to think how to handle this so that I can trust you. Maybe helping you explore this side of yourself will help.”">>
@@ -862,7 +862,7 @@
 <<print "“No. Put it on now.” You get a familiar exhilarating feeling of helplessness as you click the locks closed.">>
 <<if $PlayerChastityBeltInventory>><br><<print "You see that the high-security locks on your belt are well beyond your skills.">><br><</if>><<set $PlayerChastityBeltInventory = 1>><<set $PlayerChastityBelt = 1>>
 <<nobr>>
-	<<if setup.haveFucked('Cassie') and ($DatingJosh or $DatingAndrew)>>
+	<<if setup.haveFucked('Cassie') and (setup.areDating('Josh') or setup.areDating('Andrew'))>>
 		<<print "“You’ll be wearing that from now on whenever we are apart. And often when we are together as well. Tonight, for instance, you will wear it while you attend to my pleasure, and thank me for being so generous and forgiving.” ">>
 		[[He wastes no time on asking you when your sister will be able to come through on her part of the bargain.|Part85Sister2]]
 	<<else>>
@@ -872,9 +872,9 @@
 
 ::Part85Upset2 <600,8425>
 <<nobr>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><<set $AndrewKey = 1>><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><<set $JoshKey = 1>><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><<set $VeronicaKey = 1>><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><<set $AndrewKey = 1>><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><<set $JoshKey = 1>><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><<set $VeronicaKey = 1>><</if>>
 <</nobr>>
 
 <<print "“I know you’re sorry for what happened, and I know you couldn’t completely help it.”">>
@@ -912,7 +912,7 @@
 				<<replace "#UpsetSpan2">>
 					<<print "Or you can be thrilled that now they’ll finally be able to trust you again">>
 				<</replace>>
-				<<if setup.haveFucked('Cassie') and ($DatingJosh or $DatingAndrew)>>
+				<<if setup.haveFucked('Cassie') and (setup.areDating('Josh') or setup.areDating('Andrew'))>>
 					<<replace "#UpsetSpan3">>
 						<<print "You feel your heart race as you click the locks closed. ">>
 						[[He wastes no time on asking you when your sister will be able to come through on her part of the bargain.|Part85Sister2]]
@@ -936,7 +936,7 @@
 	<<if $PlayerSideEffectSubmissive < 3>>
 		<span id="UpsetSpan3"><<print "">></span>
 	<<else>>
-		<<if setup.haveFucked('Cassie') and ($DatingJosh or $DatingAndrew)>>
+		<<if setup.haveFucked('Cassie') and (setup.areDating('Josh') or setup.areDating('Andrew'))>>
 			<<print "You feel your heart race as you click the locks closed. ">>
 			[[He wastes no time on asking you when your sister will be able to come through on her part of the bargain.|Part85Sister2]]
 		<<else>>
@@ -947,102 +947,95 @@
 
 ::Part85BreakUp2 <1000,8425>
 <<nobr>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if $DatingAndrew>><<print "Andrew is extremely upset that you cheated on them. You try to claim it was side-effects from your X-Change that made you do it, but he isn’t believing it.">><</if>>
-	<<if $DatingJosh>><<print "Josh is extremely upset that you cheated on them. You try to claim it was side-effects from your X-Change that made you do it, but he isn’t believing it.">><</if>>
-	<<if $DatingVeronica>><<print "Veronica is extremely upset that you cheated on them. You try to claim it was side-effects from your X-Change that made you do it, but she isn’t believing it.">><</if>>
+	<<if setup.areDating('Andrew')>><<print "Andrew is extremely upset that you cheated on them. You try to claim it was side-effects from your X-Change that made you do it, but he isn’t believing it.">><</if>>
+	<<if setup.areDating('Josh')>><<print "Josh is extremely upset that you cheated on them. You try to claim it was side-effects from your X-Change that made you do it, but he isn’t believing it.">><</if>>
+	<<if setup.areDating('Veronica')>><<print "Veronica is extremely upset that you cheated on them. You try to claim it was side-effects from your X-Change that made you do it, but she isn’t believing it.">><</if>>
 <</nobr>>
 <img src="Part8.5/Alone1.jpg" hspace="10" vspace="10" height="650">
 
 <<print "“You were in control when you gave him your phone number, weren’t you? Why would you have done that if you weren’t planning to cheat from the moment you met him?” You try to calm them down, but it doesn’t help. “If I can’t trust you for a week or two at your parents, then how can I ever trust you?”">>
 
 <<nobr>>
-	<<if $DatingAndrew>><<print "You try to salvage the relationship over the next few days, but he soon makes it clear it’s over between the two of you. You move out and are back in your old dorm room.">><<set $Roommate to "Faith">><<set $DatingAndrew = 0>><<set $BreakUpAndrew = 0>><</if>>
-	<<if $DatingJosh>><<print "You try to salvage the relationship over the next few days, but he soon makes it clear it’s over between the two of you. ">><<if setup.isNeighbour('Emily')>>		
+	<<if setup.areDating('Andrew')>><<print "You try to salvage the relationship over the next few days, but he soon makes it clear it’s over between the two of you. You move out and are back in your old dorm room.">><<set $Roommate to "Faith">><<set setup.breakupWith('Andrew')>><</if>>
+	<<if setup.areDating('Josh')>><<set setup.breakupWith('Josh')>><<print "You try to salvage the relationship over the next few days, but he soon makes it clear it’s over between the two of you. ">><<if setup.isNeighbour('Emily')>>		
 	<<print "Emily isn’t entirelly thrilled when you decide to move back to your old room, but she is still supportive of you.">>
 	<<set $Roommate to 'Emily'>>
 	<<set setup.removeNeighbour('Emily')>>
-<</if>><<set $DatingJosh = 0>><<set $BreakUpJosh = 0>><</if>>
-	<<if $DatingVeronica>><<print "You try to salvage the relationship over the next few days, but she soon makes it clear it’s over between the two of you.">><<set $DatingVeronica = 0>><</if>>
+<</if>><</if>>
+	<<if setup.areDating('Veronica')>><<print "You try to salvage the relationship over the next few days, but she soon makes it clear it’s over between the two of you.">><<set setup.breakupWith('Veronica')>><</if>>
 <</nobr>>
 
 [[Most of the next few days you spend in tears in your room.|Part85BreakUp3]]
 
 ::Part85BreakUp1 <1600,8425>
 <<nobr>>
-	<<if $FWBDavidOld>><<set $FWBDavid = 1>><<set $FWBDavidOld = 0>><</if>>
-	<<if $FWBJoshOld>><<set $FWBJosh = 1>><<set $FWBJoshOld = 0>><</if>>
-	<<if $FWBPlayerOld>><<set $FWBPlayer = 1>><<set $FWBPlayerOld = 0>><</if>>
-	<<if $FWBThrillSeekerOld>><<set $FWBThrillSeeker = 1>><<set $FWBThrillSeekerOld = 0>><</if>>
-	<<if $FWBJerkOld>><<set $FWBJerk = 1>><<set $FWBJerkOld = 0>><</if>>
 	<<set $NewYearBreakUp = 1>>
 			
 	<<if $MasterKate>><span style="font-size: 150%"><<print "Mistress Kate">></span><</if>>
-	<<if $DatingAndrew>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
-	<<if $DatingJosh>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
-	<<if $DatingVeronica>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
-	<<if $DatingNerd>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
-	<<if $DatingProfessor>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
+	<<if setup.areDating('Andrew')>><span style="font-size: 150%"><<print "Andrew’s Apartment">></span><</if>>
+	<<if setup.areDating('Josh')>><span style="font-size: 150%"><<print "Josh’s Bedroom">></span><</if>>
+	<<if setup.areDating('Veronica')>><span style="font-size: 150%"><<print "Veronica’s Bedroom">></span><</if>>
+	<<if setup.areDating('Peter')>><span style="font-size: 150%"><<print "Peter’s Bedroom">></span><</if>>
+	<<if setup.areDating('Aaron')>><span style="font-size: 150%"><<print "Professor’s House">></span><</if>>
 <</nobr>>
 
 <<print "You’ve been feeling like you maybe jumped into this relationship too soon. You were still adjusting to your new life, your new body, and didn’t really know what you wanted yet.">>
-<<if $MasterKate or $DatingVeronica>><img src="Part8.5/Alone4.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Alone3.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<if $MasterKate or setup.areDating('Veronica')>><img src="Part8.5/Alone4.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Alone3.jpg" hspace="10" vspace="10" height="650"><</if>>
 
 <<print "Having a little time to think (and maybe to explore) over the holiday made you realize this isn’t what you want. Maybe it’s someone else would be better for you, or maybe monogamy just isn’t for you right now.">>
 
 <<nobr>>
 	<<print "After the holidays are over, you and ">>
 	<<if $MasterKate>><<print "You do your best to escape her power as easy as you can, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
-	<<if $DatingAndrew>><<print "You do your best to let him down easy, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
-	<<if $DatingJosh>><<print "You do your best to let him down easy, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
-	<<if $DatingVeronica>><<print "You do your best to let her down easy, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
-	<<if $DatingNerd>><<print "You do your best to let him down easy, ">>[[but it’s still upsetting for him especially.|Part85BreakUp3]]<</if>>
-	<<if $DatingProfessor>>
+	<<if setup.areDating('Andrew')>><<print "You do your best to let him down easy, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
+	<<if setup.areDating('Josh')>><<print "You do your best to let him down easy, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
+	<<if setup.areDating('Veronica')>><<print "You do your best to let her down easy, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
+	<<if setup.areDating('Peter')>><<print "You do your best to let him down easy, ">>[[but it’s still upsetting for him especially.|Part85BreakUp3]]<</if>>
+	<<if setup.areDating('Aaron')>>
 		<<if $JobOfficePAOld or $JobCheerleaderFundraiserOld>>
 			<<print "You do your best to escape his influence as easy as you can, but it’s still upsetting for both of you.">>
-			<<if $FWBJerk>><<print " And you know that Barry will start finding new ways to take advantage of you now that there is no one to protect you.">><</if>>
-			<<if $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker>><<print " But if needed, you can always fall back on one of your past flings to make you feel better.">><</if>>
-			<<if $NerdFriendZone>><<print " Fortunately, you also still have Peter who will do anything to comfort you.">><</if>>
+			<<if setup.isFWB('Barry')>><<print " And you know that Barry will start finding new ways to take advantage of you now that there is no one to protect you.">><</if>>
+			<<if setup.isFWB('David') or setup.isFWB('Josh') or setup.isFWB('James') or setup.isFWB('Zack')>><<print " But if needed, you can always fall back on one of your past flings to make you feel better.">><</if>>
+			<<if setup.isFriendzoned('Peter')>><<print " Fortunately, you also still have Peter who will do anything to comfort you.">><</if>>
 		<<else>>
 			<<print "You do your best to escape his influence as easy as you can, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]
-			<<if $FWBJerk>><<print " And you know that Barry will start finding new ways to take advantage of you now that there is no one to protect you.">><</if>>
-			<<if $FWBDavid or $FWBJosh or $FWBPlayer or $FWBThrillSeeker>><<print " But if needed, you can always fall back on one of your past flings to make you feel better.">><</if>>
-			<<if $NerdFriendZone>><<print " Fortunately, you also still have Peter who will do anything to comfort you.">><</if>>
+			<<if setup.isFWB('Barry')>><<print " And you know that Barry will start finding new ways to take advantage of you now that there is no one to protect you.">><</if>>
+			<<if setup.isFWB('David') or setup.isFWB('Josh') or setup.isFWB('James') or setup.isFWB('Zack')>><<print " But if needed, you can always fall back on one of your past flings to make you feel better.">><</if>>
+			<<if setup.isFriendzoned('Peter')>><<print " Fortunately, you also still have Peter who will do anything to comfort you.">><</if>>
 		<</if>>
 	<</if>>
 <</nobr>>
 
 <<nobr>>
 	<<if $MasterKate>><<set $MasterKate = 0>><</if>>
-	<<if $DatingAndrew>><<print "You move out and back into your old dorm room.">><<set $Roommate to "Faith">><<set $DatingAndrew = 0>><<set $BreakUpAndrew = 0>><</if>>
-	<<if $DatingJosh>>
+	<<if setup.areDating('Andrew')>><<print "You move out and back into your old dorm room.">><<set $Roommate to "Faith">><<set setup.breakupWith('Andrew')>><</if>>
+	<<if setup.areDating('Josh')>>
 		<<if setup.isNeighbour('Emily')>>
 			<<print "The two of you still live next to each other. ">>
 		<</if>>
 		<<print "You decide to occasionally sleep together as ‘friends with benefits’, but any pretense of a relationship is gone now.">>
-		<<set $DatingJosh = 0>>
-		<<set $FWBJosh = 1>>
-		<<set $BreakUpJosh = 0>>
+		<<set setup.makeFWB('Josh')>>
 	<</if>>
-	<<if $DatingNerd>>
+	<<if setup.areDating('Peter')>>
 		<<if setup.isNeighbour('Emily')>>
 			<<print "Emily isn’t entirelly thrilled when you decide to move back to your old room, but she is still supportive of you.">>
 			<<set $Roommate to 'Emily'>>
 			<<set setup.removeNeighbour('Emily')>>
 		<</if>>
-		<<set $DatingNerd = 0>>
+		<<set setup.areDating('Peter') = 0>>
 		<<set $BreakUpNerd = 0>>
 		<<set $PlayerItemNerdKey = 0>>
 	<</if>>
-	<<if $DatingVeronica>><<if $VeronicaKey>><<set $VeronicaKey = 0>><<print "She returns to you the key to your chastity belt.">><</if>><<set $DatingVeronica = 0>><</if>>
-	<<if $DatingProfessor>>
-		<<if $NerdFriendZone>><<set $DatingNerd = 1>><<set $NerdFriendZone = 0>><</if>>
-		<<set $DatingProfessor = 0>><<set $BreakUpProfessor = 0>><<set $ProfessorAllowance = 0>>
+	<<if setup.areDating('Veronica')>><<if $VeronicaKey>><<set $VeronicaKey = 0>><<print "She returns to you the key to your chastity belt.">><</if>><<set setup.breakupWith('Veronica')>><</if>>
+	<<if setup.areDating('Aaron')>>
+		<<if setup.isFriendzoned('Peter')>><<set setup.startDating('Peter')>><</if>>
+		<<set setup.breakupWith('Aaron')>><<set $ProfessorAllowance = 0>>
 		<<if $JobOfficePAOld>><<print "You have no choice but to ">>[[try and get your old job back.|Part85Office]]<</if>>
 		<<if $JobCheerleaderFundraiserOld>><<print "You have no choice but to ">>[[try and get your old job back.|Part85Fundraiser]]<</if>>
 		<<if $JobPornOralOld>><<set $JobPornOralOld =　0>><<set $JobPornOral =　1>><<print "You decide to resume your porn career. ">><</if>>
@@ -1069,7 +1062,7 @@
 <<print "Eventually you are ready to move on, though you think maybe being single is better for you for now. Of course, who knows, that might change if you meet the right person.">>
 
 <<link "You are excited to start the new semester, and to see new opportunities it might hold.">>
-	<<if $FWBJerk>>
+	<<if setup.isFWB('Barry')>>
 		<<goto [[Part85Jerk]]>>
 	<<else>>
 		<<goto [[Part9Start1]]>>
@@ -1123,7 +1116,7 @@
 
 ::Part85Jerk <1000,8600>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name: 'Barry', vaginal: true})>>
+	<<set $sex.push({sex: 'male', name: 'Barry', vaginal: true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name: 'Barry'})>>
 	<<set $sex.push({sex: 'male', vaginal: true})>>
 	<<set $sex.push({sex: 'male', vaginal: true})>>

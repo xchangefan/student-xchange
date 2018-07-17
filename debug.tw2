@@ -1,7 +1,7 @@
 ::VariablesMasterDebugger <1600,0>
 Mentor   $Mentor
 Roommate   $Roommate
-Neighbours  $Neighbours
+Neighbours  $neighbours
 NeighbourDislike : $NeighbourDislike
 Body Type: $BodyType
 
@@ -28,6 +28,11 @@ Summary:
 	</tr>
 </table>
 
+Dating: <<print JSON.stringify($dating)>>
+Exes: <<print JSON.stringify($exes)>>
+FWBs: <<print JSON.stringify($fwb)>>
+Friend Zone: <<print JSON.stringify($friendZone)>>
+
 Pregnancy:
 PlayerPregnantCheck $PlayerPregnantCheck
 PlayerPregnant   $PlayerPregnant
@@ -35,11 +40,17 @@ PlayerMother   $PlayerMother
 PlayerAbortion   $PlayerAbortion
 PlayerMenstruation   $PlayerMenstruation
 
+Master
+MasterKate   $MasterKate
+MasterKen   $MasterKen
+MasterOlivia   $MasterOlivia
+   
+DTF Nickname: $DTFNickname
+
 Student type
 PlayerGoodStudent   $PlayerGoodStudent
 PlayerAverageStudent   $PlayerAverageStudent
 PlayerLazyStudent   $PlayerLazyStudent
-  
 
 Side effects
 PlayerNoBodyHair   $PlayerNoBodyHair
@@ -133,31 +144,7 @@ PlayerMoneySet   $PlayerMoneySet
 PlayerMoney   $PlayerMoney
 PlayerCredit   $PlayerCredit
    
-Master
-MasterKate   $MasterKate
-MasterKen   $MasterKen
-MasterOlivia   $MasterOlivia
-   
 
-TODO Make Dating a variables  (also exes)
-
-Dating
-DatingAndrew   $DatingAndrew
-DatingOfficeBoss   $DatingOfficeBoss
-DatingVeronica   $DatingVeronica
-DatingJosh   $DatingJosh
-DatingNerd   $DatingNerd
-DatingProfessor   $DatingProfessor
-
-TODO Make FWB an array
-
-FWBDavid   $FWBDavid
-FWBJosh   $FWBJosh
-FWBPlayer   $FWBPlayer
-FWBThrillSeeker   $FWBThrillSeeker
-FWBJerk   $FWBJerk
-NerdFriendZone   $NerdFriendZone
-   
 
 TODO Make Job an array
 TODO Eliminate side jobs?
@@ -233,7 +220,6 @@ PlayerRollDice2   $PlayerRollDice2
 PlayerRollMultiplier   $PlayerRollMultiplier
 
 ::DebugSexualHistory <1750,0>
-TODO Need to fix birth control here
 TODO Do something to make the kidnapping part fuzzy or otherwise indicate you don't remember it
 <<print setup.sexualHistoryTable()>>
 

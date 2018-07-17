@@ -251,11 +251,11 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<elseif $PlayerProtectionNone>>
     You are not using any birth control.
   <<elseif $PlayerProtectionWithdraw>>
-    You always ask guys to pull out during sex.
+    You ask guys to pull out during sex.
   <<elseif $PlayerProtectionCondoms>>
-    You always use condoms.
+    You use condoms.
   <<elseif $PlayerProtectionPill>>
-    You always use birth control pills.
+    You use birth control pills.
   <<elseif $PlayerProtectionPermanent>>
     Your body has a permanent pill implant.
   <<elseif $PlayerProtectionPerfect>>
@@ -397,10 +397,10 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarNeighbours <2000,0>
 <<nobr>>
-  <<if $Neighbours and $Neighbours.length == 1>>
-   Your neighbour is $Neighbours[0]
-  <<elseif $Neighbours and $Neighbours.length > 1>>
-     Your neighbours are <<print $Neighbours.join(" and ")>>
+  <<if $neighbours and $neighbours.length == 1>>
+   Your neighbour is $neighbours[0]
+  <<elseif $neighbours and $neighbours.length > 1>>
+     Your neighbours are <<print $neighbours.join(" and ")>>
   <</if>>
 <</nobr>>
 
@@ -410,19 +410,19 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $MasterOlivia>><br><<print "You are a slave to Olivia's master. ">><</if>>\
 \
 <<if $AndrewEngaged>><<print "You are engaged to Andrew and living together">><</if>>\
-<<if !$AndrewEngaged and $DatingAndrew>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
+<<if !$AndrewEngaged and setup.areDating('Andrew')>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
 <<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>><</if>>\
-<<if $DatingOfficeBoss>><br><<print "You are your boss's mistress. ">><</if>>\
-<<if $DatingVeronica and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>\
-<<if $DatingVeronica and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
-<<if $DatingJosh>><br><<print "You are in a relationship with Josh. ">><</if>>\
-<<if $DatingProfessor>><br><<print "The Professor is your Daddy and you are his Baby Girl. ">><</if>>\
-<<if $FWBJosh>><br><<print "You are friends with benefits with Josh. ">><</if>>\
-<<if $FWBThrillSeeker>><br><<print "You are friends with benefits with Zack. ">><</if>>\
-<<if $DatingNerd or $NerdFriendZone>><br><<print "Peter is your boy toy. ">><</if>>\
-<<if $FWBJerk>><br><<print "Barry likes to humiliate you. ">><</if>>\
-<<if $FWBDavid>><br><<print "You are friends with benefits with David. ">><</if>>\
-<<if $FWBPlayer>><br><<print "You are friends with benefits with James. ">><</if>>\
+<<if setup.areDating('Office Boss')>><br><<print "You are your boss's mistress. ">><</if>>\
+<<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>\
+<<if setup.areDating('Veronica') and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
+<<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>\
+<<if setup.areDating('Aaron')>><br><<print "The Professor is your Daddy and you are his Baby Girl. ">><</if>>\
+<<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>\
+<<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>\
+<<if setup.areDating('Peter') or setup.isFriendzoned('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
+<<if setup.isFWB('Barry')>><br><<print "Barry likes to humiliate you. ">><</if>>\
+<<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>\
+<<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>\
 \
 
 
