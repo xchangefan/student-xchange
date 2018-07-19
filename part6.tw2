@@ -1,11 +1,5 @@
 ::Part6Start1 <800,3600>
 <<nobr>>
-	<<if $PlayerProtectionPermanent and $PlayerProtectionPerfect>>
-		<<set setup.notPregnant('period avoided by implant)')>>
-	<<else>>
-		<<set setup.notPregnant('period')>>
-	<</if>>
-
 	<<set $PlayerPointsSet to 1>>
 	<<set $FunPoints to 0>>
 	<<set $AcademicPoints to 0>>
@@ -13,24 +7,95 @@
 	<h1><<print "Classroom">></h1>
 <</nobr>>
 
-<<print "School has finally started and you’ve begun to settle in. You’re surprised at how little time you actually have to spend in the classroom at college compared to high school. Though your professors make up for it with all the homework they assign.">>
+<<nobr>>
+	School has finally started and you’ve begun to settle in. You’re surprised at how little time you actually have to spend in the
+	classroom at college compared to high school. Though your professors make up for it with all the homework they assign.
+<</nobr>>
+
 <img src="Part6/Start1.jpg" hspace="10" vspace="10" height="650">
 
-<<print "But you’re also surprised to find that no one is actually checking on you to make sure you show up for class, or do the homework. All your professors care about is how well you do on your exams.">>
-
-<<print "With all the other distractions you have now, it can be pretty tempting to blow off classwork and go have fun instead.">>
+<<nobr>>
+	But you’re also surprised to find that no one is actually checking on you to make sure you show up for class, or do the homework.
+	All your professors care about is how well you do on your exams.
+<</nobr>>
 
 <<nobr>>
-	<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
-		[[You constantly feel horny.|Part6StartBeltMaster]]
+	With all the other distractions you have now, it can be pretty tempting to blow off classwork and go have fun instead.
+	But this morning you are [[tempted to miss class for a different reason|Part6Period]].
+<</nobr>>
+
+
+::Part6Period <400,3875>
+<<nobr>>
+	<<if $PlayerProtectionPermanent and $PlayerProtectionPerfect>>
+		<<set setup.notPregnant('period avoided by implant)')>>
+		<img src="PartP/Cramps1.jpg" hspace="10" vspace="10" height="650">
+		You wake up with a bit of a stomache ache, but it actually feels lower than that.  When you talk to $Mentor about it, she
+		said it's probably period cramps.  The X-Change people had told you might experience some minor discomfort the first month
+		or two, but that they should stop entirely after that.
 	<<else>>
-		<<if $MasterKate>>
-			[[You constantly feel horny.|Part6StartBeltMaster]]
+		<<set setup.notPregnant('period')>>
+		<img src="PartP/Cramps2.jpg" hspace="10" vspace="10" height="650" align="left"><br>
+		You wake up feeling like someone is twisting your insides into a knot.  When you describe your pain to $Mentor, she tells you
+		it sounds like period cramps.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerProtectionPermanent and $PlayerProtectionPerfect>>
+		From how $Mentor describes her periods, you think your implant has already helped you quite a bit, since it isn't that bad
+		even this month.  
+	<<else>>
+	  You head to the bathroom to take a couple pain pills.  As you sit down on the toilet, you
+		quickly confirm that $Mentor was right.  When you are done going to the bathroom,
+		<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
+			you struggle cleaning the belt.  You eventually do and manage to put a pad over it.
 		<<else>>
-			<<if $PlayerGoodStudent>>[[You want to study to keep up your grades.|Part6StartGood]]<</if>>
-			<<if $PlayerAverageStudent>>[[You study to keep your grades decent, but you also want to have fun.|Part6StartAverage]]<</if>>
-			<<if $PlayerLazyStudent>>[[You just want to have fun.|Part6StartLazy]]<</if>>
+			you follow the instructions on the box of tampons and manage to get one in without making too much of a mess.
 		<</if>>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerProtectionPermanent and $PlayerProtectionPerfect>>
+		You take the pain pills she gives you and then you head to class.  By afternoon, you are back to your old routine.
+	<<elseif $PlayerGoodStudent>>
+		You feel miserable still, but you don't want to miss class today.  You make your way to class and do your best to function.
+		As soon as it's over, you head back to your bed to recover.
+	<<elseif $PlayerAverageStudent>>
+		You feel miserable still, and decide you're not going to class today.  You text one of your classmates and she understands and
+		says she'll stop by later to share her notes with you.  You lay in bed and hope you feel better soon.
+	<<elseif $PlayerLazyStudent>>
+		You know there's no way you are going to class today.  You lay in bed and hope you feel better soon.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerProtectionPermanent and $PlayerProtectionPerfect>>
+		The next day you wake up feeling great.  "That wasn't so bad", you think to yourself.
+	<<else>>
+		The next day you are feeling a bit better.  The cramps are still there, but at least they aren't as intense as yesterday.  The
+		bleeding hasn't stopped though.  It takes several more days until you are back to normal.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerProtectionPermanent and $PlayerProtectionPerfect>>
+		A
+	<<else>>
+		But a
+	<</if>>
+  week later you've forgotten about it entirely and are back to your usual routine.  Of course that means that
+	<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
+		[[you constantly feel horny because of this belt you are in.|Part6StartBeltMaster]]
+	<<elseif $MasterKate>>
+		[[you constantly feel horny because of your Mistress's instructions.|Part6StartBeltMaster]]
+	<<elseif $PlayerGoodStudent>>
+		[[you want to study to keep up your grades.|Part6StartGood]]
+	<<elseif $PlayerLazyStudent>>
+		[[you just want to have fun.|Part6StartLazy]]
+	<<else>>
+		[[you study to keep your grades decent, but you also want to have fun.|Part6StartAverage]]
 	<</if>>
 <</nobr>>
 

@@ -51,7 +51,7 @@
 <<nobr>>
   <h1>Romantic Walk</h1>
   <img src="Part11/Andrew2.jpg" hspace="10" vspace="10" height="600" />
-  <<set $AndrewEngaged to 1>>
+  <<set $Engaged to 'Andrew'>>
 <</nobr>>
 <<nobr>>
   After dinner you are looking forward to heading home to continue your Valentine’s Day fun in private, but
@@ -168,7 +168,7 @@
 
 <<nobr>>
   Of course after that, the second thing you'll probably want to do is to
-  <<if $AndrewEngaged>>
+  <<if $Engaged == 'Andrew'>>
     start [[making phone calls|Part11PhoneCall]] to let everyone know the big news!
   <<else>>
     change the sheets.  The two of you have a mess of these.  Maybe later on in the day you can
@@ -2586,13 +2586,13 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  <<if setup.areDating('Andrew') or $AndrewEngaged>>
+  <<if setup.areDating('Andrew') or $Engaged == 'Andrew'>>
     The next day, after you've talked to your mom and sister, you give your brother a call.
   <<else>>
     You talk to your mom and sister frequently, but not as often to your brother.  Today,
     after talking to your mom and sister, you decide to give him a call too.
   <</if>>
-  <<if $AndrewEngaged>>
+  <<if $Engaged == 'Andrew'>>
     You've given him the big news about your engagement, and he seems happy for you.
     He seems to be acting a bit weird again though.
   <<else>>

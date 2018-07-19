@@ -401,11 +401,11 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarRelationship <2200,0>
 <<if $MasterKate>><br><<print "You are Mistress Kate's pet. ">><</if>>\
-<<if $MasterKen>><br><<print "Ken, the artist, is your ">><<if $HusbandKen>><<print "husband">><<else>><<print "master">><</if>><<print " and you are living in his loft, together with his assistants. ">><</if>>\
+<<if $MasterKen>><br><<print "Ken, the artist, is your ">><<if $Spouse == 'Ken'>><<print "husband">><<else>><<print "master">><</if>><<print " and you are living in his loft, together with his assistants. ">><</if>>\
 <<if $MasterOlivia>><br><<print "You are a slave to Olivia's master. ">><</if>>\
 \
-<<if $AndrewEngaged>><<print "You are engaged to Andrew and living together">><</if>>\
-<<if !$AndrewEngaged and setup.areDating('Andrew')>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
+<<if $Engaged == 'Andrew'>><<print "You are engaged to Andrew and living together">><</if>>\
+<<if $Engaged != 'Andrew' and setup.areDating('Andrew')>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
 <<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>><</if>>\
 <<if setup.areDating('Office Boss')>><br><<print "You are your boss's mistress. ">><</if>>\
 <<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>\
