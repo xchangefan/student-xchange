@@ -11,7 +11,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<include [[SideBarBody]]>>
   <<include [[SideBarBirthControl]]>>
 
-  <<if $PlayerMoneySet>><<print "Money: $">>$PlayerMoney<</if>>
+<<if $PlayerMoneySet>><<print "Money: $">>$PlayerMoney<</if>>
   [[Inventory|SideBarInventory]]
   <<include [[SideBarChastity]]>>\
   <<include [[SideBarMentor]]>>\
@@ -42,7 +42,6 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
   [[Inventory|SideBarInventory]]
 </div>
-
 
 ::SideBarBody <425,0>
 <<nobr>>
@@ -359,10 +358,6 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     Emily is your mentor
     <<if $Roommate == 'Emily'>>
       and roommate
-    <<elseif setup.isNeighbour('Emily') and setup.isNeighbour("Emily's Boyfriend")>>
-      . She and her boyfriend are your neighbours
-    <<elseif setup.isNeighbour('Emily')>>
-      and neighbour
     <</if>>
     <<print ". ">>
   <<elseif $Mentor == 'Hannah'>>

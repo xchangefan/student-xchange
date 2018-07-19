@@ -433,6 +433,11 @@
 	  <<set setup.removeNeighbour($Roommate)>>
 		<<set setup.addNeighbour("Emily")>>
 		<<set setup.addNeighbour("Emily's Boyfriend")>>
+		<<if $Roommate == 'Barry'>><<goto [[Part5Jerk1]]>><</if>>
+		<<if $Roommate == 'James'>><<goto [[Part5Player1]]>><</if>>
+		<<if $Roommate == 'Peter'>><<goto [[Part5Nerd1]]>><</if>>
+		<<if $Roommate == 'Zack'>><<goto [[Part5Thrill1]]>><</if>>
+		<<if $Roommate == 'Josh'>><<goto [[Part5Regular1]]>><</if>>
 	<</link>>
 	<<print " and letting Emily and him have your room to themselves.">>
 <</nobr>>
@@ -1183,10 +1188,10 @@
 ::Part5Jerk2 <700,3125>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'Barry'})>>
-	<<set $sex.push({sex: 'male', anon: "Barry's Friend"})>>
-	<<set $sex.push({sex: 'male', anon: "Barry's Friend"})>>
-	<<set $sex.push({sex: 'male', anon: "Barry's Friend"})>>
-	<<set $sex.push({sex: 'male', anon: "Barry's Friend"})>>
+	<<set $sex.push({sex: 'male', anon: "Friend of Barry"})>>
+	<<set $sex.push({sex: 'male', anon: "Friend of Barry"})>>
+	<<set $sex.push({sex: 'male', anon: "Friend of Barry"})>>
+	<<set $sex.push({sex: 'male', anon: "Friend of Barry"})>>
 	<h1><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Barry’s Bedroom">><</if>></h1>
 <</nobr>>
 

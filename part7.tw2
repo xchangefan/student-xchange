@@ -53,14 +53,33 @@
 <<nobr>>
 	<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>[[You write “Implant”.|Part7Start4]]<</if>>
 	<<if $PlayerProtectionPill>>[[You write “Pill”.|Part7Start4]]<</if>>
-	<<if $PlayerProtectionCondoms>>[[You write “Condoms”.|Part7Start4]]<</if>>
-	<<if $PlayerProtectionWithdraw>>[[You write “Withdrawal Method”.|Part7Start4]]<</if>>
+	<<if $PlayerProtectionCondoms>>
+		[[You write “Condoms”|Part7Start4]].
+		<<if $JobCallGirl or $JobCallGirlSide>>
+			Clients don't count, right?
+		<<else>>
+			You've used one everytime... or at least you think so.
+		<</if>>
+	<</if>>
+	<<if $PlayerProtectionWithdraw>>
+		[[You write “Withdrawal Method”.|Part7Start4]]
+		<<if $JobCallGirl or $JobCallGirlSide>>
+			Clients don't count, right?
+		<<else>>
+			They've all done that... or at least you think so.
+		<</if>>
+	<</if>>
 	<<if $PlayerProtectionNone or $PlayerProtectionTry>>[[You write “None”.|Part7Start4]]<</if>>
 <</nobr>>
 
 ::Part7Start4 <1000,5750>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
+	<<if $PlayerProtectionTry>>
+		<<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0.25, false)>>
+	<<else>>
+		<<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0, false)>>
+	<</if>>
 <</nobr>>
 
 <<print "The next question asks you how often you have had sex and with how many different guys.">>
@@ -76,7 +95,7 @@
 		<img src="Part7/Start5C.jpg" hspace="10" vspace="10" height="450">
 		<img src="Part7/Start5B.jpg" hspace="10" vspace="10" height="450">
 	<<else>>
-		TODO Need image for no guys at all
+		<img src="Part7/Start5D.jpg" hspace="10" vspace="10" height="650">
 	<</if>>
 <</nobr>>
 
@@ -84,45 +103,6 @@
 
 ::Part7Start5 <800,5750>
 <<nobr>>
-	<<set $SexVaginalEffectiveCount to setup.sexVaginalCount() - $SexVaginalExcludedCount>>
-	<<if $PlayerProtectionPerfect or $SexVaginalEffectiveCount <= 0>>
-			<<set $PlayerPregnantCheck = 0>>
-	<<else>>
-		<<if setup.sexUniqueVaginalCount() == 1 and setup.sexVaginalCount() == 1>>
-			<<if $PlayerProtectionTry or $PlayerProtectionNone>>
-				<<set $PlayerPregnantCheck = 4>>
-			<</if>>
-			<<if $PlayerProtectionWithdraw or $PlayerProtectionCondoms>>
-				<<set $PlayerPregnantCheck = 1>>
-			<</if>>
-			<<if $PlayerProtectionPermanent or $PlayerProtectionPill>>
-				<<set $PlayerPregnantCheck = 0>>
-			<</if>>
-		<</if>>	
-		<<if setup.sexUniqueVaginalCount() > 1 or setup.sexVaginalCount() > 1>>
-			<<if $PlayerProtectionTry>>
-				<<set $PlayerPregnantCheck = 20>>
-			<</if>>
-			<<if $PlayerProtectionNone>>
-				<<set $PlayerPregnantCheck = 17>>
-			<</if>>
-			<<if $PlayerProtectionWithdraw>>
-				<<set $PlayerPregnantCheck = 3>>
-			<</if>>
-			<<if $PlayerProtectionCondoms>>
-				<<set $PlayerPregnantCheck = 4>>
-			<</if>>
-			<<if $PlayerProtectionPermanent or $PlayerProtectionPill>>
-				<<set $PlayerPregnantCheck = 2>>
-			<</if>>
-		<</if>>
-
-		<<if setup.areDating('Aaron') and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>>
-			<<set $PlayerPregnantCheck = 0>>
-		<</if>>
-	<</if>>
-		
-	<<set $PlayerRollDice = either(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19)>>
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
 
@@ -130,35 +110,22 @@
 <img src="Part7/Start4.jpg" hspace="10" vspace="10" height="500">
 
 <<nobr>>
-	<<if !setup.sexUniqueVaginalCount()>>
-		<<if $PlayerProtectionTry>>[[you know you will be disappointed by the results.|Part7Start6]]<<else>>[[you are not worried about the results.|Part7Start6]]<</if>>
+	<<if $PregnancyCheck.count == 0 and $PlayerProtectionTry>>
+		You know you will be disappointed by [[the results|Part7Start6]]. Maybe you'll find a guy soon to help you.
+	<<elseif $PregnancyCheck.count == 0>>
+		You know you haven't gone that far with any guys recently, so you are not worried about [[the results|Part7Start6]].
+	<<elseif $PlayerProtectionPerfect>>
+		You opted for the birth control feature on your implant, and it worked perfectly, so you are not worried about [[the results.|Part7Start6]]
 	<<else>>
-		<<if $PlayerProtectionPerfect>>
-			<<print "But as you opted for the implant and it worked perfectly, ">>[[you are not worried about the results.|Part7Start6]]
+		<<if $PlayerProtectionTry>>
+			You hopefully await
 		<<else>>
-			<<if setup.areDating('Aaron') and !$PlayerProtectionTry and !$PlayerProtectionNone and !$PlayerProtectionWithdraw>>
-				<<print "“Daddy” has been very diligent about having you use birth control properly, ">>[[you are not worried about the results.|Part7Start6]]
-			<<else>>
-				<<if $PlayerProtectionTry>>
-					<<if setup.sexUniqueVaginalCount() > 2 or setup.sexVaginalCount() > 4>><<print "You’ve had sex more than a few times recently with a guy. Maybe much more than a few times. You are anxious and a bit excited about what the results are going to be. ">><</if>>
-					<<link "You nervously await the results of your test.">>
-						<<if $PlayerPregnantCheck > $PlayerRollDice>>
-							<<goto [[Part7Preg1]]>>
-						<<else>>
-							<<goto [[Part7Start6]]>>
-						<</if>>
-					<</link>>
-				<<else>>
-					<<if setup.sexUniqueVaginalCount() > 2 or setup.sexVaginalCount() > 4>><<print "You’ve had sex more than a few times recently with a guy. Maybe much more than a few times. You are more concerned about what the results are going to be. ">><</if>>
-					<<link "You nervously await the results of your test.">>
-						<<if $PlayerPregnantCheck > $PlayerRollDice>>
-							<<goto [[Part7Preg1]]>>
-						<<else>>
-							<<goto [[Part7Start6]]>>
-						<</if>>
-					<</link>>
-				<</if>>
-			<</if>>
+			You nervously await
+		<</if>>
+		<<if $PregnancyCheck.isPregnant>>
+			[[the results.|Part7Preg1]]
+		<<else>>
+			[[the results.|Part7Start6]]
 		<</if>>
 	<</if>>
 <</nobr>>
@@ -222,18 +189,26 @@
 <<nobr>>
 	<<set $PlayerSideEffectPermanent = 1>>
 	<<set $PlayerPregnant = 1>>
-	
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
-
-<<print "The doctor comes in with the news. You are either shocked or ecstatic (maybe both) depending on whether this was something you were hoping for or not.">>
+<<nobr>>
+	The doctor comes in with the news. You are either shocked or ecstatic (maybe both) depending on whether this was something you were hoping for or not.
+<</nobr>>
 <img src="Part7/Preg1.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+	Regardless of whether this was wanted or not, or what you decide to do now, one thing is certain. This is the body you’ll have from now on. They
+	explained when you got your implant that it’d be permanent if you got pregnant, and here you are. Any side-effects the implant gave you will also
+	be something you’ll have to deal with for the rest of your life as well.
+<</nobr>>
 
-<<print "Regardless of whether this was wanted or not, or what you decide to do now, one thing is certain. This is the body you’ll have from now on. They explained when you got your implant that it’d be permanent if you got pregnant, and here you are. Any side-effects the implant gave you will also be something you’ll have to deal with for the rest of your life as well.">>
+<<nobr>>
+	They go over your options with you in detail, but you already knew what they were.
+<</nobr>>
 
-<<print "They go over your options with you in detail, but you already knew what they were.">>
-
-<<print "Do you want to ">>[[end the pregnancy now,|Part7Preg2]]<<print " or do you want to ">>[[carry the baby to term,|Part7Preg3]]<<print " regardless of if you are planing on rasing the baby yourself or putting it up for adoption later.">>
+<<nobr>>
+	Do you want to [[end the pregnancy now,|Part7Preg2]] or do you want to [[carry the baby to term,|Part7Preg3]]?<br>
+	(If you are considering adoption, then that's something you can discuss with your obstetrician later.)
+<</nobr>>
 
 ::Part7Pack1 <600,6175>
 <<nobr>>
@@ -346,46 +321,215 @@
 <<print "The initial shock has passed, and now you are excited thinking about how there is a life growing inside you. A little scared too still.">>
 <img src="Part7/Preg3A.jpg" hspace="10" vspace="10" height="650">
 
-<<print "The doctor helps you estimate that you’re about five weeks along. But it could be a couple weeks more or less. She also explains what the next few weeks will be like. You aren’t looking forward to the morning sickness, which you’ll probably be starting soon.">>
+<<nobr>>
+	The doctor helps you estimate that you’re about five weeks along. But it could be a couple weeks more or less.
+	She also explains what the next few weeks will be like. You aren’t looking forward to the morning sickness,
+	which you’ll probably be starting soon.
+<</nobr>>
 
-<<print "Afterwards one of the aids comes in and helps you find an obstetrician near campus for your later visits, and helps you fill out some additional forms.">>
+<<nobr>>
+	Afterwards one of the aids comes in and helps you find an obstetrician near campus for your later visits,
+	and helps you fill out some additional forms.
+<</nobr>>
 
-<<print "When she gets to the questions about the father:">>
+<<nobr>>
+	<<set $named to 0>>
+	<<set $unnamed to 0>>
+	When she gets to the questions about the father
+	<<if $PregnancyCheck.possibleFathers.length == 1 and $PregnancyCheck.actualFather.indexOf('Kidnapper') >= 0 >>
+		you relaize in horror, that this can only be from [[whatever happened during your memory lapse|Part7Unknown]].
+	<<else>>
+		<<if $PregnancyCheck.possibleFathers.length == 1>>
+			you know it has to be:
+		<<else>>
+			you're not certain who it is.  It could be:
+		<</if>>
+		<ul>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Andrew')  >= 0>>
+				<<set $named += 1>>
+				<li>
+				<<if setup.areDating('Andrew') >= 0>>
+					Your boyfriend, [[Andrew|Part7AndrewBoyfriend]]
+				<<else>>
+					Your boss [[Andrew|Part7AndrewBoss]]
+				<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Josh')  >= 0>>
+				<<set $named += 1>>
+				<li>
+				<<if setup.areDating('Josh') >= 0>>
+					Your boyfriend, [[Josh|Part7Josh]]
+				<<else>>
+					[[Josh|Part7Josh]], from the dorm
+				<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Office Boss')  >= 0>>
+				<<set $named += 1>>
+				<li>Your [[boss from the office|Part7OfficeBoss1]]</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Aaron')  >= 0>>
+				<<set $named += 1>>
+				<li>Your [["Daddy"|Part7Professor]], Aaron</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Barry')  >= 0>>
+				<<set $named += 1>>
+				<li>
+					Barry, the [[jerk from your dorm|Part7Unknown]],
+					<<if $PlayerProtectionTry>>
+						maybe he finally did something nice for you
+					<<else>>
+						finding one more way to humiliate you
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('James')  >= 0>>
+				<<set $named += 1>>
+				<li>[[James|Part7Unknown]], from the dorm</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Peter')  >= 0>>
+				<<set $named += 1>>
+				<li>
+					<<if setup.areDating('Peter') >= 0>>
+						[[Peter|Part7Unknown]], maybe unlocking his cock wasn't
+						<<if $PlayerProtectionTry>>
+							a bad idea after all
+						<<else>>
+							such a good idea
+						<</if>>
+					<<else>>
+						[[Peter|Part7Josh]], from the dorm
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Zack')  >= 0>>
+				<<set $named += 1>>
+				<li>[[Zack|Part7Unknown]], from the dorm</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Tom')  >= 0>>
+				<<set $named += 1>>
+				<li>[[Tom?|Part7Unknown]], that guy Hannah brought home</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Troy')  >= 0>>
+				<<set $named += 1>>
+				<li>Your classmate, [[Troy|Part7Unknown]]</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('David')  >= 0>>
+				<<set $named += 1>>
+				<li>Your friend with benefits, [[David|Part7Unknown]]</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Roger')  >= 0>>
+				<<set $named += 1>>
+				<li>[[Roger|Part7Unknown]], and Peter was watching when it hapened</li>
+			<</if>>
 
-<<print "If you aren’t sure which of the ones below is the father, you give her the answer you want to be true. You think or hope that the father is:">>
-<<if setup.daddyCheck('Andrew')>><<if setup.fuckedVaginalCount('Andrew') == 1>>* <<link "Andrew, your boss, from that one night stand.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoss]]>><</link>><<else>>* <<link "Andrew, your boyfriend.">><<set $FatherRealAndrew = 1>><<goto [[Part7AndrewBoyfriend]]>><</link>><</if>><br><</if>>\
-<<if setup.daddyCheck('Josh')>><<if setup.areDating('Josh') == 1>>* [[Josh, your boyfriend.|Part7Josh]]<<else>>* [[Josh, your neighbour, from that one time you had fun.|Part7Josh]]<</if>><br><</if>>\
-<<if setup.daddyCheck('Office Boss')>>* [[Your office boss, from all the times you had to pleasure him.|Part7OfficeBoss1]]<br><</if>>\
-<<if setup.daddyCheck('Aaron')>>* <<link "Your Daddy, the Professor.">><<set $FatherRealProfessor = 1>><<goto [[Part7Professor]]>><</link>><br><</if>>\
-<<if setup.daddyCheck('Barry')>><<if setup.fuckedVaginalCount('Barry') == 1>>* [[Barry, the jerk, from that one time you had fun.|Part7Unknown]]<<else>>* [[Barry, your the jerk, from all the times he humiliated you.|Part7Unknown]]<</if>><br><</if>>\
-<<if setup.daddyCheck('James')>><<if setup.fuckedVaginalCount('James') == 1>>* [[James, the player , from that one time you had fun.|Part7Unknown]]<<else>>* [[James, the player, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
-<<if setup.daddyCheck('Peter')>><<if setup.areDating('Peter')>>* <<link "Peter, the nerd, from that birthday gift.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><<else>>* <<link "Peter, the nerd, from all the times you had fun.">><<set $FatherRealNerd = 1>><<goto [[Part7Unknown]]>><</link>><</if>><br><</if>>\
-<<if setup.daddyCheck('Zack')>><<if setup.fuckedVaginalCount('Zack') == 1>>* [[Zack, the thrill-seeker, from that one time you had fun.|Part7Unknown]]<<else>>* [[Zack, the thrill-seeker, from all the times you had fun.|Part7Unknown]]<</if>><br><</if>>\
-<<if setup.daddyCheck('Tom')>>* [[Tom, the guy Hannah dated once.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Troy')>>* [[Troy, your colleague, from that one night stand.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('David')>>* [[David, from all the times you had fun.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Coach')>>* [[The Coach, from that time you had to audition.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Football Player')>>* [[One of the football team members, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Bar Patron')>>* [[One of the guys you picked at the bar, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Athlete')>>* [[One of gym colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Athlete (yoga)')>>* [[One of your yoga students, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('guy at the library')>>* [[One of the guys you picked in the library, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Uniersity Donor') || setup.daddyCheck('Tony')>>* [[One of the guys at the fundraiser events, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Classmate')>>* [[One of your school colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Athlete (massage client)')>>* [[One of your massage clients, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Call Girl Client')>>* [[One of call girl clients, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Porn Costar')>>* [[One of your porn colleagues, but you have no idea which one.|Part7Unknown]]<br><</if>>\
-<<if setup.daddyCheck('Kidnapper 1') || setup.daddyCheck('Kidnapper 2') || setup.daddyCheck('Kidnapper Doctor')>><<if setup.sexUniqueVaginalCount() == 3>>* [[You realize in horror that this can only be from whatever happened during your memory lapse.|Part7Unknown]]<<else>>* [[You realize in horror that this can also be related to your memory lapse.|Part7Unknown]]<</if>><br><</if>>\
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Football Player')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[Some football player|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Athlete (yoga)') >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[Some athlete from your yoga class|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Athlete (massage client)') >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[Some athlete you gave a very happy ending|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Athlete') >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[Some athlete|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Bar Patron')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[Some guy at the bar you work at|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf("Sarah's Brother")  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[Your former coworker's brother|Part7Unknown]].  She quit a while ago and you're not even sure you remember her name, and you certainly don't remember his</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some University Donor')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[One of the university donors you entertained|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Friend of Barry')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[One of Barry's friends|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Strip Club Customer')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[Someone you gave a bit more than a lapdance|Part7Unknown]] at the strip club, but you have no idea who</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Porn Costar')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[One of your porn costars|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Call Girl Client')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>
+					[[One of your call girl clients|Part7Unknown]], 
+					<<if $PlayerProtectionTry>>
+						with your most generous tip yet.
+					<<else>>
+						it's an occupational hazard you suppose.
+					<</if>>
+					But you have no idea which one it would be.
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Call Girl GFE Client')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>
+					[[Your 'Girlfriend Experience' client|Part7Unknown]], but you decide it's
+					<<if $PlayerProtectionTry>>
+						your baby,
+					<<else>>
+						your problem to deal with,
+					<</if>>
+					not his.
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Classmate')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[One of your classmates|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Kidnapper 1 (no memory)') >= 0 >>
+				<<set $unnamed += 3>>
+				<li>You realize in horror that this could be [[related to your memory lapse.|Part7Unknown]]</li>
+			<</if>>
+			<<if $named + $unnamed < $PregnancyCheck.possibleFathers.length>>
+				<li>
+					You're [[not sure who|Part7Unknown]]
+					<<if $PregnancyCheck.possibleFathers.length == 1>>
+						it could be.
+					<<else>>
+						else it could be.  It's not like you have a log of every guy you've ever had sex with.
+					<</if>>
+				</li>
+			<</if>>
+		</ul>
+	<</if>>
+<</nobr>>
 
-
-<<if $SexKidnapVaginal>><<if setup.sexUniqueVaginalCount() > 3>>* [[You really are not sure.|Part7Unknown]]<</if>><<else>><<if setup.sexUniqueVaginalCount() > 1>>* [[You really are not sure.|Part7Unknown]]<</if>><</if>>
+<<nobr>>
+	<<if $named > 0 and $PregnancyCheck.possibleFathers.length > 1>>
+		If you want they can discretely test TODO_LINK_HERE
+		<<if $named == 1>>
+			the one you know to see if he's the father or not.
+		<<elseif $unnamed == 0>>
+			the guys to find out for sure which one it is.
+		<<else>>
+			the guys you know to see if it's one of them or not.
+		<</if>>
+		Of course, you could just tell the one you <i>want</i> to be the father that he <i>is</i> the father.
+		He'll never know the difference anyway.
+	<</if>>
+<</nobr>>
 
 ::Part7Preg2 <1000,6000>
 <<nobr>>
 	<<set $PlayerPregnant = 0>>
 	<<set $PlayerAbortion = 1>>
 	<<set $PlayerMenstruation = 1>>
-	
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
 

@@ -5,7 +5,7 @@
 	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
 	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
 	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
-	<h1><<print "Cassie`s Bedroom">></span>
+	<h1><<print "Cassie`s Bedroom">></h1>
 <</nobr>>
 
 <<print "You’ve definitely become closer to your sister; you both had plenty of chances to spend time together your last few days in town.">>
@@ -30,15 +30,14 @@
 ::Part8ChristmasBrother <500,7650>
 <<nobr>>
 	<h1>
-	<<if $PlayerSideEffectExhibitionist>>
-		<<print "Cafe">>
-	<<else>>
-		<<if $PlayerChastityBelt>>
+		<<if $PlayerSideEffectExhibitionist>>
+			<<print "Cafe">>
+		<<elseif $PlayerChastityBelt>>
 			<<print "Living Room">>
 		<<else>>
 			<<print "Bathroom">>
 		<</if>>
-	<</if>></span>
+	</h1>
 <</nobr>>
 
 <<print "You’ve definitely become closer to your brother; you both had plenty of chances to spend time together your last few days in town.">>
@@ -62,7 +61,7 @@
 
 ::Part8ChristmasCody <700,7650>
 <<nobr>>
-	<h1><<print "Restaurant">></span>
+	<h1><<print "Restaurant">></h1>
 <</nobr>>
 
 <<print "You had a couple of lunchs date with Cody, followed by afternoons back at his apartment.">>
@@ -76,7 +75,7 @@
 
 ::Part8Uncle7 <900,7650>
 <<nobr>>
-	<h1><<print "Uncle Mike’s Playroom">></span>
+	<h1><<print "Uncle Mike’s Playroom">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -117,7 +116,7 @@
 
 ::Part8Start2 <200,6325>
 <<nobr>>
-	<h1><<print "Road Home">></span>
+	<h1><<print "Road Home">></h1>
 <</nobr>>
 
 <<print "You start on the long drive home, but you’re just a few miles from campus when you get a flat tire. Changing it is much harder than it used to be, especially getting the lug nuts off, but you get the job done.">>
@@ -139,7 +138,7 @@
 <<nobr>>
 	<<if $VeronicaKey>><<set $PlayerChastityBelt = 0>><</if>>
 
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -154,7 +153,7 @@
 <<nobr>>
 	<<set $RideBrad = 1>>
 	
-	<h1><<print "Road Home">></span>
+	<h1><<print "Road Home">></h1>
 <</nobr>>
 
 <<print "You head back to your dorm. You plan on checking online to see if there’s a nearby town with a station open tomorrow. But you run into Brad in the hallway getting ready to leave for home. He lives about an hour past your home town. You know driving you home on his way would just add an extra half hour to his trip.">>
@@ -164,7 +163,7 @@
 
 ::Part8Road4 <200,6450>
 <<nobr>>
-	<h1><<print "Road Home">></span>
+	<h1><<print "Road Home">></h1>
 <</nobr>>
 
 <<print "You try to make up for lost time and drive fast the whole way. Between gas and tolls you spend $100 on your trip. But your speeding eventually gets you pulled over going considerably over the speed limit.">><<set $PlayerMoney -= 100>>
@@ -196,7 +195,7 @@
 ::Part8Road2 <600,6325>
 <<nobr>>
 	
-	<h1><<print "Road Home">></span>
+	<h1><<print "Road Home">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -224,7 +223,7 @@
 ::Part8Road3 <1000,6300>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'Brad'})>>
-	<h1><<print "Road Home">></span>
+	<h1><<print "Road Home">></h1>
 <</nobr>>
 
 <<print "It’s no surprise that Brad loves your idea. You make sure to swallow every drop so you don’t make a mess in his car. The excitement of blowing him while he’s driving really turns you on too.">>
@@ -238,7 +237,7 @@
 
 ::Part8Home1 <800,6375>
 <<nobr>>
-	<h1><<print "Home">></span>
+	<h1><<print "Home">></h1>
 <</nobr>>
 
 <<print "You arrive home, but everyones already gone to sleep. You quietly head up to your old room. You really want to take a shower, but you don’t want to wake anyone up so you decide to take one in the morning instead.">>
@@ -253,7 +252,7 @@
 	<<set $PlayerMoney -= 300>>
 	<<if $PlayerMoney < 0>><<set $PlayerCredit = 1>><</if>>
 	
-	<h1><<print "Jail Cell">></span>
+	<h1><<print "Jail Cell">></h1>
 <</nobr>>
 
 <<print "You’re cuffed and placed in the back of the police car and taken to the station. By the time you’re processed, they say it’s too late in the evening to call the judge. You’ll have to stay overnight and they’ll call him in the morning to set your bail.">>
@@ -270,7 +269,7 @@
 ::Part8Road5 <400,6475>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'Police Officer', vaginal: true, birthControlOverride:'cycle'})>>
-	<h1><<print "Patrol Car">></span>
+	<h1><<print "Patrol Car">></h1>
 <</nobr>>
 
 <<print "He doesn’t answer at first, and you worry you’ve just gotten yourself into even more trouble. But then he has you join him in the front of his squad car and he calls in “10-7” and says he’ll be on dinner break for the next hour. Then he drives you both to a secluded area.">>
@@ -286,7 +285,7 @@
 
 ::Part8HomeShower <200,6600>
 <<nobr>>
-	<h1><<print "Shower">></span>
+	<h1><<print "Shower">></h1>
 <</nobr>>
 
 <<print "Your hot shower feels amazing. You enjoy finally feeling clean again after having crawled under your car yesterday to deal with the tire, plus anything that might have happened after that.">>
@@ -298,7 +297,7 @@
 <<nobr>>
 	<<set $HomeMasturbate = 1>>
 
-	<h1><<print "Home">></span>
+	<h1><<print "Home">></h1>
 <</nobr>>
 
 <<print "Once you get started, you forget about your worries about tomorrow.">>
@@ -310,7 +309,7 @@
 
 ::Part8Home3 <1000,6425>
 <<nobr>>
-	<h1><<print "Dream">></span>
+	<h1><<print "Dream">></h1>
 <</nobr>>
 
 <<print "Being back home must be having an effect on you. You dream that you are back in high school. But it’s not like it really was. Everything else looks the same. The classmates and teachers are all the same. But you are in the body you have now, not the one you were actually in back then.">>
@@ -324,7 +323,7 @@
 
 ::Part8Home4 <800,6500>
 <<nobr>>
-	<h1><<print "Dream">></span>
+	<h1><<print "Dream">></h1>
 <</nobr>>
 
 <<print "You change out of your skirt and blouse and into your skin-tight, latex gym outfit.">>
@@ -346,7 +345,7 @@
 
 ::Part8HomeMorning2 <600,6600>
 <<nobr>>
-	<h1><<print "Kitchen">></span>
+	<h1><<print "Kitchen">></h1>
 <</nobr>>
 
 <<print "“Oh my goodness! Let’s take a look at you!”, your mom says when you join them near the kitchen table. They both complement you on your new appearance and pepper you with questions about how you’ve been adjusting, and with more general questions about how school has been going too. After a while she stops with her questions to comment on what a beautiful young woman you’ve become.">>
@@ -458,7 +457,7 @@
 
 ::Part8HomeMorning1 <400,6600>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You put on something casual and get ready to head downstairs. You are still a bit nervous about how your family is going to react, but before you can head down a couple of old friends come by your room to visit.">>
@@ -470,7 +469,7 @@
 
 ::Part8HomeMorning3 <800,6625>
 <<nobr>>
-	<h1><<print "Kitchen">></span>
+	<h1><<print "Kitchen">></h1>
 <</nobr>>
 
 <<print "Cassie starts questioning you about the hard metal she felt when she slapped your butt a bit earlier.">>
@@ -489,7 +488,7 @@
 	<<set $PlayerMoney -= 200>>
 	<<if $PlayerMoney < 0>><<set $PlayerCredit = 1>><</if>>
 	
-	<h1><<print "Shopping Mall">></span>
+	<h1><<print "Shopping Mall">></h1>
 <</nobr>>
 
 <<print "When you mention that you still need to buy gifts, Cassie excitedly suggests the two of you head to the mall. You spend around $200 buying all the gifts you need for everyone. ">><<if $PlayerCredit>><<print "Maybe you should be more careful about spending on credit, but you still think it was worth it.">><</if>>
@@ -500,7 +499,7 @@
 
 ::Part8HomeMall2 <1200,6600>
 <<nobr>>
-	<h1><<print "Shopping Mall">></span>
+	<h1><<print "Shopping Mall">></h1>
 <</nobr>>
 
 <<print "When your sister takes you to a cosmetics store, you are amazed and overwhelmed at how huge it is and all the different options. You are also shocked at how much everything costs.">>
@@ -512,7 +511,7 @@
 
 ::Part8HomeMall3 <1400,6600>
 <<nobr>>
-	<h1><<print "Shopping Mall">></span>
+	<h1><<print "Shopping Mall">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -542,7 +541,7 @@
 	<<if !$PlayerUnderwearSexy>><<set $PlayerUnderwearSexy = 1>><<else>><<set $PlayerUnderwearErotic = 1>><</if>>
 	<<set $PlayerItemSpecialVibrator = 1>>
 
-	<h1><<print "Shopping Mall">></span>
+	<h1><<print "Shopping Mall">></h1>
 <</nobr>>
 
 <<print "The cute guy just watches as Cassie and you disappear into the Victoria’s Secret store.">>
@@ -570,7 +569,7 @@
 
 ::Part8HomeMall5 <1800,6600>
 <<nobr>>
-	<h1><<print "Coffee Shop">></span>
+	<h1><<print "Coffee Shop">></h1>
 <</nobr>>
 
 <<print "Your sister and you stop at the coffee shop near the mall before heading home. While you are there, Cassie points out the guy from earlier, at another table drinking a latte and looking at his phone.">>
@@ -594,7 +593,7 @@
 
 ::Part8Home5 <0,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "That night you think about the day and what a fun time <<if $KidnapEscape>>[[it was.|Part8Text1]]<<else>>it was.  But then you think of ways it could have been even more fun. Whichever of the ideas that flood your mind excites you the most, you linger on that one, imagining it in great detail:<</if>>">>
@@ -610,7 +609,7 @@
 
 ::Part8Text1 <200,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You have a lot of time to yourself over the next few days. ">>[[You spend plenty of it on your phone,|Part8Text2]]<<print " staying in touch with everyone that matters to you back at school.">>
@@ -620,7 +619,7 @@
 
 ::Part8Text2 <400,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You snap a sexy selfie during the day.">>
@@ -639,7 +638,7 @@
 
 ::Part8Text3 <600,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You can’t be there in person to tease him. But you know he’s back at his own parent’s house locked in chastity and thinking of you. Just because he’s hundreds of miles away, that doesn’t mean you can’t still tease him.">>
@@ -653,7 +652,7 @@
 
 ::Part8Text4 <800,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You nestle the remote-controlled vibrator you brought with you inside you and against your clit. The earbuds in your ear ensure that only you can hear the sounds your would-be lover makes.">>
@@ -698,7 +697,7 @@
 
 ::Part8Text5 <1000,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You continue texting with Cody that night.">>
@@ -716,7 +715,7 @@
 
 ::Part8Arrival1 <0,7000>
 <<nobr>>
-	<h1><<print "Airport">></span>
+	<h1><<print "Airport">></h1>
 <</nobr>>
 
 <<print "The next morning you head to the airport to pick up your brother, Dylan">><<if !$CarBrad>><<print ", borrowing your mom’s car.">><<else>><<print ".">><</if>>
@@ -748,7 +747,7 @@
 ::Part8Text6 <1200,6750>
 <<nobr>>
 	<<set $CodySexting to 1>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You do a sexy dance as Cody watches you remove the bra and panties you were just modeling for him.">>
@@ -766,7 +765,7 @@
 
 ::Part8TextChastity1 <800,6875>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You continue texting with Cody that night. At some point in your flirtatious exchange he asks about your purchases at the lingerie store.">>
@@ -778,7 +777,7 @@
 
 ::Part8Text7 <1400,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "When the pictures you requested in return for your show arrive, it’s unmistakable just how much Cody enjoyed your performance.">>
@@ -790,7 +789,7 @@
 
 ::Part8Text8 <1600,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You whisper into your phone how much you want to feel his cock in your mouth as your fingers tease around your lips and slide in and across your tongue.">>
@@ -804,7 +803,7 @@
 
 ::Part8TextChastity2 <1400,6875>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "When he sees the topless photos you send, he soon loses any interest in the lingerie.">>
@@ -826,7 +825,7 @@
 <<nobr>>
 	<<set $BrotherFlashed = 1>>
 	
-	<h1><<print "Airport">></span>
+	<h1><<print "Airport">></h1>
 <</nobr>>
 
 <<print "Then you pull up your top and flash him saying “Believe it! I’m 100% woman now!.”">>
@@ -848,7 +847,7 @@
 <<nobr>>
 	<<set $BrotherThong = 1>>
 	
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "Later that day, you are texting on your phone when Dylan walks in to let you know that lunch is ready. You hear the shocked sound he makes as he sees you.">>
@@ -872,7 +871,7 @@
 
 ::Part8Arrival4 <350,7000>
 <<nobr>>
-	<h1><<print "Woods">></span>
+	<h1><<print "Woods">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -926,7 +925,7 @@
 
 ::Part8Evening <525,7000>
 <<nobr>>	
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -950,7 +949,7 @@
 ::Part8EveningSister1 <1050,7125>
 <<nobr>>
 	
-	<h1><<print "Cassie`s Bedroom">></span>
+	<h1><<print "Cassie`s Bedroom">></h1>
 <</nobr>>
 
 <<print "You gently knock on your sisters door before you walk in.">>
@@ -982,7 +981,7 @@
 
 ::Part8EveningBrother1 <700,7125>
 <<nobr>>
-	<h1><<print "Dylan`s Bedroom">></span>
+	<h1><<print "Dylan`s Bedroom">></h1>
 <</nobr>>
 
 <<print "You were right, as you peek in the door, the shaft of light from the hallway shines on his bed and you see him with his eyes closed, stroking himself.">>
@@ -1008,7 +1007,7 @@
 ::Part8EveningBooty1 <1575,7125>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'Cody'})>>
-	<h1><<print "Cody’s Apartment">></span>
+	<h1><<print "Cody’s Apartment">></h1>
 <</nobr>>
 
 <<print "You don’t waste much time once you are in Cody’s apartment. You have his clothes off and are kissing him while you stroke his cock, feeling it stiffen in your hand. When you can’t resist any longer, you drop to your knees. You begin licking the underside of his cock before you wrap your lips around it and slide it into your mouth.">>
@@ -1037,7 +1036,7 @@
 	<<set $ChristmasEveOrgasm = 1>>
 	<<set $HomeMasturbate = 1>>
 
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "You decide to try masturbating in order to have any hope of getting to sleep.">>
@@ -1053,7 +1052,7 @@
 
 ::Part8EveningCall <1750,7250>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -1070,7 +1069,7 @@
 ::Part8EveningBrother2 <525,7250>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'Dylan'})>>
-	<h1><<print "Dylan`s Bedroom">></span>
+	<h1><<print "Dylan`s Bedroom">></h1>
 <</nobr>>
 
 <<print "As you stroke his cock you see him looking at your mouth. He confesses he’s been fantasizing about your tongue on his cock ever since he saw your piercing.">>
@@ -1085,7 +1084,7 @@
 ::Part8EveningBrother3 <700,7250>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'Dylan'})>>
-	<h1><<print "Dylan`s Bedroom">></span>
+	<h1><<print "Dylan`s Bedroom">></h1>
 <</nobr>>
 
 <<print "You stop stroking his cock and a moment later your lips are on its head. You can see a last bit of uncertainty on his face as he looks down and sees the face of his little brother (now his little sister).">>
@@ -1101,7 +1100,7 @@
 <<nobr>>
 	<<set $ChristmasEveOrgasm = 1>>
 	<<set $sex.push({sex: 'male', name: 'Dylan'})>>
-	<h1><<print "Dylan`s Bedroom">></span>
+	<h1><<print "Dylan`s Bedroom">></h1>
 <</nobr>>
 
 <<print "Stroking his cock and seeing the pleasure on his face only makes you more aware of your own need again. You change positions so that you are straddling his face. Seeing your wet lips in front of him quickly helps him overcome any last bit of doubts he might have had and he gets to work.">>
@@ -1117,7 +1116,7 @@
 
 ::Part8Christmas1 <0,7400>
 <<nobr>>
-	<h1><<print "Living Room">></span>
+	<h1><<print "Living Room">></h1>
 <</nobr>>
 
 <<print "Compared to when you were younger, much more of your fun on Christmas morning is from watching people open the gifts you’d bought for them, instead of opening your own.">>
@@ -1136,7 +1135,7 @@
 ::Part8EveningSister2 <1225,7125>
 <<nobr>>
 	
-	<h1><<print "Sister`s Car">></span>
+	<h1><<print "Sister`s Car">></h1>
 <</nobr>>
 
 <<print "“I didn’t mean that! But it’s good to know my pervy little brother is still in there.”, she says as she pushes you off her. “Besides, I have something better in mind.”">>
@@ -1160,7 +1159,7 @@
 	  <<set $sex.push({sex: 'male', name: "Cassie's Boyfriend"})>>
 		<<set $ChristmasEveOrgasm = 1>>
 	<</if>>
-	<h1><<print "Sister`s Boyfriend House">></span>
+	<h1><<print "Sister`s Boyfriend House">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -1202,7 +1201,7 @@
 	<<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectPheromones > 3 or $PlayerSideEffectOral > 2 or $PlayerSideEffectMasturbationBlock > 3 or $PlayerSideEffectDreams > 3 or !$LikeFemales>>
 		<<set $sex.push({sex: 'male', name: "Cassie's Boyfriend"})>>
 	<</if>>
-	<h1><<print "Cassie`s Boyfriend House">></span>
+	<h1><<print "Cassie`s Boyfriend House">></h1>
 <</nobr>>
 
 <<print "You can only watch in envy as his skillful tongue brings your sister to orgasm. You do love kissing her as the pleasure washes over her again and again.">>
@@ -1251,7 +1250,7 @@
 		<<set $ChristmasEveOrgasm = 1>>
 	<</if>>
 	
-	<h1><<print "Cassie`s Boyfriend House">></span>
+	<h1><<print "Cassie`s Boyfriend House">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -1296,7 +1295,7 @@
 	<<set $ChristmasEveOrgasm = 1>>
   <<set $sex.push({sex: 'male', name: 'Cody', vaginal: true, birthControlOverride:'cycle'})>>
 	<<set $CodyHickey to 1>>
-	<h1><<print "Cody’s Apartment">></span>
+	<h1><<print "Cody’s Apartment">></h1>
 <</nobr>>
 
 <<print "The need that’s been building in you since you arrived back home is finally answered as he pushes into you. Each time he pulls out you feel that need return, and a desperate emptiness inside you, only to feel the joy of his next thrust wash over you again a moment later.">>
@@ -1314,7 +1313,7 @@
 <<nobr>>
 	<<set $PlayerClothesOutfitLatexPink = 1>>
 	
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<print "Once you are alone, you retrieve the present “Daddy” gave you.">>
@@ -1332,7 +1331,7 @@
 
 ::Part8Christmas3 <400,7400>
 <<nobr>>
-	<h1><<print "Kitchen">></span>
+	<h1><<print "Kitchen">></h1>
 <</nobr>>
 
 <<print "When you walk into the kitchen your mom and sister are talking about the day’s plans and whether you should join them at the family dinner. They include you in the discussion when you walk in. Your mom repeats the last bit for you.">>
@@ -1364,7 +1363,7 @@
 
 ::Part8Uncle1 <600,7400>
 <<nobr>>
-	<h1><<print "Uncle Mike’s House">></span>
+	<h1><<print "Uncle Mike’s House">></h1>
 <</nobr>>
 
 <<print "“Wow. They told me about your change, but they never mentioned how beautiful you are now.”, Mike tells you. Your conversation is mostly about the game you are watching, only briefly venturing into topics like your studies or his recent divorce.">>
@@ -1382,7 +1381,7 @@
 
 ::Part8Christmas4 <400,7525>
 <<nobr>>
-	<h1><<print "Grandparent’s House">></span>
+	<h1><<print "Grandparent’s House">></h1>
 <</nobr>>
 
 <<print "You are pleasantly surprised that your grandma completely accepts the new you. “Of course, I love all my granddaughters.”, she tells you. “Just don’t go getting yourself pregnant your first year at college like your cousin Ashley did though.”. You nod but don’t say anything.">>
@@ -1394,7 +1393,7 @@
 
 ::Part8Christmas5 <600,7525>
 <<nobr>>
-	<h1><<print "Grandparent’s House">></span>
+	<h1><<print "Grandparent’s House">></h1>
 <</nobr>>
 
 <<print "When you finally do have to sit down with your grandfather, he seems to be confused about who you are. He tells you “My grandson is a lucky young man to have such a beautiful girlfriend. And to think, all this time I thought the boy was queer... Where is he anyway?”">>
@@ -1415,7 +1414,7 @@
 
 ::Part8ChristmasReturn <0,7775>
 <<nobr>>
-	<h1><<print "Living Room">></span>
+	<h1><<print "Living Room">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -1433,7 +1432,7 @@
 
 ::Part8Uncle2 <800,7400>
 <<nobr>>
-	<h1><<print "Uncle Mike’s Playroom">></span>
+	<h1><<print "Uncle Mike’s Playroom">></h1>
 <</nobr>>
 
 <<print "He unlocks a room off to the side of the basement, and then leads you into the ‘playroom’ your aunt and him used to share. As you look around the room you imagine what it would be like to be helpless and bound to the various pieces as he did whatever he wanted.">>
@@ -1465,7 +1464,7 @@
 
 ::Part8Return1 <0,7900>
 <<nobr>>
-	<h1><<print "Road to School">></span>
+	<h1><<print "Road to School">></h1>
 <</nobr>>
 
 <<print "You are careful to watch your speed on the way home, especially through the town you were pulled over in before. You’ve left with plenty of time, so you are in no hurry.">>
@@ -1478,7 +1477,7 @@
 ::Part8Uncle3 <800,7525>
 <<nobr>>
   <<set $sex.push({sex: 'male', name: 'Mike'})>>
-	<h1><<print "Uncle Mike’s Playroom">></span>
+	<h1><<print "Uncle Mike’s Playroom">></h1>
 <</nobr>>
 
 <<print "You strip as he instructs you. When he sees the chastity belt you are locked into he comments on what a bad girl you must be to need to be locked into such a thing. He says it does limit your playtime options though. He retrieves a cage from the playroom and brings it upstairs.">>
@@ -1507,7 +1506,7 @@
 <<nobr>>
 	<<set $UncleChair = 1>>
 	
-	<h1><<print "Uncle Mike’s Playroom">></span>
+	<h1><<print "Uncle Mike’s Playroom">></h1>
 <</nobr>>
 
 <<print "“You were thinking about being a naughty girl, weren’t you?”, he asks. When you admit that you were, he tells you that you’re going to have to go to timeout.">>
@@ -1543,7 +1542,7 @@
 
 ::Part8Uncle5 <1200,7400>
 <<nobr>>
-	<h1><<print "Uncle Mike’s Playroom">></span>
+	<h1><<print "Uncle Mike’s Playroom">></h1>
 <</nobr>>
 
 <<print "He removes your handcuffs and has you strip. He then cuffs your hands and feet to the bondage cross in the playroom.">>
@@ -1562,7 +1561,7 @@
 ::Part8Uncle6 <1200,7525>
 <<nobr>>
   <<set $sex.push({sex: 'male', name: 'Mike', vaginal: true, birthControlOverride:'cycle'})>>
-	<h1><<print "Uncle Mike’s Playroom">></span>
+	<h1><<print "Uncle Mike’s Playroom">></h1>
 <</nobr>>
 
 <<print "After a while he takes you down from the cross and straps you down to a bench. He gives your ass a few more swats with his hand, but soon his hand is stroking your clit and sliding inside you. You can do nothing but moan and enjoy it.">>
@@ -1591,7 +1590,7 @@
 
 ::Part8Return2 <200,7775>
 <<nobr>>
-	<h1><<print "Road to School">></span>
+	<h1><<print "Road to School">></h1>
 <</nobr>>
 
 <<print "Brad picks you up to give you a ride back to school. You want to compensate him for his trouble and gas again.">>
@@ -1609,7 +1608,7 @@
 
 ::Part8Return8 <200,7900>
 <<nobr>>
-	<h1><<if setup.areDating('Andrew')>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></span>
+	<h1><<if setup.areDating('Andrew')>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></h1>
 <</nobr>>
 
 <<nobr>>
@@ -1651,7 +1650,7 @@
 <<nobr>>
   <<set $sex.push({sex: 'male', name: 'Brad'})>>
 	
-	<h1><<print "Road to School">></span>
+	<h1><<print "Road to School">></h1>
 <</nobr>>
 
 <<print "You give him a blowjob as he drives. It makes the long drive much more enjoyable for both of you. Well, especially for him. It turns you on as much as it did the last time">><<if $PlayerChastityBelt>><<print ", but there’s nothing you can do about it anyway.">><<else>><<print ", but now you have more than enough time to ">>[[stop for something more.|Part8Return4]]<</if>>
@@ -1667,7 +1666,7 @@
 <<nobr>>
 
 	
-	<h1><<print "Mechanic">></span>
+	<h1><<print "Mechanic">></h1>
 <</nobr>>
 
 <<print "Brad drops you off at the service station where you’d left your car. They’d called while you were gone and let you know that the turbo encabulator was about to go out too and suggested you take care of now so it didn’t fail while you were driving down the highway. That sounded dangerous, so you told them to fix it as well.">>
@@ -1700,7 +1699,7 @@
 
 ::Part8Return5 <800,7775>
 <<nobr>>
-	<h1><<print "Road to School">></span>
+	<h1><<print "Road to School">></h1>
 <</nobr>>
 
 <<print "You decide that a blowjob is the closest you can go to “not cheating”.">>
@@ -1716,7 +1715,7 @@
 <<nobr>>
   <<set $sex.push({sex: 'male', name: 'Brad', vaginal: true, birthControlOverride:'cycle'})>>
 	
-	<h1><<print "Road to School">></span>
+	<h1><<print "Road to School">></h1>
 <</nobr>>
 
 <<print "It doesn’t take Brad long to find somewhere private. You’ve already gotten yourself turned on enough in the car, you just tell him to “fuck me now!” and he happily obliges.">>
@@ -1731,7 +1730,7 @@
 	<<set $PlayerMoney -= 150>>
 	<<if $PlayerMoney < 0>><<set $PlayerCredit = 1>><</if>>
 
-	<h1><<print "Mechanic">></span>
+	<h1><<print "Mechanic">></h1>
 <</nobr>>
 
 <<print "He can’t drop the $150 for the tire, so you still have to pay that part. But you and him come to another arrangement for the encabulator.">><<if $PlayerCredit>><<print " He even agrees to make an exception and let yo pay for it on credit.">><</if>>
@@ -1743,7 +1742,7 @@
 
 ::Part8NewYear1 <600,7900>
 <<nobr>>
-	<h1><<print "New Year’s Party">></span>
+	<h1><<print "New Year’s Party">></h1>
 <</nobr>>
 
 <<print "You have a really fun time at the big New Year’s Party.">>
@@ -1783,7 +1782,7 @@
 
 ::Part8Return9 <400,7900>
 <<nobr>>
-	<h1><<print "Andrew’s Apartment">></span>
+	<h1><<print "Andrew’s Apartment">></h1>
 <</nobr>>
 
 <<print "You’d thought it was a little tacky when you’d opened the skirt your parents gave you for Christmas, but when you model it for Andrew, he doesn’t seem to mind it.">>
@@ -1802,7 +1801,7 @@
 	  <<set $sex.push({sex: 'female', anon:"New Year's Eve hookup"})>>
 	<</if>>
 
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<nobr>>
@@ -1867,7 +1866,7 @@
 		<<set $SexNewYearMale = 1>>
 	<</if>>
 
-	<h1><<if setup.areDating('Andrew')>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></span>
+	<h1><<if setup.areDating('Andrew')>><<print "Andrew’s Apartment">><<else>><<print "Bedroom">><</if>></h1>
 <</nobr>>
 
 <<nobr>>
@@ -1938,7 +1937,7 @@
 
 ::Part8NewYear4 <1200,7900>
 <<nobr>>
-	<h1><<print "Bedroom">></span>
+	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<if $PlayerPregnant>><<print "You have fun dancing for another hour or two before you catch a ride home. You make it to your bed, but are asleep as soon as your head hits the sheets.">><<else>><<print "You have fun dancing and drinking champagne for another hour or two before you catch a ride home. You  make it to your bed, but are asleep as soon as your head hits the sheets.">><</if>>

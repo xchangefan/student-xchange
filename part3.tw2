@@ -1,6 +1,5 @@
 ::Part3Start <400,1250>
 <<nobr>>
-	<<set $SexVaginalExcludedCount = 0>> TODO Fix This
 	<h1><<print "Job/Activity Fair">></h1>
 <</nobr>>
 
@@ -850,8 +849,6 @@
 ::AthleteReconsider <2100,1875>
 <<nobr>>
 	<<set $sex.push({sex: 'male', type: 'coach', vaginal: true, birthControlOverride: 'vasectomy'})>>
-	<<set $SexVaginalExcludedCount += 1>>
-	
 	<h1><<print "Coach Persuasion">></h1>
 <</nobr>>
 
@@ -1408,7 +1405,7 @@
 
 ::JobLibrary3 <3600,1875>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name: 'library boss'})>>
+	<<set $sex.push({sex: 'male', name: 'Library Boss'})>>
 	<h1><<print "Campus Library - Boss Office">></h1>
 <</nobr>>
 
@@ -1508,8 +1505,7 @@
 
 <<print "Working at the library, you know all the rarely visited corners, where two people could grab a moment alone and not get caught... probably.">>
 
-<<if setup.isGoldStarLesbian()>><video src="Part3/JobLibrary6.mp4" autoplay loop muted height="600"></video><<else>><video src="Part3/JobLibrary6.mp4" autoplay loop muted height="600"></video><</if>>
-
+<<if setup.isGoldStarLesbian()>><img src="Part3/JobLibrary8.jpg" hspace="10" vspace="10" height="650" align="left"><<else>><video src="Part3/JobLibrary6.mp4" autoplay loop muted height="600"></video><</if>>
 
 <<nobr>>
 	<<print "Even when you’re not working, you still like to visit the library sometimes. ">>
@@ -1979,7 +1975,7 @@
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true, repeat:true})>>
 	
 	<h1><<print "Call Girl - First Client">></h1>
 <</nobr>>
@@ -2018,10 +2014,10 @@
 ::JobCall3 <1800,3425>
 <<nobr>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client'})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true, repeat:true})>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, repeat:true})>>
 	
 	<h1><<print "Call Girl">></h1>
 <</nobr>>
@@ -2040,7 +2036,7 @@
 ::JobCall4 <800,4325>
 <<nobr>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client'})>>
-  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true, repeat:true})>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true})>>
   <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
@@ -2438,38 +2434,6 @@
 <<print "And you have a large and increasing number of fans on campus.">>
 
 [[Spend some time on campus.|Part6Frat1]]
-
-
-::Part6Start1 <800,3600>
-<<nobr>>
-	<<set $PlayerPointsSet to 1>>
-	<<set $FunPoints to 0>>
-	<<set $AcademicPoints to 0>>
-	
-	<h1><<print "Classroom">></h1>
-<</nobr>>
-
-<<print "School has finally started and you’ve begun to settle in. You’re surprised at how little time you actually have to spend in the classroom at college compared to high school. Though your professors make up for it with all the homework they assign.">>
-<img src="Part6/Start1.jpg" hspace="10" vspace="10" height="650">
-
-<<print "But you’re also surprised to find that no one is actually checking on you to make sure you show up for class, or do the homework. All your professors care about is how well you do on your exams.">>
-
-<<print "With all the other distractions you have now, it can be pretty tempting to blow off classwork and go have fun instead.">>
-
-<<nobr>>
-	<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
-		[[You constantly feel horny.|Part6StartBeltMaster]]
-	<<else>>
-		<<if $MasterKate>>
-			[[You constantly feel horny.|Part6StartBeltMaster]]
-		<<else>>
-			<<if $PlayerGoodStudent>>[[You want to study to keep up your grades.|Part6StartGood]]<</if>>
-			<<if $PlayerAverageStudent>>[[You study to keep your grades decent, but you also want to have fun.|Part6StartAverage]]<</if>>
-			<<if $PlayerLazyStudent>>[[You just want to have fun.|Part6StartLazy]]<</if>>
-		<</if>>
-	<</if>>
-<</nobr>>
-
 
 ::JobDecided <1700,1250>
 <<nobr>>

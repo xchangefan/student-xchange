@@ -1,3 +1,39 @@
+::Part6Start1 <800,3600>
+<<nobr>>
+	<<if $PlayerProtectionPermanent and $PlayerProtectionPerfect>>
+		<<set setup.notPregnant('period avoided by implant)')>>
+	<<else>>
+		<<set setup.notPregnant('period')>>
+	<</if>>
+
+	<<set $PlayerPointsSet to 1>>
+	<<set $FunPoints to 0>>
+	<<set $AcademicPoints to 0>>
+	
+	<h1><<print "Classroom">></h1>
+<</nobr>>
+
+<<print "School has finally started and you’ve begun to settle in. You’re surprised at how little time you actually have to spend in the classroom at college compared to high school. Though your professors make up for it with all the homework they assign.">>
+<img src="Part6/Start1.jpg" hspace="10" vspace="10" height="650">
+
+<<print "But you’re also surprised to find that no one is actually checking on you to make sure you show up for class, or do the homework. All your professors care about is how well you do on your exams.">>
+
+<<print "With all the other distractions you have now, it can be pretty tempting to blow off classwork and go have fun instead.">>
+
+<<nobr>>
+	<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
+		[[You constantly feel horny.|Part6StartBeltMaster]]
+	<<else>>
+		<<if $MasterKate>>
+			[[You constantly feel horny.|Part6StartBeltMaster]]
+		<<else>>
+			<<if $PlayerGoodStudent>>[[You want to study to keep up your grades.|Part6StartGood]]<</if>>
+			<<if $PlayerAverageStudent>>[[You study to keep your grades decent, but you also want to have fun.|Part6StartAverage]]<</if>>
+			<<if $PlayerLazyStudent>>[[You just want to have fun.|Part6StartLazy]]<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
 ::Part6StartBeltMaster <500,3875>
 <<nobr>>
 	<<set $FunPoints += 2>>
@@ -941,6 +977,7 @@
 	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<h1><<print "Dungeon">></h1>
 	<<set $PlayerSlave to 1>>
+	<<set $student to false>>
 <</nobr>>
 
 <<print "The pain in your arms, and everywhere else, was unbearable. You knew you couldn’t hold on much longer. You cried, defeated, and said what he wanted: “I’m a worthless slave” and then begged him to fuck you. He made you repeated it over and over, louder each time, until he finally removed the rope from your neck.">>
