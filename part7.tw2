@@ -18,7 +18,7 @@
 <<nobr>>
 	Your mood changes though when you get to the question that asks [[“Date of Last Menstruation”.|Part7Start3]]  As you write down the date,
 	you realize that yours was almost two months ago now, and you haven't had one since.
-	<<if $PlayerProtectionPermanent and $PlayerProtectionPerfect>>
+	<<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
 		You assume, your implant has finally kicked in fully.  You assume you won't have to worry about having one again.  Well,
 		unless you decide to deactivate it someday.
 	<<else>>
@@ -337,6 +337,7 @@
 <</nobr>>
 
 <<nobr>>
+	<<set $impossibleFathers to 0>>
 	<<set $named to 0>>
 	<<set $unnamed to 0>>
 	When she gets to the questions about the father
@@ -353,9 +354,17 @@
 				<<set $named += 1>>
 				<li>
 				<<if setup.areDating('Andrew') >= 0>>
-					Your boyfriend, [[Andrew|Part7AndrewBoyfriend]]
+					Your boyfriend,
+					<<link "Andrew">>
+						<<set $PregnancyCheck.claimedFather to "Andrew">>
+						<<goto [[Part7AndrewBoyfriend]]
+					<</link>>
 				<<else>>
-					Your boss [[Andrew|Part7AndrewBoss]]
+					Your boss,
+					<<link "Andrew">>
+						<<set $PregnancyCheck.claimedFather to "Andrew">>
+						<<goto [[Part7AndrewBoss]]
+					<</link>>
 				<</if>>
 				</li>
 			<</if>>
@@ -369,7 +378,7 @@
 				<</if>>
 				</li>
 			<</if>>
-			<<if $PregnancyCheck.possibleFathers.indexOf('Office Boss')  >= 0>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Carl')  >= 0>>
 				<<set $named += 1>>
 				<li>Your [[boss from the office|Part7OfficeBoss1]]</li>
 			<</if>>
@@ -380,7 +389,7 @@
 			<<if $PregnancyCheck.possibleFathers.indexOf('Barry')  >= 0>>
 				<<set $named += 1>>
 				<li>
-					Barry, the [[jerk from your dorm|Part7Unknown]],
+					Barry, the [[jerk from your dorm|Part7Barry]],
 					<<if $PlayerProtectionTry>>
 						maybe he finally did something nice for you
 					<<else>>
@@ -390,42 +399,52 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('James')  >= 0>>
 				<<set $named += 1>>
-				<li>[[James|Part7Unknown]], from the dorm</li>
+				<li>[[James|Part7James]], from the dorm</li>
 			<</if>>
-			<<if $PregnancyCheck.possibleFathers.indexOf('Peter')  >= 0>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Peter') >= 0 or setup.areDating('Peter')>>
 				<<set $named += 1>>
 				<li>
-					<<if setup.areDating('Peter') >= 0>>
-						[[Peter|Part7Unknown]], maybe unlocking his cock wasn't
+					<<if $PregnancyCheck.possibleFathers.indexOf('Peter') < 0>>
+						<<set $impossibleFathers += 1>>
+						Maybe it's [[Peter|Part7Peter]].  You haven't let him out to fuck you since your last period, but you've teased him enough.
+						Maybe something happened then.  He'll certainly believe that anyway.
+					<<elseif setup.areDating('Peter') >= 0>>
+						[[Peter|Part7Peter]], maybe unlocking his cock wasn't
 						<<if $PlayerProtectionTry>>
 							a bad idea after all
 						<<else>>
 							such a good idea
 						<</if>>
 					<<else>>
-						[[Peter|Part7Unknown]], from the dorm
+						[[Peter|Part7Peter]], from the dorm
 					<</if>>
 				</li>
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Zack')  >= 0>>
 				<<set $named += 1>>
-				<li>[[Zack|Part7Unknown]], from the dorm</li>
+				<li>[[Zack|Part7Zack]], from the dorm</li>
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Tom')  >= 0>>
-				<<set $named += 1>>
-				<li>[[Tom?|Part7Unknown]], that guy Hannah brought home</li>
+				<<set $unnamed += 1>>
+				<li>It could be that guy Tom, or something like that, that Hannah brought home.  But [[you aren't even sure of his name|Part7Unknown]], and you doubt she remembers either.</li>
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Troy')  >= 0>>
 				<<set $named += 1>>
-				<li>Your classmate, [[Troy|Part7Unknown]]</li>
+				<li>Your classmate, 
+					<<link "Troy">>
+						<<set $PregnancyCheck.claimedFather to "Troy">>
+						<<goto [[Part7FWB]]>>
+					<</link>>,
+					though you don't really want to involve him in this</li>
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('David')  >= 0>>
 				<<set $named += 1>>
-				<li>Your friend with benefits, [[David|Part7Unknown]]</li>
-			<</if>>
-			<<if $PregnancyCheck.possibleFathers.indexOf('Roger')  >= 0>>
-				<<set $named += 1>>
-				<li>[[Roger|Part7Unknown]], and Peter was watching when it hapened</li>
+				<li>Your classmate, 
+					<<link "David">>
+						<<set $PregnancyCheck.claimedFather to "David">>
+						<<goto [[Part7FWB]]>>
+					<</link>>,
+					though you don't really want to involve him in this</li>
 			<</if>>
 
 			<<if $PregnancyCheck.possibleFathers.indexOf('Some Football Player')  >= 0>>
@@ -523,17 +542,17 @@
 	touch with him, you get him to come in and leave a sample.  Or, if don't want to tell him that you aren't sure if
 	he is the father or not, you
 	could 
-	<<if $named > 0 and $PregnancyCheck.possibleFathers.length > 1>>
+	<<if $named > 0 and ($impossibleFathers + $PregnancyCheck.possibleFathers.length) > 1>>
 		[[collect a sample yourself|Part7PregSample]]
 	<<else>>
 		collect a sample yourself
 	<</if>>
 	and bring it in.
 
-	<<if $PregnancyCheck.possibleFathers.length == 1>>
+	<<if ($impossibleFathers + $PregnancyCheck.possibleFathers.length) == 1>>
 		You tell them that won't be necessary, it can only be one person.
 	<<elseif $named == 0>>
-		You tell them that won't be really be possible.
+		You tell them that won't really be possible.
 	<<else>>
 		You tell them you'll think about it.  Though you also realize you could just decide who you <i>want</i> to be the
 		father, and tell him that he <i>is</i> the father.  He'll never know the difference anyway.
@@ -553,8 +572,8 @@
 	<<else>>
 		You make sure enough goes on your face and swallow the rest.
 	<</if>>
-	Then you go in the bathroom to clean up.  Of course insteadof just washing it off, you put it in the vial with his name on it
-	that prepared earlier.
+	Then you go in the bathroom to clean up.  Of course instead of just washing it off, you put it in the vial with his name on it
+	that you'd prepared earlier.
 <</nobr>>
 
 <<nobr>>
@@ -565,152 +584,193 @@
 
 <<nobr>>
 	<<set $isNamed to 0>>
-	<ul>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Andrew')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Andrew'})>>
-				<<if $PregnancyCheck.actualFather == 'Andrew'>>
-					<<set $isNamed to 1>>
-					<<if setup.areDating('Andrew') >= 0>>
-						"Congratulations! [[Andrew|Part7AndrewBoyfriend]] is the father!"
-					<<else>>
+	<<if setup.areDating('Andrew')>>
+		<<set $sex.push({sex: 'male', name: 'Andrew'})>>
+		<<if $PregnancyCheck.actualFather == 'Andrew'>>
+			You are relieved when she tells you, "Congratulations! [[Andrew|Part7AndrewBoyfriend]] is the father!".
+		<<else>>
+			You are crushed when she tells you, "Andrew is NOT the father."  But as you contemplate your choices, you realize that
+			Andrew would never doubt he was the father, and having him as the father would provide the best life for your child that
+			you could hope for.  You feel bad for a moment when you decided to lie and [[tell Andrew he is the father|Part7AndrewBoyfriend]],
+			but then you think of you and your baby in a big beautiful house with Andrew happily unaware next to you and decide it's the best
+			for everyone.
+			<br>
+			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
+		<</if>>
+	<<elseif setup.areDating('Carl')>>
+		<<set $sex.push({sex: 'male', name: 'Carl'})>>
+		<<if $PregnancyCheck.actualFather == 'Carl'>>
+			You are relieved when she tells you, "Congratulations! [[Carl|Part7OfficeBoss1]] is the father!".
+		<<else>>
+			You are upset when she tells you, "Carl is NOT the father."  But you realize that it doesn't matter really as long
+			as you [[tell him he is|Part7OfficeBoss1]].  It will probably be enough to get him to finally leave his wife like
+			he keeps talking about.
+			<br>
+			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
+		<</if>>
+	<<elseif setup.areDating('Josh')>>
+		<<set $sex.push({sex: 'male', name: 'Josh'})>>
+		<<if $PregnancyCheck.actualFather == 'Josh'>>
+			You are relieved when she tells you, "Congratulations! [[Josh|Part7Josh]] is the father!".
+		<<else>>
+			You are upset when she tells you, "Josh is NOT the father."  But you know telling him that will end your relationship with
+			him.  If you decide to keep the baby, Josh would be a better father than the other possibilities.  And if you decide not
+			to keep it, then what's the harm in [[lying and telling Josh he is the father|Part7Josh]]
+			<br>
+			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
+		<</if>>
+	<<elseif setup.areDating('Peter')>>
+		<<set $sex.push({sex: 'male', name: 'Peter'})>>
+		<<if $PregnancyCheck.actualFather == 'Peter'>>
+			You are a happy when she tells you, "Congratulations! [[Peter|Part7Peter]] is the father!".
+		<<elseif $PregnancyCheck.possibleFathers.indexOf('Peter')  >= 0>>
+			You aren't especailly surprised when she tells you, "Peter is NOT the father."  It's not like you let him out that often.  But you know
+			having him at your side will make the next nine months (or longer) much easier than going it alone, so you decide to
+			[[tell Peter he is the father|Part7Peter]] anyway.
+			<br>
+			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
+		<<else>>
+			"Peter is NOT the father.", she says.  Of course Peter isn't the father.  But given how much precum he's always leaking out of his
+			chastity cage, you had to be sure.  But you don't want to have to do this by yourself, and you know Peter will be dutifully by your side if you
+			[[tell him he is the father|Part7Peter]]. You expect he probably would even if you told him the truth, but you don't want to
+			take any chances on that.
+			<br>
+			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
+		<</if>>
+	<<elseif setup.areDating('Aaron')>>
+		<<set $sex.push({sex: 'male', name: 'Aaron'})>>
+		<<if $PregnancyCheck.actualFather == 'Aaron'>>
+			You are a absolutely giddy when she tells you, "Congratulations! [[Aaron|Part7Aaron]] is the father!".
+		<<else>>
+			You are in tears when she tells you, "Aaron is NOT the father."  You must have already been pregnant when he became your Daddy.  You know
+			you can't lie to him, so you tell him the truth.  Daddy holds you in his arms and comforts you.  He tells you that it doesn't matter who the
+			baby's father really is, if you decide to keep it then you and Daddy will [[raise the baby together|Part7Aaron]].  And if you decide on
+			adoption, he'll help you through the next nine months.
+			<br>
+			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
+		<</if>>
+	<<else>>
+		<ul>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Andrew')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'Andrew'})>>
+					<<if $PregnancyCheck.actualFather == 'Andrew'>>
+						<<set $isNamed to 1>>
 						"Congratulations! [[Andrew|Part7AndrewBoss]] is the father!"
-					<</if>>
-				<<else>>
-					<<if setup.areDating('Andrew') >= 0>>
-						"Andrew is NOT the father."  (Of course you could [[lie to him|Part7AndrewBoyfriend]] about it.)
 					<<else>>
 						"Andrew is NOT the father."  (Of course you could [[lie to him|Part7AndrewBoss]] about it.)
 					<</if>>
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Josh')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Josh'})>>
-				<<if $PregnancyCheck.actualFather == 'Josh'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[Josh|Part7Josh]] is the father!"
-				<<else>>
-					"Josh is NOT the father."  (Of course you could [[lie to him|Part7Josh]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Office Boss')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Office Boss'})>>
-				<<if $PregnancyCheck.actualFather == 'Office Boss'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[Your boss|Part7OfficeBoss1]] is the father!"
-				<<else>>
-					"Your boss is NOT the father."  (Of course you could [[lie to him|Part7OfficeBoss1]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Aaron')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Aaron'})>>
-				<<if $PregnancyCheck.actualFather == 'Aaron'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[Aaron|Part7Professor]] is the father!"
-				<<else>>
-					"Aaron is NOT the father."  (Of course you could [[lie to him|Part7Professor]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Barry')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Barry'})>>
-				<<if $PregnancyCheck.actualFather == 'Barry'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[Barry|Part7Unknown]] is the father!"
-				<<else>>
-					"Barry is NOT the father."  (Of course you could [[lie to him|Part7Unknown]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('James')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'James'})>>
-				<<if $PregnancyCheck.actualFather == 'James'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[James|Part7Unknown]] is the father!"
-				<<else>>
-					"James is NOT the father."  (Of course you could [[lie to him|Part7Unknown]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Peter')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Peter'})>>
-				<<if $PregnancyCheck.actualFather == 'Peter'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[Peter|Part7Unknown]] is the father!"
-				<<else>>
-					"Peter is NOT the father."  (Of course you could [[lie to him|Part7Unknown]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Zack')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Zack'})>>
-				<<if $PregnancyCheck.actualFather == 'Zack'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[Zack|Part7Unknown]] is the father!"
-				<<else>>
-					"Zack is NOT the father."  (Of course you could [[lie to him|Part7Unknown]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Tom')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Tom'})>>
-				<<if $PregnancyCheck.actualFather == 'Tom'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[Tom|Part7Unknown]] is the father!"
-				<<else>>
-					"Tom is NOT the father."  (Of course you could [[lie to him|Part7Unknown]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Troy')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Troy'})>>
-				<<if $PregnancyCheck.actualFather == 'Troy'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[Troy|Part7Unknown]] is the father!"
-				<<else>>
-					"Troy is NOT the father."  (Of course you could [[lie to him|Part7Unknown]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('David')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'David'})>>
-				<<if $PregnancyCheck.actualFather == 'David'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[David|Part7Unknown]] is the father!"
-				<<else>>
-					"David is NOT the father."  (Of course you could [[lie to him|Part7Unknown]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if $PregnancyCheck.possibleFathers.indexOf('Roger')  >= 0>>
-			<li>
-				<<set $sex.push({sex: 'male', name: 'Roger'})>>
-				<<if $PregnancyCheck.actualFather == 'Roger'>>
-					<<set $isNamed to 1>>
-					"Congratulations! [[Roger|Part7Unknown]] is the father!"
-				<<else>>
-					"Roger is NOT the father."  (Of course you could [[lie to him|Part7Unknown]] about it.)
-				<</if>>
-			</li>
-		<</if>>
-		<<if !$isNamed>>
-			<li>You realize that you'll [[probably never know|Part7Unknown]] who the father really is.</li>
-			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
-		<</if>>
-	</ul>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Josh')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'Josh'})>>
+					<<if $PregnancyCheck.actualFather == 'Josh'>>
+						<<set $isNamed to 1>>
+						"Congratulations! [[Josh|Part7Josh]] is the father!"
+					<<else>>
+						"Josh is NOT the father."  (Of course you could [[lie to him|Part7Josh]] about it.)
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Carl')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'Carl'})>>
+					<<if $PregnancyCheck.actualFather == 'Carl'>>
+						<<set $isNamed to 1>>
+						"Congratulations! [[Carl|Part7OfficeBoss1]] is the father!"
+					<<else>>
+						"Carl is NOT the father."  (Of course you could [[lie to him|Part7OfficeBoss1]] about it.)
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Aaron')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'Aaron'})>>
+					<<if $PregnancyCheck.actualFather == 'Aaron'>>
+						<<set $isNamed to 1>>
+						"Congratulations! [[Aaron|Part7Professor]] is the father!"
+					<<else>>
+						"Aaron is NOT the father."  (You never could lie to him when you were together, so you know you can't about this.)
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Barry')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'Barry'})>>
+					<<if $PregnancyCheck.actualFather == 'Barry'>>
+						<<set $isNamed to 1>>
+						"Congratulations! [[Barry|Part7Barry]] is the father!"
+					<<else>>
+						"Barry is NOT the father."  (Of course you could [[lie to him|Part7Barry]] about it.)
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('James')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'James'})>>
+					<<if $PregnancyCheck.actualFather == 'James'>>
+						<<set $isNamed to 1>>
+						"Congratulations! [[James|Part7James]] is the father!"
+					<<else>>
+						"James is NOT the father."  (Of course you could [[lie to him|Part7James]] about it.)
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Peter')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'Peter'})>>
+					<<if $PregnancyCheck.actualFather == 'Peter'>>
+						<<set $isNamed to 1>>
+						"Congratulations! [[Peter|Part7Peter]] is the father!"
+					<<else>>
+						"Peter is NOT the father."  (Of course you could [[lie to him|Part7Peter]] about it.)
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Zack')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'Zack'})>>
+					<<if $PregnancyCheck.actualFather == 'Zack'>>
+						<<set $isNamed to 1>>
+						"Congratulations! [[Zack|Part7Zack]] is the father!"
+					<<else>>
+						"Zack is NOT the father."  (Of course you could [[lie to him|Part7Zack]] about it.)
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Troy')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'Troy'})>>
+					<<if $PregnancyCheck.actualFather == 'Troy'>>
+						<<set $isNamed to 1>>
+						"Congratulations! Troy|Part7FWB]] is the father!"
+					<<else>>
+						"Troy is NOT the father." (Well, you didn't really want him involved in this anyway.)
+					<</if>>
+				</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('David')  >= 0>>
+				<li>
+					<<set $sex.push({sex: 'male', name: 'David'})>>
+					<<if $PregnancyCheck.actualFather == 'David'>>
+						<<set $isNamed to 1>>
+						"Congratulations! David|Part7FWB]] is the father!"
+					<<else>>
+						"David is NOT the father." (Well, you didn't really want him involved in this anyway.)
+					<</if>>
+				</li>
+			<</if>>
+			<<if $isNamed>>
+				<li>You know who the father is.  But if you [[don't want him involved in this|Part7FWB]], you
+					could tell him that he is not the father.  Of course, you know that if your relationship
+					is anything more than just casual sex, then doing this will almost certainly end it.</li>
+			<<else>>
+				<li>You realize that you'll [[probably never know|Part7Unknown]] who the father really is.</li>
+				<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
+			<</if>>
+		</ul>
+	<</if>>
 <</nobr>>
 
 ::Part7Preg2 <1000,6000>
@@ -858,7 +918,7 @@
 
 ::Part7OfficeBoss1 <600,5900>
 <<nobr>>
-	<<set setup.breakupWith('Office Boss')>>
+	<<set setup.breakupWith('Carl')>>
 	<<set $JobOfficePA = 0>>
 	<<set $JobOfficeManager = 1>>
 	<<set $BossPregnancyMoney = 1>>
@@ -888,6 +948,106 @@
 <<print "But for now, you are proceeding with your planned trip home for the break. Of course, you enjoy an evening with your “Daddy” before then though.">>
 
 [[You can start packing for your winter holiday.|Part7Pack1]]
+
+::Part7Barry <50,6025>
+TODO image
+TODO text
+TODO link
+
+::Part7Peter <100,6025>
+TODO image
+TODO text
+TODO link
+
+::Part7Zack <150,6025>
+TODO image
+TODO text
+TODO link
+
+::Part7James <200,6025>
+TODO image
+TODO text
+TODO link
+
+::Part7Breakup <300,6025>
+<<nobr>>
+	<h1>Breaking up</h1>
+	<<if setup.areDating('Veronica')>>
+		<img src="Part8.5/Alone4.jpg" hspace="10" vspace="10" height="650">
+	<<else>>
+		<img src="Part8.5/Alone2.jpg" hspace="10" vspace="10" height="650">
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if setup.areDating('Veronica')>>
+		You know when you decided to keep the baby that it would be the end of your relationship with Veronica.
+		You could probably hide the pregnancy for a little while but you decide to come clean about cheating on
+		her, and about the consequences of that.  She's understandably shocked and upset.
+	<<elseif setup.areDating('Andrew')>>
+		<<if $PregnancyCheck.actualFather == 'Andrew'>>
+			You know if you tell Andrew he's the father, he'll want to be involved, and probably his family will
+			too and you don't want that.  So you tell him you've been cheating on him, and that someone else is
+			the father.  He's, of course, shocked and upset.
+		<<else>>
+			You thought about just telling Andrew he was the father, but you don't want to lie to him.  You
+			let him know that you've been cheating on him, and that someone else is the father.  He's, of course,
+			shocked and upset.
+		<</if>>
+	<<elseif setup.areDating('Josh')>>
+	<<elseif setup.areDating('Aaron')>>
+	<<elseif setup.areDating('Carl')>>
+	<<elseif setup.areDating('Peter')>>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if setup.areDating('Veronica')>>
+		You both know you'll still need to work together on the squad, well at least for as long as you can still cheer, so
+		so you try to part as friendly terms.  As you gather your from her room and leave she says, "Good luck with the baby."
+		<<set setup.breakupWith('Veronica')>>
+	<</if>>
+<</nobr>>
+
+TODO text
+TODO link
+
+
+::Part7FWB <350,6025>
+<<nobr>>
+	<h1><<print "Bedroom">></h1>
+<</nobr>>
+<<nobr>>
+	You and $PregnancyCheck.claimedFather have had some fun before, but you don't really want him involved in this.  You aren't even completely positive about
+	what you are going to do when the baby is born yet.  Whatever you decide you want it to be your decision.  You don't want him being a problem if you decide
+	to put the baby up for adoption, and you certainly don't want to have to deal with $PregnancyCheck.claimedFather for the rest of your life if you decide to
+	keep the baby.
+<</nobr>>
+
+<<nobr>>
+	It's not like the two of you were exclusive anyway, so he won't have any reason to dobut you when you tell him he's not the father.  You expect he'll probably
+	be more relieved than anything.
+<</nobr>>
+
+<<nobr>>
+	You know you’ll be on your own with this pregnancy, and the thought is overwhelming you a bit. You need to take your mind off the stress of
+	learning all this today.
+<</nobr>>
+
+<img src="Part7/Preg10.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	Maybe you decide to enjoy that you can have zero-risk sex (since what more could happen now), or maybe you stay home for a nice hot bath.
+	Either way, it only takes your mind off things for a bit. Soon you are back to where you were a few hours before, trying to imagine all
+	the ways your life is about to change.
+<</nobr>>
+
+<<nobr>>
+	You decide that you don’t want to share the news with anyone else just yet. It’ll be obvious enough to everyone later. You’ll probably tell your
+	mentor after the holiday, but for now it’s your secret.
+<</nobr>>
+
+[[You put off packing for your trip home until tomorrow.|Part7Pack1]]
 
 ::Part7Unknown <400,6025>
 <<nobr>>
