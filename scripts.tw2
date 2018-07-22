@@ -149,7 +149,7 @@ setup.getPartnerName = function(fuck) {
     return fuck.name + kidnapperNote
   } else if (fuck.anon) {
     return "Some " + fuck.anon
-  } else if (fuck.gender == 'male') {
+  } else if (fuck.sex == 'male') {
     return "Some Guy"
   } else {
     return "Some Girl"
@@ -189,11 +189,6 @@ setup.sexualHistoryTable = function () {
   return st + "</table>\n"
 }
 
-
-setup.daddyCheck = function (name) {
-	//todo exclude certain birth control
-	return state.active.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && fuck.vaginal && (fuck.name == name || fuck.anon == name)}).length > 0
-}
 
 setup.haveFucked = function (name) {
 	return state.active.variables.sex.filter(function(fuck) {return fuck.name == name || fuck.anon == name}).length > 0
@@ -286,7 +281,7 @@ setup.checkForPregnancy = function (fuck, oddsBoost, ovulationOverride) {
     baseProbability = ovulationTableExtraFertile[ovulationRoll]
   } else {
     baseProbability = ovulationTableNormal[ovulationRoll]
-  } //todo
+  }
 
   var protectionFactor = 1.0
   if (fuck.birthControl == 'implant-pill') {
@@ -305,7 +300,7 @@ setup.checkForPregnancy = function (fuck, oddsBoost, ovulationOverride) {
   return (conceptionRoll + oddsBoost) >= 0.5
 }
 
-setup.checkForNewPregnancy = function(pregnancyTestType, ovulationOverride) {
+setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
   if (state.active.variables.PlayerPregnant) {
     return {isPregnant: false, possibleFathers: []} // already pregnant
   } else {
@@ -319,7 +314,7 @@ setup.checkForNewPregnancy = function(pregnancyTestType, ovulationOverride) {
       if (isPregnant) {
         fuck.checkedForPregnancy = "already pregnant"
       } else {
-        fuck.conception = setup.checkForPregnancy(fuck, ovulationOverride)
+        fuck.conception = setup.checkForPregnancy(fuck, oddsBoost, fuck.ovulating)
         fuck.checkedForPregnancy = pregnancyTestType
         if (fuck.conception) {
           isPregnant = true // but player doesn't know yet, so don't set visible state variable
