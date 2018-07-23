@@ -301,6 +301,7 @@
 	<<if $JobWebModelSide>><<set $PlayerMoney += 300>><<print " You have also saved $300 from occasionally working as a web model.">><</if>>
 	<<if $JobPornOralSide or $JobPornAnalSide or $JobPornSide or $JobPornGangSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a porn actress.">><</if>>
 	<<if $PaulPregnancyMoney>><<set $PlayerMoney += 500>><<print " You have an additional $500 from your former boss, Paul, to keep quiet about your pregnancy.">><</if>>
+	<<if $BarryBribe>><<set $PlayerMoney += 1900>><<print " You have $1900 left from what Barry paid you to get an abortion.">><</if>>
 <</nobr>>
 
 <<print "In total, you have $">>$PlayerMoney<<print " saved.">>
@@ -354,17 +355,9 @@
 				<<set $named += 1>>
 				<li>
 				<<if setup.areDating('Andrew') >= 0>>
-					Your boyfriend,
-					<<link "Andrew">>
-						<<set $PregnancyCheck.claimedFather to "Andrew">>
-						<<goto [[Part7AndrewBoyfriend]]
-					<</link>>
+					Your boyfriend, [[Andrew|Part7AndrewBoyfriend]]
 				<<else>>
-					Your boss,
-					<<link "Andrew">>
-						<<set $PregnancyCheck.claimedFather to "Andrew">>
-						<<goto [[Part7AndrewBoss]]
-					<</link>>
+					Your boss, [[Andrew|Part7AndrewBoss]]
 				<</if>>
 				</li>
 			<</if>>
@@ -486,6 +479,10 @@
 			<<if $PregnancyCheck.possibleFathers.indexOf('Some Porn Costar')  >= 0>>
 				<<set $unnamed += 1>>
 				<li>[[One of your porn costars|Part7Unknown]], but you have no idea which one</li>
+			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Handsome Pirate')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[That pirate guy from Halloween|Part7Unknown]], but you called him by his character's name all night, you don't even know what his real name is</li>
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Some Call Girl Client')  >= 0>>
 				<<set $unnamed += 1>>
@@ -747,7 +744,12 @@
 					<<set $sex.push({sex: 'male', name: 'Troy'})>>
 					<<if $PregnancyCheck.actualFather == 'Troy'>>
 						<<set $isNamed to 1>>
-						"Congratulations! Troy|Part7FWB]] is the father!"
+						"Congratulations!
+						<<link "Troy">>
+							<<set $PregnancyCheck.claimedFather to "Troy">>
+							<<goto [[Part7FWB]]>>
+						<</link>>,
+						is the father!"
 					<<else>>
 						"Troy is NOT the father." (Well, you didn't really want him involved in this anyway.)
 					<</if>>
@@ -758,7 +760,12 @@
 					<<set $sex.push({sex: 'male', name: 'David'})>>
 					<<if $PregnancyCheck.actualFather == 'David'>>
 						<<set $isNamed to 1>>
-						"Congratulations! David|Part7FWB]] is the father!"
+						"Congratulations!
+						<<link "David">>
+							<<set $PregnancyCheck.claimedFather to "David">>
+							<<goto [[Part7FWB]]>>
+						<</link>>,
+						is the father!"
 					<<else>>
 						"David is NOT the father." (Well, you didn't really want him involved in this anyway.)
 					<</if>>
@@ -989,10 +996,10 @@ TODO Update this text
 		you graduate.  So, I'm guessing the payments will add up."
 	<<else>>
 		When the test comes back negative, he's overjoyed.  "I knew I wasn't the father.  God only knows how many other men could be the father,
-		but I don't really who it is as long as it's not me."
+		but I don't really care who it is as long as it's not me."
 		<p/>
 		"But, you're still welcome to come back to my bed anytime you need me to remind you what a slut you are.  But then again, I guess your
-		body will reminding you of that every day for the next nine months or so, won't it."
+		body will be reminding you of that every day for the next nine months or so, won't it."
 		<p/>
 		You realize you are going to be dealing with this preganancy [[without any help|Part7Unknown]] from the father.
 	<</if>>
@@ -1015,8 +1022,8 @@ TODO Update this text
 
 <<nobr>>
 	You wait your turn and then go in to see the doctor again.  You let her know you've thought it over and reconsidered.  After going over everything
-	in great detail with the doctor and signing a bunch of forms, the doctor gives you a pill which you take right then.  She gives you another one take
-	tomorrow morning.  She tells you to expect bleeding and cramps, like a period, but worse.
+	in great detail with the doctor and signing a bunch of forms, the doctor gives you a pill which you take right then.  She gives you another one to
+	take tomorrow morning.  She tells you to expect bleeding and cramps, like a period, but worse.
 	<<if $PlayerProtectionTry>>
 		She starts to talk to you about birth control, but you explain that you actually want a baby, but just not with this man.
 		She understands, and wishes you luck.

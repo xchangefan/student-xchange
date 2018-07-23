@@ -86,12 +86,33 @@
 		But a
 	<</if>>
   week later you've forgotten about it entirely and are back to your usual routine.  Well, that and looking forward to
-	dressing up for [[Halloween|Part6Halloween]]
+	dressing up for
+		<<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Aaron') or setup.areDating('Josh') or $PlayerItemNerdKey or setup.areDating('Barry') or setup.isFWB('Barry') or $MasterKate or $PlayerChastityBelt>>
+			[[Halloween|Part6Halloween]]
+		<<elseif $PlayerSideEffectExhibitionist>>
+			<<link "Halloween">>
+				<<set $HalloweenNice to 0>>
+				<<goto [[Part6Halloween]]>>
+			<</link>>
+		<<else>>
+			Halloween.  You just haven't decided whether you want something
+			something
+			<<link "sweet and innocent">>
+				<<set $HalloweenNice to 1>>
+				<<goto [[Part6Halloween]]>>
+			<</link>>
+			or if you want to be a 
+			<<link "bad girl">>
+				<<set $HalloweenNice to 0>>
+				<<goto [[Part6Halloween]]>>
+			<</link>>
+			this year.
+		<</if>>
 <</nobr>>
 
 ::Part6HalloweenNextScene
 <<nobr>>
-	But after the fun of Halloween is over, and the hangover the next day has passed, everything is back to normal for a few more weeks.
+	But after the fun of Halloween is over everything is back to normal for a few more weeks.
 	Of course, for you that means
 	<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
 		[[you constantly feel horny because of this belt you are in.|Part6StartBeltMaster]]
@@ -117,21 +138,142 @@
 		<<include [[Part6HalloweenPeter]]>>
 	<<elseif setup.areDating('Barry') or setup.isFWB('Barry')>>
 		<<include [[Part6HalloweenJerk]]>>
+	<<elseif $MasterKate>>
+		<<include [[Part6HalloweenKate]]>>
+	<<elseif $PlayerChastityBelt>>>
+		<<include [[Part6HalloweenChastity]]>>
 	<<else>>
 		<<include [[Part6Halloween2]]>>
 	<</if>>
 <</nobr>>
 
-::Part6Halloween2 <460,3875>
-<<if $MasterKate or $PlayerChastityBelt>>
-	TODO
-<<else>>
-	TODO
-<</if>>
-
+::Part6HalloweenKate <465,3875>
+<img src="Part6/Halloween6.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
+TODO
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6HalloweenVeronica <470,3875>
+::Part6HalloweenChastity <470,3875>
+<img src="Part6/Halloween7.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
+TODO
+<<include [[Part6HalloweenNextScene]]>>
+
+::Part6Halloween2 <475,3875>
+<<nobr>>
+	<<if $HalloweenNice>>
+		<img src="Part6/Halloween5Good.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
+	<<else>>
+		<img src="Part6/Halloween5Bad.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $HalloweenNice>>
+		As you look through the costume options, you quickly realize that nearly all of the women's costumes
+		are the 'sexy' version of something.  You see they've even managed to make a sexy version of a
+		cartoon mouse.  But you have to admit, you look pretty hot wearing it, so you decided this is the costume
+		for you.
+	<<else>>
+		When you see the devil costume, and realize that you'll be essentially just be wearing some red lingerie,
+		with some horns and a pitchfork added on, you know it's the costume for you. 
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	The guys clearly like your costume choice as
+	<<if setup.isGoldStarLesbian()>>
+		well, though it's usully the opinion of other women that you are more interested in.
+		But tonight there's one handsome pirate in particular that has been flirting with you most of the night,
+		and you are surprised to find yourself flirting back.
+	<<else>>
+		well.  You've been flirting back and forth with one handsome pirate in particular most of the night.
+	<</if>>
+
+	As the party starts to wind down, he tells you that
+	<<if $HalloweenNice>>
+		he'd like you to join him in his room tonight, so he can show you a 'magical' time.
+	<<else>>
+		seeing you tonight has filled him with lustful thoughts, and inspired him to sin tonight.  He invites	
+		you back to his room to join him.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectLibido > 2>>
+		You are already horny from walking around like this all night.  You know thanks to your implant's side effects
+		that you can never turn down an offer for sex when you are like this, so you quickly accept his suggestion and
+		[[head back to his room with him|Party6Halloween3]]
+	<<elseif setup.isGoldStarLesbian()>>
+		You are already horny from walking around like this all night, and find his invitation oddly compelling
+		for some reason.  You aren't usually into guys, and you're not sure why the thought of him inside you
+		is suddenly filling you mind.  You could probably still [[resist the thought|Part6Halloween3Alone]] if you tried though.  But
+		your body is telling you how much it wants you to [[head back to his room with him|Part6Halloween3]].
+	<<else>>
+		You are already horny from walking around like this all night and you knew an hour or more ago that you'd be going
+		home with him tonight.  In fact, you've been thinking about little else the last hour but having him inside you.
+		Of course you quickly accept and [[head back to his room with him|Part6Halloween3]].  On the way, you wonder
+		why you are feeling even more horny than usually tonight.  You figure it must be dressing up and all the excitement
+		of Halloween.
+	<</if>>
+<</nobr>>
+
+::Part6Halloween3 <475,3875>
+<<nobr>>
+	<h1>His Room</h1>
+	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate'})>>
+	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', vaginal: true, repeat:true, noPullout:true, ovulating:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', vaginal: true, repeat:true, ovulating:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', repeat:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', vaginal: true, repeat:true, ovulating:true})>>
+<</nobr>>
+<<nobr>>
+	His tongue feels amazing, and you know he'd keep going until you came, but you don't want his tongue, you want his cock.  He certainly
+	doesn't argue when you tell him.
+<</nobr>>
+<<nobr>>
+	<<if $PlayerProtectionCondoms>>
+		<img src="Part6/Halloween5C.jpg" hspace="10" vspace="10" height="540"><p/>
+
+		You are so anxious to have him inside you that you almost forgot to have him wear a condom.  Even when you remember, the thought
+		occurs to you to not worry about it this time.  But you dismiss that thought and get a condom out of your purse.  Of course, you
+		don't make him put it on himself.
+		<<if $PlayerSideEffectOral>>
+			Feeling his cock in your mouth feels so good that you're tempted to just suck his cock instead.  But the ache you feel to have
+			his cock fucking you quickly helps you realize that it's just your implant's oral side effect messing with you.  So you take
+			his cock out of your mouth so he can put it somewhere even better.
+		<</if>>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<img src="Part6/Halloween5A.gif" hspace="10" vspace="10" height="480"><p/>
+	When you finally feel his cock rub against your clit, then push your lips apart and slide into you, your eyes roll back.  As you feel
+	him thrusting in and out of you, you are so glad you decided to come home with him.  After a while, you feel your orgasm start to
+	build.  Your moans probably aren't helping him hold back his orgasm and you are worried he might pull out before you are able
+	to cum.  You instinctively wrap your legs around his torso and squeeze, pulling him into you.
+	<<if $PlayerProtectionWithdraw>>
+		You know you should have him pull out, but you are too close, and you need this too much right now.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	He isn't able to hold back much longer, but it was just enough.  As he starts to cum, you orgasm too.  As he finishes his last
+	thrust, you feel your body still clenching and squeezing his cock until finally your orgasm passes and he pulls out of you.
+	<<if $PlayerProtectionCondoms>>
+		You pull the condom off of him and toss it in the trash can.  You lick a stray bit of cum off the end of his cock.  You giggle a
+		bit as he squirms from the sensation on his over-sensitive cock.  You both lie there, satisified, until he's ready to go again, and again...
+	<<else>>
+		The two of you lie, satisfied, next to each other for a while until he's ready to go again, and again...<p/>
+		<img src="Part6/Halloween5B.jpg" hspace="10" vspace="10" height="360"><p/>
+	<</if>>
+<</nobr>>
+<p/>
+<<include [[Part6HalloweenNextScene]]>>
+
+::Part6Halloween3Alone <480,3875>
+TODO
+<<include [[Part6HalloweenNextScene]]>>
+
+::Part6HalloweenVeronica <485,3875>
 <<set $sex.push({sex: 'female', name: 'Veronica'})>>
 <<set $sex.push({sex: 'female', name: 'Veronica'})>>
 <<set $sex.push({sex: 'female', name: 'Veronica'})>>
@@ -205,7 +347,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 ::Part6HalloweenJerk2 <500,3875>
 <<nobr>>
-	<img src="Part6/Halloween5.jpg" hspace="10" vspace="10" height="650"><p/>
+	<img src="Part6/Halloween4A.jpg" hspace="10" vspace="10" height="650"><p/>
 	<<set $sex.push({sex: 'male', name:'Barry'})>>
 	<<set $sex.push({sex: 'male', anon:'Friend of Barry'})>>
 	<<set $sex.push({sex: 'male', name:'Barry', vaginal:true, ovulating:true, noCondom:true, noPullout:true})>>
