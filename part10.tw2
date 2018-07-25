@@ -158,7 +158,9 @@ weeks away, you decided to wait until then instead.
       you've really been avoiding isn't your bills, but telling your coach about your pregnancy.
       But you realize you need to [[tell him now|Part10Disability]] before it's obvious to everyone.
     <</if>>
-    <<set $NeedSideJob to 1>>
+    <<if !$JamesBribe>>
+      <<set $NeedSideJob to 1>>
+    <</if>>
   <<elseif $PlayerPregnant and $JobStripper>>
     You were pregnant when you started at the strip club, so you knew it wouldn't last long. Now that
     you've stared to show, you'll [[have to stop|Part10StripPregnant]], at least for now.  The extra
@@ -251,6 +253,9 @@ weeks away, you decided to wait until then instead.
     Daddy helped you set up a budget, so you'd already started improving your financial situation.  You
     don't really have that much you need to pay for since Daddy is
     [[taking care of most of your expenses|Part10LivingTogether]].  So the disabiity payment should be enough.
+  <<elseif $JamesBribe>>
+    You're not worried about the drop in income from being put on the disability list.  You know
+    you have the money the attorney is giving you, and [[you'll be fine|Part10Responsible]].
   <<else>>
     But the disability payment alone isn't going to be enough to cover your expenses.  You're going to need
     to think of a way to [[earn extra money|Part10ExtraMoney]] every month.

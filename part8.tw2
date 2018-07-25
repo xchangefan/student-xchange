@@ -1,3 +1,44 @@
+::Part8Start1 <0,6200>
+<<nobr>>
+	<<set $PlayerMoney = 0>>
+	<<set $PlayerMoneySet = 1>>
+	<h1><<print "Bedroom">></h1>
+<</nobr>>
+
+<<print "Before you leave for home, you check how much money you have left. You know you won’t be getting paid again until after New Years. You have a credit card now though, so you can spend more if you need to, but you want to avoid doing that... again.">>
+<img src="Part8/Start1.jpg" hspace="10" vspace="10" height="650">
+
+<<nobr>>
+	<<if $ProfessorAllowance>><<set $PlayerMoney += 500>><<print "You have saved $500 from your Daddy`s allowance.">><</if>>
+	<<if $JobEngineer>><<set $PlayerMoney += 700>><<print "You have saved $700 from working as an engineer.">><</if>>
+	<<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<set $PlayerMoney += 700>><<print "You have saved $700 from working at the office.">><</if>>
+	<<if $JobCallGirl>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a call girl.">><</if>>
+	<<if $JobWebModel>><<set $PlayerMoney += 500>><<print "You have saved $500 from working as a web model.">><</if>>
+	<<if $JobPornOral or $JobPornAnal or $JobPorn or $JobPornGang>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a porn actress.">><</if>>
+	<<if !$ProfessorAllowance and !$JobEngineer and !$JobOfficePA and !$JobOfficeManager and !$JobOfficeIntern and !$JobCallGirl and !$JobWebModel and !$JobPornOral and !$JobPornAnal and !$JobPorn and !$JobPornGang>><<set $PlayerMoney += 500>><<print "You have saved $500 from working at your job.">><</if>>
+	<<if $JobCallGirlSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a call girl.">><</if>>
+	<<if $JobWebModelSide>><<set $PlayerMoney += 300>><<print " You have also saved $300 from occasionally working as a web model.">><</if>>
+	<<if $JobPornOralSide or $JobPornAnalSide or $JobPornSide or $JobPornGangSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a porn actress.">><</if>>
+	<<if $PaulPregnancyMoney>><<set $PlayerMoney += 500>><<print " You have an additional $500 from your former boss, Paul, to keep quiet about your pregnancy.">><</if>>
+	<<if $BarryBribe>><<set $PlayerMoney += 1900>><<print " You have $1900 left from what Barry paid you to get an abortion.">><</if>>
+	<<if $JamesBribe>><<set $PlayerMoney += 2800>><<print " You have $2800 left from what the attorney gave you to cover 'first trimester expenses'.">><</if>>
+<</nobr>>
+
+<<print "In total, you have $">>$PlayerMoney<<print " saved.">>
+
+<<nobr>>
+	<<if $VeronicaKey>>
+		[[You ask Veronica about your chastity belt.|Part8StartChastity]]
+	<<else>>
+		<<if $PlayerChastityBelt>>
+			[[You give master a call about your chastity belt.|Part8StartChastity]]
+		<<else>>
+			[[Start driving home.|Part8Start2]]
+		<</if>>
+	<</if>>
+<</nobr>>
+
+
 ::Part8ChristmasSister <300,7650>
 <<nobr>>
 	<<set $sex.push({sex: 'female', name: 'Cassie'})>>
@@ -1371,7 +1412,7 @@
 <<print "You are searching through a junk drawer in the kitchen for a utensil when you stumble on a pair of handcuffs, and their key. You forget about what you were looking for and play around with them a bit.">>
 <img src="Part8/Uncle1.jpg" hspace="10" vspace="10" height="650">
 
-<<print "It’s only when you go to unlock them that you realize they way they connect together prevents you from using the key yourself.">>
+<<print "It’s only when you go to unlock them that you realize the way they connect together prevents you from using the key yourself.">>
 
 <<print "You sheepishly walk back to the other room to show your former uncle the handcuffs and hand him the key.">>
 
@@ -1437,7 +1478,6 @@
 
 <<print "He unlocks a room off to the side of the basement, and then leads you into the ‘playroom’ your aunt and him used to share. As you look around the room you imagine what it would be like to be helpless and bound to the various pieces as he did whatever he wanted.">>
 
-<<print "You are searching through a junk drawer in the kitchen for a utensil when you stumble on a pair of handcuffs, and their key. You forget about what you were looking for and play around with them a bit.">>
 <img src="Part8/Uncle2.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
@@ -1765,13 +1805,17 @@
 		<<print "You enjoy a romantic kiss with Josh as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear3]]
 	<<elseif $KidnapEscape>>
 		<<print "You cheer as the clock strikes twelve, then you stay at the party for [[a bit more champagne.|Part8NewYear4]]">>
+	<<elseif setup.areDating('Aaron')>>
+		It's too bad Daddy doesn't get back to campus for another couple days, you'd rather have him here to share a New Year's kiss with.  But you are excited
+		that at least you won't need to hide your relationship anymore.  Tonight though, you just cheer as the clock strikes twelve,
+		then stay at the party for [[a bit more champagne.|Part8NewYear4]]
 	<<else>>
 		<<print "As the clock strikes twelve, you can kiss one of the ">>[[guys|Part8NewYear3]]<<print " or ">>[[girls|Part8NewYear2]]<<print " you were dancing with at midnight, and later go home together.">>
 	<</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if !$KidnapEscape and !setup.areDating('Veronica') and !setup.areDating('Andrew') and !setup.areDating('Josh') and $PlayerSideEffectLibido < 3 and $PlayerSideEffectPheromones < 3>>
+	<<if !setup.areDating('Aaron') and !$KidnapEscape and !setup.areDating('Veronica') and !setup.areDating('Andrew') and !setup.areDating('Josh') and $PlayerSideEffectLibido < 3 and $PlayerSideEffectPheromones < 3>>
 		<<if $PlayerPregnant>>
 			<<print "Or you can stay at the party for ">>[[some more dancing.|Part8NewYear4]]
 		<<else>>
@@ -1795,7 +1839,7 @@
 ::Part8NewYear2 <800,7900>
 <<nobr>>
 	<<if setup.areDating('Veronica')>>
-		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
+		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>	
 	<<else>>
 		<<if $MasterKate or setup.areDating('Aaron')>><<set $SexNewYearFemale = 1>><</if>>
 	  <<set $sex.push({sex: 'female', anon:"New Year's Eve hookup"})>>

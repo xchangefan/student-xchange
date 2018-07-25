@@ -279,45 +279,6 @@
 
 [[Once you finally finish packing your bags, you head home for winter break.|Part8Start1]]
 
-::Part8Start1 <0,6200>
-<<nobr>>
-	<<set $PlayerMoney = 0>>
-	<<set $PlayerMoneySet = 1>>
-	<h1><<print "Bedroom">></h1>
-<</nobr>>
-
-<<print "Before you leave for home, you check how much money you have left. You know you won’t be getting paid again until after New Years. You have a credit card now though, so you can spend more if you need to, but you want to avoid doing that... again.">>
-<img src="Part8/Start1.jpg" hspace="10" vspace="10" height="650">
-
-<<nobr>>
-	<<if $ProfessorAllowance>><<set $PlayerMoney += 500>><<print "You have saved $500 from your Daddy`s allowance.">><</if>>
-	<<if $JobEngineer>><<set $PlayerMoney += 700>><<print "You have saved $700 from working as an engineer.">><</if>>
-	<<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<set $PlayerMoney += 700>><<print "You have saved $700 from working at the office.">><</if>>
-	<<if $JobCallGirl>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a call girl.">><</if>>
-	<<if $JobWebModel>><<set $PlayerMoney += 500>><<print "You have saved $500 from working as a web model.">><</if>>
-	<<if $JobPornOral or $JobPornAnal or $JobPorn or $JobPornGang>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a porn actress.">><</if>>
-	<<if !$ProfessorAllowance and !$JobEngineer and !$JobOfficePA and !$JobOfficeManager and !$JobOfficeIntern and !$JobCallGirl and !$JobWebModel and !$JobPornOral and !$JobPornAnal and !$JobPorn and !$JobPornGang>><<set $PlayerMoney += 500>><<print "You have saved $500 from working at your job.">><</if>>
-	<<if $JobCallGirlSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a call girl.">><</if>>
-	<<if $JobWebModelSide>><<set $PlayerMoney += 300>><<print " You have also saved $300 from occasionally working as a web model.">><</if>>
-	<<if $JobPornOralSide or $JobPornAnalSide or $JobPornSide or $JobPornGangSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a porn actress.">><</if>>
-	<<if $PaulPregnancyMoney>><<set $PlayerMoney += 500>><<print " You have an additional $500 from your former boss, Paul, to keep quiet about your pregnancy.">><</if>>
-	<<if $BarryBribe>><<set $PlayerMoney += 1900>><<print " You have $1900 left from what Barry paid you to get an abortion.">><</if>>
-<</nobr>>
-
-<<print "In total, you have $">>$PlayerMoney<<print " saved.">>
-
-<<nobr>>
-	<<if $VeronicaKey>>
-		[[You ask Veronica about your chastity belt.|Part8StartChastity]]
-	<<else>>
-		<<if $PlayerChastityBelt>>
-			[[You give master a call about your chastity belt.|Part8StartChastity]]
-		<<else>>
-			[[Start driving home.|Part8Start2]]
-		<</if>>
-	<</if>>
-<</nobr>>
-
 ::Part7Preg3 <200,5750>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
@@ -392,7 +353,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('James')  >= 0>>
 				<<set $named += 1>>
-				<li>[[James|Part7James]], from the dorm</li>
+				<li>[[James|Part7James]], from the dorm.  But, if you don't want to involve him in this you could just tell him [[it's not his|Part7Unknown]].</li>
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Peter') >= 0 or setup.areDating('Peter')>>
 				<<set $named += 1>>
@@ -711,7 +672,7 @@
 					<<set $sex.push({sex: 'male', name: 'James'})>>
 					<<if $PregnancyCheck.actualFather == 'James'>>
 						<<set $isNamed to 1>>
-						"Congratulations! [[James|Part7James]] is the father!"
+						"Congratulations! [[James|Part7James]] is the father!"  Though, if you don't want to involve him in this you could just tell him [[it's not his|Part7Unknown]].
 					<<else>>
 						"James is NOT the father."  (Of course you could [[lie to him|Part7James]] about it.)
 					<</if>>
@@ -949,8 +910,19 @@
 <<nobr>>
 	<h1><<print "Daddy">></h1>
 <</nobr>>
-TODO Update this text
-<<print "This was either something the two of you were trying for, or a possibility he’d talked to you about when he’d notice you hadn’t had period lately. Either way he’s as excited as you are.">>
+
+<<nobr>>
+	<<if $PlayerProtectionTry>>
+		You and Daddy have been trying for a baby, and he's as excited as you are at the news!
+	<<elseif $PlayerProtectionNone>>
+		You and Daddy haven't been trying for this, but you also haven't been trying to avoid it either.  You both knew you wanted a child together
+		eventually, and figured you'd let nature take its course.  Nature didn't want to wait.  Daddy is as excited as you are when you tell him the news.
+	<<else>>
+		You'd told Daddy about your irregular cycles, but he'd pointed out this was another possiblity.  You definitely picked up more excitment than worry
+		in his voice when he'd mentioned it.  Now that you both know that you are pregnant, he's as excited as you are about it.
+	<</if>>
+<</nobr>>
+
 <img src="Part7/Preg8.jpg" hspace="10" vspace="10" height="650">
 
 <<print "For now the two of you are planning on keeping this a secret between the two of you. Once the holiday break is over, and you’ve moved in with him, fewer people will question the timeline of your pregnancy. Hopefully no one that matters will realize (or care) that you were one of his students when the baby was conceived.">>
@@ -1155,16 +1127,103 @@ TODO Update this text
 <</nobr>>
 
 ::Part7Zack <150,6025>
-TODO image
-TODO text
-TODO link
+TODO image Part7Zack
+TODO text Part7Zack
+TODO link Part7Zack
 
 ::Part7James <200,6025>
-TODO image
-TODO text
-TODO link
+<<nobr>>
+	<<set setup.breakupWith('James')>>
+	<<if $PregnancyCheck.actualFather == 'James'>>
+		<h1>James - Confirmed</h1>
+		<img src="PartP/PaternityPositive.jpg" hspace="10" vspace="10" height="650" align="left">
+	<<else>>
+		<h1>James - Paternity Excluded</h1>
+		<img src="PartP/PaternityNegative.jpg" hspace="10" vspace="10" height="650" align="left">
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+  As you tell James about the pregnancy and that he's the father, he seems unsurprised.  You don't think this is the first time this
+	has happened to him.  He says he needs to make a phone call and then steps away for a bit.  When he comes back he says, "I'm not
+	supposed to discuss this any further with you.  You should discuss this with my attorney instead.".  He hands you a slip of
+	paper with a name and phone number on it, and then leaves.
+<</nobr>>
+
+<<nobr>>
+	You stare at the number for a minute, and then decide to call it.  The man on the other end is friendly and tells you he understands
+	what an emotional time this is for you and that James wants to help you in this difficult time.  But then he tells you that, of course
+	it's necessary to confirm that James is in-fact the father.  He lets you know that this is only a formaility and that neither James
+	nor him intend any offense in suggesting anyone other than James could be the father.  You reluctantly agree with his request.
+<</nobr>>
+
+<<nobr>>
+	James visits the clinic and submits a sample and they test it and confirm that James 
+	<<if $PregnancyCheck.actualFather == 'James'>>
+		is the father.  His lawyer tells you, "I hope you understand we had confirm paternity before we proceeded.  Please
+		[[visit my office|Part7James2]] later this week and we can discuss the matter further."
+	<<else>>
+		is not the father.  His lawyer tells you, "My client wishes you and the child's father well, but of course will not
+		be able to provide any further assitance.".  He hands you his business card and adds, "If you determine the true father
+		and need any legal help pursuing child support, feel free to contact me."  Of course, you won't.  You've
+		[[given up|Part7Unknown]] on trying to get the father involved in this.
+	<</if>>
+<</nobr>>
+
+::Part7James2
+<<nobr>>
+	<h1>Attorney's Office</h1>
+	<img src="PartP/Lawyer.jpg" hspace="10" vspace="10" height="480">
+<</nobr>>
+
+<<nobr>>
+	James's attorney lets you know that, while James's family has money, James only gets a 'modest' allowance from his parents
+	while he is in school.  He would certainly pay his child support obligations, but it would be quite minimal until James
+	finished his undergraduate degree and his MBA after that.  In a slightly quieter tone he adds, "And given what I know about
+	James, that might take longer than usual.".
+<</nobr>>
+
+<<nobr>>
+	"But there is another option I think you should consider.", he tells you.  "You and James are both so young, and just beginning
+	your lives.  It would be a shame to spoil your future with a child neither of you are ready for...".  You cut him off to tell
+	him you have no plans for an abortion.  "No, no, I'm sorry for any confusion.  That's not what I mean at all.  I'm referring to
+	adoption.", you relax in your chair again as he continues. 
+<</nobr>>
+
+<<nobr>>
+	 "I have a number of clients.  Wealthy clients...  That would be interested in adopting your child.  They would, of course,
+	 cover all of your pregnancy-related expenses: medical expenses, clothing, housing, and transportation."  They estimate that
+	 $25,000 should cover everything.  When you let him know that most of that is being covered by the X-Change people already he
+	 tells you, "If another party is paying those expenes for you, that would be between you and them.  Any money from my clients
+	 that you didn't spend during the pregnancy would be yours to keep afterwards.  Of course, you shouldn't construe this as an
+	 offer of cash in exchange for choosing adoption." (You sense, however, that that's exactly what it is.) "Please consider it,
+	 and let me know."
+<</nobr>>
+
+<<nobr>>
+	You spend the next several days considering his offer.  You think about the responsibility of raising a child, essentially on your
+	own since while James might pitch in some money, he's certainly not going to help with parenting.  Then you think of what kind of
+	life your child would have with you, a poor college student, or with some rich couple.  You tell yourself it would be selfish of you
+	to keep the child.  You make an appointment to meet with the lawyer again, and let him know that you
+	[[agree with his adoption proposal|Part7James3]].
+<</nobr>>
+
+::Part7James3
+<<nobr>>
+	<h1>Your Room</h1>
+	<video src="PartP/Lawyer2.mp4" autoplay loop muted height="540"></video>
+	<<set $JamesBribe to 1>>
+<</nobr>>
+
+<<nobr>>
+	After you signed the paperwork, the attorney gives you a check for $3000 to cover pre-natal visits and maternity clothing and
+	any other things you might need early on.  Of course, you don't need any maternity clothes just yet, and the X-Change company
+	is paying for the doctor visits.  Seeing the balance in your account, you can't resist buying a few things today though.  You
+	have a bit of fun modelling them for $Mentor.  [[You put off packing for your trip home until tomorrow.|Part7Pack1]]
+<</nobr>>
 
 ::Part7Breakup <300,6025>
+TODO Need to actually use Part7Breakup
 <<nobr>>
 	<h1>Breaking up</h1>
 	<<if setup.areDating('Veronica')>>
@@ -1204,8 +1263,8 @@ TODO link
 	<</if>>
 <</nobr>>
 
-TODO text
-TODO link
+TODO text Part7Breakup
+TODO link Part7Breakup
 
 
 ::Part7FWB <350,6025>
