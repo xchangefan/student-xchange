@@ -108,8 +108,17 @@
 
 <<print "No one has anything bad to say about the Deltas. Well one girl called them “a bunch of sluts” but you’re pretty sure it’s just because her boyfriend’s ex was a Delta, so that doesn’t really count. The other girls you talked thought they were fine. The guys that had an opinion said all the Deltas they knew were friendly and outgoing.">>
 
-<<print "Their website seems to focus on how much fun your college years should be and about all the new friends you’ll make as a Delta.">>\
-<<if $LikeFemales or setup.areDating('Veronica')>><br><br><<print "You get the impression that you wouldn’t really fit in with the Deltas. You feel like they are interested in you just so they can claim they are ‘diverse’, but that you’d never really feel like you fit in there, so you rule out the Deltas.">><</if>></p>
+<<nobr>>
+	Their website seems to focus on how much fun your college years should be and about all the new friends you’ll make as a Delta.
+	<<if $LikeFemales or setup.areDating('Veronica')>>
+		<br><br>
+		You get the impression that you wouldn’t really fit in with the Deltas. You feel like they are interested in you just so they can claim they
+		 are ‘diverse’, but that you’d never really feel like you fit in there, so you rule out the Deltas.
+	<<elseif $CampusMinistry>>
+		<br><br>
+		Faith says she's never met someone from the campus ministry from this sorority, so she doesn't know much about them.
+	<</if>>
+<</nobr>>
 
 
 
@@ -130,13 +139,13 @@
 
 <<print "Their website seems to focus on the life-long bonds you’ll form with your sorority sisters and how they are a close-knit community.">>\
 <<if setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Aaron')>><br><br><<print "Your boyfriend is worried about you after hearing the hazing rumors about the Sigmas, so he talks you out of pledging the Sigmas.">><</if>>\
-<<if setup.areDating('Veronica')>><br><br><<print "You and Veronica both are excited at the opportunity to move in together finally, and want to pledge the same sorority. You don’t consider the Etas since they don’t have a house. And she got the same vibe from the Deltas as you did, so you both agree to pledge the Sigmas.">><br><br><</if>></p>
-
+<<if setup.areDating('Veronica')>><br><br><<print "You and Veronica both are excited at the opportunity to move in together finally, and want to pledge the same sorority. You don’t consider the Etas since they don’t have a house. And she got the same vibe from the Deltas as you did, so you both agree to pledge the Sigmas.">><br><br><</if>></p>\
+<<if $CampusMinistry>>Faith says she's heard rumors about some hazing at this sorority, but doesn't known anything for sure.  She doesn't know anyone from here either.<</if>>
 
 
 <p style="clear: both;"><img src="Part9/Greek4.jpg" hspace="10" vspace="10" height="400" align="left">
 <<nobr>>
-	<<if !setup.areDating('Veronica')>>
+	<<if !setup.areDating('Veronica') and !$CampusMinistryFail>>
 		<<link "Eta Lambda Phi">>
 			<<set $SororityELP = 1>>
 			<<goto [[Part9HAP1]]>>
@@ -152,8 +161,9 @@
 <<print "Most of what you’ve heard asking around is very positive and talking about the wonderful work they do, except for one guy that tells you they aren a ‘real sorority’ if they don’t have parties or their own house.">>
 
 <<print "Their website focuses on the people they are helping in the community. Since they don’t have a sorority house, living there wouldn’t be an option.">></p>
+<<if $CampusMinistry>>Faith says she knows several girls from this sorority, and she says they do a lot of great charity work.<<elseif $CampusMinistryFail>>It sounds like really boring.  Like the sort of sorority Faith might join.  You aren't interested.<</if>>
 
-<p style="clear: both;"><<if !setup.areDating('Veronica')>>[[Or you can decide not to pledge.|Part9SororityEndNo]]<</if>></p>
+<p style="clear: both;"><<if !setup.areDating('Veronica') and !$CampusMinistryFail>>[[Or you can decide not to pledge.|Part9SororityEndNo]]<</if>></p>
 
 ::Part9DTF1 <500,9075>
 <<nobr>>
@@ -362,7 +372,7 @@
 	<</if>>
 <</nobr>>
 
-<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !$MasterKate>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
+<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !$MasterKate and !$CampusMinistryFail>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
 
 ::Part9DTFPeter <500,9225>
 <<nobr>>
@@ -1046,11 +1056,11 @@
 	<</link>>
 <</nobr>>
 
-<<if setup.areDating('Veronica')>><<print "Veronica reminds you about sharing a room, and talks you out of any thoughts of chickening out of it at this point.">><<else>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
+<<if setup.areDating('Veronica')>><<print "Veronica reminds you about sharing a room, and talks you out of any thoughts of chickening out of it at this point.">><<elseif !$CampusMinistryFail>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
 
 ::Part9Task2 <900,9825>
 <<nobr>>
-	<h1><<print "Σ Ε Ξ">></h1>
+	<h1>Σ Ε Ξ &nbsp; &nbsp; &nbsp; "Sisters Work Together"</h1>
 	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
 	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
 	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
@@ -1097,7 +1107,7 @@
 
 ::Part9Task3 <1050,9825>
 <<nobr>>
-	<h1><<print "Σ Ε Ξ">></h1>
+	<h1>Σ Ε Ξ &nbsp; &nbsp; &nbsp; "Remember the Value of Education"</h1>
 	<<set $sex.push({sex: 'male', name:'Tutor 1'})>>
 	<<set $sex.push({sex: 'male', name:'Tutor 2'})>>
 	<<set $sex.push({sex: 'male', name:'Tutor 3'})>>
@@ -1143,7 +1153,7 @@
 
 ::Part9Task4 <1200,9575>
 <<nobr>>
-	<h1><<print "Campus">></h1>
+	<h1>Σ Ε Ξ &nbsp; &nbsp; &nbsp; "We give back to the community"</h1>
 	<<set $sex.push({sex: 'male', anon:'Guy by the science building', vaginal:true})>>
 <</nobr>>
 
@@ -1217,7 +1227,7 @@
 
 ::Part9Task8 <1350,9825>
 <<nobr>>
-	<h1><<print "Σ Ε Ξ">></h1>
+	<h1>Σ Ε Ξ &nbsp; &nbsp; &nbsp; "The ties that bind us together as sisters"</h1>
 <</nobr>>
 
 <<nobr>>
@@ -1255,7 +1265,7 @@
 
 ::Part9Task9 <1500,9825>
 <<nobr>>
-	<h1><<print "Σ Ε Ξ">></h1>
+	<h1>Σ Ε Ξ &nbsp; &nbsp; &nbsp; "There's no joy like time spent with my sisters"</h1>
 	<<set $sex.push({sex: 'female', name:'Veronica'})>>
 	<<set $sex.push({sex: 'female', name:'Veronica'})>>
 	<<set $sex.push({sex: 'female', name:'Veronica'})>>
@@ -1297,7 +1307,8 @@
 
 ::Part9Task10 <1650,9825>
 <<nobr>>
-	<h1><<print "Student Activities Office">></h1>
+	<h1>Student Activities Office &nbsp; &nbsp; &nbsp; "Learning to network with the right people"</h1>
+
 	<<set $sex.push({sex: 'male', name:'Student Activities Guy 1', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'Student Activities Guy 2'})>>
 <</nobr>>
@@ -1319,7 +1330,7 @@
 
 ::Part9Task11 <1800,9575>
 <<nobr>>
-	<h1><<print "Strip Club">></h1>
+	<h1>Strip Club &nbsp; &nbsp; &nbsp; "Charity is it's own reward"</h1>
 <</nobr>>
 
 <<print "The sorority is raising money to support their favorite charity.">>

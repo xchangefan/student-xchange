@@ -2634,7 +2634,11 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  You're still not quite sure whether you'd rather [[go there|Part11SinglesNight]], or [[just stay at home|Part11HomeAlone]].
+  <<if $CampusMinistryFail>>
+    You've missed out on too much fun already, you try to find something sexy to wear and [[head to the single-only event|Part11SinglesNight]].
+  <<else>>
+    You're still not quite sure whether you'd rather [[go there|Part11SinglesNight]], or [[just stay at home|Part11HomeAlone]].
+  <</if>>
 <</nobr>>
 
 ::Part11HomeAlone <17200,10500>
@@ -2653,7 +2657,17 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  Thankfully, you have [[something perfect|Part11HomeAlone2]] for times just like this...
+  <<if $CampusMinistry>>
+    You try to ignore it and just relax in the tub.  Eventualy the water starts to get cold and you get up
+    and dry off.  As you make you way back to your bed you wonder if you're the only one sleeping alone tonight.
+    The faint snoring you hear from Faith's bed makes you think "Well, there's at least one more."
+    <br><br>
+    You may have gone to bed alone, but your dreams are filled with thoughts of romantic dates and
+    passionate nights.  But eventually morning comes as you are awoken when your
+    [[phone rings|Part11PhoneCall]] with a call from your mom.
+  <<else>>
+    Thankfully, you have [[something perfect|Part11HomeAlone2]] for times just like this...
+  <</if>>
 <</nobr>>
 
 ::Part11HomeAlone2 <17400,10500>
@@ -2865,7 +2879,7 @@ Kim: Oh, is that what I typed?
     You were hoping he could go back to just being your brother again.
   <</if>>
 <</nobr>>
-<<if $KidnapEscape>>
+<<if $KidnapEscape or $CampusMinistry>>
   <<nobr>>
     But then he tells you that he means he misses the <b>old</b>
     you.  He misses having a brother.  He's says he's fine with having

@@ -3,13 +3,11 @@
 	<<set $PlayerPointsSet to 1>>
 	<<set $FunPoints to 0>>
 	<<set $AcademicPoints to 0>>
-	
 	<h1><<print "Classroom">></h1>
 <</nobr>>
-
 <<nobr>>
-	School has finally started and you’ve begun to settle in. You’re surprised at how little time you actually have to spend in the
-	classroom at college compared to high school. Though your professors make up for it with all the homework they assign.
+	You’re surprised at how little time you actually have to spend in the classroom at college compared to high school. Though your
+	professors make up for it with all the homework they assign.
 <</nobr>>
 
 <img src="Part6/Start1.jpg" hspace="10" vspace="10" height="650">
@@ -89,6 +87,13 @@
 	dressing up for
 		<<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Aaron') or setup.areDating('Josh') or $PlayerItemNerdKey or setup.areDating('Barry') or setup.isFWB('Barry') or $MasterKate or $PlayerChastityBelt>>
 			[[Halloween|Part6Halloween]]
+		<<elseif $CampusMinistry>>
+				<<set $HalloweenNice to 1>>
+			[[Halloween|Part6Halloween]].  As you are doing your best to be a good girl, you try to think of something sweet and innocent to wear.
+		<<elseif $CampusMinistryFail>>
+			<<set $HalloweenNice to 0>>
+			[[Halloween|Part6Halloween]].  As you've decided to embrace your 'sinful desires' as Faith and Pastor Mark called them, you figure "Why not dress
+			the part?" Faith is less than pleased.
 		<<elseif $PlayerSideEffectExhibitionist>>
 			<<link "Halloween">>
 				<<set $HalloweenNice to 0>>
@@ -112,7 +117,7 @@
 
 ::Part6HalloweenNextScene
 <<nobr>>
-	But after the fun of Halloween is over everything is back to normal for a few more weeks.
+	But after the fun of Halloween is over, everything is back to normal for a few more weeks.
 	Of course, for you that means
 	<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
 		[[you constantly feel horny because of this belt you are in.|Part6StartBeltMaster]]
@@ -228,7 +233,7 @@
 
 	<<nobr>>
 		His disappointment when you explain your belt is soon forgotten as you take out your costume fangs and wrap your lips around his
-		cock.  He he does finally leave your 'lair' later that night, he is completely drained, though not of his blood.  You still feel
+		cock.  When he does finally leave your 'lair' later that night, he is completely drained, though not of his blood.  You still feel
 		the same hunger though, but it's one that you know you won't be able to satisfy tonight.
 	<</nobr>>
 </div>
@@ -249,7 +254,18 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $HalloweenNice>>
+	<<if $CampusMinistry>>
+		As you look through the costume options, you quickly realize that nearly all of the women's costumes
+		are the 'sexy' version of something.  Even the sweet and innocent mouse costume you'd planned makes you
+		look anything but innocent.  But you don't care if others find you tempting or not, you have your
+		temptations under control, right?
+		<br><br>
+		Faith doesn't like your costume and suggest skipping the costume and the party and going to some event at
+		the ministry instead, but you tell her no this time.  You've always loved Halloween, and you'd always been a
+		bit envious at the costumes that the girls got to wear.  This is something you've been looking forward to since
+		your change and you're going to enjoy yourself. Though not too much, you promise her.  You just want to dance a
+		little and enjoy being a sexy mouse for a night.
+	<<elseif $HalloweenNice>>
 		As you look through the costume options, you quickly realize that nearly all of the women's costumes
 		are the 'sexy' version of something.  You see they've even managed to make a sexy version of a
 		cartoon mouse.  But you have to admit, you look pretty hot wearing it, so you decided this is the costume
@@ -261,13 +277,15 @@
 <</nobr>>
 
 <<nobr>>
-	The guys clearly like your costume choice as
-	<<if setup.isGoldStarLesbian()>>
-		well, though it's usully the opinion of other women that you are more interested in.
-		But tonight there's one handsome pirate in particular that has been flirting with you most of the night,
+	<<if $CampusMinistry>>
+		The guys clearly do find you tempting in your costume.  One handsome pirate in particular has been flirting with you
+		most of the night.  Despite what you'd told yourself earlier, you realize you've been flirting back as well.
+	<<elseif setup.isGoldStarLesbian() && !$CampusMinistryFail>>
+		The guys clearly like your costume choice as well, though it's usully the opinion of other women that you are
+		more interested in. But tonight there's one handsome pirate in particular that has been flirting with you most of the night,
 		and you are surprised to find yourself flirting back.
 	<<else>>
-		well.  You've been flirting back and forth with one handsome pirate in particular most of the night.
+		The guys clearly like your costume choice as well.  You've been flirting back and forth with one handsome pirate in particular most of the night.
 	<</if>>
 
 	As the party starts to wind down, he tells you that
@@ -280,10 +298,21 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectLibido > 2>>
+	<<if $CampusMinistry>>
+		You know what you promised Faith, but your body is telling you how much it wants you to 
+		[[head back to his room with him|Part6Halloween3]].  One time wouldn't be a big deal, right?
+		<<if $PlayerProtectionTry>>
+			Your mind fills with thoughts of him cumming inside you, of him impregnating you...
+		<</if>>
+		"Wait, what am I saying?", you wonder.  I should tell him [[no thanks, and go back to my room|Part6Halloween2No]].
+	<<elseif $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectLibido > 2>>
 		You are already horny from walking around like this all night.  You know thanks to your implant's side effects
 		that you can never turn down an offer for sex when you are like this, so you quickly accept his suggestion and
 		[[head back to his room with him|Party6Halloween3]]
+	<<elseif $CampusMinistryFail>>
+		You have too much time to make up for.  You have already wasted months of time you could have been enjoying
+		all that this new body has to offer, and you don't want to waste any more.  Your body is telling you how much it
+		wants you [[head back to his room with him|Part6Halloween3]], and you've decided to start listening.
 	<<elseif setup.isGoldStarLesbian()>>
 		You are already horny from walking around like this all night, and find his invitation oddly compelling
 		for some reason.  You aren't usually into guys, and you're not sure why the thought of him inside you
@@ -292,6 +321,10 @@
 			You think about going home and taking care of this problem yourself, but you quickly remind yourself that
 			you can't even do that.  Your body is telling you how much it wants you to
 			[[head back to his room with him|Part6Halloween3]], and you can't resist it tonight.
+		<<elseif $PlayerProtectionTry>>
+			You know how much you want to get pregnant, and you know you're going to have to do this sooner or later.
+			As horny as you are right now, you know they'll never be a better time.  You are nervous and
+			excited as you [[head back to his room with him|Part6Halloween3]].
 		<<else>>
 			You could probably still [[resist the thought|Part6Halloween3Alone]] if you tried though.
 			But your body is telling you how much it wants you to [[head back to his room with him|Part6Halloween3]].
@@ -305,11 +338,35 @@
 	<</if>>
 <</nobr>>
 
+::Part6Halloween2No <480, 3875>
+<<nobr>>
+	<h1>Your Room</h1>
+	<<if $PlayerNoBodyHair>>
+		<img src="Part6/Halloween9a.jpg" hspace="10" vspace="10" height="600" align="left">
+	<<else>>
+		<img src="Part6/Halloween9b.jpg" hspace="10" vspace="10" height="600" align="left">
+	<</if>>
+<</nobr>>
+<<nobr>>
+	You managed to leave the party before you do something you might regret.  When you are home and alone in your bed,
+	you can still feel the need you'd felt at the party.  You are tempted to take care of it yourself right now,
+	imagining what would have happened if you'd gone home with that pirate.  But you don't.  Faith and Pastor Mark
+	told you giving in to your fantasizes will just make them that much more intense the next time.  
+<</nobr>>
+
+<<nobr>>
+	You struggle, but eventually find sleep.  You can't help that your dreams are all filled with thoughts of
+	a certain pirate ravishing you over, and over, and over...
+<</nobr>>
+
+<<include [[Part6HalloweenNextScene]]>>
+
+
 ::Part6Halloween3 <475,3875>
 <<nobr>>
 	<h1>His Room</h1>
-	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate'})>>
-	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', vaginal: true, repeat:true, noPullout:true, ovulating:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', vaginal: true, noPullout:true, ovulating:true})>>
+	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', repeat:true})>>
 <</nobr>>
 <<nobr>>
 	His tongue feels amazing, and you know he'd keep going until you came, but you don't want his tongue, you want his cock.  He certainly
@@ -359,6 +416,14 @@
 		is back home by now, and he's always willing to [[help a girl out...|Part6Player2]]
 	<<else>>
 	  You both lie there recovering a bit.  After a while, you move down to take his cock into your mouth and coax it back to life for another round.
+		<<if $CampusMinistry>>
+			<<unset $CampusMinistry>>
+			<<set $CampusMinistryFail to 1>>
+			<br><br>
+			When you stumble in after your night of fun, Faith seems disappointed, but not surprised.  You are too embarrassed to talk to Pastor Mark, so
+			Faith lets him know you are giving up on their plan, though she spares him the details.  He wishes you luck and says he hopes you at least
+			keep at it with your music.
+		<</if>>
 		<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', repeat:true})>>
 		<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', vaginal: true, repeat:true, ovulating:true})>>
 		<<include [[Part6HalloweenNextScene]]>>
@@ -1121,7 +1186,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<if setup.areDating('Veronica')>>[[call Veronica and go to the club together.|Part6Club1]]<</if>>
 	<<if setup.areDating('Josh')>>[[call Josh and go to the club together.|Part6Club1]]<</if>>
 	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica')>>[[go to the club with the group.|Part6Club1]]<</if>>	
-	<<if $FunPoints >0>>
+	<<if $CampusMinistry or (!$CampusMinistryFail and $FunPoints >0)>>
 		<<print "Or you can ">>
 		[[keep studying to improve your grades.|Part6Study2]]
 	<</if>>
@@ -1132,17 +1197,37 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<if !$PlayerSideEffectOrgasmBlock and !$PlayerChastityBelt and !$PlayerSideEffectMasturbationBlock>>
 		<<set $AcademicPoints += 1>>
 	<</if>>
-	
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
-<<print "You study for a while longer, then head back to your room.">>
+<<nobr>>
+	You study for a while longer, then head back to your room.
+	You’re anxious about the exam tomorrow have some trouble sleeping at first,
+	so you browse your favorite websites for a while to help you relax.
+<</nobr>>
 
-<<print "You’re anxious about the exam tomorrow have some trouble sleeping at first, so you browse your favorite websites for a while to help you relax.">>
-<<if $PlayerChastityBelt>><img src="Part6/Study4.jpg" hspace="10" vspace="10" height="650"><br>\
-<<else>><<if $PlayerItemWand>><br><video src="Part6/Study3.webm" autoplay loop muted height="640"></video><br>\
-<<else>><br><video src="Part6/Study2.mp4" autoplay loop muted height="640"></video><br><</if>><</if>>
-<<if $PlayerChastityBeltor >><br><<print "Unfortunately you can’t ‘relax’ with your chastity belt on and have trouble sleeping at all.">><br><<else>><<if $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock>><</if>><br><<print "Unfortunately you can’t ‘relax’ and have trouble sleeping at all.">><br><</if>>
+<<nobr>>
+	<<if $CampusMinistry>>
+		<img src="Part6/Study5.jpg" hspace="10" vspace="10" height="650">
+	<<elseif $PlayerChastityBelt>>
+		<img src="Part6/Study4.jpg" hspace="10" vspace="10" height="650">
+	<<elseif $PlayerItemWand>>
+		<video src="Part6/Study3.webm" autoplay loop muted height="640"></video>
+	<<else>>
+		<video src="Part6/Study2.mp4" autoplay loop muted height="640"></video>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $CampusMinistry>>
+		You download a few songs you want to learn and practice a bit on your guitar before finally heading to bed.
+  <<elseif $PlayerChastityBelt>>
+		Unfortunately you can’t ‘relax’ with your chastity belt on and have trouble sleeping at all.
+	<<elseif $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock>>
+		Unfortunately you can’t ‘relax’ and have trouble sleeping at all.
+	<</if>>
+<</nobr>>
+
 <<nobr>>
 	<<if setup.isFWB('Josh')>>[[You spend some time with Josh.|Part6StartJosh2]]
 	<<elseif $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
@@ -1157,9 +1242,6 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<nobr>>
 	<h1><<print "Club">></h1>
 <</nobr>>
-
-<<print "You study for a while longer, then head back to your room.">>
-
 <<print "When you get to the club and see the sign about being 21, you remember you don’t have a fake ID - not one with your new face on it anyway.">>
 <img src="Part6/Club1.jpg" hspace="10" vspace="10" height="500">
 
@@ -1175,7 +1257,9 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<<print " You can see the way the bouncer is looking at you. You’re pretty sure you ">>
 		[[can ‘persuade’ him to let you in.|Part6ClubPersuade]]
 	<</if>>
-	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica') and !$PlayerSideEffectOral and $FunPoints < 4 and $PlayerSideEffectOral < 3>>
+	<<if $CampusMinistryFail>>
+		You are done being too timid to enjoy yourself, and decide to do what you need to do to get in.
+	<<elseif !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica') and !$PlayerSideEffectOral and $FunPoints < 4 and $PlayerSideEffectOral < 3>>
 		<<print "Or you .">>
 		<<link "can just give up and go back home.">>
 			<<if setup.isFWB('Josh')>><<goto [[Part6StartJosh2]]>>
@@ -1198,13 +1282,15 @@ do your best to make a purring sound for a bit before you fall asleep.
 <img src="Part6/Frat1.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh')>>
+	<<if $CampusMinistry or setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh')>>
 		<<print "You decide it’ll be a sausage fest, and ">>
 		[[toss the flyer when you get to your next class.|Part6Grades1]]
 	<<else>>
 		<<print "You can hold on to the flyer and try to decide if ">>
 		[[you’re going to go.|Part6Frat2]]
-		<<if $FunPoints < 6>>
+		<<if $CampusMinistryFail>>
+			Of course you are going to go!
+		<<elseif $FunPoints < 6>>
 			<<print " Or, you can decide it’ll be a sausage fest, and ">>
 			[[toss the flyer when you get to your next class.|Part6Grades1]]
 		<</if>>
@@ -1360,7 +1446,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 			<<print "You have no choise but to ">>[[go back to the table.|Part6Dance3]]
 		<</if>>
 	<<else>>
-		<<if ($PlayerSideEffectSubmissive > 2 and $PlayerSideEffectPheromones > 1) or $PlayerSideEffectLibido > 2>>
+		<<if ($PlayerSideEffectSubmissive > 2 and $PlayerSideEffectPheromones > 1) or $PlayerSideEffectLibido > 2 or $CampusMinistryFail>>
 			<<print "You are too excited to not accept his invitation and ">>[[leave to hookup with Troy.|Part6TroyHook]]
 		<<else>>
 			<<print "You could ">>[[leave to hookup with Troy,|Part6TroyHook]]<<print " or you could ">>[[reject him and go back to the table.|Part6Dance3]]
@@ -1733,6 +1819,7 @@ Might add something here in the future. Or not.
 	<<if $AcademicPoints > 9>><<print "You’re doing great and have nothing to worry about.">>
 	<<elseif $AcademicPoints < 5>><<print "You’re going to fail, there’s no way to pull your grade up enough to pass now.">>
 	<<elseif $KidnapEscape>>You are in-between, it could go either way.  You know missing so much class didn't help.  You stop by to [[talk to the professor|Part6ProfessorRecover]] to see if there is anything you can do to pass.
+	<<elseif $CampusMinistry>>You are in-between, it could go either way.  Mark suggests talking to the professor about the trouble you are having.  You stop by to [[talk to the professor|Part6ProfessorRecover]] to see if there is anything you can do to pass.
 	<<else>><<print "You are in-between, it could go either way ">>[[depending on how you do the rest of the term.|Part6Professor1]]<</if>>
 <</nobr>>
 
@@ -1856,36 +1943,71 @@ Might add something here in the future. Or not.
 [[All you can do now is wait for your final results.|Part6Grades2]]
 
 ::Part6ProfessorRecover <1100,5300>
-<img src="Part9/Start3.jpg" hspace="10" vspace="10" height="650">
 <<nobr>>
-	You don't go into too many details, really you don't remember much anyway.  You try to keep from crying as you tell him what you do know,
-	about waking up in the hospital, and about what the doctors told you had happened to you.
+	<<set $ProfessorHelp to 1>>
+	<h1>Professor's Office</h1>
+	<img src="Part9/Start3.jpg" hspace="10" vspace="10" height="650">
 <</nobr>>
+<<if $KidnapEscape>>
+	<<nobr>>
+		You don't go into too many details, really you don't remember much anyway.  You try to keep from crying as you tell him what you do know,
+		about waking up in the hospital, and about what the doctors told you had happened to you.
+	<</nobr>>
 
-<<nobr>>
-	He listens to your story, and does his best to comfort you.  He tells you not to worry about the your grade this term.  He does say
-	that you'll need to know the material you missed though, since you plan on taking the course after this as well.  So he sets up a few
-	more office visits with you to help you [[get caught up|Part6Exam]].
-<</nobr>>
+	<<nobr>>
+		He listens to your story, and does his best to comfort you.  He tells you not to worry about the your grade this term.  He does say
+		that you'll need to know the material you missed though, since you plan on taking the course after this as well.  So he sets up a few
+		more office visits with you to help you [[get caught up|Part6Exam]].
+	<</nobr>>
 
-<<nobr>>
-	You feel very releived when you leave his office.  You can't believe some of those rumors you've heard about him.  He's not like
-	that at all.
-<</nobr>>
+	<<nobr>>
+		You feel very releived when you leave his office.  You can't believe some of those rumors you've heard about him.  He's not like
+		that at all.
+	<</nobr>>
+<<else>>
+	<<nobr>>
+		You talk to the professor about how you've been struggling in his class.  You mention some 'personal issues' you've been dealing with,
+		but don't go into any details.
+	<</nobr>>
+
+	<<nobr>>
+		He tells you that the first semester can be difficult for many, and he understands.  He tells you that it's important that you pick up
+		this material though, since the next class you'll be in depends on it.  He sets up a few more office visits with you to help you
+		[[get caught up|Part6Exam]].
+	<</nobr>>
+
+	<<nobr>>
+		You feel very releived when you leave his office.  You can't believe some of those rumors you've heard about him.  He's not like
+		that at all.
+	<</nobr>>
+<</if>>
 
 ::Part6Professor1 <1200,5300>
 <<nobr>>
 	<h1><<print "Classroom">></h1>
+	<img src="Part6/Professor1.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 
-<<print "You really don’t want to fail this class.">>
+<<nobr>>
+	You really don’t want to fail this class.
+	<<if $JobAthlete or $JobCheerleader or $JobCheerleaderFundraiser>>
+		You can’t risk getting on academic probation.
+	<</if>>
+<</nobr>>
 
-<<print "You’ve seen the way the professor looks at you, especially when you wear something sexy to class.">>
-<img src="Part6/Professor1.jpg" hspace="10" vspace="10" height="650">
-
-<<if $JobAthlete or $JobCheerleader or $JobCheerleaderFundraiser>><<print "You can’t risk getting on academic probation. ">><</if>><<print "You’re confident you could visit his office some evening ">><<if $PlayerSideEffectOral or $FunPoints > 8>>[[and come to an ‘arrangement’ to ensure you pass,|Part6Professor2]]<<print " and the thought of it excites you too much to pass up on visiting him.">><<else>>[[and come to an ‘arrangement’ to ensure you pass.|Part6Professor2]]<</if>>
-
-<<if !$PlayerSideEffectOral and $FunPoints < 9 and !$JobAthlete and !$JobCheerleader and !$JobCheerleaderFundraiser>><<print "Or you can decide that ">>[[you want to be judged just on your work.|Part6Exam]]<</if>>
+<<nobr>>
+	You’ve seen the way the professor looks at you, especially when you wear something sexy to class.
+	You’re confident you could visit his office some evening
+	<<if $PlayerSideEffectOral or $FunPoints > 8>>
+		[[and come to an ‘arrangement’ to ensure you pass,|Part6Professor2]]
+		and the thought of it excites you too much to pass up on visiting him.
+	<<else>>
+		[[and come to an ‘arrangement’ to ensure you pass.|Part6Professor2]]
+	<</if>>
+	<<if !$PlayerSideEffectOral and $FunPoints < 9 and !$JobAthlete and !$JobCheerleader and !$JobCheerleaderFundraiser>>
+		Or you can decide that [[you want to be judged just on your work.|Part6Exam]]
+	<</if>>
+<</nobr>>
 
 ::Part6Professor2 <1400,5300>
 <<nobr>>
@@ -2609,7 +2731,7 @@ Might add something here in the future. Or not.
 <<nobr>>
 	<<set $PlayerRollDice to either(1,2,3,4,5,6)>>
 	<<set $PlayerRollDice += $AcademicPoints>>
-	<<if !$KidnapEscape and !$PlayerProfessorVisit and $PlayerRollDice < 11>><<set $AcademicProbation to 1>><</if>>
+	<<if !$ProfessorHelp and !$PlayerProfessorVisit and $PlayerRollDice < 11>><<set $AcademicProbation to 1>><</if>>
 	
 	<h1><<print "Campus">></h1>
 <</nobr>>

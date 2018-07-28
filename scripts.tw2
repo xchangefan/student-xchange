@@ -314,7 +314,8 @@ setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
       if (isPregnant) {
         fuck.checkedForPregnancy = "already pregnant"
       } else {
-        fuck.conception = setup.checkForPregnancy(fuck, oddsBoost, fuck.ovulating)
+				var areDefinitelyOvulating = (fuck.ovulating && !state.active.variables.PlayerProtectionPill) || fuck.noPill
+        fuck.conception = setup.checkForPregnancy(fuck, oddsBoost, areDefinitelyOvulating)
         fuck.checkedForPregnancy = pregnancyTestType
         if (fuck.conception) {
           isPregnant = true // but player doesn't know yet, so don't set visible state variable

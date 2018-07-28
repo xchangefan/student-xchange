@@ -589,7 +589,7 @@ You start trying to think of ways to earn a little extra money on the side...
     You realize you don't really have any options for extra income with the chastity belt locked on you.
   <<else>>
     You could always change your mind and talk to Hannah about working as a [[call girl|Part10CallGirlStart]]
-    <<if $Mentor == 'Olivia' or $cantWorkStore>>
+    <<if $Mentor == 'Olivia' or $cantWorkStore or $CampusMinistryFail>>
       .
     <<elseif $refusedBelt>>
       or you could go back to the store and tell Master Robert you've reconsidered and that you will wear that
@@ -827,6 +827,10 @@ Now you can [[think about something more fun|Part10End]].
       <<if !$NeedSideJob>>
         Of course, you can also just make do with what you've been earning, and [[forget about earning extra cash|Part10End]].
       <</if>>
+    <<elseif $CampusMinistryFail>>
+      <<set $refusedBelt to 1>>
+      You've just started to enjoy your body, you're not about to let someone lock away all your fun now!
+      You decline his offer and [[try to think of something else|Part10ExtraMoney3]]
     <<else>>
       You stop for a moment to think about whether you want to [[agree to wear the belt|Part10WebModel4]] or
       decline his offer and 

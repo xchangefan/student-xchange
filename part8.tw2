@@ -220,6 +220,8 @@
 		this long enough to realize it's not an act.  He tells you that he'll put it down as a much lower speeding ticket.  You'll be able to the pay $150 online when
 		you get home and he won't need to arrest you at all.  You thank him as you try to wipe away your tears. [[You’re careful to stay under the speed limit the rest of your trip.|Part8Home1]]
 	<</nobr>>
+<<elseif $CampusMinistry>>
+	[[You can't believe this is happening to you.|Part8Jail]]
 <<else>>
 	<<print "From the way the officer is looking at you, you suspect that something else might though.">>
 
@@ -253,7 +255,7 @@
 
 <<nobr>>
 	You figure you should probably
-	<<if $KidnapEscape>>
+	<<if $KidnapEscape or $CampusMinistry>>
 		<<link [[pay him $50 for part of the gas.|Part8Home1]]>><<set $PlayerMoney -= 50>><</link>>
 	<<else>>
 		<<if $PlayerSideEffectPheromones > 2 or $PlayerSideEffectDreams > 3 or $PlayerSideEffectLibido > 2 or $PlayerSideEffectExhibitionist > 2 or ( $PlayerSideEffectPheromones > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectLibido > 1 and $PlayerSideEffectExhibitionist > 1) or ( $PlayerSideEffectDreams > 2 and $PlayerSideEffectExhibitionist > 1)>><<print "pay him $50 for part of the gas.">><<else>><<link [[pay him $50 for part of the gas.|Part8Home1]]>><<set $PlayerMoney -= 50>><</link>><</if>>
@@ -286,7 +288,7 @@
 
 <<print "You are having trouble sleeping. You are a bit nervous about how your family will react when they see you for the first time. They’ve only seen pictures and videos until now, this is the first time they’ll actually see the new you in person.">>
 
-<<if !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>>[[You can masturbate|Part8Home2]]<<print " if you think that might help take your mind off it and get to sleep, or you can ">><<else>><<print "You ">><</if>><<print "just toss and turn a while longer, ">>[[but eventually get to sleep.|Part8Home3]]
+<<if !$CampusMinistry and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>>[[You can masturbate|Part8Home2]]<<print " if you think that might help take your mind off it and get to sleep, or you can ">><<else>><<print "You ">><</if>><<print "just toss and turn a while longer, ">>[[but eventually get to sleep.|Part8Home3]]
 
 ::Part8Jail <0,6475>
 <<nobr>>
@@ -640,13 +642,13 @@
 <<print "That night you think about the day and what a fun time <<if $KidnapEscape>>[[it was.|Part8Text1]]<<else>>it was.  But then you think of ways it could have been even more fun. Whichever of the ideas that flood your mind excites you the most, you linger on that one, imagining it in great detail:<</if>>">>
 
 <<if !$KidnapEscape>><<print "What if you’d gone home with Cody instead of your sister. What would have happened at his house.">><<if $NumberCody>><<print " What if you called him right now and asked to come over now?">><</if>><</if>>
-<<if !$KidnapEscape and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><video src="Part8/Home9.mp4" autoplay loop muted height="640"></video><br><<else>><img src="Part8/Home10.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<if !$KidnapEscape and !$CampusMinistry and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><video src="Part8/Home9.mp4" autoplay loop muted height="640"></video><br><<else>><img src="Part8/Home10.jpg" hspace="10" vspace="10" height="650"><</if>>
 
 <<if !$KidnapEscape>><<print "You remember that cute shop girl that helped you find a bra that fit. What if she had followed you into the changing booth and helped you in other ways.">><</if>>
 
 <<if !$KidnapEscape>><<print "You remember the black lace panties your sister bought today. You wonder if she’s wearing them right now. You wonder if she’s wearing anything else.">><</if>>
 
-<<if !$KidnapEscape>><<if !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><<print "Your hand soon finds its way between your legs and you masturbate as you imagine what might have been. ">>[[You go to sleep relaxed and satisfied.|Part8Text1]]<<set $HomeMasturbate = 1>><<else>>[[You go to sleep horny and frustrated, yet again.|Part8Text1]]<</if>><</if>>
+<<if !$KidnapEscape>><<if !$CampusMinistry and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><<print "Your hand soon finds its way between your legs and you masturbate as you imagine what might have been. ">>[[You go to sleep relaxed and satisfied.|Part8Text1]]<<set $HomeMasturbate = 1>><<else>>[[You go to sleep horny and frustrated, yet again.|Part8Text1]]<</if>><</if>>
 
 ::Part8Text1 <200,6750>
 <<nobr>>
@@ -767,7 +769,7 @@
 <<print "As you head back out to the car, he can’t help saying over and over how he can’t believe his brother is a girl now.">>
 
 <<nobr>>
-	<<if $KidnapEscape>>
+	<<if $KidnapEscape or $CampusMinistry>>
 		You [[head home with your brother|Part8Arrival3]].
 	<<elseif $PlayerSideEffectExhibitionist>>
 		[[You decide to have a little fun with him.|Part8Arrival2]]
@@ -819,6 +821,7 @@
 ::Part8Text7 <1400,6750>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
+	<<set $CodyDickPick to 1>>
 <</nobr>>
 
 <<print "When the pictures you requested in return for your show arrive, it’s unmistakable just how much Cody enjoyed your performance.">>
@@ -948,7 +951,13 @@
 	<<print "You’re a bit freaked out by this at first, but then you realize that’s a perfectly normal reaction for him. He’s never seen you before today. He may know that you’re his brother, but in another way, you’re just a pretty girl he’s just met.">>
 	
 	<<nobr>>
-		<<if $PlayerSideEffectPheromones < 4>>
+		<<if $CampusMinistry>>
+			You tell him that you understand that your change is awkward for him.  You let him know that maybe now that you
+			are his little sister instead of his little brother [[he should probably be more careful about knocking from now on|Part8Evening]]
+			to avoid situations like what happened earlier.
+			<br><br>
+			But you remind him that you may look different on the outside, but you’re still his little brother on the inside.
+		<<elseif $PlayerSideEffectPheromones < 4>>
 			<<print "You can either ">>
 			<<link [[flirt back just a bit to have fun|Part8Evening]]>><<set $BrotherFlirt = 1>><</link>>
 			<<print " with how nervous and awkward it makes him. Or you can tell him that you understand that your change is awkward for him, ">>
@@ -961,7 +970,7 @@
 		<</if>>
 	<</nobr>>
 	
-	<<print "Either way, the rest of your hike continues pleasantly.">>
+	<<if !$CampusMinistry>><<print "Either way, the rest of your hike continues pleasantly.">><</if>>
 <</if>>
 
 ::Part8Evening <525,7000>
@@ -977,15 +986,21 @@
 	<</if>>
 <</nobr>>
 <img src="Part8/Evening1.jpg" hspace="10" vspace="10" height="650">
+<<if $CodyDickPick and $CampusMinistry>>
+	You return to your bed, but your thoughts won't let you sleep.
 
-<<print "On the way back you see the light on in your sisters room. ">>[[You can go talk to her for a while|Part8EveningSister1]]<<print " to see if that takes your mind off it.">>\
-<<if !$KidnapEscape and $BrotherFlirt>><br><br><<print "You also look at your brother’s door and wonder if he’s jerking off right now, thinking of you in your hot new body. ">>[[You can peek into his room to see if you want.|Part8EveningBrother1]]<</if>>\
-<<if !$KidnapEscape and setup.areDating('Veronica')>><br><br><<print "You could ">>[[text Veronica|Part8EveningCall]]<<print " and tell her how much you wish she were here next to you.">><</if>>\
-<<if !$KidnapEscape and setup.areDating('Andrew')>><br><br><<print "You could ">>[[text Andrew|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
-<<if !$KidnapEscape and setup.areDating('Josh')>><br><br><<print "You could ">>[[text Josh|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
-<<if !$KidnapEscape and setup.areDating('Aaron')>><br><br><<print "You could ">>[[text Daddy|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
-<<if !$KidnapEscape and $NumberCody>><br><br><<print "You could check on Cody, and see if he’s up for a late-night booty-call, maybe ">>[[text him to see if he’s receptive to the idea.|Part8EveningBooty1]]<</if>>\
-<<if !$KidnapEscape and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><br><<print "Or you can ">>[[try masturbating to see if that helps.|Part8EveningMasturbate]]<</if>>\
+	<<print "You'd planned to be a good girl on break, just like you'd promised Faith you would be.  You were just playing around earlier with Cody, just some harmless fun.  You guys were miles apart, right?  But now you can't get the thought of Cody's cock out of your mind.  Your keep imagining what it would taste like, how good it would feel inside you.  ">>[[You send him a text seeing if he'd like you to come over|Part8EveningBooty1]].
+<<else>>
+	<<print "On the way back you see the light on in your sisters room. ">>[[You can go talk to her for a while|Part8EveningSister1]]<<print " to see if that takes your mind off it.">>\
+	<<if !$KidnapEscape and $BrotherFlirt>><br><br><<print "You also look at your brother’s door and wonder if he’s jerking off right now, thinking of you in your hot new body. ">>[[You can peek into his room to see if you want.|Part8EveningBrother1]]<</if>>\
+	<<if !$KidnapEscape and setup.areDating('Veronica')>><br><br><<print "You could ">>[[text Veronica|Part8EveningCall]]<<print " and tell her how much you wish she were here next to you.">><</if>>\
+	<<if !$KidnapEscape and setup.areDating('Andrew')>><br><br><<print "You could ">>[[text Andrew|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
+	<<if !$KidnapEscape and setup.areDating('Josh')>><br><br><<print "You could ">>[[text Josh|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
+	<<if !$KidnapEscape and setup.areDating('Aaron')>><br><br><<print "You could ">>[[text Daddy|Part8EveningCall]]<<print " and tell him how much you wish he were here next to you.">><</if>>\
+	<<if !$KidnapEscape and $NumberCody && !$CampusMinistry>><br><br><<print "You could check on Cody, and see if he’s up for a late-night booty-call, maybe ">>[[text him to see if he’s receptive to the idea.|Part8EveningBooty1]]<</if>>\
+	<<if !$KidnapEscape and $NumberCody && $CampusMinistry>><br><br><<print "You keep thinking of Cody.  You know you'd promised Faith you'd be a good girl over break, but you also know all it would take would be ">>[[one text to Cody|Part8EveningBooty1]] asking if he'd like you to come over, and this need you've been feeling could finally be satisified.<</if>>\
+	<<if !$KidnapEscape and !$CampusMinistry and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><br><<print "Or you can ">>[[try masturbating to see if that helps.|Part8EveningMasturbate]]<</if>>\
+<</if>>
 
 ::Part8EveningSister1 <1050,7125>
 <<nobr>>
@@ -1051,7 +1066,17 @@
 	<h1><<print "Cody’s Apartment">></h1>
 <</nobr>>
 
-<<print "You don’t waste much time once you are in Cody’s apartment. You have his clothes off and are kissing him while you stroke his cock, feeling it stiffen in your hand. When you can’t resist any longer, you drop to your knees. You begin licking the underside of his cock before you wrap your lips around it and slide it into your mouth.">>
+<<nobr>>
+	<<if $CampusMinistry>>
+		<<set $CampusMinistryFail to 1>>
+		<<set $CampusMinistryFailChristmas to 1>>
+		<<unset $CampusMinistry>>
+		You've waited to long for this, you need this too bad to resist any longer.
+	<</if>>
+	You don’t waste much time once you are in Cody’s apartment. You have his clothes off and are kissing him while you stroke his cock,
+	feeling it stiffen in your hand. When you can’t resist any longer, you drop to your knees. You begin licking the underside of his
+	cock before you wrap your lips around it and slide it into your mouth.
+<</nobr>>
 
 <video src="Part8/Evening11.mp4" autoplay loop muted height="640"></video>
 
@@ -1339,7 +1364,17 @@
 	<h1><<print "Cody’s Apartment">></h1>
 <</nobr>>
 
-<<print "The need that’s been building in you since you arrived back home is finally answered as he pushes into you. Each time he pulls out you feel that need return, and a desperate emptiness inside you, only to feel the joy of his next thrust wash over you again a moment later.">>
+<<nobr>>
+	The need that’s been building in you
+	<<if $CampusMinistryFailChristmas>>
+		for so long
+	<<else>>
+		since you arrived back home
+	<</if>>
+	is finally answered as he pushes into you.
+	Each time he pulls out you feel that need return, and a desperate emptiness inside you, only to feel the joy
+	of his next thrust wash over you again a moment later.
+<</nobr>>
 
 <video src="Part8/Evening12.mp4" autoplay loop muted height="640"></video>
 
@@ -1391,6 +1426,8 @@
 
 <<nobr>>
 	<<if $KidnapEscape>>
+	<<elseif $CampusMinistry>>
+		You let her know that you want to [[go to your grandparents|Part8Christmas4]] for Christmas dinner, with the rest of the family.
 	<<elseif !$ChristmasEveOrgasm>>
 		<<print "You’ve been crabby all morning from being so aroused last night but not getting any release. Your mom doesn’t know what has you so on edge, but decides the added stress of your grandparents isn’t a good idea. She decides for you that it’ll be better to">>
 		[[go to your uncle’s to watch football.|Part8Uncle1]]
@@ -1639,7 +1676,7 @@
 <<nobr>>
 	<<if setup.haveFucked('Brad')>>
 		<<print "He is certainly hoping for more of the ">>[[same kind of payment as last time.|Part8Return3]]
-	<<elseif $KidnapEscape>>
+	<<elseif $KidnapEscape or $CampusMinistry>>
 		You <<link [[pay him another $50|Part8Return6]]>><<set $PlayerMoney -= 50>><</link>> for the ride back.
 	<<else>>
 		<<print "You can ">><<link [[pay him another $50|Part8Return6]]>><<set $PlayerMoney -= 50>><</link>><<print " for the ride back. Although he certainly wouldn’t mind if you decided to ">>[[pay him a different way instead.|Part8Return3]]
@@ -1658,13 +1695,22 @@
 		<<print "You are so happy to finally be back at school.">>
 	<</if>>
 	You think of this more as your home now than where you grew up.
+	<<if $CampusMinistryFailChristmas>>
+		One part you hadn't been looking forward to is talking to Faith.  You let her know that you've decided to give up on
+		her and Mark's plan to 'help' you.  You don't give her any details about what's happened since you last saw her,
+		though she probably has a pretty good guess.  She's disappointed, but not surprised.  You don't plan returning to
+		the ministry, so she says she'll let Pastor Mark know.
+	<</if>>
 <</nobr>>
-<img src="Part8/Return8.jpg" hspace="10" vspace="10" height="650">
+<img src="Part8/Return8.jpg" hspace="10" vspace="10" height="700" align="left">
 
 <<nobr>>
 	You try on the purchases you made,
 	<<if $KidnapEscape>>
 		looking in the mirror and seeing how beautiful makes you excited for the new year, and ready to forget the old one.
+	<<elseif $CampusMinistry>>
+		Faith isn't a fan of some of the sexier ones your sister helped you pick out.  But you tell her not to worry, you
+		just enjoy how beautiful you feel wearing them, they aren't for any guys to see.
 	<<else>>
 		especially the sexier ones you couldn’t show off at your parents.
 	<</if>>
@@ -1719,7 +1765,7 @@
 	<</link>>
 	<<print " to lower that amount for you. ">>
 	<<if $PlayerMoney < 450>>
-		<<if $KidnapEscape or setup.isGoldStarLesbian()>>
+		<<if $KidnapEscape or $CampusMinistry or setup.isGoldStarLesbian()>>
 			You ask him about paying on credit, but he insists on cash only, and you really need your car back.
 			You could go to the ATM and get a
 			<<link [[cash advance from your credit card.|Part8Return8]]>>
@@ -1777,6 +1823,17 @@
 <img src="Part8/Return7.jpg" hspace="10" vspace="10" height="650">
 
 <<print "As you kneel on the dirty floor in the back of his garage with your lips around his cock, you keep reminding yourself of the $300 you are saving. That’s worth a couple minutes of embarrassment, right?">>
+<<if $CampusMinistry>>
+	<<nobr>>
+		<<set $CampusMinistryFail to 1>>
+		<<set $CampusMinistryFailChristmas to 1>>
+		<<unset $CampusMinistry>>
+		You know this is supposed to be humiliating and degrading, and it is.  But you also can't deny how much it is turning you on.  Feeling your lips
+		around his cock, hearing his moans, and eventually tasting his cum on your tongue.  You think, if you are enjoying even this, how much better
+		would it be with someone you were attracted to, someone who was attending to your needs.  You wonder why you've been denying yourself
+		this for so long.  You know you won't be any longer.
+	<</nobr>>
+<</if>>
 
 [[Once you finish, you drive you car back home.|Part8Return8]]
 
@@ -1810,7 +1867,8 @@
 		that at least you won't need to hide your relationship anymore.  Tonight though, you just cheer as the clock strikes twelve,
 		then stay at the party for [[a bit more champagne.|Part8NewYear4]]
 	<<else>>
-		<<print "As the clock strikes twelve, you can kiss one of the ">>[[guys|Part8NewYear3]]<<print " or ">>[[girls|Part8NewYear2]]<<print " you were dancing with at midnight, and later go home together.">>
+		As the clock strikes twelve, you can kiss one of the [[guys|Part8NewYear3]] or [[girls|Part8NewYear2]] you were dancing with at midnight.
+		Feeling the way you do right now, you know you'll probably leave here tonight with them as well.
 	<</if>>
 <</nobr>>
 
@@ -1850,12 +1908,18 @@
 
 <<nobr>>
 	<<if setup.areDating('Veronica')>>
-		<<print "You and Veronica spend the first few hours of the new year with your bodies intertwined, trying to discover all the way to give each other pleasure.">>
+		You and Veronica spend the first few hours of the new year with your bodies intertwined, trying to discover all the way to give each other pleasure
 	<<else>>
 		<<if $PlayerChastityBelt>>
-			<<print "You spend the first hours of the new year giving the pleasure you yearn for. Seeing and hearing the joy you are giving the beautiful woman is the only pleasure you can have today though.">>
+			You spend the first hours of the new year giving the pleasure you yearn for. Seeing and hearing the joy you are giving the beautiful woman is the
+			only pleasure you can have today though
+		<<elseif $CampusMinistry>>
+			You decide to leave Faith and Mark and their plans for you in the old year.  This new year is going to be about having fun.  The beautiful
+			woman you went home with is more than happy to spend the first few hours of the new year showing you all the pleasure your bodies can give
+			each other, and helping you make up for lost time.
 		<<else>>
-			<<print "You and the beautiful woman sharing your bed spend the first few hours of the new year with your bodies intertwined, trying to discover all the way to give each other pleasure.">>
+			You and the beautiful woman sharing your bed spend the first few hours of the new year with your bodies intertwined, trying to discover all the way
+			to give each other pleasure.
 		<</if>>
 	<</if>>
 <</nobr>>
@@ -1877,6 +1941,12 @@
 		<<link "the new year might hold.">>
 			<<goto [[Part85Talk1]]>>
 		<</link>>
+	<<elseif $CampusMinistry>>
+		<<set $CampusMinistryFail to 1>>
+		<<unset $CampusMinistry>>
+		Finally, the two of you are exhausted and fall asleep curled up next to each other. You wake up the next morning excited for what 
+		the [[new year might hold|Part9Start1]].  The only part you aren't looking forward to is the talk with Faith when you get back to your
+		room.  She seems disappointed, but not surprised, and says she'll let Mark know that you've abandonded their plan for you.
 	<<else>>
 		<<if $PlayerChastityBelt>>
 			<<print "You wake up the next morning, aching with need, but excited for what ">>
@@ -1920,6 +1990,9 @@
 	<<elseif setup.areDating('Josh')>>
 		<<print "You and Josh spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
 		<<set $sex.push({sex: 'male', name: 'Josh', vaginal: true})>>
+	<<elseif $CampusMinistry>>
+		You decide to leave Faith and Mark and their plans for you in the old year.  This new year is going to be about having fun.  The guy you
+		went home with is more than happy to help you try to make up for lost time.
 	<<else>>
 		<<if $PlayerChastityBelt>>
 		  <<set $sex.push({sex: 'male', name: 'New Year's Eve hookup'})>>
@@ -1951,6 +2024,9 @@
 				<<goto [[Part9Start1]]>>
 			<</if>>
 		<</link>>
+	<<elseif $CampusMinistry>>
+		You wake the next morning excited for what the [[new year might hold|Part9Start1]].  The only part you aren't looking forward to is the
+		talk with Faith when you get back to your room.
 	<<else>>
 		<<print "You wake the next morning excited for what ">>
 		<<link "the new year might hold.">>
@@ -1976,6 +2052,15 @@
 		<<else>>
 			<<print "He wakes when you do. When you notice his morning erection pressed against you, you can’t think of a better way to start the first day of the new year and ease yourself back, smiling as you feel it slide inside you.">>
 		<</if>>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<if $CampusMinistry>>
+		<<set $CampusMinistryFail to 1>>
+		<<unset $CampusMinistry>>
+		When you have the conversion with Faith, she's more disappointed than surprised.  She says she'll let Pastor Mark know that you've given up
+		on their plan to 'help' you.
 	<</if>>
 <</nobr>>
 
