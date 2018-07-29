@@ -392,7 +392,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarNeighbours <2000,0>
 <<nobr>>
-  <<if $neighbours and $neighbours.length == 1>>
+  <<if $Roommate == 'Sorority Sister'>>
+    You live with your soroity sisters.
+  <<elseif $neighbours and $neighbours.length == 1>>
    Your neighbour is $neighbours[0]
   <<elseif $neighbours and $neighbours.length > 1>>
      Your neighbours are <<print $neighbours.join(" and ")>>

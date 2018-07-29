@@ -5,7 +5,7 @@
 	<<set $TalkPunishLight = 0>>
 	<<set $TalkPunishSevere = 0>>
 	
-	<<if $MasterKate>><h1><<print "Mistress Kate">></h1><</if>>
+	<<if $MasterKate>><h1><<print "Mistress Kate's House">></h1><</if>>
 	<<if setup.areDating('Andrew')>><h1><<print "Andrew’s Apartment">></h1><</if>>
 	<<if setup.areDating('Josh')>><h1><<print "Josh’s Bedroom">></h1><</if>>
 	<<if setup.areDating('Veronica')>><h1><<print "Veronica’s Bedroom">></h1><</if>>
@@ -991,7 +991,6 @@
 <<print "Having a little time to think (and maybe to explore) over the holiday made you realize this isn’t what you want. Maybe it’s someone else would be better for you, or maybe monogamy just isn’t for you right now.">>
 
 <<nobr>>
-	<<print "After the holidays are over, you and ">>
 	<<if $MasterKate>><<print "You do your best to escape her power as easy as you can, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
 	<<if setup.areDating('Andrew')>><<print "You do your best to let him down easy, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
 	<<if setup.areDating('Josh')>><<print "You do your best to let him down easy, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
@@ -1028,7 +1027,7 @@
 			<<set $Roommate to 'Emily'>>
 			<<set setup.removeNeighbour('Emily')>>
 		<</if>>
-		<<set setup.areDating('Peter') = 0>>
+		<<set setup.breakupWith('Peter')>>
 		<<set $BreakUpNerd = 0>>
 		<<set $PlayerItemNerdKey = 0>>
 	<</if>>

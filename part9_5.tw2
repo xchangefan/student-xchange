@@ -41,9 +41,12 @@
 			<<else>>
 				<<if setup.areDating('Peter')>>
 					<<set $DoctorNerd = 1>>
-					<<print "You didn’t want to go alone so you bring Peter with you for support,">>
-					<<if $FatherRealNerd>><<print " even though you haven’t told him that he might be the father.">><<else>><<print " even though you doubt that he is the father. ">><</if>>
-					<<print "Besides you enjoy the fact that the visit itself subtly teases him, proving that another man has done things to you he could only fantasize about.">>
+						You didn’t want to go alone so you bring Peter with you for support.
+						<<if $PregnancyCheck.possibleFathers.length == 1 && $PregnancyCheck.possibleFathers[0] == 'Peter'>>
+							He is the baby's father after all.
+						<<elseif $$PregnancyCheck.possibleFathers.indexOf('Peter') < 0>>
+							Besides you enjoy the fact that the visit itself subtly teases him, proving that another man has done things to you he could only fantasize about.
+						<</if>>
 				<<else>>
 					<<if setup.areDating('Veronica')>>
 						<<set $DoctorVeronica = 1>>
@@ -135,15 +138,15 @@
 
 <<nobr>>
 	<<print "You feel very awkward, vulnerable and exposed as he checks to make sure everything is at it should be. ">>
-	<<if $DoctorAndrew>><<print "You hold the Andrew’s hand, as you sense he is feeling a bit uncomfortable being here, but you are grateful that he is here supporting you.">><</if>>
-	<<if $DoctorDaddy>><<print "You hold the Daddy’s hand, as you sense he is feeling a bit uncomfortable being here, but you are grateful that he is here supporting you.">><</if>>
-	<<if $DoctorNerd>><<print "You hold the Peter’s hand, as you sense he is feeling a bit uncomfortable being here, but you are grateful that he is here supporting you.">><</if>>
-	<<if $DoctorFaith>><<print "You hold the Faith’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
-	<<if $DoctorEmily>><<print "You hold the Emily’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
-	<<if $DoctorHannah>><<print "You hold the Hannah’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
-	<<if $DoctorSamantha>><<print "You hold the Sam’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
-	<<if $DoctorOlivia>><<print "You hold the Olivia’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
-	<<if $DoctorVeronica>><<print "You hold the Veronica’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorAndrew>><<print "You hold Andrew’s hand, as you sense he is feeling a bit uncomfortable being here, but you are grateful that he is here supporting you.">><</if>>
+	<<if $DoctorDaddy>><<print "You hold Daddy’s hand, as you sense he is feeling a bit uncomfortable being here, but you are grateful that he is here supporting you.">><</if>>
+	<<if $DoctorNerd>><<print "You hold Peter’s hand, as you sense he is feeling a bit uncomfortable being here, but you are grateful that he is here supporting you.">><</if>>
+	<<if $DoctorFaith>><<print "You hold Faith’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorEmily>><<print "You hold Emily’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorHannah>><<print "You hold Hannah’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorSamantha>><<print "You hold Sam’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorOlivia>><<print "You hold Olivia’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
+	<<if $DoctorVeronica>><<print "You hold Veronica’s hand, as you sense she is feeling a bit uncomfortable being here, but you are grateful that she is here supporting you.">><</if>>
 <</nobr>>
 
 <<print "When the doctor is done looking you over he tells you. “Everything looks good so far. ">>[[You can wait here and Nancy will be in to do your ultrasound.|Part95Exam2]]<<print " I’ll be back after that, we should have your blood work finished by then.">>
@@ -200,62 +203,14 @@
 
 <<print "“That’s not uncommon when your cycle is irregular, like yours had been. Anyway, based on everything I see here, I’m pretty confident you are at about 14 weeks now.” You’re mentally trying to calculate the dates in your head when he continues.">>
 
-<<print "“That would put conception around October 31st. ">>[[Trick or Treat!|Part95Halloween1]]<<print " Though it could be a few days in either direction. And I’m estimating your due date as July 24th. Though we might need to fine tune that date later on.”">>
-
-::Part95Halloween1 <1600,9500>
 <<nobr>>
-	<h1><<print "Halloween">></h1>
+	“That would put conception most likely around October 31st.  Trick or Treat! Though with X-Change users,
+	the speed of development can vary somewhat.  Don't worry, there's no harm to the baby.  It just means our estimates aren't quite as
+	reliable at predicting the start of the pregnancy.  It could be a week or two in either direction from my estimate. But I'm confident
+	in estimating your due date.  It should be near July 24th.”
 <</nobr>>
 
-<<print "You think back to Halloween.">>
-<img src="Part9.5/Halloween1.jpg" hspace="10" vspace="10" height="650">
-
-<<print "You remember the sexy costume you wore, and the fun you had at the party.">>
-
-<<nobr>>
-	<<link "But it’s really the fun you had *after* the party that’s at issue, isn’t it.">>
-		<<if $DoctorNerd>>
-			<<goto [[Part95Halloween3]]>>
-		<<else>>
-			<<goto [[Part95Halloween2]]>>
-		<</if>>
-	<</link>>
-<</nobr>>
-
-
-::Part95Halloween2 <1800,9500>
-<<nobr>>
-	<<if setup.areDating('Aaron')>><<set $FatherProfessor = 1>><</if>>
-	<<if setup.areDating('Andrew')>><<set $FatherAndrew = 1>><</if>>
-	<<if setup.areDating('Josh')>><<set $FatherJosh = 1>><</if>>
-	
-	<h1><<print "Halloween">></h1>
-<</nobr>>
-
-<<print "You think you know when it happened.">>
-
-<<nobr>>
-	<<if setup.haveDated('Andrew')>><<print "You remember it all. You remember how good it felt riding Andrew’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">>
-	<<elseif setup.haveDated('Aaron')>><<print "You remember it all. You remember how good it felt riding Daddy’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">>
-	<<elseif setup.haveDated('Josh') or $JoshFlee>><<print "You remember it all. You remember how good it felt riding Josh’s cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">>
-	<<else>><<print "You remember it all. You were drunk and hooked up with a random colleague, whom you cannot even remember. You do remember however how good it felt riding his cock as he thrusted up at you. You remember not wanting to stop, your orgasm was too close.">><</if>>
-<</nobr>>
-
-<video src="Part9.5/Halloween2.mp4" autoplay loop muted height="640"></video>
-
-
-<<print "You remember hearing him tell you he was going to cum, hearing him moan, feeling his cock twitch inside you. You remember how that pushed you over the edge as well.">>
-
-<<print "And you remember curling up next to him afterwards, not ever imagining ">>[[what had just started.|Part95Result1]]
-
-<<nobr>>
-	<<if setup.areDating('Aaron') and !$DoctorDaddy>><<print "You are happy to realize that Daddy is the father, and are anxious to finally tell him the news.">><</if>>
-	<<if setup.areDating('Josh')>><<print "You are happy to realize that Josh is the father, and are anxious to finally tell him the news.">><</if>>
-	<<if setup.isEx('Andrew')>><<print "You are sad to realize that Andrew is indeed the father, but the two of you have already broken up.">><</if>>
-	<<if setup.isEx('Josh')>><<print "You are sad to realize that Josh is indeed the father, but the two of you have already broken up.">><</if>>
-	<<if setup.isEx('Aaron')>><<print "You are sad to realize that Aaron (who you used to call 'Daddy') is indeed the father, but the two of you have already broken up.">><</if>>
-	<<if $JoshFlee>><<print "You are angry to realize that Josh is indeed the father, but he has ran away from you.">><</if>>
-<</nobr>>
+The doctor [[continues with his exam|Part95Result1]].
 
 ::Part95Result1 <2000,9500>
 <<nobr>>
@@ -280,7 +235,13 @@
 <<print "On you way out, you schedule your next appointment for a month from now.">>
 
 <<nobr>>
-	<<if !$FatherProfessor and !$FatherAndrew and !$FatherJosh and !$FatherNerd and !setup.areDating('Veronica')>>
+	<<if $JamesBribe>>
+		<<set $BabyAdoption = 1>>
+		Hearing the heartbeat, and seeing the ultrasound makes everything about the baby more real for you.  You think through your
+		decision to put it up for adoption.  [[You come to the same conclusion|Part95Result2]], a wealthy couple would give your baby a much better
+		home than you and a dead-beat James would.  The thought of the money that you've already spent doesn't figure in to your
+		decision at all, of course.
+	<<elseif !$FatherProfessor and !$FatherAndrew and !$FatherJosh and !$FatherNerd and !setup.areDating('Veronica')>>
 		<<print "You know you should start thinking whether you ">>
 		[[want to keep the baby|Part95Result2]]
 		<<print " after it is born, or you">>

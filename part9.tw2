@@ -319,7 +319,14 @@
 <</nobr>>
 <<if $SororityELP>><img src="Part9/End2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part9/End1.jpg" hspace="10" vspace="10" height="650"><</if>>
 
-<<print "You already know some of you will be friends for life.">>
+<<nobr>>
+	You already know some of you will be friends for life.
+	<<if $CampusMinistryFailSorority>>
+		Faith on the other hand, is disappointed, but not surprised when she finds out you are giving up on her and Mark's plan to 'help' you.  She helps you pack
+		your things for your move to the sorority house.  She says she'll let Pastor Mark know you won't be returning to the ministry.
+		<<set $Roommate to "Sorority Sister">>
+	<</if>>
+<</nobr>>
 
 <<nobr>>
 	<<if $PlayerPregnant>>
@@ -372,7 +379,7 @@
 	<</if>>
 <</nobr>>
 
-<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !$MasterKate and !$CampusMinistryFail>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
+<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !$MasterKate and !$CampusMinistryFail>><<set $CampusMinistrySaves -= 1>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
 
 ::Part9DTFPeter <500,9225>
 <<nobr>>
@@ -459,15 +466,15 @@
 
 ::Part9DTFBoyfriend1 <500,9325>
 <<nobr>>
-	<h1>$dating[0]’s Apartment</h1>
+	<h1>$dating[0]’s Bedroom</h1>
 	<<set $sex.push({sex: 'male', name:$dating[0]})>>
-	<<set $sex.push({sex: 'male', name:$dating[0]}, vaginal:true)>>
-	<<set $sex.push({sex: 'male', name:$dating[0]}, vaginal:true)>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:$dating[0]})>>
-	<<set $sex.push({sex: 'male', name:$dating[0]}, vaginal:true)>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:$dating[0]})>>
 	<<set $sex.push({sex: 'male', name:$dating[0]})>>
-	<<set $sex.push({sex: 'male', name:$dating[0]}, vaginal:true)>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
 <</nobr>>
 
 <<print "There’s only one ‘recommendation’ that you plan on getting, and if that’s not good enough then you figure the Deltas aren’t right for you anyway.">>
@@ -505,9 +512,21 @@
 	<<set $sex.push({sex: 'male', anon:'guy from your math class', vaginal:true})>>
 <</nobr>>
 
-<<print "You quickly work through the list of guys you knew that were interested in you, and also all the ones that expressed an interest after your recent wardrobe change.">>
+<<nobr>>
+	<<if $CampusMinistry>>
+		<<unset $CampusMinistry>>
+		<<set $CampusMinistryFail to 1>>
+		<<set $CampusMinistryFailSorority to 1>>
+		As you fuck the first guy, a cute one from your econ class who has been flirting with you since the start of the semester, you try to tell
+		yourself, that you are just doing it get into the sorority.  But after you have a few more 'reviews' you quit quit trying
+		to fool yourself.  It feels so good, why did you deny yourself this for so long?  You don't care how many reviews you 'need' to get, you
+		are going to get as many as you can, and have the time of your life doing it!<br><br>
+	<</if>>
+	You quickly work through the list of guys you knew that were interested in you, and also all the ones that
+	expressed an interest after your recent wardrobe change.
+	So, you have to start finding strangers to help you earn even more recommendations.
+<</nobr>>
 
-<<print "So, you have to start finding strangers to help you earn even more recommendations.">>
 <img src="Part9/Delta8.jpg" hspace="10" vspace="10" height="650">
 
 <<print "Thankfully, you find that with most of the guys on campus, it doesn’t take much more than a look and an offer and you and him are ">>[[heading back to his room.|Part9DTFSex2]]
@@ -791,7 +810,7 @@
 	<<if $PlayerSideEffectAnal>><<set $SexTaskAnal = 1>><<set $SexTaskCount += 1>><</if>>
 	<<if $PlayerSideEffectExhibitionist>><<set $SexTaskStrip = 1>><<set $SexTaskCount += 1>><</if>>
 	<<if $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive>><<set $SexTaskBondage = 1>><<set $SexTaskCount += 1>><</if>>
-	<<if $PlayerSideEffectLibido > 1>>
+	<<if $PlayerSideEffectLibido > 1 or $CampusMinistry>>
 		<<if !$SexTaskOral>><<set $SexTaskRandomOral = 1>><</if>><<set $SexTaskOral = 1>>
 		<<if !$SexTaskExhibitionist>><<set $SexTaskRandomExhibitionist = 1>><</if>><<set $SexTaskExhibitionist = 1>>
 		<<if !$SexTaskLesbian>><<set $SexTaskRandomLesbian = 1>><</if>><<set $SexTaskLesbian = 1>>
@@ -1056,7 +1075,18 @@
 	<</link>>
 <</nobr>>
 
-<<if setup.areDating('Veronica')>><<print "Veronica reminds you about sharing a room, and talks you out of any thoughts of chickening out of it at this point.">><<elseif !$CampusMinistryFail>>[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]<</if>>
+<<nobr>>
+	<<if setup.areDating('Veronica')>>
+		<<print "Veronica reminds you about sharing a room, and talks you out of any thoughts of chickening out of it at this point.">>
+	<<elseif $CampusMinistry>>
+		<<unset $CampusMinistry>>
+		<<set $CampusMinistryFail to 1>>
+		<<set $CampusMinistryFailSorority to 1>>
+		All the videos you watched, and the fantasizes they've given you, it's made you far too eager to try their tasks to back out now.
+	<<elseif !$CampusMinistryFail>>
+		[[Or you can chicken out and drop out from your pledge.|Part9SororityEndNo]]
+	<</if>>
+<</nobr>>
 
 ::Part9Task2 <900,9825>
 <<nobr>>
@@ -1080,10 +1110,22 @@
 	<<set $sex.push({sex: 'male', anon:'Frat Guy'})>>
 <</nobr>>
 
-<<print "You and Jessica are sent over to the sorority’s brother fraternity. Lily and Kayla are assigned the same task, but sent to visit the football team instead.">>
+<<nobr>>
+	You and Jessica are sent over to the sorority’s brother fraternity. Lily and Kayla are assigned the same task,
+	but sent to visit the football team instead.
+<</nobr>>
+
 <img src="Part9/Task3.jpg" hspace="10" vspace="10" height="650">
 
-<<print "You and Jessica have to give each frat brother that wants one a blowjob. You could get the job done twice as fast if you each took half of the guys by yourself. But you are supposed to do the job right, and you both have to team up to service each cock.">>
+<<nobr>>
+	You and Jessica have to give each frat brother that wants one a blowjob.
+	<<if $CampusMinistry>>
+		As you both suck cock after cock... TODO First time comment
+	<<else>>
+		You could get the job done twice as fast if you each took half of the guys by yourself. But you are supposed to
+		do the job right, and you both have to team up to service each cock.
+	<</if>>
+<</nobr>>
 
 <<if $SexTaskChastity>><<print "You can only look on in jealousy as some of the guys use their hands to entertain Jessica while she works their cock.">><<else>><<print "Some of the guys use their hands to entertain Jessica and you while you work their cocks. You try to keep focused on your work as you enjoy the added encouragement.">><</if>>
 
@@ -1193,6 +1235,10 @@
 <img src="Part9/Task7.jpg" hspace="10" vspace="10" height="650">
 
 <<print "A few weeks later you find the windshield on your car destroyed. The campus police say it was probably just an accident from kids playing ball nearby, but you’re pretty sure ">>[[it is revenge from the Sigmas for ratting them out.|Part9SororityEndNo]]
+
+<<if $CampusMinistryFailSorority>>Faith evidently still has some resentment about you abandoning the plan her and Mark had for you.  She tells you it's probably an act of God, trying to punish you.  You are not especially happy that you're going to have to continue to share a room with her the rest of the year.  You don't \
+care what she thinks though.  If God didn't want you having sex, why did he make it feel so good?<</if>>
+
 
 ::Part9Task7 <1200,9825>
 <<nobr>>

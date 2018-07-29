@@ -299,6 +299,7 @@
 
 <<nobr>>
 	<<if $CampusMinistry>>
+		<<set $CampusMinistrySaves -= 1>>		
 		You know what you promised Faith, but your body is telling you how much it wants you to 
 		[[head back to his room with him|Part6Halloween3]].  One time wouldn't be a big deal, right?
 		<<if $PlayerProtectionTry>>
@@ -906,19 +907,19 @@ do your best to make a purring sound for a bit before you fall asleep.
 			<<print "You have fun with some of your colleagues, but they will probably fall asleep as soon as you finish.">>
 		<</if>>
 		<<if !setup.isGoldStarLesbian()>>
-			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
 			<<set $sex.push({sex: 'male', anon:'Classmate', vaginal:!$PlayerChastityBelt})>>
-			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
 			<<set $sex.push({sex: 'male', anon:'Classmate', vaginal:!$PlayerChastityBelt})>>
-			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
 			<<set $sex.push({sex: 'male', anon:'Classmate', vaginal:!$PlayerChastityBelt})>>
 		<<else>>
-			<<set $sex.push({sex: 'female', anon:'Classmate')>>
-			<<set $sex.push({sex: 'female', anon:'Classmate')>>
-			<<set $sex.push({sex: 'female', anon:'Classmate')>>
-			<<set $sex.push({sex: 'female', anon:'Classmate')>>
-			<<set $sex.push({sex: 'female', anon:'Classmate')>>
-			<<set $sex.push({sex: 'female', anon:'Classmate')>>
+			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
+			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
+			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
+			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
+			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
+			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
 		<</if>>
 	<</if>>
 	<span id="Sleep2Span1">
@@ -1253,12 +1254,14 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<<print "sees the worried look on your face and realizes the problem, then slips some cash to the bouncer and he looks the other way ">>
 		[[while you both enter the club.|Part6ClubDate1]]
 	<</if>>
-	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica')>>
+	<<if !$CampusMinistry and !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica')>>
 		<<print " You can see the way the bouncer is looking at you. You’re pretty sure you ">>
 		[[can ‘persuade’ him to let you in.|Part6ClubPersuade]]
 	<</if>>
 	<<if $CampusMinistryFail>>
 		You are done being too timid to enjoy yourself, and decide to do what you need to do to get in.
+	<<elseif $CampusMinistry>>
+		You [[give up and go back home|Part6Frat1]].
 	<<elseif !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica') and !$PlayerSideEffectOral and $FunPoints < 4 and $PlayerSideEffectOral < 3>>
 		<<print "Or you .">>
 		<<link "can just give up and go back home.">>

@@ -2752,9 +2752,9 @@ Kim: Oh, is that what I typed?
 <img src="Part11/Single4.jpg" hspace="10" vspace="10" height="600" align="left"/>
 <<nobr>>
   You were 
-  <<if setup.sexFemaleCount() > setup.sexMaleCount() >>
+  <<if !$CampusMinistry and setup.sexFemaleCount() > setup.sexMaleCount() >>
     worried
-  <<elseif setup.sexFemaleCount() * 3 > setup.sexMaleCount() >>
+  <<elseif $CampusMinistry or setup.sexFemaleCount() * 3 > setup.sexMaleCount() >>
     expecting
   <<else>>
     hoping
@@ -2765,9 +2765,25 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  But who cares if their X-Change Basic pills will wear off tomorrow, it’s not like
-  anyone is here looking for anything more than a night of fun, right?  You head
-  to the dance floor to start doing just that.
+  <<if $CampusMinistry>>
+    You were thinking this would be mainly about dancing and avoiding the romance.  But as more and more
+    couples pair off and disappear - sometimes for the night, other times for just a few minutes - you
+    realize that you were wrong.  You know you should
+    <<if $CampusMinistrySaves>>
+      <<set $CampusMinistrySaves -= 1>>
+      [[go home|Part11HomeAlone]] before something happens, but your body wants this so much.  All it
+      would take would be a smile to one of the guys, and this need you've been feeling will finally
+      be answered.  You expect most of the girls here are guys on X-Change Basic, they probably
+      wouldn't take much convincing either.
+    <<else>>
+      go home before something happens, but you've been so close to giving your body what it wants, so many times.
+      You need this tonight, and you aren't going to run away from it again.
+    <</if>>
+  <<else>>
+    But who cares if their X-Change Basic pills will wear off tomorrow, it’s not like
+    anyone is here looking for anything more than a night of fun, right?  You head
+    to the dance floor to start doing just that.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -2780,14 +2796,26 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 <video src="Part11/Single5.mp4" autoplay loop muted height="640"></video>
 <<nobr>>
-  <<set $sex.push({sex: 'female', name:'Emma'})>>
-  <<set $sex.push({sex: 'female', name:'Emma'})>>
-  <<set $sex.push({sex: 'female', name:'Emma'})>>
-  <<set $sex.push({sex: 'female', name:'Emma'})>>
-  <<set $sex.push({sex: 'female', name:'Emma'})>>
-  You spotted “Emma” watching you dance.  You flash her a smile and then head over to introduce yourself
-  when the song ends.  After you chat a while, you convince her to join you on the dance floor.  She’s clearly not
-  danced in this body before, but once she gets used to it, she’s enjoying herself as much as you are.
+  <<if $CampusMinistry>>
+    <<set $sex.push({sex: 'female', name:'Rachel'})>>
+    <<set $sex.push({sex: 'female', name:'Rachel'})>>
+    <<set $sex.push({sex: 'female', name:'Rachel'})>>
+    <<set $sex.push({sex: 'female', name:'Rachel'})>>
+    <<set $sex.push({sex: 'female', name:'Rachel'})>>
+    Rachel sees you looking nervously towards her and some of the other girls as you dance.  She smiles at you and then
+    comes over to introduce herself after the song ends.  The two of you chat for a while and then join each other
+    on the dance floor.  Unlike many of the others here, she seems very comfortable in her body and looks well put
+    together, you suspect she's a woman every day, not just tonight like the others.
+  <<else>>
+    <<set $sex.push({sex: 'female', name:'Emma'})>>
+    <<set $sex.push({sex: 'female', name:'Emma'})>>
+    <<set $sex.push({sex: 'female', name:'Emma'})>>
+    <<set $sex.push({sex: 'female', name:'Emma'})>>
+    <<set $sex.push({sex: 'female', name:'Emma'})>>
+    You spotted “Emma” watching you dance.  You flash her a smile and then head over to introduce yourself
+    when the song ends.  After you chat a while, you convince her to join you on the dance floor.  She’s clearly not
+    danced in this body before, but once she gets used to it, she’s enjoying herself as much as you are.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -2796,15 +2824,36 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  The two of start making out on her sofa, but it doesn’t take long before your head is buried between her legs.
-  After she cums, you ask, “Was that your first orgasm as a woman?”. She shyly nodes yes.  Then you ask,
-  “Would you like another one?” as you pull your strap-on out of your bag.
-<</nobr>>
-
-<<nobr>>
-  “Yes... please.”, she answers.  Before the night is over “Emma” and you have both had more orgasms than
-  you cared to count.  You decide it will be less awkward if you’re gone before she changes back.  So when the
-  fun’s over, you gather your clothes and toys and head back to your dorm and [[fall asleep there|Part11PhoneCall]].
+  <<if $CampusMinistry>>
+    <<unset $CampusMinistry>>
+    <<set $CampusMinistryFail to 1>>
+    As the two of you start making out on her sofa, she senses your nervousness and asks, "Is this your first
+    time with another woman?".
+    <br><br>
+    "This is my first time with anyone.", you tell her.
+    <br><br>
+    She smiles and says, "I'll do my best to make it a memorable evening then."  She buries her head between your
+    legs and gives you your first orgasm in months.  As the pleasure ripples through your body, you wonder why
+    you've been avoiding this.  All this time wasted, you could have been doing this since you changed.  You
+    aren't going to waste any more time.
+    <br><br>
+    As you start to recover, you plan on taking your turn giving her an orgasm, but she has other ideas.  While you
+    were lost in your own thoughts, she was putting on her strap-on.  "Are you ready for another one?", she asks.
+    "Something a little different this time.".  After you nod eagerly, she playfully pushes you back onto your back.
+    <br><br>
+    You hate leaving Rachel's house, not just beacuse of how much fun you had, but because you know you'll have to
+    face Faith.  You don't go into details, but you let her know you are done with the plan her and Mark had for you.
+    She's more disappointed than surprised and says she'll let him know.  You [[fall asleep|Part11PhoneCall]] in
+    your own bed, imagining all the things you want to try next.
+  <<else>>
+    The two of start making out on her sofa, but it doesn’t take long before your head is buried between her legs.
+    After she cums, you ask, “Was that your first orgasm as a woman?”. She shyly nodes yes.  Then you ask,
+    “Would you like another one?” as you pull your strap-on out of your bag.
+    <br><br>
+    “Yes... please.”, she answers.  Before the night is over “Emma” and you have both had more orgasms than
+    you cared to count.  You decide it will be less awkward if you’re gone before she changes back.  So when the
+    fun’s over, you gather your clothes and toys and head back to your dorm and [[fall asleep there|Part11PhoneCall]].
+  <</if>>
 <</nobr>>
 
 ::Part11SinglesGuy <18000,10500>
@@ -2813,11 +2862,17 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 <video src="Part11/Single6.mp4" autoplay loop muted height="640"></video>
 <<nobr>>
-  <<set $sex.push({sex: 'male', anon:'Some Guy at the Club'})>>
-  <<set $sex.push({sex: 'male', anon:'Some Guy at the Club'})>>
+  <<set $sex.push({sex: 'male', anon:'Guy at the Club', vaginal: true})>>
+  <<set $sex.push({sex: 'male', anon:'Guy at the Club', vaginal: true})>>
   You flashed him a smile after you saw him checking you out on the dance floor.  It isn’t long before he’s
-  dancing beside you.  You’re having fun with the ‘no-strings’ atmosphere of the event, and so is he, and it
-  isn’t long before you’re grinding against him on the dance floor.
+  dancing beside you.
+  <<if $CampusMinistry>>
+    As you grind against him on the dance floor, you know you should stop, but you are enjoying it too
+    much.  But it's also adding to your desire.  Before long you know you can't wait any longer.
+  <<else>>
+    You’re having fun with the ‘no-strings’ atmosphere of the event, and so is he, and it
+    isn’t long before you’re grinding against him on the dance floor.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -2827,10 +2882,20 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  It isn’t long before your panties are on the floor and you’re bent over the sink watching in the mirror as he
-  fucks you from behind, his hand playing with your clit as he does.  You’re nervous that someone will walk in
-  at any moment, but the thrill of it is turning you on too.  Between that, his cock, and his hand, you are soon
-  watching yourself orgasm.   Not long after you do, he cums too.
+  <<if $CampusMinistry>>
+    As you drop your panties to the floor, you are nervous someone will walk in, and ashamed about what
+    you are doing, but they both just add to the excitement and make you want to keep going.  It isn't long
+    until you are bent over the sink watching in the mirror as he fucks you from behind, his hand playing
+    with your clit as he does.  The thrill of it all, not to mention his cock inside you, and his hand on
+    your clit, soon has you watching yourself as you orgasm.  As you feel the pleasure course through your
+    body, and watch it on your own face, you wonder why you'd waited this long.  You know you won't wait
+    long for the next time.
+  <<else>>
+    It isn’t long before your panties are on the floor and you’re bent over the sink watching in the mirror as he
+    fucks you from behind, his hand playing with your clit as he does.  You’re nervous that someone will walk in
+    at any moment, but the thrill of it is turning you on too.  Between that, his cock, and his hand, you are soon
+    watching yourself orgasm.   Not long after you do, he cums too.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -2840,8 +2905,20 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  You wonder if you'll make another visit to the mens room with a different guy before the night is over
-  and it's time to [[go home|Part11PhoneCall]].
+  <<if $CampusMinistry>>
+    <<unset $CampusMinistry>>
+    <<set $CampusMinistryFail to 1>>
+    You don't wait very long at all.  You soon spot another interested guy.  This time you are the one leading him
+    back to the men's room for a quick fuck.
+    <br><br>
+    Of course, eventually the night has to end.  The conversation with Faith doesn't go as badly as you had
+    feared it might.  Of course, you don't go into the details, but she seems much more disappointed than she does
+    surprised.  She says she'll let Pastor Mark know that you've abandoned their plans for you.  You
+    [[fall asleep|Part11PhoneCall]] in your bed, imagining all the things you want to try next.
+  <<else>>
+    You wonder if you'll make another visit to the mens room with a different guy before the night is over
+    and it's time to [[go home|Part11PhoneCall]].
+  <</if>>
 <</nobr>>
 
 ::Part11PhoneCall <18200,10500>
