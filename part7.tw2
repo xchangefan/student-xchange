@@ -334,11 +334,11 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Paul')  >= 0>>
 				<<set $named += 1>>
-				<li>Your [[boss from the office|Part7OfficeBoss1]]</li>
+				<li>Paul, your [[boss from the office|Part7OfficeBoss1]]</li>
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Aaron')  >= 0>>
 				<<set $named += 1>>
-				<li>Your [["Daddy"|Part7Professor]], Aaron</li>
+				<li>Your [["Daddy"|Part7Aaron]], Aaron</li>
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Barry')  >= 0>>
 				<<set $named += 1>>
@@ -362,7 +362,7 @@
 						<<set $impossibleFathers += 1>>
 						Maybe it's [[Peter|Part7Peter]].  You haven't let him out to fuck you since your last period, but you've teased him enough.
 						Maybe something happened then.  He'll certainly believe that anyway.
-					<<elseif setup.areDating('Peter') >= 0>>
+					<<elseif setup.areDating('Peter')>>
 						[[Peter|Part7Peter]], maybe unlocking his cock wasn't
 						<<if $PlayerProtectionTry>>
 							a bad idea after all
@@ -376,7 +376,11 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Zack')  >= 0>>
 				<<set $named += 1>>
-				<li>[[Zack|Part7Zack]], from the dorm</li>
+				<li><<link "Zack">>
+						<<set $PregnancyCheck.claimedFather to "Zack">>
+						<<goto [[Part7FWB]]>>
+					<</link>>, from the dorm,
+					though you don't really want to involve him in this</li>
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Tom')  >= 0>>
 				<<set $unnamed += 1>>
@@ -401,6 +405,10 @@
 					though you don't really want to involve him in this</li>
 			<</if>>
 
+			<<if $PregnancyCheck.possibleFathers.indexOf("Zack's friend")  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[Zack's friend|Part7Unknown]], but you don't want to involve him</li>
+			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Some Football Player')  >= 0>>
 				<<set $unnamed += 1>>
 				<li>[[Some football player|Part7Unknown]], but you have no idea which one</li>
@@ -650,7 +658,7 @@
 					<<set $sex.push({sex: 'male', name: 'Aaron'})>>
 					<<if $PregnancyCheck.actualFather == 'Aaron'>>
 						<<set $isNamed to 1>>
-						"Congratulations! [[Aaron|Part7Professor]] is the father!"
+						"Congratulations! [[Aaron|Part7Aaron]] is the father!"
 					<<else>>
 						"Aaron is NOT the father."  (You never could lie to him when you were together, so you know you can't about this.)
 					<</if>>
@@ -694,9 +702,13 @@
 					<<set $sex.push({sex: 'male', name: 'Zack'})>>
 					<<if $PregnancyCheck.actualFather == 'Zack'>>
 						<<set $isNamed to 1>>
-						"Congratulations! [[Zack|Part7Zack]] is the father!"
+						"Congratulations!
+						<<link "Zack">>
+							<<set $PregnancyCheck.claimedFather to "Zack">>
+							<<goto [[Part7FWB]]>>
+						<</link>>,						
 					<<else>>
-						"Zack is NOT the father."  (Of course you could [[lie to him|Part7Zack]] about it.)
+						"Zack is NOT the father."  (Well, you didn't really want him involved in this anyway.)
 					<</if>>
 				</li>
 			<</if>>
@@ -806,6 +818,9 @@
 	<h1><<print "Andrew">></h1>
 <</nobr>>
 
+<<set $StatedFather to 'Andrew'>>
+<<include [[Part7Breakup]]>>
+
 <<print "You meet Andrew at his apartment and let him know about the pregnancy. He’s a little freaked out at first, but less than you were.">>
 <img src="Part7/Preg4.jpg" hspace="10" vspace="10" height="650">
 
@@ -863,6 +878,9 @@
 	<h1><<print "Andrew">></h1>
 <</nobr>>
 
+<<set $StatedFather to 'Andrew'>>
+<<include [[Part7Breakup]]>>
+
 <<print "You can barely contain your excitement on the way home. When you tell Andrew, he’s as excited as you are. He says that the two of you had always talked about starting a family, but he’d never expected to start so soon. He places his hand on your stomach, but obviously there’s nothing to feel yet.">>
 <img src="Part7/Preg6.jpg" hspace="10" vspace="10" height="650">
 
@@ -880,6 +898,9 @@
 	<h1><<print "Josh">></h1>
 <</nobr>>
 
+<<set $StatedFather to 'Josh'>>
+<<include [[Part7Breakup]]>>
+
 <<print "Josh is in shock when you first tell him about your pregnancy. Once he calms down he offers to pay for your abortion and to drive you there if you need a ride. When you let him know that you’ve already decided against getting an abortion, he goes silent. After a while he says he needs some time to process everything, and says you can talk about it after you both get back from the holiday break.">>
 <img src="Part7/Preg7.jpg" hspace="10" vspace="10" height="650">
 
@@ -889,27 +910,44 @@
 
 ::Part7OfficeBoss1 <600,5900>
 <<nobr>>
-	<<set setup.breakupWith('Paul')>>
 	<<set $JobOfficePA = 0>>
 	<<set $JobOfficeManager = 1>>
 	<<set $PaulPregnancyMoney = 1>>
-	
 	<h1><<print "Paul">></h1>
 <</nobr>>
-
-<<print "He’s been talking about finally divorcing his wife so he can be with you. You are sure he’s finally going to do it when you tell him about your pregnancy. But he won’t commit to it. He tells you how much it turns him on knowing you’re carrying his baby and tries to turn the conversation to sex. That’s when you realize he’s never going to leave her. Not unless you do something.">>
 <img src="Part7/Preg9.jpg" hspace="10" vspace="10" height="650">
+<<set $StatedFather to 'Paul'>><<include [[Part7Breakup]]>><<set setup.breakupWith('Paul')>>
 
-<<print "You say you are going to go tell his wife that you’ve been sleeping with him for months, and that now you’re pregnant with his baby. You tell him, then she’ll want a divorce and he’ll be free. He begs you not to do that. If she finds out about everything, she’ll take him for everything he has. And HR will probably see that he’s fired. When you imagine him without his money or power, you realize that’s all you really found attractive about him anyway, so doing that wouldn’t help at all.">>
+<<nobr>>
+	He’s been talking about finally divorcing his wife so he can be with you. You are sure he’s finally going to do it when you tell him about your
+	pregnancy. But he won’t commit to it. He tells you how much it turns him on knowing you’re carrying his baby and tries to turn the conversation
+	to sex. That’s when you realize he’s never going to leave her. Not unless you do something.
+<</nobr>>
 
-[[Instead you agree to lie on the forms and say the father is “Unknown”.|Part7Unknown]]<<print " He’ll give you get a generous payment every month. And he knows a paternity test awaits if the payments ever stop.">>
+<<nobr>>
+	You say you are going to go tell his wife that you’ve been sleeping with him for months, and that now you’re pregnant with his baby. You tell him,
+	then she’ll want a divorce and he’ll be free. He begs you not to do that. If she finds out about everything, she’ll take him for everything he has.
+	And HR will probably see that he’s fired. When you imagine him without his money or power, you realize that’s all you really found attractive about
+	him anyway, so doing that wouldn’t help you at all.
+<</nobr>>
 
-<<print "Angry at him leading you on, and turned off by how pitiful he seems to you now, you decide you don’t want a relationship with him after all. You’ll stay silent as long as the money keeps coming though. He gives you a transfer to a new, and more professional, boss.">>
+<<nobr>>
+	[[Instead you agree to lie on the forms and say the father is “Unknown”.|Part7Unknown]] He’ll give you get a generous payment every month. And he
+	knows a paternity test awaits if the payments ever stop.
+<</nobr>>
 
-::Part7Professor <0,6025>
+<<nobr>>
+	Angry at him leading you on, and turned off by how pitiful he seems to you now, you decide you don’t want a relationship with him after all. You’ll
+	stay silent as long as the money keeps coming though. He gives you a transfer to a new, and more professional, boss.
+<</nobr>>
+
+::Part7Aaron <0,6025>
 <<nobr>>
 	<h1><<print "Daddy">></h1>
 <</nobr>>
+
+<<set $StatedFather to 'Aaron'>>
+<<include [[Part7Breakup]]>>
 
 <<nobr>>
 	<<if $PlayerProtectionTry>>
@@ -941,6 +979,9 @@
 		<img src="PartP/PaternityNegative.jpg" hspace="10" vspace="10" height="650" align="left">
 	<</if>>
 <</nobr>>
+
+<<set $StatedFather to 'Barry'>>
+<<include [[Part7Breakup]]>>
 
 <<nobr>>
 	When you first start to tell Barry, he's surpried and annoyed that you didn't just "deal with it" as soon as you found out about the
@@ -1090,27 +1131,27 @@
 ::Part7Peter <110,6025>
 <<nobr>>
 	<h1><<print "Peter">></h1>
-	<<if $PlayerProtectionTry>>
+	<<if $PlayerProtectionTry || !setup.areDating('Peter')>>
 		<img src="Part7/Preg12.jpg" hspace="10" vspace="10" height="650">
 	<<else>>
 		<img src="Part7/Preg11.jpg" hspace="10" vspace="10" height="650">
 	<</if>>
 	<<set $sex.push({sex: 'male', name: 'Peter'})>>
+	<<set $StatedFather to 'Peter'>>
 <</nobr>>
+<<include [[Part7Breakup]]>>
 
 <<nobr>>
-	While Peter is eating you out, you tell him
-	<<if $PregnancyCheck.possibleFathers.indexOf('Peter')>>
-		how that even though you haven't unlocked him, some of what's oozed out of his caged cock has managed to get you pregnant.
-		If he doubts your story, he doesn't say anything.  
-	<<else>>
-		that even though you don't let him orgasm very often, it only takes one time.  You tell him that now you're pregnant and he's the father.
-	<</if>>
-<</nobr>>
-
-<<nobr>>
+	<<if setup.areDating('Peter')>>
+		While Peter is eating you out, you tell him
+		<<if $PregnancyCheck.possibleFathers.indexOf('Peter') < 0>>
+			how that even though you haven't unlocked him, some of what's oozed out of his caged cock has managed to get you pregnant.
+			If he doubts your story, he doesn't say anything.  
+		<<else>>
+			that even though you don't let him orgasm very often, it only takes one time.  You tell him that now you're pregnant and he's the father.
+		<</if>>
+		<br><br>
 		<<if $PlayerProtectionTry>>
-			<<set $sex.push({sex: 'male', name: 'Peter'})>>
 			You tell Peter how happy you are, and that you are going to reward him with a special treat today for giving you the baby you've been wanting.
 			You can tell from his moans, as your lips wrap around his cock, that he isn't going to last long.  You don't care, he's earned this.
 			<<if $PregnancyCheck.actualFather != 'Peter'>>
@@ -1119,17 +1160,38 @@
 			Of course, after you've given him his reward, you're craving one of your own. He happily returns to his usual place, with his head between
 			your legs.
 		<</if>>
+	<<elseif !setup.areDating('Aaron')>>
+		<<set setup.startDating('Peter')>>
+		<<set $PlayerItemNerdKey to 1>>
+		<img src="Part5/GoNeighbour7.jpg" hspace="10" vspace="10" height="650" align="left">
+		You hadn't been dating Peter, but since he's going to be the father of your child, you decide you probably should.  You'd planned on having
+		sex with him again, and then telling about the baby afterwards.  But he's surprisingly coy as you start to unbuckle his jeans.  Once you finally have
+		them pulled down you see why.  His cock cock is locked in a chastity cage.
+		<br><br>
+		"Give me the keys.", you order him.  He quickly, but nervously hands them over. He's clearly happy when you unlock his cock and start sucking on it.
+		After he's close you stop sucking and switch to occasionally stroking his cock to keep him close, but not too close, to an orgasm.  "I have some news
+		for you...".  You proceed to keep him on the verge of an orgasm as you let him know about your baby, and that he's the father.
+		<br><br>
+		<<if $PlayerProtectionTry>>
+			"I want to reward for giving me this baby", you say as you put your hand on your stomach, "but I don't think an orgasm is the best way to reward
+			you.  I think for you, denying your orgasm today is the bigger reward."  You pull your hand away as you finish your sentence.  
+		<<else>>
+			"This thing is obviously dangerous", you say, swatting gently at his cock.  "I think it needs to be locked up for safe keeping for a while."
+			You give his cock one last stroke before pulling your hand away.
+		<</if>>
+		He whimpers a bit, but you know he loves it.
+		It takes a while, but eventually his cock gets soft enough to get it back in its cage.  You lock the cage and keep the keys.  "I
+		think it's best I hold on to these from now on, don't you agree?", you ask.  After he nods, you spread your legs apart and push his head down between
+		them.
+	<</if>>
 <</nobr>>
 
 <<nobr>>
-	You know he's going to be by your side throughout the pregnancy.  Or, if not by your side, then kneeling in front of you, which is even better.
-	After he finishes up with you, you send him off for the holiday still caged, while you [[start your packing for your own trip home|Part7Pack1]].
+	<<if !setup.areDating('Aaron')>>
+		You know he's going to be by your side throughout the pregnancy.  Or, if not by your side, then kneeling in front of you, which is even better.
+		After he finishes up with you, you send him off for the holiday still caged, while you [[start your packing for your own trip home|Part7Pack1]].
+	<</if>>
 <</nobr>>
-
-::Part7Zack <150,6025>
-TODO image Part7Zack
-TODO text Part7Zack
-TODO link Part7Zack
 
 ::Part7James <200,6025>
 <<nobr>>
@@ -1142,6 +1204,9 @@ TODO link Part7Zack
 		<img src="PartP/PaternityNegative.jpg" hspace="10" vspace="10" height="650" align="left">
 	<</if>>
 <</nobr>>
+
+<<set $StatedFather to 'James'>>
+<<include [[Part7Breakup]]>>
 
 <<nobr>>
   As you tell James about the pregnancy and that he's the father, he seems unsurprised.  You don't think this is the first time this
@@ -1170,7 +1235,7 @@ TODO link Part7Zack
 	<</if>>
 <</nobr>>
 
-::Part7James2
+::Part7James2 <115,6025>
 <<nobr>>
 	<h1>Attorney's Office</h1>
 	<img src="PartP/Lawyer.jpg" hspace="10" vspace="10" height="480">
@@ -1208,7 +1273,7 @@ TODO link Part7Zack
 	[[agree with his adoption proposal|Part7James3]].
 <</nobr>>
 
-::Part7James3
+::Part7James3 <120,6025>
 <<nobr>>
 	<h1>Your Room</h1>
 	<video src="PartP/Lawyer2.mp4" autoplay loop muted height="540"></video>
@@ -1222,102 +1287,99 @@ TODO link Part7Zack
 	have a bit of fun modelling them for $Mentor.  [[You put off packing for your trip home until tomorrow.|Part7Pack1]]
 <</nobr>>
 
-::Part7Breakup <300,6025>
-TODO Need to actually use Part7Breakup
-<<nobr>>
-	<h1>Breaking up</h1>
-	<<if setup.areDating('Veronica')>>
-		<img src="Part8.5/Alone4.jpg" hspace="10" vspace="10" height="650">
-	<<else>>
-		<img src="Part8.5/Alone2.jpg" hspace="10" vspace="10" height="650">
-	<</if>>
-<</nobr>>
-
-<<nobr>>
-	<<if setup.areDating('Veronica')>>
-		You know when you decided to keep the baby that it would be the end of your relationship with Veronica.
-		You could probably hide the pregnancy for a little while but you decide to come clean about cheating on
-		her, and about the consequences of that.  She's understandably shocked and upset.
-	<<elseif setup.areDating('Andrew')>>
-		<<if $PregnancyCheck.actualFather == 'Andrew'>>
-			You know if you tell Andrew he's the father, he'll want to be involved, and probably his family will
-			too and you don't want that.  So you tell him you've been cheating on him, and that someone else is
-			the father.  He's, of course, shocked and upset.
-		<<else>>
-			You thought about just telling Andrew he was the father, but you don't want to lie to him.  You
-			let him know that you've been cheating on him, and that someone else is the father.  He's, of course,
-			shocked and upset.
-		<</if>>
-	<<elseif setup.areDating('Josh')>>
-	<<elseif setup.areDating('Aaron')>>
-	<<elseif setup.areDating('Paul')>>
-	<<elseif setup.areDating('Peter')>>
-	<</if>>
-<</nobr>>
-
-<<nobr>>
-	<<if setup.areDating('Veronica')>>
-		You both know you'll still need to work together on the squad, well at least for as long as you can still cheer, so
-		so you try to part as friendly terms.  As you gather your from her room and leave she says, "Good luck with the baby."
-		<<set setup.breakupWith('Veronica')>>
-	<</if>>
-<</nobr>>
-
-TODO text Part7Breakup
-TODO link Part7Breakup
-
-
 ::Part7FWB <350,6025>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
+<<unset $StatedFather>>
+<<include [[Part7Breakup]]>>
+<<if !$NotUnknown>>
+	<<nobr>>
+		You and $PregnancyCheck.claimedFather have had some fun before, but you don't really want him involved in this.  You aren't even completely positive about
+		what you are going to do when the baby is born yet.  Whatever you decide you want it to be your decision.  You don't want him being a problem if you decide
+		to put the baby up for adoption, and you certainly don't want to have to deal with $PregnancyCheck.claimedFather for the rest of your life if you decide to
+		keep the baby.
+	<</nobr>>
+
+	<<nobr>>
+		It's not like the two of you were exclusive anyway, so he won't have any reason to dobut you when you tell him he's not the father.  You expect he'll probably
+		be more relieved than anything.
+	<</nobr>>
+
+	<<nobr>>
+		You know you’ll be on your own with this pregnancy, and the thought is overwhelming you a bit. You need to take your mind off the stress of
+		learning all this today.
+	<</nobr>>
+
+	<img src="Part7/Preg10.jpg" hspace="10" vspace="10" height="650">
+
+	<<nobr>>
+		Maybe you decide to enjoy that you can have zero-risk sex (since what more could happen now), or maybe you stay home for a nice hot bath.
+		Either way, it only takes your mind off things for a bit. Soon you are back to where you were a few hours before, trying to imagine all
+		the ways your life is about to change.
+	<</nobr>>
+
+	<<nobr>>
+		You decide that you don’t want to share the news with anyone else just yet. It’ll be obvious enough to everyone later. You’ll probably tell your
+		mentor after the holiday, but for now it’s your secret.
+	<</nobr>>
+
+	[[You put off packing for your trip home until tomorrow.|Part7Pack1]]
+<</if>>
+
+::Part7Breakup <395,6025>
 <<nobr>>
-	You and $PregnancyCheck.claimedFather have had some fun before, but you don't really want him involved in this.  You aren't even completely positive about
-	what you are going to do when the baby is born yet.  Whatever you decide you want it to be your decision.  You don't want him being a problem if you decide
-	to put the baby up for adoption, and you certainly don't want to have to deal with $PregnancyCheck.claimedFather for the rest of your life if you decide to
-	keep the baby.
+	<<if setup.areDating('Veronica')>>
+		When Veronica finds out you are pregnant, she breaks up with you for cheating on her.  Now you won't have her help, or the father's.
+		<<set setup.breakupWith('Veronica')>>
+		<br><br>
+	<<elseif setup.areDating('Aaron') and $StatedFather != 'Aaron'>>
+		<<set $NotUnknown to 1>>
+		You are in tears as you tell Daddy that you are pregnant and that he might not be the father, that you might have already been pregnant when
+		the two of you got together.  Daddy holds you in his arms and comforts you.  He tells you that it doesn't matter who the baby's father really
+		is, if you decide to keep it then you and Daddy will [[raise the baby together|Part7Aaron]].  And if you decide on adoption, he'll help you
+		through the next nine months.  
+	<<elseif $dating.length > 0 and !setup.areDating($StatedFather)>>
+		When you tell $dating[0] you are pregnant, and that he is NOT the father, he's devastated that you've been cheating on him.
+		<<if $dating[0] == 'Paul'>>
+			As if he's one to talk!
+			<<set $JobOfficeIntern to 1>>
+			<<set $JobOfficePA to 0>>
+		<</if>>
+		Whatever there was between the two of you is over now.  You wonder if maybe telling him he was the father would have been better.
+		But it's too late now.
+		<<set setup.breakupWith($dating[0])>>
+	<</if>>
 <</nobr>>
-
-<<nobr>>
-	It's not like the two of you were exclusive anyway, so he won't have any reason to dobut you when you tell him he's not the father.  You expect he'll probably
-	be more relieved than anything.
-<</nobr>>
-
-<<nobr>>
-	You know you’ll be on your own with this pregnancy, and the thought is overwhelming you a bit. You need to take your mind off the stress of
-	learning all this today.
-<</nobr>>
-
-<img src="Part7/Preg10.jpg" hspace="10" vspace="10" height="650">
-
-<<nobr>>
-	Maybe you decide to enjoy that you can have zero-risk sex (since what more could happen now), or maybe you stay home for a nice hot bath.
-	Either way, it only takes your mind off things for a bit. Soon you are back to where you were a few hours before, trying to imagine all
-	the ways your life is about to change.
-<</nobr>>
-
-<<nobr>>
-	You decide that you don’t want to share the news with anyone else just yet. It’ll be obvious enough to everyone later. You’ll probably tell your
-	mentor after the holiday, but for now it’s your secret.
-<</nobr>>
-
-[[You put off packing for your trip home until tomorrow.|Part7Pack1]]
 
 ::Part7Unknown <400,6025>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
+	<img src="Part7/Preg10.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
-<<if setup.areDating('Veronica')>><br><<print "Veronica figures out you’ve been cheating on her, and she breaks up with you.">><br><<set setup.breakupWith('Veronica')>><</if>>
-<<print "You’ve either decided to keep the father out of this, or you don’t even know which guy it might be.">>
 
-<<print "You know you’ll be on your own with this pregnancy, and the thought is overwhelming you a bit. You need to take your mind off the stress of learning all this today.">>
-<img src="Part7/Preg10.jpg" hspace="10" vspace="10" height="650">
+<<unset $StatedFather>>
+<<include [[Part7Breakup]]>>
 
-<<print "Maybe you decide to enjoy that you can have zero-risk sex (since what more could happen now), or maybe you stay home for a nice hot bath. Either way, it only takes your mind off things for a bit. Soon you are back to where you were a few hours before, trying to imagine all the way your life is about to change.">>
+<<if !$NotUnknown>>
+	<<nobr>>
+		You know you’ll be on your own with this pregnancy, and the thought is overwhelming you a bit. You need to take your mind off the
+		stress of learning all this today.
+	<</nobr>>
 
-<<print "You decide that you don’t want to share the news with anyone else just yet. It’ll be obvious enough to everyone later. You’ll probably tell your mentor after the holiday, but for now it’s your secret. ">>
+	<<nobr>>
+		Maybe you decide to enjoy that you can have zero-risk sex (since what more could happen now), or maybe you stay home for a nice hot bath.
+		Either way, it only takes your mind off things for a bit. Soon you are back to where you were a few hours before, trying to imagine all
+		the way your life is about to change.
+	<</nobr>>
 
-[[You put off packing for your trip home until tomorrow.|Part7Pack1]]
+	<<nobr>>
+		You decide that you don’t want to share the news with anyone else just yet. It’ll be obvious enough to everyone later. You’ll probably
+		tell your mentor after the holiday, but for now it’s your secret.
+	<</nobr>>
+
+	[[You put off packing for your trip home until tomorrow.|Part7Pack1]]
+<</if>>
 
 ::Part7AndrewBoss2 <600,6025>
 <<nobr>>

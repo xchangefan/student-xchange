@@ -1,10 +1,10 @@
 ::Part95Start1 <0,9500>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
+	<img src="Part9.5/Start1.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 
-<<print "This is your first doctor visit after finding out about your pregnancy, and are both excited and nervous about it. ">>
-<img src="Part9.5/Start1.jpg" hspace="10" vspace="10" height="650">
+<<print "This is your first doctor visit after finding out about your pregnancy, and you are both excited and nervous about it. ">>
 
 <<nobr>>
 	<<if setup.areDating('Andrew')>>
@@ -21,30 +21,15 @@
 			<<print " with you for support instead.">>
 		<<else>>
 			<<if setup.areDating('Aaron')>>
-				<<if $FatherRealProfessor == 1>>
-					<<print "You didn’t want to go alone so you bring Daddy with you for support. You make an effort to call him by his given name, Aaron, during your appointment to avoid another embarrassing situation where someone thinks he’s your actual father.">>
-					<<set $DoctorDaddy = 1>>
-				<<else>>
-					<<print "You didn’t want to go alone, but you haven’t told Daddy about your pregnancy, so you bring ">> 
-					<<if setup.isFriendzoned('Peter')>>
-						<<print "Peter">>
-						<<set $DoctorNerd = 1>>
-					<<else>>
-						<<if $Mentor == 'Faith'>><<print "Faith">><<set $DoctorFaith = 1>><</if>>
-						<<if $Mentor == 'Emily'>><<print "Emily">><<set $DoctorEmily = 1>><</if>>
-						<<if $Mentor == 'Hannah'>><<print "Hannah">><<set $DoctorHannah = 1>><</if>>
-						<<if $Mentor == 'Samantha'>><<print "Sam">><<set $DoctorSamantha = 1>><</if>>
-						<<if $Mentor == 'Olivia'>><<print "Olivia">><<set $DoctorOlivia = 1>><</if>>
-					<</if>>
-					<<print " with you for support instead.">>
-				<</if>>
+				<<print "You didn’t want to go alone so you bring Daddy with you for support. You make an effort to call him by his given name, Aaron, during your appointment to avoid another embarrassing situation where someone thinks he’s your actual father.">>
+				<<set $DoctorDaddy = 1>>
 			<<else>>
 				<<if setup.areDating('Peter')>>
 					<<set $DoctorNerd = 1>>
 						You didn’t want to go alone so you bring Peter with you for support.
 						<<if $PregnancyCheck.possibleFathers.length == 1 && $PregnancyCheck.possibleFathers[0] == 'Peter'>>
 							He is the baby's father after all.
-						<<elseif $$PregnancyCheck.possibleFathers.indexOf('Peter') < 0>>
+						<<elseif $PregnancyCheck.possibleFathers.indexOf('Peter') < 0>>
 							Besides you enjoy the fact that the visit itself subtly teases him, proving that another man has done things to you he could only fantasize about.
 						<</if>>
 				<<else>>
@@ -331,11 +316,11 @@ The doctor [[continues with his exam|Part95Result1]].
 			Well, there’s one more change that’s coming, and it’s going to be a big one...
 			<img src="Part9.5/Result3.png" hspace="10" vspace="10" height="300">
 			<br>
-			<<if $FatherProfessor>>
+			<<if setup.areDating("Aaron")>>
 				Aaron and I will have our hands full starting this July! We’ll be sure to keep you all updated.
-			<<elseif $FatherAndrew>>
+			<<elseif setup.areDating("Andrew")>>
 				Andrew and I will have our hands full starting this July! We’ll be sure to keep you all updated.
-			<<elseif $FatherNerd>>
+			<<elseif setup.areDating("Peter")>>
 				Peter and I will have our hands full starting this July! We’ll be sure to keep you all updated.
 			<<elseif setup.areDating('Veronica')>>
 				Veronica and I will have our hands full starting this July! We’ll be sure to keep you all updated.

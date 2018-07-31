@@ -414,12 +414,15 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if setup.areDating('Veronica') and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
 <<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>\
 <<if setup.areDating('Aaron')>><br><<print "The Professor is your Daddy and you are his Baby Girl. ">><</if>>\
-<<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>\
-<<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>\
-<<if setup.areDating('Peter') or setup.isFriendzoned('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
-<<if setup.isFWB('Barry')>><br><<print "Barry likes to humiliate you. ">><</if>>\
-<<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>\
-<<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>\
+<<if setup.areDating('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
+<<if $dating.length == 0>> \
+  <<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>\
+  <<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>\
+  <<if setup.isFriendzoned('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
+  <<if setup.isFWB('Barry')>><br><<print "Barry likes to humiliate you. ">><</if>>\
+  <<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>\
+  <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>\
+<</if>>
 \
 
 

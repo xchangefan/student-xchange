@@ -85,37 +85,52 @@
 	<</if>>
   week later you've forgotten about it entirely and are back to your usual routine.  Well, that and looking forward to
 	dressing up for
-		<<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Aaron') or setup.areDating('Josh') or $PlayerItemNerdKey or setup.areDating('Barry') or setup.isFWB('Barry') or $MasterKate or $PlayerChastityBelt>>
-			[[Halloween|Part6Halloween]]
-		<<elseif $CampusMinistry>>
-				<<set $HalloweenNice to 1>>
-			[[Halloween|Part6Halloween]].  As you are doing your best to be a good girl, you try to think of something sweet and innocent to wear.
-		<<elseif $CampusMinistryFail>>
+	<<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Aaron') or setup.areDating('Josh') or $PlayerItemNerdKey or setup.areDating('Barry') or setup.isFWB('Barry') or $MasterKate or $PlayerChastityBelt>>
+		[[Halloween|Part6Halloween]]
+	<<elseif $CampusMinistry>>
+			<<set $HalloweenNice to 1>>
+		[[Halloween|Part6Halloween]].  As you are doing your best to be a good girl, you try to think of something sweet and innocent to wear.
+	<<elseif $CampusMinistryFail>>
+		<<set $HalloweenNice to 0>>
+		[[Halloween|Part6Halloween]].  As you've decided to embrace your 'sinful desires' as Faith and Pastor Mark called them, you figure "Why not dress
+		the part?" Faith is less than pleased.
+	<<elseif setup.areDating('Paul')>>
+		[[Halloween|Part6HalloweenPaul]].  You're allowed to dress up for Halloween at work, and you want to wear one of the sexy costumes you saw at the
+		store.  The dress code is a little more relaxed for Halloween, but you know you can't get away with what you could at one of the campus parties.
+		Still, you're pretty sure you've found something Paul will love.
+	<<elseif $PlayerSideEffectExhibitionist>>
+		<<link "Halloween">>
 			<<set $HalloweenNice to 0>>
-			[[Halloween|Part6Halloween]].  As you've decided to embrace your 'sinful desires' as Faith and Pastor Mark called them, you figure "Why not dress
-			the part?" Faith is less than pleased.
-		<<elseif $PlayerSideEffectExhibitionist>>
-			<<link "Halloween">>
-				<<set $HalloweenNice to 0>>
-				<<goto [[Part6Halloween]]>>
-			<</link>>
-		<<else>>
-			Halloween.  You just haven't decided whether you want something
-			something
-			<<link "sweet and innocent">>
-				<<set $HalloweenNice to 1>>
-				<<goto [[Part6Halloween]]>>
-			<</link>>
-			or if you want to be a 
-			<<link "bad girl">>
-				<<set $HalloweenNice to 0>>
-				<<goto [[Part6Halloween]]>>
-			<</link>>
-			this year.
-		<</if>>
+			<<goto [[Part6Halloween]]>>
+		<</link>>
+	<<else>>
+		Halloween.  You just haven't decided whether you want something
+		something
+		<<link "sweet and innocent">>
+			<<set $HalloweenNice to 1>>
+			<<goto [[Part6Halloween]]>>
+		<</link>>
+		or if you want to be a 
+		<<link "bad girl">>
+			<<set $HalloweenNice to 0>>
+			<<goto [[Part6Halloween]]>>
+		<</link>>
+		this year.
+	<</if>>
 <</nobr>>
 
-::Part6HalloweenNextScene
+<<nobr>>
+	<<if $JobTestSubject and !$PlayerProtectionTry>>
+		You also remember the engineering people had told you after your last test that they were looking for volunteers for some
+		[[special project|Part6SpecialProject]].  You'd just been teased and denied for an hour right before he told you, so you
+		weren't really paying that close of attention to what he had said.  But you remember it paid $500.  You also remember it
+		being the afternoon of the 31st.  You could technically go to the Halloween party afterwards, but you know you're usually
+		so exhausted after a testing session you'l probably just go home and sleep.
+		<<if !$PlayerSideEffectMasturbationBlock>>Well, and masturbate, if you end up in the denied group again.<</if>>
+	<</if>>
+<</nobr>>
+
+::Part6HalloweenNextScene <405,3875>
 <<nobr>>
 	But after the fun of Halloween is over, everything is back to normal for a few more weeks.
 	Of course, for you that means
@@ -151,6 +166,178 @@
 		<<include [[Part6Halloween2]]>>
 	<</if>>
 <</nobr>>
+
+::Part6HalloweenPaul <455,3875>
+<<nobr>>
+	<h1>Office Halloween</h1>
+	<img src="Part6/Halloween10.jpg" hspace="10" vspace="10" height="750">
+	<<set $sex.push({sex: 'male', name: 'Paul'})>>
+	<<set $PlayerCostumeSchoolgirl to 1>>
+<</nobr>>
+
+<<nobr>>
+	Your schoolgirl costume pushes the line a bit, but HR isn't going to complain if your skirt is a few inches short on Halloween.
+	Besides, Paul loves it.  He does make one small change though during your first visit to his office that day.  He has you
+	take off the white cotton panties you were hiding under your skirt.
+<</nobr>>
+
+<<nobr>>
+	You're hoping he's about to bend you over his desk, hike your skirt up and fuck you, but sadly he says he doesn't have time this
+	morning.  The office is close early today, and he's got a lot of work to get done if he's going to be able to leave early with
+	everyone else.  
+<</nobr>>
+
+<<nobr>>
+	He does have time for a quick blowjob before his next meeting though.  By the you're done, you can feel your wetness trickling
+	down your thigh a bit.  As he heads to his meeting, instead of handing your panties back, he smiles and puts them in his pocket.
+	You don't see them again the rest of the day.
+<</nobr>>
+
+<<nobr>>
+	Thankfully he's able to get his work done in time, and he tells you he has a [[surprise for you|Part6HalloweenPaul2]]
+<</nobr>>
+
+::Part6HalloweenPaul2 <460,3875>
+<<nobr>>
+	<h1>Hotel Room</h1>
+	<<set $sex.push({sex: 'male', name: 'Paul', vaginal: true, ovulating: true})>>	
+	<<set $sex.push({sex: 'male', name: 'Paul'})>>
+	<img src="Part6/Halloween11.jpg" hspace="10" vspace="10" height="750" align="left">
+<</nobr>>
+
+<<nobr>>
+	Paul says he's told his wife that he has to work late.  So between leaving early and getting home late, he has hours to
+	spend with you.  And he's booked a hotel nearby!
+<</nobr>>
+
+<<nobr>>
+	The two of you are barely through the door of your room before you are on your knees on the bed begging him for the fuck
+	you were deprived of earlier.  He lifts up your skirt like you had hoped for earlier, and fucks you with it still on.
+<</nobr>>
+
+<<nobr>>
+	After you've both recovered a bit, you start giving him a little striptease as you unzip your top.  "Do you like my pretty
+	young breasts?", you teasingly ask him.  You don't wait for an answer as you lean over and take his cock in your mouth and
+	feel it quickly get hard again.
+	<<if $PlayerSideEffectAnal>>
+		<<set $sex.push({sex: 'male', name: 'Paul'})>>
+		"Do you want to fuck my ass this time?", you ask hopefully as you pull his cock out of your mouth for a moment.
+	<<elseif $PlayerSideEffectSubmissive>>
+		<<set $sex.push({sex: 'male', name: 'Paul', vaginal: true, ovulating: true})>>
+		"Do you want to tie my hands to the bed when you fuck me this time?", you ask hopefully as you pull his cock out of your mouth for a moment and grab
+		the neck tie he had been wearing.
+	<<else>>
+		<<set $sex.push({sex: 'male', name: 'Paul'})>>
+		"Do you want to cum on them this time?"		
+	<</if>>
+	You smile, knowing what his answer is going to be.	
+<</nobr>>
+
+<<nobr>>
+	<<set $sex.push({sex: 'male', name: 'Paul', vaginal: true, ovulating: true})>>
+	You wish you could spend all night here with him, but sadly you only have time for one more fuck before he has to straighten himself up
+	and head back to his wife.  He's about to head out the door when you remember and say, "panties!".  He reaches into his pocket and grabs
+	your panties from this morning.  He kisses you as he hands them back to you.  "Thank you! That would have been a mess if my wife had found
+	those!".
+<</nobr>>
+
+<<nobr>>
+	He's gone, but you still have the room for the night.  As you fall asleep alone that night, you are wondering if maybe it would
+	have been better if you hadn't said anything, and his wife had found out about the two of you.  Then maybe you'd have him to yourself.
+<</nobr>>
+
+<<include [[Part6HalloweenNextScene]]>>
+
+::Part6SpecialProject <455,3900>
+<<nobr>>
+	<h1><<print "Engineering Department">></h1>
+	<img src="Part6/SpecialProject1.jpg" hspace="10" vspace="10" height="600">
+<</nobr>>
+
+<<nobr>>
+	This time they have a bunch of documents for you to sign, you skim over most of it, two key phrases tell you all you care about anyway:
+	"$500" and "High Probability of Orgasm".  A third phrase makes you laugh a bit "subject will be discouraged from orgasming", like you're going
+	to listen to that.  After you sign, they lead you in to one of their test chambers and strap you into a machine and leave the room.  Once the
+	room is empty except for you, someone begins speaking with you over the intercom.
+<</nobr>>
+
+<<nobr>>
+	"As per the test protocol you signed, this will be our only communication with you during the test.  Your responses will, of course, be recorded for later
+	analysis.  This test will be controlled remotely by male students that have been randomly selected for you.  They will be using a toy on themselves, their
+	actions on the toywill be replicate for you by the machine you are attached to."
+<</nobr>>
+
+<<nobr>>
+	"The male participants will be able to view the live video of you, but you will only hear audio of them and, briefly, a photograph of them.  Otherwise,
+	the montitor will be displaying your test progress or erotic images that previous tests have shown most likely to appeal to you.
+	Once each male participant orgasms, you will have a 30 second break before the next session begins."
+<</nobr>>
+
+TODO: Are the punishments chosen for you, or always the same?
+<<nobr>>
+	"As described in the disclosure, unlike most of the experiments here, this experiment is to test your ability to <i>resist</i> orgasming.
+	As such, there will be punishments of increasing severity administered for orgasming during the experiment.  They have been computer selected based
+	on your individual profile, and will be administered automatically.  Thank you for your participation."  At that the intercom cuts off.
+<</nobr>>
+
+<<nobr>>
+	<<set $EngineerGoo to 0>>
+	<<set $EngineerResistsLeft to 2>>
+	The display above you reads out: "Punishment 1: Reduction of Payment by $50.".  "Well, even if that happens 5 times, I'll still be leaving with $250.
+	<<if $PlayerEasytoOrgasm>>
+		Given how easy how easily you usually orgasm, you know you'll have a hard time doing anything but cumming every time.  You see a timer counting down from
+		30 seconds and [[wait for the fun to begin.|Part6SpecialProject2]]
+	<<else>>
+		You wonder if you should not worry about the money and just
+		<<link "try to cum">>
+			<<set $EngineerTry to 1>>
+			<<set $EngineerResist to 0>>
+			<<goto Part6SpecialProject2>> 			
+		<</link>> or if you should
+		<<link "try to resist">>
+			<<
+			<<set $EngineerTry to 0>>
+			<<set $EngineerResist to 1>>
+			<<set $EngineerResistsLeft -= 1>>
+			<<goto Part6SpecialProject2>> 			
+		<</link>>
+	<</if>>
+<</nobr>>
+
+::Part6SpecialProject2 <475,3900>
+<video src="Part6/SpecialProject2.mp4" autoplay loop muted height="580"></video><p/>
+TODO 5 different captions, or one with changing text (probably 5 differnet)
+
+For all of them: if you have easy orgasms, treat as Try
+
+Otherwise:
+For Session 1: Neither cums (He cums too quick and you aren't horny yet)
+For Session 2: He lasted a while, cum unless you resisted twice
+For Session 3: Cum unless resist
+For Session 4: Cum if trying
+For Session 5: Everyone cums
+
+Try:0, Try:1, Resist:1, Resist:1, Try:2
+Resist: 0, Resist: 0, Try: 1, Try: 2, Try 3:
+Try: 0, Try:1, Try, 2, Try:3, Try:4
+
+1: If you orgasm during this session, $50 will be deducted from your study participant Payment
+2: If you orgasm during this session, an orgasm denial agent will be administered after the final session.  This will prevents
+most orgasms for 60 days
+3: If you orgasm during this session
+		- Your implant's birth control feature will be deactivate.  It will not be able to be reactivated
+		- Your implant's fertility feature will be activated.  This will increase fertility and prevent the use of hormonal birth control pills.  This effect
+		will be permanent.
+		- a live semen sample will be used in place of the simulant when the male participant orgasms
+4: a live semen sample will be used in place of the simulant when the male participant orgasms
+(Then after last one, a final session where the denial agent is applied before you orgasm again)
+
+todo remove old text
+<<print "This latest machine isn’t controlled by computer or by one of the lab technicians like before. This one is controlled by some other student somewhere on campus.">>
+<<print "You are soon begging him, “Don’t stop. Don’t stop!”. But then you feel the machine thrust into you a final time and release a sticky goo inside you. You whimper, unsatisfied as you know your mystery partner must have came without you.">>
+<<print "As the machine pulls out of you you feel some of the goo drip out. You wonder to yourself if that is it - if you are leaving the lab horny and unsatisfied this week. A moment later the machine springs back to life as another volunteer begins to use his toy.">>
+<<print "You close your eyes and imagine your phantom partner is here with you. You focus on the pleasure of each thrust of his cock, hoping you’ll be able to cum this time before he does.">>
+
 
 ::Part6HalloweenKate <465,3875>
 <div style="display:flex;">
@@ -309,7 +496,7 @@
 	<<elseif $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectLibido > 2>>
 		You are already horny from walking around like this all night.  You know thanks to your implant's side effects
 		that you can never turn down an offer for sex when you are like this, so you quickly accept his suggestion and
-		[[head back to his room with him|Party6Halloween3]]
+		[[head back to his room with him|Part6Halloween3]]
 	<<elseif $CampusMinistryFail>>
 		You have too much time to make up for.  You have already wasted months of time you could have been enjoying
 		all that this new body has to offer, and you don't want to waste any more.  Your body is telling you how much it
@@ -339,7 +526,7 @@
 	<</if>>
 <</nobr>>
 
-::Part6Halloween2No <480, 3875>
+::Part6Halloween2No <480,3875>
 <<nobr>>
 	<h1>Your Room</h1>
 	<<if $PlayerNoBodyHair>>
@@ -415,6 +602,9 @@
 	<<if setup.isFWB('James')>>
 		Eventually you find your way back to your dorm.  Somehow you are still horny.  What's gotten into you tonight you wonder.  But you figure James
 		is back home by now, and he's always willing to [[help a girl out...|Part6Player2]]
+	<<elseif setup.isFWB('Zack')>>
+		Eventually you find your way back to your dorm.  Somehow you are still horny.  What's gotten into you tonight you wonder.  But you figure Zack
+		is back home by now, and he's always willing to [[help a girl out...|Part6Thril2]]
 	<<else>>
 	  You both lie there recovering a bit.  After a while, you move down to take his cock into your mouth and coax it back to life for another round.
 		<<if $CampusMinistry>>
@@ -430,6 +620,79 @@
 		<<include [[Part6HalloweenNextScene]]>>
 	<</if>>
 <</nobr>>
+
+::Part6Thril2 <170,3125>
+<<nobr>>
+	<h1>Zack's Room</h1>
+	<video src="Part6/GoNeighbour6.mp4" autoplay loop muted height="580"></video><p/>
+<</nobr>>
+
+<<nobr>>
+	When you get back to the dorm, you stand in the doorway to his room striking a seductive pose and wait for Zack to see you.  When he finally turns
+	to notice you realize it's not Zack but
+	<<if $Mentor=='Emily'>>
+		<<set $halloweenOtherGuy to "Zack's friend">>
+		a friend of his!
+	<<elseif $neighbours[0] == 'Zack'>>
+		<<set $halloweenOtherGuy to $neighbours[1]>>
+		his roommate $neighbours[1]!
+	<<else>>
+		his roommate $neighbours[0]!
+		<<set $halloweenOtherGuy to $neighbours[0]>>
+	<</if>>
+	Then you hear Zack from behind you coming from the restroom.  "You seem to have a familiar look of need tonight.", he says when he sees you.	
+<</nobr>>
+
+<<nobr>>
+	Zack continues, "How about we try something different tonight?  I've had a threesome with two girls before, but I've never had one with two guys before.
+	I'm game if you two are."  $halloweenOtherGuy quickly agrees to it.  You came here needing Zack's cock, a second one is an unexpected bonus, so you
+	quickly agree as well.
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerSideEffectAnal>>
+		You're thrilled when $halloweenOtherGuy wants to fuck your ass while you ride Zack's cock.  You cum in no time thanks to your implant and
+		and your love for anal.  Of course, the guys still haven't came, so they just hold you in place fucking you to another orgasm before the they
+		finally cum.
+	<<elseif $PlayerSideEffectOral>>
+		You were hoping the guys were going to 'spit-roast' you, but instead $halloweenOtherGuy fucks your ass while you ride Zack's cock.  Zack knows
+		about much you crave oral and tells you, "Don't worry I know how much you love sucking cock.  We'll get there.  We have all night."
+	<<else>>
+		You aren't sure which way they want to start, but you get the message when Zack sits down.  You climb on top of him and start riding his cock.
+		It isn't long until you feel another cock push into your ass.  You feel so full as the two guys fuck you from either side.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<set $sex.push({sex: 'male', name: 'Zack', vaginal:true, ovulating: true, noPullout:true})>>
+	<<set $sex.push({sex: 'male', name: $halloweenOtherGuy})>>
+	<<set $sex.push({sex: 'male', name: 'Zack'})>>
+	<<set $sex.push({sex: 'male', name: $halloweenOtherGuy, vaginal:true, ovulating: true, noPullout:true})>>
+	<<set $sex.push({sex: 'male', name: 'Zack'})>>
+	<<set $sex.push({sex: 'male', name: $halloweenOtherGuy})>>
+	<<if $PlayerProtectionCondoms>>
+		After the two guys cum, you get up and grab a trash can for them to toss their condoms in.  Then you show the full box you'd grabed from Zack's nightstand
+		"And we have enough for all night.", you tell them.  
+	<<else>>
+		After the two guys cum, you get up.  You feel cum leaking out of you from both sides.  $halloweenOtherGuy goes to the bathroom for a second to
+		clean his cock.  When he comes back you tell them, 
+	<</if>>
+	"Let me know when you're ready to go 
+	<<if $PlayerSideEffectAnal>>
+		again. This time I want Zack fucking my ass."
+	<<elseif $PlayerSideEffectOral>>
+		again. This time I want at least one cock in my mouth."
+	<<else>>
+		again."
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	But eventually the guys are worn out, and you know it's time for bed.  You fall asleep with a smile on our face though.  You're pretty sure you know
+	two guys that did too.
+<</nobr>>
+
+<<include [[Part6HalloweenNextScene]]>>
 
 ::Part6Player2 <175,3125>
 <<nobr>>
@@ -490,7 +753,7 @@
 <</nobr>>
 
 <<nobr>>
-	But eventually, you know it's time for bed.  You wash your toys and put them away and fall asleep.  Of course the two guys you'd imagined
+	But eventually you know it's time for bed.  You wash your toys and put them away and fall asleep.  Of course the two guys you'd imagined
 	while you were awake return again as you dream and enjoy you many times through the night.
 <</nobr>>
 
@@ -517,23 +780,31 @@ her room.
 <<include [[Part6HalloweenNextScene]]>>
 
 ::Part6HalloweenBoyfriend <490,3875>
-<<set $sex.push({sex: 'male', name:$dating[0]})>>
-<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
-<<set $sex.push({sex: 'male', name:$dating[0]})>>
-<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
-<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
-<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
-<video src="Part6/Halloween2.mp4" autoplay loop muted height="540"></video><p/>
-<<set $PlayerCostumeKitten to 1>><<set $PlayerTailButtplug to 1>>
-You have a wonderful time at the Halloween party, and love the looks you get in your 'sexy kitten' costume.  But the whole time
-all you can think about it is getting back home and having $Dating[0] take it off you.
-<p/>
+<<nobr>>
+	<<set $sex.push({sex: 'male', name:$dating[0]})>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
+	<<set $sex.push({sex: 'male', name:$dating[0]})>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
+	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
+	<<set $PlayerCostumeKitten to 1>>
+	<<set $PlayerTailButtplug to 1>>
+	<video src="Part6/Halloween2.mp4" autoplay loop muted height="540"></video><p/>
+	
+	You have a wonderful time at the Halloween party, and love the looks you get in your 'sexy kitten' costume.  But the whole time
+	all you can think about it is getting back home and having $dating[0] take it off you.
+<</nobr>>
+
+<<nobr>>
 When you finally are alone together, he jokes about how his kitten is in heat.  You can't really disagree.  After he has you out
 of most of your costume he tells you he has a surprise for you.  He shows you the tail buttplug he bought for you.  "My little
 kitten can't be without her tail can she?", he says as he puts a bit of lube on it and slides it into your ass.
-<p/>
+<</nobr>>
+
+<<nobr>>
 When the two of you are finally finished for the night, you lie next to him with your tail still in.  You snuggle up next to him and
 do your best to make a purring sound for a bit before you fall asleep.
+<</nobr>>
 
 <<include [[Part6HalloweenNextScene]]>>
 
@@ -1091,7 +1362,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<<set $AcademicPoints += 3>>
 		<<set $FunPoints += 1>>
 	<<else>>
-		<<if $NerdSex>>
+		<<if setup.haveFucked('Peter')>>
 			<<set $AcademicPoints += 2>>
 		<<else>>
 			<<set $AcademicPoints += 1>>
@@ -1105,16 +1376,14 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<if setup.areDating('Peter')>><img src="Part6/Start8.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="650"><</if>>
 
 <<nobr>>
-	<<if !setup.areDating('Peter') and !$NerdSex>>
-		<<print "Unfortunately you are not that close so he he can find only so little time to help you.">>
+	<<if setup.areDating('Peter')>>
+		<<print "Of course, with you holding the key to his cock, he’s somehow able to always find the time to help you when you need it. You’ve had him buy a nice metal one so he can keep it on as long as you like.">>
+	<<elseif setup.haveFucked('Peter')>>
+		<<print "You are a bit close so he he can find only so he can find some time to help you.">>
 	<<else>>
-		<<if setup.areDating('Peter')>>
-			<<print "You’ve had him buy a nice metal one so he can keep it on as long as you like. Of course, with you holding the key to his cock, he’s somehow able to always find the time to help you when you need it.">>
-		<<else>>
-			<<print "You are a bit close so he he can find only so he can find some time to help you.">>
-		<</if>>
+		<<print "Unfortunately you are not that close so he he can find only so little time to help you.">>
 	<</if>>
-<</nobr>>
+	<</nobr>>
 <<if setup.areDating('Peter')>><br><<print "But you make sure your virgin toy has a little fun sometimes too. You love hearing him wince on the dance floor as you grind against him and his cock struggles to get hard in it’s cage. ">> [[And you planned something special for his birthday.|Part6NerdBirthday]]<br><</if>>
 <<nobr>>
 	<<if !setup.areDating('Peter')>>
@@ -1231,7 +1500,6 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<nobr>>
 	<<if setup.isFWB('Josh')>>[[You spend some time with Josh.|Part6StartJosh2]]
-	<<elseif $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
 	<<elseif $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
 	<<elseif $JobPornOralSide or $JobPornOral>>[[You go and film another porn movie the next day.|JobPornOral3]]
 	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang3]]
@@ -1266,7 +1534,6 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<<print "Or you .">>
 		<<link "can just give up and go back home.">>
 			<<if setup.isFWB('Josh')>><<goto [[Part6StartJosh2]]>>
-			<<elseif $JobTestSubject>><<goto [[JobEngineerSubject4]]>>
 			<<elseif $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
 			<<elseif $JobPornOralSide or $JobPornOral>><<goto [[JobPornOral3]]>>
 			<<elseif $JobPornGangSide or $JobPornGang>><<goto [[JobPornGang3]]>>
@@ -1349,15 +1616,10 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<print " Do you leave with them and ">>
 	<<link "go back home, ">>
 		<<if setup.isFWB('Josh')>><<goto [[Part6StartJosh2]]>>
-			<<else>><<if $JobTestSubject>><<goto [[JobEngineerSubject4]]>>
-				<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
-					<<else>><<if $JobPornOralSide or $JobPornOral>><<goto [[JobPornOral3]]>>
-						<<else>><<if $JobPornGangSide or $JobPornGang>><<goto [[JobPornGang3]]>>
-							<<else>><<goto [[Part6Frat1]]>>
-						<</if>>
-					<</if>>
-				<</if>>
-			<</if>>
+		<<elseif $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
+		<<elseif $JobPornOralSide or $JobPornOral>><<goto [[JobPornOral3]]>>
+		<<elseif $JobPornGangSide or $JobPornGang>><<goto [[JobPornGang3]]>>
+		<<else>>goto [[Part6Frat1]]>>
 		<</if>>
 	<</link>>
 	<<print "or do you ">>
@@ -1398,15 +1660,10 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<nobr>>
 	<<if setup.isFWB('Josh')>>[[You spend some time with Josh the next day.|Part6StartJosh2]]
-		<<else>><<if $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
-			<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
-				<<else>><<if $JobPornOralSide or $JobPornOral>>[[You have to film another porn movie the next day.|JobPornOral3]]
-					<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang3]]
-						<<else>>[[You spend some time on campus the next day.|Part6Frat1]]
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<elseif $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
+	<<elseif $JobPornOralSide or $JobPornOral>>[[You have to film another porn movie the next day.|JobPornOral3]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang3]]
+	<<else>>[[You spend some time on campus the next day.|Part6Frat1]]
 	<</if>>
 <</nobr>>
 
@@ -1476,15 +1733,10 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<nobr>>
 	<<if setup.isFWB('Josh')>>[[You spend some time with Josh the next day.|Part6StartJosh2]]
-		<<else>><<if $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
-			<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
-				<<else>><<if $JobPornOralSide or $JobPornOral>>[[You have to film another porn movie the next day.|JobPornOral3]]
-					<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang3]]
-						<<else>>[[You spend some time on campus the next day.|Part6Frat1]]
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<elseif $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
+	<<elseif $JobPornOralSide or $JobPornOral>>[[You have to film another porn movie the next day.|JobPornOral3]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang3]]
+	<<else>>[[You spend some time on campus the next day.|Part6Frat1]]
 	<</if>>
 <</nobr>>
 
@@ -1527,15 +1779,10 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<nobr>>
 	<<if setup.isFWB('Josh')>>[[You spend some time with Josh the next day.|Part6StartJosh2]]
-		<<else>><<if $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
-			<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
-				<<else>><<if $JobPornOralSide or $JobPornOral>>[[You have to film another porn movie the next day.|JobPornOral3]]
-					<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang3]]
-						<<else>>[[You spend some time on campus the next day.|Part6Frat1]]
-					<</if>>
-				<</if>>
-			<</if>>
-		<</if>>
+	<<elseif $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
+	<<elseif $JobPornOralSide or $JobPornOral>>[[You have to film another porn movie the next day.|JobPornOral3]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang3]]
+	<<else>>[[You spend some time on campus the next day.|Part6Frat1]]
 	<</if>>
 <</nobr>>
 
@@ -2112,55 +2359,42 @@ Might add something here in the future. Or not.
 
 <video src="Part6/Professor6.webm" autoplay loop muted height="640"></video>
 
+<<nobr>>
+	<<if $JobPornOralSide or $JobPornAnalSide or $JobPornGangSide or $JobPornSide or $JobCallGirlSide>>
+		<<if $JobPornOralSide>><<set $JobPornOralSide =　0>><<set $JobPornOralSideOld =　1>><</if>>
+		<<if $JobPornAnalSide>><<set $JobPornAnalSide =　0>><<set $JobPornAnalSideOld =　1>><</if>>
+		<<if $JobPornGangSide>><<set $JobPornGangSide =　0>><<set $JobPornGangSideOld =　1>><</if>>
+		<<if $JobPornSide>><<set $JobPornSide =　0>><<set $JobPornSideOld =　1>><</if>>
+		<<if $JobCallGirlSide>><<set $JobCallGirlSide =　0>><<set $JobCallGirlSideOld =　1>><</if>>
+		<<print "As you have a naughty side job, you know you need to be punished for that too. Your Daddy convinces to quit your side job.">><br><br>
+	<</if>>
+<</nobr>>
+<<nobr>>
+	<<if $JobCheerleaderFundraiser or $JobOfficePA or $JobPornOral or $JobPornOral or $JobPornAnal or $JobPornGang or $JobPorn or $JobCallGirl>>
+		As you have a naughty job, you know you need to be punished for that too. Your Daddy convices you to quit your job and is going to give you
+		an allowance.  He says you can find another, less naughty job if you'd like, but you soon find you enjoy spending the extra time with Daddy
+		or in making sure everything is perfect for him when he gets home.
+			<<set $ProfessorAllowance = 1>>
+			<<if $JobCheerleaderFundraiser>><<set $JobCheerleaderFundraiser =　0>><<set $JobCheerleaderFundraiserOld =　1>><</if>>
+			<<if $JobOfficePA>><<set $JobOfficePA =　0>><<set $JobOfficePAOld =　1>><</if>>
+			<<if $JobPornOral>><<set $JobPornOral =　0>><<set $JobPornOralOld =　1>><</if>>
+			<<if $JobPornAnal>><<set $JobPornAnal =　0>><<set $JobPornAnalOld =　1>><</if>>
+			<<if $JobPornGang>><<set $JobPornGang =　0>><<set $JobPornGangOld =　1>><</if>>
+			<<if $JobPorn>><<set $JobPorn =　0>><<set $JobPornOld =　1>><</if>>
+			<<if $JobCallGirl>><<set $JobCallGirl =　0>><<set $JobCallGirlOld =　1>><</if>>
+		<<if setup.areDating('Paul')>>
+			<<set setup.breakupWith('Paul')>>
+		<</if>><br><br>
+	<</if>>
 
-<<if $JobPornOralSide or $JobPornAnalSide or $JobPornGangSide or $JobPornSide or $JobCallGirlSide>>\
-	<<if $JobPornOralSide>><<set $JobPornOralSide =　0>><<set $JobPornOralSideOld =　1>><</if>>\
-	<<if $JobPornAnalSide>><<set $JobPornAnalSide =　0>><<set $JobPornAnalSideOld =　1>><</if>>\
-	<<if $JobPornGangSide>><<set $JobPornGangSide =　0>><<set $JobPornGangSideOld =　1>><</if>>\
-	<<if $JobPornSide>><<set $JobPornSide =　0>><<set $JobPornSideOld =　1>><</if>>\
-	<<if $JobCallGirlSide>><<set $JobCallGirlSide =　0>><<set $JobCallGirlSideOld =　1>><</if>>\
-	<br><<print "As you have a naughty side job, you know you need to be punished for that too. Your Daddy convinces to quit your side job.">><br>\
-<</if>>\
-<<if $JobCheerleaderFundraiser or $JobOfficePA or $JobPornOral or $JobPornOralSide or $JobPornAnal or $JobPornAnalSide or $JobPornGang or $JobPornGangSide or $JobPorn or $JobPornSide or $JobCallGirlSide>>\
-	<br><<print "As you have a naughty job, you know you need to be punished for that too. Your Daddy can ">>\
-	<<nobr>>
-		<span id="DaddyJobSpan1">
-			<<link "help you get a less naughty job">>
-				<<replace "#DaddyJobSpan1">>
-					<<print "help you get a less naughty job">>
-					<<set $ProfessorNewJob = 1>>
-				<</replace>>
-				<<replace "#DaddyJobSpan2">>
-					<<print "give you a small allowance each week">>
-				<</replace>>
-			<</link>>
-		</span>
-	<</nobr>>\
-	<<print "once the new semester starts, or he can just ">>\
-	<<nobr>>
-		<span id="DaddyJobSpan2">
-			<<link "give you a small allowance each week">>
-				<<replace "#DaddyJobSpan1">>
-					<<print "help you get a less naughty job">>
-				<</replace>>
-				<<replace "#DaddyJobSpan2">>
-					<<print "give you a small allowance each week">>
-					<<set $ProfessorAllowance = 1>>
-					<<if $JobCheerleaderFundraiser>><<set $JobCheerleaderFundraiser =　0>><<set $JobCheerleaderFundraiserOld =　1>><</if>>\
-					<<if $JobOfficePA>><<set $JobOfficePA =　0>><<set $JobOfficePAOld =　1>><</if>>\
-					<<if $JobPornOral>><<set $JobPornOral =　0>><<set $JobPornOralOld =　1>><</if>>\
-					<<if $JobPornAnal>><<set $JobPornAnal =　0>><<set $JobPornAnalOld =　1>><</if>>\
-					<<if $JobPornGang>><<set $JobPornGang =　0>><<set $JobPornGangOld =　1>><</if>>\
-					<<if $JobPorn>><<set $JobPorn =　0>><<set $JobPornOld =　1>><</if>>\
-					<<if $JobCallGirl>><<set $JobCallGirl =　0>><<set $JobCallGirlOld =　1>><</if>>\
-				<</replace>>
-			<</link>>
-		</span>
-	<</nobr>>\
-	<<print " instead. ">><<if setup.areDating('Paul')>><<print "He also forbids you from seeing your old boss again.">><<set setup.breakupWith('Paul')>><</if>><br>\
-<</if>>\
-
-<<if !setup.isFriendzoned('Peter')>><<print "When Daddy punishes you know it’s only because he loves you. ">>[[That’s probably part of why you get so wet whenever he does.|Part6Professor8]]<<else>><<print "When Daddy punishes you know it’s only because he loves you. That’s probably part of why you get so wet whenever he does. ">>[[Some times you ask Peter to help you find the right gift for your Daddy.|Part6Professor7]]<</if>>
+	When Daddy punishes you know it’s only because he loves you.
+	<<if setup.isFriendzoned('Peter')>>
+		That’s probably part of why you get so wet whenever he does.
+		[[Some times you ask Peter to help you find the right gift for your Daddy.|Part6Professor7]]
+	<<else>>
+		[[That’s probably part of why you get so wet whenever he does.|Part6Professor8]]
+	<</if>>
+<</nobr>>
 
 ::Part6Professor8 <1200,5425>
 <<nobr>>
@@ -2540,10 +2774,8 @@ Might add something here in the future. Or not.
 <</nobr>>
 
 <<nobr>>
-	<<if $JobTestSubject>>[[You have to go to work at the lab the next day.|JobEngineerSubject4]]
-		<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
-			<<else>>[[You spend some time on campus the next day.|Part6Frat1]]
-		<</if>>
+	<<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
+	<<else>>[[You spend some time on campus the next day.|Part6Frat1]]
 	<</if>>
 <</nobr>>
 
@@ -2649,14 +2881,10 @@ Might add something here in the future. Or not.
 <<print "You do however enjoy the sex between the two of you. It is no longer romantic like before, but more raw and rough. Not that you are complaining about the orgasms you are getting from it.">>
 
 <<nobr>>
-	<<if $JobTestSubject>>[[You have to go to work at the lab.|JobEngineerSubject4]]
-		<<else>><<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
-			<<else>><<if $JobPornOralSide or $JobPornOral>>[[You go and film another porn movie.|JobPornOral3]]
-				<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang3]]
-					<<else>>[[You spend some time on campus.|Part6Frat1]]
-				<</if>>
-			<</if>>
-		<</if>>
+	<<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
+	<<elseif $JobPornOralSide or $JobPornOral>>[[You go and film another porn movie.|JobPornOral3]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang3]]
+	<<else>>[[You spend some time on campus.|Part6Frat1]]
 	<</if>>
 <</nobr>>
 
