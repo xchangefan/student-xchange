@@ -248,6 +248,82 @@
 
 <<include [[Part6HalloweenNextScene]]>>
 
+::Part6PunishWarnMessage <475,3950>
+<<nobr>>
+	You see the display above counting down from 30 seconds.  Above that it
+	<<if $SubjectPunishLastMessage == $SubjectPunish>>
+		still says
+	<<else>>
+		says
+	<</if>>
+	<<if $SubjectPunish <= 1>>
+		"Punishment for First Orgasm: Reduction of Study Payment by $50"
+		<<if $SubjectPunishLastMessage != 1>>
+			$50 isn't that much, so you aren't concerned.  You'll still get $450, right.
+		<</if>>
+	<<elseif $SubjectPunish == 2>>
+		"Punishment for Second Orgasm: <strong>Orgasm Denial</strong> Agent - minimum duration 30 days"
+		<<if $SubjectPunishLastMessage != 2>>
+			<<if $PlayerChastityBelt and $MasterKey>>
+				You aren't that worried, you might have had to wait that long or more before you'd have been allowed out of your belt anyway.  The orgasms here
+				during testing are usually all you get.
+			<<else>>
+				30 days without an orgasm! Or more! You squirm and tug at your bonds, but it doesn't do any good.
+			<</if>>
+		<</if>>
+	<<elseif $SubjectPunish == 3>>
+		<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+			"Punishment for Third Orgasm: <strong>Permanent Deactivation</strong> of Implant Birth Control"
+		<<else>>
+			"Punishment for Third Orgasm: <strong>Permanent Activation</strong> of Implant Enhanced Fertility Feature"
+		<</if>>
+		<<if $SubjectPunishLastMessage != 3>>
+			You tug again at your bonds.  "Permanent! Fuck I should have read that closer!" you say to yourself.
+		<</if>>
+	<<else>>
+		"Punishment for Subsequent Orgasms: <strong>Live Semen Sample</strong> Used During Male's Orgasm Instead of Simulant"
+		<<if $SubjectPunishLastMessage < 4>>
+			You thrash at your bonds again. "What!? Whose? No!", you yell to the empty room.
+			<<if !$PlayerSideEffectPermanent>>
+				You realize if it gets you pregnant, you'll never be able to change back after graduation.
+			<</if>>
+		<</if>>
+	<</if>>
+	<<set $SubjectPunishLastMessage to $SubjectPunish>>
+<</nobr>>
+
+
+::Part6PunishAdministerMessage <475,3950>
+<<nobr>>
+	You see the screen over you flash red with the message 
+	<<if $SubjectPunish <= 1>>
+		"$50 Penalty Applied"
+	<<elseif $SubjectPunish == 2>>
+		<<set $SubjectOrgasmDenialGoo to 1>>
+		"Orgasm Denial Agent punishment will be administered after final session"
+	<<elseif $SubjectPunish == 3>>
+		<<set $SubjectBirthControlChange>>
+		<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+			"Implant Birth Control Permanently Deactivated - Immediate ovulation probable"
+			<<unset $PlayerProtectionPerfect>>
+			<<unset $PlayerProtectionPermanent>>
+			<<set $PlayerProtectionNone to 1>>
+		<<else>>
+			"Implant Enhanced Fertility Feature Permanently Activated - Oral Contraceptives Ineffective - Immediate ovulation probable"
+			<<unset $PlayerProtectionPill>>
+			<<set $PlayerProtectionNone to 1>>
+		<</if>>
+	<<else>>
+		<<set $SubjectLiveSemen to 1>>
+		"Live Semen Sample will be deposited for Male Subjects Orgasm"
+	<</if>>
+	<<set $SubjectPunish += 1>>
+	<<set $SubjectHorniness = 0>>
+	<<if $SubjectPunish == 3 and !($PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill)>>
+		<<set $SubjectPunish to 4>>
+	<</if>>
+<</nobr>>
+
 ::Part6SpecialProject <455,3900>
 <<nobr>>
 	<h1><<print "Engineering Department">></h1>
@@ -268,75 +344,434 @@
 <</nobr>>
 
 <<nobr>>
-	"The male participants will be able to view the live video of you, but you will only hear audio of them and, briefly, a photograph of them.  Otherwise,
-	the montitor will be displaying your test progress or erotic images that previous tests have shown most likely to appeal to you.
-	Once each male participant orgasms, you will have a 30 second break before the next session begins."
+	"A live stream of you will transmitted to your male participant.  You will be able to hear him on the speakers you are hearing me now.  The monitors
+	you see will be displayin your test progress or erotic images that previous tests have shown most likely to appeal to you.  Once each male participant
+	orgasms, you will have a 30 second break before the next session begins."
 <</nobr>>
 
-TODO: Are the punishments chosen for you, or always the same?
 <<nobr>>
 	"As described in the disclosure, unlike most of the experiments here, this experiment is to test your ability to <i>resist</i> orgasming.
-	As such, there will be punishments of increasing severity administered for orgasming during the experiment.  They have been computer selected based
-	on your individual profile, and will be administered automatically.  Thank you for your participation."  At that the intercom cuts off.
+	As such, there will be punishments of increasing severity administered for orgasming during the experiment.  These will be administered
+	automatically if an orgasm is detected.  Thank you for your participation."  At that the intercom cuts off.
 <</nobr>>
 
 <<nobr>>
-	<<set $EngineerGoo to 0>>
-	<<set $EngineerResistsLeft to 2>>
-	The display above you reads out: "Punishment 1: Reduction of Payment by $50.".  "Well, even if that happens 5 times, I'll still be leaving with $250.
-	<<if $PlayerEasytoOrgasm>>
-		Given how easy how easily you usually orgasm, you know you'll have a hard time doing anything but cumming every time.  You see a timer counting down from
-		30 seconds and [[wait for the fun to begin.|Part6SpecialProject2]]
+	<<set $SubjectPunish to 1>>
+	<<set $SubjectHorniness to 0>>
+	<<set $SubjectResistsLeft to 2>>
+	<<include [[Part6PunishWarnMessage]]>>
+	After the counter reaches 0, the video begins to display images that could be straight out of some of your fantasies.  Then you feel your legs
+	start to pull apart as the machine starts up.  "Damn, they didn't tell me you'd be this hot.", you hear a voice say through the speakers.
+<</nobr>>
+
+<<nobr>>
+	Do you want to just
+	<<link "lie back and enjoy it">>
+		<<set $SubjectHorniness += 5>>
+		<<goto Part6SpecialProject2>> 			
+	<</link>>
+	or, do you think you should
+	<<link "try to resist.">>
+		<<set $SubjectHorniness += 3>>
+		<<set $SubjectResistsLeft -= 1>>
+		<<goto Part6SpecialProject2>> 			
+	<</link>>
+	<<if $PlayerSideEffectLibido>>
+		<<set $SubjectResistsLeft -= 1>>
+		As horny as you usually are, thanks to your implant's side effect, you dobut you'll be able to hold out for long.
 	<<else>>
-		You wonder if you should not worry about the money and just
-		<<link "try to cum">>
-			<<set $EngineerTry to 1>>
-			<<set $EngineerResist to 0>>
-			<<goto Part6SpecialProject2>> 			
-		<</link>> or if you should
-		<<link "try to resist">>
-			<<
-			<<set $EngineerTry to 0>>
-			<<set $EngineerResist to 1>>
-			<<set $EngineerResistsLeft -= 1>>
-			<<goto Part6SpecialProject2>> 			
-		<</link>>
+		You don't know how long you'll be able to hold out for though.
 	<</if>>
 <</nobr>>
 
+
+
 ::Part6SpecialProject2 <475,3900>
-<video src="Part6/SpecialProject2.mp4" autoplay loop muted height="580"></video><p/>
-TODO 5 different captions, or one with changing text (probably 5 differnet)
+<<nobr>>
+	<h1>Session 1</h1>
+	<video src="Part6/SpecialProject2.mp4" autoplay loop muted height="580"></video><p/>
+<</nobr>>
 
-For all of them: if you have easy orgasms, treat as Try
+<<nobr>>
+	The machine has already generated some sort of lube, though with the images you keep seeing overhead, you're not sure it was needed.
+	You are unable to move at all, unable to speed up or slow down how fast the machine fucks you.
+	<<if $PlayerSideEffectSubmissive>>
+		<<set $SubjectHorniness += 1>>
+		Knowing how helpless you are only turns you on more.
+	<</if>>	
+	It's all being controlled by some guy at his computer somewhere.  You know he's watching you on his screen and imagining the toy he is fucking is you.
+	<<if $PlayerSideEffectExhibitionist>>
+		<<set $SubjectHorniness += 1>>
+		You can't help being excited at the idea.  You wonder if anyone else is watching the live stream, how many will watch the videos of you later...
+	<</if>>
+<</nobr>>
 
-Otherwise:
-For Session 1: Neither cums (He cums too quick and you aren't horny yet)
-For Session 2: He lasted a while, cum unless you resisted twice
-For Session 3: Cum unless resist
-For Session 4: Cum if trying
-For Session 5: Everyone cums
+<<nobr>>
+	<<if $PlayerEasytoOrgasm>>
+		The easy orgasms your implant has gifted you with aren't helping you in this challenge as every thrust of the dildo sends a ripple of pleasure
+		through your body.
+		<<set $SubjectHorniness += 5>>
+	<</if>>
+	Between your own moans, you can hear the breathing and moans of the guy controlling you for now.  You know he's not going to last much longer.
+<</nobr>>
 
-Try:0, Try:1, Resist:1, Resist:1, Try:2
-Resist: 0, Resist: 0, Try: 1, Try: 2, Try 3:
-Try: 0, Try:1, Try, 2, Try:3, Try:4
+<<nobr>>
+	He doesn't last very long, 
+	<<if $SubjectHorniness >= 10>>
+		but he lasts longer than you.  Soon your body is tugging at the straps holding it down as waves of pleasure
+		shoot through your body.  
+		<<include [[Part6PunishAdministerMessage]]>>
+		You must have pushed him over the edge as you hear a few final grunts and the dildo plunges into you and releases some kind of liquid.
+		The dildo stays there for a moment until it finally pulls out, with some of the fluid leaking out as it does.  You try to catch your breath
+		from your orgasm before the machine stars again.
+	<<elseif $SubjectHorniness >= 8>>
+		he had you so close!  If he'd lasted just a few more seconds, you would have came too.  You hear him make a few final grunts and
+		the dildo plunges into you and releases some kind of liquid.  The dildo stays there for a moment until it finally pulls out, with some of the
+		fluid leaking out as it does.  You are left there teetering on the edge of an orgasm.  You know you won't last long when the
+		machine stars up again.  
+	<<else>>
+		there wasn't much danger of you cumming this time.  It felt good while it lasted, but he clearly enjoyed the show he was getting
+		too much.  You hear him make a few final grunts and the dildo plunges into you and releases some kind of liquid.  The dildo stays
+		there for a moment until it finally pulls out, with some of the fluid leaking out as it does.  You know you'll probably walk away with
+		the full $500, if they all are like this guy.  
+	<</if>>
+	<<set $sex.push({sex: 'male', name: 'Remote Tester 1', vaginal: true, birthControlOverride: ($SubjectLiveSemen) ? false : 'goo', ovulating: true, noCondom: true, noPullout: true})>>
+	<<unset $SubjectLiveSemen>>
+<</nobr>>
 
-1: If you orgasm during this session, $50 will be deducted from your study participant Payment
-2: If you orgasm during this session, an orgasm denial agent will be administered after the final session.  This will prevents
-most orgasms for 60 days
-3: If you orgasm during this session
-		- Your implant's birth control feature will be deactivate.  It will not be able to be reactivated
-		- Your implant's fertility feature will be activated.  This will increase fertility and prevent the use of hormonal birth control pills.  This effect
-		will be permanent.
-		- a live semen sample will be used in place of the simulant when the male participant orgasms
-4: a live semen sample will be used in place of the simulant when the male participant orgasms
-(Then after last one, a final session where the denial agent is applied before you orgasm again)
+<<nobr>>
+	<<if $SubjectHorniness > 3>>
+		<<set $SubjectHorniness -= 3>>
+	<<else>>
+		<<set $SubjectHorniness = 0>>
+	<</if>>
+	<<include [[Part6PunishWarnMessage]]>>
+<</nobr>>
 
-todo remove old text
-<<print "This latest machine isn’t controlled by computer or by one of the lab technicians like before. This one is controlled by some other student somewhere on campus.">>
-<<print "You are soon begging him, “Don’t stop. Don’t stop!”. But then you feel the machine thrust into you a final time and release a sticky goo inside you. You whimper, unsatisfied as you know your mystery partner must have came without you.">>
-<<print "As the machine pulls out of you you feel some of the goo drip out. You wonder to yourself if that is it - if you are leaving the lab horny and unsatisfied this week. A moment later the machine springs back to life as another volunteer begins to use his toy.">>
-<<print "You close your eyes and imagine your phantom partner is here with you. You focus on the pleasure of each thrust of his cock, hoping you’ll be able to cum this time before he does.">>
+<<nobr>>
+	"Looks like someone got you warmed up for me.", you hear a new voice say after the timer hits zero and the next sessions starts.
+	<<link "lie back and enjoy it">>
+		<<set $SubjectHorniness += (7 + Math.floor(Math.random() * 3))>>
+		<<goto Part6SpecialProject3>> 			
+	<</link>>
+	<<if $SubjectResistsLeft>>
+		or, do you think you should
+		<<link "try to resist.">>
+			<<set $SubjectHorniness += (2 + Math.floor(Math.random() * 3))>>
+			<<set $SubjectResistsLeft -= 1>>
+			<<goto Part6SpecialProject3>> 			
+		<</link>>
+	<<else>>
+		You don't have enough will power left to resist any longer.
+	<</if>>
+<</nobr>>
+
+::Part6SpecialProject3 <500,3900>
+<<nobr>>
+	<h1>Session 2</h1>
+	<video src="Part6/SpecialProject3.mp4" autoplay loop muted height="580"></video><p/>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerEasytoOrgasm>>
+		You still can't help but feel your orgasm build with every thrust he makes the machine take into you.
+		<<set $SubjectHorniness += 5>>
+	<</if>>
+
+	TODO Something about more stamina than the last guy
+<</nobr>>
+
+<<nobr>>
+	<<if $SubjectHorniness >= 10>>
+		"Cum for me!" He says as he sees your orgasm approaching.  You can't help but do as he says as the dildo
+		keeps thrusting.  
+		<<include [[Part6PunishAdministerMessage]]>>
+		He keeps going a bit longer before he too cums, once again the strange goo shoots into you. You lie there a moment as the
+		pleasure of your orgasm washes over you.
+	<<elseif $SubjectHorniness >= 8>>
+		You were so close.  You weren't going to be able to hold out much longer. As he cums the dildo sprays the same strange goo
+		into you.  You know you'll only have a moment before the next session will start.
+	<<else>>
+	  This guy lasted longer, but you weren't in any danger of cumming for him.  After he cums in his toy, the dildo sprays the
+		same strange goo into you.  You know you'll have a moment before the next guy starts.
+	<</if>>
+	LIVE: $SubjectLiveSemen
+	<<set $sex.push({sex: 'male', name: 'Remote Tester 2', vaginal: true, birthControlOverride: ($SubjectLiveSemen) ? false : 'goo', ovulating: true, noCondom: true, noPullout: true})>>
+	<<unset $SubjectLiveSemen>>
+<</nobr>>
+
+<<nobr>>
+	<<if $SubjectHorniness > 3>>
+		<<set $SubjectHorniness -= 3>>
+	<<else>>
+		<<set $SubjectHorniness = 0>>
+	<</if>>
+	<<include [[Part6PunishWarnMessage]]>>
+<</nobr>>
+
+<<nobr>>
+	"They have you tied down good, looks like you can't move an inch.", the next guy starts.  "Why don't you struggle for me and let me see how helpless you are."
+	<<link "lie back and enjoy it">>
+		<<set $SubjectHorniness += (7 + Math.floor(Math.random() * 3))>>
+		<<set $SubjectSession3 to 'enjoy'>>
+		<<goto Part6SpecialProject4>> 			
+	<</link>>
+	<<link "struggle to get free">>
+		<<set $SubjectHorniness += (1 + Math.floor(Math.random() * 3))>>
+		<<set $SubjectSession3 to 'struggle'>>
+		<<goto Part6SpecialProject4>> 			
+	<</link>>
+	<<if $SubjectResistsLeft>>
+		or, do you think you should
+		<<link "just lie there, but try not to cum.">>
+			<<set $SubjectHorniness += (5 + Math.floor(Math.random() * 3))>>
+			<<set $SubjectResistsLeft -= 1>>
+			<<set $SubjectSession3 to 'resist'>>
+			<<goto Part6SpecialProject4>> 			
+		<</link>>
+	<<else>>
+		You don't have enough will power left to resist any longer.
+	<</if>>
+<</nobr>>
+
+::Part6SpecialProject4 <550,3900>
+<<nobr>>
+	<h1>Session 3</h1>
+	<video src="Part6/SpecialProject3.mp4" autoplay loop muted height="580"></video><p/>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerEasytoOrgasm>>
+		You still can't help but feel your orgasm build with every thrust he makes the machine take into you.
+		<<set $SubjectHorniness += 5>>
+	<</if>>
+
+	TODO If struggled say something about him coming quickly    $SubjectSession3
+	TODO otherwise he takes a while longer 
+<</nobr>>
+
+<<nobr>>
+	TODO Update Text
+	<<if $SubjectHorniness >= 10>>
+		"Cum for me!" He says as he sees your orgasm approaching.  You can't help but do as he says as the dildo
+		keeps thrusting.  
+		<<include [[Part6PunishAdministerMessage]]>>
+		He keeps going a bit longer before he too cums, once again the strange goo shoots into you. You lie there a moment as the
+		pleasure of your orgasm washes over you.
+	<<elseif $SubjectHorniness >= 8>>
+		You were so close.  You weren't going to be able to hold out much longer. As he cums the dildo sprays the same strange goo
+		into you.  You know you'll only have a moment before the next session will start.
+	<<else>>
+	  This guy lasted longer, but you weren't in any danger of cumming for him.  After he cums in his toy, the dildo sprays the
+		same strange goo into you.  You know you'll have a moment before the next guy starts.
+	<</if>>
+	LIVE: $SubjectLiveSemen
+	<<set $sex.push({sex: 'male', name: 'Remote Tester 3', vaginal: true, birthControlOverride: ($SubjectLiveSemen) ? false : 'goo', ovulating: true, noCondom: true, noPullout: true})>>
+	<<unset $SubjectLiveSemen>>
+<</nobr>>
+
+<<nobr>>
+	<<if $SubjectHorniness > 3>>
+		<<set $SubjectHorniness -= 3>>
+	<<else>>
+		<<set $SubjectHorniness = 0>>
+	<</if>>
+	<<include [[Part6PunishWarnMessage]]>>
+<</nobr>>
+
+<<nobr>>
+	TODO Update Text and amounts
+	"They have you tied down good, looks like you can't move an inch.", the next guy starts.  "Why don't you struggle for me and let me see how helpless you are."
+	<<link "lie back and enjoy it">>
+		<<set $SubjectHorniness += (7 + Math.floor(Math.random() * 3))>>
+		<<set $SubjectSession3 to 'enjoy'>>
+		<<goto Part6SpecialProject5>> 			
+	<</link>>
+	<<if $SubjectResistsLeft>>
+		or, do you think you should
+		<<link "just lie there, but try not to cum.">>
+			<<set $SubjectHorniness += (5 + Math.floor(Math.random() * 3))>>
+			<<set $SubjectResistsLeft -= 1>>
+			<<set $SubjectSession3 to 'resist'>>
+			<<goto Part6SpecialProject5>> 			
+		<</link>>
+	<<else>>
+		You don't have enough will power left to resist any longer.
+	<</if>>
+<</nobr>>
+
+::Part6SpecialProject5 <550,3900>
+<<nobr>>
+	<h1>Session 4</h1>
+	<video src="Part6/SpecialProject3.mp4" autoplay loop muted height="580"></video><p/>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerEasytoOrgasm>>
+		You still can't help but feel your orgasm build with every thrust he makes the machine take into you.
+		<<set $SubjectHorniness += 5>>
+	<</if>>
+
+	TODO If struggled say something about him coming quickly    $SubjectSession3
+	TODO otherwise he takes a while longer 
+<</nobr>>
+
+<<nobr>>
+	TODO Update Text
+	<<if $SubjectHorniness >= 10>>
+		"Cum for me!" He says as he sees your orgasm approaching.  You can't help but do as he says as the dildo
+		keeps thrusting.  
+		<<include [[Part6PunishAdministerMessage]]>>
+		He keeps going a bit longer before he too cums, once again the strange goo shoots into you. You lie there a moment as the
+		pleasure of your orgasm washes over you.
+	<<elseif $SubjectHorniness >= 8>>
+		You were so close.  You weren't going to be able to hold out much longer. As he cums the dildo sprays the same strange goo
+		into you.  You know you'll only have a moment before the next session will start.
+	<<else>>
+	  This guy lasted longer, but you weren't in any danger of cumming for him.  After he cums in his toy, the dildo sprays the
+		same strange goo into you.  You know you'll have a moment before the next guy starts.
+	<</if>>
+	LIVE: $SubjectLiveSemen
+	<<set $sex.push({sex: 'male', name: 'Remote Tester 3', vaginal: true, birthControlOverride: ($SubjectLiveSemen) ? false : 'goo', ovulating: true, noCondom: true, noPullout: true})>>
+	<<unset $SubjectLiveSemen>>
+<</nobr>>
+
+<<nobr>>
+	<<if $SubjectHorniness > 3>>
+		<<set $SubjectHorniness -= 3>>
+	<<else>>
+		<<set $SubjectHorniness = 0>>
+	<</if>>
+	<<include [[Part6PunishWarnMessage]]>>
+<</nobr>>
+
+<<nobr>>
+	TODO Update Text and amounts
+	"They have you tied down good, looks like you can't move an inch.", the next guy starts.  "Why don't you struggle for me and let me see how helpless you are."
+	<<link "lie back and enjoy it">>
+		<<set $SubjectHorniness += (7 + Math.floor(Math.random() * 3))>>
+		<<set $SubjectSession3 to 'enjoy'>>
+		<<goto Part6SpecialProject6>> 			
+	<</link>>
+	<<if $SubjectResistsLeft>>
+		or, do you think you should
+		<<link "just lie there, but try not to cum.">>
+			<<set $SubjectHorniness += (5 + Math.floor(Math.random() * 3))>>
+			<<set $SubjectResistsLeft -= 1>>
+			<<set $SubjectSession3 to 'resist'>>
+			<<goto Part6SpecialProject6>> 			
+		<</link>>
+	<<else>>
+		You don't have enough will power left to resist any longer.
+	<</if>>
+<</nobr>>
+
+::Part6SpecialProject6 <550,3900>
+<<nobr>>
+	<h1>Session 5</h1>
+	<video src="Part6/SpecialProject3.mp4" autoplay loop muted height="580"></video><p/>
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerEasytoOrgasm>>
+		You still can't help but feel your orgasm build with every thrust he makes the machine take into you.
+		<<set $SubjectHorniness += 5>>
+	<</if>>
+
+	TODO If struggled say something about him coming quickly    $SubjectSession3
+	TODO otherwise he takes a while longer 
+<</nobr>>
+
+<<nobr>>
+	TODO Update Text
+	<<if $SubjectHorniness >= 10>>
+		"Cum for me!" He says as he sees your orgasm approaching.  You can't help but do as he says as the dildo
+		keeps thrusting.  
+		<<include [[Part6PunishAdministerMessage]]>>
+		He keeps going a bit longer before he too cums, once again the strange goo shoots into you. You lie there a moment as the
+		pleasure of your orgasm washes over you.
+	<<elseif $SubjectHorniness >= 8>>
+		You were so close.  You weren't going to be able to hold out much longer. As he cums the dildo sprays the same strange goo
+		into you.  You know you'll only have a moment before the next session will start.
+	<<else>>
+	  This guy lasted longer, but you weren't in any danger of cumming for him.  After he cums in his toy, the dildo sprays the
+		same strange goo into you.  You know you'll have a moment before the next guy starts.
+	<</if>>
+	LIVE: $SubjectLiveSemen
+	<<set $sex.push({sex: 'male', name: 'Remote Tester 4', vaginal: true, birthControlOverride: ($SubjectLiveSemen) ? false : 'goo', ovulating: true, noCondom: true, noPullout: true})>>
+	<<unset $SubjectLiveSemen>>
+<</nobr>>
+
+<<nobr>>
+	<<if $SubjectHorniness > 3>>
+		<<set $SubjectHorniness -= 3>>
+	<<else>>
+		<<set $SubjectHorniness = 0>>
+	<</if>>
+	<<include [[Part6PunishWarnMessage]]>>
+<</nobr>>
+
+<<nobr>>
+	TODO Update Text and amounts
+	"They have you tied down good, looks like you can't move an inch.", the next guy starts.  "Why don't you struggle for me and let me see how helpless you are."
+	<<link "lie back and enjoy it">>
+		<<set $SubjectHorniness += (7 + Math.floor(Math.random() * 3))>>
+		<<set $SubjectSession3 to 'enjoy'>>
+		<<goto Part6SpecialProject7>> 			
+	<</link>>
+	<<if $SubjectResistsLeft>>
+		or, do you think you should
+		<<link "just lie there, but try not to cum.">>
+			<<set $SubjectHorniness += (5 + Math.floor(Math.random() * 3))>>
+			<<set $SubjectResistsLeft -= 1>>
+			<<set $SubjectSession3 to 'resist'>>
+			<<goto Part6SpecialProject7>> 			
+		<</link>>
+	<<else>>
+		You don't have enough will power left to resist any longer.
+	<</if>>
+<</nobr>>
+
+::Part6SpecialProject7 <550,3900>
+<<nobr>>
+	<h1><<print "Engineering Department">></h1>
+	<img src="Part6/SpecialProject1.jpg" hspace="10" vspace="10" height="600">
+<</nobr>>
+
+<<nobr>>
+	<<if $PlayerEasytoOrgasm>>
+		You still can't help but feel your orgasm build with every thrust he makes the machine take into you.
+		<<set $SubjectHorniness += 5>>
+	<</if>>
+
+	TODO If struggled say something about him coming quickly    $SubjectSession3
+	TODO otherwise he takes a while longer 
+<</nobr>>
+
+<<nobr>>
+	TODO Update Text
+	<<if $SubjectHorniness >= 10>>
+		"Cum for me!" He says as he sees your orgasm approaching.  You can't help but do as he says as the dildo
+		keeps thrusting.  
+		<<include [[Part6PunishAdministerMessage]]>>
+		He keeps going a bit longer before he too cums, once again the strange goo shoots into you. You lie there a moment as the
+		pleasure of your orgasm washes over you.
+	<<elseif $SubjectHorniness >= 8>>
+		You were so close.  You weren't going to be able to hold out much longer. As he cums the dildo sprays the same strange goo
+		into you.  You know you'll only have a moment before the next session will start.
+	<<else>>
+	  This guy lasted longer, but you weren't in any danger of cumming for him.  After he cums in his toy, the dildo sprays the
+		same strange goo into you.  You know you'll have a moment before the next guy starts.
+	<</if>>
+	LIVE: $SubjectLiveSemen
+	<<set $sex.push({sex: 'male', name: 'Remote Tester 3', vaginal: true, birthControlOverride: ($SubjectLiveSemen) ? false : 'goo', ovulating: true, noCondom: true, noPullout: true})>>
+	<<unset $SubjectLiveSemen>>
+<</nobr>>
+
+TODO Denial Goo (if applicable)
+TODO Sumarize results?
+TODO Allow birth control selection if anything changed
+
 
 
 ::Part6HalloweenKate <465,3875>
@@ -1872,7 +2307,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "Either way, my problem is about to be solved.">>
 
-[[You feel the pain growing in your arms|Part6Kidnapped5]]<<print " and how it is becoming harder to breathe. ">><<if !$PlayerSideEffectSubmissive1>>[[But maybe you can find some strength to resist him.|Part6KidnappedResist1]]<</if>>
+[[You feel the pain growing in your arms|Part6Kidnapped5]]<<print " and how it is becoming harder to breathe. ">><<if !$PlayerSideEffectSubmissive>>[[But maybe you can find some strength to resist him.|Part6KidnappedResist1]]<</if>>
 
 ::Part6Kidnapped5 <1225,4750>
 <<nobr>>

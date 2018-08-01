@@ -236,6 +236,8 @@ setup.addDetailsToRecentSex = function() {
         fuck.checkedForPregnancy = 'on period'
       } else if (fuck.birthControl == 'vasectomy') {
         fuck.checkedForPregnancy = 'partner had vasectomy'
+      } else if (fuck.birthControl == 'goo') {
+        fuck.checkedForPregnancy = 'sample did not contain sperm'
       }
 		}
 	})
@@ -249,7 +251,8 @@ setup.getPossibleConceptions = function() {
       fuck.birthControl != 'pregnant' &&
       fuck.birthControl != 'implant-perfect' &&
       fuck.birthControl != 'cycle' &&
-      fuck.birthControl != 'vasectomy'
+      fuck.birthControl != 'vasectomy' &&
+			fuck.birthControl != 'goo'
   })
 }
 
