@@ -16,6 +16,7 @@
 	<<if $JobWebModel>><<set $PlayerMoney += 500>><<print "You have saved $500 from working as a web model.">><</if>>
 	<<if $JobPornOral or $JobPornAnal or $JobPorn or $JobPornGang>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a porn actress.">><</if>>
 	<<if !$ProfessorAllowance and !$JobEngineer and !$JobOfficePA and !$JobOfficeManager and !$JobOfficeIntern and !$JobCallGirl and !$JobWebModel and !$JobPornOral and !$JobPornAnal and !$JobPorn and !$JobPornGang>><<set $PlayerMoney += 500>><<print "You have saved $500 from working at your job.">><</if>>
+	<<if $SpecialProjectMoney>><<set $PlayerMoney += ($SpecialProjectMoney / 2)>>You have $<<print $SpecialProjectMoney / 2>> left of the 'Special Project' money you received.<</if>>
 	<<if $JobCallGirlSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a call girl.">><</if>>
 	<<if $JobWebModelSide>><<set $PlayerMoney += 300>><<print " You have also saved $300 from occasionally working as a web model.">><</if>>
 	<<if $JobPornOralSide or $JobPornAnalSide or $JobPornSide or $JobPornGangSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a porn actress.">><</if>>

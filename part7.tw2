@@ -485,6 +485,10 @@
 				<<set $unnamed += 1>>
 				<li>[[Some guy from one of the frat parties you went to|Part7Unknown]], but you have no idea which one</li>
 			<</if>>
+			<<if $PregnancyCheck.possibleFathers.indexOf('Some Remote Tester')  >= 0>>
+				<<set $unnamed += 1>>
+				<li>[[One of the anonymous sperm samples|Part7Unknown]] from the 'special project' you participated in</li>
+			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Kidnapper 1 (no memory)') >= 0 >>
 				<<set $unnamed += 3>>
 				<li>You realize in horror that this could be [[related to your memory lapse.|Part7Unknown]]</li>
@@ -613,7 +617,7 @@
 		<<else>>
 			You are in tears when she tells you, "Aaron is NOT the father."  You must have already been pregnant when he became your Daddy.  You know
 			you can't lie to him, so you tell him the truth.  Daddy holds you in his arms and comforts you.  He tells you that it doesn't matter who the
-			baby's father really is, if you decide to keep it then you and Daddy will [[raise the baby together|Part7Aaron]].  And if you decide on
+			baby's father really is, if you decide to keep it, then you and Daddy will [[raise the baby together|Part7Aaron]].  And if you decide on
 			adoption, he'll help you through the next nine months.
 			<br>
 			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
@@ -1337,7 +1341,7 @@
 		<<set $NotUnknown to 1>>
 		You are in tears as you tell Daddy that you are pregnant and that he might not be the father, that you might have already been pregnant when
 		the two of you got together.  Daddy holds you in his arms and comforts you.  He tells you that it doesn't matter who the baby's father really
-		is, if you decide to keep it then you and Daddy will [[raise the baby together|Part7Aaron]].  And if you decide on adoption, he'll help you
+		is, if you decide to keep it, then you and Daddy will [[raise the baby together|Part7Aaron]].  And if you decide on adoption, he'll help you
 		through the next nine months.  
 	<<elseif $dating.length > 0 and !setup.areDating($StatedFather)>>
 		When you tell $dating[0] you are pregnant, and that he is NOT the father, he's devastated that you've been cheating on him.
