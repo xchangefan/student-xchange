@@ -4,8 +4,9 @@ grep "^\:\:" *.tw2 | grep -v "<[0-9]\+,[0-9]\+>"
 #| grep -v "::StoryTitle" | grep -v "::Configuration" | grep -v "::StoryCSS"
 
 echo
-echo Looking for incorrectly terminated if statements
+echo Looking for incorrect if statements
 grep -n "<<if>$" *.tw2
 grep -n "<</if>$" *.tw2
 grep -n "<<if>>>" *.tw2
 grep -n "<</if>>>" *.tw2
+grep -n "<<else if" *.tw2

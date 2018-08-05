@@ -183,7 +183,7 @@
 
 <<nobr>>
 	You're hoping he's about to bend you over his desk, hike your skirt up and fuck you, but sadly he says he doesn't have time this
-	morning.  The office is close early today, and he's got a lot of work to get done if he's going to be able to leave early with
+	morning.  The office is closing early today, and he's got a lot of work to get done if he's going to be able to leave early with
 	everyone else.  
 <</nobr>>
 
@@ -309,14 +309,28 @@
 		<<set $SubjectOrgasmDenialGoo to 1>>
 		"Orgasm Denial Agent punishment will be administered after final session"
 	<<elseif $SubjectPunish == 3>>
-		<<set $SubjectBirthControlChange to 1>>
 		<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
 			"Implant Birth Control Permanently Deactivated - Ovulation likely within next 24 hours"
 			<<unset $PlayerProtectionPerfect>>
 			<<unset $PlayerProtectionPermanent>>
 			<<set $PlayerProtectionNone to 1>>
+		<<set $SubjectBirthControlChange to 1>>
+		<<elseif $PlayerProtectionFertile>>
+			<<set $SubjectPunishLastMessage to 4>>
+			"ERROR - Fertility Feature Alread Active"  The dildo plunges into you again and you feel it release something inside you, but less than
+			before. "Live Semen Sample deposited".  You thrash at your bonds again. "What!? Whose? No!", you yell to the empty room.  The machine
+			freezes for a moment and then releases inside you again.  "Live Semen Sample deposited".  And it happens a third time.
+			<br><br>
+			You are wondering if you are going to have to be this machines cum dumster all night when the message changes. "Malfunction detected -
+			Error cleared - resuming testing."
+			<<set $sex.push({sex: 'male', anon: 'Remote Tester', vaginal: true, ovulating: true, noCondom: true, noPullout: true})>>
+			<<set $sex.push({sex: 'male', anon: 'Remote Tester', vaginal: true, ovulating: true, noCondom: true, noPullout: true})>>
+			<<set $sex.push({sex: 'male', anon: 'Remote Tester', vaginal: true, ovulating: true, noCondom: true, noPullout: true})>>
 		<<else>>
 			"Implant Enhanced Fertility Feature Permanently Activated - Oral Contraceptives Ineffective - Ovulation likely within next 24 hours"
+			<<if $PlayerProtectionPill>>
+				<<set $SubjectBirthControlChange to 1>>
+			<</if>>
 			<<unset $PlayerProtectionPill>>
 			<<set $PlayerProtectionNone to 1>>
 			<<set $PlayerProtectionFertile to 1>>
@@ -326,12 +340,12 @@
 	<<elseif $SubjectPunish == 5>>
 		"Live Semen Sample deposited, $400 Penalty Applied"
 		<<set $SpecialProjectMoney -= 400>>
+	<<elseif $SubjectPunish == 5>>
+		"Live Semen Sample deposited, $400 Penalty Applied"
+		<<set $SpecialProjectMoney -= 400>>
 	<</if>>
 	<<set $SubjectPunish += 1>>
 	<<set $SubjectHorniness to 3>>
-	<<if $SubjectPunish == 3 and !($PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill)>>
-		<<set $SubjectPunish to 4>>
-	<</if>>
 <</nobr>>
 
 ::SpecialProjectIntro <455,3900>
@@ -583,8 +597,8 @@
 			He seems to last forever,
 			<<if $SubjectHorniness >= $SubjectOrgasmThreshold>>
 				fucking you to a second orgasm before he finaly cums.  Thankfully the machine only counts one per session.
-				Before disconnecting he says, "I know you didn't beleive me about turning off the punishment.  But you came anyway.  It's too bad
-				I couldn't actually record all this."
+				Before disconnecting he says, "I know you didn't beleive me about turning off the punishment.  But you came anyway.  That's
+				hilarious.  It's too bad I couldn't actually record all this."
 			<<else>>
 				though you're able to avoid orgasming.  Before disconnecting he says, "Aww, I guess you didn't believe me about turning off the
 				punishment.  And it's probably a good thing I couldn't really record this, because that was a dreadful performance."
@@ -789,6 +803,9 @@
 					<</replace>>
 			<</link>>instead?
 		</span>
+	<<elseif ($dating.length == 0 or setup.areDating('Peter')) and $PlayerItemNerdKey>>
+		Just as you'd thought, you are pretty tired after the testing.  But you'd picked out a [[special costume with Peter in mind|Part6HalloweenPeter]], and you
+		don't want to let it go to waste.
 	<<else>>
 		<<include [[SpecialProjectNextScene]]>>
 	<</if>>
@@ -1360,17 +1377,28 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<nobr>>
 	You wanted to wear a costume that Peter would love.  You'd had two choices in mind at the store.  But after you spotted another 'Slave
 	Girl Leia' costume at the party, you are glad you went with this one.
-	<p/>
+<</nobr>>
+
+<<nobr>>
 	After you leave the party and are alone with Peter, you see your costume has made him just as horny as you had hoped.  Though,
 	considering how rarely you let him cum, you could have probably worn a burlap bag and gotten him excited.
-	<p/>
-	You have him bury his head under your uniform's skirt.  After he takes the edge off your horniness with your first of many orgasms
-	tonight, you can think clearly.  You try to decide how you want to want to reward Peter for completing his mission.
-	<p/>
+<</nobr>>
+
+<<nobr>>
+	You have him bury his head under your uniform's skirt.
+	<<if $SubjectOrgasmDenialGoo>>
+		You aren't sure if the machine was telling the truth or not, but you soon find out for sure as your orgasm is taken away from you at the last moment.
+		That's not Peter's fault though, so you still want to reward him for 'completing his mission'.
+	<<else>>
+		After he takes the edge off your horniness with your first of many orgasms tonight, you can think clearly.
+		You try to decide how you want to want to reward Peter for 'completing his mission'.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
 	You decide to let him pick his favorite quote.  The one he chooses is: "[[I'm Givin' Her All She's Got, Captain!|Part6HalloweenPeterAllShesGot]]",
 	"[[Resistance Is Futile|Part6HalloweenPeterFutile]]", or "[[To Boldly Go Where No Man Has Gone Before|Part6HalloweenPeterBoldly]]"
 <</nobr>>
-
 
 ::Part6HalloweenPeterAllShesGot <510,3875>
 <<nobr>>
@@ -1386,12 +1414,20 @@ do your best to make a purring sound for a bit before you fall asleep.
 	He still gets some pleasure as he can feel you slide across his cock through the bars.  Of course you think it's probably
 	just the thought of being inside you that is exciting him so much, and the sight of you moaning beneath him as his hand
 	rubs your clit between thrusts.
-	<p/>
+<</nobr>>
+
+<<nobr>>
 	Whichever it was exciting him, it's enough that he manages to cum, at least a bit, while he's inside you.  You can tell
 	it wasn't anything near as satisfying for him as it would have been without the cage though.
-	<p/>
-	Your satisfaction is guaranteed though.  You get him right back to work with his tongue, and you start by
-	having him clean up the mess he just made for you.
+<</nobr>>
+
+<<nobr>>
+	<<if $SubjectOrgasmDenialGoo>>
+		There's no change for your satisfaction though.  But that doesn't stop you from having him get
+	<<else>>
+		Your satisfaction is guaranteed though.  You get him
+	<</if>>
+	right back to work with his tongue, you tell him he can start by	cleaning up the mess he just made for you.
 <</nobr>>
 
 <<include [[Part6HalloweenNextScene]]>>
@@ -1402,6 +1438,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<set $sex.push({sex: 'male', name:'Peter'})>>
 	<<set $sex.push({sex: 'male', name:'Peter'})>>
 	<<set $sex.push({sex: 'male', name:'Peter'})>>
+	<<set $PeterRuinedOrgasm to 1>>
 	<h1>Resistance Is Futile</h1>
 	<video src="Part6/Halloween3B.mp4" autoplay loop muted height="540"></video><p/>
 	You've decide you want to be 	nice to Peter today.  You were already nice enough to pick out a costume you knew he'd
@@ -1412,8 +1449,13 @@ do your best to make a purring sound for a bit before you fall asleep.
 	you've taken it away.  His cock spurts out some of his pent up cum, but he's still left needing more.
 	<p/>
 	"There, that should take some of the pressure off.", you tell him.  You know that while his balls might be a bit lighter now,
-	it won't have satisfied him, and he'll still be aching for an orgasm.  Of course he won't be getting another one for a while.
-	He'll be spending the rest of the night giving you as many as you need though.
+	it won't have satisfied him, and he'll still be aching for an orgasm.  Of course he probably won't be getting another one for
+	a while.
+	<<if $SubjectOrgasmDenialGoo>>
+		You'll both be spending the night in horny frustration.
+	<<else>>
+		He'll be spending the rest of the night giving you as many as you need though.
+	<</if>>
 <</nobr>>
 
 <<include [[Part6HalloweenNextScene]]>>
@@ -1432,22 +1474,101 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<</if>>
 	<</if>>
 	He's just happy to be going there now.
-
 	<<set $sex.push({sex: 'male', name:'Peter', vaginal:true, ovulating:true, noPullout:true})>>
 	<<set $sex.push({sex: 'male', name:'Peter'})>>
 	<<set $sex.push({sex: 'male', name:'Peter', vaginal:true, ovulating:true})>>
 	<<set $sex.push({sex: 'male', name:'Peter'})>>
-	<p/>
+<</nobr>>
+
+<<nobr>>
 	<video src="Part6/Halloween3C.mp4" autoplay loop muted height="540"></video><p/>
 	After you remove his cage, you climb on top of him and slide him into you.  You are enjoying riding his cock, but he cums
 	disappointingly soon.  You could lock him right back up now and he'd still be a happy man, but you want more tonight.
-	<p/>
-	You have him eat you out, and clean up the mess he made with his early orgasm.  Once he's ready to go again, you have
-	him make another attempt.  This time he lasts long enough to satisfy you before he cums again.  After you lock his cock
-	back in it's cage, you have him give you one last orgasm before you both are too tired to go on tonight.
+<</nobr>>
+
+<<nobr>>
+	<<if $SubjectOrgasmDenialGoo>>
+		You know you're not going get off tonight, but you still want more than his short fuck.  You have him eat you out, cleaning
+		up the mess he made with his early orgasm.  Once he's ready to go again, you have him make another attempt, this time
+		with him on top.
+		<br><br>
+		He lasts long enough this time, but your orgasm is denied anyway.  As you lock his cock back in it's cage you realize, tonight it's
+		Peter falling asleep with a satisfied smile on his face, and you going to bed horny and frustrated.
+	<<else>>
+		You have him eat you out, and clean up the mess he made with his early orgasm.  Once he's ready to go again, you have
+		him make another attempt.  This time he lasts long enough to satisfy you before he cums again.  After you lock his cock
+		back in it's cage, you have him give you one last orgasm before you both are too tired to go on tonight.
+	<</if>>
 <</nobr>>
 
 <<include [[Part6HalloweenNextScene]]>>
+
+::Part6NextAll <400,3875>
+<<nobr>>
+	<<if setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
+	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobCheerleaderFundraiser>>[[You help the university with another fundraiser.|Part6CheerleaderFundraiser]]
+	<<elseif $JobAthlete>>[[You practice in the gym.|Part6Athlete]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
+	<</if>>
+<</nobr>>
+
+::Part6NextPeter <415,3875>
+<<nobr>>
+	<<if setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
+	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobCheerleaderFundraiser>>[[You help the university with another fundraiser.|Part6CheerleaderFundraiser]]
+	<<elseif $JobAthlete>>[[You practice in the gym.|Part6Athlete]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
+	<</if>>
+<</nobr>>
+
+::Part6NextZackJosh <430,3875>
+<<nobr>>
+	<<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
+	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobCheerleaderFundraiser>>[[You help the university with another fundraiser.|Part6CheerleaderFundraiser]]
+	<<elseif $JobAthlete>>[[You practice in the gym.|Part6Athlete]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
+	<</if>>
+<</nobr>>
+
+
+::Part6Next <450,3875>
+<<nobr>>
+	<<if $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
+	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
+	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
+	<<elseif $JobCheerleaderFundraiser>>[[You help the university with another fundraiser.|Part6CheerleaderFundraiser]]
+	<<elseif $JobAthlete>>[[You practice in the gym.|Part6Athlete]]
+	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
+	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
+	<</if>>
+<</nobr>>
 
 ::Part6StartBeltMaster <500,3875>
 <<nobr>>
@@ -1469,20 +1590,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	Though the relief doesn't last long.  Soon your thoughts will be back to wonder when you'll be allowed to cum again.
 <</nobr>>
 
-<<nobr>>
-	<<if setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
-	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
-	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-	<<else>>[[You join a study group.|Part6StudyGroup]]
-	<</if>>
-<</nobr>>
+<<include [[Part6NextAll]]>>
 
 ::Part6StartGood <200,3725>
 <<nobr>>
@@ -1494,26 +1602,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<print "You’ve always been a good student. You don’t need someone watching over you to make sure you do your work. You make sure that you don’t let all the new fun that college (or your new body) presents keep you from doing your classwork.">>
 <img src="Part6/Start3.jpg" hspace="10" vspace="10" height="650">
 
-<<nobr>>
-	<<if setup.areDating('Andrew')>>[[You spend some time with Andrew.|Part6StartAndrew]]
-	<<elseif setup.areDating('Veronica')>>[[You spend some time with Veronica.|Part6StartVeronica]]
-	<<elseif setup.areDating('Josh')>>[[You spend some time with Josh.|Part6StartJosh1]]
-	<<elseif setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
-	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
-	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-	<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
-	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-	<<else>>[[You join a study group.|Part6StudyGroup]]
-	<</if>>
-<</nobr>>
+<<include [[Part6NextAll]]>>
 
 ::Part6StartAverage <400,3725>
 <<nobr>>
@@ -1526,26 +1615,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<print "You did ok before, with your parents and teachers pushing you every day, but now it’s way too easy to skip the homework for a night out. And it’s even more tempting the next morning to sleep in and skip class.">>
 <img src="Part6/Start4.jpg" hspace="10" vspace="10" height="650">
 
-<<nobr>>
-	<<if setup.areDating('Andrew')>>[[You spend some time with Andrew.|Part6StartAndrew]]
-	<<elseif setup.areDating('Veronica')>>[[You spend some time with Veronica.|Part6StartVeronica]]
-	<<elseif setup.areDating('Josh')>>[[You spend some time with Josh.|Part6StartJosh1]]
-	<<elseif setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
-	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
-	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-	<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
-	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-	<<else>>[[You join a study group.|Part6StudyGroup]]
-	<</if>>
-<</nobr>>
+<<include [[Part6NextAll]]>>
 
 ::Part6StartLazy <600,3725>
 <<nobr>>
@@ -1559,26 +1629,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "But you didn’t like studying before, and the X-Change didn’t change that about your personality. So you find much more often you are spending your time doing something more fun than studying like... well, everything else.">>
 
-<<nobr>>
-	<<if setup.areDating('Andrew')>>[[You spend some time with Andrew.|Part6StartAndrew]]
-	<<elseif setup.areDating('Veronica')>>[[You spend some time with Veronica.|Part6StartVeronica]]
-	<<elseif setup.areDating('Josh')>>[[You spend some time with Josh.|Part6StartJosh1]]
-	<<elseif setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
-	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
-	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-	<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
-	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-	<<else>>[[You join a study group.|Part6StudyGroup]]
-	<</if>>
-<</nobr>>
+<<include [[Part6NextAll]]>>
 
 ::Part6StartSleep <800,4025>
 <<nobr>>
@@ -1599,18 +1650,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 				<<print "you can use the time for fun.">>
 			<</replace>>
 			<<replace "#Sleep1Span3">>
-				<<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-				<<elseif $JobEngineer>>[[You have to work at the Lab the next day.|JobEngineer5]]
-				<<elseif $JobTestSubject>>[[You have to work at the Lab the next day.|JobEngineerSubject3]]
-				<<elseif $JobBarista>>[[You have to work at the cafe the next day.|Part6Barista]]
-				<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby the next day.|Part6Cheerleader]]
-				<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work at the Bar the next day.|Part6Bar]]
-				<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre the next day.|JobFitnessMassage3]]
-				<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl the next day.|JobCall4]]
-				<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie the next day.|JobPornOral2]]
-				<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-				<<else>>[[You join a study group.|Part6StudyGroup]]
-				<</if>>
+				<<include [[Part6Next]]>>
 			<</replace>>
 		<</link>>
 	</span>
@@ -1680,6 +1720,9 @@ do your best to make a purring sound for a bit before you fall asleep.
 			<<set $sex.push({sex: 'female', anon:'Classmate'})>>
 		<</if>>
 	<</if>>
+	<<if $SubjectOrgasmDenialGoo>>
+		You only wish you had your ability to orgasm back, so you could enjoy it as much as your partner.
+	<</if>>
 	<span id="Sleep2Span1">
 		<<link "unless you never finish and just have fun the whole night.">>
 			<<set $FunPoints += 2>>
@@ -1690,15 +1733,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 				<<print "finally do a little bit of homework.">>
 			<</replace>>
 			<<replace "#Sleep2Span3">>
-				<<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-				<<elseif $JobEngineer>>[[You have to work at the Lab the next day.|JobEngineer5]]
-				<<elseif $JobTestSubject>>[[You have to work at the Lab the next day.|JobEngineerSubject3]]
-				<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work at the Bar the next day.|Part6Bar]]
-				<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre the next day.|JobFitnessMassage3]]
-				<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl the next day.|JobCall4]]
-				<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie the next day.|JobPornOral2]]
-				<<else>>[[You join a study group the next day.|Part6StudyGroup]]
-				<</if>>
+				<<include [[Part6Next]]>>
 			<</replace>>
 		<</link>>
 	</span>
@@ -1714,18 +1749,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 				<<print "finally do a little bit of homework.">>
 			<</replace>>
 			<<replace "#Sleep2Span3">>
-				<<if $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-				<<elseif $JobEngineer>>[[You have to work at the Lab the next day.|JobEngineer5]]
-				<<elseif $JobTestSubject>>[[You have to work at the Lab the next day.|JobEngineerSubject3]]
-				<<elseif $JobBarista>>[[You have to work at the cafe the next day.|Part6Barista]]
-				<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby the next day.|Part6Cheerleader]]
-				<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work at the Bar the next day.|Part6Bar]]
-				<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre the next day.|JobFitnessMassage3]]
-				<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl the next day.|JobCall4]]
-				<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie the next day.|JobPornOral2]]
-				<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-				<<else>>[[You join a study group.|Part6StudyGroup]]
-				<</if>>
+				<<include [[Part6Next]]>>
 			<</replace>>
 		<</link>>
 	</span>
@@ -1796,22 +1820,9 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <video src="Part6/Josh1.webm" autoplay loop muted height="640"></video>
 
-
 <<print "You and him both try to balance studying with the occasional night out. Of course, what you do at the end of the night is pretty similar either way.">>
 
-<<nobr>>
-	<<if setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
-	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
-	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-	<<else>>[[You join a study group.|Part6StudyGroup]]
-	<</if>>
-<</nobr>>
+<<include [[Part6NextZackJosh]]>>
 
 ::Part6Thrill <400,4025>
 <<nobr>>
@@ -1827,21 +1838,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<print "He makes sure to include you on his adventures from time to time. You never know what to expect, but it’s always exciting.">>
 <img src="Part6/Start7.jpg" hspace="10" vspace="10" height="650">
 <<if setup.isFWB('Zack')>><br><<print "He makes sure to that you join him as often as possible.">><br><</if>>
-<<nobr>>
-	<<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-	<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-	<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-	<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-	<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work at the Bar.|Part6Bar]]
-	<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-	<<else>>[[You join a study group.|Part6StudyGroup]]
-	<</if>>
-<</nobr>>
+<<include [[Part6NextZackJosh]]>>
 
 ::Part6Nerd <0,4025>
 <<nobr>>
@@ -1859,37 +1856,53 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<h1><<print "Peter">></h1>
 <</nobr>>
 
-<<print "He’s a great student, and willing to help you study or with any work you are struggling with, if he’s not too busy with his own work.">>
-<<if setup.areDating('Peter')>><img src="Part6/Start8.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<nobr>>
+	He’s a great student, and willing to help you study or with any work you are struggling with, if he’s not too busy with his own work.
+	<<if setup.areDating('Peter')>>
+		<<if $SubjectOrgasmDenialGoo>>
+			<img src="Part6/Nerd2.gif" hspace="10" vspace="10" height="440">
+		<<else>>
+			<img src="Part6/Start8.jpg" hspace="10" vspace="10" height="650">
+		<</if>>
+	<<else>>
+		<img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="650">
+	<</if>>
+<</nobr>>
 
 <<nobr>>
 	<<if setup.areDating('Peter')>>
-		<<print "Of course, with you holding the key to his cock, he’s somehow able to always find the time to help you when you need it. You’ve had him buy a nice metal one so he can keep it on as long as you like.">>
+		<<if $SubjectOrgasmDenialGoo>>
+			<<if $PeterRuinedOrgasm>>
+				You were researching online for any way around your orgasm denial problem.  You didn't have any luck there, but you kept reading more and
+				more about ruined orgasms.  You'd already given him one on Halloween and you'd loved it, but you'd been
+			<<else>>
+				<<set $PeterRuinedOrgasm to 1>>
+				You were researching online for any way around your orgasm denial problem.  You didn't have any luck there, but you kept reading more and
+				more about ruined orgasms.  They sounded like a lot of fun.  You'd thought about trying it before with Peter, but you'd
+			<</if>>
+			worried you'd go to far and let him have a full orgasm.  But now you're confident you won't let that happen.
+			<br><br>
+			You told Peter you might let him cum for his birthday, and so you do. You never said you'd keep stroking after that, or that it wouldn't
+			leave him just as horny as he was when you stated.
+			<br><br>
+			Who knows, maybe you'll let him have a real orgasm once you are able to have one too.  Or maybe not, giving him ruined ones are
+			much more fun.
+		<<else>>
+			Of course, with you holding the key to his cock, he’s somehow able to always find the time to help you when you need it. You’ve had him buy a nice
+			metal one so he can keep it on as long as you like.
+			<br><br>
+			But you make sure your toy has a little fun sometimes too. You love hearing him wince on the dance floor as you grind against him and his cock
+			struggles to get hard in it’s cage.
+			[[And you planned something special for his birthday.|Part6NerdBirthday]]
+		<</if>>
 	<<elseif setup.haveFucked('Peter')>>
 		<<print "You are a bit close so he he can find only so he can find some time to help you.">>
 	<<else>>
-		<<print "Unfortunately you are not that close so he he can find only so little time to help you.">>
-	<</if>>
-	<</nobr>>
-<<if setup.areDating('Peter')>><br><<print "But you make sure your virgin toy has a little fun sometimes too. You love hearing him wince on the dance floor as you grind against him and his cock struggles to get hard in it’s cage. ">> [[And you planned something special for his birthday.|Part6NerdBirthday]]<br><</if>>
-<<nobr>>
-	<<if !setup.areDating('Peter')>>
-		<<if setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
-		<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
-		<<elseif $JobLibrary>>[[You go and study at the Library.|Part6Library]]
-		<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
-		<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
-		<<elseif $JobBarista>>[[You have to work at the cafe.|Part6Barista]]
-		<<elseif $JobCheerleader>>[[You have to cheer for the football team’s derby.|Part6Cheerleader]]
-		<<elseif $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi>>[[You have to work  at the Bar.|Part6Bar]]
-		<<elseif $JobFitnessMassage>>[[You have to work at the Fitness Centre.|JobFitnessMassage3]]
-		<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-		<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-		<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-		<<else>>[[You join a study group.|Part6StudyGroup]]
-		<</if>>
+		<<print "Unfortunately you are not that close so he can find only a little time to help you.">>
 	<</if>>
 <</nobr>>
+
+<<include [[Part6NextPeter]]>>
 
 ::Part6Library <100,4175>
 <<nobr>>
@@ -1908,14 +1921,91 @@ do your best to make a purring sound for a bit before you fall asleep.
 ::Part6Bar <300,4175>
 <<nobr>>
 	<<set $FunPoints += 2>>
-	
-	<h1><<print "Bar">></h1>
+	<h1>Bar</h1>
+	<img src="Part6/Bar1.jpg" hspace="10" vspace="10" height="720" align="left">
 <</nobr>>
 
-<<print "You aren’t usually having as much fun as the people you are serving, but you still manage to have a good time most nights.">>
-<img src="Part6/Bar.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+	While you're working, you aren't usuall having as much fun as the people that you are serving.  But you know when
+	<<if setup.areDating('Kate')>>
+		[[when your shift ends|Part6BarKate]],
+	<<elseif $JobBartenderGuys>>
+		[[when your shift ends|Part6BarCouple]],
+	<<else>>
+		[[when your shift ends|Part6BarWoman]],
+	<</if>>
+	you probably will be.
+<</nobr>>
 
-<<print "Really, where else could you have beautiful women trying to buy you drinks all night - and get paid for it.">>
+<<nobr>>
+	Really, where else could you have beautiful women trying to buy you drinks all night - and get paid for it.
+<</nobr>>
+
+::Part6BarWoman
+<<nobr>>
+	<h1>Her house</h1>
+	<<set $sex.push({sex: 'female', anon:"Bar Patron"})>>
+	<<set $sex.push({sex: 'female', anon:"Bar Patron", repeat:true})>>
+	<<set $sex.push({sex: 'female', anon:"Bar Patron", repeat:true})>>
+	<<set $sex.push({sex: 'female', anon:"Bar Patron", repeat:true})>>
+	<<set $sex.push({sex: 'female', anon:"Bar Patron", repeat:true})>>
+	<video src="Part6/Bar2a.mp4" autoplay loop muted height="640"></video>
+<</nobr>>
+
+<<nobr>>
+	It's usually an hour or so before the end of your shift when it becomes clear who you'll be heading home with that night.
+	Whenever it's someone new, you're never quite sure whether it'll be soft and gentle, or if she'll be pulling your hair back
+	while she fucks you with a strap-on.  Your favorite nights are when she alternates back and forth between both.
+<</nobr>>
+<video src="Part6/Bar2b.mp4" autoplay loop muted height="640"></video>
+<<nobr>>
+	<<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
+	<</if>>
+<</nobr>>
+
+::Part6BarCouple
+<<nobr>>
+	<h1>Their house</h1>
+	<<set $sex.push({sex: 'female', anon:"Bar Patron"})>>
+	<<set $sex.push({sex: 'male', anon:"Bar Patron", vaginal:true})>>
+	<<set $sex.push({sex: 'female', anon:"Bar Patron", repeat:true})>>
+	<<set $sex.push({sex: 'male', anon:"Bar Patron", vaginal:true, repeat:true})>>
+	<<set $sex.push({sex: 'female', anon:"Bar Patron", repeat:true})>>
+	<<set $sex.push({sex: 'male', anon:"Bar Patron", vaginal:true, repeat:true})>>
+	<video src="Part6/Bar3.mp4" autoplay loop muted height="640"></video>
+<</nobr>>
+
+<<nobr>>
+	Usually, the couples you go home with are timid, trying everything out for the first time.  That can be fun, but you really love the
+	times where it's them that introduces you to something new.
+<</nobr>>
+
+<<nobr>>
+	<<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+	<<else>>[[You join a study group.|Part6StudyGroup]]
+	<</if>>
+<</nobr>>
+
+::Part6BarKate
+<<nobr>>
+	<h1>Kate's House</h1>
+	<<set $sex.push({sex: 'female', name:"Kate"})>>
+	<<set $sex.push({sex: 'female', name:"Kate"})>>
+	<<set $sex.push({sex: 'female', name:"Kate"})>>
+	<<set $sex.push({sex: 'female', name:"Kate"})>>
+	<<set $sex.push({sex: 'female', name:"Kate"})>>
+	<video src="Part6/Bar4.mp4" autoplay loop muted height="640"></video>
+<</nobr>>
+
+<<nobr>>
+	You know that whenever Kate is in town, she'll know just how to help you unwind after a long shift.  If you're really
+	lucky, she might even let you orgasm too.
+<</nobr>>
 
 <<nobr>>
 	<<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
@@ -2980,9 +3070,11 @@ Might add something here in the future. Or not.
 ::Part6Professor8 <1200,5425>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron'})>>
 	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Aaron'})>>
 	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
 	<<set $PlayerUnderwearPink = 1>>
 	<<set $PlayerEarsHeart = 1>>
@@ -2990,12 +3082,22 @@ Might add something here in the future. Or not.
 	<h1><<print "Professor’s House">></h1>
 <</nobr>>
 
-<<print "Daddy also likes to reward you for good behavior, like when you get a good grade on a quiz or give an especially good blowjob.">>
 <img src="Part6/Professor7.jpg" hspace="10" vspace="10" height="600">
 
-<<print "Sometimes it’s a gift, like a new dress, lingerie, a teddy bear, or new earrings.">>
+<<nobr>>
+	Daddy also likes to reward you for good behavior, like when you get a good grade on a quiz or give an especially good blowjob.
+	Sometimes it’s a gift, like a new dress, lingerie, a teddy bear, or new earrings.
+<</nobr>>
 
-<<print "But you’re favorite is always just spending time with Daddy. You think that’s his favorite too.">>
+<<nobr>>
+	But you’re favorite is always just spending time with Daddy. You think that’s his favorite too.
+	<<if $SubjectOrgasmDenialGoo>>
+		Tonight even more than most.  Instead of being denied this time, you finally feel the orgasm you've been craving for over a month
+		wash over you.  Daddy smiles as he watches you quiver and twitch.  "Would my Baby like another?" he asks.
+		<<unset $SubjectOrgasmDenialGoo>>
+		<<set $SubjectOrgasmDenialGooWoreOff to 1>>
+	<</if>>
+<</nobr>>
 
 [[Eventually it is time for you semester finals.|Part6Exam]]
 
@@ -3109,7 +3211,7 @@ Might add something here in the future. Or not.
 
 <<print "You tell him you have the best birthday present for him, you are going to let him fuck you.">>
 
-<<if $NerdBirthdaySex>><<print "You can see the excitement on his face as he anxiously wait for you to unlock him.">><<else>><<print "You can see his confusion when you pull out a strapon from your bag. You tell him he is going to fuck you, just not wiht his cock.">><</if>>
+<<if $NerdBirthdaySex>><<print "You can see the excitement on his face as he anxiously wait for you to unlock him.">><<else>><<print "You can see his confusion when you pull out a strapon from your bag. You tell him he is going to fuck you, just not with his cock.">><</if>>
 
 <<if $NerdBirthdaySex>><video src="Part6/Birthday1.mp4" autoplay loop muted height="640"></video><<else>><video src="Part6/Birthday2.mp4" autoplay loop muted height="640"></video><</if>>
 
@@ -3140,7 +3242,7 @@ Might add something here in the future. Or not.
 <<print "Thank you, Peter, for helping me pick out something special to wear for when Daddy gets back from his conference. You can't imagine how horny I've gotten since he's been away. Oh, yeah, I guess you can.">>
 
 <<print "So do you like this one, or the previous one more? I think this one is sexy, but it was more expensive and I'm worried he might get too eager and rip the panties instead of letting me take them off slowly and seductively like I planned.">>
-<img src="Part6/Nerd.jpg" hspace="10" vspace="10" height="650">
+<img src="Part6/Nerd1.jpg" hspace="10" vspace="10" height="650">
 
 <<print "From that look you are making, I'm thinking I'm right, that's probably what he'll do. But it's probably worth it, knowing I made him lose control like that, if only for a moment.">>
 
@@ -3374,11 +3476,200 @@ Might add something here in the future. Or not.
 <<print "It’s the day you have been preparing for the most, the football team’s match against their biggest rival. The crowd gathered to watch the match is amazing.">>
 
 <<if setup.areDating('Veronica')>><<print "You have been training hard with the team, especially for this day, and you can’t wait to show everyone, and especially Veronica, how much your skills have improved.">><<else>><<print "Despite your bad relation in the beginning with, through training you were able to get friendly with most of the other girls on the team, except Veronica, whom you always do your best to avoid. All the football players are also very friendly to you, which is no surprised considering that they all got to fuck you.">><</if>>
-<img src="Part6/Cheerleader.jpg" hspace="10" vspace="10" height="650">
+<img src="Part6/Cheerleader1.jpg" hspace="10" vspace="10" height="650">
 
 <<if setup.areDating('Veronica')>><<print "Cheerleading for such a big event is so much fun, especially seeing how much the audience also enjoys your dance moves.">><<else>><<print "Seeing the audience enjoy your dance move so much helps you somewhat forget some of the bad memories, but also wish it had been like this from the beginning.">><</if>>
 
 <<if setup.areDating('Veronica')>><<print "It is a hard match, but in the end your team narrowly wins, and you hope your efforts helped support that victory. Everyone in the stadium is extatic and you see Veronica smiling at you affectionately. You know that you will have your own kind of celebration for this victory.">><<else>><<print "It is a hard match, but in the end your team narrowly wins, the stadium extatic, and you can say that overall it was a pleasant experience for you today.">><</if>>
+
+<<nobr>>
+	<<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+		<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+			<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+				<<else>>[[You join a study group.|Part6StudyGroup]]
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+::Part6CheerleaderFundraiser <1200,4175>>
+<<nobr>>
+	<h1>Fundraising</h1>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'female', anon: 'Cheerleader'})>>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', repeat:true})>>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', repeat:true})>>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', vaginal: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'female', anon: 'Cheerleader'})>>
+	<<set $sex.push({sex: 'male', anon: 'University Donor', vaginal: true, noCondom: true, noPullout: true})>>
+
+<</nobr>>
+<video src="Part6/Cheerleader2.mp4" autoplay loop muted height="640"></video>
+<<nobr>>
+	It seems like the university is always having fundraisers, you don't complain though, you enjoy doing your part to help.
+<</nobr>>
+
+<<nobr>>
+	The wealthy men you are meant to entertain are used to getting what they want.  Sometimes they are content
+	to just use your body however they please.  But other nights you aren't enough for them, and you head to
+	their hotel room with a friend.  Those are usually your favorite nights.
+<</nobr>>
+
+<<nobr>>
+	<<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
+		<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+			<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+				<<else>>[[You join a study group.|Part6StudyGroup]]
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+::Part6Athlete <1250,4175>>
+<<nobr>>
+	<<if $CampusMinistry>>
+		<h1>Out for a Run</h1>
+		<video src="Part6/Athlete1a.mp4" autoplay loop muted height="640"></video>
+		<br><br>
+		You know you have access to the university's state-of-the-art fitness center, but often you'd rather just go for a run outside.
+		It's not just the fresh air, though that's nice too.  At the gym there's always other athletes.  Sometimes their sweaty, toned bodies,
+		and their tight fitting workout clothes... Well, sometimes you think it's better to just avoid the temptation.
+		<br><br>
+		Out here all you have to worry about are cat-calls from creepy guys on the street or yelling from cars,
+		but at least there's no temptation for you there.
+	<<elseif $PlayerItemNerdKey or $dating.length or $fwb.length>>
+		<h1>Fitness Center</h1>
+		<video src="Part6/Athlete1b.mp4" autoplay loop muted height="640"></video>
+		It's always a welcome surprise when
+		<<if $dating.length>>
+			<<set $sex.push({sex: 'male', name: $dating[0]})>>
+			<<set $sex.push({sex: 'male', name: $dating[0], vaginal:true})>>
+			<<set $sex.push({sex: 'male', name: $dating[0]})>>
+			<<set $sex.push({sex: 'male', name: $dating[0], vaginal:true})>>
+			<<set $sex.push({sex: 'male', name: $dating[0]})>>
+			<<set $sex.push({sex: 'male', name: $dating[0], vaginal:true})>>
+			$dating[0]
+		<<elseif $PlayerItemNerdKey>>
+			<<set $sex.push({sex: 'male', name: 'Peter'})>>
+			<<set $sex.push({sex: 'male', name: 'Peter'})>>
+			<<set $sex.push({sex: 'male', name: 'Peter'})>>
+			<<set $sex.push({sex: 'male', name: 'Peter'})>>
+			<<set $sex.push({sex: 'male', name: 'Peter'})>>
+			<<set $sex.push({sex: 'male', name: 'Peter'})>>
+			Peter
+		<<else>>
+			<<set $sex.push({sex: 'male', name: $fwb[0]})>>
+			<<set $sex.push({sex: 'male', name: $fwb[0], vaginal:true})>>
+			<<set $sex.push({sex: 'male', name: $fwb[0]})>>
+			<<set $sex.push({sex: 'male', name: $fwb[0], vaginal:true})>>
+			<<set $sex.push({sex: 'male', name: $fwb[0]})>>
+			<<set $sex.push({sex: 'male', name: $fwb[0], vaginal:true})>>
+			$fwb[0]
+		<</if>>
+		stops by the fitness center for a visit.  You don't finish your workout early, but you do like to give him a little show
+		so he stays around until you're done.  It also makes sure that as soon as you are done, he's ready to head back to his room
+		for a different kind of workout.
+	<<elseif $PlayerSideEffectPheromones>>
+		<<if $PlayerChastityBelt>>
+			<h1>Guy's Locker Room</h1>
+			<img src="Part6/Athlete2.jpg" hspace="10" vspace="10" height="650">
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<<else>>
+			<h1>Guy's Locker Room</h1>
+			<img src="Part6/Athlete3.jpg" hspace="10" vspace="10" height="600">
+			<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true, repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', vaginal: true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete', repeat:true})>>
+			<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<</if>>
+		<br><br>
+		The male athletes have started to pick up on how horny you get after they've been working out.  It's actually been helping encourage them to work
+		out longer and harder to build up more of a sweat.  Of course that's not the only thing they've been doing longer and harder.
+	<<elseif $PlayerChastityBelt>>
+		<h1>Locker Room</h1>
+		<img src="Part6/Athlete5.jpg" hspace="10" vspace="10" height="600">
+		<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+		<br><br>
+		You beg the coach to unlock your chastity belt, but he won't.  He says you've been doing great with your training and he doesn't want to disrupt that now.
+		He reminds you it's only a few more months to the next competition.  If you do as well then as you did last time, he'll give you another hour
+		alone in his office with your belt off, with all the toys you want.
+		<br><br>
+		"A few more months!", you think, "that's easy for him to say when he can get himself off whenever he wants."  You still can't satisfy your need, but
+		you know getting one of your fellow athletes off sometimes takes the edge off your frustration, just a bit.  It's never too difficult to find someone
+		willing to volunteer.
+	<<else>>
+		<h1>Fitness Center</h1>
+		<video src="Part6/Athlete4.mp4" autoplay loop muted height="640"></video>
+		<<set $sex.push({sex: 'male', anon: 'Masseur', vaginal: true})>>
+		<<set $sex.push({sex: 'male', anon: 'Masseur', vaginal: true, repeat: true})>>
+		<<set $sex.push({sex: 'male', anon: 'Masseur', vaginal: true})>>
+		<<set $sex.push({sex: 'female', anon: 'Masseuse'})>>
+		<<set $sex.push({sex: 'male', anon: 'Masseur', vaginal: true})>>
+		<<set $sex.push({sex: 'male', anon: 'Masseur', vaginal: true, repeat: true})>>
+		<<set $sex.push({sex: 'female', anon: 'Masseuse'})>>
+		<<set $sex.push({sex: 'male', anon: 'Masseur', vaginal: true})>>
+		<<set $sex.push({sex: 'male', anon: 'Masseur', vaginal: true, repeat: true})>>
+		Working out all the time puts a lot of strain on your body.  It's nice to be able to go get a massage whenever you need one.
+		Well, it starts as a massage anyway.  After your aches and pains are worked on, they can tell you're ready for them to help
+		you in a different way.
+		<br><br>
+		The girls are usually booked up ahead of time, but there's almost always a guy available when you stop by.  That's fine by you.
+		The only downside is waiting until he's ready to go again.  Of course he can just go back to working your muscles for a while
+		until you see him start to get hard again.
+	<</if>>
+<</nobr>>
 
 <<nobr>>
 	<<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]

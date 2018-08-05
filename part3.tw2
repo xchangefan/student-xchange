@@ -498,43 +498,76 @@
 <<nobr>>
 	<h1><<print "Office Interview">></h1>
 <</nobr>>
-
-<<print "Emily has her boyfriend setup the interview for you. The job isn’t actually for his brother, but a different manager at the company. So you’re a bit nervous as you doubt whatever recommendation Emily’s boyfriend provided is going to go very far.">>
-
-<<print "Emily has her boyfriend setup the interview for you. The job isn’t actually for his brother, but a different manager at the company. So you’re a bit nervous as you doubt whatever recommendation Emily’s boyfriend provided is going to go very far.">>
+<<nobr>>
+	Emily has her boyfriend setup the interview for you. The job isn’t actually for his brother, but for Paul, a different manager at the company.
+	So you’re a bit nervous as you doubt whatever recommendation Emily’s boyfriend provided is going to go very far.
+<</nobr>>
 <img src="Part3/JobOffice1.jpg" hspace="10" vspace="10" height="650">
-
-<<print "But you dress for the job, and come well prepared for the interview. You aren’t sure the interview is going that well. A lot of the software you’ll be expected to use, you’ve never even heard of before.">><<if $PlayerPiercedTongue>><br><br><<print "Near the end of the interview, you notice a confused look from him and you wonder if maybe you should have removed the tongue ring before the interview.">><</if>><<print "Sure enough, the questions start and you’re not sure how you want to respond.">>
+<<nobr>>
+	But you dress for the job, and come well prepared for the interview. Still, you aren’t sure the interview is going that well. A lot of the
+	software you’ll be expected to use, you’ve never even heard of before.
+<</nobr>>
 
 <<nobr>>
 	<<if $PlayerPiercedTongue>>
-		<<if !$PlayerSideEffectOral and $PlayerSideEffectLibido < 3>>
-			<<link "You can stay professional,">>
-				<<if $PlayerSideEffectSubmissive>>
-					<<goto [[JobOfficeSub]]>>
-				<<else>>
-					<<goto [[JobOfficePro1]]>>
-				<</if>>
-			<</link>>
-			<<print " and tell him it was your friend’s idea, but now that it doesn’t hurt anymore, you’re glad you got it. You imply you just like the way it looks, and leave off any mention of it’s other benefits.">>
-			<<if !setup.areDating('Josh')>><<print " Or, if you want to try to make sure you get the job, you can tell him how it improves oral, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]<</if>>
+		Near the end of the interview, you notice a confused look from him and you wonder if maybe you should have removed the tongue ring
+		before the interview.  Sure enough, the questions about your piercing start.  You offer to remove it for work if it's a problem, but
+		he seems much more interested in it than concerned about it.
+		<br><br>
+		<<if $PlayerSideEffectOral>>
+			You tell yourself it's to get the job, but the thought of a cock in your mouth is too irresistible to you, so
+			you tell him how it improves oral, [[and offer him a demonstration.|JobOfficeBlowjob1]].
+		<<elseif $PlayerSideEffectLibido>>
+			You tell yourself it's to get the job, but all you can think about is him ripping off your business clothes and bending you over the
+			meeting room table.  You know that's not going to happen, so you try for the next best thing.  You tell him how much your piercing
+			improves oral, [[and offer him a demonstration.|JobOfficeBlowjob1]].
+		<<elseif setup.areDating('Josh')>>
+			You
+			<<if $PlayerSideEffectSubmissive>>
+				[[try to stay professional|JobOfficeSub]]
+			<<else>>
+				[[try to stay professional|JobOfficePro1]]
+			<</if>>
+			and change the subject to something else.
 		<<else>>
-			<<print "You want to try to make sure you get the job, so you tell him how it improves oral, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]
+			You could
+			<<if $PlayerSideEffectSubmissive>>
+				[[try to stay professional|JobOfficeSub]]
+			<<else>>
+				[[try to stay professional|JobOfficePro1]]
+			<</if>>
+			and change the subject to something else, or you could tell him how much your piercing improves oral,
+			[[and offer him a demonstration.|JobOfficeBlowjob1]].
+		<</if>>
+	<<elseif $PlayerSideEffectOral or $PlayerSideEffectLibido>>
+		Your mind is drifting as he talk about the job requirements. You unconciously tease your lip with your pen as you imagine
+		<<if $PlayerSideEffectOral>>
+			kneeling under the table and sucking his cock.
+		<<else>>
+			him ripping off your business clothes and bending you over the meeting room table.
+		<</if>>
+		You wonder if he could tell what you are thinking when he asks, "Do you have any other skills... that maybe aren't listed on
+		your resume?"
+		<<if ($PlayerSideEffectOral and $PlayerSideEffectLibido) or ($PlayerSideEffectOral > 1) or ($PlayerSideEffectLibido > 1)>>
+			You take the hint and kneel down to [[give him a demonstration|JobOfficeBlowjob1]] of one of your skills.
+		<<else>>
+			You can take the hint and kneel down to [[give him a demonstration|JobOfficeBlowjob1]] of one of your skills.  Or you
+			can pretend like it was an innocent question and
+			<<if $PlayerSideEffectSubmissive>>
+				[[try to stay professional|JobOfficeSub]],
+			<<else>>
+				[[try to stay professional|JobOfficePro1]],
+			<</if>>
+			telling him about some of your hobbies.
 		<</if>>
 	<<else>>
-		<<if !$PlayerSideEffectOral and $PlayerSideEffectLibido < 3>>
-			<<link "You can stay professional,">>
-				<<if $PlayerSideEffectSubmissive>>
-					<<goto [[JobOfficeSub]]>>
-				<<else>>
-					<<goto [[JobOfficePro1]]>>
-				<</if>>
-			<</link>>
-			<<print " and try to answer the questions as best as you can.">>
-			<<if !setup.areDating('Josh')>><<print " Or, if you want to try to make sure you get the job, you can mention how your skills are more of an oral variety, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]<</if>>
+		You are nervous the entire interview but you
+		<<if $PlayerSideEffectSubmissive>>
+			[[try to stay professional|JobOfficeSub]],
 		<<else>>
-			<<print "You want to try to make sure you get the job, so you mention how your skills are more of an oral variety, ">>[[and offer him a demonstration.|JobOfficeBlowjob1]]
+			[[try to stay professional|JobOfficePro1]],
 		<</if>>
+		and answer the questions as best you can.
 	<</if>>
 <</nobr>>
 
@@ -1010,7 +1043,7 @@
 ::AthleteRelief <1000,3300>
 <<nobr>>
 	<<set $sex.push({sex: 'female', anon: 'Masseuse'})>>	
-	<h1><<print "Gym">></h1>
+	<h1><<print "Fitness Center">></h1>
 <</nobr>>
 <<nobr>>
 	<<if $CampusMinistry>>
@@ -1900,12 +1933,11 @@
 	<<set $JobOfficePA = 1>>
 	<<set $sex.push({sex: 'male', name: 'Paul'})>>
 	<<if setup.areDating('Josh')>><<set $CheatedJosh += 1>><</if>>
-	
 	<h1><<print "Office Oral Demonstrastion">></h1>
+	<img src="Part3/JobOffice2.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 
-<<print "You love the feel of his cock as it slides into your mouth. You are still learning how to best use your ">><<if $PlayerPiercedTongue>><<print "pierced ">><</if>><<print "tongue to add to his pleasure, but from his moans you know you’re doing good so far.">>
-<img src="Part3/JobOffice2.jpg" hspace="10" vspace="10" height="650">
+<<print "You love the feel of Paul's cock as it slides into your mouth. You are still learning how to best use your ">><<if $PlayerPiercedTongue>><<print "pierced ">><</if>><<print "tongue to add to his pleasure, but from his moans you know you’re doing good so far.">>
 
 <<print "It isn’t that long until you begin to feel his cock twitch in your mouth. You swallow every drop of his warm cum, and then tease his cock with your tongue as you slide his cock from your mouth.">>
 
@@ -1950,7 +1982,6 @@
 <<nobr>>
 	<<set $JobOffice = 0>>
 	<<set $JobOfficeIntern = 1>>
-	
 	<h1><<print "Office Spanking">></h1>
 <</nobr>>
 
@@ -1995,6 +2026,10 @@
 
 ::JobOfficePro2 <200,3300>
 <<nobr>>
+	<<set $sex.push({sex: 'male', name: 'Office Coworker'})>>
+	<<set $sex.push({sex: 'male', name: 'Office Coworker'})>>
+	<<set $sex.push({sex: 'male', name: 'Office Coworker'})>>
+	<<set $sex.push({sex: 'male', name: 'Office Coworker'})>>
 	<<set $sex.push({sex: 'male', name: 'Office Coworker'})>>
 	<<set $sex.push({sex: 'male', name: 'Office Coworker'})>>
 	
