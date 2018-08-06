@@ -1,2 +1,263 @@
+::Part12StartEngagementNews
+<h1>Spreading the News</h1>
+<div><<nobr>>
+<span style="float: left;width: 40%;padding-right: 20px;">
+  <video src="Part12/Engaged1.mp4" autoplay loop muted height="769"></video>
+</span>
+<</nobr>><span style="">    
+  <<nobr>>
+    When your call with your brother is over, you give your sister, Cassie, another call.
+    You're trying to see how everyone is taking the news, especially your dad.  You knew
+    he was upset after finding out about the pregnancy, and you're hoping he's taking
+    this better.
+  <</nobr>>
+
+  <<nobr>>
+    She said he's actually relieved and excited to hear the news.  He had been worried
+    about you raising the baby on your own.  He'd even thought you might end up back
+    at their house with the kid.  But now he knows that won't be a problem.
+  <</nobr>>
+
+  <<nobr>>
+    You have quite a few other calls to make, and none of them are quick.  Andrew's calls
+    go much faster so he's left waiting for you to get off the phone.
+  <</nobr>>
+
+  <<nobr>>
+  	<<set $sex.push({sex: 'male', name:'Andrew'})>>
+    You're able to make sure he doesn't get too bored while he waits though.  You wonder how
+    [[Faith|Part12StartEngagementNews2]] would react if she knew what you were doing while you
+    were on the phone with her.
+  <</nobr>>
+</span>
+</div>
+
+::Part12StartEngagementNews2
+<<nobr>>
+  <h1>Spreading the News</h1>
+  <img src="Part12/Engaged2.jpg" hspace="10" vspace="10" height="600" align="left"/>
+	<<set $sex.push({sex: 'male', name:'Andrew'})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew'})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew'})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew'})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+	<<set $sex.push({sex: 'male', name:'Andrew'})>>
+	<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
+<</nobr>>
+
+<<nobr>>
+  Your mentor, Faith, is overjoyed to hear about Andrew’s proposal.  She tells you she’d knew you and him would be perfect for each other.
+  You don’t recall actually asking her, but Faith just assumes she’ll be your maid-of-honor.
+<</nobr>>
+
+<<nobr>>
+  But you realize your only other real option anyway is your sister, and she’s hours away and frequently traveling for work.
+<</nobr>>
+
+<<nobr>>
+  So Faith probably is the best choice. Though you’re guessing you won’t be having any wild bachelorette parties with her
+  running things. But then again, considering how pregnant you’ll be by then, that probably wasn’t likely anyway.
+<</nobr>>
+
+<<nobr>>
+  You have one bit of the wedding settled now, but there's so much more [[left to plan|Part12AndrewPlanning]]
+<</nobr>>
+
 ::Part12Start <0,10700>
-Part 12 (Spring Break) - Hopefully coming soon
+<<nobr>>
+  <h1>Spring Break</h1>
+  <img src="Part12/Start1.jpg" hspace="10" vspace="10" height="600"/>
+<</nobr>>
+
+<<nobr>>
+  Spring break is finally here!  The whole campus is shutting down for the week as everyone heads off to the beach, or home, or anywhere but school.
+<</nobr>>
+
+<<nobr>>
+  <<if $Engaged == 'Andrew'>>
+    You're not going anywhere though, you and Andrew have [[far to much to plan|Part12AndrewPlanning]]!
+  <<elseif setup.areDating('Andrew')>>
+    You're not going anywhere though.  But you and Andrew did [[request off work this week|Part12AndrewHome]] so you could spend it together.
+  <<elseif setup.areDating('Aaron')>>
+    But you're a bit disappointed when you find out Daddy doesn't want to go to the beach.  He doesn't want to spend his week off surrounded by a
+    bunch of students.  Well [[except you, of course|Part12Aaron]].
+  <<elseif setup.areDating('Paul')>>
+    You're not going anywhere though.  Since you won't have to be in class, you can spend more time at work.  Not that you are that excited about
+    working.  It just means you'll have [[more time together with your boss, Paul|Part12Paul]].
+  <<elseif setup.areDating('Kate')>>
+    You're not going anywhere though.  Mistress Kate has the week off and you'll be [[spending it with her|Part12Kate]],
+    which is even better than sitting on some beach.
+  <<else>>
+    You're thrilled as you pack your things and get ready to leave.
+    <<if $PlayerChastityBelt>>
+      TODO This assumes if master doesn't have the key, the person they are dating does.  Is this true?  Change to use variable for keyholder
+      <<if !$MasterKey and $dating.length>>
+        $dating[0] unlock your chastity belt for the week.
+        <<if setup.areDating('Veronica')>>she<<else>>he<</if>>
+        understands that things might get a crazy this week.  But
+        <<if setup.areDating('Veronica')>>she'll<<else>>he'll<</if>>
+        be right there with you, so you shouldn't get into anything
+        <<if setup.areDating('Veronica')>>she<<else>>he<</if>>
+        doesn't approve up.
+      <<else>>
+        Master Robert says he doesn't want you getting into too much trouble on your spring break, so he's decided to keep you locked for the week.
+        He assures you that your belt is perfectly safe in the water.
+      <</if>>
+    <</if>>
+    <br><br>
+    <<if setup.areDating('Peter')>>
+      <<set $SpringBreakPeter to 1>>
+      You almost forget to bring Peter's key along, but remember to grab it just before you leave.  You hide it in your makeup bag so you don't lose it.
+      <br><br>
+    <<elseif $PlayerItemNerdKey>>
+      <span id="NerdKey">
+        Just before you head out the door, you notice Peter's chastity key on your dresser, you'd forgotten all about it.
+        <<link "You grab it">>
+          <<replace "#NerdKey">>
+            <<set $SpringBreakPeter to 1>>
+            You grab Peter's chastity key before you leave.  You hide it in oyur makeup bag so you don't lose it.
+            <br><br>
+            <<include [[Part12Intro2]]
+          <</replace>>
+        <</link>>
+        since you probably want to unlock him for teasing on the trip.  Who knows, maybe more.
+        &nbsp;&nbsp;or&nbsp;&nbsp;
+        <<link "You leave it">>
+          <<replace "#NerdKey">>
+            You toss Peter's chastity key into your underwear drawer, out of sight.  You have much more exciting things to worry about this week.
+            <br><br>
+            <<include [[Part12Intro2]]
+          <</replace>>
+        <</link>>
+        since Peter's not going down with you.  You're not sure what he's doing this week, you just know it doesn't involve you... or his cock.
+      </span>
+    <<else>>
+      <<include [[Part12Intro2]]>>
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part12Intro2
+<<nobr>>
+  <<if setup.areDating('Veronica')>>
+    Veronica has [[arranged a ride|Part12VeronicaRide]] for the two of you.
+  <<elseif setup.areDating('Josh')>>
+    Josh has [[arranged a ride|Part12JoshRide]] for the two of you.
+  <<elseif $SpringBreakPeter>>
+    There's some girls you know that are riding down.  You and Peter chip in on gas and [[join them|Part12RideGirls]].
+  <<else>>
+    There's some girls you know that are riding down.  You can chip in on gas and [[join them|Part12RideGirls]].
+    <br><br>
+    One of the fraternties also invited you to ride on their [[party bus|Part12PartyBus]].  It's already paid for
+    and they'll probably be beer.  Who are you kidding, of course there will be beer.
+  <</if>>
+<</nobr>>
+
+::Part12AndrewPlanning
+<<nobr>>
+  <h1>Wedding Planning</h1>
+  <img src="Part12/Engaged3.jpg" hspace="10" vspace="10" height="600"/>
+<</nobr>>
+
+<<nobr>>
+  You and Andrew decide on a date in early June.  It’ll be a few weeks after the semester is over, so you won’t be worrying about school.
+  But it’s still early enough you won’t be too uncomfortably standing for a long time, and you shouldn’t have to worry about going into
+  labor at the wedding.
+<</nobr>>
+
+<<nobr>>
+  You know Andrew is planning a honeymoon.  You remind him to keep in mind that you’ll be 33 or 34 weeks pregnant by then.
+  After you imagine going into labor on some remote island, you add that it might be a good idea to keep it close to home,
+  just in case.
+<</nobr>>
+
+<<nobr>>
+  Tomorrow you and Faith will be out [[shopping for wedding dresses|Part12AndrewPlanning2]].
+<</nobr>>
+
+::Part12AndrewPlanning2
+<<nobr>>
+  <h1>Wedding Planning</h1>
+  <img src="Part12/Engaged4.jpg" hspace="10" vspace="10" height="600" align="left"/>
+<</nobr>>
+
+<<nobr>>
+  Faith is such a big help.  You know many girls have probably planned their weddings in their mind for years, but you’d never
+  thought about it at all until a few months ago.  And there are so many decisions to make. The one you and her have been spending
+  time on lately is your dress.  When you start looking for what fits, Faith reminds you that you’ll be much bigger by then.
+<</nobr>>
+
+<<nobr>>
+  The belly pad the store lets you wear while trying on the dresses helps you and Faith picture what they’ll look like in a few months at
+  the wedding. And the store tells you they’ll make alterations the week before the wedding to make sure it looks beautiful on you.
+<</nobr>>
+
+<<nobr>>
+  There's a lot of planning to do, but you make sure to [[spend some time with Andrew|Part12AndrewPlanning3]] too.
+<</nobr>>
+
+::Part12AndrewPlanning3
+<<nobr>>
+  <h1>Wedding Planning</h1>
+  <video src="Part12/Engaged5.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
+
+<<nobr>>
+  Most everyone else is away for spring break, so campus is eerily quiet this week.  You and Andrew are staying
+  in town though. With no classes, you’ve been using your extra time to work on wedding planning.  Well, some of the time
+  anyway.  You’ve also been spending quite a bit of it at home with Andrew.
+<</nobr>>
+
+<<nobr>>
+  You don’t know if it’s all the extra curves you have now, or just knowing that his baby is growing inside you,
+  but Andrew can barely keep his hands off of you.  And you love it.
+<</nobr>>
+
+<<nobr>>
+  But all to soon the week is over, and it's [[back to class|Part12BackToClass]].  You and Andrew will have to work the rest of your planning in between work, classes, and
+  homework.
+<</nobr>>
+
+::Part12AndrewHome
+TODO “Staying Home” : Andrew (Not Engaged)  https://imgur.com/a/MzkMDQ3
+
+::Part12Aaron
+TODO “Private Vacation” (Daddy/Professor) https://imgur.com/a/YMr3UwK
+
+::Part12Paul
+TODO “Discovered” Boss  https://imgur.com/a/ALPOmhJ
+
+::Part12Kate
+TODO “Mistress” https://imgur.com/a/o9aNtX0
+
+::Part12VeronicaRide
+TODO Veronica Ride
+
+::Part12JoshRide
+TODO Josh Ride
+
+::Part12RideGirls
+TODO Riding with the girls
+
+::Part12PartyBus
+TODO Party Bus
+
+::Part12TODO
+TODO On Spring Break
+TODO At th Beach
+TODO Veronica
+TODO Chasity Belt
+TODO Film Crew
+TODO Slippery
+TODO More Fun
+TODO Good Boy (Peter)
+
+TODO Conclusion Heading Home
+
+::Part12BackToClass
+TODO Back to Class
