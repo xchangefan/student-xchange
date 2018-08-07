@@ -2,7 +2,6 @@
 A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 <<if $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
-<br>
 <<include [[SideBarNavigation]]>>
 <<include [[SideBarDebug]]>>
 
@@ -84,6 +83,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     is yours for the rest of your life.
   <<else>>
     is yours for at least the next few years.
+    <<if $PlayerDecidePermanent>>
+      But you plan on making sure it's yours the rest of your life.
+    <</if>>
   <</if>>
 <</nobr>>
 
@@ -344,7 +346,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 ::SideBarMentor <1800,0>
-<br><br>
+<br>
 <<nobr>>
   <<if $Mentor == 'Faith'>>
     Faith is your mentor
