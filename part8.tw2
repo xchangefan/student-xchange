@@ -28,10 +28,10 @@
 <<print "In total, you have $">>$PlayerMoney<<print " saved.">>
 
 <<nobr>>
-	<<if $VeronicaKey>>
+	<<if $Keyholder == 'Veronica'>>
 		[[You ask Veronica about your chastity belt.|Part8StartChastity]]
 	<<else>>
-		<<if $PlayerChastityBelt>>
+		<<if $Keyholder == 'Robert'>>
 			[[You give master a call about your chastity belt.|Part8StartChastity]]
 		<<else>>
 			[[Start driving home.|Part8Start2]]
@@ -178,16 +178,16 @@
 
 ::Part8StartChastity <300,6325>
 <<nobr>>
-	<<if $VeronicaKey>><<set $PlayerChastityBelt = 0>><</if>>
+	<<if $Keyholder == 'Veronica'>><<unset $PlayerChastityBelt>><</if>>
 
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
 <<nobr>>
-	<<if $VeronicaKey>><<print "You are very grateful as she unlocks you and leaves you unbelted for your trip home.">><<set $PlayerChastityBelt = 0>>
+	<<if $Keyholder == 'Veronica'>><<print "You are very grateful as she unlocks you and leaves you unbelted for your trip home.">><<set $PlayerChastityBelt = 0>>
 	<<else>><<print "Your request to be unlocked for the trip home was denied. ">><<if !$PlayerProtectionPermanent and !$PlayerProtectionPill and !$PlayerProtectionPerfect>><<print "If you are on your period, Olivia instructs you on using pads and period panties to deal with it, and on using the shower sprayer to clean up.">><</if>><</if>>
 <</nobr>>
-<<if $VeronicaKey>><img src="Part8/Start3.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8/Start2.jpg" hspace="10" vspace="10" height="650"><</if>>
+<<if $Keyholder == 'Veronica'>><img src="Part8/Start3.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8/Start2.jpg" hspace="10" vspace="10" height="650"><</if>>
 
 [[Start driving home.|Part8Start2]]
 
@@ -1995,10 +1995,10 @@
 		went home with is more than happy to help you try to make up for lost time.
 	<<else>>
 		<<if $PlayerChastityBelt>>
-		  <<set $sex.push({sex: 'male', name: 'New Year's Eve hookup'})>>
+		  <<set $sex.push({sex: 'male', name: "New Year's Eve hookup"})>>
 			<<print "You spend the first hours of the new year giving the pleasure you yearn for. Seeing and hearing the joy you are giving him is the only pleasure you can have today though.">>
 		<<else>>
-		  <<set $sex.push({sex: 'male', name: 'New Year's Eve hookup', vaginal: true, noPullout: true})>>
+		  <<set $sex.push({sex: 'male', name: "New Year's Eve hookup", vaginal: true, noPullout: true})>>
 			<<print "You and him spend the first few hours of the new year enjoying the pleasure of each others bodies, until you fall asleep beside him.">>
 		<</if>>
 	<</if>>

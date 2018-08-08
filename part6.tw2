@@ -190,7 +190,6 @@
 <<nobr>>
 	He does have time for a quick blowjob before his next meeting though.  By the you're done, you can feel your wetness trickling
 	down your thigh a bit.  As he heads to his meeting, instead of handing your panties back, he smiles and puts them in his pocket.
-	You don't see them again the rest of the day.
 <</nobr>>
 
 <<nobr>>
@@ -264,7 +263,7 @@
 	<<elseif $SubjectPunish == 2>>
 		"Punishment for Second Orgasm: <strong>Orgasm Denial</strong> Agent - minimum duration 30 days"
 		<<if $SubjectPunishLastMessage != 2>>
-			<<if $PlayerChastityBelt and $MasterKey>>
+			<<if $Keyholder == 'Robert'>>
 				You aren't that worried, you might have had to wait that long or more before you'd have been allowed out of your belt anyway.  The orgasms here
 				during testing are usually all you get.
 			<<else>>
@@ -733,8 +732,9 @@
 		The display then says, "Orgasm Denial Agent Successful - Subject Unable to Orgasm for 30 - 60 days.  Continue to report for your
 		regularly testing appointments.  You will be assigned other duties until your ability to orgasm returns."
 		<br><br>
-		<<if $PlayerChastityBelt and $MasterKey>>
-			You think, "Well, at least you know there won't be any point in even begging to be let out of your chastity belt again until December.  Not like the begging
+		<<if $Keyholder == 'Robert'>>
+			You think, "Well, at least you know there won't be any point in even begging to be let out of your chastity belt again until December.
+			Not like the begging
 			would have worked anyway."
 		<<else>>
 			You thrash at the straps holding you down in frustration, but you know it's too late now.
@@ -861,7 +861,7 @@
 		<<if $PlayerSideEffectExhibitionist>>
 			Of course, the thrill of it turns you on as well.
 		<</if>>
-		But when when you glance at yourself in the mirror, and see how beautiful you look, and how no one will know who you really are,
+		But when you glance at yourself in the mirror, and see how beautiful you look, and how no one will know who you really are,
 		it doesn't worry you anymore.
 	<</nobr>>
 
@@ -2410,8 +2410,9 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<nobr>>
 	Your two captors ignore your muffled cries as they bend you over something and cut away
 	<<if $PlayerChastityBelt>>
-		<<set $PlayerChastityBelt = 0>>
-		<<set $PlayerChastityBeltInventory to 0>>
+		<<unset $Keyholder>>
+		<<unset $PlayerChastityBelt>>
+		<<unset $PlayerChastityBeltInventory>>
 		your chastiy belt.
 	<<else>>
 		your panties.

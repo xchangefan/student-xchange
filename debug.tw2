@@ -34,6 +34,7 @@ FWBs: <<print JSON.stringify($fwb)>>
 Friend Zone: <<print JSON.stringify($friendZone)>>
 Engaged: $Engaged
 Spouse: $Spouse
+Keyholder	$Keyholder
 
 Pregnancy:
 PlayerPregnantCheck $PlayerPregnantCheck
@@ -183,14 +184,16 @@ JobEngineer   $JobEngineer
 JobTestSubject   $JobTestSubject
 JobArt   $JobArt
    
-Other   Other
+Chastity
 OliviaChastityBelt   $OliviaChastityBelt
 PlayerChastityBelt   $PlayerChastityBelt
-VeronicaKey   $VeronicaKey
-AndrewKey   $AndrewKey
-JoshKey   $JoshKey
-ProfessorKey   $ProfessorKey
-KateKey   $KateKey
+PlayerChastityBeltInventory   $PlayerChastityBeltInventory
+Keyholder	$Keyholder<<if $Keyholder>>
+	KeyholderPronoun	$KeyholderPronoun
+	KeyholderPronounPosessive	$KeyholderPronounPosessive
+<</if>>
+
+Other   Other
 PlayerPointsSet   $PlayerPointsSet
 FunPoints   $FunPoints
 AcademicPoints   $AcademicPoints

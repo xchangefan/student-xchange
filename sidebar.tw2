@@ -336,13 +336,10 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 ::SideBarChastity <1600,0>
+<<if !$PlayerChastityBelt and $PlayeChastityBeltInventory>>You have a chastity belt, but you aren't currently locked.<</if>>\
 <<if $PlayerChastityBelt and $PlayerCumslut>><br><br><<print "You are locked in a chastity belt, as you should be. ">><</if>>\
 <<if $PlayerChastityBelt and !$PlayerCumslut>><br><br><<print "You are currently locked in a chastity belt. ">><</if>>\
-<<if $VeronicaKey>><<print "Veronica has your key. ">><</if>>\
-<<if $AndrewKey>><<print "Andrew has your key. ">><</if>>\
-<<if $JoshKey>><<print "Josh has your key. ">><</if>>\
-<<if $KateKey>><<print "Mistress Kate has your key. ">><</if>>\
-<<if $ProfessorKey>><<print "Daddy has your key. ">><</if>>\
+<<if $PlayerChastityBelt and $Keyholder>>$Keyholder has your key.<</if>>\
 \
 
 ::SideBarMentor <1800,0>
@@ -396,22 +393,25 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<nobr>>
   <<if $Roommate == 'Sorority Sister'>>
     You live with your soroity sisters.
+  <<elseif $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Victoria' or $Roommate == 'Aaron'>>
   <<elseif $neighbours and $neighbours.length == 1>>
-   Your neighbour is $neighbours[0]
+    Your neighbour is $neighbours[0]
   <<elseif $neighbours and $neighbours.length > 1>>
-     Your neighbours are <<print $neighbours.join(" and ")>>
+    Your neighbours are <<print $neighbours.join(" and ")>>
   <</if>>
 <</nobr>>
 
 ::SideBarRelationship <2200,0>
-<<if $MasterKate>><br><<print "You are Mistress Kate's pet. ">><</if>>\
+<<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>\
+<<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>\
 <<if $MasterKen>><br><<print "Ken, the artist, is your ">><<if $Spouse == 'Ken'>><<print "husband">><<else>><<print "master">><</if>><<print " and you are living in his loft, together with his assistants. ">><</if>>\
 <<if $MasterOlivia>><br><<print "You are a slave to Olivia's master. ">><</if>>\
 \
 <<if $Engaged == 'Andrew'>><<print "You are engaged to Andrew and living together">><</if>>\
 <<if $Engaged != 'Andrew' and setup.areDating('Andrew')>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
 <<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>><</if>>\
-<<if setup.areDating('Paul')>><br><<print "You are your boss, Paul's mistress. ">><</if>>\
+<<if setup.areDating('Paul') and $Roommate!='Paul'>><br><<print "You are your boss, Paul's, mistress. ">><</if>>\
+<<if setup.areDating('Paul') and $Roommate=='Paul'>><br><<print "You are your boss, Paul's, girlfriend. You live with him. ">><</if>>\
 <<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>\
 <<if setup.areDating('Veronica') and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
 <<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>\

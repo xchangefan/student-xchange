@@ -503,12 +503,12 @@
 
 <<print "After Olivia let her master know you’re in an exclusive relationship, he gave the key to your belt to Veronica. He said the thought of a beautiful woman keeping another locked in chastity is worth far more to him than the cost of the belt.">>
 
-
 <<nobr>>
 	<<print "When you were alone though, she handed you the key and gave you a choice. ">>
 	<span id="Veronica1Span1">
 		<<link "You could take off the belt,">>
-			<<set $PlayerChastityBelt = 0>>
+			<<unset $PlayerChastityBelt>>
+			<<unset $Keyholder>>
 			<<replace "#Veronica1Span1">>
 				<<print "You could take off the belt,">>
 			<</replace>>
@@ -527,7 +527,9 @@
 <<nobr>>
 	<span id="Veronica1Span2">
 		<<link "Or you could hand the key back to her,">>
-			<<set $VeronicaKey = 1>>
+			<<set $Keyholder to "Veronica">>
+			<<set $KeyholderPronoun to "she">>
+			<<set $KeyholderPronounPossessiveto "her">>
 			<<replace "#Veronica1Span1">>
 				<<print "You could take off the belt,">>
 			<</replace>>

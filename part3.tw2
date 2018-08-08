@@ -1535,9 +1535,10 @@
 
 ::JobLibraryRestricted <3750,2250>
 <<nobr>>
-	<<set $PlayerChastityBelt = 0>>
+	<<unset $PlayerChastityBelt>>
+	<<unset $Keyholder>>
 	<<set $OliviaChastityBelt = 1>>
-	<<set $PlayerChastityBeltInventory to 0>>
+	<<unset $PlayerChastityBeltInventory>>
 	<h1><<print "Campus Library - Restricted Section">></h1>
 <</nobr>>
 
@@ -1687,7 +1688,7 @@
 	<h1><<print "Engineering Department">></h1>
 <</nobr>>
 
-<<print "Since you are one of the few women on the team, you get to test much of the new equipment before it’s tried on the subjects.">><<if $PlayerChastityBelt>><<set $PlayerChastityBelt = 0>><br><br><<print "Olivia’s master reluctantly agrees to release you from the belt, since you have to test the devices away from the lab as well.">><</if>>
+<<print "Since you are one of the few women on the team, you get to test much of the new equipment before it’s tried on the subjects.">><<if $Keyholder == "Robert">><<unset $PlayerChastityBelt>><<unset $Keyholder>><br><br><<print "Olivia’s master reluctantly agrees to release you from the belt, since you have to test the devices away from the lab as well.  He lets you keep the belt and the keys.">><</if>>
 
 <video src="Part3/JobEngineer3.webm" autoplay loop muted height="640"></video>
 

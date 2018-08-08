@@ -94,20 +94,14 @@
     which is even better than sitting on some beach.
   <<else>>
     You're thrilled as you pack your things and get ready to leave.
-    <<if $PlayerChastityBelt>>
-      TODO This assumes if master doesn't have the key, the person they are dating does.  Is this true?  Change to use variable for keyholder
-      <<if !$MasterKey and $dating.length>>
-        $dating[0] unlock your chastity belt for the week.
-        <<if setup.areDating('Veronica')>>she<<else>>he<</if>>
-        understands that things might get a crazy this week.  But
-        <<if setup.areDating('Veronica')>>she'll<<else>>he'll<</if>>
-        be right there with you, so you shouldn't get into anything
-        <<if setup.areDating('Veronica')>>she<<else>>he<</if>>
-        doesn't approve up.
-      <<else>>
-        Master Robert says he doesn't want you getting into too much trouble on your spring break, so he's decided to keep you locked for the week.
-        He assures you that your belt is perfectly safe in the water.
-      <</if>>
+    <<if $Keyholder == 'Robert'>>
+      Master Robert says he doesn't want you getting into too much trouble on your spring break, so he's decided to keep you locked for the week.
+      He assures you that your belt is perfectly safe in the water.
+    <<elseif $Keyholder>>
+      $dating[0] unlock your chastity belt for the week.
+      $KeyholderPronoun understands that things might get a crazy this week.  But
+      <<print $KeyholderPronoun>>'ll be right there with you, so you shouldn't get into anything
+      $KeyholderPronoun doesn't approve up.
     <</if>>
     <br><br>
     <<if setup.areDating('Peter')>>
@@ -120,7 +114,7 @@
         <<link "You grab it">>
           <<replace "#NerdKey">>
             <<set $SpringBreakPeter to 1>>
-            You grab Peter's chastity key before you leave.  You hide it in oyur makeup bag so you don't lose it.
+            You grab Peter's chastity key before you leave.  You hide it in your makeup bag so you don't lose it.
             <br><br>
             <<include [[Part12Intro2]]
           <</replace>>
@@ -875,10 +869,660 @@ from your drunken friends. You do your best to let him know just how appreciativ
 <</nobr>>
 
 ::Part12Paul
-TODO “Discovered” Boss  https://imgur.com/a/ALPOmhJ
+<<nobr>>
+  <h1>Paul's Office</h1>
+  <video src="Part12/Paul1.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
+<<nobr>>
+  You normally attend classes in the morning and work in the afternoon, but you decide to skip spring break and
+  just work more instead.  Not that you are that excited about your job, you just want to spend more time with
+  your boss.  The Friday before break he seemed especially stressed so you start asking him what’s wrong.
+<</nobr>>
+
+<<nobr>>
+  You act shocked when he tells you his wife discovered that he’s been having an affair.  He tells you how she
+  moved out shortly after Valentine’s Day.  You wonder if was the panties you’d ‘accidentally’ left behind that
+  finally clued her in to what’s been going on for months, but of course you don't mention that.
+<</nobr>>
+
+<<nobr>>
+  He’d thought it was temporary and she’d be back soon.  But he was served with divorce papers this morning,
+  so he’s [[finally realizing|Part12Paul2]] his marriage is over.
+<</nobr>>
+
+::Part12Paul2
+<<nobr>>
+  <h1>Paul's Office</h1>
+  <video src="Part12/Paul2.mp4" autoplay loop muted height="600"></video>
+  <<set $PaulWifeLeft to 1>>
+<</nobr>>
+<<nobr>>
+  “It must be such a hard time for you.”, you tell him.  “But it should be a simple divorce,
+  right, I’m sure you have a prenup and everything, and there’s no kids.  But maybe
+  it’s for the best.  Haven’t you been wanting to leave her?”
+<</nobr>>
+
+<<nobr>>
+  “I'd wanted kids... but she didn't.  I suppose it does make it easier now though.",
+  he responds.  “And my lawyer says the prenup ensures she’ll get a hefty settlement,
+  but the divorce should be quick and I’ll still be just fine financially afterwards.  I
+  know I should be relieved but I guess the finality of it all is just a bit unsettling.”
+<</nobr>>
+
+<<nobr>>
+  “Well...”, you asks suggestively, “is there [[anything I could do|Part12Paul3]] to help relieve some of your stress?”
+<</nobr>>
+
+::Part12Paul3
+<<nobr>>
+  <h1>Paul's Office</h1>
+  <video src="Part12/Paul3.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+<</nobr>>
+<<nobr>>
+  As you kneel on his desk, his expert fingers, and then his tongue, causes your pleasure to build and build.
+  You do your best to contain the sound as he pushes you over the edge to orgasm.  You've gotten quite a bit of
+  expericence doing that by now.
+<</nobr>>
+
+<<nobr>>
+  You gain a bit of composure as he stands up and starts to undo his pants.  “Oh god, I want your cock so bad.
+  But you have a meeting in a few minutes.  And your scheduled is packed the rest of the afternoon too.”, you
+  say, making sure to convey your disappointment.
+<</nobr>>
+
+<<nobr>>
+  “Well, it’s just me at home now.  So why don’t you [[join me tonight|Part12Paul4]] - and the rest of the
+  weekend?”, he says as he zips his pants and straightens himself up for his meeting.
+<</nobr>>
+
+<<nobr>>
+  “That’s a wonderful idea.  I’d love that!”, you happily reply.  After he’s left for his meeting, you can’t help but
+  smile, knowing he thinks it was his idea.”
+<</nobr>>
+
+::Part12Paul4
+<<nobr>>
+  <h1>Paul's House</h1>
+  <video src="Part12/Paul4.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+
+<<nobr>>
+  That evening, back at his house, you drop to your knees and wrap your lips around his cock.  “Oh god, that
+  feels so good.”, he tells you.
+<</nobr>>
+
+<<nobr>>
+  “Feeling your cock in my mouth, or inside me, is always my favorite part of the day.”, you tell him before
+  teasing the tip of his cock with your tongue.  “I’m always sad when it’s time to leave work and I know I won’t
+  see you again until the next afternoon.”
+<</nobr>>
+
+<<nobr>>
+  He starts to say something, but your lips wrap tightly around his cock and slide down, and his words
+  [[disappear into a moan|Part12Paul5]].
+<</nobr>>
+
+::Part12Paul5
+<<nobr>>
+  <h1>Paul's House</h1>
+  <video src="Part12/Paul5.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noCondom:true})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+
+<<nobr>>
+  You wake up the next morning well before he does.  When you see the huge, beautiful tub you can’t help but
+  take a bath.  As you soak in the warm water, any doubts that this is the life you want for yourself disappear.
+<</nobr>>
+
+<<nobr>>
+  When your bath is done, you dry off and open up your makeup bag to make sure you are as beautiful as you
+  can be for him when he wakes up.  Then you [[head downstairs|Part12Paul6]] to make breakfast for him.
+<</nobr>>
+
+::Part12Paul6
+<<nobr>>
+  <h1>Paul's House</h1>
+  <video src="Part12/Paul6.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noCondom:true})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
+	<<set $Roommate to "Paul">>
+<</nobr>>
+
+<<nobr>>
+  Monday morning as he’s getting ready for work, you warn him he has a busy schedule today.  You push him
+  back onto the breakfast table and tell him you want to make sure his day starts off right though.
+<</nobr>>
+
+<<nobr>>
+  “Why don’t you move in here?”, he asks pausing occasionally to moan, “I’d love coming home every evening
+  if you were going to be here.  Not to mention heading to work with a smile on my face every morning.”
+<</nobr>>
+
+<<nobr>>
+  You act surprised as you excitedly tell him [[yes, you’d love to move in|Part12Paul7]].
+<</nobr>>
+
+::Part12Paul7
+<<nobr>>
+  <h1>Paul's House</h1>
+  <video src="Part12/Paul7.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+
+<<nobr>>
+  As he fucks you on the kitchen table, your mind keeps drifting to thoughts of the future, of living here, taking
+  his old wife’s place.  But the feel of his cock inside you pulls you back to the here and now.
+  Your mind darts back and forth between fantasizing about starting every day like this, and just enjoying how
+  good it feels right now.  It doesn’t take long until you are grabbing the edge of the table as you orgasm.
+<</nobr>>
+
+<<nobr>>
+  After he finishes inside you, you lay on the table a few moments before standing up again.  As he dresses
+  for work, he tells you to take the day off work.  He’ll send some movers over to help you pack your things
+  and bring them here.
+<</nobr>>
+
+<<nobr>>
+  You tell him to schedule them after noon.  You have a few errands to run this morning, though you don’t
+  go into the details.  Once he’s gone you clean up the mess the two of you left, dress, and head out for
+  [[your errands|Part12Paul8]].
+<</nobr>>
+
+::Part12Paul8
+<<nobr>>
+  <h1>Paul's House</h1>
+  <img src="Part12/Paul8.jpg" hspace="10" vspace="10" height="700" align="left"/>
+<</nobr>>
+
+<<nobr>>
+  You want this life for yourself.  And you know what Paul wants (well, besides just you).  He wants to be a father.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionTry>>
+    You'd been wanting to get pregnant already, but even more so now.  You
+  <<else>>
+    Maybe you’d thought about being a mother eventually, or maybe not.  But you
+  <</if>>
+  know if you give him the child he’s always wanted, everything you want will fall into place.
+  Any hesitation about moving on or remarrying too quickly will be long forgotten.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+    You make a quick visit to the X-Change office before the movers arrive.  They deactivate the birth control feature for you and let you know
+    that you'll probably start ovulating within the next day or two.  As you leave they wish you luck with conceiving.
+  <<elseif $PlayerProtectionPill>>
+    You toss your birth control pills in the trash before the movers arrive.  As you do, you imagine telling Paul a month or two from now
+    'they must have gotten lost in the move and I forgot all about them.'
+  <<elseif $PlayerProtectionWithdraw>>
+    You suspect he’s wanting to get you pregnant too, either consciously or subconsciously.  You can’t remember the
+    last time he’s pulled out.  Well, you can remember him cumming on your face and finishing him with your mouth sometimes, but more
+    often than not he's finishing inside you.  You certainly aren’t going to remind him to pull out.
+  <<elseif $PlayerProtectionCondoms>>
+    You suspect he’s wanting to get you pregnant too, either consciously or subconsciously.  You can’t remember the last time he’s worn a
+    condom with you. You certainly aren’t going to remind him.
+  <<elseif $PlayerProtectionTry>>
+    Now that you are living with Paul, the two of you are having sex much more often.  Maybe you'll finally be able to conceive.
+  <<else>>
+    Now that you are living with Paul, the two of you are having sex much more often.  Hopefully it won't take long to conceive.
+  <</if>>
+  <<set $PlayerProtectionTry to 1>>
+  <<unset $PlayerProtectionWithdraw>>
+  <<unset $PlayerProtectionCondoms>>
+  <<unset $PlayerProtectionPill>>
+  <<unset $PlayerProtectionPermanent>>
+  <<unset $PlayerProtectionPerfect>>
+<</nobr>>
+
+<<nobr>>
+  The movers don’t arrive until the afternoon, so there’s plenty of time for a quick visit to the store
+  to pick up something sexy.  You’ll be sure to be wearing it when he comes home from work this evening.
+<</nobr>>
+
+<<nobr>>
+  <<set $sex.push({sex: 'male', name:'Paul'})>>
+  <<set $sex.push({sex: 'male', name:'Paul', vaginal:true, ovulating:true})>>
+  <<set $sex.push({sex: 'male', name:'Paul', vaginal:true, ovulating:true})>>
+  <<set $sex.push({sex: 'male', name:'Paul'})>>
+  <<set $sex.push({sex: 'male', name:'Paul', vaginal:true, ovulating:true})>>
+  <<set $sex.push({sex: 'male', name:'Paul'})>>
+  <<set $sex.push({sex: 'male', name:'Paul', vaginal:true, ovulating:true})>>
+  <<set $sex.push({sex: 'male', name:'Paul'})>>
+  <<set $sex.push({sex: 'male', name:'Paul', vaginal:true, ovulating:true})>>
+  All too soon though, spring break is over and it's time to go [[back to class|Part12BackToClass]]
+<</nobr>>
 
 ::Part12Kate
-TODO “Mistress” https://imgur.com/a/o9aNtX0
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <img src="Part12/Kate1.jpg" hspace="10" vspace="10" height="800" align="left"/>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  Mistress Kate has the week off, and instead of heading off to spring break with your friends, you decide to spend it with her.
+<</nobr>>
+
+<<nobr>>
+  You may not be getting drunk every night like your friends probably are, but you expect you’ll be having a pretty good
+  time too, [[right here at home|Part12Kate2]].
+<</nobr>>
+
+::Part12Kate2
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <video src="Part12/Kate2.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  Mistress didn’t let you cum last night, and you wake up horny.  But she’s decided you don’t get to cum this
+  morning either - but she does.
+<</nobr>>
+
+<<nobr>>
+  You love making her cum almost as much as your own orgasms, but she won’t even be letting you do that
+  this morning.  She cuffs you and makes you watch as she gets herself off right in front of you.
+<</nobr>>
+
+<<nobr>>
+  When she’s finished, she gives you one hard swat on the ass as she heads to the bathroom to
+  get ready to go out.  She leaves you bound and waiting until she’s finished. Then she uncuffs
+  you and sends you to get [[ready in the bathroom|Part12Kate3]]. Of course she keeps an eye on
+  you to make sure you don’t do anything you shouldn’t.
+<</nobr>>
+
+::Part12Kate3
+<<nobr>>
+  <h1>Out with Mistress Kate</h1>
+  <video src="Part12/Kate3.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
+
+<<nobr>>
+  You did as mistress instructed you and didn’t wear any panties under your skirt.  Before the two of you get
+  out of the car at your first stop that day, she pulls a beautiful butt plug out of her purse.  The jewel at
+  its base sparkles in the midday sun.
+<</nobr>>
+
+<<nobr>>
+  She pushes it into your mouth to get it ready and then hands it to you to put it in place.  “You’ll be wearing
+  that the rest of the day if you want [[any chance at an orgasm tonight|Part12Kate4]].”, she tells you.
+<</nobr>>
+
+<<nobr>>
+  As the two of you go about your day, she keeps checking to make sure you are still wearing your plug.  She
+  always does it somewhere you’ll probably not get caught, but where there’s still a chance.  You know she
+  doesn’t think you are going to cheat and take it out.  You know she thinks the risk of someone seeing you
+  will excite you.  She’s right.
+<</nobr>>
+
+::Part12Kate4
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <video src="Part12/Kate4.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  When you get home, Mistress says she’s pleased that you kept your plug in all night and has you remove it
+  and change for her.  Then she binds you on top of the Sybian she’d bought not long after you moved in.
+<</nobr>>
+
+<<nobr>>
+  You are almost to the orgasm she’d promised you when suddenly she turns off the Sybian.  You whimper and
+  moan into your gag, needing just a little bit more.  “Did you think I was going to let you cum already?”, she
+  asks knowing you can’t answer.  “I only promised you a chance to orgasm.  But don’t worry, that wasn’t your
+  chance.  Your chance
+  <<if $PlayerSideEffectPermanent>>
+    [[will come soon|Part12KateNoChoice]],
+  <<else>>
+    [[will come soon|Part12KateMakeChoice]],
+  <</if>>
+  though that doesn’t necessarily mean that <i>you</i> will cum soon.”
+<</nobr>>
+
+::Part12KateNoChoice
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <img src="Part12/Kate5.jpg" hspace="10" vspace="10" height="800" align="left"/>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  “We both know that your change is permanently and you’ll be a woman the rest of your life, and I couldn’t
+  be happier for you.
+<</nobr>>
+
+<<nobr>>
+  But I know sometimes you still think of yourself as a man and I want to help cure you of that.”,
+  your mistress tells you as she pulls out a new toy.
+<</nobr>>
+
+<<nobr>>
+  As she slides one end of the strapless dildo inside her she continues, “I know right now
+  you are imagining what it would be like to wear this, to have a cock again, if only for a moment.
+  That’s not what you should be thinking.”
+<</nobr>>
+
+<<nobr>>
+  “I’m going to watch closely as you suck my temporary cock. Your mistress will know what you
+  are thinking.  When you stop imagining having a cock and start imagining how good this
+  would feel inside you, then I will reward you.  If I get tired of waiting, then you’ll have
+  missed your chance for an [[orgasm tonight|Part12KateRewarded]].”
+<</nobr>>
+
+::Part12KateRewarded
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <video src="Part12/Kate6.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  Mistress sees the hungry look in your eyes as you suck her dildo, and she decides that you are ready for
+  your reward.  She makes you beg for her to fuck you before she finally slides the dildo into you from behind.
+<</nobr>>
+
+<<nobr>>
+  “Concentrate on that wonderful full feeling when I’m inside you.”, she tells you.  “And also on that aching,
+  empty feeling you feel just for a moment as I pull out.  This is who you are now, not some cock you’ll never
+  see again.”  You can only manage to say “Yes, mistress.” as you feel your orgasm building.
+<</nobr>>
+
+<<nobr>>
+  As you cum, she thrusts deep and hard a few times leaving the dildo deep inside you until your orgasm has
+  finally passed.  “Isn’t that much better than anything you had before you changed?”, she asks rhetorically.
+  “All your orgasms for a while will come from me fucking you like that.  At least until I’m sure any thoughts of
+  your old life are long gone.”
+<</nobr>>
+
+<<nobr>>
+  “Of course, my clit is still in need of attention.  And you do still have a tongue”, she says as she removes the
+  dildo and [[tosses it aside|Part12KateDecided]].
+<</nobr>>
+
+::Part12KateMakeChoice
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <video src="Part12/Kate7.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
+
+<<nobr>>
+  Mistress had brought up many times before about whether you had accepted this as your new life and your
+  new body.  Or was all this, and her, just an temporary adventure for you.  She’d said it was time for you to
+  decide and she left you alone to think about it.
+<</nobr>>
+
+<<nobr>>
+  When she returns you see she is slowly stroking her strapless dildo.  You had thought you’d made your
+  decision but you still can’t help imagining both the pleasure each of her strokes would give if her dildo were
+  your cock AND how wonderful it would feel to have that dildo fucking you right now.
+<</nobr>>
+
+<<nobr>>
+  “This dildo is going to help you decide once and for all.”, she tells you.  “I’ve filled it with a special batch of
+  fake cum I got from the X-Change people.  If you orgasm while I’m fucking you with it, I’ll trigger it to ‘cum’ too.
+  The chemicals it releases will trigger your X-Change to become permanent.  Of course, if you hold back and
+  don’t cum, you’ll still be able to change back after graduation, if that’s what you want.”
+<</nobr>>
+
+<<nobr>>
+  Even if you don’t want the change to be permanent you can’t bring yourself to use your safeword, or even to
+  ask her not to fuck you.  You wonder what it says about what you really want since all you can manage to say
+  is [[“Yes, Mistress.”|Part12KateMakeChoice2]]
+<</nobr>>
+
+::Part12KateMakeChoice2
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <video src="Part12/Kate8.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  Your mistress knows what your body wants better than you do, and she’s focused on giving you as much
+  pleasure as she can.
+<</nobr>>
+
+<<nobr>>
+  It feels so good as she fucks you with her strapless dildo.
+  <span id="StraplessDecide">
+    Do you 
+    <<link "concentrate on how good it feels">>
+      <<replace "#StraplessDecide">>
+        <<set $KateDecide to 'Enjoy'>>
+        You concentrate on each of her thrusts and how good they feel.  The thought that your change might soon be permanent excites you.
+        <br><br>
+        You stare into Mistress's eyes as you feel your [[orgasm starting to get close...|Part12KateMakeChoice3]]
+      <</replace>>
+    <</link>>
+    &nbsp;&nbsp;or&nbsp;&nbsp;
+    <<link "think about something else and try not to cum">>
+      <<replace "#StraplessDecide">>
+        <<set $KateDecide to 'Resist'>>
+        You try to think of something else.  You are enjoying being in this body... especially right now... but you aren't sure you
+        want be like this forever.  Are you?
+        <br><br>
+        You struggle to hold back feel your [[orgasm starting to get close...|Part12KateMakeChoice3]]
+      <</replace>>
+    <</link>>?
+    Or do you
+    <<link "still not know what you want">>
+      <<replace "#StraplessDecide">>
+        <<set $KateDecide to 'Undecided'>>
+        The thought of being in this body forever excites you but aren't certain about it.  You can't believe you still don't know what you
+        want.  But Mistress keeps thrusting, and soon other thoughts are pushed out of your mind.  All you can think about is her
+        fucking you.
+        <br><br>
+        You heart races as you feel your [[orgasm starting to get close...|Part12KateMakeChoice3]]
+      <</replace>>
+    <</link>>?
+  </span>
+<</nobr>>
+
+::Part12KateMakeChoice3
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <video src="Part12/Kate9.mp4" autoplay loop muted height="600"></video>
+  <<if $KateDecide == 'Enjoy'>>
+    <<set $KateDecideModifier to 5>> 
+  <<elseif $KateDecide == 'Resist'>>
+    <<set $KateDecideModifier to -5>> 
+  <<else>>
+    <<set $KateDecideModifier to 1>> 
+  <</if>>
+  <<if $PlayerEasytoOrgasm>>
+    <<set $KateDecideModifier += 5>>
+  <</if>>
+  <<set $KateDecideOrgasm to Math.ceil(Math.random() * 20 + $KateDecideModifier) >= 11>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  <<if $KateDecideOrgasm>>
+    You cry out as your orgasm washes over you.  Some mix of fear and excitement surges in you as your
+    mistress thrusts one last time, presumably to deposit her ‘cum’ as deep inside you as possible.  Maybe
+    it’s just the afterglow of the orgasm, but now that there’s nothing you can do to change back, you feel a
+    certain [[contentment with your new life|Part12KateMakeChoice4]].
+  <<else>>
+    You felt your orgasm getting closer and closer, but before you cum, Mistress’s thrusts stop. You 
+    <<if $KateDecide == 'Resist'>>
+      were trying not to cum, but still you 
+    <</if>>
+    feel a frustrating emptiness when she pulls out of you.
+    Maybe you’ve made up your mind now, or maybe you haven’t, but you figure at least
+    [[the choice is still yours|Part12KateMakeChoice4]].
+  <</if>>
+<</nobr>>
+
+::Part12KateMakeChoice4
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <video src="Part12/Kate10.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  “At first I thought you were playing along with my little role play, but I realized near the end there that you
+  truly believed my ‘X-Change fake cum’ story.”, Mistress says once you’ve both caught your breath.
+  “I would never do that to you, pet.”, she tells you as she strokes your hair.
+<</nobr>>
+
+<<nobr>>
+  “The [[decision is still yours|Part12KateMakeChoice5]], of course. But I think the fact that you believed me and
+  didn’t ask me to stop shows what your true desires  really are.”
+<</nobr>>
+
+<<nobr>>
+  When she asks, “Are you ready for another round, but this time without the role play?”, you quickly agree.
+<</nobr>>
+
+::Part12KateMakeChoice5
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <img src="Part12/Kate11.jpg" hspace="10" vspace="10" height="600"/>
+<</nobr>>
+
+<<nobr>>
+  After Mistress is asleep, you are lying awake and thinking about what she said and about what you really want.
+<</nobr>>
+
+<<nobr>>
+  Encouraging you to make a decision, and many other things she’s said, makes it clear that Kate is wanting a long-term relationship.
+  Obviously that’s not possible with you if you are going to change back in a few years.  But is that even something you want at this
+  point in your life?  Would you ever want to give this up?
+<</nobr>>
+
+<<nobr>>
+  <span id="RealDecide">
+    Do you 
+    <<link "make your change permanent">>
+      <<replace "#RealDecide">>
+        <<set $PlayerDecidePermanent to 1>>
+        Regardless of where things go between you and Kate, you're certain you [[never want to change back again|Part12KateDecided]].
+        You'll see if the X-Change people can make your change permanent at your next visit.
+      <</replace>>
+    <</link>>
+    or are you still not sure and might still
+    <<link "want to change back after graduation">>
+      <<replace "#RealDecide">>
+        You aren't sure yet, you think you might still want to change back someday.  But you know it's [[not fair to Kate|Part12KateGoodbye]] to
+        keep stringing her along when you might be a guy a few years from now.
+      <</replace>>
+    <</link>>
+  </span>
+<</nobr>>
+
+::Part12KateDecided
+<<nobr>>
+  <h1>Home with Mistress Kate</h1>
+  <img src="Part12/Kate12.jpg" hspace="10" vspace="10" height="600"/>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+	<<set $sex.push({sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  The next morning, you and Kate talk for a while before getting out of bed.  “You helped me realize a lot about myself last night.”,
+  you tell her.  “I know this is my body now. The one I was alway meant to have, the one I always will have.  Thank you for helping
+  me understand that.”
+<</nobr>>
+
+<<nobr>>
+  She pulls you close and kisses you.  The two of you spend quite a while talking about your new understanding, and about the
+  future until you both decide that maybe it’s time to finally get out of bed.
+<</nobr>>
+
+<<nobr>>
+  The next morning you send an email to the X-Change office to see if they can make your change permanent.  [[After spring break|Part12BackToClass]],
+  they reply back congratulating you and letting you know that they’ll be happy to do that for you at your next check-up.  You don't
+  ask if there's any fake cum involved, but you assume not.
+<</nobr>>
+
+::Part12KateGoodbye
+<<nobr>>
+  <h1>Home Alone</h1>
+  <img src="Part12/Kate13.jpg" hspace="10" vspace="10" height="800" align="left"/>
+  <<set setup.breakupWith('Kate')>>
+  <<unset $MasterKate>>
+  <<set $Roommate to "Samantha">> 
+<</nobr>>
+
+<<nobr>>
+  You enjoyed your time with “Mistress” Kate, but you aren’t sure what you want yet, and you know she’s looking for more in a relationship than you
+  can offer right now.  She understands, though she’s seems pretty confident that when you do decide, that it’ll be this body that you choose.
+  The two of you part as friends as you pack up your things and move back to the dorms.
+  <<if $Keyholder == 'Kate'>>
+    <br><br>
+    Kate lets you keep the chastity belt you'd gotten so familiar with, though she gives you the key.
+    <<unset $Keyholder>>
+    <<unset $PlayerChastityBelt>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When you’re at home alone, you look at your body in the mirror.  “Would it be so bad if I stayed like this?”, you wonder.
+  “Maybe not”, you think, “But it’s not something I need to decide right now.”
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock>>
+    Now that you aren't bound by Mistr... Kate's rules anymore, your hand slides into your panties as you decide to enjoy your new freedom.
+    But you are soon reminded that Kate wasn't the only thing preventing you from masturbating.  You remember your implant's side effect as the
+    orgasm you'd felt building never comes.  Your relief will have to come another night.
+    <br><br>
+    But for now you need to get to sleep, it's [[back to class|Part12BackToClass]] tomorrow.
+  <<else>>
+    You realize [[something else too|Part12KateAfter]].
+  <</if>>
+<</nobr>>
+
+::Part12KateAfter
+<<nobr>>
+  <h1>Home Alone</h1>
+  <video src="Part12/Kate14.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
+
+<<nobr>>
+  Mistress had been in charge of your orgasms for so long, and had forbid you from masturbating, it takes you a while
+  to remember that now you can pleasure yourself whenever you wish. Of course, your submissive side is still there as
+  your mind fills with fantasies of a hand on your neck, keeping you from moving.  The thought only turns you on more.
+<</nobr>>
+
+<<nobr>>
+  You hear clapping coming from the guys room after your orgasm.  You quickly realize that
+  maybe you’ll need to try to be a bit quieter now that you’re back in the dorms again.
+  But for now you need to get to sleep, it's [[back to class|Part12BackToClass]] tomorrow.
+<</nobr>>
 
 ::Part12VeronicaRide
 TODO Veronica Ride

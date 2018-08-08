@@ -401,7 +401,7 @@
   <<if !$PlayerChastityBelt>>
     You move your head around with your lips parted, trying to find his cock again.  Before you do though,
     you feel Josh lift you up and [[carry you towards the bed|Part11JoshBlindfolded2]].
-  <<elseif $JoshKey>>
+  <<elseif $Keyholder == 'Josh'>>
     You ache as he finally removes the belt from you.
     He slides one finger inside you and back out, just once, to tease you.  Then
     he takes your hand and [[leads you to the bedroom|Part11JoshBlindfolded2]],
@@ -971,7 +971,7 @@
 <<nobr>>
   <span id="MoveInSpan">
     Do you answer:
-    <<link ""Yes!">>
+    <<link "Yes!">>
       <<replace "#MoveInSpan">>
         You tell her you feel the same way, and accept her offer to move in.
         She thrilled of course.  The two of you have a passionate night
@@ -1002,9 +1002,9 @@
 	<<set $sex.push({sex: 'female', name:'Kate'})>>
 	<<set $sex.push({sex: 'female', name:"Kate's New Pet"})>>
   <<set setup.makeFWB('Kate')>>
-  <<set $MasterKate to 0>>
-  <<set $KateKey to 0>>
-  <<set $PlayerChastityBelt to 0>>
+  <<unset $MasterKate>>
+  <<unset $Keyholder>>
+  <<unset $PlayerChastityBelt>>
   When you spot Kate at the bar with another girl about your age you assume she must have moved on.  But you
   realize that’s not entirely the case when she invites you to come home with them both at the end of your shift.
 <</nobr>>
@@ -1090,7 +1090,8 @@
 	<<set $sex.push({sex: 'female', name:'Kate'})>>
 	<<set $sex.push({sex: 'female', name:'Kate'})>>
 	<<set $sex.push({sex: 'female', name:'Kate'})>>
-  <<set $Rommmate = 'Kate'>>
+  <<set $Roommate to 'Kate'>>
+  <<set setup.startDating('Kate')>>
   You are so excited to move out of your dorm or sorority house and in with Mistress Kate.
   You love being able to [[spend as much time with her|Part11MistressMovingIn2]] as possible.
   She’s still away for work a lot, but you love greeting her at the door wearing something sexy.
@@ -1461,7 +1462,7 @@
     <img src="Part11/Master6A.png" hspace="10" vspace="10" height="400" align="left"/>
     As he walks away, his wife walks up.  She grabs the pair of nipple clamps from the table next to you.  You wince for
     a moment as she attaches them to your nipples.  Then she presses a button on each and you feel them both start to vibrate,
-    making you get even more arroused than you already were.
+    making you get even more aroused than you already were.
     <<set $PartyHornyPerTime += 5>>
   <</if>>
 <</nobr>>

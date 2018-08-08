@@ -33,9 +33,8 @@ weeks away, you decided to wait until then instead.
 ::Part10StartChastity <200,10300>
 <<nobr>>
 	<h1><<print "Chastity">></h1>
-  <<include [[SetChastityVariables]]>>
 <</nobr>>
-<<if $MasterKey>>
+<<if $Keyholder == 'Robert'>>
   <<nobr>>
     <<set $sex.push({sex: 'male'})>>
     <<set $sex.push({sex: 'male'})>>
@@ -550,7 +549,7 @@ You start trying to think of ways to earn a little extra money on the side...
       Besides, even if they wanted a pregnant dancer, it wouldn't be allowed while you were on disability leave.
     <</if>>
   <<elseif $PlayerChastityBelt>>
-    <<if $VeronicaKey>>
+    <<if $Keyholder == 'Veronica'>>
     <<set $cantWorkStripper to 0>>
       Veronica is skeptical at first.  She's not real excited aobu the thought of you grinding on top of strange
       men.  And she's heard that sometimes much more than that goes on too.  After you promise that it'll just be
@@ -599,7 +598,7 @@ You start trying to think of ways to earn a little extra money on the side...
 <<nobr>>
   <<if $PlayerChastityBelt and ($JobWebModel or $JobWebModelSide or $JobPorn or $JobPornSide or $JobPornOral or $JobPornOralSide or $JobPornAnal or $JobPornAnalSide or $JobPornGang or $JobPornGangSide)>>
     You can't really think of any way to earn extra money with this belt locked on you.
-  <<elseif $PlayerChastityBelt and $MasterKey>>
+  <<elseif $Keyholder == 'Robert'>>
     You realize your only option to earn extra money is if Olivia's master will hire you.  You can
     [[double check with her|Part10WebModel]] about openings.
   <<elseif $PlayerChastityBelt>>
@@ -744,7 +743,7 @@ Now you can [[think about something more fun|Part10End]].
 <img src="Part10/Store2.jpg" hspace="10" vspace="10" height="600" />
 <<nobr>>
   Master Robert
-  <<if !$PlayerChastityBelt or !$MasterKey>>
+  <<if !$Keyholder or $Keyholder != "Robert">>
     (you are expected to call him that at work, even if he isn’t your Master)
   <</if>>
   lets you know that there’s not much modeling work right now.  He can certainly use you,
@@ -757,7 +756,7 @@ Now you can [[think about something more fun|Part10End]].
   store that he thinks you’d be perfect for.  As you look at all the products they sell
   here, working as a clerk sounds like it might be interesting.  He says this job pays in
   cash too, which
-  <<if $PlayerChastityBelt and $MasterKey >>
+  <<if $Keyholder == 'Robert' >>
     [[sounds great to you|Part10WebModel3]].
   <<else>>
     sounds great to you. There’s [[just one catch...|Part10WebModel3]]
@@ -767,7 +766,7 @@ Now you can [[think about something more fun|Part10End]].
 ::Part10WebModel3 <3800,10300>
 <img src="Part10/Store3.jpg" hspace="10" vspace="10" height="800" align="left" />
 <<nobr>>
-  <<if $PlayerChastityBelt and $MasterKey>>
+  <<if $Keyholder == 'Robert'>>
     You'll, of course, still be locked in the chastity belt while at work.  But you
     hope that maybe if you [[work for him at the store|Part10WebModel5]], he might let you out every
     now and then.  Maybe if he needs to test out some new toy...
@@ -779,7 +778,7 @@ Now you can [[think about something more fun|Part10End]].
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerChastityBelt and $MasterKey>>
+  <<if $Keyholder == 'Robert'>>
   <<elseif $PlayerChastityBelt>>
     Robert smiles when you lift up your skirt to show the belt you already wear.  He is
     happy that you are securely belted, but there is no way $KeyholderName is going to
@@ -802,7 +801,7 @@ Now you can [[think about something more fun|Part10End]].
   <</if>>
 <</nobr>>  
 
-<<if $PlayerChastityBelt and $MasterKey>>
+<<if $Keyholder == 'Robert'>>
 <<elseif $cantWorkStore>>Since this job isn't going to work for you, you'll have to [[think of something else|Part10ExtraMoney3]].
 <<else>>
   <<nobr>>
@@ -861,9 +860,11 @@ Now you can [[think about something more fun|Part10End]].
 ::Part10WebModel4 <400,10300>
 <img src="Part10/Store4.jpg" hspace="10" vspace="10" height="800" align="left" />
 <<nobr>>
-  <<set $PlayerMoneySet to 0>>
+  <<unset $PlayerMoneySet>>
   <<set $PlayerChastityBelt to 1>>
-  <<set $MasterKey to 1>>
+  <<set $Keyholder to "Robert">>
+  <<set $KeyholderPronoun to "he">>
+  <<set $KeyholderPronounPosessive to "his">>
   He says you won’t be starting work for a couple days, so you are planning on spending that time
   <<if $PlayerSideEffectMasturbationBlock>>
     fucking like crazy.
