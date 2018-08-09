@@ -1834,10 +1834,14 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 	
 	<h1><<print "Zack">></h1>
+	<<if $CampusMinistry>>
+		<img src="Part6/Start7a.jpg" hspace="10" vspace="10" height="650">
+	<<else>>
+		<img src="Part6/Start7.jpg" hspace="10" vspace="10" height="650">
+	<</if>>
 <</nobr>>
 
 <<print "He makes sure to include you on his adventures from time to time. You never know what to expect, but it’s always exciting.">>
-<img src="Part6/Start7.jpg" hspace="10" vspace="10" height="650">
 <<if setup.isFWB('Zack')>><br><<print "He makes sure to that you join him as often as possible.">><br><</if>>
 <<include [[Part6NextZackJosh]]>>
 
