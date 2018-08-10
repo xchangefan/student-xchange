@@ -2099,18 +2099,648 @@ from your drunken friends. You do your best to let him know just how appreciativ
 <</nobr>>
 
 ::Part12AtTheBeach
-TODO Part12AtTheBeach
+<<nobr>>
+  <h1>At the Beach</h1>
+  <img src="Part12/Beach1.jpg" hspace="10" vspace="10" height="800" align="left"/>
+<</nobr>>
+
+<<nobr>>
+  You’re glad the long drive is finally over,and as soon as you drop off your stuff in
+  your room you head straight to the beach. You know you’re going to have a [[fun time this week|Part12AtTheBeach2]].
+<</nobr>>
+
+::Part12AtTheBeach2
+<<nobr>>
+  <h1>Near the Beach</h1>
+  <img src="Part12/Beach2.jpg" hspace="10" vspace="10" height="600" align="left"/>
+<</nobr>>
+
+<<nobr>>
+  During the day, you spend most of your time near the beach, enjoying the sun and the ocean.
+  You love the looks you get in your bikini from the guys, and some of the girls too.
+<</nobr>>
+
+<<nobr>>
+  Though, depending on your complexion, you might need to be careful to avoid getting too much sun.
+  Of course if that’s something you have to worry about, you don’t have to look too far to find someone willing to
+  help you apply sunscreen to those hard-to-reach places.
+  They’d probably be more than willing to help you with some easy-to-reach places too.
+<</nobr>>
+
+<<nobr>>
+  And, of course, taking a break from the sun is always a good excuse to step into the shade and grab a cold drink too.
+  <<if $PlayerPregnant>>
+    Though, in your case the [[drinks are non-alcoholic|Part12BeachPregnant]].
+  <<elseif $SpringBreakPeter>>
+    Of course, if you want to stay out in sun, you can just [[make Peter fetch your drink for you|Part12AtTheBeachPeter]].
+  <<else>>
+    You don't spend too much time indoors [[during the day|Part12AtTheBeach3]] though, they'll be enough time for indoor fun later.
+  <</if>>
+<</nobr>>
+
+::Part12BeachPregnant
+<<nobr>>
+  <h1>At the Beach</h1>
+  <img src="Part12/Beach3.jpg" hspace="10" vspace="10" height="800" align="left"/>
+<</nobr>>
+
+<<nobr>>
+You may not drinking like most of your friends are, but you aren’t letting that stop you from having a good time.  
+<</nobr>>
+
+<<nobr>>
+  You had been a bit self-conscious about your bikini at first.  But people have been telling you how beautiful you look,
+  <<if $SpringBreakPeter>>
+    [[especialy Peter|Part12AtTheBeachPeter]].
+  <<else>>
+    [[and you’ve stopped worrying about it|Part12AtTheBeach3]].
+  <</if>>
+<</nobr>>
+
+::Part12AtTheBeachPeter
+<<nobr>>
+  <h1>At the Pool</h1>
+  <img src="Part12/Beach4.jpg" hspace="10" vspace="10" height="800" align="left"/>
+<</nobr>>
+
+<<nobr>>
+  You haven’t let Peter cum in weeks and you know he’s desperate for an orgasm.  You’re thinking about letting him out for a little relief.
+  But then you think about him looking at all the girls in bikinis (and sometimes less), and how much hornier that’ll make him.
+<</nobr>>
+
+<<nobr>>
+  You decide he’ll need to wait at least until the end of the week.
+  You know letting him know relief might be coming soon will make him want it even more, so of course you tell him.
+<</nobr>>
+
+<<nobr>>
+  “I’m going to have a [[lot of fun this week|Part12AtTheBeach3]], and so will you.  My fun will be getting fucked silly by
+  <<if setup.areDating('Peter') or $dating.length == 0>>
+    a different guy or girl
+  <<else>>
+    $dating[0]
+  <</if>>
+  every night.  Your fun will be hearing all about it
+  <<if setup.areDating('Peter') or $dating.length == 0>>
+    when I stumble back to our room.”
+  <<else>>
+    later."
+  <</if>>  
+  As you tell him your plans, you see him shift uncomfortably as his cock tries and fails to get hard.
+<</nobr>>
+
+<<nobr>>
+  “And if you’re a good boy all week, and I’m not too sore, I’ll probably give you a turn before we go home.”  
+<</nobr>>
+
+::Part12AtTheBeach3
+<<nobr>>
+  <h1>At the Beach</h1>
+  <img src="Part12/Beach5.jpg" hspace="10" vspace="10" height="600"/>
+<</nobr>>
+
+<<nobr>>
+  Of course, soaking up the sun and splashing around on the beach aren’t the only fun you are having this week.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    Though some fun is [[still frustratingly out of your reach|Part12Chastity]].
+  <<elseif setup.areDating('Veronica')>>
+    You know you and Veronica are [[going to have a great time!|Part12Veronica]]
+  <<else>>
+    You know you are [[going to have a great time!|Part12FilmCrew]]
+  <</if>>
+<</nobr>>
+
+::Part12Veronica
+<<nobr>>
+  <h1>At the Pool</h1>
+  <img src="Part12/Veronica1.jpg" hspace="10" vspace="10" height="600" align="left"/>
+<</nobr>><<nobr>>
+  You and Veronica enjoy relaxing beside each other on the beach or next to the hotel pool.
+  Most of the guys there don’t realize the two of you are a couple and try to hit on either or both of you.
+  With your sunglasses on they don’t realize you’re watching them as they try to work up the nerve to approach you.
+<</nobr>>
+
+<<nobr>>
+  After the latest guy walks away disappointed, Veronica offers some suggestions on what to do next.
+  "I have a few ideas, let me know which you want to try.  We have all week, so really we could
+  <<link "do all of them if you want.">>
+    <<set $VeronicaGirls to 1>>
+    <<set $VeronicaGuys to 1>>
+    <<set $VeronicaFilm to 1>>
+    <<goto [[Part12VeronicaGirls]]>>
+  <</link>>
+  "
+  <<set $numVeronicaSelections to 0>>
+<</nobr>>
+
+<<nobr>>
+  “I ran in to a couple girls at the bar, and they invited us to hang out with them sometime this week.  And they have a girls-only
+  party back at their room every night.”
+  <span id="GirlsSpan">
+    Do you tell Veronica:
+    <<link "Sounds like fun!">>
+      <<replace "#GirlsSpan">>
+        <<set $VeronicaGirls to 1>>
+        <<set $numVeronicaSelections += 1>>
+        <<if $numVeronicaSelections >= 3>>
+          <<replace "#NextSpan">>
+            <<include [[Part12VeronicaNext]]>>
+          <</replace>>
+        <</if>>
+        You tell Veronica that the party sounds like fun.
+      <</replace>>
+    <</link>>
+    or
+    <<link "Eh, not really">>
+      <<replace "#GirlsSpan">>
+        <<set $VeronicaGirls to 0>>
+        <<set $numVeronicaSelections += 1>>
+        <<if $numVeronicaSelections >= 3>>
+          <<replace "#NextSpan">>
+            <<include [[Part12VeronicaNext]]>>
+          <</replace>>
+        <</if>>
+        You tell her that you're not really interested in the party.
+      <</replace>>
+    <</link>>
+  </span>
+<</nobr>>
+
+<<nobr>>
+  “It’s not normally something I’d do, but I know you’re bi, or at least more bi than I am.   Anyway, I was talking to Blake and
+  Darnell, those guys in the room next to us.  If you want to have a little fun with them, we can give that a try.”
+  <<if $PlayerSideEffectPheromones>>
+    <<set $VeronicaGuys to 1>>
+    <<set $numVeronicaSelections += 1>>
+    <<if $numVeronicaSelections >= 3>>
+      <<replace "#NextSpan">>
+        <<include [[Part12VeronicaNext]]>>
+      <</replace>>
+    <</if>>
+    Being around all the sweaty, shirtless guys all day, with their skin shining from suntan lotion... it has you too excited to give
+    her anything but an enthusastic "Yes!" to this idea.
+  <<else>>
+    <span id="GuysSpan">
+      Do you tell Veronica:
+      <<link "Really? You'd do that for me?">>
+        <<replace "#GuysSpan">>
+          <<set $VeronicaGuys to 1>>
+          <<set $numVeronicaSelections += 1>>
+          <<if $numVeronicaSelections >= 3>>
+            <<replace "#NextSpan">>
+              <<include [[Part12VeronicaNext]]>>
+            <</replace>>
+          <</if>>
+          You tell Veronica how exciting that idea sounds to you.
+        <</replace>>
+      <</link>>
+      or
+      <<link "Eww! No!">>
+        <<replace "#GuysSpan">>
+          <<set $VeronicaGuys to 0>>
+          <<set $numVeronicaSelections += 1>>
+          <<if $numVeronicaSelections >= 3>>
+            <<replace "#NextSpan">>
+              <<include [[Part12VeronicaNext]]>>
+            <</replace>>
+          <</if>>
+          You thank her for being willing to try that for you, but you're not really interested in it either.
+        <</replace>>
+      <</link>>
+    </span>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  “Did you see those people carrying all those boxes and camera stuff into the hotel earlier?  Someone said it was for some
+  sort of promotion for a sex toy company or something.  We could go check it out and find out more.”
+  <<if $UncleChair>>
+    <<set $VeronicaFilm to 1>>
+    <<set $numVeronicaSelections += 1>>
+    <<if $numVeronicaSelections >= 3>>
+      <<replace "#NextSpan">>
+        <<include [[Part12VeronicaNext]]>>
+      <</replace>>
+    <</if>>
+    Veronica pauses for a second then continues.  "Actually, from what they already told me, I know you'll love this one, so
+    we are definitely going to do it."
+  <<else>>
+    <span id="FilmSpan">
+      Do you tell Veronica:
+      <<link "That sounds interesting">>
+        <<replace "#FilmSpan">>
+          <<set $VeronicaFilm to 1>>
+          <<set $numVeronicaSelections += 1>>
+          <<if $numVeronicaSelections >= 3>>
+            <<replace "#NextSpan">>
+              <<include [[Part12VeronicaNext]]>>
+            <</replace>>
+          <</if>>
+          You tell Veronica that it might be interesting to check out.
+        <</replace>>
+      <</link>>
+      or
+      <<link "That sounds boring">>
+        <<replace "#FilmSpan">>
+          <<set $VeronicaFilm to 0>>
+          <<set $numVeronicaSelections += 1>>
+          <<if $numVeronicaSelections >= 3>>
+            <<replace "#NextSpan">>
+              <<include [[Part12VeronicaNext]]>>
+            <</replace>>
+          <</if>>
+          You tell Veronica that it sounds like a bunch of boring advertisments.
+        <</replace>>
+      <</link>>
+    </span>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <span id="NextSpan">
+  </span>
+<</nobr>>
+
+::Part12VeronicaNext
+<<nobr>>
+  <<if $VeronicaGirls>>
+    "Great! I think I see one of the girls now.  [[Let's go talk to her|Part12VeronicaGirls]]"
+  <<elseif $VeronicaGuys>>
+    "Great! I think I saw Blake over by the bar earlier.  [[I'll go talk to him.|Part12VeronicaGuys]]"
+  <<elseif $VeronicaFilm>>
+    "Great! [[Let's go now|Part12VeronicaFilmCrew]].  We'll just wear our bikinis, I'm sure no one will mind."
+  <<else>>
+   "Aww, I don't want to waste the whole week sitting by the pool getting hit on by horny guys.  Lets do <i>something</i>.
+    Which is it? [[the all-girls party|Part12VeronicaGirls]], [[hooking up with Blake and Darnell|Part12VeronicaGuys]],
+    or [[checking out the film crew|Part12VeronicaFilmCrew]]"?
+  <</if>>
+<</nobr>>
+
+TODO Add Sex
+::Part12VeronicaGirls
+<<nobr>>
+  <h1>Girls-only Fun</h1>
+  <video src="Part12/Veronica2.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  The girls Veronica had met are a bit wilder than you and Veronica, but you have to admit they’re a lot of fun.
+  They take you to a beach a few miles away where it’s legal and convince you both to go topless.
+<</nobr>>
+
+<<nobr>>
+  One of them calls her brother to tease him about what a good time she’s having, and even sends him a video
+  of it all.  The thought crosses your mind to do the same to your brother, but you quickly decide that maybe
+  that’s not a good idea considering how things went over the holiday with him.
+<</nobr>>
+
+<<nobr>>
+  Later in the day you all head back to their room and get [[that night’s party|Part12VeronicaGirlsHotTub]] started a little early.
+<</nobr>>
+
+::Part12VeronicaGirlsHotTub
+<<nobr>>
+  <h1>In the Hot Tub</h1>
+  <video src="Part12/Veronica3.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+<</nobr>>
+
+<<nobr>>
+  Later that evening, after everyone has had quite a few drinks, you head down the hotel’s hot tub.  You don’t
+  bother with the bikinis this time.
+<</nobr>>
+
+<<nobr>>
+  The girls are mostly paired off, you with Veronica, and others with their girlfriend or just whoever they
+  decided to hook up with tonight.   It starts as just making out, but with everyone drunk and naked, it quickly
+  becomes much more.  Some girls are even switching around to different girls.
+<</nobr>>
+
+<<nobr>>
+  You notice there’s an odd number of girls though, and there’s one quiet one that isn’t participating that much.
+  You can tell she’s turned on, but you think it just might be too much for her.  You can see if Veronica wants
+  to [[take the shy girl to your room|Part12VeronicaGirlsQuiet]] or you can
+  [[stay in the hot tub|Part12VeronicaGirlsWild]] and see how wild things get.
+<</nobr>>
+
+::Part12VeronicaGirlsQuiet
+<<nobr>>
+  <h1>Your and Veronica's Room</h1>
+  <video src="Part12/Veronica4.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', anon: 'Shy Girl'})>>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', anon: 'Shy Girl'})>>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', anon: 'Shy Girl'})>>
+<</nobr>>
+
+<<nobr>>
+  As you all stumble back to your room, she keeps telling you and Veronica both how beautiful you are.  As you
+  talk to her, she tells you she’s pretty sure she’s a lesbian, though she’s never been with a girl before. She’s
+  only been with a guy a few times, and quickly decided that it wasn’t for her.
+<</nobr>>
+
+<<nobr>>
+  She may be new at this, but she’s a quick learner though.  You and Veronica spend the next several hours
+  helping her make up for lost time.  When she leaves your room at the end of the fun, she tells you both what a
+  wonderful time she had, and that now she has no doubt.  She’s definitely a lesbian.
+<</nobr>>
+
+<<nobr>>
+  <<if $VeronicaGuys>>
+    Veronica says tomorrow she'll see if [[the guys next door|Part12VeronicaGuys]] are still interested.
+  <<elseif $VeronicaFilm>>
+    Veronica says tomorrow the two of you can [[check out that film crew|Part12VeronicaFilmCrew]].
+  <<else>>
+    Veronica says since this was the only idea she had that you liked, you'll have to
+    [[think of some way to pass the time|Part12VeronicaTogether]] this week.
+  <</if>>
+<</nobr>>
+
+::Part12VeronicaGirlsWild
+<<nobr>>
+  <h1>With the Police</h1>
+  <img src="Part12/Veronica5.jpg" hspace="10" vspace="10" height="600" align="left"/>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', anon: 'Girl in the Hot Tub'})>>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', anon: 'Girl in the Hot Tub'})>>
+	<<set $sex.push({sex: 'female', anon: 'Girl in the Hot Tub'})>>
+	<<set $sex.push({sex: 'female', anon: 'Girl in the Hot Tub'})>>
+<</nobr>>
+
+<<nobr>>
+  The hot tub party gets wilder and wilder.  You and Veronica start off with each other, but soon everyone is switching partners back
+  and forth.  It’s amazing.  A lot of the girls have paired off and left though.  There’s still you and Veronica and two other girls there,
+  and you’re still having a blast.
+<</nobr>>
+
+<<nobr>>
+  But the screams from all the orgasms must have worried (or maybe just annoyed) someone, as the police show up while you are
+  all naked and fucking in the public hot tub.  They have you put your bikinis back on and cuff you and lead you back to their car.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.haveFucked('Police Officer')>>
+    You know it got you out of that ticket a few months ago, so you decide to [[offer the officer a blow job|Part12VeronicaArrest]].
+    You're hoping Veronica or one of the other girls will take care of his partner, but you're prepared to do both if that's what
+    it takes to get out of this.
+  <<else>>
+    You think about [[offering to give the officer and his partner blow jobs|Part12VeronicaArrest]] if they forget about this.
+    Or you [[could just accept your punishment|Part12VeronicaWarning]], how bad could it be?
+  <</if>>
+<</nobr>>
+
+::Part12VeronicaWarning
+<<nobr>>
+  <h1>Your and Veronica's Room</h1>
+  <img src="Part12/Veronica6.jpg" hspace="10" vspace="10" height="600"/>
+<</nobr>>
+<<nobr>>
+  The officers start listing the crimes you’ve committed and the possible penalties.  You can’t help but start sobbing when he
+  mentions that you could be listed as a sex offender for having sex in public. You tell him how sorry you are, and that you and
+  Veronica aren’t normally like this.
+<</nobr>>
+
+<<nobr>>
+  They decide to let you all off with a warning.  They make you promise to go back to your rooms for the night, and stay out of
+  trouble for the rest of the week.  You all quickly agree.
+  You and Veronica are so relieved, but now that the excitement has died down, the alcohol finally starts making you both sleepy
+  and you soon pass out in your room.  You and Veronica both avoid the other girls from that night the rest of the week.
+<</nobr>>
+
+<<nobr>>
+  <<if $VeronicaGuys>>
+    Hopefully [[the guys next door|Part12VeronicaGuys]] won't be as wild as these girls were.
+  <<elseif $VeronicaFilm>>
+    You shouldn't get into much trouble tomorrow [[checking out that film crew|Part12VeronicaFilmCrew]].
+  <<else>>
+    You're pretty sure you can [[think of some way to pass the time|Part12VeronicaTogether]] this week
+    that won't get the two of you arrested.
+  <</if>>
+<</nobr>>
+
+::Part12VeronicaArrest
+<<nobr>>
+  <h1>In Court</h1>
+  <img src="Part12/Veronica7.jpg" hspace="10" vspace="10" height="600" align="left"/>
+<</nobr>>
+
+<<nobr>>
+One of the officers laugh at your blow-job offer and says, “Sorry, you’re not really my type. Besides, I don’t think my
+husband would approve.”  After your attempted bribe, they decide not to let you off with a warning and squeeze
+you all into their police car and head back to the station.
+<</nobr>>
+
+<<nobr>>
+  You start crying on Veronica’s shoulder as they list all the crimes you committed tonight and the possible
+  penalties for each, even being listed as a sex offender. You all spend the night in a cold jail cell, will
+  just one scratchy blanket each to keep warm. The next morning you are hauled into the courtroom, still in
+  your bikinis.
+<</nobr>>
+
+<<nobr>>
+  The judge lectures you all for a while, but tells you that the prosecutor has decided to go easy on you all.
+  If you plead guilty to a “disturbing the peace” ticket he’ll let you go with just the night you’ve already spent
+  in jail, and a $200 fine.  You all quickly agree given the alternative.
+<</nobr>>
+
+<<nobr>>
+  You and Veronica do your best to keep your fun indoors the rest of the trip and avoid the wild girls you’d met the
+  rest of the week.
+  <<if $VeronicaGuys>>
+    Hopefully [[the guys next door|Part12VeronicaGuys]] won't be as wild as these girls were.
+  <<elseif $VeronicaFilm>>
+    You shouldn't get into much trouble tomorrow [[checking out that film crew|Part12VeronicaFilmCrew]].
+  <<else>>
+    You're pretty sure you can [[think of some way to pass the time|Part12VeronicaTogether]] this week
+    that won't get the two of you arrested.
+  <</if>>
+<</nobr>>
+
+::Part12VeronicaGuys
+<<nobr>>
+  <h1>Blake and Darnell's Room</h1>
+  <video src="Part12/Veronica8.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'male', name: 'Blake', vaginal:true, noCondom:true, noPullout:true})>>
+<</nobr>>
+
+<<nobr>>
+  You thank Veronica for being open to this as you head to Blake and Darnell’s room.  They share a few drinks
+  with you both and the alcohol helps calm some of your nervousness, and Veronica actually looks excited.
+<</nobr>>
+
+<<nobr>>
+  You and Veronica start with each other as the boys both watch.  When you ask her which guy she would
+  prefer she tells you,  “Neither. They’re both for you.  You’re the bi one.  I just want to watch.”
+  Once you’re ready she signals Blake to come over.
+<</nobr>>
+
+<<nobr>>
+  Veronica watches from the edge of the bed as he fucks you.  Veronica had you close already, so you cum
+  soon after he starts, he just keeps fucking you through your orgasm.  Meanwhile, Darnell sits in a chair
+  sipping his drink switching back and forth from watching his friend fuck you and watching Veronica get
+  herself more and more turned on.
+<</nobr>>
+
+<<nobr>>
+  You’re not quite to your second orgasm when Blake grunts and grabs your hips and thrusts one last time
+  deep inside you.  “God, that’s so hot.”, Veronica says.  “It was like he was some kind of hungry animal
+  at the end there.”  She jestures Darnell [[to come over|Part12VeronicaGuys2]]
+<</nobr>>
+
+::Part12VeronicaGuys2
+<<nobr>>
+  <h1>Blake and Darnell's Room</h1>
+  <video src="Part12/Veronica9.mp4" autoplay loop muted height="600"></video>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'male', name: 'Darnell', vaginal:true, noCondom:true, noPullout:true})>>
+<</nobr>>
+
+<<nobr>>
+  Blake is spent, and goes to sit down and watch the rest of the show. As Darnell heads over to take his place,
+  Veronica pulls you over between her legs.  As your tongue gets to work on her, you hear her say, “Fuck her from
+  behind.”  A moment later you feel Darnell’s cock slide into you.
+<</nobr>>
+
+<<nobr>>
+  When you start to moan and get distracted from pleasuring Veronica, she tells you, “Get back to work, or
+  I’ll tell him to fuck your ass instead.”  It doesn’t come to that though as both you and Veronica are soon
+  cumming.  Darnell is still going though. After Veronica recovers from her orgasm, she reaches under you,
+  rubbing your clit as he fucks you.
+<</nobr>>
+
+<<nobr>>
+  He’s getting close as you cum again.  Veronica holds his balls as he fucks you, curious to see what they’ll
+  feel like as he cums for you.  She soon finds out, smiling as she feels his balls twitch as he cums inside you.
+<</nobr>>
+
+<<nobr>>
+  After you head back to your room you thank her again for doing this for you.  She tells you she had a fun time too and
+  that maybe you can do this again someday.  “Not with these two obviously.  We’ll never see them again.
+  But I doubt it would be hard to find a willing guy or two if we ever wanted to to this again.”  
+  Maybe sometime,
+  <<if $VeronicaFilm>>
+    but tomorrow you want to [[check out that film crew|Part12VeronicaFilmCrew]].
+  <<else>>
+    but the rest of this week, you want [[Veronica all to yourself|Part12VeronicaTogether]].
+  <</if>>
+<</nobr>>
+
+::Part12VeronicaFilmCrew
+<<nobr>>
+  <h1>Near the Beach</h1>
+  <video src="Part12/Veronica10.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
+
+<<nobr>>
+  As you and Veronica check out the film crew, you quickly discover that while they are giving away free coupons
+  for an online sex toy store, what they are really doing is trying to find girls willing to get wild on camera.
+  Obviously they are eager to recruit you and Veronica when they see you.
+  <<if $VeronicaGirls and setup.haveFucked('Girl in the Hot Tub')>>
+    You tell them about the incident with the police, and they promise you that anything with less than your
+    bikini on they'd do in private.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  They offer to pay you and Veronica to have sex on camera, 
+  <<if $PlayerSideEffectExhibitionist>>
+    you're excited about the idea, but Veronica isn't.
+  <<else>>
+    but even if you’re willing to go along with it, Veronica isn’t.
+  <</if>>
+  They do however get you both to agree to just sensually kiss in your bikinis.  While they film it, of course.
+<</nobr>>
+
+<<nobr>>
+  When they find out
+  <<if $JobCheerleader or $JobCheerleaderFundraiser>>
+    you are both cheerleaders
+  <<else>>
+    Veronica is a cheerleader
+  <</if>>
+  they have another idea that pays more than just kissing, but they assure you both that you can keep your bikinis on
+  for this one... if you want.
+<</nobr>>
+
+<<nobr>>
+  You’re both a little turned on after your kiss, so you’re more open to their new idea than you
+  would have been a few minutes ago.  You agree to consider it and [[follow them inside|Part12VeronicaFilmCrew2]].
+<</nobr>>
+
+::Part12VeronicaFilmCrew2
+<<nobr>>
+  <h1>A Hotel Room</h1>
+  <video src="Part12/Veronica11.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
+
+<<nobr>>
+  “Is that it?  The football team uses something like that when they work out sometimes.”,
+  Veronica says when she sees the sports roller they want you to try.  You keep your bikinis
+  on like they promised and sit on the roller.  But when the producer flips the switch on the side,
+  the vibrations shoot through the thin fabric like it isn’t even there.
+<</nobr>>
+
+<<nobr>>
+  Veronica is caressing you from behind and you are both softly moaning, when the producer reaches
+  over and turns off the vibrations.  “That’s great, we got what we need.”, she says.  When she sees
+  the look on your and Veronica's faces, she adds, “Well, unless you want keep going, topless.  We
+  could use that video too.”  She offers some more money and you are about to agree but Veronica adds,
+  “And we get to keep this thing afterward, too.”
+<</nobr>>
+
+<<nobr>>
+  “Done.”, the producer says and your bikini tops are tossed aside seconds later.  She makes sure the
+  camera guy is still filming and turns the vibrations back on.  The camera doesn’t stop
+  rolling until you both have collapsed onto the bed after more orgasms than you could count.
+<</nobr>>
+
+<<nobr>>
+  You and Veronica don't have anything else planned for the week, but somehow the two of you
+  are still able [[to enjoy yourselves|Part12VeronicaTogether]]
+<</nobr>>
+
+::Part12VeronicaTogether
+<<nobr>>
+  <h1>Your and Veronica's Room</h1>
+  <img src="Part12/Veronica12.jpg" hspace="10" vspace="10" height="600" align="left"/>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+	<<set $sex.push({sex: 'female', name: 'Veronica'})>>
+<</nobr>>
+
+<<nobr>>
+Of course not all of your trip is spent on the beach or even drinking, partying, or acting wild.
+Plenty of it is spent back in your hotel room having even more fun with just you and Veronica.
+<</nobr>>
+
+<<nobr>>
+  But, eventually it's time to pack your things and [[head back home|Part12HeadHome]]
+<</nobr>>
+
+::Part12Chastity
+TODO Part12Chastity
+
+::Part12FilmCrew
+TODO Part12FilmCrew
+
 
 ::Part12TODO
-TODO On Spring Break
-TODO At th Beach
-TODO Veronica
-TODO Chasity Belt
-TODO Film Crew
 TODO Slippery
 TODO More Fun
 TODO Good Boy (Peter)
 
+::Part12HeadHome
 TODO Conclusion Heading Home
 
 ::Part12BackToClass
