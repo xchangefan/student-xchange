@@ -154,7 +154,8 @@
   <<elseif $CampusMinistry>>
     Alexis invited you to ride down with her and her sister, but you know Alex has a crush on you, so you declined.
     A classmate told you about one of the fraternities [[party bus|Part12PartyBus]].  They are offering
-    to let you ride for free.  TODO Something about joining Faith
+    to let you ride for free.
+    TODO Something about joining Faith (Maybe repenish your CampusMinistrySaves also)
   <<else>>
     There's some girls you know that are riding down.  You can chip in on gas and [[join them|Part12RideGirls]].
     One of the fraternties also invited you to ride on their [[party bus|Part12PartyBus]].  It's already paid for
@@ -1799,6 +1800,7 @@ from your drunken friends. You do your best to let him know just how appreciativ
 <<nobr>>
   <h1>Riding with Alex</h1>
   <video src="Part12/TravelGirls2.mp4" autoplay loop muted height="600"></video>
+  <<set $sex.push({sex: 'female', name:'Alexis'})>>
 <</nobr>>
 
 <<nobr>>
@@ -1831,6 +1833,10 @@ from your drunken friends. You do your best to let him know just how appreciativ
 <<nobr>>
   <h1>Hotel Room with Alex</h1>
   <video src="Part12/TravelGirls3.mp4" autoplay loop muted height="600"></video>
+  <<set $sex.push({sex: 'female', name:'Alexis'})>>
+  <<set $sex.push({sex: 'female', name:'Alexis'})>>
+  <<set $sex.push({sex: 'female', name:'Alexis'})>>
+  <<set $sex.push({sex: 'female', name:'Alexis'})>>
 <</nobr>>
 
 <<nobr>>
@@ -2136,7 +2142,7 @@ from your drunken friends. You do your best to let him know just how appreciativ
 <<nobr>>
   And, of course, taking a break from the sun is always a good excuse to step into the shade and grab a cold drink too.
   <<if $PlayerPregnant>>
-    Though, in your case the [[drinks are non-alcoholic|Part12BeachPregnant]].
+    Though, in your case the [[drinks are non-alcoholic|Part12PregnantFun]].
   <<elseif $SpringBreakPeter>>
     Of course, if you want to stay out in sun, you can just [[make Peter fetch your drink for you|Part12AtTheBeachPeter]].
   <<else>>
@@ -2144,7 +2150,7 @@ from your drunken friends. You do your best to let him know just how appreciativ
   <</if>>
 <</nobr>>
 
-::Part12BeachPregnant
+::Part12Part12PregnantFun
 <<nobr>>
   <h1>At the Beach</h1>
   <img src="Part12/Beach3.jpg" hspace="10" vspace="10" height="800" align="left"/>
@@ -3560,6 +3566,8 @@ Plenty of it is spent back in your hotel room having even more fun with just you
     you even more so.  Of course you want to
   <<elseif setup.haveFucked('Locksmith')>>
     You've were locked in that belt for so long, and now you're finally free!  Of course you want to
+  <<elseif $CampusMinistryFailSpringBreak>>
+    You've suppressed your desires for so long, you aren't going to pass up on this opportunity. Of course you want to
   <<elseif $PlayerItemChastity>>
     You know you won't be able to get off in your belt, but the thought of another woman, slick with oil, rubbing against you
     is still too much to resist.  Of course you want to
@@ -3575,7 +3583,7 @@ Plenty of it is spent back in your hotel room having even more fun with just you
   <<else>>
     [[join in|Part12Oil2]].
   <</if>>
-  <<if !$PlayerSideEffectExhibitionist and !$PlayerSideEffectLibido and !setup.haveFucked('Locksmith') and !$PlayerItemChastity>>
+  <<if !$PlayerSideEffectExhibitionist and !$PlayerSideEffectLibido and !setup.haveFucked('Locksmith') and !$PlayerItemChastity and !$CampusMinistryFailSpringBreak>>
     <<if $CampusMinistry and !$CampusMinistrySaves>>
       Maybe it's the alcohol, or all the girls rubbing against each other, or just that you've deprived yourself for so long,
       but you decide to at least give it a try.
@@ -3842,14 +3850,309 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 <</nobr>>
 
 ::Part12Poolside
-TODO
+<<nobr>>
+  <h1>Plans for Later</h1>
+  <img src="Part12/Poolside.jpg" hspace="10" vspace="10" height="800" align="left"/>
+<</nobr>>
 
-::Part12TODO
-TODO More Fun
-TODO Good Boy (Peter)
+<<nobr>>
+  Of course not all the fun at spring break has to involve parties and lots of drinking.
+  You also enjoy just sitting on the beach or by the pool in your bikini.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Josh')>>
+    TODO [[Part12JoshBeach]]
+  <<elseif $PlayerChastityBelt>>
+    TODO [[Part12ChastityBeach]]
+  <<elseif $PlayerPregnant>>
+    TODO [[Part12PregnantHotel]]
+  <<elseif $CampusMinistry>>
+    You see all the couples making out, or making hurried trips back to their hotel rooms to have sex.  You can't help but wonder what it would be
+    like to be one of them.  You know it wouldn't be hard to find a willing guy.
+    <br><br>
+    But you'd promised Faith that you'd behave yourself.  You've already let things go a bit farther than you'd expected with the film crew, and you'd
+    almost gotten carried away at that party the other night.
+    <br><br>
+    You decide to be a good girl and just sit here by the pool [[enjoying the sun|Part12Relaxing]].  Is it wrong that you also enjoy the looks you get
+    from the guys, admiring what they can see but not touch.  You hope not.
+  <<elseif $PlayerSideEffectSubmissive>>
+    TODO [[Part12SubmissiveHotel]]
+  <<else>>
+    TODO [[Part12BeachAlone]]
+  <</if>>
+<</nobr>>
+
+::Part12JoshBeach
+TODO [[Part12JoshBeach2]]
+
+::Part12JoshBeach2
+TODO [[Part12JoshBeach3]]
+
+::Part12JoshBeach3
+TODO [[Part12Relaxing]]
+
+::Part12ChastityBeach
+TODO [[Part12ChastityBeach2]]
+
+::Part12ChastityBeach2
+TODO [[Part12Relaxing]]
+
+::Part12PregnantHotel
+TODO [[Part12PregnantHotel2]]
+
+::Part12PregnantHotel2
+TODO [[Part12Relaxing]]
+
+::Part12SubmissiveHotel
+TODO [[Part12SubmissiveHotel2]]
+
+::Part12SubmissiveHotel2
+TODO [[Part12Relaxing]]
+
+::Part12BeachAlone
+TODO [[Part12BeachMen]] or [[Part12BeachWomen]] or [[Part12RoomAlone]]
+
+::Part12BeachMen
+TODO [[Part12DominateHim]] or [[Part12HimAlone]] 
+
+::Part12DominateHim
+TODO [[Part12DominateHim2]]
+
+::Part12DominateHim2
+TODO [[Part12DominateHim3]]
+
+::Part12DominateHim3
+TODO [[Part12Relaxing]]
+
+::Part12HimAlone
+TODO [[Part12HimAlone2]]
+
+::Part12HimAlone2
+TODO Change Title?
+TODO [[Part12HimAlone3]]
+
+::Part12HimAlone3
+TODO Change Title?
+TODO [[Part12Relaxing]]
+
+::Part12BeachWomen
+TODO [[Part12DominateHer]] or [[Part12WithTheGirls]]
+
+::Part12DominateHer
+TODO [[Part12DominateHer2]]
+
+::Part12DominateHer2
+TODO [[Part12Relaxing]]
+
+::Part12WithTheGirls
+TODO [[Part12WithTheGirls2]]
+
+::Part12WithTheGirls2
+TODO [[Part12WithTheGirls3]]
+
+::Part12WithTheGirls3
+TODO [[Part12Relaxing]]
+
+::Part12RoomAlone
+TODO [[Part12Relaxing]]
+
+::Part12Relaxing
+<<nobr>>
+  <h1>Relaxing by the Beach</h1>
+  <img src="Part12/Relaxing.jpg" hspace="10" vspace="10" height="700"/>
+<</nobr>>
+
+<<nobr>>
+  It’s your last chance to enjoy the beach before heading home.  You do your best to enjoy
+  your last day here as you sit back, soak up the sun, and enjoy the beautiful view.
+<</nobr>>
+
+<<nobr>>
+  <<if $SpringBreakPeter>>
+    "It seems like I'm forgetting something", you think.  You let that thought pass and go back to enjoying the view.  But then you remember,
+    you'd told Peter you might let him cum if he was a [[good boy|Part12GoodBoy]] all week.
+  <<else>>
+    Unfortunately, all too soon it's time to [[head home|Part12HeadHome]].
+  <</if>>
+<</nobr>>
+
+::Part12GoodBoy
+<h1>On the Beach with Peter</h1>
+<div><<nobr>>
+<span style="float: left;width: 40%;padding-right: 20px;">
+  <video src="Part12/Peter1.mp4" autoplay loop muted height="600"></video>
+</span>
+<</nobr>><span style="">    
+  <<nobr>>
+    It’s the end of the week and you and Peter are enjoying a last stroll by the ocean. You’ve
+    found a nice, secluded stretch of beach and stop for a moment.  “You’ve been a good boy all
+    week”, you tell him as crawl seductively toward him. “I’m going to give you some relief
+    finally.  Would you like that?” He, of course, quickly agrees.
+  <</nobr>>
+
+  <<nobr>>
+    When you reach him you laugh, “Not here silly.  No pockets. Your key is back in the hotel room.”
+    You make sure your stroll lasts quite a bit longer, just to stretch out his anticipation even more.
+  <</nobr>>
+
+  <<nobr>>
+    On you way back you try to decide whether you are feeling [[mean|Part12PeterMean]] or
+    [[generous|Part12PeterGenerous]] today.
+  <</nobr>>
+</span></div>
+
+::Part12PeterMean
+<<nobr>>
+  <h1>Feeling Mean</h1>
+  <video src="Part12/Peter2.mp4" autoplay loop muted height="600"></video>
+  <<set $sex.push({sex: 'male', name:'Peter'})>>
+<</nobr>>
+<<nobr>>
+  “Aww, you’ve been such a good boy.”, you tell Peter when you get back to your room. “But my poor pussy took
+  such a pounding this week, I’m just too sore. But my hand’s not too sore, is that good enough?”, you ask
+  knowing he’ll agree to anything for the chance to cum.
+<</nobr>>
+
+<<nobr>>
+  He’s disappointed, of course, he won’t get to fuck you like he’d imagined all week, but he knows better than
+  to say anything.  He doesn’t want you changing your mind and taking even this away from him. You slowly stroke
+  his cock to prolong his pleasure.  He desperately wants to thrust and fuck your hand, but you pull your hand
+  away whenever he tries, so he eventually stops.
+<</nobr>>
+
+<<nobr>>
+  Finally, you can tell he’s passed the point of no return, and you give his cock one last stroke and let go.  He
+  moans and whimpers as he cums, aching for just a few more strokes.  But you just watch as he makes a
+  mess on the floor.
+<</nobr>>
+
+<<nobr>>
+  “That should relieve some of the pressure.  Now let me get your cage back on and untie you so you can
+  clean up that mess you made.”  Then you can [[pack up our things for us|Part12HeadHome]].
+<</nobr>>
+
+::Part12PeterGenerous
+<<nobr>>
+  <h1>Feeling Generous</h1>
+  <video src="Part12/Peter3.mp4" autoplay loop muted height="600"></video>
+  <<set $sex.push({sex: 'male', name:'Peter'})>>
+  <<set $sex.push({sex: 'male', name:'Peter', vaginal:true, ovulating:true, noCondom:true, noPullout:true})>>
+<</nobr>>
+
+<<nobr>>
+  You head back to the hotel room and unlock his cock before heading to another quiet spot near the hotel.
+  You know he’s probably not going to last long, so you make sure you’ve had one orgasm and are well on
+  your way to another before his shorts come off.
+<</nobr>>
+
+<<nobr>>
+  Finally, you pull down his shorts and climb on top of him.  When you see the look of pleasure on his face
+  as his cock slides into you, you worry he might cum right then.  He lasts long enough for you to cum one
+  last time before he moans and thrusts up and fills you with all the cum he’s been saving.
+<</nobr>>
+
+<<nobr>>
+  You walk back to the hotel room and instruct him to put his cage back on as you go to the bathroom to
+  wash up.  When you get out of the shower, he happily hands you his key back.  Then you both begin
+  [[packing for the trip home|Part12HeadHome]]
+<</nobr>>
 
 ::Part12HeadHome
-TODO Conclusion Heading Home
+<<nobr>>
+  <h1>Riding Home</h1>
+  <<if setup.areDating('Veronica') or setup.haveFucked('Alexis')>>
+    <img src="Part12/RideHome1.jpg" hspace="10" vspace="10" height="600"/>
+  <<elseif setup.areDating('Josh')>>
+    <img src="Part12/RideHome2.jpg" hspace="10" vspace="10" height="600"/>
+  <<else>>
+    <img src="Part12/RideHome3.jpg" hspace="10" vspace="10" height="600" align="left"/>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  The ride back home is much more subdued than the ride there. Everyone is either hungover
+  or exhausted from the week, most are both.  You fall asleep after a while and don’t wake
+  up until you’re nearly home
+<</nobr>>
+
+<<nobr>>
+  You had a great time, but your glad to be home. The campus is busy again as everyone else is
+  arriving back from spring break too, or from home, or wherever they went for the week.
+  <<if setup.areDating('Veronica') or setup.haveFucked('Alexis') or setup.areDating('Josh')>>
+    You're both relieved and disappointed to [[get back to your room|Part12LastMinute]].
+  <<else>>
+    You seem to get a few odd looks on your way [[back to your room|Part12RideHome2]].  You assume you
+    are just not used to being on campus yet and keep going.
+  <</if>>
+<</nobr>>
+
+::Part12RideHome2
+<<nobr>>
+  <h1>Back Home</h1>
+  <img src="Part12/RideHome4.jpg" hspace="10" vspace="10" height="500"/>
+<</nobr>>
+
+<<nobr>>
+  <<if $Roommate == 'Faith'>>
+    Faith gasps when she sees you.  You look confused until she pulls you over to the mirror and shows you the writing on your face.
+  <<else>>
+    You don't realize someone on the bus wrote on your face until you see yourself in the mirror.
+  <</if>>
+  It takes some scrubbing, but eventually it all comes off.
+<</nobr>>
+
+<<nobr>>
+  <<if $CampusMinistry>>
+    You assure Faith that nobody fucked any of your holes, someone just decided to prank you while you were sleeping on the bus.  She's relieved
+    that you are still trying to avoid giving in to your desires.  She confesses she'd figured you were a lost cause when you went on the spring
+    break trip with everyone else.
+    <br><br>
+    You start to panic though when she mentions
+  <<elseif $CampusMinistryFailSpringBreak>>
+    You tell Faith that someone decided to prank you while you were sleeping.  "Oh, so you didn't..."  The guilty look on your face answers
+    her question for you before she even finishes it.  Now that you know what you've been missing, you're going to be having as much fun
+    as you can.  You let her know that you won't be following her or Mark's plan for you any longer. She doesn't seem particularly surprised.
+    <br><br>
+    Your relief at getting the confession off your chest turns to panic though when you remember 
+  <<else>>
+    Your mood quickly changes from annoyance at the prank to one of panic  when you remember
+  <</if>>
+  the [[paper you have due tomorrow|Part12LastMinute]].
+<</nobr>>
+
+::Part12LastMinute
+<<nobr>>
+  <h1>Finishing your Assignment</h1>
+  <img src="Part12/LastMinuteWork.jpg" hspace="10" vspace="10" height="700" align="left"/>
+<</nobr>>
+
+<<nobr>>
+  After you remember that you have an assignment due on Monday you hurry to finish it tonight.
+<</nobr>>
+
+<<nobr>>
+  You’re a bit mad at the professor for making it due the day after spring break.  But you’re more
+  mad at yourself.  He’d assigned it weeks ago and you could have done it sooner.
+<</nobr>>
+
+<<nobr>>
+  You’ll get it done, but it’s clear that [[spring break is over|Part12BackToClass]].
+<</nobr>>
 
 ::Part12BackToClass
-TODO Back to Class
+<<nobr>>
+  <h1>Studying</h1>
+  <img src="Part12/BacktoClass.jpg" hspace="10" vspace="10" height="600"/>
+<</nobr>>
+
+<<nobr>>
+  The first few days back in class you find your mind wandering a bit.  You keep daydreaming about the fun you had over break.
+  But soon you get used to the routine of classes and the rest of your life and things are back to normal.  (Or at least what is
+  normal for you now.)
+<</nobr>>
+
+<<nobr>>
+  You get back work so you don’t want to have any worries about passing or not like you did last semester. You remind yourself
+  it’s just a [[little over a month|Part13Start]], then you’ll have the whole summer with no classes at all.
+<</nobr>>
