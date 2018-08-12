@@ -1,4 +1,4 @@
-::Part6Start1 <800,3600>
+::Part6Start1  <0,600>
 <<nobr>>
 	<<set $PlayerPointsSet to 1>>
 	<<set $FunPoints to 0>>
@@ -23,7 +23,7 @@
 <</nobr>>
 
 
-::Part6Period <400,3875>
+::Part6Period  <200,600>
 <<nobr>>
 	<<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
 		<<set setup.notPregnant('period avoided by implant)')>>
@@ -130,7 +130,7 @@
 	<</if>>
 <</nobr>>
 
-::Part6HalloweenNextScene <405,3875>
+::Part6HalloweenNextScene  <400,600>
 <<nobr>>
 	But after the fun of Halloween is over, everything is back to normal for a few more weeks.
 	Of course, for you that means
@@ -147,7 +147,7 @@
 	<</if>>
 <</nobr>>
 
-::Part6Halloween <450,3875>
+::Part6Halloween  <600,600>
 <<nobr>>
 	<h1>Halloween</h1>
 	<<if setup.areDating('Veronica')>>
@@ -167,7 +167,7 @@
 	<</if>>
 <</nobr>>
 
-::Part6HalloweenPaul <455,3875>
+::Part6HalloweenPaul  <800,600>
 <<nobr>>
 	<h1>Office Halloween</h1>
 	<img src="Part6/Halloween10.jpg" hspace="10" vspace="10" height="750">
@@ -196,7 +196,7 @@
 	Thankfully he's able to get his work done in time, and he tells you he has a [[surprise for you|Part6HalloweenPaul2]]
 <</nobr>>
 
-::Part6HalloweenPaul2 <460,3875>
+::Part6HalloweenPaul2  <1000,600>
 <<nobr>>
 	<h1>Hotel Room</h1>
 	<<set $sex.push({sex: 'male', name: 'Paul', vaginal: true, ovulating: true})>>	
@@ -247,7 +247,7 @@
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::SpecialProjectPunishWarnMessage <475,3950>
+::SpecialProjectPunishWarnMessage  <1200,600>
 <<nobr>>
 	As your session is about to begin you glance at the warning at the bottom of the display above you.  It
 	<<if $SubjectPunishLastMessage == $SubjectPunish>>
@@ -298,7 +298,7 @@
 	<<set $SubjectPunishLastMessage to $SubjectPunish>>
 <</nobr>>
 
-::SpecialProjectPunishAdministerMessage <475,3950>
+::SpecialProjectPunishAdministerMessage  <1400,600>
 <<nobr>>
 	You see the screen over you flash red with the message 
 	<<if $SubjectPunish <= 1>>
@@ -348,7 +348,7 @@
 	<<set $SubjectHorniness to 3>>
 <</nobr>>
 
-::SpecialProjectIntro <455,3900>
+::SpecialProjectIntro  <1600,600>
 <<nobr>>
 	<h1><<print "Engineering Department">></h1>
 	<img src="Part6/SpecialProject1.jpg" hspace="10" vspace="10" height="600">
@@ -405,7 +405,7 @@
 	The monitor above you that was showing the countdown switches to displaying erotic images, [[along with a warning message|SpecialProjectSession]].
 <</nobr>>
 
-::SpecialProjectSession <500,3900>
+::SpecialProjectSession  <1800,600>
 <<nobr>>
 	<<set $SubjectSessionNumber += 1>>
 	<h1>Session $SubjectSessionNumber of $SubjectSessionTarget</h1>
@@ -458,7 +458,7 @@
 	<</link>>?
 <</nobr>>
 
-::SpecialProjectResult
+::SpecialProjectResult <2000,600>
 <<nobr>>
 	<<unset $SpecialMessage>>
 	<<if $SubjectAction == "struggle">>
@@ -708,7 +708,7 @@
 	<</if>>
 <</nobr>>
 
-::SpecialProjectFinalResult <600,3900>
+::SpecialProjectFinalResult  <2200,600>
 <<nobr>>
 	<h1>Engineering Department</h1>
 	<<if $SubjectPunish < 3>>
@@ -812,7 +812,7 @@
 	<</if>>
 <</nobr>>
 
-::SpecialProjectNextScene <625,3900>>
+::SpecialProjectNextScene > <2400,600>
 <<nobr>>
 	Everything is fairly normal for you for the next couple weeks.
 	<<if $SubjectOrgasmDenialGoo>>
@@ -844,7 +844,7 @@
 	<</if>>
 <</nobr>>
 
-::Part6HalloweenKate <465,3875>
+::Part6HalloweenKate  <2600,600>
 <div style="display:flex;">
 	<img src="Part6/Halloween6.jpg" hspace="10" vspace="10" height="650" align="left">
 	<br><br>
@@ -892,7 +892,7 @@
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6HalloweenChastity <470,3875>
+::Part6HalloweenChastity  <2800,600>
 <div style="display:flex;">
 	<<nobr>>
 		<<set $sex.push({sex: 'male', anon: 'Sexy Fireman'})>>
@@ -934,7 +934,7 @@
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6Halloween2 <475,3875>
+::Part6Halloween2  <3000,600>
 <<nobr>>
 	<<if $HalloweenNice>>
 		<<set $PlayerCostumeMouse to 1>>
@@ -1031,7 +1031,7 @@
 	<</if>>
 <</nobr>>
 
-::Part6Halloween2No <480,3875>
+::Part6Halloween2No  <3200,600>
 <<nobr>>
 	<h1>Your Room</h1>
 	<<if $PlayerNoBodyHair>>
@@ -1055,7 +1055,7 @@
 <<include [[Part6HalloweenNextScene]]>>
 
 
-::Part6Halloween3 <475,3875>
+::Part6Halloween3  <3400,600>
 <<nobr>>
 	<h1>His Room</h1>
 	<<set $sex.push({sex: 'male', anon: 'Handsome Pirate', vaginal: true, noPullout:true, ovulating:true})>>
@@ -1126,7 +1126,7 @@
 	<</if>>
 <</nobr>>
 
-::Part6Thril2 <170,3125>
+::Part6Thril2  <3600,600>
 <<nobr>>
 	<h1>Zack's Room</h1>
 	<video src="Part6/GoNeighbour6.mp4" autoplay loop muted height="580"></video><p/>
@@ -1199,7 +1199,7 @@
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6Player2 <175,3125>
+::Part6Player2  <3800,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'James', vaginal:true, ovulating: true, noPullout:true})>>
 	<<set $sex.push({sex: 'female', anon: 'girl James brought home'})>>
@@ -1231,7 +1231,7 @@
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6Halloween3Alone <480,3875>
+::Part6Halloween3Alone  <4000,600>
 <<nobr>>
 	<video src="Part6/Halloween8.mp4" autoplay loop muted height="640"></video><p/>
 
@@ -1264,7 +1264,7 @@
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6HalloweenVeronica <485,3875>
+::Part6HalloweenVeronica  <4200,600>
 <<set $sex.push({sex: 'female', name: 'Veronica'})>>
 <<set $sex.push({sex: 'female', name: 'Veronica'})>>
 <<set $sex.push({sex: 'female', name: 'Veronica'})>>
@@ -1284,7 +1284,7 @@ her room.
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6HalloweenBoyfriend <490,3875>
+::Part6HalloweenBoyfriend  <4400,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:$dating[0]})>>
 	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
@@ -1313,7 +1313,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6HalloweenJerk <500,3875>
+::Part6HalloweenJerk  <4600,600>
 <img src="Part6/Halloween4.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
 <<nobr>>
 	<<set $PlayerCostumeKitten to 1>>
@@ -1344,7 +1344,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	[[back at the dorm|Part6HalloweenJerk2]].
 <</nobr>>
 
-::Part6HalloweenJerk2 <500,3875>
+::Part6HalloweenJerk2  <4800,600>
 <<nobr>>
 	<img src="Part6/Halloween4A.jpg" hspace="10" vspace="10" height="650"><p/>
 	<<set $sex.push({sex: 'male', name:'Barry'})>>
@@ -1368,7 +1368,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6HalloweenPeter <480,3875>
+::Part6HalloweenPeter  <5000,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Peter'})>>
 	<img src="Part6/Halloween3.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
@@ -1401,7 +1401,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	"[[Resistance Is Futile|Part6HalloweenPeterFutile]]", or "[[To Boldly Go Where No Man Has Gone Before|Part6HalloweenPeterBoldly]]"
 <</nobr>>
 
-::Part6HalloweenPeterAllShesGot <510,3875>
+::Part6HalloweenPeterAllShesGot  <5200,600>
 <<nobr>>
 	<h1>"I'm Givin' Her All She's Got, Captain!"</h1>
 	<<set $sex.push({sex: 'male', name:'Peter', vaginal:true, ovulating:true, noCondom:true, noPullout:true})>>
@@ -1433,7 +1433,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6HalloweenPeterFutile <520,3875>
+::Part6HalloweenPeterFutile  <5400,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Peter'})>>
 	<<set $sex.push({sex: 'male', name:'Peter'})>>
@@ -1461,7 +1461,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6HalloweenPeterBoldly <530,3875>
+::Part6HalloweenPeterBoldly  <5600,600>
 <<nobr>>
 	<h1>"To Boldly Go Where No Man Has Gone Before"</h1>
 	<<if setup.haveFuckedVaginal('Peter')>>
@@ -1504,7 +1504,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6HalloweenNextScene]]>>
 
-::Part6NextAll <400,3875>
+::Part6NextAll  <5800,600>
 <<nobr>>
 	<<if setup.isNeighbour('Peter')>>[[You spend some time with Peter.|Part6Nerd]]
 	<<elseif setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
@@ -1522,7 +1522,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6NextPeter <415,3875>
+::Part6NextPeter  <6000,600>
 <<nobr>>
 	<<if setup.isNeighbour('Zack')>>[[You spend some time with Zack.|Part6Thrill]]
 	<<elseif $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
@@ -1539,7 +1539,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6NextZackJosh <430,3875>
+::Part6NextZackJosh  <6200,600>
 <<nobr>>
 	<<if $PlayerReducedSleep>>[[You have lots of extra time from not having to sleep as much.|Part6StartSleep]]
 	<<elseif $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
@@ -1556,7 +1556,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 <</nobr>>
 
 
-::Part6Next <450,3875>
+::Part6Next  <6400,600>
 <<nobr>>
 	<<if $JobEngineer>>[[You have to work at the Lab.|JobEngineer5]]
 	<<elseif $JobTestSubject>>[[You have to work at the Lab.|JobEngineerSubject3]]
@@ -1571,7 +1571,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6StartBeltMaster <500,3875>
+::Part6StartBeltMaster  <6600,600>
 <<nobr>>
 	<<set $FunPoints += 2>>
 	<<set $sex.push({sex: 'male', anon:'Classmate'})>>
@@ -1593,7 +1593,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6NextAll]]>>
 
-::Part6StartGood <200,3725>
+::Part6StartGood  <6800,600>
 <<nobr>>
 	<<set $AcademicPoints += 2>>
 	
@@ -1605,7 +1605,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6NextAll]]>>
 
-::Part6StartAverage <400,3725>
+::Part6StartAverage  <7000,600>
 <<nobr>>
 	<<set $FunPoints += 1>>
 	<<set $AcademicPoints += 1>>
@@ -1618,7 +1618,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6NextAll]]>>
 
-::Part6StartLazy <600,3725>
+::Part6StartLazy  <7200,600>
 <<nobr>>
 	<<set $FunPoints += 4>>
 	
@@ -1632,7 +1632,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6NextAll]]>>
 
-::Part6StartSleep <800,4025>
+::Part6StartSleep  <7400,600>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
@@ -1661,7 +1661,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <span id="Sleep1Span3"></span>
 
-::Part6StartSleepFun <1000,4025>
+::Part6StartSleepFun  <7600,600>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
@@ -1758,7 +1758,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <span id="Sleep2Span3"></span>
 
-::Part6StartAndrew <700,3875>
+::Part6StartAndrew  <7800,600>
 <<nobr>>
 	<<set $AcademicPoints += 2>>
 	<<set $FunPoints += 1>>
@@ -1784,7 +1784,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6StartVeronica <100,3875>
+::Part6StartVeronica  <8000,600>
 <<nobr>>
 	<<set $AcademicPoints += 1>>
 	<<set $FunPoints += 2>>
@@ -1805,7 +1805,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6StartJosh1 <300,3875>
+::Part6StartJosh1  <8200,600>
 <<nobr>>
 	<<set $AcademicPoints += 1>>
 	<<set $FunPoints += 1>>
@@ -1825,7 +1825,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6NextZackJosh]]>>
 
-::Part6Thrill <400,4025>
+::Part6Thrill  <8400,600>
 <<nobr>>
 	<<if setup.isFWB('Zack')>>
 		<<set $FunPoints += 4>>
@@ -1845,7 +1845,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<if setup.isFWB('Zack')>><br><<print "He makes sure to that you join him as often as possible.">><br><</if>>
 <<include [[Part6NextZackJosh]]>>
 
-::Part6Nerd <0,4025>
+::Part6Nerd  <8600,600>
 <<nobr>>
 	<<if setup.areDating('Peter')>>
 		<<set $AcademicPoints += 3>>
@@ -1909,7 +1909,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<include [[Part6NextPeter]]>>
 
-::Part6Library <100,4175>
+::Part6Library  <8800,600>
 <<nobr>>
 	<<set $AcademicPoints += 2>>
 	
@@ -1923,7 +1923,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "No one said you had to do your homework at home. ">>[[Or clothed.|JobLibrary6]]
 
-::Part6Bar <300,4175>
+::Part6Bar  <9000,600>
 <<nobr>>
 	<<set $FunPoints += 2>>
 	<h1>Bar</h1>
@@ -1946,7 +1946,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	Really, where else could you have beautiful women trying to buy you drinks all night - and get paid for it.
 <</nobr>>
 
-::Part6BarWoman
+::Part6BarWoman <9200,600>
 <<nobr>>
 	<h1>Her house</h1>
 	<<set $sex.push({sex: 'female', anon:"Bar Patron"})>>
@@ -1971,7 +1971,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6BarCouple
+::Part6BarCouple <9400,600>
 <<nobr>>
 	<h1>Their house</h1>
 	<<set $sex.push({sex: 'female', anon:"Bar Patron"})>>
@@ -1996,7 +1996,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6BarKate
+::Part6BarKate <9600,600>
 <<nobr>>
 	<h1>Kate's House</h1>
 	<<set $sex.push({sex: 'female', name:"Kate"})>>
@@ -2020,7 +2020,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6StudyGroup <400,4375>
+::Part6StudyGroup  <9800,600>
 <<nobr>>
 	<<set $AcademicPoints += 2>>
 	
@@ -2044,7 +2044,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6Study2 <0,4875>
+::Part6Study2  <10000,600>
 <<nobr>>
 	<<if !$PlayerSideEffectOrgasmBlock and !$PlayerChastityBelt and !$PlayerSideEffectMasturbationBlock>>
 		<<set $AcademicPoints += 1>>
@@ -2089,7 +2089,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6Club1 <400,4500>
+::Part6Club1  <10200,600>
 <<nobr>>
 	<h1><<print "Club">></h1>
 <</nobr>>
@@ -2127,7 +2127,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6Frat1 <0,5375>
+::Part6Frat1  <10400,600>
 <<nobr>>
 	<h1><<print "Campus">></h1>
 <</nobr>>
@@ -2151,7 +2151,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6ClubDate1 <300,4875>
+::Part6ClubDate1  <10600,600>
 <<nobr>>
 	<<set $FunPoints += 2>>
 	
@@ -2163,7 +2163,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "You both have a great time, but eventually you’re ready to head home. While you two are dancing, you lean over to your partner’s ear and tell them exactly what you want them to do to you when you get back home. Moments later, the two of you are out the door and struggling to ">>[[keep your hands off each other on the way to the taxi.|Part6ClubDate2]]
 
-::Part6ClubPersuade <500,4625>
+::Part6ClubPersuade  <10800,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Club Bouncer'})>>
 	<h1><<print "Club">></h1>
@@ -2182,7 +2182,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "A group of women are at the bar doing shots ">>[[and invite you over after they see you down one.|Part6Shots1]]<<print " Or you can order something a little weaker ">>[[and join the rest of your group at a table near the dance floor.|Part6Dance1]]
 
-::Part6Shots1 <500,4750>
+::Part6Shots1  <11000,600>
 <<nobr>>
 	<<set $FunPoints += 2>>
 	
@@ -2213,7 +2213,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	[[keep going?|Part6Shots2]]
 <</nobr>>
 
-::Part6Dance1 <700,4625>
+::Part6Dance1  <11200,600>
 <<nobr>>
 	<<set $FunPoints += 1>>
 	
@@ -2227,7 +2227,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "Enough of a buzz in fact that when Troy, who’s been undressing you with his eyes all night, asks you to dance, ">>[[you say yes.|Part6Dance2]]
 
-::Part6Shots2 <500,4875>
+::Part6Shots2  <11400,600>
 <<nobr>>
 	<<set $sex.push({sex: 'female', name:'Becky'})>>
 	<<set $sex.push({sex: 'female', name:'Kim'})>>
@@ -2268,7 +2268,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6Dance2 <700,4750>
+::Part6Dance2  <11600,600>
 <<nobr>>
 	<h1><<print "Club">></h1>
 <</nobr>>
@@ -2306,7 +2306,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6TroyHook <900,4750>
+::Part6TroyHook  <11800,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Troy', vaginal:!$PlayerChastityBelt, noCondom:true, noPullout:true})>>
 	<h1><<print "Troy’s Bedroom">></h1>
@@ -2341,7 +2341,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6Dance3 <300,5125>
+::Part6Dance3  <12000,600>
 <<nobr>>
 	<h1><<print "Club">></h1>
 <</nobr>>
@@ -2355,7 +2355,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "You definitely don’t trust the bartender or bouncer, there’s no way you’ll go to them for help. The lights and the music are starting to make you nauseous, ">>[[you wonder if some fresh air would help.|Part6Dance4]]
 
-::Part6TroyHelp <500,5125>
+::Part6TroyHelp  <12200,600>
 <<nobr>>
 	<<set $AcademicPoints -= 2>>
 	<<set $TroyHelp to 1>>
@@ -2387,7 +2387,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
-::Part6Dance4 <700,5000>
+::Part6Dance4  <12400,600>
 <<nobr>>
 	<h1><<print "Dungeon">></h1>
 <</nobr>>
@@ -2401,7 +2401,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "“I’m not going to tell him if you aren’t”, the other one responds. ">>[[There’s nothing you can do as you hear their footsteps approach...|Part6Kidnapped1]]
 
-::Part6Kidnapped1 <975,4500>
+::Part6Kidnapped1  <12600,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 1', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
@@ -2429,7 +2429,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "They don’t have time for more it seems, so you are spared another round. ">>[[For now at least.|Part6Kidnapped2]]
 
-::Part6Kidnapped2 <1100,4500>
+::Part6Kidnapped2  <12800,600>
 <<nobr>>
 	<h1><<print "Van">></h1>
 <</nobr>>
@@ -2441,7 +2441,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "It’s no use though. You can’t get free. After driving forever, the van finally stops. Someone new grabs you by the ropes binding you and ">>[[pulls you out of the van like you were luggage.|Part6Kidnapped3]]
 
-::Part6Kidnapped3 <1225,4500>
+::Part6Kidnapped3  <13000,600>
 <<nobr>>
 	<h1><<print "Dungeon">></h1>
 <</nobr>>
@@ -2458,7 +2458,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<if $PlayerSideEffectSubmissive > 1>>[[“Holy shit, this one is a goldmine!”|Part6KidnappedSub1]]<<else>><<print "He calmly adds a weight to the chain between your nipples, increasing the pain, but you refuse to give in. He repeats several more times. Each time when the pain starts to fade a bit, he adds another weight. But eventually he’s used all the weights and stops.">><</if>>
 <<if $PlayerSideEffectSubmissive > 1>><<else>><br><<print "You feel like you’ve won a small victory as he removes the clamps, but a moment later you cry out in pain as the blood returns to your abused nipples. He cuts off what’s left of your clothing and says, ">>[[“Don’t worry, I have a solution for ones like you.”|Part6Kidnapped4]]<</if>>
 
-::Part6Kidnapped4 <1225,4625>
+::Part6Kidnapped4  <13200,600>
 <<nobr>>
 	<h1><<print "Dungeon">></h1>
 <</nobr>>
@@ -2476,7 +2476,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 [[You feel the pain growing in your arms|Part6Kidnapped5]]<<print " and how it is becoming harder to breathe. ">><<if !$PlayerSideEffectSubmissive>>[[But maybe you can find some strength to resist him.|Part6KidnappedResist1]]<</if>>
 
-::Part6Kidnapped5 <1225,4750>
+::Part6Kidnapped5  <13400,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<h1><<print "Dungeon">></h1>
@@ -2493,7 +2493,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 [[You stay silent and hope he won’t take long to finish.|Part6Kidnapped6]]
 
-::Part6Kidnapped6 <1225,4875>
+::Part6Kidnapped6  <13600,600>
 <<nobr>>
 	<h1><<print "Dungeon">></h1>
 <</nobr>>
@@ -2515,7 +2515,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "“Because, you weren’t grateful when I was rewarding you earlier. When one of your betters rewards you with his cock, ">>[[you should let him know how grateful you are.”|Part6Kidnapped7]]
 
-::Part6Kidnapped7 <1225,5000>
+::Part6Kidnapped7  <13800,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
@@ -2551,7 +2551,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "At least some of the moans you make are real now. ">>[[And it terrifies you when you are left to yourself to think about it.|Part6Kidnapped8]]
 
-::Part6Kidnapped8 <1225,5125>
+::Part6Kidnapped8  <14000,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 2'})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
@@ -2585,7 +2585,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 <<print "One of them tells you the pills they still give you are to make sure don’t get pregnant. You are for pleasure, not breeding. At least for now they say. ">>[[Your future owner may feel differently.|Part6Kidnapped9]]
 
-::Part6Kidnapped9 <1350,5125>
+::Part6Kidnapped9  <14200,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 1'})>>
@@ -2631,12 +2631,12 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 [[The End.|GameOverKidnappedSlave]]
 
-::GameOverKidnappedSlave <1475,5125>
+::GameOverKidnappedSlave  <14400,600>
 <h1><<print "Game Over">></h1>
 <img src="PartX/GameOver2.jpg" hspace="10" vspace="10" height="600">
 Might add something here in the future. Or not.
 
-::Part6Frat2 <200,5425>
+::Part6Frat2  <14600,600>
 <<nobr>>
 	<<set $FunPoints += 2>>
 	<h1><<print "Frat Party">></h1>
@@ -2660,7 +2660,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6Grades1 <1000,5425>
+::Part6Grades1  <14800,600>
 <<nobr>>
 	<h1><<print "Campus">></h1>
 <</nobr>>
@@ -2678,7 +2678,7 @@ Might add something here in the future. Or not.
 
 <<if $AcademicPoints > 9 or $AcademicPoints < 5>>[[Eventually it is time for you semester finals.|Part6Exam]]<</if>>
 
-::Part6David1 <200,5550>
+::Part6David1  <15000,600>
 <<nobr>>
 	<h1><<print "Frat Party">></h1>
 <</nobr>>
@@ -2694,7 +2694,7 @@ Might add something here in the future. Or not.
 
 [[Thankfully David keeps you from falling when your legs go weak as you orgasm.|Part6David2]]
 
-::Part6Frat3 <400,5400>
+::Part6Frat3  <15200,600>
 <<nobr>>
 	<h1><<print "Frat Party">></h1>
 <</nobr>>
@@ -2706,7 +2706,7 @@ Might add something here in the future. Or not.
 
 <<print "But you seem to remember being better at poker. Maybe it’s the beer, or maybe it’s just that you enjoy the reactions you get from the guys as you strip off each article of clothing so you aren’t really trying to win. Either way, it isn’t long until you ">><<if $PlayerChastityBelt>>[[start to run low on clothes.|Part6FratChastity]]<<else>>[[start to run low on clothes.|Part6FratForfeit]]<</if>>
 
-::Part6David2 <400,5550>
+::Part6David2  <15400,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
@@ -2722,7 +2722,7 @@ Might add something here in the future. Or not.
 
 <<print "You’re both too horny to wait for them, and you head to the unoccupied bathroom across the hall where he ">>[[fucks you against the closet door.|Part6David3]]
 
-::Part6David3 <600,5550>
+::Part6David3  <15600,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'David', vaginal:true})>>
@@ -2743,7 +2743,7 @@ Might add something here in the future. Or not.
 
 [[You go to class the next day.|Part6Grades1]]
 
-::Part6FratChastity <800,5550>
+::Part6FratChastity  <15800,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', anon:'Frat guy'})>>
 	<<set $sex.push({sex: 'male', anon:'Frat guy'})>>
@@ -2760,7 +2760,7 @@ Might add something here in the future. Or not.
 
 [[You go to class the next day.|Part6Grades1]]
 
-::Part6FratForfeit <700,5400>
+::Part6FratForfeit  <16000,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', anon:'Frat guy', vaginal:true})>>
 	<<set $sex.push({sex: 'male', anon:'Frat guy', repeat:true})>>
@@ -2800,7 +2800,7 @@ Might add something here in the future. Or not.
 
 [[You go to class the next day.|Part6Grades1]]
 
-::Part6Exam <1575,5600>
+::Part6Exam  <16200,600>
 <<nobr>>
 	<h1><<print "Classroom">></h1>
 <</nobr>>
@@ -2824,7 +2824,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6AfterExam <1625,5600>
+::Part6AfterExam  <16400,600>
 <<nobr>>
 	<<unset $SubjectOrgasmDenialGoo>>
 	<<set $SubjectOrgasmDenialGooWoreOff to 1>>
@@ -2869,7 +2869,7 @@ Might add something here in the future. Or not.
 [[All you can do now is wait for the results of your exams.|Part6Grades2]]
 
 
-::Part6ProfessorRecover <1100,5300>
+::Part6ProfessorRecover  <16600,600>
 <<nobr>>
 	<<set $ProfessorHelp to 1>>
 	<h1>Professor's Office</h1>
@@ -2909,7 +2909,7 @@ Might add something here in the future. Or not.
 	<</nobr>>
 <</if>>
 
-::Part6Professor1 <1200,5300>
+::Part6Professor1  <16800,600>
 <<nobr>>
 	<h1><<print "Classroom">></h1>
 	<img src="Part6/Professor1.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -2936,7 +2936,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6Professor2 <1400,5300>
+::Part6Professor2  <17000,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Aaron'})>>
 	<<set $PlayerProfessorVisit = 1>>
@@ -2948,7 +2948,7 @@ Might add something here in the future. Or not.
 
 <<print "As you feel his cock twitch on your tongue and his cum fill your mouth, you think you’ve done enough to pass and you’re done. But he tells you he wants to meet with you again to ">>[[discuss your studies further.|Part6Professor3]]
 
-::Part6Professor3 <1600,5300>
+::Part6Professor3  <17200,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Aaron'})>>
 	<h1><<print "Professor’s Office">></h1>
@@ -2961,7 +2961,7 @@ Might add something here in the future. Or not.
 
 <<print "He spends the next hour tutoring you 1-on-1, helping catch you up. “I think that’s enough for today.”, he says before he gets up to lock his door. From there, ">>[[things proceed much more like you were expecting them to go.|Part6Professor4]]
 
-::Part6Professor4 <1800,5300>
+::Part6Professor4  <17400,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Aaron'})>>
 	<h1><<print "Professor’s Office">></h1>
@@ -2992,7 +2992,7 @@ Might add something here in the future. Or not.
 
 <<if $PlayerChastityBelt or $PlayerSideEffectOral or setup.areDating('Andrew') or setup.areDating('Veronica') or setup.areDating('Josh') or $MasterKate>>[[Eventually it is time for you semester finals.|Part6Exam]]<</if>>
 
-::Part6Professor5 <1800,5425>
+::Part6Professor5  <17600,600>
 <<nobr>>
 	<<set setup.startDating('Aaron')>>
 	<<set $PlayerClothesDressPink = 1>>
@@ -3027,7 +3027,7 @@ Might add something here in the future. Or not.
 
 <<if $MasterRobert>><br><<print "When you tell Olivia about your relationship with Daddy you expect her (and her master) to be upset, but it's quite the opposite. She tells you “Master was worried that your new urges would get you into trouble if you were left on your own. He's been really worried about you since you took off your belt. Now that he knows you are being well taken care of, he'll be quite relieved.” ">><br><</if>><<set $MasterRobert = 0>>
 
-::Part6Professor6 <1600,5425>
+::Part6Professor6  <17800,600>
 <<nobr>>
 	<h1><<print "Professor’s House">></h1>
 <</nobr>>
@@ -3073,7 +3073,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6Professor8 <1200,5425>
+::Part6Professor8  <18000,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'Aaron'})>>
@@ -3107,7 +3107,7 @@ Might add something here in the future. Or not.
 
 [[Eventually it is time for you semester finals.|Part6Exam]]
 
-::Part6KidnappedSub1 <1350,4625>
+::Part6KidnappedSub1  <18200,600>
 <<nobr>>
 	<h1><<print "Dungeon">></h1>
 <</nobr>>
@@ -3131,7 +3131,7 @@ Might add something here in the future. Or not.
 
 [[“We are going to have so much fun together.”|Part6KidnappedSub2]]
 
-::Part6KidnappedSub2 <1475,4625>
+::Part6KidnappedSub2  <18400,600>
 <<nobr>>
 	<h1><<print "Dungeon">></h1>
 <</nobr>>
@@ -3153,7 +3153,7 @@ Might add something here in the future. Or not.
 
 <<print "“This one sure is special, boss, ">>[[”we can definetly use her for that special order.”|Part6KidnappedSub3]]<<print " your hear the asisstant saying. ">>
 
-::Part6KidnappedSub3 <1475,4750>
+::Part6KidnappedSub3  <18600,600>
 <<nobr>>
 	<h1><<print "Dungeon">></h1>
 <</nobr>>
@@ -3171,7 +3171,7 @@ Might add something here in the future. Or not.
 
 <<print "And the more you do it, ">>[[the more excited you get.|Part6KidnappedSub4]]
 
-::Part6KidnappedSub4 <1475,4875>
+::Part6KidnappedSub4  <18800,600>
 <<nobr>>
 	<h1><<print "Dungeon">></h1>
 <</nobr>>
@@ -3189,7 +3189,7 @@ Might add something here in the future. Or not.
 
 <<print "They spend the rest of the day flogging you, and the couple of weeks more training you further, ">>[[until you are finally ready.|Part6KidnappedSub5]]
 
-::Part6KidnappedSub5 <1475,5000>
+::Part6KidnappedSub5  <19000,600>
 <<nobr>>
 	<h1><<print "Your new life">></h1>
 <</nobr>>
@@ -3209,7 +3209,7 @@ Might add something here in the future. Or not.
 
 [[The End.|GameOverKidnappedSlave]]
 
-::Part6NerdBirthday <200,4025>
+::Part6NerdBirthday  <19200,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Peter', vaginal:$NerdBirthdaySex})>>
 	<h1><<print "Peter">></h1>
@@ -3240,7 +3240,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6Professor7 <1400,5425>
+::Part6Professor7  <19400,600>
 <<nobr>>
 	<h1><<print "Professor’s House">></h1>
 <</nobr>>
@@ -3254,7 +3254,7 @@ Might add something here in the future. Or not.
 
 <<print "Now, you've been a dear, but you need to head home. ">>[[He'll be home soon.|Part6Professor8]]<<print " Maybe I'll have a chance in a few weeks to unlock you for a minute or two so you can jerk off. I know it's been a while, but we'll have to see.">>
 
-::Part85NewYear <1600,8175>
+::Part85NewYear  <19600,600>
 <<nobr>>
 	<<if $MasterKate>><h1><<print "Mistress Kate">></h1><</if>>
 	<<if setup.areDating('Aaron')>><h1><<print "Professor’s House">></h1><</if>>
@@ -3315,7 +3315,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6KidnappedResist1 <975,4625>
+::Part6KidnappedResist1  <19800,600>
 <<nobr>>
 	<h1><<print "Dungeon">></h1>
 <</nobr>>
@@ -3335,7 +3335,7 @@ Might add something here in the future. Or not.
 
 [[This is something unexpected, so you get to rest untill we get our doctor to check on you.|Part6KidnappedResist2]]
 
-::Part6KidnappedResist2 <975,4750>
+::Part6KidnappedResist2  <20000,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper Doctor', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $SexKidnap += 1>>
@@ -3357,7 +3357,7 @@ Might add something here in the future. Or not.
 
 [[He recommends getting rid of you and staying on the safe side.|Part6KidnappedResist3]]
 
-::Part6KidnappedResist3 <975,4875>
+::Part6KidnappedResist3  <20200,600>
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Kidnapper 2', vaginal:true, noCondom: true, noPullout: true})>>
 	<<set $SexKidnap += 1>>
@@ -3381,7 +3381,7 @@ Might add something here in the future. Or not.
 
 [[Eventually everything goes dark.|Part6KidnappedResist4]]
 
-::Part6KidnappedResist4 <975,5000>
+::Part6KidnappedResist4  <20400,600>
 <<nobr>>
 	<h1><<print "Roadside">></h1>
 <</nobr>>
@@ -3395,7 +3395,7 @@ Might add something here in the future. Or not.
 
 [[If she`s smart, she`ll just go back to her previous life.|Part6KidnappedResist5]]
 
-::Part6KidnappedResist5 <975,5125>
+::Part6KidnappedResist5  <20600,600>
 <<nobr>>
 	<<set $KidnapEscape to 1>>
 	<<set $AcademicPoints += 2>>
@@ -3413,7 +3413,7 @@ Might add something here in the future. Or not.
 
 <<print "The only good thing to came out of this was that you had lots of extra time while in hospital to study ">>[[and to increase your grades.|Part6Grades1]]
 
-::Part6ClubDate2 <300,5000>
+::Part6ClubDate2  <20800,600>
 <<nobr>>
 	<<if setup.areDating('Veronica')>>
 		<<set $sex.push({sex: 'female', name: 'Vernoica'})>>
@@ -3468,7 +3468,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6Cheerleader <1100,4175>
+::Part6Cheerleader  <21000,600>
 <<nobr>>
 	<<if setup.areDating('Veronica')>>
 		<<set $FunPoints += 2>>
@@ -3498,7 +3498,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6CheerleaderFundraiser <1200,4175>>
+::Part6CheerleaderFundraiser > <21200,600>
 <<nobr>>
 	<h1>Fundraising</h1>
 	<<set $sex.push({sex: 'male', anon: 'University Donor', vaginal: true, noCondom: true, noPullout: true})>>
@@ -3533,7 +3533,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6Athlete <1250,4175>>
+::Part6Athlete > <21400,600>
 <<nobr>>
 	<<if $CampusMinistry>>
 		<h1>Out for a Run</h1>
@@ -3687,7 +3687,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6Barista <1300,4175>
+::Part6Barista  <21600,600>
 <<nobr>>
 	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and setup.haveFucked('Andrew')>>
 		<<set $sex.push({sex: 'male', name:'Andrew', vaginal:true})>>
@@ -3739,7 +3739,7 @@ Might add something here in the future. Or not.
 <</nobr>>
 
 
-::Part6StartJosh2 <0,5125>
+::Part6StartJosh2  <21800,600>
 <<nobr>>
 	<<set $FunPoints += 1>>
 	<<set $sex.push({sex: 'male', name:'Josh', vaginal:true})>>
@@ -3766,7 +3766,7 @@ Might add something here in the future. Or not.
 	<</if>>
 <</nobr>>
 
-::Part6Office <100,5250>
+::Part6Office  <22000,600>
 <<nobr>>
 	<h1><<print "Office">></h1>
 <</nobr>>
@@ -3836,7 +3836,7 @@ Might add something here in the future. Or not.
 
 [[You spend some time on campus.|Part6Frat1]]
 
-::Part6Grades2 <1400,5600>
+::Part6Grades2  <22200,600>
 <<nobr>>
 	<<unset $PlayerPointsSet>>
 	<<set $PlayerRollDice to either(1,2,3,4,5,6)>>
@@ -3862,3 +3862,4 @@ Might add something here in the future. Or not.
 <</nobr>>
 
 [[You should go for a medical exam before the hollidays.|Part7Start1]]
+
