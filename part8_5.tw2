@@ -303,16 +303,16 @@
 
 
 <<nobr>>
-	<<if $MasterKate>><<if haveFuckedVaginal('Brad')>><<print "“If you wanted to thank him, you should have just given him his pleasure. Fucking him was not necessary.”">><<else>><<print "“If you wanted to thank him, you should have just given him his pleasure. Yours belongs to me. I’ll let it go this time, unless there is more, but don’t let it happen again.”">><</if>><</if>>
-	<<if setup.areDating('Andrew')>><<if haveFuckedVaginal('Brad')>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... But... Did you really need to fuck him?”">><<else>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... Just...Please, don’t do anything like that again.”">><</if>><</if>>
+	<<if $MasterKate>><<if setup.haveFuckedVaginal('Brad')>><<print "“If you wanted to thank him, you should have just given him his pleasure. Fucking him was not necessary.”">><<else>><<print "“If you wanted to thank him, you should have just given him his pleasure. Yours belongs to me. I’ll let it go this time, unless there is more, but don’t let it happen again.”">><</if>><</if>>
+	<<if setup.areDating('Andrew')>><<if setup.haveFuckedVaginal('Brad')>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... But... Did you really need to fuck him?”">><<else>><<print "“I know you didn’t plan it. You car broke down and you needed a ride, and then one thing led to another... Just...Please, don’t do anything like that again.”">><</if>><</if>>
 	<<if setup.areDating('Josh')>><<print "“I understand, I know with your side-effects things can get out of control sometimes. But I’ll expect the same in-car fun for me on our next road-trip.”">><</if>>
-	<<if setup.areDating('Veronica')>><<if haveFuckedVaginal('Brad')>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... why didn’t you stop with just blowjobs... Whatever.”">><<else>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... just... Whatever.”">><</if>><</if>>
+	<<if setup.areDating('Veronica')>><<if setup.haveFuckedVaginal('Brad')>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... why didn’t you stop with just blowjobs... Whatever.”">><<else>><<print "“You do know guys usually accept money also, right? Why didn’t you just pay... just... Whatever.”">><</if>><</if>>
 	<<if setup.areDating('Peter')>><<print "“Wow that sounds so hot. I wish I could get at least part of that pleasure one day.”">><</if>>
 	<<if setup.areDating('Aaron')>><<print "“It was good that you wanted to thank him for helping you, but you let things go to far. I will go easy on your punishment this time, unless there is more, but I want you to think about what you’ve done.”">><</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if haveFuckedVaginal('Brad') and !setup.areDating('Peter') and !setup.areDating('Aaron') and !setup.areDating('Josh')>>
+	<<if setup.haveFuckedVaginal('Brad') and !setup.areDating('Peter') and !setup.areDating('Aaron') and !setup.areDating('Josh')>>
 		<<set $TalkUpset = 1>>
 		<<set $TalkPunishSevere = 1>>
 		<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
