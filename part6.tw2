@@ -3838,6 +3838,7 @@ Might add something here in the future. Or not.
 
 ::Part6Grades2 <1400,5600>
 <<nobr>>
+	<<unset $PlayerPointsSet>>
 	<<set $PlayerRollDice to either(1,2,3,4,5,6)>>
 	<<set $PlayerRollDice += $AcademicPoints>>
 	<<if !$ProfessorHelp and !$PlayerProfessorVisit and $PlayerRollDice < 11>><<set $AcademicProbation to 1>><</if>>
