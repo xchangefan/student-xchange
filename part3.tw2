@@ -604,41 +604,38 @@
 		<<set $Bar1Set = 4>>
 	<<else>>
 		<span id="Bar1Span">"."</span>
+		<<silently>>
+			<<repeat 100ms>>
+				<<if $Bar1Update>>
+					<<replace "#Bar1Span">>
+						<<switch $Bar1Set>>
+							<<case 1>>
+								<<link "you picture a beautiful woman">>
+									<<set $Bar1Update = 1>>
+									<<set $Bar1Set = 2>>
+								<</link>>
+								<<print " - maybe one of the ">>[[ones that was hitting on you tonight.|JobBarGirl]]
+							<<case 2>>
+								<<link "you picture a handsome man.">>
+									<<set $Bar1Update = 1>>
+									<<set $Bar1Set = 3>>
+								<</link>>
+								<<print " You picture yourself beneath him as he thrusts into you. Damn it, X-Change! You work all day, surrounded by beautiful women hitting on you. But when you close your eyes, ">>[[it’s men you fantasize about.|JobBarGuy]]
+							<<case 3>>
+								<<link "you decide you don’t have time for this.">>
+									<<set $Bar1Update = 1>>
+									<<set $Bar1Set = 1>>
+								<</link>>
+								<<print " Drink orders are stacking up and you need to get back to work and stop  ">>[[goofying off.|JobBarUnsure1]]
+							<<case 4>>
+								<<stop>>
+						<</switch>>
+						<<set $Bar1Update = 0>>
+					<</replace>>
+				<</if>>
+			<</repeat>>
+		<</silently>>
 	<</if>>
-<</nobr>>
-
-<<nobr>>
-	<<silently>>
-		<<repeat 100ms>>
-			<<if $Bar1Update>>
-				<<replace "#Bar1Span">>
-					<<switch $Bar1Set>>
-						<<case 1>>
-							<<link "you picture a beautiful woman">>
-								<<set $Bar1Update = 1>>
-								<<set $Bar1Set = 2>>
-							<</link>>
-							<<print " - maybe one of the ">>[[ones that was hitting on you tonight.|JobBarGirl]]
-						<<case 2>>
-							<<link "you picture a handsome man.">>
-								<<set $Bar1Update = 1>>
-								<<set $Bar1Set = 3>>
-							<</link>>
-							<<print " You picture yourself beneath him as he thrusts into you. Damn it, X-Change! You work all day, surrounded by beautiful women hitting on you. But when you close your eyes, ">>[[it’s men you fantasize about.|JobBarGuy]]
-						<<case 3>>
-							<<link "you decide you don’t have time for this.">>
-								<<set $Bar1Update = 1>>
-								<<set $Bar1Set = 1>>
-							<</link>>
-							<<print " Drink orders are stacking up and you need to get back to work and stop  ">>[[goofying off.|JobBarUnsure1]]
-						<<case 4>>
-							<<stop>>
-					<</switch>>
-					<<set $Bar1Update = 0>>
-				<</replace>>
-			<</if>>
-		<</repeat>>
-	<</silently>>
 <</nobr>>
 
 ::JobWebModel1 <2550,1250>
