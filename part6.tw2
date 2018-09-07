@@ -120,7 +120,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $JobTestSubject and !$PlayerProtectionTry>>
+	<<if $JobTestSubject>>
 		You also remember the engineering people had told you after your last test that they were looking for volunteers for some
 		[[special project|SpecialProjectIntro]].  You'd just been teased and denied for an hour right before he told you, so you
 		weren't really paying that close of attention to what he had said.  But you remember it paid $500.  You also remember it
@@ -278,21 +278,35 @@
 			"Punishment for Third Orgasm: <strong>Permanent Activation</strong> of Implant Enhanced Fertility Feature"
 		<</if>>
 		<<if $SubjectPunishLastMessage != 3>>
-			You tug again at your bonds.  "Permanent! Fuck I should have read that disclosure closer!" you say to yourself.
+			<<if $PlayerProtectionTry>>
+				"No! Not that!", you say as you tug at your restraints.  You want them to think this is a punishment for you like it's supposed to be.
+				Of course, since you're trying to get pregnant, it's anything but a punishment.
+			<<else>>
+				You tug again at your bonds.  "Permanent! Fuck I should have read that disclosure closer!" you say to yourself.
+			<</if>>
 		<</if>>
 	<<elseif $SubjectPunish == 4>>
 		"Punishment for Fourth Orgasm: <strong>Live Semen Sample</strong> Used During Male's Orgasm Instead of Simulant for Remainder of Testing"
 		<<if $SubjectPunishLastMessage != 4>>
 			You thrash at your bonds again. "What!? Whose? No!", you yell to the empty room.
-			<<if !$PlayerSideEffectPermanent>>
+			<<if $PlayerProtectionTry>>
+				You imagine if this wasn't exactly what you wanted, you'd be pretty upset at this possibility, but you try not to overact and let them
+				know you hope to leave here today pregnant.  You can't help yourself cum directly, but you'll concentrate on his cum filling you and
+				giving you the baby you want.  Maybe that will help you cum a little bit faster.
+			<<elseif !$PlayerSideEffectPermanent>>
 				You realize if it gets you pregnant, you'll never be able to change back after graduation.
 			<</if>>
 		<</if>>
 	<<else>>
 		"Punishment for Fifth Orgasm: Reduction of Study Payment by $400"
 		<<if $SubjectPunishLastMessage < 5>>
-			You sigh in frustration.  You haven't been able to hold out yet, you doubt you will now either.  Now you'll probably walk out of here
-			with almost nothing.
+			<<if $PlayerProtectionTry>>
+				Well, if you walk out of here $50 and a baby inside you, that still an evening well spent.  But you'll get his cum even if you don't orgasm, so
+				maybe it'd be better to hold back this time.  But you doubt you'll be able to.
+			<<else>>
+				You sigh in frustration.  You haven't been able to hold out yet, you doubt you will now either.  Now you'll probably walk out of here
+				with almost nothing.
+			<</if>>
 		<</if>>
 	<</if>>
 	<<set $SubjectPunishLastMessage to $SubjectPunish>>
@@ -317,8 +331,11 @@
 		<<elseif $PlayerProtectionFertile>>
 			<<set $SubjectPunishLastMessage to 4>>
 			"ERROR - Fertility Feature Already Active"  The dildo plunges into you again and you feel it release something inside you, but less than
-			before. "Live Semen Sample deposited".  You thrash at your bonds again. "What!? Whose? No!", you yell to the empty room.  The machine
-			freezes for a moment and then releases inside you again.  "Live Semen Sample deposited".  And then it happens a third time.
+			before. "Live Semen Sample deposited".  You thrash at your bonds again. "What!? Whose? No!", you yell to the empty room.
+			<<if $PlayerProtectionTry>>
+				You're sure anyone watching would think you really were upset.
+			<</if>>
+			The machine freezes for a moment and then releases inside you again.  "Live Semen Sample deposited".  And then it happens a third time.
 			<img src="Part6/SpecialProject11.jpg" hspace="10" vspace="10" height="600">
 			<br><br>
 			You are wondering if you are going to have to be this machine's cum dumster all night when the message changes. "Malfunction detected -
@@ -337,6 +354,9 @@
 		<</if>>
 	<<elseif $SubjectPunish == 4>>
 		"Live Semen Sample deposited"
+		<<if $PlayerProtectionTry>>
+			You wonder if you'll look back on this as the moment your future baby was concieved.
+		<</if>>
 	<<elseif $SubjectPunish == 5>>
 		"Live Semen Sample deposited, $400 Penalty Applied"
 		<<set $SpecialProjectMoney -= 400>>
@@ -461,6 +481,9 @@
 ::SpecialProjectResult <2000,600>
 <<nobr>>
 	<<unset $SpecialMessage>>
+	<<if $SubjectPunish >= 4 and $PlayerProtectionTry>>
+		<<set $SubjectHorniness += 3>>
+	<</if>>
 	<<if $SubjectAction == "struggle">>
 		<<set $SubjectHorniness += $subjectStrugglePoints[$SubjectSessionNumber - 1]>>
 		<<if $PlayerSideEffectSubmissive>>
@@ -491,11 +514,17 @@
 	<<if $SubjectHorniness >= $SubjectOrgasmThreshold>>
 		<<if $SubjectAction == "struggle">>
 			Your tugs at your restraints turns into a violent thrashing as the orgasm you were trying to avoid comes crashing over you.
+			<<if ($SubjectPunish == 3 or $SubjectPunish == 4) and $PlayerProtectionTry>>
+				You hope your performance was convincing.
+			<</if>>
 			Finally as it subsides, you give up your struggles just as he finishes.
 		<<elseif $SubjectAction == "resist">>
 			As much as you try to fight against it, you can't resist the orgasm the machine, and the guy on the other end of it, force
-			on you.  Your stern face of resistance finally gives way to screams of pleasure.  He keeps going through your orgasm until
-			eventually he cums too.
+			on you.  Your stern face of resistance finally gives way to screams of pleasure.  
+			<<if $SubjectPunish >= 4 and $PlayerProtectionTry>>
+				You hope your performance was convincing.
+			<</if>>
+			He keeps going through your orgasm until eventually he cums too.
 		<<else>>
 			You lie back and let the machine, and the guy on the other end of it, have their way with you.  You moan as the dildo slides
 			in and out of you. Finally you feel your orgasm building and know there's nothing you could do to stop it now.  A moment later
@@ -504,7 +533,11 @@
 		<</if>>
 	<<elseif $SubjectHorniness >= $SubjectOrgasmThreshold *0.8>>
 		<<if $SubjectAction == "struggle" or $SubjectAction == "resist">>
-			You are able to hold back, but only barely.
+			<<if ($SubjectPunish == 3 or $SubjectPunish == 4) and $PlayerProtectionTry>>
+				You were so close to an orgasm, if only he'd lasted just a bit logner.
+			<<else>>
+				You are able to hold back, but only barely.
+			<</if>>
 			<<if $SubjectSessionNumber != $SubjectSessionTarget>>
 				You doubt you'll be able to hold it back much longer.
 			<</if>>
@@ -515,9 +548,17 @@
 		<</if>>
 	<<else>>
 		<<if $SubjectSessionNumber == $SubjectSessionTarget>>
-			Thankfully, there wasn't any danger of you orgasming that time.
+			<<if ($SubjectPunish == 3 or $SubjectPunish == 4) and $PlayerProtectionTry>>
+				Saddly, there was no chance at orgasming that time.  You'll just have to conceive the old-fashioned way after all, you suppose.
+			<<else>>
+				Thankfully, there wasn't any danger of you orgasming that time.
+			<</if>>
 		<<else>>
-			There wasn't any danger of you orgasming that time.  You wonder if you'll be as lucky next time.
+			<<if ($SubjectPunish == 3 or $SubjectPunish == 4) and $PlayerProtectionTry>>
+				Saddly, there was no chance at orgasming that time.  You hope you'll have better luck with the next guy.
+			<<else>>
+				There wasn't any danger of you orgasming that time.  You wonder if you'll be as lucky next time.
+			<</if>>
 		<</if>>
 	<</if>>
 <</nobr>>
@@ -680,18 +721,21 @@
 <<nobr>>
 	<<if $SubjectHorniness >= $SubjectOrgasmThreshold>>
 		<<include [[SpecialProjectPunishAdministerMessage]]>>
-	<<elseif $SubjectPunish >= 4>>
+	<<elseif $SubjectPunish > 4>>
 		You see the screen over you flash red with the message  "Live Semen Sample deposited"
+		<<if $PlayerProtectionTry>>
+			You do your best to suppress a smile. 
+		<</if>>
 	<</if>>
 <</nobr>>
 
 <<nobr>>
 	<<if $SubjectSessionNumber < $SubjectSessionTarget>>
-		<<if $SubjectHorniness <= 0>>
+		<<if $SubjectHorniness <= 0 or $PlayerProtectionTry>>
 			You only have short time to recover as the display above finishes its countdown.  Then it's time for the
 			[[next session|SpecialProjectSession]].
 		<<else>>
-			You don't have long before the [[next session|SpecialProjectSession]], but you take what time you have to try to think about something else so you are as close to an orgasm.
+			You don't have long before the [[next session|SpecialProjectSession]], but you take what time you have to try to think about something else so you aren't as close to an orgasm.
 			<<if $PlayerSideEffectLibido>>
 				You fail though, you're too horny to think about anything else.
 			<<elseif $PlayerSideEffectSubmissive>>

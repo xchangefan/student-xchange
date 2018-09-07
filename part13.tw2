@@ -1,2 +1,170 @@
 ::Part13Start <0,11500>
-Part 13 - To Be Continued
+As the end of the semester and finals approach, you aren't nearly as worried about passing as you were last semester.
+
+Your grades certainly aren't going to be all "A"s, but you are fairly confident you'll pass everything this semester.
+
+<<if setup.areDating('Aaron')>>
+  How could you not do better, now that [[Daddy is there|Part13Aaron]] to make sure you get your work done.
+<<elseif $PlayerItemNerdKey>>
+  With you holding the key to Peter's cock, he's always eager to help when you run into trouble, and that's certainly helped you pass too.
+  You don't let Peter cum often, but at the end of the term, you decide he [[deserves a special reward|Part12Peter]]
+  <</if>>
+<<else>>
+  There's still [[your job|Part13Job]] you need to focus on as well though.
+<</if>>
+
+::Part13Aaron
+TODO Part12Aaron
+TODO General comments
+TODO Easter Bunny Costume
+TODO Sex
+TODO Go to Part13PeterFriendZone or Part13Job
+
+::Part13PeterFriendZone
+TODO Part13PeterFriendZone
+TODO (If with professor and have peter's key.  His reward is just getting to watch you masturbate)
+TODO THen go to Part13Job
+
+::Part13Peter
+TODO Part12Peter
+TODO Teasing Peter, then goto Part13PeterVeronica, or randomly betwen Part13PeterTooSoon or Part13PeterMuchTooSoon
+
+::Part13PeterVeronica
+TODO Veronica was watching and decides to join in then Goto Part13Job
+
+::Part13PeterTooSoon
+TODO Start fucking peter but his cock comes out and he cums before you can get it back in, then goto Part13Job
+
+::Part13PeterMuchTooSoon
+TODO You are teasing Peter.  After one more round of teasing, you plan on climbing on top of him and riding him until he cums.  But when you start telling
+TODO all about it, he cums right then.
+TODO Then go to Part13Job
+
+
+::Part13Job
+  TODO
+  <<if $JobAthlete and !$PlayerPregnant>>
+    <<include [[Part13Athlete]]>>
+  <<elseif $JobCheerleader>>
+    <<include [[Part13Cheerleader]]>>
+  <<elseif $JobCheerleaderFundraiser>>
+    <<include [[Part13CheerleaderFundraiser]]>>
+  <<elseif $JobFitnessYoga>>
+    TODO JobFitnessYoga
+  <<elseif $JobFitnessMassage>>
+    TODO JobFitnessMassage
+  <<elseif $JobLibrary>>
+    TODO JobLibrary
+  <<elseif $JobEngineer>>
+    TODO JobEngineer
+  <<elseif $JobTestSubject>>
+    TODO JobTestSubject
+  <<elseif $JobLibrary>>
+    TODO JobLibrary
+  <<elseif $JobBarista>>
+    TODO JobBarista
+  <<elseif $JobOffice>>
+    TODO JobOffice
+  <<elseif $JobOfficePA>>
+    TODO JobOfficePA
+  <<elseif $JobOfficeManager>>
+    TODO JobOfficeManager
+  <<elseif $JobOfficeIntern>>
+    TODO JobOfficeIntern
+  <<elseif $JobCallGirl>>
+    TODO JobCallGirl
+  <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+    TODO JobBartender
+  <<elseif $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
+    TODO JobPorn
+  <<elseif $ProfessorAllowance>>
+    TODO ProfessorAllowance
+  <<else>>
+    TODO Else
+  <</if>>
+
+::TodoPlaceHolderJob
+<<if $JobCallGirl>><</if>>
+<<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
+<<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
+<<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>\
+
+TODO Job Based Portion
+TODO Sex Scene
+TODO Side Job
+TODO End of Semester
+TODO Summer Plans
+TODO Part 13 - To Be Continued
+
+::Part13Athlete
+TODO Athlete
+
+::Part13Cheerleader
+TODO Cheerleader
+TODO Pregnant / not Pregnant
+
+::Part13CheerleaderFundraiser
+TODO Cheerleader Fundraiser
+
+::Part13Aaron
+TODO Part 13 - To be continued Aaron
+- Around the house naked
+- ??
+
+::Part13Kate
+TODO Part 13 - To Be Continued Kate
+
+::Part13Andrew
+TODO Part 13 - To Be Continued Andrew (Regular or Campus Ministry)
+
+::Part13AndrewEngaged
+TODO Part 13 - To Be Continued Andrew Engaged
+
+::Part13Paul
+TODO Part 13 - To Be Continued Paul
+
+::Part13Veronica
+TODO Part 13 - To Be Continued Veronica
+
+::Part13Josh
+TODO Part 13 - To Be Continued Josh
+
+::Part13Aaron
+TODO Part 13 - To Be Continued Aaron
+
+::Part13Peter
+TODO Part 13 - To Be Continued Peter
+
+::Part13MasterRobert
+TODO Part 13 - To Be Continued Master Robert
+
+
+::TODOPlaceholder
+<<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>\
+<<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>\
+<<if $MasterKen>><br><<print "Ken, the artist, is your ">><<if $Spouse == 'Ken'>><<print "husband">><<else>><<print "master">><</if>><<print " and you are living in his loft, together with his assistants. ">><</if>>\
+<<if $MasterRobert>><br><<print "You are a slave to Olivia's master. ">><</if>>\
+\
+<<if $Engaged == 'Andrew'>><<print "You are engaged to Andrew and living together">><</if>>\
+<<if $Engaged != 'Andrew' and setup.areDating('Andrew')>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
+<<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>><</if>>\
+<<if setup.areDating('Paul') and $Roommate!='Paul'>><br><<print "You are your boss, Paul's, mistress. ">><</if>>\
+<<if setup.areDating('Paul') and $Roommate=='Paul'>><br><<print "You are your boss, Paul's, girlfriend. You live with him. ">><</if>>\
+<<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>\
+<<if setup.areDating('Veronica') and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
+<<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>\
+<<if setup.areDating('Aaron')>><br><<print "The Professor is your Daddy and you are his Baby Girl. ">><</if>>\
+<<if setup.areDating('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
+<<if $dating.length == 0>> \
+  <<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>\
+  <<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>\
+  <<if setup.isFriendzoned('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
+  <<if setup.isFWB('Barry')>><br><<print "Barry likes to humiliate you. ">><</if>>\
+  <<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>\
+  <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>\
+
+
+
+
+::Part13EndOfSemester
+

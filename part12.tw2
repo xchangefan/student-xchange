@@ -2219,10 +2219,10 @@ You may not drinking like most of your friends are, but you aren’t letting tha
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerChastityBelt>>
-    Though some fun is [[still frustratingly out of your reach|Part12Chastity]].
-  <<elseif setup.areDating('Veronica')>>
+  <<if setup.areDating('Veronica')>>
     You know you and Veronica are [[going to have a great time!|Part12Veronica]]
+  <<elseif $PlayerChastityBelt and $Keyholder == 'Robert'>>
+    Though some fun is [[still frustratingly out of your reach|Part12Chastity]].
   <<else>>
     You know you are [[going to have a great time!|Part12FilmCrew]]
   <</if>>
