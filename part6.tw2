@@ -2713,14 +2713,26 @@ Might add something here in the future. Or not.
 <img src="Part6/Grades1.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<if $AcademicPoints > 9>><<print "You’re doing great and have nothing to worry about.">>
-	<<elseif $AcademicPoints < 5>><<print "You’re going to fail, there’s no way to pull your grade up enough to pass now.">>
-	<<elseif $KidnapEscape>>You are in-between, it could go either way.  You know missing so much class didn't help.  You stop by to [[talk to the professor|Part6ProfessorRecover]] to see if there is anything you can do to pass.
-	<<elseif $CampusMinistry>>You are in-between, it could go either way.  Mark suggests talking to the professor about the trouble you are having.  You stop by to [[talk to the professor|Part6ProfessorRecover]] to see if there is anything you can do to pass.
-	<<else>><<print "You are in-between, it could go either way ">>[[depending on how you do the rest of the term.|Part6Professor1]]<</if>>
+	<<if $AcademicPoints > 9>>
+		You’re doing great and you are pretty sure you have nothing to worry about.
+		<<if $CampusMinistry>>
+			[[Eventually it is time for you semester finals.|Part6Exam]]
+		<<else>>
+			You wonder if there's [[any way to be more sure you'll pass|Part6Professor1]]
+		<</if>>
+	<<elseif $AcademicPoints < 5 and !$PlayerGoodStudent>>
+		You’re going to fail, there’s no way to pull your grade up enough to pass now.
+		[[Eventually it is time for you semester finals.|Part6Exam]]
+	<<elseif $KidnapEscape>>
+		You are in-between, it could go either way.  You know missing so much class didn't help.  You stop by to [[talk to the professor|Part6ProfessorRecover]]
+		to see if there is anything you can do to pass.
+	<<elseif $CampusMinistry>>
+		You are in-between, it could go either way.  Mark suggests talking to the professor about the trouble you are having.
+		You stop by to [[talk to the professor|Part6ProfessorRecover]] to see if there is anything you can do to pass.
+	<<else>>
+		You are in-between, it could go either way [[depending on how you do the rest of the term.|Part6Professor1]]
+	<</if>>
 <</nobr>>
-
-<<if $AcademicPoints > 9 or $AcademicPoints < 5>>[[Eventually it is time for you semester finals.|Part6Exam]]<</if>>
 
 ::Part6David1  <15000,600>
 <<nobr>>
