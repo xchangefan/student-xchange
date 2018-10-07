@@ -2,6 +2,7 @@
 <<nobr>>
   <h1>Finishing the Semester</h1>
   <img src="Part13/Class1.png" hspace="10" vspace="10" height="650">
+  <<include [[Part13VariableCleanup]]>>
 <</nobr>>
 
 <<nobr>>
@@ -15,9 +16,15 @@
   <<elseif $PlayerItemNerdKey>>
     With you holding the key to Peter's cock, he's always [[eager to help|Part13Peter]], and that's certainly helped you pass too.
   <<else>>
-    There's still [[your job|Part13Job]] you need to focus on as well though.
+    But, of course, school work isn't the only things [[you need to worry about|Part13Job]].
   <</if>>
 <</nobr>>
+
+::Part13VariableCleanup
+<<if $JobBarista && setup.areDating('Andrew') && !$PlayerPregnant && !$CampusMinistry>>
+  <<unset $JobBarista>>
+  <<set $JobBaristaOld to 1>>
+<</if>>
 
 ::Part13Aaron
 <<nobr>>
@@ -217,7 +224,7 @@
       [[the X-Change office|Part13Checkup]] for your end-of-semester check-up.
     <</if>>
   <<else>>
-    Of course, there's your [[job|Part13Job]] you need to focus on too.
+    But, of course, school work and Daddy aren't the only things [[you need to worry about|Part13Job]].  
   <</if>>
 <</nobr>>
 
@@ -265,7 +272,7 @@
       [[the X-Change office|Part13Checkup]] for your end-of-semester check-up.
     <</if>>
   <<else>>
-      But, of course, there's your [[job|Part13Job]] you need to focus on too.
+    But, of course, school work and Daddy aren't the only things [[you need to worry about|Part13Job]].
   <</if>>
 <</nobr>>
 
@@ -434,47 +441,54 @@
 <</nobr>>
 
 ::Part13Job
-  TODO
-  <<if $JobAthlete and !$PlayerPregnant>>
-    <<include [[Part13Athlete]]>>
-  <<elseif $JobCheerleader>>
-    <<include [[Part13Cheerleader]]>>
-  <<elseif $JobCheerleaderFundraiser>>
-    <<include [[Part13CheerleaderFundraiser]]>>
-  <<elseif $JobFitnessYoga>>
-    TODO JobFitnessYoga
-  <<elseif $JobFitnessMassage>>
-    TODO JobFitnessMassage
-  <<elseif $JobLibrary>>
-    TODO JobLibrary
-  <<elseif $JobEngineer>>
-    TODO JobEngineer
-  <<elseif $JobTestSubject>>
-    TODO JobTestSubject
-  <<elseif $JobLibrary>>
-    TODO JobLibrary
-  <<elseif $JobBarista>>
-    TODO JobBarista
-  <<elseif $JobOffice>>
-    TODO JobOffice
-  <<elseif $JobOfficePA>>
-    TODO JobOfficePA
-  <<elseif $JobOfficeManager>>
-    TODO JobOfficeManager
-  <<elseif $JobOfficeIntern>>
-    TODO JobOfficeIntern
-  <<elseif $JobCallGirl>>
-    TODO JobCallGirl
-  <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
-    TODO JobBartender
-  <<elseif $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
-    TODO JobPorn
-  <<elseif $ProfessorAllowance>>
-    TODO ProfessorAllowance
-  <<else>>
-    TODO Else
-  <</if>>
+<<if $JobAthlete and !$PlayerPregnant>>
+  <<include [[Part13Athlete]]>>
+<<elseif $JobCheerleader>>
+  <<include [[Part13Cheerleader]]>>
+<<elseif $JobCheerleaderFundraiser>>
+  <<include [[Part13CheerleaderFundraiser]]>>
+<<elseif $JobFitnessYoga>>
+  <<include [[Part13Yoga]]>>
+<<elseif $JobFitnessMassage>>
+  <<include [[Part13FitnessMassage]]>>
+<<elseif $JobLibrary>>
+  <<include [[Part13Library]]>>
+<<elseif $JobEngineer>>
+  <<include [[Part13Engineer]]>>
+<<elseif $JobTestSubject>>
+  <<include [[Part13TestSubject]]>>
+<<elseif $JobBarista && $Engaged=='Andrew'>>
+  <<include [[Part13BaristaEngaged]]>>
+<<elseif $JobBarista>>
+  <<include [[Part13Barista]]>>
+<<elseif $JobOfficePA>>
+  <<include [[Part13OfficePA]]>>
+<<elseif $JobOfficeManager>>
+  <<include [[Part13OfficeManager]]>>
+<<elseif $JobOfficeIntern and $PlayerSideEffectSubmissive>>
+  <<include [[Part13OfficeInternSubmissive]]>>
+<<elseif $JobOffice or $JobOfficeIntern>>
+  <<include [[Part13OfficeIntern]]>>
+<<elseif $JobCallGirl>>
+  <<include [[Part13Callgirl]]>>
+<<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+  <<include [[Part13Bartender]]>>
+<<elseif $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
+  <<include [[Part13PornStar]]>>
+<<elseif $JobStripper>>
+  <<include [[Part13Stripper]]>>
+<<elseif $JobGloryHole>>
+  <<include [[Part13GloryHole]]>>
+<<elseif $ProfessorAllowance>>
+  <<include [[Part13Allowance]]>>
+<<else>>
+  You try not to think too much about your job.
+  <p/>
+  <<include [[Part13AfterJob]]>>
+<</if>>
 
+
+::Part13AfterJob
   <<nobr>>
     <<if $PlayerPregnant>>
       After you leave campus, you head over to [[your obstetrician's office|Part13OB]] for your appointment.
@@ -484,27 +498,354 @@
   <</nobr>>
 
 ::TodoPlaceHolderJob
-<<if $JobCallGirl>><</if>>
+<<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>\
 <<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
 <<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
 <<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>\
 
 TODO Job Based Portion
-TODO Sex Scene
 TODO Side Job
+TODO Need Sorority competion at the end of the year, and hook up with frat guy(s) (or some girl) if not in a relationship or on faith-path
 TODO End of Semester
+TODO Visit for OB or checkup
 TODO Summer Plans
+TODO Stay with Significant Other, go home, or semester abroad
 TODO Part 13 - To Be Continued
 
 ::Part13Athlete
-TODO Athlete
+<<nobr>>
+  <h1>Training</h1>
+  <img src="Part13/Fit1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  It's hard work, but in addition to your school work and everything else, you spend hours in the fitness center every day training.
+<</nobr>>
+
+<<nobr>>
+  Of course, it's all so you'll be your best when it comes time to compete.  But you also enjoy keeping your [[body in top shape|Part13Athlete2]].
+<</nobr>>
+
+::Part13Athlete2
+<<nobr>>
+  <h1>Training</h1>
+  <video src="Part13/Fit2.webm" autoplay loop muted height="600"></video>
+<</nobr>>
+
+<<nobr>>
+  Frequently when you work out, you'll have a few supporters looking on and encouraging you.  You always appreciate the support.
+  Well, you're pretty sure the women looking on are supporters.  They clearly are hoping you train and compete well.  Some of the guys though...
+<</nobr>>
+
+<<nobr>>
+  From the way some of them watch, you suspect they might be imagining more about how you'd perform in bed than how you'll
+  [[perform on the field|Part13Athlete3]].  And imagining is all they'll probably ever get to do.
+<</nobr>>
+
+::Part13Athlete3
+<<nobr>>
+  <h1>Victory</h1>
+  <video src="Part13/Fit3.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
+
+<<nobr>>
+  All your training you and your fellow athletes have done has paid off!  You and another girl from your school managed to place first and second!
+<</nobr>>
+
+<<nobr>>
+  Your other teammates are waiting on the sidelines to congratulate you both.  But you both left it all on the field.  You collapse next to each other
+  and congratulate one another until you gather enough energy to get up and join the rest of the team.
+<</nobr>>
+
+<<nobr>>
+  It's the end of the season, so you are done training for the semester.  You still have [[one more visit to the fitness center|Part13Athlete4]] planned though.
+<</nobr>>
+
+::Part13Athlete4
+<<nobr>>
+  <h1>Fitness Center</h1>
+  <img src="Part13/Fit4.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    Your coach says you've certainly earned a reward.  He unlocks your belt for a special visit to one of the fitness center's massage rooms.  You lose track of how many
+    orgasms you have during your hour-long session.  When your visit is done, he locks your belt back on and tells you to have a fun summer.
+  <<else>>
+    You decide to make one last visit to the fitness center's massage room when you go to pick up your things from your locker.  The woman giving your massage knows just
+    how to help relieve the stress of months of training from your exhausted body.
+  <</if>>
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13Yoga
+<<nobr>>
+  <h1>Yoga Class</h1>
+  <video src="Part13/Yoga1.mp4" autoplay loop muted height="540"></video>
+<</nobr>>
+
+<<nobr>>
+  Your job as a 'natural yoga' instructor has really picked up lately.  The university administration had heard about the classes you had for
+  the athletes and hadn't thought much of it.  They were fine with anything that kept their athletes happy.  But you'd been a bit worried they might
+  try to shut down the girl-focused classes you had opened up to non-athletes also.
+<</nobr>>
+
+<<nobr>>
+  They'd had the opposite reaction.  They encouraged you to offer more of those classes.  Someone in the univeristy administration was even
+  able to secure a company to sponsor the classes so you could focus on them full-time.
+<</nobr>>
+
+<<nobr>>
+  With new women joining your classes every week, you are always careful to start with simple warm-up stretches.  You want to make sure they
+  each get comfortable being nude in front of the class.  Some are nervous at first, but a few minutes of deep breathing usually calms their nerves.
+  Then you can [[continue with the class|Part13Yoga2]]
+<</nobr>>
+
+::Part13Yoga2
+<<nobr>>
+  <h1>Yoga Class</h1>
+  <video src="Part13/Yoga2.mp4" autoplay loop muted height="540"></video>
+  <<if !$PlayerSideEffectLibido>><<set $PlayerSideEffectLibido to 1>><</if>>
+<</nobr>>
+
+<<nobr>>
+  After the first part of the class, you take a stretch break.  You remind your students they need to stay hydrated, both in class and at home.  It's true, but
+  it's also a bit of product placement from the company sponsoring the class - <b>ErosH<sub>2</sub>O</b>.  <i>"It has a proprietary blend of nutrients that give
+  an active woman the energy she needs to go all day... and all night."</i>
+<</nobr>>
+
+<<nobr>>
+  "Sorry, I have to say that part.", you tell them as you all take a drink.  "But it's probably true.  I certainly seem to have a lot more... energy, since
+  I started drinking it."
+<</nobr>>
+
+<<nobr>>
+  "Mmmmm, it gives me a warm feeling all over.", one of the new girls says.  "And little tingles...", she stops mid sentence and glances between her legs.
+<</nobr>>
+
+<<nobr>>
+  "That's probably just from the yoga.  It can really get the blood moving.", you reassure her, though you remember thinking the same thing the first time you'd
+  drank it.  As you remind them to practice at home between classes you recommend they do it with a partner that can encourage them and with enough strength to
+  help them stretch just a bit more.  "It shouldn't be too hard for you to find a guy willing to help."
+<</nobr>>
+
+<<nobr>>
+  "It gets pretty hard once he's helping though.", one of the returning girls says with a giggle.
+<</nobr>>
+
+<<nobr>>
+  "Well, that's perfectly natural too.", you say.  "And it'll work well with the positions we'll be covering in the [[rest of the class|Part13Yoga3]] today."
+<</nobr>>
+
+::Part13Yoga3
+<<nobr>>
+  <h1>Yoga Class</h1>
+  <video src="Part13/Yoga3.mp4" autoplay loop muted height="540"></video>
+<</nobr>>
+
+<<nobr>>
+  "You should be able to grab your feet by yourself in this position.  But if you have a partner, have him stand behind you.  He should grab your wrists and hold
+  them there, pulling back a bit more if you can manage.", you explain.
+<</nobr>>
+
+<<nobr>>
+  "As Nicole suggested earlier, he may have other things on his mind at this point.  You'll probably be eager for that as well, and there's no reason yoga can't be
+  fun for you and him.  It won't take more than a word or two of encouragement before he's in his nautral state as well and ready to join you.
+<</nobr>>
+
+<<nobr>>
+  "Just do you best to hold your position, and have him continue to hold your wrists.  The natural thrust-and-pull motions he'll make will really help you
+  improve your flexibilty.
+<</nobr>>
+
+<<nobr>>
+  "Now lets hydrate again for a second before we [[move on to the next position|Part13Yoga4]]."
+<</nobr>>
+
+::Part13Yoga4
+<<nobr>>
+  <h1>Yoga Class</h1>
+  <video src="Part13/Yoga4.mp4" autoplay loop muted height="540"></video>
+<</nobr>>
+
+<<nobr>>
+  "Here you'll want to grab your knees and pull them towards your chest.", you tell your students.  "Pull on your knees like this.  Eventually they should be able
+  to touch your breasts.  For some of you smaller-chested girls that may take more time, but don't worry, you'll get there eventually.
+<</nobr>>
+
+<<nobr>>
+  "If you have a partner helping you, then point your legs upward.  He can then place some of his weight on your thighs and the back of your knees to help you
+  maintain your position.  As he thrusts, his weight will help you stretch these muscles here.", you tell them as you indicate on your body the muscle groups.
+<</nobr>>
+
+<<nobr>>
+  "Hopefully, you'll also enjoy the deep penetration this position will allow him as well.  I'm sure he will.", you add before you start to
+  [[wrap up the class|Part13Yoga5]].
+<</nobr>>
+
+::Part13Yoga5
+<<nobr>>
+  <h1>Yoga Class</h1>
+  <video src="Part13/Yoga5.mp4" autoplay loop muted height="540"></video>
+<</nobr>>
+
+<<nobr>>
+  You finish up the class with a few more breathing exercises before you tell them goodbye and remind them to practice at home.  "If I don't see you again before
+  then, have a great summer.  There's a stack of <b>ErosH<sub>2</sub>O</b> coupons in the back if you want to pick some up over the summer, take as many as you need.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13FitnessMassage
+TODO Part13FitnessMassage
+    <<include [[Part13AfterJob]]>>
 
 ::Part13Cheerleader
 TODO Cheerleader
 TODO Pregnant / not Pregnant
+    <<include [[Part13AfterJob]]>>
 
 ::Part13CheerleaderFundraiser
 TODO Cheerleader Fundraiser
+    <<include [[Part13AfterJob]]>>
+
+::Part13Library
+TODO Part13Library
+    <<include [[Part13AfterJob]]>>
+
+::Part13Engineer
+TODO Part13Engineer
+TODO Watching female subject
+TODO If not in relationship, on dual monkey rocker with another female engineer
+    <<include [[Part13AfterJob]]>>
+
+::Part13TestSubject
+TODO Part13TestSubject
+TODO Sybian BJ Scene - Get Oral side effect if don't already have it
+    <<include [[Part13AfterJob]]>>
+
+::Part13BaristaEngaged
+<<nobr>>
+	<h1>Home with Andrew</h1>
+  <video src="Part13/Andrew1.webm" autoplay loop muted height="600"></video>
+  <<unset $JobBarista>>
+  <<set $JobBaristaOld to 1>>
+<</nobr>>
+
+<<nobr>>
+  You and Andrew had decided the two of you would be fine without the money from your job.  Besides, being on your feet for hours at work was starting to get
+  uncomfortable.  You let your new manager know you are leaving, and won't be returning after the baby is born.  Everyone wished you the best.  And your former
+  coworkers threw you a baby shower your last week there.
+<</nobr>>
+
+<<nobr>>
+  Between school, planning a wedding, and getting everything ready for a baby you've had plenty to keep you busy.  Though, you still try to always be home by
+  the time Andrew gets off work.  
+<</nobr>>
+
+<<nobr>>
+  You're not sure if it's all the hormones from the pregnancy or what, but you're even hornier now than you were before.  You'd worried a bit that Andrew wouldn't find
+  you attractive when you were pregnant, but it seems like just the opposite.  The two of you usually head straight the bedroom when he gets home from work.  Dinner
+  comes later, after you've both worked up an appetite.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13Barista
+TODO Part13Barista
+    <<include [[Part13AfterJob]]>>
+
+::Part13OfficePA
+<<nobr>>
+	<h1><<print "Personal Assistant">></h1>
+  <img src="Part13/Office1.png" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+TODO Part13OfficePA
+TODO If Dating someone (other than Peter), no sex scene, otherwise sex scene
+    <<include [[Part13AfterJob]]>>
+TODO Part13OfficePA
+    <<include [[Part13AfterJob]]>>
+
+::Part13OfficeManager
+<<nobr>>
+	<h1>At the Office</h1>
+  <img src="Part13/Office1.png" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+<<nobr>>
+  <<if $dating.length > 0 || !setup.areDating('Peter')>>
+    You are enjoying your job as an office manager.  You like dressing nice, but you are careful to keep it professional at work.
+    Of course, sometimes that means you might need a scarf to hide the hickey $dating[0] left on your neck.  Of course
+    feeling the scarf on your neck just reminds you how much fun you had, and makes you anxious for the end of the day
+    when you can be together again.
+  <<else>>
+    You are enjoying your job as an office manager.  You like dressing nice, but you are careful to keep it professional at work.
+    Of course, sometimes that means you might need a scarf to hide the hickey on your neck.  You'll have to remember to bring a
+    ruler from the office next time.  A few swats on their ass should remind them to be more careful next time.
+  <</if>>
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13OfficeIntern
+<<nobr>>
+	<h1>At the Office</h1>
+  <img src="Part13/Office1.png" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+<<nobr>>
+  <<if $dating.length > 0 || !setup.areDating('Peter')>>
+    You are enjoying your job as an intern.  You like dressing nice, but you are careful to keep it professional at work.
+    Of course, sometimes that means you might need a scarf to hide the hickey $dating[0] left on your neck.  Of course
+    feeling the scarf on your neck just reminds you how much fun you had, and makes you anxious for the end of the day
+    when you can be together again.
+  <<else>>
+    <<if setup.
+    You are enjoying your job as an intern.  You like dressing nice, but you are careful to keep it professional at work.
+    Of course, sometimes that means you might need a scarf to hide the hickey the
+    <<if setup.sexFemaleCount() > setup.sexMaleCount()>>
+      girl
+    <<else>>
+      guy
+    <</if>>
+    from the mailroom gave you earlier in the day.  Of course feeling the scarf on your neck just reminds you how much fun you
+    had, and makes you anxious for the end of the day when the two of you can continue where you left off.
+  <</if>>
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13OfficeInternSubmissive
+<<nobr>>
+	<h1><<print "Office Intern">></h1>
+  <img src="Part13/Office2.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+TODO Part13OfficeInternSubmissive
+    <<include [[Part13AfterJob]]>>
+
+::Part13CallGirl
+TODO Part13CallGirl
+    <<include [[Part13AfterJob]]>>
+
+::Part13Bartender
+TODO Part13Bartender
+    <<include [[Part13AfterJob]]>>
+
+::Part13PornStar
+TODO Part13PornStar
+    <<include [[Part13AfterJob]]>>
+
+::Part13Stripper
+TODO Part13Stripper
+    <<include [[Part13AfterJob]]>>
+
+::Part13GloryHole
+TODO Part13GloryHole
+    <<include [[Part13AfterJob]]>>
+
+::Part13Allowance
+TODO Part13Allowance
+    <<include [[Part13AfterJob]]>>
 
 ::Part13Kate
 TODO Part 13 - To Be Continued Kate
@@ -552,11 +893,11 @@ TODO Part 13 - To Be Continued Master Robert
   <<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>\
   <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>\
 
-::Part13EndOfSemester
 
 
 ::Part13OB
 TODO Part13OB
+TODO [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
 
 ::Part13Checkup
 <<nobr>>
@@ -681,3 +1022,6 @@ TODO Part13OB
     TODO Handle if they choose to make their implant permanent
   <</if>>
 <</nobr>>
+
+::Part13SummerPlans
+TODO Part13SummerPlans
