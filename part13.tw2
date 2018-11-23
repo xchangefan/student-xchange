@@ -465,9 +465,7 @@
   <<include [[Part13OfficePA]]>>
 <<elseif $JobOfficeManager>>
   <<include [[Part13OfficeManager]]>>
-<<elseif $JobOfficeIntern and $PlayerSideEffectSubmissive>>
-  <<include [[Part13OfficeInternSubmissive]]>>
-<<elseif $JobOffice or $JobOfficeIntern>>
+<<elseif $JobOfficeIntern>>
   <<include [[Part13OfficeIntern]]>>
 <<elseif $JobCallGirl>>
   <<include [[Part13Callgirl]]>>
@@ -851,6 +849,8 @@ TODO Part13Library
   Sometimes $dating[0] will give you the orgasm you crave as soon as you walk through the door.  But $datingPronoun loves how horny and suggestable you are
   after work, so often $datingPronoun will make you wait.  After an hour or more of focusing only on $datingPosessivePronoun pleasure, then $datingPronoun
   might finally give you the release you want.  It's always worth the wait.
+  <<unset $datingPronoun>>
+  <<unset $datingPosessivePronoun>>
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
@@ -887,9 +887,10 @@ TODO Part13Library
 <</nobr>>
 
 <<nobr>>
-  Before you cum she warns you, "Make sure you don't get up after you get off.  It's set to inject that denial gel we used a while back into whoever
-  starts to stand up first.  And don't stop.  If we stop before one of us gets up, then it gives us both the gel."  Knowing you can't stop pushes you
-  over the edge.  As you cry out, she rocks even faster.  It isn't much longer and she's cumming too.
+  Before you cum she warns you, "Make sure you don't get up after you get off.  Remember that denial gel we used for that special project a while back?
+  The machine is set to inject that into into whoever starts to stand up first.  And don't stop.  If we stop before one of us gets up, then it gives us
+  both the gel."  The thought of spending who knows how much of your summer unable to orgasm both terrifies and excites you.  The thought of it, and the
+  feeling of being trapped on the rocker, both push you over the edge.  As you cry out, she rocks even faster.  It isn't much longer and she's cumming too.
 <</nobr>>
 
 <<nobr>>
@@ -920,7 +921,7 @@ TODO Part13Library
 <</nobr>>
 
 <<nobr>>
-  You're already wet when the first of them slides in from behind you.  But your moan only lasts a second as a moment later your mouth is filled by
+  You're already wet when the first of them slides in from behind you.  But your moan only lasts a second, as a moment later your mouth is filled by
   one of your coworker's cock.  The guys were clearly as excited as you were, as they don't last long.  But thankfully, you won't be leaving here
   unsatisfied.  There's a line of guys waiting to take their place as each one finishes. 
 <</nobr>>
@@ -1218,7 +1219,7 @@ TODO Part13Library
 
 <<nobr>>
   You could just [[play up that you are working your way through college|Part13BikiniBaristaStudent]].  Or maybe [[showing a bit more skin|Part13BikiniBaristaSkin]]
-  would keep your customers coming, and tipping well.  You could also [[offer regulars 'curbside-service'|Part13BikiniBaristaCurbside]] if they tip well.
+  would keep your customers coming, and tipping well.  You could also [[offer regulars 'curbside-service'|Part13BikiniBaristaCurbside]] if they tip well, very well.
 <</nobr>>
 
 ::Part13BikiniBaristaStudent
@@ -1343,8 +1344,6 @@ TODO Part13Library
 TODO Part13OfficePA
 TODO If Dating someone (other than Peter), no sex scene, otherwise sex scene
     <<include [[Part13AfterJob]]>>
-TODO Part13OfficePA
-    <<include [[Part13AfterJob]]>>
 
 ::Part13OfficeManager
 <<nobr>>
@@ -1372,17 +1371,16 @@ TODO Part13OfficePA
 	<h1>At the Office</h1>
   <img src="Part13/Office1.png" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
-
 <<nobr>>
-  <<if $dating.length > 0 || !setup.areDating('Peter')>>
-    You are enjoying your job as an intern.  You like dressing nice, but you are careful to keep it professional at work.
-    Of course, sometimes that means you might need a scarf to hide the hickey $dating[0] left on your neck.  Of course
-    feeling the scarf on your neck just reminds you how much fun you had, and makes you anxious for the end of the day
+  You are enjoying your job at the office.  You like dressing nice, but you are careful to keep it professional at work, well mostly professional.
+  Of course, sometimes that means you might need a scarf to hide the hickey
+  <<if $dating.length > 0 && !setup.areDating('Peter')>>
+    $dating[0] left on your neck.  Of course feeling the scarf on your neck just reminds you how much fun you had, and makes you anxious for the end of the day
     when you can be together again.
+    <br><br>
+    <<include [[Part13AfterJob]]>>
   <<else>>
-    <<if setup.
-    You are enjoying your job as an intern.  You like dressing nice, but you are careful to keep it professional at work.
-    Of course, sometimes that means you might need a scarf to hide the hickey the
+    the
     <<if setup.sexFemaleCount() > setup.sexMaleCount()>>
       girl
     <<else>>
@@ -1390,18 +1388,71 @@ TODO Part13OfficePA
     <</if>>
     from the mailroom gave you earlier in the day.  Of course feeling the scarf on your neck just reminds you how much fun you
     had, and makes you anxious for the end of the day when the two of you can continue where you left off.
+    <br><br>
+    Most people dread working on the weekends, but you sometimes enjoy it.  Not because you love work so much, but you enjoy that your boss is considertably
+    more flexible with the dress code outside of normal business hours.  You know it'll be fun if [[it's just you and him|Part13OfficeInternBoss]] in the office.
+    But even if he's not there, you know [[it'll be much more fun than a normal workday|Part13OfficeInternGuys]].
   <</if>>
+<</nobr>>
+
+::Part13OfficeInternGuys
+<<nobr>>
+	<h1>At the Office</h1>
+  <img src="Part13/Office2.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', anon:"Coworker"})>>
+  <<set $sex.push({sex: 'male', anon:"Coworker", vaginal:!$PlayerChastityBelt})>>
+  <<set $sex.push({sex: 'male', anon:"Coworker"})>>
+  <<set $sex.push({sex: 'male', anon:"Coworker", vaginal:!$PlayerChastityBelt})>>
+<</nobr>>
+<<nobr>>
+  Working on the weekend lets you and some of your coworkers catch up a bit.  You all know there won't be any clients stopping by and there won't be any
+  bosses asking questions.  You can just get the work done.
+<</nobr>>
+
+<<nobr>>
+  Of course the guys might be a bit distracte by your weekend wardrobe, but they certainly don't complain.  They all know what to do if the distraction gets
+  to be too much.  They just clip your cuffs together behind your back.  They usually enjoy watching you struggle a bit, but they know you'll soon give up.
+  And then they know you'll start negotiating for your release.  There's nothing you love more than a nice, hard negotation.
+<</nobr>>
+
+<<nobr>>
+  By the time everyone heads home on Saturday, you all have a smile on your face.  You will all start Monday all caught up on their work, and you were able
+  to enjoy a bit of team-building as well.
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
 
-::Part13OfficeInternSubmissive
+::Part13OfficeInternBoss
 <<nobr>>
-	<h1><<print "Office Intern">></h1>
-  <img src="Part13/Office2.jpg" hspace="10" vspace="10" height="650" align="left">
+	<h1>At the Office</h1>
+  <img src="Part13/Office3.jpg" hspace="10" vspace="10" height="650" align="left">
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noCondom:true})>>
+	<<set $sex.push({sex: 'male', name:'Paul'})>>
+	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noCondom:true, noPullout:true})>>
 <</nobr>>
-TODO Part13OfficeInternSubmissive
-    <<include [[Part13AfterJob]]>>
+<<nobr>>
+  Your boss lets you know when it's just going to be you and him in the office on the weekend.  You know that means he wants you to wear something
+  special to work.  It always excites you putting it on, but what excites you the most is when you click the arm and leg cuffs on over it.  You know
+  you'll be wearing your body suit until Paul decides to unlock the cuffs for you.
+<</nobr>>
+
+<<nobr>>
+  You know you'll be wearing it all day, including the bus rides to and from work.  But thankfully, your weekend outfit comes with a couple strategically
+  placed zippers, which helps you take care of your needs with the suit still on.  Convienently, the zippers also lets you take care of some of Paul's needs too.
+<</nobr>>
+
+<<nobr>>
+  Whether the two of you spent the day hard at work, or just having fun, when it's time to go home it's usually the same.  Paul will unlock your cuffs and drop them
+  into your purse for next time.  Though since you don't have any other clothes with you, you'll still be wearing it home.
+<</nobr>>
+
+<<nobr>>
+  Before you both leave though, Paul unzips your suit for a bit more fun.  He usually zips you back shut after leaving a little present inside you.  It may take a
+  few extra minutes to clean yourself up and to clean the inside of the suit when you get home, but you certainly don't mind.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
 
 ::Part13CallGirl
 TODO Part13CallGirl
@@ -1452,12 +1503,10 @@ TODO Part 13 - To Be Continued Master Robert
 ::TODOPlaceholder
 <<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>\
 <<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>\
-<<if $MasterKen>><br><<print "Ken, the artist, is your ">><<if $Spouse == 'Ken'>><<print "husband">><<else>><<print "master">><</if>><<print " and you are living in his loft, together with his assistants. ">><</if>>\
 <<if $MasterRobert>><br><<print "You are a slave to Olivia's master. ">><</if>>\
-\
 <<if $Engaged == 'Andrew'>><<print "You are engaged to Andrew and living together">><</if>>\
-<<if $Engaged != 'Andrew' and setup.areDating('Andrew')>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
-<<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>><</if>>\
+<<if $Engaged != 'Andrew' and setup.areDating('Andrew')>><br><<print "You are in a relationship with your cafe boss, Andrew">><</if>>\
+<<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>>\
 <<if setup.areDating('Paul') and $Roommate!='Paul'>><br><<print "You are your boss, Paul's, mistress. ">><</if>>\
 <<if setup.areDating('Paul') and $Roommate=='Paul'>><br><<print "You are your boss, Paul's, girlfriend. You live with him. ">><</if>>\
 <<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>\
@@ -1472,7 +1521,6 @@ TODO Part 13 - To Be Continued Master Robert
   <<if setup.isFWB('Barry')>><br><<print "Barry likes to humiliate you. ">><</if>>\
   <<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>\
   <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>\
-
 
 
 ::Part13OB
