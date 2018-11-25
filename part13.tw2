@@ -468,15 +468,11 @@
 <<elseif $JobOfficeIntern>>
   <<include [[Part13OfficeIntern]]>>
 <<elseif $JobCallGirl>>
-  <<include [[Part13Callgirl]]>>
+  <<include [[Part13CallGirl]]>>
 <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
   <<include [[Part13Bartender]]>>
 <<elseif $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
   <<include [[Part13PornStar]]>>
-<<elseif $JobStripper>>
-  <<include [[Part13Stripper]]>>
-<<elseif $JobGloryHole>>
-  <<include [[Part13GloryHole]]>>
 <<elseif $ProfessorAllowance>>
   <<include [[Part13Allowance]]>>
 <<else>>
@@ -487,6 +483,13 @@
 
 
 ::Part13AfterJob
+  TODO Check for second job 
+  TODO $JobCallGirl [[Part13CallGirl]]
+  TODO $JobStripper [[Part13Stripper]]
+  TODO $JobGloryHole[[Part13GloryHole]]
+  TODO [[Part13AfterSecondJob]]
+
+::Part13AfterSecondJob
   <<nobr>>
     <<if $PlayerPregnant>>
       After you leave campus, you head over to [[your obstetrician's office|Part13OB]] for your appointment.
@@ -494,7 +497,7 @@
       Before you leave campus, you head to [[the X-Change office|Part13Checkup]] for your end-of-semester check-up.
     <</if>>
   <</nobr>>
-  TODO Need to add more text before this (either in this passage, or in the ones it is included in)
+  TODO Need to add more text before this and Part13AfterJob.  Either in one of these passages or in the ones that include them
 
 ::TodoPlaceHolderJob
 <<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>\
@@ -1535,7 +1538,7 @@ TODO Part13Library
 
 ::Part13CallGirl
 TODO Part13CallGirl
-    <<include [[Part13AfterJob]]>>
+    <<include [[Part13AfterSecondJob]]>>
 
 ::Part13Bartender
 <<nobr>>
@@ -1800,11 +1803,202 @@ TODO Part13PornStar
 
 ::Part13Stripper
 TODO Part13Stripper
-    <<include [[Part13AfterJob]]>>
+    <<include [[Part13AfterSecondJob]]>>
 
 ::Part13GloryHole
-TODO Part13GloryHole
-    <<include [[Part13AfterJob]]>>
+<<nobr>>
+  TODO<<set $PlayerSideEffectOral to 2>>
+	<h1>At the Sex Shop</h1>
+  <<if $PlayerCumslut>>
+    <img src="Part13/GloryB2.jpg" hspace="10" vspace="10" height="650" align="left">
+    <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<elseif $PlayerSideEffectOral >= 2>>
+    <img src="Part13/GloryB1.jpg" hspace="10" vspace="10" height="650" align="left">
+    <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<else>>
+    <video src="Part13/GloryA1.mp4" autoplay loop muted height="480"></video>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerCumslut>>
+    You were talking to Master Robert about what a good job you've been doing.  He told you what a good little cumslut you are and how much higher the booth revenue
+    has been lately.  He tells you, "I know you're the main reason for that.  I would try to reward you, but I know for you, the job is it's own reward."
+    <br><br>
+    You are excited to hear that he's using some of the extra money to [[refurbish the booths|Part13GloryHoleCumslut]] though.  That'd been the one thing you didn't like,
+    how dirty and rough the floors and walls of the booths were.  You were sure more guys would come visit if they were a bit nicer.
+  <<elseif $PlayerSideEffectOral >= 2>>
+    You were talking to Master Robert about what a good job you've been doing and how much higher the booth revenue has been lately.  He tells you, "I know you're the
+    main reason for that.  I would try to reward you, but I know for you, the job is it's own reward."
+    <br><br>
+    You are excited to hear that he's using some of the extra money to [[refurbish the booths|Part13GloryHoleBelted]] though.  That'd been the one thing you didn't like,
+    how dirty and rough the floors and walls of the booths were.  You were sure more guys would come visit if they were a bit nicer.
+  <<else>>
+    You're so excited, it's finally the day!
+    <br><br>
+    Master Robert had talked to you about what a good job you've been doing.  He let you know that booth revenue
+    is way up thanks to you.  If you were thinking clearly, you probably would have asked for a raise.  Then you could have paid back your pay advances sooner,
+    or been able to stop borrowing money and getting yourself stuck in the belt even longer.  But you weren't thinking clearly.  Instead, you told him that you
+    just want to be able to orgasm again.
+    <br><br>
+    He thought for a moment and then said that while you still haven't earned a permanent release from your chastity belt, he could allow something else.
+    <br><br>
+    Today you'll get to spend [[your shift in the booth|Part13GloryHole2]], completely unbelted.  Of course, you know it'll be back on before you leave work, but for now it's
+    absense is a strange feeling for you.
+  <</if>>
+<</nobr>>
+
+::Part13GloryHole2
+<<nobr>>
+	<h1>At the Sex Shop</h1>
+  <video src="Part13/GloryA2.mp4" autoplay loop muted height="480"></video>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+<</nobr>>
+<<nobr>>
+  As much as you might like to just sit in the booth and masturbate, that's not what Master Robert gave you permission to do.  You know he'll probably find out if
+  you tried, and then he'd probably put an end to the new arrangement.  You don't want that, so you follow the rules he gave you.
+<</nobr>>
+
+<<nobr>>
+  You are allowed to touch yourself, but only while you are servicing one of the customers.  Your first customer seems to be enjoying the extra enthusiasm you
+  have for your work today.  But you are frustated for a bit as his cock disappers and you have to stop rubbing your neglected clit.
+<</nobr>>
+
+<<nobr>>
+  But you're soon relieved when the cock reappears in a different hole.  At first you are upset.  That hole is always annoying.  The chairs prevent you from
+  kneeling on the floor, and even if you could kneel there, the height is all wrong.  But then you realize what it is the perfect height for, and why the
+  customer decided to move there.  You smile and head over to [[give the customer what he wants|Part13GloryHole3]].
+<</nobr>>
+
+::Part13GloryHole3
+<<nobr>>
+	<h1>At the Sex Shop</h1>
+  <video src="Part13/GloryA3.mp4" autoplay loop muted height="480"></video>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer', vaginal:true, pullout:true, noCondom:true})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer', vaginal:true, pullout:true})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer', vaginal:true, pullout:true})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer', vaginal:true, pullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  After being trapped in the belt for so long, his cock feels so good inside you.  You just rock back and forth enjoying every thrust.  You can hear his moans
+  and grunts through the wall and know he's enjoying it too.
+<</nobr>>
+
+<<nobr>>
+  As good as it feels for you, you realize too late, that he's going to cum well before you can.  Next time you'll let the customer do the thrusting while you
+  stroke your clit.  Maybe then you'll be able to cum too.
+<</nobr>>
+
+<<nobr>>
+  You're wondering if he's going to cum inside you.  You need his cock too much right now to stop him even if you normally would.  But you realize that's not what he's
+  wanting this time as is [[cock pulls out of you and disappears into the hole again|Part13GloryHole4]].
+<</nobr>>
+
+::Part13GloryHole4
+<<nobr>>
+	<h1>At the Sex Shop</h1>
+  <video src="Part13/GloryA4.mp4" autoplay loop muted height="480"></video>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+<</nobr>>
+<<nobr>>
+  You quickly return to his cock when it returns to the original hole.  As you swallow his cum, you wish you could keep going and finish yourself, but you
+  know you have to wait for your next customer.
+<</nobr>>
+
+<<nobr>>
+  But you also know it won't be long until the next cock appears for you - especially once word starts to spread about the new services you are offering.
+<</nobr>>
+
+<<include [[Part13AfterSecondJob]]>>
+
+::Part13GloryHoleBelted
+<<nobr>>
+	<h1>At the Sex Shop</h1>
+  <img src="Part13/GloryB2.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+<</nobr>>
+<<nobr>>
+  Of course master was careful to refurbish the booths in stages, so that there were always at least two available, one for you and one for your current customer.
+  But still, attendence is down a bit during construction.
+<</nobr>>
+
+<<nobr>>
+  You use some of the extra time you have to thank the construction crew for their hard work.  You're sure they appreciate it.  You think they'll probably put it
+  a bit of [[extra effort|Part13GloryHoleBelted2]] once they know how enjoyable the booths they are rebuilding can be.
+<</nobr>>
+
+::Part13GloryHoleBelted2
+<<nobr>>
+	<h1>At the Sex Shop</h1>
+  <img src="Part13/GloryB3.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Construction Worker'})>>
+<</nobr>>
+<<nobr>>
+  Master Robert is worried that maybe your little incentive for the construction crew might be having the opposite effect.  He's worried that they might be dragging
+  their feet a bit so that they can enjoy your attention a bit longer.  You're a bit disappointed when you think he's going to have you stop.
+<</nobr>>
+
+<<nobr>>
+  But then you have another idea.  You suggest to Master that he sets a completion deadline for the crew, and if they can beat it, then he can give the entire crew a
+  month of free booth visits with you.  Master agrees, and it works, the crew finishes well ahead of schedule.
+<</nobr>>
+
+<<nobr>>
+  Master is excited that he'll be able to have his little "Grand Reopening" event on schedule, and you're excited that you now you'll have a stead supply of cocks for
+  while.  You don't even mind that most of them will be for free for the next month.
+<</nobr>>
+
+<<include [[Part13AfterSecondJob]]>>
+
+::Part13GloryHoleCumslut
+<<nobr>>
+	<h1>At the Sex Shop</h1>
+  <video src="Part13/GloryC1.webm" autoplay loop muted height="480"></video>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+  <<set $sex.push({sex: 'male', anon:'Glory Hole Customer'})>>
+<</nobr>>
+<<nobr>>
+  Master was careful to refurbish the booths in stages, so that there were always at least two available, one for you and one for your current customer.  But he
+  decided to have a "Grand Reopening" anyway when the last of the booths were finished.
+<</nobr>>
+
+<<nobr>>
+  Any of the customers that wanted to attend were invited, and of course he wanted you working that day.  But instead of an anonymous customer on the other side
+  of the wall, you were all having a toast of champagne before breaking in final booth.  Well, they had a toast of champagne.  It would have been difficult for you
+  to drink any with the ring-gag in your mouth.
+<</nobr>>
+
+<<nobr>>
+  Once the toast was done, you got to work doing what you do best.  The gag made things more difficult, but you still had a wonderful time.  It was a nice to
+  finally be able to put a face to some familiar cocks.  Of course, once of the faces is a new one at all.  Just think, you've been sitting in his class all semester
+  and you never knew it was his cock poking into your booth every Thursday.
+<</nobr>>
+
+<<include [[Part13AfterSecondJob]]>>
 
 ::Part13Allowance
 TODO Part13Allowance
