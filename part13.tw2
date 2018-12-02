@@ -9,6 +9,7 @@
   As the end of the semester and finals approach, you aren't nearly as worried about passing as you were last semester.
   Your grades certainly aren't going to be all A's, but you are fairly confident you'll pass everything this semester.
 <</nobr>>
+  TODO <<set $JobCheerleader to 1>>
 
 <<nobr>>
   <<if setup.areDating('Aaron')>>
@@ -19,6 +20,21 @@
     But, of course, school work isn't the only things [[you need to worry about|Part13Job]].
   <</if>>
 <</nobr>>
+
+::TodoPart13Notes_DELETE_THIS_LATER
+<<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>\
+<<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
+<<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
+<<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>\
+Overall Flow:
+- Job Based Portion
+- Side Job (if relevant)
+- Need Sorority competion at the end of the year, and hook up with frat guy(s) (or some girl) if not in a relationship or on faith-path
+- Relationship, if relevant
+- End of Semester / classes
+- Visit for OB or checkup
+- Summer Plans: Stay with Significant Other, go home, or semester abroad
+
 
 ::Part13VariableCleanup
 <<if $JobBarista && setup.areDating('Andrew') && !$PlayerPregnant && !$CampusMinistry>>
@@ -483,11 +499,7 @@
 
 
 ::Part13AfterJob
-  TODO Check for second job 
-  TODO $JobCallGirl [[Part13CallGirl]]
-  TODO $JobStripper [[Part13Stripper]]
-  TODO $JobGloryHole[[Part13GloryHole]]
-  TODO [[Part13AfterSecondJob]]
+  TODO Part13AfterJob : Check for second job: $JobCallGirl [[Part13CallGirl]] or $JobStripper [[Part13Stripper]] or $JobGloryHole[[Part13GloryHole]] or skip to [[Part13AfterSecondJob]]
 
 ::Part13AfterSecondJob
   <<nobr>>
@@ -497,22 +509,7 @@
       Before you leave campus, you head to [[the X-Change office|Part13Checkup]] for your end-of-semester check-up.
     <</if>>
   <</nobr>>
-  TODO Need to add more text before this and Part13AfterJob.  Either in one of these passages or in the ones that include them
-
-::TodoPlaceHolderJob
-<<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>\
-<<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
-<<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
-<<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>\
-
-TODO Job Based Portion
-TODO Side Job
-TODO Need Sorority competion at the end of the year, and hook up with frat guy(s) (or some girl) if not in a relationship or on faith-path
-TODO End of Semester
-TODO Visit for OB or checkup
-TODO Summer Plans
-TODO Stay with Significant Other, go home, or semester abroad
-TODO Part 13 - To Be Continued
+  TODO Need to add more text before Part13AfterJob and/or Part13AfterSecondJob.
 
 ::Part13Athlete
 <<nobr>>
@@ -774,17 +771,237 @@ TODO Part 13 - To Be Continued
 <<include [[Part13AfterJob]]>>
 
 ::Part13Cheerleader
-TODO Cheerleader
-TODO Pregnant / not Pregnant
+<<nobr>>
+	<h1>At the Big Game</h1>
+  <img src="Part13/Cheer1.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+<<nobr>>
+  <<if $PlayerPregnant>>
+    Obviously in your current state, you are doing much cheerleading.  But you still enjoy cheering the team on from the stands.  You also enjoy watching your
+    squad perform for the crowd.  Though as you watch them and remember how recently you had you fit into those skimpy uniforms,  You can't help but to glance
+    down at your own body, and marvel at how much different it looks right now.
+    <br><br>
+    But hopefully by next year you'll be back in shape and be able to rejoin them.
+    <br><br>
     <<include [[Part13AfterJob]]>>
+  <<else>>
+    TODO Part13Cheerleader  
+  <</if>>  
+<</nobr>>
+
 
 ::Part13CheerleaderFundraiser
-TODO Cheerleader Fundraiser
-    <<include [[Part13AfterJob]]>>
+TODO Part13CheerleaderFundraiser
+<<include [[Part13AfterJob]]>>
 
 ::Part13Library
-TODO Part13Library
-    <<include [[Part13AfterJob]]>>
+<<nobr>>
+	<h1>At the Library</h1>
+  <img src="Part13/Library1.jpg" hspace="10" vspace="10" height="650" align="left">
+  Your job at the library continues as it has for most of the year.  The site of a nude woman pushing a cart of books or wandering the aisles shelving has become a
+  familiar sight for many.  Of course, it's still a welcome one to the cleaning crew, professor doing some after-hours research.  You've gotten less diligent about
+  waiting until the general closing time to shed your clothes.  But the late-night studiers that spot you haven't complained yet, and you don't expect them to.
+<</nobr>>
+
+<<nobr>>
+  Of course, at this busy time of the year, you are working earlier shifts more.  That usually means you have to more careful about what you wear.  Or at least it
+  means that you should be more careful.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Aaron')>>
+    Of course everyone at work can on look and admire, and you'll have to keep your needs in check [[until you can be with Daddy|Library13Collar]].
+  <<elseif setup.areDating('Kate')>>
+    Of course everyone at work can on look and admire, and you'll have to keep your needs in check [[until you can be with Kate|Library13Collar]].
+  <<elseif setup.areDating('Veronica')>>
+    Of course, you and Veronica have most of your fun elsewhere, but [[she needs to study too|Part13LibraryVeronica]].  
+  <<elseif $dating.length>>
+    Of course, you and $dating[0] have most of your fun elsewhere, but [[he needs to study too|Part13LibraryGuyDating]].  
+  <<else>>
+    With the end of the semester approaching, there's a lot more students using the library.  Of course all that extra studying is stressful for many of the students.
+    <br><br>
+    Sometimes you find a guy hard and studying... you mean studying hard... and wonder if seeing you might be distracting him from his work.  Of course you could
+    always [[help him eliminate the distraction|Part13LibraryGuys]] so he can get back to work.
+    <br><br>
+    The girls are studying hard too, of course.  But they seem, at least to you, to be better able to keep focused on their work until they finish.  Of course,
+    when they are done, some are eager to hang around after closing [[so you can help them relieve some stress|Part13LibraryGirls]].
+    <br><br>
+    Even the more studious students want to relax a bit after finishing up their final projects for the semester.  And of course they spend pleanty of time at the
+    library, so they know you well.  You've seen the way they look at you as they glance up from their books, so you aren't surprised when they ask for your 'help'
+    with some [[end-of-semester fun|Part13LibraryQuest]]
+  <</if>>
+<</nobr>>
+
+::Part13LibraryQuest
+<<nobr>>
+	<h1>At the Library</h1>
+  <img src="Part13/Library2.jpg" hspace="10" vspace="10" height="650">
+  <<set $sex.push({sex: 'male', anon:"Nerdy Dungeon Master", repeat:true})>>
+
+  <<set $sex.push({sex: 'male', anon:"Nerdy Barbarian", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon:"Nerdy Wizard", repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:"Nerdy Ranger"})>>
+
+  <<set $sex.push({sex: 'male', anon:"Nerdy Wizard", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon:"Nerdy Barbarian", repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:"Nerdy Rogue", repeat:true})>>
+
+  <<set $sex.push({sex: 'male', anon:"Nerdy Ranger", repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:"Nerdy Dungeon Master", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon:"Nerdy Rogue", repeat:true})>>
+
+<</nobr>>
+<<nobr>>
+  "A role-playing quest?", you ask.  The fun they wanted you for wasn't at all what you'd expected them to say.  "I'm sure using the library after hours
+  won't be a problem.  But you want me to play too.  Do I need to roll a character, or something first?"
+<</nobr>>
+
+<<nobr>>
+  "No, you'll be the one giving them the quest.  And you'll be the prize if they complete it too.", the 'dungeon master' tells you.  You smile and agree,
+  realizing that maybe you weren't that wrong after all.
+<</nobr>>
+
+<<nobr>>
+  When it's time for the quest, the DM gets everything ready, including you.  "They'll find you shortly after they start.  They'll be able to remove
+  your gag easily, but you'll have to send them on a quest to find the keys to your other restraints.  You'll offer themselves to you in exchange for
+  your release.", he tells you.  You can only give an excited "Mmmmmm..." in response.
+<</nobr>>
+
+<<nobr>>
+  "Hopefully they won't realize that they could already use you anyway they like without bothering with removing your restraints.  That would skip the
+  entire quest, and you and them would miss out on all the fun toys they'll find along the way.  Of course, using your character liek that would go
+  against alignment for most of them, but seeing you like this might make them forget about their characters.  But it does remind me, since I'm the DM,
+  I don't really need to bother with the quest either do I?"
+<</nobr>>
+
+<<nobr>>
+  After you shake your head "No", he removes your gag and helps you to your knees before unzipping his pants.  "We better make this quick, they'll be here
+  before long."
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13LibraryGirls
+<<nobr>>
+	<h1>At the Library</h1>
+  <img src="Part13/Library3.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'female', anon:"Studying Student"})>>
+  <<set $sex.push({sex: 'female', anon:"Studying Student"})>>
+  <<set $sex.push({sex: 'female', anon:"Studying Student"})>>
+  <<set $sex.push({sex: 'female', anon:"Studying Student"})>>
+<</nobr>>
+<<nobr>>
+  The female students are usually content to finish their work and save their fun for after.  After a few looks back and forth, one of them might ask you
+  "What time do you get off tonight?".  You like to give her a mischevous smile and say, "The library closes at 11, but what time I get off is really up to you."
+<</nobr>>
+
+<<nobr>>
+  Of course, when its more than one girl flirting with you, that's even better.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13LibraryVeronica
+<<nobr>>
+	<h1>At the Library</h1>
+  <img src="Part13/Library3.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'female', name:"Veronica"})>>
+  <<set $sex.push({sex: 'female', name:"Veronica"})>>
+  <<set $sex.push({sex: 'female', anon:"Studying Student"})>>
+  <<set $sex.push({sex: 'female', name:"Veronica"})>>
+  <<set $sex.push({sex: 'female', anon:"Studying Student"})>>
+  <<set $sex.push({sex: 'female', name:"Veronica"})>>
+<</nobr>>
+<<nobr>>
+  When you spot Veronica at the library, sometimes you can help but invite her to a quiet spot for a litle fun.
+<</nobr>>
+
+<<nobr>>
+  Though for most of your fun at the library, you and Veroncia wait until after everyone else leaves.  Well, usually it's everyone else.  Sometimes one of you
+  finds another young woman hard at work at the library, but looking for a little fun after closing.  You are both happy to help her with that.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13LibraryGuyDating
+<<nobr>>
+	<h1>At the Library</h1>
+  <img src="Part13/Library4.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', name:$dating[0]})>>
+  <<set $sex.push({sex: 'male', name:$dating[0]})>>
+  <<set $sex.push({sex: 'male', name:$dating[0]})>>
+  <<set $sex.push({sex: 'male', name:$dating[0]})>>
+<</nobr>>
+<<nobr>>
+  When you spot $dating[0] at the library, you can't help but stop by and visit him while he studies.  You know you'll see him soon enough after work, but
+  you don't want his studying to be hindered with his mind full of what you and him might do later.
+<</nobr>>
+
+<<nobr>>
+  Thankfully, you have a quick way to prevent that, and let him focus on his work again.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13LibraryGuys
+<<nobr>>
+	<h1>At the Library</h1>
+  <img src="Part13/Library4.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', anon:"Studying Student"})>>
+  <<set $sex.push({sex: 'male', anon:"Studying Student"})>>
+  <<set $sex.push({sex: 'male', anon:"Studying Student", vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon:"Studying Student"})>>
+  <<set $sex.push({sex: 'male', anon:"Studying Student"})>>
+  <<set $sex.push({sex: 'male', anon:"Studying Student", vaginal:true})>>
+<</nobr>>
+<<nobr>>
+  Of course by now everyone has heard the stories of a nude young woman roaming the library at night.  But you don't always work at night, especially not now, when
+  the library is so busy.  But even when you are working an earlier shift, many of the guys still recognize you as the one the stories are about.  When they do,
+  for some it becomes difficult to continue focusing on the work they came here to do.
+<</nobr>>
+
+<<nobr>>
+  As you spot them shifting in their seat trying to deal with the erection now straining against their jeans, you remember what that was like.  Often you
+  decide to approach them, place your hand on their struggling cock, and whisper "Would you like me to help with that?" in to their ear.  You always know
+  what the answer is going to be.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Library13Collar
+<<nobr>>
+	<h1>At the Library</h1>
+  <img src="Part13/Library5.jpg" hspace="10" vspace="10" height="650">
+  <<if setup.areDating('Aaron')>>
+    <<set $datingPronoun to "he">>
+    <<set $datingPronounPosessive to "his">>
+    <<set $datingPronounObjective to "him">>
+  <<else>>
+    <<set $datingPronoun to "she">>
+    <<set $datingPronounPosessive to "her">>
+    <<set $datingPronounObjective to "her">>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  Normally you have to wait until after you get home from work to be with $dating[0].  But occasinally $datingPronoun makes plans to meet you at work.
+  On those nights, you are sure to leave $datingPronounObjective your key to get into the library.  You'll be patiently waiting for $datingPronounObjective,
+  just as you were told.
+<</nobr>>
+
+<<nobr>>
+  As you wait, all you can think about is whether this is one of the nights that
+  <<if setup.areDating('Aaron')>>
+    Daddy bends you over his knee right here, and spanks you for being such a naughty girl for wandering the library naked all evening.
+  <<else>>
+    Kate has you kneel on all fours so she has somewhere to rest her feet as she sits down to read a book for a while.
+  <</if>>
+  Or if $datingPronoun'll be taking the leash attached to your collar, and leading you out to the car and to whatever fun awaits you at $datingPronounPosessive house.
+  <<unset $datingPronoun>>
+  <<unset $datingPronounPosessive>>
+  <<unset $datingPronounObjective>>
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
 
 ::Part13Engineer
 <<nobr>>
@@ -1807,7 +2024,6 @@ TODO Part13Stripper
 
 ::Part13GloryHole
 <<nobr>>
-  TODO<<set $PlayerSideEffectOral to 2>>
 	<h1>At the Sex Shop</h1>
   <<if $PlayerCumslut>>
     <img src="Part13/GloryB2.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -2005,28 +2221,27 @@ TODO Part13Allowance
     <<include [[Part13AfterJob]]>>
 
 ::Part13Kate
-TODO Part 13 - To Be Continued Kate
+TODO Part13Kate
 
 ::Part13Andrew
-TODO Part 13 - To Be Continued Andrew (Regular or Campus Ministry)
+TODO Part13Andrew (Regular or Campus Ministry)
 
 ::Part13AndrewEngaged
-TODO Part 13 - To Be Continued Andrew Engaged
+TODO Part13AndrewEngaged
 
 ::Part13Paul
-TODO Part 13 - To Be Continued Paul
+TODO Part13Paul
 
 ::Part13Veronica
-TODO Part 13 - To Be Continued Veronica
+TODO Part13Veronica
 
 ::Part13Josh
-TODO Part 13 - To Be Continued Josh
+TODO Part13Josh
 
 ::Part13MasterRobert
-TODO Part 13 - To Be Continued Master Robert
+TODO Part13MasterRobert
 
-
-::TODOPlaceholder
+::TodoRelationshipPlaceholder_DELETE_THIS_LATER
 <<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>\
 <<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>\
 <<if $MasterRobert>><br><<print "You are a slave to Olivia's master. ">><</if>>\
@@ -2048,10 +2263,8 @@ TODO Part 13 - To Be Continued Master Robert
   <<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>\
   <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>\
 
-
 ::Part13OB
-TODO Part13OB
-TODO [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
+TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
 
 ::Part13Checkup
 <<nobr>>
@@ -2165,15 +2378,14 @@ TODO [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
       <br>
       Of course, you know the effects of your implant are permanent now.  This will be the body you have for the rest of your life.
     <</if>>
-    TODO Set variables
+    TODO Pregnant: Set variables
     <<if $PlayerProtectionTry>>
-      TODO Part13Check4
+      TODO Pregnant: Part13Check4
     <<else>>
-      TODO Part13CheckupAbortion or Part13Check4
+      TODO Pregnant: Part13CheckupAbortion or Part13Check4
     <</if>>
   <<else>>
-    TODO Not pregnant
-    TODO Handle if they choose to make their implant permanent
+    TODO Not pregnant: Handle if they choose to make their implant permanent
   <</if>>
 <</nobr>>
 
