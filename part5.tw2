@@ -1837,38 +1837,7 @@
 				<<print "locked up forever instead.">>
 			<</replace>>
 			<<replace "#Nerd4Span3">>
-				<<nobr>>
-					<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
-					<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
-					<<if $JobAthlete>>
-						<<link "You go to train at the Gym.">>
-							<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
-								<<goto [[AthleteOral]]>>
-							<<else>>
-								<<if $PlayerChastityBelt>>
-									<<goto [[AthleteChastity]]>>
-								<<else>>
-									<<if $PlayerSideEffectPheromones>>
-										<<goto [[AthletePheromones]]>>
-									<<else>>
-										<<goto [[AthleteRelief]]>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</link>>
-					<</if>>
-					
-					<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
-					<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
-					<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
-					<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
-					<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
-	
-					<<if $JobBarista>>[[Spend some time on campus.|Part6Start1]]<</if>>
-					<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
-					<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
-					<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
-				<</nobr>>
+				<<include [[Part5NerdAfter]]>>
 			<</replace>>
 		<</link>>
 	</span>
@@ -1882,43 +1851,48 @@
 				<<print "locked up forever instead.">>
 			<</replace>>
 			<<replace "#Nerd4Span3">>
-				<<nobr>>
-					<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
-					<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
-					<<if $JobAthlete>>
-						<<link "You go to train at the Gym.">>
-							<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
-								<<goto [[AthleteOral]]>>
-							<<else>>
-								<<if $PlayerChastityBelt>>
-									<<goto [[AthleteChastity]]>>
-								<<else>>
-									<<if $PlayerSideEffectPheromones>>
-										<<goto [[AthletePheromones]]>>
-									<<else>>
-										<<goto [[AthleteRelief]]>>
-									<</if>>
-								<</if>>
-							<</if>>
-						<</link>>
-					<</if>>
-					
-					<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
-					<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
-					<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
-					<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
-	
-					<<if $JobBarista>>[[Spend some time on campus.|Part6Start1]]<</if>>
-					<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
-					<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
-					<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
-				<</nobr>>
+				<<include [[Part5NerdAfter]]>>
 			<</replace>>
 		<</link>>
 	</span>
 <</nobr>>
 
 <span id="Nerd4Span3"></span>
+
+::Part5NerdAfter
+<<nobr>>
+	<<if $JobOfficePA>>[[You go to work at the office.|JobOfficeBlowjob2]]<</if>>
+	<<if $JobOfficeManager>>[[You go to work at the office.|JobOfficePro2]]<</if>>
+	<<if $JobAthlete>>
+		<<link "You go to train at the Gym.">>
+			<<if $PlayerChastityBelt and $PlayerSideEffectPheromones>>
+				<<goto [[AthleteOral]]>>
+			<<else>>
+				<<if $PlayerChastityBelt>>
+					<<goto [[AthleteChastity]]>>
+				<<else>>
+					<<if $PlayerSideEffectPheromones>>
+						<<goto [[AthletePheromones]]>>
+					<<else>>
+						<<goto [[AthleteRelief]]>>
+					<</if>>
+				<</if>>
+			<</if>>
+		<</link>>
+	<</if>>
+	
+	<<if $JobEngineer>>[[You go to work at the lab.|JobEngineer4]]<</if>>
+	<<if $JobTestSubject>>[[You go to work at the lab.|JobEngineerSubject2]]<</if>>
+	<<if $JobLibrary>>[[You go to work at the library.|JobLibrary5]]<</if>>
+	<<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<</if>>
+	<<if $JobFitnessYoga>>[[You go to work at the fitness centre.|JobFitnessYoga3]]<</if>>
+
+	<<if $JobBarista>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobOfficeIntern>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleader>>[[Spend some time on campus.|Part6Start1]]<</if>>
+	<<if $JobCheerleaderFundraiser>>[[Spend some time on campus.|Part6Start1]]<</if>>
+<</nobr>>
+
 
 ::Part5Thrill2 <350,2875>
 <<nobr>>

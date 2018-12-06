@@ -9,7 +9,6 @@
   As the end of the semester and finals approach, you aren't nearly as worried about passing as you were last semester.
   Your grades certainly aren't going to be all A's, but you are fairly confident you'll pass everything this semester.
 <</nobr>>
-  TODO <<set $JobCheerleader to 1>>
 
 <<nobr>>
   <<if setup.areDating('Aaron')>>
@@ -25,8 +24,7 @@
 <<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>\
 <<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
 <<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
-<<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>\
-Overall Flow:
+TODO Overall Flow:
 - Job Based Portion
 - Side Job (if relevant)
 - Need Sorority competion at the end of the year, and hook up with frat guy(s) (or some girl) if not in a relationship or on faith-path
@@ -785,10 +783,213 @@ Overall Flow:
     <br><br>
     <<include [[Part13AfterJob]]>>
   <<else>>
-    TODO Part13Cheerleader  
+    You <<if setup.areDating('Veronica')>>and Veronica <</if>>love cheering for your team.
+    You love it even more when there's a huge crowd watching.
+    <<if $PlayerSideEffectExhibitionist>>
+      Performing in your skimpy outfit with all these people watching excites you almost more than you can take.  Sometimes you worry your wetness may show through
+      the thin fabric, and everyone will know.  Actually worry isn't the right word, since the thought that they might know turns you on too.
+    <<else>>
+      It excites you a bit knowing all these people are watching you perform.
+    <</if>>
+    <br><br>
+    <<if setup.areDating('Veronica')>>
+      Your need builds and builds until you hear the final buzzer.  It all must have an effect on Veroncia as well.  After most games the two of you
+      [[hurry home|Part13CheerleaderVeronica]] to be alone together.
+    <<elseif setup.areDating('Kate')>>
+      Your need builds and builds until you hear the final buzzer.  After most games you [[hurry home|Part13CheerleaderKate]] to be with Kate
+    <<elseif setup.areDating('Peter')>>
+      Your need builds and builds until you hear the final buzzer.  After most games you [[hurry home|Part13CheerleaderPeter]].  You text Peter
+      on the way to make sure he is there waiting like a good boy.
+    <<elseif $dating.length>>
+      Your need builds and builds until you hear the final buzzer.  After most games you [[hurry home|Part13CheerleaderBoyfriend]] to be with $dating[0]
+    <<elseif $PlayerSideEffectPheromones>>
+      If the crowd watching you wasn't enough, the smell of the athletes working up a sweat running back and forth across the court is more
+      than you can bear.  It's all you can do to make until the final buzzer.  You quickly make your way to the locker room as soon as you can.
+      [[The guys' locker room|Part13CheerleaderTeam]] that is.
+    <<else>>
+      Your need builds and builds until you hear the final buzzer.  By the time the game is over you can't ignore it any longer.  You've spotted plenty of guys
+      watching you cheer that would be more than happy to [[take you back to their room|Part13CheerleaderGuy]].
+      <<if !$PlayerSideEffectMasturbationBlock>>
+        Of course, you could go just go back to your room and [[take care of things yourself|Part13CheerleaderSelf]].
+      <</if>>
+      And... The longer you wait, the more the thought fills your mind of what might happen if you just [[headed down to the guys' locker room|Part13CheerleaderTeam]].
+    <</if>>
   <</if>>  
 <</nobr>>
 
+::Part13CheerleaderVeronica
+<<nobr>>
+	<h1>After the Big Game</h1>
+  <img src="Part13/Cheer6.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'female', name: 'Veronica'})>>
+  <<set $sex.push({sex: 'female', name: 'Veronica'})>>
+  <<set $sex.push({sex: 'female', name: 'Veronica'})>>
+  <<set $sex.push({sex: 'female', name: 'Veronica'})>>
+<</nobr>>
+<<nobr>>
+  You and Veronica try to make it home first, but that doesn't always work out.  If the two of you can't quite wait, your squad has long since learned
+  to turn the other way if things get a little heated betwen you and Veronica while you are showering up.
+<</nobr>>
+
+<<nobr>>
+  Of course, even if the you have some fun in the shower, you both know that's not enough.  You'll be using up whatever energy you and her have left as soon as
+  you get home.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13CheerleaderKate
+<<nobr>>
+	<h1>After the Big Game</h1>
+  <video src="Part13/Cheer7.webm" autoplay loop muted height="640"></video>
+  <<set $sex.push({sex: 'female', name: 'Kate'})>>
+  <<set $sex.push({sex: 'female', name: 'Kate'})>>
+<</nobr>>
+<<nobr>>
+  Mistress Kate knows how you are after a game.  Sometime she gives you what you need as soon walk through the door.  Other times, she ties you up and makes you wait.
+<</nobr>>
+
+<<nobr>>
+  As you lie there helpless, it only makes you hornier.  You know she'll make you shower when she unties you, and you won't even be allowed to touch yourself.  Then
+  the real fun will begin.  You never know if she'll let you orgasm at the end of it all, or if she'll make you go to bed hornier than when you walked in.
+<</nobr>>
+
+<<nobr>>
+  When you walk in the front door, you always tell yourself you hope this is one of the days she'll let you cum immediately.  But you know, deep down, that you really
+  hope it's one of the days that she doesn't.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13CheerleaderBoyfriend
+<<nobr>>
+	<h1>After the Big Game</h1>
+  <img src="Part13/Cheer2.jpg" hspace="10" vspace="10" height="650">
+  <<set $sex.push({sex: 'male', name: $dating[0]})>>
+  <<set $sex.push({sex: 'male', name: $dating[0], vaginal:true})>>
+  <<set $sex.push({sex: 'male', name: $dating[0]})>>
+  <<set $sex.push({sex: 'male', name: $dating[0], vaginal:true})>>
+<</nobr>>
+<<nobr>>
+  $dating[0] knows how you are after a game, and he loves it.  He knows exactly what you need and gives it to you as soon as you are home.  It's only after you've
+  both came that you head to the shower.
+<</nobr>>
+
+<<nobr>>
+  After you've freshed up, he's nearly ready to go again.  Of course even if he's not quite ready, you know a little show will get him eager to go again.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13CheerleaderGuy
+<<nobr>>
+	<h1>After the Big Game</h1>
+  <img src="Part13/Cheer2.jpg" hspace="10" vspace="10" height="650">
+  <<set $sex.push({sex: 'male', anon: 'Basketball fan', vaginal:true, noCondom:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Basketball fan', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Basketball fan', vaginal:true, noCondom:true, repeat:true})>>
+<</nobr>>
+<<nobr>>
+  You can't wait any longer, and he certainly doesn't want to either.  So it isn't long before the
+  two of you are on his bed.
+  <<if $PlayerEasytoOrgasm>>
+    You orgasm just before he does, but you still want more.
+  <<else>>
+    He cums before you can orgasm, leaving you aching for more.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You take the few minutes he needs to recover for head to the restroom to freshen up after
+  the
+  <<if $PlayerProtectionCondoms>>
+    game.
+  <<else>>
+    game, and to clean up the mess your fan made for you.
+  <</if>>
+  When you get back, you pose for him a bit in your uniform.  Well, part of your uniform anyway.
+  It doesn't take long before he's eager to go again.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13CheerleaderSelf
+<<nobr>>
+	<h1>After the Big Game</h1>
+  <video src="Part13/Cheer5.mp4" autoplay loop muted height="640"></video>
+<</nobr>>
+<<nobr>>
+  Once you are through your door, you are grateful that you are the only one there.  You toss your uniform to the floor and get to work.  You can't
+  even bother to look for your vibrator.  You need this now.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectOrgasmBlock>>
+    Thankfully, your
+  <<else>>
+    Your
+  <</if>>
+  orgasm comes quickly and powerfully.  What energy you had left after the game is consumed, but thankfully your need is managable again.
+<</nobr>>
+
+<<nobr>>
+  As recover, you wonder how long it'll take before you have enough energy to do anything but just lie there and try to catch your breath.
+  You also wonder that when you do get some energy back, will you get up and head over to the shower to clean up, or look through your drawer for your
+  vibrator and go for another orgasm or two.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13CheerleaderTeam
+<<nobr>>
+	<h1>After the Big Game</h1>
+  <img src="Part13/Cheer3.jpg" hspace="10" vspace="10" height="650">
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete', vaginal:true, noCondom:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete', vaginal:true, noCondom:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete', vaginal:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  <<if !$PlayerSideEffectPheromones>>
+    You tremble with anticipation as you walk down to their locker room.  You can barely believe what you are doing as you push the door open and walk in.  The
+    team wonders what you are doing there at first, but as you strip and drop to your knees, they quickly figure it out and start lining up.
+    <br><br>
+  <</if>>
+  They've been running around for over an hour, but thankfully they still have more than enough energy when they see you waiting in their locker room.
+  Taking them three at the time, it doesn't take you that long to work your way through anyone on the team that's interested.
+<</nobr>>
+
+<<nobr>>
+  When you and they are finally satisfied, you make your way over to your own lockerroom to clean up. From the smile on your face it's obvious to the rest
+  of your squad where you've been and what you've been doing.  Well, it's obvious for several reasons.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+
+::Part13CheerleaderPeter
+<<nobr>>
+	<h1>After the Big Game</h1>
+  <img src="Part13/Cheer4.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', name: 'Peter'})>>
+  <<set $sex.push({sex: 'male', name: 'Peter'})>>
+<</nobr>>
+<<nobr>>
+  Thankfully, Peter is well practiced by now at taking care of you needs after a game.  He doesn't seem to mind that you've just spent a few hours working up
+  a sweat.  You can only imagine what it must smell like under your skirt, but he just gets right to work.
+<</nobr>>
+
+<<nobr>>
+  Usually you're exausted after the game.  You like to relax back on your bed so you can fully enjoy each orgasm you have Peter give you.  But sometimes you
+  have a little extra energy left when you get home, then you let Peter get a little exercise too.  Of course your view from atop his face gives you an excellent
+  view of his caged cock.  You love seeing it strain against the cage as he works.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
 
 ::Part13CheerleaderFundraiser
 TODO Part13CheerleaderFundraiser
