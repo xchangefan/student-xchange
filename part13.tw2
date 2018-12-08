@@ -498,7 +498,17 @@ TODO Overall Flow:
 
 
 ::Part13AfterJob
-  TODO Part13AfterJob : Check for second job: $JobCallGirl [[Part13CallGirl]] or $JobStripper [[Part13Stripper]] or $JobGloryHole[[Part13GloryHole]] or skip to [[Part13AfterSecondJob]]
+<<nobr>>
+  <<if $JobCallGirlSide>>
+    Of course, you still have a stead source of money coming in from your [[job as call girl|Part13CallGirl]].
+  <<elseif $JobGloryHole>>
+    Of course, you still some money coming in from your [[job at the sex shop|Part13GloryHole]].
+  <<elseif $JobStripper>>
+    Of course, you still have a stead source of money coming in from your [[job at the strip club|Part13Stripper]].
+  <<else>>
+    <<include [[Part13AfterSecondJob]]>>
+  <</if>>
+<</nobr>>
 
 ::Part13AfterSecondJob
   <<nobr>>
@@ -1019,7 +1029,7 @@ TODO Overall Flow:
 <<nobr>>
   He also mentioned that he recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer in a foreign
   country.  There'll be a number of girls from the university there, but they'll only be picking one from the cheerleading squad.  You don't have to decide
-  now, he says.  But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  He'll send someone else
+  right now, he says.  But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  He'll send someone else
   to take care of the donor and the athlete.
 <</nobr>>
 
@@ -1111,8 +1121,53 @@ TODO Overall Flow:
 	<h1>Being Evaluated</h1>
   <video src="Part13/Abroad1.webm" autoplay loop muted height="640"></video>
 <</nobr>>
-TODO Part13AbroadEvaluation
+<<nobr>>
+  After nearly a year here, you really aren't surprised to learn that there's more to the "semester abroad" than you were initially told about.  You try to
+  go along with it at first as the interviewer asks you to pose and model for the camera.  After a bit you get into it and forget that they are recording the
+  whole thing for someone to watch later.
+<</nobr>>
+
+<<nobr>>
+  After your clothes are off they begin with their questions.  The questions are about your sexual experience, what you'd be willing to do, how discrete you can be.
+  It soon becomes clear that your trip won't be about studying, but about taking care of the initimate needs of some prince.  (They won't say exactly who it is, but
+  they assure you it's not the one from the recent news stories.)
+<</nobr>>
+
+<<nobr>>
+  You can decide to <<link [[continue with the interview|Part13Abroad2]]>><<set $PlanSemesterAbroad = 1>><</link>> and plan to spend the summer overseas.
+  Or you can <<link [[tell them you aren't interested|Part13Abroad2]]>><<unset $PlanSemesterAbroad>><</link>> and that they should find another girl instead.
+  If you were considering suggesting something less diplomatic, you decide you don't want to cause trouble with the university, and hold your tongue. 
+<</nobr>>
+
+::Part13Abroad2
+<<nobr>>
+	<h1>Leaving your Evaluation</h1>
+  <video src="Part13/Abroad2.webm" autoplay loop muted height="640"></video>
+<</nobr>>
+<<nobr>>
+  <<if $PlanSemesterAbroad>>
+    As your evaluation is completed, you start to dress to head home.  While you do you catch part of the next evaluation.  
+  <<else>>
+    They don't waste any time before starting with the next girl.  They call her in and begin her evaluation while you are still getting dressed to leave.
+  <</if>>
+  The girl that follows you seems fairly shy.  You expect her to stop her interview
+  <<if !$PlanSemesterAbroad>>too <</if>>
+  at any moment and leave, but she doesn't - at least not while you are there.
+<</nobr>>
+
+<<nobr>>
+  They are still talking with her as you leave.  You overhear them letting her know she'll need to wax before she leaves this summer.
+  <<if $PlayerNoBodyHair>>
+    You are glad you'll never have to worry about getting that done.
+  <<elseif $PlanSemesterAbroad>>
+    You wonder if you'll run into her when you are getting your next wax.
+  <<else>>
+    Now you are even more glad you decided to pass on this.
+  <</if>>
+<</nobr>>
+
 <<include [[Part13AfterJob]]>>
+
 
 ::Part13Library
 <<nobr>>
@@ -2074,8 +2129,98 @@ TODO Part13AbroadEvaluation
 <<include [[Part13AfterJob]]>>
 
 ::Part13CallGirl
-TODO Part13CallGirl
+<<nobr>>
+	<h1>Getting Ready</h1>
+  <video src="Part13/CallGirl1.webm" autoplay loop muted height="600"></video>
+<</nobr>>
+
+<<nobr>>
+  You see so many clients, and they all want something different.  But no matter how your afternoon or evening is going to end up, it always starts the same.
+<</nobr>>
+
+<<nobr>>
+  Most of them probably never even realize it, but you spend a long time getting ready before your evening even begins.  You make sure your body, your make-up,
+  your hair - really everything, looks perfect.
+<</nobr>>
+
+<<nobr>>
+  Once that's all taken care of, then you can head to your closet to pick out just the right thing to wear, based on [[what kind of client you are seeing|Part13CallGirl2]].
+<</nobr>>
+
+::Part13CallGirl2
+<<nobr>>
+	<h1>Hotel room</h1>
+  <img src="Part13/CallGirl2.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true, noPullout:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true, condom:true})>>
+<</nobr>>
+<<nobr>>
+  Where you find yourself most often is some business traveler's hotel room.  He's 1000 miles from his wife, and looking for a little fun.  You are happy to provide it.
+<</nobr>>
+
+<<nobr>>
+  You love when there's a big conference in town.  You and Hannah both end up busy every evening for a week, going from room to room taking care of the horny conference
+  attendees.  It may be repetative, but it certainly pays well.
+<</nobr>>
+
+<<nobr>>
+  But obviously those [[aren't the only type of clients you see|Part13CallGirl3]].
+<</nobr>>
+
+::Part13CallGirl3
+<<nobr>>
+	<h1>Attending a Play</h1>
+  <img src="Part13/CallGirl3.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', anon:'Call Girl GFE Client', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl GFE Client', vaginal:true, noPullout:true, noCondom:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl GFE Client', vaginal:true, noCondom:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl GFE Client', repeat:true})>>
+<</nobr>>
+
+<<nobr>>
+  It's not always straight to a hotel room and right to sex.  Some of your clients want you on their arm as they head to the theater, or out to dinner.
+  Sometimes it's because they want to feel like you are their girlfriend, and other times the just like being seen with a beautiful young woman beside
+  them.  Your time isn't free though, but they can affort to pay for it.
+<</nobr>>
+
+<<nobr>>
+  Of course, at the end of the night, you know your nice dress will still be in a pile on a hotel room floor just like for any other client.
+<</nobr>>
+
+<<nobr>>
+  Well, you realize, [[not every visit ends up in a hotel room|Part13CallGirl4]].
+<</nobr>>
+
+::Part13CallGirl4
+<<nobr>>
+	<h1>Secluded Road</h1>
+  <video src="Part13/CallGirl4.mp4" autoplay loop muted height="600"></video>
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
+<</nobr>>
+<<nobr>>
+  Some of your clients would rather have their fun somewhere other than a hotel room.  Maybe they want to relive their teenage years and you let him pretend
+  like he's 19 too for a little while.  
+<</nobr>>
+
+<<nobr>>
+  You've heard people say before that older guys driving sports cards or convertibles were trying to compensate for a small cock.  Now you know that
+  is certainly not always true.
+<</nobr>>
+
+<<nobr>>
+  <<if $JobCallGirl>>
+    <<include [[Part13AfterJob]]>>
+  <<else>>
     <<include [[Part13AfterSecondJob]]>>
+  <</if>>   
+<</nobr>>
 
 ::Part13Bartender
 <<nobr>>
@@ -2336,11 +2481,11 @@ TODO Part13CallGirl
 
 ::Part13PornStar
 TODO Part13PornStar
-    <<include [[Part13AfterJob]]>>
+<<include [[Part13AfterJob]]>>
 
 ::Part13Stripper
 TODO Part13Stripper
-    <<include [[Part13AfterSecondJob]]>>
+<<include [[Part13AfterSecondJob]]>>
 
 ::Part13GloryHole
 <<nobr>>
