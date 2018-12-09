@@ -1,3 +1,10 @@
+::TodoPart13Notes_OverallFlow_DELETE_THIS_LATER
+- Need Sorority competion at the end of the year, and hook up with frat guy(s) (or some girl) if not in a relationship or on faith-path
+- Relationship, if relevant
+- End of Semester / classes
+- Visit for OB or checkup
+- Summer Plans: Stay with Significant Other, go home, or semester abroad
+
 ::Part13Start <0,11500>
 <<nobr>>
   <h1>Finishing the Semester</h1>
@@ -15,31 +22,46 @@
     How could you not do better, now that [[Daddy is there|Part13Aaron]] to make sure you get your work done.
   <<elseif $PlayerItemNerdKey>>
     With you holding the key to Peter's cock, he's always [[eager to help|Part13Peter]], and that's certainly helped you pass too.
+  <<elseif setup.areDating('Kate') or $MasterKate>>
+    Even with all the school work, you make sure to [[spend as much time with Kate|Part13Kate]] as you can.
+  <<elseif $Engaged == 'Andrew' and setup.areDating('Andrew')>>
+    Sometimes is hard to think about school work though with [[all the wedding plans|Part13AndrewEngaged]] you are making distracting you.
+  <<elseif setup.areDating('Andrew')>>
+    Even with all the school work, you make sure to [[spend as much time with Andrew|Part13Andrew]] as you can.
+  <<elseif setup.areDating('Paul')>>
+    Even with all the school work, you make sure to [[spend as much time with Paul|Part13Paul]] as you can.
+  <<elseif setup.areDating('Veronica')>>
+    Even with all the school work, you make sure to [[spend as much time with Veronica|Part13Veronica]] as you can.
+  <<elseif setup.areDating('Part13Josh')>>
+    Even with all the school work, you make sure to [[spend as much time with Josh|Part13Josh]] as you can.
   <<else>>
-    But, of course, school work isn't the only things [[you need to worry about|Part13Job]].
+    But, of course, school work isn't the only thing you need to worry about.  [[There's your job too|Part13Job]].
   <</if>>
 <</nobr>>
-
-::TodoPart13Notes_DELETE_THIS_LATER
-TODO Add AbroadEvaluation option to additional paths (Fitness Center, Library, ?)
-<<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>\
-<<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
-<<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
-TODO Overall Flow:
-- Job Based Portion
-- Side Job (if relevant)
-- Need Sorority competion at the end of the year, and hook up with frat guy(s) (or some girl) if not in a relationship or on faith-path
-- Relationship, if relevant
-- End of Semester / classes
-- Visit for OB or checkup
-- Summer Plans: Stay with Significant Other, go home, or semester abroad
-
 
 ::Part13VariableCleanup
 <<if $JobBarista && setup.areDating('Andrew') && !$PlayerPregnant && !$CampusMinistry>>
   <<unset $JobBarista>>
   <<set $JobBaristaOld to 1>>
 <</if>>
+
+::Part13Kate
+TODO Relationship Part13Kate [[There's your job too|Part13Job]].
+
+::Part13Andrew
+TODO Relationship Part13Andrew (Regular or Campus Ministry) [[There's your job too|Part13Job]].
+
+::Part13AndrewEngaged
+TODO Relationship Part13AndrewEngaged [[There's your job too|Part13Job]].
+
+::Part13Paul
+TODO Relationship Part13Paul [[There's your job too|Part13Job]].
+
+::Part13Veronica
+TODO Relationship Part13Veronica [[There's your job too|Part13Job]].
+
+::Part13Josh
+TODO Relationship Part13Josh [[There's your job too|Part13Job]].
 
 ::Part13Aaron
 <<nobr>>
@@ -239,7 +261,7 @@ TODO Overall Flow:
       [[the X-Change office|Part13Checkup]] for your end-of-semester check-up.
     <</if>>
   <<else>>
-    But, of course, school work and Daddy aren't the only things [[you need to worry about|Part13Job]].  
+    But, of course, school work and Daddy aren't the only things you need to worry about.  [[There's your job too|Part13Job]].
   <</if>>
 <</nobr>>
 
@@ -287,7 +309,7 @@ TODO Overall Flow:
       [[the X-Change office|Part13Checkup]] for your end-of-semester check-up.
     <</if>>
   <<else>>
-    But, of course, school work and Daddy aren't the only things [[you need to worry about|Part13Job]].
+    But, of course, school work and Daddy aren't the only things you need to worry about.  [[There's your job too|Part13Job]].
   <</if>>
 <</nobr>>
 
@@ -349,7 +371,7 @@ TODO Overall Flow:
 <</nobr>>
 
 <<nobr>>
-  But, of course, school work and Peter aren't the only things [[you need to worry about|Part13Job]].
+  But, of course, school work and Peter aren't the only things you need to worry about.  [[There's your job too|Part13Job]].
 <</nobr>>
 
 ::Part13PeterVeronica
@@ -382,7 +404,7 @@ TODO Overall Flow:
 <</nobr>>
 
 <<nobr>>
-  But, of course, school work, Veronica and Peter aren't the only things [[you need to worry about|Part13Job]].
+  But, of course, school work, Veronica and Peter aren't the only things you need to worry about.  [[There's your job too|Part13Job]].
 <</nobr>>
 
 ::Part13PeterStroke
@@ -423,7 +445,8 @@ TODO Overall Flow:
 <</nobr>>
 
 <<nobr>>
-  But, of course, school work and Peter aren't the only things [[you need to worry about|Part13Job]].
+  But, of course, school work and Peter aren't the only things you need to worry about.  [[There's your job too|Part13Job]].
+
 <</nobr>>
 
 ::Part13PeterMuchTooSoon
@@ -452,7 +475,7 @@ TODO Overall Flow:
 <</nobr>>
 
 <<nobr>>
-  But, of course, school work and Peter aren't the only things [[you need to worry about|Part13Job]].
+  But, of course, school work and Peter aren't the only things you need to worry about.  [[There's your job too|Part13Job]].
 <</nobr>>
 
 ::Part13Job
@@ -488,14 +511,11 @@ TODO Overall Flow:
   <<include [[Part13Bartender]]>>
 <<elseif $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
   <<include [[Part13PornStar]]>>
-<<elseif $ProfessorAllowance>>
-  <<include [[Part13Allowance]]>>
 <<else>>
   You try not to think too much about your job.
   <p/>
   <<include [[Part13AfterJob]]>>
 <</if>>
-
 
 ::Part13AfterJob
 <<nobr>>
@@ -702,6 +722,14 @@ TODO Overall Flow:
   then, have a great summer.  There's a stack of <b>ErosH<sub>2</sub>O</b> coupons in the back if you want to pick some up over the summer, take as many as you need.
 <</nobr>>
 
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
+    in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
+    then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
+    <</if>>
+<</nobr>>
+
 <<include [[Part13AfterJob]]>>
 
 ::Part13FitnessMassage
@@ -775,6 +803,14 @@ TODO Overall Flow:
   When they've left you need to get ready for your next session.  You just need to throw a robe on and walk to the showers on the other side of the fitness
   center.  You're always sure to get a few smiles from the guys as they notice your face as you walk past.  From the girls on the way, or in the locker
   room, sure, you get the occasional look of disgust.  But more often it's a small, knowing smile they give instead.
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
+    in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
+    then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
+  <</if>>
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
@@ -1027,10 +1063,12 @@ TODO Overall Flow:
 <</nobr>>
 
 <<nobr>>
-  He also mentioned that he recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer in a foreign
-  country.  There'll be a number of girls from the university there, but they'll only be picking one from the cheerleading squad.  You don't have to decide
-  right now, he says.  But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  He'll send someone else
-  to take care of the donor and the athlete.
+  <<if !$PlayerPregnant>>
+    He also mentioned that he recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer in a foreign
+    country.  There'll be a number of girls from the university there, not just from the cheerleading squad.  You don't have to decide right now, he says.
+    But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  He'll send someone else to take care of
+    the donor and the athlete.
+  <</if>>
 <</nobr>>
 
 ::Part13CheerleaderFundraiserStandard
@@ -1121,7 +1159,7 @@ TODO Overall Flow:
 	<h1>Being Evaluated</h1>
   <video src="Part13/Abroad1.webm" autoplay loop muted height="640"></video>
 <</nobr>>
-<<nobr>>
+<<nobr>>1
   After nearly a year here, you really aren't surprised to learn that there's more to the "semester abroad" than you were initially told about.  You try to
   go along with it at first as the interviewer asks you to pose and model for the camera.  After a bit you get into it and forget that they are recording the
   whole thing for someone to watch later.
@@ -1146,7 +1184,10 @@ TODO Overall Flow:
 <</nobr>>
 <<nobr>>
   <<if $PlanSemesterAbroad>>
-    As your evaluation is completed, you start to dress to head home.  While you do you catch part of the next evaluation.  
+    As your evaluation is completed, you start to dress to head home.  While you do you catch part of the next evaluation.
+    <<if $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
+      Apparently they are also doing interviews for other girls too.  You wonder how many one prince needs, or maybe it's for more than one prince.
+    <</if>>
   <<else>>
     They don't waste any time before starting with the next girl.  They call her in and begin her evaluation while you are still getting dressed to leave.
   <</if>>
@@ -1254,6 +1295,15 @@ TODO Overall Flow:
   before long."
 <</nobr>>
 
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
+    to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
+    But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
+    can just ignore it.
+  <</if>>
+<</nobr>>
+
 <<include [[Part13AfterJob]]>>
 
 ::Part13LibraryGirls
@@ -1272,6 +1322,15 @@ TODO Overall Flow:
 
 <<nobr>>
   Of course, when its more than one girl flirting with you, that's even better.
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
+    to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
+    But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
+    can just ignore it.
+  <</if>>
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
@@ -1296,6 +1355,15 @@ TODO Overall Flow:
   finds another young woman hard at work at the library, but looking for a little fun after closing.  You are both happy to help her with that.
 <</nobr>>
 
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
+    to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
+    But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
+    can just ignore it.
+  <</if>>
+<</nobr>>
+
 <<include [[Part13AfterJob]]>>
 
 ::Part13LibraryGuyDating
@@ -1314,6 +1382,15 @@ TODO Overall Flow:
 
 <<nobr>>
   Thankfully, you have a quick way to prevent that, and let him focus on his work again.
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
+    to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
+    But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
+    can just ignore it.
+  <</if>>
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
@@ -1339,6 +1416,15 @@ TODO Overall Flow:
   As you spot them shifting in their seat trying to deal with the erection now straining against their jeans, you remember what that was like.  Often you
   decide to approach them, place your hand on their struggling cock, and whisper "Would you like me to help with that?" in to their ear.  You always know
   what the answer is going to be.
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
+    to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
+    But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
+    can just ignore it.
+  <</if>>
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
@@ -1374,6 +1460,15 @@ TODO Overall Flow:
   <<unset $datingPronoun>>
   <<unset $datingPronounPosessive>>
   <<unset $datingPronounObjective>>
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
+    to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
+    But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
+    can just ignore it.
+  <</if>>
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
@@ -1448,6 +1543,14 @@ TODO Overall Flow:
   <<unset $datingPosessivePronoun>>
 <</nobr>>
 
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
+    in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
+    then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
+  <</if>>
+<</nobr>>
+
 <<include [[Part13AfterJob]]>>
 
 ::Part13EngineerSingleFemale
@@ -1493,6 +1596,14 @@ TODO Overall Flow:
   just a feature I was thinking about adding.", she tells you as she grins.  "From your reaction, I can say it's definitely going on my list of things to add."
 <</nobr>>
 
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
+    in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
+    then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
+  <</if>>
+<</nobr>>
+
 <<include [[Part13AfterJob]]>>
 
 ::Part13EngineerSingleMale
@@ -1519,6 +1630,14 @@ TODO Overall Flow:
   You're already wet when the first of them slides in from behind you.  But your moan only lasts a second, as a moment later your mouth is filled by
   one of your coworker's cock.  The guys were clearly as excited as you were, as they don't last long.  But thankfully, you won't be leaving here
   unsatisfied.  There's a line of guys waiting to take their place as each one finishes. 
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
+    in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
+    then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
+  <</if>>
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
@@ -1620,6 +1739,15 @@ TODO Overall Flow:
     <i>(Your recent test sessions seem to have awoken a love for oral sex in you)</i>
   <</if>>
   <<set $PlayerSideEffectOral += 1>>
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerPregnant>>
+    After your testing session is over, one of the researchers lets you know that they've recommended you for the university's semester abroad program.  It's a
+    fully-funded trip to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now,
+    he says.  But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested
+    you can just ignore it.
+  <</if>>
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
@@ -2480,11 +2608,183 @@ TODO Overall Flow:
 <<include [[Part13AfterJob]]>>
 
 ::Part13PornStar
-TODO Part13PornStar
-<<include [[Part13AfterJob]]>>
+<<nobr>>
+	<h1>On a Porn Set</h1>
+  <<if $PlayerPregnant>>
+    <video src="Part13/Pornstar2.mp4" autoplay loop muted height="480"></video>
+  <<else>>
+    <video src="Part13/Pornstar1.mp4" autoplay loop muted height="600"></video>
+  <</if>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+  <<set $sex.push({sex: 'male', anon: "Porn Costar"})>>
+<</nobr>>
+
+<<nobr>>
+  After your last set of the day, you have a talk with Master Robert.  Sales on your videos have been slipping a bit.  He says it's not your
+  <<if $CodySexting or setup.haveFucked('Cody')>>
+    fault, if anything those photos of you that leaked helped bump the numbers up for a bit.
+  <<else>>
+    fault.
+  <</if>>
+  These things just happen.
+<</nobr>>
+
+<<nobr>>
+  Everyone loves the new girl, but interest dies down a bit after a while as someone newer comes along.  He says not to worry too much though, people will still be
+  buying your videos for quite a while.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    He says some of the more niche videos you've made since you got pregnant will be selling for years and years, so it'll work out in the long run.
+    <br><br>
+    <<include [[Part13AfterJob]]>>
+  <<else>>
+    He does tell you that he's booked you for a special engagement this summer that will more than makeup in the slight dip in revenue.  He says their people have of
+    course seen your videos, but there's still an in-person assessment they want to do first.  He's [[scheduled it for tomorrow|Part13PornStarSpecial]].
+    <<if $PlayerChastityBelt>>
+      Any questions you have about the idea quickly vanish when Master lets you know that you'll be spending the entire summer unbelted while you are on your special
+      assignment.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part13PornStarSpecial
+<<nobr>>
+	<h1>Being Evaluated</h1>
+  <video src="Part13/Abroad1.webm" autoplay loop muted height="640"></video>
+  <<set $PlanSemesterAbroad = 1>>
+<</nobr>>
+<<nobr>>
+  You show up for the assessment and model for them as instructed.
+  <<if $PlayerChastityBelt>>
+    It feels strange not wearing your belt, but Master unlocked you just for the evaluation.
+  <</if>>
+  They are filming your whole evaluation, but at this point you hardly even notice the cameras anymore.
+<</nobr>>
+
+<<nobr>>
+  After your clothes are off they begin with their questions.  The questions are about your sexual experience beyond your videos, what you'd be willing to do,
+  how discrete you can be. It soon becomes clear that you'll taking care of the initimate needs of some prince.  The prince has seen many of your videos, and
+  is a big fan they tell you. (They won't say exactly who it is, but they assure you it's not the one from the recent news stories.)
+<</nobr>>
+
+<<nobr>>
+  The evaluation goes well, and they let Master Robert know that they'll be booking you for the entire summer and hand him a check.  You don't see how much it's
+  for as he puts it into his pocket.  "Don't worry, I'll make sure all of you trip expenses get paid.  And they'll be some extra money waiting in your account for you
+  when you get home.", Master assures you.
+<</nobr>>
+
+<<nobr>>
+  With that taken care of, 
+  <<if $PlayerChastityBelt>>
+    Master locks your belt back on and
+  <</if>>
+  you [[gather your things to leave|Part13Abroad2]].
+<</nobr>>
 
 ::Part13Stripper
-TODO Part13Stripper
+<<nobr>>
+	<h1>On Stage</h1>
+  <img src="Part13/Strip1.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+
+<<nobr>>
+  The extra money you earn at the strip club comes in handy.  And the amount you bring home after each ship has only gone up.  It's not because your
+  dancing has improved, though it has.  You've just gotten much better at spotting which of the men watching you can convice to pay the extra for a
+  <<if setup.haveFuckedVaginal('Strip Club Customer')>>
+    [[private dance|Part13StripperSex]].
+  <<elseif setup.haveFucked('Strip Club Customer')>>
+    [[private dance|Part13StripperExtras]].
+  <<else>>
+    private dance.  You don't make as much as some of the girls do though.  But then again, you aren't blowing guys like they are either.
+    <br><br>
+    But that doesn't mean you don't [[have some fun at work|Part13Stripper2]] sometimes, right there on stage.
+  <</if>>
+<</nobr>>
+
+::Part13Stripper2
+<<nobr>>
+	<h1>On Stage</h1>
+  <img src="Part13/Strip2.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Veronica')>>
+    <<set $sex.push({sex: 'female', name: "Veronica"})>>
+    <<set $sex.push({sex: 'female', anon: "Stripper"})>>
+    <<set $sex.push({sex: 'female', anon: "Stripper"})>>
+    <<set $sex.push({sex: 'female', anon: "Stripper"})>>
+    <<set $sex.push({sex: 'female', anon: "Stripper"})>>
+    Your favorite part of your job is when you and Veronica are on stage together.  You can believe how great it is to have her tongue on your clit, or yours
+    tongue on hers, with a crowd cheering you on and tossing money at your the whole time.
+  <<else>>
+    <<set $sex.push({sex: 'female', anon: "Stripper"})>>
+    <<set $sex.push({sex: 'female', anon: "Stripper"})>>
+    <<set $sex.push({sex: 'female', anon: "Stripper"})>>
+    <<set $sex.push({sex: 'female', anon: "Stripper"})>>
+    <<set $sex.push({sex: 'female', anon: "Stripper"})>>
+    You love when you and another girl are on stage together.  There's always tons of guys watching, cheering, and tossing money at the two of you.
+    <br><br>
+    Sometimes the two of you take turns and switch positions back and forth.  But sometimes the other girl will want you to be the one on your knees pleasuring her
+    the whole time.  You thought they were just selfish at first, but they'll usually give you a bigger share of the stage tips.
+    One of them made it clear to you their reason though, when she leaned over and whispered, "That guy is paying for the VIP room after
+    our set, and it'll feel much better if you make me good and wet first."
+    <br><br>
+    After that you were more than happy to take care your fellow dancers, and pocket the extra tips in exchange.
+  <</if>>
+<</nobr>>
+
+<<include [[Part13AfterSecondJob]]>>
+
+::Part13StripperSex
+<<nobr>>
+	<h1>In the VIP Room</h1>
+  <img src="Part13/Strip3.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer", vaginal:true, condom:true})>>
+  <<set $sex.push({sex: 'male', name: 'Strip Club Bartender', vaginal: true})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer"})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer", vaginal:true, condom:true})>>
+  <<set $sex.push({sex: 'male', name: 'Strip Club Bartender', vaginal: true})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer", vaginal:true, condom:true, repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer", vaginal:true, condom:true})>>
+  <<set $sex.push({sex: 'male', name: 'Strip Club Bartender', vaginal: true})>>
+<</nobr>>
+<<nobr>>
+  You can also tell which guys will be willing to pay even more to go to the VIP room for much more.  And that's where you real money comes from.  
+<</nobr>>
+
+<<include [[Part13AfterSecondJob]]>>
+
+::Part13StripperExtras
+<<nobr>>
+	<h1>Giving a Private Dance</h1>
+  <img src="Part13/Strip4.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer"})>>
+  <<set $sex.push({sex: 'male', anon: 'Strip Club Bouncer', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer"})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer", repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Strip Club Bouncer', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer"})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer"})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer"})>>
+  <<set $sex.push({sex: 'male', anon: 'Strip Club Bouncer', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer"})>>
+  <<set $sex.push({sex: 'male', anon: "Strip Club Customer"})>>
+  <<set $sex.push({sex: 'male', anon: 'Strip Club Bouncer', repeat:true})>>
+<</nobr>>
+<<nobr>>
+  You can also tell which guys desperately want you to pull their hard cock out of their pants and have you give them something extra.  Well, figuring
+  that part out is easy - because all of them want that.
+<</nobr>>
+
+<<nobr>>
+  But you can tell which ones will pay you for it if you offer.  And you can even spot the ones too shy to talk about it, but that will happily
+  leave a huge tip if you take care of them.
+<</nobr>>
+
 <<include [[Part13AfterSecondJob]]>>
 
 ::Part13GloryHole
@@ -2681,55 +2981,8 @@ TODO Part13Stripper
 
 <<include [[Part13AfterSecondJob]]>>
 
-::Part13Allowance
-TODO Part13Allowance
-    <<include [[Part13AfterJob]]>>
-
-::Part13Kate
-TODO Part13Kate
-
-::Part13Andrew
-TODO Part13Andrew (Regular or Campus Ministry)
-
-::Part13AndrewEngaged
-TODO Part13AndrewEngaged
-
-::Part13Paul
-TODO Part13Paul
-
-::Part13Veronica
-TODO Part13Veronica
-
-::Part13Josh
-TODO Part13Josh
-
-::Part13MasterRobert
-TODO Part13MasterRobert
-
-::TodoRelationshipPlaceholder_DELETE_THIS_LATER
-<<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>\
-<<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>\
-<<if $MasterRobert>><br><<print "You are a slave to Olivia's master. ">><</if>>\
-<<if $Engaged == 'Andrew'>><<print "You are engaged to Andrew and living together">><</if>>\
-<<if $Engaged != 'Andrew' and setup.areDating('Andrew')>><br><<print "You are in a relationship with your cafe boss, Andrew">><</if>>\
-<<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>>\
-<<if setup.areDating('Paul') and $Roommate!='Paul'>><br><<print "You are your boss, Paul's, mistress. ">><</if>>\
-<<if setup.areDating('Paul') and $Roommate=='Paul'>><br><<print "You are your boss, Paul's, girlfriend. You live with him. ">><</if>>\
-<<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>\
-<<if setup.areDating('Veronica') and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
-<<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>\
-<<if setup.areDating('Aaron')>><br><<print "The Professor is your Daddy and you are his Baby Girl. ">><</if>>\
-<<if setup.areDating('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
-<<if $dating.length == 0>> \
-  <<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>\
-  <<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>\
-  <<if setup.isFriendzoned('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
-  <<if setup.isFWB('Barry')>><br><<print "Barry likes to humiliate you. ">><</if>>\
-  <<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>\
-  <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>\
-
 ::Part13OB
-TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
+TODO Checkup Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
 
 ::Part13Checkup
 <<nobr>>
@@ -2843,16 +3096,17 @@ TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
       <br>
       Of course, you know the effects of your implant are permanent now.  This will be the body you have for the rest of your life.
     <</if>>
-    TODO Pregnant: Set variables
+    TODO Checkup Pregnant: Set variables
     <<if $PlayerProtectionTry>>
-      TODO Pregnant: Part13Check4
+      TODO Checkup Pregnant: Part13Check4
     <<else>>
-      TODO Pregnant: Part13CheckupAbortion or Part13Check4
+      TODO Checkup Pregnant: Part13CheckupAbortion or Part13Check4
     <</if>>
   <<else>>
-    TODO Not pregnant: Handle if they choose to make their implant permanent
+    TODO Checkup Not pregnant: Handle if they choose to make their implant permanent
   <</if>>
 <</nobr>>
 
 ::Part13SummerPlans
+TODO Don't send to SemesterAbroad if pregnant and decided to keep baby
 TODO Part13SummerPlans
