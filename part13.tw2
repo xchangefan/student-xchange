@@ -26,13 +26,15 @@
     Even with all the school work, you make sure to [[spend as much time with Kate|Part13Kate]] as you can.
   <<elseif $Engaged == 'Andrew' and setup.areDating('Andrew')>>
     Sometimes is hard to think about school work though with [[all the wedding plans|Part13AndrewEngaged]] you are making distracting you.
+  <<elseif setup.areDating('Andrew') && $CampusMinistry>>
+    Even with all of the school work, you've been sure to find the time whenever [[Andrew has invited you on another date|Part13AndrewMinistry]].
   <<elseif setup.areDating('Andrew')>>
     Even with all the school work, you make sure to [[spend as much time with Andrew|Part13Andrew]] as you can.
   <<elseif setup.areDating('Paul')>>
     Even with all the school work, you make sure to [[spend as much time with Paul|Part13Paul]] as you can.
   <<elseif setup.areDating('Veronica')>>
     Even with all the school work, you make sure to [[spend as much time with Veronica|Part13Veronica]] as you can.
-  <<elseif setup.areDating('Part13Josh')>>
+  <<elseif setup.areDating('Josh')>>
     Even with all the school work, you make sure to [[spend as much time with Josh|Part13Josh]] as you can.
   <<else>>
     But, of course, school work isn't the only thing you need to worry about.  [[There's your job too|Part13Job]].
@@ -48,20 +50,150 @@
 ::Part13Kate
 TODO Relationship Part13Kate [[There's your job too|Part13Job]].
 
-::Part13Andrew
-TODO Relationship Part13Andrew (Regular or Campus Ministry) [[There's your job too|Part13Job]].
+::Part13Veronica
+TODO Relationship Part13Veronica [[There's your job too|Part13Job]].
 
 ::Part13AndrewEngaged
 TODO Relationship Part13AndrewEngaged [[There's your job too|Part13Job]].
 
-::Part13Paul
-TODO Relationship Part13Paul [[There's your job too|Part13Job]].
+::Part13AndrewMinistry
+<<nobr>>
+  <h1>At Andrew's Apartment</h1>
+  <img src="Part13/AndrewM1.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  This evening after your dinner with Andrew, the two of you go back to his apartment to watch a movie.  A kiss turns into another more passionate kiss.  It doesn't
+  take long and you both have completely forgotten about the movie.
+<</nobr>>
 
-::Part13Veronica
-TODO Relationship Part13Veronica [[There's your job too|Part13Job]].
+<<nobr>>
+  As you kiss, Andrew caresses you.  You can't help but moan when one of his hands occasionally brushes along the side of your breast, or slides across your thigh.
+  When his hand slides under your shirt a bit, you can't help yourself and grab it and pull it up.  You kiss him passionately as his hand sofly squeezes your breast.
+  When his thumb slides across your nipple, you gasp with pleasure.  His fingers then move to focus on your nipple, alternately circling it with his finger and gently
+  pinching it.
+<</nobr>>
+
+<<nobr>>
+  You feel an aching need between your legs.  You don't want him to stop, you want more.
+  Feeling his lips against yours and his tongue in his mouth, you want to [[take off your shirt|Part13AndrewMinistry2]] and let his mouth move a bit lower.
+  <<if $CampusMinistrySaves>>
+    <<set $CampusMinistrySaves -= 1>>
+    But part of you wonders if [[maybe you should stop|Part13AndrewMinistryStop]].
+  <</if>>
+<</nobr>>
+
+::Part13AndrewMinistry2
+<<nobr>>
+  <h1>At Andrew's Apartment</h1>
+  <img src="Part13/AndrewM2.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<if $CampusMinistrySaves>>
+    <<set $CampusMinistrySaves -= 1>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  You pull off your shirt and toss it aside.  TODO
+<</nobr>>
+
+
+TODO [[Part13AndrewMinistry3]]
+
+::Part13AndrewMinistry3
+<<nobr>>
+  <h1>At Andrew's Apartment</h1>
+  <img src="Part13/AndrewM3.gif" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  TODO
+<</nobr>>
+
+<<nobr>>
+  TODO [[Part13AndrewMinistryOral]] or [[Part13MinistrySex]] or [[Part13AndrewMinistryFinger]]
+<</nobr>>
+
+TODO Relationship Part13AndrewMinistry [[There's your job too|Part13Job]].
+
+::Part13AndrewMinistryOral
+<<nobr>>
+  <h1>At Andrew's Apartment</h1>
+  <img src="Part13/AndrewM4.gif" hspace="10" vspace="10" height="500">
+<</nobr>>
+TODO [[Reciprocate|Part13AndrewMinistryOral2]]
+
+::Part13AndrewMinistryOral2
+<<nobr>>
+  <h1>At Andrew's Apartment</h1>
+  <img src="Part13/AndrewM5.gif" hspace="10" vspace="10" height="380">
+<</nobr>>
+TODO Part13AndrewMinistryOral2, then [[Part13AndrewMinistryHome]]
+
+::Part13MinistrySex
+TODO Part13AndrewMinistrySex
+
+::Part13AndrewMinistryFinger
+TODO Part13AndrewMinistryFinger - Andrew asks if he can finish getting you off first, you eagerly agree
+
+::Part13AndrewMinistryStop
+TODO Relationship Part13AndrewMinistryStop
+
+::Part13AndrewMinistryHome
+TODO Relationship After Andrew Ministry Date - Talk with Faith.  [[There's your job too|Part13Job]].
+
+::Part13Andrew
+<<nobr>>
+  <h1>Waiting for Andrew</h1>
+  <img src="Part13/Andrew1.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+TODO Relationship Part13Andrew (Regular) [[Part13Boyfriend]].
+
+::Part13Paul
+TODO Relationship Part13Paul [[Part13Boyfriend]]
 
 ::Part13Josh
-TODO Relationship Part13Josh [[There's your job too|Part13Job]].
+<<nobr>>
+  <h1>Finding Time for Josh</h1>
+  <img src="Part13/Josh1.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  Josh is busy finishing up his end-of-semester work and studying for his finals too, so neither of you have as much free time as you did earlier in the semester.
+  But thankfully since the two of you
+  <<if $Roommate == "Josh">>
+    share a dorm room,
+  <<else>>
+    live next door to each other,
+  <</if>>
+  you can still [[find time to be together|Part13Boyfriend]].
+<</nobr>>
+
+::Part13Boyfriend
+<<nobr>>
+  <h1>With $dating[0]</h1>
+  <img src="Part13/Boyfriend1.gif" hspace="10" vspace="10" height="400">
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+<</nobr>>
+TODO [[Part13Boyfriend2]]
+
+::Part13Boyfriend2
+<<nobr>>
+  <h1>With $dating[0]</h1>
+  <<if $PlayerProtectionCondoms>>
+    <img src="Part13/Boyfriend2.jpg" hspace="10" vspace="10" height="600"  align="left">
+  <<elseif $PlayerProtectionWithdraw>>
+    <img src="Part13/Boyfriend3.jpg" hspace="10" vspace="10" height="600"  align="left">
+  <<else>>
+    <img src="Part13/Boyfriend4.jpg" hspace="10" vspace="10" height="600"  align="left">
+  <</if>>
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+  <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+<</nobr>>
+TODO Part13Boyfriend2
+TODO [[There's your job too|Part13Job]].
 
 ::Part13Aaron
 <<nobr>>
