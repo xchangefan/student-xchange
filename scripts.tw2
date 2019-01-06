@@ -172,6 +172,7 @@ setup.sexualHistoryTable = function () {
     }
 		st += "</td><td>" + fuck.sex + "</td><td>" + (fuck.vaginal ? "Y" : "") + "</td><td>"
 			 + (fuck.vaginal ? fuck.birthControl : "")
+			 + (fuck.ovulating ? " (ovulating) " : "")
 			 + "</td><td>"
     if (fuck.conception) {
       if (fuck.aborted) {
@@ -291,7 +292,7 @@ setup.checkForPregnancy = function (fuck, oddsBoost, ovulationOverride) {
     protectionFactor = 0.02
   } else if (fuck.birthControl == 'pill' && fuck.name == 'Aaron') {
     protectionFactor = 0.02
-  } else if (fuck.birthControl == 'pill') {
+  } else if (fuck.birthControl == 'pill' && !fuck.ovulating) {
     protectionFactor = 0.05
   } else if (fuck.birthControl == 'condom') {
     protectionFactor = 0.1

@@ -420,7 +420,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $MasterRobert>><br><<print "You are a slave to Olivia's master. ">><</if>>\
 \
 <<if $Engaged == 'Andrew'>><<print "You are engaged to Andrew and living together">><</if>>\
-<<if $Engaged != 'Andrew' and setup.areDating('Andrew')>><br><<print "You are in a relationship with your cafe boss, Andrew">>\
+<<if $Engaged != 'Andrew' and setup.areDating('Andrew')>><br><<print "You are in a relationship with Andrew">>\
 <<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>><</if>>\
 <<if setup.areDating('Paul') and $Roommate!='Paul'>><br><<print "You are your boss, Paul's, mistress. ">><</if>>\
 <<if setup.areDating('Paul') and $Roommate=='Paul'>><br><<print "You are your boss, Paul's, girlfriend. You live with him. ">><</if>>\
@@ -471,6 +471,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $JobPorn>><<print "You work as an Porn Actress. ">><</if>>\
 <<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
 <<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>\
+<<if $JobHomemaker and $Spouse>><<print "You are a stay-at-home wife. ">><</if>>\
+<<if $JobHomemaker and !$Spouse and $Engaged>><<print "You are a stay-at-home fiancée. ">><</if>>\
+<<if $JobHomemaker and !$Spouse and !$Engaged>><<print "You are a stay-at-home girlfriend. ">><</if>>\
 \
 
 
