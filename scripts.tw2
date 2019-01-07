@@ -333,6 +333,38 @@ setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
   }
 }
 
+setup.overrideForcePregnancy = function(pregnancyTestType) {
+  var recentVaginal = setup.getPossibleConceptions()
+	var normalCheck = setup.checkForNewPregnancy(pregnancyTestType, 0.25)
+
+  if (state.active.variables.PlayerPregnant || normalCheck.isPregnant) {
+		// pregnant without override, do nothing extra
+		return normalCheck 
+	} else {
+		// they somehow managed to not get pregnant, but the story expects them to, so lets fix that
+
+		if (recentVaginal.length === 0) {
+			// how did we end up here? This shouldn't have been called if they are sleeping with any guys.  Aborting pregnancy override
+			return normalCheck
+		}
+
+    var possibleFathers = Array.from(new Set(recentVaginal.map(function(fuck) {
+      return setup.getPartnerName(fuck)
+    })))
+
+		var luckyFuck = recentVaginal[Math.floor(Math.random() * recentVaginal.length)]
+		luckyFuck.conception = true
+
+		return {
+			isPregnant: true,
+			possibleFathers,
+			conceptionEvent: luckyFuck,
+			actualFather: setup.getPartnerName(luckyFuck),
+			count: recentVaginal.length
+		}
+	}
+}
+
 ::NeighbourFunctions [script] <350,50>
 setup.addNeighbour = function (name) {
 	return state.active.variables.neighbours.push(name)
