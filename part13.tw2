@@ -290,7 +290,7 @@
 
 <<nobr>>
   After everyone is satisified, Carl thanks you and Veronica for a wonderful time and leaves.  You are still bound and helpless, now with Carl's cum
-  <<if $PlayerProtectionCondom>>
+  <<if $PlayerProtectionCondoms>>
     oozing from the condom he left on your stomach.
   <<else>>
     leaking from you.
@@ -3958,24 +3958,132 @@ TODO Checkup Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
 <</nobr>>
 
 <<nobr>>
+  The doctor comes in to deliver the news.
   <<if $PregnancyCheck.isPregnant>>
+	  <<set $PlayerPregnant to 1>>
+    You are pregnant!
+    <<if !$PlayerSideEffectPermanent>>
+    	<<set $PlayerSideEffectPermanent to 1>>
+      She also reminds you that, of course the effects of your implant are permanent now.  This will be the body you have for the rest of your life.
+    <</if>>
+    <br><br>
+    <<if setup.areDating('Kate')>>
+      You're horrified at the news.  You feel like you are still be punished for that time you cheated on Mistress Kate with 
+      <<if $PregnancyCheck.conceptionEvent.anon>>
+        <<print $PregnancyCheck.actualFather.toLowerCase()>>.
+      <<else>>
+        <<print $PregnancyCheck.actualFather>>.
+      <</if>>
+      You don't want a baby right now, and you know Mistress Kate doesn't either.  And you certainly don't one that is a constant reminder of your
+      mistake.  You let the doctor know that you want to [[terminate the pregnancy|Part13CheckupAbort]].
+    <<elseif $PlayerProtectionTry>>
+      You are ecstatic, finally you're pregnant!  The doctor can tell from your excitement that you plan to [[carry the baby to term|Part13CheckupKeep]].  She
+      asks to make sure, and you enthusiastically confirm it for her.
+    <<else>>
+      The doctor sees you need a moment to process the news.  She says she'll give you a bit to think about [[your options|Part13CheckupPregnant]], and she'll
+      be back in a few minutes.
+    <</if>>
+  <<elseif $PlayerDecidePermanent and !$PlayerSideEffectPermanent>>
+    You are not pregnant.  You tell the doctor that there's [[something else you want to discuss|Part13CheckupPermanent]] with her.
+  <<else>>
+    You are [[not pregnant|Part13CheckupNotPregnant]].
+  <</if>>
+<</nobr>>
+
+::Part13CheckupPregnant
+<<nobr>>
+	<h1>Medical Clinic</h1>
+  <img src="Part13/Pregnant1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  As you consider your options, and the father, your mind can't help but imagine what your body will look like a few months from now.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Veronica')>>
+    It doesn't really matter to you who the father is.  You and Veronica have already discussed that this was a possibility, and she said she'd support you
+    with whatever choice you made if it happened.  You know if you carry the baby, it'll be Veronica helping you through the pregnancy.  And if you decide to
+    keep the baby after he or she is born, you know it'll be Veronica you want helping raise him or her with you.
+  <<elseif $PregnancyCheck.possibleFathers.length === 1>>
+    <<if $PregnancyCheck.conceptionEvent.anon>>
+      You know who the father must be.  Or at least when it must have happened.  You don't actually remember his name.  To you he was just
+      <<print $PregnancyCheck.actualFather.toLowerCase()>>.  He's obviously not a consideration in all this.
+    <<else>>
+      Of course, you know the father is <<print $PregnancyCheck.actualFather>>.  But this is your decision, not his.
+    <</if>>
+  <<else>>
+    You think through who the father could be:
+    <<if $PregnancyCheck.possibleFathers.length > 4>>
+      <ul>
+        <<print $PregnancyCheck.possibleFathers.slice($PregnancyCheck.possibleFathers.length - 4).map((father) => {return "<li> - " + father + "</li>"}).join("")>>
+      </ul>
+      <img src="Part13/Pregnant2.jpg" hspace="10" vspace="10" height="300" align="left">
+      You're sure your forgetting some though. You know you shouldn't be, but you can't help that you feel ashamed that you
+      can't even remember everyone it might be.  But you dismiss your self-shaming and focus on the decision you have to make.
+    <<else>>
+      <ul>
+        <<print $PregnancyCheck.possibleFathers.map((father) => {return "<li> - " + father + "</li>"}).join("")>>
+      </ul>
+      That's the only possibilities.  But this is your decision, not theirs.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  By the time the doctor returns, you're sure of your decision.
+<</nobr>>
+
+<<nobr>>
+	Do you tell her you want to [[carry the baby to term,|Part13CheckupKeep]] or that you want to [[end the pregnancy now,|Part13CheckupAbort]]?<br>
+	(If you are considering adoption, then that's something to discuss with your obstetrician later.)
+<</nobr>>
+
+::Part13CheckupKeep
+TODO Part13CheckupKeep
+
+::Part13CheckupAbort
+TODO Part13CheckupAbort
+
+::Part13CheckupPermanent
+<<nobr>>
+  <<set $PlayerSideEffectPermanent to 1>>
+  <<unset $PlayerDecidePermanent>>
+	<h1>Back Home</h1>
+  <img src="Part13/Decide1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+<<nobr>>
+  You let the doctor know about the decision you've made to make your change permanent.  The doctor discusses the decision with you at length, and confirms
+  that you are aware that any side effects you have will become permanent also.  When you tell her you're sure, she has you sign some forms.
+<</nobr>>
+
+<<nobr>>
+  After she's finished with the other tests that you were scheduled for, she gives you a quick injection and tells you "Congratulations!" and it's done.
+<</nobr>>
+
+<<nobr>>
+  It's not until you are sitting alone at home for a moment that it really starts to sink in.  This is who you are now.  You are a woman now, and you will be
+  for the rest of your life.  And you couldn't be happier about it.
+<</nobr>>
+
+<<nobr>>
+  Eventually your mind drifts back to the present and you start thinking about [[what you are going to do this summer|Part13SummerPlans]].
+<</nobr>>
+
+::Part13CheckupNotPregnant
+<<nobr>>
+	<h1>Back Home</h1>
+  <img src="Part13/Plans1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  The doctor continues with the other tests you were scheduled for and you head home.  When you get there you make something to drink and then sit down
+  to think about [[what you are going to do this summer|Part13SummerPlans]].
+<</nobr>>
+
+::Part13OldTextTODO
     The doctor comes in with the news.  He says it's difficult to determine exactly when you might have conceived since you couldn't remember when your last cycle was.
     Your implant also complicates the calculation as well.  He explains that they've seen some irregularities with development time in the early part of pregnancies.
     "Don't worry, it normalizes after a few months, and it doesn't pose any risk to the fetus at all."
-    <<if !$PlayerSideEffectPermanent>>
-      <br>
-      Of course, you know the effects of your implant are permanent now.  This will be the body you have for the rest of your life.
-    <</if>>
-    TODO Checkup Pregnant: Set variables
-    <<if $PlayerProtectionTry>>
-      TODO Checkup Pregnant: Part13Check4
-    <<else>>
-      TODO Checkup Pregnant: Part13CheckupAbortion or Part13Check4
-    <</if>>
-  <<else>>
-    TODO Checkup Not pregnant: Handle if they choose to make their implant permanent
-  <</if>>
-<</nobr>>
 
 ::Part13SummerPlans
 TODO Part13SummerPlans (Don't send to SemesterAbroad if pregnant and decided to keep baby)
