@@ -10,7 +10,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<include [[SideBarBody]]>>
   <<include [[SideBarBirthControl]]>>
 
-<<if $PlayerMoneySet>><<print "Money: $">>$PlayerMoney<</if>>
+<<if $PlayerMoneySet and !$PlayerCumslutPermanent>><<print "Money: $">>$PlayerMoney<</if>>
   [[Inventory|SideBarInventory]]
   <<include [[SideBarChastity]]>>\
   <<include [[SideBarMentor]]>>\
@@ -76,15 +76,19 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <</nobr>>
 
 <<nobr>>
-  This body
-  <<if $PlayerSlave>>
-    doesn't belong to you anymore.
-  <<elseif $PlayerSideEffectPermanent>>
-    is yours for the rest of your life.
+  <<if $PlayerCumslutPermanent>>
+    You are a permanent cumslut
   <<else>>
-    is yours for at least the next few years.
-    <<if $PlayerDecidePermanent>>
-      But you plan on making sure it's yours the rest of your life.
+    This body
+    <<if $PlayerSlave>>
+      doesn't belong to you anymore.
+    <<elseif $PlayerSideEffectPermanent>>
+      is yours for the rest of your life.
+    <<else>>
+      is yours for at least the next few years.
+      <<if $PlayerDecidePermanent>>
+        But you plan on making sure it's yours the rest of your life.
+      <</if>>
     <</if>>
   <</if>>
 <</nobr>>
@@ -216,7 +220,12 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li>You get excited much faster.</li>
   <</if>>
 
-  <<if $PlayerSideEffectOral >3 >>
+  <<if $PlayerCumslutPermanent>>
+    <li>You love the feel of a cock in your mouth.</li>
+    <li>You can only orgasm while giving a blowjob.  You never know when it will happen, but it's a welcome reward when it does.</li>
+    <li>If you go to long without a cock in your mouth, you'll beg for one until someone lets you suck their cock.</li>
+    <li>You'll never turn down a cock offered to you.  You'll drop to you knees immediately if they let you.</li>
+  <<elseif $PlayerSideEffectOral >3 >>
     <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex, you cannot orgasm without it, and can never refuse it, you sometimes suggest it as a reward.</li>
   <<elseif $PlayerSideEffectOral >2 >>
     <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex and can never refuse it, you sometimes suggest it as a reward.</li>
@@ -227,13 +236,17 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
 
   <<if $PlayerSideEffectAnal >3 >>
-    <li>You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm, you constantly need something in your ass.</li>
+    <li>You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm, you constantly need something in your ass.
+    <<if $PlayerCumslutPermanent>>As long as they finish in your mouth, that is.<</if>></li>
   <<elseif $PlayerSideEffectAnal >2 >>
-    <li>You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm.</li>
+    <li>You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm.
+    <<if $PlayerCumslutPermanent>>As long as they finish in your mouth, that is.<</if>></li>
   <<elseif $PlayerSideEffectAnal >1 >>
-    <li>You love anal sex and can never refuse it.</li>
+    <li>You love anal sex and can never refuse it.
+    <<if $PlayerCumslutPermanent>>As long as they finish in your mouth, that is.<</if>></li>
   <<elseif $PlayerSideEffectAnal>>
-    <li>You love anal sex.</li>
+    <li>You love anal sex.
+    <<if $PlayerCumslutPermanent>>As long as they finish in your mouth, that is.<</if>></li>
   <</if>>
 <</nobr>>
 </ul>
@@ -249,12 +262,24 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<elseif $PlayerPregnant>>
   <<elseif $PlayerProtectionTry>>
     You are trying to get pregnant.
+    <<if $PlayerCumslutPermanent>>
+      If not, you'd ask to swallow every drop instead. 
+    <</if>>
   <<elseif $PlayerProtectionNone>>
     You are not using any birth control.
+    <<if $PlayerCumslutPermanent>>
+      As long as he only fucks your mouth, you don't really need any, do you?
+    <</if>>
   <<elseif $PlayerProtectionWithdraw>>
     You ask guys to pull out during sex.
+    <<if $PlayerCumslut>>
+      You want them to cum in your mouth instead.
+    <</if>>
   <<elseif $PlayerProtectionCondoms>>
     You use condoms.
+    <<if $PlayerCumslutPermanent>>
+      At least whenever you aren't swallowing his cum instead.    
+    <</if>>
   <<elseif $PlayerProtectionPill>>
     You use birth control pills.
   <<elseif $PlayerProtectionPermanent>>
@@ -474,6 +499,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $JobHomemaker and $Spouse>><<print "You are a stay-at-home wife. ">><</if>>\
 <<if $JobHomemaker and !$Spouse and $Engaged>><<print "You are a stay-at-home fiancée. ">><</if>>\
 <<if $JobHomemaker and !$Spouse and !$Engaged>><<print "You are a stay-at-home girlfriend. ">><</if>>\
+<<if $JobStripper>>You have as a stripper<</if>>\
+<<if $JobGloryHole>>You have a side-job sucking cocks at the sex shop<</if>>\
 \
 
 

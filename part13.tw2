@@ -1076,7 +1076,11 @@ TODO Part13AndrewEngaged
 ::Part13Boyfriend2
 <<nobr>>
   <<set $tempNoPullOutNoWarn to ($PlayerProtectionWithdraw and Math.random() < 0.25)>>
-  <<set $tempNoPullOutBeg to ($PlayerProtectionWithdraw and Math.random() < 0.5)>>
+  <<if !$PlayerSideEffectOrgasmBlock and ($PlayerEasytoOrgasm or $PlayerSuperOrgasms)>>
+    <<set $tempNoPullOutBeg to false>>
+  <<else>>
+    <<set $tempNoPullOutBeg to ($PlayerProtectionWithdraw and Math.random() < 0.5)>>
+  <</if>>
   <h1>With $dating[0]</h1>
   <<if $PlayerPregnant>>
     <video src="Part13/Boyfriend5.webm" autoplay loop muted height="600"></video>
@@ -1099,7 +1103,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 <<nobr>>
   $dating[0] can see the need in your eyes, and uses his hands to entertain you for a while, and soon he's ready to go again.
-  He already had you close ot an orgasm before you felt him slide back into you, and soon you are cumming again.  
+  He already had you close to an orgasm before you felt him slide back into you, and soon you are cumming again.  
   <<if $PlayerPregnant>>
     After the spasms of your orgasm pass, you can feel the baby kick inside you, you don't mention it to $dating[0] though.
   <</if>>
@@ -1109,31 +1113,66 @@ TODO Part13AndrewEngaged
   <<if !$PlayerPregnant and $PlayerProtectionCondoms>>
     $dating[0] always last longer the second time around so he keeps going for quite a while longer and soon you are moaning and squirming as you feel
     another orgasm approaching.
-    After you cum again, $dating[0] starts thrusting faster and deeper as he feels his orgasm getting close too.  It's almost too much, but it doesn't last long,
-    as a moment later he thrusts a final time and he stops with his cock deep inside you.
-    <br><br>
-    You wonder if maybe the post-orgasm bliss is clouding your thoughts.  But as he starts to slowly pull out of you, you imagine his seed swimming inside you,
-    searching for its target.  But of course, it's all in the condom he's wearing, not inside you, right?  But you can't help but wonder why your body is making
-    you think things like this.
+    <<if $PlayerSideEffectOrgasmBlock>>
+      But then you feel your orgasm fade away, you kick your feet and slap the covers in frustration at the all-too-familar feeling of being
+      denied at the last moment.  $dating[0] isn't denied though, a moment later he thrusts a final time and stops with his cock deep inside you.
+      <br><br>
+      You wonder if maybe your frustration is clouding your thoughts.  But as he starts to slowly pull out of you, you imagine his seed swimming inside you,
+      searching for its target.  But of course, it's all in the condom he's wearing, not inside you, right?  You wonder if maybe your body would have let you
+      orgasm if you'd only have let him cum inside you.  You know that isn't true and push the thought from your mind.  But you can't help but wonder why your
+      body is making you think things like this.
+    <<else>>
+      After you cum again, $dating[0] starts thrusting faster and deeper as he feels his orgasm getting close too.  It's almost too much, but it doesn't last long,
+      as a moment later he thrusts a final time and he stops with his cock deep inside you.
+      <br><br>
+      You wonder if maybe the post-orgasm bliss is clouding your thoughts.  But as he starts to slowly pull out of you, you imagine his seed swimming inside you,
+      searching for its target.  But of course, it's all in the condom he's wearing, not inside you, right?  But you can't help but wonder why your body is making
+      you think things like this.
+    <</if>>
   <<elseif !$PlayerPregnant and $PlayerProtectionWithdraw>>
     $dating[0] always last longer the second time around so he keeps going for quite a while longer and soon you are moaning and squirming as you feel
     another orgasm approaching.
     <<if $tempNoPullOutNoWarn>>
-      As you cry out with another orgasm, you hear $dating[0] moan and then feel him thrust a final time and cum inside you.
+      <<if $PlayerSideEffectOrgasmBlock>>
+        But then you feel your orgasm fade away, you kick your feet and slap the covers in frustration at the all-too-familar feeling of being
+        denied at the last moment.  $dating[0] isn't denied though, a moment later he thrusts a final time and stops with his cock deep inside you.
+        <br><br>
+        He starts to apologize for not pulling out, but you tell him it's ok.  You wonder if maybe your frustration is clouding your thoughts.
+        But as you rub his cock between your lips and tease out the last bits of cum, you imagine his seed swimming inside you, searching for its target.
+        And instead of worrying you like it normally would, you smile a bit at the thought.
+      <<else>>
+        As you cry out with another orgasm, you hear $dating[0] moan and then feel him thrust a final time and cum inside you.
+        <br><br>
+        He starts to apologize for not pulling out, but you tell him it's ok.  You wonder if maybe the post-orgasm bliss is clouding your thoughts.
+        But as you rub his cock between your lips and tease out the last bits of cum, you imagine his seed swimming inside you, searching for its target.
+        And instead of worrying you like it normally would, you smile a bit at the thought.
+      <</if>>
+    <<elseif !$PlayerSideEffectOrgasmBlock and ($PlayerEasytoOrgasm or $PlayerSuperOrgasms)>>
+      After you cry out with another orgasm, you hear $dating[0] warn, "I'm getting close".  You see the reluctance in his eyes as he pulls out of you.
+      His reluctance fades quickly as you frantically stroke him, and soon his cum covers your stomach.
       <br><br>
-      He starts to apologize for not pulling out, but you tell him it's ok.  You wonder if maybe the post-orgasm bliss is clouding your thoughts.
-      But as you rub his cock between your lips and tease out the last bits of cum, you imagine his seed swimming inside you, searching for its target.
-      And instead of worrying you like it normally would, you smile a bit at the thought.
+      You don't know why, but you feel slightly disappointed. Your orgasm was amazing, but you feel like you missed out on something.  You feel his cum starting to
+      dry on your stomach and fantasize about it inside you, and then his baby inside you.  You push the though from your mind, wondering why your body is making you
+      think things like this.    
     <<else>>
       "I'm getting close", $dating[0] warns.  You see the reluctance to pull out in his eyes and you desperately want him to keep going, since you are so close
       to coming again yourself.
       <br><br>
       <<if $tempNoPullOutBeg>>
-        "Please! Don't stop!", is all you have to say, and he keeps going, even picking up the pace a bit.  You cum again as he thrusts a final time,
-        and fills you with his cum.
-        <br><br>
-        You wonder if maybe the post-orgasm bliss is clouding your thoughts.  But as you rub his cock between your lips and tease out the last bits of cum,
-        you imagine his seed swimming inside you, searching for its target. And instead of worrying you like it normally would, you smile a bit at the thought.
+        "Please! Don't stop!", is all you have to say, and he keeps going, even picking up the pace a bit.
+        <<if $PlayerSideEffectOrgasmBlock>>
+          You feel your orgasm about to happen, but then it fades away.  You kick your feet and slap the covers in frustration at the
+          all-too-familar feeling of being denied at the last moment.  $dating[0] isn't denied though, a moment later he thrusts a final time and stops
+          with his cock deep inside you.
+          <br><br>
+          You wonder if maybe your frustration is clouding your thoughts.  But as you rub his cock between your lips and tease out the last bits of cum,
+          you imagine his seed swimming inside you, searching for its target. And instead of worrying you like it normally would, you smile a bit at the thought.
+        <<else>>
+          You cum again as he thrusts a final time, and fills you with his cum.
+          <br><br>
+          You wonder if maybe the post-orgasm bliss is clouding your thoughts.  But as you rub his cock between your lips and tease out the last bits of cum,
+          you imagine his seed swimming inside you, searching for its target. And instead of worrying you like it normally would, you smile a bit at the thought.
+        <</if>>
       <<else>>
         You let out a frustrated whimper as he pulls out just before you cum again.  You channel your frustration into frantically stroking him and soon his cum
         covers your stomach.
@@ -1144,9 +1183,18 @@ TODO Part13AndrewEngaged
       <</if>>
     <</if>>
   <<else>>
-    Eventually, $dating[0] feels his orgasm getting close.
-    You feel him thrust faster, and deeper, and it pushes you over the edge again and you cum again as he thrusts a final time.
-    As he pulls out you feel his cum leaking out of you.  It makes you smile 
+    Eventually, $dating[0] feels his orgasm getting close. You feel him thrust faster, and deeper, 
+    <<if $PlayerSideEffectOrgasmBlock>>
+      and your orgasm is so close.  But then it fades away.  You kick your feet and slap the covers in frustration at the
+      all-too-familar feeling of being denied at the last moment.  $dating[0] isn't denied though, a moment later he thrusts a final time and stops
+      with his cock deep inside you.
+      <br><br>
+      As he pulls out you feel his cum leaking out of you.  Even over the frustration of your lost orgasm, it makes you smile 
+    <<else>>
+        and it pushes you over the edge again and you cum again as he thrusts a final time.
+        <br><br>
+        As he pulls out you feel his cum leaking out of you.  It makes you smile 
+    <</if>>
     <<if $PlayerPregnant>>
       as you think of the life already growing inside you.
     <<else>>
@@ -1823,7 +1871,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
     in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
     then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
@@ -1906,7 +1954,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
     in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
     then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
@@ -2163,7 +2211,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     He also mentioned that he recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer in a foreign
     country.  There'll be a number of girls from the university there, not just from the cheerleading squad.  You don't have to decide right now, he says.
     But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  He'll send someone else to take care of
@@ -2260,8 +2308,20 @@ TODO Part13AndrewEngaged
   <video src="Part13/Abroad1.webm" autoplay loop muted height="640"></video>
 <</nobr>>
 <<nobr>>
-  After nearly a year here, you really aren't surprised to learn that there's more to the "semester abroad" than you were initially told about.  You try to
-  go along with it at first as the interviewer asks you to pose and model for the camera.  After a bit you get into it and forget that they are recording the
+  After nearly a year here, you really aren't surprised to learn that there's more to the "semester abroad" than you were initially told about.
+  <<if $PlayerChastityBelt>>
+    "It's good to see you are accustomed to being properly secured", the evaluator tells you.  "But don't worry. Your
+    <<if $Keyholder === "Robert">>
+      Master
+    <<else>>
+      employer
+    <</if>>
+    sent us a copy of your belt's key so it won't intefere with our evaluation.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You try to go along with it at first as the interviewer asks you to pose and model for the camera.  After a bit you get into it and forget that they are recording the
   whole thing for someone to watch later.
 <</nobr>>
 
@@ -2396,7 +2456,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
     to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
     But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
@@ -2425,7 +2485,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
     to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
     But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
@@ -2456,7 +2516,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
     to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
     But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
@@ -2485,7 +2545,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
     to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
     But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
@@ -2519,7 +2579,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
     to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
     But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
@@ -2563,7 +2623,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     The next day, before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip
     to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.
     But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you
@@ -2644,7 +2704,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
     in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
     then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
@@ -2697,7 +2757,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
     in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
     then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
@@ -2733,7 +2793,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     Before you leave work, your boss mentions that he's recommended you for the university's semester abroad program.  It's a fully-funded trip to study over the summer
     in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
     then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.
@@ -2842,7 +2902,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerPregnant>>
+  <<if !$PlayerPregnant && !$PlayerCumslut>>
     After your testing session is over, one of the researchers lets you know that they've recommended you for the university's semester abroad program.  It's a
     fully-funded trip to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now,
     he says.  But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested
@@ -4082,13 +4142,14 @@ TODO Part13AndrewEngaged
 <<include [[Part13AfterSecondJob]]>>
 
 ::Part13OB
+<<set $PlayerMenstruation to 0>>
 TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
 
 ::Part13Checkup
-TODO Add Cumslut collar check and add-on feature
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
   <img src="Part7/Start1A.jpg" hspace="10" vspace="10" height="650" align="left">
+	<<set $PlayerMenstruation to 0>>
 <</nobr>>
 
 <<nobr>>
@@ -4234,6 +4295,18 @@ TODO Add Cumslut collar check and add-on feature
     <</if>>
   <<elseif $PlayerDecidePermanent and !$PlayerSideEffectPermanent>>
     You are not pregnant.  You tell the doctor that there's [[something else you want to discuss|Part13CheckupPermanent]] with her.
+  <<elseif $PlayerCumslut>>
+    You are not pregnant.  The doctor continues with the other tests you were scheduled for and you.  Then she asks you to wait, there's
+    someone else that wants to talk to you.
+    <br><br>
+    After the doctor leaves you wait nervously, worried that something must have came up on one of your tests.  When the door opens again, two men with
+    X-Change logos on thier shirts come in.  One is carrying a clipboard, the other is carrying a small case.  Now you are even more nervous.  Something
+    must be wrong with your implant!
+    <br><br>
+    "Miss, everything is fine.", the one with the clipboard quickly reassures you.  "There was nothing abnormal on any of your tests, otherwise we wouldn't be
+    able to make you this offer."
+    <br><br>
+    Your express of worry is quickly replaced with one of curiosity.  "[[Offer?|CheckupCumslut]]", you ask.
   <<else>>
     You are [[not pregnant|Part13CheckupNotPregnant]].
   <</if>>
@@ -4291,7 +4364,66 @@ TODO Add Cumslut collar check and add-on feature
 TODO Part13CheckupKeep
 
 ::Part13CheckupAbort
-TODO Part13CheckupAbort
+TODO Need to test Part13CheckupAbort
+<<nobr>>
+	<<set $PlayerPregnant to 0>>
+  <<set $PlayerAbortionEndOfYear to 1>>
+  <<if $PlayerAbortion>>
+  	<<set $PlayerAbortion += 1>>
+  <<else>>
+  	<<set $PlayerAbortion to 1>>
+  <</if>>
+	<<set $PlayerMenstruation to 1>>
+	<h1><<print "Medical Clinic">></h1>
+<</nobr>>
+<<print "You decide you aren’t ready for this.">>
+<img src="PartP/PregTest5.jpg" hspace="10" vspace="10" height="600">
+
+<<print "After going over everything in great detail with the doctor and signing a bunch of forms, the doctor gives you a pill which you take right then.">>
+
+<<nobr>>
+	<<print "She also gives you another one to take tomorrow morning. She tells you to expect bleeding and cramps, like a period, but worse. ">>
+  <<if $PlayerAbortion > 1>>
+    Of course, all this seems very familiar to you.
+  <</if>>
+	<<if $PlayerProtectionPill>>
+		<<print "She also gives you a new supply of birth control pills to start with tomorrow.">>
+	<<else>>
+		<<if !$PlayerProtectionPermanent>>
+			<<if !$PlayerProtectionFertile>>
+				<<print "If you want to ">>
+				<span id="AbortSpan1">
+					<<link "start using birth control pills,">>
+						<<set $PlayerProtectionTry = 0>>
+						<<set $PlayerProtectionNone = 0>>
+						<<set $PlayerProtectionWithdraw = 0>>
+						<<set $PlayerProtectionCondoms = 0>>
+						<<set $PlayerProtectionPill = 1>>
+						<<replace "#AbortSpan1">>
+							<<print "start using birth control pills,">>
+						<</replace>>
+					<</link>>
+				</span>
+				<<print "she can also give you a supply of those to start with tomorrow.">>
+			<<else>>
+				<<if !$PlayerProtectionCondoms>>
+					<<print "As birth control pills don`t work on you, she recomends starting to ">>
+					<span id="NotPregSpan2">
+						<<link "use condoms for protection.">>
+							<<set $PlayerProtectionTry = 0>>
+							<<set $PlayerProtectionNone = 0>>
+							<<set $PlayerProtectionWithdraw = 0>>
+							<<set $PlayerProtectionCondoms = 1>>
+							<<replace "#NotPregSpan2">>
+								<<print "use condoms for protection,">>
+							<</replace>>
+						<</link>>
+					</span>
+					<<print " so that you don't end up in the same situation again.">>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
 
 ::Part13CheckupPermanent
 <<nobr>>
