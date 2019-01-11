@@ -94,7 +94,10 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <</nobr>>
 
 <<nobr>>
-  <<if !$PlayerSlave>>
+  <<if $PlayerSlave>>
+  <<elseif $DropoutCumslut>>
+    You've adjusted to the [[permanent conditions|SideBarSideEffects]] your body has now.
+  <<else>>
     You are 
     <<if  $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
       trying to adjust to the [[side effects|SideBarSideEffects]] your implant gave your new body.
@@ -222,8 +225,12 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
   <<if $PlayerCumslutPermanent>>
     <li>You love the feel of a cock in your mouth.</li>
-    <li>You can only orgasm while giving a blowjob.  You never know when it will happen, but it's a welcome reward when it does.</li>
-    <li>If you go to long without a cock in your mouth, you'll beg for one until someone lets you suck their cock.</li>
+    <<if $DropoutCumslut>>
+      <li>You've stopped orgasming while giving blowjobs, but you don't mind.  The feel of his cock in your mouth and the joy you get making him cum is all you need.</li>
+    <<else>>
+      <li>You can only orgasm while giving a blowjob.  You never know when it will happen, but it's a welcome reward when it does.</li>
+    <</if>>
+    <li>If you go too long without a cock in your mouth, you'll beg for one until someone lets you suck their cock.</li>
     <li>You'll never turn down a cock offered to you.  You'll drop to you knees immediately if they let you.</li>
   <<elseif $PlayerSideEffectOral >3 >>
     <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex, you cannot orgasm without it, and can never refuse it, you sometimes suggest it as a reward.</li>
@@ -253,6 +260,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarBirthControl <600,0>
 <<nobr>>
+  <br>
   <<if $PlayerSlave>>
     Your new owner will decide whether he wants to breed you or not.
     <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
@@ -382,7 +390,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 ::SideBarMentor <1800,0>
 <br>
 <<nobr>>
-  <<if $Mentor == 'Faith'>>
+  <<if $DropoutCumslut>>
+  <<elseif $Mentor == 'Faith'>>
     Faith is your mentor
     <<if $Roommate == 'Faith'>>
       and roommate
@@ -428,7 +437,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarNeighbours <2000,0>
 <<nobr>>
-  <<if $Roommate == 'Sorority Sister'>>
+  <<if $DropoutCumslut>>
+  <<elseif $Roommate == 'Sorority Sister'>>
     You live with your soroity sisters.
   <<elseif $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Victoria' or $Roommate == 'Aaron'>>
   <<elseif $neighbours and $neighbours.length == 1>>
@@ -439,70 +449,84 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <</nobr>>
 
 ::SideBarRelationship <2200,0>
-<<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>\
-<<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>\
-<<if $MasterKen>><br><<print "Ken, the artist, is your ">><<if $Spouse == 'Ken'>><<print "husband">><<else>><<print "master">><</if>><<print " and you are living in his loft, together with his assistants. ">><</if>>\
-<<if $MasterRobert>><br><<print "You are a slave to Olivia's master. ">><</if>>\
-\
-<<if $Engaged == 'Andrew'>><<print "You are engaged to Andrew and living together">><</if>>\
-<<if $Engaged != 'Andrew' and setup.areDating('Andrew')>><br><<print "You are in a relationship with Andrew">>\
-<<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>><</if>>\
-<<if setup.areDating('Paul') and $Roommate!='Paul'>><br><<print "You are your boss, Paul's, mistress. ">><</if>>\
-<<if setup.areDating('Paul') and $Roommate=='Paul'>><br><<print "You are your boss, Paul's, girlfriend. You live with him. ">><</if>>\
-<<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>\
-<<if setup.areDating('Veronica') and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
-<<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>\
-<<if setup.areDating('Aaron')>><br><<print "The Professor is your Daddy and you are his Baby Girl. ">><</if>>\
-<<if setup.areDating('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
-<<if $dating.length == 0>> \
-  <<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>\
-  <<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>\
-  <<if setup.isFriendzoned('Peter')>><br><<print "Peter is your boy toy. ">><</if>>\
-  <<if setup.isFWB('Barry')>><br><<print "Barry likes to humiliate you. ">><</if>>\
-  <<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>\
-  <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>\
-<</if>>
-\
-
+<<nobr>>
+  <<if $DropoutCumslut>>
+    You live at home with your parents, but are looking for your own apartment.
+  <<else>>
+    <<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>
+    <<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>
+    <<if $MasterKen>>
+      <br><<print "Ken, the artist, is your ">>
+      <<if $Spouse == 'Ken'>><<print "husband">><<else>><<print "master">><</if>>
+      <<print " and you are living in his loft, together with his assistants. ">>
+    <</if>>
+    <<if $MasterRobert>><br><<print "You are a slave to Olivia's master. ">><</if>>
+    <<if $Engaged == 'Andrew'>><<print "You are engaged to Andrew and living together">><</if>>
+    <<if $Engaged != 'Andrew' and setup.areDating('Andrew')>>
+      <br><<print "You are in a relationship with Andrew">>
+      <<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>>
+    <</if>>
+    <<if setup.areDating('Paul') and $Roommate!='Paul'>><br><<print "You are your boss, Paul's, mistress. ">><</if>>
+    <<if setup.areDating('Paul') and $Roommate=='Paul'>><br><<print "You are your boss, Paul's, girlfriend. You live with him. ">><</if>>
+    <<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>
+    <<if setup.areDating('Veronica') and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
+    <<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>
+    <<if setup.areDating('Aaron')>><br><<print "The Professor is your Daddy and you are his Baby Girl. ">><</if>>
+    <<if setup.areDating('Peter')>><br><<print "Peter is your boy toy. ">><</if>>
+    <<if $dating.length == 0>> 
+      <<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>
+      <<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>
+      <<if setup.isFriendzoned('Peter')>><br><<print "Peter is your boy toy. ">><</if>>
+      <<if setup.isFWB('Barry')>><br><<print "Barry likes to humiliate you. ">><</if>>
+      <<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>
+      <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>
+    <</if>>
+  <</if>>
+  <</nobr>>
 
 ::SideBarJob <2400,0>
-<<if $PlayerJobSet>><br><br><</if>>\
-<<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>\
-<<if $JobCheerleader>><<print "You are a Cheerleader. ">><</if>>\
-<<if $JobCheerleaderFundraiser>><<print "You are a Fundraiser for the Cheerleaders.">><</if>>\
-<<if $JobFitness>><<print "You work as a Fitness Instructor. ">><</if>>\
-<<if $JobFitnessYoga>><<print "You work as a Natural Yoga Instructor. ">><</if>>\
-<<if $JobFitnessMassage>><<print "You work as a Masseuse. ">><</if>>\
-<<if $JobLibrary>><<print "You work as a Librarian. ">><</if>>\
-<<if $JobEngineer>><<print "You work as an Engineer. ">><</if>>\
-<<if $JobTestSubject>><<print "You are a test subject at the lab. ">><</if>>\
-<<if $JobArt>><<print "You work as an Art Model. ">><</if>>\
-<<if $JobBarista>><<print "You work as a Barista. ">><</if>>\
-<<if $JobOffice>><<print "You are an Office Worker. ">><</if>>\
-<<if $JobOfficePA>><<print "You work as an Office Personal Assistant. ">><</if>>\
-<<if $JobOfficeManager>><<print "You work as an Office Manager. ">><</if>>\
-<<if $JobOfficeIntern>><<print "You work as an Office Intern. ">><</if>>\
-<<if $JobCallGirl>><<print "You work as a Call Girl. ">><</if>>\
-<<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>\
-<<if $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>><<print "You work as a Bartender. ">><</if>>\
-<<if $JobWebModel>><<print "You work as a Web Model. ">><</if>>\
-<<if $JobWebModelSide>><<print "You are also working as a Web Model. ">><</if>>\
-<<if $JobPornOral>><<print "You work as an Oral Porn Actress. ">><</if>>\
-<<if $JobPornOralSide>><<print "You sometimes also work as an Oral Porn Actress. ">><</if>>\
-<<if $JobPornAnal>><<print "You work as an Anal Porn Actress. ">><</if>>\
-<<if $JobPornAnalSide>><<print "You sometimes also work as an Anal Porn Actress. ">><</if>>\
-<<if $JobPornGang>><<print "You work as a Porn Actress. ">><</if>>\
-<<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
-<<if $JobPorn>><<print "You work as an Porn Actress. ">><</if>>\
-<<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>\
-<<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>\
-<<if $JobHomemaker and $Spouse>><<print "You are a stay-at-home wife. ">><</if>>\
-<<if $JobHomemaker and !$Spouse and $Engaged>><<print "You are a stay-at-home fiancée. ">><</if>>\
-<<if $JobHomemaker and !$Spouse and !$Engaged>><<print "You are a stay-at-home girlfriend. ">><</if>>\
-<<if $JobStripper>>You have as a stripper<</if>>\
-<<if $JobGloryHole>>You have a side-job sucking cocks at the sex shop<</if>>\
-\
-
+<<nobr>>
+  <<if $DropoutCumslut>>
+    <br><br>
+    You work at a smoothie bar.
+  <<elseif $PlayerJobSet>>
+    <br><br>
+    <<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>
+    <<if $JobCheerleader>><<print "You are a Cheerleader. ">><</if>>
+    <<if $JobCheerleaderFundraiser>><<print "You are a Fundraiser for the Cheerleaders.">><</if>>
+    <<if $JobFitness>><<print "You work as a Fitness Instructor. ">><</if>>
+    <<if $JobFitnessYoga>><<print "You work as a Natural Yoga Instructor. ">><</if>>
+    <<if $JobFitnessMassage>><<print "You work as a Masseuse. ">><</if>>
+    <<if $JobLibrary>><<print "You work as a Librarian. ">><</if>>
+    <<if $JobEngineer>><<print "You work as an Engineer. ">><</if>>
+    <<if $JobTestSubject>><<print "You are a test subject at the lab. ">><</if>>
+    <<if $JobArt>><<print "You work as an Art Model. ">><</if>>
+    <<if $JobBarista>><<print "You work as a Barista. ">><</if>>
+    <<if $JobOffice>><<print "You are an Office Worker. ">><</if>>
+    <<if $JobOfficePA>><<print "You work as an Office Personal Assistant. ">><</if>>
+    <<if $JobOfficeManager>><<print "You work as an Office Manager. ">><</if>>
+    <<if $JobOfficeIntern>><<print "You work as an Office Intern. ">><</if>>
+    <<if $JobCallGirl>><<print "You work as a Call Girl. ">><</if>>
+    <<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>
+    <<if $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>><<print "You work as a Bartender. ">><</if>>
+    <<if $JobWebModel>><<print "You work as a Web Model. ">><</if>>
+    <<if $JobWebModelSide>><<print "You are also working as a Web Model. ">><</if>>
+    <<if $JobPornOral>><<print "You work as an Oral Porn Actress. ">><</if>>
+    <<if $JobPornOralSide>><<print "You sometimes also work as an Oral Porn Actress. ">><</if>>
+    <<if $JobPornAnal>><<print "You work as an Anal Porn Actress. ">><</if>>
+    <<if $JobPornAnalSide>><<print "You sometimes also work as an Anal Porn Actress. ">><</if>>
+    <<if $JobPornGang>><<print "You work as a Porn Actress. ">><</if>>
+    <<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>
+    <<if $JobPorn>><<print "You work as an Porn Actress. ">><</if>>
+    <<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>
+    <<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>
+    <<if $JobHomemaker and $Spouse>><<print "You are a stay-at-home wife. ">><</if>>
+    <<if $JobHomemaker and !$Spouse and $Engaged>><<print "You are a stay-at-home fiancée. ">><</if>>
+    <<if $JobHomemaker and !$Spouse and !$Engaged>><<print "You are a stay-at-home girlfriend. ">><</if>>
+    <<if $JobStripper>>You have as a stripper<</if>>
+    <<if $JobGloryHole>>You have a side-job sucking cocks at the sex shop<</if>>
+  <</if>>
+<</nobr>>
 
 ::SideBarStudentLifeBalance <2600,0>
 <<if $PlayerPointsSet>><br><br><<print "Student life balance:">><</if>>\
