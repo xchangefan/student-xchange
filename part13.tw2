@@ -4393,8 +4393,12 @@ TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
     about after that.  You've both already decided that father, whoever it might be, isn't part of this. It's just you, Veronica, and the baby.
     <br><br>
     But after you break the big news to Veronica, the two of you will still need discuss [[your plans for this summer|Part13SummerPlans]].
-  <<elseif setup.areDating("Peter") or ($PlayerItemNerdKey and setup.haveFuckedVaginal("Peter")) or setup.haveFuckedVaginal("Roger") >>
-    You can't wait to [[tell Peter about the baby|Part13PregnantPeter]].
+  <<elseif setup.areDating("Peter") or ($PlayerItemNerdKey and setup.haveFuckedVaginal("Peter")) or setup.haveFuckedVaginal("Roger")>>
+    <<if $PlayerProtectionTry>>
+      You can't wait to [[tell Peter about the baby|Part13PregnantPeterTrying]].
+    <<else>>
+      You wonder how [[Peter will take the news about the baby|Part13PregnantPeterAccident]].
+    <</if>>    
   <<elseif setup.areDating("Josh")>>
     <<if $PlayerProtectionTry>>
       You can't wait to [[tell Josh about the baby|Part13PregnantJosh]].  You only hope he is as excited as you are.
@@ -4538,13 +4542,89 @@ TODO Part13PregnantAaron
 [[You can start packing for your winter holiday.|Part7Pack1]]
 
 ::Part13PregnantAndrew
-TODO Part13PregnantAndrew
+TODO Part13PregnantAndrew - Regular and Ministry
 
 ::Part13PregnantJosh
-TODO Part13PregnantJosh
+TODO Part13PregnantJosh - he doesn't run off this time
 
-::Part13PregnantPeter
-TODO Part13PregnantPeter
+::Part13PregnantPeterAccident
+<<nobr>>
+	<h1>Telling Peter</h1>
+  <img src="Part13/Pregnant3.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<if setup.areDating("Peter")>>
+    <<set setup.startDating("Peter")>>
+  <</if>>
+  <<set $sex.push({sex: 'male', name: 'Peter'})>>
+<</nobr>>
+TODO Peter Accident (More secure cage, but similar text about being a father as for trying)
+
+::Part13PregnantPeterTrying
+<<nobr>>
+	<h1>Telling Peter</h1>
+  <<if setup.areDating("Peter")>>
+    <<set setup.startDating("Peter")>>
+  <</if>>
+  <<set $sex.push({sex: 'male', name: 'Peter'})>>
+  <video src="Part13/Pregnant4.webm" autoplay loop muted height="600"></video>
+<</nobr>>
+<<nobr>>
+  When you get back from your checkup, you cuff Peter the bed.  His cock springs to life the moment you remove its cage.  You start slowly sucking his cock, the first
+  attention it's had for at least a week.  You switch to stroking him with your hand as you tell him about your doctor visit, slowly building up to the big news.
+<</nobr>>
+
+<<nobr>>
+  "That's right, we're going to have a baby!", you excitedly tell him.  "And I've decided to give you a reward for finally getting the job done and putting a baby
+  inside me."
+<</nobr>>
+
+<<nobr>>
+  <<if $PregnancyCheck.possibleFathers.contains("Peter")>>
+    <<if $PregnancyCheck.possibleFathers.length > 1>>
+      "Of course, we both know that it's possible that it's someone else's.  But you let me fuck other men, sometimes right in front of you, and you loved every
+      minute of it.", you tell him.
+      <br><br>
+      "I'm going to need help these next few months.  And the baby is going to need a father.  And you'd do a much better job than any of the other
+      possiblities"
+      <br><br>
+      "Unless you don't agree.  If you aren't sure you deserve this reward, if you'd rather get us tested to be sure, just say so and I'll stop..."
+      <br><br>
+      "We don't need to do that.  It's definitely my baby. I'm the baby's father!", Peter pleads.
+      <br><br>
+      "Wonderful.  After tonight, on all the forms, and if anyone asks, you're the father - it couldn't be anyone else.  I know you're going to make an excellent
+      father.", you tell him before your lips return to his cock.
+    <<else>>
+      "I'm going to need help these next few months.  And the baby is going to need a father.  And I know you're going to make an excellent father.", you tell him
+      before your lips return to his cock.
+    <</if>>
+  <<else>>
+    "Of course, we both know your cock was safely locked away when it happened, but I still couldn't have done it with out you.  If you hadn't let me fuck other men,
+    sometimes right in front of you even, then this never would have been possible."
+    <br><br>
+    "But I'm going to need help these next few months.  And the baby is going to need a father.  And you'd do a much better job than... whoever it was."
+    <br><br>
+    "Unless you don't agree.  If you don't think you deserve this reward, just say so and I'll stop..."
+    <br><br>
+    "It's my baby. I'm the baby's father!", Peter pleads.
+    <br><br>
+    "Wonderful.  After tonight, on all the forms, and if anyone asks, you're the father - it couldn't be anyone else.  I know you're going to make an excellent
+    father.", you tell him before your lips return to his cock.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <img src="Part13/Pregnant5.jpg" hspace="10" vspace="10" height="450" align="left">
+  You keep it slow, trying to make his reward last as long as possible.  You've gotten good at knowing when he's getting close.  Most nights you'd stop now and
+  leave him frustrated, but not tonight.  You keep going until he groans and and cums in your mouth.  He's still cumming as your lips slide back off his cock.
+<</nobr>>
+
+<<nobr>>
+  You don't bother to wipe your face and move up to give him a long, passionate kiss.  When you've finished you reach over for his chastity cage.  "Let's lock
+  this beast back up.  He doesn't really have a job to do for the next nine months, does he.", you smile then add, "But I might let him out to play before then."
+<</nobr>>
+
+<<nobr>>
+  Once Peter's cock is caged and you've uncuffed his hands, the two of you can sit down to go over your [[plans for the summer|Part13SummerPlans]].
+<</nobr>>
 
 ::Part13SummerPlans
 <<nobr>>
@@ -4609,7 +4689,7 @@ TODO Part13PregnantPeter
       <br><br>
       But as the two of you drive [[off campus towards home|Part13SummerHome]] you are happy that at least this time double standards worked in your favor.
     <<else>>
-      You want to spend the summer with $dating[0], but you know you can't take them home to stay at your house.  Hopefully you'll be able to visit with him
+      You want to spend the summer with $dating[0], but you know you can't take him home to stay at your house.  Hopefully you'll be able to visit with him
       sometime over the summer.  If not, you know you'll be on the phone with him almost every day.
       <br><br>
       You are already starting to miss him as you drive [[off campus towards home|Part13SummerHome]].
