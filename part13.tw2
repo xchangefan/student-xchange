@@ -1,3 +1,7 @@
+::Part13TEMP_NOTES
+ TODO Need to add more text before Part13AfterJob and/or Part13AfterSecondJob.
+ TODO Change [[There's your job too|Part13Job]] to have some better text, and only link to job if they have one.  Link directly to the dr visit if they don't
+
 ::Part13Start <0,11500>
 <<nobr>>
   <h1>Finishing the Semester</h1>
@@ -374,10 +378,6 @@
 
 [[There's your job too|Part13Job]].
 
-::Part13AndrewEngaged
-TODO Part13AndrewEngaged
-[[There's your job too|Part13Job]].
-
 ::Part13AndrewMinistry
 <<nobr>>
   <h1>At Andrew's Apartment</h1>
@@ -420,13 +420,13 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  You pull your shirt up and off, and toss it to the side.  His kisses thens lowly move down.  When the wrap around your nipple he gently sucks, pulling it into his
-  mouth.  You head back and tell him how good that feels.
+  You pull your shirt up and off, and toss it to the side.  His kisses thens lowly move down.  When his lips wrap around your nipple he gently sucks, pulling it into his
+  mouth.  Your head goes back and you tell him how good that feels.
 <</nobr>>
 
 <<nobr>>
   He continues, moving from one breast to the other.  He uses his hand to play with your other nipple.  But the pleasure has only made the aching need you feel grow.
-  Andrew's hand moves off of your breast and down to your knee.  As he it slides up your thigh you can't help yourself as your legs part inviting him to continue.
+  Andrew's hand moves off of your breast and down to your knee.  As he it slides up your thigh you can't help yourself as your legs part, inviting him to continue.
 <</nobr>>
 
 <<nobr>>
@@ -541,7 +541,7 @@ TODO Part13AndrewEngaged
 <<nobr>>
   <h1>In Andrew's Bedroom</h1>
   <video src="Part13/AndrewM7.mp4" autoplay loop muted height="600"></video>
-  <<set $sex.push({sex: 'male', vaginal: true, condom: true, name:'Andrew'})>>
+  <<set $sex.push({sex: 'male', vaginal: true, condom: true, name:'Andrew', birthControl: 'careful condom'})>>
   <<set $AndrewMinistrySex to 1>>
 <</nobr>>
 <<nobr>>
@@ -1202,7 +1202,7 @@ TODO Part13AndrewEngaged
   <<unset $tempNoPullOutBeg>>
 <</nobr>>
 
-[[There's your job too|Part13Job]].
+<<if $JobHomemaker>><<include [[Part13AfterSecondJob]]>><<else>>[[There's your job too|Part13Job]].<</if>>
 
 ::Part13Aaron
 <<nobr>>
@@ -1236,7 +1236,7 @@ TODO Part13AndrewEngaged
 <<nobr>>
   On the island, over spring break, you had gotten used to not wearing clothes.  You'd loved how free you'd felt, how beautiful it made you feel, and also
   the reaction it had on Daddy.  You had been worried that would have to stop when you got home. Of course you couldn't go nude in public any more, but at home was different.  Even when Daddy had his parties for other faculty members, he says this is
-  your home too, so they'll have to accept you dressing (or not dressing) as you please if they want to attend.  The didn't seem to mind, and adjusted quickly.
+  your home too, so they'll have to accept you dressing (or not dressing) as you please if they want to attend.  They don't seem to mind, and have adjusted quickly.
 <</nobr>>
 
 <<nobr>>
@@ -1318,12 +1318,12 @@ TODO Part13AndrewEngaged
 
 <<nobr>>
   As he binds your arms and legs and slides the remote vibrator the two of you have played with before into you he explains, "We've used it enough that it's well calibrated
-  to your body, and I've set it keep you close to an orgasm, but to stop before then.  After a few hours like that, controlling your desires at a party shouldn't be
+  to your body, and I've set it keep you close to an orgasm, but to stop before then.  After a few hours like that, controlling your desires at a party should be
   easy for you by comparison."
 <</nobr>>
 
 <<nobr>>
-  "Try not to beg too much, I'll be in the next room grading papers.  While I'm gone I want you to to think about what you've done and how you'll do better next time -
+  "Try not to beg too much, I'll be in the next room grading papers.  While I'm gone, I want you to to think about what you've done and how you'll do better next time -
   well as much as you'll be able to think at all anyway."
 <</nobr>>
 
@@ -1653,9 +1653,7 @@ TODO Part13AndrewEngaged
 <<elseif $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
   <<include [[Part13PornStar]]>>
 <<else>>
-  You try not to think too much about your job.
-  <p/>
-  <<include [[Part13AfterJob]]>>
+  <<include [[Part13AfterSecondJob]]>>
 <</if>>
 
 ::Part13AfterJob
@@ -1672,6 +1670,7 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 ::Part13AfterSecondJob
+  TODO Change ...leave campus text for after second job
   <<nobr>>
     <<if $PlayerPregnant>>
       After you leave campus, you head over to [[your obstetrician's office|Part13OB]] for your appointment.
@@ -1679,8 +1678,6 @@ TODO Part13AndrewEngaged
       Before you leave campus, you head to [[the X-Change office|Part13Checkup]] for your end-of-semester check-up.
     <</if>>
   <</nobr>>
-  TODO Need to add more text before Part13AfterJob and/or Part13AfterSecondJob.
-  TODO Change [[There's your job too|Part13Job]] to have some better text, and only link to job if they have one.  Link directly to the dr visit if they don't
 
 
 ::Part13Athlete
@@ -3096,8 +3093,12 @@ TODO Part13AndrewEngaged
 <</nobr>>
 
 <<nobr>>
-  You could just [[play up that you are working your way through college|Part13BikiniBaristaStudent]].  Or maybe [[showing a bit more skin|Part13BikiniBaristaSkin]]
-  would keep your customers coming, and tipping well.  You could also [[offer regulars 'curbside-service'|Part13BikiniBaristaCurbside]] if they tip well, very well.
+  <<if setup.areDating('Aaron')>>
+    You [[play up that you are working your way through college|Part13BikiniBaristaStudent]], hoping that will encourage generous tips.
+  <<else>>
+    You could just [[play up that you are working your way through college|Part13BikiniBaristaStudent]].  Or maybe [[showing a bit more skin|Part13BikiniBaristaSkin]]
+    would keep your customers coming, and tipping well.  You could also [[offer regulars 'curbside-service'|Part13BikiniBaristaCurbside]] if they tip well, very well.
+  <</if>>
 <</nobr>>
 
 ::Part13BikiniBaristaStudent
@@ -3189,7 +3190,12 @@ TODO Part13AndrewEngaged
 <<nobr>>
   The two of you are beautiful, barely dressed, and alone together in a small shop.  Even if you're seeing someone, or if one of you prefer guys, what's wrong with
   a little making out between coworkers? Really, it's almost like it's part of the job.
-  <<if $dating.length>>Or at least that's what you tell <<print $dating[0]>>.<</if>>
+  <<if $dating.length>>
+    Or at least that's what you tell <<print $dating[0]>>.
+    <<if !setup.areDating("Veronica")>>
+      And judging from the detailed questions he usually asks, and what usually follows that, you're pretty sure he doesn't mind it at all.
+    <</if>>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -4138,7 +4144,7 @@ TODO Part13AndrewEngaged
 
 ::Part13OB
 <<set $PlayerMenstruation to 0>>
-TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
+TODO Part13OB, then [[Part13SummerPlans]]
 
 ::Part13Checkup
 <<nobr>>
@@ -4291,14 +4297,15 @@ TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
       You don't want a baby right now, and you know Mistress Kate doesn't either.  And you certainly don't one that is a constant reminder of your
       mistake.  You let the doctor know that you want to [[terminate the pregnancy|Part13CheckupAbort]].
     <<elseif $PlayerProtectionTry>>
-      You are ecstatic, finally you're pregnant!  The doctor can tell from your excitement that you plan to [[carry the baby to term|Part13CheckupKeep]].  She
-      asks to make sure, and you enthusiastically confirm it for her.
+      You are ecstatic, finally you're pregnant!  You excitedly tell the doctor that you will definitely be [[carrying the baby to term|Part13CheckupKeep]].  She
+      congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
+    <<elseif $CampusMinistry>>
+      You make it clear to the doctor that you aren't going to consider anything other than [[carrying the baby to term|Part13CheckupKeep]].  She congratulates
+      you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
     <<else>>
       The doctor sees you need a moment to process the news.  She says she'll give you a bit to think about [[your options|Part13CheckupPregnant]], and she'll
       be back in a few minutes.
     <</if>>
-  <<elseif $PlayerDecidePermanent and !$PlayerSideEffectPermanent>>
-    You are not pregnant.  You tell the doctor that there's [[something else you want to discuss|Part13CheckupPermanent]] with her.
   <<elseif $PlayerCumslut>>
     You are not pregnant.  The doctor continues with the other tests you were scheduled for.  Then she asks you to wait, there's
     someone else that wants to talk to you.
@@ -4311,6 +4318,8 @@ TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
     able to make you this offer."
     <br><br>
     Your express of worry is quickly replaced with one of curiosity.  "[[Offer?|CheckupCumslut]]", you ask.
+  <<elseif $PlayerDecidePermanent and !$PlayerSideEffectPermanent>>
+    You are not pregnant.  You tell the doctor that there's [[something else you want to discuss|Part13CheckupPermanent]] with her.
   <<else>>
     You are [[not pregnant|Part13CheckupNotPregnant]].
   <</if>>
@@ -4387,6 +4396,7 @@ TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
       Based on the timing, you are pretty sure he's the father.  Regardless, you know he'd love you, and your baby, just as much either way.
     <</if>>
   <<elseif setup.areDating("Veronica")>>
+    <<unset $StatedFather>>
     You are nervous about telling Veronica about the baby.  You both knew this was a possibility, but having it actually happen is something else entirely.
     <br><br>
     But you've both talked about this possibility enough to know she'll be there with you through the pregnancy, and support whatever decision you make
@@ -4411,6 +4421,7 @@ TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
       going to let him know if you have any doubts.
     <</if>>
   <<elseif $PregnancyCheck.possibleFathers.contains("Barry") and $PregnancyCheck.possibleFathers.length > 1>>
+    <<unset $StatedFather>>
     You know that Barry might be the father.  It could be someone else too.  Even if you told him he was the father he'd probably make you get tested to be sure.
     He's seen his friends fucking you right in front of him, so of course he would.  He'd probably call you a slut the whole time too.
     <br><br>
@@ -4422,6 +4433,7 @@ TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
     <br><br>
     But you don't have to worry about that now though.  For now you can just think about [[your summer plans|Part13SummerPlans]].
   <<else>>
+    <<unset $StatedFather>>
     <<if $PregnancyCheck.possibleFathers.length === 1>>
       You know the father has to be 
       <<if $PregnancyCheck.conceptionEvent.anon>>
@@ -4513,13 +4525,11 @@ TODO Part13OB, then [[Part13SummerPlans]] or [[Part13AndrewWedding1]]
 <</nobr>>
 
 ::Part13PregnantAaron
-TODO Part13PregnantAaron
 <<nobr>>
-	<h1><<print "Daddy">></h1>
+	<h1><<print "Telling Daddy">></h1>
+  <<set $StatedFather to 'Aaron'>>
+  <img src="Part7/Preg8.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
-
-<<set $StatedFather to 'Aaron'>>
-<<include [[Part7Breakup]]>>
 
 <<nobr>>
 	<<if $PlayerProtectionTry>>
@@ -4528,29 +4538,72 @@ TODO Part13PregnantAaron
 		You and Daddy haven't been trying for this, but you also haven't been trying to avoid it either.  You both knew you wanted a child together
 		eventually, and figured you'd let nature take its course.  Nature didn't want to wait.  Daddy is as excited as you are when you tell him the news.
 	<<else>>
-		You'd told Daddy about your irregular cycles, but he'd pointed out this was another possiblity.  You definitely picked up more excitment than worry
-		in his voice when he'd mentioned it.  Now that you both know that you are pregnant, he's as excited as you are about it.
+    You both knew you wanted a child together eventually, this is just a little sooner than expected.  But Daddy had reminded you that this was always
+    a possibility.  Though you always picked up more excitment than worry in his voice when he'd mentioned it.  Now that you both know that you are
+    pregnant, he's as excited as you are about it.
 	<</if>>
 <</nobr>>
 
-<img src="Part7/Preg8.jpg" hspace="10" vspace="10" height="650">
-
-<<print "For now the two of you are planning on keeping this a secret between the two of you. Once the holiday break is over, and you’ve moved in with him, fewer people will question the timeline of your pregnancy. Hopefully no one that matters will realize (or care) that you were one of his students when the baby was conceived.">>
-
-<<print "But for now, you are proceeding with your planned trip home for the break. Of course, you enjoy an evening with your “Daddy” before then though.">>
-
-[[You can start packing for your winter holiday.|Part7Pack1]]
+<<nobr>>
+  You and daddy are too busy planning how to decorate the room that will soon be the nursery to worry much about
+  [[what else you are going to do this summer|Part13SummerPlans]].
+<</nobr>>
 
 ::Part13PregnantAndrew
-TODO Part13PregnantAndrew - Regular and Ministry
+<<nobr>>
+	<h1><<print "Telling Andrew">></h1>
+  <<set $StatedFather to 'Andrew'>>
+  <img src="Part7/Preg6.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+
+<<nobr>>
+  You can barely contain your excitement on the way home. When you tell Andrew, he’s as excited as you are. He says that the two of you had always talked about
+  starting a family, but he’d never expected to start so soon. He places his hand on your stomach, but obviously there’s nothing to feel yet.
+<</nobr>>
+
+<<nobr>>
+  You both decide to keep the news just between the two of you for now. Maybe after the holidays you might start thinking of telling others.
+<</nobr>>
+
+<<nobr>>
+  You both spend the rest of the imagining how to convert the extra bedroom into a nursery, talking about baby names, and trying to imagine what it’s going to be
+  like. Well, that’s not all you spend the day doing, a good deal of it is spent in the main bedroom too.
+<</nobr>>
+
+<<nobr>>
+  You and Andrew know what you are [[doing this summer|Part13SummerPlans]], so you don't need to think much about it.
+<</nobr>>
 
 ::Part13PregnantJosh
-TODO Part13PregnantJosh - he doesn't run off this time
+<<nobr>>
+	<h1><<print "Telling Josh">></h1>
+  <<set $StatedFather to 'Josh'>>
+  <img src="Part13/Pregnant8.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  Josh is in shock when you first tell him about your pregnancy.  Once he calms down he says he'll support you no matter what you decide to do about it.  You let him
+  know that you've already thought about it and have decided to keep the baby.  You ask him how he feels about your decision.
+<</nobr>>
+
+<<nobr>>
+  "To be honest, I'm a little scared.  I don't know if I'm ready to be a father.  I guess no one ever really is, are they?  But I do know that I'll be by your side
+  through this."
+<</nobr>>
+
+<<nobr>>
+  You are so relieved.  You know Josh has matured a lot during your year together.  You wonder if he'd have taken the news as well a year, or even a few months ago.
+  But you're glad he's going to be there with you when you need him.
+<</nobr>>
+
+<<nobr>>
+  He may be there when you need him, but circumstances might make being together [[over the summer|Part13SummerPlans]] more difficult.
+<</nobr>>
 
 ::Part13PregnantPeterAccident
 <<nobr>>
 	<h1>Telling Peter</h1>
   <video src="Part13/Pregnant6.webm" autoplay loop muted height="500"></video>
+  <<set $StatedFather to 'Peter'>>
   <<if setup.areDating("Peter")>>
     <<set setup.startDating("Peter")>>
   <</if>>
@@ -4629,6 +4682,7 @@ TODO Part13PregnantJosh - he doesn't run off this time
 ::Part13PregnantPeterTrying
 <<nobr>>
 	<h1>Telling Peter</h1>
+  <<set $StatedFather to 'Peter'>>
   <<if setup.areDating("Peter")>>
     <<set setup.startDating("Peter")>>
   <</if>>
@@ -4721,6 +4775,10 @@ TODO Part13PregnantJosh - he doesn't run off this time
         The next few months of your pregnancy are going to be the most difficult, of course you are going to need daddy there to help you.  The two of you will
         obviously be visiting your family at some point.  You hope they react well to the age difference.  But most of your summer is going to be spent
         [[here with Daddy|Part13SummerStay]], preparing for your new baby.
+      <<else if setup.areDating('Andrew')>>
+        The next few months of your pregnancy are going to be the most difficult, so you'll need Andrew by your side.  The two of you will probably make a visit
+        or two to see your family sometime over the summer.  But most of your summer is going to be spent [[here with Daddy|Part13SummerStay]], preparing for
+        your new baby.
       <<else>>
         The next few months of your pregnancy are going to be the most difficult, of course you are going to need $dating[0] there to help you.  But since you
         can't spend the summer here on campus, the two of you will be [[staying with your family|Part13SummerHome]] for most of the summer.
@@ -4745,8 +4803,8 @@ TODO Part13PregnantJosh - he doesn't run off this time
       <<if setup.areDating('Aaron') or setup.areDating('Paul')>>
         You hope they react well to the age difference.
       <</if>>
-      But you'll be spending most of your vacation here with $dating[0].
-    <<elseif setup.areDating('Andrew') and !$CampusMinistry>>
+      But you'll be spending most of your vacation [[staying here, together|Part13SummerStay]].
+    <<elseif setup.areDating('Andrew') and $CampusMinistry>>
       You know you are going to miss Andrew over the summer, but you can't stay on campus.  Hopefully you'll be able to visit with him sometime over the summer.  If
       not, you know you'll be on the phone with him almost every day.
       <br><br>
@@ -4773,7 +4831,6 @@ TODO Part13PregnantJosh - he doesn't run off this time
     <</if>>
   <</if>>
 <</nobr>>
-
 
 ::Part13SummerHome
 <<nobr>>

@@ -43,37 +43,45 @@
 
 <<print "You get to the “Contraception” box and then think about what you’ve been using the past month or two.">>
 <<nobr>>
-	<<if $PlayerProtectionWithdraw or $PlayerProtectionNone>><img src="Part7/Start3A.jpg" hspace="10" vspace="10" height="650">
-		<<else>><<if $PlayerProtectionCondoms>><img src="Part7/Start3B.jpg" hspace="10" vspace="10" height="650">
+	<<if setup.sexVaginalCount() == 0>>
+		<img src="Part7/Start5M.jpg" hspace="10" vspace="10" height="650">
+	<<elseif $PlayerProtectionWithdraw or $PlayerProtectionNone>>
+		<img src="Part7/Start3A.jpg" hspace="10" vspace="10" height="650">
+	<<else>>
+		<<if $PlayerProtectionCondoms>><img src="Part7/Start3B.jpg" hspace="10" vspace="10" height="650">
 			<<else>><img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
 		<</if>>
 	<</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>[[You write “Implant”.|Part7Start4]]<</if>>
-	<<if $PlayerProtectionPill>>[[You write “Pill”.|Part7Start4]]<</if>>
-	<<if $PlayerProtectionCondoms>>
-		[[You write “Condoms”|Part7Start4]].
-		<<if setup.sexVaginalCount() == 0>>
-			Well, at least in theory that's what you'd use.
-		<<elseif $JobCallGirl or $JobCallGirlSide>>
-			Clients don't count, right?
-		<<else>>
-			You've used one everytime... or at least you think so.
+	<<if setup.sexVaginalCount() == 0>>
+		[[You write “Abstinence”.|Part7Start4]]
+	<<else>>
+		<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>[[You write “Implant”.|Part7Start4]]<</if>>
+		<<if $PlayerProtectionPill>>[[You write “Pill”.|Part7Start4]]<</if>>
+		<<if $PlayerProtectionCondoms>>
+			[[You write “Condoms”|Part7Start4]].
+			<<if setup.sexVaginalCount() == 0>>
+				Well, at least in theory that's what you'd use.
+			<<elseif $JobCallGirl or $JobCallGirlSide>>
+				Clients don't count, right?
+			<<else>>
+				You've used one everytime... or at least you think so.
+			<</if>>
 		<</if>>
-	<</if>>
-	<<if $PlayerProtectionWithdraw>>
-		[[You write “Withdrawal Method”.|Part7Start4]]
-		<<if setup.sexVaginalCount() == 0>>
-			Well, at least in theory that's what you'd use.
-		<<elseif $JobCallGirl or $JobCallGirlSide>>
-			Clients don't count, right?
-		<<else>>
-			They've all done that... or at least you think so.
+		<<if $PlayerProtectionWithdraw>>
+			[[You write “Withdrawal Method”.|Part7Start4]]
+			<<if setup.sexVaginalCount() == 0>>
+				Well, at least in theory that's what you'd use.
+			<<elseif $JobCallGirl or $JobCallGirlSide>>
+				Clients don't count, right?
+			<<else>>
+				They've all done that... or at least you think so.
+			<</if>>
 		<</if>>
+		<<if $PlayerProtectionNone or $PlayerProtectionTry>>[[You write “None”.|Part7Start4]]<</if>>
 	<</if>>
-	<<if $PlayerProtectionNone or $PlayerProtectionTry>>[[You write “None”.|Part7Start4]]<</if>>
 <</nobr>>
 
 ::Part7Start4 <1000,5750>
@@ -115,7 +123,12 @@
 
 <<nobr>>
 	<<if $PregnancyCheck.count == 0 and $PlayerProtectionTry>>
-		You know you will be disappointed by [[the results|Part7Start6]]. Maybe you'll find a guy soon to help you.
+		<<if $CampusMinistry>>
+			You know you want to be a mother someday, but you have to meet the right man first.  You hope that happens soon.
+			Still, you have to wait for them to come back with [[the results|Part7Start6]], even though you know what it will be.
+		<<else>>
+			You know you will be disappointed by [[the results|Part7Start6]]. Maybe you'll find a guy soon to help you.
+		<</if>>
 	<<elseif $PregnancyCheck.count == 0>>
 		You know you haven't gone that far with any guys recently, so you are not worried about [[the results|Part7Start6]].
 	<<elseif $PlayerProtectionPerfect>>
@@ -139,7 +152,18 @@
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
 
-<<if $PlayerProtectionTry>><<print "You are a bit disappointed to hear them confirm that you are not pregnant.">><<else>><<print "You are relieved to hear them confirm that you are not pregnant.">><</if>>
+<<nobr>>
+	<<if $PregnancyCheck.count == 0>>
+		Obviously you aren't pregnant, there's no way you could be.
+		<<if $PlayerProtectionTry>>
+			But somehow it's still disappointing when they come back and confirm it officially.
+		<</if>>
+	<<elseif $PlayerProtectionTry>>
+		<<print "You are a bit disappointed to hear them confirm that you are not pregnant.">>
+	<<else>>
+		<<print "You are relieved to hear them confirm that you are not pregnant.">>
+	<</if>>
+<</nobr>>
 <img src="PartP/PregTest2.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
