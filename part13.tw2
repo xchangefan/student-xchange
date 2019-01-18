@@ -40,11 +40,29 @@
   <</if>>
 <</nobr>>
 
+<<nobr>>
+  <<if $PlayerPregnantWinter>>
+    <video src="Part13/Pregnant9.webm" autoplay loop muted height="600"></video>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnantWinter>>
+    You still can't believe how much your body has changed.  First with the X-Change, and now with the pregnancy.
+    You are reminded just how much every morning as you get ready.
+  <</if>>
+<</nobr>>
+
 ::Part13VariableCleanup
-<<if $JobBarista && setup.areDating('Andrew') && !$PlayerPregnant && !$CampusMinistry>>
-  <<unset $JobBarista>>
-  <<set $JobBaristaOld to 1>>
-<</if>>
+<<nobr>>
+  <<if $JobBarista && setup.areDating('Andrew') && !$PlayerPregnant && !$CampusMinistry>>
+    <<unset $JobBarista>>
+    <<set $JobBaristaOld to 1>>
+  <</if>>
+  <<if $PlayerPregnant>>
+    <<set $PlayerPregnantWinter to 1>>
+  <</if>>
+<</nobr>>
 
 ::Part13Kate
 <<nobr>>
@@ -1620,8 +1638,13 @@
 <</nobr>>
 
 ::Part13Job
-<<if $JobAthlete and !$PlayerPregnant>>
-  <<include [[Part13Athlete]]>>
+<<nobr>>
+<<if $JobAthlete>>
+  <<if $PlayerPregnant>>
+    <<include [[Part13AthleteDisability]]>>
+  <<else>>
+    <<include [[Part13Athlete]]>>
+  <</if>>  
 <<elseif $JobCheerleader>>
   <<include [[Part13Cheerleader]]>>
 <<elseif $JobCheerleaderFundraiser>>
@@ -1655,6 +1678,7 @@
 <<else>>
   <<include [[Part13AfterSecondJob]]>>
 <</if>>
+<</nobr>>
 
 ::Part13AfterJob
 <<nobr>>
@@ -1679,6 +1703,37 @@
     <</if>>
   <</nobr>>
 
+::Part13AthleteDisability
+<<nobr>>
+  <h1>Visting with the Team</h1>
+  <video src="Part13/Fit5.webm" autoplay loop muted height="600"></video>
+<</nobr>>
+<<nobr>>
+  You can't train or compete in your condition, but you still stop by and watch the team practice or compete when you can.  And you still join them when they go
+  out afterwards as well.  Of course, you are the center of attention when you are there.
+<</nobr>>
+
+<<nobr>>
+  The other girls lots of questions about how you are managing, or asking to put their hand
+  on your belly to see if they can feel the baby kick.  Carli seems to be focusing on a different change though.
+  "I'm so jealous of your new breasts!", she tells you.  "I spent so much money on these, and you get those for free!"
+<</nobr>>
+
+<<nobr>>
+  "You know they go back to about the same size after the pregnancy and breastfeeding is done, right?", you tell her as you try to hide your annoyance.
+<</nobr>>
+
+<<nobr>>
+  "And I thought your step-dad paid for your boob-job anyway.", one of your teammates add.
+<</nobr>>
+
+<<nobr>>
+  "He paid for it, but I certainly had to work for the money, if you know what I mean.", she replies.  You and the rest of the team know Carli well enough by now
+  that everyone knows exactly what she means.  As you struggle to stand up and make your way to the restroom to pee, again, you hear Carli add.  "Ok, well
+  I get to keep these, and I don't have to deal with all that, so I guess it was worth it."
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
 
 ::Part13Athlete
 <<nobr>>
@@ -3420,7 +3475,11 @@
 ::Part13CallGirl
 <<nobr>>
 	<h1>Getting Ready</h1>
-  <video src="Part13/CallGirl1.webm" autoplay loop muted height="600"></video>
+  <<if $PlayerPregnantWinter>>
+    <img src="Part13/Pregnant10.gif" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+    <video src="Part13/CallGirl1.webm" autoplay loop muted height="600"></video>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -3439,7 +3498,11 @@
 ::Part13CallGirl2
 <<nobr>>
 	<h1>Hotel room</h1>
-  <img src="Part13/CallGirl2.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<if $PlayerPregnantWinter>>
+    <video src="Part13/Pregnant11.webm" autoplay loop muted height="600"></video>
+  <<else>>
+    <img src="Part13/CallGirl2.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
   <<set $sex.push({sex: 'male', anon:'Call Girl Client', repeat:true})>>
   <<set $sex.push({sex: 'male', anon:'Call Girl Client', vaginal:true})>>
   <<set $sex.push({sex: 'male', anon:'Call Girl Client', repeat:true})>>
@@ -3463,7 +3526,11 @@
 ::Part13CallGirl3
 <<nobr>>
 	<h1>Attending a Play</h1>
-  <img src="Part13/CallGirl3.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<if $PlayerPregnantWinter>>
+    <img src="Part13/Pregnant12.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+    <img src="Part13/CallGirl3.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
   <<set $sex.push({sex: 'male', anon:'Call Girl GFE Client', repeat:true})>>
   <<set $sex.push({sex: 'male', anon:'Call Girl GFE Client', vaginal:true, noPullout:true, noCondom:true})>>
   <<set $sex.push({sex: 'male', anon:'Call Girl GFE Client', vaginal:true, noCondom:true})>>
@@ -3473,7 +3540,11 @@
 <<nobr>>
   It's not always straight to a hotel room and right to sex.  Some of your clients want you on their arm as they head to the theater, or out to dinner.
   Sometimes it's because they want to feel like you are their girlfriend, and other times the just like being seen with a beautiful young woman beside
-  them.  Your time isn't free though, but they can affort to pay for it.
+  them.Your time isn't free though, but they can affort to pay for it.
+  <<if $PlayerPregnantWinter>>
+    <br><br>
+    Everyone assumes whomever you with is the father of the baby.  You don't think your clients mind, in fact, you think they enjoy that as well.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -3481,7 +3552,15 @@
 <</nobr>>
 
 <<nobr>>
-  Well, you realize, [[not every visit ends up in a hotel room|Part13CallGirl4]].
+  <<if $PlayerPregnantWinter>>
+    <<if $JobCallGirl>>
+      <<include [[Part13AfterJob]]>>
+    <<else>>
+      <<include [[Part13AfterSecondJob]]>>
+    <</if>>   
+  <<else>>
+    Well, you realize, [[not every visit ends up in a hotel room|Part13CallGirl4]].
+  <</if>>
 <</nobr>>
 
 ::Part13CallGirl4
@@ -4143,8 +4222,28 @@
 <<include [[Part13AfterSecondJob]]>>
 
 ::Part13OB
-<<set $PlayerMenstruation to 0>>
-TODO Part13OB, then [[Part13SummerPlans]]
+<<nobr>>
+	<h1>Obstetrician Visit</h1>
+  <<set $PlayerMenstruation to 0>>
+  <img src="Part13/Pregnant13.jpg" hspace="10" vspace="10" height="550">
+<</nobr>>
+<<nobr>>
+  Everything looks great with your baby at your appointment.  The doctor confirms your due date is in mid-July.  She also confirms the swelling,
+  heartburn, frequent bathroom trips, tender breasts, and sleep troubles you've been having are all perfectly normal.
+<</nobr>>
+
+<<nobr>>
+  "If you are staying in town during the summer, they'll give you an appointment reminder card on your way out.",  the doctor tells you.  
+<</nobr>>
+
+<<nobr>>
+  "If you are leaving for the summer, flying is fine for the next few weeks.  After that, you should avoid it.
+  You can get one of our business cards on your way out.  Have your home town doctor give us call and we'll transfer all your records over to them directly."
+<</nobr>>
+
+<<nobr>>
+  You thank the doctor and head out the checkout desk and grab the card the doctor.  Then you head back home to [[finalize your summer plans|Part13SummerPlans]]  
+<</nobr>>
 
 ::Part13Checkup
 <<nobr>>
