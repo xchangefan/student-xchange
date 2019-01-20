@@ -1663,6 +1663,8 @@
   <<include [[Part13BaristaEngaged]]>>
 <<elseif $JobBarista>>
   <<include [[Part13Barista]]>>
+<<elseif $JobBikiniBarista>>
+  <<include [[Part13BikiniBarista]]>>
 <<elseif $JobOfficePA>>
   <<include [[Part13OfficePA]]>>
 <<elseif $JobOfficeManager>>
@@ -2950,7 +2952,7 @@
 
 <<nobr>>
   <<if !$PlayerPregnant && !$PlayerCumslut>>
-    After your testing session is over, one of the researchers lets you know that they've recommended you for the university's summer abroad program.  It's a
+    After one of your testing sessions is over, one of the researchers lets you know that they've recommended you for the university's summer abroad program.  It's a
     fully-funded trip to study over the summer in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now,
     he says.  But if you think you might be interested, then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested
     you can just ignore it.
@@ -3069,6 +3071,8 @@
 <<nobr>>
 	<h1>Bikini Coffee Shop</h1>
   <img src="Part13/BaristaB1.jpg" hspace="10" vspace="10" height="650">
+  <<unset $JobBarista>>
+  <<set $JobBikiniBarista to 1>>
 <</nobr>>
 <<nobr>>
   Your [[first day|Part13BikiniBarista2]] at the new job starts great.
@@ -3101,13 +3105,24 @@
 <</nobr>>
 
 <<nobr>>
-  Brian has been careful to schedule you or one of the other experienced girls each shift.  Most of the other girls seem to have more experience filling a bikini
-  than an espresso shot.  Hopefully they'll pick it up fast though so you aren't doing all the work.
+  <<if $PaulSeverance>>
+    Brian has been careful to schedule you with one of the more experienced girls each shift.  Most of the girls are like you - they look great in a bikini,
+    but are new at the barista part.  But you are able to pick it up quickly, and soon you start to feel like you are pulling your weight and not being a
+    burden on the other girl you are scheduled with.
+    <br><br>
+    This job is much different than working in the office.  Before you only saw your coworkers.  The customers were just names on some spreadsheet.  Here the customers
+    are right in front of you.  Well, unless they ask you to turn around so they can also see the back of you.
+  <<else>>
+    Brian has been careful to schedule you or one of the other experienced girls each shift.  Most of the other girls seem to have more experience filling a bikini
+    than an espresso shot.  Hopefully they'll pick it up fast though so you aren't doing all the work.
+    <br><br>
+    After the morning rush, Brian leaves you in charge, and he even gives you a key to so that you can open or lock up when you are scheduled to open or close.  You
+    are excited about the new responsibility.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  After the morning rush, Brian leaves you in charge, and he even gives you a key to so that you can open or lock up when you are scheduled to open or close.  You
-  are excited about the new responsibility.  You also realize you'll have much more impact on whether this new shop takes off or goes out of business in a few
+  You also realize you'll have much more impact on whether this new shop takes off or goes out of business in a few
   months.  You know you'll [[do what you can to make sure it gets off to a good start|Part13BikiniBarista3]].
 <</nobr>>
 
@@ -3138,8 +3153,13 @@
 <</nobr>>
 <<nobr>>
   Leaning out the window much futher than necessary to give your customers a nice view of your cleavage, or 'accidently' dropping part of their
-  tip so you have to bend over to pick it up, are expected.  That sort of thing is why your customers are coming here, and tipping well, instead of going to your
-  old coffee shop.  But you wonder what else you could do.
+  tip so you have to bend over to pick it up, are expected.  That sort of thing is why your customers are coming here, and tipping well,
+  <<if $PaulSeverance>>
+    after all.
+  <<else>>
+    instead of going to your old coffee shop.
+  <</if>>
+    But you wonder what else you could do.
 <</nobr>>
 
 <<nobr>>
@@ -4858,6 +4878,7 @@
 <</nobr>>
 <<nobr>>
   <<if $PlanSummerAbroad and $PlayerPregnant>>
+    <<unset $PlanSummerAbroad>>
     On your way home you get a call from your contact with the summer abroad program.  They congratulate you on your pregnancy, but let you know that due to your
     condition you won't be able to participate this summer.
     <br><br>
@@ -4871,10 +4892,10 @@
   <<if $PlayerPregnant and !$PregnancySpring>>
     <<if $dating.length>>
       <<if setup.areDating('Aaron')>>
-        The next few months of your pregnancy are going to be the most difficult, of course you are going to need daddy there to help you.  The two of you will
+        The next few months of your pregnancy are going to be the most difficult, of course you are going to need Daddy there to help you.  The two of you will
         obviously be visiting your family at some point.  You hope they react well to the age difference.  But most of your summer is going to be spent
         [[here with Daddy|Part13SummerStay]], preparing for your new baby.
-      <<else if setup.areDating('Andrew')>>
+      <<elseif setup.areDating('Andrew')>>
         The next few months of your pregnancy are going to be the most difficult, so you'll need Andrew by your side.  The two of you will probably make a visit
         or two to see your family sometime over the summer.  But most of your summer is going to be spent [[here with Daddy|Part13SummerStay]], preparing for
         your new baby.

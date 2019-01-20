@@ -307,36 +307,15 @@
 <</switch>>
 
 <<nobr>>
-	<<if !setup.isNeighbour("Emily's Boyfriend")>>
-		As you prepare to go shopping with $Mentor, you keep thinking how:
-		<ul>
-			<li><<print $neighbours[0]>>
-				<<if $Mentor == 'Faith'>><<link [[was fine,|Faith2]]>><<set $NeighbourDislike to $neighbours[1]>><</link>>
-				<<elseif $Mentor == 'Olivia'>><<link [[was fine,|Olivia2]]>><<set $NeighbourDislike to $neighbours[1]>><</link>>
-				<<elseif $Mentor == 'Samantha'>><<link [[was fine,|Samantha2]]>><<set $NeighbourDislike to $neighbours[1]>><</link>>
-				<<elseif $Mentor == 'Hannah'>><<link [[was fine,|Hannah2]]>><<set $NeighbourDislike to $neighbours[1]>><</link>>
-				<</if>>	
-				but you didn't really like $neighbours[1]
-			</li>
-			<li><<print $neighbours[1]>> was fine, but
-				<<if $Mentor == 'Faith'>><<link [[you didn't really like|Faith2]]>><<set $NeighbourDislike to $neighbours[0]>><</link>>
-				<<elseif $Mentor == 'Olivia'>><<link [[you didn't really like|Olivia2]]>><<set $NeighbourDislike to $neighbours[0]>><</link>>
-				<<elseif $Mentor == 'Samantha'>><<link [[you didn't really like|Samantha2]]>><<set $NeighbourDislike to $neighbours[0]>><</link>>
-				<<elseif $Mentor == 'Hannah'>><<link [[you didn't really like|Hannah2]]>><<set $NeighbourDislike to $neighbours[0]>><</link>>
-				<</if>>	
-				$neighbours[0]
-			</li>
-			<li>You 
-				<<if $Mentor == 'Faith'>><<link [[don't really care|Faith2]]>><<set $NeighbourDislike to $neighbours[either(0,1)]>><</link>>
-				<<elseif $Mentor == 'Olivia'>><<link [[don't really care|Olivia2]]>><<set $NeighbourDislike to $neighbours[either(0,1)]>><</link>>
-				<<elseif $Mentor == 'Samantha'>><<link [[don't really care|Samantha2]]>><<set $NeighbourDislike to $neighbours[either(0,1)]>><</link>>
-				<<elseif $Mentor == 'Hannah'>><<link [[don't really care|Hannah2]]>><<set $NeighbourDislike to $neighbours[either(0,1)]>><</link>>
-				<</if>>
-				one way or the other between them
-			</li>
-		</ul>
+	<<if setup.isNeighbour("Emily's Boyfriend")>>
+		After you finish talking with him, [[you go shopping with Emily.|Emily2]]
 	<<else>>
-		<<print "After you finish talking with him, ">>[[you go shopping with Emily.|Emily2]]
+		After you finish talking with him,
+		<<if $Mentor == 'Faith'>>[[you go shopping with Faith.|Faith2]]
+		<<elseif $Mentor == 'Olivia'>>[[you go shopping with Olivia.|Olivia2]]
+		<<elseif $Mentor == 'Samantha'>>[[you go shopping with Samantha.|Samantha2]]
+		<<elseif $Mentor == 'Hannah'>>[[you go shopping with Hannah.|Hannah2]]
+		<</if>>	
 	<</if>>
 <</nobr>>
 
@@ -406,16 +385,21 @@
 <img src="Part5/Faith1.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<print "You can ">>
-	<<link "try sneaking over the guys room">>
-		<<if setup.isNeighbour('Barry') and $NeighbourDislike != 'Barry'>><<goto [[Part5Jerk1]]>>
-		<<elseif setup.isNeighbour('James') and $NeighbourDislike != 'James'>><<goto [[Part5Player1]]>>
-		<<elseif setup.isNeighbour('Peter') and $NeighbourDislike != 'Peter'>><<goto [[Part5Nerd1]]>>
-		<<elseif setup.isNeighbour('Josh') and $NeighbourDislike != 'Josh'>><<goto [[Part5Regular1]]>>
-		<<else>><<goto [[Part5Thrill1]]>><</if>>
-	<</link>>
-	<<print " after she goes to sleep and seeing if the guy you prefer is willing to help, or you can ">>
-	[[try to endure your horniness.|Part5Faith2]]
+	You can try sneaking over the guys' room to see if
+	<<if $neighbours[0] == 'Barry'>>[[Barry|Part5Jerk1]]
+	<<elseif $neighbours[0] == 'James'>>[[James|Part5Player1]]
+	<<elseif $neighbours[0] == 'Peter'>>[[Peter|Part5Nerd1]]
+	<<elseif $neighbours[0] == 'Josh'>>[[Josh|Part5Regular1]]
+	<<else>>[[Zach|Part5Thrill1]]
+	<</if>>
+	or
+	<<if $neighbours[1] == 'Barry'>>[[Barry|Part5Jerk1]]
+	<<elseif $neighbours[1] == 'James'>>[[James|Part5Player1]]
+	<<elseif $neighbours[1] == 'Peter'>>[[Peter|Part5Nerd1]]
+	<<elseif $neighbours[1] == 'Josh'>>[[Josh|Part5Regular1]]
+	<<else>>[[Zach|Part5Thrill1]]
+	<</if>>
+	are willing to help, or you can [[try to endure your horniness.|Part5Faith2]]
 <</nobr>>
 
 ::Part5Emily1 <1050,2500>
@@ -607,10 +591,11 @@
 ::Part5Faith5 <175,2500>
 <<nobr>>
 	<h1><<print "Dormitory Shower">></h1>
+	<<set $tempShowerGuy to Math.floor(Math.random() * 2)>>
 <</nobr>>
 
 <<nobr>>
-	At first you think it’s another waking fantasy, but you realize this is real, you’ve just walked in on one of the guys next door showering.
+	At first you think it’s another waking fantasy, but you realize this is real, you’ve just walked in on $neighbours[$tempShowerGuy] showering.
 <</nobr>>
 
 <img src="Part5/Faith5.jpg" hspace="10" vspace="10" height="650">
@@ -670,7 +655,7 @@
 		pleasuring yourself
 	<</if>>
 	as you stare.
-	<<if setup.isNeighbour('Peter') and $NeighbourDislike == 'Peter'>>
+	<<if $neighbours[$tempShowerGuy] === 'Peter'>>
 		He's embarrassed at first, but you can see how hard he's gotten at knowing you've
 		been watching him.  You take the first move and
 	<<else>>
@@ -681,21 +666,11 @@
 <</nobr>>
 
 <<nobr>>
-	<<if setup.isNeighbour('Barry') and $NeighbourDislike == 'Barry'>>
-		<<set setup.makeFWB('Barry')>>
-	<<elseif setup.isNeighbour('James') and $NeighbourDislike == 'James'>>
-		<<set setup.makeFWB('James')>>
-	<<elseif setup.isNeighbour('Peter') and $NeighbourDislike == 'Peter'>>
-		<<set setup.makeFWB('Peter')>>
-	<<elseif setup.isNeighbour('Josh') and $NeighbourDislike == 'Josh'>>
-		<<set setup.makeFWB('Josh')>>
-	<<else>>
-		<<set setup.makeFWB('Zack')>>
-	<</if>>
+	<<set setup.makeFWB($neighbours[$tempShowerGuy])>>
 
 	The two of you fool around a bit in the shower, but it's cramped and the water has started to get
 	cold, so you quicky decide to
-	<<if $fwb[0] == 'Peter'>>
+	<<if $neighbours[$tempShowerGuy] === 'Peter'>>
 		[[move this to his room|Part5Nerd1]].
 	<<else>>
 		[[move this to his room|Part5Faith5KeepWatching2]].
@@ -704,20 +679,19 @@
 
 ::Part5Faith5KeepWatching2 <200,2500>
 <<nobr>>
-	<h1>$fwb[0]'s Room</h1>
+	<h1>$neighbours[$tempShowerGuy]'s Room</h1>
+	<video src="Part5/Faith7.mp4" autoplay loop muted height="508"></video>
 <</nobr>>
 
-<video src="Part5/Faith7.mp4" autoplay loop muted height="508"></video>
-
 <<nobr>>
-	You hadn't really hit it off with $fwb[0] when you'd met, so you hadn't imagined you'd end up here in his bed.
-	But he was here, and he was hard, and you couldn't hold back any longer.  As you feel his cock slide into you,
+	You hadn't imagined when you'd met that you'd end hup here in $neighbours[$tempShowerGuy]'s bed.  Well, you might have imagined it a few times.  But you'd,
+	thought it'd only ever be in your imagination.  But he was here, and he was hard, and you couldn't hold back any longer.  As you feel his cock slide into you,
 	you wonder why you'd waited.  You and him could have been doing this since you moved in.
 <</nobr>>
 
 <<nobr>>
-	When your need is finally satisified you climb out of $fwb[0]'s wet bed, as you do
-	<<if $fwb[0] == 'Barry'>>
+	When your need is finally satisified you climb out of $neighbours[$tempShowerGuy]'s wet bed, as you do
+	<<if $neighbours[$tempShowerGuy] === 'Barry'>>
 		he give's you a swat on the ass and says, "That was fun, slut.  Come back whenever you need more.  You
 		caught me by surprise today, don't count on me being so nice next time."
 		<<if $PlayerSideEffectSubmissive>>
@@ -736,14 +710,14 @@
 <</nobr>>
 
 <<nobr>>
-	<<set $sex.push({sex: 'male', name: $fwb[0]})>>
-	<<set $sex.push({sex: 'male', name: $fwb[0], vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: $neighbours[$tempShowerGuy]})>>
+	<<set $sex.push({sex: 'male', name: $neighbours[$tempShowerGuy], vaginal:true})>>
 	As you start to leave his room, you realize Faith has returned.  Thankfully she doesn't seem to have
 	heard your moans.  You carefully sneak back to the bathroom to grab your clothes and get dressed.
 	You know you'll probably be sneaking back over to
-	<<if $fwb[0] == 'Barry'>>[[Barry's room|Part5Jerk1]]
-	<<elseif $fwb[0] == 'James'>>[[James's room|Part5Player1]]
-	<<elseif $fwb[0] == 'Josh'>>[[Josh's room|Part5Regular1]]
+	<<if $neighbours[$tempShowerGuy] == 'Barry'>>[[Barry's room|Part5Jerk1]]
+	<<elseif $neighbours[$tempShowerGuy] == 'James'>>[[James's room|Part5Player1]]
+	<<elseif $neighbours[$tempShowerGuy] == 'Josh'>>[[Josh's room|Part5Regular1]]
 	<<else>>[[Zack's room|Part5Thrill1]]
 	<</if>>
 	again soon.
@@ -1272,39 +1246,57 @@
 	<h1><<print "Neighbour’s Bedroom">></h1>
 <</nobr>>
 
-<<print "Before you knock on their door, you try to think of how to invite one of the guys back to your room, but then you come up with a better idea.">>
+<<nobr>>
+	Before you knock on their door, you try to think of how to invite one of the guys back to your room, but then you come up with a better idea.
+<</nobr>>
 
-<<print "You tell them both how horny you are and that you plan on taking one of them back to your room to fuck you. You then tell them you want to make sure whichever one it is can last long enough to satisfy you. You tell them you’ll stroke them both off and whichever one cums first loses.">>
+<<nobr>>
+	You tell them both how horny you are and that you plan on taking one of them back to your room to fuck you. You then tell them you want to make
+	sure whichever one it is can last long enough to satisfy you. You tell them you’ll stroke them both off and whichever one cums first loses.
+<</nobr>>
 
 <video src="Part5/Hannah4.mp4" autoplay loop muted height="600"></video>
 
-
-<<print "Of course, you know who you want to win, so you just squeeze a bit tighter, stroke a bit deeper, and make sure the other one ‘loses’. He probably never had more fun losing before though.">>
+<<nobr>>
+	Of course, they think it's a fair competition between them, but it's not.  Really, it's up to you to decided whether
+	<<link $neighbours[0]>><<set $tempStrokeWinner = 0>><<goto [[Part5HannahNeighbour2]]>><</link>>
+	or
+	<<link $neighbours[1]>><<set $tempStrokeWinner = 1>><<goto [[Part5HannahNeighbour2]]>><</link>>
+	wins this game.  
+<</nobr>>
 
 <<nobr>>
-	<<if $NeighbourDislike == $neighbours[0]>>
-		<<set $strokeWinner to $neighbours[1]>>
-	<<else>>
-		<<set $strokeWinner to $neighbours[0]>>
-	<</if>>
-	$strokeWinner
-	<<print "was really close to cumming, but he held back. You head back to your room with him. You’ll make sure he eats you out long enough that he’s not so close to an orgasm ">>
-	[[when he finally starts fucking you.|Part5HannahNeighbour2]]
+	All you have to do is just squeeze a bit tighter and stroke a bit deeper, to make sure the other one ‘loses’.
+	As his cum covers your hand, you are sure he's never had more fun losing before in his life.  You take your winner back to your room.
+	You plan on having him eat you out long enough that you are close to an orgasm, and so that the one he was holding back will have faded,
+	before you'll let him	finally start to fuck you.
 <</nobr>>
 
 ::Part5HannahNeighbour2 <2100,3125>
 <<nobr>>
 	<<set $sex.push({sex: 'female', name: 'Hannah'})>>
-	<<set $sex.push({sex: 'male', name: $strokeWinner, vaginal:true})>>
+	<<set $sex.push({sex: 'male', name: $neighbours[$tempStrokeWinner], vaginal:true})>>
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
-<<print "You and your neighbour are barely in your room when Hannah walks in. Her date didn’t go well so she ended it when she saw your text. “I saw your text and figured I’d take whichever guy you didn’t.”, she says, “But now that I see how horny and frustrated you have this one already, I want to play too.”’You tell her you’d be happy to share.">>
+<<nobr>>
+	You and $neighbours[$tempStrokeWinner] are barely in your room when Hannah walks in. Her date didn’t go well so she ended it when she saw your text.
+	“I saw your text and figured I’d take whichever guy you didn’t.”, she says, “But now that I see how horny and frustrated you have this one already,
+	I want to play too.”’You tell her you’d be happy to share.
+<</nobr>>
 <img src="Part5/Hannah5.gif" hspace="10" vspace="10" height="600">
 
-<<print "You and her have hours of fun with him. You take turns, one rides his face while the other teases his cock. You and Hannah have came many times, but you make sure to keep him on the edge of an orgasm, but never let him cum. As he’s eating Hannah out for the final time he begs for you to let him cum this time.">>
+<<nobr>>
+	You and her have hours of fun with $neighbours[$tempStrokeWinner]. You take turns, one rides his face while the other teases his cock.
+	You and Hannah have came many times, but you make sure to keep him on the edge of an orgasm, but never let him cum. As he’s eating Hannah out for
+	the final time he begs for you to let him cum this time.
+<</nobr>>
 
-<<print "This final time instead of teasing him again, you climb on top of him. You’re sure his roommate next door had to hear the moan he made as you slide his cock inside you. You grind slowly, teasing him inside you, until after he gets Hannah off again. When she’s satisfied, then you begin riding him in earnest. He doesn’t last very long after that.">>
+<<nobr>>
+	This final time instead of teasing him again, you climb on top of him. You’re sure <<print $neighbours[(1-$tempStrokeWinner)]>> next door hears the
+	moan $neighbours[$tempStrokeWinner] makes as you slide his cock inside you.  You grind slowly, teasing him inside you, until after he gets Hannah off
+	again. When she’s satisfied, then you begin riding him in earnest. He doesn’t last very long after that.
+<</nobr>>
 
 <<nobr>>
 	<<if $JobAthlete>>
