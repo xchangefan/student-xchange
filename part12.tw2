@@ -78,8 +78,15 @@
   <<set $PaulSeverance to 1>>
 <</nobr>>
 <<nobr>>
-  You are a bit torn about whether to go on spring break with Josh, or to tell him that you have to work and can't go.  It's not that you enjoy work, but
-  you do like having a job and want to do what you have to in order to keep it.
+  You are a bit torn about whether to go on spring break with
+  <<if setup.areDating('Josh')>>
+    Josh, or to tell him  
+  <<else>>
+    your friends, or to tell them
+  <</if>>
+  that you have to work and can't go.
+  It's not that you enjoy working here that much, but you do like the steady source of money and having a job that will look good on a resume,
+  so you'll do what you have to in order to keep it.
 <</nobr>>
 
 <<nobr>>
@@ -132,9 +139,15 @@
 <</nobr>>
 
   <<nobr>>
-    You aren't going to be hurting for money for a while, but decide you still probably should look for a job so this money will last.  You've heard
-    people talking about a new coffee shop that is opening up.  Except this one will feature baristas in bikinis.  You've only ever made regular coffee for Paul,
-    but you know you look good in a bikini, so you hope that will be enough.
+    You aren't going to be hurting for 
+    <<if $JobCallGirlSide>>
+      money, especially with your side-job.  But you figure you should have some visible source of income so people don't
+      question where your money comes from.
+    <<else>>
+      money for a while, but decide you still probably should look for a job so the money from Paul will last.
+    <</if>>
+    You've heard people talking about a new coffee shop that is opening up.  Except this one will feature baristas in bikinis.  You've only ever made regular
+    coffee for Paul, but you know you look good in a bikini, so you hope that will be enough.
   <</nobr>>
 
   <<nobr>>
@@ -1102,7 +1115,7 @@ from your drunken friends. You do your best to let him know just how appreciativ
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
 	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noCondom:true})>>
 	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true, noPullout:true, noCondom:true})>>
-	<<set $Roommate to "Paul">>
+	<<set $Roommate to 'Paul'>>
 <</nobr>>
 
 <<nobr>>
@@ -1196,6 +1209,12 @@ from your drunken friends. You do your best to let him know just how appreciativ
 <<nobr>>
   The movers don’t arrive until the afternoon, so there’s plenty of time for a quick visit to the store
   to pick up something sexy.  You’ll be sure to be wearing it when he comes home from work this evening.
+  <<if $JobStripper>>
+    You also swing by the strip club to let the manager know you won't be working there anymore.  Of course, that doesn't mean you won't give Paul the occasional
+    private performance.
+    <<unset $JobStripper>>
+    <<set $JobStripperOld to 1>>
+  <</if>>
 <</nobr>>
 
 <<nobr>>

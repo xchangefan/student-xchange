@@ -97,9 +97,20 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $PlayerSlave>>
   <<elseif $DropoutCumslut>>
     You've adjusted to the [[permanent conditions|SideBarSideEffects]] your body has now.
+  <<elseif $ExWifeTrap>>
+    You are unable to orgasm thanks to Paul's ex-wife.
+    <<if $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
+      The [[side effects|SideBarExWifeTrapSideEffects]] your implant gave your new body seem minor now.
+    <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep >>
+      The [[features|SideBarExWifeTrapSideEffects]] your implant has don't change that.
+    <<elseif $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
+      You miss the [[features|SideBarExWifeTrapSideEffects]] your implant used to have.
+    <<else>>
+      That has [[affected you|SideBarExWifeTrapSideEffects]] in other ways as well.
+    <</if>>
   <<else>>
     You are 
-    <<if  $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
+    <<if $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
       trying to adjust to the [[side effects|SideBarSideEffects]] your implant gave your new body.
     <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep or $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
       enjoying the [[features|SideBarSideEffects]] of your new body.
@@ -108,6 +119,94 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
   <</if>>
 <</nobr>>
+
+::SideBarExWifeTrapSideEffects <495,0>
+<h1>Implant Effects</h1>
+<ul>
+<<nobr>>
+  <li>You are unable to orgasm until the denial gel Paul's ex tricked you into using wears off, whenever that may be.</li>
+  <li>Even though you can't orgasm, you find it hard not to think about sex.  Your mind tells you can't cum, but your body keeps telling you to try anyway.</li>
+
+  <<if $PlayerNoBodyHair>>
+    <li>You have no body hair.</li>
+  <</if>>
+
+  <<if $PlayerWeightControl>>
+    <li>You have perfect
+    <<if $PlayerPregnant>>
+      weight, when you aren't pregnant.
+    <<else>>
+      weight.
+    <</if>>
+    </li>
+  <</if>>
+
+  <<if $PlayerReducedSleep>>
+    <li>You don't need much sleep.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectDreams>>
+    <li>Your dreams are always erotic.  Frequently you wake up horny and frustrated,
+    and you worry that your body has tried to orgasm while you slept, extending the duration of your denial</li>
+  <</if>>
+
+  <<if $PlayerEasytoOrgasm >>
+    <li>You remember how easy it use to be for you to orgasm.  Now it's impossible.</li>
+  <</if>>
+
+  <<if $PlayerPowerfulOrgasms >>
+    <li>You remember how intense your orgasms used to be.  What you wouldn't give to feel one of those again now.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectExhibitionist >2 >>
+    <li>You crave being naked in public, you dislike wearing clothes.</li>
+  <<elseif $PlayerSideEffectExhibitionist >1 >>
+    <li>You like the thought of being naked in public, you want to wear revealing clothes.</li>
+  <<elseif $PlayerSideEffectExhibitionist>>
+    <li>You like the thought of being naked in public.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectSubmissive >>
+    <li>You are submissive in sexual situations.  You let Paul fuck you whenever and however he wants, even though you know it might extend your denial.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectPheromones >3 >>
+    <li>Being next to any man will instantly excite you.</li>
+  <<elseif $PlayerSideEffectPheromones >2 >>
+    <li>The smell of sweating men excites you, being next to multiple men will instantly excite you.</li>
+  <<elseif $PlayerSideEffectPheromones >1 >>
+    <li>The smell of sweating men excites you, regular men will excite you if you stay too long next to them.</li>
+  <<elseif $PlayerSideEffectPheromones>>
+    <li>The smell of sweating men excites you.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectLibido >2 >>
+    <li>Your libido is much higher, you can never refuse sex.</li>
+  <<elseif $PlayerSideEffectLibido >1 >>
+    <li>Your libido is much higher, you will often accept or suggest sex.</li>
+  <<elseif $PlayerSideEffectLibido>>
+    <li>You get excited much faster.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectOral >2 >>
+    <li>You love oral sex and can never refuse it, you sometimes suggest it as a reward.</li>
+  <<elseif $PlayerSideEffectOral >1 >>
+    <li>You love oral sex and can never refuse it.</li>
+  <<elseif $PlayerSideEffectOral>>
+    <li>You love oral sex.</li>
+  <<else>>
+    <li>You love oral sex because you know it makes Paul happy, and doesn't risk extending your denial.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectAnal >1 >>
+    <li>You love anal sex and can never refuse it.</li>
+  <<elseif $PlayerSideEffectAnal>>
+    <li>You love anal sex.</li>
+  <<else>>
+    <li>You love anal sex because you know it makes Paul happy, and is less likely to extend your denial.</li>
+  <</if>>
+<</nobr>>
+</ul>
 
 ::SideBarSideEffects <500,0>
 <h1>Implant Effects</h1>
@@ -461,13 +560,28 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       <<print " and you are living in his loft.">>
     <</if>>
     <<if $MasterRobert>><br><<print "You are a slave to Olivia's master. ">><</if>>
-    <<if $Engaged == 'Andrew'>><<print "You are engaged to Andrew and living together">><</if>>
-    <<if $Engaged != 'Andrew' and setup.areDating('Andrew')>>
-      <br><<print "You are in a relationship with Andrew">>
-      <<if $Roommate == 'Andrew'>><<print " and living together">><<print ". ">><</if>>
+    <<if $Spouse == 'Andrew' or $Engaged == 'Andrew' or setup.areDating('Andrew')>>
+      <<if $Spouse == 'Andrew'>>
+        You are married to Andrew.
+      <<elseif $Engaged == 'Andrew'>>
+        You are engaged to Andrew, and living together.
+      <<elseif $Roommate=='Andrew'>>
+        You are in a relationship with Andrew, and living together.
+      <<else>>
+        You are in a relationship with Andrew.
+      <</if>>
     <</if>>
-    <<if setup.areDating('Paul') and $Roommate!='Paul'>><br><<print "You are your boss, Paul's, mistress. ">><</if>>
-    <<if setup.areDating('Paul') and $Roommate=='Paul'>><br><<print "You are your boss, Paul's, girlfriend. You live with him. ">><</if>>
+    <<if $Spouse == 'Paul' or $Engaged == 'Paul' or setup.areDating('Paul')>>
+      <<if $Spouse == 'Paul'>>
+        <br>You are married to Paul.
+      <<elseif $Engaged == 'Paul'>>
+        <br>You are engaged to Paul, and living together.
+      <<elseif $Roommate=='Paul'>>
+        You are your boss, Paul's, girlfriend. You live with him.
+      <<else>>
+        You are your boss, Paul's, mistress. 
+      <</if>>
+    <</if>>
     <<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>
     <<if setup.areDating('Veronica') and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
     <<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>
@@ -524,7 +638,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <<if $JobHomemaker and $Spouse>><<print "You are a stay-at-home wife. ">><</if>>
     <<if $JobHomemaker and !$Spouse and $Engaged>><<print "You are a stay-at-home fiancée. ">><</if>>
     <<if $JobHomemaker and !$Spouse and !$Engaged>><<print "You are a stay-at-home girlfriend. ">><</if>>
-    <<if $JobStripper>>You have as a stripper<</if>>
+    <<if $JobStripper>>You have a side-job as a stripper<</if>>
     <<if $JobGloryHole>>You have a side-job sucking cocks at the sex shop<</if>>
   <</if>>
 <</nobr>>

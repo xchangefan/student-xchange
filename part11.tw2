@@ -3220,11 +3220,15 @@ Kim: Oh, is that what I typed?
     But you can worry about that later. For now you need to get back to your homework.  Well, that
     and daydreaming about what you are going to do over 
     <<if setup.areDating('Paul') and setup.areDating('Josh')>>
-      [[spring break|Part12PaulBreakup]]
+      [[spring break|Part12PaulBreakup]] in a few weeks.
+    <<elseif setup.areDating('Paul') and $JobCallGirlSide>>
+      spring break.
+      <br><br>
+      You realize you haven't been spending as much time with Paul since you started your 'side job'.  You wonder if maybe you
+      should skip [[spring break|Part12PaulBreakup]] to spend time at work with him.
     <<else>>
-      [[spring break|Part12Start]]
+      [[spring break|Part12Start]] in a few weeks.
     <</if>>
-    in a few weeks.
   <</if>>
 <</nobr>>
 

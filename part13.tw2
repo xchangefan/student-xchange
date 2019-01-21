@@ -1938,7 +1938,7 @@
   <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)', vaginal:true, condom:true})>>
   <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
   <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)', vaginal:true, pullout:true} )>>
-  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)', vaginal:true, nocondom:true, noPullout:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)', vaginal:true, noCondom:true, noPullout:true})>>
 <</nobr>>
 
 <<nobr>>
@@ -3112,6 +3112,9 @@
     <br><br>
     This job is much different than working in the office.  Before you only saw your coworkers.  The customers were just names on some spreadsheet.  Here the customers
     are right in front of you.  Well, unless they ask you to turn around so they can also see the back of you.
+    <<if $JobCallGirlSide or $JobStripper or $JobGloryHole>>
+      Though obviously, 'working closely' with customers isn't something new to you, considering your other job.
+    <</if>>
   <<else>>
     Brian has been careful to schedule you or one of the other experienced girls each shift.  Most of the other girls seem to have more experience filling a bikini
     than an espresso shot.  Hopefully they'll pick it up fast though so you aren't doing all the work.
@@ -3250,6 +3253,21 @@
 
 <<nobr>>
   Either way, you know you'll be sure to have a [[steady supply of customers|Part13BikiniBarista5]] coming to the coffee shop.
+  <<if $JobCallGirlSide>>
+    <<set $sex.push({sex: 'male', anon: 'coffee aficionado', repeat:true})>>
+    <<set $sex.push({sex: 'male', anon: 'coffee aficionado', repeat:true, vaginal:true})>>
+    <<set $sex.push({sex: 'male', anon: 'coffee aficionado', repeat:true, vaginal:true, noCondom:true})>>
+    <<set $sex.push({sex: 'male', anon: 'coffee aficionado', repeat:true})>>
+    <<set $sex.push({sex: 'male', anon: 'coffee aficionado', repeat:true, vaginal:true, noCondom:true, noPullout:true})>>
+    <<set $sex.push({sex: 'male', anon: 'coffee aficionado', repeat:true, vaginal:true, noCondom:true})>>
+    <<set $sex.push({sex: 'male', anon: 'coffee aficionado', repeat:true})>>
+    <<set $sex.push({sex: 'male', anon: 'coffee aficionado', repeat:true, vaginal:true, noCondom:true})>>
+    <<set $sex.push({sex: 'male', anon: 'coffee aficionado', repeat:true, vaginal:true, noCondom:true})>>
+    <br><br>
+    And for the guys driving nice cars, the ones that you think can afford more than a quick blowjob, you leave them with something else: a phone number and a name.
+    Of course it's not your personal number, it's the number for the agency you work with when you're working as a call girl.  Of course, the name isn't your real name
+    either, but it's the one most of your clients know you by.  Hopefully you'll be seeing some of these customers again real soon.
+  <</if>>
 <</nobr>>
 
 ::Part13BikiniBarista5
@@ -4499,7 +4517,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if setup.areDating("Paul") and $PregnancyCheck.possibleFathers.contains("Paul")>>
+  <<if setup.areDating('Paul') and $PregnancyCheck.possibleFathers.contains('Paul')>>
     You can't wait to [[tell Paul about the baby|Part13PregnantPaul]].
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       Based on the timing, you are pretty sure he's the father.  Regardless, you certainly aren't going to let him know if you have any doubts.
