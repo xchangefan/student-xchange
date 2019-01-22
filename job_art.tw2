@@ -217,6 +217,11 @@
 <<nobr>>
 	<<set $PlayerPregnant = 0>>
 	<<set $PlayerMother = 1>>
+	<<if either(1,2) == 1>>
+    <<set $children.push({name: "Pablo", sex: 'male'})>>
+  <<else>>
+    <<set $children.push({name: "Frida", sex: 'female'})>>
+  <</if>>
 	
 	<h1><<print "Ken`s Wife & `Canvas`">></h1>
 <</nobr>>

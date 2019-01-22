@@ -125,7 +125,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <ul>
 <<nobr>>
   <li>You are unable to orgasm until the denial gel Paul's ex tricked you into using wears off, whenever that may be.</li>
-  <li>Even though you can't orgasm, you find it hard not to think about sex.  Your mind tells you can't cum, but your body keeps telling you to try anyway.</li>
+  <li>Even though you can't orgasm, you find it hard not to think about sex.  Your mind tells you that you can't cum, but your body keeps telling you to try anyway.</li>
 
   <<if $PlayerNoBodyHair>>
     <li>You have no body hair.</li>
@@ -188,20 +188,20 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li>You get excited much faster.</li>
   <</if>>
 
-  <<if $PlayerSideEffectOral >2 >>
-    <li>You love oral sex and can never refuse it, you sometimes suggest it as a reward.</li>
-  <<elseif $PlayerSideEffectOral >1 >>
-    <li>You love oral sex and can never refuse it.</li>
+  <<if $PlayerSideEffectOral >1 >>
+    <li>You love oral sex and can never refuse it.  You do your best to hold back from orgasming from it.
+    But you know you aren't always successful, end up extending your denial</li>
   <<elseif $PlayerSideEffectOral>>
-    <li>You love oral sex.</li>
+    <li>You love oral sex. You only hope you body doesn't try to cum from it and extend your denial.</li>
   <<else>>
     <li>You love oral sex because you know it makes Paul happy, and doesn't risk extending your denial.</li>
   <</if>>
 
   <<if $PlayerSideEffectAnal >1 >>
-    <li>You love anal sex and can never refuse it.</li>
+    <li>You love anal sex and can never refuse it.  You do your best to hold back from orgasming from it.  But you know you aren't always successful,
+    end up extending your denial</li>
   <<elseif $PlayerSideEffectAnal>>
-    <li>You love anal sex.</li>
+    <li>You love anal sex.  You only hope you body doesn't try to cum from it and extend your denial.</li>
   <<else>>
     <li>You love anal sex because you know it makes Paul happy, and is less likely to extend your denial.</li>
   <</if>>
@@ -378,7 +378,18 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       As long as he only fucks your mouth, you don't really need any, do you?
     <</if>>
   <<elseif $PlayerProtectionWithdraw>>
-    You ask guys to pull out during sex.
+    <<if $Spouse>>
+      <<if $Spouse == 'Veronica' or $Spouse == 'Kate'>>
+        If it were ever an issue, you would ask guys
+      <<else>>
+        You ask $Spouse
+      <</if>>
+    <<elseif setup.areDating('Veronica') or setup.areDating('Kate')>>
+      If it were ever an issue, you would ask guys
+    <<else>>
+      You ask guys
+    <</if>>
+    to pull out during sex.
     <<if $PlayerCumslut>>
       You want them to cum in your mouth instead.
     <</if>>
@@ -393,6 +404,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     Your body has a permanent pill implant.
   <<elseif $PlayerProtectionPerfect>>
     Your implant prevents pregnancy.
+  <<elseif $PlayerProtectionSilent>>
   <<else>>
     You aren't sure what sort of birth control to use yet.
   <</if>>
@@ -596,6 +608,10 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>
     <</if>>
   <</if>>
+  <<if $children and $children.length>>
+    <br>
+    You are the mother of <<print $children.map((child) => {return child.name}).join(" and ")>>.
+  <</if>>
   <</nobr>>
 
 ::SideBarJob <2400,0>
@@ -635,9 +651,17 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <<if $JobPorn>><<print "You work as an Porn Actress. ">><</if>>
     <<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>
     <<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>
-    <<if $JobHomemaker and $Spouse>><<print "You are a stay-at-home wife. ">><</if>>
-    <<if $JobHomemaker and !$Spouse and $Engaged>><<print "You are a stay-at-home fiancée. ">><</if>>
-    <<if $JobHomemaker and !$Spouse and !$Engaged>><<print "You are a stay-at-home girlfriend. ">><</if>>
+    <<if $JobHomemaker>>
+      <<if $PlayerMother>>
+        You are a stay-at-home mother.
+      <<elseif $Spouse>>
+        You are a stay-at-home wife.
+      <<elseif $Engaged>>
+        You are a stay-at-home fiancée.
+      <<else>>
+        You are a stay-at-home girlfriend.
+      <</if>>
+    <</if>>
     <<if $JobStripper>>You have a side-job as a stripper<</if>>
     <<if $JobGloryHole>>You have a side-job sucking cocks at the sex shop<</if>>
   <</if>>
