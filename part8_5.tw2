@@ -26,7 +26,11 @@
 <<if $MasterKate or setup.areDating('Veronica')>><img src="Part8.5/Talk2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Talk1.jpg" hspace="10" vspace="10" height="650"><</if>>
 
 <<nobr>>
-	<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Police Officer') and !setup.haveFucked('Cody') and !setup.haveFucked('Mechanic') and !$HomeMasturbate and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
+	<<if $MasterKate and $PlayerPregnant>>
+		You start with the biggest news, your pregnancy.  Kate seems excited for you, but a bit upset as well.  Regardless of what you thought the future of your relationship
+		with her was, it's clear she thought it might be something serious and long-term.  But it's clear she's not interested in having a new baby in her life, at least not
+		one she had no part of.
+	<<elseif !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Police Officer') and !setup.haveFucked('Cody') and !setup.haveFucked('Mechanic') and !$HomeMasturbate and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
 		<<print "You tell ">><<if $MasterKate or setup.areDating('Veronica')>><<print "her">><<else>><<print "him">><</if>><<print " that you ">>[[were completely faithful|Part85Faithful]]<<print " while you were away">><<if $MasterKate>><<print "and that you did not disobey her.">><<else>><<print ".">><</if>>
 	<<else>>
 		<<if !setup.haveFucked('Cassie') and !setup.haveFucked("Cassie's Boyfriend") and !setup.haveFucked('Mike') and !setup.haveFucked('Brad') and !setup.haveFucked('Dylan') and !setup.haveFucked('Police Officer') and !setup.haveFucked('Cody') and !setup.haveFucked('Mechanic') and !$UncleChair and !$SexNewYearMale and !$SexNewYearFemale>>
@@ -52,11 +56,13 @@
 <</nobr>>
 
 <<nobr>>
-	<<if !$MasterKate and !setup.areDating('Aaron')>>
-		<<print "Unless the time apart let you rethink your relationship ">>[[and you want to end it.|Part85BreakUp1]]
+	<<if $MasterKate and $PlayerPregnant>>
+		You've had some time to think about your relationship, and while it was fun while it lasted, you and Kate clearly are wanting different things
+		from life right now.  You've decided that [[it's best to end the relationship.|Part85BreakUp3]]
+	<<elseif setup.areDating('Aaron') and $PlayerSideEffectSubmissive >= 3>>
+	<<elseif MasterKate and $PlayerSideEffectSubmissive >= 2>>
 	<<else>>
-		<<if $MasterKate and $PlayerSideEffectSubmissive < 2>><<print "Unless the time apart let you rethink your relationship ">>[[and you want to end it.|Part85BreakUp1]]<</if>>
-		<<if setup.areDating('Aaron') and $PlayerSideEffectSubmissive < 3>><<print "Unless the time apart let you rethink your relationship ">>[[and you want to end it.|Part85BreakUp1]]<</if>>
+		Unless the time apart let you rethink your relationship [[and you want to end it.|Part85BreakUp1]]
 	<</if>>
 <</nobr>>
 
@@ -815,7 +821,7 @@
 
 ::Part85Punish2 <400,8425>
 <<nobr>>
-	<<if $MasterKate>><h1><<print "Mistress Kate">></h1><<<set $Keyholder to "Kate">><<set $KeyholderPronoun to "she">><<set $KeyholderPronounPossessive to "her">><</if>>
+	<<if $MasterKate>><h1><<print "Mistress Kate">></h1><<set $Keyholder to "Kate">><<set $KeyholderPronoun to "she">><<set $KeyholderPronounPossessive to "her">><</if>>
 	<<if setup.areDating('Aaron')>><h1><<print "Professor’s House">></h1><<set $Keyholder to "Aaron">><<set $KeyholderPronoun to "he">><<set $KeyholderPronounPossessive to "his">><</if>>
 <</nobr>>
 
@@ -986,7 +992,7 @@
 <<print "You’ve been feeling like you maybe jumped into this relationship too soon. You were still adjusting to your new life, your new body, and didn’t really know what you wanted yet.">>
 <<if $MasterKate or setup.areDating('Veronica')>><img src="Part8.5/Alone4.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8.5/Alone3.jpg" hspace="10" vspace="10" height="650"><</if>>
 
-<<print "Having a little time to think (and maybe to explore) over the holiday made you realize this isn’t what you want. Maybe it’s someone else would be better for you, or maybe monogamy just isn’t for you right now.">>
+<<print "Having a little time to think (and maybe to explore) over the holiday made you realize this isn’t what you want. Maybe someone else would be better for you, or maybe monogamy just isn’t for you right now.">>
 
 <<nobr>>
 	<<if $MasterKate>><<print "You do your best to escape her power as easy as you can, ">>[[but it’s still upsetting for both of you.|Part85BreakUp3]]<</if>>
@@ -1051,6 +1057,7 @@
 ::Part85BreakUp3 <1200,8600>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
+	<<if $MasterKate>><<set $MasterKate = 0>><</if>>
 <</nobr>>
 
 <<print "You were really down the first week or so after the break-up, but your mentor was there to help you through it.">>

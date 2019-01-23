@@ -341,14 +341,14 @@
 
 <<nobr>>
 	<<print "Some of the boxes of your stuff got lost in the move, but Andrew helped you buy new stuff to replace it with. (Including some sexier clothes than what Faith picked out.)">>
-	<<if $PlayerProtectionCondoms == 1>>
+	<<if $PlayerProtectionCondoms>>
 		<<print "Your condoms were also in one of the boxes that went missing. But you’ve forgotten about it and haven’t been using any protection at all since the move.">>
 		<<set $PlayerProtectionNone = 1>>
 		<<set $PlayerProtectionCondoms = 0>>
 		<<set $PlayerProtectionCondomsForgot = 1>>
 	<</if>>
+	<<if $PlayerProtectionPill == 1>>
 		<<print "Your birth control pills were also in one of the boxes that went missing. But you’ve forgotten about it and haven’t been using any protection at all since the move.">>
-		<<if $PlayerProtectionPill == 1>>
 		<<set $PlayerProtectionNone = 1>>
 		<<set $PlayerProtectionPill = 0>>
 	<</if>>

@@ -13,7 +13,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<if $PlayerMoneySet and !$PlayerCumslutPermanent>><<print "Money: $">>$PlayerMoney<</if>>
   [[Inventory|SideBarInventory]]
   <<include [[SideBarChastity]]>>\
-  <<include [[SideBarMentor]]>>\
+  <<if $student>><<include [[SideBarMentor]]>><</if>>\
   <<include [[SideBarNeighbours]]>>\
   <<include [[SideBarRelationship]]>>\
   <<include [[SideBarJob]]>>\
@@ -116,6 +116,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       enjoying the [[features|SideBarSideEffects]] of your new body.
     <<else>>
       enjoying your new body.
+    <</if>>
+    <<if $AcademicProbationDenial>>
+      <br><br>Your implant has blocked your orgasms until you are able to get your grades up.
     <</if>>
   <</if>>
 <</nobr>>
@@ -638,18 +641,12 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <<if $JobOfficeManager>><<print "You work as an Office Manager. ">><</if>>
     <<if $JobOfficeIntern>><<print "You work as an Office Intern. ">><</if>>
     <<if $JobCallGirl>><<print "You work as a Call Girl. ">><</if>>
-    <<if $JobCallGirlSide>><<print "You sometimes also work as a Call Girl. ">><</if>>
     <<if $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>><<print "You work as a Bartender. ">><</if>>
     <<if $JobWebModel>><<print "You work as a Web Model. ">><</if>>
-    <<if $JobWebModelSide>><<print "You are also working as a Web Model. ">><</if>>
     <<if $JobPornOral>><<print "You work as an Oral Porn Actress. ">><</if>>
-    <<if $JobPornOralSide>><<print "You sometimes also work as an Oral Porn Actress. ">><</if>>
     <<if $JobPornAnal>><<print "You work as an Anal Porn Actress. ">><</if>>
-    <<if $JobPornAnalSide>><<print "You sometimes also work as an Anal Porn Actress. ">><</if>>
     <<if $JobPornGang>><<print "You work as a Porn Actress. ">><</if>>
-    <<if $JobPornGangSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>
     <<if $JobPorn>><<print "You work as an Porn Actress. ">><</if>>
-    <<if $JobPornSide>><<print "You sometimes also work as a Porn Actress. ">><</if>>
     <<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>
     <<if $JobHomemaker>>
       <<if $PlayerMother>>
@@ -662,8 +659,14 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
         You are a stay-at-home girlfriend.
       <</if>>
     <</if>>
-    <<if $JobStripper>>You have a side-job as a stripper<</if>>
-    <<if $JobGloryHole>>You have a side-job sucking cocks at the sex shop<</if>>
+    <<if $JobStripper>><br>You have a side-job as a stripper<</if>>
+    <<if $JobGloryHole>><br>You have a side-job sucking cocks at the sex shop<</if>>
+    <<if $JobCallGirlSide>><br>You have a side-job as a Call Girl.<</if>>
+    <<if $JobWebModelSide>><br>You have a side-job as a Web Model.<</if>>
+    <<if $JobPornOralSide>><br>You have a side-job as an Oral Porn Actress.<</if>>
+    <<if $JobPornAnalSide>><br>You have a side-job as an Anal Porn Actress.<</if>>
+    <<if $JobPornGangSide>><br>You have a side-job as a Porn Actress.<</if>>
+    <<if $JobPornSide>><br>You have a side-job as a Porn Actress.<</if>>
   <</if>>
 <</nobr>>
 
