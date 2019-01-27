@@ -1,75 +1,498 @@
 ::Part13AndrewEngaged
-<img src="PartX/AndrewFamily1.jpg" hspace="10" vspace="10" height="600">
-TODO Wedding plans, leaving school at the end of the semester
+<<nobr>>
+  <h1>Getting Ready for the Big Day</h1>
+  <img src="PartX/AndrewFamily1.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $tempBabyNameBoys to ["Casey","Liam","Brandon","Wyatt"].map((name) => {return {name, sex:'male'}})>>
+  <<set $tempBabyNameGirls to ["Hope","Delilah","Emma","Sophia"].map((name) => {return {name, sex:'female'}})>>
+	<<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  You and Andrew had originally picked a date in early June, but had soon discovered that picking that date meant many of your friends from school wouldn't be able
+  to attend.  Looking for a date when your school friends, and your family, and Andrew's family can all make it, and the church is available, was a challenge.  But
+  you were able to find one - the Saturday after finals.
+<</nobr>>
 
-TODO Andrew - Family Ending
-- Have wedding, baby, stay home to be with baby and don't return to school (Also skip dean meeting if applicable)
-- horny before 6 weeks is up, wake up and give Andrew a BJ
-- non-pregnant sex
-- Pregnant again soon after (christmas one with stockings in the background)
-- Down the line with four kids total?
-- Turns out to be twins (second time maybe?)
-- Adjust sidebar for Andrew Family Ending
-- mff with sister again, if did that before (maybe even if not)
-[[A2]]
+<<nobr>>
+  Standing around in the coffee shop all day was getting difficult,
+  <<if $JobBikiniBarista>>
+    <<set $JobBikiniBaristaFormer>>
+    and you'd started to feel ridiculous in your bikini,
+  <</if>>
+  so you'd gone on maternity leave.  But after you and Andrew talked about it more, you decided to let them know you wouldn't be coming back after the baby.
+  Why spend all that time away from your baby
+  when Andrew makes more than enough.
+  <<unset $JobBarista>>
+  <<unset $JobBikiniBarista>>
+  <<set $JobHomemaker to 1>>
+<</nobr>>
 
-::A2
-<img src="PartX/AndrewFamily2.jpg" hspace="10" vspace="10" height="600">
-TODO Wedding
-[[A3]]
+<<nobr>>
+  With the wedding preparations going on, you barely study for your finals at all and don't do very well.  You still manage to pass all of your classes, except one.
+  You get some sort of notice from the university the day after your exam
+  <<if $AcademicProbation>>
+    <<set $AcademicHold to 1>>
+    telling you that you haven't been making satisfactory academic progress.  It says that you have to meet with the dean's office immediately or you won't be
+    able to enroll next semester.
+  <<else>>
+    <<set $AcademicProbation to 1>>
+    telling you that you've been placed on "academic probation". It warns about further consequences if your grades don't improve next semester.
+  <</if>>
+<</nobr>>
 
-::A3
-<img src="PartX/AndrewFamily3.jpg" hspace="10" vspace="10" height="600">
-TODO Honeymoon at home
-[[A4]]
+<<nobr>>
+  <<unset $student>>
+  <<set $Dropout to "Baby">>
+  You've already decided that you won't be enrolling next semester anyway.  You'll have a newborn to take care of by then, and would much rather be
+  spending time with
+  <<if !$BabyKnow>>
+    him or her
+  <<elseif $BabyBoy>>
+    him
+  <<else>>
+    her
+  <</if>>
+  than sitting in some boring lecure hall.  You delete the notice and get back to working with Faith on the final details for
+  Saturday.
+<</nobr>>
 
-::A4
+<<nobr>>
+  With all the excitement, you have a hard time getting to sleep Friday night, but you eventually manage.  When you wake up the next morning, you can't believe
+  the day has finally arrived!  Faith is coming by to pick you up shortly.  You remind Andrew that with your hair appointment and everything else, you won't see
+  him again until the church.  "I thought it was bad luck for me to see you at all today before then.", he jokes.
+<</nobr>>
+
+<<nobr>>
+  "Well, I can think of one or two other things we are traditionally supposed to wait until [[after the ceremony|AndrewWedding]] for as well.", you tease back.
+<</nobr>>
+
+::AndrewWedding
+<<nobr>>
+  <h1>After the Ceremony</h1>
+  <img src="PartX/AndrewFamily2.jpg" hspace="10" vspace="10" height="700" align="left">
+  <<unset $Engaged>>
+  <<set $Spouse to 'Andrew'>>
+<</nobr>>
+<<nobr>>
+  After weeks and weeks of worrying, your wedding day has finally arrived, and everything is perfect!  Your maid-of-honor, Faith, and
+  <<if $CampusMinistry>>
+    your other friends from
+  <<else>>
+    her friends from
+  <</if>>
+  the campus ministry group decorated the church wonderfully.  You'd been worried about how you'd look in your dress this far along in your pregnancy, but
+  everyone says you look radiant.
+<</nobr>>
+
+<<nobr>>
+  You remember worrying early on about how your father would react to your pregnancy, and then engagement, but he's fully adjusted to having two daughters now.  He's
+  thrilled to walk you down the aisle.  As he does, you can't help but notice how handsome Andrew looks in his tuxedo.  
+<</nobr>>
+
+<<nobr>>
+  You do your best to keep from crying and spoiling your makeup as you listen to the beautiful words Pastor Mark gives during the ceremony.  You especially loved
+  the part where he talked about how the miracles of modern science have allowed you and Paul to experience God's miracle of life.
+<</nobr>>
+
+<<nobr>>
+  Everyone has a great time at the reception.  Your legs a quickly tire from dancing with Andrew, then your father, you let Faith and Cassie take your place for most
+  of the rest of the dances you'd normally do.  Faith is thrilled when she catches your bouquet.
+<</nobr>>
+
+<<nobr>>
+  Your sister Cassie is clearly having a good time, you see her disappear for a while with one of Andrew's groomsmen.  They both seem happy, if a bit dishevled when they
+  return.  Even your brother is having a good time as you see him chatting with your friend Mindy, who
+  <<if $JobBikiniBaristaFormer>>
+    worked with you at the bikini coffee shop.
+  <<else>>
+    worked with you at the coffee shop until she left to go to the bikini barista shop.
+  <</if>>
+  You know Mindy well enough to know Dylan's is going to have a fun night.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionPermanent>>
+    <<set $PlayerProtectionSilent to 1>>
+    At some point you'll make a visit to the X-Change office to have them permanently deactivate the so-called birth control feature on your implant.  You and Andrew are
+    planning on having a large family and don't want anything getting in the way of that. 
+  <<elseif $PlayerProtectionWithdraw>>
+    You and Andrew are planning on having a large family.  So now that you are married, the days of you asking him to pull out are over.  Well, considering your current
+    condition, they've actually been over for a while.
+  <<elseif $PlayerProtectionCondoms>>
+    You and Andrew are planning on having a large family.  So now that you are married, the days of him using a condom are over.  Well, considering your current
+    condition, they've actually been over for a while.
+  <<elseif $PlayerProtectionPill>>
+    You and Andrew are planning on having a large family.  You'll be tossing out your old birth control pills, if you can even find them again after so many months.
+  <<else>>
+    You and Andrew are planning on having a large family.  You wonder how long your body will take to recover after this baby before you and Andrew can get started on
+    your second.
+  <</if>>
+  <<set $PlayerProtectionSilent to 1>>
+  <<unset $PlayerProtectionPermanent>>
+  <<unset $PlayerProtectionWithdraw>>
+  <<unset $PlayerProtectionCondoms>>
+  <<unset $PlayerProtectionPill>>
+<</nobr>>
+
+<<nobr>>
+  As much fun as the reception is, you're exhausted by the time it's finally over, and glad when you and Andrew can finally
+  [[escape off to your honeymoon|AndrewHoneymoon]]
+<</nobr>>
+
+::AndrewHoneymoon
+<<nobr>>
+  <h1>Honeymoon</h1>
+  <img src="PartX/AndrewFamily3.jpg" hspace="10" vspace="10" height="600">
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+<</nobr>>
+<<nobr>>
+  Thankfully, your slightly earlier wedding date made travel a little more convenient, but Andrew still kept the honeymoon plans close to home just in case.
+<</nobr>>
+
+<<nobr>>
+  It's wonderful having Andrew off work, and all to yourself for a few days.  You surprise him with a few special honeymoon outfits you'd purchases.  You were thrilled
+  when you'd seen that they'd still have something sexy for you to wear, even in your current condition.  Andrew clearly loves it too.
+<</nobr>>
+
+<<nobr>>
+  Walking too much isn't comfortable for you, so the two of you spend more time in the hotel room than you probably would on a normal vacation.
+  Though obviously, that's not the only reason.  You are pretty sure if you hadn't already been pregnant before the honeymoon, you certainly would have been after it.
+<</nobr>>
+
+<img src="PartX/AndrewFamily3a.gif" hspace="10" vspace="10" height="420">
+
+<<nobr>>
+  Before you know it though, the trip is over and the two of you [[head home|AndrewProgress]].
+<</nobr>>
+
+::AndrewProgress
+<<nobr>>
+  <h1>Progress Photos</h1>
+  You love that Andrew is as excited about your pregnancy as you are.  He's been taking pictures of you throughout your entire progress, and posts them so
+  everyone can see how different you look each month.
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+<</nobr>>
+
+<<nobr>>
+  He also keeps another set of photos of your progress, but these are just for you and him.
+  Well, mostly just you and him.  You've let him share them online too, as long he edits your head out of the photos.  
+  <<if $PlayerSideEffectExhibitionist>>
+    It excites you as you imagine others looking at your nude and growing body.  It seems to excite Andrew too.
+  <<else>>
+    "It's just a natural part of life.  There's nothing sexual about it.", you tell yourself.  You wonder why then does it turn you on so much
+    imagining other people looking at the photos of your nude and growing body?
+  <</if>>
+<</nobr>>
 <img src="PartX/AndrewFamily4.jpg" hspace="10" vspace="10" height="600">
-TODO Pictures Andrew took during your pregnancy
-[[A5]]
+<<nobr>>
+  You wonder if you'll still be pregnant long enough for him to get another pair of photos, or if you'll go into labor before he has a chance for
+  [[month nine|AndrewNearlyTime]].
+<</nobr>>
 
-::A5
-<video src="PartX/AndrewFamily5.webm" autoplay loop muted height="500"></video>
-TODO Shortly before birth
-[[A6]]
+::AndrewNearlyTime
+<<nobr>>
+  <h1>Nearly Time</h1>
+  <video src="PartX/AndrewFamily5.webm" autoplay loop muted height="500"></video>
+  <<if $BabyBoy or $BabyGirl>>
+    <<if $BabyBoy>><<set $BabyGirl to 0>><</if>>
+  <<else>>
+    <<set $BabyGirl to either(0,1)>>
+  <</if>>
+  <<set $tempBaby to $tempBabyName[$BabyGirl].shift()>>
+  <<unset $BabyBoy>>
+  <<unset $BabyGirl>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+<</nobr>>
 
-::A6
+<<nobr>>
+  You know it's nearly time, you've had your hospital bag ready to go for weeks now.  You feel like your baby isn't just kicking inside anymore, but has
+  moved on to doing cartwheels.  Sometimes when the baby starts, you'll call Andrew over and he'll sit there with you and watch as the baby moves around.
+<</nobr>>
+
+<<nobr>>
+  That's not why you are yelling for Andrew today though.  "It's time to go.", you tell him as you feel [[your contractions start|AndrewLabor]].
+  He quickly grabs your bag and starts helping you out to the car.
+<</nobr>>
+
+::AndrewLabor
+<<nobr>>
+  <h1>Labor and Delivery</h1>
+  <<set $PlayerPregnant = 0>>
+  <<set $PlayerMother = 1>>
+  <<set $children.push($tempBaby)>>
+  <<unset $tempBaby>>
+  Andrew wasn't sure at first when you had told him you planned on delivering nude, but you reassured him that it was a common thing to do.  After you told him about
+  the benefits of skin-to-skin contact with the baby, and about how the gowns wouldn't be covering much anyway most of the time, he was less nervous about it.  Of
+  course you plan on putting one of the gowns on afterwards, before family starts coming to see you and the baby.
+<</nobr>>
+
+<<nobr>>
+  The labor goes on for hours.  You'd wanted to "experience the natural joy of childbirth", you had told yourself beforehand, but now as the contractions get more
+  intense, you start to question that.  "Why the hell couldn't X-Change invent a 'painless childbirth' option!", you ask outloud.  "Forget natural!", you tell the
+  nurse, "I want an epideral!"
+<</nobr>>
+
+<<nobr>>
+  A couple minutes later the doctor is telling you "There's no time for an epideral now.  I'm going to need you to Push..."
+<</nobr>>
 <img src="PartX/AndrewFamily6.jpg" hspace="10" vspace="10" height="340">
-TODO Delivering Baby (Need some reason why no gown)
-[[A7]]
+<<nobr>>
+  It hurts worse than you'd ever imagined it would, but eventually it's over.
+<</nobr>>
 
-::A7
-<img src="PartX/AndrewFamily7.jpg" hspace="10" vspace="10" height="640" align="left">
-TODO Really horny a few weeks after baby, but not allowed to to do anything, giving Andrew BJ
-<img src="PartX/AndrewFamily7a.jpg" hspace="10" vspace="10" height="640" align="left">
-TODO Can eventually masturbate, but nothing else
-[[A8]]
+<<nobr>>
+  Once you are holding your healthy, new
+  <<if $BabyBoy>>
+    son,
+  <<else>>
+    daughter,
+  <</if>>
+  you knowit was all worth it.  As you hold
+  <<if $BabyBoy>>him<<else>>her<</if>>
+  against you, you forget about the pain.
+<</nobr>>
 
-::A8
-<video src="PartX/AndrewFamily8.mp4" autoplay loop muted height="500"></video>
-TODO Something with you and Andrew, so excite you finally can again
-TODO If didn't have previous threesome with Andrew and Cassie, then can choose to skip it now and go to [[A10]].  If choose now, or had previously then goto [[A9]]
+<<nobr>>
+  After the you and the baby are cleaned up, they get you a gown and move you the room you'll be staying in for a few days, until you and
+  <<print $children[0].name>> are ready to [[go home|AndrewRecovering]].
+<</nobr>>
 
-::A9
-<video src="PartX/AndrewFamily9.mp4" autoplay loop muted height="500"></video>
-TODO Threesome with Cassie.
-[[A10]]
+::AndrewRecovering
+<<nobr>>
+  <h1>Recovering</h1>
+  The first few couple weeks after you get home, is spent focusing on diaper changes, middle-of-the-night feedings, and letting your body recover from what it just
+  went through, so your doctor's instructions to wait at least six weeks before having sex agian seemed reasonable.
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+<</nobr>>
 
-::A10
-<img src="PartX/AndrewFamily10.jpg" hspace="10" vspace="10" height="640" align="left">
-TODO Pregnant Again
-[[A11]]
+<<nobr>>
+  But then you feel your libido start to come back, slowly at first.  But then you are watching Andrew rock the baby to sleep, seeing what a great father he is
+  and will be, and you suddenly want Andrew more than you ever had before.  You don't want to wait any longer.
+<</nobr>>
 
-::A11
-<video src="PartX/AndrewFamily11.webm" autoplay loop muted height="500"></video>
-TODO Still having fun even with the kids taking your time
-[[A12]]
+  <img src="PartX/AndrewFamily7.jpg" hspace="10" vspace="10" height="640" align="left">
+<<nobr>>
+  After they baby is asleep you tell Andrew you want him inside you, but he reminds you of what the doctor had said.
+  <<if $PlayerSideEffectAnal>>
+    You tell Andrew to fuck your ass instead, but the doctor had said that had to wait too.
+  <</if>>
+  "Ok, no sex.", you say reluctantly.  "Would a blowjob be ok?", you add.  Andrew doesn't have any objections at all to that.
+<</nobr>>
 
-::A12
-<img src="PartX/AndrewFamily12.jpg" hspace="10" vspace="10" height="640" align="left">
-TODO Pregnant again, realize you've been pregnant more than not since changing.  No plans on stopping soon.<br>
+<<nobr>>
+  Once you've finished with Andrew, you tell him "The doctor said I was ok to masturbate whenever I felt up to it, as long as it was external 
+  <<if $PlayerSideEffectMasturbationBlock>>
+    only.  Except I can't even do that."
+  <<else>>
+    only."
+  <</if>>
+  You reach into your drawer and pull out your vibrator and add, "Maybe you could help out.  Just hold it on my clit like this."
+<</nobr>>
+
+<<nobr>>
+  It isn't long until you are covering your mouth with your hand so your moans don't wake the baby.  Still, [[six weeks|AndrewSixWeeks]] is not going to
+  come soon enough.
+<</nobr>>
+<img src="PartX/AndrewFamily7a.jpg" hspace="10" vspace="10" height="640" align="right">
+
+::AndrewSixWeeks
+<<nobr>>
+  <h1>Six Weeks</h1>
+  <video src="PartX/AndrewFamily8.mp4" autoplay loop muted height="500"></video>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+<</nobr>>
+<<nobr>>
+<</nobr>>
+TODO 5: Something with you and Andrew, so excited you finally can again.  [[AndrewPregnantAgain]]
+
+::AndrewPregnantAgain
+<<nobr>>
+  <h1>Expecting Again</h1>
+  <img src="PartX/AndrewFamily10.jpg" hspace="10" vspace="10" height="640" align="left">
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+<</nobr>>
+<<nobr>>
+<</nobr>>
+<<set $PlayerPregnant = 1>>
+<<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
+<<set $tempBaby2 to $tempBabyName[either(0,1)].shift()>>
+TODO 4: Pregnant Again (2nd) Option to go to [[AndrewThreesomeFun]] if had threesome before.  Otherwise (or if choose), go to [[AndrewFun]]
+
+::AndrewThreesomeFun
+<<nobr>>
+  <h1>Fun with Cassie and Andrew</h1>
+  <video src="PartX/AndrewFamily9.mp4" autoplay loop muted height="500"></video>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Cassie'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+<</nobr>>
+<<nobr>>
+<</nobr>>
+TODO 3: had the second one and the third one already before this, Still having fun even with the kids taking your time. Threesome with Cassie. [[AndrewPregnantFourth]]
+
+::AndrewFun
+<<nobr>>
+  <h1>Fun with Andrew</h1>
+  <video src="PartX/AndrewFamily11.webm" autoplay loop muted height="500"></video>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+<</nobr>>
+<<nobr>>
+<</nobr>>
+<<set $PlayerPregnant = 0>>
+TODO 2: had the second one and the third one already before this, Still having fun even with the kids taking your time
+<<set $children.push($tempBaby)>>
+<<set $children.push($tempBaby2)>>
+<<unset $tempBaby>>
+<<unset $tempBaby2>>
+[[AndrewPregnantFourth]]
+
+::AndrewPregnantFourth
+<<nobr>>
+  <h1>Fourth on the Way</h1>
+  <img src="PartX/AndrewFamily12.jpg" hspace="10" vspace="10" height="640" align="left">
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+<</nobr>>
+<<nobr>>
+<</nobr>>
+<<set $PlayerPregnant = 1>>
+<<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
+TODO 1: Pregnant again, realize you've been pregnant more than not since changing.  No plans on stopping soon.<br>
 [[The End.|GameOverAndrewFamily]]
 
 ::GameOverAndrewFamily
 <h1><<print "Game Over - Wife and Mother - Large Family">></h1>
 <img src="PartX/GameOver4.jpg" hspace="10" vspace="10" height="600">
+<<set $children.push($tempBaby)>>
+<<unset $tempBaby>>

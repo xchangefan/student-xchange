@@ -17,6 +17,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<include [[SideBarNeighbours]]>>\
   <<include [[SideBarRelationship]]>>\
   <<include [[SideBarJob]]>>\
+  <<include [[SideBarStudentYear]]>>\
   <<include [[SideBarStudentLifeBalance]]>>\
 </div>
 
@@ -344,18 +345,24 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex.</li>
   <</if>>
 
-  <<if $PlayerSideEffectAnal >3 >>
-    <li>You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm, you constantly need something in your ass.
-    <<if $PlayerCumslutPermanent>>As long as they finish in your mouth, that is.<</if>></li>
-  <<elseif $PlayerSideEffectAnal >2 >>
-    <li>You love anal sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm.
-    <<if $PlayerCumslutPermanent>>As long as they finish in your mouth, that is.<</if>></li>
-  <<elseif $PlayerSideEffectAnal >1 >>
-    <li>You love anal sex and can never refuse it.
-    <<if $PlayerCumslutPermanent>>As long as they finish in your mouth, that is.<</if>></li>
-  <<elseif $PlayerSideEffectAnal>>
-    <li>You love anal sex.
-    <<if $PlayerCumslutPermanent>>As long as they finish in your mouth, that is.<</if>></li>
+  <<if $PlayerSideEffectAnal>>
+    <li>
+      You love anal
+      <<if $PlayerSideEffectAnal >3 >>
+        sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm, you constantly need something in your ass.
+      <<elseif $PlayerSideEffectAnal >2 >>
+        sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm.
+      <<elseif $PlayerSideEffectAnal >1 >>
+        sex and can never refuse it.
+      <<elseif $PlayerSideEffectAnal>>
+        sex.
+      <</if>>
+      <<if $PlayerCumslutPermanent>>
+        As long as they finish in your mouth, that is.
+      <<elseif !$PlayerSideEffectPermanent and  $PlayerSideEffectAnalPermanent>>
+        <i>This effect is permanent, even if you change back to your old body.</i>
+      <</if>>
+    </li>
   <</if>>
 <</nobr>>
 </ul>
@@ -370,6 +377,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       to breed you.
     <</if>>
   <<elseif $PlayerPregnant>>
+  <<elseif $PlayerProtectionSilent>>
   <<elseif $PlayerProtectionTry>>
     You are trying to get pregnant.
     <<if $PlayerCumslutPermanent>>
@@ -407,7 +415,6 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     Your body has a permanent pill implant.
   <<elseif $PlayerProtectionPerfect>>
     Your implant prevents pregnancy.
-  <<elseif $PlayerProtectionSilent>>
   <<else>>
     You aren't sure what sort of birth control to use yet.
   <</if>>
@@ -469,11 +476,11 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 ::SideBarCostumes <1300,0>
 <br><br>Costumes: \
 <<if $PlayerCostumeSchoolgirl>><<print "Sexy Schoolgirl. ">><</if>>\
-<<if $PlayerLatexKiten>><<print "Latex Kitten. ">><</if>>\
+<<if $PlayerCostumeLatexKitten>><<print "Latex Kitten. ">><</if>>\
 <<if $PlayerCostumeVampire>><<print "Vampire. ">><</if>>\
 <<if $PlayerCostumeMouse>><<print "Sexy Mouse. ">><</if>>\
 <<if $PlayerCostumeDevil>><<print "Sexy Devil. ">><</if>>\
-<<if $PlayerCostumeKiten>><<print "Sexy Kitten. ">><</if>>\
+<<if $PlayerCostumeKitten>><<print "Sexy Kitten. ">><</if>>\
 <<if $PlayerCostumeTrek>><<print "Sexy Trek Crew. ">><</if>>\
 <<if $PlayerMermaidTail>><<print "Mermaid. ">><</if>>\
 
@@ -551,14 +558,14 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarNeighbours <2000,0>
 <<nobr>>
-  <<if $DropoutCumslut>>
+  <<if !$student>>
   <<elseif $Roommate == 'Sorority Sister'>>
     You live with your soroity sisters.
   <<elseif $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Victoria' or $Roommate == 'Aaron'>>
   <<elseif $neighbours and $neighbours.length == 1>>
-    Your neighbour is $neighbours[0]
+    Your neighbour is <<print $neighbours[0]>>.
   <<elseif $neighbours and $neighbours.length > 1>>
-    Your neighbours are <<print $neighbours.join(" and ")>>
+    Your neighbours are <<print $neighbours.join(" and ")>>.
   <</if>>
 <</nobr>>
 
@@ -569,10 +576,10 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<else>>
     <<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>
     <<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>
-    <<if $MasterKen>>
-      <br><<print "Ken, the artist, is your ">>
-      <<if $Spouse == 'Ken'>><<print "husband">><<else>><<print "master">><</if>>
-      <<print " and you are living in his loft.">>
+    <<if $Spouse == 'Ken'>>
+      <br>You are married to Ken.
+    <<elseif $MasterKen>>
+      <br><<print "Ken, the artist, is your master and you are living in his loft.">>
     <</if>>
     <<if $MasterRobert>><br><<print "You are a slave to Olivia's master. ">><</if>>
     <<if $Spouse == 'Andrew' or $Engaged == 'Andrew' or setup.areDating('Andrew')>>
@@ -613,7 +620,12 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
   <<if $children and $children.length>>
     <br>
-    You are the mother of <<print $children.map((child) => {return child.name}).join(" and ")>>.
+    You are the mother of
+    <<if $children.length > 2>>
+      <<print $children.slice(0, $children.length - 1).map((child) => {return child.name}).join(", ")>> and <<print $children[$children.length - 1].name>>.
+    <<else>>
+      <<print $children.map((child) => {return child.name}).join(" and ")>>.
+    <</if>>
   <</if>>
   <</nobr>>
 
@@ -667,6 +679,26 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <<if $JobPornAnalSide>><br>You have a side-job as an Anal Porn Actress.<</if>>
     <<if $JobPornGangSide>><br>You have a side-job as a Porn Actress.<</if>>
     <<if $JobPornSide>><br>You have a side-job as a Porn Actress.<</if>>
+  <</if>>
+<</nobr>>
+
+::SideBarStudentYear <2590,0>
+<<nobr>>
+  <<if $student>>
+    <br>
+    <<if $Graduated>>
+      You have graduated!
+    <<elseif $StudentYearsCompleted >= 3>>
+      You are a senior.
+    <<elseif $StudenYearsCompleted == 2>>
+      You are a junior.
+    <<elseif $StudenYearsCompleted == 1>>
+      You are a sophomore.
+    <<else>>
+      You are a freshman.
+    <</if>>
+  <<elseif $Dropout>>
+    <br>You have dropped out of college.
   <</if>>
 <</nobr>>
 

@@ -166,6 +166,8 @@
 ::JobArt8 <3200,1450>
 <<nobr>>
 	<<set $student to false>>
+  <<set $Dropout to "Baby">>
+	<<set $children to []>>
 	<h1><<print "Doctor Visit">></h1>
 <</nobr>>
 
@@ -204,6 +206,8 @@
 ::JobArt10 <3600,1450>
 <<nobr>>
 	<h1><<print "Ken`s Wife & `Canvas`">></h1>
+	<<set $tempBabyName to [[{name: "Pablo", sex: 'male'}], [{name: "Frida", sex: 'female'}]]>>
+	<<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
 <</nobr>>
 
 <<print "He continues to photograph you every step of the way throughout your pregnancy.">>
@@ -217,12 +221,8 @@
 <<nobr>>
 	<<set $PlayerPregnant = 0>>
 	<<set $PlayerMother = 1>>
-	<<if either(1,2) == 1>>
-    <<set $children.push({name: "Pablo", sex: 'male'})>>
-  <<else>>
-    <<set $children.push({name: "Frida", sex: 'female'})>>
-  <</if>>
-	
+  <<set $children.push($tempBaby)>>
+	<<unset $tempBaby>>
 	<h1><<print "Ken`s Wife & `Canvas`">></h1>
 <</nobr>>
 

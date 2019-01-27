@@ -486,6 +486,7 @@
   <h1>With Paul</h1>
   <img src="PartX/Trophy10.jpg" hspace="10" vspace="10" height="700" align="left">
 	<<set $student to false>>
+  <<set $Dropout to "Baby">>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
@@ -519,21 +520,9 @@
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
-	<<if either(1,2) == 1>>
-    <<set $tempBaby1 = {name: "Paul Jr.", sex: 'male'}>>
-		<<if either(1,2) == 1>>
-  	  <<set $tempBaby2 = {name: "Casey", sex: 'male'}>>
-  	<<else>>
-    	<<set $tempBaby2 = {name: "Emilia", sex: 'female'}>>
-  	<</if>>
-  <<else>>
-    <<set $tempBaby1 = {name: "Emilia", sex: 'female'}>>
-		<<if either(1,2) == 1>>
-  	  <<set $tempBaby2 = {name: "Paul Jr.", sex: 'male'}>>
-  	<<else>>
-    	<<set $tempBaby2 = {name: "Delilah", sex: 'female'}>>
-  	<</if>>
-  <</if>>
+
+	<<set $tempBabyName to [[{name: "Paul Jr.", sex: 'male'}, {name: "Casey", sex: 'male'}], [{name: "Emilia", sex: 'female'},{name: "Delilah", sex: 'female'}]]>>
+	<<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
 <</nobr>>
 
 <<nobr>>
@@ -567,8 +556,8 @@
   <video src="PartX/Trophy11.webm" autoplay loop muted height="582"></video>
 	<<set $PlayerPregnant = 0>>
 	<<set $PlayerMother = 1>>
-	<<set $children.push($tempBaby1)>>
-	<<unset $tempBaby1>>
+	<<set $children.push($tempBaby)>>
+	<<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
 	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
@@ -738,8 +727,8 @@
   <h1>A Wonderful Surprise</h1>
   <video src="PartX/Trophy12.webm" autoplay loop muted height="582"></video>
   <<unset $ExWifeTrap>>
-  <<set $children.push($tempBaby2)>>
-	<<unset $tempBaby2>>
+	<<set $children.push($tempBaby)>>
+	<<unset $tempBaby>>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>
 	<<set $sex.push({sex: 'male', name:'Paul', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>

@@ -1039,7 +1039,6 @@
 			<video src="Part1/SideEffectAnal.mp4" autoplay loop muted height="640"></video>
 		<</nobr>>
 		
-		
 		<<nobr>>
 			<<if $PlayerSideEffectAnal == 1>>
 				<<print "Some women like anal sex, some women hate it, and some women love it. Guess which you’re going to be.">>
@@ -1056,7 +1055,15 @@
 			<</if>>
 		<</nobr>>
 
-		<<print "It’s going to feel amazing for you, You’ll probably be begging any guy you’re with to try it. But don’t worry, most will be happy to oblige.">>
+		<<nobr>>
+			<<print "It’s going to feel amazing for you, You’ll probably be begging any guy you’re with to try it. But don’t worry, most will be happy to oblige.">>
+			<<if !$PlayerSideEffectPermanent and $PlayerSideEffectAnal > 1 and either(0,1) == 1>>
+				<<set $PlayerSideEffectAnalPermanent to $PlayerSideEffectAnal>>
+				<br><br>
+				Oh... and it looks like the side effect will be permanent, even if you change back to your old body.  But I hear prostate orgasms feel amazing so
+				I'm sure you'll enjoy it if you ever decide to change back.
+			<</if>>
+		<</nobr>>
 	<<case 9>><h1><<print "Side-Effect: Increased Libido">></h1>
 		
 		<<nobr>>
