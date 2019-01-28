@@ -1,4 +1,4 @@
-::Part13AndrewEngaged
+::Part13AndrewEngaged <0,4310>
 <<nobr>>
   <h1>Getting Ready for the Big Day</h1>
   <img src="PartX/AndrewFamily1.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -75,7 +75,7 @@
   "Well, I can think of one or two other things we are traditionally supposed to wait until [[after the ceremony|AndrewWedding]] for as well.", you tease back.
 <</nobr>>
 
-::AndrewWedding
+::AndrewWedding <200,4310>
 <<nobr>>
   <h1>After the Ceremony</h1>
   <img src="PartX/AndrewFamily2.jpg" hspace="10" vspace="10" height="700" align="left">
@@ -148,7 +148,7 @@
   [[escape off to your honeymoon|AndrewHoneymoon]]
 <</nobr>>
 
-::AndrewHoneymoon
+::AndrewHoneymoon <400,4310>
 <<nobr>>
   <h1>Honeymoon</h1>
   <img src="PartX/AndrewFamily3.jpg" hspace="10" vspace="10" height="600">
@@ -185,7 +185,7 @@
   Before you know it though, the trip is over and the two of you [[head home|AndrewProgress]].
 <</nobr>>
 
-::AndrewProgress
+::AndrewProgress <600,4310>
 <<nobr>>
   <h1>Progress Photos</h1>
   You love that Andrew is as excited about your pregnancy as you are.  He's been taking pictures of you throughout your entire progress, and posts them so
@@ -220,7 +220,7 @@
   [[month nine|AndrewNearlyTime]].
 <</nobr>>
 
-::AndrewNearlyTime
+::AndrewNearlyTime <800,4310>
 <<nobr>>
   <h1>Nearly Time</h1>
   <video src="PartX/AndrewFamily5.webm" autoplay loop muted height="500"></video>
@@ -250,7 +250,7 @@
   He quickly grabs your bag and starts helping you out to the car.
 <</nobr>>
 
-::AndrewLabor
+::AndrewLabor <1000,4310>
 <<nobr>>
   <h1>Labor and Delivery</h1>
   <<set $PlayerPregnant = 0>>
@@ -293,7 +293,7 @@
   <<print $children[0].name>> are ready to [[go home|AndrewRecovering]].
 <</nobr>>
 
-::AndrewRecovering
+::AndrewRecovering <1200,4310>
 <<nobr>>
   <h1>Recovering</h1>
   The first few couple weeks after you get home, is spent focusing on diaper changes, middle-of-the-night feedings, and letting your body recover from what it just
@@ -339,7 +339,7 @@
 <</nobr>>
 <img src="PartX/AndrewFamily7a.jpg" hspace="10" vspace="10" height="640" align="right">
 
-::AndrewSixWeeks
+::AndrewSixWeeks <1400,4310>
 <<nobr>>
   <h1>Six Weeks</h1>
   <video src="PartX/AndrewFamily8.mp4" autoplay loop muted height="500"></video>
@@ -365,10 +365,20 @@
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
 <</nobr>>
 <<nobr>>
+  You are thrilled at your six week follow-up visit, when your doctor gives you the OK to start having sex again.
 <</nobr>>
-TODO 5: Something with you and Andrew, so excited you finally can again.  [[AndrewPregnantAgain]]
 
-::AndrewPregnantAgain
+<<nobr>>
+  It feels so good when you feel Andrew slide into you again after so long.  The two of you spend the next few weeks having sex at every opporunity,
+  trying to make up for lost time.
+<</nobr>>
+
+<<nobr>>
+  Each time, when Andrew finishes inside you, you wonder how long it will take before you are [[pregnant again|AndrewPregnantAgain]].  You want
+  <<print $children[0].name>> to have a brother or sister, so you hope it will be soon.
+<</nobr>>
+
+::AndrewPregnantAgain <1600,4310>
 <<nobr>>
   <h1>Expecting Again</h1>
   <img src="PartX/AndrewFamily10.jpg" hspace="10" vspace="10" height="640" align="left">
@@ -418,13 +428,14 @@ TODO 5: Something with you and Andrew, so excited you finally can again.  [[Andr
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
 <</nobr>>
 <<nobr>>
+  <<set $PlayerPregnant = 1>>
+  <<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
+  <<set $tempBaby2 to $tempBabyName[either(0,1)].shift()>>
+  Happily it doesn't take long before you are pregnant again.   
 <</nobr>>
-<<set $PlayerPregnant = 1>>
-<<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
-<<set $tempBaby2 to $tempBabyName[either(0,1)].shift()>>
 TODO 4: Pregnant Again (2nd) Option to go to [[AndrewThreesomeFun]] if had threesome before.  Otherwise (or if choose), go to [[AndrewFun]]
 
-::AndrewThreesomeFun
+::AndrewThreesomeFun <1800,4310>
 <<nobr>>
   <h1>Fun with Cassie and Andrew</h1>
   <video src="PartX/AndrewFamily9.mp4" autoplay loop muted height="500"></video>
@@ -433,18 +444,24 @@ TODO 4: Pregnant Again (2nd) Option to go to [[AndrewThreesomeFun]] if had three
   <<set $sex.push({sex: 'male', name: 'Cassie'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Cassie'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Cassie'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $children.push($tempBaby)>>
+  <<set $children.push($tempBaby2)>>
+  <<unset $tempBaby>>
+  <<unset $tempBaby2>>
 <</nobr>>
 <<nobr>>
 <</nobr>>
 TODO 3: had the second one and the third one already before this, Still having fun even with the kids taking your time. Threesome with Cassie. [[AndrewPregnantFourth]]
 
-::AndrewFun
+::AndrewFun <2000,4310>
 <<nobr>>
   <h1>Fun with Andrew</h1>
   <video src="PartX/AndrewFamily11.webm" autoplay loop muted height="500"></video>
@@ -458,18 +475,18 @@ TODO 3: had the second one and the third one already before this, Still having f
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $children.push($tempBaby)>>
+  <<set $children.push($tempBaby2)>>
+  <<unset $tempBaby>>
+  <<unset $tempBaby2>>
 <</nobr>>
 <<nobr>>
 <</nobr>>
 <<set $PlayerPregnant = 0>>
 TODO 2: had the second one and the third one already before this, Still having fun even with the kids taking your time
-<<set $children.push($tempBaby)>>
-<<set $children.push($tempBaby2)>>
-<<unset $tempBaby>>
-<<unset $tempBaby2>>
 [[AndrewPregnantFourth]]
 
-::AndrewPregnantFourth
+::AndrewPregnantFourth <2200,4310>
 <<nobr>>
   <h1>Fourth on the Way</h1>
   <img src="PartX/AndrewFamily12.jpg" hspace="10" vspace="10" height="640" align="left">
@@ -491,8 +508,9 @@ TODO 2: had the second one and the third one already before this, Still having f
 TODO 1: Pregnant again, realize you've been pregnant more than not since changing.  No plans on stopping soon.<br>
 [[The End.|GameOverAndrewFamily]]
 
-::GameOverAndrewFamily
+::GameOverAndrewFamily <2400,4310>
 <h1><<print "Game Over - Wife and Mother - Large Family">></h1>
 <img src="PartX/GameOver4.jpg" hspace="10" vspace="10" height="600">
 <<set $children.push($tempBaby)>>
 <<unset $tempBaby>>
+
