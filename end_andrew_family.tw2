@@ -2,8 +2,8 @@
 <<nobr>>
   <h1>Getting Ready for the Big Day</h1>
   <img src="PartX/AndrewFamily1.jpg" hspace="10" vspace="10" height="600" align="left">
-  <<set $tempBabyNameBoys to ["Casey","Liam","Brandon","Wyatt"].map((name) => {return {name, sex:'male'}})>>
-  <<set $tempBabyNameGirls to ["Hope","Delilah","Emma","Sophia"].map((name) => {return {name, sex:'female'}})>>
+  <<set $tempBabyNameBoys to ["Casey","Liam","Brandon","Wyatt","Eli"].map((name) => {return {name, sex:'male'}})>>
+  <<set $tempBabyNameGirls to ["Hope","Delilah","Emma","Sophia","Mia"].map((name) => {return {name, sex:'female'}})>>
 	<<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
@@ -428,12 +428,47 @@
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
 <</nobr>>
 <<nobr>>
+  <<set $children.push($tempBabyName[either(0,1)].shift())>>
   <<set $PlayerPregnant = 1>>
   <<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
-  <<set $tempBaby2 to $tempBabyName[either(0,1)].shift()>>
-  Happily it doesn't take long before you are pregnant again.   
+  Happily it doesn't take long before you are pregnant again.  You know much more what to expect during your pregnancy this time around, but you also have
+  <<print $children[0].name>> to take care of too, which starts to be a challenge as you get further and further along.  But Andrew takes the last month of your
+  pregnancy off work for paternity leave so he can help through the worst of it.
 <</nobr>>
-TODO 4: Pregnant Again (2nd) Option to go to [[AndrewThreesomeFun]] if had threesome before.  Otherwise (or if choose), go to [[AndrewFun]]
+
+<<nobr>>
+  This time you opt for the epideral as soon as you can.  It helps, but you still find yourself screaming about why they haven't they cured this yet.  But like before,
+  once little <<print $children[1].name>> is in your arms, you don't care anymore.
+<</nobr>>
+
+<<nobr>>
+  Of course, afterwards the doctor gives the same instructions about waiting six weeks.  It's a little easier to wait this time, at least at first, if only because the
+  <<if $children[0].sex == 'male' and $children[1].sex == 'male'>>
+    boys
+  <<elseif $children[0].sex == 'female' and $children[1].sex == 'female'>>
+    girls
+  <<else>>
+    kids
+  <</if>>
+  keep you and Andrew busy all the time.  Though, you admit being a bit nervous as you head to your six week appointment that the doctor will be able to tell
+  that you and Andrew started back a week early this time.
+<</nobr>>
+
+<<nobr>>
+  Sex isn't quite as frequent for you and Andrew as it was before, so it takes a bit longer before you are pregnant with your third.  But when you head to your
+  relatives for Christmas, "Again?" is the question you hear most often.
+<</nobr>>
+
+<<nobr>>
+  You know more and more of your and Andrew's time will be about parenting, but you want to make sure that you keep the passion and romance between the two of you as well.
+  You already have some ideas about how to
+  <<if setup.haveFucked('Cassie')>>
+    [[keep things exciting|AndrewThreesomeFun]]
+  <<else>>
+    [[keep things exciting|AndrewFun]]
+  <</if>>
+  in the bedroom.
+<</nobr>>
 
 ::AndrewThreesomeFun <1800,4310>
 <<nobr>>
@@ -453,13 +488,30 @@ TODO 4: Pregnant Again (2nd) Option to go to [[AndrewThreesomeFun]] if had three
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
   <<set $children.push($tempBaby)>>
-  <<set $children.push($tempBaby2)>>
   <<unset $tempBaby>>
-  <<unset $tempBaby2>>
 <</nobr>>
 <<nobr>>
+  The
+  <<if $children[0].sex == 'male' and $children[1].sex == 'male' and $children[2].sex == 'male'>>
+    boys
+  <<elseif $children[0].sex == 'female' and $children[1].sex == 'female' and $children[2].sex == 'female'>>
+    girls
+  <<else>>
+    kids
+  <</if>>
+  love it when Aunt Cassie comes to visit.  They love spending the evening with her while you and Andrew go out for a romantic evening together.
 <</nobr>>
-TODO 3: had the second one and the third one already before this, Still having fun even with the kids taking your time. Threesome with Cassie. [[AndrewPregnantFourth]]
+
+<<nobr>>
+  Sometimes the evening will end with you and Andrew continuing your romantic evening together into the bedroom.  Other times, the three
+  of you will choose something a bit more adventurous.
+<</nobr>>
+
+<<nobr>>
+  Cassie's hoping she'll be there whenever [[her next niece or nephew is concieved|AndrewPregnantFourth]], so she always makes sure Andrew starts with you.
+  She does her best to make sure you cum at the same time Andrew does.  When it's her turn she has Andrew wear a condom even though she's also on birth control.
+  "I'm not taking any chances, I've seen what that thing can do.", she tells you.
+<</nobr>>
 
 ::AndrewFun <2000,4310>
 <<nobr>>
@@ -476,15 +528,38 @@ TODO 3: had the second one and the third one already before this, Still having f
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
   <<set $children.push($tempBaby)>>
-  <<set $children.push($tempBaby2)>>
   <<unset $tempBaby>>
-  <<unset $tempBaby2>>
+  <<set $PlayerPregnant = 0>>
 <</nobr>>
 <<nobr>>
+  The
+  <<if $children[0].sex == 'male' and $children[1].sex == 'male' and $children[2].sex == 'male'>>
+    boys
+  <<elseif $children[0].sex == 'female' and $children[1].sex == 'female' and $children[2].sex == 'female'>>
+    girls
+  <<else>>
+    kids
+  <</if>>
+  love it when they can spend time with Grandma and Grandpa.  Your parents don't get to visit as often due to the distance, but Andrew's parents live right here
+  in town.  They love it when their grandchildren come over, and even more when they can spend the night.
 <</nobr>>
-<<set $PlayerPregnant = 0>>
-TODO 2: had the second one and the third one already before this, Still having fun even with the kids taking your time
-[[AndrewPregnantFourth]]
+
+<<nobr>>
+  You and Andrew will usually take the opporunity to go out for a romantic evening together, followed by a passionate evening at home.  Though sometimes you like to
+  spice it up a bit more.
+<</nobr>>
+
+<<nobr>>
+  You wonder what Andrew will do when he gets home from work.  Will dinner plans wait a bit while he ravages is helpless wife?  Or will he grab the keys to the
+  cuffs from the top shelf and unlock you, saving the rest of the fun for later.  You wonder if telling him how wet you are aleady will make him want to use you now,
+  or more eager make you wait for it.  Then you realize that he could use you <i>and</i> leave you horny and aching for when you get home.  You put pillow from the
+  sofa on the floor and kneel on it.  Hopefully seeing you waiting for him like that will give him the same idea you just had.
+<</nobr>>
+
+<<nobr>>
+  You can guess from the "I hope the two of you had a good time." comments when you pick up the kids the next day, that his parents
+  are hoping the evening along together will soon lead to [[another grandchild|AndrewPregnantFourth]] for them.  You hope so too.
+<</nobr>>
 
 ::AndrewPregnantFourth <2200,4310>
 <<nobr>>
@@ -500,17 +575,40 @@ TODO 2: had the second one and the third one already before this, Still having f
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $PlayerPregnant = 1>>
+  <<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
+  <<set $tempBaby2 to $tempBabyName[either(0,1)].shift()>>
 <</nobr>>
 <<nobr>>
+  Doing what you can to keep things exciting between you and Andrew seems to be working, and soon you are pregnant with your fourth child.
+  <<if setup.haveFucked('Cassie')>>
+    When you let Cassie know the approximate date of conception that the doctor gave you, she's thrilled knowing it might have been one of the nights she'd joined
+    the two of you in the bedroom.
+  <</if>>
 <</nobr>>
-<<set $PlayerPregnant = 1>>
-<<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
-TODO 1: Pregnant again, realize you've been pregnant more than not since changing.  No plans on stopping soon.<br>
+
+<<nobr>>
+  With three, soon to be four, kids running around, it's rarely quiet at home.  But in a rare peaceful moment, you stop to think about when you'd first
+  received that letter from the school.  That was six years ago.  It's seems a bit strange now to think that you've only been a woman for six years.  It seems
+  even stranger when you realize that more than half your time as a woman, you've spent pregnant.  You wonder how long you can keep that trend going.
+<</nobr>>
+
+<<nobr>>
+  When you were first planning on getting married, you and Andrew had talked about having five kids.  You'd both wanted a large family, and that'd seemed like a
+  lot back then.  Now, it doesn't seem like that many.  Maybe you and Andrew should have a talk to see if maybe a few more would be better.
+<</nobr>>
+
+<<nobr>>
+  Maybe it's better to not decide on a number, the two of you can just keep going, and decide to stop whenever the two of you think it's enough.
+<</nobr>>
+
 [[The End.|GameOverAndrewFamily]]
 
 ::GameOverAndrewFamily <2400,4310>
 <h1><<print "Game Over - Wife and Mother - Large Family">></h1>
 <img src="PartX/GameOver4.jpg" hspace="10" vspace="10" height="600">
 <<set $children.push($tempBaby)>>
+<<set $children.push($tempBaby2)>>
 <<unset $tempBaby>>
+<<unset $tempBaby2>>
 
