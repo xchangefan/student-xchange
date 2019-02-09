@@ -1,322 +1,259 @@
 ::Neighbours <300,625>
 <<nobr>>
-	<<set $Neighbour1Update = 1>>
-	<<set $Neighbour2Update = 1>>
+	<h1>Choosing Neighbours</h1>
+	<img src="Part5/Neighbours0.jpg" hspace="10" vspace="10" height="400" align="left">
+<</nobr>>
+<<nobr>>
+	"Most of the dorm rooms on campus are assigned randomly, but there are a few sets that haven't been assigned yet.  They said we could pick which guys would be in the room
+	next door to us if we wanted.
+<</nobr>>
 
-	<<if !$PlayerNeighbourSet>>
-		<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
-		<<switch $PlayerRollDice>>
-			<<case 1>>
-				<<set setup.addNeighbour('Barry')>>
-				<<set $Neighbour2 = 1>>
-			<<case 2 3 4 5>>
-				<<set setup.addNeighbour('James')>>
-				<<set $Neighbour2 = 2>>
-			<<case 6 7 8 9 10>>
-				<<set setup.addNeighbour('Peter')>>
-				<<set $Neighbour2 = 3>>
-			<<case 11 12 13 14 15 16 17>>
-				<<set setup.addNeighbour('Zack')>>
-				<<set $Neighbour2 = 4>>
-			<<case 18 19 20>>
-				<<set setup.addNeighbour('Josh')>>
-				<<set $Neighbour2 = 5>>
-		<</switch>>
+<<nobr>>
+	"If you don't care who 
+	<<if $Mentor == 'Emily'>>
+		the second neighbour is, we can just have him
+	<<else>>
+		our neighbours are, we can just have them
+	<</if>>
+	[[randomly assigned for us|NeighbourAssign]].
+<</nobr>>
 
-		<<if !setup.isNeighbour("Emily's Boyfriend")>>
-			<<silently>>
-				<<repeat 50ms>>
-					<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
-					<<switch $PlayerRollDice>>
-						<<case 1>>
-							<<if !setup.isNeighbour('Barry')>>
-								<<set setup.addNeighbour('Barry')>>
-								<<set $PlayerNeighbourSet = 1>>
-								<<set $Neighbour1 = 1>>
-								<<set $Neighbour1Update = 1>>
-								<<stop>>
-							<</if>>
-						<<case 2 3 4 5>>
-							<<if !setup.isNeighbour('James')>>
-								<<set setup.addNeighbour('James')>>
-								<<set $PlayerNeighbourSet = 1>>
-								<<set $Neighbour1 = 2>>
-								<<set $Neighbour1Update = 1>>
-								<<stop>>
-							<</if>>
-						<<case 6 7 8 9 10>>
-							<<if !setup.isNeighbour('Peter')>>
-								<<set setup.addNeighbour('Peter')>>
-								<<set $PlayerNeighbourSet = 1>>
-								<<set $Neighbour1 = 3>>
-								<<set $Neighbour1Update = 1>>
-								<<stop>>
-							<</if>>
-						<<case 11 12 13 14 15 16 17>>
-							<<if !setup.isNeighbour('Zack')>>
-								<<set setup.addNeighbour('Zack')>>
-								<<set $PlayerNeighbourSet = 1>>
-								<<set $Neighbour1 = 4>>
-								<<set $Neighbour1Update = 1>>
-								<<stop>>
-							<</if>>
-						<<case 18 19 20>>
-							<<if !setup.isNeighbour('Josh')>>
-								<<set setup.addNeighbour('Josh')>>
-								<<set $PlayerNeighbourSet = 1>>
-								<<set $Neighbour1 = 5>>
-								<<set $Neighbour1Update = 1>>
-								<<stop>>
-							<</if>>
-					<</switch>>
-				<</repeat>>
-			<</silently>>
+<<nobr>>
+	"But if you want, you can pick 
+	<<if $Mentor != 'Emily'>>
+		one out, and I'll pick
+	<</if>>
+	the other one out.  But it's not like we are at the animal shelter picking out kittens or something. There's just a list of names.
+	I did ask around and get a little info on a few of them though.  [[Here are the ones I know|NeighbourSelect]]."
+<</nobr>>
+
+
+::NeighbourSelect
+<<nobr>>
+	<h1>Neighbour Selection</h1>
+	$Mentor fills you in on the names she recognizes from the list of potential neighbours:
+<</nobr>>
+
+<<nobr>>
+	<img src="Part5/Neighbours0.jpg" hspace="10" vspace="10" height="400" align="left">
+	<<link "Barry">><<set setup.addNeighbour("Barry")>><<goto [[NeighbourAssign]]>><</link>>:
+	<<if $Mentor == 'Olivia'>>
+		I've... ummm... met Barry before actually.  I like it when guys put me in my place, and Barry is good at that.  But I know some other girls don't like him at all.
+	<<else>>
+		One of the other mentors knew him.  She seemed to like him, but from the way she described him, he sounded like a bit of
+		<<if $Mentor == 'Faith'>>
+			a jerk.
 		<<else>>
-			<<set $PlayerNeighbourSet = 1>>
-			<<set $Neighbour1 = 6>>
+			an ass.
 		<</if>>
 	<</if>>
-	
-	<h1><<print "Neighbours">></h1>
+	But it's your choice.
 <</nobr>>
 
-<img src="Part5/Neighbours1.jpg" hspace="10" vspace="10" height="400">
 <<nobr>>
-	<<print "As you go to your room in the dormitory, your neighbours are already there. When they hear you two come in, they come out of their room to introduce themselves. One of them ">>
-		<span id="Neighbour1"><<print " is Emily‘s boyfriend">></span>
-	<<print " and the other seems to be ">>
-		<span id="Neighbour2">"."</span>
+	<<link "James">><<set setup.addNeighbour("James")>><<goto [[NeighbourAssign]]>><</link>>:
+	<<if $Mentor == 'Hannah'>>
+		I think I hooked up with him once.  It was just a fun, one-time thing, so don't let that discourage you if you're interested.
+	<<else>>
+		A couple of the girls I talked with
+		<<if $Mentor == 'Faith'>>
+			have... ummm... dated James.  But he doesn't really seem like 'future husband' material to me.
+		<<else>>
+			have fooled around with James.  They all sounded like they had a good time though.
+		<</if>>
+	<</if>>
 <</nobr>>
 
-<<link [[You approach them to find out more.|Neighbours2]]>><</link>>
+<<nobr>>
+	<<link "Josh">><<set setup.addNeighbour("Josh")>><<goto [[NeighbourAssign]]>><</link>>:
+	He seemed ok from what I heard.  Nothing really stood out, so he's probably a safe choice.
+<</nobr>>
 
 <<nobr>>
-	<<silently>>
-		<<repeat 100ms>>
-			<<if $Neighbour2Update>>
-				<<replace "#Neighbour2">>
-					<<switch $Neighbour2>>
-						<<case 1>>
-							<<link " a Jerk.">>
-								<<set setup.removeNeighbour('Barry')>>
-								<<set $Neighbour2Update = 1>>
-								<<if !$Neighbour1 != 2>>
-									<<set setup.addNeighbour('James')>>
-									<<set $Neighbour2 = 2>>
-								<<else>>
-									<<set setup.addNeighbour('Peter')>>
-									<<set $Neighbour2 = 3>>
-								<</if>>
-							<</link>>
-						<<case 2>>
-							<<link " a Player.">>
-								<<set setup.removeNeighbour('James')>>
-								<<set $Neighbour2Update = 1>>
-								<<if $Neighbour1 != 3>>
-									<<set setup.addNeighbour('Peter')>>
-									<<set $Neighbour2 = 3>>
-								<<else>>
-									<<set setup.addNeighbour('Zack')>>
-									<<set $Neighbour2 = 4>>
-								<</if>>
-							<</link>>
-						<<case 3>>
-							<<link " a Nerd.">>
-								<<set setup.removeNeighbour('Peter')>>
-								<<set $Neighbour2Update = 1>>
-								<<if $Neighbour1 != 4>>
-									<<set setup.addNeighbour('Zack')>>
-									<<set $Neighbour2 = 4>>
-								<<else>>
-									<<set setup.addNeighbour('Josh')>>
-									<<set $Neighbour2 = 5>>
-								<</if>>
-							<</link>>
-						<<case 4>>
-							<<link " a Thrill-Seeker.">>
-								<<set setup.removeNeighbour('Zack')>>
-								<<set $Neighbour2Update = 1>>
-								<<if $Neighbour1 != 5>>
-									<<set setup.addNeighbour('Josh')>>
-									<<set $Neighbour2 = 5>>
-								<<else>>
-									<<set setup.addNeighbour('Barry')>>
-									<<set $Neighbour2 = 1>>
-								<</if>>
-							<</link>>
-						<<case 5>>
-							<<link " a Regular Guy.">>
-								<<set setup.removeNeighbour('Josh')>>
-								<<set $Neighbour2Update = 1>>
-								<<if $Neighbour1 != 1>>
-									<<set setup.addNeighbour('Barry')>>
-									<<set $Neighbour2 = 1>>
-								<<else>>
-									<<set setup.addNeighbour('James')>>
-									<<set $Neighbour2 = 2>>
-								<</if>>
-							<</link>>
-					<</switch>>
-					<<set $Neighbour2Update = 0>>
-				<</replace>>
-			<</if>>
-			<<if !setup.isNeighbour("Emily's Boyfriend") and $Neighbour1Update>>
-				<<replace "#Neighbour1">>
-					<<switch $Neighbour1>>
-						<<case 1>>
-							<<link " a Jerk.">>
-								<<set setup.removeNeighbour('Barry')>>
-								<<set $Neighbour1Update = 1>>
-								<<if $Neighbour2 != 2>>
-									<<set setup.addNeighbour('James')>>
-									<<set $Neighbour1 = 2>>
-								<<else>>
-									<<set setup.addNeighbour('Peter')>>
-									<<set $Neighbour1 = 3>>
-								<</if>>
-							<</link>>
-						<<case 2>>
-							<<link " a Player.">>
-								<<set setup.removeNeighbour('James')>>
-								<<set $Neighbour1Update = 1>>
-								<<if $Neighbour2 != 3>>
-									<<set setup.addNeighbour('Peter')>>
-									<<set $Neighbour1 = 3>>
-								<<else>>
-									<<set setup.addNeighbour('Zack')>>
-									<<set $Neighbour1 = 4>>
-								<</if>>
-							<</link>>
-						<<case 3>>
-							<<link " a Nerd.">>
-								<<set setup.removeNeighbour('Peter')>>
-								<<set $Neighbour1Update = 1>>
-								<<if $Neighbour2 != 4>>
-									<<set setup.addNeighbour('Zack')>>
-									<<set $Neighbour1 = 4>>
-								<<else>>
-									<<set setup.addNeighbour('Josh')>>
-									<<set $Neighbour1 = 5>>
-								<</if>>
-							<</link>>
-						<<case 4>>
-							<<link " a Thrill-Seeker.">>
-								<<set setup.removeNeighbour('Zack')>>
-								<<set $Neighbour1Update = 1>>
-								<<if $Neighbour2 != 5>>
-									<<set setup.addNeighbour('Josh')>>
-									<<set $Neighbour1 = 5>>
-								<<else>>
-									<<set setup.addNeighbour('Barry')>>
-									<<set $Neighbour1 = 1>>
-								<</if>>
-							<</link>>
-						<<case 5>>
-							<<link " a Regular Guy.">>
-								<<set setup.removeNeighbour('Josh')>>
-								<<set $Neighbour1Update = 1>>
-								<<if $Neighbour2 != 1>>
-									<<set setup.addNeighbour('Barry')>>
-									<<set $Neighbour1 = 1>>
-								<<else>>
-									<<set setup.addNeighbour('James')>>
-									<<set $Neighbour1 = 2>>
-								<</if>>
-							<</link>>
-						<<case 6>>
-							<<set $Neighbour1Update = 0>>
-					<</switch>>
-					<<set $Neighbour1Update = 0>>
-				<</replace>>
-			<</if>>
-		<</repeat>>
-	<</silently>>
+	<<link "Peter">><<set setup.addNeighbour("Peter")>><<goto [[NeighbourAssign]]>><</link>>:
+	<<if $Mentor == 'Faith'>>
+		He helped me in a math class I was struggling in last year.  He's a sweet guy - and really smart too.  Having him right next door would probably be a big help if
+		either of us need any tutoring help this year.
+	<<else>>
+		He's tutored a few of the girls I talked with.  He seems nice.  And smart I guess.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	<<link "Zack">><<set setup.addNeighbour("Zack")>><<goto [[NeighbourAssign]]>><</link>>:
+	<<if $Mentor == 'Samantha'>>
+		My ex-girlfriend was into skydiving and Zack is too, so I've met him a few times.  He's a bit on the wild side, but pretty cool.  For a guy anyway.
+	<<else>>
+		It sounds like he's into rock climbing and skydiving and stuff.  He might be fun to hang out with if you're the adventurous type.
+	<</if>>
+<</nobr>>
+
+::NeighbourAssign
+<<nobr>>
+	<h1>Neighbour Assignment</h1>
+	<img src="Part5/Neighbours0.jpg" hspace="10" vspace="10" height="400" align="left">
+
+	<<if $Mentor == 'Faith'>>
+		<<set $tempMentorChoice1 to "Peter">>
+		<<set $tempMentorChoice2 to "Josh">>
+	<<elseif $Mentor == 'Emily'>>
+		<<set $tempMentorChoice1 to either("Barry", "James", "Zack", "Peter", "Josh")>>
+	<<elseif $Mentor == 'Hannah'>>
+		<<set $tempMentorChoice1 to "James">>
+		<<set $tempMentorChoice2 to "Zack">>
+	<<elseif $Mentor == 'Samantha'>>
+		<<set $tempMentorChoice1 to "Zack">>
+		<<set $tempMentorChoice2 to "Peter">>
+	<<else>>
+		<<set $tempMentorChoice1 to "Barry">>
+		<<set $tempMentorChoice2 to "Zack">>
+	<</if>>
+
+	<<if $neighbours.length == 0>>
+		<<set $tempRoommatePick to 0>>
+		<<set $tempPlayerPick to 0>>
+		<<set $tempNeighbours = ["Barry", "James", "Zack", "Peter", "Josh"]>>
+		<<set $tempNeighbourPick = either(0,1,2,3,4)>>
+		<<set setup.addNeighbour($tempNeighbours[$tempNeighbourPick])>>
+		<<set $tempNeighbours to $tempNeighbours.slice(0,$tempNeighbourPick).concat($tempNeighbours.slice($tempNeighbourPick + 1))>>
+		<<set setup.addNeighbour($tempNeighbours[either(0,1,2,3)])>>
+		<<unset $tempNeighbourPick>>
+		<<unset $tempNeighbours>>
+	<<elseif $neighbours.length == 1>>
+		<<set $tempRoommatePick to 1>>
+		<<if $Mentor == 'Emily'>>
+			<<set $tempPlayerPick to 0>>
+		<<else>>
+			<<set $tempPlayerPick to 1>>
+		<</if>>
+		<<if setup.isNeighbour($tempMentorChoice1)>>
+			<<set setup.addNeighbour($tempMentorChoice2)>>
+		<<else>>
+			<<set setup.addNeighbour($tempMentorChoice1)>>
+		<</if>>
+	<<else>>
+		<<set $tempPlayerPick to 1>>
+		<<set $tempRoommatePick to 1>>
+	<</if>>
+	<<unset $tempMentorChoice1>>
+	<<unset $tempMentorChoice2>>
+<</nobr>>
+
+<<nobr>>
+	<<if $Mentor == 'Emily'>>
+		Emily selected her boyfriend and you
+		<<if $tempPlayerPick>>
+			selected
+		<<else>>
+			were assigned
+		<</if>> 
+		$neighbours[1] as neighbours.
+	<<elseif $tempPlayerPick>>
+		You selected $neighbours[0] and $Mentor selected $neighbours[1] as neighbours.
+	<<else>>
+		You and $Mentor were assigned $neighbours[0] and $neighbours[1] as neighbours.
+	<</if>>
+	<<unset $tempPlayerPick>>
+	<<unset $tempRoommatePick>>
+<</nobr>>
+
+<<nobr>>
+	You'll be able to meet them both when we get back from
+	<<if $Mentor == 'Faith'>>[[your shopping trip.|Faith2]]
+	<<elseif $Mentor == 'Emily'>>[[your shopping trip.|Emily2]]
+	<<elseif $Mentor == 'Hannah'>>[[your shopping trip.|Hannah2]]
+	<<elseif $Mentor == 'Samantha'>>[[your shopping trip.|Samantha2]]
+	<<else>>[[your shopping trip.|Olivia2]]
+	<</if>>	
 <</nobr>>
 
 ::Neighbours2 <500,625>
 <<nobr>>
-	<h1><<print "Neighbours">></h1>
+	<h1><<print "Meeting the Neighbours">></h1>
 <</nobr>>
-
-<<switch $neighbours[0]>>
-	<<case 'Barry'>>\
-		<img src="Part5/Neighbours2A.jpg" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to this guy you realize he is indeed a Misogynistic Jerk. His name is Barry and you knew guys like this when you were a guy. You didn’t like them then and like them even less now.">>
-
-		<<print "He hasn’t said anything you could report him for, but you expect it’s onlya matter of time. You can quickly tell he’s only interested in one thing from you, and it’s not your opinion.">>
-	<<case 'James'>>\
-		<img src="Part5/Neighbours2B.png" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to this guy you realize he is indeed a Player. His name is James and he’s quite charming, and says all the right things. You know it’s an act though. Once he charms your pants off, he’ll bore quickly and move on to the next girl.">>
-
-		<<print "But he might be good for a little fun, if that’s all you’re looking for too.">>
-	<<case 'Peter'>>\
-		<img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to this guy you realize he is indeed a Nerd. His name is Peter and he’s very shy, especially when he’s talking to you. You get the feeling that he’s always nervous around girls, especially ones he thinks are pretty. He seems nice though.">>
-
-		<<print "You’re pretty sure if you helped him come out of his shell a bit more he could make someone (else) a decent boyfriend someday.">>
-	<<case 'Zack'>>\
-		<img src="Part5/Neighbours2D.jpg" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to this guy you realize he is indeed a Thrill-Seeker. His name is Zack and he lives for adventure. Rock climbing, skydiving, you-name-it, he loves anything that gets the adrenaline going.">>
-
-		<<print "You’re not sure how long he’ll be here before he bores of this place and leaves to go summit Everest or something, but you expect he’ll keep things exciting until then.">>
-	<<case 'Josh'>>\
-		<img src="Part5/Neighbours2E.jpg" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to this guy you realize he is indeed just a Regular Guy. His name is Josh and he seems like most 18 year old guys - a bit immature, but friendly and polite. If you were still a guy, you’re pretty sure you guys would become good friends.">>
-
-		<<print "As you get to know him more you find out he’s the first in his family to go to college. He’s excited, and nervous about it all, and wants to make the best of it.">>
-	<<case "Emily's Boyfriend">>\
-		<<print "You try to talk with Emily‘s boyfriend, but she keeps all his attention for herself. Regardless, he seems quite normal.">>
-<</switch>>
-
-<<switch $neighbours[1]>>
-	<<case 'Barry'>>\
-		<img src="Part5/Neighbours2A.jpg" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to the other guy you realize he is indeed a Misogynistic Jerk. His name is Barry and you knew guys like this when you were a guy. You didn’t like them then and like them even less now.">>
-
-		<<print "He hasn’t said anything you could report him for, but you expect it’s onlya matter of time. You can quickly tell he’s only interested in one thing from you, and it’s not your opinion.">>
-	<<case 'James'>>\
-		<img src="Part5/Neighbours2B.png" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to the other guy you realize he is indeed a Player. His name is James and he’s quite charming, and says all the right things. You know it’s an act though. Once he charms your pants off, he’ll bore quickly and move on to the next girl.">>
-
-		<<print "But he might be good for a little fun, if that’s all you’re looking for too.">>
-	<<case 'Peter'>>\
-		<img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to the other guy you realize he is indeed a Nerd. His name is Peter and he’s very shy, especially when he’s talking to you. You get the feeling that he’s always nervous around girls, especially ones he thinks are pretty. He seems nice though.">>
-
-		<<print "You’re pretty sure if you helped him come out of his shell a bit more he could make someone (else) a decent boyfriend someday.">>
-	<<case 'Zack'>>\
-		<img src="Part5/Neighbours2D.jpg" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to the other guy you realize he is indeed a Thrill-Seeker. His name is Zack and he lives for adventure. Rock climbing, skydiving, you-name-it, he loves anything that gets the adrenaline going.">>
-
-		<<print "You’re not sure how long he’ll be here before he bores of this place and leaves to go summit Everest or something, but you expect he’ll keep things exciting until then.">>
-	<<case 'Josh'>>\
-		<img src="Part5/Neighbours2E.jpg" hspace="10" vspace="10" height="400">
-		
-		<<print "As you talk to the other guy you realize he is indeed just a Regular Guy. His name is Josh and he seems like most 18 year old guys - a bit immature, but friendly and polite. If you were still a guy, you’re pretty sure you guys would become good friends.">>
-
-		<<print "As you get to know him more you find out he’s the first in his family to go to college. He’s excited, and nervous about it all, and wants to make the best of it.">>
-<</switch>>
-
 <<nobr>>
-	<<if setup.isNeighbour("Emily's Boyfriend")>>
-		After you finish talking with him, [[you go shopping with Emily.|Emily2]]
+	After you and $Mentor get back from your shopping trip you start unpacking and settling into your room.  Eventually you hear the guys coming in next door.
+	<<if $Mentor == "Emily">>
+		As soon as Emily hears her boyfriend come in, she excitedly leads you next door to meet him and your other neighbour.
 	<<else>>
-		After you finish talking with him,
-		<<if $Mentor == 'Faith'>>[[you go shopping with Faith.|Faith2]]
-		<<elseif $Mentor == 'Olivia'>>[[you go shopping with Olivia.|Olivia2]]
-		<<elseif $Mentor == 'Samantha'>>[[you go shopping with Samantha.|Samantha2]]
-		<<elseif $Mentor == 'Hannah'>>[[you go shopping with Hannah.|Hannah2]]
-		<</if>>	
+		Eventually you and $Mentor head over to meet your new neighours.
 	<</if>>
+<</nobr>>
+<<nobr>>
+	<<for _i = 0; _i < $neighbours.length; _i++>>
+		<br>
+		<<switch $neighbours[_i]>>
+			<<case "Emily's Boyfriend">>
+				<img src="Part5/Neighbours2F.png" hspace="10" vspace="10" height="400"><br/>
+				You try to talk with Emily‘s boyfriend, but she keeps all his attention for herself.  He seems normal though.
+				And it gives you more time to get to know your other neighbour.
+			<<case 'Barry'>>
+				<img src="Part5/Neighbours2A.jpg" hspace="10" vspace="10" height="400"><br/>
+				On the plus side, you can tell Barry thinks of you the same as he does any other woman.  Though you can quickly tell in his case that might not be such a good
+				thing. He doesn't seem to think much of women in general, and of you in particular.  You get the impression he's only interested in one thing from you and the
+				other women on campus, and it's not your opinions.
+				<br><br>
+				"I know a lot of girls like to slut it up their first semester.  Feel free to stop by anytime and I'll give you what you need.  Or at least what you deserve.",
+				he tells you.
+				<<if $Mentor == "Olivia">>
+					"Unless all your best parts are locked away like they are for your roommate that is.", he adds.
+					<<if $PlayerChastityBelt>>
+						"Ha! I take it from that face you just made you're wearing one too.  Well, I still love blowjobs so the offer still stands.  I'll get my dick sucked, and I
+						won't have to hear you talk - that sounds twice as good."
+					<</if>>
+				<</if>>
+			<<case 'James'>>
+				<img src="Part5/Neighbours2B.png" hspace="10" vspace="10" height="400"><br>
+				<<if $Mentor == "Hannah">>
+					When Hannah sees James she tells you, "Yeah, that is the guy I was thinking off.  He's a fun time if you ever get bored."
+					Then she holds her hands an impressive number of inches apart and gives you a thumbs up sign.  James notices the gesture and flashes a smile at you.
+					<br><br>
+				<</if>>
+				As you talk to James he seems quite charming, and says all the right things and you feel like you could just keep talking to him.
+				Later, $Mentor warns you,
+				<<if $Mentor == "Hannah">>
+					"If you're looking for a committment, you'll probably want to look somewhere where else.  But if you are just looking for good time, he'll give you one."
+				<<else>>
+					"I've seen guys like him before.  He'll charm the pants off a girl like you and quickly move on to the next one."
+					<<if $Mentor != "Faith">>
+						Of course, if that's what you want too, it'll probably be a good time while it lasts.
+					<</if>>
+				<</if>>
+			<<case 'Peter'>>
+				<img src="Part5/Neighbours2C.jpg" hspace="10" vspace="10" height="400"><br>
+				Peter seems quite shy, especially when he's talking to you.
+				<<if $Mentor == "Faith">>
+					He seemed more talkative with Faith though.  She tells you later "Don't worry, he'll open up.  Peter's always nervous around girls he's just met,
+					especially the pretty ones.  He must really like you."
+				<<else>>
+					He seems sweet, but you seem to really make him nervous.  He seems a little less nervous talking to $Mentor.  You wonder if it's because he finds you attractive.
+				<</if>>
+				<br><br>
+				Part of you wonders what kind of a boyfriend Peter would make if you could get him to come out of his shell a bit.
+			<<case 'Zack'>>
+				<img src="Part5/Neighbours2D.jpg" hspace="10" vspace="10" height="400"><br>
+				<<if $Mentor == "Samantha">>
+					"How have you been?", Zack says when he sees Sam walk in.  "I haven't seen you in a while, are you still jumping?"<br><br>
+					"No, Beth was the adventerous one, I'm happy keeping both feet on the ground now.", Sam replies before gesturing towards you,
+					"I think my roommate here is looking to try new things, so she might be interested."<br><br>
+				<</if>>
+				As you to talk to Zack you can tell he lives for adventure.  Rock climbing, skydiving, you-name-it, he loves anything that gets the adrenaline going.
+				He makes it sounds fun too, he's already talked you into giving skydiving a try - just once to see if you like it.
+			<<case 'Josh'>>
+				<img src="Part5/Neighbours2E.jpg" hspace="10" vspace="10" height="400"><br>
+				Josh seems like a typical 18 year old guy, a bit immature, but friendly and polite.  If you were still a guy, and he was your roommate, you're guessing
+				you would be come good friends.
+				<br><br>
+				As you get to know him more you find out he’s the first in his family to go to college. He’s excited, and nervous about it all,
+				and wants to make the best of it.
+		<</switch>>
+		<br>
+	<</for>>
+<</nobr>>
+<<nobr>>
+	After you are done meeting the guys, you head back to your room to finish unpacking.  You talk with $Mentor for a while before you decide it's time to 
+	settle in for your first night's sleep in a new town, a new bed, and a new body.  Hopefully you'll sleep well, tomorrow is another big day, with the
+	[[Job Fair|EndPart2]] that the X-Change people have set up for you.
 <</nobr>>
 
 ::Part5Andrew <0,3125>
@@ -747,7 +684,7 @@
 <<nobr>>
 	You apologize for her seeing that, but tell her you just couldn't hold back any longer.  You tell her about the dreams
 	you've been having at night, and the fantasize you can't get out of your mind during the day.  You tell her about
-	seeing your neighbor in the shower, and about how you barely resisted joining him in the shower.
+	seeing your neighbour in the shower, and about how you barely resisted joining him in the shower.
 <</nobr>>
 
 <<nobr>>
@@ -879,17 +816,27 @@
 <<nobr>>
 	Thankfully, Faith is at the ministry frequently, so you don't have to wait long until you have the room to yourself.  You suck on your new toy
 	as you other hand finds its way to your clit.  Once you've gotten yourself wet and can't wait any longer, you
-	<<if $PlaySideEffectOral>>reluctantly<</if>> pull the dildo out of your mouth.  You moan as it feels so good sliding in.  "Why have I been
-	denying myself this?", you wonder.  You keep going as you feel your orgasm build and build...
+	<<if $PlaySideEffectOral>>reluctantly<</if>> pull the dildo out of your mouth.  You moan as it feels so good sliding in.  
 <</nobr>>
 
 <<nobr>>
-	<<if $PlayerSideEffectOrgasmBlock>>
+	<<if $PlayerSideEffectMasturbationBlock>>
+		"Why have I been denying myself this?", you wonder.  But as you keep going instead of it feeling better and better, you start to feel it less and less.
+		You pick up the pace and go deeper with the dildo, and try rubbing your clit, but it doesn't help. Even as the feelings diminish, your hunger for some
+		release goes up and up.
+		<br><br>
+		You eventually give up, realizing it's the masturbation denial side effect they'd told you about causing this.  By the time you stop, you are feeling almost
+		nothing, but far hornier than when you'd started.  You are tempted to go out and find some guy, right now!  But you manage to summon up just enough will power
+		to throw the dildo in your drawer and try to get some sleep.  Maybe you can [[figure out something on Sunday|Part5FaithNo2]] when Faith will be gone all
+		morning.
+	<<elseif $PlayerSideEffectOrgasmBlock>>
+		"Why have I been denying myself this?", you wonder.  You keep going as you feel your orgasm build and build...
 		"No!!!", you cry out as you suddenly feel your oragasm slip away just before you can cum.  You realize your implant's side effect has denied
 		your orgasm.  You'd try again, but you know the result will be the same for at least the next day.  You toss the dildo into a drawer and
 		try to tell yourself, "Well, at least it felt good while it lasted."  You figure you'll [[try again on Sunday|Part5FaithNo2]] when
 		Faith will be gone all morning.
 	<<else>>
+		"Why have I been denying myself this?", you wonder.  You keep going as you feel your orgasm build and build...
 		"Yes! Yes! Oh God Yes!", you scream as you cum.
 		<<if $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
 			Wave after wave of pleasure washes over you, it takes you several minutes to recover from them.
@@ -903,7 +850,7 @@
 
 ::Part5FaithNo2 <430,2500>
 <<nobr>>
-	<<if $PlayerSideEffectOrgasmBlock>>
+	<<if $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock>>
 		<h1>Some Guy's Room</h1>
 		<video src="Part5/Faith14.mp4" autoplay loop muted height="540"></video>
 		<<set $sex.push({sex: 'male', anon: 'Basketball Player', vaginal:true})>>
@@ -924,9 +871,9 @@
 
 <<nobr>>
 	You don't make it until Sunday.  It's just two days later
-	<<if $PlayerSideEffectOrgasmBlock>>
+	<<if $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock>>
 		when you are leaving your yoga class at the fitness center.  You were hoping the class would take your mind off the frustration you've
-		been feeling, but didn't.  As you are walking throught the center, you see the basketball team practicing and sit down in the front row
+		been feeling, but it didn't.  As you are walking throught the center, you see the basketball team practicing and sit down in the front row
 		of the empty bleachers to watch.
 		<br><br>
 		You don't even realize how much you've been staring until after they are done and one of the players comes over to talk to you.  He
@@ -941,8 +888,9 @@
 		is the case this time.
 		<br><br>
 		After you both have came, you lie next to him for a while.  It's been so long since you had an orgasm.  You hope you never have to go that
-		long again.  But unless your implant thwarts you again, you shouldn't have to wait very long until your next one.  After you've given
-		him a bit of time to recover, you take his cock into your mouth and begin to coax it back to life for another round.
+		long again.
+		<<if $PlayerSideEffectOrgasmBlock>>But unless your implant thwarts you again, you shouldn't have to wait very long until your next one.<</if>>
+		After you've given him a bit of time to recover, you take his cock into your mouth and begin to coax it back to life for another round.
 	<<elseif $JobAthlete>>
 		when your sore muscles lead you to the massage area at the athletic center.  You tell yourself you are just getting a massage, but you
 		knew that wasn't true when you walked in.  Why else would you have specifically requested one of the guys for your massage?  Even when

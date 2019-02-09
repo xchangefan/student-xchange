@@ -14,3 +14,5 @@ zip src/build/$DIFF_FILENAME -9 src/build/$HTML_FILENAME
 find Part*/* -exec test ! -e src/build/release-$LAST_VERSION/{} \; -exec zip src/build/$DIFF_FILENAME -9 {} \;
 find Part*/* -exec test -e src/build/release-$LAST_VERSION/{} \; \! -exec cmp -s {} src/build/release-$LAST_VERSION/{} \; -exec zip src/build/$DIFF_FILENAME -9 {} \;
 echo "** BUILD COMPLETE** "
+
+# TODO Fix build. Currently DIFF is putting zip file into src/build in zip, change to have it put it in root of zip
