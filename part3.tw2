@@ -1,10 +1,9 @@
 ::Part3Start <400,1250>
 <<nobr>>
-	<h1><<print "Job/Activity Fair">></h1>
+	<h1>Job/Activity Fair</h1>
+	Next, we’ve lined up several local employers with job openings that some of you may qualify for. These include both on and off campus employers.
+	<img src="Part3/Start.jpg" hspace="10" vspace="10" height="650">
 <</nobr>>
-
-<<print "Next, we’ve lined up several local employers with job openings that some of you may qualify for. These include both on and off campus employers.">>
-<img src="Part3/Start.jpg" hspace="10" vspace="10" height="650">
 
 <<print "There are also some representatives from the athletic department here as well. Those positions aren’t technically allowed to pay you. But they do offer scholarships that would cover some of your tuition. That means you’d get to keep some of the money X-Change would have paid to the school. So it works out about the same as if they did pay you.">>
 
@@ -16,43 +15,150 @@
 
 ::JobList1 <800,1250>
 <<nobr>>
-	<h1><<print "Job/Activity Fair">></h1>
+	<h1>Job/Activity Fair</h1>
 <</nobr>>
-<p style="clear: both;"><span id="JobsMentor"></span>
-
-
+<<nobr>>
+	<<if $Mentor == 'Faith'>>
+				<<link [[Faith's Recommendation (Barista)|JobDecided]]>>
+					<<set $JobBarista = 1>>
+				<</link>>:
+				I looked through the jobs out there. Most of them look ok, I guess, but some of them... well, I just hope their parents
+				don’t learn how they earn their money.  I’m glad my parents give me enough I don’t have to worry about a job at school.
+				I hope I still meet my future husband while I’m here, and I never have to work outside the home. But I guess that’s not
+				an option for you yet, so I’ll try to help out."<br>
+				<img src="Part2/Faith1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobFaith.jpg" hspace="10" vspace="10" height="550"><br>
+				Anyway, I know this guy, Andrew, who’d be perfect for you. To hire you I mean. He’s here working on his business degree, but he also
+				manages the coffee shop on campus. His dad actually owns the whole chain of stores. Andrew will be running it all in a few years.
+				Most girls think he’s handsome too. I’m sure he’ll make someone a wonderful husband some day.
+				<br><br>
+				Why don’t I set you two up for a dat... a dinner meeting. So he can get to know you and see about a job for you.
+				Even if he doesn’t have a job, I’m sure you’ll have a great time. One of the dresses we bought earlier will be perfect for
+				your... meeting.
+	<<elseif $Mentor == 'Emily'>>
+			<<link [[Emily's Recommendation (Office Worker)|JobDecided]]>>
+				<<set $JobOffice = 1>>
+			<</link>>:
+			I checked out the job booths. There are some pretty good choices out there. There’s probably one that you’d like.<br>
+			<img src="Part2/Emily1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobEmily.jpg" hspace="10" vspace="10" height="550"><br>
+			I didn’t know of any jobs to recommend for you so I asked my boyfriend about it and he had an idea. His brother is a manager at an office
+			that’s not to far from campus. Their receptionist quit not to long ago, and they are looking for a new one. He said he could put in a good
+			word for you.  Take a look at the other options too, and let me know if you’re interested.
+	<<elseif $Mentor == 'Hannah'>>
+			<<link [[Hannah's Recommendation (Call Girl)|JobDecided]]>>
+				<<set $JobCallGirl = 1>>
+			<</link>>:
+			<i>(Hannah looks around to make sure no one is within earshot.)</i> If you want one of those jobs out in the booths,
+			take it. But I have another option for you.
+			<br><br>
+			You already know how much I like sex. And I’m pretty sure you feel the same way. Well, we don’t have to GIVE it away, you know.
+			<img src="Part2/Hannah1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobHannah.jpg" hspace="10" vspace="10" height="550"><br>
+			No, I wouldn’t use the word ‘prostitute’ that sounds like a street walker or something. I prefer ‘call girl’.  I use this service, I
+			just tell them when  I want to work, and they give me a text with the address I’m supposed to go to. I can make as much in a night as
+			most of those jobs pay in a week or more.
+			<br><br>
+			And even if you do want one of those other jobs, you can still
+			<<link "do this every now and then for some extra money.">>
+				<<set $JobCallGirlSide = 1>>
+				<<set $JobSide = 1>>
+				<<goto [[JobList2]]>>
+			<</link>>
+			If you want it as your only job, you can just make up a lie to tell your family what your job is.
+			<br><br>
+			Let me know if you’re interested. And don’t tell anyone.
+	<<elseif $Mentor == 'Samantha'>>
+			<<link [[Samantha's Recommendation (Bartender)|JobDecided]]>>
+				<<set $JobBartender = 1>>
+			<</link>>:
+			Some of those jobs in the booths look ok, but I have another option for you.
+			My favorite bar is looking for a new bartender. Looking like you do, it won’t matter if you don’t have any prior experience.
+			As long as you don’t mind a bunch of horny, half-drunk women flirting with you, you can pick up the rest on the job.<br>
+			<img src="Part2/Samantha1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobSamantha.jpg" hspace="10" vspace="10" height="550"><br>
+			And if you do a little flirting back at them, you’ll be going home with lots of tips every night. *Who* you go home with is entirely up to you, of course.
+			<br><br>
+			And don’t worry about your age. As long as you keep the girls buying drinks, the boss isn’t going to care.
+			After you look around, let me know if you are interested.
+	<<elseif $Mentor == 'Olivia'>>
+			<<link [[Olivia's Master's request (Web Model)|JobDecided]]>>
+				<<set $JobWebModel = 1>>
+			<</link>>:
+			I wanted to let you know about two things before you started looking.
+			<br><br>
+			First, my master owns an adult toy and clothing store. It’s the one we got your chastity belt from in fact.<br>
+			<img src="Part2/Olivia1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobOlivia.jpg" hspace="10" vspace="10" height="550"><br>
+			He’s looking for another model for their website. You’ll get to dress, or wear, or use many of the things they sell there. And you’ll get to
+			work with me, as I’m their other model! Plus we get to keep a lot of what we model too!
+			<br><br>
+			The other thing is, master didn’t want you to feel pressured to take the job. He said to take it only if you wanted it. You can also decide to only
+			<<link "do this every now and then for some extra money.">>
+				<<set $JobWebModelSide = 1>>
+				<<set $JobSide = 1>>
+				<<goto [[JobList2]]>>
+			<</link>>
+			<br><br>
+			If you take a different job, he’ll make sure your boss will have a copy of your belt’s key. That way they’ll be able to take it off if you need to
+			be unbelted for practice, or work, ... or whatever.  He’ll just make them promise to make sure it’s back on when you leave.  Let me know what you
+			decide on.
+	<</if>>
+<</nobr>>
+<hr>
 <<nobr>>
 	<<link "Student Athlete">>
 		<<set $JobAthlete = 1>>
-		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
-			<<set $JobSide = 2>>
-			<<goto [[JobList2]]>>
-		<<else>>
-			<<goto [[JobDecided]]>>
-		<</if>>
-	<</link>>
+		<<goto [[JobDecided]]>>
+	<</link>>: 
+	You’ll be training or competing 5 or 6 days a week. You’ll have access to state-of-the-art training facilities and the help of the university’s trainers.
+	So you’re sure to stay in peak condition.  The partial scholarship from the athletic department will free up some of the X-Change stipend that was paying
+	for tuition, so you will have some spending money available.
 <</nobr>>
-
-<<print "You’ll be training or competing 5 or 6 days a week. You’ll have access to state-of-the-art training facilities and the help of the university’s trainers. So you’re sure to stay in peak condition.">>
-<img src="Part3/JobAthleteA.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobAthleteB.jpg" hspace="10" vspace="10" height="550">
-
-<<print "The partial scholarship from the athletic department will free up some of the X-Change stipend that was paying for tuition, so you will have some spending money available.">>
-
-<<print "You are certain to be accepted if you have a “Fit” (or an equivalent custom) body type. But some sports have different needs, so there might be an opening for someone of a different body type as well.">>
-
-<span id="CheerJob"></span>
+<<nobr>>
+	<img src="Part3/JobAthleteA.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobAthleteB.jpg" hspace="10" vspace="10" height="550">
+<</nobr>>
+<<nobr>>
+	<<if $BodyType == "Fit">>
+		They seem eager to have you join the team.  You are thankful for this new body X-Change gave you.  You feel like try-outs will probably be a sure thing
+		for you.
+	<<else>>
+		Your new body isn't as athleticly built as some of the new girls' bodies are, and so are worried you won't make the team.  The let you know that there
+		are many different sports on campus, and they aren't all looking for the same thing.  They welcome you to try out if you are interested.
+	<</if>>
+<</nobr>>
+<hr>
+<<nobr>>
+	<<if $BodyType == "Plus">>
+		Cheerleader: You can see they are mostly looking a mainly looking for girls with a body type.  Most of the X-Change girls would probably be fine, but
+		you suspect you are a bit more curvy than what they are looking for, so you move on to the next booth.
+	<<else>>
+		<<link "Cheerleader">>
+			<<set $JobCheerleader = 1>>
+			<<goto [[JobDecided]]>>
+		<</link>>:
+		<<if $BodyType != "Standard">>
+			You can tell you are
+			<<if $BodyType == "Fit">>
+				more muscular
+			<<elseif $BodyType == "Petite">>
+				smaller
+			<<else>>
+				built differently
+			<</if>>
+			than most of the cheerleaders, but they assure you that there's a place for you if you are interested.
+		<</if>>
+		You’ll be practicing or working out 4 days a week, and then going to games to cheer on Saturdays. You’ll also be expected to attend university fundraising events occasionally.
+		<br>
+		<img src="Part3/JobCheerleaderA.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobCheerleaderB.jpg" hspace="10" vspace="10" height="550">
+		<br>
+		They get donations from alumni contributors to fund the program and offer a stipend equivalent to what most of the other jobs here pay.
+		Plus they’ll cover your squad travel, uniform, and beauty-care expenses.
+	<</if>>
+<</nobr>>
+<hr>
 <span style="font-size: 120%"><<print "On-Campus Employment">></span>
 <p style="clear: both;"><img src="Part3/JobOnCampusA.jpg" hspace="10" vspace="10" height="350" align="left">
 
 <<nobr>>
 	<<link "Campus Fitness Center Assistant">>
 		<<set $JobFitness = 1>>
-		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
-			<<set $JobSide = 2>>
-			<<goto [[JobList2]]>>
-		<<else>>
-			<<goto [[JobDecided]]>>
-		<</if>>
+		<<goto [[JobDecided]]>>
 	<</link>>
 <</nobr>>
 
@@ -62,12 +168,7 @@
 <<nobr>>
 	<<link "Campus Library">>
 		<<set $JobLibrary = 1>>
-		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
-			<<set $JobSide = 2>>
-			<<goto [[JobList2]]>>
-		<<else>>
-			<<goto [[JobDecided]]>>
-		<</if>>
+		<<goto [[JobDecided]]>>
 	<</link>>
 <</nobr>>
 
@@ -79,12 +180,7 @@
 <<nobr>>
 	<<link "Engineering Department Assistant">>
 		<<set $JobEngineer = 1>>
-		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
-			<<set $JobSide = 2>>
-			<<goto [[JobList2]]>>
-		<<else>>
-			<<goto [[JobDecided]]>>
-		<</if>>
+		<<goto [[JobDecided]]>>
 	<</link>>
 <</nobr>>
 
@@ -96,12 +192,7 @@
 <<nobr>>
 	<<link "Art Department Model">>
 		<<set $JobArt = 1>>
-		<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
-			<<set $JobSide = 2>>
-			<<goto [[JobList2]]>>
-		<<else>>
-			<<goto [[JobDecided]]>>
-		<</if>>
+		<<goto [[JobDecided]]>>
 	<</link>>
 <</nobr>>
 
@@ -144,169 +235,9 @@
 	<</link>>
 <</nobr>></p>
 
-<<silently>>
-	<<repeat 100ms>>
-	<<if $BodyType != 'Plus'>>
-		<<replace "#CheerJob">>
-			<<nobr>>
-				<<link "Cheerleader">>
-					<<set $JobCheerleader = 1>>
-					<<if $Mentor == 'Hannah' or $Mentor == 'Olivia'>>
-						<<set $JobSide = 2>>
-						<<goto [[JobList2]]>>
-					<<else>>
-						<<goto [[JobDecided]]>>
-					<</if>>
-				<</link>>
-			<</nobr>>
-
-			<<print "You’ll be practicing or working out 4 days a week, and then going to games to cheer on Saturdays. You’ll also be expected to attend university fundraising events occasionally.">>
-			<img src="Part3/JobCheerleaderA.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobCheerleaderB.jpg" hspace="10" vspace="10" height="550">
-			
-			<<print "You know they’re looking for girls that meet that typical X-Change look, but you think they might take you if you’re fit or petite. If you’re on the heavy size you know the answer will be no though.">>
-			
-			<<print "They get donations from alumni contributors to fund the program and offer a stipend equivalent to what most of the other jobs here pay. Plus they’ll cover your squad travel, uniform, and beauty-care expenses.">>
-			
-		<</replace>>
-		<<stop>>
-	<</if>>
-	<</repeat>>
-<</silently>>
-<<silently>>
-	<<repeat 100ms>>
-	<<if $Mentor == 'Faith'>>
-		<<replace "#JobsMentor">>\
-			<<nobr>>
-				<<link [[Faith's Recommendation (Barista)|JobDecided]]>>
-					<<set $JobBarista = 1>>
-				<</link>>
-			<</nobr>>
-
-			<<print "I looked through the jobs out there. Most of them look ok, I guess, but some of them... well, I just hope their parents don’t learn how they earn their money.">>
-
-			<<print "I’m glad my parents give me enough I don’t have to worry about a job at school. I hope I still meet my future husband while I’m here, and I never have to work outside the home. But I guess that’s not an option for you yet, so I’ll try to help out.">>
-			<img src="Part2/Faith1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobFaith.jpg" hspace="10" vspace="10" height="550">
-
-			<<print "Anyway, I know this guy, Andrew, who’d be perfect for you. To hire you I mean.">>
-
-			<<print "He’s here working on his business degree, but he also manages the coffee shop on campus. His dad actually owns the whole chain of stores. Andrew will be running it all in a few years. Most girls think he’s handsome too. I’m sure he’ll make someone a wonderful husband some day.">>
-
-			<<print "Why don’t I set you two up for a dat... a dinner meeting. So he can get to know you and see about a job for you.">>
-
-			<<print "Even if he doesn’t have a job, I’m sure you’ll have a great time. One of the dresses we bought earlier will be perfect for your... meeting.">>
-		<</replace>>\
-		<<stop>>
-	<</if>>
-	<<if $Mentor == 'Emily'>>
-		<<replace "#JobsMentor">>\
-			<<nobr>>
-				<<link [[Emily's Recommendation (Office Worker)|JobDecided]]>>
-					<<set $JobOffice = 1>>
-				<</link>>
-			<</nobr>>
-
-			<<print "I checked out the job booths. There are some pretty good choices out there. There’s probably one that you’d like.">>
-			<img src="Part2/Emily1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobEmily.jpg" hspace="10" vspace="10" height="550">
-
-			<<print "I didn’t know of any jobs to recommend for you so I asked my boyfriend about it and he had an idea. His brother is a manager at an office that’s not to far from campus. Their receptionist quit not to long ago, and they are looking for a new one. He said he could put in a good word for you.">>
-
-			<<print "Take a look at the other options, and let me know if you’re interested.">>\
-		<</replace>>
-		<<stop>>
-	<</if>>
-	<<if $Mentor == 'Hannah'>>
-		<<replace "#JobsMentor">>\
-			<<nobr>>
-				<<link [[Hannah's Recommendation (Call Girl)|JobDecided]]>>
-					<<set $JobCallGirl = 1>>
-				<</link>>
-			<</nobr>>
-
-			<<print "(Hannah looks around to make sure no one is within earshot.)">>
-
-			<<print "If you want one of those jobs out in the booths, take it. But I have another option for you.">>
-
-			<<print "You already know how much I like sex. And I’m pretty sure you feel the same way. Well, we don’t have to GIVE it away, you know.">>
-			<img src="Part2/Hannah1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobHannah.jpg" hspace="10" vspace="10" height="550">
-
-			<<print "No, I wouldn’t use the word ‘prostitute’ that sounds like a street walker or something. I prefer ‘call girl’.">>
-
-			<<print "I use this service, I just tell them when  I want to work, and they give me a text with the address I’m supposed to go to. I can make as much in a night as most of those jobs pay in a week or more.">>
-
-			<<nobr>>
-				<<print "And even if you do want one of those other jobs, you can still ">>
-				<<link "do this every now and then for some extra money.">>
-					<<set $JobCallGirlSide = 1>>
-					<<set $JobSide = 1>>
-					<<goto [[JobList2]]>>
-				<</link>>
-				<<print " Or you can do it as your only job and just make up a lie to tell your family.">>
-			<</nobr>>
-
-			<<print "Let me know if you’re interested. And don’t tell anyone.">>\
-		<</replace>>
-		<<stop>>
-	<</if>>
-	<<if $Mentor == 'Samantha'>>
-		<<replace "#JobsMentor">>\
-			<<nobr>>
-				<<link [[Samantha's Recommendation (Bartender)|JobDecided]]>>
-					<<set $JobBartender = 1>>
-				<</link>>
-			<</nobr>>
-
-			<<print "Some of those jobs in the booths look ok, but I have another option for you.">>
-
-			<<print "My favorite bar is looking for a new bartender. Looking like you do, it won’t matter if you don’t have any prior experience. As long as you don’t mind a bunch of horny, half-drunk women flirting with you, you can pick up the rest on the job.">>
-			<img src="Part2/Samantha1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobSamantha.jpg" hspace="10" vspace="10" height="550">
-
-			<<print "And if you do a little flirting back at them, you’ll be going home with lots of tips every night. *Who* you go home with is entirely up to you, of course.">>
-
-			<<print "And don’t worry about your age. As long as you keep the girls buying drinks, the boss isn’t going to care.">>
-
-			<<print "After you look around, let me know if you are interested.">>\
-		<</replace>>
-		<<stop>>
-	<</if>>
-	<<if $Mentor == 'Olivia'>>
-		<<replace "#JobsMentor">>\
-			<<nobr>>
-				<<link [[Olivia's Master's request (Web Model)|JobDecided]]>>
-					<<set $JobWebModel = 1>>
-				<</link>>
-			<</nobr>>
-
-			<<print "I wanted to let you know about two things before you started looking.">>
-
-			<<print "First, one of master’s friends owns an adult toy and clothing store. It’s the one we got your chastity belt from in fact.">>
-			<img src="Part2/Olivia1.jpg" hspace="10" vspace="10" height="550"><img src="Part3/JobOlivia.jpg" hspace="10" vspace="10" height="550">
-
-			<<print "He’s looking for another model for their website. You’ll get to dress, or wear, or use many of the things they sell there. And you’ll get to work with me, as I’m their other model! Plus we get to keep a lot of what we model too!">>
-
-			<<nobr>>
-			<<print "The other thing is, master didn’t want you to feel pressured to take the job. He said to take it only if you wanted it. You can also decide to only ">>
-				<<link "do this every now and then for some extra money.">>
-					<<set $JobWebModelSide = 1>>
-					<<set $JobSide = 1>>
-					<<goto [[JobList2]]>>
-				<</link>>
-			<</nobr>>
-
-			<<print "If you take a different job, he’ll make sure your boss will have a copy of your belt’s key. That way they’ll be able to take it off if you need to be unbelted for practice, or work, ... or whatever.">>
-
-			<<print "He’ll just make them promise to make sure it’s back on when you leave.">>
-
-			<<print "Let me know what you decide on.">>\
-		<</replace>>
-		<<stop>>
-	<</if>>
-	<</repeat>>
-<</silently>>
-
 ::JobList2 <1200,1250>
 <<nobr>>
 	<<set $PlayerJobSet = 1>>
-	
 	<h1><<print "Job/Activity Fair">></h1>
 <</nobr>>
 <span id="JobsListSpan2">"."</span>
@@ -647,10 +578,8 @@
 	<<set $MasterRobert = 1>>
 	<<set $PlayerClothesTopLeather = 1>>
 	<<set $PlayerClothesSkirtLeather = 1>>
-	
 	<h1><<print "Web Model">></h1>
 <</nobr>>
-
 <<print "Olivia introduces you to her master. He has a name, of course, but you aren’t allowed to use it. At first he has you call him “Sir”, but eventually you are calling him “Master” as well. He unlocks you from your chastity belt for your first modeling session.">>
 
 <<print "You love the way the skirt feels on your skin. You love how it limits your walk, forcing you to take smaller steps. And most of all, you love how you look in it.">>
@@ -956,6 +885,7 @@
 <<print "But you’re locked in your belt except when you’re with your coach. At least tasting each guys cum as your take in the musky odor of his recent workout helps take the hunger away...">>
 
 [[Just a bit. You know it will return soon.|AthleteChastity]]
+<<achievement>>train<</achievement>>
 
 ::AthleteChastity <600,3300>
 <<nobr>>
@@ -1040,6 +970,7 @@
 		<<if $JobCallGirlSide>>[[For now, you have to go to also work as a Call Girl.|JobCall3]]<</if>>
 	<</if>>
 <</nobr>>
+<<achievement>>train<</achievement>>
 
 ::AthleteRelief <1000,3300>
 <<nobr>>
@@ -1215,6 +1146,7 @@
 		<<if $JobCallGirlSide>>[[you have to go to also work as a Call Girl.|JobCall1]]<</if>>
 	<</if>>
 <</nobr>>
+<<achievement>>train<</achievement>>
 
 ::JobCheerleaderNice1 <1500,1875>
 <<nobr>>
@@ -2210,6 +2142,7 @@
 <<print "Meanwhile, you’re looking up into her husbands eyes. Both you and him are eager for the next round, when you know it will be you that his cock is inside.">>
 
 <<print "You know that when you get back to your dorm room the next morning ">>[[Sam will be starting with questions about who you went home with this time.|Part5Samantha1]]
+<<achievement>>threesome:FMF<</achievement>>
 
 ::JobBarUnsure1 <900,1750>
 <<nobr>>
@@ -2260,10 +2193,9 @@
 	<<set $PlayerCuffs = 1>>
 	<<set $PlayerThighBands = 1>>
 	<<set $PlayerCollar = 1>>
-	
-	<h1><<print "Web Model">></h1>
+	<h1>Web Model</h1>
 <</nobr>>
-
+<img src="Part3/JobOlivia2.jpg" hspace="10" vspace="10" height="650" align="left">
 <<print "After that first shoot, Master told you to put your belt back on.">>
 
 <<print "You could have refused. You could have walked out. But you didn’t.">>
@@ -2273,7 +2205,6 @@
 <<print "You wanted him to control you.">>
 
 <<print "He’s decided to keep the belt locked on you, removing it only when you are working. Though Master is generous sometimes, rewarding you with an orgasm at the end of good week.">>
-<img src="Part3/JobOlivia2.jpg" hspace="10" vspace="10" height="650">
 
 <<print "As you get more and more accustomed to the belt, Master adds thigh bands, wrist and ankle cuffs, and eventually a collar to what you wear when you are not at work.">>
 
@@ -2746,6 +2677,7 @@
 <<print "Many of your fans start debating that your orgasms look so real so perhaps you are not just faking them. ">><<if $PlayerChastityBelt>><<print "None of them know that you are kept in chastity except when you are filming. ">><</if>><<print "Of course, you’re being fucked so well that even if you wanted to fake them, you would just be overrun by the real ones.">>
 
 [[You join a study group.|Part6StudyGroup]]
+<<achievement>>threesome:MFM<</achievement>>
 
 ::JobPornGang3 <700,5250>
 <<nobr>>
@@ -2781,4 +2713,5 @@
 <<print "And you have a large and increasing number of fans on campus.">>
 
 [[Spend some time on campus.|Part6Frat1]]
+<<achievement>>train<</achievement>>
 

@@ -1,4 +1,11 @@
 ::GeneralFunctions [script] <200,50>
+
+setup.getDefaultName = function () {
+	const unusedPopularNames = ["Madison","Abigail","Taylor","Alyssa","Lauren","Brianna","Anna","Megan","Destiny","Jasmine","Jennifer","Julia","Isabella","Morgan"]
+	const randomIndex = Math.floor(Math.random() * unusedPopularNames.length)
+	return unusedPopularNames[randomIndex]
+}
+
 setup.removeItem = function (arr, item) {
 	var index = arr.indexOf(item)
 	if (index < 0) {
@@ -433,3 +440,270 @@ setup.isFriendzoned = function(name) {
 $(document).on(':passagestart', function (ev) {
 	setup.addDetailsToRecentSex()
 })
+
+::AchievementFunctions [script] <417,50>
+setup.getAchievementDetails = function() {
+	return {
+		married: {text: "Married", image: "Married.png"},
+		mileHigh: {text: "Mile High Club", image: "MileHigh.gif"},
+		pregnant: {text: "Pregnant", image: "Pregnant.jpg"},
+		mother: {text: "Gave Birth", image: "Baby.jpg"},
+		dropout: {text: "Dropped out of College", image: "DropOut.png"},
+		train: {text: "Serving a Train", image: "Train.jpg"},
+		threesome: {parts: ["MFM", "FMF", "FFF"], text: "Three Threesomes: MFM, FMF, and FFF", image: "Threesome.png"},
+
+		slave: {text: "Enslaved", image: "Slave.jpg", isEnding: true},
+		cumslut: {text: "Cum Slut", image: "Cumslut.png", isEnding: true},
+		kenWife: {text: "Artist's Muse", image: "Art.jpg", isEnding: true},
+		andrewLargeFamily: {text: "Large Family", image: "LargeFamily.jpg", isEnding: true},
+		paulWife: {text: "Trophy Wife", image: "TrophyWife.jpg", isEnding:true}
+	}
+}
+
+setup.getAchievements = function() {
+	const achievements = localStorage.getItem("student-x-change-program.achievements")
+	if (achievements) {
+		return JSON.parse(achievements)
+	} else {
+		return []
+	}
+}
+
+setup.getAchievementSaveData = function() {
+	const achievements = localStorage.getItem("student-x-change-program.achievements")
+	return btoa(achievements)
+}
+
+setup.restoreLoadedAchievementData = function(saveData) {
+	try {
+		const achievements = JSON.parse(atob(saveData))
+		if (achievements.length > 0) {
+			setup.saveAchievements(achievements)
+			return true
+		} else {
+			console.error("Empty achievements load attempted")
+			return false
+		}
+	} catch (ex) {
+		console.error(ex)
+		return false		
+	}
+}
+
+setup.saveAchievements = function(achievements) {
+	localStorage.setItem("student-x-change-program.achievements", JSON.stringify(achievements))
+}
+
+setup.addMultipartAchievement = function(achId) {
+	const currAchievements = setup.getAchievements()
+	if (currAchievements.indexOf(achId) < 0) {
+		const newAchievements = currAchievements.concat([achId])
+		setup.saveAchievements(newAchievements)
+	}
+		
+	const mainAchId = achId.split(":")[0]
+	const achInfo = setup.getAchievementDetails()[mainAchId]
+	if (!achInfo || !achInfo.parts || !achInfo.parts.length) return false
+
+	let hasAllParts = true
+	achInfo.parts.forEach((part) => {
+		if (!setup.hasAchievement(`${mainAchId}:${part}`)) {
+			hasAllParts = false
+		}
+	})
+
+	return hasAllParts && setup.addAchievement(mainAchId)
+}
+
+setup.addAchievement = function(achId) {
+	if (achId.indexOf(":") >= 0) {
+		return setup.addMultipartAchievement(achId)
+	}
+
+	const currAchievements = setup.getAchievements()
+	if (currAchievements.indexOf(achId) < 0) {
+		const newAchievements = currAchievements.concat([achId])
+		setup.saveAchievements(newAchievements)
+		return true
+	} else {
+		return false
+	}
+}
+
+setup.clearAchievements = function() {
+	setup.saveAchievements([])
+}
+
+setup.hasAchievement = function(achId) {
+	return setup.getAchievements().indexOf(achId) >= 0
+}
+
+setup.getAchievementCount = function() {
+	return setup.getAchievements().filter((achId) => {return achId.indexOf(":") < 0}).length
+}
+
+setup.getPossibleEndings = function() {
+	const details = setup.getAchievementDetails()
+	let endings = []
+	for (let ach in details) {
+		if (details[ach].isEnding) {
+			endings.push(ach)
+		}
+	}
+	return endings
+}
+
+setup.getAchievementTable = function() {
+	var st = "<table>\n"
+
+	const achToRow = (achId) => {
+		const achInfo = setup.getAchievementDetails()[achId]
+		if (achId.indexOf(":") >= 0) {
+			return ""
+		} else if (!achInfo) {
+		 	return "<tr><td colspan=2>Unknown Achievement: " + achId + "</td></tr>\n"
+		} else if (achInfo.isEnding) {
+		 	return ""
+		} else {
+			const imgText = (achInfo.image) ? "<img src=\"PartAch/" + achInfo.image + "\" hspace=\"10\" vspace=\"10\" height=\"100\" align=\"left\"/>" : ""
+		 	return "<tr><td>" + imgText + "</td><td>" + achInfo.text + "</td></tr>\n"	
+		}
+	}
+
+	st += setup.getAchievements().map(achToRow).join("")
+
+	st += "</table>\n"
+	return st
+}
+
+setup.getAchievementEndingTable = function() {
+	var st = "<table>\n"
+
+	const achToRow = (achId) => {
+		const achInfo = setup.getAchievementDetails()[achId]
+		if (achInfo && achInfo.isEnding) {
+			const imgText = (achInfo.image) ? "<img src=\"PartAch/" + achInfo.image + "\" hspace=\"10\" vspace=\"10\" height=\"100\" align=\"left\"/>" : ""
+		 	return "<tr><td>" + imgText + "</td><td>" + achInfo.text + "</td></tr>\n"	
+		} else {
+		 	return ""
+		}
+	}
+
+	st += setup.getAchievements().map(achToRow).join("")
+
+	st += "</table>\n"
+	return st
+}
+
+setup.getAchievementEndingCount = function() {
+	return setup.getAchievements().filter((ach) => {
+		const achInfo = setup.getAchievementDetails()[ach]
+		return achInfo && achInfo.isEnding
+	}).length
+}
+
+setup.getTotalEndingCount = function() {
+	return setup.getPossibleEndings().length
+}
+
+::Achievement [script] 
+// adapted from notify.js, by chapel; for sugarcube 2 version 1.0.0
+$(document.body).append("<div id='achievement'></div>");
+$(document).on(':achievement', function (e) {
+    if (e.message && typeof e.message === 'string') {
+        // trim message
+        const achId = e.message.trim();
+
+				let achInfo = setup.getAchievementDetails()[achId]
+				if (!achInfo) {
+					achInfo = { text: "Unknown Achievement: " + achId }
+				}
+
+				const imageText = achInfo.image ? "<img src=\"PartAch/" + achInfo.image + "\" height=\"200\">" : ""				
+				const endingText = achInfo.isEnding ? "The End: " : ""
+				e.message = imageText + (endingText + achInfo.text).replace(" ","&nbsp;")
+				
+        // classes
+        if (e.class) {
+            if (typeof e.class === 'string') {
+                e.class = 'open macro-achievement ' + e.class;
+            } else if (Array.isArray(e.class)) {
+                e.class = 'open macro-achievement ' + e.class.join(' ');
+            } else {
+                e.class = 'open macro-achievement';
+            }
+        } else {
+            e.class = 'open macro-achievement';
+        }
+        
+        // delay
+        if (e.delay) {
+            if (typeof e.delay !== 'number') {
+                e.delay = Number(e.delay)
+            }
+            if (Number.isNaN(e.delay)) {
+                e.delay = 5000;
+            }
+        } else {
+            e.delay = 5000;
+        }
+        
+        $('#achievement')
+            .empty()
+            .wiki(e.message)
+            .addClass(e.class)
+                
+        setTimeout(function () {
+            $('#achievement').removeClass();
+        }, e.delay);
+    }
+});
+
+// <<achievement delay 'classes'>> message <</achievement>>
+Macro.add('achievement', {
+       tags : null,
+    handler : function () {
+        
+        // set up
+        var msg     = this.payload[0].contents, 
+            time    = false, 
+            classes = false, i;
+        
+        // arguments
+        if (this.args.length > 0) {
+            if (typeof this.args[0] === 'number') {
+                time    = this.args[0];
+                classes = (this.args.length > 1) ? this.args.slice(1).flatten() : false;
+            } else {
+                classes = this.args.flatten().join(' ');
+            }
+        }
+
+				const isMultiPart = (msg.indexOf(":") >= 0)
+
+				if (msg.indexOf(":") >= 0) {
+					if (setup.addMultipartAchievement(msg)) {
+						// fire event
+						$(document).trigger({
+								type    : ':achievement',
+								message : msg.split(":")[0],
+								delay   : time,
+								class   : classes
+						});
+					}
+				} else {
+					if (setup.addAchievement(msg)) {
+						// fire event
+						$(document).trigger({
+								type    : ':achievement',
+								message : msg,
+								delay   : time,
+								class   : classes
+						});
+					}
+				}
+    }
+});
+
+::PassageHeader
+<span style="display:none"><<if $playerName>>$playerName: <</if>></span>

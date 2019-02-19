@@ -78,7 +78,7 @@
 	<<set $sex.push({sex: 'male', name:'Kidnapper 3', vaginal:true, noCondom: true, noPullout: true})>>
 	<h1><<print "Dungeon">></h1>
 	<<set $PlayerSlave to 1>>
-	<<set $student to false>>
+	<<unset $student>>
 <</nobr>>
 
 <<print "The pain in your arms, and everywhere else, was unbearable. You knew you couldn’t hold on much longer. You cried, defeated, and said what he wanted: “I’m a worthless slave” and then begged him to fuck you. He made you repeated it over and over, louder each time, until he finally removed the rope from your neck.">>
@@ -243,9 +243,9 @@
 
 <<print "You dumb bitch, you wouldn't give in and you passed out, so we used this to wake you up.">>
 
-<<print "While I`ve been trying to break you, my assistants have searched around to find out more about you.">>
+<<print "While I've been trying to break you, my assistants have searched around to find out more about you.">>
 
-<<print "While it doesn`t seem that you have anyone close in this city, they were surprised to discover that you are a guy with an experimental X-Change implant.">>
+<<print "While it doesn't seem that you have anyone close in this city, they were surprised to discover that you are a guy with an experimental X-Change implant.">>
 
 [[This is something unexpected, so you get to rest untill we get our doctor to check on you.|KidnappedResist2]]
 
@@ -307,7 +307,7 @@
 
 <<print "The doctor did say she will not remember anything anyway from all the drugs. Lets just dump her on the field and be on our way.">>
 
-[[If she`s smart, she`ll just go back to her previous life.|KidnappedResist5]]
+[[If she's smart, she'll just go back to her previous life.|KidnappedResist5]]
 
 ::KidnappedResist5  <20600,600>
 <<nobr>>
@@ -330,4 +330,4 @@
 ::GameOverKidnappedSlave  <14400,600>
 <h1><<print "Game Over - Slave">></h1>
 <img src="PartX/GameOver2.jpg" hspace="10" vspace="10" height="600">
-
+<<achievement>>slave<</achievement>>

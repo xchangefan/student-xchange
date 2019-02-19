@@ -126,19 +126,19 @@
 	<<set $PlayerProtectionPermanent = 0>>
 	<<set $PlayerProtectionPerfect = 0>>
 	
-	<h1><<print "Ken`s `Canvas`">></h1>
+	<h1><<print "Ken's 'Canvas'">></h1>
 <</nobr>>
 
-<<print "Thanks to the X-Change, once you stopped trying to prevent it, your body was fertile within days. Of course he started `using your body as his canvas` even before then.">>
+<<print "Thanks to the X-Change, once you stopped trying to prevent it, your body was fertile within days. Of course he started 'using your body as his canvas' even before then.">>
 
-<<print "He`s arranged for you to stay at his loft until he is sure his child is growing inside you, but one of his female assistants is always there to help you whenever he is not there. They also help you watch the lectures and complete the classwork your professors send over.">>
+<<print "He's arranged for you to stay at his loft until he is sure his child is growing inside you, but one of his female assistants is always there to help you whenever he is not there. They also help you watch the lectures and complete the classwork your professors send over.">>
 <img src="Part3/JobArt6.jpg" hspace="10" vspace="10" height="650">
 
-<<print "Of course, it`s hard to concentrate on school work all day when all you can think about is that night when he finally comes home to his `muse`.">>
+<<print "Of course, it's hard to concentrate on school work all day when all you can think about is that night when he finally comes home to his 'muse'.">>
 
-<<print "You wonder if you are pregnant now. If you are, you`ll ">>[[find out at your doctor visit in a few weeks.|JobArt7]]<<print " You wonder if your arms will feel strange and foreign to you when you have use of them again. Of course, you`ll still be back several times a week so he can document every step of your pregnancy.">>
+<<print "You wonder if you are pregnant now. If you are, you'll ">>[[find out at your doctor visit in a few weeks.|JobArt7]]<<print " You wonder if your arms will feel strange and foreign to you when you have use of them again. Of course, you'll still be back several times a week so he can document every step of your pregnancy.">>
 
-<<print "You hope he`ll still find your body as inspiring months from now and will do more with his `canvas` than just photograph it.">>
+<<print "You hope he'll still find your body as inspiring months from now and will do more with his 'canvas' than just photograph it.">>
 
 ::JobArt7 <3000,1450>
 <<nobr>>
@@ -162,10 +162,11 @@
 <<print "You look closely at your body in the mirror. You knew that it’d be changing a lot over the next few months, but that it will still be the body you’ll have for the rest of your life.">>
 
 [[You couldn’t be more thrilled at the thought.|JobArt8]]
+<<achievement>>pregnant<</achievement>>
 
 ::JobArt8 <3200,1450>
 <<nobr>>
-	<<set $student to false>>
+	<<unset $student>>
   <<set $Dropout to "Baby">>
 	<<set $children to []>>
 	<h1><<print "Doctor Visit">></h1>
@@ -179,6 +180,7 @@
 <<print "The people at the X-Change office are very happy for you. Your obstetrician will be sending them copies of her reports from your visits (and eventual delivery) to close out your participation in the trial, so you probably won’t be seeing any of them again.">>
 
 [[You say your goodbyes and thank them for the wonderful new life they’ve given you before you leave.|JobArt9]]
+<<achievement>>dropout<</achievement>>
 
 ::JobArt9 <3400,1450>
 <<nobr>>
@@ -202,10 +204,11 @@
 <<print "It’s one of the happiest days of your life so far, and his too, despite what he’s said about marriage.">>
 
 <<print "He can’t turn the artist in himself off completely though you notice, ">>[[as you watch him struggle not to take over for the event photographers.|JobArt10]]
+<<achievement>>married<</achievement>>
 
 ::JobArt10 <3600,1450>
 <<nobr>>
-	<h1><<print "Ken`s Wife & `Canvas`">></h1>
+	<h1><<print "Ken's Wife & 'Canvas'">></h1>
 	<<set $tempBabyName to [[{name: "Pablo", sex: 'male'}], [{name: "Frida", sex: 'female'}]]>>
 	<<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
 <</nobr>>
@@ -223,7 +226,7 @@
 	<<set $PlayerMother = 1>>
   <<set $children.push($tempBaby)>>
 	<<unset $tempBaby>>
-	<h1><<print "Ken`s Wife & `Canvas`">></h1>
+	<h1><<print "Ken's Wife & 'Canvas'">></h1>
 <</nobr>>
 
 <<print "You’d thought you knew what pain felt like, but you discover childbirth is another level entirely.">>
@@ -238,7 +241,9 @@
 <<print "Taking care of your growing family consumes much of your time, but you also have a growing interest as a fashion designer as well. Of course, everyone knows exactly where you get your inspiration from.">>
 
 [[The End.|GameOverArt]]
+<<achievement>>mother<</achievement>>
 
 ::GameOverArt <4000,1450>
 <h1><<print "Game Over - Wife of an Artist">></h1>
 <img src="PartX/GameOver1.jpg" hspace="10" vspace="10" height="600">
+<<achievement>>kenWife<</achievement>>

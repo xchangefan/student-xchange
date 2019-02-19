@@ -3,6 +3,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 <<if $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
 <<include [[SideBarNavigation]]>>
+<<include [[SideBarAchievementLink]]>>
 <<include [[SideBarDebug]]>>
 
 ::SideBarFemale <250,0>
@@ -51,6 +52,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<elseif $PlayerSlave>>
     a slave.
   <<else>>
+    <<if $playerName>>$playerName, <</if>>
     <<if $BodyType == 'Standard'>>
       a beautiful,
     <<elseif $BodyType == 'Plus'>>
@@ -185,11 +187,11 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
 
   <<if $PlayerSideEffectLibido >2 >>
-    <li>Your libido is much higher, you can never refuse sex.</li>
+    <li>Your libido is much higher than normal, you can never refuse sex.</li>
   <<elseif $PlayerSideEffectLibido >1 >>
-    <li>Your libido is much higher, you will often accept or suggest sex.</li>
+    <li>Your libido is much higher than normal, you will often accept or suggest sex to anyone showing the slightest interest.</li>
   <<elseif $PlayerSideEffectLibido>>
-    <li>You get excited much faster.</li>
+    <li>You libido is higher than normal.  Your thoughts frequently return to sex.</li>
   <</if>>
 
   <<if $PlayerSideEffectOral >1 >>
@@ -317,13 +319,13 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
 
   <<if $PlayerSideEffectLibido >3 >>
-    <li>Your libido is much higher, causing you to orgasm randomly, you can never refuse sex.</li>
+    <li>Your libido is much higher than normal, causing you to orgasm randomly, you can never refuse sex.</li>
   <<elseif $PlayerSideEffectLibido >2 >>
-    <li>Your libido is much higher, you can never refuse sex.</li>
+    <li>Your libido is much higher than normal, you can never refuse sex.</li>
   <<elseif $PlayerSideEffectLibido >1 >>
-    <li>Your libido is much higher, you will often accept or suggest sex.</li>
+    <li>Your libido is much higher than normal, you will often accept or suggest sex to anyone showing the slightest interest.</li>
   <<elseif $PlayerSideEffectLibido>>
-    <li>You get excited much faster.</li>
+    <li>You libido is higher than normal.  Your thoughts frequently return to sex.</li>
   <</if>>
 
   <<if $PlayerCumslutPermanent>>
@@ -818,3 +820,101 @@ In addition to the standard click navigation, the following is supported for one
 <<nobr>>
   <i>I'd ask for a round of applause for <strong>"HiEv"</strong> who provided the code for this feature, but it's hard to clap with just one hand.</i>
 <</nobr>>
+
+::SideBarAchievementLink <2950,0>
+<<nobr>>
+  <<if setup.getAchievementCount() == 1>>
+    [[1 Achievement Earned|SideBarAchievements]]
+  <<else>>
+    <<set _tempAchieveText to "" + setup.getAchievementCount() + " Achievements Earned">>
+    <<link _tempAchieveText SideBarAchievements>><</link>>
+  <</if>>
+<</nobr>>
+
+::SideBarAchievements <2960,0>
+<<nobr>>
+  <<if setup.getAchievementCount()>>
+    <h1>Earned Achievements</h1>
+    <<print setup.getAchievementTable()>>
+  
+    <h1>You have reached <<print setup.getAchievementEndingCount()>> of the <<print setup.getTotalEndingCount()>> endings completed so far</h1>
+    <<print setup.getAchievementEndingTable()>>
+  <<else>>
+    <h1>No Achievements Earned</h1>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  
+  [[Load Achievements|SideBarLoadAchievements]]
+  <<if setup.getAchievementCount()>>
+    <br>
+    [[Save Achievements|SideBarSaveAchievements]]<br>
+    (Note: Achievements will be lost if you clear your browser's local storage, or if you are in incognito mode and end your session.
+    Save them if you want to restore your progress later.)<br><br><br>
+    [[Clear All Achievements|SideBarClearAchievements]]
+  <</if>>
+<</nobr>>
+
+::SideBarClearAchievements <2970,0>
+<<nobr>>
+  <h1>Warning: This will clear all of your achievements</h1>
+<</nobr>>
+
+<<nobr>>
+  <span id="ClearAchievementsSpan">
+    <<link "Click here to confirm">>
+      <<set setup.clearAchievements()>>
+      <<replace "#ClearAchievementsSpan">>
+        Achievements Cleared.
+        <<back>>
+      <</replace>>
+    <</link>>
+  </span>
+<</nobr>>
+
+::SideBarLoadAchievements <2980,0>
+<<nobr>>
+  <h1>Load Saved Achievements</h1>
+  Paste in the achievement data that you previously saved to restore your achievements.  Then click "Load Achievements"
+<</nobr>>
+
+<<nobr>>
+  <span id="LoadAchievementSpan">
+    <<textarea "$achievementData" "" autofocus>><br>
+    <<link "Load Achievements">>
+      <<if setup.restoreLoadedAchievementData($achievementData)>>
+        <<replace "#LoadAchievementError">>
+        <</replace>>
+        <<replace "#LoadAchievementSpan">>
+          Achievements Loaded.
+          <<back>>
+        <</replace>>
+      <<else>>
+        <<replace "#LoadAchievementError">>
+          Unable to process saved achievement data
+        <</replace>>
+      <</if>>
+    <</link>>
+  </span>
+  <span id="LoadAchievementError">
+  </span>
+<</nobr>>
+
+::SideBarSaveAchievements <2990,0>
+<<nobr>>
+  <h1>Achievement Save Data</h1>
+  Achievements, as well as any Saves that you have "saved to disk", are stored in your browser local storage.
+  This is lost if you clear it, or if you are in 'incognito/private mode' and close your browser.
+<</nobr>>
+
+<<nobr>>
+  You can save the below text and then use "Load Achievements" later to restore your achievements.
+<</nobr>>
+
+<<nobr>>
+  <textarea rows="10" cols="60">
+    <<print setup.getAchievementSaveData()>>
+  </textarea>
+<</nobr>>
+
