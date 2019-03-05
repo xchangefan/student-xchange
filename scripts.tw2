@@ -221,6 +221,8 @@ setup.addDetailsToRecentSex = function() {
           fuck.birthControl = 'pregnant'
         } else if (state.active.variables.PlayerProtectionPerfect) {
           fuck.birthControl = 'implant-perfect'
+				} else if (state.active.variables.PlayerProtectionPrince) {
+					fuck.birthControl = 'injection'
         } else if (fuck.birthControlOverride) {
           fuck.birthControl = fuck.birthControlOverride
         } else if (state.active.variables.PlayerProtectionPermanent) {
@@ -240,6 +242,8 @@ setup.addDetailsToRecentSex = function() {
         fuck.checkedForPregnancy = 'already pregnant'
       } else if (fuck.birthControl == 'implant-perfect') {
         fuck.checkedForPregnancy = 'perfect implant'
+      } else if (fuck.birthControl == 'injection') {
+        fuck.checkedForPregnancy = 'injection'
       } else if (fuck.birthControl == 'cycle') {
         fuck.checkedForPregnancy = 'wrong time of month'
       } else if (fuck.birthControl == 'vasectomy') {
@@ -260,6 +264,7 @@ setup.getPossibleConceptions = function() {
       !fuck.checkedForPregnancy &&
       fuck.birthControl != 'pregnant' &&
       fuck.birthControl != 'implant-perfect' &&
+      fuck.birthControl != 'injection' &&
       fuck.birthControl != 'cycle' &&
       fuck.birthControl != 'vasectomy' &&
 			fuck.birthControl != 'goo'
@@ -456,7 +461,8 @@ setup.getAchievementDetails = function() {
 		cumslut: {text: "Cum Slut", image: "Cumslut.png", isEnding: true},
 		kenWife: {text: "Artist's Muse", image: "Art.jpg", isEnding: true},
 		andrewLargeFamily: {text: "Large Family", image: "LargeFamily.jpg", isEnding: true},
-		paulWife: {text: "Trophy Wife", image: "TrophyWife.jpg", isEnding:true}
+		paulWife: {text: "Trophy Wife", image: "TrophyWife.jpg", isEnding:true},
+		memoryWipe: {text: "Memory Wipe", image: "CleanMind.jpg", isEnding:true}
 	}
 }
 

@@ -380,6 +380,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
   <<elseif $PlayerPregnant>>
   <<elseif $PlayerProtectionSilent>>
+  <<elseif $PlayerProtectionPrince>>
+    The injection you received will prevent pregnancy and menstration for the summer.
   <<elseif $PlayerProtectionTry>>
     You are trying to get pregnant.
     <<if $PlayerCumslutPermanent>>
@@ -413,6 +415,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
   <<elseif $PlayerProtectionPill>>
     You use birth control pills.
+    <<if $PlayerProtectionPrince>>
+      The injection you received will also pregnancy for the next few months.
+    <</if>>
   <<elseif $PlayerProtectionPermanent>>
     Your body has a permanent pill implant.
   <<elseif $PlayerProtectionPerfect>>
@@ -420,7 +425,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<else>>
     You aren't sure what sort of birth control to use yet.
   <</if>>
-  <<if $PlayerProtectionFertile>>
+  <<if $PlayerProtectionFertile and !$PlayerProtectionPrince>>
     You are especially fertile.
   <</if>>
 <</nobr>>
