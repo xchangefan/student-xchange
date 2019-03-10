@@ -1,7 +1,7 @@
 ::StoryCaption <200,0>
 A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
-<<if $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
+<<if $MindBlank>><<include [[SideBarMindBlank]]>><<elseif $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
 <<include [[SideBarNavigation]]>>
 <<include [[SideBarAchievementLink]]>>
 <<include [[SideBarDebug]]>>
@@ -36,6 +36,12 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<include [[SideBarMasterPartyTime]]>>\
 </div>
 
+::SideBarMindBlank <375,0>>
+<div style="font-size: 90%">\
+  <<include [[SideBarBodyMindBlank]]>>
+  You love working at the brothel.
+</div>
+
 ::SideBarSlave <388,0>
 <div style="font-size: 90%">\
   <<include [[SideBarBody]]>>
@@ -43,6 +49,26 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
   [[Inventory|SideBarInventory]]
 </div>
+
+::SideBarBodyMindBlank <420,0>
+<<nobr>>
+  You are
+  <<if $BodyType == 'Standard'>>
+    a beautiful,
+  <<elseif $BodyType == 'Plus'>>
+    a curvy,
+  <<elseif $BodyType == 'Petite'>>
+    a petite,
+  <<elseif $BodyType == 'Fit'>>
+    an athletic,
+  <<else>>
+    a mysterious,
+  <</if>>
+  <<if $PlayerPregnant>>
+    pregnant,
+  <</if>>
+  young woman.
+<</nobr>>
 
 ::SideBarBody <425,0>
 <<nobr>>
@@ -102,7 +128,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     You've adjusted to the [[permanent conditions|SideBarSideEffects]] your body has now.
   <<elseif $ExWifeTrap>>
     You are unable to orgasm thanks to Paul's ex-wife.
-    <<if $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
+    <<if $PlayerSideEffectMasochist or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
       The [[side effects|SideBarExWifeTrapSideEffects]] your implant gave your new body seem minor now.
     <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep >>
       The [[features|SideBarExWifeTrapSideEffects]] your implant has don't change that.
@@ -113,7 +139,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
   <<else>>
     You are 
-    <<if $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
+    <<if $PlayerSideEffectMasochist or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
       trying to adjust to the [[side effects|SideBarSideEffects]] your implant gave your new body.
     <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep or $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
       enjoying the [[features|SideBarSideEffects]] of your new body.
@@ -175,6 +201,10 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $PlayerSideEffectSubmissive >>
     <li>You are submissive in sexual situations.  You let Paul fuck you whenever and however he wants, even though you know it might extend your denial.</li>
   <</if>>
+
+  <<if $PlayerSideEffectMasochist>>
+    <li>You it when Paul bends you over his knee and spanks your ass until it's red.<li>
+  <</if>
 
   <<if $PlayerSideEffectPheromones >3 >>
     <li>Being next to any man will instantly excite you.</li>
@@ -306,6 +336,14 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li>You are submissive in sexual situations, you can never refuse sex if you are already horny.</li>
   <<elseif $PlayerSideEffectSubmissive>>
     <li>You are submissive in sexual situations.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectMasochist>>
+    <<if setup.areDating('Aaron')>>
+      <li>You it when Daddy bends you over his knee and spanks your ass until it's red.</li>
+    <<else>>
+      <li>You love when you get punished like you deserve.  A little pain only makes the pleasure more intense.</li>
+    <</if>>
   <</if>>
 
   <<if $PlayerSideEffectPheromones >3 >>
