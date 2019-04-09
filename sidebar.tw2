@@ -11,7 +11,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<include [[SideBarBody]]>>
   <<include [[SideBarBirthControl]]>>
 
-<<if $PlayerMoneySet and !$PlayerCumslutPermanent>><<print "Money: $">>$PlayerMoney<</if>>
+<<if $PlayerMoneySet and !$PlayerCumslutPermanent and !$DropoutConcubine>><<print "Money: $">>$PlayerMoney<</if>>
   [[Inventory|SideBarInventory]]
   <<include [[SideBarChastity]]>>\
   <<if $student>><<include [[SideBarMentor]]>><</if>>\
@@ -139,7 +139,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
   <<else>>
     You are 
-    <<if $PlayerSideEffectMasochist or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
+    <<if $PlayerSideEffectNude or $PlayerSideEffectMasochist or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
       trying to adjust to the [[side effects|SideBarSideEffects]] your implant gave your new body.
     <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep or $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
       enjoying the [[features|SideBarSideEffects]] of your new body.
@@ -248,6 +248,10 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <h1>Implant Effects</h1>
 <ul>
 <<nobr>>
+  <<if $PlayerSideEffectNude>>
+    <li>You find it uncomfortable to wear most clothing and so are usually nude, or nearly so.</li>
+  <</if>>
+
   <<if $PlayerNoBodyHair>>
     <li>You have no body hair.</li>
   <</if>>
@@ -419,7 +423,12 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<elseif $PlayerPregnant>>
   <<elseif $PlayerProtectionSilent>>
   <<elseif $PlayerProtectionPrince>>
-    The injection you received will prevent pregnancy and menstration for the summer.
+    The injections you receive will prevent pregnancy and menstration
+    <<if $DropoutConcubine>>
+      for as long as you work for the Prince.
+    <<else>>
+      for the summer.
+    <</if>>
   <<elseif $PlayerProtectionTry>>
     You are trying to get pregnant.
     <<if $PlayerCumslutPermanent>>
@@ -556,7 +565,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 ::SideBarMentor <1800,0>
 <br>
 <<nobr>>
-  <<if $DropoutCumslut>>
+  <<if $DropoutCumslut || $DropoutConcubine>>
   <<elseif $Mentor == 'Faith'>>
     Faith is your mentor
     <<if $Roommate == 'Faith'>>
@@ -618,6 +627,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <<nobr>>
   <<if $DropoutCumslut>>
     You live at home with your parents, but are looking for your own apartment.
+  <<elseif $DropoutConcubine>>
+    You live at the palace.
   <<else>>
     <<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>
     <<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>
@@ -679,6 +690,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $DropoutCumslut>>
     <br><br>
     You work at a smoothie bar.
+  <<elseif $DropoutConcubine>>
+    You serve the Prince in whatever way he desires.
   <<elseif $PlayerJobSet>>
     <br><br>
     <<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>
