@@ -358,7 +358,7 @@ setup.overrideForcePregnancy = function(pregnancyTestType) {
 		// they somehow managed to not get pregnant, but the story expects them to, so lets fix that
 
 		if (recentVaginal.length === 0) {
-			// how did we end up here? This shouldn't have been called if they are sleeping with any guys.  Aborting pregnancy override
+			// how did we end up here? This shouldn't have been called if they aren't sleeping with any guys.  Aborting pregnancy override
 			return normalCheck
 		}
 
@@ -453,6 +453,7 @@ setup.getAchievementDetails = function() {
 		mileHigh: {text: "Mile High Club", image: "MileHigh.gif"},
 		pregnant: {text: "Pregnant", image: "Pregnant.jpg"},
 		mother: {text: "Gave Birth", image: "Baby.jpg"},
+		childfree: {text: "Childfree", image: "NoBaby.png"},
 		dropout: {text: "Dropped out of College", image: "DropOut.png"},
 		train: {text: "Serving a Train", image: "Train.jpg"},
 		threesome: {parts: ["MFM", "FMF", "FFF"], text: "Three Threesomes: MFM, FMF, and FFF", image: "Threesome.png"},

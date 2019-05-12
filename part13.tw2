@@ -767,7 +767,7 @@ Of course, in addition to your school work and spending time with Andrew, you al
 <</nobr>>
 <<nobr>>
   You still love the times you and Paul can have some fun in his office at work, but you love it even more when you are together at home.  While the naughty
-  thrill of it maybe less, there's no rush like there is at work.  You can spend as long as you want together, and enjoy every minute without worrying about
+  thrill of it may be less, there's no rush like there is at work.  You can spend as long as you want together, and enjoy every minute without worrying about
   being interrupted.
 <</nobr>>
 
@@ -2590,8 +2590,6 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <<nobr>>
   <<if setup.areDating('Aaron')>>
     Of course everyone at work can on look and admire, and you'll have to keep your needs in check [[until you can be with Daddy|Library13Collar]].
-  <<elseif setup.areDating('Kate')>>
-    Of course everyone at work can on look and admire, and you'll have to keep your needs in check [[until you can be with Kate|Library13Collar]].
   <<elseif setup.areDating('Veronica')>>
     Of course, you and Veronica have most of your fun elsewhere, but [[she needs to study too|Part13LibraryVeronica]].  
   <<elseif $dating.length>>
@@ -2891,7 +2889,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 ::Part13EngineerDating <17400,4110>
 <<nobr>>
 	<h1>Bedroom with $dating[0]</h1>
-  <<if setup.areDating('Veronica') or setup.areDating('Kate')>>
+  <<if setup.areDating('Veronica')>>
     <img src="Part13/Engineer3b.jpg" hspace="10" vspace="10" height="650" align="left">
     <<set $datingPronoun to "she">>
     <<set $datingPosessivePronoun to "her">>
@@ -3443,7 +3441,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
   a little making out between coworkers? Really, it's almost like it's part of the job.
   <<if $dating.length>>
     Or at least that's what you tell <<print $dating[0]>>.
-    <<if !setup.areDating("Veronica")>>
+    <<if !setup.areDating('Veronica')>>
       And judging from the detailed questions he usually asks, and what usually follows that, you're pretty sure he doesn't mind it at all.
     <</if>>
   <</if>>
@@ -4591,7 +4589,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
       <<else>>
         <<print $PregnancyCheck.actualFather>>.
       <</if>>
-      You don't want a baby right now, and you know Mistress Kate doesn't either.  And you certainly don't one that is a constant reminder of your
+      You don't want a baby right now, and you know Mistress Kate doesn't either.  And you certainly don't want one that is a constant reminder of your
       mistake.  You let the doctor know that you want to [[terminate the pregnancy|Part13CheckupAbort]].
     <<elseif $PlayerProtectionTry>>
       You are ecstatic, finally you're pregnant!  You excitedly tell the doctor that you will definitely be [[carrying the baby to term|Part13CheckupKeep]].  She
@@ -4682,17 +4680,17 @@ Of course, in addition to your school work and being whored out by Barry, you al
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       Based on the timing, you are pretty sure he's the father.  Regardless, you certainly aren't going to let him know if you have any doubts.
     <</if>>
-  <<elseif setup.areDating("Andrew") and $PregnancyCheck.possibleFathers.contains("Andrew")>>
+  <<elseif setup.areDating('Andrew') and $PregnancyCheck.possibleFathers.contains('Andrew')>>
     You can't wait to [[tell Andrew about the baby|Part13PregnantAndrew]].
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       Based on the timing, you are pretty sure he's the father.  Regardless, you certainly aren't going to let him know if you have any doubts.
     <</if>>
-  <<elseif setup.areDating("Aaron") and $PregnancyCheck.possibleFathers.contains("Aaron")>>
+  <<elseif setup.areDating('Aaron') and $PregnancyCheck.possibleFathers.contains('Aaron')>>
     You can't wait to [[tell Aaron about the baby|Part13PregnantAaron]].
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       Based on the timing, you are pretty sure he's the father.  Regardless, you know he'd love you, and your baby, just as much either way.
     <</if>>
-  <<elseif setup.areDating("Veronica")>>
+  <<elseif setup.areDating('Veronica')>>
     <<unset $StatedFather>>
     You are nervous about telling Veronica about the baby.  You both knew this was a possibility, but having it actually happen is something else entirely.
     <br><br>
@@ -4700,13 +4698,13 @@ Of course, in addition to your school work and being whored out by Barry, you al
     about after that.  You've both already decided that father, whoever it might be, isn't part of this. It's just you, Veronica, and the baby.
     <br><br>
     But after you break the big news to Veronica, the two of you will still need discuss [[your plans for this summer|Part13SummerPlans]].
-  <<elseif setup.areDating("Peter") or ($PlayerItemNerdKey and setup.haveFuckedVaginal("Peter")) or setup.haveFuckedVaginal("Roger")>>
+  <<elseif setup.areDating('Peter') or ($PlayerItemNerdKey and setup.haveFuckedVaginal('Peter')) or setup.haveFuckedVaginal('Roger')>>
     <<if $PlayerProtectionTry>>
       You can't wait to [[tell Peter about the baby|Part13PregnantPeterTrying]].
     <<else>>
       You wonder how [[Peter will take the news about the baby|Part13PregnantPeterAccident]].
     <</if>>    
-  <<elseif setup.areDating("Josh")>>
+  <<elseif setup.areDating('Josh')>>
     <<if $PlayerProtectionTry>>
       You can't wait to [[tell Josh about the baby|Part13PregnantJosh]].  You only hope he is as excited as you are.
     <<else>>
@@ -4784,6 +4782,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
   But at least you aren't pregnant anymore.  You stay at home while you deal with the bleeding.  But between the frequent tampon changes, you have time to think about
   [[your plans for this summer|Part13SummerPlans]].
 <</nobr>>
+<<achievement>>childfree<</achievement>>
 
 ::Part13CheckupPermanent <29200,4110>
 <<nobr>>
@@ -4792,7 +4791,6 @@ Of course, in addition to your school work and being whored out by Barry, you al
 	<h1>Back Home</h1>
   <img src="Part13/Decide1.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
-
 <<nobr>>
   You let the doctor know about the decision you've made to make your change permanent.  The doctor discusses the decision with you at length, and confirms
   that you are aware that any side effects you have will become permanent also.  When you tell her you're sure, she has you sign some forms.
@@ -4827,7 +4825,6 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <<set $StatedFather to 'Aaron'>>
   <img src="Part7/Preg8.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
-
 <<nobr>>
 	<<if $PlayerProtectionTry>>
 		You and Daddy have been trying for a baby, and he's as excited as you are at the news!
@@ -4852,7 +4849,6 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <<set $StatedFather to 'Andrew'>>
   <img src="Part7/Preg6.jpg" hspace="10" vspace="10" height="500">
 <</nobr>>
-
 <<nobr>>
   You can barely contain your excitement on the way home. When you tell Andrew, he’s as excited as you are. He says that the two of you had always talked about
   starting a family, but he’d never expected to start so soon. He places his hand on your stomach, but obviously there’s nothing to feel yet.
@@ -4901,13 +4897,12 @@ Of course, in addition to your school work and being whored out by Barry, you al
 	<h1>Telling Peter</h1>
   <video src="Part13/Pregnant6.webm" autoplay loop muted height="500"></video>
   <<set $StatedFather to 'Peter'>>
-  <<if setup.areDating("Peter")>>
-    <<set setup.startDating("Peter")>>
+  <<if setup.areDating('Peter')>>
+    <<set setup.startDating('Peter')>>
   <</if>>
   <<set $sex.push({sex: 'male', name: 'Peter'})>>
   <<set $sex.push({sex: 'male', name: 'Peter'})>>
 <</nobr>>
-
 <<nobr>>
   You tell Peter you have a big surprise for him, but only after he's taken care of your needs first.  You're already so close before he even gets your panties off,
   you tell him to keep going.  As you cum you can see the expectant, hopeful look in his eyes.  "I need more than just one.", you tell him as you pull off your panties.
@@ -4980,8 +4975,8 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <<nobr>>
 	<h1>Telling Peter</h1>
   <<set $StatedFather to 'Peter'>>
-  <<if setup.areDating("Peter")>>
-    <<set setup.startDating("Peter")>>
+  <<if setup.areDating('Peter')>>
+    <<set setup.startDating('Peter')>>
   <</if>>
   <<set $sex.push({sex: 'male', name: 'Peter'})>>
   <video src="Part13/Pregnant4.webm" autoplay loop muted height="600"></video>
@@ -4997,7 +4992,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <</nobr>>
 
 <<nobr>>
-  <<if $PregnancyCheck.possibleFathers.contains("Peter")>>
+  <<if $PregnancyCheck.possibleFathers.contains('Peter')>>
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       "Of course, we both know that it's possible that it's someone else's.  But you let me fuck other men, sometimes right in front of you, and you loved every
       minute of it.", you tell him.
@@ -5053,6 +5048,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <<else>>
      <img src="Part13/SummerPlans1.jpg" hspace="10" vspace="10" height="650" align="left">
   <</if>>
+  <<set $StudenYearsCompleted to 1>>
 <</nobr>>
 <<nobr>>
   <<if $PlanSummerAbroad and $PlayerPregnant>>
@@ -5075,7 +5071,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
         [[here with Daddy|Part13SummerStay]], preparing for your new baby.
       <<elseif setup.areDating('Andrew')>>
         The next few months of your pregnancy are going to be the most difficult, so you'll need Andrew by your side.  The two of you will probably make a visit
-        or two to see your family sometime over the summer.  But most of your summer is going to be spent [[here with Daddy|Part13SummerStay]], preparing for
+        or two to see your family sometime over the summer.  But most of your summer is going to be spent [[here with Andrew|Part13SummerStay]], preparing for
         your new baby.
       <<else>>
         The next few months of your pregnancy are going to be the most difficult, of course you are going to need $dating[0] there to help you.  But since you
@@ -5096,9 +5092,9 @@ Of course, in addition to your school work and being whored out by Barry, you al
       you won't be participating this summer.
       <br><br>
     <</if>>
-    <<if setup.areDating('Aaron') or setup.areDating('Kate') or (setup.areDating('Andrew') and !$CampusMinistry) or setup.areDating('Paul')>>
+    <<if setup.areDating('Aaron') or setup.areDating('Kate') or (setup.areDating('Andrew') and !$CampusMinistry)>>
       You know you both will probably be making a visit or two back to visit your family at some point.
-      <<if setup.areDating('Aaron') or setup.areDating('Paul')>>
+      <<if setup.areDating('Aaron')>>
         You hope they react well to the age difference.
       <</if>>
       But you'll be spending most of your vacation [[staying here, together|Part13SummerStay]].
@@ -5157,14 +5153,22 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <<nobr>>
   <h1>With $dating[0] for the Summer</h1>
   <<if $PlayerPregnant and !$PregnancySpring>>
-     <img src="Part13/SummerPlans6.jpg" hspace="10" vspace="10" height="650">
+     <img src="Part13/SummerPlans6.jpg" hspace="10" vspace="10" height="500">
   <<else>>
      <img src="Part13/SummerPlans3.jpg" hspace="10" vspace="10" height="650">
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  TODO [[Part14SummerStay]]
+  <<if $PlayerPregnant and !$PregnancySpring>>
+    <<include [[Part14StayAaronPregnant]]>>
+  <<elseif setup.areDating('Aaron')>>
+    <<include [[Part14StayAaron]]>>
+  <<elseif setup.areDating('Andrew')>>
+    <<include [[Part14StayAndrew]]>>
+  <<else>>
+    <<include [[Part14StayKate]]>>
+  <</if>>
 <</nobr>>
 
 ::Part13SummerAbroad <31200,4110>

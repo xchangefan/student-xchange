@@ -1,9 +1,83 @@
-::Part14SummerStay
-TODO Part14SummerStay
-TODO If Pregnant or Not
-TODO Aaron
-TODO Kate
-TODO Andrew (Not pregnant, or recently pregnant) NOT Campus CampusMinistry
-TODO Paul ?? (Is this possible at the point or would you have broken up or be on the finish path now)
+::Part14StayAaron
+TODO Part14StayAaron (Not Pregnant or Pregnant (recent))
 
+::Part14StayAndrew
+TODO Andrew - Not Pregnant, Not Campus Ministry or Pregnant (recent)
 
+::Part14StayKate
+TODO Kate - Not Pregnant
+TODO - Kate Proposes?
+
+::Part14StayAaronPregnant
+TODO Part14StayAaronPregnant Pregnant (summer delivery)
+TODO [[Part14AaronPregnant2]]
+
+::Part14AaronPregnant2
+<video src="Part14/Pregnant1.webm" autoplay loop muted height="600"></video>
+TODO Ache's and urges, waiting for Aaron to get home from his summer classes
+TODO [[Part14AaronPregnant3]]
+
+::Part14AaronPregnant3
+<<nobr>>
+  <h1>TODO</h1>
+  <video src="Part14/Pregnant2.mp4" autoplay loop muted height="600"></video>
+  <<set $sex.push({sex: 'male', name: 'Aaron'})>>
+  <<set $sex.push({sex: 'male', name: 'Aaron', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Aaron', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Aaron'})>>
+  <<set $sex.push({sex: 'male', name: 'Aaron', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Aaron'})>>
+<</nobr>>
+TODO Horny all the time, sex with Aaron
+TODO [[Part14AaronPregnant4]]
+
+::Part14AaronPregnant4
+<img src="Part14/Pregnant3.jpg" hspace="10" vspace="10" height="600">
+TODO Visiting the library, planning on having lunch with Aaron.  Go into labor.
+TODO [[Part14AaronDeliver]]
+
+::Part14AaronDeliver
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="PartX/AndrewFamily6.jpg" hspace="10" vspace="10" height="340">
+  <<set $tempBabyNameBoys to ["Casey","Liam","Brandon","Wyatt"].map((name) => {return {name, sex:'male'}})>>
+  <<set $tempBabyNameGirls to ["Delilah","Emma","Sophia","Mia"].map((name) => {return {name, sex:'female'}})>>
+	<<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
+  <<if $BabyBoy or $BabyGirl>>
+    <<if $BabyBoy>><<set $BabyGirl to 0>><</if>>
+  <<else>>
+    <<set $BabyGirl to either(0,1)>>
+  <</if>>
+  <<set $tempBaby to $tempBabyName[$BabyGirl].shift()>>
+  <<unset $BabyBoy>>
+  <<unset $BabyGirl>>
+<</nobr>>
+TODO Having the baby, similar to text from Andrew path
+TODO [[Part14AaronBaby]] or [[Part14AaronAdopt]]
+
+::Part14AaronBaby
+<<nobr>>
+  <h1>TODO Baby</h1>
+  TODO Image
+  <<set $PlayerPregnant = 0>>
+  <<set $PlayerMother = 1>>
+  <<set $children.push($tempBaby)>>
+  <<unset $tempBaby>>
+<</nobr>>
+TODO Part14AaronBaby
+TODO Keep the baby, Aaron encourages you to keep going to school, but you quit your job (if you still had one) to spend time with the baby
+TODO No sex for a while
+<<achievement>>mother<</achievement>>
+
+::Part14AaronAdopt
+<<nobr>>
+  <h1>TODO Adoption</h1>
+  TODO Image
+  <<set $PlayerPregnant = 0>>
+  <<set $PlayerAdoption = 1>>
+  <<unset $tempBaby>>
+<</nobr>>
+TODO Part14AaronAdopt
+TODO Give up the baby for adoption, then continue on aaron non-pregnant path after summer
+TODO No sex for a while
+<<achievement>>childfree<</achievement>>
