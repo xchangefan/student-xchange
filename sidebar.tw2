@@ -556,11 +556,25 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 \
 
 ::SideBarChastity <1600,0>
-<<if !$PlayerChastityBelt and $PlayeChastityBeltInventory>>You have a chastity belt, but you aren't currently locked.<</if>>\
-<<if $PlayerChastityBelt and $PlayerCumslut>><br><br><<print "You are locked in a chastity belt, as you should be. ">><</if>>\
-<<if $PlayerChastityBelt and !$PlayerCumslut>><br><br><<print "You are currently locked in a chastity belt. ">><</if>>\
-<<if $PlayerChastityBelt and $Keyholder>>$Keyholder has your key.<</if>>\
-\
+<<nobr>>
+  <<if $PlayerChastityPiercing>>
+    You wear a chastity piercing.
+    <<if $Keyholder>>
+      Your orgasms belong to $Keyholder.
+    <</if>>
+  <<elseif $PlayerChastityBelt>>
+    <<if $PlayerCumslut>>
+      You are locked in a chastity belt, as you should be.
+    <<else>>
+      You are currently locked in a chastity belt.
+    <</if>>
+    <<if $Keyholder>>
+      $Keyholder has your key.
+    <</if>>
+  <<elseif $PlayerChastityBeltInventory>>
+    You have a chastity belt, but you aren't currently locked.
+  <</if>>
+<</nobr>>
 
 ::SideBarMentor <1800,0>
 <br>
