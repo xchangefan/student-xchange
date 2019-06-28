@@ -627,9 +627,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 ::SideBarNeighbours <2000,0>
 <<nobr>>
   <<if !$student>>
+  <<elseif $Spouse or $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Victoria' or $Roommate == 'Aaron'>>
   <<elseif $Roommate == 'Sorority Sister'>>
     You live with your soroity sisters.
-  <<elseif $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Victoria' or $Roommate == 'Aaron'>>
   <<elseif $neighbours and $neighbours.length == 1>>
     Your neighbour is <<print $neighbours[0]>>.
   <<elseif $neighbours and $neighbours.length > 1>>
@@ -644,8 +644,10 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<elseif $DropoutConcubine>>
     You live at the palace.
   <<else>>
-    <<if setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.<</if>>
-    <<if $MasterKate and !setup.areDating('Kate')>><br><<print "You are Mistress Kate's pet. ">><</if>>
+    <<if $Engaged == 'Kate'>>You are engaged to Kate, and living together.
+    <<elseif setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.
+    <<elseif $MasterKate>><br>You are Mistress Kate's pet.
+    <</if>>
     <<if $Spouse == 'Ken'>>
       <br>You are married to Ken.
     <<elseif $MasterKen>>
