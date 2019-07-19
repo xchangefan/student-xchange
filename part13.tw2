@@ -5114,8 +5114,21 @@ Of course, in addition to your school work and being whored out by Barry, you al
       <br><br>
       You are already starting to miss him as you drive [[off campus towards home|Part13SummerHome]].
     <</if>>
+  <<elseif ($Roommate=='Barry' or setup.isNeighbour('Barry')) and !setup.isEx('Barry') and !$PlayerChastityBelt and (!$PlayerPregnant or $PregnancySpring) and !$CampusMinistry>>
+    Barry notices you going over your summer plans and interrupts you to [[discuss his plans with you|Part13SummerBarry]].
+    <br><br>
+    "You might be interested in this too.", he tells you.
   <<else>>
-    As you pack your things, you look around your room.  You think it's crazy when you recall, the first time you were here you'd only been a woman for a few hours.
+    <<include [[Part13SummerLeave]]>>
+    As you look around your room.  You think it's crazy when you recall,
+    the first time you were here you'd only been a woman for a few hours.
+  <</if>>
+<</nobr>>
+
+::Part13SummerLeave
+<<nobr>>
+    As you look around your room.  You think it's crazy when you recall,
+    the first time you were here you'd only been a woman for a few hours.
     <br><br>
     <<if $PlanSummerAbroad>>
       <<if $AcademicProbationDenial>>
@@ -5130,8 +5143,155 @@ Of course, in addition to your school work and being whored out by Barry, you al
     <<else>>
       As you drive [[off campus towards home|Part13SummerHome]] you are excited to have a few months to relax after such an eventful year.
     <</if>>
+<</nobr>>
+
+::Part13SummerBarry
+<<nobr>>
+  <h1>Discussing Barry's Plans</h1>
+  <img src="Part13/SummerPlans8.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  Barry shows you the plans for the "Clothing Optional" resort he'll be staying at for several weeks near the start of the summer.
+<</nobr>>
+
+<<nobr>>
+  As you flip through the brochure you see pictures of people playing vollyball, swimming, sunbathing, eating, and everything else you'd see in most
+  resort brochures.  Except in this one most of them are nude or topless.
+  <<if $PlayerSideEffectExhibitionist>>
+    <br><br>
+    The thought of what it would be like to spend two whole weeks naked and in public like that excites you.
+    <<if setup.isFWB('Barry')>>
+      Barry smiles and says, "I though you would like that, slut."
+    <</if>>
+  <<else>>
+    You wonder what it would be like being able to walk around naked for two whole weeks.
+  <</if>> 
+<</nobr>>
+
+<<nobr>>
+  "But that brochure is for the original resort.", Barry tells you.  "I'm going to the new one that they've recently added.  It's on a small island of its own.
+  And unlike the general debauchery of the original, this one has a specific theme I'm interested in." 
+<</nobr>>
+
+<<nobr>>
+  I don't have a brochure for the new island, but let me [[show you the website for it|Part13SummerBarry2]].
+<</nobr>>
+
+::Part13SummerBarry2
+<<nobr>>
+  <h1>Discussing Submission Island</h1>
+  <img src="Part13/SummerPlans9.jpg" hspace="10" vspace="10" height="600">
+<</nobr>>
+<<nobr>>
+  The website shows some of the same activities as the brochure did, but many more photos specific to the 'theme' Barry mention, BDSM.
+<</nobr>>
+
+<<nobr>>
+  You see submissive women on leashes, kneeling at the feet of more dominate women.  You see guys in chasity cages watching as their wives have sex with someone else.
+  You see other guys making use of women publicly bound.  Even the 'stables' don't have horses to ride, but pony girls patiently waiting.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part13/SummerPlans10.jpg" hspace="10" vspace="10" height="500">
+  <img src="Part13/SummerPlans11.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectSubmissive>>
+    The thought of being one of those bound and helpless girls is already making you wet.
+    <<if setup.isFWB('Barry')>>
+      "It seems like this place was made with sluts like you in mind.", Barry says.  "Well, and for guys like me to use them, of course."
+    <</if>>
+  <<elseif $PlayerSideEffectDominant>>
+    You are thrilled at the thought of having an island full of submissive women and men to play with.
+  <<elseif setup.isFWB('Barry')>>
+    You wonder what it would be like, spending two weeks being used by Barry.  Obviously you know Barry likes that idea, which is why he's telling you about this.
+  <<else>>
+    You wonder what it would be like to be one of those women, having a submissive guy are girl to lead around and use.  Or, maybe one of the helpless girls on
+    their knees would be fun too.  You wonder if you'd be allowed to do a week of each.
+  <</if>>
+  <<if $PlayerItemNerdKey>>
+    <br><br>
+    You can't help but wonder if Peter would enjoy being one of those guys in the photos, locked in chastity for two weeks while everyone else is having sex all
+    around him.  It's not happening for him this summer though.  At least not with you and Barry.
   <</if>>
 <</nobr>>
+
+<<nobr>>
+  <<if setup.isFWB('Barry') and ($PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist)>>
+    "I know you'd never pass up this opportunity.", Barry tells you.
+  <<elseif setup.isFWB('Barry')>>
+    "Would you like to accompany me for the trip?", Barry asks you.
+  <<else>>
+    "Would you like to join me for the trip?", Barry asks you.
+  <</if>>
+  "It's actually cheaper with you then if I went alone.  They charge extra per night for single guys than they do for couples.  It won't cost you anything
+  except the airfare.  And I can help with that if you need it."
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectSubmissive>>
+    Being able to let your submissive side out for two whole weeks is just too much to pass up.  Of course [[you are going to go with Barry|Part14Island]].
+  <<elseif $PlayerSideEffectExhibitionist>>
+    You'd decided your answer as soon as you'd seen the first brochure.  Being able to walk around naked for two whole weeks on the beach is just too much to pass up.
+    Of course [[you are going to go with Barry|Part14Island]].
+  <<else>>
+    You wonder if you should accept Barry's offer.
+  <</if>>
+  <<if !setup.isFWB('Barry') and $PlayerSideEffectSubmissive>>
+    <br><br>
+    By now you know Barry well enough to know what he's like.  When you're bound and helpless for two weeks, he'll certainly be taking the opportunity to use your
+    body whenever he feels like.  The more you think about it, the more you wonder why you weren't having him do that all year already.
+  <</if>>
+  <<if $AcademicProbationDenial>>
+    <br><br>
+    You wonder how madding it
+    <<if $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist>>
+      will
+    <<else>>
+      would
+    <</if>>
+    be, surrounded by an island full of people having sex in front of you.  And you with your orgasm and pleasure surpressed due to your probation.
+  <</if>>
+  <<if $PlanSummerAbroad>>
+    <br><br>
+    You realize that going to the resort with Barry
+    <<if $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist>>
+      will
+    <<else>>
+      would
+    <</if>>
+    means you can't participate in the summer abroad you'd been planning on.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist>>
+    "Of course, [[I'd love to go|Part14Island]]", you tell Barry.
+    <<if $PlayerSideEffectSubmissive>>
+      "I mean, 'I'd love to go, Sir'", you correct yourself.
+    <</if>>
+  <<else>>
+    Do you accept Barry's offer and [[join him on his island trip|Part14Island]]?
+    Or do you thank him for thinking of you, and wish him a good time, but [[decline his offer|Part13SummaryBarryNo]]?
+  <</if>>
+<</nobr>>
+
+::Part13SummaryBarryNo
+<<nobr>>
+  <h1>Plans for the Summer</h1>
+  <<if $PlayerPregnant and !$PregnancySpring>>
+     <img src="Part13/SummerPlans2.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+     <img src="Part13/SummerPlans1.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
+<</nobr>>
+<<nobr>>
+  "Thank you, but that seems a too much for me.", you tell Barry.  "I hope you have a great time there though."
+  Then you go back to what you were doing before Barry's interruption.
+<</nobr>>
+
+<<include [[Part13SummerLeave]]>>
 
 ::Part13SummerHome <30800,4110>
 <<nobr>>
