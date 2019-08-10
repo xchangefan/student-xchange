@@ -413,6 +413,33 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <</nobr>>
 </ul>
 
+::SideBarHunted <<590,0>
+<<nobr>>
+  <<if $PlayerHunted>>
+    <<if $HuntFinished and $HuntWinner>>
+      You have survived the hunt, and finished in first place.
+    <<elseif $HuntFinished>>
+      You have survived the hunt.
+    <<elseif $HuntCaptures > 1>>
+      <b>You have lost the hunt.</b>  You are at the mercy of the hunters now.
+    <<elseif $HuntCaptures>>
+      <b>You are being hunted.</b>  You been captured once, but still have one more chance.
+    <<else>>
+      <b><u>You are being hunted.</u></b>
+    <</if>>
+    <<if $HuntFinished>>
+    <<elseif $HuntAhead < 0>>
+      You think you are
+      <<if $HuntAhead < -1>>far<</if>>
+      behind the other girls.
+    <<elseif $HuntAhead > 0>>
+      You think you are
+      <<if $HuntAhead > 1>>far<</if>>
+      ahead of the other girls.
+    <</if>>
+  <</if>>
+<</nobr>>
+
 ::SideBarBirthControl <600,0>
 <<nobr>>
   <br>
@@ -422,6 +449,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       Though he'll have to deal with your implant if he does decide
       to breed you.
     <</if>>
+  <<elseif $PlayerHunted>>
+    <<include [[SideBarHunted]]>>
   <<elseif $PlayerPregnant>>
   <<elseif $PlayerProtectionSilent>>
   <<elseif $PlayerProtectionPrince>>

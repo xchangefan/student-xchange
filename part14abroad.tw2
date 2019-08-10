@@ -3851,14 +3851,14 @@ TODO Keeping all the stuff
   <<elseif $PlayerSideEffectSubmissive >4>>
     As he describes the hunt, and you imagine being stalked by horny men, you imagine them capturing you.  You imagine being taken by them and used by them.
     You think of being helpless and used, of having no say over what happens to you next, of being completely at their mercy.  The thought is irresistible
-    to you. "[[Of course, I'm interested.|IslandHunt]]", you eagerly tell him.
+    to you. "[[Of course, I'm interested.|Part14IslandTest]]", you eagerly tell him.
     <br><br>
     "I did mention, it's for the rest of the summer, right?  Don't worry, I can work with your airline to waive any change fees for your return flight home."
   <<else>>
     As he describes the hunt, and you imagine being stalked by horny men, you imagine them capturing you.  You imagine being taken by them and used by them.
     You think of being helpless and used, of having no say over what happens to you next, of being completely at their mercy.  The thought excites you.
     <br><br>
-    "Keep in mind, you'd be here for the remainder of the summer.", he adds.  "[[Let me know if you are interested|IslandHunt]].  I can work with your
+    "Keep in mind, you'd be here for the remainder of the summer.", he adds.  "[[Let me know if you are interested|Part14IslandTest]].  I can work with your
     airline to waive any change fees for your return flight home."
   <</if>>
 <</nobr>>
@@ -3885,6 +3885,70 @@ TODO Keeping all the stuff
   <</if>>
 <</nobr>>
 
+::Part14IslandTest
+<<nobr>>
+  <h1>Resort Medical Clinic</h1>
+  <img src="PartP/PregTest6.jpg" hspace="10" vspace="10" height="640" align="left">
+  <<if $PlayerSideEffectPermanent>>
+    <<set $IslandAlreadyPermanent to 1>>
+  <</if>>
+  <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+  When you tell them you plan on being one of the prey for the hunt, they send you over to the resort's medical clinic, Barry doesn't need to leave for the
+  airport just yet, so he goes with you.  "There's just a few standard tests I need to do to make sure you are healthy enough to 'compete'.", the doctor tells
+  you.  "Let's start with taking some blood, then the computer can analayze it while I look you over."
+<</nobr>>
+
+<<nobr>>
+  After he checks you over he says, "Everything looks great so far.  Let me go get the results of your blood work.", then he leaves the room.
+<</nobr>>
+
+<<nobr>>
+  A couple minutes later he returns with the results.
+  <<if $PregnancyCheck.isPregnant>>
+    <<set $PlayerPregnant to 1>>
+    <<set $IslandPregnant to 1>>
+    "Well, there's nothing wrong with you.  In fact you seem to be in great health.  But something did come up on your blood test.", he says.  Then he
+    continues, "You're pregnant."
+    <br><br>
+    "Well, technically you aren't pregnant yet.  But your X-Change implant has detected that a conception likely to result in pregnancy has occurred.
+    <<if !$IslandAlreadyPermanent>>
+      As you know, this means your implant's effects are permanent now.
+    <</if>>
+    <br><br>
+    The doctor continues on, mentioning the conception likely occurred from activity this week.  Then Barry interrupts him, "Is your machine able to
+    see if I'm the father or not?"  Then he adds, "It's been a fun week for both of us."
+    <br><br>
+    The doctor takes some of Barry's blood and runs it through the computer as well.  When he comes back he tells Barry,
+    <b><u>
+    <<if $PregnancyCheck.actualFather == 'Barry'>>
+      "Congratulations, you are the father."
+    <<else>>
+      "I'm sorry, you are not the father."
+    <</if>>
+    </u></b>
+    Though Barry's reaction seems to be the opposite of what the doctor expected it to be.
+    <br><br>
+    "I'm not sure if that result changes your decision, miss.
+    But at this early stage, a can give you an injection that will prevent implantation if you want to prevent the pregnancy from starting.  You'll
+    have a normal period this month like nothing happened.
+    <<if !$IslandAlreadyPermanent>>
+      Of course, that won't change anything about the changes to your body from your implant being permanent.
+    <</if>>
+    <br><br>
+    If you want to keep the baby, I can forward the tests from today to your doctor back home.  Unfortunately, you won't be able compete in the hunt
+    in that case, assuming you were even still interested in it.
+    <<if $PregnancyCheck.actualFather == 'Barry'>>
+      From his reaction, you know Barry wants you to prevent the pregnancy, but he hasn't said anything. The decision is up to you.
+    <</if>>
+    <br><br>    
+    Do you want to [[proceed with the pregnancy|Part14IslandReturn]] and head home with Barry? Or do you want to [[prevent the pregnancy|IslandHunt]] and
+    continue with your plan to join the hunt.
+    <<unset $IslandAlreadyPermanent>>
+  <<else>>
+    "Everything looks good with your blood tests.", he says.  "You're [[approved to compete|IslandHunt]].  Have fun!"
+  <</if>>
+<</nobr>>
+
 ::Part14IslandReturn
 <<nobr>>
   <h1>Submiting to Barry</h1>
@@ -3894,6 +3958,17 @@ TODO Keeping all the stuff
   <<set $sex.push({sex: 'male', name:'Barry', vaginal: true, noPullout:true, noCondom:true})>>
 <</nobr>>
 <<nobr>>
+  <<if $IslandPregnant>>
+    <<if $PregnancyCheck.actualFather == 'Barry'>>
+      Barry doesn't say anything about the pregnancy, maybe he needs some time to process everything.  For now, you are just going to ignore it too.
+      You two can discuss it when you get home.
+    <<else>>
+      Barry doesn't say anything about your pregnancy, though you know he's not going to be any help.  He may have had a part in the activities this
+      weekend, but he's not the father.  But you knew you'd be on your own when you decided to continue with the pregnancy.  But you decide to not
+      think about all that.  You can worry about the pregnancy once you get back home.
+    <</if>>
+    <br><br>
+  <</if>>
   After the boat ride from the island you and Barry wait at the airport and eventually board what you expect is going to be a long, boring flight home.
 <</nobr>>
 
@@ -3942,9 +4017,57 @@ TODO Keeping all the stuff
     "Go ahead, one sip won't hurt the baby.", Barry tells you.
   <</if>>
   As you sip the champagane, you think about your relationship with Barry.  This week, you've learned how much you love serving him.  And you think he's figured
-  out something similar.  You expect things are going to be different between you [[when you get home|Part14IslandHome]] than they were before the trip.
+  out something similar.  You expect things are going to be different between you
+  <<if !$PlayerPregnant || $PregnancyCheck.actualFather == 'Barry'>>
+    [[when you get home|Part14IslandHome]]
+  <<else>>
+    [[when you get home|Part14IslandHomeFWB]]
+  <</if>>
+  than they were before the trip.
 <</nobr>>
 <<achievement>>mileHigh<</achievement>>
+
+::Part14IslandHomeFWB
+<<nobr>>
+  <h1>Serving to Barry</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part14/Barry1.webm" autoplay loop muted height="640"></video>
+  </div>
+  <<set $sex.push({sex: 'male', name:'Barry'})>>
+  <<set $sex.push({sex: 'male', name:'Barry', vaginal: true})>>
+  When you get home
+  <<if $Roommate == 'Barry'>>
+    and back to your and Barry's room, you start to unpack.
+  <<else>>
+    you head to Barry's room.
+  <</if>>
+  "I had the resort make something while we were there.", he says before pulling a pet collar from his bag.
+  It has a pretty heart tag on it with "<<if $playerName>>$playerName<<else>>Barry's Pet<</if>>" engraved on it.  On the other side it says,
+  "Property of", with Barry's name beneath that.
+<</nobr>>
+
+<<nobr>>
+  "I was looking forward to keeping you around as my pet, but it looks like your hands are going to be full soon with that little souvenir you picked
+  up on our trip.", he says pointing towards your stomach.  But we can still play from time to time, for now at least.  "I was going to have you wear
+  this all the time.  But I don't want people thinking I'm the father.  So I'll hold on to it and you can wear it during playtime."
+<</nobr>>
+
+<<nobr>>
+  "Yes sir.", you say.  After you do, he buckles the pet collar around your neck and tells you to take off your shirt.
+<</nobr>>
+
+<<nobr>>
+  You immediately comply.  Then he says, "Now, on your knees.
+  <<if $IslandSybian or $IslandStray or $IslandMassage == 2>>
+    It's time for you to start paying me back for those extra charges I found on my hotel bill.
+  <<elseif $IslandPregnant>>
+    It's time for you to thank me for helping you find some guy to knock you up.
+  <<else>>
+    It's time for you to thank me for the collar I bought for you.
+  <</if>>
+<</nobr>>
+
+TODO Continue with main home for the summer path, skipping some scenes
 
 ::Part14IslandHome
 <<nobr>>
@@ -3957,7 +4080,7 @@ TODO Keeping all the stuff
   <<set $sex.push({sex: 'male', name:'Barry', vaginal: true})>>
   When you get home
   <<if $Roommate == 'Barry'>>
-    and back to your and Barry's room, you stat to unpack.
+    and back to your and Barry's room, you start to unpack.
   <<else>>
     you head to Barry's room.
   <</if>>
@@ -3968,6 +4091,9 @@ TODO Keeping all the stuff
 
 <<nobr>>
   "I don't think you want to stop being my pet just because our trip is over, do you?", he asks.
+  <<if $PlayerPregnant>>
+    "Especially not with my baby growing inside you now."
+  <</if>>
 <</nobr>>
 
 <<nobr>>

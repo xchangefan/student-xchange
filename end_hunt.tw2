@@ -2,37 +2,124 @@
 <<nobr>>
   <h1>Waiting for the Hunt</h1>
   <img src="PartX/Hunt1.jpg" hspace="10" vspace="10" height="720" align="left">
+  <<set $PlayerHunted to 1>>
+  <<set $HuntCaptures to 0>>
+  <<set $HuntAhead to 0>>
 <</nobr>>
-TODO Deactivate birth control somewhere on this path.  But have temporary birth control during the hunt?
-TODO Locked up overnight
-TODO They go over the rules of the Hunt
-TODO If captured, they can do what they want with you
-TODO The first day they release you, but without any of your supplies so it will be much harder
-TODO Second day, a capture means you lose
+<<nobr>>
+  First they went over the rules of the hunt with you.  In short, you have to find your way to the target location on your map.  If you're captured, the
+  first time, they can use you however they wnat for a few hours, then release you.  That will make it much harder to win, but you'll still have a chance.
+  The second second time you are captured, you lose.
+<</nobr>>
 
-TODO CHOICE: Can set off with a group of girls together [[IslandHuntGroup]]
-TODO CHOICE: Or can set off alone [[IslandHuntAlone]]
+<<nobr>>
+  You are all getting paid to participate, but the amount depends on how you finish, and if you finish at all.  That will also affect what privileges you
+  have during your stay the rest of the summer.  They want to make sure all the prey do there best not to get caught and will punish anyone that doesn't
+  try their best.
+<</nobr>>
+
+<<nobr>>
+  The hunt starts tomorrow.  For now, they've stripped you and the other prey of your street clothes to make sure you can't smuggle anything in to help you.
+  Tomorrow you'll be given supplies, incluing clothes, before you are dropped off.  Tonight you just have to wait.  They should be bringing your dinner
+  by soon though.
+<</nobr>>
+
+<<nobr>>
+  There's several girls in the cell with you.  They are planning on working together, at least for the first day.  You can [[join them tomorrow|IslandHuntGroup]]
+  or you [[go it alone tomorrow|IslandHuntAlone]]
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    <<unset $IslandPregnant>>
+    <<unset $PlayerPregnant>>
+    <<achievement>>childfree<</achievement>>
+  <</if>>
+<</nobr>>
+TODO Adjust Rules as needed later
 
 ::IslandHuntGroup
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>Teaming Up</h1>
   <video src="PartX/Hunt2.mp4" autoplay loop muted height="540"></video>
+  <<set $HuntStartAsTeam to 1>>
 <</nobr>>
-TODO Starting off with a team of girls
-TODO [[IslandHuntGroup2]]
+<<nobr>>
+  You and three other girls decide to work together at first.  At the end it'll be every woman for herself, but at least for today and the first part of
+  tomorrow, you are going to be a team.  You know a hunter can overpower any one of you.  But he won't be able to overpower all four of you working together.
+<</nobr>>
+
+<<nobr>>
+  You start off confidently towards your target.  You even take some time to snap a few photos with phone they gave you.  You try to pull up GPS on it to help,
+  but they've locked it down, disabling everything except the camera.  Still, you and your new friends will have photos to share later.  Of course, the
+  resort has rights to use them in their advertising too.
+<</nobr>>
+
+<<nobr>>
+  The four of you [[continue on|IslandHuntGroup2]], checking every now and then to make sure there's no hunters lurking nearby.
+<</nobr>>
 
 ::IslandHuntGroup2
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>Taking a Break</h1>
   <video src="PartX/Hunt3.mp4" autoplay loop muted height="540"></video>
 <</nobr>>
-TODO Having fun, making too much noise
-TODO Two men come after you.  Instead of trying to fight them off together you scatter in every direction.  Well, at least two of you will get away, right?
-TODO (Randomize directions?)
-TODO Direction 1: [[IslandHuntGroup3]] (as girl 1)
-TODO Direction 2: [[IslandHuntGroup3]] (as girl 2)
-TODO Direction 3: [[IslandHuntAlone2]]
-TODO Direction 4: [[IslandHuntAlone3]]
+<<nobr>>
+  You and your companions stop for a break.  It's just water and an energy bar, but it gives you all a chance to rest, and to talk and joke around a bit.
+  You hadn't realized that the sound of your laughter was carrying so well through the woods, but as you rested, two hunters began stalking your group.
+<</nobr>>
+
+<<nobr>>
+  They waited until they had you between them, and then came at you from different directions.  You had planned on the four of you taking on one hunter, but
+  you hadn't planned on the hunters working together too.  When they jump out at you, everyone forgets about the plan and fends for themselves.  There's four
+  of you, and they can only capture two!
+<</nobr>>
+
+<<nobr>>
+  <<if $BodyType == 'Plus'>>
+    Of course, you have a few extra pounds compared to the other girls, and they are all faster than you are.  So you don't have any chance of being one of
+    the two that gets away.  Before you know it, one of the hunters is on top of you with his arms around you.  Once his partner has captured one of your
+    friends, the two of them carry you and her off somewhere to [[do whatever they want with you|IslandHuntGroup3]].
+  <<elseif $BodyType == 'Fit'>>
+    <<set $tempHunt to random(1, 10)>>
+    You are in better shape than the other girls,
+    <<if $tempHunt <= 2 >>
+      but that doesn't help you.  One of the hunters grabs you from behind before you even think to run.  You're upset at yourself for letting yourself get
+      caught so easily.  As you and one of your friends are carried off somwhere, you wonder [[what the two of them plan on doing with you|IslandHuntGroup3]].
+    <<else>>
+      so you manage to run off before they can grab you.  The hunters grab two of your friends instead.  You stalk them from a distance and watch as they
+      take your friends inside a compound with other hunters waiting.  You wonder what the two captures girls are in for next.  That's not your problem though,
+      you decide as you walk away.  You can run off alone either to the
+      <<if $tempHunt % 2 == 0>>
+        [[left|IslandHuntAlone2]] or to the [[right|IslandHuntSleep]]
+      <<else>>
+        [[left|IslandHuntSleep]] or to the [[right|IslandHuntAlone2]]
+      <</if>>
+      of the hunters' compound.
+    <</if>>
+  <<else>>
+    <<set $tempHunt to random(1, 10)>>
+    <<if $tempHunt <= 2 >>
+      One of the hunters grabs you from behind before you even think to run.  You're upset at yourself for letting yourself get caught so easily.  As you
+      and one of your friends are carried off somwhere, you wonder [[what the two of them plan on doing with you|IslandHuntGroup3]].
+    <<elseif $tempHunt <= 5 >>
+      You start to run, but one of the hunters catches up with you, and grabs you.  Before you know it, one of the hunters is on top of you with his arms
+      around you.  His partner has already captured one of your friends.  The two of them carry you and her off somewhere to
+      [[do whatever they want with you|IslandHuntGroup3]].
+    <<else>>
+      You run off before the hunters can grab you.  Instead they grab two of your friends.  You stalk them from a distance and watch as they
+      take your friends inside a compound with other hunters waiting.  You wonder what the two captive girls are in for next.  That's not your problem though,
+      you decide as you walk away.  You can run off alone either to the
+      <<if $tempHunt % 2 == 0>>
+        [[left|IslandHuntAlone2]] or to the [[right|IslandHuntSleep]]
+      <<else>>
+        [[left|IslandHuntSleep]] or to the [[right|IslandHuntAlone2]]
+      <</if>>
+      of the hunters' compound.
+    <</if>>
+  <</if>>
+  <<unset $tempHunt>>
+<</nobr>>
 
 ::IslandHuntGroup3
 <<nobr>>
@@ -40,28 +127,60 @@ TODO Direction 4: [[IslandHuntAlone3]]
   <video src="PartX/Hunt4.mp4" autoplay loop muted height="540"></video>
 <</nobr>>
 TODO Used (Either as Girl 1 in the shed/cave or Girl 2 by the pool)
-TODO Then released separately [[IslandHuntAlone2]]
+TODO Then released separately [[IslandHuntAlone2]] (Link to somehwere else, this one has clothes)
+TODO Chance to be caught again on the first day
+TODO If AcademicProbation
 
 ::IslandHuntAlone
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>Going it Alone</h1>
   <img src="PartX/Hunt5.jpg" hspace="10" vspace="10" height="720" align="left">
 <</nobr>>
-TODO Careful to be quiet and stay off the trails
-TODO Need to stop to go pee
-TODO Choice: Go right here in the open [[IslandHuntPee]]
-TODO Choice: Looks like an old public restroom nearby, use that [[IslandHuntRestroom]]
+<<nobr>>
+  Several of the girls head off together, but you head off on your own.  Only one of you can win this, after all.  You try to stay quiet, and keep a wary eye
+  out for hunters sneaking up on you.
+  <<if $BodyType == 'Fit'>>
+    You don't know where the others are, but you assume you are making good time compared to them.  You need to stay focused on avoding being captured though.
+    Your speed won't help you if you are tied up, or eliminated altogether.
+    <<set $HuntAhead += 1>>
+  <<elseif $BodyType == 'Plus'>>
+    You don't know where the others are, but you worry they are keeping a faster pace than you.  You find yourself hoping they all get captured, so it
+    won't matter how fast you are.
+    <<set $HuntAhead -= 1>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You've been trying to make sure you stay hydrated, but now you have to pee.  Long gone are the days when you could just whip it out and go.  You realize
+  you'll be helpless and vulnerable if you [[squat down in the woods to pee|IslandHuntPee]].
+<</nobr>>
+
+<<nobr>>
+  You see an alternative in the distance, there's a small park here.  You are still far from the resort, so you wonder if maybe this is for the staff that live
+  on the island.  The part that interests you though is the public restroom.  You're still worried about being caught, but it's in the middle of a large
+  cleared area with no hunters visible, so maybe it'll be ok if you [[use the park restroom|IslandHuntRestroom]].
+<</nobr>>
 
 ::IslandHuntPee
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>Answering Nature's Call</h1>
   <video src="PartX/Hunt6.mp4" autoplay loop muted height="540"></video>
 <</nobr>>
-TODO Pee, feel much better afterwards, continue on
-TODO (Randomize directions?)
-TODO Direction 1: [[IslandHuntAlone2]]
-TODO Direction 2: [[IslandHuntSleep]] (But caught after falling asleep)
-TODO Direction 3: [[IslandHuntSleep]]
+
+<<nobr>>
+  You feel vulnerable, but you can wait any longer.  You look around, and think you are safe.  Then you squat down.  You try to get done as quick as you can.
+  You feel so much better when you are done.  You don't have any toilet paper to pat yourself dry with so you just wiggle a bit and hope for the best.
+<</nobr>>
+
+<<nobr>>
+  You manage to get your pants up and start back on your way.  You walk, until it starts to get dark.  You can either,
+  <<if random(1, 2) == 1>>
+    [[keep walking into the night|IslandHuntAlone2]]
+  <<else>>
+    [[keep walking into the night|IslandHuntHeadStartSleep]]
+  <</if>>
+  to get a head-start on the other girls.  Or you can [[start looking for someplace safe to sleep|IslandHuntSleep]].
+<</nobr>>
 
 ::IslandHuntRestroom
 <<nobr>>
@@ -86,23 +205,148 @@ TODO [[IslandHuntRestroom3]]
   <video src="PartX/Hunt9.mp4" autoplay loop muted height="540"></video>
 <</nobr>>
 TODO Hosed down, rest of clothes cut off, then released
+TODO Chance to be caught again on the first day
 TODO [[IslandHuntNakedMorning]]
 
 ::IslandHuntAlone2
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>Caught in the Woods</h1>
   <video src="PartX/Hunt10.mp4" autoplay loop muted height="540"></video>
+  <<set $HuntCaptureFirst to 1>>
+  <<set $sex.push({sex: 'male', anon:'Hunter', vaginal: true, noPullout:true, noCondom:true})>>
+  <<set $sex.push({sex: 'male', anon:'Hunter', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon:'Hunter', repeat:true})>>
 <</nobr>>
-TODO Caught that evening before you go to sleep
-TODO [[IslandHuntNakedMorning]]
+<<nobr>>
+  <<if $HuntStartAsTeam>>
+    It's getting late, and you're starting to look 
+  <<else>>
+    <<set $HuntAhead += 1>>
+    You've gotten a head start on the other girls, and you are getting tired and are ready to start looking
+  <</if>>
+  for a place you can hide, and sleep for the night.  But then a hunter jumps out of the woods and grabs you from behind.  Before you know it he has your
+  hands bound and is ready to use you however he pleases.
+<</nobr>>
+
+<<nobr>>
+  He starts with your mouth.  You try to suck his cock, hoping to get him off quickly.  But he prefers to just slap your face with his cock and occasionally
+  fuck your mouth for a while.  After doing that a bit, he decides to move on.
+<</nobr>>
+
+<<nobr>>
+  He ties your arms to a tree, cuts away your clothes, and begins fucking you.  You know he's getting close, and are hoping it will be over soon.  You still
+  want to have time to recover, and sleep, so you can get a good start tomorrow.  But he has other plans.  He pulls out of you and begins using the handle of
+  one of his tools to fuck you. He doesn't care if you get off or not, he's just having fun and you can't stop him.
+  <<if $PlayerEasytoOrgasm and !$AcademicProbationDenial>>
+    But even without trying he manages to get you off.  He mocks what a slut you are as he continues to ram the handle into you.
+  <</if>>  
+<</nobr>>
+
+<<nobr>>
+  He's decided he's going to finish in your ass.
+  <<if $PlayerSideEffectAnal and !$AcademicProbationDenial>>
+    You always love a thick cock in your ass, and he comments how much you are enjoying it.  You cum
+    <<if $PlayerEasytoOrgasm>>again<</if>>
+    just as he rams his cock in and fills your ass with cum.
+  <<else>>
+    He doesn't care if you like or not, he fucks your ass for his own pleasure.  He slaps it hard every now and then just because he can.  Finally you
+    feel him ram his cock in a final time and fill your ass with cum.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He's done with you now.  He keeps your supplies, and whats left of your clothes, and tells you to go.  You run for a while, hoping not to get caught again
+  and lose.  When you think you've found someplace safe, you settle in [[to try to sleep for the night|IslandHuntNakedMorning]].  You are too exhausted to
+  bother trying to clean any of the mess he's left on you, or inside you.
+<</nobr>>
+
+::IslandHuntHeadStartSleep
+<<nobr>>
+  <h1>Sleeping in the Woods</h1>
+  <img src="PartX/Hunt11.jpg" hspace="10" vspace="10" height="640" align="left">
+  <<set $HuntAhead += 1>>
+<</nobr>>
+<<nobr>>
+  You are exhausted and quickly fall soundly asleep beside a tree.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectDreams>>
+    TODO [[IslandHuntDream]]
+  <<else>>
+TODO Go to sleep, make it through the night and continue on next morning [[IslandHuntClothesMorning]]
+TODO Or, Caught while you were asleep. [[IslandHuntSleepCaught]]
+  <</if>>
+<</nobr>>
 
 ::IslandHuntSleep
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>Sleeping in the Woods</h1>
   <img src="PartX/Hunt11.jpg" hspace="10" vspace="10" height="640" align="left">
 <</nobr>>
 TODO Go to sleep, make it through the night and continue on next morning [[IslandHuntClothesMorning]]
-TODO Or, Caught while you were asleep. [[IslandHuntSleepCaught]]
+TODO Or, Caught while you were asleep. [[IslandHuntSleepCaught]] if have erotic dreams
+
+::IslandHuntDream
+<<nobr>>
+  <h1>Erotic Dreams</h1>
+  <video src="PartX/HuntDream1.mp4" autoplay loop muted height="540"></video>
+<</nobr>>
+<<nobr>>
+  As soon as you fall asleep your erotic dreams begin.  In reality, its the chilly night air making your nipples hard.  But in your dream, it's the ice cubes
+  circling around them causing it.  Once erect, they call out for more attention, which a pair of clamps soon provide.
+<</nobr>>
+
+<<nobr>>
+  In your dream, you ache to feel someone inside you, but are told it's time for your feeding instead.  Your master puts a nice bowl of milk down for you.
+  You eagerly lap it up.  You 'accidently' spill a bit on yourself, hoping your master will want a little too.
+<</nobr>>
+
+<<nobr>>
+  <<if $AcademicProbationDenial>>
+    You wake up horny, frustrated after weeks without an orgasm.  The dreams make it so much worse.  Every night you are reminded of what you can have
+    right now.  Only the hard nipples fromy our dream are real, and even then it's just the cold causing it.
+    <br><br>
+    You know you won't be able to sleep until you can calm down.  And maybe it's just horniness making you paranoid, but you feel like you are being watched.
+    You decide to quietly leave your campsite and find another place to hide for the night.
+    <br><br>
+    Eventually you find some place for the night and [[get back to sleep|IslandHuntDream2]].
+  <<else>>
+    You wake up horny,
+    <<if $PlayerSideEffectMasturbationBlock>>
+      and wishing you could do something about it.
+    <<else>>
+      tempted to do something about it.  But you realize the noise would attract hunters.
+    <</if>>
+    You decide to just try to get back to sleep again.  Maybe the pleasure you can't have awake right now, you can have
+    [[while you sleep|IslandHuntDream2]]
+  <</if>>
+<</nobr>>
+
+::IslandHuntDream2
+<<nobr>>
+  <h1>Camping Trip (Dreaming)</h1>
+  <video src="PartX/HuntDream2.mp4" autoplay loop muted height="540"></video>
+<</nobr>>
+<<nobr>>
+  Sleeping in the woods must have you remembering the camping trips you took with your friends back in high school.  But things are different in your dream.
+  You aren't in the body you had then, but the one you have now.  And it's much more exciting than you remember it being.
+<</nobr>>
+
+<<nobr>>
+  Back then, you were all about the same size and strength, but now he seems so strong and you feel so small as he holds you down and fucks you.  You love it.
+<</nobr>>
+
+<<nobr>>
+  But it's not just the two of you on the trip.  Your other friend is outside the tent, watching and patiently waiting for his turn.  Then you wonder why
+  they have to take turns at all.  You'd love to
+  <<if $AcademicProbationDenial or random(1,4) == 4>>
+    [[take them both at once|IslandHuntClothesMorning]]
+  <<else>>
+    [[take them both at once|IslandHuntSleepCaught]]
+  <</if>>
+  if they'd like.
+<</nobr>>
 
 ::IslandHuntSleepCaught
 <<nobr>>
@@ -130,21 +374,68 @@ TODO [[IslandHuntNakedMorning]]
 
 ::IslandHuntNakedMorning
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>Cleaning up</h1>
   <img src="PartX/Hunt15.jpg" hspace="10" vspace="10" height="640">
 <</nobr>>
-TODO wake up, bathe
-TODO [[IslandHuntNakedMorning2]]
+<<nobr>>
+  You wake up feeling disgusting after sleeping on the ground all night, as well as because of everything else that happened yesterday.
+  You know it's a risk, being out in the open, but the quick bath you take is worth it.  You feel much better afterwards, and
+  [[ready to start the second day of the hunt|IslandHuntNakedMorning2]].
+<</nobr>>
 
 ::IslandHuntNakedMorning2
 <<nobr>>
-  <h1>TODO</h1>
-  <img src="PartX/Hunt16.jpg" hspace="10" vspace="10" height="640" align="left">
+  <h1>Following the Trail</h1>
+  <img src="PartX/Hunt16.jpg" hspace="10" vspace="10" height="680" align="left">
 <</nobr>>
-TODO Feeling better after washing up
-TODO Still tired, no shoes, and have to stay away from the thickets and thorns
-TODO Very small chance of not getting caught (Can't move very fast, can't go throuhg the thick parts of the forest
-TODO [[IslandHuntArriveNaked]] or [[IslandHuntNakedCapture]]
+<<nobr>>
+  Your are still tired after your poor night of sleep, but your bath helped.  You at least feel clean and a bit more energized now,
+  though you really wish you had one of those energy bars from your backpack right now.
+<</nobr>>
+
+<<nobr>>
+  You know your chances of being captured again and eliminated are much higher on the trail, but you don't have any choice.  You tried going through the
+  woods and the brush, but you had to turn back.  With no clothes to protect you, the branches and thorns and everything else was just too much on your bare skin.
+  You'll have to take your chances on the trail.
+<</nobr>>
+
+<<nobr>>
+  <<set $tempHunt to random(1, 10)>>
+  <<if $HuntHeadStart and ($BodyType == 'Fit')>>
+    You have a head start from travelling into the night last night, and you are in better shape than the other girls.  So hopefully you'll have a big
+    advantage today.  Assuming you don't get caught first, that is.  Though you hope you'll be able to stay ahead of the hunters too.
+    <<set $tempHunt += 2>>
+    <<set $HuntAhead += 1>>
+  <<elseif $HuntHeadStart and ($BodyType == 'Plus')>>
+    You have a head start from travelling into the night last night, but you aren't as fast as the other girls.  Hopefully the two balance out.
+    todo
+  <<elseif $HuntHeadStart>>
+    You have a head start from travelling into the night last night, so hopefully you'll have an advantage today against the other girls.  Assuming you
+    don't get caught first that is.
+    todo
+  <<elseif $BodyType == 'Fit'>>
+    You are in better shape than the other girls, so hopefully you'll have an advantage today against the other girls.  Assuming you
+    don't get caught first that is.  Though you hope you'll be able to stay ahead of the hunters too.
+    <<set $tempHunt += 1>>
+  <<elseif $BodyType == 'Plus'>>
+    You know you aren't as fast as the other girls, so you worry you'll be at a disadvantage today against the other girls, and easier prey for the hunters.
+    <<set $tempHunt -= 1>>
+  <<else>>
+    You wonder how many of the other girls are still in the hunt.  You find youself hoping many of them have been captured twice and are being used
+    by hunters right now.  Then the hunters would be distracted and you'd have that many fewer girls to compete against.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  But you are getting ahead of yourself worrying about who is ahead of who.  None of that matters if you don't even make it to the end.
+  You stop worrying about who is ahead and get back to focusing on
+  <<if $tempHunt >= 8>>
+    [[trying to avoid getting captured|IslandHuntArriveNaked]]
+  <<else>>
+    [[trying to avoid getting captured|IslandHuntNakedCapture]]
+  <</if>>
+  and making it to the finish line.
+<</nobr>>
 
 ::IslandHuntClothesMorning
 <<nobr>>
@@ -186,22 +477,64 @@ TODO [[IslandHuntCaptured]]
 
 ::IslandHuntArriveNaked
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>Making it to the Finish Line</h1>
   <video src="PartX/Hunt21.mp4" autoplay loop muted height="540"></video>
+  <<set $HuntFinished to 1>>
+  <<set $tempHuntScore to (random(1, 4) + $HuntAhead)>>
+  <<set $HuntWinner to $tempHuntScore >= 4>>
 <</nobr>>
-TODO Achievement: Underdog
-TODO Make it to the end, naked, but not captured on second day
-TODO Found some poor girls shoes, her loss, your gain (her clothes were all ripped to shreds though, so no use)
-TODO Nervous as approach gate, but make it through
-TODO [[IslandHuntWin]]
+<<nobr>>
+  You want to run right up when you spot your goal.  But you worry there might be sneaky hunters hiding just before the gate.  It'd be so frustrating to be feet
+  from the finish line only to be snatched up at the last moment.  So you keep a watchful eye out as you slowly approach.
+<</nobr>>
+
+<<nobr>>
+  Once you are sure it is safe to apprach you walk up and through the gates.  You get some cheers when you cross through the gate.  You also get quite a few
+  whistles as you walk through completely naked.
+<</nobr>>
+
+<<nobr>>
+  You are thirsty and hungry, and head straight to the snack table for something to eat and drink before you even bother to see if any other girls have arrived yet.
+  But when you do look around to see, you find that
+  <<if $HuntWinner>>
+    you are the first one here!  You've won!  You see several girls in cages, after having been captured twice and eliminated.  You wonder how many of the girls
+    yet to arrive will make it here on their own, and how many will be captured and added to one of the empty cages.
+  <<elseif $tempHuntScore == 3>>
+    only one other girl has returned so far.  You are disappointed that you just missed winning first place, but at least you made it here.  You see several girls
+    in cages, after having been captured twice and eliminated.  You could have been one of them.
+  <<elseif $tempHuntScore == 2>>
+    several girls have already returned.  You may not have won, but at least you made it here.  You see several girls in cages, after having been captured twice
+    and eliminated.  You could have been one of them.
+  <<else>>
+    many girls have already returned.  You may turn out to be the last one to make it here successfully, but at least you made it.  You see several girls in cages,
+    after having been captured twice and eliminated.  You wonder if the remaining girls yet to arrive have already been captured and are just waiting for the
+    hunter that captured them to finish having his fun before delivering her here.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You are still hungry, so you take plate of food and
+  <<if $HuntWinner>> 
+    [[sit down to wait|IslandHuntWin]]
+  <<else>>
+    [[sit down to wait|IslandHuntFinish]]
+  <</if>>
+  to see whether the next cheers will be for another prey making her way in, or for
+  a hunter carrying his captured and used prey in to display.
+<</nobr>>
+<<if $HuntWinner>>
+  <<achievement>>underdog<</achievement>>
+<</if>>
 
 ::IslandHuntArriveClothes
 <<nobr>>
   <h1>TODO</h1>
   <img src="PartX/Hunt22.jpg" hspace="10" vspace="10" height="640">
 <</nobr>>
+TODO Text similar to IslandHuntArriveNaked
 TODO Make it to the end, nervous you're going to get caught at last moment, but uncaptured and with clothes
-TODO [[IslandHuntBath]]
+TODO If Plus sized and win, then Achievement: Underdog
+TODO [[IslandHuntFinish]] or [[IslandHuntFirst]]
 
 ::IslandHuntCaptured
 <<nobr>>
@@ -218,7 +551,17 @@ TODO [[IslandHuntLost]]
 <</nobr>>
 TODO Hosed down then
 TODO Eating at a bowl beside the table
-TODO Continue the same otherwise
+TODO What if pregnant during hunt
+TODO [[IslandPet]]
+
+::IslandHuntFinish
+TODO Finished but didn't win
+TODO What if pregnant during hunt
+
+::IslandHuntFirst
+TODO Finished in first place
+TODO Get to eat at the table
+TODO What if pregnant during hunt
 TODO [[IslandPet]]
 
 ::IslandHuntBath
@@ -226,22 +569,25 @@ TODO [[IslandPet]]
   <h1>TODO</h1>
   <img src="PartX/Pet2.jpg" hspace="10" vspace="10" height="640">
 <</nobr>>
-TODO Given a nice bath
-TODO [[IslandHuntWin]]
+TODO Given a nice bath (Where to work this in)
 
 ::IslandHuntWin
 <<nobr>>
   <h1>TODO</h1>
   <img src="PartX/Pet3.jpg" hspace="10" vspace="10" height="640" align="left">
 <</nobr>>
-TODO Given 'Best in Show' award
-TODO Get to eat at the table
-TODO Continue the same otherwise
-TODO [[IslandPet]]
 
 ::IslandPet
+TODO Change to allow them to leave if they win, or if they end up pregnant during the hunt
+TODO What if pregnant during hunt
 TODO Continue, permanent pet on the island
 TODO If on probation denial: denied for the summer still, need to go by the main island to get it deactivted, but not able to until the busy season is over
 TODO If Fertility enhancement or can't use birth control, then used for breeding
 TODO Ending
 TODO Achievement
+[[The End.|GameOverPet]]
+
+::GameOverPet
+<h1><<print "Game Over - Resort Pet">></h1>
+<img src="PartX/GameOver1.jpg" hspace="10" vspace="10" height="600">
+<<achievement>>resortPet<</achievement>>
