@@ -96,6 +96,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     young
     <<if $PlayerCumslut>>
       cumslut.
+    <<elseif $IslandPet>>
+      pet.
     <<elseif $PlayerMother>>
       mother.
     <<else>>
@@ -147,7 +149,11 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       enjoying your new body.
     <</if>>
     <<if $AcademicProbationDenial>>
-      <br><br>Your implant has blocked your orgasms until you are able to get your grades up.
+      <<if $IslandPet>>
+        <br><br>Your implant has blocked your orgasms until you can get to the X-Change office to have them allowed again.
+      <<else>>
+        <br><br>Your implant has blocked your orgasms until you are able to get your grades up.
+      <</if>>
     <</if>>
   <</if>>
 <</nobr>>
@@ -362,9 +368,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li>The smell of sweating men excites you.</li>
   <</if>>
 
-  <<if $PlayerSideEffectLibido >3 >>
-    <li>Your libido is much higher than normal, causing you to orgasm randomly, you can never refuse sex.</li>
-  <<elseif $PlayerSideEffectLibido >2 >>
+  <<if $PlayerSideEffectLibido >2 >>
     <li>Your libido is much higher than normal, you can never refuse sex.</li>
   <<elseif $PlayerSideEffectLibido >1 >>
     <li>Your libido is much higher than normal, you will often accept or suggest sex to anyone showing the slightest interest.</li>
@@ -611,7 +615,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 ::SideBarMentor <1800,0>
 <br>
 <<nobr>>
-  <<if $DropoutCumslut || $DropoutConcubine>>
+  <<if $DropoutCumslut || $DropoutConcubine || $IslandPet>>
   <<elseif $Mentor == 'Faith'>>
     Faith is your mentor
     <<if $Roommate == 'Faith'>>
@@ -675,6 +679,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     You live at home with your parents, but are looking for your own apartment.
   <<elseif $DropoutConcubine>>
     You live at the palace.
+  <<elseif $IslandPet>>
+    <br>You live on an island as a pet.
   <<else>>
     <<if $Engaged == 'Kate'>>You are engaged to Kate, and living together.
     <<elseif setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.
@@ -741,6 +747,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     You work at a smoothie bar.
   <<elseif $DropoutConcubine>>
     You serve the Prince in whatever way he desires.
+  <<elseif $IslandPet>>
+    You do your best to make the guests at the resort very happy.
   <<elseif $PlayerJobSet>>
     <br><br>
     <<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>
