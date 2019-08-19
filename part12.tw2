@@ -5156,7 +5156,8 @@ Plenty of it is spent back in your hotel room having even more fun with just you
   <<else>>
     He seems very nice, and you do find him attractive, and Faith clearly approves of the idea.
   <</if>>
-  You tell him [[yes, you'd love to go on a date with him|Part12AndrewDate]].
+  You can tell him [[yes, you'd love to go on a date with him|Part12AndrewDate]], or
+  you can let him know you want to focus on school and aren't [[wanting to date anyone right now|Part12BackToClass]].
 <</nobr>>
 
 ::Part12AndrewDate <32600,11000>
@@ -5220,6 +5221,11 @@ Plenty of it is spent back in your hotel room having even more fun with just you
   <img src="Part12/BacktoClass.jpg" hspace="10" vspace="10" height="600"/>
 <</nobr>>
 <<nobr>>
+  <<if $AndrewPhoneNumber and !setup.areDating('Andrew')>>
+    "I understand.", Andrew says, trying to hide the disappointment in his voice.  "Still, if you'd like to hang out sometime as friends, just give me
+    a call."
+    <br><br>
+  <</if>>
   The first few days back in class you find your mind wandering a bit.  You keep daydreaming about the fun you had over break.
   <<if setup.areDating('Andrew') and $CampusMinistry>>
     And about Andrew, of course.

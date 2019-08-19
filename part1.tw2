@@ -198,8 +198,8 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 <<nobr>>
 	There is one additional option.  There’s an experimental feature on your implant we can activate for you.  It might prevent pregnancy and
-	eliminate your periods.  There’s a good chance it will help, and a small chance that it will make things worse.  Let us know if
-	[[we should try it for you|ExperimentalPregnancy]].
+	eliminate your periods.  Let us know if [[you would like to hear more about it|ExperimentalPregnancyChoice]].
+  There’s a good chance it will help, and a small chance that it will make things worse. 
 <</nobr>>
 
 <<nobr>>
@@ -217,12 +217,16 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<<case 5>>
 			[[random.|BodyOptionalFeatures][$PlayerProtectionPill to 1]]
 		<<case 6>>
-			[[random.|ExperimentalPregnancy]]
+			[[random.|ExperimentalPregnancy][$ExperimentalPregnancyOption to either(1,2)]]
 	<</switch>>
 <</nobr>>
 
 ::BodyOptionalFeatures <800,200>
 <<nobr>>
+  <<if $ExperimentalPregnancyOption == 2>>
+    <<set $PlayerSideEffects += either(0,0,0,0,0,1,2,3,4,5)>>
+  <</if>>
+
 	<<set $PreventSideEffectCount to 0>>
 	<<set $PlayerSideEffectPermanent to 0>>
 	<<set $PlayerSideEffectOrgasmBlock to 0>>
@@ -413,13 +417,13 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 <<nobr>>
 	<<print "You will gain ">><span id="PlayerSideEffects">$PlayerSideEffects</span><<print " ">>
-	<<link "side effects.">>
-		<<if $PlayerSideEffects > 0>>
-			<<goto [[BodySideEffects]]>>
-		<<else>>
-			<<goto [[EndPart1]]>>
-		<</if>>
-	<</link>>
+  <<if $ExperimentalPregnancyOption>>
+    [[side effects|BodySideEffectLibido][$PlayerSideEffects += 1]].
+  <<elseif $PlayerSideEffects > 0>>
+    [[side effects|BodySideEffects]].
+  <<else>>
+    [[side effects|EndPart1]].
+  <</if>>
 	<<nobr>>
 		If you get the same side effect more than once, it intensifies the effect.  If you get a side effect you really don't like, we are usually
 		able to reverse it and keep it from happening again.  But we can only do it for a couple times and it causes it's own side effects.
@@ -427,6 +431,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 	<<nobr>>
 		<<if $gameMode == 'debug'>>
+      <br><br>
 			There is also an experimental way that will let you
 			<<link "choose the side effects,">>
 				<<set $PlayerSideEffects += 3>>
@@ -552,104 +557,101 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</silently>>
 <</nobr>>
 
+::ExperimentalPregnancyChoice <1190,200>
+<<nobr>>
+  <h1>Experimental Birth Control</h1>
+  <img src="Part1/PregPrevent7.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  "Excellent!", the technicaian says.  "There's actually two different options we can try out.  They both only work now, before your first menstrual cycle
+  has started.  If you ever decide you want to concieve, just come in and let us know.  We can trigger you to start ovulating that day.  But we won't be
+  able to reactivate these options after your pregnancy.  So you'll have to use one of the traditional means after that.
+<</nobr>>
+
+<<nobr>>
+  "[[The first option|ExperimentalPregnancy][$ExperimentalPregnancyOption to 1]] is about 75% effective.  Sometimes it is as effective as taking the pill,
+  except you never have to worry about forgetting about it.  Sometimes it is even better than that.".  He doesn't go into details on the 25% of the time it
+  isn't effective.  
+<</nobr>>
+
+<<nobr>>
+  Birth control is a frequently requested feature, especially in college settings, so our engineers have been working to improve this feature's effectiveness.
+  They have a [[new version available|ExperimentalPregnancy][$ExperimentalPregnancyOption to 2]] that is 100% effective at preventing pregnancy.  But there
+  is a 50% chance it can generate some other unrelated side effects.  If you definitely don't want to get pregnant, then this is the option for you.  Though,
+  if you are wanting to change back after graudation, keep in mind that causing your change becoming permanent is one of the possible side-effects.
+<</nobr>>
+
+<<nobr>>
+  With either, there have been some reports of inreased sex drive.  But it's hard to determine how much of that is because of the birth control option directly,
+  and how much just because of the freedom to have fun without the risk of pregnancy.  I'm sure it's the latter.  But more importantly, both options'
+  contraceptive effects start immediately.  And after a month or two, your periods should stop or become much lighter as well.
+<</nobr>>
+
+<<nobr>>
+  And, if or when you ever decide you want to concieve, just come in and let us know.  We can trigger you to start ovulating that day.  We won't be able to
+  reactivate the experimental option though, so you'll have to use one of the traditional means after that.
+<</nobr>>
+
+<<nobr>>
+  "Or, if you've changed your mind and want to choose a more traditional option, like 
+  [[pulling out|BodyOptionalFeatures][$PlayerProtectionWithdraw to 1]],
+  [[condoms|BodyOptionalFeatures][$PlayerProtectionCondoms to 1]],
+  [[the pill|BodyOptionalFeatures][$PlayerProtectionPill to 1]],
+  [[or nothing at all|BodyOptionalFeatures][$PlayerProtectionTry to 1]]
+  that's fine too. "
+<</nobr>>
+
+::ExperimentalPregnancyPerfect
+<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
+
+<<nobr>>
+  <<set $PlayerProtectionPerfect = 1>>
+  [[It worked perfectly.|BodyOptionalFeatures]]
+  There’s almost no chance you’ll get pregnant now.
+<</nobr>>
+
+::ExperimentalPregnancyPill
+<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
+
+<<nobr>>
+  <<set $PlayerProtectionPermanent = 1>>
+  Well, [[it worked.|BodyOptionalFeatures]]  But remember, there is still a small chance of pregnancy, similar to if you were on the pill, except without the
+  risk of forgetting to take it.
+<</nobr>>
+
+::ExperimentalPregnancyFertile
+<video src="Part1/ExperimentalPregnancy1.mp4" autoplay loop muted width="854"></video>
+
+<<nobr>>
+  <<set $PlayerProtectionFertile = 1>>
+  Oh... Um.... Well, it appears you are part of that 25% I mentioned.  As you were informed this is still an experimental feature.  Activating it did have an
+  effect on your cycle, but not the one we had intended.  You are going to have a longer fertile period each month, so your chances of pregnancy are actually
+  higher than normal.
+<</nobr>>
+
+<<nobr>>
+  On the bright side, it will be much easier to concieve when you are ready to start a family.  Some of the others that have had this happen have just
+  taken it as a sign and decided to [[start trying to conceive right away|BodyOptionalFeatures][$PlayerProtectionTry to 1]].  Of course if not, then
+  [[condoms|BodyOptionalFeatures][$PlayerProtectionCondoms to 1]] or [[pulling out|BodyOptionalFeatures][$PlayerProtectionWithdraw to 1]] are still
+  options.  Hormonal birth control is not going to be effective for you however.
+<</nobr>>
+
+<<nobr>>
+  You could just not worry about it and let [[whatever happens, happen|BodyOptionalFeatures][$PlayerProtectionNone to 1]]
+<</nobr>>
+
 ::ExperimentalPregnancy <1200,200>
 <<nobr>>
-	<<set $PlayerRollDice = either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
-
-	<h1><<print "Experimental Birth Control">></h1>
+	<<set $PlayerRollDice = either(1,2,3,4,5,6,7,8)>>
+  <h1>Experimental Birth Control</h1>
+  <<if $ExperimentalPregnancyOption == 2 or $PlayerRollDice == 6 or $PlayerRollDice == 7 or $PlayerRollDice == 8>>
+    <<include [[ExperimentalPregnancyPerfect]]>>
+  <<elseif $PlayerRollDice == 3 or $PlayerRollDice == 4 or $PlayerRollDice == 5>>
+    <<include [[ExperimentalPregnancyPill]]>>
+  <<else>>
+    <<include [[ExperimentalPregnancyFertile]]>>
+  <</if>>
 <</nobr>>
-<<switch $PlayerRollDice>>
-	<<case 1>>
-		<<print "I’m so sorry but remember that ‘small chance’ of making things worse that I mentioned? Well, it did. ">>
-
-		<<print "Your cycles are going to continue like normal.  Well... not normal exactly.  Your fertile period is going to be a much longer portion of your cycle than it’d normally be.  So that makes it more likely you’ll get pregnant if you’re not careful.">>
-		
-		<video src="Part1/ExperimentalPregnancy1.mp4" autoplay loop muted width="854"></video><<set $PlayerProtectionFertile = 1>>
-
-		
-		<<print "And, the birth control pills I mentioned earlier.  Those won’t be effective on you.  Really your only option if you want to be with men and not get pregnant, is going to be ">><<link [[condoms|BodyOptionalFeatures]]>><<set $PlayerProtectionCondoms = 1>><</link>><<print ". Unless you changed your mind and decided that you actually do ">><<link [[want to get pregnant.|BodyOptionalFeatures]]>><<set $PlayerProtectionTry = 1>><</link>>
-
-		<<print "To be honest though, most of the girls that this has happened to decided against condoms and were pregnant in a few months.  I’m not sure if that’s the X-Change implant making them want to get pregnant, or if they just gave up after being so unlucky.  Maybe you can let me know in a few months.">>
-
-		<<nobr>>
-			<<print "You can also risk it and just decide to ">>
-			<<link [[ask the guy to pull out|BodyOptionalFeatures]]>><<set $PlayerProtectionWithdraw = 1>><</link>>
-			<<print " instead or even to ">>
-			<<link [[not bother using birth control.|BodyOptionalFeatures]]>><<set $PlayerProtectionNone = 1>><</link>>
-		<</nobr>>
-
-		<<nobr>>
-			<<print "Or maybe, you really have no idea what the best option is anymore, ">>
-			<<link "but you have to pick something. (Random)">>
-				<<set $PlayerRollDice = either(1,2,3,4)>>
-				<<switch $PlayerRollDice>>
-					<<case 1>>
-						<<set $PlayerProtectionTry = 1>><<goto [[BodyOptionalFeatures]]>>
-					<<case 2>>
-						<<set $PlayerProtectionNone = 1>><<goto [[BodyOptionalFeatures]]>>
-					<<case 3>>
-						<<set $PlayerProtectionWithdraw = 1>><<goto [[BodyOptionalFeatures]]>>
-					<<case 4>>
-						<<set $PlayerProtectionCondoms = 1>><<goto [[BodyOptionalFeatures]]>>
-				<</switch>>
-			<</link>>
-		<</nobr>>		
-	<<case 2 3 4 5 6>>
-		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
-	
-		<<print "Oh well, it didn’t work.  Luckily no side effects though.  You can pick one of the other options though.">>
-
-		<<nobr>>
-			<<print "With the trial you are participating in, those are ">>
-			<<link [[condoms|BodyOptionalFeatures]]>><<set $PlayerProtectionCondoms = 1>><</link>>
-			<<print " and ">>
-			<<link [[birth control pills.|BodyOptionalFeatures]]>><<set $PlayerProtectionPill = 1>><</link>>
-			<<print " Or you might just prefer to">>
-			<<link [[ask the guy to pull out|BodyOptionalFeatures]]>><<set $PlayerProtectionWithdraw = 1>><</link>>
-			<<print " or even to ">>
-			<<link [[not bother using birth control.|BodyOptionalFeatures]]>><<set $PlayerProtectionNone = 1>><</link>>
-		<</nobr>>
-		
-		<<nobr>>
-			<<print "Or maybe you really have no idea what the best option is anymore, ">>
-			<<link "but you have to pick something. (Random)">>
-				<<set $PlayerRollDice = either(1,2,3,4,5)>>
-				<<switch $PlayerRollDice>>
-					<<case 1>>
-						<<set $PlayerProtectionTry = 1>><<goto [[BodyOptionalFeatures]]>>
-					<<case 2>>
-						<<set $PlayerProtectionNone = 1>><<goto [[BodyOptionalFeatures]]>>
-					<<case 3>>
-						<<set $PlayerProtectionWithdraw = 1>><<goto [[BodyOptionalFeatures]]>>
-					<<case 4>>
-						<<set $PlayerProtectionCondoms = 1>><<goto [[BodyOptionalFeatures]]>>
-					<<case 5>>
-						<<set $PlayerProtectionPill = 1>><<goto [[BodyOptionalFeatures]]>>
-				<</switch>>
-			<</link>>
-		<</nobr>>
-	<<case 7 8 9 10 11 12 13>>
-		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
-		
-		<<nobr>>
-			<<set $PlayerProtectionPermanent = 1>>
-			<<print "Well, ">>
-			[[it kinda worked.|BodyOptionalFeatures]]
-			<<print "  There’s still a small chance of pregnancy - it’s about as much as if you’d taken the pill, but now you don’t have to worry about forgetting it.  And, your periods will probably be very light.">>
-		<</nobr>>
-			
-		<<print "However if you ever decide that you to want to get pregnant, let us know and we’ll deactivate the birth control feature for you and you’ll be back to normal cycles in a month or two.">>
-	<<case 14 15 16 17 18 19 20>>
-		<video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
-	
-		<<nobr>>
-			<<set $PlayerProtectionPerfect = 1>>
-			[[It worked perfectly.|BodyOptionalFeatures]]
-			<<print "  There’s almost no chance you’ll get pregnant now. And, you’re not going to have to deal with periods!">>
-		<</nobr>>
-		
-		<<print "However if you ever decide that you to want to get pregnant, let us know and we’ll deactivate the birth control feature for you and you’ll be back to normal cycles in a month or two.">>
-<</switch>>
 
 
 ::BodySideEffects <1400,200>
@@ -1112,14 +1114,20 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</nobr>>
 
 	<<nobr>>
+		<<if $ExperimentalPregnancyOption and $PlayerSideEffectLibido == 1>>
+      You aren't even done with orientation, and you are already thinking about sex.  You wonder if what the technician mentioned about the birth control
+      feature causing a higher sex drive is true.
+      <<if !$PlayerProtectionFertile>>
+        What's the harm if it is?  You don't have to worry about get pregnant after all.
+      <</if>>
+      <br><br>
+    <</if>>
 		<<if $PlayerSideEffectLibido == 1>>
 			Your libido is going to be much, much higher than normal. You probably feel a near-irresistible need for an orgasm growing within you several times a day.
 		<<elseif $PlayerSideEffectLibido == 2>>
 			Your need for sex will be so strong that you will often choose sex when given the choice.
-		<<elseif $PlayerSideEffectLibido == 3>>
-			Your need for sex will be so strong that you will always accept people asking you for sex.
 		<<else>>
-			You can now get so horny that sometimes you will just orgasm randomly, regardless of what you are doing.
+			Your need for sex will be so strong that you will always accept people asking you for sex.
 		<</if>>
 		If you feel the need growing during class, you’ll probably think about quietly pleasuring yourself. Don’t. Trust me, you’ll only start off quiet.
 		It’s better to find a classmate you can pull into a broom closet for a few minutes, just to take the edge off then you can get back to class and
@@ -1128,7 +1136,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</nobr>>
 
 	<<nobr>>
-		<<if $PlayerSideEffectLibido == 1 and $PreventSideEffectCount < 2 >>
+		<<if !$ExperimentalPregnancyOption and $PlayerSideEffectLibido == 1 and $PreventSideEffectCount < 2 >>
 			If you really don't care for this one, I should be able to 
 			<<link [[disable it|BodySideEffects]]>>
 				<<set $PlayerSideEffectLibido = 0>>
