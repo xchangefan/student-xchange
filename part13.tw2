@@ -5114,10 +5114,17 @@ Of course, in addition to your school work and being whored out by Barry, you al
       <br><br>
       You are already starting to miss him as you drive [[off campus towards home|Part13SummerHome]].
     <</if>>
-  <<elseif ($Roommate=='Barry' or setup.isNeighbour('Barry')) and !setup.isEx('Barry') and !$PlayerChastityBelt and (!$PlayerPregnant or $PregnancySpring) and !$CampusMinistry>>
-    Barry notices you going over your summer plans and interrupts you to [[discuss his plans with you|Part13SummerBarry]].
-    <br><br>
-    "You might be interested in this too.", he tells you.
+  <<elseif ($Roommate=='Barry' or setup.isNeighbour('Barry')) and !setup.isEx('Barry') and !$PlayerChastityBelt and (!$PlayerPregnant or $PregnancySpring)>>
+    <<if $CampusMinistry>>
+      Barry notices you going over your summer plans and interrupts you to discuss his plans with you.
+      <br><br>
+      "Heyyy, I know we haven't hung out much this year, but I'd like to change that.  It didn't sound like you had anything exciting going
+      on this summer.  And I'm sure you'd have fun doing this too.", he tells you.  You are skeptical, but [[listen to his plans|Part13SummerBarryLie]].
+    <<else>>
+      Barry notices you going over your summer plans and interrupts you to [[discuss his plans with you|Part13SummerBarry]].
+      <br><br>
+      "You might be interested in this too.", he tells you.
+    <</if>>
   <<else>>
     <<include [[Part13SummerLeave]]>>
     As you look around your room.  You think it's crazy when you recall,
@@ -5143,6 +5150,65 @@ Of course, in addition to your school work and being whored out by Barry, you al
     <<else>>
       As you drive [[off campus towards home|Part13SummerHome]] you are excited to have a few months to relax after such an eventful year.
     <</if>>
+<</nobr>>
+
+::Part13SummerBarryLie
+<<nobr>>
+  <h1>Discussing Barry's Plans</h1>
+  <img src="Part13/SummerPlans8lie.jpg" hspace="10" vspace="10" height="540">
+<</nobr>>
+<<nobr>>
+  "I'm going to an island resort this summer.  Nearly everything is included, food, drinks, and most of the activities.",
+<</nobr>>
+
+<<nobr>>
+  "That sounds really expensive.", you tell him.  "I don't think I could afford something like that.  I'm sure you'll have a great time though." 
+<</nobr>>
+
+<<nobr>>
+  "Actually, it's not that bad, especially with the exchange rate.  And actually it wouldn't cost <i>you</i> anything.  They have a special going
+  right now, but it's for couples only.  So it would actually be cheaper for me if you went with me.  I'll even pay for your flight.
+  He sees you bristle at the word 'couples', and adds.  "They don't care if we are a real couple or not, just that we only take one room.  One of us
+  can sleep on the sofa or floor or something."
+<</nobr>>
+
+<<nobr>>
+  "I don't know.  Sharing a hotel room with you.  People might get the wrong idea about us.", you worry.
+<</nobr>>
+
+<<nobr>>
+  <<if $Roommate == 'Barry'>>
+    "We've shared a room most of the year anyway.",
+  <<else>>
+    "We've practically shared a room all year anyway.  We've been right next door, and sharing a bathroom.",
+  <</if>>
+  he tries to assuage your concerns.  "Besides, no one will care.  They are much more relaxed there about that sort of thing.  And people back home don't
+  even need to know we're sharing a room."
+<</nobr>>
+
+<<nobr>>
+  He sees you are still skeptical, "Here, [[let me show you how fun it'll be there|Part13SummerBarryLie2]]."  He quickly tosses some brochures into his desk
+  drawer and opens his computer and types in the name of some resort.
+<</nobr>>
+
+::Part13SummerBarryLie2
+<<nobr>>
+  <h1>Barry trying to convice you</h1>
+  <img src="Part13/SummerPlans9lie.jpg" hspace="10" vspace="10" height="540">
+<</nobr>>
+<<nobr>>
+  Barry proceeds to show you photos of people on the beach, horseback riding, drinking at the pool, deep-sea fishing, and a bunch of other activities.
+  "Is that where we'd be staying?", you ask pointing to one of the nicer looking buildings featured in one of the photos.
+<</nobr>>
+
+<<nobr>>
+  "Ummm, no.  This is a different resort.  The... website is down for the one I'm going to, but it looks very similar.", Barry tells you.  "Anyway, what do
+  you say?  I'll need to know right away, hopefully I can still find a flight that isn't too expensive."
+<</nobr>>
+
+<<nobr>>
+  You are surprised Barry is being so generous.  You wonder if you might have been misjudging him all year.  You can [[tell him yes|Part14Island]],
+  you'll go with him.  Or if you don't trust him enough, or just aren't interested, you can [[decline and wish him a good trip|Part13SummaryBarryNo]]
 <</nobr>>
 
 ::Part13SummerBarry
@@ -5295,8 +5361,12 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <</if>>
 <</nobr>>
 <<nobr>>
-  "Thank you, but that seems a too much for me.", you tell Barry.  "I hope you have a great time there though."
-  Then you go back to what you were doing before Barry's interruption.
+  <<if $CampusMinistry>>
+    "Thank you, but I'm going to stick with my original plans.", 
+  <<else>>
+    "Thank you, but that seems like too much for me.",
+  <</if>>
+  you tell Barry.  "I hope you have a great time there though."  Then you go back to what you were doing before Barry's interruption.
 <</nobr>>
 
 <<include [[Part13SummerLeave]]>>
