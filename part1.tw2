@@ -419,10 +419,8 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<<print "You will gain ">><span id="PlayerSideEffects">$PlayerSideEffects</span><<print " ">>
   <<if $ExperimentalPregnancyOption>>
     [[side effects|BodySideEffectLibido][$PlayerSideEffects += 1]].
-  <<elseif $PlayerSideEffects > 0>>
-    [[side effects|BodySideEffects]].
   <<else>>
-    [[side effects|EndPart1]].
+    [[side effects|BodySideEffects]].
   <</if>>
 	<<nobr>>
 		If you get the same side effect more than once, it intensifies the effect.  If you get a side effect you really don't like, we are usually
@@ -653,8 +651,14 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 <</nobr>>
 
-
 ::BodySideEffects <1400,200>
+<<if $PlayerSideEffects>>
+  <<include [[BodySideEffectsYes]]>>
+<<else>>
+  <<include [[EndPart1]]>>
+<</if>>
+
+::BodySideEffectsYes <1425,200>
 	<<nobr>>
 		<<set $validOptionsThisRoll = []>>
 		<<if !$PlayerSideEffectPermanent>>
