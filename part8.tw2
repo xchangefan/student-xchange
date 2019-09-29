@@ -1062,11 +1062,8 @@
 
 ::Part8EveningBooty1 <1575,7125>
 <<nobr>>
-	<<set $sex.push({sex: 'male', name: 'Cody'})>>
 	<h1><<print "Cody’s Apartment">></h1>
-<</nobr>>
-
-<<nobr>>
+	<<set $sex.push({sex: 'male', name: 'Cody'})>>
 	<<if $CampusMinistry>>
 		<<set $CampusMinistryFail to 1>>
 		<<set $CampusMinistryFailChristmas to 1>>
@@ -1092,9 +1089,14 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $PlayerChastityBelt>><<print "You go back home and sneak in. ">>[[You fall asleep still with an aching need,|Part8Christmas1]]<<print " but with a smile on your face and a familiar taste in your mouth.">><</if>>
-	<<if $PlayerSideEffectOral>><<print "You let him put his tongue to work until ">>[[his cock is ready for action again.|Part8EveningBooty2]]<</if>>
-	<<if !$PlayerChastityBelt and !$PlayerSideEffectOral>><<print "You take his cock from your mouth and ">>[[tell him to fuck you.|Part8EveningBooty2]]<</if>>
+	<<if $PlayerChastityBelt>>
+    <<print "You go back home and sneak in. ">>[[You fall asleep still with an aching need,|Part8Christmas1]]
+    <<print " but with a smile on your face and a familiar taste in your mouth.">>
+  <<elseif $PlayerSideEffectOral>>
+    <<print "You let him put his tongue to work until ">>[[his cock is ready for action again.|Part8EveningBooty2]]
+  <<else>>
+    <<print "You take his cock from your mouth and ">>[[tell him to fuck you.|Part8EveningBooty2]]
+  <</if>>
 <</nobr>>
 
 ::Part8EveningMasturbate <350,7250>
