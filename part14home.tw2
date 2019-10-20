@@ -57,6 +57,7 @@
 <<nobr>>
 	<h1>At the Gas Station</h1>
   <video src="Part14/Drive1.webm" autoplay loop muted height="400"></video>
+  <<set $PlayerCarFlash to 1>>
 <</nobr>>
 
 <<nobr>>
@@ -540,7 +541,7 @@ TODO Deal with Academic Probation Denial everywhere
 <<nobr>>
   "You just <i>want</i> to jerk off right now.  You don't really understand yet.  Come ask me to unlock you when you can't take it anymore, and you absolutely
   <b>NEED</b> to be able to cum again.", you tell him.  He doesn't have any choice but to agree.  "Now, it'll probably be difficult at first, but try to get
-  some sleep. I'll be across the hall [[taking a bath|Part14HomeBath]] before I go to sleep.  Don't disturbe me.  I'll be a while since I'll be masturbateing",
+  some sleep. I'll be across the hall [[taking a bath|Part14HomeBath]] before I go to sleep.  Don't disturbe me.  I'll be a while since I'll be masturbating",
   you <<if $PlayerSideEffectMasturbationBlock>>lie.<<else>>say.<</if>>
 <</nobr>>
 
@@ -985,8 +986,14 @@ TODO [[Part14HomeBath]]
 <</nobr>>
 
 <<nobr>>
-  "<<if $playerName>>$playerName, <</if>>I was planning on hanging out with some of my friends later, do you [[want to join me|Part14HomeSister]]?",
-  Cassie asks on the way back to the car.  "Or were [[you wanting to do something with Dylan|Part14Home2Brother]] this evening?"
+  <<if $PlayerChastityBelt and $Keyholder === 'Dylan'>>
+    "<<if $playerName>>$playerName, <</if>>I was planning on hanging out with some of my friends later, do you want to join me|Part14HomeSister?",
+    Cassie asks on the way back to the car.  "Or were [[you wanting to do something with Dylan|Part14Home2Brother]] this evening?"  You don't want to
+    miss out on Dylan maybe unlocking you, so you tell her you and Dylan already have plans.
+  <<else>>
+    "<<if $playerName>>$playerName, <</if>>I was planning on hanging out with some of my friends later, do you [[want to join me|Part14HomeSister]]?",
+    Cassie asks on the way back to the car.  "Or were [[you wanting to do something with Dylan|Part14Home2Brother]] this evening?"
+  <</if>>
 <</nobr>>
 
 ::Part14Home2Brother
@@ -1022,28 +1029,34 @@ TODO [[Part14HomeBath]]
     <br><br>
     You could [[make something up|Part14CallGirl][$BrotherCallGirl to 0]] that sounds plausible.  Or, if you want to tell him the truth but not have Cassie hear,
     you could tell him that you'll [[tell him about it when you get home|Part14CallGirl][$BrotherCallGirl to 1]].
-  <<elseif true or $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
-    TODO [[Part14Bar]]
-  <<elseif true or $JobGloryHole>>
+  <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+    "So... I've been to bars before.  But not a lesbian bar.  What's it like there? What working there like?", Dylan starts asking you about your job.
+    <br><br>
+    You explain that for the most part it's not that different than any other bar.  "It's just that it's mostly women.", you tell him.  After he asks what you
+    mean by 'Mostly', you explain how there's also couples that come in.  "Sometimes they just want to see what it's like.  Usually though the wife or girlfriend
+    is curious about being bi, and feels more comfortable bringing the boyfriend along.  At first anyway."
+    <br><br>
+    You could [[leave it at that|Part14Home3]], or you could tell Dylan that you can [[go into more detail|Part14Bar]] when you get home.
+  <<elseif $JobGloryHole>>
     TODO [[Part14GloryHole]]
-  <<elseif true or $JobWebModel or $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
+  <<elseif $JobWebModel or $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
     TODO [[Part14Model]] (Lying about Porn Star job)
-  <<elseif true or $JobStripper>>
+  <<elseif $JobStripper>>
     TODO [[Part14Strip]]
-  <<elseif true or $JobCheerleader or $JobCheerleaderFundraiser>>
+  <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
     TODO [[Part14Cheerleader]] (A or D)
-  <<elseif true or $JobEngineer>>
+  <<elseif $JobEngineer>>
     You'd been vague about your job with Dylan, so he doesn't know about it's more interesting aspects.  He's just trying to have a conversation on the long 
     TODO [[Part14Engineering]] (Engineer or Test Subject)
-  <<elseif true or $JobTestSubject>>
+  <<elseif $JobTestSubject>>
     TODO [[Part14Engineering]] (Engineer or Test Subject)
-  <<elseif true or $JobFitnessMassage>>
+  <<elseif $JobFitnessMassage>>
     TODO [[Part14Massage]]
-  <<elseif true or $JobFitnessYoga>>
+  <<elseif $JobFitnessYoga>>
     TODO [[Part14Yoga]]
-  <<elseif true or $DylanCumslutCollar>>
+  <<elseif $DylanCumslutCollar>>
     TODO [[Part14CumslutCollar4]] if that and no interesting job
-  <<elseif true or $BondageWithDylan>>
+  <<elseif $BondageWithDylan>>
     TODO [[Part14BondageToys3]] if that and no interesting job
   <<else>>
     TODO Need Default
@@ -1060,19 +1073,16 @@ TODO [[Part14HomeBath]]
     <video src="Part14/Never1.webm" autoplay loop muted height="500"></video>
   <<elseif $NeverGameRound === 2>>
   	<h1>"<b><i>Have you ever</i></b> had sex in car?"</h1>
-    <img src="Part14/Dare2.gif" hspace="10" vspace="10" height="345">
+    <img src="Part14/Dare1.gif" hspace="10" vspace="10" height="345">
   <<elseif $NeverGameRound === 3>>
   	<h1>"<b><i>Have you ever</i></b> been naked in public?"</h1>
-    <br>TODO Image<br>
+    <img src="Part14/Dare2.jpg" hspace="10" vspace="10" height="500">
   <<elseif $NeverGameRound === 4>>
   	<h1>"<b><i>Have you ever</i></b> had sex outside?"</h1>
-    <br>TODO Image<br>
-  <<elseif $NeverGameRound === 5>>
-  	<h1>"<b><i>Have you ever</i></b> had sex with an older man?"</h1>
-    <br>TODO Image<br>
+    <video src="Part14/Never2.mp4" autoplay loop muted height="500"></video>
   <<else>>
   	<h1>"<b><i>Have you ever</i></b> tried bondage?"</h1>
-    <br>TODO Image<br>
+    <video src="Part14/Never3.webm" autoplay loop muted height="500"></video>
   <</if>>
 <</nobr>>
 <<nobr>>
@@ -1139,14 +1149,59 @@ TODO [[Part14HomeBath]]
       they are disappointed hoping for another story.  "Sorry, me neither.", Cassie adds.
     <</if>>
   <<elseif $NeverGameRound === 3>>
-    TODO Naked in public: PlayerSideEffectExhibitionist, Sorority challenge, stripping, (don't mention porn star), sex party, if nothing then challenge
+    <<if setup.haveFucked('Sports car owner')>>
+      Before you can even answer Cassie tells you, "In case we didn't mention it, you can't use the same answer twice.  So your gas station encounter doesn't
+      count." You don't even have time to respond with a different time before Haley
+    <<elseif $PlayerCarFlash>>
+      You are working up the nerve to tell them about the fun you'd had on the way home at the gas station, but Haley takes your delay as a sign you've
+      never done it.  She 
+    <<elseif $JobStripper>>
+      You start telling them about your job as stripper.  They ask many questions.  About what it's like, how much money you make, and how many guys
+      try for "extras".  When their questions stop, Cassie tells you, "It doesn't count though.  You're supposed to be naked there, so it's not really the same.
+      Haley is excited by Cassie's arbitrary ruling and
+    <<elseif $PlayerSideEffectExhibitionist>>
+      You've done it so many times, you think for a minute trying to decide which time will make the better story.  But Haley takes your delay as a sign you've
+      never done it.  She
+    <<elseif setup.haveFucked('Guy by the science building')>>
+      Your first thought is the time you fucked that guy by the science building during pledge week.  But you are wondering if you should mention it since
+      <<if setup.haveFucked('Campus Police Officer')>>
+        then their questions would probably lead to telling them about getting caught, and what you had to do with the campus police officer to avoid getting
+        yourself or the Sigmas in trouble.
+      <<else>>
+        you saw a Sigma logo earlier in Danielle's room and you wonder if she's a Sigma Epsilon Xi.  You'd hate to have to explain the story about reporting them
+        for hazing.
+      <</if>>
+      As you are thinking it over, Haley takes your delay as a sign you've never done it.  She
+    <<else>>
+      You try to remember something, but are drawing a blank.  Haley smiles and
+    <</if>>
+    starts chanting, "Challenge! Challenge!".  You don't want to spoil the fun, so you tell them you'll take the challenge.
+    <br><br>
+    Your challenge is to strip down and then run around the house once and then back in.
+    <<if $PlayerChastityBelt>>
+      "Well, except for that.", Dani says laughing and pointing once you are down to your chastity belt.
+    <</if>>
+    You look out the window on the front door to make sure no one is visible,
+    then you quickly run outside and start around the house.  You make it around the house, then you head passed the open garage door.  That's when you spot Danielle's
+    dad staring up at you from under his car.  You look nervously back at him for a second and then run inside the front door again.
+    <br><br>
+    "Oh my god, Danielle!", you explain with your heart still pounding.  "You didn't tell me your Dad was home!".
+    <br><br>
+    They all laugh and she says, "Well, I never said he wasn't home either."
   <<elseif $NeverGameRound === 4>>
-    TODO Sex outside (just hear story, it was your question)
-  <<elseif $NeverGameRound === 5>>
-    TODO Sex with an older man (Professor (Aaron or other) Mike, Bouncer, Call Girl, Paul, Library Boss, Strip Club?, Film Crew at spring break,
-    TODO don't mention glory hole customers?, Coach, University Donor, Sex Party, Student Activites Guy, Campus Police Officer, DTF Reviewer
+    Cassie has a story this time.  She tells about fucking her boyfriend last year on a camping trip.  "Last summer, before I left for school?  I was on that trip!
+    and we were all squeezed into that tiny tent.", you tell her.
+    <br><br>
+    "Well, you and Dylan were gone fishing for quite a while.  I promise you, we had much more fun back at camp waiting for you two to return.", she replies.
   <<else>>
-    TODO bondage
+    Haley starts.  She starts to tell you about how she likes it when her boyfriend ties her up.  "Actually, it's not really tied anymore.  We did that at first.
+    But now we have special restraints.  And a gag too.", she adds.  "I love that feeling of helplessness."
+    <<if $PlayerSideEffectSubmissive>>
+      You nod along in agreement
+    <<else>>
+      You listen intently
+    <</if>>
+    as she describes tugging at the restraints when she orgasms and the mute screams she makes into the gag.
   <</if>>
 <</nobr>>
 
@@ -1183,26 +1238,241 @@ TODO [[Part14HomeBath]]
     <</if>> 
   <<elseif $NeverGameRound === 3>>
     <<set $NeverGameRound to 4>>
-    Now it's your turn to ask a question.  You think for a moment then ask, "[[Have you ever had sex outside|Part14HomeSister]]?".
+    Now it's your turn to ask a question.  You think for a moment then ask, "[[Have you ever had sex outdoors|Part14HomeSister]]?".
   <<elseif $NeverGameRound === 4>>
     <<set $NeverGameRound to 5>>
-    It's Danielle's turn again. "[[Have you ever had sex with an older man|Part14HomeSister]]?", she asks.  "Like 35 or 40 or something.", she clarifies.
-    "I'm talking senior citizen, not a senior in college", she adds then laughs.
-  <<elseif $NeverGameRound === 5>>
-    <<set $NeverGameRound to 6>>
-    When it's time for Haley's question she thinks for a moment, then smiles.
-    TODO After Sex with an older man [[Part14HomeSister]]
+    It's Danielle's turn again. "[[Have you ever tried bondage|Part14HomeSister]]?  You know, had a guy tie you up for sex.", she asks.
   <<else>>
-    <<set $NeverGameRound to 7>>
-    It's your turn again.  You're thinking of your next question when Cassie notices the time.  "Oh.  We're going to have to leave soon.", she says explaining
-    that she's meeting her boyfriend soon and needs to [[head home to get ready|Part14HomeSister2]] before then.  Her friends say goodbye and how great it was
-    to meet you and hear about your exciting year.
+    <<set $NeverGameRound to 6>>
+    But before you or Cassie can answer, Cassie notices the time.  "Oh.  We have to leave.", she says explaining that she's meeting her boyfriend soon and
+    needs to [[head home to get ready|Part14HomeSister2]] before then.  "Unless you were wanting to 
+    <<if $PlayerChastityBelt>>
+      [[spend the night here|Part14HomeDanniChastity]] 
+    <<else>>
+      [[spend the night here|Part14HomeDanni]] 
+    <</if>>
+    with Dani and Haley?", Cassie adds. 
   <</if>>
 <</nobr>>
 
+::Part14HomeDanniChastity
+<<nobr>>
+	<h1>Danielle's House</h1>
+  <img src="Part14/Dani3.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You, Dani, and Haley tell Cassie goodbye.  Once Cassie is gone Dani smiles, turns to you and points to your chasity belt.  She says, "Well, I suppose you are
+  already in bondage."  She disappoitedly adds, "I guess there's no challenge for you then."
+<</nobr>>
+
+<<nobr>>
+  "Actually I have an idea.", Haley says.  "You can challenge her to have an orgasm with her belt still on.  I'm sure she'd like to try.  Then you and I can
+  do our best to get her off."
+<</nobr>>
+
+<<nobr>>
+  "Ok.", Dani responds.  "If she wins, obviously the orgasm is it's own reward.  But if she loses...  Then she has to go show my Dad her belt.  I'm sure he's
+  wondering about it after earlier.  And he should be home by then."
+<</nobr>>
+
+<<nobr>>
+  Haley laughs and adds, "An then she has to suck his cock too, right?"  She turns to you and adds.  "She's already tried to get me to fuck him.  I think Dani
+  wants her dad to move on after the divorce."
+<</nobr>>
+
+<<nobr>>
+  "Well.  He should.", Dani defends hereself.  "Mom's already remarried, so why shouldn't Dad get a little action too?"  Haley laughs again.  "She doesn't
+  <i>have to</i> do anything except show him the belt.  Of course if she <i>wants to</i>, I'm sure he wouldn't mind."
+<</nobr>>
+
+<<nobr>>
+  You don't have much hope for success, but you [[can't turn down the chance|Part14HomeDaniChastity2]].
+<</nobr>>
+
+::Part14HomeDaniChastity2
+<<nobr>>
+	<h1>Danielle's House</h1>
+  <video src="Part14/Dani4.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  The two of them do their best, one kissing you as the other plays with your breasts, each of them kissing on one of your thighs, anything they can think of.
+  Eventually they give up.  By then they are both really horny.  Well, all three of you are, but they can do something about their condition.
+<</nobr>>
+
+<<nobr>>
+  You watch as the two of them get themselves off.  Dani's orgasm takes a bit longer, but does best to encourage her.  When Dani finally does finish, you
+  look on with envy as her body spasms with pleasure.
+<</nobr>>
+
+<<nobr>>
+  The two of them lie there enjoying the afterglow of their orgasms for a while until they hear the garage door open.  Dani smiles then sits up.  "Now it's time
+  for [[your part of the challenge|Part14HomeDaniChastity3]].", she says looking at you.
+<</nobr>>
+
+::Part14HomeDaniChastity3
+<<nobr>>
+	<h1>Danielle's House</h1>
+  <img src="Part14/Dani3.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You gently knock on his door.  You are wearing your chastity belt still visible under your sleepwear, though obviously not as visible as it was earlier.
+  "Mr...", you start before realizing you don't know his and Danielle's last name.
+<</nobr>>
+
+<<nobr>>
+  "Just 'Dan' is fine.", he says.  He gestures at your belt and asks, "So, did Haley and my daughter lock that on you.  That seems a bit much, even for them."
+  You explain that you've actually been wearing it for a while, and that the key is hundereds of miles from here.  "It looks fairly sturdy, I'm not sure if I
+  have the tools to get it off you safely.  But I can take a look.  If that's what you needed?", he asks.
+<</nobr>>
+
+<<nobr>>
+  "M...maybe, you can look tomorrow.", you say.  "Tonight I was needing something else."  You tell him how horny being in the belt makes you.  You tell him you've
+  been thinking about sucking is cock ever since he saw you run past the garage earlier.
+<</nobr>>
+
+<<nobr>>
+  "Really?", he asks with a hopeful tone in his voice.
+<</nobr>>
+
+<<nobr>>
+  "No.", you answer honestly.  "Actually, I've been thinking about feeling your cock inside me since then.  But since we can't do that, can I suck your cock instead?"
+<</nobr>>
+
+<<nobr>>
+  "[[Of course, you can|Part14HomeDaniChastity4]].", he answers.  You close the door to his room and walk over to him.
+<</nobr>>
+
+::Part14HomeDaniChastity4
+<<nobr>>
+	<h1>Danielle's House</h1>
+  <video src="Part14/Dani5.webm" autoplay loop muted height="500"></video>
+  <<set $sex.push({sex: 'male', name:'Dan'})>>
+  <<set $sex.push({sex: 'male', name:'Dan'})>>
+<</nobr>>
+
+<<nobr>>
+  You are eager to suck his cock, but take it slow at first.  He loves every minute of it.  Eventually the feel of his cock in your mouth and the sounds of
+  his moans are too much and you can't help but pick up the speed.  When he finally comes it feels like weeks of cum fill your mouth.  You eagerly swallow every
+  drop and lick his cock clean.
+<</nobr>>
+
+<<nobr>>
+  "That was wonderful.", he says.  "Is there anything I can do for you?".  He's clearly wondering what he could do with that belt on you.
+<</nobr>>
+
+<<nobr>>
+  "No Mr... I mean Dan.", you say.  "Thank you for letting me suck your cock.  Should I leave you alone now?".
+<</nobr>>
+
+<<nobr>>
+  "Only if you want to.  You are welcome to sleep in here tonight.", he says hopefully.  You smile and tell him that you would like that.  He smiles back and
+  starts to get ready for bed.  Once you are in bed he spoons you with an arm around you.  You love the feeling of him next to you, but feeling his cock against
+  your ass makes you yearn to be out of this belt.  You fall asleep content, but with a familiar empty ache inside.
+<</nobr>>
+
+<<nobr>>
+  When you both wake up the next morning, he kisses you and strokes your hair as you are lie there content and half asleep.  Once you are fully awake you notice
+  his morning erection and say, "Can I help you with that Dan?".
+<</nobr>>
+
+<<nobr>>
+  "Of course.  But is there anything I can do for you?".  You shrug but then tell him you want him inside you, but since you can't have that, maybe he could grab
+  you by the hair and fuck your mouth instead.  He eagerly obliges your request.
+<</nobr>>
+
+<<nobr>>
+  When you are finished, you plan on showering in his bathroom, but you still need your clothes from Dani's room.  You try to sneak in without waking her she looks
+  up and sees you gathering your clothes.  You hold your fingers up in a "Shhh" sign to keep her from waking Haley too.  Dani doesn't say anything but just looks
+  at you with a big smile on her face as you leave the room and head back to [[her father's room|DaniellesDad]].
+<</nobr>>
+
+::Part14HomeDanni
+<<nobr>>
+	<h1>Danielle's House</h1>
+  <img src="Part14/Dani1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You, Dani, and Haley tell Cassie goodbye.  Once Cassie is gone Dani smiles, turns to you, and says, "We'll just assume Cassie would have had something to confess.
+  So that means it's a challenge again for you."
+  <<if $PlayerSideEffectSubmissive>>
+    You certainly have stories to share, but find the thought of a bondage challenge much too exciting to pass up.
+  <<else>>
+    Even if you could share a story to avoid the challenge, you don't want to.  The challenge sounds like it'd be much more fun.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You think you're finally getting the hang of this game of their's.  "Yes.  I guess it does." you reply. As they decide on your challenge, the two of them whisper
+  back and forth, stopping to giggle several times.  Finally they stop whispering and tell you they'll let you decide.
+<</nobr>>
+
+<<nobr>>
+  "My idea was to tie you, [[blindfold you, and lead you around the house|Part14HomeDani2]] for a while.", Haley says before adding, "Don't worry Dani's dad has
+  gone out, so we have the house to ourselves for an hour at least.  Who knows what we might do to you."
+<</nobr>>
+
+<<nobr>>
+  "And mine was to take you [[down to garage and tie you up there|Part14HomeDani3]].",  Dani says. "I know how excited you were getting caught naked by my dad.
+  Imagine how exciting it would be for him to catch you again when he comes home.  This time you couldn't run away though, you'd be tied and waiting for him.
+  An hour would give us lots of time to have fun with you first, of course."
+<</nobr>>
+
+<<nobr>>
+  Haley laughs and adds, "She's already tried to get me to fuck him.  I think Dani wants her dad to move on after the divorce.".
+<</nobr>>
+
+<<nobr>>
+  "Well.  He should.", Dani defends hereself.  "Mom's already remarried, so why shouldn't Dad get a little action too?"  Haley laughs again.
+<</nobr>>
+
+<<nobr>>
+  You could also suggest that they [[just tie you up right here|Part14HomeDani5]].  Of course what happens once you're tied is still up to them.
+<</nobr>>
+
+::Part14HomeDani2
+<<nobr>>
+	<h1>Danielle's House</h1>
+  <img src="Part14/Dani2.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+TODO Part14HomeDani2 - Dani's dad's bedroom
+TODO [[Part14HomeDani4]]
+
+::Part14HomeDani3
+<<nobr>>
+	<h1>Danielle's House</h1>
+  <video src="Part14/Dani6.mp4" autoplay loop muted height="500"></video>
+  <<set $sex.push({sex: 'male', name:'Dan', vaginal:true, noCondom:true, noPullout:true})>>
+<</nobr>>
+TODO Part14HomeDani3 - Garage
+TODO [[Part14HomeDani4]]
+
+::Part14HomeDani4
+TODO Part14HomeDani4 - more with Dani's Dad (in his bedroom)
+TODO [[DaniellesDad]]
+
+
+::Part14HomeDani5
+<<nobr>>
+	<h1>Danielle's House</h1>
+  <video src="Part14/Dani7.mp4" autoplay loop muted height="500"></video>
+  <<set $sex.push({sex: 'female', name:'Danielle'})>>
+<</nobr>>
+TODO Part14HomeDani5 - Dani's room
+TODO end and go to [[Part14Home3]], or can decide to go to Dani's dad room after Dani denies you [[Part14HomeDani4]]
 
 ::Part14HomeSister2
-<video src="Part14/Home26.webm" autoplay loop muted height="500"></video>
+<<nobr>>
+	<h1>Getting Ready with Cassie</h1>
+  <video src="Part14/Home26.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  Her friends say goodbye and how great it was to meet you and hear about your exciting year. TODO
+<</nobr>>
+
+<<nobr>>
+  One you and Cassie are back home TODO
+<</nobr>>
+
 TODO Part14HomeSister2
 TODO [[Part14HomeSister3]] or [[Part14Home3]]
 TODO setup.haveFucked("Cassie's Boyfriend")
@@ -1531,7 +1801,7 @@ TODO Then continuation of Brother path
 TODO [[Part14CumslutCollar5]]
 TODO [[Part14ChastityCage4]]
 TODO [[Part14BondageToys4]]
-TODO [[Part14ChastityBelt3]]
+TODO [[Part14ChastityBelt3]] (Mention something about him letting you out for swimming)
 
 TODO [[Part14CallGirl6]]
 
