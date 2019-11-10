@@ -244,7 +244,7 @@ TODO Deal with Academic Probation Denial everywhere
 <</nobr>>
 
 <<nobr>>
-  You insist on carrying one of the boxes, one you know has things you wouldn't want him to see.  But you stumble off on the edge of the driveway and almost fall.
+  You insist on carrying one of the boxes, one you know it has things you wouldn't want him to see.  But you stumble off on the edge of the driveway and almost fall.
   Dylan grabs you and keeps you from falling, but you still drop the box and its contents pour out onto the grass.
 <</nobr>>
 
@@ -646,8 +646,7 @@ TODO Deal with Academic Probation Denial everywhere
 <</nobr>>
 
 ::Part14ChastityBeltNoKey
-TODO Part14ChastityBeltNoKey
-TODO [[Part14HomeBath]]
+TODO Part14ChastityBeltNoKey [[Part14HomeBath]]
 
 ::Part14BondageToysYes
 <<nobr>>
@@ -716,8 +715,13 @@ TODO [[Part14HomeBath]]
 <</nobr>>
 
 <<nobr>>
-  You can't believe your brother is fucking you!  You know you probably stop, but it feels too good.  And you know it's not like you could make him stop even if
-  if you wanted to, and knowing that makes it even more exciting.
+  You can't believe your brother is fucking you!  You know you probably should stop,
+  <<if $dating.length && !setup.areDating('Peter')>>
+    what would $dating[0] think!  But
+  <<else>>
+    but
+  <</if>>
+  it feels too good.  And you know it's not like you could make him stop even if if you wanted to, and knowing that makes it even more exciting.
 <</nobr>>
 
 <<nobr>>
@@ -739,7 +743,11 @@ TODO [[Part14HomeBath]]
 	<h1>Upstairs with Dylan</h1>
   <img src="Part14/Home1.jpg" hspace="10" vspace="10" height="500" align="left">
   Later, when you and Dylan are alone, he asks you about the toys he'd seen earlier.  "You can just jerk off and get off every time.", you point out.  "My body
-  sometimes needs a little more help.  But it's more than worth the trouble when it gets there."
+  sometimes needs a little more help.  
+  <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
+    Although in my case, the implant they gave me has a special feature that makes it easier than it is for most women.
+  <</if>>
+  But it's more than worth the trouble when it gets there."
 <</nobr>>
 
 <<nobr>>
@@ -747,8 +755,14 @@ TODO [[Part14HomeBath]]
 <</nobr>>
 
 <<nobr>>
-  You sit down on the bed and start talking with him about it.  "Well, before before my orgasms were... well, obviously you know what guy orgasms feel like.  I
-  don't need to explan that.  But now it's much different."
+  You sit down on the bed and start talking with him about it.  "Well, before my orgasms were... well, obviously you know what guy orgasms feel like.  I
+  don't need to explan that.  But now it's much 
+  <<if $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
+    different. I'm sure it's great for most women, but it feels even better for me I think.  The implant they gave me has a special feature that makes my
+    orgasm even more powerful.  Or at least that's what they told me.  I don't have any other orgasms as a woman to compare it to.
+  <<else>>
+    different.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -757,9 +771,14 @@ TODO [[Part14HomeBath]]
 <</nobr>>
 
 <<nobr>>
-  He's listening intently as you continue, "Finally I go over the edge.  It's like a wave a pleasure washes over me, like the ocean destroying a
-  sandcastle or something.  But it crashes over me again and again.  I usually moan or scream.  I can't help it even if I wanted to.  It's like I lose control
-  of my body for a moment."
+  He's listening intently as you continue, "Finally I go over the edge.  It's like a wave of pleasure washes over me, like the ocean destroying a
+  sandcastle or something.  But it crashes over me again and again.
+  <<if $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
+    I can't help but scream or moan    
+  <<else>>
+    I usually moan or scream.  I can't help it 
+  <</if>>
+  even if I wanted to.  It's like I lose control of my body for a moment."
 <</nobr>>
 
 <<nobr>>
@@ -860,7 +879,7 @@ TODO [[Part14HomeBath]]
 
 <<nobr>>
   It was probably a good idea.  It isn't long and your cries of pleasure are being silenced by his hand.  You squirm and thrash as he keeps the vibrator in
-  place.  His strong hands keep you from moving much.  Eventually, when he's satisfied your orgasm has passed, he pulls the vibrator a way.  After a few more
+  place.  His strong hands keep you from moving much.  Eventually, when he's satisfied your orgasm has passed, he pulls the vibrator away.  After a few more
   seconds he pulls his hand away from your mouth and you breathe deeply again.
 <</nobr>>
 
@@ -1038,11 +1057,48 @@ TODO [[Part14HomeBath]]
     <br><br>
     You could [[leave it at that|Part14Home3]], or you could tell Dylan that you can [[go into more detail|Part14Bar]] when you get home.
   <<elseif $JobGloryHole>>
-    TODO [[Part14GloryHole]]
+    "So, you said you make some extra money working in a shop near school, but then you stopped talking about it when Mom came in.  So is it like a
+    lingerie store or something?", Dylan asks.
+    <br><br>
+    <<if $dating.length or !setup.haveFucked('Dylan')>>
+      You could just give him a dismissive "Yeah, something like that.", and then [[change the subject|Part14Home3]].
+      Or, you could tell him,
+    <<else>>
+      You are already wet when you tell him, 
+    <</if>>
+    "Well, they do sell some lingerie, but mostly it's a shop that sells sex toys.  But I don't want to discuss it.".
+    Your brother is disappointed until he notices you glancing over toward Cassie before whispering to him, "I'll
+    [[tell you more about it later|Part14GloryHole]] when we're alone."
   <<elseif $JobWebModel or $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
-    TODO [[Part14Model]] (Lying about Porn Star job)
+    "So, you had said you were going to try out modelling.  How has that been going?  Is it like on a runway or photos in magazines or something?", Dylan asks.
+    <br><br>
+    You don't want to tell them that the 'web modelling' job you'd originally looked into led to you being a porn star, so you lie.
+    <br><br>
+    "Nothing big yet.  Just a few small clothing sites. I'm not even sure which ones, they just have me model the clothes and send the pictures off.
+    But I haven't really got much work.
+    <<if $BodyType == 'Standard'>>
+      I have the body for it I guess, but there's girls that have been practicing for years and are just as pretty or
+    <<else>>
+      They have a particular body type they usually want.  So they usually go with girls that are 
+    <</if>>
+    prettier than me.  I've made more money working as a barista on the side that I have from any modeling."
+    <br><br>
+    "They're crazy not to use you... you know to hire you.", Dylan says trying to reassure you.  "I'm sure you're a great model."
+    <br><br>
+    You thank him, then he adds.  "Maybe you could [[model for us later|Part14Model]]?"
+    <br><br>
+    "That sounds fun.", Cassie says.  "But wait until I get back from my friends, I'll have a little while before I have to head out and I don't want to miss out.
   <<elseif $JobStripper>>
-    TODO [[Part14Strip]]
+    "So... What's it like working at a strip club?", Dylan starts asking you about your job. "Do any of the girls give 'extras', or is that just something that
+    happens in porn and movies?  Does...", Dylan continues excitedly asking more questions but Cassie cuts him off.
+    <br><br>
+    "I've heard pole dancing really strengthens your core.  Is that true, or just something they say to sell those home pole kits?", Cassie asks as she drives.
+    <br><br>
+    You try to answer both of them with an offer.  "You know there's a club in town, right.  Why don't I take you guys there, my treat.  Who knows, when I tell
+    the manager that I dance back at school he might even let me dance a set or two on stage."
+    <br><br>
+    Dylan quickly accepts your invitation, but Cassie declines.  "I'm sorry, that sounds really fun.  But I have other plans tonight.".  Cassie hears Dylan's
+    disappointment and adds, "You two [[go without me tonight|Part14Strip]].  Maybe I'll be able to join you a different night.
   <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
     TODO [[Part14Cheerleader]] (A or D)
   <<elseif $JobEngineer>>
@@ -2212,9 +2268,9 @@ TODO [[Part14Home3]]
   <img src="Part14/Home20.gif" hspace="10" vspace="10" height="500">
 <</nobr>>
 <<nobr>>
-  You are loving the attention you are getting in your bikini though.
+  You love the attention you are getting in your bikini.
   <<if $JobBikiniBarista>>
-    It's different when it's not part of your job.
+    But it's different when it's not part of your job.
   <</if>>
   You notice several men checking out your ass as you splash around with your brother and sister.
   You wonder if some of the others are taking a peek too, but hiding it behind their sunglasses.  You tease them a bit, wiggling your ass on purpose to see their
@@ -2390,13 +2446,16 @@ TODO [[Part14Home4]]
   TODO Part14Home4
 <</nobr>>
 
+TODO If dating someone, they come to visit?
+TODO If with Veronica and did bondage with Dylan (or possibly other ways), Dylan using both of you
+
 <<nobr>>
   <<if $DylanChastityKey>>
     TODO [[Part14ChastityCage5]]
   <<elseif $JobPorn or $JobPornGang or $JobPornAnal or $JobPornOral>>
     TODO [[Part14Porn]]
   <<elseif $JobStripper>>
-    TODO [[Part14Strip]]
+    TODO [[Part14Strip]] ?? Or would this have already been covered
   <<else>>
     TODO [[Part14Friends]] or [[Part14Uncle]] or [[Part14Home5]]
   <</if>>
