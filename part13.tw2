@@ -4529,7 +4529,11 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <<nobr>>
   You hand her your sample and wait while takes it off to test it.
   <<if setup.sexVaginalCount() == 0 or $PregnancyCheck.count == 0>>
-    It's a waste of time, but she has to do it anyway.  You wait patiently
+    It's
+    <<if setup.sexVaginalCount() == 1 and $sex[0].name == 'Andrew'>>
+      probably
+    <</if>>
+    a waste of time, but she has to do it anyway.  You wait patiently
   <<elseif $PlayerProtectionTry>>
     You can barely sit still waiting
   <<else>>
