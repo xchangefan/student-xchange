@@ -4029,8 +4029,14 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 
 <<nobr>>
   You aren’t feeling bold enough to join in on the fun today, so you only watch as the girls do more and more wild things.
-  The wrestling turns into erotic massage, then to fingering. People are heading out back to fuck as well.
-  But you are having enough fun just watching as you sip your drink as you observe the craziness.
+  The wrestling turns into erotic massage, then to fingering.
+  <<if $CampusMinistry>>
+    You can only watch in shock.  But something about watching those girls wiggle around and moan makes you wonder what it'd be like
+    to be one of them.  But no.  You'd never do something like that.  You
+  <<else>>
+    People are heading out back to fuck as well. But you
+  <</if>>
+  are having enough fun just watching as you sip your drink as you observe the craziness.
 <</nobr>>
 
 <<nobr>>
@@ -4040,7 +4046,12 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 <</nobr>>
 
 <<nobr>>
-  But that's something to do some other time.  You still want to [[enjoy the rest of your week|Part12Poolside]] while you are still here.
+  <<if $CampusMinistry>>
+    You come to your senses, and try to push the the perverted thoughts out of your mind.  Wait, what am I thinking? You ask yourself.
+    You try to forget about it, and [[enjoy the rest of your week|Part12Poolside]] while you are still here.
+  <<else>>
+    But that's something to do some other time.  You still want to [[enjoy the rest of your week|Part12Poolside]] while you are still here.
+  <</if>>
 <</nobr>>
 
 ::Part12Poolside <25200,11000>
@@ -4066,11 +4077,20 @@ Plenty of it is spent back in your hotel room having even more fun with just you
     You see all the couples making out, or making hurried trips back to their hotel rooms to have sex.  You can't help but wonder what it would be
     like to be one of them.  You know it wouldn't be hard to find a willing guy.
     <br><br>
-    But you'd promised Faith that you'd behave yourself.  You've already let things go a bit farther than you'd expected with the film crew, and you'd
-    almost gotten carried away at that party the other night.
-    <br><br>
-    You decide to be a good girl and just sit here by the pool [[enjoying the sun|Part12Relaxing]].  Is it wrong that you also enjoy the looks you get
-    from the guys, admiring what they can see but not touch.  You hope not.
+    <<if $CampusMinistrySaves > 0>>
+      <<set $CampusMinistrySaves -= 1>>
+      But you'd promised Faith that you'd behave yourself.  You've already let things go a bit farther than you'd expected with the film crew, and you'd
+      almost gotten carried away at that party the other night.
+      <br><br>
+      You decide to be a good girl and just sit here by the pool [[enjoying the sun|Part12Relaxing]].  Is it wrong that you also enjoy the looks you get
+      from the guys, admiring what they can see but not touch.  You hope not.
+    <<else>>
+      You told Faith you'd behave yourself, but your body is begging you to ignore her.  You've already let things go a bit farther than you'd expected
+      with the film crew, and you'd almost gotten carried away at that party the other night.  "Would it be so bad to go just that little bit further?
+      I mean, how would she ever even know", you try to rationalize to yourself.
+      <br><br>
+      In a moment of resolve you decide to leave the temptation of the pool and go [[lie on the beach alone|Part12BeachAlone]] instead.
+    <</if>>
   <<elseif $PlayerSideEffectSubmissive>>
     The week is almost over, but you meet a guy whose [[interests seem to line up perfectly with yours|Part12SubmissiveHotel]].
   <<else>>
@@ -4367,7 +4387,15 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerSideEffectPheromones>>
+  <<if $CampusMinistry>>
+    <<unset $CampusMinistry>>
+    <<set $CampusMinistryFail to 1>>
+    <<set $CampusMinistryFailSpringBreak to 1>>
+    <<set $CampusMinistryFailSpringBreakLate to 1>>
+    You can't resist any longer.  Seeing all the fun everyone else has been having all week, trying to be a good girl, you just can't anymore.
+    "I think my legs were trying to tell me something, and you go the message before I did.  [[How about we go back to your room|Part12HimAlone]].",
+    you say to him.
+  <<elseif $PlayerSideEffectPheromones>>
     The intoxicating smell of him is too much, and you can't help but [[take him up on his implied offer|Part12BeachMen]].
   <<else>>
     You could [[take him up on his implied offer|Part12BeachMen]].  Or you could see if you
@@ -4497,13 +4525,26 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 <</nobr>>
 
 <<nobr>>
-  It may not be in the middle of the beach, but you can feel the sun on your skin and smell the ocean air.  As
-  you look at higher rooms on the hotel and imagining people looking out their windows, watching you two,
-  you decide it’s close enough to your fantasy of sex on the beach.
+  <<if $CampusMinistryFailSpringBreakLate>>
+    You can still feel the sun on your skin and smell the ocean air outside on is deck.  As you look at higher rooms on the hotel and wonder if there are
+    people up there, looking out their windows, about to watch the two of you.  You decide you don't care, you've waited nearly a year.  You aren't going
+    to wait any longer.
+    <br><br>
+    When your orgasm hits you can't belive how good it feels.  Waves of pleasure keep going as your orgasm continues.  He's still fucking you when your
+    thoughts start to become coherent again.  "Why did I ever wait?", you wonder to yourself.  "I could have been doing this all year!  I'm not going
+    to waste any more time!"
+  <<else>>
+    It may not be in the middle of the beach, but you can feel the sun on your skin and smell the ocean air.  As
+    you look at higher rooms on the hotel and imagining people looking out their windows, watching you two,
+    you decide it’s close enough to your fantasy of sex on the beach.
+    <br><br>
+    It was just as good as you'd imagined, and soon the screams of your orgasm are alerting anyone in those high windows that might want to watch
+    the rest of the show.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  After you cum, you have him lay back again and you climb on top of him and ride his cock.  You know he
+  But he still hasn't came.  So you have him lay back again and you climb on top of him and ride his cock.  You know he
   won’t be able to last long as you thrust him deep inside you each time.  Once he’s came too, you climb off
   him. You head over to the table where he’d placed your drink, with his cum leaking out of you leaving a
   trail behind you as you go.
@@ -4543,7 +4584,12 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 <<nobr>>
   Your mind and senses are overwhelmed as you feel one tongue on your clit,
   another circling your nipple, and the [[third guy|Part12GuysRoom2]] holding your arms down as
-  he fucks your mouth. 
+  he fucks your mouth.
+  <<if $CampusMinistryFailSpringBreakLate>>
+    <br><br>
+    "I'm such a slut.  What will Faith think?", you think to yourself.  Then you decide being a slut is exactly what you want to be.
+    "I wonder if Faith knew how good it feels and how much fun being a slut can be, if she'd want to be one too."
+  <</if>>
 <</nobr>>
 
 ::Part12GuysRoom2 <28600,11000>
