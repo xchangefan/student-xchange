@@ -556,8 +556,9 @@
 <<nobr>>
   <h1>Trying Again</h1>
   <video src="PartX/Trophy11.webm" autoplay loop muted height="582"></video>
-	<<set $PlayerPregnant = 0>>
-	<<set $PlayerMother = 1>>
+	<<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
+	<<set $PlayerMother to 1>>
 	<<set $children.push($tempBaby)>>
 	<<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
 	<<set $sex.push({sex: 'male', name:'Paul'})>>

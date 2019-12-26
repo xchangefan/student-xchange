@@ -142,8 +142,8 @@
 
 ::JobArt7 <3000,1450>
 <<nobr>>
-	<<set $PlayerPregnant = 1>>
-	<<set $PlayerSideEffectPermanent = 1>>
+	<<set $PlayerPregnant to 1>>
+	<<set $PlayerSideEffectPermanent to 1>>
 	
 	<h1><<print "Pregnancy Test">></h1>
 <</nobr>>
@@ -223,6 +223,7 @@
 ::JobArt11 <3800,1450>
 <<nobr>>
 	<<set $PlayerPregnant = 0>>
+  <<unset $PregnancyCheck>>
 	<<set $PlayerMother = 1>>
   <<set $children.push($tempBaby)>>
 	<<unset $tempBaby>>

@@ -255,8 +255,9 @@
 ::AndrewLabor <1000,4310>
 <<nobr>>
   <h1>Labor and Delivery</h1>
-  <<set $PlayerPregnant = 0>>
-  <<set $PlayerMother = 1>>
+  <<set $PlayerPregnant to 0>>
+  <<set $PlayerMother to 1>>
+  <<unset $PregnancyCheck>>
   <<set $children.push($tempBaby)>>
   <<unset $tempBaby>>
   Andrew wasn't sure at first when you had told him you planned on delivering nude, but you reassured him that it was a common thing to do.  After you told him about
@@ -432,7 +433,7 @@
 <</nobr>>
 <<nobr>>
   <<set $children.push($tempBabyName[either(0,1)].shift())>>
-  <<set $PlayerPregnant = 1>>
+  <<set $PlayerPregnant to 1>>
   <<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
   Happily it doesn't take long before you are pregnant again.  You know much more what to expect during your pregnancy this time around, but you also have
   <<print $children[0].name>> to take care of too, which starts to be a challenge as you get further and further along.  But Andrew takes the last month of your
@@ -533,7 +534,8 @@
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
   <<set $children.push($tempBaby)>>
   <<unset $tempBaby>>
-  <<set $PlayerPregnant = 0>>
+  <<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
 <</nobr>>
 <<nobr>>
   The
@@ -579,7 +581,7 @@
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-  <<set $PlayerPregnant = 1>>
+  <<set $PlayerPregnant to 1>>
   <<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
   <<set $tempBaby2 to $tempBabyName[either(0,1)].shift()>>
 <</nobr>>

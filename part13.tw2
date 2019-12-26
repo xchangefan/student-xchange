@@ -1778,6 +1778,13 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <<elseif $PlayerPregnant>>
     It's hard to get comfortable with your growing belly in the way, so sleep is difficult to find.  But you make sure you wake up on time the next
     day so you can make it to your [[your obstetrician's office|Part13OB]] for your appointment.
+    <<if $PlayerChastityBelt>>
+      <br><br>
+      You're thrilled to hear $Keyholder is sending you home without your belt on for safety reasons.  It wouldn't be good to go into labor with your 
+      chastity belt still on!
+      <<set $PlayerChastityBeltInventory to 1>>
+      <<set $PlayerChastityBelt to 0>>
+    <</if>>
   <<elseif $PlayerChastityBelt>>
     You wake up several times through the night, each time you wake up wishing you could return to the erotic dream you had been having, just for a few more minutes.
     Or, if not that, if only you could finish the job yourself.  But neither is possible, so each time time you toss and turn in frustration until you can find sleep
@@ -4757,6 +4764,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 ::Part13CheckupAbort <29000,4110>
 <<nobr>>
 	<<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
   <<set $PlayerAbortionEndOfYear to 1>>
   <<if $PlayerAbortion>>
   	<<set $PlayerAbortion += 1>>
@@ -5386,7 +5394,11 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <<if $PlayerPregnant and !$PregnancySpring>>
     <img src="Part13/SummerPlans7.jpg" hspace="10" vspace="10" height="650" align="left">
     <br><br>
-    TODO [[Part14HomePregnant]]
+    After you struggle to find clothes that fit and that will be comfortable for a long drive home you head towards home.  It's a good thing your family
+    is expecting you at any particular time, since you have to keep pulling over to use the restroom.
+    <br><br>
+    At one of your bathroom breaks, you notice the fuel gage on your car, so you , you [[pull over to the pump to fill up|Part14Drive]], before you leave
+    the station.
   <<elseif $CampusMinistry>>
     <img src="Part13/SummerPlans4.jpg" hspace="10" vspace="10" height="650" align="left">
     <br><br>

@@ -216,7 +216,8 @@
 ::Part7Preg1 <600,5750>
 <<nobr>>
 	<<set $PlayerSideEffectPermanent = 1>>
-	<<set $PlayerPregnant = 1>>
+	<<set $PlayerPregnant to 1>>
+ 
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
 <<nobr>>
@@ -791,9 +792,10 @@
 
 ::Part7Preg2 <1000,6000>
 <<nobr>>
-	<<set $PlayerPregnant = 0>>
-	<<set $PlayerAbortion = 1>>
-	<<set $PlayerMenstruation = 1>>
+	<<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
+	<<set $PlayerAbortion to 1>>
+	<<set $PlayerMenstruation to 1>>
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
 
@@ -1054,9 +1056,10 @@
 <<nobr>>
 	<h1>Reconsidered</h1>
 	<<set $BarryBribe to 1>>
-	<<set $PlayerPregnant = 0>>
-	<<set $PlayerAbortion = 1>>
-	<<set $PlayerMenstruation = 1>>
+	<<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
+	<<set $PlayerAbortion to 1>>
+	<<set $PlayerMenstruation to 1>>
 	<<set setup.breakupWith('Barry')>>
 	<img src="Part7/Jeans.gif" hspace="10" vspace="10" height="764" align="left">
 	<br>
