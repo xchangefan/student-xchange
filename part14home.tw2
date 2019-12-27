@@ -1,8 +1,3 @@
-::NOTES_TODO
-1. TODO Deal with Academic Probation Denial everywhere
-2. FINAL: [[Part14Home5]]
-*. Then check other files for t o d o
-
 ::Part14Wax
 <<nobr>>
 	<h1>At the Salon</h1>
@@ -178,8 +173,13 @@
   <<set $sex.push({sex: 'male', name:'Sports car owner'})>>
   <<set $sex.push({sex: 'male', name:'Sports car owner', vaginal:true, noCondom:true, pullout:true})>>
     As soon as you are parked, you feel his hand slide up your thigh.  His finger slides easily into you.  "I thought the drive would have that effect on you",
-    he says before he kisses you.  It doesn't take to long before his fingers have you grasping tightly onto the steering wheel as you cum.  Once you've caught
-    your breath he says, "Why don't we continue outside the car.  There's not much room in here."
+    he says before he kisses you.
+    <<if $AcademicProbationDenial>>
+      He starts to try to get you off, but you know that is hopeless, so you ask if he wants to get out continue outside the car instead.
+    <<else>>
+      It doesn't take to long before his fingers have you grasping tightly onto the steering wheel as you cum.  Once you've caught
+      your breath he says, "Why don't we continue outside the car.  There's not much room in here."
+    <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -274,6 +274,7 @@
 <<nobr>>
 	<h1>With your family</h1>
   <img src="Part14/Ministry2.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $PlayerDecidePermanent to 1>>
 <</nobr>>
 <<nobr>>
   Your dad has Dylan carry the boxes from your car up to your room while he sits you down to talk.  "I'd been really worried about you after your change.  There's
@@ -389,6 +390,9 @@
     You plan on telling your father about your decision to [[put the baby up for adoption|Part14HomePregnant2][$tempBabyAdopt to 1]].  You going to leave
     of the incentive James's lawyer gave to help you come to that decision.  It's what is best for the baby anyway, and you don't want your dad thinking
     you did it because of the money.
+  <<elseif $PlayerSideEffectBreeder>>
+    You plan on [[putting the baby up for adoption|Part14HomePregnant2][$tempBabyAdopt to 1]] so you can turn around and get pregnant again as soon as
+    possible.  Of course, you aren't going to tell your dad that part just yet.
   <<else>>
     If you'd been on the fence before about whether you were going to [[keep the baby|Part14HomePregnant2][$tempBabyKeep to 1]] or
     [[put it up for adoption|Part14HomePregnant2][$tempBabyAdopt to 1]], now's the time to decide for certain.
@@ -484,16 +488,23 @@
 <</nobr>>
 
 <<nobr>>
-  "I suppose if you'd taken the easy route and had an abortion, I never would have know.", your father says.  You bristle at his comment.  There was
-  nothing 'easy' about that decision for you.  But you say nothing and he continues, "Hopefully, you'll learn from this experience and grow from it."
+  "I suppose if you'd taken the easy route and had an abortion, I never would have know.", your father says.  You bristle at his comment.
+  <<if $PlayerSideEffectBreeder>>
+    You would never abort one of your babies.  You realize are already imagining your next pregnancy, and the one after that.
+  <<else>>
+    There was nothing 'easy' about that decision for you.
+  <</if>>
+  But you say nothing and he continues, "Hopefully, you'll learn from this experience and grow from it."
 <</nobr>>
 
 <<nobr>>
-  "Yes, dad.  I'll be more careful in the future.", you say.
-  <<if $PlayerProtectionTry>>
-    You don't mention that this wasn't an 'accident'.  You can't imagine how upset he'd be if he knew that you were trying to get pregnant.
+  "Yes, dad.  I'll be more careful in the future.", you
+  <<if $PlayerSideEffectBreeder>>
+    lie. Of course you won't be more careful.  Careful won't give you orgasms, careful won't get you pregnant.  Fuck careful.
+  <<elseif $PlayerProtectionTry>>
+    lie. You don't mention that this wasn't an 'accident'.  You can't imagine how upset he'd be if he knew that you were trying to get pregnant.
   <<elseif $PlayerProtectionFertile>>
-    You don't mention that this probably won't be your last pregnancy.  The enhanced fertility you implant gives your body means you'll probably be pregnant
+    say. You don't mention that this probably won't be your last pregnancy.  The enhanced fertility you implant gives your body means you'll probably be pregnant
     again sooner rather than later.  You can wait to get scolded about that when it actualy happens, rather than now.
   <</if>>
 <</nobr>>
@@ -675,6 +686,10 @@
     <br><br>
     After you drop to your knees he says, "Good slut.  Now get to work.  Maybe if you do a good job, I might even let you have an orgasm before
     I release you."
+    <<if $AcademicProbationDenial>>
+      You only wish he could give you an orgasm.  Even though you know you won't feel it nearly like you should, thanks to the denial setting.
+      You still long for his cock inside you.
+    <</if>>
   <</if>>
 <</nobr>>
 
@@ -710,7 +725,7 @@
 
 <<include [[Part14HomePregnant5Next]]>>
 
-::Par14HomePregnant5Girl
+::Part14HomePregnant5Girl
 <<nobr>>
 	<h1>With $dating[0]</h1>
   <img src="Part14/Pregnant11.gif" hspace="10" vspace="10" height="450">
@@ -726,7 +741,7 @@
 
 <<include [[Part14HomePregnant5Next]]>>
 
-::Par14HomePregnant5Guy
+::Part14HomePregnant5Guy
 <<nobr>>
   <<if $dating.length>>
     <<set $sex.push({sex:'male', name: $dating[0]})>>
@@ -756,7 +771,8 @@
   <video src="Part14/Pregnant1.webm" autoplay loop muted height="600"></video>
 <</nobr>>
 <<nobr>>
-  Maybe it's the implant, maybe it's hormones from the pregnancy, or maybe it was just seeing the shirtless guys all day at the pool.  But you ache
+  Maybe it's the implant, maybe it's hormones from the pregnancy, or maybe it was just seeing the shirtless guys all day at the pool.  Well, actually
+  it's probably all of the above.  But you ache
   <<if $PlayerSideEffectSubmissive>>
     to be tied up and used.
   <<else>>
@@ -785,10 +801,10 @@
 ::Part14HomePregnant5
 <<nobr>>
   <<if setup.areDating('Veronica') or setup.areDating('Kate')>>
-    <<include [[Par14HomePregnant5Girl]]>>
+    <<include [[Part14HomePregnant5Girl]]>>
   <<elseif $dating.length>>
-    <<include [[Par14HomePregnant5Guy]]>>
-  <<elseif !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerSideEffectSubmissive>>
+    <<include [[Part14HomePregnant5Guy]]>>
+  <<elseif !$PlayerSideEffectBreeder and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerSideEffectSubmissive>>
     <<include [[Part14HomePregnant5Solo]]>>
   <<else>>
     <<include [[Part14HomePregnant5Online]]>>
@@ -848,9 +864,16 @@
 <</nobr>>
 
 <<nobr>>
-  You are so happy when the anesthesiologist arrives.  It feels like a bee sting when she puts the epideral in, but once everything is going with your epideral
-  it feels so much better.  Of course you can still feel everything, and push when you need too, but most of the pain is gone.  You're so glad you got it as your
-  labor goes on for hours.  After what seems like forever you finally hear the doctor say the say the baby is coming now.
+  <<if $PlayerSideEffectBreeder>>
+    They offer you an epideral, but you tell them no.  You are going to be giving birth many times you assume, so you need to get used to the feeling.
+    It soon becomes clear that it's not something that anyone could ever 'get used to'.  The pain is intense, but somehow it also feels right, feels natural.
+    Thankfully, it doesn't last that long, and sooner than expected you
+  <<else>>
+    You are so happy when the anesthesiologist arrives.  It feels like a bee sting when she puts the epideral in, but once everything is going with your epideral
+    it feels so much better.  Of course you can still feel everything, and push when you need too, but most of the pain is gone.  You're so glad you got it as your
+    labor goes on for hours.  After what seems like forever you finally
+  <</if>>
+  hear the doctor say the say the baby is coming now.
 <</nobr>>
 
 <<nobr>>
@@ -912,8 +935,11 @@
 <</nobr>>
 
 <<nobr>>
-  You enjoy several glasses of wine at dinner, the first you've had to drink since you'd found out you were pregnant.  After about the third
-  glass you have a good buzz and are actually feeling a bit horny, the first time you've felt like that since you gave birth.
+  You enjoy several glasses of wine at dinner, the first you've had to drink since you'd found out you were pregnant.
+  <<if $PlayerSideEffectBreeder>>
+    You'll enjoy it now.  Soon enough you'll be pregnant again and have to avoid drinking again.
+  <</if>>
+  After about the third glass you have a good buzz and are actually feeling a bit horny, the first time you've felt like that since you gave birth.
 <</nobr>>
 
 <<nobr>>
@@ -921,10 +947,12 @@
   <<if $PlayerChastityBeltInventory>>
     Of course, you are very familiar with what that's like.
   <</if>>
-  <<if $dating.length>>
-    But that doesn't mean that $dating[0] has to wait.  [[Not everything is forbidden|Part14HomeAdopt3]]
+  <<if $PlayerSideEffectBreeder>>
+    You'll just have to wait until the doctor says you are [[ready for sex|Breeder]] again.
+  <<elseif $dating.length>>
+    But that doesn't mean that $dating[0] has to wait.  [[Not everything is forbidden|Part14HomeAdopt3]].
   <<else>>
-    You'll just have to wait until after you are [[back at school|Part14Home5]]
+    You'll just have to wait until after you are [[back at school|Part14Home5]].
   <</if>>
 <</nobr>>
 
@@ -1045,14 +1073,14 @@
     guy that holds the key?  Or lucky girl?"
     <br><br>
     "[[I'll talk about it later.|Part14ChastityBelt]]", you tell him as you hurry inside with the box.
-  <<elseif $PlayerItemNerdKey>>
+  <<elseif $PlayerItemNerdKey and !$AcademicProbationDenial>>
     <img src="Part14/Chastity11.jpg" hspace="10" vspace="10" height="300" align="left">
     His eyes go right to Peter's old chastity cage.  You'd bought a new, metal cage for Peter.  You locked him into the more secure cage before he'd left
     campus for summer break.  "Do you want to tell me the story behind this, Sis?", your brother asks.
     <br><br>
     "[[I will later.|Part14ChastityCage]]", you tell him as you grab the cage from his hand and stuff it into a different box.  "For now, just help me pick all
     this up before someone else sees it."
-  <<elseif $PlayerSideEffectSubmissive>>
+  <<elseif $PlayerSideEffectSubmissive or !$AcademicProbationDenial>>
     <img src="Part14/Bondage1.jpg" hspace="10" vspace="10" height="300" align="left">
     His eyes go right to your bondage restraints.  "Looks like someone has had a fun time at college.  Care to share any stories, Sis?", your brother asks.
     <br><br>
@@ -1527,7 +1555,18 @@
   <<else>>
     but
   <</if>>
-  it feels too good.  Maybe he'd stop if you asked, but he could just ignore you and keep going, and there would be nothing you could do to stop him.
+  it feels too
+  <<if $AcademicProbationDenial>>
+    right.  It's like your body was made for his cock,  every time he pulls out you would do anything for him to thrust back in.  You are so happy
+    everytime he does.
+    <br><br>
+    You feel your body reacting like it should from sex, your heart beating faster, blood rushing to your chest, you even hear moans
+    escaping from your lips.  It's like your body is feeling everything, but the feeling is blocked from your mind.
+    <br><br>
+  <<else>>
+    good.
+  <</if>>
+  Maybe he'd stop if you asked, but he could just ignore you and keep going, and there would be nothing you could do to stop him.
   And knowing that makes it even more exciting.
 <</nobr>>
 
@@ -1586,6 +1625,12 @@
     I usually moan or scream.  I can't help it 
   <</if>>
   even if I wanted to.  It's like I lose control of my body for a moment."
+  <<if $AcademicProbationDenial>>
+    <br><br>
+    But right now I can't orgasm at all.  Don't tell Mom and Dad, but I didn't do that well in some of my classes.  The dean put me on 'academic probation'
+    and had the X-Change people set my implant to deny me so I wouldn't think about sex.  It denied me, but now all I do is think about sex, even though
+    I know I'll just want it more afterwards.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -1757,7 +1802,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerChastityBelt or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock>>
+  <<if $PlayerChastityBelt or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock or $AcademicProbationDenial>>
     Eventually though, the water starts to cool, and you figure its time to get out.  You dry yourself off, wrap a towel around yourself and head to your room.
     Hopefully you'll find more [[time to relax|Part14Home2]] tomorrow.  This is your summer vacation, after all.
   <<elseif $BrotherVibeUse or $BrotherVibeWatch>>
@@ -1950,7 +1995,7 @@
     <br><br>
     "No.  It's not that at all.", you tell him.  Then you glance over at your sister and tell Dylan, "Later, once we are home.  You and I can sit down alone
     and [[I'll explain it to you better|Part14Engineering]]."
-  <<elseif $JobTestSubject>>
+  <<elseif $JobTestSubject and !$AcademicProbationDenial>>
     <<include [[Part14Home2BrotherWithDylan]]>>
     You'd been vague about your job with Dylan, so he doesn't know about it's more interesting aspects.  So he's just trying to have a conversation on the ride
     home.  "So, you are a test subject?", he says.  "Is it like new, experimental medicines?  Or is more psychological, like that one I heard about where they
@@ -1983,7 +2028,7 @@
     <<include [[Part14Home2BrotherWithDylan]]>>
     You already know what Dylan [[wants to do when you get home|Part14CumslutCollar4]]. Your mouth is already watering thinking of the delicious taste of
     his cum in your mouth again.  And, if you are being honest, you have to admit that your mouth isn't the only thing that's wet thinking about it.
-  <<elseif $BondageWithDylan>>
+  <<elseif $BondageWithDylan and !$AcademicProbationDenial>>
     <<include [[Part14Home2BrotherWithDylan]]>>
     You give a sly smile to Dylan.  You both know what you'll be doing once you are alone together.  Well, he knows
     [[what he'll be doing to you|Part14BondageToys3]].  You just know you'll be bound and helpless, and you are already wet thinking about it.
@@ -2437,9 +2482,12 @@
 
 <<nobr>>
   Now that you are helpless, the two of them start to have their fun with you.  One moment they'll playing with your nipples and stroking your clit, then when
-  you start to get too turned on they switch to spaking you or tickling you, making sure you don't get off.  Soon you are begging them to keep going and let you
-  get off.  "He's coming!", Haley says after checking out the window again.  The two of them quickly leave, with you still tied there.  A moment later the garage
-  door starts to go up.
+  you start to get too turned on they switch to spaking you or tickling you, making sure you don't get off.
+  <<if $AcademicProbationDenial>>
+    If they only knew you couldn't, or at least not and feel it.
+  <</if>>
+  Soon you are begging them to keep going and let you get off.  "He's coming!", Haley says after checking out the window again.  The two of them quickly leave,
+  with you still tied there.  A moment later the garage door starts to go up.
 <</nobr>>
 
 <<nobr>>
@@ -2453,11 +2501,19 @@
   between your bound legs.  You know you've made yourself clear when he swats your ass and says, "Naughty girl."  The he strokes your leg and soothes the spot on
   your ass where he'd spanked you.  Then his hand finds its way between your legs.  After the earlier teasing from Haley and Dani, it doesn't take long before
   you are moaning into your gag with an orgasm.
+  <<if $AcademicProbationDenial>>
+    It's maddening hearing your body tell you how good it felt, but being completely denied the feeling of it.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
   By the time you've recovered a bit from your orgasm, he's stripped out of his clothes and you can see his hard cock ready for you.  "Fuck me!", you try to say
-  into your gag.  A few moment's later Dani's dad's cock is sliding inside you.  His thumb finds its way to your clit as he fucks you, ensuring that you are cumming
+  into your gag.  A few moment's later Dani's dad's cock is sliding inside you.  His thumb finds its way to your clit as he fucks you, 
+  <<if $AcademicProbationDenial>>
+    causing your body to writhe with another unfelt orgasm
+  <<else>>
+    ensuring that you are cumming
+  <</if>>
   again just as he fills you with his own orgasm.
 <</nobr>>
 
@@ -2485,8 +2541,12 @@
 
 <<nobr>>
   Now that you are helpless, the two of them start to have their fun with you.  One moment they'll playing with your nipples and stroking or licking your clit,
-  then when you start to get too turned on they switch to pinching your nipple or spanking your lips.  You try to close your legs or cover your chest, but can't move.
-  Only once you are no longer close to an orgasm do they continue again.
+  then when you start to get too turned on they switch to pinching your nipple or spanking your lips.
+  <<if $AcademicProbationDenial>>
+    You are only vaguely aware of them pleasuring you.  You notice more the way your body reacts than you do the actual feeling of it.  When they switch
+    to giving you pain, you feel that fully.
+  <</if>>
+  You try to close your legs or cover your chest, but can't move.  Only once they think you are no longer close to an orgasm do they continue again.
 <</nobr>>
 
 <<nobr>>
@@ -2495,6 +2555,9 @@
 
 <<nobr>>
   You hear them start to leave the room and desperate to cum, you tell out.  "Please, I'll do anything you want.  Just let me cum."  You hear them walking back.
+  <<if $AcademicProbationDenial>>
+    You know you won't feel the orgasm, but your body still crys out in need of it.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -2518,10 +2581,14 @@
     You don't hear what they say after that as they put headphones on you.  They are playing some sort of white noise that drowns out everything else.  Now, with two
     of your senses denied, you are accutely aware when you feel their hands touch your skin.
     <br><br>
-    Now that you are helpless, the two of them start to have their fun with you.  One moment they'll playing with your nipples or using vibratr on your clit.
-    Then when you start to get too turned on they switch to tickling you, or pinching your nipples painfully, making sure you don't get off.  Soon you are begging
-    them to keep going and let you get off.  But after a few rounds of this they abruptly stop.  You call out to them, but hear nothing.  You try to patiently wait
-    for their return.
+    Now that you are helpless, the two of them start to have their fun with you.  One moment they'll playing with your nipples or using vibrator on your clit.
+    <<if $AcademicProbationDenial>>
+      You can barely feel it, but your body responds as if you could.  You ache for them to keep going and let you cum, even though you know you won't feel it
+      if you do.
+    <</if>>
+    Then when the see you start to get too turned on they switch to tickling you, or pinching your nipples painfully, making sure you don't get off.  Soon you
+    are begging them to keep going and let you get off.  But after a few rounds of this they abruptly stop.  You call out to them, but hear nothing.  You try to
+    patiently wait for their return.
     <br><br>
     They don't say anything but you feel the bed shift.  "Please... please let me cum.", you beg.  You feel a hand slide across your stomach.  It feels rougher than
     before, but you don't think about it because a moment later fingers are stroking your clit and sliding inside you.  "Yes.  Please don't stop.", you beg.
@@ -2532,13 +2599,16 @@
       <br><br>
     <</if>>
     "Yes, Mr...", you start realizing it must be Dani's dad, but he stops you.  "Just Dan is fine.", he says as he fingers continue bringing you closer.
-    He doesn't stop to tease or frustrate you, but keeps going until you pulling at your restraints as you cry out with an orgasm.  Only after the intial waves of
-    pleasure have passed do you realize how loud you were.  You wonder if Danielle and Haley heard you from Dani's room - they must have.
+    He doesn't stop to tease or frustrate you, but keeps going until you pulling at your restraints as you cry out with an orgasm.
+    <<if $AcademicProbationDenial>>
+      It sounds like an amazing one too, you only wish you could have felt it.
+    <</if>>
+    Only after the intial waves of pleasure have passed do you realize how loud you were.  You wonder if Danielle and Haley heard you from Dani's room -
+    they must have.
     <br><br>
     "Did your friends put you up to this?", he asks you.  You admit that they did, but you also confess that you'd been fantasizing about him inside you ever since
     you'd ran passed him naked earlier.  You think you hear his pants coming off before he continues.  "So, you want me to fuck you while you are tied like this?",
     he asks as he teases your nipple.  You beg him to use you however he wants.  After you say that he puts the earbud back in your ear.
-    <br><br>
   <<elseif $tempDaniGarage>>
     He carries you upstairs and lays you down on the bed still bound.  He laughs when he sees cuffs and other toys waiting on the bed.  "It looks like your friends
     are really trying to play matchmaker tonight.", he says with a laugh.  He takes off your gag and says, "I wouldn't want to disappoint them, would you?".  You
@@ -2547,9 +2617,19 @@
     else.
     <br><br>
     Now, with two of your senses denied, you are accutely aware when you feel his hands touch your skin.  You arch up to meet them as they slide up your legs and
-    then your thighs.  You feel his thumbs part your lips, then you moan loudly as you feel his tongue on your clit.  He doesn't stop until you are pulling at your
-    restraints as you cry out with an orgasm.  Only after the intial waves of pleasure have passed do you realize how loud you were.  You wonder if Danielle and
-    Haley heard you from Dani's room - they must have.
+    then your thighs.  You feel his thumbs part your lips, then you moan loudly as you 
+    <<if $AcademicProbationDenial>>
+      become vaguely aware of his tongue on your clit.
+    <<else>>
+      feel his tongue on your clit.
+    <</if>>
+    He doesn't stop until you are pulling at your restraints as you cry out with an orgasm.
+    <<if $AcademicProbationDenial>>
+      If only you could have felt it.  As soon as the sound is out
+    <<else>>
+      Only after the intial waves of pleasure have passed do
+    <</if>>
+    you realize how loud you were.  You wonder if Danielle and Haley heard you from Dani's room - they must have.
   <<else>>
     <br><br>
     You don't hear anything but you feel the bed shift.  "Please... please let me cum.", you beg.  You feel a hand slide across your stomach.  It feels rougher than
@@ -2578,10 +2658,14 @@
 <</nobr>>
 
 <<nobr>>
-  His fingers play with your clit as he fucks you, and you are crying out with another orgasm just as you feel him thrust and cum inside you.  After he removes your
-  blindfold and headphones and unbuckles your cuffs, you ask him if he wants you to leave.  "Only if you want to.  You are welcome to sleep in here tonight.", he says
-  hopefully.  You smile and tell him that you would like that.  He smiles back and starts to get ready for bed.  Once you are in bed he spoons you with an arm around
-  you.  You love the feeling of him next to you and [[fall asleep content|Part14HomeDani2]].
+  His fingers play with your clit as he fucks you, and you are crying out with another orgasm
+  <<if $AcademicProbationDenial>>
+    that you can't feel    
+  <</if>>
+  just as you feel him thrust and cum inside you.  After he removes your blindfold and headphones and unbuckles your cuffs, you ask him if he wants you to leave.
+  "Only if you want to.  You are welcome to sleep in here tonight.", he says hopefully.  You smile and tell him that you would like that.  He smiles back and starts
+  to get ready for bed.  Once you are in bed he spoons you with an arm around you.  You love the feeling of him next to you and
+  [[fall asleep content|Part14HomeDani2]].
 <</nobr>>
 
 ::Part14HomeDani2
@@ -2602,12 +2686,22 @@
 <</nobr>>
 
 <<nobr>>
-  You know he'd keep going until you came, which wouldn't take much longer.  But you can't wait any longer.  "I want you to fuck me", you tell him.
+  <<if $AcademicProbationDenial>>
+    You know your orgasm is a hopeless cause, but you want him inside you.
+  <<else>>
+    You know he'd keep going until you came, which wouldn't take much longer.  But you can't wait any longer.
+  <</if>>
+  "I want you to fuck me", you tell him.
 <</nobr>>
 
 <<nobr>>
-  He's as eager as you are this morning, and fucks you hard and fast.  You were already close, so it doesn't take long before you are cumming.  He keeps going
-  a while longer, before pulling out and finishing on your stomach.
+  He's as eager as you are this morning, and fucks you hard and fast.
+  <<if $AcademicProbationDenial>>
+    You feel your body spasm with an orgasm you can't feel.
+  <<else>>
+    You were already close, so it doesn't take long before you are cumming.
+  <</if>>
+  He keeps going a while longer, before pulling out and finishing on your stomach.
 <</nobr>>
 
 <<nobr>>
@@ -2642,24 +2736,25 @@
 <</nobr>>
 
 <<nobr>>
-  Dan returns the favor, soaping you up like you did him.  He focuses on your breasts and then on your ass.  When his soapy hands start to move between your
-  legs you give him a different idea.  You get the shower head and spray it on your clit.  It feels good, but when he flips the shower head to a pulsating setting,
-  it's you that have to put your hand against the wall for support for a moment.
-<</nobr>>
-
-<<nobr>>
-  He continues with the shower head, using his other hand to play with your breasts as you get closer and closer.  When you finally orgasm you start to stumble,
-  but he catches you.  With the rush of your orgasm still hitting you, he holds you against his bare skin and kisses you.
-<</nobr>>
-
-<<nobr>>
-  Only once he's sure you are steady on your feet again, does he hand you the shower head and let you finish cleaning, while he heads to the sink to shave.
+  Dan returns the favor, soaping you up like you did him.  He focuses on your breasts and then on your ass.  When his soapy hands start to move between your legs
+  <<if $AcademicProbationDenial>>
+    they part instinctivly.  You tremble as he strokes your inner thigh.  After he's sure your sufficiently lathered, and quite aroused, he lets you finish
+    cleaning, while he heads to the sink to shave.
+  <<else>>
+    you give him a different idea.  You get the shower head and spray it on your clit.  It feels good, but when he takes it from you and flips the shower head to
+    a pulsating setting, it's you that have to put your hand against the wall for support for a moment.
+    <br><br>
+    He continues with the shower head, using his other hand to play with your breasts as you get closer and closer.  When you finally orgasm you start to stumble,
+    but he catches you.  With the rush of your orgasm still hitting you, he holds you against his bare skin and kisses you.
+    <br><br>
+    Only once he's sure you are steady on your feet again, does he hand you the shower head and let you finish cleaning, while he heads to the sink to shave.
+  <</if>>  
 <</nobr>>
 
 <<nobr>>
   After you've both dressed, you head downstairs with him.  He's promised to make you pancakes, and you are starving.  He's just finished yours and is handing
   you your plate when you see your sister's friend Danielle walk in.  "Mmmm, I smelled your panckaes from upstairs Dad.  Can you make me one too?", she says
-  before noticing you.  She smiles when she sees you.  "Oh... I didn't know you had someone over.  I'll can go back upstairs."
+  before noticing you.  She smiles when she sees you.  "Oh... I didn't know you had someone over.  I can go back upstairs."
 <</nobr>>
 
 <<nobr>>
@@ -2691,8 +2786,11 @@
 <</nobr>>
 
 <<nobr>>
-  <<if setup.haveFucked('Greg')>>
+  <<if setup.haveFucked('Greg') and (!$dating.length or setup.areDating('Peter'))>>
     As much fun as you had last time, you aren't about to say no.  "Of course I want [[to go with you|Part14HomeSister3]].", you tell her.
+  <<elseif $AcademicProbationDenial and (!$dating.length or setup.areDating('Peter'))>>
+    You know you can't get off thanks to your probation, but you crave it.  Not just the orgasm you know you can't have, but just the feel
+    of someone inside you.  "Of course I want [[to go with you|Part14HomeSister3]].", you tell her.
   <<else>>
     "If you [[want to join me|Part14HomeSister3]], then you'd better start getting ready.  But even if you [[are going to stay home|Part14Home3]],
     you can sit with me while I get ready.", Cassie tells you.
@@ -2821,16 +2919,22 @@
 
 <<nobr>>
   Cassie sits on the sofa, stroking herself occasionally as she watches Gary and Greg take you from either end.  Your mouth has Greg's cock all to itself now,
-  while Gary fucks you from behind.  The don't let up as
-  <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
-    orgasm after orgasm wash
+  while Gary fucks you from behind.  They don't let up as
+  <<if $AcademicProbationDenial>>
+    you scream and your body spasms with an orgasm you mind just can't feel.
+  <<elseif $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
+    orgasm after orgasm wash over you.
   <<elseif $PlayerPowerfulOrgasms>>
-    a powerful orgasm washes
+    a powerful orgasm washes over you.
   <<else>>
-    your orgasm washes
+    your orgasm washes over you.
   <</if>>
-  over you.  They just fuck you hard and deeper pushing themsleves closer.  "God, I always love this part.", Cassie says as she strokes her clit faster, though
-  you are too lost in your orgasm to hear it.
+  They just fuck you hard and deeper pushing themsleves closer.  "God, I always love this part.", Cassie says as she strokes her clit
+  <<if $AcademicProbationDenial>>
+    faster.
+  <<else>>
+    faster, though you are too lost in your orgasm to hear it.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -3085,7 +3189,11 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
+  <<if $AcademicProbationDenial>>
+    Your denial is even more frustrating as you don't have to fake an orgasm with like you do with
+    <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>some<<else>>most<</if>>
+    clients.  But even though your moans and screams and reactions are real, you don't actually feel it.  He enjoys your reactions just the same though.
+  <<elseif $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
     You never have much trouble getting off even with the most clueless of clients, thanks your implant, so you quickly cum from his more experienced touch.
     He thinks you might be faking it at first, but soon realizes you aren't.  When he how easy you are to get off, he gets you off again and again.  By the
     time he moves on to his own pleasure, you've lost count of your orgasms, and your legs feel like jelly.
@@ -3180,7 +3288,13 @@
 
 <<nobr>>
   He's still talking as you unzip his pants, but once his cock is in your mouth he's forgotten all about your visit with Ryan. You don't suck his cock too
-  long though.  You don't want Dylan getting off before you do.  Ryan may have said naughty sluts should go home horny, but you'd much rather go home satisfied.
+  long though.
+  <<if $AcademicProbationDenial>>
+    You want to feel Dylan's cock inside you first.  Ryan said naughtly sluts should go home horny, and you certainly will, but that doesn't mean you
+    can't feel a cock inside you again before then.
+  <<else>>
+    You don't want Dylan getting off before you do.  Ryan may have said naughty sluts should go home horny, but you'd much rather go home satisfied.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -3268,7 +3382,7 @@
 
 <<nobr>>
   You see a smirk on Cassie's face as you tell Dylan, "But I guess you'll never know what that's like.  But I can tell you more about it any time
-  if you are curious."  He doesn't say anythign as you [[continue home|Part14Home3]], but you and Cassie can almost imagine the sound of wheels
+  if you are curious."  He doesn't say anything as you [[continue home|Part14Home3]], but you and Cassie can almost imagine the sound of wheels
   turning in his head as he thinks about what you've said.
 <</nobr>>
 
@@ -3504,7 +3618,11 @@
 <</nobr>>
 
 <<nobr>>
-  You want to [[feel it inside you|Part14Yoga4Sex]], but it is your brother, so maybe [[just sucking him off|Part14Yoga4BJ]] would be a better idea.
+  <<if $AcademicProbationDenial>>
+    "Would you [[like me to help you with that|Part14Yoga4BJ]]?", you ask Dylan.
+  <<else>>
+    You want to [[feel it inside you|Part14Yoga4Sex]], but it is your brother, so maybe [[just sucking him off|Part14Yoga4BJ]] would be a better idea.
+  <</if>>
 <</nobr>>
 
 ::Part14Yoga4BJ
@@ -3527,7 +3645,7 @@
 
 <<nobr>>
   He cums just as you take his cock out for a moment to catch a breath.  He doesn't mind though as you keep stroking him and the move down to clean the
-  cum from his cock.  You carefully gather what's covered your face and swallot it all too.  After all, it's the only thing you find more refreshing after a
+  cum from his cock.  You carefully gather what's covered your face and swallow it all too.  After all, it's the only thing you find more refreshing after a
   workout than your Eros water.
 <</nobr>>
 
@@ -3587,7 +3705,7 @@
 <</nobr>>
 
 <<nobr>>
-  You don't think Dylan has noticed.  Or, probably, he thinks he saw somethign you twirrled or kicked, but it happened so fast he thinks his mind was playing
+  You don't think Dylan has noticed.  Or, probably, he thinks he saw something you twirrled or kicked, but it happened so fast he thinks his mind was playing
   tricks on him.  You decide to make sure he notices.  You tell, "For most of the stunts we do on the field, I'd need other cheerleaders to help."
 <</nobr>>
 
@@ -3613,7 +3731,7 @@
 
 <<nobr>>
   You bite your lip a bit as you contemplate [[staying to see where things lead|Part14Cheerleader2]], or
-  <<if $PlayerSideEffectMasturbationBlock>>
+  <<if $PlayerSideEffectMasturbationBlock or $AcademicProbationDenial>>
     [[heading up to take a shower|Part14CheerleaderShower]],
   <<else>>
     [[heading to your room|Part14CheerleaderMasturbate]] to 'be alone' for a bit,
@@ -3638,8 +3756,9 @@
 <</nobr>>
 
 <<nobr>>
-  You are wet from the excitement of your earlier display, and his fingers slide easily into you.  He'd probalby keep going until you came, but
-  you can't wait, and [[you want more|Part14Cheerleader3]].
+  You are wet from the excitement of your earlier display, and his fingers slide easily into you.  He'd probalby keep going until 
+  <<if $AcademicProbationDenial>>he thought that<</if>>
+  you came, but you can't wait, and [[you want more|Part14Cheerleader3]].
 <</nobr>>
 
 ::Part14Cheerleader3
@@ -3674,16 +3793,33 @@
 <</nobr>>
 
 <<nobr>>
-  The moans of your approaching orgasm have excited Dylan, and he warns you that's he's about to cum.  You are too close, he can't stop now!  "Don't stop.", you
-  beg.  "I'm almost there."  As he holds back his orgasm as long as he can, then grunts and grabs your hips as he thrusts a few final times.
+  <<if $AcademicProbationDenial>>
+    Even though you can't feel the pleasure, your body seems to sense it and the moans it is forcing out of your
+  <<else>>
+    The moans of your approaching orgasm 
+  <</if>>
+  have excited Dylan, and he warns you that's he's about to cum.
+  <<if $AcademicProbationDenial>>
+    You can barely feel it there, but yet you need his cock inside you.  "Please, don't stop.", you beg.
+  <<else>>
+    You are too close, he can't stop now!  "Don't stop.", you beg.  "I'm almost there."  
+  <</if>>
+  As he holds back his orgasm as long as he can, then grunts and grabs your hips as he thrusts a few final times.
 <</nobr>>
 
 <<nobr>>
-  You are worried you are going to be left frustrated.  But then he reaches under you and begins stroking your clit with his cock still inside you.  A few
-  moments later, you are orgasming too.  You feel yourself clenching onto his cock, trying to squeeze out anything he might have left.
+  <<if $AcademicProbationDenial>>
+    He reaches under you and begins stroking your clit with his cock still inside you.  A few moments later, you feel yourself
+    clenching onto his cock, trying to squeeze out anything he might have left.  You long to be able to feel how good the orgasm
+    that was just denied you would have felt.
+  <<else>>
+    You are worried you are going to be left frustrated.  But then he reaches under you and begins stroking your clit with his cock still inside you.  A few
+    moments later, you are orgasming too.  You feel yourself clenching onto his cock, trying to squeeze out anything he might have left.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
+  <<if $AcademicProbationDenial>>You try to hide the fact that you didn't get to experience the orgasm your body just experienced.<</if>>  
   "I think we both needed that.", you say as you get up and slide your skirt back on.  As you do, you wipe a bit of cum leaking down your leg with your finger,
   before licking your finger clean.  "Hopefully [[seeing me in a bikini|Part14Home3]] when we head to the pool won't feel like a let down after this.", you joke
   before heading upstairs to shower.
@@ -3713,7 +3849,13 @@
   <video src="Part14/Home44.webm" autoplay loop muted height="500"></video>
 <</nobr>>
 <<nobr>>
-  You know you won't be able to get off, you never can by yourself.  But you were so worked up from your fun with Dylan you can't help but try.
+  You know you won't be able to get
+  <<if $AcademicProbationDenial>>
+    off.
+  <<else>>
+    off, you never can by yourself.
+  <</if>>
+  But you were so worked up from your fun with Dylan you can't help but try.
 <</nobr>>
 
 <<nobr>>
@@ -3727,7 +3869,13 @@
 <</nobr>>
 
 <<nobr>>
-  For just a moment, your mind is fooled and you think he's fucking you, and your implant's side effects doesn't block you.  But then the dildo comes loose from
+  For just a moment, your mind is fooled and you think he's fucking you,
+  <<if $AcademicProbationDenial>>
+    and you feel a pleasant fullness inside you, though of course not the rest of the pleasure that you should be feeling.
+  <<else>>
+    and your implant's side effects doesn't block you.
+  <</if>>
+  But then the dildo comes loose from
   the wall and the moment is lost.  Even though you are left even hornier than when you started, you can't help but laugh.
 <</nobr>>
 
@@ -3751,9 +3899,9 @@
     but I had her lower herself down as I guided the two probes inside her.  As I made sure the vibration pad was directly against her clit, I'm sure she
     was thinking she'd be able to stand up fully and move off if it became too much.
     <br><br>
-    But when I started the test, she soon discovered the first of the modifications I had made.  She would have only noticed a pleasurable sensation of being
-    filled as the probes inflated.  She would realize that they were designed to make it nearly impossible for her to remove them until they were defalted.
-    She wouldn't realize she was trapped there until she tried to escape.
+    But when I started the test, soon discovered the first of the modifications I had made.  Though at that point she would just think it was just a
+    pleasurable sensation of being filled as the probes inflated.  She wouldn't realize until later that the probes were designed to make it nearly
+    impossible for her to remove them until they were defalted.  She wouldn't realize she was trapped there until she tried to escape.
     <br><br>
     "What were the other modifications?", Dylan asks you.  "You said 'the first of the modifications'.  What were the other ones?"
     <br><br>
@@ -3888,8 +4036,14 @@
 <</nobr>>
 
 <<nobr>>
-  After a minute, Dylan thanks you and says, "I don't have one of your machines to use, but you [[certainly deserve some pleasure of your own|Part14Engineering3]].
-  That was amazing."
+  <<if $AcademicProbationDenial>>
+    After a minute, Dylan thanks you and says, "I don't have one of your machines to use, but you certainly deserve some pleasure of your own. That was amazing."
+    You don't want to be frustrated by your probation denial, so you thank him for the offer, but [[pass on it|Part14Home3]].  You tell him that sometimes it's
+    hotter when they just use and leave you horny and covered in their cum. "I can see how that would be true.", Dylan says.
+  <<else>>
+    After a minute, Dylan thanks you and says, "I don't have one of your machines to use, but you
+    [[certainly deserve some pleasure of your own|Part14Engineering3]]. That was amazing."
+  <</if>>
 <</nobr>>
 
 ::Part14Engineering3
@@ -4175,9 +4329,8 @@
 <<nobr>>
   The buzz you are feeling makes you less cautious though.  You can't help but stare as you watch one of the other girls kneel down in front of your dad.  You
   watch as she unzips is pants and pulls out his cock.  Her lips wrap around it and she starts giving him a blowjob.  The entire time he continues to smoke
-  a cigar.  That's when he notices you.  You feel even more naked than you are as he eyes you up and down.  Then he puts one finger over his mouth in "ssh"
-  sign.  You take it to mean, "If you keep quiet about tonight, so will I."  Then he turns away from you and his free hand moves to the back of the girls
-  head as she continues to work his cock.
+  a cigar.  That's when he notices you.  You feel even more naked than you are as he eyes you up and down.  Then he turns away from you and his free hand moves
+  to the back of the girls head as she continues to work his cock.
 <</nobr>>
 
 <<nobr>>
@@ -4226,35 +4379,43 @@
 <<nobr>>
   You start by taking his cock into your mouth.  But you don't suck his cock for long, you want him inside you too much for that.  Soon you are climbing on
   top of him and riding his cock, keeping it deep inside you as much as possible.  After a bit his thumb moves down to find your clit.  Now as you grind his
-  cock inside you, you are also grinding your clit against his thumb.  When he tells you he's about to cum, it pushes you over the edge and you cum too.
+  cock inside you, you are also grinding your clit against his thumb.  When he tells you he's about to cum, 
+  <<if $AcademicProbationDenial>>
+    you tell him "Cum for me!"
+  <<else>>
+    it pushes you over the edge and you cum too.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
+  <<if $AcademicProbationDenial>>
+    After his cock stops twitching inside you
+  <<else>>
+    After your orgasm passes
+  <</if>>
+  and you pull his cock out of you, you feel his cum leaking out of
   <<if $PlayerProtectionCondoms>>
-    It's only after your orgasm passes and you pull his cock out of you, and you feel his cum leaking out of you, that you remember.  Between the ligering
+    you, you finally remember.  Between the ligering
     effects of the alcohol, and how horny you were, you forgot all about having him wear a condom.  Oh well, you figure.  He probably wouldn't have had one
     anyway, and you certainly wouldn't have stopped because of that.
   <<elseif $PlayerProtectionWithdraw>>
-    It's only after your orgasm passes and you pull his cock out of you, and you feel his cum leaking out of you, that you remember.  Between the ligering
+    you, you finally  remember.  Between the ligering
     effects of the alcohol, and how horny you were, you didn't tell him to pull out.  Well, as close as you were to cumming and as horny as you were,
     you certainly wouldn't have wanted him to if you had remembered.
   <<elseif $PlayerProtectionTry>>
-    After your orgasm passes you pull his cock out of you, and you feel his cum leaking out of you.  You smile thinking of the cum he left inside you.
+    you.  You smile thinking of the cum he left inside you.
     You wonder if tonight will be the night you get pregnant.  You never asked to see if he was on any birth control or anything.  Probably not you figure.
     And even if he was, you really needed a good fuck anyway, right.
   <<else>>
-    After your orgasm passes you pull his cock out of you, and you feel his cum leaking out of you.  If that wasn't enough of a clue, when you look down
+    you.  If that wasn't enough of a clue, when you look down
     and see the smile on his face, you know he enjoyed that as much as you did.  You needed a good fuck tonight.  But after months since the divorce, and
     who knows how long before then, he probably needed one even more.
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  <<if $dating.length>>
-  <<else>>
-    You are both too tired for another round.  You soon [[fall asleep|Part14HomeDani2]] next to him, with the not-entirely-unfamiliar feeling of his cum
-    leaking out of you.
-  <<if>>
+  You are both too tired for another round.  You soon [[fall asleep|Part14HomeDani2]] next to him, with the not-entirely-unfamiliar feeling of his cum
+  leaking out of you.
 <</nobr>>
 
 ::Part14StripPrivate
@@ -4319,7 +4480,11 @@
 
 <<nobr>>
   He places his hands on your ass stroking it.  Then he pulls the thin line of material to one side and slides a finger between your wet lips.
-  The moan you make when he finds your clit is only slightly exaggerated for his benefit.
+  <<if $AcademicProbationDenial>>
+    You exaggerate the moan you make.  You only wish you were able to feel half of what you pretend to feel.
+  <<else>>
+    The moan you make when he finds your clit is only slightly exaggerated for his benefit.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -4349,7 +4514,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerSideEffectOrgasmBlock>>
+  <<if $PlayerSideEffectOrgasmBlock or $AcademicProbationDenial or $AcademicProbationDenial>>
     You continue acting the part, moaning and whimpering as you fake an orgasm for Dan's benefit.  It's not his fault you've been denied by your implant again.
     Besides, this fuck was for his benefit, not yours.  You exaggerate your 'orgasm' more than it would normally be, moaning more as it appraches and screaming
     louder as it comes.
@@ -4724,8 +4889,13 @@
 <</nobr>>
 
 <<nobr>>
-  "Diane" seems to be comfortable now, so could [[leave her here with "Dylan's" friends|Part14DylanXChangeParty3Alone]].  One of them could give her a ride
-  home after the party.  Or, you could [[stay at the party with her|Part14DylanXChangeParty3]].
+  "Diane" seems to be comfortable now, so could [[leave her here with "Dylan's" friends|Part14DylanXChangeParty3Alone]].  One of them could give her a
+  ride home after the party.  
+  <<if $AcademicProbationDenial>>
+    You are tempted to stay and join in the fun, but you know you'd just get be frustrated and denied in the end.  Besides this is 'Diane's not for fun, not yours.
+  <<else>>
+    Or, you could [[stay at the party with her|Part14DylanXChangeParty3]].
+  <</if>>
 <</nobr>>
 
 ::Part14DylanXChangeParty3Alone
@@ -4990,9 +5160,15 @@
 <</nobr>>
 <<nobr>>
   Just like he promised, Dylan ties you to his bed once the two of you are alone.  He's less tender this time.  This time he fingers you and teases your
-  clit a while, but as soon as it starts to feel really good he slaps your pussy or your breasts, making you cry out in pain instead of pleasure.  Then
-  his fingers return to giving you pleasure.  Soon the pleasure and the pain mix together, and the complete powerless you have to choose between them
-  makes you even wetter than his fingers do.
+  clit a while, but 
+  <<if $AcademicProbationDenial>>
+    just when you are enjoying it, he slaps your pussy or your breasts, making you cry out in pain.  Then his fingers return and you again feel the comforting
+    feeling of them moving inside you.
+  <<else>>
+    as soon as it starts to feel really good he slaps your pussy or your breasts, making you cry out in pain instead of pleasure.  Then
+    his fingers return to giving you pleasure.  Soon the pleasure and the pain mix together, and the complete powerless you have to choose between them
+    makes you even wetter than his fingers do.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -5001,8 +5177,14 @@
 <</nobr>>
 
 <<nobr>>
-  That doesn't stop you from cuming though.  If anything, you cum even harder, you breast stings again as he swats it while you are in the middle of your
-  orgasm.  Your breasts still throb as he moves his hand away, now using them both for support as he fucks you hard and fast until he finishes with his own orgasm.
+  <<if $AcademicProbationDenial>>
+    Your body must like that, as soon you feel your body bucking and hear yourself screaming with an orgasm you can't feel.  All you feel is the sting on your
+    breasts as he swats it again.
+  <<else>>
+    That doesn't stop you from cuming though.  If anything, you cum even harder, you breast stings again as he swats it while you are in the middle of your
+    orgasm.
+  <</if>>
+  Your breasts still throb as he moves his hand away, now using them both for support as he fucks you hard and fast until he finishes with his own orgasm.
 <</nobr>>
 
 <<nobr>>
@@ -5018,8 +5200,12 @@
 <</nobr>>
 <<nobr>>
   You were right about what Dylan wanted, but you hadn't realized how much you'd wanted it too.  After being locked in the belt for so long, and knowing you'll be
-  locked in it again when he's done with you, you are begging him to fuck you before he finally enters you.  When he slides inside you, it feels just as wonderful
-  as you'd imagined it would.
+  locked in it again when he's done with you, you are begging him to fuck you before he finally enters you.  When he slides inside you, it feels
+  <<if $AcademicProbationDenial>>
+    like he belongs there.
+  <<else>>
+    just as wonderful as you'd imagined it would.
+  <</if>>
   <<if $PlayerProtectionCondoms>>
     <br><br>
     You tell yourself that you don't ask him to use a condom because you'd promised him 'whatever he wanted'.  But really, after so long without feeling anything,
@@ -5029,11 +5215,19 @@
     You tell yourself that you don't ask him to pull out  because you'd promised him 'whatever he wanted'.  But really, after so long without feeling anything,
     you want this to last as long as it can.  You couldn't bear to make him stop a moment early.
   <</if>>
+  <<if $AcademicProbationDenial>>
+    As your body reacts to him, your mind can't register the feelings.  You hear your own moans, your own cries of pleasure, feel your hips moving, but can't
+    feel anything but the slightest hint of his cock inside you.  But you never want it to leave.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  Once he finishes inside you, you reluctantly go to pick up your belt so he can lock it on you again.  "Where are you going?", he asks.
-  "I'm [[not done with you|Part14ChastityBelt4]] yet."
+  Once he finishes inside you, you reluctantly go to pick up your belt so he can
+  <<if $AcademicProbationDenial>>
+    [[lock it on you again|Part14Home4]].
+  <<else>>
+    lock it on you again.  "Where are you going?", he asks. "I'm [[not done with you|Part14ChastityBelt4]] yet."
+  <</if>>
 <</nobr>>
 
 ::Part14ChastityBelt4
@@ -5242,6 +5436,10 @@
       You wake up excited today, because today is the day $dating[0] is arriving!  It's been so long and you can't wait to see him.
     <</if>>
     <<include [[Part14DylanSmoothieWatch]]>>
+  <<elseif $AcademicProbationDenial>>
+    You wake up horny, but as always, there's nothing you can do about it.  You make yourself a smoothie and try to take your mind off it.
+    It doesn't help.  Stil, you try to ignore it as you decide what to do today.
+    <<include [[Part14DylanSmoothieWatch]]>>
   <<else>>
     You wake up in a great mood.  You don't have any plans for today yet, so you decide to make yourself a fruit smoothie while you decide what to do today.
     <<include [[Part14DylanSmoothieWatch]]>>
@@ -5292,6 +5490,10 @@
         You stay home, trying to watch TV so you can avoid thinking about how much you need an orgasm.  It doesn't work well, but what choice do you have.
         Maybe you'll [[feel better tomorrow|Part14Home5]]
       <</if>>
+    <<elseif $AcademicProbationDenial>>
+      You wake up horny, but as always, there's nothing you can do about it.  You make yourself a smoothie and try to take your mind off it.
+      It doesn't help.  Stil, you try to ignore it as you decide what to do today.
+      <<include [[Part14DylanSmoothieWatch]]>>
     <<else>>
       You wake up in a great mood. You don't have any plans for today yet, so you decide to make yourself a fruit smoothie while you decide what to do today.
       <<include [[Part14DylanSmoothieWatch]]>>
@@ -5400,7 +5602,9 @@
     <</if>>
     <br><br>
     "Very well.", your father says not sure whether to believe you or not.  "I don't want to hear about anything like this happening again - and I certainly
-    don't want to see it again.  I'll let you decide what to tell $dating[0].  I think perhaps next time you should stay with them during the summer."
+    don't want to see it again.  I'll let you decide what to tell $dating[0].  I think perhaps next time you should stay with
+    <<if setup.areDating('Veronica') or setup.areDating('Kate')>>her<<else>>him<</if>>
+    during the summer."
     <br><br>
     You are relieved, you sense things could have gone much worse with your father.  You quickly leave and head upstairs to get ready for
     <<if setup.areDating('Veronica')>>
@@ -5672,31 +5876,31 @@
 
 <<nobr>>
   You miss the taste of her, and lie back on the bed and pull her towards you.  Her moans only make you more eager and soon she is grinding into your face as
-  she orgasms.  "Oh, god, that was amazing.  It's been way too long.", she says when she recovers.  "Now, it's your turn.", she says leaving you lying down
-  as she begins kissing her way down your chest and stomach until her lips find their way to yours.
-<</nobr>>
-
-<<nobr>>
-  You moan as her tongue slides into you before sliding back out to focus on your clit.  It circles around your clit for a while then her lips wrap around it,
-  taking your clit between her lips as she sucks gently on it.  You moan and grab at the sheets as the pleasure overwhelms you.
-<</nobr>>
-
-<<nobr>>
-  She continues until you can feel your orgasm approaching.
-  <<if $PlayerSideEffectOrgasmBlock>>
-    She continues on, wanting to push you over the edge.  But you feel the approaching orgasm suddenly fade.  You are left desperately needing it, but knowing
-    you won't be able to cum today.  Or perhaps not even tomorrow.  You know the side effect of your implant has denied you again.  "Oh, baby.  Did it happen
-    again?", Veronica says when she hears an all to familiar whimper from you.  "Maybe it'll happen for you tomorrow."
-    <br><br>
-    "Maybe.", you agree.  "But, I'm still really horny.  Can I make you cum again at least."  Unsurprisingly she grants your request.
+  she orgasms.  "Oh, god, that was amazing.  It's been way too long.", she says when she recovers.  "Now, it's your turn.",
+  <<if $AcademicProbationDenial>>
+    she says.  You reminder her of your denial and suggest that instead you focus on her a second time.  She doesn't object to that idea.
   <<else>>
-    She continues on, and you scream as she pushes you over the edge.  She continues through your orgasm, knowing just when to stop before it becomes to much.
+    she says leaving you lying down as she begins kissing her way down your chest and stomach until her lips find their way to yours.
+    <br><br>
+    You moan as her tongue slides into you before sliding back out to focus on your clit.  It circles around your clit for a while then her lips wrap around it,
+    taking your clit between her lips as she sucks gently on it.  You moan and grab at the sheets as the pleasure overwhelms you.
+    <br><br>
+    She continues until you can feel your orgasm approaching.
+    <<if $PlayerSideEffectOrgasmBlock>>
+      She continues on, wanting to push you over the edge.  But you feel the approaching orgasm suddenly fade.  You are left desperately needing it, but knowing
+      you won't be able to cum today.  Or perhaps not even tomorrow.  You know the side effect of your implant has denied you again.  "Oh, baby.  Did it happen
+      again?", Veronica says when she hears an all to familiar whimper from you.  "Maybe it'll happen for you tomorrow."
+      <br><br>
+      "Maybe.", you agree.  "But, I'm still really horny.  Can I make you cum again at least."  Unsurprisingly she grants your request.
+    <<else>>
+      She continues on, and you scream as she pushes you over the edge.  She continues through your orgasm, knowing just when to stop before it becomes to much.
+    <</if>>
   <</if>>
 <</nobr>>
 
 <<nobr>>
   After you two finish, you two rest a bit before dressing again and heading back downstars.  Dylan is there with a smile on his face.  "I guess you enjoyed
-  you photos and video then?", you joke.
+  your photos and video then?", you joke.
 <</nobr>>
 
 <<nobr>>
@@ -5712,22 +5916,32 @@
   <<set $sex.push({sex: 'female', name:'Veronica'})>>
 <</nobr>>
 <<nobr>>
-  The next morning as you and Veronica are getting dressed she pushes you back onto the bed.
-  <<if $PlayerSideEffectOrgasmBlock>>
-    "Let's see if you have better luck this time.  You'll need to keep quiet though.", she tells you.
+  The next morning as you and Veronica are getting dressed 
+  <<if $AcademicProbationDenial>>
+    you push her back onto the bed.  "Let's see if you can keep quiet this time.", you say with a mischievous smile.
+    Then your fingers find their way between her legs, rubbing her clit through her panties.
+    <br><br>
+    Soon your fingers have slid down her stomach and under her panties.  You knows just what her body likes and soon she is struggling to keep
+    quiet.  Then you places your other hand firmly over her mouth silencing her before increasing the pace of your fingers' work.
   <<else>>
-    "Let's see if you can keep quiet this time.", she says with a mischievous smile.
+    she pushes you back onto the bed.
+    <<if $PlayerSideEffectOrgasmBlock>>
+      "Let's see if you have better luck this time.  You'll need to keep quiet though.", she tells you.
+    <<else>>
+      "Let's see if you can keep quiet this time.", she says with a mischievous smile.
+    <</if>>
+    Then her fingers find their way between your legs, rubbing your clit through your panties.
+    <br><br>
+    Soon her fingers have slid down your stomach and under your panties.  She knows just what your body likes and soon you are struggling to keep
+    quiet.  Then she places her other hand firmly over you mouth silencing you before increasing the pace of her fingers' work.
   <</if>>
-  Then her fingers find their way between your legs, rubbing your clit through your panties.
 <</nobr>>
 
 <<nobr>>
-  Soon her fingers have slid down your stomach and under your panties.  She knows just what your body likes and soon you are struggling to keep
-  quiet.  Then she places her other hand firmly over you mouth silencing you before increasing the pace of her fingers' work.
-<</nobr>>
-
-<<nobr>>
-  <<if $PlayerSideEffectOrgasmBlock>>
+  <<if $AcademicProbationDenial>>
+    As your fingers drive her to an orgasm, she squirm and moan as your hand remains firmly over her mouth.  Your hand remains a bit longer after your fingers
+    pull out of her.  You put your wet fingers to her lips and she eagerly suck them clean of her own juices.  
+  <<elseif $PlayerSideEffectOrgasmBlock>>
     You are moaning into her hand feeling your orgasm approaching again, but again it is yaked away from you at the last moment as your implant denies you
     again.  You kick down at the bed in frustration.
     <br><br>
@@ -5741,7 +5955,7 @@
 <</nobr>>
 
 <<nobr>>
-  Afterwards Veronica gets up and tells you, "Now you should probably finish getting ready.  We are due [[downstairs for breakfast soon|Part14Home5]]".
+  Afterwards Veronica gets up and tells you, "Now we should probably finish getting ready.  We are due [[downstairs for breakfast soon|Part14Home5]]".
 <</nobr>>
 
 ::Part14VeronicaVisitRiley
@@ -5828,13 +6042,25 @@
 <</nobr>>
 
 <<nobr>>
-  You are enjoying watching him fuck your girlfriend, but you enjoy it even more when he pushes you back onto the bed.  "I assume you'll enjoy her tongue
+  You are enjoying watching him fuck your girlfriend, but 
+  <<if $AcademicProbationDenial>>
+    he decides he wants to fuck you instead.  You can't feel the pleasure of it, but somehow his cock feels... right.  You can feel your body reacting
+    to him, but you just can't feel the pleasure from it.
+  <<else>>
+    you enjoy it even more when he pushes you back onto the bed.
+  <</if>>
+  "I assume you'll enjoy her tongue
   even more than my cock", he says, pointing to your face. Veronica quickly complies with the implied instruction and straddles your face.  He removes
   the ropes, deciding they are no longer needed and now only getting in the way.
 <</nobr>>
 
 <<nobr>>
-  You feel yourself getting close to an orgasm as he fucks you, but try to stay focused on pleasuring Veronica.  You look up and see his hands around
+  <<if $AcademicProbationDenial>>
+    You sense your body's reactions.  Even though you can't feel it, you sense it's about to orgasm,
+  <<else>>
+    You feel yourself getting close to an orgasm as he fucks you,
+  <</if>>
+  but you try to stay focused on pleasuring Veronica. You look up and see his hands around
   Veronica's throat, squeezing slightly as she gets close to an orgasm.  But before either of you orgasm, he pulls out of you and
   [[pushes Veronica down towards the bed|Part14VeronicaVisitRiley5]].
 <</nobr>>
@@ -5861,23 +6087,28 @@
 <<nobr>>
   "That was... interesting.  And more fun than I expected.", Veronica says.  "I see why you like getting tied up.  But I think I still prefer you to be
   the one submitting and me to be the one in charge.  At least most of the time.  And I order you to lie down on the bed.  I think you still deserve
-  an orgasm, don't you."  You smile and answer "Yes, ma'am."
-<</nobr>>
-
-<<nobr>>
-  You are still turned on from the session with Riley and it doesn't take long before Veronica has you approaching an orgasm.
-  <<if $PlayerSideEffectOrgasmBlock>>
-    She continues on, wanting to push you over the edge.  But you feel the approaching orgasm suddenly fade.  You are left desperately needing it, but knowing
-    you won't be able to cum today.  Or perhaps not even tomorrow.  You know the side effect of your implant has denied you again.  "Oh, baby.  Did it happen
-    again?", Veronica says when she hears an all to familiar whimper from you.  "Maybe it'll happen for you tomorrow."
-    <br><br>
-    "Maybe.", you agree.  "But, I'm still really horny.  Can I make you cum again at least."  Unsurprisingly she grants your request.
+  an orgasm, don't you."
+  <<if $AcademicProbationDenial>>
+    You remind her of your denial again then add, "But can I make you cum again instead?"  Unsurprisingly she grants your request.
   <<else>>
-    She continues on, and you scream as she pushes you over the edge.  She continues through your orgasm, knowing just when to stop before it becomes to much.
+    You smile and answer "Yes, ma'am."
   <</if>>
 <</nobr>>
 
 <<nobr>>
+  <<if !$AcademicProbationDenial>>
+    You are still turned on from the session with Riley and it doesn't take long before Veronica has you approaching an orgasm.
+    <<if $PlayerSideEffectOrgasmBlock>>
+      She continues on, wanting to push you over the edge.  But you feel the approaching orgasm suddenly fade.  You are left desperately needing it, but knowing
+      you won't be able to cum today.  Or perhaps not even tomorrow.  You know the side effect of your implant has denied you again.  "Oh, baby.  Did it happen
+      again?", Veronica says when she hears an all to familiar whimper from you.  "Maybe it'll happen for you tomorrow."
+      <br><br>
+      "Maybe.", you agree.  "But, I'm still really horny.  Can I make you cum again at least."  Unsurprisingly she grants your request.
+    <<else>>
+      She continues on, and you scream as she pushes you over the edge.  She continues through your orgasm, knowing just when to stop before it becomes to much.
+    <</if>>
+    <br><br>
+  <</if>>
   After you two finish, you two rest a bit before dressing again and heading back downstars.  Dylan is there with a smile on his face.  "I guess you had
   a pleasant visit with Riley.  And afterwards too it sounded like.", he jokes.  "Word of warning though, you'll probably want to
   [[keep it down next time|Part14VeronicaVisit4]] when Mom and Dad are back, if you don't want them finding out about you two.
@@ -6066,11 +6297,18 @@
   <<else>>
     "I've missed you so much!", you tell Josh as you begin stripping of your clothes.  It isn't long before you are in the back seat of your car getting
     fucked by Josh.  "Oh god, I've missed your cock too!"
+    <<if $AcademicProbationDenial>>
+      You can't really feel it, but just having it inside you again feels so right.
+    <</if>>
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
+  <<if $AcademicProbationDenial>>
+    You aren't going to be able to orgasm, but you don't care.  Well you do, but you are happy just being with $dating[0] right now,
+    of having him inside you, and seeing a familiar far-away look in his eyes as he gets close to his orgasm.  A moment later you
+    hear him groan as he fills you with a huge load he'd saved for you.
+  <<elseif $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
     It doesn't take long before the screams from your orgasm are echoing through the car and the nearby woods.
   <<else>>
     You were too eager for much foreplay, and after so long apart he cums before you can.  But you don't care, just feeling his cock inside you is
@@ -6088,7 +6326,14 @@
 
 <<nobr>>
   You try to clean up $dating[0]'s cum leaking out of you a bit before getting dressed again, you don't want to make a mess of your pretty new panties.
-  But now that your initial need, and $dating[0]'s, you feel much better and can finish showing him around your home town.  Of course, there will be time for
+  But now that your initial need, and $dating[0]'s, is
+  <<if $AcademicProbationDenial>>
+    as satisfied as it can be
+  <<else>>
+    satisfied
+  <</if>>
+  you feel much better and can finish showing him around your home town.  Of course, there
+  will be time for
  <<if setup.areDating('Peter')>>
     [[more fun later|Part14HomePeter]]
   <<else>>
@@ -6122,6 +6367,7 @@
 <<nobr>>
 	<h1>In your room with Peter</h1>
   <video src="Part14/Home81.webm" autoplay loop muted height="450"></video>
+  <<set $sex.push({sex: 'male', name:'Peter'})>>
 <</nobr>>
 
 <<nobr>>
@@ -6129,9 +6375,16 @@
 <</nobr>>
 
 <<nobr>>
-  His skills haven't gotten stale, and his tongue feels just as good as ever.  It isn't long before you are grabbing his hair with your hands and wrapping your
-  legs around his head and holding him in as you cum.  Now that your needs are satisfied, you are ready to go downstairs for the movie with your brother and
-  sister.
+  <<if $AcademicProbationDenial>>
+    You don't want your denial to interfere with Peter's training, so you put him to work as normal.
+    You can't feel his tongue, at least not very much, but it does give you a pleasant familiar feeling seeing his head down there.
+    Your body feels more than you can though, and you find your legs wrapping around his head holding him in, and bucking against him, just as if
+    you were having an orgasm.  Except that you feel none of it.  Now that his work is done
+  <<else>>
+    His skills haven't gotten stale, and his tongue feels just as good as ever.  It isn't long before you are grabbing his hair with your hands and wrapping your
+    legs around his head and holding him in as you cum.  Now that your needs are satisfied, 
+  <</if>>
+  you are ready to go downstairs for the movie with your brother and sister.
 <</nobr>>
 
 <<nobr>>
@@ -6172,7 +6425,7 @@
 <</nobr>>
 
 <<nobr>>
-  After Josh cums in your ass, you both start to dress to head downstairs.  "No so fast.", he tells you.  "you still [[need to be punished|Part14HomeJosh2]].
+  After Josh cums in your ass, you both start to dress to head downstairs.  "No so fast.", he tells you.  "you still [[need to be punished|Part14HomeJosh2]]".
 <</nobr>>
 
 ::Part14HomeJosh2
@@ -6331,6 +6584,12 @@
   <</if>>
 <</nobr>>
 
+<<nobr>>
+  <<if $AcademicProbationDenial>>
+    You already can't cum because of your probation denial, but this is even worse.
+  <</if>>
+<</nobr>>
+
 
 ::Part14BoyfriendFatherChastity3
 <<nobr>>
@@ -6357,7 +6616,12 @@
     to unlock my cock from this cage - you're the one that will be in chastity from now on.  And then I want you
   <</if>>
   on your knees and sucking my cock.", $dating[0] says firmly as he unzips his pants.  "And every second I have to wait is another week before I even think
-  about letting you have an orgasm."
+  about letting you have an
+  <<if $AcademicProbationDenial>>
+    orgasm.  And that's after your probation is lifted and you could cum again if I allowed it."
+  <<else>>
+    orgasm."
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -6377,8 +6641,18 @@
 <</nobr>>
 
 <<nobr>>
-  "3 weeks.", he says as your lips move up and down on his cock. "So we'll be [[heading back to school|Part14Home5]], settled back in, and already back to class
-  before you orgasm again.  Well, assuming there's not a delay next time I tell you to suck my cock, and I don't have to add another week or two.  But if you
+  "3 weeks.", he says as your lips move up and down on his cock.
+  <<if $AcademicProbationDenial>>
+    "So if takes you a month [[after we head back to school|Part14Home5]] to get off probation, that's if you're lucky and get a professor to change a grade.
+    If you're not so lucky, it'll be a whole semester.  Then add three more weeks.  Sounds like it'll be at least October or November
+  <<else>>
+    "So we'll be [[heading back to school|Part14Home5]], settled back in, and already back to class
+  <</if>>
+  before you orgasm again.
+  <<if $AcademicProbationDenial>>
+    You whimper in frustration as you imagine waiting that long to orgasm again.
+  <</if>>
+  Well, assuming there's not a delay next time I tell you to suck my cock, and I don't have to add another week or two.  But if you
   don't want me to hold the keys, we can go discuss it with your father."
 <</nobr>>
 
@@ -6714,8 +6988,8 @@
     beleive it or not.
     <br><br>
     You and they both cut out the flirting after that, and [[focus on the drinking|Part14Friends4Drink]], and joking around that doesn't involve firting with you.
-  <<elseif $PlayerSideEffectLibido or $PlayerSideEffectPheromones>>
-    As you flirt with them, you realize how honry you are.  You know where things will lead if you keep drinking with them.  You decide you don't want
+  <<elseif $PlayerSideEffectLibido or $PlayerSideEffectPheromones or $AcademicProbationDenial>>
+    As you flirt with them, you realize how horny you are.  You know where things will lead if you keep drinking with them.  You decide you don't want
     to wait for that.  When you suggest that you move the party [[back to Mason's house|Part14Friends4Sex]], they quickly agree.
   <<else>>
     You have a good buzz from the beer, and are feeling kind of horny.  You wonder what the guys would say if you suggested
@@ -6755,13 +7029,15 @@
 <</nobr>>
 
 <<nobr>>
-  You remember the first better than the others, your three friends all fucking you at once.  Afterward there were cheers and high-fives, and
+  You remember the first time better than the others, your three friends all fucking you at once.  Afterward there were cheers and high-fives, and
   then more beer.
 <</nobr>>
 
 <<nobr>>
   After a beer or two they were ready to go again.  Your memory of that round, and the one that came after, is less clear.  It's mostly just
-  a pleasant blur of cocks and tongues, and orgasms.  Of a mouth full of cum and hands swatting your ass.
+  a pleasant blur of cocks and tongues, and orgasms.
+  <<if $AcademicProbationDenial>>Theirs, not yours.<</if>>
+  Of a mouth full of cum and hands swatting your ass.
 <</nobr>>
 
 <<nobr>>
@@ -6771,7 +7047,7 @@
 
 <<nobr>>
   As you stand there, still half out of the lingerie you'd worn, you say.  "I could use a ride [[back home|Part14Home5]] in a while."  Then you unfurl
-  what's what was a full box condoms at the start of last night.  "But there's no reason I need to leave right away."
+  what's left of what was a full box condoms at the start of last night.  "But there's no reason I need to leave right away."
 <</nobr>>
 
 ::Part14Friends4Drink
@@ -6810,7 +7086,7 @@
   basement.  Dylan orders you to strip, which you do
   <<if $PlayerSideEffectExhibitionist>>
     excitedly
-  <</else>>
+  <<else>>
     nervously
   <</if>>
   wondering how many people are watching you.  You can hear the footsteps of whoever let you in, but there could be others.
@@ -7091,8 +7367,20 @@
 <</nobr>>
 
 <<nobr>>
-  Once you are secure, he are secure, he gets a dildo and starts fucking you with it.  As you feel an orgasm getting close, he points it out to Dylan.
-  "Can you see how she's about to cum?", then he stops leaving you whimpering into your gag.  "Now do that a few more times, and she'll do anything you want
+  Once you are secure, he are secure, he gets a dildo and starts fucking you with it.
+  <<if $AcademicProbationDenial>>
+    You've learned how your body reacts with this new setting.  Now that you can observe your orgasm approaching without the distraction of actually feeling
+    the pleasure, you can recognize one comming.  Your uncle can see it comming too and points it out to Dylan.
+  <<else>>
+    As you feel an orgasm getting close, he points it out to Dylan.
+  <</if>>
+  "Can you see how she's about to cum?", then he stops leaving you whimpering into your gag.
+  <<if $AcademicProbationDenial>>
+    <br><br>
+    You know you weren't going to feel the orgasm he just denied you anyway.  But your body still screams for him to continue with the dildo just a bit longer.
+    You'd do anything for just a bit more of it, even though you know you couldn't feel most of it.
+  <</if>>
+  "Now do that a few more times, and she'll do anything you want
   to be allowed to cum.  It can be even more persuasive than a paddle or whip."
   <<if $MasterMike>>
     Then he adds, "Obviously, it's easier with her since she's been denied for a while.  But after a few edges any submissive girl will be willing to offer
@@ -7150,6 +7438,10 @@
     to whatever you want her to agree to.  But there's no point in that her, I can already have this one do whatever I wanted."
     <br><br>
     You'd be thanking him so much if you could speak when he says, "And I've decided to [[allow her an orgasm|Part14UncleOrgasm]] to celebrate her new ownership.
+  <<elseif $AcademicProbationDenial>>
+    "What she wants right now is a nice hard cock, or two, right now.", isn't that right.  You nod yes.
+    <<include [[Part14UncleBeg]]>>
+    You moan into your gag when Dylan leans over and whispers, "[[Yes|Part14UncleOrgasm]]" into you ear
   <<elseif $PlayerChastityBelt and $Keyholder == "Dylan">>
     "And she knows she's leaving here locked in that chastity belt again.  So if she's going to cum anytime soon, it'll be right now."
     <<include [[Part14UncleBeg]]>>
@@ -7200,19 +7492,35 @@
   <<if $MasterMike>>
     "Don't worry, Dylan, we won't leave you out.", Mike tells him.  "Have you ever fucked a girl in the ass before?"
     <br><br>
-    After they untie you you climb onto Mike's cock. It feels so good having a cock inside you.  It feels even better as Dylan comes behind you and
-    slides his into your ass.
+    After they untie you you climb onto Mike's cock. It feels 
+    <<if $AcademicProbationDenial>>
+      comforting
+    <<else>>
+      so good
+    <</if>>
+    having a cock inside you.  It feels even better as Dylan comes behind you and slides his into your ass.
     <br><br>
-    It doesn't take you long to cum, having been on the edge of an orgasm most of the afternoon, and deprived of even that for so long.  The two of them keep
-    going a while after you cum.  Dylan fills your ass with his cum first.  A minute later, Mike has filled you with his also.
+    <<if !$AcademicProbationDenial>>
+      It doesn't take you long to cum, having been on the edge of an orgasm most of the afternoon, and deprived of even that for so long.  The two of them keep
+      going a while after you cum.
+    <</if>>
+    Dylan fills your ass with his cum first.  A minute later, Mike has filled you with his also.
     <br><br>
     You are so content at that moment, you know you made the right decision.  You can't wait to [[find out what|Part14UncleDay2]] your new master wants of you.
   <<else>>
     "We will take you up on two of those offers.", Dylan says.  It soon becomes clear what the first is.  After they untie you you climb onto Mike's cock.
-    It feels so good having a cock inside you.  It feels even better as Dylan comes behind you and slides his into your ass.
+    It feels 
+    <<if $AcademicProbationDenial>>
+      comforting
+    <<else>>
+      so good
+    <</if>>
+    having a cock inside you.  It feels even better as Dylan comes behind you and slides his into your ass.
     <br><br>
-    It doesn't take you long to cum, having been on the edge of an orgasm most of the afternoon.  The two of them keep going a while after you cum.  Dylan fills
-    your ass with his cum first.  A minute later, Mike has filled you with his also.
+    <<if !$AcademicProbationDenial>>
+      It doesn't take you long to cum, having been on the edge of an orgasm most of the afternoon.  The two of them keep going a while after you cum.
+    <</if>>
+    Dylan fills your ass with his cum first.  A minute later, Mike has filled you with his also.
     <br><br>
     You are so content at that moment, you don't even care what the other offer they referred to was.  You are relieved when they let you know that you'll be
     their slave the rest of the week until you return to school.  "So, we will see you [[again tomorrow|Part14UncleDay2]].", Mike tells you.
@@ -7286,8 +7594,14 @@
 
 <<nobr>>
   Each day you submit yourself to whatever Mike wants you to do, and Dylan too if he's there.  Each day they use you however they please.  Every day you are eager
-  to please them, hoping that that day they will let you cum.  Some of the days, they actually do.
+  to please
+    <<if $AcademicProbationDenial>>
+      them.  You only wish that on the rare days they let you cum, you could actually feel it.
+    <<else>>
+      them, hoping that that day they will let you cum. Some of the days, they actually do.
+    <</if>>
 <</nobr>>
 
 ::Part14Home5
 TODO Part14Home5 - Wrap up at home, Go back with boy/girlfriend if they visited, Brother (or you) still in chastity when you leave? [[Part14End]]
+- DropoutBreeder

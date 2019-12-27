@@ -1801,7 +1801,12 @@ Of course, in addition to your school work and being whored out by Barry, you al
 ::Part13DeansOffice <10200,4110>
 <<nobr>>
   <h1>Visiting the Dean's Office</h1>
-  <<set $AcademicProbationDenial to 1>>
+  <<if $PlayerPregnant and !$dating.length and ($PlayerProtectionTry or setup.sexUniqueVaginalCount() > 25) and ($$PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock)>>
+    <<set $PlayerSideEffectBreeder to 1>>
+    <<set $PlayerProtectionFertile to 1>>
+  <<elseif !$PlayerPregnant>>
+    <<set $AcademicProbationDenial to 1>>
+  <</if>>
 <</nobr>>
 <<nobr>>
   After a year at this place you were expecting, maybe even hoping, you'd be able to take care of this problem with a little 1-on-1 time with the dean.
@@ -1810,7 +1815,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 
 <<nobr>>
   "...miss, you were informed of the numerous resources available to you when you were placed on academic probation at the end of last term.  And of the
-  consequences for failing to make substantive improvement this term.  Your failure to make use of those resources or to head those warning is what has
+  consequences for failing to make substantive improvement this term.  Your failure to make use of those resources or to heed those warnings is what has
   brought us to this point.", you struggle to pay attention as the dean drones on and on.  If he is going to kick you out, you wish he'd get on with it.
 <</nobr>>
 
@@ -1825,36 +1830,141 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <</nobr>>
 
 <<nobr>>
-  After he walks you down to the X-Change office and they do something to the settings of your implant, they confirm your ability to orgasm has been
-  completely disabled.  They also inform you that your ability to feel sexual pleasure in general will be greatly reduced as well.  "So, I won't be interested
-  in sex at all until I get my grades up?", you try to confirm.
-<</nobr>>
-
-<<nobr>>
-  "Interested?  Oh yes, you'll be interested.", the technican corrects you.  "We aren't sure why, but paradoxically, activating these settings usually increases
-  sexual desire.  But perhaps that is why the university finds it to be such a good motivator?"  The dean only nods, then leads you back to his office.  The
-  two of you then sit down to work on an "academic improvement plan", which is just as boring as it sounds.
-<</nobr>>
-
-<img src="Part13/Dean.jpg" hspace="10" vspace="10" height="500">
-
-<<nobr>>
-  When you are finally able to leave you head home to see if it's true.  You quickly
-  <<if $PlayerSideEffectMasturbationBlock>>
-    confirm, with a little help that is,
+  After he walks you down to the X-Change office and they do something to the settings of your implant, then they
+  <<if $PlayerSideEffectBreeder>>
+    attempt to confirm your ability to orgasm has been completely disabled.  However, you soon discover they've haven't done anything of the sort.
+    <br>
+    <div style="float:left;padding:12px;">
+      <video src="Part13/Breeder1.webm" autoplay loop muted height="400"></video>
+      <br>
+      <img src="Part13/Breeder2.gif" hspace="10" vspace="10" height="300">
+    </div>
+    It feels wonderful as the technican holds a vibrator against your clit, but he seems to suspect something is wrong.  You don't listen to what he is
+    saying as he comments on you unusual response as you feel your orgasm approaching.  You don't pay any attention as he begins furiously typing on his
+    terminal as you cry out with
+    <<if $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
+      one of
+    <</if>>
+    the most amazing orgasm you've ever felt.
+    <br><br>
+    After you come down from your orgasm and can listen again he tells you, "Miss, there was a problem with your procedure.  As you know, the implant is
+    still in an experimental phase."  The dean looks on, clearly annoyed.
+    <br><br>
+    "That sure didn't feel like a problem.", you say.
+    <br><br>
+    "Well, it seems that the temporary orgasm block we attempted to activate interacted in an unforseen way with your existing orgasm-inhibiting side 
+    <<if $PlayerSideEffectOrgasmBlock and $PlayerSideEffectMasturbationBlock>>effects.<<else>>effect.<</if>>
+    The fact that you currently pregnant likely also played a role.  But don't worry, there is no impact on the baby.", the X-Change technician explains.
+    <br><br>
+    "I'm not sure if you are familiar with our 'Breeder' line of products, but the effects I'm seeing from your implant seem very similar to those", he continues.
+    "Namely, since you are currently pregnant your can experience powerful orgasm like you just did via masturation, intercourse, or any other method."
+    <br><br>
+    "That's wonderful!", you interrupt to say as the dean's look of annoyance deepens.
+    <br><br>
+    The technician continues, "However, when you are not pregnant, you will only be able to orgasm when you are fertile and your partner ejaculates viable
+    sperm inside you.  Obviously condoms or other male-centered birth control would block the later part of that, and any female-centered birth control would
+    block the former.  That, and the enhanced fertility effects mean any orgasm-generating intercourse is very likely to result in pregnancy.  These effects
+    are permanent."
+    <br><br>
+    As the technican talks about it your mind is filled with thoughts of men cumming inside you.  You'd be tempted to see if the technician was interested
+    if the dean wasn't right here.  Then the dean interrupts your pleasant thoughts with a question, "Couldn't she just get an abortion?"  You instinctively
+    cover your belly protectively. "Not now.", he clarifies.  "I mean when she gets pregnant the next time, and the time after that.  And what about when
+    she's to old to get pregnant?"
+    <br><br>
+    "Termination is possible of course, but if its like with our standard Breeder pills work, then it would interfere with how it detects pregnancy and
+    probable conception events.  She probably wouldn't be able to orgasm again until she was pregnant again and things were able to reset.", the technician
+    explains.  "Though in practice, it almost never happens.  They generally are quite excited about each pregnancy and wouldn't even consider termination.
+    Post-menopausal she'd still be able to orgasm from intercourse if..."
+    <br><br>
+    <<unset $PlayerSideEffectOrgasmBlock>>
+    <<unset $PlayerSideEffectMasturbationBlock>>
+    <<unset $PlayerEasytoOrgasm>>
+    <<unset $PlayerPowerfulOrgasms>>
+    <<unset $PlayerSuperOrgasms>>
+    <<unset $PlayerProtectionPill>>
+    <<set $PlayerProtectionTry to 1>>
+    <<unset $PlayerProtectionPerfect>>
+    <<unset $PlayerProtectionPermanent>>
+    <<unset $PlayerProtectionNone>>
+    <<unset $PlayerProtectionWithdraw>>
+    <<unset $PlayerProtectionCondoms>>
+    <<unset $PlayerProtectionPill>>
+    You cut off the dean and his curiousity, you don't want to hear about abortions or when you get old, you just want to get out of here and enjoy
+    another one of those orgasms.  But then you remember you have your [[appointment at your obstetrician's office|Part13OB]] first.
+    <br><br>
+    The dean has some final words for you before you leave, "Well, I will still honor our agreement to allow you to renenroll in the fall.  But you are still
+    on probation, so assuming you decide to return in the fall, you will still need to work on improving your grades if you wish to remain a student here."
+  <<elseif $PlayerPregnant>>
+    attempt to confirm your ability to orgasm has been completely disabled.  However, you soon discover they've haven't done anything of the sort.
+    <br>
+    <div style="float:left;padding:12px;">
+      <video src="Part13/Breeder1.webm" autoplay loop muted height="400"></video>
+      <br>
+      <img src="Part13/Breeder2.gif" hspace="10" vspace="10" height="300">
+    </div>
+    It feels wonderful as the technican holds a vibrator against your clit, but he seems to suspect something is wrong.  You don't listen to what he is
+    saying as he comments on you unusual response as you feel your orgasm approaching.  You don't pay any attention as he begins furiously typing on his
+    terminal as you cry out with an orgasm.
+    <br><br>
+    After you come down from your orgasm and can listen again he tells you, "Miss, there was a problem with your procedure.  As you know, the implant is
+    still in an experimental phase."  The dean looks on, clearly annoyed.
+    <br><br>
+    "That sure didn't feel like a problem.", you say.
+    <br><br>
+    "Well, I suppose from your point of view it's not.", he says.  "It appears the temporary orgasm block we attempted to activate was ineffective.  This
+    is likely due to your pregnancy.  We won't be able to complete the procedure."
+    <br><br>
+    "That's wonderful!", you interrupt to say as the dean's look of annoyance deepens.
+    <br><br>
+    You and the dean exit the X-Change office and you try not to smile as you think about enjoying the summer full orgasms that you were almost denied.
+    "Well, I will still honor our agreement to allow you to renenroll in the fall.  But you are still on probation, so assuming you decide to return in the fall,
+    you will still need to work on improving your grades if you wish to remain a student here."
+    <br><br>
+    "Yes, I understand.", you say as you part ways with him and head towards your [[appointment at your obstetrician's office|Part13OB]].
   <<else>>
-    confirm
-  <</if>>
-  that you can't orgasm.  And it's worse than that, you can barely feel anything down there, even trying just makes your hornier and more frustrated.
-  As you look down you can't believe it, everything looks perfectly normal, but it just doesn't work.
-<</nobr>>
-
-<<nobr>>
-  Your last night on campus is a frustrating one, and sleep is hard to find.  But you make sure to wake up in time for your
-  <<if $PlayerPregnant>>
-    [[appointment at your obstetrician's office|Part13OB]].
-  <<else>>
-    regular [[end-of-semester check-up|Part13Checkup]] with the X-Change office.  You plan on doing your best not to be mad at them about your current situation.
+    confirm your ability to orgasm has been completely disabled.
+    <<if $CampusMinistry>>
+      It is humiliating as he holds a vibrator against your private parts, right here in front of the dean!  But you can barely feel it though, you don't
+      think that's normal.
+    <</if>>
+    They also inform you that your ability to feel sexual pleasure in general will be greatly reduced as well.
+    <<if $CampusMinistry and $sex.length == 0>>
+      "But... I'm a virgin anyway.", you tell them.
+      <br><br>
+      "Well, it will also prevent masturbation.  And if you don't do that either, then...", he pauses to check his notes.  He doesn't seem to have encountered
+      this situation before. "Well, I suppose it won't have much effect.  Assuming you are being honest with us that is."  You don't think he believes you.
+      <br><br>
+      Then the dean leads you back to his office.  The two of you then sit down to work on an "academic improvement plan", which is just as boring as it sounds.
+    <<else>>
+      "So, I won't be interested in sex at all until I get my grades up?", you try to confirm.
+      <br><br>
+      "Interested?  Oh yes, you'll be interested.", the technican corrects you.  "We aren't sure why, but paradoxically, activating these settings usually increases
+      sexual desire.  But perhaps that is why the university finds it to be such a good motivator?"  The dean only nods, then leads you back to his office.  The
+      two of you then sit down to work on an "academic improvement plan", which is just as boring as it sounds.
+    <</if>>
+    <br><br>
+    <img src="Part13/Dean.jpg" hspace="10" vspace="10" height="500">
+    <br><br>
+    <<if $CampusMinistry>>
+      You have a hard time getting to sleep, your mind keeps going back to how embarrassed you were in front of the dean today.
+    <<else>>
+      When you are finally able to leave you head home to see if it's true.  You quickly
+      <<if $PlayerSideEffectMasturbationBlock>>
+        confirm, with a little help that is,
+      <<else>>
+        confirm
+      <</if>>
+      that you can't orgasm.  And it's worse than that, you can barely feel anything down there, even trying just makes your hornier and more frustrated.
+      As you look down you can't believe it, everything looks perfectly normal, but it just doesn't work.
+      <br><br>
+      Your last night on campus is a frustrating one, and sleep is hard to find.  
+    <</if>>
+    But you make sure to wake up in time for your
+    <<if $PlayerPregnant>>
+      [[appointment at your obstetrician's office|Part13OB]].
+    <<else>>
+      regular [[end-of-semester check-up|Part13Checkup]] with the X-Change office.  You plan on doing your best not to be mad at them about your current situation.
+    <</if>>   
   <</if>>
 <</nobr>>
 
@@ -3749,7 +3859,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
   them. Your time isn't free though, but they can afford to pay for it.
   <<if $PlayerPregnantWinter>>
     <br><br>
-    Everyone assumes whomever you with is the father of the baby.  You don't think your clients mind, in fact, you think they enjoy that as well.
+    Everyone assumes whoever you are with is the father of the baby.  You don't think your clients mind, in fact, you think they enjoy that as well.
   <</if>>
 <</nobr>>
 
@@ -4868,7 +4978,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <</nobr>>
 <<nobr>>
   You can barely contain your excitement on the way home. When you tell Andrew, he’s as excited as you are. He says that the two of you had always talked about
-  starting a family, but he’d never expected to start so soon. He places his hand on your stomach, but obviously there’s nothing to feel yet.
+  starting a family, but he’d never expected to start so soon. He places his hand on your belly, but obviously there’s nothing to feel yet.
 <</nobr>>
 
 <<nobr>>
@@ -5080,7 +5190,10 @@ Of course, in addition to your school work and being whored out by Barry, you al
     to do just this sort of privacy violation.
     <br><br>
   <</if>>
-  <<if $PlayerPregnant and !$PregnancySpring>>
+  <<if $PlayerSideEffectBreeder>>
+    You have everything packed to go home, but you still have some time before you leave.  There's lots of guys still on campus, you'd
+    [[hate to waste an opportunity|Part13SummerPlansBreeder]] to have a little fun before you leave.
+  <<elseif $PlayerPregnant and !$PregnancySpring>>
     <<if $dating.length>>
       <<if setup.areDating('Aaron')>>
         The next few months of your pregnancy are going to be the most difficult, of course you are going to need Daddy there to help you.  The two of you will
@@ -5149,6 +5262,21 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <</if>>
 <</nobr>>
 
+::Part13SummerPlansBreeder
+<<nobr>>
+  <h1>Getting One for the Road</h1>
+  <img src="Part13/Breeder3.gif" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  The guys around campus have quickly learned how much you love a good fuck and that you love for them cum inside you now.  They are happy to oblige.  You hope
+  they are just as willing next semester when you are no longer pregnant, but want to be.
+<</nobr>>
+
+<<nobr>>
+  Now you feel like you can handle the ride home.  You have your latest partner help you carry your things down to your car so you
+  can drive [[off campus towards home|Part13SummerHome]].
+<</nobr>>
+    
 ::Part13SummerLeave
 <<nobr>>
     As you look around your room.  You think it's crazy when you recall,
@@ -5309,7 +5437,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <</nobr>>
 
 <<nobr>>
-  <<if setup.isFWB('Barry') and ($PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist)>>
+  <<if setup.isFWB('Barry') and ($PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1)>>
     "I know you'd never pass up this opportunity.", Barry tells you.
   <<elseif setup.isFWB('Barry')>>
     "Would you like to accompany me for the trip?", Barry asks you.
@@ -5321,15 +5449,15 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerSideEffectSubmissive>>
+  <<if $PlayerSideEffectSubmissive > 1>>
     Being able to let your submissive side out for an entire week is just too much to pass up.  Of course you are going to go with Barry.
-  <<elseif $PlayerSideEffectExhibitionist>>
+  <<elseif $PlayerSideEffectExhibitionist > 1>>
     You'd decided your answer as soon as you'd seen the first brochure.  Being able to walk around naked for an entire week on the beach is just too much to pass up.
     Of course you are going to go with Barry.
   <<else>>
     You wonder if you should accept Barry's offer.
   <</if>>
-  <<if !setup.isFWB('Barry') and $PlayerSideEffectSubmissive>>
+  <<if !setup.isFWB('Barry') and $PlayerSideEffectSubmissive > 1>>
     <br><br>
     By now you know Barry well enough to know what he's like.  When you're bound and helpless for an entire week, he'll certainly be taking the opportunity to use 
     our body whenever he feels like.  The more you think about it, the more you wonder why you weren't having him do that all year already.
@@ -5337,7 +5465,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <<if $AcademicProbationDenial>>
     <br><br>
     You wonder how madding it
-    <<if $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist>>
+    <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1>>
       will
     <<else>>
       would
@@ -5347,7 +5475,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <<if $PlanSummerAbroad>>
     <br><br>
     You realize that going to the resort with Barry
-    <<if $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist>>
+    <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1>>
       will
     <<else>>
       would
@@ -5357,7 +5485,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist>>
+  <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1>>
     "Of course, [[I'd love to go|Part14Island]]", you tell Barry.
     <<if $PlayerSideEffectSubmissive>>
       "I mean, 'I'd love to go, Sir'", you correct yourself.
@@ -5394,7 +5522,8 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <<if $PlayerPregnant and !$PregnancySpring>>
     <img src="Part13/SummerPlans7.jpg" hspace="10" vspace="10" height="650" align="left">
     <br><br>
-    After you struggle to find clothes that fit and that will be comfortable for a long drive home you head towards home.  It's a good thing your family
+    You'd struggled to find clothes that fit and that will be comfortable for a long drive home you head towards home, but figured out that it'satisfied
+    going to be uncomfortable no matter what you wear.  It's a good thing your family
     is expecting you at any particular time, since you have to keep pulling over to use the restroom.
     <br><br>
     At one of your bathroom breaks, you notice the fuel gage on your car, so you , you [[pull over to the pump to fill up|Part14Drive]], before you leave

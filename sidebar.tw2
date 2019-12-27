@@ -128,6 +128,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $PlayerSlave>>
   <<elseif $DropoutCumslut>>
     You've adjusted to the [[permanent conditions|SideBarSideEffects]] your body has now.
+  <<elseif $DropoutBreeder>>
+    You've adjusted to the [[permanent conditions|SideBarSideEffects]] your body has now.
   <<elseif $ExWifeTrap>>
     You are unable to orgasm thanks to Paul's ex-wife.
     <<if $PlayerSideEffectMasochist or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
@@ -141,7 +143,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
   <<else>>
     You are 
-    <<if $PlayerSideEffectNude or $PlayerSideEffectMasochist or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
+    <<if $PlayerSideEffectNude or $PlayerSideEffectMasochist or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams or $PlayerSideEffectBreeder>>
       trying to adjust to the [[side effects|SideBarSideEffects]] your implant gave your new body.
     <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep or $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
       enjoying the [[features|SideBarSideEffects]] of your new body.
@@ -264,7 +266,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
   <<if $PlayerWeightControl>>
     <li>You have perfect
-    <<if $PlayerPregnant>>
+    <<if $PlayerSideEffectBreeder>>
+      weight, when you aren't pregnant.  But you prefer being pregnant.
+    <<elseif $PlayerPregnant>>
       weight, when you aren't pregnant.
     <<else>>
       weight.
@@ -297,7 +301,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
 
   <<if $PlayerPowerfulOrgasms >3 >>
-    <li>Your orgasms are so  powerful and long that you often pass out.</li>
+    <li>Your orgasms are so powerful and long that you often pass out.</li>
   <<elseif $PlayerPowerfulOrgasms >2 >>
     <li>Your orgasms are so powerful and long that your mind goes blank.</li>
   <<elseif $PlayerPowerfulOrgasms >1 >>
@@ -385,11 +389,11 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
     <li>If you go too long without a cock in your mouth, you'll beg for one until someone lets you suck their cock.</li>
     <li>You'll never turn down a cock offered to you.  You'll drop to you knees immediately if they let you.</li>
-  <<elseif $PlayerSideEffectOral >3 >>
+  <<elseif $PlayerSideEffectOral >3 and !$PlayerSideEffectBreeder>>
     <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex, you cannot orgasm without it, and can never refuse it, you sometimes suggest it as a reward.</li>
-  <<elseif $PlayerSideEffectOral >2 >>
+  <<elseif $PlayerSideEffectOral >2 and !$PlayerSideEffectBreeder>>
     <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex and can never refuse it, you sometimes suggest it as a reward.</li>
-  <<elseif $PlayerSideEffectOral >1 >>
+  <<elseif $PlayerSideEffectOral >1>>
     <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex and can never refuse it.</li>
   <<elseif $PlayerSideEffectOral>>
     <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex.</li>
@@ -398,9 +402,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $PlayerSideEffectAnal>>
     <li>
       You love anal
-      <<if $PlayerSideEffectAnal >3 >>
+      <<if $PlayerSideEffectAnal >3 and !$PlayerSideEffectBreeder>>
         sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm, you constantly need something in your ass.
-      <<elseif $PlayerSideEffectAnal >2 >>
+      <<elseif $PlayerSideEffectAnal >2 and !$PlayerSideEffectBreeder>>
         sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm.
       <<elseif $PlayerSideEffectAnal >1 >>
         sex and can never refuse it.
@@ -409,10 +413,16 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       <</if>>
       <<if $PlayerCumslutPermanent>>
         As long as they finish in your mouth, that is.
+      <<elseif $PlayerSideEffectBreeder>>
+        As long as they cum inside you, that is.
       <<elseif !$PlayerSideEffectPermanent and  $PlayerSideEffectAnalPermanent>>
         <i>This effect is permanent, even if you change back to your old body.</i>
       <</if>>
     </li>
+  <</if>>
+
+  <<if $PlayerSideEffectBreeder>>
+    <li>You have powerful orgasms.  But you can only orgasm when you are pregnant, or when somone cums inside you.</li>
   <</if>>
 <</nobr>>
 </ul>
@@ -508,7 +518,12 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     You aren't sure what sort of birth control to use yet.
   <</if>>
   <<if $PlayerProtectionFertile and !$PlayerProtectionPrince>>
-    You are especially fertile.
+    You are especially
+    <<if $PlayerSideEffectBreeder>>
+      fertile and you want men to cum inside you.
+    <<else>>
+      fertile.
+    <</if>>
   <</if>>
 <</nobr>>
 
