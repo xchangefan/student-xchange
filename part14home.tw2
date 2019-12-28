@@ -359,15 +359,53 @@
       You feel like you'd let him do whatever he wanted if he were here right now.
     <</if>>
     <br><br>
-    But he's not here right now.  So you try to put it out of your mind and get ready for your [[day with Cassie and Dylan|Part14Home2]].
+    But he's not here right now.  So you try to put it out of your mind and get ready for your
+    <<if $AcademicProbationDenial>>
+      [[day with Cassie and Dylan|Part14HomeMinistry3Denial]].
+    <<else>>
+      [[day with Cassie and Dylan|Part14Home2]].
+    <</if>>
   <<else>>
     Well, you know what it is that your body wants.  But you aren't going to say it.
     <br><br>
     "It's not my fault I have dreams like that is it?", you wonder.  You decide it's not wrong to have them, you can't help that.  You still haven't decide
     if it's wrong how much you enjoy them.
     <br><br>
-    But that's not a question you are going to think about.  You need to put it out of your mind and get ready for your [[day with Cassie and Dylan|Part14Home2]].
+    But that's not a question you are going to think about.  You need to put it out of your mind and get ready for your
+    <<if $AcademicProbationDenial>>
+      [[day with Cassie and Dylan|Part14HomeMinistry3Denial]].
+    <<else>>
+      [[day with Cassie and Dylan|Part14Home2]].
+    <</if>>
   <</if>>
+<</nobr>>
+
+::Part14HomeMinistry3Denial
+<<nobr>>
+	<h1>Getting Ready</h1>
+  <img src="Part14/Ministry8.gif" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  You are lost in thought as you get ready, thinking about
+  <<if setup.areDating('Andrew')>>
+    <<if setup.haveFuckedVaginal('Andrew')>>
+      feeling Andrew inside you again.
+    <<else>>
+      your dream last night, and about Andrew.
+    <</if>>
+  <<else>>
+    your dream last night.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Without even realizing it, you've put on one of your few 'sexy' panties and rubing yourself lewdly against a cushion.  You still can't feel anything,
+  but when you take off the panties to change into your normal ones, the stickyness inside shows your body was reacting to it.
+<</nobr>>
+
+<<nobr>>
+  Once you've changed into clean panties, dressed, and have checked in the mirror to make sure your face isn't still all red and splotchy, you
+  head downstairs for your [[day with Cassie and Dylan|Part14Home2]]
 <</nobr>>
 
 ::Part14HomePregnant
@@ -392,7 +430,10 @@
     you did it because of the money.
   <<elseif $PlayerSideEffectBreeder>>
     You plan on [[putting the baby up for adoption|Part14HomePregnant2][$tempBabyAdopt to 1]] so you can turn around and get pregnant again as soon as
-    possible.  Of course, you aren't going to tell your dad that part just yet.
+    possible.  Of course, you aren't going to tell your dad that part just yet, just about the adoption for now.
+  <<elseif $BabyAdoption>>
+    You'd decided months ago that you were [[putting the baby up for adoption|Part14HomePregnant2][$tempBabyAdopt to 1]].  You hope your father
+    accepts that decision.
   <<else>>
     If you'd been on the fence before about whether you were going to [[keep the baby|Part14HomePregnant2][$tempBabyKeep to 1]] or
     [[put it up for adoption|Part14HomePregnant2][$tempBabyAdopt to 1]], now's the time to decide for certain.
@@ -558,15 +599,15 @@
     <<else>>
       him, not caring if it's true or not.
     <</if>>
-  <<elseif setup.areDating('Kate') or setup.areDating('Veronica')>>
+  <<elseif setup.areDating('Veronica')>>
     <<if $StatedFather>>
-      "His name is $StatedFather, but that doesn't matter.  My girlfriend $dating[0] and I want a baby.  She wasn't comfortable taking a blue X-Change, so I
+      "His name is $StatedFather, but that doesn't matter.  My girlfriend Veronica and I want a baby.  She wasn't comfortable taking a blue X-Change, so I
       did what had to be done.", you tell your father.
       <<if !$PlayerProtectionTry>>
         You know this will go much better if he thinks it was a choice the two of you made, not an accident when you were with a guy.
       <</if>>
     <<else>>
-      "My girlfriend $dating[0] is the father.  We wanted a baby, so she took an X-Change Basic for a night and... well you can figure out the rest.", you lie.
+      "My girlfriend Veronica is the father.  We wanted a baby, so she took an X-Change Basic for a night and... well you can figure out the rest.", you lie.
       <<if $PlayerProtectionTry>>
         You know this will go better if he thinks you know who the father is, and will be raising the baby with 'him', even if he thinks she was only a man for
         the night.
@@ -642,7 +683,7 @@
   You'd worried you'd be exhausted quickly at the pool, but it's quite the opposite.  You aren't doing any swimming, and being in the water actually makes
   you feel lighter, and it's actually quite relaxing.  You enjoy sitting back and watching your brother and sister splash around.  Well, you also enjoy
   admiring
-  <<if setup.areDating('Kate') or setup.areDating('Veronica')>>
+  <<if setup.areDating('Veronica')>>
     the girls in their bikinis.
   <<else>>
     the shirtless guys.
@@ -778,7 +819,7 @@
   <<else>>
     to be fucked.
   <</if>>
-  But thanks to the internet, it doesn't take you long to [[find a guy|Par14HomePregnant5Guy]] willing to give you
+  But thanks to the internet, it doesn't take you long to [[find a guy|Part14HomePregnant5Guy]] willing to give you
     <<if $PlayerSideEffectSubmissive>>
       exactly what you deserve.
     <<else>>
@@ -800,7 +841,7 @@
 
 ::Part14HomePregnant5
 <<nobr>>
-  <<if setup.areDating('Veronica') or setup.areDating('Kate')>>
+  <<if setup.areDating('Veronica')>>
     <<include [[Part14HomePregnant5Girl]]>>
   <<elseif $dating.length>>
     <<include [[Part14HomePregnant5Guy]]>>
@@ -824,7 +865,7 @@
 <<nobr>>
   Everyone else is still asleep, so while the contractions are still pretty far apart you make sure you have everything in your hosptial bag.
   You also take a minute to freshen up
-  <<if setup.haveFucked('Internet Hookup') or ($dating.length and !setup.areDating('Veronica') and !setup.areDating('Kate'))>>
+  <<if setup.haveFucked('Internet Hookup') or ($dating.length and !setup.areDating('Veronica'))>>
     and clean up the evidence of your fun from last night
   <</if>>,
   then you get dressed in something comfortable before you start waking people up.
@@ -898,6 +939,8 @@
   <</if>>
 <</nobr>>
 
+<<achievement>>mother<</achievement>>
+
 ::Part14HomeAdopt
 <<nobr>>
   <h1>Finalizing arrangements</h1>
@@ -905,6 +948,7 @@
   <<set $PlayerPregnant to 0>>
   <<unset $PregnancyCheck>>
   <<set $PlayerAdoption to 1>>
+  <<unset $BabyAdoption>>
   <<unset $tempBaby>>
   <<unset $BabyBoy>>
   <<unset $BabyGirl>>
@@ -959,7 +1003,7 @@
 ::Part14HomeAdopt3
 <<nobr>>
 	<h1>Taking Care of $dating[0]'s Needs</h1>
-  <<if setup.areDating('Kate') or setup.areDating('Veronica')>>
+  <<if setup.areDating('Veronica')>>
     <img src="Part14/Pregnant12.jpg" hspace="10" vspace="10" height="600" align="left">
     <<set $sex.push({sex:'female', name:$dating[0]})>>
     <<set $sex.push({sex:'female', name:$dating[0]})>>
@@ -1013,7 +1057,6 @@
 <<nobr>>
   The doctors say since you are both healthy, you and $children[0].name can [[go home|Part14HomeKeepBaby2]] after 48 hours.
 <</nobr>>
-<<achievement>>mother<</achievement>>
 
 ::Part14HomeKeepBaby2
 <<nobr>>
@@ -5603,7 +5646,7 @@
     <br><br>
     "Very well.", your father says not sure whether to believe you or not.  "I don't want to hear about anything like this happening again - and I certainly
     don't want to see it again.  I'll let you decide what to tell $dating[0].  I think perhaps next time you should stay with
-    <<if setup.areDating('Veronica') or setup.areDating('Kate')>>her<<else>>him<</if>>
+    <<if setup.areDating('Veronica')>>her<<else>>him<</if>>
     during the summer."
     <br><br>
     You are relieved, you sense things could have gone much worse with your father.  You quickly leave and head upstairs to get ready for
@@ -6207,8 +6250,66 @@
 <</nobr>>
 
 <<nobr>>
-  After the two of you have been at it for a while, you hear a deep rumbling noise.  You both realize it's your stomach and start laughing.
-  "Maybe we should [[get something to eat|Part14BoyfriendAndrew2]].", Andrew says after he stops laughing.
+  <<if $AcademicProbationDenial>>
+    After you two have been making out for a little while you feel a need, you want Andrew so bad right now.
+    "I know [[somewhere else we can go|Part14BoyfriendAndrewDenial]].", you tell him.
+  <<else>>
+    After the two of you have been at it for a while, you hear a deep rumbling noise.  You both realize it's your stomach and start laughing.
+    "Maybe we should [[get something to eat|Part14BoyfriendAndrew2]].", Andrew says after he stops laughing.
+  <</if>>
+<</nobr>>
+
+::Part14BoyfriendAndrewDenial
+<<nobr>>
+  <h1>In the Woods with Andrew</h1>
+  <img src="Part14/Ministry9.jpg" hspace="10" vspace="10" height="550">
+<</nobr>>
+<<nobr>>
+  <<if $sex.length == 0>>
+    You'd always imagined your first time having sex would be somewhere romantic, maybe even on your wedding night.
+  <<elseif setup.sexVaginalCount() == 0>>
+    You'd always imagined your first time going all the way with Andrew would be somewhere romantic, maybe with candles flickering giving everything
+    a soft glow.
+  <<else>>
+    You'd thought you could wait to be with Andrew agian until after you got back to school, and hopefully after they turned off this denial thing.
+  <</if>>
+  But you need Andrew too much right now.
+<</nobr>>
+
+<<nobr>>
+  You take him to a special place you know about in the woods, where no one will find you, then you lay down a blanket.  The making out continues
+  for a little while, but soon you are stripping off your clothes and helping Andrew take his off.
+<</nobr>>
+
+<<nobr>>
+  He's perhaps surprised, but certainly not minding, how direct you are being as you push him onto his back on the blanket and climb on top of him.
+  You realize how wet you are as grab him and guide him into as you lower yourself down.  You let out a small gasp as you drop down.
+<</nobr>>
+
+<<nobr>>
+  Feeling him inside you, doesn't feel like you know it should.  You don't have the pleasure, but yet it still feels so right.  You want his cock to
+  stay in you forever.  You love the feeling of him deep inside you as you sit on his hips.
+  But clearly he wants you to move, so you begin riding him.  Each time you pull up and his cock starts to come out of you, you feel a desperate need
+  to have him back inside you and you quickly lower yourself back down.
+<</nobr>>
+
+<<nobr>>
+  You don't feel the pleasure that causes your moans, but you see how much Andrew loves them, so you are glad you are making them.  As your moans
+  start to increase Andrew tells you, "I'm about to cum."
+<</nobr>>
+
+<<nobr>>
+  You suddenly feel the need to have him inside you even more than before and drop down
+  all the way, so his cock is as far as it will go.  You just move a little back and forth over and over again because you don't want to take him out of
+  you.
+<</nobr>>
+
+<<nobr>>
+  <<set $sex.push({sex: 'male', name:'Andrew', vaginal: true, noPullout:true, noCondom: true})>>
+  You feel the warmth of it as he cums inside you and hearing him groan as he does makes you so happy.  You stop moving and lay there on top of him
+  with him still inside you, until finally he starts to get soft. "That was amazing.", he tells you.  You still lay there a bit longer until you hear
+  a deep rumbling noise.  You both realize it's your stomach and start laughing.  "Maybe we should [[get something to eat|Part14BoyfriendAndrew2]].",
+  Andrew says after he stops laughing.
 <</nobr>>
 
 ::Part14BoyfriendAndrew2
@@ -6236,12 +6337,12 @@
 <</nobr>>
 
 <<nobr>>
-  "I've heard that you see some really beautiful views mountain climbing, but I never imagined it look this amazing.", Andrew says as you are getting your
+  "I've heard that you see some really beautiful views mountain climbing, but I never imagined it would look this amazing.", Andrew says as you are getting your
   climbing harness on.
 <</nobr>>
 
 <<nobr>>
-  "Oh stop!", you say laughing when you realize he was talking about how the harness makes your but look in your leggings.  You'd probably flirt back with him,
+  "Oh stop!", you say laughing when you realize he was talking about how the harness makes your butt look in your leggings.  You'd probably flirt back with him,
   but you have to focus on the instructions you are getting and then start your attempt at the wall.
 <</nobr>>
 
@@ -6979,15 +7080,24 @@
       You are pretty sure if Andrew were here right now, you'd be asking him to take you home, and not to sleep.
       <br><br>
       "Guys.", you say.  "I know we we've been joking around, and it's been fun.  But just so we are all clear.  I have a boyfriend.
+      You guys are my friends, and I don't want that to change just because I have."  They all agree that's for the best, though you aren't sure if they really
+      beleive it or not.
+      <br><br>
+      You and they both cut out the flirting after that, and [[focus on the drinking|Part14Friends4Drink]], and joking around that doesn't involve firting with you.
+    <<elseif $AcademicProbationDenial>>
+      Your friends are looking much more attractive to you, and it's making you feel strange.  But it feels like a good sort of strange.
+      <br><br>
+      "Guys.", you say.  "I know we we've been joking around, but... maybe I'd like to stop joking around.  Do you think we could
+      get out of here.  Maybe we could move the party [[to Mason's house|Part14Friends4Sex]]?"  They quickly agree with your idea.
     <<else>>
-      You friends are looking much more attractive to you, and it's making you feel strange.
+      Your friends are looking much more attractive to you, and it's making you feel strange.
       <br><br>
       "Guys.", you say.  "I know we we've been joking around, and it's been fun.  But just so we are all clear.  
+      You guys are my friends, and I don't want that to change just because I have."  They all agree that's for the best, though you aren't sure if they really
+      beleive it or not.
+      <br><br>
+      You and they both cut out the flirting after that, and [[focus on the drinking|Part14Friends4Drink]], and joking around that doesn't involve firting with you.
     <</if>>
-    You guys are my friends, and I don't want that to change just because I have."  They all agree that's for the best, though you aren't sure if they really
-    beleive it or not.
-    <br><br>
-    You and they both cut out the flirting after that, and [[focus on the drinking|Part14Friends4Drink]], and joking around that doesn't involve firting with you.
   <<elseif $PlayerSideEffectLibido or $PlayerSideEffectPheromones or $AcademicProbationDenial>>
     As you flirt with them, you realize how horny you are.  You know where things will lead if you keep drinking with them.  You decide you don't want
     to wait for that.  When you suggest that you move the party [[back to Mason's house|Part14Friends4Sex]], they quickly agree.
@@ -7020,8 +7130,17 @@
   <<set $sex.push({sex: 'male', name:'Jake'})>>
 <</nobr>>
 <<nobr>>
-  Once the party has relocated to Mason's house, it gets much more fun.  Things start with you modeling the one purchase the guys had only
-  helped you pick out at the lingerie store, they hadn't got to see you in it.
+  <<if $AcademicProbationDenial>>
+    Once the party has relocated to Mason's house there's a few more drinks.  You know what you want, but are too nervous to say it.  On your way back
+    from the bathroom, you spot a box next to the dryer.  Seeing what's in it, you know exactly what to do.  You grab a few things from the top of the box
+    and go back into the bathroom to change.
+    <br><br>
+    Your friends' jaws drop when you walk back into the living room wearing nothing but Mason's ex-girlfriend's lingerie and holding a box of condoms
+    he'd never had a chance to open before they broke up.
+  <<else>>
+    Once the party has relocated to Mason's house, it gets much more fun.  Things start with you modeling the one purchase the guys had only
+    helped you pick out at the lingerie store, they hadn't got to see you in it.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -7029,8 +7148,18 @@
 <</nobr>>
 
 <<nobr>>
-  You remember the first time better than the others, your three friends all fucking you at once.  Afterward there were cheers and high-fives, and
-  then more beer.
+  You remember the first time better than the others, your three friends all fucking you at once.
+  <<if $AcademicProbationDenial>>
+    You feel their cocks to different degrees.  The one that should feel the best, you feel the least, but the way it fills you feels so right, it
+    makes you happy you did this and wonder why you didn't before.  You wonder how good it would feel if you weren't on the denial from your probation.
+    You can't wait to find out.  The one in your ass, you can feel it stretching you thrusting inside you, but it doesn't do much for you one way or
+    another.  The one in your mouth, you imagine feels like it always would.  You love the taste of it on your tongue, and the feel of it as it slides across.
+    <br><br>
+    You feel like such a slut, being fucked by all of your friends at once.  This certainly isn't how you'd imagined your first time, but you love it.
+    The way they use you, fucking you even though you won't feel any real pleasure from it, somehow makes you feel even sluttier, and makes you love it
+    even more.
+  <</if>>
+  Afterward there were cheers and high-fives, and then more beer.
 <</nobr>>
 
 <<nobr>>
@@ -7048,6 +7177,14 @@
 <<nobr>>
   As you stand there, still half out of the lingerie you'd worn, you say.  "I could use a ride [[back home|Part14Home5]] in a while."  Then you unfurl
   what's left of what was a full box condoms at the start of last night.  "But there's no reason I need to leave right away."
+  <<if $AcademicProbationDenial>>
+    <br><br>
+    You know Faith and Mark will be disappointed when they learn you won't be working with them anymore to control the impulses your X-Change gave you.
+    This is your body, and you going to start enjoying it.  Well, you will once you get off probation anyway.
+    <<unset $CampusMinistry>>
+    <<set $CampusMinistryFail to 1>>
+    <<set $CampusMinistryFailSummer to 1>>
+  <</if>>
 <</nobr>>
 
 ::Part14Friends4Drink
@@ -7602,6 +7739,179 @@
     <</if>>
 <</nobr>>
 
+::Part14Home5Child
+<<nobr>>
+  <h1>Adjusting to Motherhood</h1>
+  <img src="Part14/Return2.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  <<if $dating.length>>
+    TODO With $dating[0]
+  <<else>>
+    TODO Alone
+  <</if>>
+<</nobr>>
+TODO Part14Home5Child
+- [[Part14End]]
+
+::Part14Home5Adopt
+<<nobr>>
+  <h1>Counting the days</h1>
+  <img src="Part14/Return1.png" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You are happy to back on campus and seeing all your friends again, and away from the judgemental eye of your father.  You are also happy that your body
+  has returned back to it's normal size.  Well, you think it has, although you wonder if maybe your breasts are still a bit larger than they were before
+  your pregnancy.
+<</nobr>>
+
+<<nobr>>
+  Even though you feel like everything else is back to normal, the doctor says you still have to wait a couple more weeks before you can
+  'resume normal sexual activity'. You still don't know if you can wait that long.  You wonder exactly what he means by 'normal activity'.
+  You wonder if that means
+  <<if setup.areDating('Veronica')>>
+    lesbian sex
+  <<elseif $PlayerSideEffectAnal and (!$PlayerSideEffectOral or $PlayerSideEffectAnal > $PlayerSideEffectOral)>>
+    anal
+  <<else>>
+    oral
+  <</if>>
+  is still ok.  You're going to assume it does.
+  <<if $dating.length>>
+    $dating[0] is almost as eager as you, so he'll certainly be willing to give it a shot.
+  <<else>>
+    Now that you are back on campus, it should be too hard to find someone to help you check.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Hopefuly that will get you by for the next couple weeks until your last visit with the OB.  Then things should [[return to normal|Part14End]] for you.
+<</nobr>>
+
+::Part14Home5Ministry
+<<nobr>>
+  <h1>TODO Ministry w/o Denial</h1>
+  <img src="Part14/Return5.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+TODO Part14Home5Ministry
+- [[Part14End]]
+
+::Part14Home5MinistryFail
+<<nobr>>
+  <h1>TODO</h1>
+  <video src="Part14/Return4.webm" autoplay loop muted height="550"></video>
+<</nobr>>
+TODO Part14Home5MinistryFail
+- [[Part14End]]
+
+::Part14Home5MinistryDenial
+<<nobr>>
+  <h1>TODO w/ Andrew after Ministry Denial</h1>
+  <img src="Part14/Return3.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+TODO Part14Home5MinistryDenial - Eager to get denial lifted
+- [[Part14End]]
+
+::Part14Home5Veronica
+<<nobr>>
+  <h1>Back to School</h1>
+  <img src="Part14/Return6.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+TODO Part14Home5Veronica
+- [[Part14End]]
+
+::Part14Home5BoyfriendStrict
+<<nobr>>
+  <h1>Back to School</h1>
+  <video src="Part14/Return8.webm" autoplay loop muted height="550"></video>
+<</nobr>>
+TODO Part14Home5BoyfriendStrict
+
+::Part14Home5Peter
+<<nobr>>
+  <h1>Back to School</h1>
+  <video src="Part14/Return7.webm" autoplay loop muted height="550"></video>
+<</nobr>>
+TODO Part14Home5Peter
+
+- [[Part14End]]
+::Part14Home5Boyfriend
+<<nobr>>
+  <h1>Back to School</h1>
+  <video src="Part14/Return9.webm" autoplay loop muted height="550"></video>
+<</nobr>>
+
+TODO Part14Home5Boyfriend
+- [[Part14End]]
+
+::Part14Home5General
+<<nobr>>
+  <h1>Back to School</h1>
+  TODO <img src="Part14/ReturnX.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+TODO Part14Home5General
+- If Dylan is in chastity
+- If you are in chastity with Dylan having the key
+- If you are in chastity, without Dylan having the key
+- handle academic denial
+- [[Part14End]]
+
+::Part14MakePermanent
+<<nobr>>
+  <<set $PlayerSideEffectPermanent to 1>>
+  <<unset $PlayerDecidePermanent>>
+	<h1>A Woman Forever</h1>
+  <img src="Part13/Decide1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You'd thought about it a lot over the summer, and you are sure of your decision.  So the first thing you do after arriving on campus is stop by the
+  X-Change office.
+<</nobr>>
+
+<<nobr>>
+  You let the doctor know about the decision you've made to make your change permanent.  The doctor discusses the decision with you at length, and confirms
+  that you are aware that any side effects you have will become permanent also.  When you tell her you're sure, she has you sign some forms.
+<</nobr>>
+
+<<nobr>>
+  After she's finished with the other tests that you were scheduled for, she gives you a quick injection and tells you "Congratulations!" and it's done.
+<</nobr>>
+
+<<nobr>>
+  It's not until you are sitting alone at home for a moment that it really starts to sink in.  This is who you are now.  You are a woman now, and you will be
+  for the rest of your life.  And you couldn't be happier about it.
+<</nobr>>
+
+<<nobr>>
+  Eventually your mind drifts back to the present and you start thinking about [[things returning to normal|Part14Home5]] back at school.
+<</nobr>>
+
+<<achievement>>girlpower<</achievement>>
+
 ::Part14Home5
-TODO Part14Home5 - Wrap up at home, Go back with boy/girlfriend if they visited, Brother (or you) still in chastity when you leave? [[Part14End]]
-- DropoutBreeder
+<<nobr>>
+  <<if $PlayerMother>>
+    <<include [[Part14Home5Child]]>>
+  <<elseif $PlayerAdoption>>
+    <<include [[Part14Home5Adopt]]>>
+  <<elseif $PlayerDecidePermanent>>
+    <<include [[Part14MakePermanent]]>>
+  <<elseif $CampusMinistryFailSummer>>
+    <<include [[Part14Home5MinistryFail]]>>
+  <<elseif $CampusMinistry and $AcademicProbationDenial and setup.areDating('Andrew')>>
+    <<include [[Part14Home5MinistryDenial]]>>
+  <<elseif $CampusMinistry>>
+    <<include [[Part14Home5Ministry]]>>
+  <<elseif setup.areDating('Veronica')>>
+    <<include [[Part14Home5Veronica]]>>
+  <<elseif $BoyfriendStrictChastity>>
+    <<include [[Part14Home5BoyfriendStrict]]>>
+  <<elseif setup.areDating('Peter')>>
+    <<include [[Part14Home5Peter]]>>
+  <<elseif $dating.length>>
+    <<include [[Part14Home5Boyfriend]]>>
+  <<else>>
+    <<include [[Part14Home5General]]>> 
+  <</if>>
+<</nobr>>
