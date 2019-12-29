@@ -281,9 +281,11 @@
 
 <<nobr>>
 	<<if setup.areDating('Andrew')>>
+    <<set setup.addInventory('clothes', 'bikini')>>
 		You find out it was Andrew that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you.
 		And the money was for charity after all, so he didn’t mind paying too much for it.
 	<<elseif setup.areDating('Aaron')>>
+    <<set setup.addInventory('clothes', 'bikini')>>
 		You find out it was Daddy that won it. He thought you looked so sexy in it, he didn’t want anyone going home with it but you.
 		And the money was for charity after all, so he didn’t mind paying too much for it.
 	<</if>>
@@ -631,6 +633,11 @@
 		Smurfette, that bare spot on the bench is yours.  Here's your dildo.  We kept it sealed in the box for you since we figured
 		[[that's how you'd want it|Part9DTFInitiationSmurfette]].
 	<</if>>
+  <<if $DTFNickname == 'Smurfette'>>
+    <<set setup.addInventory('toys', 'commemorative dildo (unopened)'>>
+  <<else>>
+    <<set setup.addInventory('toys', 'commemorative dildo'>>
+  <</if>>
 <</nobr>>
 
 ::Part9DTFBlowjob2 <700,9450>
@@ -1424,6 +1431,7 @@ care what she thinks though.  If God didn't want you having sex, why did he make
 ::Part9Task13 <1800,9825>
 <<nobr>>
 	<h1><<print "Strip Club">></h1>
+  <<set setup.addInventory('costumes', 'stripper outfits')>>
 <</nobr>>
 
 <<print "At the end of the night, you’ve collected quite a stack of cash for the fundraiser. (Much more than Brooke/Cherry did). Your sororities sisters are thrilled at how much you were able to make.">>

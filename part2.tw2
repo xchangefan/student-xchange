@@ -3,6 +3,8 @@
 	<<set $PlayerMentorPick = 0>>
 	
 	<h1><<print "Dormitories">></h1>
+  <<set setup.addInventory('clothes', 'shirts')>>
+  <<set setup.addInventory('clothes', 'sweat pants')>>
 <</nobr>>
 
 <<print "Now, we are going to go over where you’ll be staying your first year here. All freshman stay on-campus in dormitories, so that makes it simpler.">>
@@ -92,8 +94,7 @@
 
 ::Faith2 <600,400>
 <<nobr>>
-	<<set $PlayerClothesDressLong = 1>>
-	
+	<<set setup.addInventory('clothes', 'long dresses')>>
 	<h1><<print "Faith">></h1>
 <</nobr>>
 
@@ -104,9 +105,8 @@
 
 ::Faith3 <800,400>
 <<nobr>>
-	<<set $PlayerUnderwearCotton = 1>>
-	<<set $PlayerSleepwearRegular = 1>>
-	
+  <<set setup.addInventory('underwear', 'cotton underwear')>>
+  <<set setup.addInventory('sleepwear', 'regular sleepwear')>>
 	<h1><<print "Faith">></h1>
 <</nobr>>
 
@@ -118,7 +118,7 @@
 <<nobr>>
 	<<print "They suggested taking you to get your ">>
 	<<link [[ears pierced if you want.|Neighbours2]]>>
-		<<set $PlayerEarsDiamond = 1>>
+    <<set setup.addInventory('piercings', 'diamond earrings')>>
 	<</link>>
 	<<print "With the extra we have left, I can get you some small diamond earrings instead of the plain ones they normally give you! Trust me, they’ll look beautiful on you no matter what you’re wearing.">>
 <</nobr>>
@@ -145,9 +145,7 @@
 
 ::Emily2 <1200,400>
 <<nobr>>
-	<<set $PlayerClothesJeans = 1>>
-	<<set $PlayerClothesShirt = 1>>
-	
+  <<set setup.addInventory('clothes', 'jeans')>>
 	<h1><<print "Emily">></h1>
 <</nobr>>
 
@@ -159,10 +157,9 @@
 
 ::Emily3 <1400,400>
 <<nobr>>
-	<<set $PlayerItemVibrator = 1>>
-	<<set $PlayerUnderweaRegular = 1>>
-	<<set $PlayerSleepwearComfy = 1>>
-	
+  <<set setup.addInventory('toys', 'vibrator')>>
+  <<set setup.addInventory('underwear', 'regular underwear')>>
+  <<set setup.addInventory('sleepwear', 'comfy sleepwear')>>
 	<h1><<print "Emily">></h1>
 <</nobr>>
 
@@ -180,7 +177,7 @@
 <<nobr>>
 	<<print "They gave us money for ">>
 	<<link [[getting your ears pierced.|Neighbours2]]>>
-		<<set $PlayerEarsRegular = 1>>
+    <<set setup.addInventory('piercings', 'stud earrings')>>
 	<</link>>
 	<<print "We could do that, but I have a better idea.">>
 <</nobr>>
@@ -189,7 +186,7 @@
 <<nobr>>
 	<<print "You can ">>
 	<<link [[get your tongue pierced!|Neighbours2]]>>
-		<<set $PlayerPiercedTongue = 1>>
+    <<set setup.addInventory('piercing', 'tongue')>>
 	<</link>>
 	<<print " I got mine done last year. And, oh my god, does my boyfriend love how the piercing feels when I suck his cock. He always loved me giving him head, but he loves it even more now.">>
 <</nobr>>
@@ -221,9 +218,8 @@
 
 ::Hannah2 <2000,400>
 <<nobr>>
-	<<set $PlayerClothesBlouse = 1>>
-	<<set $PlayerClothesSkirt = 1>>
-	
+  <<set setup.addInventoy('clothes', 'blouses')>>
+  <<set setup.addInventoy('clothes', 'skirts')>>
 	<h1><<print "Hannah">></h1>
 <</nobr>>
 
@@ -241,9 +237,8 @@
 
 ::Hannah3 <2200,400>
 <<nobr>>
-	<<set $PlayerSleepwearRegular = 1>>
-	<<set $PlayerUnderwearSexy = 1>>
-	
+  <<set setup.addInventory('sleepwear', 'regular sleepwear')>>
+	<<set setup.addInventory('underwear', 'sexy underwear')>>
 	<h1><<print "Hannah">></h1>
 <</nobr>>
 
@@ -254,13 +249,13 @@
 
 ::Hannah4 <2400,400>
 <<nobr>>
-	<<set $PlayerEarsRegular = 1>>
-	<h1><<print "Hannah">></h1>
+  <<set setup.addInventory('piercings', 'stud earrings')>>
+  <h1><<print "Hannah">></h1>
 <</nobr>>
 <<nobr>>
 	<<print "They have some money here to get your ears pierced. We’ll do that, but I hooked with a body piercer a few weeks ago. I know he’ll give us a deal if you want a second piercing. Here, look what I had him do with my navel, ">>
 	<<link [[maybe you can get one too.|Neighbours2]]>>
-		<<set $PlayerPiercedButton = 1>>
+    <<set setup.addInventory('piercing', 'navel')>>
 	<</link>>
 <</nobr>>
 <img src="Part2/Hannah4A.jpg" hspace="10" vspace="10" height="400">
@@ -280,7 +275,7 @@
 ::Hannah5 <2500,400>
 <<nobr>>
 	<h1><<print "Hannah">></h1>
-	<<set $PlayerPiercedClit = 1>>
+	<<set setup.addInventory('piercings', 'clit hood')>>
 	<<set $sex.push({sex: 'male', name: 'Piercer'})>>
 <img src="Part2/Hannah4C.gif" hspace="10" vspace="10" height="400">
 <</nobr>>
@@ -355,10 +350,9 @@
 
 ::Samantha2 <2800,400>
 <<nobr>>
-	<<set $PlayerClothesDressCasual = 1>>
-	<<set $PlayerClothesJeans = 1>>
-	<<set $PlayerClothesShirt = 1>>
-	
+  <<set setup.addInventory('clothes', 'dresses')>>
+  <<set setup.addInventory('clothes', 'jeans')>>
+  <<set setup.addInventory('clothes', 'blouses')>>
 	<h1><<print "Samantha">></h1>
 <</nobr>>
 
@@ -371,10 +365,9 @@
 
 ::Samantha3 <3000,400>
 <<nobr>>
-	<<set $PlayerUnderwearSexy = 1>>
-	<<set $PlayerUnderwearRegular = 1>>
-	<<set $PlayerSleepwearComfy = 1>>
-	
+	<<set setup.addInventory('underwear', 'sexy underwear')>>
+	<<set setup.addInventory('underwear', 'regular underwear')>>
+  <<set setup.addInventory('sleepwear', 'comfy sleepwear')>>
 	<h1><<print "Samantha">></h1>
 <</nobr>>
 
@@ -384,7 +377,7 @@
 <<nobr>>
 	<<print "They gave us some money to get your ears pierced too. ">>
 	<<link [[They probably just meant the lobes.|Neighbours2]]>>
-		<<set $PlayerEarsRegular = 1>>
+    <<set setup.addInventory('piercings', 'stud earrings')>>
 	<</link>>
 	<<print " But we have enough money left, you could go for something a bit more.">>
 <</nobr>>
@@ -393,7 +386,7 @@
 <<nobr>>
 	<<print "Maybe a helix or an industrial? Why don’t we have the piercer take a look at your ear and then you two can talk about what you want and ">>
 	<<link [[what would work well for your ear.|Neighbours2]]>>
-		<<set $PlayerEarsMultiple = 1>>
+    <<set setup.addInventory('piercings', 'multiple ear piercings')>>
 	<</link>>
 <</nobr>>
 
@@ -418,9 +411,15 @@
 
 ::Olivia2 <3400,400>
 <<nobr>>
-	<<set $PlayerClothesSweat = 1>>
-	<<set $PlayerClothesDressLeather = 1>>
-	
+  <<set setup.addInventory('clothes', 'blouses')>>
+  <<set setup.addInventory('clothes', 'jeans')>>
+  <<set setup.addInventory('clothes', 'dresses')>>
+  <<set setup.addInventory('clothes', 'latex dress')>>
+  <<set setup.addInventory('clothes', 'latex top')>>
+  <<set setup.addInventory('clothes', 'leather top')>>
+  <<set setup.addInventory('clothes', 'leather skirt')>>
+  <<set setup.addInventory('clothes', 'short skirt')>>
+  <<set setup.addInventory('clothes', 'hobble skirt')>>
 	<h1><<print "Olivia">></h1>
 <</nobr>>
 
@@ -432,8 +431,8 @@
 
 ::Olivia3 <3600,400>
 <<nobr>>
-	<<set $PlayerUnderwearErotic = 1>>
-	<<set $PlayerUnderwearRegular = 1>>
+  <<set setup.addInventory('underwear', 'erotic underwear')>>
+	<<set setup.addInventory('underwear', 'regular underwear')>>
 	
 	<h1><<print "Olivia">></h1>
 <</nobr>>
@@ -446,7 +445,7 @@
 
 ::Olivia4 <3800,400>
 <<nobr>>
-	<<set $PlayerChastityBeltInventory = 1>>
+  <<set setup.addInventory('toys', 'chastity belt')>>
 	<<set $PlayerChastityBelt = 1>>
 	<<set $Keyholder to "Robert">>
   <<set $KeyholderPronoun to "he">>
@@ -467,9 +466,8 @@
 
 ::Olivia5 <4000,400>
 <<nobr>>
-	<<set $PlayerEarsRegular = 1>>
-	<<set $PlayerPiercedBreasts = 1>>
-	
+  <<set setup.addInventory('piercings', 'stud earrings')>>
+  <<set setup.addInventory('piercings', 'nipples')>>
 	<h1><<print "Olivia">></h1>
 <</nobr>>
 

@@ -988,7 +988,7 @@
 
 <<nobr>>
   Unfortunately you still have weeks to go before you can do anything about it.
-  <<if $PlayerChastityBeltInventory>>
+  <<if setup.haveInventory('toys', 'chastity belt')>>
     Of course, you are very familiar with what that's like.
   <</if>>
   <<if $PlayerSideEffectBreeder>>
@@ -1100,7 +1100,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $CumslutCollar>>
+  <<if setup.haveInventory('toys', 'cumslut collar')>>
     <img src="Part11/Chastity7.jpg" hspace="10" vspace="10" height="300" align="left">
     His eyes go right to the collar left on your door after Valentine's Day.  The one that says 'CUM SLUT' on it. "Do you want to tell me the story behind this,
     Sis?", he asks.
@@ -1129,7 +1129,7 @@
     <br><br>
     "[[I will later.|Part14BondageToys]]", you tell him as you grab the restraints from his hand and off the ground and stuff it all into a different box.  "For now,
     just help me pick all this up before someone else sees it."
-  <<elseif $PlayerChastityBeltInventory>>
+  <<elseif setup.haveInventory('toys', 'chastity belt')>>
     <img src="Part14/Chastity12.jpg" hspace="10" vspace="10" height="300" align="left">
     His eyes go right to your chastity belt.  "Is that what I think it is?  Don't they work better if you are wearing it?", your brother asks.   "Do you want to
     tell me the story behind this, Sis?", he asks.
@@ -1204,7 +1204,7 @@
 <</nobr>>
 
 <<nobr>>
-  He's having his fun, but you're releived that you had tossed the lock that came with the collar, the one without a key.  It had been too much of a temptation.
+  He's having his fun, but you're relieved that you had tossed the lock that came with the collar, the one without a key.  It had been too much of a temptation.
   You knew you'd lock it on when you were really horny sometime if you kept it around.  At least now, whenever your brother is done playing around, he'll be able
   to unlock the collar.
 <</nobr>>
@@ -5737,7 +5737,7 @@
   "I'm a grown woman!  I'm not going to let you put one of those... things on me.", you say.
   <<if $PlayerChastityBelt>>
     Of course, it'd be hard to do when you are already wearing one.  But you'd rather $Keyholder have the key than your father!
-  <<elseif $PlayerChastityBeltInventory or setup.haveFucked('Locksmith')>>
+  <<elseif setup.haveInventory('toys', 'chastity belt') or setup.haveFucked('Locksmith')>>
     Of course, you've worn one before, but having you Dad hold the key is something else entirely.
   <</if>>
   "Maybe you should wear one!", you yell.  "I saw YOU getting your cock sucked by someone girl my age!  So who are you to judge me!  Maybe Mom should know
@@ -6570,7 +6570,7 @@
 ::Part14BoyfriendFatherChastity
 <<nobr>>
 	<h1>$dating[0] and Your Father Talking</h1>
-  <<if $PlayerChastityBeltInventory>>
+  <<if setup.haveInventory('toys', 'chastity belt')>>
     <<set $tempPlayerChastityBeltPrevious to 1>>
     <img src="Part14/Home75.jpg" hspace="10" vspace="10" height="500" align="left">
   <<else>>
@@ -6613,7 +6613,7 @@
   back to school, it will be wearing this belt."  You stare back at him in shock as you imagine not being able to orgasm until you return home.  But then
   he adds, "Your boyfriend will be holding the key, as you've proven yourself incapable of self-restraint.  Go put it on now.  I'll send you with my credit
   card to get her measured for a more secure one this afternoon."
-  <<if $PlayerChastityBeltInventory>>
+  <<if setup.haveInventory('toys', 'chastity belt')>>
     <br><br>
     "Actually sir, that part won't be necessary.", $dating[0] says. "I already have a secure belt for her.  I let her go without it during the trip since I assumed she would
     be safe away from school.  I won't make that mistake again."  Your father then instructs you to wear that one instead.
@@ -6635,7 +6635,7 @@
 <<nobr>>
 	<h1>Locked on Father's Orders</h1>
   <img src="Part14/Home76.jpg" hspace="10" vspace="10" height="650" align="left">
-  <<set $PlayerChastityBeltInventory = 1>>
+  <<set setup.addInventory('toys', 'chastity belt')>>
 	<<set $PlayerChastityBelt = 1>>
 	<<set $Keyholder to $dating[0]>>
   <<set $KeyholderPronoun to "he">>

@@ -2093,7 +2093,7 @@ You’re even used by a few women, using strap-ons, or their own fist.
 ::Part11CumslutCollar <14600,10500>
 <<nobr>>
   <h1>Your Room</h1>
-  <<set $CumslutCollar to 1>>
+  <<set setup.addInventory('toys', 'cumslut collar')>>
 <</nobr>>
 <img src="Part11/Chastity7.jpg" hspace="10" vspace="10" height="600" align="left"/>
 <<nobr>>
@@ -3083,7 +3083,7 @@ Kim: Oh, is that what I typed?
       <</if>>
       "</li>
     <</if>>
-    <<if ($PlayerPiercedClit and !$PlayerChastityBelt) or $PlayerEarsMultiple or $PlayerPiercedTongue or $PlayerPiercedButtonBelly or $PlayerPiercedBreasts>>
+    <<if (setup.haveInventory('piercing', 'clit hood') and !$PlayerChastityBelt) or setup.haveInventory('piercing', 'multiple ear piercings') or setup.haveInventory('piercing', 'tongue') or setup.haveInventory('piercing', 'navel') or setup.haveInventory('piercing', 'nipples')>>
       <li>"Piercings are disgusting, why would she do that to herself."</li>
     <</if>>
     <<if $PlayerChastityBelt && setup.haveFucked('Cody') && !setup.haveFuckedVaginal('Cody')>>

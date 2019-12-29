@@ -11,7 +11,7 @@ setup.removeItem = function (arr, item) {
 	if (index < 0) {
 		return arr
 	} else {
-  	return arr.splice(0,index).concat(arr.splice(index+1))
+  	return arr.slice(0,index).concat(arr.slice(index+1))
 	}
 }
 
@@ -101,6 +101,40 @@ $(document).on('keyup', function (e) {
 		Engine.backward();
 	}
 });
+
+::InventoryFunctions [script] <275,50>
+setup.addInventory = function (itemClass, itemName) {
+  if (!state.active.variables.inventory[itemClass]) {
+    state.active.variables.inventory[itemClass] = []
+  }
+  state.active.variables.inventory[itemClass] = setup.addIfNeeded(state.active.variables.inventory[itemClass], itemName)
+}
+
+setup.haveInventory = function (itemClass, itemName) {
+  if (!state.active.variables.inventory[itemClass]) {
+    return false
+  } else {
+    return state.active.variables.inventory[itemClass].indexOf(itemName) >= 0
+  }
+}
+
+setup.removeInventory = function(itemClass, itemName) {
+  if (setup.haveInventory(itemClass, itemName)) {
+    state.active.variables.inventory[itemClass] = setup.removeItem(state.active.variables.inventory[itemClass], itemName)
+    return true;
+  } else {
+    return false;
+  }
+}
+
+setup.listInventory = function(itemClass) {
+  if (!state.active.variables.inventory[itemClass]) {
+    return "none"
+  } else {
+    return state.active.variables.inventory[itemClass].join(", ")
+  }
+  
+}
 
 ::SexFunctions [script] <300,50>
 setup.sexCount = function () {

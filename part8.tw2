@@ -582,9 +582,12 @@
 ::Part8HomeMall4 <1600,6600>
 <<nobr>>
 	<<if !setup.areDating('Aaron')>><<set $PlayerMoney -= 150>><</if>>
-	<<if !$PlayerUnderwearSexy>><<set $PlayerUnderwearSexy = 1>><<else>><<set $PlayerUnderwearErotic = 1>><</if>>
-	<<set $PlayerItemSpecialVibrator = 1>>
-
+	<<if !setup.haveInventory('underwear', 'sexy underwear')>>
+    <<set setup.addInventory('underwear', 'sexy underwear')>>
+  <<else>>
+    <<set setup.addInventory('underwear', 'erotic underwear')>>
+  <</if>>
+  <<set setup.addInventory('toys', 'remote vibrator')>>
 	<h1><<print "Shopping Mall">></h1>
 <</nobr>>
 
@@ -934,7 +937,7 @@
 <<print "You know if you hadn’t changed he’d be asking about relationships and who you’d been with, but he avoids that topic entirely.  You don’t mention it either.">>
 
 <<nobr>>
-	<<if !$KidnapEscape and ($BrotherFlashed or $BrotherThong or $PlayerPiercedTongue)>>
+	<<if !$KidnapEscape and ($BrotherFlashed or $BrotherThong or setup.haveInventory('piercing', 'tongue'))>>
 		<<set $BrotherCrush = 1>>
 		<<print "You can tell he has a bit of crush on you or something making him uncomfortable, probably ">>
 		<<if $BrotherFlashed>>
@@ -1048,7 +1051,7 @@
 <<nobr>>
 	<<print "He starts to cover himself, but you put a hand under the covers, grab his still-hard cock and pick up where he left off. He soon stops trying to hide it and just ">>
 	<<link "closes his eyes again in pleasure.">>
-		<<if $PlayerPiercedTongue>>
+		<<if setup.haveInventory('piercing', 'tongue')>>
 			<<goto [[Part8EveningBrother2]]>>
 		<<else>>
 			<<if $PlayerChastityBelt or $PlayerSideEffectOral>>
@@ -1392,8 +1395,7 @@
 
 ::Part8Christmas2 <200,7425>
 <<nobr>>
-	<<set $PlayerClothesOutfitLatexPink = 1>>
-	
+  <<set setup.addInventory('clothes', 'pink latex suit')>>
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
 

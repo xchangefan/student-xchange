@@ -168,6 +168,7 @@
 <<nobr>>
   <h1>Spring Break</h1>
   <img src="Part12/Start1.jpg" hspace="10" vspace="10" height="600"/>
+  <<set setup.addInventory('clothes', 'bikini')>>
 <</nobr>>
 
 <<nobr>>
@@ -800,6 +801,7 @@ from your drunken friends. You do your best to let him know just how appreciativ
 <<nobr>>
   <h1>On the Beach</h1>
   <img src="Part12/Daddy5.jpg" hspace="10" vspace="10" height="600"/>
+  <<set $IslandNudity to 1>>
 <</nobr>>
 
 <<nobr>>
@@ -925,6 +927,7 @@ from your drunken friends. You do your best to let him know just how appreciativ
 <<nobr>>
   <h1>On the Island</h1>
   <img src="Part12/Daddy9.jpg" hspace="10" vspace="10" height="600"/>
+  <<set setup.addInventory('clothes', 'sheer-topped dress')>>
 <</nobr>>
 
 <<nobr>>
@@ -969,6 +972,7 @@ from your drunken friends. You do your best to let him know just how appreciativ
 <<nobr>>
   <h1>Back on the Mainland</h1>
   <img src="Part12/Daddy11.jpg" hspace="10" vspace="10" height="600"/>
+  <<unset $IslandNudity>>
 <</nobr>>
 
 <<nobr>>
@@ -3214,7 +3218,7 @@ Plenty of it is spent back in your hotel room having even more fun with just you
   <h1>Locksmith's Shop</h1>
   <img src="Part12/Chastity9.jpg" hspace="10" vspace="10" height="800" align="left"/>
   <<unset $PlayerChastityBelt>>
-  <<unset $PlayerChastityBeltInventory>>
+  <<set setup.removeInventory('toys', 'chastity belt')>>
   <<unset $Keyholder>>
   <<unset $MasterRobert>>
 <</nobr>>
@@ -3453,7 +3457,7 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 <<nobr>>
   <h1>By the Pool</h1>
   <video src="Part12/Film6.mp4" autoplay loop muted height="600"></video>
-  <<set $PlayerMermaidTail to 1>>
+  <<set setup.addInventory('costumes', 'mermaid')>>
 <</nobr>>
 
 <<nobr>>
@@ -3645,7 +3649,7 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerSideEffectOral or $PlayerPiercedTongue>>
+  <<if $PlayerSideEffectOral or setup.haveInventory('piercing', 'tongue')>>
     [[The producer comes over when she sees you struggling|Part12MermaidLegs]].
   <<else>>
     The producer comes over when she sees you struggling.  She puts her arms around you and grabs your ass for a
@@ -3683,7 +3687,7 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 
 <<nobr>>
   “Mermaids have to earn their legs. And they earn it by giving others pleasure.”, she tells you.
-  <<if $PlayerPiercedTongue>>
+  <<if setup.haveInventory('piercing', 'tongue')>>
     She slides her finger into your mouth and rubs it across your pierced tongue,
   <</if>>
   “You and I both know you’ve been fantasizing all afternoon about getting a taste of what these guys are packing

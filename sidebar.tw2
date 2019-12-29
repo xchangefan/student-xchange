@@ -531,80 +531,32 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <h1>Inventory</h1>
 <<if $PlayerSlave>>
   You own nothing.
+<<elseif $IslandNudity>>
+  <br><br>Your clothing is in storage
+  <<include [[SideBarPiercing]]>>\
+  <<include [[SideBarToys]]>>\
 <<else>>
   <<include [[SideBarClothing]]>>\
   <<include [[SideBarPiercing]]>>\
   <<include [[SideBarCostumes]]>>\
-  <<include [[SideBarOtherInventory]]>>\
+  <<include [[SideBarToys]]>>\
 <</if>>
 
-
 ::SideBarClothing <1000,0>
-<br><br>Wardrobe: \
-<<if $PlayerClothesShirt>><<print "Shirts. ">><</if>>\
-<<if $PlayerClothesBlouse>><<print "Blouses. ">><</if>>\
-<<if $PlayerClothesTopLeather>><<print "Leather Top. ">><</if>>\
-<<if $PlayerClothesSweat>><<print "Sweat Pants. ">><</if>>\
-<<if $PlayerClothesJeans>><<print "Jeans. ">><</if>>\
-<<if $PlayerClothesLeatherJeans>><<print "Leather Jeans. ">><</if>>\
-<<if $PlayerClothesSkirt>><<print "Skirts. ">><</if>>\
-<<if $PlayerClothesSkirtLeather>><<print "Leather Skirts. ">><</if>>\
-<<if $PlayerClothesDressCasual>><<print "Casual Dresses. ">><</if>>\
-<<if $PlayerClothesDressLong>><<print "Long Dresses. ">><</if>>\
-<<if $PlayerClothesDressShort>><<print "Short Dresses. ">><</if>>\
-<<if $PlayerClothesDressLeather>><<print "Leather Dresses. ">><</if>>\
-<<if $PlayerClothesDressPink>><<print "Pink Dresses. ">><</if>>\
-<<if $PlayerClothesOutfitLatexPink>><<print "Pink Latex Suit. ">><</if>>\
-<<if $PlayerUnderwearCotton>><<print "Cotton Underwear. ">><</if>>\
-<<if $PlayerUnderwearRegular>><<print "Regular Underwear. ">><</if>>\
-<<if $PlayerUnderwearSexy>><<print "Sexy Underwear. ">><</if>>\
-<<if $PlayerUnderwearErotic>><<print "Erotic Underwear. ">><</if>>\
-<<if $PlayerUnderwearPink>><<print "Pink Underwear. ">><</if>>\
-<<if $PlayerSleepwearComfy>><<print "Comfy Sleepwear. ">><</if>>\
-<<if $PlayerSleepwearRegular>><<print "Regular Sleepwear. ">><</if>>\
-<<if $PlayerSleepwearSexy>><<print "Sexy Sleepwear. ">><</if>>\
-\
+<br><br>Wardrobe:\
+<br>- Clothes: <<print setup.listInventory('clothes')>>\
+<br>- Sleepwear: <<print setup.listInventory('sleepwear')>>\
+<br>- Underwear: <<print setup.listInventory('underwear')>>\
 
 ::SideBarPiercing <1200,0>
-<br><br>Piercings: \
-<<if $PlayerEarsRegular>><<print "Stud Earrings. ">><</if>>\
-<<if $PlayerEarsDiamond>><<print "Diamond Earrings. ">><</if>>\
-<<if $PlayerEarsMultiple>><<print "Multiple Earrings. ">><</if>>\
-<<if $PlayerEarsHeart>><<print "Heart Earrings. ">><</if>>\
-<<if $PlayerPiercedTongue>><<print "Tongue. ">><</if>>\
-<<if $PlayerPiercedButton>><<print "Belly button. ">><</if>>\
-<<if $PlayerPiercedBreasts>><<print "Breasts. ">><</if>>\
-<<if $PlayerPiercedClit>><<print "Clit hood. ">><</if>>\
-\
+<br><br>Piercings: <<print setup.listInventory('piercings')>>\
 
 ::SideBarCostumes <1300,0>
-<br><br>Costumes: \
-<<if $PlayerCostumeSchoolgirl>><<print "Sexy Schoolgirl. ">><</if>>\
-<<if $PlayerCostumeLatexKitten>><<print "Latex Kitten. ">><</if>>\
-<<if $PlayerCostumeLatexBondageKitten>><<print "Latex Bondage Kitten. ">><</if>>\
-<<if $PlayerCostumeVampire>><<print "Vampire. ">><</if>>\
-<<if $PlayerCostumeMouse>><<print "Sexy Mouse. ">><</if>>\
-<<if $PlayerCostumeDevil>><<print "Sexy Devil. ">><</if>>\
-<<if $PlayerCostumeKitten>><<print "Sexy Kitten. ">><</if>>\
-<<if $PlayerCostumeTrek>><<print "Sexy Trek Crew. ">><</if>>\
-<<if $PlayerMermaidTail>><<print "Mermaid. ">><</if>>\
+<br><br>Costumes: <<print setup.listInventory('costumes')>>\
 
-::SideBarOtherInventory <1400,0>
-<br><br>Items: \
-<<if $PlayerItemTeddy>><<print "Teddy Bear. ">><</if>>\
-<<if $PlayerCuffs>><<print "Cuffs. ">><</if>>\
-<<if $PlayerThighBands>><<print "Thigh Bands. ">><</if>>\
-<<if $PlayerCollar>><<print "Collar. ">><</if>>\
-<<if $PlayerCollarPink>><<print "Pink Collar. ">><</if>>\
-<<if $PlayerGagPink>><<print "Pink Gag. ">><</if>>\
-<<if $PlayerBondageRope>><<print "Bondage Ropes. ">><</if>>\
-<<if $PlayerItemsVibratingPanties>><<print "Vibrating panties. ">><</if>>\
-<<if $PlayerChastityBeltInventory>><<print "Chastity Belt. ">><</if>>\
-<<if $PlayerItemVibrator>><<print "Vibrator. ">><</if>>\
-<<if $PlayerItemSpecialVibrator>><<print "Remote Vibrator. ">><</if>>\
-<<if $ItemWand>><<print "Magic Wand. ">><</if>>\
-<<if $PlayerItemNerdKey>><<print "Peter's Key. ">><</if>>\
-\
+::SideBarToys <1400,0>
+<br><br>Toys: <<print setup.listInventory('toys')>>
+<br><br><<if $PlayerItemNerdKey>><<print "You have Peter's Chastity Key. ">><</if>>\
 
 ::SideBarChastity <1600,0>
 <<nobr>>
@@ -627,7 +579,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
         $Keyholder has your key.
       <</if>>
     <</if>>
-  <<elseif $PlayerChastityBeltInventory>>
+  <<elseif setup.haveInventory('toys', 'chastity belt')>>
     You have a chastity belt, but you aren't currently locked.
   <</if>>
 <</nobr>>

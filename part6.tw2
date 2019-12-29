@@ -174,7 +174,7 @@
 	<h1>Office Halloween</h1>
 	<img src="Part6/Halloween10.jpg" hspace="10" vspace="10" height="750">
 	<<set $sex.push({sex: 'male', name: 'Paul'})>>
-	<<set $PlayerCostumeSchoolgirl to 1>>
+  <<set setup.addInventory('costumes', 'sexy schoolgirl')>>
 <</nobr>>
 
 <<nobr>>
@@ -902,7 +902,7 @@
 		<<set $sex.push({sex: 'female', name: 'Kate'})>>
 		<<set $sex.push({sex: 'female', name: 'Kate'})>>
 		<<set $sex.push({sex: 'female', name: 'Kate'})>>
-		<<set $PlayerCostumeLatexKitten to 1>>
+  <<set setup.addInventory('costumes', 'latex kitten')>>
 		You love the costume mistress picked out for you.  The way the latex clings to your skin is exhilirating.  You are a little
 		self-conscious at first, going out in public wearing it.
 		<<if $PlayerSideEffectExhibitionist>>
@@ -946,7 +946,7 @@
 		<<set $sex.push({sex: 'male', anon: 'Sexy Fireman', repeat:true})>>
 		<<set $sex.push({sex: 'male', anon: 'Sexy Fireman', repeat:true})>>
 		<<set $sex.push({sex: 'male', anon: 'Sexy Fireman', repeat:true})>>
-		<<set $PlayerCostumeVampire to 1>>
+    <<set setup.addInventory('costumes', 'vampire')>>
 		<img src="Part6/Halloween7.jpg" hspace="10" vspace="10" height="720" align="left"><p/>
 		You see all the sexy costumes the store has, and there's so many you'd love to wear.  But nearly all of them would show everyone
 		the chastity belt you have locked on.  You want to avoid that, so you try to find something that will allow you to conceal it.
@@ -984,10 +984,10 @@
 ::Part6Halloween2  <3000,600>
 <<nobr>>
 	<<if $HalloweenNice>>
-		<<set $PlayerCostumeMouse to 1>>
+    <<set setup.addInventory('costumes', 'sexy mouse')>>
 		<img src="Part6/Halloween5Good.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
 	<<else>>
-		<<set $PlayerCostumeDevil to 1>>
+    <<set setup.addInventory('costumes', 'sexy devil')>>
 		<img src="Part6/Halloween5Bad.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
 	<</if>>
 <</nobr>>
@@ -1321,7 +1321,7 @@
 <<set $sex.push({sex: 'female', name: 'Veronica'})>>
 <<set $sex.push({sex: 'female', name: 'Veronica'})>>
 <video src="Part6/Halloween1.mp4" autoplay loop muted height="640"></video><p/>
-<<set $PlayerCostumeKitten to 1>>
+	<<set setup.addInventory('costumes', 'sexy kitten')>>
 You and Veronica have a blast in your matching 'sexy kitten' costumes.  You both love the looks you get at the party, but really
 there's only one person looking at you that you really care about.  Seeing Veronica in her costume is really turning you on, and
 you are hoping you are having the same effect on her.  You know you are when asks you, "Do kittens go into heat?"
@@ -1341,8 +1341,8 @@ her room.
 	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
 	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
 	<<set $sex.push({sex: 'male', name:$dating[0], vaginal:true, ovulating:true})>>
-	<<set $PlayerCostumeKitten to 1>>
-	<<set $PlayerTailButtplug to 1>>
+	<<set setup.addInventory('costumes', 'sexy kitten')>>
+  <<set setup.addInventory('toys', 'kitten-tail buttplug')>>
 	<video src="Part6/Halloween2.mp4" autoplay loop muted height="540"></video><p/>
 	
 	You have a wonderful time at the Halloween party, and love the looks you get in your 'sexy kitten' costume.  But the whole time
@@ -1365,7 +1365,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 ::Part6HalloweenJerk  <4600,600>
 <img src="Part6/Halloween4.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
 <<nobr>>
-	<<set $PlayerCostumeKitten to 1>>
+	<<set setup.addInventory('costumes', 'sexy kitten')>>
 	At the party Barry leads you around by your 'leash'.  When he sits on the sofa with some of his friends, he doesn't let you sit
 	beside him, you're told to curl up on the floor at his feet.
 	<p/>
@@ -1422,7 +1422,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<nobr>>
 	<<set $sex.push({sex: 'male', name:'Peter'})>>
 	<img src="Part6/Halloween3.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
-	<<set $PlayerCostumeTrek to 1>>
+	<<set setup.addInventory('costumes', 'Star Trek crew')>>
 <</nobr>>
 
 <<nobr>>
@@ -2116,7 +2116,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<img src="Part6/Study5.jpg" hspace="10" vspace="10" height="650">
 	<<elseif $PlayerChastityBelt>>
 		<img src="Part6/Study4.jpg" hspace="10" vspace="10" height="650">
-	<<elseif $PlayerItemWand>>
+	<<elseif setup.haveInventory('toys', 'magic wand')>>
 		<video src="Part6/Study3.webm" autoplay loop muted height="640"></video>
 	<<else>>
 		<video src="Part6/Study2.mp4" autoplay loop muted height="640"></video>
@@ -2729,7 +2729,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</nobr>>
 
 	<<nobr>>
-		You feel very releived when you leave his office.  You can't believe some of those rumors you've heard about him.  He's not like
+		You feel very relieved when you leave his office.  You can't believe some of those rumors you've heard about him.  He's not like
 		that at all.
 	<</nobr>>
 <<else>>
@@ -2745,7 +2745,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</nobr>>
 
 	<<nobr>>
-		You feel very releived when you leave his office.  You can't believe some of those rumors you've heard about him.  He's not like
+		You feel very relieved when you leave his office.  You can't believe some of those rumors you've heard about him.  He's not like
 		that at all.
 	<</nobr>>
 <</if>>
@@ -2836,10 +2836,10 @@ do your best to make a purring sound for a bit before you fall asleep.
 ::Part6Professor5  <17600,600>
 <<nobr>>
 	<<set setup.startDating('Aaron')>>
-	<<set $PlayerClothesDressPink = 1>>
-	<<set $PlayerCollarPink = 1>>
-	<<set $PlayerItemTeddy = 1>>
-	<<set $PlayerGagPink = 1>>
+  <<set setup.addInventory('clothes', 'pink dresses')>>
+  <<set setup.addInventory('toys', 'pink collar')>>
+  <<set setup.addInventory('toys', 'pink gag')>>
+  <<set setup.addInventory('toys', 'teddy bear')>>
 	
 	<h1><<print "Professor’s House">></h1>
 <</nobr>>
@@ -2923,9 +2923,8 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
 	<<set $sex.push({sex: 'male', name:'Aaron'})>>
 	<<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
-	<<set $PlayerUnderwearPink = 1>>
-	<<set $PlayerEarsHeart = 1>>
-	
+  <<set setup.addInventory('underwear', 'pink underwear')>>
+  <<set setup.addInventory('piercings', 'heart earrings')>>
 	<h1><<print "Professor’s House">></h1>
 <</nobr>>
 

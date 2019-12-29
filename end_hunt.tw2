@@ -14,8 +14,8 @@
 
 <<nobr>>
   You are all getting paid to participate, but the amount depends on how you finish, and if you finish at all.  That will also affect what privileges you
-  have during your stay the rest of the summer.  They want to make sure all the prey do there best not to get caught and will punish anyone that doesn't
-  try their best.
+  have during your stay the rest of the summer.  They want to make sure all the prey do their best not to get caught and will punish anyone that doesn't
+  try their hardest, or at least if they think they aren't.
 <</nobr>>
 
 <<nobr>>
@@ -33,9 +33,9 @@
   <<if $PlayerPregnant>>
     The doctor mentioned that the shot he gave you could increase your libido.  "But that will probably just make the hunt that much more fun for you.", he
     had added.  Now all you can think about is being tied and used by hunters.  You wonder if that's from the shot or just normal.  You realize now the doctor
-    never said how long it would take for libido effects to wear off.
+    never said how long it would take for the libido effects to wear off.
     <br><br>
-    <i>You have a much higher libido than you did previously.</i>
+    <i>You have a much higher libido than you did previously (permanently).</i>
     <<if $PlayerSideEffectLibido>>
       <<set $PlayerSideEffectLibido += 2>>
     <<else>>
@@ -536,7 +536,7 @@
 <</nobr>>
 
 <<nobr>>
-  It's dark and you are draped over the hutners shoulder, so you can't see much when of where they take you.  But you hear many more hunters around.  This
+  It's dark and you are draped over the hunter's shoulder, so you can't see much of where they take you.  But you hear many more hunters around.  This
   must be where they are all staying for the night.  They take you into a building and bind you to some posts on the floor.  "Since you are out of the hunt,
   it won't just be us using you.", your captor says as he tightens the straps.  "All the other hunters will want a turn too."
 <</nobr>>
@@ -1189,7 +1189,7 @@
 <</nobr>>
 
 <<nobr>>
-  You pet her pretty blonde hair to try to soothe her, "I..", she starts to speak,but stops remembering her shock collar.  You've figured out whispering
+  You pet her pretty blonde hair to try to soothe her, "I..", she starts to speak, but stops remembering her shock collar.  You've figured out whispering
   won't set yours off.  Even so, it's still normally forbidden and would get you manually shocked if you were caught.  But you figure it'd be ok just this one
   time.  You whisper softly into her ear.  "It's much more fun if you play along.  You must enjoy giving up control, or you wouldn't have came to the resort in
   the first place, right?"
@@ -1272,6 +1272,8 @@
   <img src="PartX/Pet2.jpg" hspace="10" vspace="10" height="640">
   <<unset $PlayerHunted>>
   <<set $PlayerWasHunted to 1>>
+  <<unset $IslandNudity>>
+
 <</nobr>>
 <<nobr>>
   After they cheer your victory they drive you back to the resort to let you take a nice relaxing bath to wash away all the sweat and dirt, and
@@ -1404,6 +1406,7 @@
 
 ::IslandHuntSubmissive
 <<nobr>>
+  <<set $IslandNudity to 1>>
   <<if $HuntWinner>> 
     <h1>Submissive for the Week</h1>
     <img src="PartX/Pet7.jpg" hspace="10" vspace="10" height="640" align="left">
@@ -1641,9 +1644,10 @@
   <<set $sex.push({sex: 'male', anon:'Resort Guest', vaginal:true, noCondom:true, noPullout:true})>>
   <<set $sex.push({sex: 'male', anon:'Resort Guest', repeat:true})>>
   <<set $sex.push({sex: 'male', anon:'Resort Guest', repeat:true})>>
-  <<set $sex.push({sex: 'male', anon:'Resort Worker', vaginal:true, condom:true})>>  <<set $PlayerCostumeLatexBondageKitten to 1>>
+  <<set $sex.push({sex: 'male', anon:'Resort Worker', vaginal:true, condom:true})>> 
+  <<set setup.addInventory('costumes', 'latex bondage kitten')>>
   You've been looking at a certain item in the display case for weeks now.
-  <<if $PlayerCostumeLatexKitten>>
+  <<if setup.haveInventory('costumes', 'latex kitten')>>
     You have something similar, but much this one is so much more exciting
   <</if>>
   It's a locking latex catsuit, complete with cute little ears on the hood.  And once you're locked into it, someone else - someone with the key, will need
@@ -1891,6 +1895,7 @@
   <<unset $student>>
   <<set $Dropout to "Pet">>
   <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+  <<set setup.addInventory('toys', 'permanent collar')>>
 <</nobr>>
 <<nobr>>
   You tell him you'd love to stay!  After you sign the contract, he gives you some time to call your family and friends and let them know that your
@@ -1952,6 +1957,9 @@
     <<unset $PlayerProtectionPill>>
     <<unset $PlayerProtectionPermanent>>
     <<unset $PlayerProtectionPerfect>>
+    <<set setup.addInventory('toys', 'chastity belt')>>
+    <<set $Keyholder to "The resort manager">>
+    <<set $PlayerChastityBelt to 1>>
     "I have some exciting news for you.  The doctor has informed me of how fertile you are, so we are giving you a special assignment.", the manager tells you.
     "Some of our guests are looking for more than just casual fun.  They are wanting children, but don't want to be or can't get pregnant.  They'll pay us, and
     also you, a sizable amount if you carry the child they want for them.
@@ -1987,4 +1995,6 @@
 <video src="PartX/GameOver6.mp4" autoplay loop muted height="480"></video>
 <<set $PlayerPregnant to 1>>
 <<unset $AcademicProbationDenial>>
+<<unset $Keyholder>>
+<<unset $PlayerChastityBelt>>
 <<achievement>>breedingPet<</achievement>>

@@ -444,7 +444,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $PlayerPiercedTongue>>
+	<<if setup.haveInventory('piercing', 'tongue')>>
 		Near the end of the interview, you notice a confused look from him and you wonder if maybe you should have removed the tongue ring
 		before the interview.  Sure enough, the questions about your piercing start.  You offer to remove it for work if it's a problem, but
 		he seems much more interested in it than concerned about it.
@@ -576,8 +576,8 @@
 ::JobWebModel1 <2550,1250>
 <<nobr>>	
 	<<set $MasterRobert = 1>>
-	<<set $PlayerClothesTopLeather = 1>>
-	<<set $PlayerClothesSkirtLeather = 1>>
+  <<set setup.addInventory('clothes', 'leather top'>>
+  <<set setup.addInventory('clothes', 'leather skirt'>>
 	<h1><<print "Web Model">></h1>
 <</nobr>>
 <<print "Olivia introduces you to her master. He has a name, of course, but you aren’t allowed to use it. At first he has you call him “Sir”, but eventually you are calling him “Master” as well. He unlocks you from your chastity belt for your first modeling session.">>
@@ -1471,7 +1471,7 @@
 	<<unset $PlayerChastityBelt>>
 	<<unset $Keyholder>>
 	<<set $OliviaChastityBelt = 1>>
-	<<unset $PlayerChastityBeltInventory>>
+	<<set setup.removeInventory('toys', 'chastity belt')>>
 	<h1><<print "Campus Library - Restricted Section">></h1>
 <</nobr>>
 
@@ -1871,7 +1871,7 @@
 	<img src="Part3/JobOffice2.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 
-<<print "You love the feel of Paul's cock as it slides into your mouth. You are still learning how to best use your ">><<if $PlayerPiercedTongue>><<print "pierced ">><</if>><<print "tongue to add to his pleasure, but from his moans you know you’re doing good so far.">>
+<<print "You love the feel of Paul's cock as it slides into your mouth. You are still learning how to best use your ">><<if setup.haveInventory('piercing', 'tongue')>><<print "pierced ">><</if>><<print "tongue to add to his pleasure, but from his moans you know you’re doing good so far.">>
 
 <<print "It isn’t that long until you begin to feel his cock twitch in your mouth. You swallow every drop of his warm cum, and then tease his cock with your tongue as you slide his cock from your mouth.">>
 
@@ -1900,7 +1900,7 @@
 <<print "You notice he also hired a ‘personal assistant’ around the same time as you. She doesn’t actually seem to do much work, and spends a great deal of time in his office with the door closed. But it’s not your concern so you ignore it.">>
 <img src="Part3/JobOffice4.jpg" hspace="10" vspace="10" height="650">
 
-<<print "Until his ‘assistant’ is away on vacation that is. He calls you in to his office and explains how he can help your career, if you just give him a little demonstration of ">><<if $PlayerPiercedTongue>><<print "your tongue piercing. “I googled tongue piercings after your interview, and I’ve been wondering what yours would feel like on my cock ever since.”">><<else>><<print "your oral skills. “I’ve been watching you every day after your interview, and I’ve been wondering what your lips would feel like around my cock ever since.”">><</if>>
+<<print "Until his ‘assistant’ is away on vacation that is. He calls you in to his office and explains how he can help your career, if you just give him a little demonstration of ">><<if setup.haveInventory('piercing', 'tongue')>><<print "your tongue piercing. “I googled tongue piercings after your interview, and I’ve been wondering what yours would feel like on my cock ever since.”">><<else>><<print "your oral skills. “I’ve been watching you every day after your interview, and I’ve been wondering what your lips would feel like around my cock ever since.”">><</if>>
 
 <<print "You explain to him that it is never going to happen. But he is still going to help your career. And he’s never going try something like this again with you, or anyone else. That is, if he doesn’t want HR finding out about this meeting, and his wife finding out about his “assistant”.">>
 
@@ -1979,7 +1979,7 @@
 
 <<print "You make it clear to him what you’re offering. Your visits together aren’t going to help his career. And they aren’t going to help his cock.  He’s going to spend his lunch hour, every day, eating your pussy.">>
 
-<<if $PlayerPiercedTongue>><<print "You visibly rub your piercing along your lip. ">><</if>><<print "Then you let him know, that maybe, once every few weeks, you might stop by his place after work to return the favor.">>
+<<if setup.haveInventory('piercing', 'tongue')>><<print "You visibly rub your piercing along your lip. ">><</if>><<print "Then you let him know, that maybe, once every few weeks, you might stop by his place after work to return the favor.">>
 
 [[Spend some time on campus.|Part6Start1]]
 
@@ -2190,9 +2190,9 @@
 
 ::JobWebModel2 <2550,1375>
 <<nobr>>
-	<<set $PlayerCuffs = 1>>
-	<<set $PlayerThighBands = 1>>
-	<<set $PlayerCollar = 1>>
+  <<set setup.addInventory('toys', 'collar')>>
+  <<set setup.addInventory('toys', 'cuffs')>>
+  <<set setup.addInventory('toys', 'thigh bands')>>
 	<h1>Web Model</h1>
 <</nobr>>
 <img src="Part3/JobOlivia2.jpg" hspace="10" vspace="10" height="650" align="left">

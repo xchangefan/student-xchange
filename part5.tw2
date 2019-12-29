@@ -258,12 +258,11 @@
 
 ::Part5Andrew <0,3125>
 <<nobr>>
-	<<set $PlayerClothesDressLong = 0>>
-	<<set $PlayerUnderwearCotton = 0>>
-	<<set $PlayerSleepwearRegular = 0>>
-	<<set $PlayerClothesDressShort = 1>>
-	<<set $PlayerUnderwearSexy = 1>>
-	<<set $PlayerSleepwearSexy = 1>>
+	<<set setup.removeInventory('clothes', 'short dresses')>>
+  <<set setup.removeInventory('clothes', 'short skirts')>>
+  <<set setup.removeInventory('underwear', 'cotton underwear')>>
+	<<set setup.addInventory('underwear', 'sexy underwear')>>
+  <<set setup.addInventory('sleepwear', 'lingerie')>>
 	<<set $Roommate to "Andrew">>
 	
 	<h1><<print "Andrew’s Apartment">></h1>
@@ -994,8 +993,7 @@
 
 ::Part5EmilyWatch <1225,3125>
 <<nobr>>
-	<<set $PlayerItemWand = 1>>
-	
+  <<set setup.addInventory('toys', 'magic wand')>>
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
 
@@ -1841,8 +1839,7 @@
 
 ::Part5Thrill2 <350,2875>
 <<nobr>>
-	<<set $PlayerClothesLeatherJeans = 1>>
-	
+	<<set setup.addInventory('clothes', 'leather jeans'>>
 	<h1><<if $Mentor == 'Emily'>><<print "Your New Bedroom">><<else>><<print "Zack’s Bedroom">><</if>></h1>
 <</nobr>>
 
@@ -1855,8 +1852,7 @@
 
 ::Part5Thrill3 <350,3125>
 <<nobr>>
-	<<set $PlayerItemsVibratingPanties = 1>>
-	
+	<<set setup.addInventory('toys', 'vibrating panties')>>
 	<h1><<print "Classroom">></h1>
 <</nobr>>
 

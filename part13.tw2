@@ -1388,6 +1388,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <<set $sex.push({sex: 'male', name:'Aaron'})>>
   <<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
   <<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+  <<set setup.addInventory('toys', 'bunny-tail buttplug')>>
 <</nobr>>
 <<nobr>>
   When Daddy tells you he bought you a special outfit for Easter, you're worried you'll have to dress up.  But you are pleasantly surprised when you open the
@@ -1782,7 +1783,6 @@ Of course, in addition to your school work and being whored out by Barry, you al
       <br><br>
       You're thrilled to hear $Keyholder is sending you home without your belt on for safety reasons.  It wouldn't be good to go into labor with your 
       chastity belt still on!
-      <<set $PlayerChastityBeltInventory to 1>>
       <<set $PlayerChastityBelt to 0>>
     <</if>>
   <<elseif $PlayerChastityBelt>>
@@ -3374,6 +3374,9 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <img src="Part13/BaristaB1.jpg" hspace="10" vspace="10" height="650">
   <<unset $JobBarista>>
   <<set $JobBikiniBarista to 1>>
+  <<set setup.addInventory('clothes', 'bikini')>>
+  <<set setup.addInventory('underwear', 'sexy underwear')>>
+  <<set setup.addInventory('sleepwear', 'lingerie')>>
 <</nobr>>
 <<nobr>>
   Your [[first day|Part13BikiniBarista2]] at the new job starts great.
@@ -5049,7 +5052,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 	<h1>Telling Peter</h1>
   <video src="Part13/Pregnant6.webm" autoplay loop muted height="500"></video>
   <<set $StatedFather to 'Peter'>>
-  <<if setup.areDating('Peter')>>
+  <<if !setup.areDating('Peter')>>
     <<set setup.startDating('Peter')>>
   <</if>>
   <<set $sex.push({sex: 'male', name: 'Peter'})>>
