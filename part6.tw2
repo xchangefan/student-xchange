@@ -326,10 +326,16 @@
 	<<elseif $SubjectPunish == 3>>
 		<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
 			"Implant Birth Control Permanently Deactivated - Ovulation likely within next 24 hours"
-			<<unset $PlayerProtectionPerfect>>
-			<<unset $PlayerProtectionPermanent>>
-			<<set $PlayerProtectionNone to 1>>
-		<<set $SubjectBirthControlChange to 1>>
+      <<if $PlayerProtectionPerfect>>
+  			<<unset $PlayerProtectionPerfect>>
+  			<<set $PlayerProtectionNone to 1>>
+    		<<set $SubjectBirthControlChange to 1>>
+      <</if>>
+      <<if $PlayerProtectionPermanent>>
+    		<<unset $PlayerProtectionPermanent>>
+  			<<set $PlayerProtectionNone to 1>>
+    		<<set $SubjectBirthControlChange to 1>>
+	    <</if>>
 		<<elseif $PlayerProtectionFertile>>
 			<<set $SubjectPunishLastMessage to 4>>
 			"ERROR - Fertility Feature Already Active"  The dildo plunges into you again and you feel it release something inside you, but less than
@@ -349,9 +355,9 @@
 			"Implant Enhanced Fertility Feature Permanently Activated - Oral Contraceptives Ineffective - Ovulation likely within next 24 hours"
 			<<if $PlayerProtectionPill>>
 				<<set $SubjectBirthControlChange to 1>>
+  			<<unset $PlayerProtectionPill>>
+  			<<set $PlayerProtectionNone to 1>>
 			<</if>>
-			<<unset $PlayerProtectionPill>>
-			<<set $PlayerProtectionNone to 1>>
 			<<set $PlayerProtectionFertile to 1>>
 		<</if>>
 	<<elseif $SubjectPunish == 4>>

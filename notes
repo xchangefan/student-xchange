@@ -2,25 +2,22 @@
 Changes/fixes before next release
 TODO Says "Hannah is your mentor and roommate . Your neighbours are Zack and Barry" even though living with Aaron
 TODO Part14 Add similar Bar choice (to what is currently in Kate Path) for when working at the Bar in other situations
-TODO If using condoms, then do the engineering halloween event and get the fertility punishment, doesn't handle birth control correctly later on or in sidebar.  (Says none used, or multiple things)
-TODO Part13/Boyfriend5.webm is not reachable (not a bug, just an impossible path).  see about using the image on a different path
 TODO - If Mistress Kate put a chastity belt on the player character then there will be a reaction from Master Robert, but if Master Robert place a chastity belt on
 TODO   the player character, then there are no reaction from Mistress Kate and the game continue like no chastity belt have been placed on the player. This could also be an opportunity to expand the story between the player character and between Mistress Kate and Master Robert.
-TODO - "At the Big Game" in Part 13 if in Chastity doesn't seem to show anything with Chastity
 TODO - Change Bartender job first screen.  I don't like the way the choices flip around
-TODO - What if pregnant with Andrew and opt for adoption?  Currently ignores that.
 TODO - Side effects from birth control shot on abroad path? (Trouble thinking? Horniness?)
-TODO - I have noticed that on the Andrew relationship line, if the person get pregnant in the first round and decides to check the baby's gender and says a boy or a girl. But later in the story it is always a girl that the person gives birth to at the end of the story. If you Update the game maybe fix this some how.
-TODO - make 100% option bith control cause a side effect (maybe libido, maybe random) whenever it prevents a pregnancy
-TODO - sidebar doesn't mention Peter if you have his key and not dating him (Samantha as mentor, Peter as neighbor, side-job at stripclub)
 TODO - Add note at halloween special project regarding "Denial" side effect.
+
+TODO - Add job-related inventory
 =======
 Changes made in Part 14
 - Added Achievements
 - Added player name input (defaults to a random common name), includes this in save text
 - Reworked neighbour selection and introduction
 - Reworked job selection screen a bit
-- Changed experimental birth control
+- Changed experimental birth control, increased likelyhood of failure for original, added a second option that works but causes side effects
+- Reworked internals of inventory management
+- Minor bug/scenario-combination fixes
 =======
 TODO achievements
 - Current achievements
@@ -87,13 +84,11 @@ TODO achievements
   - Change to track horniness.  If you are very horny then you won't turn down sex if offered.
   - Track how you are doing in school.  If you are very horny and don't masturbate or have sex then you can't focus on school and do poorly.  Maybe also work depending on the job
 
-
 ============================================================
 Label when you don't get a choice because of your side effects?
 ============================================================
 Add story option for veronica + porn star ?
 End path for porn star ?
-Nerd: Work in key-holding for him if you aren’t already (and aren’t in a relationship, or maybe if you are but with no sex).  Continuing with him.  Maybe a loving path and a cuckolding path?
 ——
 [quote]Any plans for the mentors to join some of the sororities?[/quote]
 I didn't have any plans about it, but I'm open to ideas if you had any.
@@ -109,11 +104,10 @@ Suggestions from tfgames:
 - should be more side-effects in exchange for some perks - perhaps being able to customize body type for 1 side-effect each?
     
 Back-end
-- Revamping inventory
 - Revamping body / side effect system
 
 Earlier Parts:
-- Consider making Job an array and/or eliminating side-jobs
+- Consider eliminating side-jobs from beginning (still have them at the student loan part)
 - Part85Submissive1: Change to make text specific and not "Your Lover"
 - Sorority w/Veronica - Sidebar doesn't change roommate (is this fixed now?)
 
@@ -126,6 +120,7 @@ Sidebar
 - side effects: Look at text for higher levels.  They don't have any effect currently beyond the base level
 - Student Life balance: Change text of different levels.  Can say you are a bad student even if you specifically say you are a good one
 - Add item pictures and descriptions to inventory.  (Including situational things ie. "Vibrator: staring at it only reminds you of the orgasms you are denied in your chastity belt")
+- consider adding additional side effect from second implant birth control option.  Triggered every time it prevents a pregnancy
 
 ================
 Overall notes
@@ -150,8 +145,11 @@ Unknown Endings
 - Cheerleader D (Something leading into University’s backstory?)
 - Engineer
 - Test Subject. (Something leading into University’s backstory?)
+- Peter
+  - Loving ending
+  - Cuckold ending
+  - Submissive to him ending
 - Nothing specific to job
 	- Fitness Center
 	- Library
-
 - Single mother still in school

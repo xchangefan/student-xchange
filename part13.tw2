@@ -1104,7 +1104,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
   <</if>>
   <h1>With $dating[0]</h1>
   <<if $PlayerPregnant>>
-    <video src="Part13/Boyfriend5.webm" autoplay loop muted height="600"></video>
+    <video src="Part14/Pregnant9.webm" autoplay loop muted height="600"></video>
   <<elseif $PlayerProtectionCondoms>>
     <video src="Part13/Boyfriend2.webm" autoplay loop muted height="600"></video>
   <<elseif $PlayerProtectionWithdraw and !$tempNoPullOutNoWarn and !$tempNoPullOutBeg>>
@@ -2316,7 +2316,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <</nobr>>
 <<nobr>>
   <<if $PlayerPregnant>>
-    Obviously in your current state, you are doing much cheerleading.  But you still enjoy cheering the team on from the stands.  You also enjoy watching your
+    Obviously in your current state, you aren't doing much cheerleading.  But you still enjoy cheering the team on from the stands.  You also enjoy watching your
     squad perform for the crowd.  Though as you watch them and remember how recently you had you fit into those skimpy uniforms,  You can't help but to glance
     down at your own body, and marvel at how much different it looks right now.
     <br><br>
@@ -2332,6 +2332,10 @@ Of course, in addition to your school work and being whored out by Barry, you al
     <<else>>
       It excites you a bit knowing all these people are watching you perform.
     <</if>>
+    <<if $PlayerChastityBelt and $Keyholder == "Robert">>
+      You also enjoy being out of your chastity belt for a while too.  Though Master Robert sends Olivia to watch every time.  For some reason
+      he just doesn't trust that Veronica would like you back up at the end of every game.
+    <</if>>
     <br><br>
     <<if setup.areDating('Veronica')>>
       Your need builds and builds until you hear the final buzzer.  It all must have an effect on Veroncia as well.  After most games the two of you
@@ -2343,6 +2347,14 @@ Of course, in addition to your school work and being whored out by Barry, you al
       on the way to make sure he is there waiting like a good boy.
     <<elseif $dating.length>>
       Your need builds and builds until you hear the final buzzer.  After most games you [[hurry home|Part13CheerleaderBoyfriend]] to be with $dating[0]
+    <<elseif $PlayerChastityBelt and $Keyholder == "Robert">>
+      Your need builds and builds until you hear the final buzzer.  Olivia is waiting right there when you walk off the court to pass along
+      Master Robert's orders to get back in the belt.  She knows she has to be quick if she is going to catch you before you
+      <<if either(0,1,2,3,4) == 4>>
+        head down to the guys' locker room.  She's [[not always fast enough though|Part13CheerleaderTeam]].
+      <<else>>
+        [[head down to the guys' locker room|Part13CheerleaderTeamChastity]].
+      <</if>>
     <<elseif $PlayerSideEffectPheromones>>
       If the crowd watching you wasn't enough, the smell of the athletes working up a sweat running back and forth across the court is more
       than you can bear.  It's all you can do to make until the final buzzer.  You quickly make your way to the locker room as soon as you can.
@@ -2480,6 +2492,39 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <</nobr>>
 
 <<include [[Part13AfterJob]]>>
+
+::Part13CheerleaderTeamChastity <14190,4110>
+<<nobr>>
+	<h1>After the Big Game</h1>
+  <video src="Part13/Cheer8.webm" autoplay loop muted height="600"></video>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete'})>>
+<</nobr>>
+<<nobr>>
+  <<if !$PlayerSideEffectPheromones>>
+    You tremble with anticipation as you walk down to their locker room.  You can barely believe what you are doing as you push the door open and walk in.  The
+    team wonders what you are doing there at first, but as you drop to your knees, they quickly figure it out and start lining up.
+    <br><br>
+  <</if>>
+  They've been running around for over an hour, and their musky order fills your nose as you suck their cocks one after another.  It takes
+  you a while before you've served them all.
+<</nobr>>
+
+<<nobr>>
+  When they are all finally satisfied, you are still dripping with need, but that can't be helped.  You make your way over to your own lockerroom
+  to clean up. From the smile on your face it's obvious to the rest of your squad where you've been and what you've been doing.  Well, your
+  smile probably isn't the only thing on your face that gives it away.
+<</nobr>>
+
+<<include [[Part13AfterJob]]>>
+<<achievement>>train<</achievement>>
 
 ::Part13CheerleaderTeam <14200,4110>
 <<nobr>>
