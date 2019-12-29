@@ -522,9 +522,6 @@
 
 ::JobBar1 <1050,1625>
 <<nobr>>
-	<<set $Bar1Update = 1>>
-	<<set $Bar1Set = either(1,2,3)>>
-
 	<h1><<print "Bartender">></h1>
 <</nobr>>
 
@@ -532,44 +529,14 @@
 <img src="Part3/JobBar1.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<print "You think you’ll always be at least a bit bi, but when you close your eyes and imagine your ideal partner... ">>
+	<<print "You think you’ll always be at least a bit bi, but when you close your eyes and imagine your ideal partner ">>
 	<<if $PlayerSideEffectSubmissive>>
-		[[nothing, because you are blindfolded, tied down, and helpless.|JobBarSub]]
+		you can't see anything.  Because you know your ideal partner would have [[you blindfolded, tied down, and helpless.|JobBarSub]]
 		<<print " You imagine a tongue between your legs sending waves of pleasure through your body. Does it matter who it belongs to as long as it feels so good?">>
-		<<set $Bar1Set = 4>>
 	<<else>>
-		<span id="Bar1Span">"."</span>
-		<<silently>>
-			<<repeat 100ms>>
-				<<if $Bar1Update>>
-					<<replace "#Bar1Span">>
-						<<switch $Bar1Set>>
-							<<case 1>>
-								<<link "you picture a beautiful woman">>
-									<<set $Bar1Update = 1>>
-									<<set $Bar1Set = 2>>
-								<</link>>
-								<<print " - maybe one of the ">>[[ones that was hitting on you tonight.|JobBarGirl]]
-							<<case 2>>
-								<<link "you picture a handsome man.">>
-									<<set $Bar1Update = 1>>
-									<<set $Bar1Set = 3>>
-								<</link>>
-								<<print " You picture yourself beneath him as he thrusts into you. Damn it, X-Change! You work all day, surrounded by beautiful women hitting on you. But when you close your eyes, ">>[[it’s men you fantasize about.|JobBarGuy]]
-							<<case 3>>
-								<<link "you decide you don’t have time for this.">>
-									<<set $Bar1Update = 1>>
-									<<set $Bar1Set = 1>>
-								<</link>>
-								<<print " Drink orders are stacking up and you need to get back to work and stop  ">>[[goofying off.|JobBarUnsure1]]
-							<<case 4>>
-								<<stop>>
-						<</switch>>
-						<<set $Bar1Update = 0>>
-					<</replace>>
-				<</if>>
-			<</repeat>>
-		<</silently>>
+    do you see a [[a beautiful woman|JobBarGirl]] like the ones that hit on you most nights, or
+    even though you work all day around beautiful women, is it a [[handsome man|JobBarGuy]] you fantasize about?
+    Or do you [[just not know|JobBarUnsure1]] what you want yet?
 	<</if>>
 <</nobr>>
 
