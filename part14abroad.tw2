@@ -1605,6 +1605,7 @@ TODO Coming back into the country after the trip, Keeping all the stuff
   <h1>In the Changing Room</h1>
   <video src="Part14/Collar1.mp4" autoplay loop muted height="480"></video>
   <<set $IslandNudity to 1>>
+  <<set setup.addInventory('toys', 'pet shock collar')>>
 <</nobr>>
 
 <<nobr>>
@@ -1683,6 +1684,7 @@ TODO Coming back into the country after the trip, Keeping all the stuff
   <h1>In the Changing Room</h1>
   <video src="Part14/Collar1.mp4" autoplay loop muted height="480"></video>
   <<set $IslandNudity to 1>>
+  <<set setup.addInventory('toys', 'pet shock collar')>>
 <</nobr>>
 <<nobr>>
   You are expecting two separate changing rooms, but instead you find you are in one large room.  And in addition to you and Barry, the resort has an attendant
@@ -4223,6 +4225,7 @@ TODO Coming back into the country after the trip, Keeping all the stuff
     <video src="Part14/Plane3.mp4" autoplay loop muted height="480"></video>
   </div>
   <<unset $IslandNudity>>
+  <<set setup.removeInventory('toys', 'pet shock collar')>>
   <<set $sex.push({sex: 'male', name:'Barry', vaginal: true, noPullout:true, noCondom:true})>>
 <</nobr>>
 <<nobr>>
@@ -4396,4 +4399,5 @@ TODO Continue with main home for the summer path, skipping some scenes
 
 ::Part14ReturningFromIsland
 <<unset $IslandNudity>>
+<<set setup.removeInventory('toys', 'pet shock collar')>>
 TODO Coming back at then end of summer after spending summer on the island
