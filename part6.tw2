@@ -287,6 +287,12 @@
 				You tug again at your bonds.  "Permanent! Fuck I should have read that disclosure closer!" you say to yourself.
 			<</if>>
 		<</if>>
+	<<elseif $SubjectPunish == 4 and $PlayerSideEffectOrgasmBlock>>
+    "Punishment for Fourth Orgasm: <strong>Corporal Punishment</strong>"
+		<<if $SubjectPunishLastMessage != 4>>
+			You wonder who the hell Corporal Punishment is.  Is there someone from the army going to come in and fuck you?
+      You just hope he does it before they give you the denial treatment.
+    <</if>>
 	<<elseif $SubjectPunish == 4>>
 		"Punishment for Fourth Orgasm: <strong>Live Semen Sample</strong> Used During Male's Orgasm Instead of Simulant for Remainder of Testing"
 		<<if $SubjectPunishLastMessage != 4>>
@@ -360,6 +366,11 @@
 			<</if>>
 			<<set $PlayerProtectionFertile to 1>>
 		<</if>>
+  <<elseif $SubjectPunish == 4 and $PlayerSideEffectOrgasmBlock>>
+    <<set $tempCorporalPunishmentDue to 1>>
+    "Corporal Punishment will be administered after final session"
+  <<elseif $SubjectPunish == 5 and $PlayerSideEffectOrgasmBlock>>
+    "$400 Penalty Applied"
 	<<elseif $SubjectPunish == 4>>
 		"Live Semen Sample deposited"
 		<<if $PlayerProtectionTry>>
@@ -368,10 +379,8 @@
 	<<elseif $SubjectPunish == 5>>
 		"Live Semen Sample deposited, $400 Penalty Applied"
 		<<set $SpecialProjectMoney -= 400>>
-	<<elseif $SubjectPunish == 5>>
-		"Live Semen Sample deposited, $400 Penalty Applied"
-		<<set $SpecialProjectMoney -= 400>>
 	<</if>>
+  <<if $PlayerSideEffectOrgasmBlock>>Another message appears below that reading "Live Semen Sample deposited".<</if>>
 	<<set $SubjectPunish += 1>>
 	<<set $SubjectHorniness to 3>>
 <</nobr>>
@@ -408,6 +417,27 @@
 	"As per the test protocol you signed, this will be our only communication with you during the test.  Your responses will, of course, be recorded for later
 	analysis.  This test will be controlled remotely by male students that have been randomly selected for you.  They will be using a toy on themselves, their
 	actions on the toy will be replicated for you by the machine you are attached to."
+  <<if $PlayerSideEffectOrgasmBlock>>
+    <br><br>
+    "As described in your disclosure form, due to the potential activiation of your implant's denial side-effect the test protocol has been altered
+    slightly in your case.  Specifically, a cream will be applied at the start of the first session that will make the effect less likely to occur
+    during test testing.  As noted, this experimental cream does have a high chance of causing permanent denial with repeated use, but as this is
+    you first time using it, there is no danger today."
+    <br><br>
+    "Additionally, instead of a simulant, real male pre-cum and semen will be used during your testing as this minimizes the chance of triggering
+    your denial effect.  Some punishments have been altered as a result of this."
+    <br><br>
+    <<if $PlayerProtectionTry>>
+      That's Wonderful! I can't believe they are paying me for this,
+    <<elseif $PlayerProtectionCondoms or $PlayerProtectionWithdraw>>
+      Shit, it will be cumming inside me, with no protection, with real cum.  I could get actually get pregnant from this,
+    <<elseif $PlayerProtectionPermanent or $PlayerProtectionPerfect or $PlayerProtectionPill>>
+      Well, it's a good thing I'm on birth control,
+    <<else>>
+      Wouldn't this be a strange way to get pregnant,
+    <</if>>
+    you think to yourself.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -437,7 +467,7 @@
 <<nobr>>
 	<<set $SubjectSessionNumber += 1>>
 	<h1>Session $SubjectSessionNumber of $SubjectSessionTarget</h1>
-	<<if $SubjectSessionNumber == 1>>
+	<<if $SubjectSessionNumber == 1 and ($PlayerProtectionTry or !$PlayerSideEffectOrgasmBlock)>>
 		<video src="Part6/SpecialProject2.mp4" autoplay loop muted height="580"></video><p/>
 	<<else>>
 		<video src="Part6/SpecialProject3.mp4" autoplay loop muted height="580"></video><p/>
@@ -503,7 +533,9 @@
 		<<set $SubjectHorniness += $subjectEnjoyPoints[$SubjectSessionNumber - 1]>>
 	<</if>>
 	<h1>End of Session $SubjectSessionNumber of $SubjectSessionTarget</h1>
-	<<if $SubjectHorniness >= $SubjectOrgasmThreshold>>
+  <<if $PlayerSideEffectOrgasmBlock>>
+    <img src="Part6/SpecialProject11.jpg" hspace="10" vspace="10" height="600">
+	<<elseif $SubjectHorniness >= $SubjectOrgasmThreshold>>
 		<<if $SubjectPunish > 3>>
 			<img src="Part6/SpecialProject11.jpg" hspace="10" vspace="10" height="600">
 		<<elseif $SubjectPunish > 1>>
@@ -723,13 +755,13 @@
 		<</if>>
 	<</if>>
 
-	<<set $sex.push({sex: 'male', anon: 'Remote Tester', vaginal: true, birthControlOverride: ($SubjectPunish > 3) ? false : 'goo', ovulating: true, noCondom: true, noPullout: true})>>
+	<<set $sex.push({sex: 'male', anon: 'Remote Tester', vaginal: true, birthControlOverride: ($PlayerSideEffectOrgasmBlock or $SubjectPunish > 3) ? false : 'goo', ovulating: true, noCondom: true, noPullout: true})>>
 <</nobr>>
 
 <<nobr>>
 	<<if $SubjectHorniness >= $SubjectOrgasmThreshold>>
 		<<include [[SpecialProjectPunishAdministerMessage]]>>
-	<<elseif $SubjectPunish > 4>>
+	<<elseif $SubjectPunish > 4 or $PlayerSideEffectOrgasmBlock>>
 		You see the screen over you flash red with the message  "Live Semen Sample deposited"
 		<<if $PlayerProtectionTry>>
 			You do your best to suppress a smile. 
@@ -865,35 +897,137 @@
 <</nobr>>
 <<achievement>>train<</achievement>>
 
+::SpecialProjectCorporalPunishment <2300,600>
+<<nobr>>
+	<h1>Engineering Department</h1>
+	<video src="Part6/SpecialProject13.mp4" autoplay loop muted height="480"></video><p/>
+  <<unset $tempCorporalPunishmentDue>>
+  <<set $CorporalPunishment to 1>>
+<</nobr>>
+<<nobr>>
+  She leads you into another room and binds you to wooden cross.  Then another technician wheels a machine out.  You wonder how it's going
+  to fuck you since she had you put your panties back on.  Then when you see him attach a whip to the machine and carefully measure
+  the machines distance to you realize what the machine is for.  You really start to worry as he adjust the height to be level with your breasts
+  and remeasure making sure the whip reaches both breasts.
+  <<if $PlayerSideEffectSubmissive>>
+    <br><br>
+    When the technician sees how excited you are getting as your are bound and then measured for the whip, she warns you, "Even if this is
+    something you would normally get off on, you certainly won't tonight.  That denial gel they just applied will keep you from getting
+    aroused at all tonight.  You'll only feel the pain.  Don't worry, you'll be able to get aroused again tomorrow.  The orgasms will take
+    much longer to come back though."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You try not to cry out in pain when the first strike hits directly across your breast.  Then another one follows and it hurts even more than
+  the first.  You try to prepare yourself for each one, but you soon discover the machine controlling them randomizes the times between
+  each strike.  There might be two, three, or four in quick succession, or there might be ten or even twenty seconds between each one.  Every
+  time one hits you are unprepared again for the pain that comes with it.
+<</nobr>>
+
+<<nobr>>
+  The wouldn't tell you how long this was going to last, and you have no idea how much time has passed.  When the machine doesn't strike
+  for a while you are dreading that it will hit you many times in a row suddenly to make up for the moment of peace.  You are releived
+  when you see the [[female technician aproaches you|SpecialProjectCorporalPunishment2]].  You know she wouldn't come between you and the
+  whip if it was still going.
+<</nobr>>
+
+::SpecialProjectCorporalPunishment2 <2300,600>
+<<nobr>>
+	<h1>Engineering Department</h1>
+	<video src="Part6/SpecialProject14.mp4" autoplay loop muted height="480"></video><p/>
+<</nobr>>
+<<nobr>>
+  She's wearing gloves again.  This time she sprays something on your chest and rub it all over your breasts.  You don't mind as the searing
+  pain you still felt is gone almost instantly.  Then she uncuffs you from the cross you'd been attached to at lets you down.
+<</nobr>>
+
+<<nobr>>
+  You can't help but touch your breast and are surprised that there isn't any pain at all.  "It only takes it a few seconds for the healing
+  spray to set, so it should be safe to touch now. Your breasts will heal up without a mark by morning.", she says.  Then she adds,
+  "They'll probably still be quite sensitive for about a week, you'll need to leave them uncovered.  We'll right you a note for your
+  professors."
+<</nobr>>
+
+<<nobr>>
+  When you ask when you should return to class she clarifies, "The note is to explain why you are topless in class, of course.  Not
+  to excuse you from class entirely.  We wouldn't you to fall behind."  You realize, you'll be expected to continue your
+  normal schedule for the next week, even though you [[won't be able to wear much of anything|SpecialProjectCorporalPunishment3]] covering
+  your chest.
+<</nobr>>
+
+::SpecialProjectCorporalPunishment3 <2300,600>
+<<nobr>>
+	<h1>School Cafeteria</h1>
+	<video src="Part6/SpecialProject15.webm" autoplay loop muted height="580"></video><p/>
+  When your schedule alows, you try to go to visit the cafeteria when it's less busy as your current state usually attracts a lot of attention.
+  While normally that might be fun, it's something you want to avoid this week.
+<</nobr>>
+
+<<nobr>>
+  The guys most likely to hit on you right now, obviously will want to play with your breasts, since that's what brought the to your table.
+  But they are far too sensitive for that right now.  And besides, you're still unable to get off and will be for weeks after your breasts
+  return to normal.
+<</nobr>>
+
+<<nobr>>
+  You know you won't be able to wait a month or two for sex, but that's ok.  Not be able to get off you can handle, intense pain from
+  having your breast squeezed right now, you can't.
+<</nobr>>
+
+<<nobr>>
+  You are relieved finally when you discover your breasts are no longer affected, and you can go back to dressing normally.  Finally, things will
+  be back to normal.
+<</nobr>>
+
+<<include [[SpecialProjectNextSceneBase]]>>
+
+::SpecialProjectNextSceneBase <2375,600>
+<<nobr>>
+  <<if $SubjectOrgasmDenialGoo>>
+    Well, except for how horny you are all the 
+    <<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
+      time, though maybe that isn't that unusual for you [[thanks to your chastity belt|Part6StartBeltMaster]].
+    <<elseif $MasterKate>>
+      time, though maybe that isn't that unusual for you [[thanks to your Mistress's instructions|Part6StartBeltMaster]].
+    <<elseif $PlayerGoodStudent>>
+      time.  But still [[you need to study to keep up your grades|Part6StartGood]].
+    <<elseif $PlayerLazyStudent>>
+      time.  But still [[you want to have what fun you can|Part6StartLazy]].
+    <<else>>
+      time.  But still [[you want to study to keep your grades decent, but you also want to have what fun you can|Part6StartAverage]].
+    <</if>>
+  <<else>>
+    Of course, for you that means
+    <<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
+      [[you constantly feel horny because of this belt you are in.|Part6StartBeltMaster]]
+    <<elseif $MasterKate>>
+      [[you constantly feel horny because of your Mistress's instructions.|Part6StartBeltMaster]]
+    <<elseif $PlayerGoodStudent>>
+      [[you want to study to keep up your grades.|Part6StartGood]]
+    <<elseif $PlayerLazyStudent>>
+      [[you just want to have fun.|Part6StartLazy]]
+    <<else>>
+      [[you study to keep your grades decent, but you also want to have fun.|Part6StartAverage]]
+    <</if>>
+  <</if>>
+<</nobr>>
+
 ::SpecialProjectNextScene <2400,600>
 <<nobr>>
-	Everything is fairly normal for you for the next couple weeks.
-	<<if $SubjectOrgasmDenialGoo>>
-		Well, except for how horny you are all the 
-		<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
-			time, though maybe that isn't that unusual for you [[thanks to your chastity belt|Part6StartBeltMaster]].
-		<<elseif $MasterKate>>
-			time, though maybe that isn't that unusual for you [[thanks to your Mistress's instructions|Part6StartBeltMaster]].
-		<<elseif $PlayerGoodStudent>>
-			time.  But still [[you need to study to keep up your grades|Part6StartGood]].
-		<<elseif $PlayerLazyStudent>>
-			time.  But still [[you want to have what fun you can|Part6StartLazy]].
-		<<else>>
-			time.  But still [[you want to study to keep your grades decent, but you also want to have what fun you can|Part6StartAverage]].
-		<</if>>
-	<<else>>
-		Of course, for you that means
-		<<if $PlayerChastityBelt and !setup.areDating('Veronica')>>
-			[[you constantly feel horny because of this belt you are in.|Part6StartBeltMaster]]
-		<<elseif $MasterKate>>
-			[[you constantly feel horny because of your Mistress's instructions.|Part6StartBeltMaster]]
-		<<elseif $PlayerGoodStudent>>
-			[[you want to study to keep up your grades.|Part6StartGood]]
-		<<elseif $PlayerLazyStudent>>
-			[[you just want to have fun.|Part6StartLazy]]
-		<<else>>
-			[[you study to keep your grades decent, but you also want to have fun.|Part6StartAverage]]
-		<</if>>
+  <<if $tempCorporalPunishmentDue>>
+    You are still lying there bound in place, covered in the denial goop they squirted in and onto you when someone comes in.  She is
+    wearing latex gloves as she hoses you down until the goo is no longer visible.  You suppose they don't need it on you anymore, now
+    that it's done it's work.  Then they [[lead you into another room|SpecialProjectCorporalPunishment]].
+  <<else>>
+    <<if $SubjectOrgasmDenialGoo>>
+      You are still lying there bound in place, covered in the denial goop they squirted in and onto you when someone comes in.  He is
+      wearing latex gloves as he hoses you down until the goo is no longer visible.  You suppose they don't need it on you anymore, now
+      that it's done it's work.  Once that is done, he releases you.
+      <br><br>
+    <</if>>
+    Everything is fairly normal for you for the next couple weeks.
+    <<include [[SpecialProjectNextSceneBase]]>>
 	<</if>>
 <</nobr>>
 
