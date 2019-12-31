@@ -3354,7 +3354,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <<nobr>>
   You and many of your coworkers take Brian out for drinks after his last day.  He hadn't talked much about where he was going before, just that it was a different
   coffee place.  But now, he opens up a bit more.  You find out the place he'll be managing next only has women baristas.  You also find out that they'll be wearing
-  bikini's, or something like that instead of regular clothes and aprons like you do now.
+  bikinis, or something like that instead of regular clothes and aprons like you do now.
 <</nobr>>
 
 <<nobr>>
@@ -4816,6 +4816,9 @@ Of course, in addition to your school work and being whored out by Barry, you al
     <<set $PregnancySpring to 1>>
     You are pregnant!
     <<achievement>>pregnant<</achievement>>
+    <<if setup.pregnantFirstTime() and !$PlayerProtectionTry>>
+      <<achievement>>firsttime<</achievement>>
+    <</if>>
     <<if !$PlayerSideEffectPermanent>>
     	<<set $PlayerSideEffectPermanent to 1>>
       She also reminds you that, of course the effects of your implant are permanent now.  This will be the body you have for the rest of your life.

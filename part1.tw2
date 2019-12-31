@@ -422,7 +422,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 <<nobr>>
 	<<print "You will gain ">><span id="PlayerSideEffects">$PlayerSideEffects</span><<print " ">>
-  <<if $ExperimentalPregnancyOption>>
+  <<if $ExperimentalPregnancyOption == 2>>
     [[side effects|BodySideEffectLibido][$PlayerSideEffects += 1]].
   <<else>>
     [[side effects|BodySideEffects]].

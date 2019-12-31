@@ -20,6 +20,13 @@
 <<nobr>>
 	<h1>At the Gas Station</h1>
   <img src="Part14/Drive3.jpg" hspace="10" vspace="10" height="500">
+  <<if !$CampusMinistry>>
+    <<set setup.addInventory('toys', 'magic wand')>>
+  <</if>>
+  <<if $PlayerSideEffectSubmissive and !$CampusMinistry>>
+    <<set setup.addInventory('toys', 'cuffs')>>
+    <<set setup.addInventory('toys', 'yoke')>>
+  <</if>>
 <</nobr>>
 <<nobr>>
   You're filling up your little economy car when you see a guy pull up to the pump next to your with a GT-R.  You can't help yourself and are soon staring at it.
@@ -321,8 +328,8 @@
     thoughts you have.  (Even those thoughs can be fun too, you admit in a moment of honesty.)
     <br><br>
     Hearing your father support your change, and talk about how he knows this is who you were always meant helps you decide for sure.  You aren't going
-    to change back to your old body.  This is who you are supposed to be.  You'll stop by an X-Change office if you have a chance, or when you get back to
-    school, and tell them to make it permanent for you.
+    to change back to your old body.  This is who you are supposed to be.  You'll stop by an X-Change office when you get back to school, and tell
+    them to make it permanent for you.
   <</if>>
 <</nobr>>
 
@@ -531,7 +538,7 @@
 <<nobr>>
   "I suppose if you'd taken the easy route and had an abortion, I never would have know.", your father says.  You bristle at his comment.
   <<if $PlayerSideEffectBreeder>>
-    You would never abort one of your babies.  You realize are already imagining your next pregnancy, and the one after that.
+    You would never abort one of your babies.  You realize you are already imagining your next pregnancy, and the one after that.
   <<else>>
     There was nothing 'easy' about that decision for you.
   <</if>>
@@ -896,7 +903,7 @@
   <<set $tempBaby to $tempBabyName[$BabyGirl].shift()>>
 <</nobr>>
 <<nobr>>
-  Once you get to the labor and delivery room they changing you out of your comfortable clothes and into an itchy hospital gown that doesn't
+  Once you get to the labor and delivery room they change you out of your comfortable clothes and into an itchy hospital gown that doesn't
   cover much.  When your water breaks and you make a mess of it, you toss it asside.  You tell them not to bother with another one.  You are hot
   and sweaty already and it's just you and
   <<if $dating.length>>$dating[0]<<else>>Cassie<</if>>
@@ -1123,7 +1130,7 @@
     <br><br>
     "[[I will later.|Part14ChastityCage]]", you tell him as you grab the cage from his hand and stuff it into a different box.  "For now, just help me pick all
     this up before someone else sees it."
-  <<elseif $PlayerSideEffectSubmissive or !$AcademicProbationDenial>>
+  <<elseif ($PlayerSideEffectSubmissive and !$AcademicProbationDenial)>>
     <img src="Part14/Bondage1.jpg" hspace="10" vspace="10" height="300" align="left">
     His eyes go right to your bondage restraints.  "Looks like someone has had a fun time at college.  Care to share any stories, Sis?", your brother asks.
     <br><br>
@@ -1408,7 +1415,7 @@
 ::Part14ChastityBelt
 <<nobr>>
 	<h1>Upstairs with Dylan</h1>
-  <<if $PlayerChastityBelt>>
+  <<if $PlayerChastityBelt or ($dating.length and !setup.areDating('Peter'))>>
     <img src="Part14/Chastity20.jpg" hspace="10" vspace="10" height="450" align="left">
   <<else>>
     <img src="Part14/Chastity12.jpg" hspace="10" vspace="10" height="300" align="left">
@@ -1444,6 +1451,36 @@
   <<if $PlayerChastityBelt>>
     "God.  That's so hot sis.", your brother tells you.  "I'm going to go in my room and jerk off.  Since I can".  He smiles as he walks out.  His teasing
     only reminds you of what you are already very familiar with.  You decide to try to take your mind off it with a [[hot bath|Part14HomeBath]].
+  <<elseif setup.areDating('Peter')>>
+    "I can't believe it'd fit so snug you couldn't even get a finger under it.  Can you show me?", he asks.
+    <br><br>
+    "No, I won't.", you tell hime.  "You'll just have to trust me." then you head to the bathroom for [[the bath you had planned|Part14HomeBath]].
+  <<elseif $dating.length>>
+    <<set $PlayerChastityBelt to 1>>
+    <<set $Keyholder to $dating[0]>>
+    <<if setup.areDating('Veronica')>>
+      <<set $KeyholderPronoun to "she">>
+      <<set $KeyholderPronounPossessive to "her">>
+    <<else>>
+      <<set $KeyholderPronoun to "he">>
+      <<set $KeyholderPronounPossessive to "his">>
+    <</if>>
+    Then he notices the other locks in the box.  The ones that are open but without keys.  "$dating[0] has the keys to those.", you tell him.
+    <br><br>
+    "So if you lock these on right now, you wouldn't be able to do anything until $dating[0] gets here?  God that's hot.  Do it!"  You question
+    whether you should or not, but he keeps encouraging you.  "You wouldn't have brought them if you weren't planning on doing it, would you."
+    <br><br>
+    "But... but I was going to do it the week before $dating[0] was suppose to arrive, not at the beginning of the summer.", you plead.  You aren't
+    trying to convince Dylan but rather to talk down the part of yourself that wants to lock the belt on.
+    <br><br>
+    "Think how horny you'll be when $dating[0] gets here.", Dylan points out.  You lose the battle to resist putting on the belt.
+    <br><br>
+    Dylan watches as you strip down and put on the belt.  He watches as you click the locks closed knowing the keys are hundreds of miles away.
+    He stares and admires you in your belt for a bit.  Then he says, "God.  That's so hot sis.  Now I'm going to go in my room and jerk off.
+    Since I can.".  He smiles as he walks out.
+    <br><br>
+    You decide you might as well take that [[hot bath|Part14HomeBath]] you were planning before calling $dating[0] know you've locked your
+    belt on..
   <<else>>
     "I can't believe it'd fit so snug you couldn't even get a finger under it.  Can you show me?", he asks.
     <br><br>
@@ -1514,7 +1551,10 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerSideEffectSubmissive > 3>>
+  <<if $dating.length>>
+    "You [[tell him no|Part14HomeBath]],  The thought of being helpless is already turning you on, and you don't want things to get out of hand.
+    Play time will have to wait until you are with $dating[0] again.
+  <<elseif $PlayerSideEffectSubmissive > 3>>
     "[[Sure.|Part14BondageToysYes]]", you say.  You wonder if it's a good idea, but you can't resist being tied up, even if it's just for a minute or two.
   <<elseif setup.haveFucked('Dylan')>>
     "[[Sure.|Part14BondageToysYes]]", you say.  You wonder what Dylan will do to you once you are tied up and helpless.  You can feel yourself already starting
@@ -2267,12 +2307,22 @@
     <<set $NeverGameRound to 6>>
     But before you or Cassie can answer, Cassie notices the time.  "Oh.  We have to leave.", she says explaining that she's meeting her boyfriend soon and
     needs to [[head home to get ready|Part14HomeSister2]] before then.  "Unless you were wanting to 
-    <<if $PlayerChastityBelt>>
-      [[spend the night here|Part14HomeDaniChastity]] 
+    <<if $dating.length>>
+      spend the night here with Dani and Haley?", cassie adds.  You decide against that, you sense the two of them are up to something, probably
+      something $dating[0]
+      <<if setup.areDating('Peter')>>
+        would love to her all the details of, but you aren't interested.
+      <<else>>
+        wouldn't appreciate.
+      <</if>>
     <<else>>
-      [[spend the night here|Part14HomeDani]] 
+      <<if $PlayerChastityBelt>>
+        [[spend the night here|Part14HomeDaniChastity]] 
+      <<else>>
+        [[spend the night here|Part14HomeDani]] 
+      <</if>>
+      with Dani and Haley?", Cassie adds. 
     <</if>>
-    with Dani and Haley?", Cassie adds. 
   <</if>>
 <</nobr>>
 
@@ -2817,21 +2867,23 @@
 <</nobr>>
 
 <<nobr>>
-  Back home she says, "You are welcome to join us this evening.
-  <<if setup.haveFucked('Greg')>>
-    Greg has a friend that will probably be joining us later too, so it should be even more fun than last time!"
-  <<else>>
-    Greg is really looking forward to meeting you."  You tell her you are worried about being a 'third wheel', but she says not to worry about it.
-    "One of his friends might be join us later too.
-    <<if !$dating.length || setup.areDating("Peter")>>Who knows? Maybe the two of you will hit it off.  Regardless,<</if>>
-    I'm sure everyone will have a great time."
+  <<if $dating.length and !setup.areDating('Peter')>>
+    Back home she says, "You are welcome to join us this evening.
+    <<if setup.haveFucked('Greg')>>
+      Greg has a friend that will probably be joining us later too, so it should be even more fun than last time!"
+    <<else>>
+      Greg is really looking forward to meeting you."  You tell her you are worried about being a 'third wheel', but she says not to worry about it.
+      "One of his friends might be join us later too.
+      <<if !$dating.length or setup.areDating("Peter")>>Who knows? Maybe the two of you will hit it off.  Regardless,<</if>>
+      I'm sure everyone will have a great time."
+    <</if>>
+    <br><br>
   <</if>>
-<</nobr>>
-
-<<nobr>>
-  <<if setup.haveFucked('Greg') and (!$dating.length or setup.areDating('Peter'))>>
+  <<if $dating.length and !setup.areDating('Peter')>>
+    "I feel bad [[leaving you here|Part14Home3]] while I go have fun.", Cassie says. "But you'll be able to be with $dating[0] soon I hope."
+  <<elseif setup.haveFucked('Greg')>>
     As much fun as you had last time, you aren't about to say no.  "Of course I want [[to go with you|Part14HomeSister3]].", you tell her.
-  <<elseif $AcademicProbationDenial and (!$dating.length or setup.areDating('Peter'))>>
+  <<elseif $AcademicProbationDenial>>
     You know you can't get off thanks to your probation, but you crave it.  Not just the orgasm you know you can't have, but just the feel
     of someone inside you.  "Of course I want [[to go with you|Part14HomeSister3]].", you tell her.
   <<else>>
@@ -3294,7 +3346,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $BrotherCallGirl>>
+  <<if $BrotherCallGirl and (!$dating.length or setup.areDating('Peter'))>>
     "Yeah, it went great.  He was a lot of fun.", you tell Dylan as you flip through the stack of money Ryan left.  You're still surprised at how much
     extra he left for you.  Clearly he had a good time.
     <br><br>
@@ -3773,7 +3825,11 @@
 <</nobr>>
 
 <<nobr>>
-  You bite your lip a bit as you contemplate [[staying to see where things lead|Part14Cheerleader2]], or
+  <<if $dating.length>>
+    "Well, I think you probably need some time alone.", you tell Dylan as you glance at the bulge he's showing.  Then you start
+  <<else>>
+    You bite your lip a bit as you contemplate [[staying to see where things lead|Part14Cheerleader2]], or
+  <</if>>
   <<if $PlayerSideEffectMasturbationBlock or $AcademicProbationDenial>>
     [[heading up to take a shower|Part14CheerleaderShower]],
   <<else>>
@@ -4616,6 +4672,8 @@
   <<elseif $DylanCumslutCollar>>
     But you and Dylan decided you'd rather not go anyway.  You and Dylan change plans and decide to skip the pool and go to a movie instead. Of course once
     everyone is gone, neither of you [[actual go to the movie theater|Part14CumslutCollar5]].
+  <<elseif $dating.length and $Keyholder == $dating[0]>>
+    You tell everyone that you aren't feeling well and [[stay home|Part14Home4]], counting the days until you can see $dating[0] again.
   <<else>>
     You don't know whether to tell everyone you aren't feeling well and [[stay home|Part14Home4]], or to just accept that
     [[people are going to find out|Part14Home3ChastityLocked]] eventually anyway.
@@ -4668,6 +4726,8 @@
   In one motion, you kneel and pull of the t-shirt that you'd put on after changing out of your swimsuit.on.  "No.  It wouldn't be out of the question at all.", you tell a shocked Mason as you start to unbuckle
   and pull down his pants.  [[Your other friends|Part14Home3ChastityLocked3]] watch on as you get started sucking your friend's cock.
 <</nobr>>
+
+<<achievement>>friends<</achievement>>
 
 ::Part14Home3ChastityLocked3
 <<nobr>>
@@ -4935,7 +4995,9 @@
   "Diane" seems to be comfortable now, so could [[leave her here with "Dylan's" friends|Part14DylanXChangeParty3Alone]].  One of them could give her a
   ride home after the party.  
   <<if $AcademicProbationDenial>>
-    You are tempted to stay and join in the fun, but you know you'd just get be frustrated and denied in the end.  Besides this is 'Diane's not for fun, not yours.
+    You are tempted to stay and join in the fun, but you know you'd just get be frustrated and denied in the end.  Besides this is 'Diane's night for fun, not yours.
+  <<elseif $dating.length>>
+    You are tempted to stay and join in the fun, but you'll save your fun for when $dating[0] gets here. Besides this is 'Diane's night for fun, not yours.
   <<else>>
     Or, you could [[stay at the party with her|Part14DylanXChangeParty3]].
   <</if>>
@@ -5055,6 +5117,8 @@
   [[Tomorow you'll just have the one sister again|Part14Home4]]."  He thinks for a minute then adds, "I mean I had a fun time.  But I'll be happy to be
   back in my own body.  Though... it might be fun to try again sometime too.
 <</nobr>>
+
+<<achievement>>sisters<</achievement>>
 
 ::Part14StripHome
 <<nobr>>
@@ -5186,12 +5250,12 @@
 <</nobr>>
 
 <<nobr>>
-  You make sure his pleasure does last a long time.  You keep him on the edge another half and hour, keeping his toy lubed up, stopping when you see him getting close,
+  You make sure his pleasure does last a long time.  You keep him on the edge another half an hour, keeping his toy lubed up, stopping when you see him getting close,
   and continuing again when it's safe.  Finally you decide it's enough.
 <</nobr>>
 
 <<nobr>>
-  Once you've locked him back in his chastity cage you untie him.  "Now, I want you to watch at least and hour of porn tonight", you instruct him.
+  Once you've locked him back in his chastity cage you untie him.  "Now, I want you to watch at least an hour of porn tonight", you instruct him.
   Don't focus on just the woman though.  I want you to also look at the guy's cock as it slides into her, and imagine how good it must feel for him.
   I'll question you [[Tomorrow morning|Part14Home4]] about it and decide if I'll let you cum next time or not."
 <</nobr>>
@@ -5865,6 +5929,10 @@
 <<nobr>>
   "Well, I could be persuaded to keep quiet.", Dylan says with a smirk.  "I wasn't quick enough to get a photo of that, and I'd really like one.  Maybe if
   you could do that again, I won't tell anyone about it."
+  <<if $DylanChastityKey>>
+    Then he adds, "And I'll be needing the key to this cage back too."  You smile and hand him his key.
+    <<unset $DylanChastityKey>>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -5883,6 +5951,12 @@
 <<nobr>>
   Dylan doesn't say anything about what he saw, or even make the vague hints about your relationship you'd expected.  And he waits patiently until your parents
   are gone before asking again for another kiss, one that he can capture with his phone.
+  <<if $PlayerChastityBelt and $Keyholder == 'Veronica'>>
+    <<unset $PlayerChastityBelt>>
+    <br><br>
+    "Are you good and horny for me baby?", Veronica asks you as she pets your hair.  "Do you want me to unlock you from that mean chastity belt?"
+    Of course you say yes.  She makes Dylan turn around as she takes it off you.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -5902,7 +5976,17 @@
   <<else>>
     [[move this somewhere more private|Part14VeronicaVisit3]].
   <</if>>
-  Your brother can go take care of his own needs himself.  Judging from the bulge in his pants, you assume he's going to do just that right now.
+  "I think that's enough for our deal, don't you think.", you tell Dylan.  He agrees and stops the camera.  "We'll leave you to jerk off to your
+  video of your sister and her girlfriend then.", you say.
+  <<if $DylanChastitySelfLocked>>
+    <br><br>
+    "I won't be doing that.  At least not yet.", he tells you.  "I used that service you told me about and I can't get my key out for another
+    two days!".
+    <br><br>
+    You laugh and tell him, "Well, maybe we'll keep going a bit longer for you then.  No filming though.  You and Veronica increase the intensity
+    of your making out until you can hear Dylan wincing from his cock straining against it's cage.  Ok, we will leave you to your frustration
+    now then."
+  <</if>>
 <</nobr>>
 
 ::Part14VeronicaVisit3
@@ -6163,18 +6247,24 @@
   <img src="Part14/Home74.gif" hspace="10" vspace="10" height="600" align="left">
 <</nobr>>
 <<nobr>>
-  You are excited when $dating[0] calls to let you know he's 30 minutes away.  You change clothes several times, trying to find just the right outfit that you
-  know will turn him on, but won't upset your parents.  You settle on skinny jeans and tight t-shirt, your parents shouldn't object to that.  Of course the
-  new matching bra and panties under that are just for $dating[0] to see.
-<</nobr>>
-
-<<nobr>>
+  <<if !$PlayerChastityBelt>>
+    You are excited when $dating[0] calls to let you know he's 30 minutes away.  You change clothes several times, trying to find just the right outfit that you
+    know will turn him on, but won't upset your parents.  You settle on skinny jeans and tight t-shirt, your parents shouldn't object to that.  Of course the
+    new matching bra and panties under that are just for $dating[0] to see.
+    <br><br>
+  <</if>>
   You greet $dating[0] at the door with chaste kiss and a big hug, knowing your father is watching from his chair.
   After you introduce $dating[0] to your father, your father tells you , "You can help your friend bring in his things, but then I
   <<if $FatherStripClub>>
     [[need to talk to him|Part14BoyfriendFatherChastity]]."
   <<else>>
     [[need to talk to him|Part14BoyfriendFather]]."
+  <</if>>
+  <<if $PlayerChastityBelt>>
+    <br><br>
+    Once you and $dating[0] are alone together, he unlocks your chastity belt.  "I hope you are good and horny for me.", he says.  "Hopefully 
+    it won't be too long before we can have some time alone together."
+    <<unset $PlayerChastityBelt>>
   <</if>>
 <</nobr>>
 
@@ -7022,8 +7112,15 @@
   <h1>Hanging out with Old Friends</h1>
   <<if $CampusMinistry>>
     <img src="Part14/Ministry4.png" hspace="10" vspace="10" height="450" align="left">
+    <<set setup.addInventory('clothes', 'skirts')>>
+    <<set setup.addInventory('clothes', 'blouses')>>
+    <<set setup.addInventory('clothes', 'jeans')>>
   <<else>>
     <video src="Part14/Home31.webm" autoplay loop muted height="500"></video>
+    <<set setup.addInventory('clothes', 'skirts')>>
+    <<set setup.addInventory('clothes', 'blouses')>>
+    <<set setup.addInventory('clothes', 'little black dress')>>
+    <<set setup.addInventory('clothes', 'high heels')>>
   <</if>>
 <</nobr>>
 <<nobr>>
@@ -7186,6 +7283,9 @@
     <<set $CampusMinistryFailSummer to 1>>
   <</if>>
 <</nobr>>
+
+<<achievement>>friends<</achievement>>
+<<achievement>>threesome:MFM<</achievement>>
 
 ::Part14Friends4Drink
 <<nobr>>
@@ -7827,6 +7927,7 @@ TODO Part14Home5Veronica
   <video src="Part14/Return8.webm" autoplay loop muted height="550"></video>
 <</nobr>>
 TODO Part14Home5BoyfriendStrict
+- Dylan's chastity key if you have it
 
 ::Part14Home5Peter
 <<nobr>>

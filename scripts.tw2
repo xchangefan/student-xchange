@@ -308,6 +308,11 @@ setup.getPossibleConceptions = function() {
   })
 }
 
+setup.pregnantFirstTime = function() {
+  const intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
+  return intercourse.length && intercourse[0].conception
+}
+
 setup.notPregnant = function(reason) {
   setup.getPossibleConceptions().forEach(function(fuck) {
     fuck.checkedForPregnancy = reason
@@ -496,6 +501,9 @@ setup.getAchievementDetails = function() {
 		threesome: {parts: ["MFM", "FMF", "FFF"], text: "Three Threesomes: MFM, FMF, and FFF", image: "Threesome.png"},
 		underdog: {text: "Underdog Wins", image: "Underdog.jpg"},
     girlpower: {text: "Choosing This Life", image: "GirlPower.png"},
+    friends: {text: "Friends are Friends Forever", image: "Friends.jpg"},
+    sisters: {text: "Three Sisters", image: "Sisters.jpg"},
+    firsttime: {text: "Beginner's Luck", image: "FirstTime.jpg"},
 
 		slave: {text: "Enslaved", image: "Slave.jpg", isEnding: true},
 		cumslut: {text: "Cum Slut", image: "Cumslut.png", isEnding: true},
@@ -505,7 +513,9 @@ setup.getAchievementDetails = function() {
 		memoryWipe: {text: "Memory Wipe", image: "CleanMind.jpg", isEnding:true},
 		concubine: {text: "Prince's Concubine", image: "Concubine.jpg", isEnding:true},
 		resortPet: {text: "Permanent Vacation", image: "Pet.jpg", isEnding:true},
-    breedingPet: {text: "Breeding Pet", image: "Breeder.jpg", isEnding:true},
+    breedingPet: {text: "Breeding Pet", image: "BreederPet.jpg", isEnding:true},
+    chastity: {text: "Chaste Wife", image: "Chastity.jpg", isEnding:true},
+    breeder: {text: "Professional Surrogate", image: "Breeder.jpg", isEnding:true},
 	}
 }
 

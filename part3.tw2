@@ -45,6 +45,7 @@
 			word for you.  Take a look at the other options too, and let me know if you’re interested.
 	<<elseif $Mentor == 'Hannah'>>
 			<<link [[Hannah's Recommendation (Call Girl)|JobDecided]]>>
+        <<set setup.addInventory('costumes', 'call girl outfits')>>
 				<<set $JobCallGirl = 1>>
 			<</link>>:
 			<i>(Hannah looks around to make sure no one is within earshot.)</i> If you want one of those jobs out in the booths,
@@ -58,6 +59,7 @@
 			<br><br>
 			And even if you do want one of those other jobs, you can still
 			<<link "do this every now and then for some extra money.">>
+        <<set setup.addInventory('costumes', 'call girl outfits')>>
 				<<set $JobCallGirlSide = 1>>
 				<<set $JobSide = 1>>
 				<<goto [[JobList2]]>>
@@ -432,6 +434,7 @@
 	<h1><<print "Office Interview">></h1>
 	<<unset $JobFitnessMassage>>
 	<<unset $JobFitnessYoga>>
+  <<set setup.addInventory('clothes', 'business clothes')>>
 <</nobr>>
 <<nobr>>
 	Emily has her boyfriend setup the interview for you. The job isn’t actually for his brother, but for Paul, a different manager at the company.
@@ -444,7 +447,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if setup.haveInventory('piercing', 'tongue')>>
+	<<if setup.haveInventory('piercings', 'tongue')>>
 		Near the end of the interview, you notice a confused look from him and you wonder if maybe you should have removed the tongue ring
 		before the interview.  Sure enough, the questions about your piercing start.  You offer to remove it for work if it's a problem, but
 		he seems much more interested in it than concerned about it.
@@ -655,6 +658,7 @@
 ::JobCheerleader1 <1650,1625>
 <<nobr>>
 	<h1><<print "Chearleaders Trials">></h1>
+  <<set setup.addInventory('costumes', 'cheerleader uniform')>>
 <</nobr>>
 
 <<print "As you arrive for the first day of cheer practice you quickly learn there are actually two completely different squads of cheerleaders here: “A” squad and “D” squad. You wonder to yourself why “B” and “C” are skipped.">>
@@ -806,6 +810,7 @@
 ::AthleteQualified <1950,1875>
 <<nobr>>	
 	<h1><<print "Athlete Training">></h1>
+  <<set setup.addInventory('costume', 'athletic clothing')>>
 <</nobr>>
 
 <<print "Ladies, congratulations on making the team!">>
@@ -1230,7 +1235,9 @@
 <<nobr>>	
 	<<set $JobFitness = 0>>
 	<<set $JobFitnessYoga = 1>>
-	
+	<<set setup.addInventory('tools', 'yoga mat')>>
+	<<set setup.addInventory('clothes', 'yoga pants')>>
+	<<set setup.addInventory('clothes', 'sports bra')>>
 	<h1><<print "Yoga Class">></h1>
 <</nobr>>
 
@@ -1259,7 +1266,7 @@
   <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
 	<<set $JobFitness = 0>>
 	<<set $JobFitnessMassage = 1>>
-	
+	<<set setup.addInventory('tools', 'massage oils')>>
 	<h1><<print "Fitness Center - Massage Room">></h1>
 <</nobr>>
 
@@ -1385,6 +1392,7 @@
 <<nobr>>
 	<<set $sex.push({sex: 'male', name: 'Library Boss'})>>
 	<h1><<print "Campus Library - Boss Office">></h1>
+  <<set setup.addInventory('tools', 'library key')>>
 <</nobr>>
 
 <<print "You decide making your wardrobe more boring wouldn’t be much fun.">>
@@ -1538,7 +1546,8 @@
 ::JobEngineer2 <2950,1875>
 <<nobr>>
 	<<set $sex.push({sex: 'female', anon: 'Engineering Subject'})>>
-	
+	<<set setup.addInventory('tools', 'engineering toolbox')>>
+	<<set setup.addInventory('tools', 'engineering projects')>>
 	<h1><<print "Engineering Department">></h1>
 <</nobr>>
 
@@ -1743,6 +1752,7 @@
 ::JobBaristaPro1 <300,1750>
 <<nobr>>
 	<h1><<print "Barista">></h1>
+  <<set setup.addInventory('costumes', 'barista apron')>>
 <</nobr>>
 
 <<print "You explain to Andrew about the misunderstanding. He’s very understanding, he comments on how Faith is always trying to play matchmaker, so he’s not really surprised.">>
@@ -1764,6 +1774,7 @@
 <<nobr>>	
 	<<set $sex.push({sex: 'male', name: 'Andrew', vaginal:true})>>
 	<h1><<print "Andrew - One Night Stand">></h1>
+  <<set setup.addInventory('costumes', 'barista apron')>>
 <</nobr>>
 
 <<print "Andrew is handsome, and he seems nice, but you aren’t looking for a relationship. But you do have needs you can’t ignore. You turn his romantic, goodnight kiss into something more passionate. It isn’t long before he’s inviting you back to his apartment.">>
@@ -1778,7 +1789,7 @@
 ::JobBaristaRomance1 <0,2000>
 <<nobr>>
 	<<set setup.startDating('Andrew')>>
-	
+  <<set setup.addInventory('costumes', 'barista apron')>>
 	<h1><<print "Andrew - Date">></h1>
 <</nobr>>
 
@@ -1838,7 +1849,7 @@
 	<img src="Part3/JobOffice2.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 
-<<print "You love the feel of Paul's cock as it slides into your mouth. You are still learning how to best use your ">><<if setup.haveInventory('piercing', 'tongue')>><<print "pierced ">><</if>><<print "tongue to add to his pleasure, but from his moans you know you’re doing good so far.">>
+<<print "You love the feel of Paul's cock as it slides into your mouth. You are still learning how to best use your ">><<if setup.haveInventory('piercings', 'tongue')>><<print "pierced ">><</if>><<print "tongue to add to his pleasure, but from his moans you know you’re doing good so far.">>
 
 <<print "It isn’t that long until you begin to feel his cock twitch in your mouth. You swallow every drop of his warm cum, and then tease his cock with your tongue as you slide his cock from your mouth.">>
 
@@ -1867,7 +1878,7 @@
 <<print "You notice he also hired a ‘personal assistant’ around the same time as you. She doesn’t actually seem to do much work, and spends a great deal of time in his office with the door closed. But it’s not your concern so you ignore it.">>
 <img src="Part3/JobOffice4.jpg" hspace="10" vspace="10" height="650">
 
-<<print "Until his ‘assistant’ is away on vacation that is. He calls you in to his office and explains how he can help your career, if you just give him a little demonstration of ">><<if setup.haveInventory('piercing', 'tongue')>><<print "your tongue piercing. “I googled tongue piercings after your interview, and I’ve been wondering what yours would feel like on my cock ever since.”">><<else>><<print "your oral skills. “I’ve been watching you every day after your interview, and I’ve been wondering what your lips would feel like around my cock ever since.”">><</if>>
+<<print "Until his ‘assistant’ is away on vacation that is. He calls you in to his office and explains how he can help your career, if you just give him a little demonstration of ">><<if setup.haveInventory('piercings', 'tongue')>><<print "your tongue piercing. “I googled tongue piercings after your interview, and I’ve been wondering what yours would feel like on my cock ever since.”">><<else>><<print "your oral skills. “I’ve been watching you every day after your interview, and I’ve been wondering what your lips would feel like around my cock ever since.”">><</if>>
 
 <<print "You explain to him that it is never going to happen. But he is still going to help your career. And he’s never going try something like this again with you, or anyone else. That is, if he doesn’t want HR finding out about this meeting, and his wife finding out about his “assistant”.">>
 
@@ -1946,7 +1957,7 @@
 
 <<print "You make it clear to him what you’re offering. Your visits together aren’t going to help his career. And they aren’t going to help his cock.  He’s going to spend his lunch hour, every day, eating your pussy.">>
 
-<<if setup.haveInventory('piercing', 'tongue')>><<print "You visibly rub your piercing along your lip. ">><</if>><<print "Then you let him know, that maybe, once every few weeks, you might stop by his place after work to return the favor.">>
+<<if setup.haveInventory('piercings', 'tongue')>><<print "You visibly rub your piercing along your lip. ">><</if>><<print "Then you let him know, that maybe, once every few weeks, you might stop by his place after work to return the favor.">>
 
 [[Spend some time on campus.|Part6Start1]]
 

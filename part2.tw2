@@ -5,6 +5,16 @@
 	<h1><<print "Dormitories">></h1>
   <<set setup.addInventory('clothes', 'shirts')>>
   <<set setup.addInventory('clothes', 'sweat pants')>>
+  <<set setup.addInventory('tools', 'makeup')>>
+  <<if !$PlayerNoBodyHair>>
+    <<set setup.addInventory('tools', 'razors')>>
+  <</if>>
+  <<if $PlayerSideEffectAnal>>
+    <<set setup.addInventory('tools', 'anal cleaning kit')>>
+  <</if>>
+  <<if $PlayerSideEffectSubmissive>>
+    <<set setup.addInventory('toys', 'cuffs')>>
+  <</if>>
 <</nobr>>
 
 <<print "Now, we are going to go over where you’ll be staying your first year here. All freshman stay on-campus in dormitories, so that makes it simpler.">>
@@ -186,7 +196,7 @@
 <<nobr>>
 	<<print "You can ">>
 	<<link [[get your tongue pierced!|Neighbours2]]>>
-    <<set setup.addInventory('piercing', 'tongue')>>
+    <<set setup.addInventory('piercings', 'tongue')>>
 	<</link>>
 	<<print " I got mine done last year. And, oh my god, does my boyfriend love how the piercing feels when I suck his cock. He always loved me giving him head, but he loves it even more now.">>
 <</nobr>>
@@ -218,8 +228,8 @@
 
 ::Hannah2 <2000,400>
 <<nobr>>
-  <<set setup.addInventoy('clothes', 'blouses')>>
-  <<set setup.addInventoy('clothes', 'skirts')>>
+  <<set setup.addInventory('clothes', 'blouses')>>
+  <<set setup.addInventory('clothes', 'skirts')>>
 	<h1><<print "Hannah">></h1>
 <</nobr>>
 
@@ -255,7 +265,7 @@
 <<nobr>>
 	<<print "They have some money here to get your ears pierced. We’ll do that, but I hooked with a body piercer a few weeks ago. I know he’ll give us a deal if you want a second piercing. Here, look what I had him do with my navel, ">>
 	<<link [[maybe you can get one too.|Neighbours2]]>>
-    <<set setup.addInventory('piercing', 'navel')>>
+    <<set setup.addInventory('piercings', 'navel')>>
 	<</link>>
 <</nobr>>
 <img src="Part2/Hannah4A.jpg" hspace="10" vspace="10" height="400">
