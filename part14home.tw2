@@ -881,7 +881,7 @@
 <<nobr>>
   When the contractions start to become more regular and closer together, you tell
   <<if $dating.length>>
-    $dating[0]>>
+    $dating[0]
   <<else>>
     Cassie
   <</if>>
@@ -1056,8 +1056,8 @@
 <<nobr>>
   You don't have much strength yet, but you and
   <<if $dating.length>>$dating[0]<<else>>Cassie<</if>>
-  both start making phone calls to let them know about the healthy mother and child.  You tell them you don't want any visitors until then.  Though you
-  make an exception for
+  both start making phone calls to let them know about the healthy mother and child.  You tell them you don't want any visitors until tomorrow.
+  Though you make an exception for
   <<if $dating.length>>your mom and sister<<else>>your mom<</if>>.
 <</nobr>>
 
@@ -6244,10 +6244,19 @@
 ::Part14BoyfriendVisit
 <<nobr>>
   <h1>Seeing $dating[0] Again</h1>
-  <img src="Part14/Home74.gif" hspace="10" vspace="10" height="600" align="left">
+  <<if $PlayerChastityBelt and $Keyholder != $dating[0]>>
+    <img src="Part14/Chastity26.png" hspace="10" vspace="10" height="600" align="left">
+  <<else>>
+    <img src="Part14/Home74.gif" hspace="10" vspace="10" height="600" align="left">
+  <</if>>
 <</nobr>>
 <<nobr>>
-  <<if !$PlayerChastityBelt>>
+  <<if $PlayerChastityBelt && $Keyholder != $dating[0]>>
+    You are excited when $dating[0] calls to let you know he's 30 minutes away.  You ache to feel him inside you, but you know
+    that since $Keyholder has the key, and not $dating[0], your pleasure won't be coming anytime soon.  Then your thoughts
+    turn to feeling $dating[0]'s cock on your tongue.  Maybe that will be enough.
+    <br><br>  
+  <<elseif !$PlayerChastityBelt>>
     You are excited when $dating[0] calls to let you know he's 30 minutes away.  You change clothes several times, trying to find just the right outfit that you
     know will turn him on, but won't upset your parents.  You settle on skinny jeans and tight t-shirt, your parents shouldn't object to that.  Of course the
     new matching bra and panties under that are just for $dating[0] to see.
@@ -6260,7 +6269,7 @@
   <<else>>
     [[need to talk to him|Part14BoyfriendFather]]."
   <</if>>
-  <<if $PlayerChastityBelt>>
+  <<if $PlayerChastityBelt and $Keyholder == $dating[0]>>
     <br><br>
     Once you and $dating[0] are alone together, he unlocks your chastity belt.  "I hope you are good and horny for me.", he says.  "Hopefully 
     it won't be too long before we can have some time alone together."
@@ -6319,7 +6328,13 @@
     The awkward exchange goes on for a while.  Eventually your dad
     <<if setup.areDating('Peter')>>is<<else>>seems<</if>>
     satisfied that the young man has his wild young daughter under control, and
-    the two of you [[leave the house|Part14Boyfriend2]] so you can show $dating[0] around town.
+    the two of you
+      <<if $PlayerChastityBelt and $Keyholder == 'Robert'>>
+          [[leave the house|Part14BoyfriendFatherChastity3]]
+      <<else>>
+        [[leave the house|Part14Boyfriend2]]
+      <</if>>
+    so you can show $dating[0] around town.
   <</if>>
 <</nobr>>
 
@@ -6666,6 +6681,12 @@
   <<else>>
     <img src="Part14/Home61.jpg" hspace="10" vspace="10" height="500" align="left">
   <</if>>
+  <<set $PlayerChastityBelt to 1>>
+  <<set $FatherChastity to 1>>
+  <<set $BoyfriendStrictChastity to 1>>
+  <<set $Keyholder to $dating[0]>>
+  <<set $KeyholderPronoun to "he">>
+  <<set $KeyholderPronounPossessive to "his">>
 <</nobr>>
 <<nobr>>
   "I had been really worried about <<if $playerName>>$playerName<<else>>her<</if>> when she'd first changed.", your father says.  I'd worried with college, and the
@@ -6786,28 +6807,50 @@
 <<nobr>>
 	<h1>Discussing the Belt with $dating[0]</h1>
   <img src="Part14/Home77.jpg" hspace="10" vspace="10" height="650" align="left">
-  <<set $BoyfriendStrictChastity to 1>>
-  As soon as you are somewhere private with $dating[0], you tell him, "That was great.  You really had him convinced.  Now, go ahead and unlock this thing.
+  As soon as you are somewhere private with $dating[0], you tell him, "That was great.  You really had him convinced.
+  <<if !$PlayerChastityBelt or $Keyholder == $dating[0]>>
+    Now, go ahead and unlock this thing.
+  <<elseif $PlayerItemNerdKey>>
+    Now, let me unlock that cage for you.
+  <</if>>
+
   <<if $PlayerItemNerdKey>>
-    I have a very special treat for you.  When was the last time I let your cock out, let alone let you fuck me?"
+    I have a very special treat for you.  When was the last time I let your cock out, let alone
+    <<if $PlayerChastityBelt and $Keyholder != $dating[0]>>
+      sucked your cock and swallowed every drop?"
+    <<else>>
+      let you fuck me?"
+    <</if>>
   <<else>>
     It's been too long since I've felt your cock inside me."
   <</if>>
+  <<set $sex.push({sex: 'male', name:$dating[0]})>>
 <</nobr>>
 
 <<nobr>>
-  "No.  I won't be unlocking you.", $dating says.  "I wasn't lying to your father.  I think this is exactly what you need."  When you start to object he
-  asks you "How many men have you fucked since we last saw each other?  How many cocks have you sucked?"  You try to think but he quickly answers for you,
-  "The correct answer should have been zero, and you shouldn't have had to think about it."
-<</nobr>>
-
-<<nobr>>
-  "Now, I want you
-  <<if $PlayerItemNerdKey>>
-    to unlock my cock from this cage - you're the one that will be in chastity from now on.  And then I want you
+   <<if !$PlayerChastityBelt or $Keyholder == $dating[0]>>
+    "No.  I won't be unlocking you.", $dating says.  "I wasn't lying to your father.  I think this is exactly what you need."  When you start to object he
+    asks you "How many men have you fucked since we last saw each other?  How many cocks have you sucked?"  You try to think but he quickly answers for you,
+    "The correct answer should have been zero, and you shouldn't have had to think about it."
+  <<elseif $PlayerItemNerdKey>>
+    <<unset $PlayerItemNerdKey>>
+    <<set $PeterFree to 1>>
+    After you unlock his cage he tells you, "Good, and you should know my cock won't be going back in there again.  From now on, you'll be the
+    only one in chastity."  The longer you've been in chastity the more submissive you've gotten, but you wonder what's suddenly made Peter feel
+    so bold.  You soon understand when he shows you the key to your chastity belt.
+    <<if $JobGloryHole>>
+      "I purchased your debt, and your collateral, from Robert.  I assured him his booth girl would be keeping up her work.  But that her off-hours
+      are all mine now."
+    <<else>>
+      "I purchased your keys from Robert.  He didn't charge that much, I think he'd gotten bored of you and wanted to move on to someone new in
+      the fall."
+    <</if>>
   <</if>>
-  on your knees and sucking my cock.", $dating[0] says firmly as he unzips his pants.  "And every second I have to wait is another week before I even think
-  about letting you have an
+<</nobr>>
+
+<<nobr>>
+  "Now, I want you on your knees and sucking my cock.", $dating[0] says firmly as he drops his pants.  "And every second I have to wait is
+  another week before I even think about letting you have an
   <<if $AcademicProbationDenial>>
     orgasm.  And that's after your probation is lifted and you could cum again if I allowed it."
   <<else>>
@@ -6816,6 +6859,11 @@
 <</nobr>>
 
 <<nobr>>
+  <<set $BoyfriendStrictChastity to 1>>
+  <<set $PlayerChastityBelt to 1>>
+  <<set $Keyholder to $dating[0]>>
+  <<set $KeyholderPronounPossessive to "he">>
+  <<set $KeyholderPronounPossessive to "his">>
   You just stare at him, not finding his joke amusing.
   <div style="font-size: 125%"><b><i>1</i></b></div><br>
   "Don't be ridiculous.", you say still not believing he's serious.<br>
@@ -6828,9 +6876,36 @@
     <<set $PeterFree to 1>>
     grab the key to his chastity cage and unlock him. Then you
   <</if>>
-  drop to your knees and start sucking his cock.
+  drop to your knees and start
+  <<if $PeterFree>>
+    [[sucking his cock|Part14BoyfriendFatherChastityPeter]].
+  <<else>>
+    sucking his cock.
+    <br><br>
+    "3 weeks.", he says as your lips move up and down on his cock.
+    <<if $AcademicProbationDenial>>
+      "So if takes you a month [[after we head back to school|Part14Home5]] to get off probation, that's if you're lucky and get a professor to change a grade.
+      If you're not so lucky, it'll be a whole semester.  Then add three more weeks.  Sounds like it'll be at least October or November
+    <<else>>
+      "So we'll be [[heading back to school|Part14Home5]], settled back in, and already back to class
+    <</if>>
+    before you orgasm again.
+    <<if $AcademicProbationDenial>>
+      You whimper in frustration as you imagine waiting that long to orgasm again.
+    <</if>>
+    Well, assuming there's not a delay next time I tell you to suck my cock, and I don't have to add another week or two.  But if you
+    don't want me to hold the keys, we can go discuss it with your father."
+    <br><br>
+    You shake your head "no" as you continue to suck $dating[0]'s cock.  Your father would probably want to keep the keys himself then.  This is much better than
+    that!
+  <</if>>
 <</nobr>>
 
+::Part14BoyfriendFatherChastityPeter
+<<nobr>>
+	<h1>Discussing the Belt with $dating[0]</h1>
+  <img src="Part14/Home83.png" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
 <<nobr>>
   "3 weeks.", he says as your lips move up and down on his cock.
   <<if $AcademicProbationDenial>>
@@ -6850,6 +6925,19 @@
 <<nobr>>
   You shake your head "no" as you continue to suck $dating[0]'s cock.  Your father would probably want to keep the keys himself then.  This is much better than
   that!
+<</nobr>>
+
+<<nobr>>
+  Once Peter starts moaning from your blowjob, that's all your can think about and your eagerness increases the closer his orgasm gets.
+  You are ready for his cock to fill your mouth with his cum, but he has other plans today.  Just before then, he pulls out of your mouth.
+  You hear him grunt loudly as he releases weeks of pent up cum all over your face and chest.  Once the bulk of it is out he lets you suck
+  on his cock a bit longer to get the last few drops.
+<</nobr>>
+
+<<nobr>>
+  "You aren't finished.", he says as you start to reach for something to wipe up with.  "You don't need that to clean yourself up with."
+  You understand and quickly get to work licking the cum from your breasts where you can reach, and using your fingers to scoop it up where
+  your tongue can't reach.  "Good girl.", he says patting your on the head as he pulls up his pants.
 <</nobr>>
 
 ::Part14ChastityCage5
@@ -7845,14 +7933,40 @@
   <img src="Part14/Return2.jpg" hspace="10" vspace="10" height="500">
 <</nobr>>
 <<nobr>>
+  It's going to be a big change this school year, though probably not as big as the change last year was.
+  <br><br>
+  You <<if $dating.length>>and $dating[0]<</if>> are making use of the campus daycare, paid for by the X-Change people.  Little 
+  $children[0].name is well looked after during the day when you <<if $dating.length>>and $dating[0]<</if>> are in class.  Then
+  you pick <<if $children[0].sex == "male">>him<<else>>her<</if>> up on the way home.  Your breasts are usually aching and ready
+  for another feeding by then.
+<</nobr>>
+
+<<nobr>>
+  You worry that your grades are slipping though because you aren't getting much sleep.
   <<if $dating.length>>
-    TODO With $dating[0]
+    Even when it's $dating[0]'s turn to wake up at night with $children[0].name, they still have to bring
+    <<if $children[0].sex == "male">>him<<else>>her<</if>> to you to feed.  Neither you or $dating[0] are getting as much sleep as you need.
+    <<if $AcademicProbation>>
+      You worry you might flunk out of school if your can't get your grades up this semester.
+    <<else>>
+      You worry your grades might start to slip this semester.
+    <</if>>
   <<else>>
-    TODO Alone
+    You are up every night changing and feeding $children[0].name and aren't getting hardly any sleep.
+    <<if $AcademicProbation>>
+      You worry you might flunk out of school if your can't get your grades up this semester.
+    <<else>>
+      You worry your grades might start to slip this semester.
+    <</if>>
   <</if>>
 <</nobr>>
-TODO Part14Home5Child
-- [[Part14End]]
+
+<<nobr>>
+  There's still time to turn things around though.  Hopefully when $children[0].name starts sleeping more through the night, you'll be
+  able to get some sleep too.  But even if you get your grades up, you are quite certain that [[this semester|Part14End]] isn't going to have
+  quite the level of excitement as your first one did a year ago.  Though you're happy you'll be spending it with
+  <<if $dating.length>>$dating[0] and<</if>><<print $children[0].name>>.
+<</nobr>>
 
 ::Part14Home5Adopt
 <<nobr>>

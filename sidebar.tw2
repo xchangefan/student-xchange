@@ -565,8 +565,12 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       Your orgasms belong to $Keyholder.
     <</if>>
   <<elseif $PlayerChastityBelt>>
-    <<if $BoyfriendStrictChastity>>
+    <<if $BoyfriendStrictChastity and $FatherChastity>>
       $Keyholder has locked you in a chastity belt, as your father instructed.
+    <<elseif $BoyfriendStrictChastity>>
+      $Keyholder has locked you in a chastity belt.  Your father would approve.
+    <<elseif $FatherChastity>>
+      Your father has locked you in a chastity belt until your wedding day.
     <<elseif $PlayerCumslut>>
       You are locked in a chastity belt, as you should be.
       <<if $Keyholder>>
@@ -732,6 +736,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     You serve the Prince in whatever way he desires.
   <<elseif $IslandPet>>
     You do your best to make the guests at the resort very happy.
+  <<elseif $JobSurrogate>>
+    You are a professional surrogate.
   <<elseif $PlayerJobSet>>
     <br><br>
     <<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>
