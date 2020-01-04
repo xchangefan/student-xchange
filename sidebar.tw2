@@ -553,8 +553,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarToys <1400,0>
 <br><br>Equipment:\
-<br>- Toys: <<print setup.listInventory('toys')>>\
 <br>- Tools: <<print setup.listInventory('tools')>>\
+<br>- Sex Toys: <<print setup.listInventory('sex toys')>>\
+<br>- Other Toys: <<print setup.listInventory('toys')>>\
 <<if $PlayerItemNerdKey>><br><br><<print "You have Peter's Chastity Key. ">><</if>>\
 
 ::SideBarChastity <1600,0>
@@ -582,7 +583,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
         $Keyholder has your key.
       <</if>>
     <</if>>
-  <<elseif setup.haveInventory('toys', 'chastity belt')>>
+  <<elseif setup.haveInventory('sex toys', 'chastity belt')>>
     You have a chastity belt, but you aren't currently locked.
   <</if>>
 <</nobr>>
@@ -590,7 +591,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 ::SideBarMentor <1800,0>
 <br>
 <<nobr>>
-  <<if $DropoutCumslut || $DropoutConcubine || $IslandPet>>
+  <<if $DropoutCumslut || $DropoutConcubine || $IslandPet || $FatherChastity>>
   <<elseif $Mentor == 'Faith'>>
     Faith is your mentor
     <<if $Roommate == 'Faith'>>
@@ -637,7 +638,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarNeighbours <2000,0>
 <<nobr>>
-  <<if !$student>>
+  <<if !$student || $FatherChastity>>
   <<elseif $Spouse or $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Victoria' or $Roommate == 'Aaron'>>
   <<elseif $Roommate == 'Sorority Sister'>>
     You live with your soroity sisters.
@@ -706,6 +707,15 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>
     <<if setup.areDating('Peter')>><br><<print "Peter is your boyfriend. ">><<if $PlayerItemNerdKey>>You keep him locked in chastity.<</if>><</if>>
     <<if setup.areDating('Barry')>><br><<print "You serve Barry as his pet. ">><</if>>
+
+    <<if $Spouse == 'Mason'>>
+      <br>You are married to Mason.
+    <<elseif $Engaged == 'Mason'>>
+      <br>You are engaged to Mason, but stil living at your parents house.
+    <<elseif setup.areDating('Mason')>>
+      <br>You are in a relationship with Mason.
+    <</if>>
+
     <<if $dating.length == 0>> 
       <<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>
       <<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>
@@ -732,6 +742,18 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $DropoutCumslut>>
     <br><br>
     You work at a smoothie bar.
+  <<elseif $FatherChastity>>
+    <<if $JobHomemaker>>
+      <<if $PlayerMother>>
+        You are a stay-at-home mother.
+      <<elseif $Spouse>>
+        You are a stay-at-home wife.
+      <<elseif $Engaged>>
+        You are a stay-at-home fiancée.
+      <<else>>
+        You are a stay-at-home girlfriend.
+      <</if>>
+    <</if>>
   <<elseif $DropoutConcubine>>
     You serve the Prince in whatever way he desires.
   <<elseif $IslandPet>>
@@ -740,6 +762,17 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     You are a professional surrogate.
   <<elseif $PlayerJobSet>>
     <br><br>
+    <<if $JobHomemaker>>
+      <<if $PlayerMother>>
+        You are a stay-at-home mother.
+      <<elseif $Spouse>>
+        You are a stay-at-home wife.
+      <<elseif $Engaged>>
+        You are a stay-at-home fiancée.
+      <<else>>
+        You are a stay-at-home girlfriend.
+      <</if>>
+    <</if>>
     <<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>
     <<if $JobCheerleader>><<print "You are a Cheerleader. ">><</if>>
     <<if $JobCheerleaderFundraiser>><<print "You are a Fundraiser for the Cheerleaders.">><</if>>
@@ -764,17 +797,6 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <<if $JobPornGang>><<print "You work as a Porn Actress. ">><</if>>
     <<if $JobPorn>><<print "You work as an Porn Actress. ">><</if>>
     <<if $ProfessorAllowance>><<print "You do not work, but Daddy gives you a weekly allowance. ">><</if>>
-    <<if $JobHomemaker>>
-      <<if $PlayerMother>>
-        You are a stay-at-home mother.
-      <<elseif $Spouse>>
-        You are a stay-at-home wife.
-      <<elseif $Engaged>>
-        You are a stay-at-home fiancée.
-      <<else>>
-        You are a stay-at-home girlfriend.
-      <</if>>
-    <</if>>
     <<if $JobStripper>><br>You have a side-job as a stripper<</if>>
     <<if $JobGloryHole>><br>You have a side-job sucking cocks at the sex shop<</if>>
     <<if $JobCallGirlSide>><br>You have a side-job as a Call Girl.<</if>>
@@ -794,9 +816,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       You have graduated!
     <<elseif $StudentYearsCompleted >= 3>>
       You are a senior.
-    <<elseif $StudenYearsCompleted == 2>>
+    <<elseif $StudentYearsCompleted == 2>>
       You are a junior.
-    <<elseif $StudenYearsCompleted == 1>>
+    <<elseif $StudentYearsCompleted == 1>>
       You are a sophomore.
     <<else>>
       You are a freshman.

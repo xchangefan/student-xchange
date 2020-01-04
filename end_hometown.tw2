@@ -1,16 +1,861 @@
+
 ::MovingBackHome
-<<set $FatherChastity to 1>>
-<<set $PlayerChastityBelt to 1>>
-<<set $Keyholder to "Your father">>
-<<set $KeyholderPronoun to "he">>
-<<set $KeyholderPronounPossessive to "his">>
-TODO MovingBackHome (ending) [[MovingBackHome2]]
-- Permanent if not already
-- in a chastity belt, moved back home, transfer to community college
-- (end up marrying a high school friend and having a shitty job in town)
-- Need to deal with if already pregnant
-- Deal with academic probation denial
+<<nobr>>
+  <h1>Inspection</h1>
+  <img src="PartX/BackHome1.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $FatherChastity to 1>>
+  <<set $PlayerChastityBelt to 1>>
+  <<set $Keyholder to "Your father">>
+  <<set $KeyholderPronoun to "he">>
+  <<set $KeyholderPronounPossessive to "his">>
+  <<set $dating to []>>
+  <<set $fwb to []>>
+  <<set $friendzone to []>>
+  
+  Your father goes through your things, looking for any 'contraband'.  He looks through your 'toys' and throws out anything remotely
+  sex related - except of course the chastity belt you are locked in.  He also takes any of your clothes he deems 'too slutty'.
+  <<if setup.haveInventory('sex toys', 'cumslut collar')>>
+    When he sees your 'Cumslut' collar he shakes his head.  "God, it's worse than I thought."
+  <<elseif setup.haveInventory('sex toys', 'knee pads')>>
+    When he sees your knee pads mixed in with your other sex toys, he shakes his head.  "God, it's worse than I thought."
+  <</if>>
+  <<if $PlayerItemNerdKey or $PlayerItemNerdKeyStripper or $DylanChastityKey>>
+    <br><br>
+    When your father sees the keys for
+    <<if ($PlayerItemNerdKey or $PlayerItemNerdKeyStripper) and $DylanChastityKey>>
+      Peter's and Dylan's chastity cages
+      <<set $DylanChastitySelfLocked to 1>>
+    <<elseif $DylanChastityKey>>
+      Dylan's chastity cage
+      <<set $DylanChastitySelfLocked to 1>>
+    <<else>>
+      Peter's chastity cage
+    <</if>>
+    you lie and say they are for $Mentor's storage locker.  You tell them you'll mail them back to her since you won't be sharing it anymore.
+    You'll be sure that they do get them back to their original owner though... eventually.
+    <<unset $PlayerItemNerdKey>>
+    <<unset $PlayerItemNerdKeyStripper>>
+    <<unset $DylanChastityKey>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He sends your mother out to buy you some 'respectable' clothing and underwear so you have enough to wear after what he's taken.
+  And, of course plenty of dresses since you the chastity belts limits some of your clothing options.
+  <<set $inventory['sex toys'] = ['chastity belt']>>
+  <<if setup.haveInventory('costumes', 'Star Trek crew')>>
+    <<set $inventory['costumes'] = ['Star Trek crew']>>
+  <<elseif setup.haveInventory('costumes', 'vampire')>>
+    <<set $inventory['costumes'] = ['vampire']>>
+  <<else>>
+    <<set $inventory['costumes'] = null>>
+  <</if>>
+  <<set setup.removeInventory('tools', 'anal cleaning kit')>>
+  <<set setup.removeInventory('tools', 'massage oils')>>
+  <<set setup.removeInventory('tools', 'library key')>>
+  <<set setup.removeInventory('tools', 'engineering projects')>>
+  <<set setup.removeInventory('clothes', 'sheer-topped dress')>>
+  <<set setup.removeInventory('clothes', 'latex dress')>>
+  <<set setup.removeInventory('clothes', 'latex top')>>
+  <<set setup.removeInventory('clothes', 'leather top')>>
+  <<set setup.removeInventory('clothes', 'leather skirt')>>
+  <<set setup.removeInventory('clothes', 'hobble skirt')>>
+  <<set setup.removeInventory('clothes', 'pink latex suit')>>
+  <<set setup.addInventory('clothes', 'blouses')>>
+  <<set setup.addInventory('clothes', 'long dresss')>>
+  <<set setup.addInventory('clothes', 'dresses')>>
+  <<set setup.removeInventory('underwear', 'sexy underwear')>>
+  <<set setup.removeInventory('underwear', 'erotic underwear')>>
+  <<set setup.removeInventory('sleepwear', 'lingerie')>>
+  <<set setup.addInventory('underwear', 'regular underwear')>>
+  <<set setup.addInventory('underwear', 'cotton underwear')>>
+  <<if setup.haveInventory('piercings', 'tongue')>>
+    He also makes you take out your tongue piercing.
+    <<set setup.removeInventory('piercings', 'tongue')>>
+  <</if>>
+  <<if $PlayerProtectionPill>>
+    He tosses out your birth control pills too.  "You obviously won't be needing these."  You know better than to try to argue or mention the
+    benefits they have for lessening your periods, you know he won't listen anyway and will get annoyed if you start talking about periods.
+    <<unset $PlayerProtectionPill>>
+    <<set $PlayerProtectionNone to 1>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "On Monday, we'll go down to the nearest [[X-Change office|MovingBackHome2]] and have you checked out.  I'm sure you're probably pregnant
+  by now.
+  <<if $PlayerPregnant>>You cringe knowing it's true.<</if>>
+  Thank God STDs are mostly a thing of the past, or who knows how many you'd have by now.  But they'll dobule check for those too.
+<</nobr>>
 
 ::MovingBackHome2
-TODO [[MovingBackHome2]]
+<<nobr>>
+  <h1>At the X-Change Office</h1>
+  <<if $PlayerPregnant>>
+    <<set $tempPregnantBefore to 1>>
+    <<achievement>>childfree<</achievement>>
+    <<if $PlayerAbortion>>
+      <<set $PlayerAbortion += 1>>
+    <<else>>
+  	  <<set $PlayerAbortion to 1>>
+    <</if>>
+  <</if>>
+  <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+  <<if $PregnancyCheck.isPregnant>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    <<set $PlayerPregnant to 1>>
+    <<achievement>>pregnant<</achievement>>
+    <<if setup.pregnantFirstTime() and !$PlayerProtectionTry>>
+      <<achievement>>firsttime<</achievement>>
+    <</if>>
+  <</if>>
+  <img src="PartP/PregTest6.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $PlayerProtectionNone to 1>>
+  <<unset $PlayerProtectionTry>>
+  <<unset $PlayerProtectionWithdraw>>
+  <<unset $PlayerProtectionCondoms>>
+  Your father removes your belt for your exam, but stays with you nearly the entire time.  He leaves the room during your pelvic exam though,
+  and that's when you talk privately with the doctor.
+  <<if $tempPregnantBefore>>
+    "I'm pregnant, but I don't want to be.  Please give me something to end it before it becomes noticeable  My father is already disappointed
+    with me, and being pregnant would make it even worse."  After confirming that this is what you want, he gives you an injection to
+    end your pregnancy.  He warns you of the period-like bleeding you should expect over the next few days.  You don't comment but start
+    to dread dealing with that in your chastity belt.
+  <<else>>
+    "I don't know if I'm pregnant right now or not, but please do whatever you need
+    to do, to make sure I'm not.  My father is already disappointed with me, and being pregnant would make it even worse."
+    <<if $PlayerPregnant>>
+      The doctor confirms that you are pregant, or at least a conception has occurred.  After confirming it with you he gives you an injection to
+      make sure any pregnancy will be prevented or ended.
+    <</if>>
+  <</if>>
+  <<unset $tempPregnantBefore>>
+  <<unset $PlayerPregnant>> 
+<</nobr>>
+
+<<nobr>>
+  When your father returns he goes over your implants settings with the doctor :<br><br>
+  <<if $PlayerSideEffectPermanent>>
+    Your change is already permanent, which your father says is for the best.
+  <<else>>
+    As your change is not yet permanent, your father requests that they make it permanent, so you don't still hold any silly notions of
+    being a man someday.  He says there's hope of your being a proper woman eventually, but you were never going to be a man.
+  <</if>>
+  <br><br>
+  <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+    He has them deactive the built-in birth control from your implant.  He says you won't be needing due to your belt, and when you are
+    married, you'll be wanting to have children<br><br>
+    <<unset $PlayerProtectionPerfect>>
+    <<unset $PlayerProtectionPermanent>>
+  <</if>>
+  <<if $PlayerProtectionFertile>>
+    The enhanced fertility effects of your implant are not reversable, but your father says that it sounds like a wonderful thing anyway.
+    Once you are married, it'll be that much easier for you and your husband to concieve.<br><br>
+  <</if>>
+  <<if $AcademicProbationDenial>>
+    You are pleased that he instructs the doctor to disable the academic probation denial setting on your implant, but less so when
+    he explains why.  "If that kept her from acting like a slut, then I'd be all for it.  But it clearly doesn't do that, so what is the point
+    of it?  She's not going to be needing to be 'denied' anyway with the belt on all the time.  And when her wedding night comes some day,
+    she should be able to enjoy it."
+    <br><br>
+    The doctor informs him that they have to notify the dean's office at the university, and that your re-enrollment at the
+    university will be blocked.  "That's not a concern, she isn't returning there anyway."<br><br>
+  <</if>>
+  <<if $PlayerNoBodyHair and $PlayerWeightControl>>
+    Your father thinks your implants effects that prevent body hair and weight gain are wonderful.
+    "I'm sure her future husband will appreciate those."  Then he jokes, "Do you think you can implant those for my wife?"
+    <br><br>
+  <<elseif $PlayerWeightControl>>
+    Your father thinks your implants effect that prevents weight gain is wonderful.
+    "I'm sure her future husband will appreciate that."  Then he jokes, "Do you think you can implant that for my wife?"
+    <br><br>
+  <<elseif $PlayerNoBodyHair>>
+    Your father thinks your implants effect that prevents body hair is wonderful.
+    "I'm sure her future husband will appreciate that."  Then he jokes, "My wife would want to know if you could implant that for her too."
+    <br><br>
+  <</if>>
+  <<if $PlayerReducedSleep>>
+    When he tells your father about your reduced sleep effects he says, "That's great.  But now she'll be using it to study, instead of
+    just as more time to whore around."
+    <br><br>
+  <</if>>
+  <<if $PlayerSideEffectDreams>>
+    When he tells your father about the effects that give you such 'vivid' dreams, he doesn't much care.  "If she had only been dreaming about
+    being a slut, I wouldn't have cared."
+    <br><br>
+  <</if>>
+
+  <<if $PlayerSideEffectLibido or $>>
+    Your father isn't particularly surprised when the doctor mentions your implants libido effects.  "Well, that's probably contributed to
+    her current behavior.  But I'm sure her future husband will appreciate it someday."
+    <br><br>
+  <</if>>
+
+  <<if $PlayerSideEffectMasochist>>
+    When he tells your father about how a little pain turns you on, he says, "Well, I guess I'll let her future husband know not to use
+    spankings for punishment.  Of course, it'll be up to him if he wants to use them for other reasons."
+    <br><br>
+  <</if>>
+
+  <<if $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
+    Your father stops the doctor from going into much detail about your enhanced orgasm effects.  "I'm sure that'll be great for her
+    and her future husband, but I don't need to hear about it.  It won't be an issue anyway with her belt on until then."
+    <br><br>
+  <</if>>
+
+  <<if $PlayerSideEffectAnal or $PlayerSideEffectOral or $PlayerSideEffectDominant or $PlayerSideEffectSubmissive>>
+    "I don't need to hear about that.", you father cuts the doctor off when he starts talking about the preferenes for certain
+    sexual activities that your implant has given you.  "She can discuss that with her husband when the time comes."
+    <br><br>
+  <</if>>
+
+  <<if $PlayerSideEffectExhibitionist or $PlayerSideEffectPheromones>>
+    "Well, that would certainly explain some of her behavior.", your father says when the doctor discusses some of the effects
+    that cause you to act out in public.  "But, I suppose there's nothing you can do about it."
+  <</if>>
+
+  <<if $PlayerSideEffectOrgasmBlock or $PlayerSideEffectOrgasmBlock>>
+    Your father doesn't seem to care about the effects that make orgasming, particularly when you masturbate, difficult for you.
+    "Well, she won't be touching herself anytime soon anyway.  I'm sure that will just encourage her to find a husband sooner,
+    rather than later."
+    <br><br>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Even though you won't be getting the benefit of the scholarship anymore, you are still expected to have regular checkups for the next
+  few years, so your father makes an appointment for your next visit on his way out.  Then he tells you,
+  "Now, we'll head over to the [[community college|MovingBackHome3]] to sign you up for next semester.
+<</nobr>>
+
+::MovingBackHome3
+<<nobr>>
+  <h1>At Your New School</h1>
+  <img src="PartX/BackHome2.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  You are unhappy at first, leaving all the friends you'd made at your university and starting at a completely new school.  But soon you
+  start to notice the benefits of being here as well.
+<</nobr>>
+
+<<nobr>>
+  First, it's much easier than before.  The classes aren't quite as hard, but that's only part of it.  They also spend more individual time
+  teaching you.  And when you meet with one of the professors, you feel like he's really trying to help you succeed.  And, of course, the women
+  professors are great too.
+<</nobr>>
+
+<<nobr>>
+  Second, since you are staying at home you don't need to work at all anymore.  Your dad gives you an allowance.  It's not that much, but you
+  don't really have that many expenses anymore either.
+<</nobr>>
+
+<<nobr>>
+  And maybe it's just that you had more freedom then, but looking back you feel like everything at the university was pushing you into being
+  some sort of sex addict.  But here, everything seems to just be about helping you learn.  Well, except the male students.  Many of them
+  seem to still be interested in getting in your pants.  But they obviously aren't going to have much luck there thanks to your dad and the
+  chastity belt.
+<</nobr>>
+
+<<nobr>>
+  Of course, just because everything doesn't seem to be designed to constantly remind you of sex, that doesn't mean you aren't
+  [[still thinking about it all the time|MovingBackHome4]].
+<</nobr>>
+
+::MovingBackHome4
+<<nobr>>
+  <h1>Sitting in Class</h1>
+  <video src="PartX/BackHome3.webm" autoplay loop muted height="540"></video>
+<</nobr>>
+<<nobr>>
+  Sex is always on your mind.  Knowing you can't have it, or even masturbate, only makes you think about it more.  If your dad would let you out,
+  just once just for
+  <<if $PlayerSideEffectOrgasmBlock or $PlayerSideEffectOrgasmBlock>>
+    the night.  A quick fuck from one of the guys at school you know would want to.
+  <<else>>
+    an hour.  A little time with a good vibrator would do the trick.
+  <</if>>
+  That would be enough to make you feel better you think.  But you know better to even ask your father.  At best it would be humilating and
+  get a firm 'No'.  At worse... you aren't sure how he'd make it worse on you, but you know he could probably find a way.
+<</nobr>>
+
+<<nobr>>
+  And you are too ashamed to ask your mother to let you do any more than what is necessary when she supervises your period cleaning.
+  She'd probably refuse anyway.  She's said she finds your situation uncomfortable, but thinks your father's methods are probably
+  necessary after what he'd seen you doing. 
+<</nobr>>
+
+<<nobr>>
+  <<if setup.haveInventory('piercings', 'clit hood')>>
+    <img src="PartX/BackHome5.jpg" hspace="10" vspace="10" height="450" align="left">
+    Of course the VCH piercing you still have in doesn't help.  Especially not since with the rattleball ends your bar has on it.
+    Every step you take causes it to vibrate ever so slightly, constantly keeping your mind on the clit you can't reach.
+    <br><br>
+    Of course your father demand it be removed if he knew about it.  But it would be humiliating if he found.  And besides, 
+    it's the only stimulation you get and you wouldn't want to give it up, even if it does drive you insane. You mom has promised she won't
+    mention it to him either, "It would only upset him."
+    <br><br>
+  <<elseif setup.haveInventory('piercings', 'nipples')>>
+    <img src="PartX/BackHome4.jpg" hspace="10" vspace="10" height="450" align="left">
+    Maybe wearing your nipple rings and other jewelry doesn't help.  But it's the one big of fun that your father didn't confiscate.  They
+    were mixed in with your earrings and he didn't even notice they were not earrings.  You make sure you don't wear anything that might show
+    through your bra and top when you are around your dad, but it makes you feel sexy still wearing them when you can.  Even if it is a constant
+    reminder that playing with your nipples is the only stimulation you can get with this belt on.
+    <br><br>
+  <</if>>
+  Without an orgasm for any real relief, the thoughts come to you, all day long.  Sometimes in class, you'll lose focus on what the professor
+  is saying, and instead start imagining yourself in class still, but bound to your chair.  Ready to be used by the professor or your classmates.
+  Hoping to be used.  Needing to be used.  It's only when the professor calls your name that you focus again and wipe a bit of drool from your shirt.
+<</nobr>>
+
+<<nobr>>
+  Of course the thoughts are the most intense at night, [[while you sleep|MovingBackHome5]].
+<</nobr>>
+
+::MovingBackHome5Engineering
+<<nobr>>
+  <video src="PartX/BackHome6.webm" autoplay loop muted height="540"></video>
+  <br>
+  At night your dreams are usually sexual as your body tries to tell you what you need.  You always enjoy the dreams, but they always
+  end not with you getting off, but with you waking up horny and desperate to cum.
+  <br><br>
+  Often you you are in one of the engineering testing rooms at your old university
+  <<if $PlayerSideEffectSubmissive>>
+    where you'd be bound and experimented on.
+  <<elseif $JobEngineer>>
+    where you used to test other young women.  Though your dreams are about the times you let yourself be bound and used by your coworkers.
+  <<else>>
+    that you'd heard others talk about.
+  <</if>>
+  But in your dreams it's students and professors from your current school that use your bound and helpless body.
+  <br><br>
+  Sometimes the dream ends quickly with both of them filling you with cum before you are able to orgasm yourself.  Other times the
+  dream goes on and on, but with your orgasm always tantalizingly close, but never arriving.  You always wake up feeling horny and
+  achingly empty. 
+  <br><br>
+  If it's morning you get up to face the day again thinking about the pleasure you can't have.  If it's still dark out, you do something
+  different.  Your father may have taken your cuffs and other toys away, but you still love the feel of something around your wrists.
+  <br><br>
+  You grab a pair of panties from your drawer.  Behind your back you put your hands through them then twist them around a bit.  Of course
+  you know in a few moments you could be free, but it still feels like you are bound.  You lie there imagining how exposed your breasts, you
+  open your mouth and imagine them using it.  As you fantisize you only get more horny, but you hope you'll find sleep soon, and that
+  you'll return to the testing room when you do.
+<</nobr>>
+
+::MovingBackHome5DP
+<<nobr>>
+  <video src="PartX/BackHome7.webm" autoplay loop muted height="540"></video>
+  <br>
+  At night your dreams are usually sexual as your body tries to tell you what you need.  You always enjoy the dreams, but they always
+  end not with you getting off, but with you waking up horny and desperate to cum.
+  <br><br>
+  It's usually two or three of your classmates that are fucking you in your dreams.  Though sometimes one of them is a professor instead.
+  The first cock feels so good as you lower yourself down onto it.  But when the other cock pushes its way into your ass it is so
+  much better.
+  <br><br>
+  Sometimes the dream ends quickly with both of them filling you with cum before you are able to orgasm yourself.  Other times the
+  dream goes on and on, but with your orgasm always tantalizingly close, but never arriving.  You always wake up feeling horny and
+  achingly empty. 
+  <br><br>
+  You wish the X-Change doctor had never mentioned your love for anal to your father.  As disgusted by it was he was, he surely hasn't
+  forgotten.  If it weren't for that, maybe you could have convinced your father to buy a chastity belt with an 'open back' design.
+  Then you could at least have your ass filled.  You could have told your father you wanted the new belt for hygiene reasons, but now
+  he'll know for sure your true motivation and you'll get an angry 'no' instead.
+<</nobr>>
+
+::MovingBackHome5Regular
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/BackHome8.mp4" autoplay loop muted height="600"></video>
+  </div>
+  At night your dreams are usually sexual as your body tries to tell you what you need.  You always enjoy the dreams, but they always
+  end not with you getting off, but with you waking up horny and desperate to cum.
+  <br><br>
+  It's usually one of your classmates, or sometimes one of your professors, fucking you in your dreams.  Feeling his cock push past your
+  lips and slide into you feels so good, so familiar, so much what you need.  His handson your ankles, pushing your legs back so he can
+  drive deeper and harder feels perfect too.
+  <br><br>
+  Sometimes he finishes inside you, orgasming before you do and you wake up with your own juices leaking from your belt and you can imagine
+  they are his.  Other times he pulls out and cums on your stomach.  You wake up horny and desperate for more.  You can't help but reach
+  a hand down hoping to find evidence that he was real, but find your stomach disappointingly clean.
+<</nobr>>
+
+::MovingBackHome5
+<<nobr>>
+  <h1>Dreaming you are Free of your Belt</h1>
+  <<if $PlayerSideEffectSubmissive or $JobEngineer or $JobTestSubject>>
+    <<include [[MovingBackHome5Engineering]]>>
+  <<elseif $PlayerSideEffectAnal>>
+    <<include [[MovingBackHome5DP]]>>
+  <<else>>
+    <<include [[MovingBackHome5Regular]]>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You do your best to cope with you dreams, both the ones at night and the ones that intrude into the day.  There's nothing you can
+  do about the need you feel so you do your best to ignore it.  It's a constant struggle though.
+<</nobr>>
+
+<<nobr>>
+  As the months go on, you try to focus on your studies.  The constant need you feel is just part of who you are now, the ache betweeen your
+  legs that is never answered never gets any easier, but you know all you can do is [[live with it|MovingBackHome6]].
+<</nobr>>
+
+::MovingBackHome6
+<<nobr>>
+  <h1>Resisting the Urge</h1>
+  <img src="PartX/BackHome13.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  Of course, your belt doesn't take all options away from you.  But you resist the urges to enjoy what little it allows.  It's not easy
+  though.  Sometimes it's all you can do to hold back from trying to find a nice, hard, beautiful cock and wrapping your lips around it.
+  If you think about it to hard you can almost taste the cum in your mouth.  You try not to think about it, though you seldom succeed at that.
+<</nobr>>
+
+<<nobr>>
+  Your father is the reason you hold back.  Every day when you get home from class he questions you on what you did that day, making sure you
+  are behaving yourself.  You know you wouldn't be able to lie convincingly if you ever did something he didn't approve of and tried to lie.
+<</nobr>>
+
+<<nobr>>
+  You don't know what would happen if he caught you doing something.  He's said there are worse belts he could get for you.  Ones with punishment
+  options.  You don't know if he'd really use one of those, but just the thought of your most sensitive areas being shocked repeatedly with no way
+  to make it stop is enough to make sure you don't disobey or lie.
+<</nobr>>
+
+<<nobr>>
+  The days move by so slowly at first, but you start to get accustomed to your situation.  Eventually, you get into a rythym of class, homework,
+  sleep, and back to class again.  Then before you know it the [[school year is over|MovingBackHome7]].
+<</nobr>>
+
+::MovingBackHome7
+<<nobr>>
+  <h1>Transfering Schools Again</h1>
+  <img src="PartX/BackHome9.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $StudentYearsCompleted to 2>>
+<</nobr>>
+<<nobr>>
+  With the credits you'd transfered from the university, and a year at the community college done, there isn't much left for you
+  to take at the community college, so you transfer to the four-year state school near town.  Of course you'll still be going home
+  every night with your dad watching for any of your old behaviors to return.
+<</nobr>>
+
+<<nobr>>
+  The work is harder here, and they don't hold your hand as much as at the community college.  But it's not like at the first university
+  either.  They still seem to be focused on your education.  Maybe this is what a normal university is like, you think.
+<</nobr>>
+
+<<nobr>>
+  You'd worried that you'd have to make all new friends again after you transfered over, so you are thrilled when you run into
+  your friend Mason in the hall one day.  Of course you'd seen him since high school, but since he'd gone off to college and most of
+  the guys you'd known were working down that factory, he hadn't hung out with them as much.  You don't know if he's just been too busy, or
+  was hanging out with new, college friends instead.  Either way it was nice to see a familiar face.
+<</nobr>>
+
+<<nobr>>
+  You and Mason hang out together after class is over and get caught back up.  As you are driving home, you remember how you were a year ago.
+  You probably would gone home with Mason and fucked him all night long.  Of course your dreams that night are filled with you doing
+  just that.  But you can't help your dreams, can you?
+<</nobr>>
+
+<<nobr>>
+  But you hope you and Mason will [[be spending a lot of time together|MovingBackHome8]] this year.
+<</nobr>>
+
+::MovingBackHome8
+<<nobr>>
+  <h1>Dating Mason</h1>
+  <img src="PartX/BackHome10.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $StudentYearsCompleted to 3>>
+  <<set setup.startDating('Mason')>>
+<</nobr>>
+<<nobr>>
+  You and Mason spent more and more time together throught the year.  When Mason made it clear his feelings for you have gone beyond
+  friendship, you let him know you felt the same way.  You also relucantly told him about your chastity belt, worried that would end
+  things before they even started.
+<</nobr>>
+
+<<nobr>>
+  But Mason said you are worth the wait.  You are worried again when you tell your father that you and Mason are dating now, but he
+  doesn't mind.  "Of course I don't mind.  How will you have a husband someday if you don't have a boyfriend first?", he says.  "Have you
+  told him about your belt.  And that it won't be coming off until your wedding day?"
+<</nobr>>
+
+<<nobr>>
+  He is happy when you tell him that you have, and what Mason's response was.  "That is wonderful, but Mason is a young man, with a young
+  man's desires.  He may be tempted to stray before then if they aren't met.", you look up at your father, confused.  "Just because you are
+  waiting until marriage, it doesn't mean you can't do what you can to keep your boyfriend happy and satisfied until then.  Do you understand?"
+<</nobr>>
+
+<<nobr>>
+  "Yes, Daddy.", you tell him.  Then you look away as you start to imagine your [[next date with Mason|MovingBackHome9]].
+<</nobr>>
+
+<<nobr>>
+  Your thoughts are still on Mason, and when you'll be able to see him again as you head back to your room.
+<</nobr>>
+
+
+::MovingBackHome9
+<<nobr>>
+  <h1>A Picnic with Mason</h1>
+  <img src="PartX/BackHome11.gif" hspace="10" vspace="10" height="450">
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+<</nobr>>
+<<nobr>>
+  When Mason takes you out on your next date together, you decide the private spot where he's set up your picnic is the perfect place.
+  When your top comes off, and you aren't wearing a bra, Mason knows something has changed.  "I still have to wait for the belt to come
+  off.", you tell him.  "But that doesn't mean I have to wait for everything."
+<</nobr>>
+
+<<nobr>>
+  As you two make out, his hands roam farther than you'd allowed before.  As his hands cup your breasts, you moan, the first time any hands
+  but your owns have touched them in so long.  With his tongue in your mouth his fingers tease your nipples.  It's more than you can take.
+  You need him inside you, right now!
+<</nobr>>
+
+<<nobr>>
+  But you can't have that.  So instead you pull away from his kiss and pull down his pants.  You start sucking his cock.  It feels so wonderful
+  on your tongue.  It was just as good as you'd been fantasizing.
+  You start with just the head, enjoying the way your lips feel as they slide over the smooth crown of his cock.  You'd looked at so many
+  cocks online since you'd last seen one, imagining what this would be like.  You are loving the way your lips catch a bit on corona, the
+  soft moans he makes as you flick your tongue along the frenulum.
+<</nobr>>
+
+<<nobr>>
+  But soon you can't take it soft and slow any longer, and you begin taking more and more of his cock into your mouth.  You don't stop
+  until he's filled your mouth with cum, just as you'd fantasized about so many times.
+<</nobr>>
+
+<<nobr>>
+  Afterwards he tries to focus on you pleasure, what pleasure the belt allows you at least.  After his lips move from your breasts, he
+  kisses his way down to your waist.  He skips over your belt and begins to kiss and suck on your inner thigh.  You moan and wimper, it feels
+  so good, but makes you need more.  He continues as long as you let him, but soon you can't take anymore and tell him to stop and
+  let you [[suck his cock again|MovingBackHome10]].
+<</nobr>>
+
+<<achievement>>friends<</achievement>>
+
+::MovingBackHome10
+<<nobr>>
+  <h1>On a Romantic Date with Mason</h1>
+  <img src="PartX/BackHome14.png" hspace="10" vspace="10" height="700" align="left">
+<</nobr>>
+<<nobr>>
+  You remembered how other men had just wanted to use you, and then move on after they got what they wanted.  You know Mason wasn't like
+  that, but a small part of you worried that Mason might lose interest in you after your picnic.  Of course, that didn't happen.
+<</nobr>>
+
+<<nobr>>
+  You had thought it was possible that he might just want to meet in private, to enjoy what intimacy you can together, after so long
+  without even that.  You don't think you would have minded that, even though you knew it would end with you tugging at your belt
+  in frustration.
+<</nobr>>
+
+<<nobr>>
+  But he didn't want that, or at least not only that.  Instead he'd had a romantic date planned for you.  You spent
+  [[most of the evening|MovingBackHome11]] talking over candlelight about how much you love each other, and what you both plan on
+  doing after graduation.
+<</nobr>>
+
+::MovingBackHome11
+<<nobr>>
+  <h1>After your Romantic Date</h1>
+  <<if $BodyType == "Standard" or $BodyType == "Plus">>
+    <img src="PartX/BackHome17.gif" hspace="10" vspace="10" height="500">
+  <<else>>
+    <img src="PartX/BackHome18.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+<</nobr>>
+<<nobr>>
+  Talking over candlelight was how you spent most of the evening, but not how you ended the evening.  After the romantic night out, you both
+  went back to Mason's apartment.
+<</nobr>>
+
+<<nobr>>
+  As you and Mason make out, your clothing is slowly removed piece by piece, until you are left there kissing him wearing only your chastity belt.
+  His hands roam your body as your desire only grows.  You still ache to feel him inside you.
+<</nobr>>
+
+<<nobr>>
+  As you look down at your breasts you have an idea.  You squeeze them together, so he can slide his cock between them.
+  <<if $BodyType == "Standard" or $BodyType == "Plus">>
+    You watch as his cock is squeezed between your breasts.  As you see the head push past the tender flesh you imagine it
+    parting your lips, trapped beneath your belt, and pushing inside you.
+    <br>
+    With each of his thrusts you can almost feel one inside you as your body 'remembers' how good it felt.  Mason's body doesn't have
+    to remember, and soon you have a lovely view as his cock swells and then releases a warm load of cum over your chest and face.
+    <br>
+    <img src="PartX/BackHome18.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+    But even that is denied to you.  This time it's your body that doesn't cooperate with your fantasy.  But his cock is already
+    right there in front of your mouth, so can still be sure your breasts are covered with his cum before you finish.
+  <</if>>  
+<</nobr>>
+
+<<nobr>>
+  As you suck away the last bits of cum from his cock and scoop and lick away what covers you, you realize your father was right.
+  You can see the need and hunger in Mason's eyes, especailly when he's close to cumming.  He probably wouldn't have been able to wait
+  until your wedding day, whenever that might be.  You are glad you are able to make him so happy and ensure he never thinks to
+  leave for a girlfriend not locked in a chastity belt.
+<</nobr>>
+
+<<nobr>>
+  Your only worry is that maybe now he is too happy with the way things are.  You worry he may want to date for years and years.
+  You had become accustomed to your belt, well somewhat at least.  But now that your pleasure is so close, either from Mason's hands,
+  his mouth, or his wonderful cock, your need has returned more than ever.
+<</nobr>>
+
+<<nobr>>
+  Now you wonder if you'll be able to wait long enough for Mason to propose.  But then you realize
+  [[you have no choice but to wait|MovingBackHome12]].
+<</nobr>>
+
+::MovingBackHome12
+<<nobr>>
+  <h1>Still Waiting...</h1>
+  <img src="PartX/BackHome12.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+<</nobr>>
+<<nobr>>
+  Your need only grows every day, but Mason is [[happy with the way things are now|MovingBackHome13]].  Of course he agrees that it will be wonderful 'someday'
+  when you are married, but he doesn't have the hunger to be fucked that you have.  He doesn't feel the need for it like you do.  Why would
+  he?  Every day you leave him with empty balls and a smile on his face.
+<</nobr>>
+
+<<nobr>>
+  He would probably be happy waiting years until you married.  While you would elope with him today if you could.  You try not to complain,
+  but Mason seems to have picked up on some of your impatience.
+<</nobr>>
+
+<<nobr>>
+  "Of course I enjoy it... what we do now.", Mason says.  "But I thought you enjoyed it too?" You can hear a bit of concern in his voice when
+  he thinks you might not.
+<</nobr>>
+  
+<<nobr>>
+  "I love it!", you tell him truthfully.  "I love the way your cock feels in my mouth. I love the way you put your hands on
+  the back of my head and moan as you start to get close.  And I realy love that moment where I feel the head get bigger and I know
+  you are about to be filling my mouth with your cum."
+<</nobr>>
+  
+<<nobr>>
+  "Wow, you enjoy it even more than I thought.  I got hard just hearing you talk about it.  Do you want to suck it again?", he asks.
+<</nobr>>
+  
+<<nobr>>
+  "Please, can I?", you beg as you drop to your knees.  You can't have Mason fuck you like you want, but wrapping your lips around
+  his cock does make you happy.  And it lets you enjoy giving him pleasure for a moment instead of worrying about the pleasure you can't have.
+<</nobr>>
+
+::MovingBackHome13
+<<nobr>>
+  <h1>A Few More Months to Wait</h1>
+  <img src="PartX/BackHome15.png" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $Engaged to 'Mason'>>
+<</nobr>>
+<<nobr>>
+  Mason takes you out on another romantic date this evening.  But at the end of this date it's Mason kneeling for you, and holding
+  up and engagement ring!  "Yes, yes, I'll marry you!", you tell him.
+<</nobr>>
+
+<<nobr>>
+  You are so happy at the thought of spending the rest of your lives together that for a moment your forgot about the belt, and being
+  free of it.
+<</nobr>>
+
+<<nobr>>
+  When you remember that comes with your wedding night, you want to run off right now and get married today.  But you don't
+  suggest that, you know Mason has already planned to wait until after graduation.
+<</nobr>>
+
+<<nobr>>
+  You know you'd be eager to find a venue, to set an exact date, and to do all the rest of the planning with Mason for the big day.
+  But you are even more eager.  Because you know once you have the date set, they'll be a day circled in red on your calendar, and
+  you know that will be the day you can finally orgasm again.
+<</nobr>>
+
+<<nobr>>
+  But the planning can wait until tomorrow.  Tonight you just [[want to celebrate|MovingBackHome14]] with Mason.
+<</nobr>>
+
+::MovingBackHome14
+<<nobr>>
+  <h1>Sucking your Fiancé's Cock</h1>
+  <img src="PartX/BackHome16.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+<</nobr>>
+<<nobr>>
+  This summer may still be a while away, but months is so much better than 'someday'.  And knowing you'll soon be able to orgasm again has
+  you feeling hornier than ever by the time you get to Mason's house.
+<</nobr>>
+
+<<nobr>>
+  You don't want to wait or make out, or anything else.  You gently push Mason down on the sofa and pull down his pants and get work
+  on his cock and have him cumming for you in record time.
+<</nobr>>
+
+<<nobr>>
+  "You should probably talk to my father before we go public with any kind of announcement or anything.  He'll want you to 'ask his
+  permission' first.", you say as you clean the cum from your face.
+<</nobr>>
+
+<<nobr>>
+  "I figured as much.  I've already spoken to him.  And he approves.", he sees the look on your face and adds,  "And he'll be giving me
+  the key to this on our wedding day." he says as he tugs on your belt and pulls your now-clean face towards him for a kiss.
+<</nobr>>
+
+<<nobr>>
+  "He says he [[wants to talk to me more|MovingBackHome15]] though.  Which I guess is good, since he's going to be my father-in-law soon.", 
+<</nobr>>
+
+::MovingBackHome15
+<<nobr>>
+  <h1>Prenuptial Agreement</h1>
+  <img src="PartX/BackHome20.jpg" hspace="10" vspace="10" height="500">
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+<</nobr>>
+
+TODO Tells her about her father, and that she needs to be in the belt when unsupervised [[MovingBackHome16]]
+
+::MovingBackHome16
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="PartX/BackHome19.jpg" hspace="10" vspace="10" height="500">
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+  <<set $sex.push({sex: 'male', name:'Mason'})>>
+<</nobr>>
+
+TODO Tells her that she'll be submissive [[MovingBackHomeGraduation]]
+
+::MovingBackHomeGraduation
+  <<set $StudentYearsCompleted to 4>>
+  <<set $Graduated to 1>>
+TODO Graduation, then [[MovingBackHomeBachelorParty]]
+<<achievement>>graduate<</achievement>>
+
+::MovingBackHomeBachelorParty
+TODO Mason goes to a bachelor party, at strip club, but he cums back horny and wants a bj, so know he didn't do anything there, then [[MovingBackHomeWedding]]
+
+::MovingBackHomeWedding
+<<set $Spouse to 'Mason'>>
+<<unset $Engaged>>
+<<set $BoyfriendStrictChastity to 1>>
+<<set $Keyholder to 'Mason'>>
+TODO Wedding, Caprice wedding night video then [[MovingBackHomeNextDay]]
+
+::MovingBackHomeNextDay
+TODO Back into belt [[MovingBackHomeHoneymoon]]
+
+::MovingBackHomeHoneymoon
+TODO Mason keeps you locked most of the time still, out occasionaly for sex, Anal? [[MovingBackHomePregnant]]
+
+::MovingBackHomePregnant
+TODO Pregnancy (inc achievements) [[MovingBackHomeDoctorsOrders]]
+
+::MovingBackHomeDoctorsOrders
+TODO Blowjob while recovering [[MovingBackHomeMarriedLife]]
+
+::MovingBackHomeMarriedLife
+TODO He has manager job at factory, you stay home and take care of the kids [[End|MovingBackHomeEnd]]
+
+::MovingBackHomeEnd
+<h1><<print "Game Over - Chaste Wife">></h1>
+<img src="PartX/GameOver7.jpg" hspace="10" vspace="10" height="650">
 <<achievement>>chastity<</achievement>>
+
