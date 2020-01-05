@@ -665,97 +665,99 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <</if>>
 
 ::BodySideEffectsYes <1425,200>
-	<<nobr>>
-		<<set $validOptionsThisRoll = []>>
-		<<if !$PlayerSideEffectPermanent>>
-			<<if $PreventSideEffectCount > 0>>
-				<<set $validOptionsThisRoll.push(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)>>
-				<<if $PreventSideEffectCount > 1>>
-					<<set $validOptionsThisRoll.push(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)>>
-				<</if>>
-			<</if>>
-			<<set $validOptionsThisRoll.push(1, 1)>>
-		<</if>>
-		<<if !$PreventSideEffectOrgasmBlock>>
-			<<if $PlayerSideEffectOrgasmBlock>>
-				<<set $validOptionsThisRoll.push(2)>>
-			<<else>>
-				<<set $validOptionsThisRoll.push(2, 2, 2, 2)>>
-			<</if>>
-		<</if>>
-		<<if !$PreventSideEffectMasturbationBlock>>
-			<<if $PlayerSideEffectMasturbationBlock>>
-				<<set $validOptionsThisRoll.push(3)>>
-			<<else>>
-				<<set $validOptionsThisRoll.push(3, 3, 3, 3)>>
-			<</if>>
-		<</if>>
-		<<if !$PreventSideEffectSubmissive>>
-			<<if $PlayerSideEffectSubmissive>>
-				<<set $validOptionsThisRoll.push(4)>>
-			<<else>>
-				<<set $validOptionsThisRoll.push(4, 4, 4, 4)>>
-			<</if>>
-		<</if>>
-		<<if !$PreventSideEffectExhibitionist>>
-			<<if $PlayerSideEffectExhibitionist>>
-				<<set $validOptionsThisRoll.push(5)>>
-			<<else>>
-				<<set $validOptionsThisRoll.push(5, 5, 5, 5)>>
-			<</if>>
-		<</if>>
-		<<if !$PreventSideEffectPheromones>>
-			<<if $PlayerSideEffectPheromones>>
-				<<set $validOptionsThisRoll.push(6)>>
-			<<else>>
-				<<set $validOptionsThisRoll.push(6, 6, 6, 6)>>
-			<</if>>
-		<</if>>
-		<<if !$PreventSideEffectOral>>
-			<<if $PlayerSideEffectOral>>
-				<<set $validOptionsThisRoll.push(7)>>
-			<<else>>
-				<<set $validOptionsThisRoll.push(7, 7, 7, 7)>>
-			<</if>>
-		<</if>>
-		<<if !$PreventSideEffectAnal>>
-			<<if $PlayerSideEffectAnal>>
-				<<set $validOptionsThisRoll.push(8)>>
-			<<else>>
-				<<set $validOptionsThisRoll.push(8, 8, 8, 8)>>
-			<</if>>
-		<</if>>
-		<<if !$PreventSideEffectLibido>>
-			<<if $PlayerSideEffectLibido>>
-				<<set $validOptionsThisRoll.push(9)>>
-			<<else>>
-				<<set $validOptionsThisRoll.push(9, 9, 9, 9)>>
-			<</if>>
-		<</if>>
-		<<if !$PreventSideEffectDreams>>
-			<<if $PlayerSideEffectDreams>>
-				<<set $validOptionsThisRoll.push(10)>>
-			<<else>>
-				<<set $validOptionsThisRoll.push(10, 10, 10, 10)>>
-			<</if>>
-		<</if>>
-		<<set $validOptionsThisRoll.push(11, 11)>>
-	<</nobr>>
+<<nobr>>
+  <<set $validOptionsThisRoll = []>>
+  <<if !$PlayerSideEffectPermanent>>
+    <<if $PreventSideEffectCount > 0>>
+      <<set $validOptionsThisRoll.push(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)>>
+      <<if $PreventSideEffectCount > 1>>
+        <<set $validOptionsThisRoll.push(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)>>
+      <</if>>
+    <</if>>
+    <<set $validOptionsThisRoll.push(1, 1)>>
+  <</if>>
+  <<if !$PreventSideEffectOrgasmBlock>>
+    <<if $PlayerSideEffectOrgasmBlock>>
+      <<set $validOptionsThisRoll.push(2)>>
+    <<else>>
+      <<set $validOptionsThisRoll.push(2, 2, 2, 2)>>
+    <</if>>
+  <</if>>
+  <<if !$PreventSideEffectMasturbationBlock>>
+    <<if $PlayerSideEffectMasturbationBlock>>
+      <<set $validOptionsThisRoll.push(3)>>
+    <<else>>
+      <<set $validOptionsThisRoll.push(3, 3, 3, 3)>>
+    <</if>>
+  <</if>>
+  <<if !$PreventSideEffectSubmissive>>
+    <<if $PlayerSideEffectSubmissive>>
+      <<set $validOptionsThisRoll.push(4)>>
+    <<else>>
+      <<set $validOptionsThisRoll.push(4, 4, 4, 4)>>
+    <</if>>
+  <</if>>
+  <<if !$PreventSideEffectExhibitionist>>
+    <<if $PlayerSideEffectExhibitionist>>
+      <<set $validOptionsThisRoll.push(5)>>
+    <<else>>
+      <<set $validOptionsThisRoll.push(5, 5, 5, 5)>>
+    <</if>>
+  <</if>>
+  <<if !$PreventSideEffectPheromones>>
+    <<if $PlayerSideEffectPheromones>>
+      <<set $validOptionsThisRoll.push(6)>>
+    <<else>>
+      <<set $validOptionsThisRoll.push(6, 6, 6, 6)>>
+    <</if>>
+  <</if>>
+  <<if !$PreventSideEffectOral>>
+    <<if $PlayerSideEffectOral>>
+      <<set $validOptionsThisRoll.push(7)>>
+    <<else>>
+      <<set $validOptionsThisRoll.push(7, 7, 7, 7)>>
+    <</if>>
+  <</if>>
+  <<if !$PreventSideEffectAnal>>
+    <<if $PlayerSideEffectAnal>>
+      <<set $validOptionsThisRoll.push(8)>>
+    <<else>>
+      <<set $validOptionsThisRoll.push(8, 8, 8, 8)>>
+    <</if>>
+  <</if>>
+  <<if !$PreventSideEffectLibido>>
+    <<if $PlayerSideEffectLibido>>
+      <<set $validOptionsThisRoll.push(9)>>
+    <<else>>
+      <<set $validOptionsThisRoll.push(9, 9, 9, 9)>>
+    <</if>>
+  <</if>>
+  <<if !$PreventSideEffectDreams>>
+    <<if $PlayerSideEffectDreams>>
+      <<set $validOptionsThisRoll.push(10)>>
+    <<else>>
+      <<set $validOptionsThisRoll.push(10, 10, 10, 10)>>
+    <</if>>
+  <</if>>
+  <<set $validOptionsThisRoll.push(11, 11)>>
+<</nobr>>
 
-	<<switch either($validOptionsThisRoll)>>
-		<<case 1>>	<<include [[BodySideEffectPermanent]]>>
-		<<case 2>>	<<include [[BodySideEffectOrgasmBlock]]>>
-		<<case 3>>	<<include [[BodySideEffectMasturbationBlock]]>>
-		<<case 4>>	<<include [[BodySideEffectSubmissive]]>>
-		<<case 5>>	<<include [[BodySideEffectExhibitionist]]>>
-		<<case 6>>	<<include [[BodySideEffectPheromones]]>>
-		<<case 7>>	<<include [[BodySideEffectOral]]>>
-		<<case 8>>	<<include [[BodySideEffectAnal]]>>
-		<<case 9>>	<<include [[BodySideEffectLibido]]>>
-		<<case 10>>	<<include [[BodySideEffectDreams]]>>
-		<<case 11>>	<<include [[BodySideEffectSuperOrgasm]]>>
-		<<default>> <<include [[BodySideEffectFail]]>>
-	<</switch>>
+<<nobr>>
+  <<switch either($validOptionsThisRoll)>>
+    <<case 1>>	<<include [[BodySideEffectPermanent]]>>
+    <<case 2>>	<<include [[BodySideEffectOrgasmBlock]]>>
+    <<case 3>>	<<include [[BodySideEffectMasturbationBlock]]>>
+    <<case 4>>	<<include [[BodySideEffectSubmissive]]>>
+    <<case 5>>	<<include [[BodySideEffectExhibitionist]]>>
+    <<case 6>>	<<include [[BodySideEffectPheromones]]>>
+    <<case 7>>	<<include [[BodySideEffectOral]]>>
+    <<case 8>>	<<include [[BodySideEffectAnal]]>>
+    <<case 9>>	<<include [[BodySideEffectLibido]]>>
+    <<case 10>>	<<include [[BodySideEffectDreams]]>>
+    <<case 11>>	<<include [[BodySideEffectSuperOrgasm]]>>
+    <<default>> <<include [[BodySideEffectFail]]>>
+  <</switch>>
+<</nobr>>
 
 ::BodySideEffectFail <1600,200>
 	Actually, it looks like there weren't quite as many as I had thought.  That was [[your last side effect.|EndPart1]]
@@ -1102,6 +1104,15 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			and prevent it from happening again.  It'll probably cause more
 			of other side effects though.  Otherwise, it looks like
 		<<else>>
+      <<if !$PlayerSideEffectAnalPermanent and either(1,2,3,4,5,6) < 6>>
+        <<set $PlayerSideEffectAnalPermanent to 1>>
+        Your need for anal sex is permanent, even if you change back.  You probably won't be able to get off unless your ass is
+        getting fucked.  So if you change back and prefer men, you'll definitely be a bottom.  But even if you prefer women, don't worry
+        there are options there too.
+        <br>
+        <video src="Part1/SideEffectAnal2.webm" autoplay loop muted width="650"></video>
+        <br><br>
+      <</if>>
 			It looks like
 		<</if>>
 		

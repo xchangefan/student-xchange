@@ -709,11 +709,11 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <<if setup.areDating('Barry')>><br><<print "You serve Barry as his pet. ">><</if>>
 
     <<if $Spouse == 'Mason'>>
-      <br>You are married to Mason.
+      You are married to Mason.
     <<elseif $Engaged == 'Mason'>>
-      <br>You are engaged to Mason, but stil living at your parents house.
+      You are engaged to Mason, but stil living at your parents house.
     <<elseif setup.areDating('Mason')>>
-      <br>You are in a relationship with Mason.
+      You are in a relationship with Mason.
     <</if>>
 
     <<if $dating.length == 0>> 
@@ -744,6 +744,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     You work at a smoothie bar.
   <<elseif $FatherChastity>>
     <<if $JobHomemaker>>
+      <br><br>
       <<if $PlayerMother>>
         You are a stay-at-home mother.
       <<elseif $Spouse>>
@@ -752,6 +753,12 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
         You are a stay-at-home fiancée.
       <<else>>
         You are a stay-at-home girlfriend.
+      <</if>>
+    <<elseif $FatherChastityBarista>>
+      <br><br>
+      You are working as a Barista, but just until you can find a job in your field.
+      <<if $PlayerStudentLoan>>
+        All your pay is going to pay off your student loan.
       <</if>>
     <</if>>
   <<elseif $DropoutConcubine>>
