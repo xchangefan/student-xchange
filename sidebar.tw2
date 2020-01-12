@@ -280,14 +280,17 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li>You don't need much sleep.</li>
   <</if>>
 
+  <<if $SideEffectsForHusband>>
+    <<set $tempHusbandText to " and usually about " + $Spouse>>
+  <</if>>  
   <<if $PlayerSideEffectDreams >3 >>
-    <li>Your dreams are always erotic and you have trouble distinguishing them from reality.</li>
+    <li>Your dreams are always erotic $tempHusbandText and you have trouble distinguishing them from reality.</li>
   <<elseif $PlayerSideEffectDreams >2 >>
-    <li>Your dreams are always erotic and will affect you during the day.</li>
+    <li>Your dreams are always erotic $tempHusbandTextand will affect you during the day.</li>
   <<elseif $PlayerSideEffectDreams >1 >>
-    <li>Your dreams are always erotic.</li>
+    <li>Your dreams are always erotic $tempHusbandText.</li>
   <<elseif $PlayerSideEffectDreams>>
-    <li>Your dreams are sometimes erotic.</li>
+    <li>Your dreams are sometimes erotic $tempHusbandText.</li>
   <</if>>
 
   <<if $PlayerEasytoOrgasm >3 >>
@@ -330,7 +333,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li>You cannot orgasm from masturbating.</li>
   <</if>>
 
-  <<if $PlayerSideEffectExhibitionist >3 >>
+  <<if $PlayerSideEffectExhibitionist >3 and !$SideEffectsForHusband>>
     <li>You crave always being naked, you dislike wearing clothes, you cannot refuse sex when naked.</li>
   <<elseif $PlayerSideEffectExhibitionist >2 >>
     <li>You crave being naked in public, you dislike wearing clothes.</li>
@@ -340,18 +343,41 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li>You like the thought of being naked in public.</li>
   <</if>>
 
+  <<if $SideEffectsForHusband>>
+    <<set $tempHusbandText to " and usually about " + $Spouse>>
+  <</if>>  
   <<if $PlayerSideEffectDominant>>
     <li>You are usually dominant in sexual situations.</li>
   <<elseif $PlayerSideEffectSubmissive >4 >>
-    <li>You long to be controlled.  You want nothing more to serve and to be used.</li>
+    <li>You long to be controlled.  You want nothing more to serve and to be
+      <<if $SideEffectsForHusband>>
+        by $Spouse
+      <</if>>.
+    </li>
   <<elseif $PlayerSideEffectSubmissive >3 >>
-    <li>You are submissive in sexual situations, you can never refuse anything.</li>
+    <li>You are submissive in sexual situations, you can never refuse anything
+      <<if $SideEffectsForHusband>>
+        from $Spouse
+      <</if>>.
+    </li>
   <<elseif $PlayerSideEffectSubmissive >2 >>
-    <li>You are submissive in sexual situations, you can never refuse sex.</li>
+    <li>You are submissive in sexual situations, you can never refuse sex
+      <<if $SideEffectsForHusband>>
+        with $Spouse
+      <</if>>.
+    </li>
   <<elseif $PlayerSideEffectSubmissive >1 >>
-    <li>You are submissive in sexual situations, you can never refuse sex if you are already horny.</li>
+    <li>You are submissive in sexual situations, you can never refuse sex
+      <<if $SideEffectsForHusband>>
+        with $Spouse
+      <</if>>
+     if you are already horny.</li>
   <<elseif $PlayerSideEffectSubmissive>>
-    <li>You are submissive in sexual situations.</li>
+    <li>You are submissive in sexual situations
+      <<if $SideEffectsForHusband>>
+        with $Spouse
+      <</if>>.
+    </li>
   <</if>>
 
   <<if $PlayerSideEffectMasochist>>
@@ -362,7 +388,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
   <</if>>
 
-  <<if $PlayerSideEffectPheromones >3 >>
+  <<if $PlayerSideEffectPheromones and $SideEffectsForHusband>>
+    <li>The smell of sweating men excites you so you try to avoid them unless you are with your husband.</li>
+  <<elseif $PlayerSideEffectPheromones >3 >>
     <li>Being next to any man will instantly excite you.</li>
   <<elseif $PlayerSideEffectPheromones >2 >>
     <li>The smell of sweating men excites you, being next to multiple men will instantly excite you.</li>
@@ -372,7 +400,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <li>The smell of sweating men excites you.</li>
   <</if>>
 
-  <<if $PlayerSideEffectLibido >2 >>
+  <<if $PlayerSideEffectLibido and $SideEffectsForHusband>>
+    <li>Your libido is much higher than normal.  Frequently your thoughts are on the next time $Spouse will be inside you again.</li>
+  <<elseif $PlayerSideEffectLibido >2 >>
     <li>Your libido is much higher than normal, you can never refuse sex.</li>
   <<elseif $PlayerSideEffectLibido >1 >>
     <li>Your libido is much higher than normal, you will often accept or suggest sex to anyone showing the slightest interest.</li>
@@ -389,6 +419,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
     <li>If you go too long without a cock in your mouth, you'll beg for one until someone lets you suck their cock.</li>
     <li>You'll never turn down a cock offered to you.  You'll drop to you knees immediately if they let you.</li>
+  <<elseif $PlayerSideEffectOral and $SideEffectsForHusband>>
+    <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sucking $Spouse's cock.  You try to wake him up with a blowjob every day, and greet him with another after work.</li>
   <<elseif $PlayerSideEffectOral >3 and !$PlayerSideEffectBreeder>>
     <li><<if $PlayerCumslut>>Like a good cumslut, you<<else>>You<</if>> love oral sex, you cannot orgasm without it, and can never refuse it, you sometimes suggest it as a reward.</li>
   <<elseif $PlayerSideEffectOral >2 and !$PlayerSideEffectBreeder>>
@@ -402,7 +434,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $PlayerSideEffectAnal>>
     <li>
       You love anal
-      <<if $PlayerSideEffectAnal >3 and !$PlayerSideEffectBreeder>>
+      <<if $SideEffectsForHusband>>
+        sex and are thrilled whenever $Spouse wants it.</li>
+      <<elseif $PlayerSideEffectAnal >3 and !$PlayerSideEffectBreeder>>
         sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm, you constantly need something in your ass.
       <<elseif $PlayerSideEffectAnal >2 and !$PlayerSideEffectBreeder>>
         sex and can never refuse it, your lovers need to play with your ass for you to be able to orgasm.
@@ -424,6 +458,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $PlayerSideEffectBreeder>>
     <li>You have powerful orgasms.  But you can only orgasm when you are pregnant, or when somone cums inside you.</li>
   <</if>>
+  
 <</nobr>>
 </ul>
 
