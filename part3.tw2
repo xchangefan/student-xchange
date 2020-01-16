@@ -758,7 +758,7 @@
 			<<replace "#Engineer2Span">>
 				<img src="Part3/JobEngineer1.jpg" hspace="10" vspace="10" height="650">
 
-				<<print "Subjects, as described in the forms you signed earlier, the primary purpose here is to a research study comparing orgasm response between natal women and X-Change users.">>
+				<<print "Subjects, as described in the forms you signed earlier, the primary purpose here is to gather data for a research study comparing orgasm response between natal women and X-Change users.">>
 
 				<<print "Please do not disclose which you are to any of our staff, the fewer of us aware of your status, the better. Researchers from the Biology department will be analyzing all the data we collect and will have access to the information you provided earlier.">>
 
@@ -1595,15 +1595,41 @@
 ::JobEngineer3 <3000,2250>
 <<nobr>>	
 	<h1><<print "Engineering Department">></h1>
+  Since you are one of the few women on the team, you get to test much of the new equipment before it’s tried on the subjects.
+  <<if $Keyholder == "Robert">>
+    <<unset $PlayerChastityBelt>>
+    <<unset $Keyholder>>
+    <br><br>
+    Olivia’s master reluctantly agrees to release you from the belt, since you have to test the devices away from the lab as well.
+    He lets you keep the belt and the keys.
+  <</if>>
 <</nobr>>
 
-<<print "Since you are one of the few women on the team, you get to test much of the new equipment before it’s tried on the subjects.">><<if $Keyholder == "Robert">><<unset $PlayerChastityBelt>><<unset $Keyholder>><br><br><<print "Olivia’s master reluctantly agrees to release you from the belt, since you have to test the devices away from the lab as well.  He lets you keep the belt and the keys.">><</if>>
+<<nobr>>
+  <video src="Part3/JobEngineer3.webm" autoplay loop muted height="640"></video>
+<</nobr>>
 
-<video src="Part3/JobEngineer3.webm" autoplay loop muted height="640"></video>
+<<nobr>>
+  You get to see what works well, what doesn’t, and help the team make improvements before it’s tried out for real. You record every
+  session for later analysis. You love seeing the effect watching the recordings later has on your male coworkers.
+<</nobr>>
 
+<<nobr>>
+  <<if $PlayerSideEffectMasturbationBlock>>
+    While you can get a good idea of what will work during your experiments, you can't get off playing with your creations by yourself.
+    It sure feels good though.  When you are left incredibly horny at the end of one of your equipment tests, you know you are on the
+    right track.
+  <<else>>
+    After a while though, it seems to get harder and harder to get off with some of the equipment - or even just masturbating.
+    You make a visit to the health center, and after some tests they let you know that all of the masturbation you’ve been doing
+    for work (and otherwise) has activated some latent side-effect of your X-Change. You can still orgasm as well as you could before,
+    but just not with you in control.
+    <<set $PlayerSideEffectMasturbationBlock = 1>>
+    <br><br>
+    <i>You are no longer able to orgasm from masturbation.</i>
+  <</if>>
+<</nobr>>
 
-<<print "You get to see what works well, what doesn’t, and help the team make improvements before it’s tried out for real. You record every session for later analysis. You love seeing the effect watching the recordings later has on your male coworkers.">>
-<<if !$PlayerSideEffectMasturbationBlock>><<set $PlayerSideEffectMasturbationBlock = 1>><br><<print "After a while though, it seems to get harder and harder to get off with some of the equipment - or even just masturbating. You make a visit to the health center, and after some tests they let you know that all of the masturbation you’ve been doing for work (and otherwise) has activated some latent side-effect of your X-Change. You can still orgasm as well as you could before, but just not with you in control.">><br><</if>>
 <<nobr>>
 	<<link "Spend time in your dormitory.">>
 		<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
@@ -1622,14 +1648,12 @@
 	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
 	<<set $sex.push({sex: 'male', anon: 'Engineering Coworker'})>>
 	<<if setup.areDating('Josh')>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
-	
 	<h1><<print "Engineering Department">></h1>
+  The new equipment still needs to be tested. And instead of letting the other woman on the team get all the fun, you come up with
+  another way. If you are locked in, and someone else is controlling the machine, it works fine on you.
 <</nobr>>
 
-<<print "The new equipment still needs to be tested. And instead of letting the other woman on the team get all the fun, you come up with another way. If you are locked in, and someone else is controlling the machine, it works fine on you.">>
-
 <video src="Part3/JobEngineer4.mp4" autoplay loop muted height="640"></video>
-
 
 <<print "Your male coworkers soon find that you are quite horny and very willing to negotiate when you’re bound, helpless, and desperate for them to leave the machine on long enough to let you orgasm.">>
 
