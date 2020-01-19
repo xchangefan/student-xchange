@@ -282,11 +282,13 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
   <<if $SideEffectsForHusband>>
     <<set $tempHusbandText to " and usually about " + $Spouse>>
+  <<else>>
+    <<set $tempHusbandText to "">>
   <</if>>  
   <<if $PlayerSideEffectDreams >3 >>
     <li>Your dreams are always erotic $tempHusbandText and you have trouble distinguishing them from reality.</li>
   <<elseif $PlayerSideEffectDreams >2 >>
-    <li>Your dreams are always erotic $tempHusbandTextand will affect you during the day.</li>
+    <li>Your dreams are always erotic $tempHusbandText and will affect you during the day.</li>
   <<elseif $PlayerSideEffectDreams >1 >>
     <li>Your dreams are always erotic $tempHusbandText.</li>
   <<elseif $PlayerSideEffectDreams>>
