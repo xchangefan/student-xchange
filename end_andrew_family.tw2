@@ -1,22 +1,5 @@
-::Part13AndrewEngaged <0,4310>
+::Part13AndrewEngagedWinter <0,4310>
 <<nobr>>
-  <h1>Getting Ready for the Big Day</h1>
-  <img src="PartX/AndrewFamily1.jpg" hspace="10" vspace="10" height="600" align="left">
-  <<set $tempBabyNameBoys to ["Casey","Liam","Brandon","Wyatt","Eli"].map((name) => {return {name, sex:'male'}})>>
-  <<set $tempBabyNameGirls to ["Hope","Delilah","Emma","Sophia","Mia"].map((name) => {return {name, sex:'female'}})>>
-	<<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
-  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
-  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
   You and Andrew had originally picked a date in early June, but had soon discovered that picking that date meant many of your friends from school wouldn't be able
   to attend.  Looking for a date when your school friends, and your family, and Andrew's family can all make it, and the church is available, was a challenge.  But
   you were able to find one - the Saturday after finals.
@@ -61,8 +44,58 @@
   <<else>>
     her
   <</if>>
-  than sitting in some boring lecure hall.  You delete the notice and get back to working with Faith on the final details for
+  than sitting in some boring lecture hall.  You delete the notice and get back to working with Faith on the final details for
   Saturday.
+<</nobr>>
+
+::Part13AndrewEngagedSummer <50,4310>
+<<nobr>>
+  You and Andrew had settled on a date, picked a venue, and sent out all the invitations.  At times you wonder if the two of you should have just eloped while
+  you were on vacation, but seeing the excitement Faith, Cassie, and everyone else has for you, you are glad you didn't.
+<</nobr>>
+
+<<nobr>>
+  <<unset $student>>
+  <<set $Dropout to "Baby">>
+  You didn't bother enrolling after the summer.  You'll have a newborn to take care of, and would much rather be spending time with
+  <<if !$BabyKnow>>
+    him or her
+  <<elseif $BabyBoy>>
+    him
+  <<else>>
+    her
+  <</if>>
+  than sitting in some boring lecture hall.
+<</nobr>>
+
+<<nobr>>
+  Faith still has classes though, so you you have to wait until she's out before you and her can go over the final details for the wedding next Saturday.
+<</nobr>>
+
+::Part13AndrewEngaged <100,4310>
+<<nobr>>
+  <h1>Getting Ready for the Big Day</h1>
+  <img src="PartX/AndrewFamily1.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $tempBabyNameBoys to ["Casey","Liam","Brandon","Wyatt","Eli"].map((name) => {return {name, sex:'male'}})>>
+  <<set $tempBabyNameGirls to ["Hope","Delilah","Emma","Sophia","Mia"].map((name) => {return {name, sex:'female'}})>>
+	<<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<if $tempSummerEngaged>>
+    <<include [[Part13AndrewEngagedSummer]]>>
+  <<else>>
+    <<include [[Part13AndrewEngagedWinter]]>>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -390,6 +423,8 @@
   Each time, when Andrew finishes inside you, you wonder how long it will take before you are [[pregnant again|AndrewPregnantAgain]].  You want
   <<print $children[0].name>> to have a brother or sister, so you hope it will be soon.
 <</nobr>>
+
+TODO Handle if tempFamilySize ($tempFamilySize) equals Small
 
 ::AndrewPregnantAgain <1600,4310>
 <<nobr>>
