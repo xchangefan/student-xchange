@@ -50,14 +50,34 @@
 
 ::Part13AndrewEngagedSummer <50,4310>
 <<nobr>>
-  You and Andrew had settled on a date, picked a venue, and sent out all the invitations.  At times you wonder if the two of you should have just eloped while
-  you were on vacation, but seeing the excitement Faith, Cassie, and everyone else has for you, you are glad you didn't.
+  <<if $tempFamilySize == 'NoKids'>>
+    <<set $tempFamilySize to 'Small'>>
+    Andrew is as shocked by the news as you were when you get home and share the big news with him.  He quickly warms to the idea that he's going to be a
+    father though.  So quickly, in fact, that you suspect that may have been what he wanted, but he just said he didn't want kids because he knew that was what
+    you had wanted.  He's definitely agreeing with you stop, at least for now, after this one.
+    <br><br>
+    You and him discuss the wedding date, and check the availability for the venue you both want.  You realize that the by the date you settle on, you'll be
+    quite pregnant.  But you don't mind.  As long as you and Andrew are married before the baby is born, that's fine by you.
+  <<elseif $PregnancySummer>>
+    Andrew is as thrilled about the news as you are when you get home and share the big news with him.  You and him discuss the wedding date, and check the
+    availability for the venue you both want.  You realize that the by the date you settle on, you'll be quite pregnant.  But you don't mind.  As long as you
+    and Andrew are married before the baby is born, that's fine by you.
+  <<else>>
+    You and Andrew had settled on a date, picked a venue, and sent out all the invitations.  At times you wonder if the two of you should have just eloped while
+    you were on vacation, but seeing the excitement Faith, Cassie, and everyone else has for you, you are glad you didn't.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
   <<unset $student>>
   <<set $Dropout to "Baby">>
-  You didn't bother enrolling after the summer.  You'll have a newborn to take care of, and would much rather be spending time with
+  <<if $PregnancySummer>>
+    After you'd gotten the big news, you decided to drop your classes before the semester started.  You could have made through this semester before
+    you deliver, but you don't see the point.  You'll be giving birth next term, and then you'll
+  <<else>>
+    You didn't bother enrolling after the summer.  You'll 
+  <</if>>
+  have a newborn to take care of.  And would much rather be spending time with
   <<if !$BabyKnow>>
     him or her
   <<elseif $BabyBoy>>
@@ -69,7 +89,8 @@
 <</nobr>>
 
 <<nobr>>
-  Faith still has classes though, so you you have to wait until she's out before you and her can go over the final details for the wedding next Saturday.
+  The months fly by though, and before you know it, it's the week of your wedding!  Faith still has classes, so you you have to wait until she's out before you
+  and her can go over the final details for the wedding next Saturday.
 <</nobr>>
 
 ::Part13AndrewEngaged <100,4310>
@@ -420,11 +441,30 @@
 <</nobr>>
 
 <<nobr>>
-  Each time, when Andrew finishes inside you, you wonder how long it will take before you are [[pregnant again|AndrewPregnantAgain]].  You want
-  <<print $children[0].name>> to have a brother or sister, so you hope it will be soon.
+  <<if $tempFamilySize == 'Small'>>
+    <<if $PlayerProtectionNone or $PlayerProtectionTry>>
+      <<unset $PlayerProtectionNone>>
+      <<unset $PlayerProtectionTry>>
+      You and Andrew decide that you should probably start using birth control from now on, so you don't end up pregnant again soon.
+      <<if $PlayerProtectionFertile>>
+        <<set $PlayerProtectionCondoms to 1>>
+        You'd prefer the pill, but since that's not going to work for you, Andrew and you decide to start using condoms.
+      <<else>>
+        <<set $PlayerProtectionPill to 1>>
+        You talk to your doctor and get on the birth control pill right away.
+      <</if>>
+    <<else>>
+      You and Andrew decide to be more careful about birth control from now on, so you don't end up pregnant again soon.
+    <</if>>
+    You and Andrew would rather have little <<print $children[0].name>> be [[an only child|AndrewOnlyChild]] you can both dote on for now.
+  <<else>>
+    Each time, when Andrew finishes inside you, you wonder how long it will take before you are [[pregnant again|AndrewPregnantAgain]].  You want
+    <<print $children[0].name>> to have a brother or sister, so you hope it will be soon.
+  <</if>>
 <</nobr>>
 
-TODO Handle if tempFamilySize ($tempFamilySize) equals Small
+::AndrewOnlyChild
+TODO AndrewOnlyChild
 
 ::AndrewPregnantAgain <1600,4310>
 <<nobr>>

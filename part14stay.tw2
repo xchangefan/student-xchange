@@ -1,6 +1,5 @@
 ::Part14StayAndrew
 <<nobr>>
-  TODO <<set $AcademicProbationDenial to 1>>
   <h1>With Andrew for the Summer</h1>
   <img src="Part13/SummerPlans3.jpg" hspace="10" vspace="10" height="700" align="left">
   With no classes during the summer, and no job to worry, you have most of the day free.  You do your best to make sure everything is perfect when Andrew
@@ -85,7 +84,7 @@
   <</if>>
   love knowing he's going to work with the smell of you on his freshly cleaned cock.
   <<if !$PlayerPregnant>>
-    <<if true or $PlayerProtectionCondoms>>
+    <<if $PlayerProtectionCondoms>>
       Of course you have to forget to tell him to wear a condom for that to happen.  It's not like you keep them in the kitchen anyway.
     <<elseif $PlayerProtectionWithdraw>>
       Of course you have him cum inside you.  You wouldn't want him to pull out and make a mess in the kitchen.
@@ -458,11 +457,129 @@
   <<link [[next summer|Part14StayAndrewPregnancyTest]]>><<set $tempWeddingDate to 'Later'>><</link>>.
 <</nobr>>
 
+::Part14StayAndrewPregnancyTestPositive
+<<nobr>>
+  <<set $PlayerPregnant to 1>>
+  <<set $PregnancySummer to 1>>
+  <<achievement>>pregnant<</achievement>>
+  <<if setup.pregnantFirstTime() and !$PlayerProtectionTry>>
+    <<achievement>>firsttime<</achievement>>
+  <</if>>
+  positive.  You're pregnant!
+  <br>
+  <<if $tempFamilySize == 'NoKids'>>
+    <img src="PartP/PregTest3.jpg" hspace="10" vspace="10" height="400">
+    <br><br>
+    This is not what you were hoping for.  You were hoping it'd just be you and Andrew forever, though you have your suspicions that Andrew may have
+    just said that's what he wanted too because he knew you weren't wanting kids.  Though he must have decided he'd be happier either way, or he wouldn't
+    have agreed with you.
+    <br><br>
+    You know he'd [[want you to keep the baby|Part13AndrewEngaged]] if he knew you are pregnant.  But you also know that you could
+    [[have them terminate the pregnancy|Part14StayAndrewAbortion]] while you were here today, and Andrew would never even know about it.
+  <<else>>
+    <img src="PartP/PregTest4.jpg" hspace="10" vspace="10" height="400">
+    <br><br>
+    <<if $PlayerProtectionTry>>
+      Finally!
+    <<else>>
+      Well, you were wanting a baby eventually.  You just weren't expecting one quite so soon.  
+    <</if>>
+    You can't wait to get home and [[tell Andrew the news|Part13AndrewEngaged]].
+    <<if $tempWeddingDate == 'Later'>>
+      You know he'll probably agree with you that pushing the wedding date up would be a good idea.  You'd rather be married before the baby is born.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part14StayAndrewPregnancyTestNegative
+<<nobr>>
+  negative.  You're not pregnant.
+  <br>
+  <img src="PartP/PregTest2.jpg" hspace="10" vspace="10" height="400">
+  <br><br>
+  <<if $PlayerProtectionTry>>
+    You hope you'll have better luck next time.
+  <<else>>
+    That's
+    <<if $tempFamilySize == 'NoKids'>>
+      good since you weren't wanting any kids.
+    <<else>>
+      good.  You want to get pregnant eventually, just not yet.
+    <</if>>
+  <</if>>
+  <br><br>
+  Now that that is out of the way, you start preparing for the [[start of a new semester|Part14End]].  You'll also need to start planning for your wedding,
+  <<if $tempWeddingDate == 'Soon'>>
+    it's only a few months from now.
+  <<else>>
+    but you have all year to do that.
+  <</if>>
+<</nobr>>
+
 ::Part14StayAndrewPregnancyTest
-TODO Turn off birth control? or Turn it on if wanting no kids
-TODO If pregnant the change their decisions if relevant
-TODO They decide: tempWeddingDate : $tempWeddingDate AND tempFamilySize : $tempFamilySize
-TODO Parents for a visit?
+<<nobr>>
+  <h1>Visit to the X-Change Office</h1>
+  You'd enjoyed a quick visit to your parents with Andrew, but most of the time was spent talking about your engagement.  Your mom, and your sister Cassie are
+  both thrilled.  Your father seems to approve as well says he had been worried about you after your change, but is relieved your've found a good man like Andrew
+  to settle down with.
+  <br>
+  <img src="PartP/PregTest1.jpg" hspace="10" vspace="10" height="400">
+	<<if $PlayerProtectionTry>>
+		<<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0.25)>>
+	<<else>>
+		<<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+	<</if>>
+<</nobr>>
+<<nobr>>
+  The semester is starting back up soon, so you stop by the X-Change office for your start-of-semester check-up.  As part of your visit, they also run a pregnancy
+  test for you.  You wait patiently for the result.  When she comes back, the technician lets you know that the test was 
+  <<if $PregnancyCheck.isPregnant>>
+    <<include [[Part14StayAndrewPregnancyTestPositive]]>>
+  <<else>>
+    <<include [[Part14StayAndrewPregnancyTestNegative]]>>
+  <</if>>
+<</nobr>>
+
+::Part14StayAndrewAbortion
+<<nobr>>
+	<<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
+	<<set $PlayerAbortion to 1>>
+	<h1><<print "Medical Clinic">></h1>
+  You decide you aren’t ready for this.<br>
+  <img src="PartP/PregTest5.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+
+<<nobr>>
+  After going over everything in great detail with the doctor and signing a bunch of forms, the doctor gives you a pill which you take right then.
+  She offers you another one to take later, but you have them hold on to it so you can stop by tomorrow morning.
+<</nobr>>
+
+<<nobr>>
+  You don't want it around the house for Andrew to find.  Even though you'd agreed to not have kids, you know it would only upset him to know you had an abortion.
+  There's no reason he'd ever need to know.  As far as he knows, you just started your period this week.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionNone or $PlayerProtectionTry>>
+    <<unset $PlayerProtectionNone>>
+    <<unset $PlayerProtectionTry>>
+    You decide that you should probably start using birth control from now on, so you don't end up pregnant again soon.
+    <<if $PlayerProtectionFertile>>
+      <<set $PlayerProtectionCondoms to 1>>
+      You'd prefer the pill, but since that's not going to work for you, you talk to Andrew about using condoms from now on.
+    <<else>>
+      <<set $PlayerProtectionPill to 1>>
+      You talk to your doctor and get on the birth control pill right away.
+    <</if>>
+  <<else>>
+    You know you'll need to be more careful about birth control from now on, so you don't end up pregnant again soon.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Now that this crisis has been managed, you need to focus on getting ready for the [[start of the new semester|Part14End]].
+<</nobr>>
 
 ::Part14StayKate
 <<nobr>>
