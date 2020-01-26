@@ -175,27 +175,50 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerProtectionPermanent>>
-    <<set $PlayerProtectionSilent to 1>>
-    At some point you'll make a visit to the X-Change office to have them permanently deactivate the so-called birth control feature on your implant.  You and Andrew are
-    planning on having a large family and don't want anything getting in the way of that. 
-  <<elseif $PlayerProtectionWithdraw>>
-    You and Andrew are planning on having a large family.  So now that you are married, the days of you asking him to pull out are over.  Well, considering your current
-    condition, they've actually been over for a while.
-  <<elseif $PlayerProtectionCondoms>>
-    You and Andrew are planning on having a large family.  So now that you are married, the days of him using a condom are over.  Well, considering your current
-    condition, they've actually been over for a while.
-  <<elseif $PlayerProtectionPill>>
-    You and Andrew are planning on having a large family.  You'll be tossing out your old birth control pills, if you can even find them again after so many months.
+  <<if $tempFamilySize == 'Small'>>
+    You and Andrew aren't planning on a big family, so
+    <<if $PlayerProtectionPermanent>>
+      hopefully your implants birth control will be more effective in the future.
+    <<elseif $PlayerProtectionPill>>
+      hopefully your birth controls will be more effective in the future.
+    <<elseif $PlayerProtectionFertile>>
+      you plan to start using condoms after you deliver.
+      <<unset $PlayProtectionTry>>
+      <<unset $PlayerProtectionNone>>
+      <<unset $PlayerProtectionWithdraw>>
+      <<unset $PlayerProtectionPill>>
+      <<set $PlayerProtectionCondoms to 1>>
+    <<else>>
+      you talk to your doctor about starting birth control pills after you deliver.
+      <<unset $PlayProtectionTry>>
+      <<unset $PlayerProtectionNone>>
+      <<unset $PlayerProtectionWithdraw>>
+      <<unset $PlayerProtectionCondoms>>
+      <<set $PlayerProtectionPill to 1>>
+    <</if>>
   <<else>>
-    You and Andrew are planning on having a large family.  You wonder how long your body will take to recover after this baby before you and Andrew can get started on
-    your second.
+    <<if $PlayerProtectionPermanent>>
+      <<set $PlayerProtectionSilent to 1>>
+      At some point you'll make a visit to the X-Change office to have them permanently deactivate the so-called birth control feature on your implant.  You and Andrew are
+      planning on having a large family and don't want anything getting in the way of that. 
+    <<elseif $PlayerProtectionWithdraw>>
+      You and Andrew are planning on having a large family.  So now that you are married, the days of you asking him to pull out are over.  Well, considering your current
+      condition, they've actually been over for a while.
+    <<elseif $PlayerProtectionCondoms>>
+      You and Andrew are planning on having a large family.  So now that you are married, the days of him using a condom are over.  Well, considering your current
+      condition, they've actually been over for a while.
+    <<elseif $PlayerProtectionPill>>
+      You and Andrew are planning on having a large family.  You'll be tossing out your old birth control pills, if you can even find them again after so many months.
+    <<else>>
+      You and Andrew are planning on having a large family.  You wonder how long your body will take to recover after this baby before you and Andrew can get started on
+      your second.
+    <</if>>
+    <<set $PlayerProtectionSilent to 1>>
+    <<unset $PlayerProtectionPermanent>>
+    <<unset $PlayerProtectionWithdraw>>
+    <<unset $PlayerProtectionCondoms>>
+    <<unset $PlayerProtectionPill>>
   <</if>>
-  <<set $PlayerProtectionSilent to 1>>
-  <<unset $PlayerProtectionPermanent>>
-  <<unset $PlayerProtectionWithdraw>>
-  <<unset $PlayerProtectionCondoms>>
-  <<unset $PlayerProtectionPill>>
 <</nobr>>
 
 <<nobr>>
@@ -356,7 +379,7 @@
 <</nobr>>
 
 <<nobr>>
-  After the you and the baby are cleaned up, they get you a gown and move you the room you'll be staying in for a few days, until you and
+  After you and the baby are cleaned up, they get you a gown and move you the room you'll be staying in for a few days, until you and
   <<print $children[0].name>> are ready to [[go home|AndrewRecovering]].
 <</nobr>>
 
@@ -464,7 +487,55 @@
 <</nobr>>
 
 ::AndrewOnlyChild
-TODO AndrewOnlyChild
+<div><<nobr>>
+<h1>Taking Every Opporunity</h1>
+<span style="float: left;width: 40%;padding-right: 20px;">
+  <video src="PartX/AndrewFamily13.webm" autoplay loop muted height="600"></video>
+</span>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+<</nobr>>
+</div>
+
+<<nobr>>
+  A romantic evening together is
+  <<if setup.haveFucked('Cassie')>>
+    [[a rare treat|AndrewThreesomeFun]],
+  <<else>>
+    [[a rare treat|AndrewFun]],
+  <</if>>
+  but you and Andrew find time together when you can, even if romance isn't part of it.
+<</nobr>>
+
+<<nobr>>
+  Frequently it's a sex together at night, and trying to be careful not to wake $children[0].name with your screams.  But other times, it's a quick fuck
+  over the counter before Andrew heads to work.
+<</nobr>>
+
+<<nobr>>
+  You are free to enjoy it as much as you want.  If you wake $children[0].name up, it's not a problem.
+  It's about time for
+  <<if $children[0].sex == 'male'>>
+    his
+  <<else>>
+    her
+  <</if>>
+  feeding anyway.
+<</nobr>>
 
 ::AndrewPregnantAgain <1600,4310>
 <<nobr>>
@@ -575,30 +646,62 @@ TODO AndrewOnlyChild
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-  <<set $children.push($tempBaby)>>
-  <<unset $tempBaby>>
-<</nobr>>
-<<nobr>>
-  The
-  <<if $children[0].sex == 'male' and $children[1].sex == 'male' and $children[2].sex == 'male'>>
-    boys
-  <<elseif $children[0].sex == 'female' and $children[1].sex == 'female' and $children[2].sex == 'female'>>
-    girls
-  <<else>>
-    kids
+  <<if $tempFamilySize != 'Small'>>
+    <<set $children.push($tempBaby)>>
+    <<unset $tempBaby>>
   <</if>>
-  love it when Aunt Cassie comes to visit.  They love spending the evening with her while you and Andrew go out for a romantic evening together.
+<</nobr>>
+<<nobr>>
+  <<if $tempFamilySize == 'Small'>>
+    $children[0].name loves it when Aunt Cassie comes to visit.
+    <<if $children[0].sex == 'male'>>
+      He
+    <<else>>
+      She
+    <</if>>
+    loves spending the evening with her while you and Andrew go out for a romantic evening together.
+  <<else>>
+    The
+    <<if $children[0].sex == 'male' and $children[1].sex == 'male' and $children[2].sex == 'male'>>
+      boys
+    <<elseif $children[0].sex == 'female' and $children[1].sex == 'female' and $children[2].sex == 'female'>>
+      girls
+    <<else>>
+      kids
+    <</if>>
+    love it when Aunt Cassie comes to visit.  They love spending the evening with her while you and Andrew go out for a romantic evening together.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  Sometimes the evening will end with you and Andrew continuing your romantic evening together into the bedroom.  Other times, the three
-  of you will choose something a bit more adventurous.
+  <<if $tempFamilySize == 'Small'>>
+    $children[0].name is
+  <<else>>
+    The
+    <<if $children[0].sex == 'male' and $children[1].sex == 'male' and $children[2].sex == 'male'>>
+      boys
+    <<elseif $children[0].sex == 'female' and $children[1].sex == 'female' and $children[2].sex == 'female'>>
+      girls
+    <<else>>
+      kids
+    <</if>>
+    are
+  <</if>>
+  sound asleep by the time you and Andrew get home.  It's just you Andrew and Cassie awake now. Sometimes the evening will end with you and Andrew
+  continuing your romantic evening together into the bedroom.  Other times, the three of you will choose something a bit more adventurous.
 <</nobr>>
 
 <<nobr>>
-  Cassie's hoping she'll be there whenever [[her next niece or nephew is concieved|AndrewPregnantFourth]], so she always makes sure Andrew starts with you.
-  She does her best to make sure you cum at the same time Andrew does.  When it's her turn she has Andrew wear a condom even though she's also on birth control.
-  "I'm not taking any chances, I've seen what that thing can do.", she tells you.
+  <<if $tempFamilySize == 'Small'>>
+    You love playing with Cassie's clit as Andrew fucks her.  You do your best to make sure that she comes at the same time Andrew does.  She always remembers
+    to be careful with her birth control pils.  "I don't think $children[0].name needs a little half-brother/cousin, do you?", she jokes.
+    <br><br>
+    "No.  We do not want that.", you agree.  "We are happy with [[happy with just one|AndrewOnlyChild2]], and we want to keep it that way."
+  <<else>>
+    Cassie's hoping she'll be there whenever [[her next niece or nephew is concieved|AndrewPregnantFourth]], so she always makes sure Andrew starts with you.
+    She does her best to make sure you cum at the same time Andrew does.  When it's her turn she has Andrew wear a condom even though she's also on birth control.
+    "I'm not taking any chances, I've seen what that thing can do.", she tells you.
+  <</if>>
 <</nobr>>
 <<achievement>>threesome:FMF<</achievement>>
 
@@ -616,22 +719,47 @@ TODO AndrewOnlyChild
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew'})>>
   <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
-  <<set $children.push($tempBaby)>>
-  <<unset $tempBaby>>
-  <<set $PlayerPregnant to 0>>
-  <<unset $PregnancyCheck>>
+  <<if $tempFamilySize != 'Small'>>
+    <<set $children.push($tempBaby)>>
+    <<unset $tempBaby>>
+    <<set $PlayerPregnant to 0>>
+    <<unset $PregnancyCheck>>
+  <</if>>
 <</nobr>>
 <<nobr>>
-  The
-  <<if $children[0].sex == 'male' and $children[1].sex == 'male' and $children[2].sex == 'male'>>
-    boys
-  <<elseif $children[0].sex == 'female' and $children[1].sex == 'female' and $children[2].sex == 'female'>>
-    girls
+  <<if $tempFamilySize == 'Small'>>
+    $children[0].name loves it when
+    <<if $children[0].sex == 'male'>>
+      he
+    <<else>>
+      she
+    <</if>>
+    can spend time with Grandma and Grandpa.  Your parents don't get to visit as often due to the distance, but Andrew's parents live right here
+    in town.  They love it when their
+    <<if $children[0].sex == 'male'>>
+      grandson
+    <<else>>
+      granddaugther
+    <</if>>
+    comes over, and even more when
+    <<if $children[0].sex == 'male'>>
+      he
+    <<else>>
+      she
+    <</if>>
+    can spend the night.
   <<else>>
-    kids
+    The
+    <<if $children[0].sex == 'male' and $children[1].sex == 'male' and $children[2].sex == 'male'>>
+      boys
+    <<elseif $children[0].sex == 'female' and $children[1].sex == 'female' and $children[2].sex == 'female'>>
+      girls
+    <<else>>
+      kids
+    <</if>>
+    love it when they can spend time with Grandma and Grandpa.  Your parents don't get to visit as often due to the distance, but Andrew's parents live right here
+    in town.  They love it when their grandchildren come over, and even more when they can spend the night.
   <</if>>
-  love it when they can spend time with Grandma and Grandpa.  Your parents don't get to visit as often due to the distance, but Andrew's parents live right here
-  in town.  They love it when their grandchildren come over, and even more when they can spend the night.
 <</nobr>>
 
 <<nobr>>
@@ -640,16 +768,90 @@ TODO AndrewOnlyChild
 <</nobr>>
 
 <<nobr>>
-  You wonder what Andrew will do when he gets home from work.  Will dinner plans wait a bit while he ravages is helpless wife?  Or will he grab the keys to the
+  You wonder what Andrew will do when he gets home from work.  Will dinner plans wait a bit while he ravages his helpless wife?  Or will he grab the keys to the
   cuffs from the top shelf and unlock you, saving the rest of the fun for later.  You wonder if telling him how wet you are aleady will make him want to use you now,
-  or more eager make you wait for it.  Then you realize that he could use you <i>and</i> leave you horny and aching for when you get home.  You put pillow from the
+  or more eager make you wait for it.  Then you realize that he could use you <i>and</i> leave you horny and aching for when you get home.  You put a pillow from the
   sofa on the floor and kneel on it.  Hopefully seeing you waiting for him like that will give him the same idea you just had.
 <</nobr>>
 
 <<nobr>>
   You can guess from the "I hope the two of you had a good time." comments when you pick up the kids the next day, that his parents
-  are hoping the evening along together will soon lead to [[another grandchild|AndrewPregnantFourth]] for them.  You hope so too.
+  are hoping the evening alone together will soon lead to
+  <<if $tempFamilySize == 'Small'>>
+    another grandchild for them.  [[You hope not|AndrewOnlyChild2]].
+  <<else>>
+    [[another grandchild|AndrewPregnantFourth]] for them.  You hope so too.
+  <</if>>
 <</nobr>>
+
+::AndrewOnlyChild2
+<<nobr>>
+  <h1>Only the Best for $children[0].name</h1>
+  <img src="PartX/AndrewFamily14.jpg" hspace="10" vspace="10" height="640" align="left">
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew'})>>
+  <<set $sex.push({sex: 'male', name: 'Andrew', vaginal: true})>><</nobr>>
+<<nobr>>
+  $children[0].name is almost three now.  You and Andrew had talked about having another, but decided against it.  You'd rather focus just on $children[0].name.
+<</nobr>>
+
+<<nobr>>
+  With just one child, you and Andrew can make sure
+  <<if $children[0].sex == 'male'>>
+    he
+  <<else>>
+    she
+  <</if>>
+  always has the best.  With just one to pay for you could easily afford the best preschool, which
+  <<if $children[0].sex == 'male'>>
+    he'll
+  <<else>>
+    she'll
+  <</if>>
+  be starting in next year.  You want
+  <<if $children[0].sex == 'male'>>
+    him
+  <<else>>
+    her
+  <</if>>
+  to be ready when she starts kindergarten, and the private school you already have 
+  <<if $children[0].sex == 'male'>>
+    him
+  <<else>>
+    her
+  <</if>>
+  pre-enrolled for.
+<</nobr>>
+
+<<nobr>>
+  And with just one child to manage, bringing $children[0].name along on a trip to the farmer's market is no problem at all.  Nothing makes you happier than
+  when you look back and Andrew pushing $children[0].name's stroller, and thinking about what a great father Andrew is.
+<</nobr>>
+
+<<nobr>>
+  Your feelings are more mixed when you imagine years from now with Andrew
+  <<if $children[0].sex == 'male'>>
+    teaching $children[0].name how to drive a car.
+  <<else>>
+    walking $children[0].name down the aisle at her own wedding.
+  <</if>>
+  You wish $children[0].name could stay this age forever.  But you know you'll be happy to watch
+  <<if $children[0].sex == 'male'>>
+    him
+  <<else>>
+    her
+  <</if>>
+  grow up.  And who knows, maybe you and Andrew will think about having another baby when $children[0].name is almost grown.
+<</nobr>>
+
+[[The End.|GameOverAndrewSmallFamily]]
 
 ::AndrewPregnantFourth <2200,4310>
 <<nobr>>
@@ -703,3 +905,7 @@ TODO AndrewOnlyChild
 <<unset $tempBaby2>>
 <<achievement>>andrewLargeFamily<</achievement>>
 
+::GameOverAndrewSmallFamily
+<h1><<print "Game Over - Wife and Mother - Small Family">></h1>
+<img src="PartX/GameOver1.jpg" hspace="10" vspace="10" height="600">
+<<achievement>>andrewSmallFamily<</achievement>>
