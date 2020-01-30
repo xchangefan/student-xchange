@@ -459,6 +459,7 @@
 
 ::Part14StayAndrewPregnancyTestPositive
 <<nobr>>
+  <<set $PlayerSideEffectPermanent to 1>>
   <<set $PlayerPregnant to 1>>
   <<set $PregnancySummer to 1>>
   <<achievement>>pregnant<</achievement>>
@@ -585,7 +586,6 @@
 <<nobr>>
   <h1>With $dating[0] for the Summer</h1>
   <img src="Part14/Bar1.jpg" hspace="10" vspace="10" height="500" align="left">
-  TODO (Handle if denial or not)
 <</nobr>>
 <<nobr>>
   With the campus mostly deserted over the summer, business is much slower at the bar.  Of course the young women from campus aren't there,
@@ -690,15 +690,15 @@
 <</nobr>>
 
 <<nobr>>
-  They'll eagerly take the "I kissed a girl".  Of course they've wanted to do that for years, but now they have an excuse.  They'll want to make it
-  more than a quick peck though if they want the discount.  And, if it's a good enough kiss, they might just find the regular they kissed buying
-  their drinks the rest of the night.
+  They'll eagerly take the "I kissed a girl" challenge.  Of course they've wanted to do that for years, but now they have an excuse.
+  They'll want to make it more than a quick peck though if they want their free drink.  And, if it's a good enough kiss, they might just find the regular
+  they kissed buying their drinks the rest of the night.
 <</nobr>>
 
 <<nobr>>
-  After a while, when the night gets going more, you'll offer the "straight girls" drinks on the house.  And by "on the house", you mean on you or
-  one of your regulars.  By this point the "straight girls" will have forgotten their inhibitions, and eagerly drinking their shots from between
-  a pair of breasts.
+  After a while, when the night gets going more, you'll offer the "straight girls" drinks on the house.  And by "on the house", you mean poured down
+  the chest of one of your regulars.  By this point the "straight girls" will have forgotten their inhibitions, and eagerly drinking their shots from
+  between a pair of breasts.
 <</nobr>>
 
 <<nobr>>
@@ -739,8 +739,15 @@
 <</nobr>>
 
 <<nobr>>
-  And of course, you plan on giving them more pleasure than any guy they've been with ever has.  But you aren't trying to make her into
-  a pillow princess.  So after you've given her more than she thought she could handle, it's time [[to turn things around|Part14StayBarFun3]]
+  <<if $AcademicProbationDenial>>
+    She knew going in that tonight was just about helping her explore, and that [[your heart belongs to someone else|Part14StayKateTalk]].  That
+    actually made it easier for her, knowing there were no committments or expectations on her.  But now that she knows what she really wants,
+    you know she'll be in the bar again soon.  Maybe she'll leave with one of the long-time regulars.  Or maybe she'll find another former straight
+    girl to leave with, and the two of them can explore a new world together.
+  <<else>>
+    And of course, you plan on giving them more pleasure than any guy they've been with ever has.  But you aren't trying to make her into
+    a pillow princess.  So after you've given her more than she thought she could handle, it's time [[to turn things around|Part14StayBarFun3]]
+  <</if>>
 <</nobr>>
 
 ::Part14StayBarFun3
@@ -893,7 +900,7 @@
 <</nobr>>
 <<nobr>>
   "I thought it would be easier if you could see what I was talking about.  So, I printed out this sample version to show you.  See, there's the
-  ring for the hood piercing you'd been wanting.  Obviously you'd need some lip piercings as well for this.
+  ring for the hood piercing you'd been wanting.  Obviously you'd need some labia piercings as well for this.
 <</nobr>>
 
 <<nobr>>
@@ -907,8 +914,11 @@
 <</nobr>>
 <img src="Part14/Chastity2b.jpg" hspace="10" vspace="10" height="500">
 <<nobr>>
-  "Then the only way you, or really anyone by me, could give you any pleasure between your legs would be to use a powerful vibrator.  I wouldn't recommend trying that
+  "Then the only way you, or really anyone but me, could give you any pleasure between your legs would be to use a powerful vibrator.  I wouldn't recommend trying that
   though.  The website says the shocks it generates to prevent that sort of behavior are quite unpleasant."
+  <<if $AcademicProbationDenial>>
+    Then she adds, "Of course your pleasure is already denied due to your probation, but I'm sure you won't be on that for long."
+  <</if>>
 <</nobr>>
 
 <<nobr>>  
@@ -937,6 +947,7 @@
   <h1>After your piercing</h1>
   <img src="Part14/Chastity3.jpg" hspace="10" vspace="10" height="550">
   <<set $PlayerChastityPiercing to 1>>
+  <<set setup.addInventory('piercings', 'chastity piercing')>>
   <<unset $PlayerChastityBelt>>
   <<set $Keyholder to "Kate">>
 <</nobr>>
@@ -963,16 +974,25 @@
 <</nobr>>
 
 <<nobr>>
-  "Here, let me show you.", he directs Kate on usage of the app. "Go to the teasing menu.  Select 'Low' for the intensity level'.  Good, now click the 'With Edging'
-  box.  Now pick any number you want on the 'Average Edges per Hour' slider, but don't say it outloud - it's best she be surprised.  Good choice.  Now, slide the
-  'Orgasm Chance' and 'Shock Chance' sliders to 0%.  Exactly.  Now click the 'Activate with Lockout' button, and [[set the timer to 10 hours|Part14StayKate3]] if
-  that works for you."
-<</nobr>>
-
-<<nobr>>
-  As soon as Kate presses the button, you feel soft vibrations start against your clit.  "Wonderful.", you piercer tells her. "That should promote a very healthy
-  blood flow, which will promote healing.  It will also make her quite eager for you to start playing with the rest of the features tonight.  If you have any
-  problems, come back and see me or call the company's emergency line if needed."
+  "Here, let me show you.", he directs Kate on usage of the app. "Go to the teasing
+  <<if $AcademicProbationDenial>>
+    menu..."  Kate stops there and explains your probation denial.  "Ok, go to the punishment menu then.", he says.  Select a severity level, probably not 'High'
+    though for now.  Now pick any number you want on the 'Average Shocks per Hour' slider, but don't say it outloud - it's best she be surprised.  Good choice.  
+    Now click the 'Activate with Lockout' button, and [[set the timer to 10 hours|Part14StayKate3]] if that works for you."
+    <br><br>
+    As soon as Kate presses the button, you feel one painful shock right on your clit and then another one.  You can't get away from them and a third one hits.
+    "You can turn off the starting shocks if you want next time.  But what you set should be enough to promote a healthy blood flow, which will promote healing.
+    It'll also make her eager to behave.  That should help you get her back on track with her studies.
+  <<else>>
+    menu.  Select 'Low' for the intensity level'.  Good, now click the 'With Edging'
+    box.  Now pick any number you want on the 'Average Edges per Hour' slider, but don't say it outloud - it's best she be surprised.  Good choice.  Now, slide the
+    'Orgasm Chance' and 'Shock Chance' sliders to 0%.  Exactly.  Now click the 'Activate with Lockout' button, and [[set the timer to 10 hours|Part14StayKate3]] if
+    that works for you."
+    <br><br>
+    As soon as Kate presses the button, you feel soft vibrations start against your clit.  "Wonderful.", you piercer tells her. "That should promote a very healthy
+    blood flow, which will promote healing.  It will also make her quite eager for you to start playing with the rest of the features tonight.  
+  <</if>>
+  If you have any problems, come back and see me or call the company's emergency line if needed."
 <</nobr>>
 
 <<nobr>>
@@ -1033,8 +1053,13 @@
 <</nobr>>
 
 <<nobr>>
-  You have to stop getting ready a few times and sit down for a bit whenver your piercing decides to bring you close to an orgasm,
-  and then stop.  Each time, once you catch your breath, you go back to fixing your hear, or putting on your makeup.
+  You have to stop getting ready a few times and sit down for a bit whenver your piercing decides to
+  <<if $AcademicProbationDenial>>
+    give you shock, or several in a row.
+  <<else>>
+    bring you close to an orgasm, and then stop.
+  <</if>>
+  Each time, once you catch your breath, you go back to fixing your hear, or putting on your makeup.
 <</nobr>>
 
 ::Part14StayKateDance
@@ -1043,31 +1068,40 @@
   <img src="Part14/Kate4.jpg" hspace="10" vspace="10" height="700" align="left">
 <</nobr>>
 <<nobr>>
-  When you first feel the vibrator spring to life again, you think it's about to edge you another time.  But this time is different.
-<</nobr>>
-
-<<nobr>>
-  As each pulse hits, you realize it's in time with music in the club. When you mention it to Kate, she checks her app.  "It looks like that's
-  a default setting.  I hope you like it, since I'm still locked out of making any changes for now."
-<</nobr>>
-
-<<nobr>>
-  "I love it!", you tell her as each beat sends a pulse of pleasure through you.  You have to hold on to Kate for support several times though
-  the evening as the vibrations bring you just to the edge of cumming on the dance floor, but then stop just a few seconds too soon.
-<</nobr>>
-
-<<nobr>>
-  Just as you and Kate are arriving back home a notification appears on her phone.  "Oh, it looks like the 10 hour lockout period is over.", she says
-  with a smile.  Of course, it can't be removed at least another month, but I can control the other functions now.
-<</nobr>>
-
-<<nobr>>
-  "Does that mean you can tell it to let me orgasm now?", you eagerly ask.
-<</nobr>>
-
-<<nobr>>
-  She presses a button and the vibrator comes to life more powerful than you've felt it yet.  But then she moves her finger away and says, "If I decide to, yes.
-  maybe I will.  But [[I have something else in mind first|Part14StayKateHome]]."
+  <<if $AcademicProbationDenial>>
+    When you first feel the vibrator spring to life again, you are excited.  But you realize you can't feel the pleasure from it, you can just feel that it
+    is vibrating.
+    <br><br>
+    As each pulse hits, you realize it's in time with music in the club. When you mention it to Kate, she checks her app.  "It looks like that's
+    a default setting.  I hope you like it, since I'm still locked out of making any changes for now."
+    <br><br>
+    "Well, I like it I guess.  It seems to override the shocks, or at least I haven't felt one in a while."  You jump as one hits right then.  "Never mind,
+    they haven't stopped.  Anyway, the vibrations would probably feel amazing if I wasn't on this damn probation thing.  And I don't know if it's the vibrations
+    causing it or just that I'm having a good time, but I really just want to keep dancing."
+    <br><br>
+    You and Kate stay a while longer.  Just as you are arriving back home a notification appears on her phone.  "Oh, it looks like the 10 hour lockout period is
+    over.", she says with a smile.  Of course, it can't be removed at least another month, but I can control the other functions now.
+    <br><br>
+    "Does that mean the shocks will stop now?", you eagerly ask.
+    <br><br>
+    She presses a button and says.  "Yes, as long as [[you behave yourself|Part14StayKateHome]]."
+  <<else>>
+    When you first feel the vibrator spring to life again, you think it's about to edge you another time.  But this time is different.
+    <br><br>
+    As each pulse hits, you realize it's in time with music in the club. When you mention it to Kate, she checks her app.  "It looks like that's
+    a default setting.  I hope you like it, since I'm still locked out of making any changes for now."
+    <br><br>
+    "I love it!", you tell her as each beat sends a pulse of pleasure through you.  You have to hold on to Kate for support several times though
+    the evening as the vibrations bring you just to the edge of cumming on the dance floor, but then stop just a few seconds too soon.
+    <br><br>
+    Just as you and Kate are arriving back home a notification appears on her phone.  "Oh, it looks like the 10 hour lockout period is over.", she says
+    with a smile.  Of course, it can't be removed at least another month, but I can control the other functions now.
+    <br><br>
+    "Does that mean you can tell it to let me orgasm now?", you eagerly ask.
+    <br><br>
+    She presses a button and the vibrator comes to life more powerful than you've felt it yet.  But then she moves her finger away and says, "If I decide to, yes.
+    maybe I will.  But [[I have something else in mind first|Part14StayKateHome]]."
+  <</if>>
 <</nobr>>
 
 ::Part14StayKateHome
@@ -1076,33 +1110,40 @@
 <span style="float: left;width: 40%;padding-right: 20px;">
   <video src="Part14/Kate5.webm" autoplay loop muted height="700"></video>
 </span>
-<</nobr>>
-<<nobr>>
-  "This is called 'Encouragement' mode.  It'll help keep you motivated while you attend to me.", Kate says as she pushes your head down between her legs.
+<<set $sex.push({sex: 'female', name:"Kate"})>>
 <</nobr>>
 
 <<nobr>>
-  "You should be able to feel the vibrations building now.".  You nod, keeping your tongue on her clit.  "It will keep edging you as you are eating me out.
-  That should keep it fun for both of us!"
-<</nobr>>
-
-<<nobr>>
-  "After I cum, it asks me to rate your work.  Five stars will give you a guaranteed orgasm, One star a series of unpleasant shocks.  So you best do a good
-  job, pet."
-<</nobr>>
-
-<<nobr>>
-  When she finally comes you anxiously wait to see what rating she hits.  "Hmmm, very good, but you seemed a bit distracted.  Four stars."
-<</nobr>>
-
-<<nobr>>
-  When she hits it you see a spinner appear and start to spin.  As it slows down you see it nearing "Orgasm", but it stops just before it gets there.
-  'Try harder next time.' the message says as you feel the vibrations abruptly stop.
-<</nobr>>
-
-<<nobr>>
-  "That's just as well.", Kate says.  "We have to get up early tomorrow to [[head to your parents|Part14StayKateOnTheRoad]].  I'll turn off the random
-  teases for the night, so you can get some sleep tonight."
+  <<if $AcademicProbationDenial>>
+    "I read about something called 'Encouragement' mode.  It would help keep you motivated while you attend to me.", Kate says as she pushes your head down
+    between her legs.
+    <br><br>
+    "It'd keep you on the edge as you are eating me out.  Wouldn't that be fun for you right now?"
+    <br><br>
+    "Then after I cum, it would ask me to rate your work.  Five stars will give you a guaranteed orgasm, One star a series of those unpleasant shocks.  But
+    unfortunately all you could get now would be the shocks, so that away the fun.  I know you won't be giving me anything deserving just one star, will
+    you pet?"
+    <br><br>
+    When she finally comes she tells you, "Hmmm, very good, that would have been deserving of an orgasm."
+    <br><br>
+    "Oh well.", Kate says.  "We have to get up early tomorrow to [[head to your parents|Part14StayKateParents]], so we best be getting to sleep soon."
+  <<else>>
+    "This is called 'Encouragement' mode.  It'll help keep you motivated while you attend to me.", Kate says as she pushes your head down between her legs.
+    <br><br>
+    "You should be able to feel the vibrations building now.".  You nod, keeping your tongue on her clit.  "It will keep edging you as you are eating me out.
+    That should keep it fun for both of us!"
+    <br><br>
+    "After I cum, it asks me to rate your work.  Five stars will give you a guaranteed orgasm, One star a series of unpleasant shocks.  So you best do a good
+    job, pet."
+    <br><br>
+    When she finally comes you anxiously wait to see what rating she hits.  "Hmmm, very good, but you seemed a bit distracted.  Four stars."
+    <br><br>
+    When she hits it you see a spinner appear and start to spin.  As it slows down you see it nearing "Orgasm", but it stops just before it gets there.
+    'Try harder next time.' the message says as you feel the vibrations abruptly stop.
+    <br><br>
+    "That's just as well.", Kate says.  "We have to get up early tomorrow to [[head to your parents|Part14StayKateOnTheRoad]].  I'll turn off the random
+    teases for the night, so you can get some sleep tonight."
+  <</if>>
 <</nobr>>
 </div>
 
@@ -1157,20 +1198,23 @@
 
 ::Part14StayKateParents
 <<nobr>>
-  <h1>At your parents'</h1>
+  <h1>At your parents</h1>
   <img src="Part14/Parents1.jpg" hspace="10" vspace="10" height="650" align="left">
-  Kate's phone beeps as you drive past your old high school.  Your start to notice the vibration steadily declining after that.  They stop completely about the
-  time she pulls onto your parents' street.  "That's the one.", you say, pointing to your family's house.
-<</nobr>>
-
-<<nobr>>
-  You and Kate carry you bags inside and set them down.  "You look a bit flushed, those bags must be heavy.  Just set them down and your Dad can take them upstairs
-  for you them later.", your mom tells you.  "Kate can talk with your dad for a bit.  You come in the kitchen with me and I'll get you something cool to drink."
-<</nobr>>
-
-<<nobr>>
-  You are already feeling normal again, but you don't want to explain to your mother why you looked the way you did, so you go along with her.  By the time you
-  finish your drink, she seems satisfied that you aren't going to have a heat stroke or whatever she was worried about, so you head back to join Kate and your father.
+  <<if $AcademicProbationDenial>>
+    "That's the one.", you say, pointing to your family's house.
+    <br><br>
+    You and Kate carry you bags inside and set them down.  "Those bags must be heavy.  Just set them down and your Dad can take them upstairs for you later.",
+    your mom tells you.  "Kate can talk with your dad for a bit.  You come in the kitchen with me and we can get drinks for everyone."
+  <<else>>
+    Kate's phone beeps as you drive past your old high school.  Your start to notice the vibration steadily declining after that.  They stop completely about the
+    time she pulls onto your parents' street.  "That's the one.", you say, pointing to your family's house.
+    <br><br>
+    You and Kate carry you bags inside and set them down.  "You look a bit flushed, those bags must be heavy.  Just set them down and your Dad can take them upstairs
+    for you later.", your mom tells you.  "Kate can talk with your dad for a bit.  You come in the kitchen with me and I'll get you something cool to drink."
+    <br><br>
+    You are already feeling normal again, but you don't want to explain to your mother why you looked the way you did, so you go along with her.  By the time you
+    finish your drink, she seems satisfied that you aren't going to have a heat stroke or whatever she was worried about, so you head back to join Kate and your father.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -1195,8 +1239,17 @@
 <</nobr>>
 
 <<nobr>>
-  "Ok, then.", your mom says.  "You girls get settled in then.  [[Your sister Cassie|Part14StayKateMovie]] should be here soon.  I'll be in the kitchen finishing
-  up with dinner.
+  <<if $AcademicProbationDenial>>
+    "Ok, then.", your mom says.  "You girls get settled in then.  Your sister Cassie should be here soon.  I'll be in the kitchen finishing up with dinner.
+    <br><br>
+    When Cassie gets home you and Cassie watch a movie whle Kate talks with your mother a bit.
+    <br><br>
+    When it's time for bed you and Kate go up to your old room.  You offer to pleasure her but she says sex can wait until you are back home.  Instead the two of
+    you snuggle up in your old bed.  She tells you "[[sweet dreams|Part14StayKateDreams]]" before you both drift off to sleep.
+  <<else>>
+    "Ok, then.", your mom says.  "You girls get settled in then.  [[Your sister Cassie|Part14StayKateMovie]] should be here soon.  I'll be in the kitchen finishing
+    up with dinner.
+  <</if>>
 <</nobr>>
 
 ::Part14StayKateMovie
@@ -1274,7 +1327,7 @@
 <<nobr>>
   You awake during your wedding ceremony.  At first you are disappointed, that it was just a dream.  But then you glance over at Kate, and realize she was
   the queen in your dream.  So it wasn't entirely a dream at all.  You smile and snuggle up close to her and
-  <<if $PlayerSideEffectExhibitionist || $PlayerSideEffectDreams>>
+  <<if $PlayerSideEffectExhibitionist or $PlayerSideEffectDreams>>
     [[try to get back to sleep|Part14StayKateDream2]].
   <<elseif setup.haveFucked('Mike') or $UncleChair>>
     [[try to get back to sleep|Part14StayKateDream3Hard]].
@@ -1409,14 +1462,25 @@
 <</nobr>>
 
 <<nobr>>
-  Your spasms shake the table as you orgasm, but the hands hold you firm.  Her fingers continue thrusting inside you and stroking your clit.  You cry out as you
-  continue to orgasm and her hands continue their work.  You are in the middle of a real orgasm as you wake up.  The vibration from your piercing is intense and you
-  can't help but cry out in your bedroom waking up Kate.  A few moments later the vibrations start to subside and you catch your breath.
+  <<if $AcademicProbationDenial>>
+    You feel an orgasm building up inside you as the hands hold you firm.  Her fingers continue thrusting inside you and stroking your clit.  Just as you are
+    about to cum, you wake up.  You can feel your piercing vibrating strongly, but you feel nothing from it.  You are covered in sweat and short of breath but
+    the orgasm was all in your dream, there's nothing now.  You know you would have came just now if your body had allowed it.
+  <<else>>
+    Your spasms shake the table as you orgasm, but the hands hold you firm.  Her fingers continue thrusting inside you and stroking your clit.  You cry out as you
+    continue to orgasm and her hands continue their work.  You are in the middle of a real orgasm as you wake up.  The vibration from your piercing is intense and you
+    can't help but cry out in your bedroom waking up Kate.  A few moments later the vibrations start to subside and you catch your breath.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  "I see the 'Alarm Clock' mode works even better than I'd hoped.  Right on schedule.  I don't think you'll be sleeping through any classes this fall.", Kate
-  tells you.  "You should probably go take a shower, so you aren't tempted to fall back asleep.  Only the first wake up is so fun.  If you try to 'snooze'
+  "I see the 'Alarm Clock' mode works even better than I'd hoped.  Right on schedule.  I don't think you'll be sleeping through any classes this 
+  <<if $AcademicProbationDenial>>
+    fall.  Maybe that will help get you off of probation quicker.",
+  <<else>>
+    fall.",
+  <</if>> 
+  Kate tells you.  "You should probably go take a shower, so you aren't tempted to fall back asleep.  Only the first wake up is so fun.  If you try to 'snooze'
   the alarm and lay back down, it uses shocks the next time.  Besides, we need to get ready so we can [[head back home|Part14StayKateHomeAgain]] after breakfast."  
 <</nobr>>
 
@@ -1424,6 +1488,8 @@
 <<nobr>>
   <h1>Back home with Kate</h1>
   <video src="Part14/Kate8.webm" autoplay loop muted height="550"></video>
+  <<set $sex.push({sex: 'female', name:"Kate"})>>
+  <<set $sex.push({sex: 'female', name:"Kate"})>>
 <</nobr>>
 
 <<nobr>>
@@ -1432,28 +1498,30 @@
 <</nobr>>
 
 <<nobr>>
-  After making out a bit, you kiss your way down her stomach and begin pleasuring Kate.  You begin to notice the vibrations again as she remembers to reach for
-  her phone and activates "Encouragement Mode".  You love how good it feels, you stay focused on Kate's pleasure, looking up into her eyes and making sure is
-  enjoying your work.
+  After making out a bit, you kiss your way down her stomach and begin pleasuring Kate.
+  <<if $AcademicProbationDenial>>
+    <br><br>
+    After she orgasms she lets you know that you would have just earned another orgasm.
+    <br><br>
+    Later in the day,
+  <<else>>
+    You begin to notice the vibrations again as she remembers to reach for
+    her phone and activates "Encouragement Mode".  You love how good it feels, you stay focused on Kate's pleasure, looking up into her eyes and making sure is
+    enjoying your work.
+    <br><br>
+    Your piercing is keeping you close to an orgasm as Kate begins to cum, and grinds into your face as you continue until you know she's had enough.  She can't
+    speak yet, but you see her press "5 Stars" on her phone. You feel the vibrations from the piercing increase instantly as you watch the spinner on her phone
+    spin then land on "3 Orgasms".
+    <br><br>
+    Kate pulls you up next to her and holds you as the first of the orgasms washes over you.  You squirm as the vibrations continue after your orgasms.  Kate holds
+    you still and strokes your hair, "That's a good pet, enjoy your reward."  Kate kises you as you feel yourself pushed, unavoidably, towards a second orgasm.
+    You know there's still a third to come after that.
+    <br><br>
+    Much later, after you've both had time to recover, 
+  <</if>>
+  you both unpack your bags from your trip to your parents.  You wonder if it's worth putting the suitcase away tough, since Kate has
+  [[a business trip|Part14StayKateTrip]] coming soon.
 <</nobr>>
-
-<<nobr>>
-  Your piercing is keeping you close to an orgasm as Kate begins to cum, and grinds into your face as you continue until you know she's had enough.  She can't
-  speak yet, but you see her press "5 Stars" on her phone. You feel the vibrations from the piercing increase instantly as you watch the spinner on her phone
-  spin then land on "3 Orgasms".
-<</nobr>>
-
-<<nobr>>
-  Kate pulls you up next to her and holds you as the first of the orgasms washes over you.  You squirm as the vibrations continue after your orgasms.  Kate holds
-  you still and strokes your hair, "That's a good pet, enjoy your reward."  Kate kises you as you feel yourself pushed, unavoidably, towards a second orgasm.
-  You know there's still a third to come after that.
-<</nobr>>
-
-<<nobr>>
-  Much later, after you've both had time to recover, you both unpack your bags from your trip to your parents.  You wonder if it's worth putting the suitcase
-  away tough, since Kate has [[a business trip|Part14StayKateTrip]] coming soon.
-<</nobr>>
-
 
 ::Part14StayKateTrip
 <<nobr>>
@@ -1473,24 +1541,30 @@
 <</nobr>>
 
 <<nobr>>
-  You'd been wondering what she might do during your flight.  Thoughts of trying to be quiet as you orgasmed on a crowded plane crossed your mind more than once.
-  You were relieved, but also a bit disappointed when she opened up her phone and set the piercing, then her phone, to airplane mode.  
-<</nobr>>
-
-<<nobr>>
-  But, the next few days she has other plans.  While she's away at her meetings she sets your piercing to randomly decide whether to just softly tease you for a
-  while, bring you close to an orgasm but then deny you, or make you orgasm.  She didn't let you see exactly what she set, so you never know what to expect.
-<</nobr>>
-
-<<nobr>>
-  You're not going to hide away in your hotel room though.  You grab your bikini and head down to the beach.  You sit in the sand for a bit enjoying a quiet
+  <<if $AcademicProbationDenial>>
+    You were worried that you might have done something deserving of punishment when you see Kate pull up the app on her phone.  But then you are relieved when
+    she just sets your piercing, and then her phone, to airplane mode.
+    <br><br>
+    She's away at meetings much of the day, but you're
+  <<else>>
+    You'd been wondering what she might do during your flight.  Thoughts of trying to be quiet as you orgasmed on a crowded plane crossed your mind more than once.
+    You were relieved, but also a bit disappointed when she opened up her phone and set the piercing, then her phone, to airplane mode.
+    <br><br>
+    But, the next few days she has other plans.  While she's away at her meetings she sets your piercing to randomly decide whether to just softly tease you for a
+    while, bring you close to an orgasm but then deny you, or make you orgasm.  She didn't let you see exactly what she set, so you never know what to expect.
+    <br><br>
+    You're
+  <</if>>
+  not going to hide away in your hotel room though.  You grab your bikini and head down to the beach.  You sit in the sand for a bit enjoying a quiet
   moment.  As you do, you think of Kate and look forward to when she's done with work and [[can join you for the rest of the trip|Part14StayKatePropose]].  She
   seemed like she was hiding something earlier, you wonder if you should be worried or excited about what it might be.
 <</nobr>>
 
 <<nobr>>
-  Your thoughts are cut short though as you feel the vibrations start again.  You wonder if it'll let you cum this time.  After the last few times ended in
-  denials, you hope so.  You couldn't care less how many people see you orgasm right now.
+  <<if !$AcademicProbationDenial>>
+    Your thoughts are cut short though as you feel the vibrations start again.  You wonder if it'll let you cum this time.  After the last few times ended in
+    denials, you hope so.  You couldn't care less how many people see you orgasm right now.
+  <</if>>
 <</nobr>>
 
 ::Part14StayKatePropose
@@ -1521,30 +1595,35 @@
 
 ::Part14StayKateTrip2
 <<nobr>>
-  <h1>Back home with Kate</h1>
+  <h1>Back in the Hotel with Kate</h1>
   <video src="Part14/Kate10.webm" autoplay loop muted height="550"></video>
+  <<set $sex.push({sex: 'female', name:"Kate"})>>
 <</nobr>>
 <<nobr>>
   After a late night with Kate, you both sleep late.  You want to stay in bed with her all day.  But when Kate sees you are awake she tells you to go start a bath
-  for your both in the big bath tub the room has.  When you come back to tell her it's almost ready, you see her set something on her phone, but you don't feel
-  any vibrations start.  She sees you watching her.  She smiles and says, "Let me know when you figure out what the new settings is."
-<</nobr>>
-
-<<nobr>>
-  She climbs into the bath after you and tells you to soap up her back for her.  When your fingers brush across her back as you run the soap across it, you
-  feel the vibrations start.  When you put the soap down and have both hands on her back the vibrations increase.  After you press your body against her back
-  and moan she turns around to face you.
-<</nobr>>
-
-<<nobr>>
-  You hold her as closely as you can, realizing the more you are touching her the more intense the vibrations are.  You kiss her passionately as you feel your orgasm
-  building.  As you cum, she holds you tightly against her through your orgasm.  After you cum, the vibrations stop.  "I set it for just one this time.", Kate tells
-  you.  "I didn't what us staying in here all day.  Now, lets finish washing up, I want to spend the day out with my fiancée."
+  for your both in the big bath tub the room has.
+  <<if $AcademicProbationDenial>>
+    You start with soaping up her back for her, but it soon turns to kissing and then to your fingers under the water pleasuring her.
+    <br><br>
+    After she cums Kate tells you, "Let's finish washing up. As fun as that was, I don't want to spend all day in here.
+  <<else>>
+    When you come back to tell her it's almost ready, you see her set something on her phone, but you don't feel
+    any vibrations start.  She sees you watching her.  She smiles and says, "Let me know when you figure out what the new settings is."
+    <br><br>
+    She climbs into the bath after you and tells you to soap up her back for her.  When your fingers brush across her back as you run the soap across it, you
+    feel the vibrations start.  When you put the soap down and have both hands on her back the vibrations increase.  After you press your body against her back
+    and moan she turns around to face you.
+    <br><br>
+    You hold her as closely as you can, realizing the more you are touching her the more intense the vibrations are.  You kiss her passionately as you feel your orgasm
+    building.  As you cum, she holds you tightly against her through your orgasm.  After you cum, the vibrations stop.  "I set it for just one this time.", Kate tells
+    you.  "I didn't what us staying in here all day.  Now, lets finish washing up, 
+  <</if>>
+  I want to spend the day out with my fiancée."
 <</nobr>>
 
 <<nobr>>
   The rest of the trip is fun, but unfortunately all too short.  And soon it's time to head back home.  On the flight home you think of all of you need to do.
-  But you are stressed out yet.  You'll both have months, at least, to plan the wedding. You haven't even set the date yet.  But school will be starting up again
+  But you aren't stressed out yet.  You'll both have months, at least, to plan the wedding. You haven't even set the date yet.  But school will be starting up again
   soon, so you'll need to get ready for that.  But before any of that, you have [[phone calls to make|Part14StayKateSchool]] as soon as you get home, so you can
   let everyone know the big news!  
 <</nobr>>
@@ -1578,11 +1657,10 @@
 <</nobr>>
 
 <<nobr>>
-  All too soon, the first day of the new school year arrives.  But as you get ready for the first day back at school, you wonder how many of your classmates,
-  that don't already know,   will notice the engagement ring on your hand.  Even if they dont notice that, it'll be hard to miss the huge smile you are also wearing. 
+  All too soon, the first day of the [[new school year|Part14End]] arrives.  But as you get ready for the first day back at school, you wonder how many of your
+  classmates, that don't already know, will notice the engagement ring on your hand.  Even if they dont notice that, it'll be hard to miss the huge smile you are
+  also wearing. 
 <</nobr>>
-
-<<include [[Part14End]]>>
 
 ::Part14StayAaron
 <<nobr>>

@@ -236,6 +236,10 @@ setup.haveFucked = function (name) {
 	return state.active.variables.sex.filter(function(fuck) {return fuck.name == name || fuck.anon == name}).length > 0
 } 
 
+setup.haveFuckedMale = function (name) {
+	return state.active.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && (fuck.name == name || fuck.anon == name)}).length > 0
+} 
+
 setup.haveFuckedVaginal = function (name) {
 	// different than daddyCheck, since doesn't care about birth control
 	return state.active.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)}).length > 0
