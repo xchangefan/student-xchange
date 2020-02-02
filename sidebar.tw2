@@ -705,7 +705,6 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       <br><<print "Ken, the artist, is your master and you are living in his loft.">>
     <</if>>
     <<if $MasterRobert>><br><<print "You are a slave to Robert. ">><</if>>
-    <<if $MasterMike>><br><<print "Mike is your master. ">><</if>>
     <<if $Spouse == 'Andrew' or $Engaged == 'Andrew' or setup.areDating('Andrew')>>
       <<if $Spouse == 'Andrew'>>
         You are married to Andrew.
@@ -753,6 +752,16 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       You are in a relationship with Mason.
     <</if>>
 
+    <<if $Spouse == 'Mike'>>
+      You are married to your master, Mike.
+    <<elseif $Engaged == 'Mike'>>
+      You are engaged to your master, Mike, and living together.
+    <<elseif $Dropout == 'Uncle'>>
+      You are living with your master, Mike.
+    <<elseif $MasterMike>>
+      Mike is your master.
+    <</if>>
+
     <<if $dating.length == 0>> 
       <<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>
       <<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>
@@ -779,7 +788,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $DropoutCumslut>>
     <br><br>
     You work at a smoothie bar.
-  <<elseif $FatherChastity>>
+  <<elseif $FatherChastity or $Dropout == 'Uncle'>>
     <<if $JobHomemaker>>
       <br><br>
       <<if $PlayerMother>>

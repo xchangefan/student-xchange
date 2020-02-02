@@ -1,6 +1,295 @@
 ::UncleSub
-TODO UncleSub (Ending)
-- Ending with Mike as your master
-- You don't want to go back to school in the belt, with no hope of an orgasm
-- You beg to stay with him
-- Deal with if pregnant already
+<<nobr>>
+  <h1>Moving in with Mike</h1>
+  <img src="PartX/Uncle1.jpg" hspace="10" vspace="10" height="650">
+  <<unset $student>>
+  <<set $Dropout to "Uncle">>
+  <<set $JobHomemaker to 1>>
+  <<set setup.startDating('Mike')>>
+  <<achievement>>dropout<</achievement>>
+<</nobr>>
+<<nobr>>
+  If he had ordered you to go back to school, you would have.  If he had ordered you to stay, you would have done that too.  But Mike wanted you to make this decision
+  on your own.  Of course you decided to drop out of school and stay here with your Master Mike.
+<</nobr>>
+
+<<nobr>>
+  You know once you move in your relationship with him won't be a secret to anyone anymore.  There are going to be some people that judge you both because Mike used
+  to be your uncle, but you don't care.  But you aren't related anymore, so you think they should just mind their own business.
+<</nobr>>
+
+<<nobr>>
+  You've submitted to men before, obviously.  You loved it then too, but this is so much more.  Mike uses your body however he wants, of course.  You'd be disappointed if
+  he didn't.  But afterwards he holds you, and strokes your hair, and tells you what a good girl you were.  You aways know how much he cares for you.
+<</nobr>>
+
+<<nobr>>
+  He's thrilled you are moving in.  He throws a back yard party to celebrate with some of his closest friends.  Your father isn't there, so he
+  has you wear what you normally do, not much at all.  His friends don't mind in the least.
+<</nobr>>
+
+<<nobr>>
+  Tomorrow you'll be dressed differently when [[your father comes by to visit|UncleSub2]].  But you are still nervous how that is going to go.
+<</nobr>>
+
+::UncleSub2
+<<nobr>>
+  <h1>Your Father Vists with Mike</h1>
+  <img src="PartX/Uncle2.jpg" hspace="10" vspace="10" height="550" align="left">
+  You know your father is coming to visit Mike and you today, and you are nervous about what you are going to say.  You soon discover that you don't have to
+  worry about that, since you won't be saying anything.  It's just going to be the two of them talking.  You are still worried what your father is going to say
+  though, since this is the first time you've spent any time with him since you moved in with Mike.
+<</nobr>>
+
+<<nobr>>
+  Your father doesn't have anything to say to you beyond a few greetings.  Him and Mike however talk to each other as if you aren't there.  "... I knew he was never
+  going to end up as a man.", your father tells Mike.  "At times, I'd worried he'd end up walking the street trying to earn money for a Plus pill.  I'd been
+  considering just buying one for him to avoid that.  But thankfully, that university program happened made that all unnecessary."
+<</nobr>>
+
+<<nobr>>
+  "I had hoped the university would help train her to be a proper young woman.", your father continues.  "But they just turned her loose and let her run wild.
+  Having a strong hand to guide her is the best she could have hoped for then.  And I'm glad it's someone I know and trust like you."
+<</nobr>>
+
+<<nobr>>
+  "If things had worked out between you and Kim, then you and I would be still be brothers-in-law.  I hope you don't mind, I still think of you as a brother.",
+  your dad tells Mike.  "I don't think that's going to change, if some day you end up being my son-in-law."
+<</nobr>>
+
+<<nobr>>
+  You gasp a bit at your dad's comment, but no one hears it thanks to your gag.
+<</nobr>>
+
+<<nobr>>
+  That went far better than you'd imagined, you think as your father leaves.  Once your father is gone, Mike removes your gag and cuffs, and reminds you
+  that you need to get ready [[for your appointment|UncleSub3]]
+<</nobr>>
+
+::UncleSub3
+<<nobr>>
+  <h1>A Visit to the X-Change Clinic</h1>
+  <img src="PartP/PregTest6.jpg" hspace="10" vspace="10" height="550" align="left">
+<</nobr>>
+<<nobr>>
+  You show up at your visit for the X-Change office.
+  <<if $AcademicProbationDenial>>
+    You need them to deactivate this horrible denial setting the dean made them turn on.
+  <<elseif $PlayerPregnant>>
+    They need to check up on the baby for you.
+  <<elseif !$PlayerSideEffectPermanent>>
+    You need them to do something for you.
+  <<else>>
+    They want to do some tests, since you won't stoping by as regularly since you aren't on campus anymore.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $AcademicProbationDenial>>
+    <<set $tempCelebrate to 'orgasm'>>
+    <<unset $AcademicProbationDenial>>
+    "There, you should be able to orgasm normally again miss.
+    <<if $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
+      Or in your case, better than normal, as before.
+    <</if>>
+    Congratulations!", the X-Change technican tells you.  You can't wait to get home and celbrate your new ability with Mike.
+    <br><br>
+  <</if>>
+  <<if $PlayerPregnant>>
+    Everything looks fine with the fetus miss.  The technician tells you.  You notice after your told them your plans to put the baby up for adoption that
+    they stopped calling it 'your baby' and instead switched to 'the fetus'.  You suppose they are trying to help make your decision easier.  It was an easy
+    decision though.  You'll probably want to have children with Mike eventually, neither of you are sure yet.  But you know you don't want one now.  Especially
+    some other man's child.
+    <br><br>
+    You are glad Mike is so support of you continuing with this pregnancy so you can put the baby up for adoption.  Seeing how much he is now, when it isn't
+    even his baby inside you lets you know he'll make an excellent father someday when it is.  It also makes you want to [[hurry home and be with him|UncleSub4]].
+  <<elseif !$PlayerSideEffectPermanent>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+    <<if $PregnancyCheck.isPregnant>>
+      <<set $PlayerSideEffectPermanent to 1>>
+      <<if $PlayerAbortion>>
+        <<set $PlayerAbortion += 1>>
+      <<else>>
+        <<set $PlayerAbortion to 1>>
+      <</if>>
+      <<achievement>>pregnant<</achievement>>
+      <<achievement>>childfree<</achievement>>
+      <<if setup.pregnantFirstTime() and !$PlayerProtectionTry>>
+        <<achievement>>firsttime<</achievement>>
+      <</if>>
+      Before making your change permanent they do some tests, and discover that it's not necessary.  You are pregnant!  And so the change is already permanent.
+      You let them know you aren't ready for that just yet, especially since your brother is one of the possible fathers! (You don't mention that last part.)
+      So they give you a pill that you take now, and then another one for later.  They warn you to expect bleeding, more than a normal period, for a few days.
+      Probaby starting tomorrow.
+      <br><br>
+      But the exciting part is that this is your body forever now!  You know Mike is going to [[want to celebrate|UncleSub4]] that
+      <<if $tempCelebrate>>
+        too
+      <<else>>
+        <<set $tempCelebrate to 'perm'>>
+      <</if>>
+      when you get home.
+    <<else>>
+      After check to make sure that you aren't pregnant, and that your implant isn't already permanent, they give you an injections.  "Congratulations!
+      You are a woman forever now!", the technician tells you.
+      <br><br>
+      You know Mike is going to [[want to celebrate|UncleSub4]] with you about this
+      <<if $tempCelebrate>>
+        too
+      <<else>>
+        <<set $tempCelebrate to 'perm'>>
+      <</if>>
+      when you get home.
+    <</if>>    
+  <<else>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+    <<if $PregnancyCheck.isPregnant>>
+      <<set $PlayerSideEffectPermanent to 1>>
+      <<achievement>>pregnant<</achievement>>
+      <<achievement>>childfree<</achievement>>
+      <<if setup.pregnantFirstTime() and !$PlayerProtectionTry>>
+        <<achievement>>firsttime<</achievement>>
+      <</if>>
+      One of the tests the run is a pregnancy test.  And they discover you are pregnant!  You let them know you aren't ready for that just yet, especially since
+      your brother is one of the possible fathers!   (You don't mention that last part.) So they give you a pill that you take now, and then another one for later.
+      They warn you to expect bleeding, more than a normal period, for a few days.  Probaby starting tomorrow.
+      <br><br>
+      But everything else was great on your tests and they won't need to see you again for months.  So you [[hurry home to see Mike|UncleSub4]].
+    <<else>>
+      Everything looked great on your tests.  They even checked and confirmed you aren't pregnant.  They say they won't need to see you again for months.
+      So you [[hurry home to see Mike|UncleSub4]].
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionFertile>>
+    <<if !$PlayerProtectionWithdrawl>>
+      <<unset $PlayerProtectionTry>>
+      <<unset $PlayerProtectionCondoms>>
+      <<unset $PlayerProtectionNone>>
+      <<set $PlayerProtectionWithdrawl to 1>>
+      You and Mike aren't wanting a baby just yet, and only a few birth control methods work for you.  So after going over your options with the nurse, you
+      let her know you'll be having Mike pull out.  You know you probably won't most of the time, it usually feels too good for both of you to have him stop.
+      <<if $PlayerPregnant>>
+        Though for now, you don't have to worry about.
+      <</if>>
+    <</if>>
+  <<elseif !$PlayerProtectionPerfectand and !$PlayerProtectionPermanent and !$PlayerProtectionPill>>
+    <<unset $PlayerProtectionTry>>
+    <<unset $PlayerProtectionCondoms>>
+    <<unset $PlayerProtectionNone>>
+    <<unset $PlayerProtectionWithdrawl>>
+    <<set $PlayerProtectionPill to 1>>
+    You and Mike aren't wanting a baby just yet so you'll be getting on the pill.
+    <<if $PlayerPregnant>>
+      After your pregnancy that is.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::UncleSub4
+<<nobr>>
+  <<if $tempCelebrate>>
+    <h1>Mike Helps you Celebrate</h1>
+  <<else>>
+    <h1>Mike has a Surprise for You</h1>
+  <</if>>
+  <video src="PartX/Uncle3.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  When you get home, Mike says
+  <<if $tempCelebrate>>
+    he has the perfect idea on how to celebrate
+    <<if $tempCelebrate == 'orgasm'>>
+      your ability to orgasm again.
+    <<else>>
+      that you are a woman forever now.
+    <</if>>
+  <<else>>
+    he has a surprise for you.  He says he knows you're going to like it.
+  <</if>>
+  He takes a familiar chair up in the dungeon for you.  Once he binds you to it, he activates the vibrator, on low at first, but gradually turning up the speed.
+<</nobr>>
+
+<<nobr>>
+  <<if $tempCelebrate == 'orgasm'>>
+    TODO
+  <<elseif $tempCelebrate>>
+    TODO
+  <<else>>
+    TODO
+  <</if>>
+  As your first orgasm hits
+  <<unset $tempCelebrate>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    <<unset $PlayerChastityBelt>>
+    He also tells you that he trusts you enough not to need the chastity belt on you all the time.  Of course, he'll keep it around for play, or if he decides you
+    need it again.
+  <</if>>
+<</nobr>>
+
+TODO [[UncleSub5]]
+
+::UncleSub5
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="PartX/Uncle4.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+TODO [[UncleSub6]]
+
+::UncleSub6
+<<nobr>>
+  <h1>TODO</h1>
+  <video src="PartX/Uncle5.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+TODO Not always BDSM, then: [[UncleSub7]]
+
+::UncleSub7
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="PartX/Uncle6.jpg" hspace="10" vspace="10" height="550">
+<</nobr>>
+TODO Though usually it is, but not always in the dugeon, then: [[UncleSub8]]
+
+::UncleSub8
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="PartX/Uncle7.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $Spouse to 'Mike'>>
+<</nobr>>
+TODO Elope [[UncleSubPregnant]] or [[UncleSub9]]
+
+<<achievement>>married<</achievement>>
+
+::UncleSubPregnant
+<<nobr>>
+  <h1>TODO</h1>
+  <video src="Part14/Pregnant8.mp4" autoplay loop muted height="500"></video>
+  <<if $PlayerAdoption>>
+    <<set $PlayerAdoption += 1>>
+  <<else>>
+    <<set $PlayerAdoption to 1>>
+  <</if>>
+  <<unset $PlayerPregnant>>
+<</nobr>>
+TODO Pregnant, deliver, adoption
+TODO [[UncleSub9]]
+<achievement>>mother<</achievement>>
+<achievement>>childfree<</achievement>>
+
+::UncleSub9
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="PartX/Uncle8.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+
+[[The End.|GameOverUncle]]
+
+::GameOverUncle
+<img src="PartX/GameOver1.jpg" hspace="10" vspace="10" height="600">
+
+<<achievement>>uncle<</achievement>>
