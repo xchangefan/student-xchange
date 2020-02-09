@@ -676,7 +676,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 ::SideBarNeighbours <2000,0>
 <<nobr>>
   <<if !$student || $FatherChastity>>
-  <<elseif $Spouse or $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Victoria' or $Roommate == 'Aaron'>>
+  <<elseif ($Spouse and $Spouse != 'Dan') or $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Victoria' or $Roommate == 'Aaron'>>
   <<elseif $Roommate == 'Sorority Sister'>>
     You live with your soroity sisters.
   <<elseif $neighbours and $neighbours.length == 1>>
@@ -752,6 +752,16 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       You are in a relationship with Mason.
     <</if>>
 
+    <<if $Spouse == 'Dan'>>
+      You are married to Dan.
+    <<elseif $Engaged == 'Dan'>>
+      You are engaged to Dan. You live with him.
+    <<elseif setup.areDating('Dan') and $Roommate == 'Dan'>>
+      You are in a relationship with Dan. You live with him.
+    <<elseif setup.areDating('Dan')>>
+      You are in a relationship with Dan.
+    <</if>>
+
     <<if $Spouse == 'Mike'>>
       You are married to your master, Mike.
     <<elseif $Engaged == 'Mike'>>
@@ -788,7 +798,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $DropoutCumslut>>
     <br><br>
     You work at a smoothie bar.
-  <<elseif $FatherChastity or $Dropout == 'Uncle'>>
+  <<elseif $FatherChastity or $Dropout == 'Uncle' or $StudentBreak == 'Dan'>>
     <<if $JobHomemaker>>
       <br><br>
       <<if $PlayerMother>>
@@ -875,6 +885,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       You are a sophomore.
     <<else>>
       You are a freshman.
+    <</if>>
+    <<if $StudentBreak>>
+      You are taking a semester off.
     <</if>>
   <<elseif $Dropout>>
     <br>You have dropped out of college.

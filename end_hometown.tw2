@@ -105,7 +105,7 @@
     <<set $PlayerSideEffectPermanent to 1>>
     <<set $PlayerPregnant to 1>>
     <<achievement>>pregnant<</achievement>>
-    <<if setup.pregnantFirstTime() and !$PlayerProtectionTry>>
+    <<if setup.pregnantFirstTime()>>
       <<achievement>>firsttime<</achievement>>
     <</if>>
   <</if>>
@@ -138,20 +138,24 @@
   <<if $PlayerSideEffectPermanent>>
     Your change is already permanent, which your father says is for the best.
   <<else>>
+    <<set $PlayerSideEffectPermanent to 1>>
     As your change is not yet permanent, your father requests that they make it permanent, so you don't still hold any silly notions of
     being a man someday.  He says there's hope of your being a proper woman eventually, but you were never going to be a man.
   <</if>>
   <br><br>
+
   <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
     He has them deactive the built-in birth control from your implant.  He says you won't be needing due to your belt, and when you are
     married, you'll be wanting to have children<br><br>
     <<unset $PlayerProtectionPerfect>>
     <<unset $PlayerProtectionPermanent>>
   <</if>>
+
   <<if $PlayerProtectionFertile>>
     The enhanced fertility effects of your implant are not reversable, but your father says that it sounds like a wonderful thing anyway.
     Once you are married, it'll be that much easier for you and your husband to concieve.<br><br>
   <</if>>
+
   <<if $AcademicProbationDenial>>
     You are pleased that he instructs the doctor to disable the academic probation denial setting on your implant, but less so when
     he explains why.  "If that kept her from acting like a slut, then I'd be all for it.  But it clearly doesn't do that, so what is the point
@@ -161,6 +165,7 @@
     The doctor informs him that they have to notify the dean's office at the university, and that your re-enrollment at the
     university will be blocked.  "That's not a concern, she isn't returning there anyway."<br><br>
   <</if>>
+  
   <<if $PlayerNoBodyHair and $PlayerWeightControl>>
     Your father thinks your implants effects that prevent body hair and weight gain are wonderful.
     "I'm sure her future husband will appreciate those."  Then he jokes, "Do you think you can implant those for my wife?"
@@ -174,11 +179,13 @@
     "I'm sure her future husband will appreciate that."  Then he jokes, "My wife would want to know if you could implant that for her too."
     <br><br>
   <</if>>
+
   <<if $PlayerReducedSleep>>
     When he tells your father about your reduced sleep effects he says, "That's great.  But now she'll be using it to study, instead of
     just as more time to whore around."
     <br><br>
   <</if>>
+
   <<if $PlayerSideEffectDreams>>
     When he tells your father about the effects that give you such 'vivid' dreams, he doesn't much care.  "If she had only been dreaming about
     being a slut, I wouldn't have cared."
@@ -241,7 +248,7 @@
 <<nobr>>
   First, it's much easier than before.  The classes aren't quite as hard, but that's only part of it.  They also spend more individual time
   teaching you.  And when you meet with one of the professors, you feel like he's really trying to help you succeed.  And, of course, the women
-  professors are great too.
+  professors are great too.  You hadn't really given much thought to how few there were at your previous university.
 <</nobr>>
 
 <<nobr>>
@@ -424,6 +431,11 @@
 <</nobr>>
 
 <<nobr>>
+  Though thankfully he doesn't question you about your thoughts and fantasies.  He wouldn't want to know about how many times you've dreamt of kneeling
+  down and pleasuring one of your professors or classmates.
+<</nobr>>
+
+<<nobr>>
   The days move by so slowly at first, but you start to get accustomed to your situation.  Eventually, you get into a rythym of class, homework,
   sleep, and back to class again.  Then before you know it the [[school year is over|MovingBackHome7]].
 <</nobr>>
@@ -448,7 +460,7 @@
 <<nobr>>
   You'd worried that you'd have to make all new friends again after you transfered over, so you are thrilled when you run into
   your friend Mason in the hall one day.  Of course you'd seen him since high school, but since he'd gone off to college and most of
-  the guys you'd known were working down that factory, he hadn't hung out with them as much.  You don't know if he's just been too busy, or
+  the guys you'd known were working down the factory, he hadn't hung out with them as much.  You don't know if he's just been too busy, or
   was hanging out with new, college friends instead.  Either way it was nice to see a familiar face.
 <</nobr>>
 
@@ -518,9 +530,9 @@
 <<nobr>>
   But you can't have that.  So instead you pull away from his kiss and pull down his pants.  You start sucking his cock.  It feels so wonderful
   on your tongue.  It was just as good as you'd been fantasizing.
-  You start with just the head, enjoying the way your lips feel as they slide over the smooth crown of his cock.  You'd looked at so many
-  cocks online since you'd last seen one, imagining what this would be like.  You are loving the way your lips catch a bit on corona, the
-  soft moans he makes as you flick your tongue along the frenulum.
+  You start with just the head, enjoying the way your lips feel as they slide over the smooth crown of his cock.  You've lost track of how many
+  times you've caught yourself many times 'studying' the penis diagram in your anatomy text book, imagining what one would feel like again.
+  Now that you finally are, you are loving the way your lips catch a bit on the corona, the soft moans he makes as you flick your tongue along the frenulum.
 <</nobr>>
 
 <<nobr>>
@@ -716,7 +728,7 @@
 <</nobr>>
 <<nobr>>
   Mason takes you out on another romantic date this evening.  But at the end of this date it's Mason kneeling for you, and holding
-  up and engagement ring!  "Yes, yes, I'll marry you!", you tell him.
+  up an engagement ring!  "Yes, yes, I'll marry you!", you tell him.
 <</nobr>>
 
 <<nobr>>
@@ -730,9 +742,9 @@
 <</nobr>>
 
 <<nobr>>
-  You know you'd be eager to find a venue, to set an exact date, and to do all the rest of the planning with Mason for the big day.
-  But you are even more eager.  Because you know once you have the date set, they'll be a day circled in red on your calendar, and
-  you know that will be the day you can finally orgasm again.
+  You know even without your belt that you'd be eager to find a venue, to set an exact date, and to do all the rest of the planning with Mason
+  for the big day.  But you are even more eager than that.  Because you know once you have the date set, they'll be a day circled in red on your
+  calendar, and you know that will be the day you can finally orgasm again.
 <</nobr>>
 
 <<nobr>>
@@ -1535,7 +1547,7 @@
 <</nobr>>
 
 <<nobr>>
-  In addition to joy of having your husband fuck your ass more often, you do enjoy how much easier things are after using the bathroom.
+  In addition to the joy of having your husband fuck your ass more often, you do enjoy how much easier things are after using the bathroom.
   But thinking about that reminds you of [[another cleaning issue|MovingBackHomePregnant]] that you realize hasn't been a problem recently.
 <</nobr>>
 
@@ -1592,7 +1604,7 @@
 <</nobr>>
 
 <<achievement>>pregnant<</achievement>>
-<<if setup.pregnantFirstTime() and !$PlayerProtectionTry>>
+<<if setup.pregnantFirstTime()>>
   <<achievement>>firsttime<</achievement>>
 <</if>>
 
