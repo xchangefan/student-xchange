@@ -45,8 +45,12 @@
   <h1>Your Father Vists with Mike</h1>
   <img src="PartX/Uncle2.jpg" hspace="10" vspace="10" height="550" align="left">
   You know your father is coming to visit Mike and you today, and you are nervous about what you are going to say.  You soon discover that you don't have to
-  worry about that, since you won't be saying anything.  It's just going to be the two of them talking.  You are still worried what your father is going to say
-  though, since this is the first time you've spent any time with him since you moved in with Mike.
+  worry about that, since you won't be saying anything.  It's just going to be the two of them talking.
+<</nobr>>
+
+<<nobr>>
+  You are still worried what your father is going to say though, since this is the first time you've spent any time with him since you moved in with Mike.  Well,
+  and you obviously are wondering how your father is going to react to the gag Mike has ordered you to wear.
 <</nobr>>
 
 <<nobr>>
@@ -112,9 +116,9 @@
     You are glad Mike is so support of you continuing with this pregnancy so you can put the baby up for adoption.  Seeing how much he is now, when it isn't
     even his baby inside you lets you know he'll make an excellent father someday when it is.  It also makes you want to [[hurry home and be with him|UncleSub4]].
   <<elseif !$PlayerSideEffectPermanent>>
-    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test')>>
     <<if $PregnancyCheck.isPregnant>>
-      <<set $PlayerSideEffectPermanent to 1>>
       <<if $PlayerAbortion>>
         <<set $PlayerAbortion += 1>>
       <<else>>
@@ -126,8 +130,11 @@
         <<achievement>>firsttime<</achievement>>
       <</if>>
       Before making your change permanent they do some tests, and discover that it's not necessary.  You are pregnant!  And so the change is already permanent.
-      You let them know you aren't ready for that just yet, especially since your brother is one of the possible fathers! (You don't mention that last part.)
-      So they give you a pill that you take now, and then another one for later.  They warn you to expect bleeding, more than a normal period, for a few days.
+      <br><br>
+      You let them know you aren't ready for that just yet, especially since your brother is one of the possible fathers! Of course you don't tell them about
+      that part.
+      <br><br>
+      They give you a pill that you take now, and then another one for later.  They warn you to expect bleeding, more than a normal period, for a few days.
       Probaby starting tomorrow.
       <br><br>
       But the exciting part is that this is your body forever now!  You know Mike is going to [[want to celebrate|UncleSub4]] that
@@ -412,7 +419,7 @@
   <<if $PlayerPregnant>>
     Of course, you'll pass on the champagne and go with grape juice for the toast, since [[you still have a baby on the way|UncleSubPregnant]].
   <<else>>
-    Actually, you have [[your whole life together to celelbrate|UncleSubEnd]].
+    Actually, you have [[your whole life together to celebrate|UncleSubEnd]].
   <</if>>
 <</nobr>>
 
@@ -468,7 +475,7 @@
 
 <<nobr>>
   You love sitting at your husband's feet as he and his friends watch the game.  Of course on days like this, the chain isn't locked.  What good
-  would would having a pretty young 'slave girl' be if she couldn't go get someone a beer when they run out.
+  would having a pretty young 'slave girl' be if she couldn't go get someone a beer when they run out.
 <</nobr>>
 
 <<nobr>>
