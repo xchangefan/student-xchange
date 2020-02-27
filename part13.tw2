@@ -1801,16 +1801,24 @@ Of course, in addition to your school work and being whored out by Barry, you al
 ::Part13DeansOffice <10200,4110>
 <<nobr>>
   <h1>Visiting the Dean's Office</h1>
-  <<if $PlayerPregnant and !$dating.length and ($PlayerProtectionTry or setup.sexUniqueVaginalCount() > 25) and ($$PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock)>>
-    <<set $PlayerSideEffectBreeder to 1>>
-    <<set $PlayerProtectionFertile to 1>>
-  <<elseif !$PlayerPregnant>>
-    <<set $AcademicProbationDenial to 1>>
+  <<if $PlayerPregnant>>
+    <img src="Part13/Dean3.jpg" hspace="10" vspace="10" height="650" align="left">
+    As you get ready for your visit to the Dean's office, you are still dreading it.  You look through your closet to find something that accentuates
+    the fact that you are pregnant.  It's not like you can hide it anyway at this point.  Hopefully you'll be able to get some sympathy from him due
+    to your current state.  You make sure the outfit you pick out also shows off the ample cleaveage you currently have, while not making it look like
+    you are trying to do that.
+  <<elseif $CampusMinistry>>
+    <img src="Part13/Dean2.jpg" hspace="10" vspace="10" height="650" align="left">
+    As you get ready for your visit to the Dean's office, you are still dreading it.  You wear one of your nice bras under
+    your shirt.  No one is going to see it, obviously.  But you always feel a little bit prettier and more confident when
+    you wear it.  And you need all the confidence you can get right now.
+  <<else>>
+    <img src="Part13/Dean2.jpg" hspace="10" vspace="10" height="650" align="left">
+    As you get ready for your visit to the Dean's office, you are still dreading it.  You wear one of your nice bras under
+    your top.  You make sure that it passes for a casual student outfit, but you also make sure to show as much cleavage as possible.
+    Hopefully that will help you talk your way out of this situation with the dean.
   <</if>>
-<</nobr>>
-<<nobr>>
-  After a year at this place you were expecting, maybe even hoping, you'd be able to take care of this problem with a little 1-on-1 time with the dean.
-  You do have to meet with him 1:1, but soon find this meeting is much longer and more boring than you'd hoped.
+  Once you are ready, you reluctantly head over to the administration building.
 <</nobr>>
 
 <<nobr>>
@@ -1826,11 +1834,65 @@ Of course, in addition to your school work and being whored out by Barry, you al
 <</nobr>>
 
 <<nobr>>
-  When you hear what the other option is, you almost wish you had been kicked out.  You even consider quiting instead of going through with it.  But you agree.
+  "They say it's the perfect punishment for a horny slut.", the dean says.  When he sees the
+  <<if $CampusMinistry>>shocked<<else>>angry<</if>>
+  look on your face he explains, "Pardon my language, those are their words not mine.  It's actually the marketing slogan for the option
+  they'll be activating for you.  Why anyone would buy it willingly is something you'll have to ask them.  But maybe you already know.  I'm sure you're more
+  familiar with what 'horny sluts' like than I am.
 <</nobr>>
 
 <<nobr>>
-  After he walks you down to the X-Change office, they do something to the settings of your implant.  Then they
+  <<if $CampusMinistry>>
+    "But I'm not a horny slut, sir.", you tell him, blushing as you repeat the phrase he'd used. "I'm actually a virgin.  I don't think I should be
+    punished like one of them."
+    <br><br>
+    "Of course, you're not.", he says clearly not believing a word of it.  "It's your choice, this or transfering to somewhere less challenging."
+  <<else>>
+    His comments about horny sluts, and his general demeanor, make it clear the back-up plan you'd had is doomed to fail.  If you offered a blowjob, or even
+    sex, in exchange for letting it slide for another semester, you know he'd tell you no.  And he'd be even more convinced that you are a horny slut that needs
+    be be punished.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You consider dropping out instead of going through with it. But
+  <<if $PlayerGoodStudent>>
+    everyone had such high hopes for you at college, and you don't want to let them down.
+  <<elseif $PlayerAverageStudent>>
+    you oveheard you dad talking to your mom and saying that you'd be gone after a year or less, and you don't want to prove him right.
+  <<else>>
+    you heard too many people back home say that you'd be gone after a year or less, and you don't want to prove them right.
+  <</if>>
+  So you agree [[to go through with it|Part13DeansOffice2]]
+<</nobr>>
+
+::Part13DeansOffice2 <10300,4110>
+<<nobr>>
+  <h1>With the Dean at the X-Change Office</h1>
+  <<if $PlayerPregnant and !$dating.length and ($PlayerProtectionTry or setup.sexUniqueVaginalCount() > 25) and ($PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock)>>
+    <<set $PlayerSideEffectBreeder to 1>>
+    <<set $PlayerProtectionFertile to 1>>
+  <<elseif !$PlayerPregnant>>
+    <<set $AcademicProbationDenial to 1>>
+  <</if>>
+  They explain the 'feature' they are activating as you are given forms to sign consenting to the 'voluntary' procedure and signing your right to deacivate
+  it over to the dean.
+<</nobr>>
+
+<<nobr>>
+  "The planned use of this feature is for women that enjoy orgasm denial and loss of control.",  the X-Change technician explains.  "It will completely block your
+  ability to feel your orgasms, and much of the pleasure leading up to them, while it is activated.  Your body will still react more-or-less normally for the
+  situation.  But it'll just be subconcious reactions, you won't feel it the way you normally would."
+<</nobr>>
+
+<<nobr>>
+  He continues explaining, "In the future we plan on allowing remote activation and deactivation via an app on the users phone.  With of course a timer-based lockout
+  for individuals, or allowing transfer of control to someone else.  But for now, you'll need to come in to the office here to get it deactivated.  Once the dean has
+  sent over his approval that is."
+<</nobr>>
+
+<<nobr>>
+  After you are done signing forms, he does something to the settings of your implant.  Then he
   <<if $PlayerSideEffectBreeder>>
     attempt to confirm your ability to orgasm has been completely disabled.  However, you soon discover they've haven't done anything of the sort.
     <br>
@@ -1869,7 +1931,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
     As the technican talks about it, your mind is filled with thoughts of men cumming inside you.  You'd be tempted to see if the technician was interested
     if the dean wasn't right here.  Then the dean interrupts your pleasant thoughts with a question, "Couldn't she just get an abortion?"  You instinctively
     cover your belly protectively. "Not now.", he clarifies.  "I mean when she gets pregnant the next time, and the time after that.  And what about when
-    she's to old to get pregnant?"
+    she's too old to get pregnant?"
     <br><br>
     "Termination is possible of course, but if its like with our standard Breeder pills work, then it would interfere with how it detects pregnancy and
     probable conception events.  She probably wouldn't be able to orgasm again until she was pregnant again and things were able to reset.", the technician
@@ -1935,7 +1997,8 @@ Of course, in addition to your school work and being whored out by Barry, you al
       mouth you are ashamed of the thought that fills your head.  You keep thinking it'd be so much better if he had one of those vibrators that go inside,
       instead of one just pressed against you outside.
       <br><br>
-      Without realizing it your hand has moved from your mouth and started stroking the technician's shoulder and arm and thinking abpit what a nice man he is.
+      Without realizing it your hand has moved from your mouth and started stroking the technician's shoulder and arm and thinking what a nice man he is
+      and wanting to wrap your arms around him.
       But a few moments later you are screaming at him and you don't know why.  He stops the vibrator and you can feel your heart bounding and you can
       barely breathe.  "What is happening?", you ask.
     <<else>>
@@ -1943,7 +2006,7 @@ Of course, in addition to your school work and being whored out by Barry, you al
       You can feel that it is vibrating, but it doesn't feel like it is supposed to.  He might as well be vibrating your arm for all the pleasure you feel.
       <br><br>
       But you notice your body is still reacting the way it normally would.  Your heart is beating fast, your feel your skin flush, and you ache for
-      the tecnician to put down the vibrator and just fuck you.  Maybe the dean too.
+      the tecnician to put down the vibrator and just fuck you.
       <br><br>
       When you hear yourself moan, it is maddening as you still don't actually feel anything.  Even when you hear yourself scream and claw at the technician's
       shoulder, you don't feel anything.  You recognize that your body seemed to just have an orgasm, but you felt none of it.
@@ -1953,23 +2016,33 @@ Of course, in addition to your school work and being whored out by Barry, you al
     to sexual pleasure don't register with her conscious mind."
     <br><br>
     <<if $CampusMinistry and $sex.length == 0>>
-      "Sexual... but I'm a virgin.", you tell them.
+      "Sexual... but I'm a virgin.", you tell him.
       <br><br>
-      "Well, it will also prevent masturbation.  And if you don't do that either, then...", he pauses to check his notes.  He doesn't seem to have encountered
-      this situation before. "Well, I suppose you won't be missing much."  You don't think he believes you though.
+      As the technician's eyes glance over at the dean for a second, you realize he thinks you are just saying that because the dean is here.  "Of course,
+      ma'am.", he says  "Well, it will also prevent masturbation.  Though maybe the other effects will encourage you to enjoy your new body more fully,
+      well, as much as you can now anyway."
       <br><br>
-      Then the dean leads you back to his office.  "If you were honest about your lack of sexual activity, then the denial mode they set on your implant
-      might not be the motivator it normally is.  But you'll still be expected to put in the effort to improve your grades if you want to remain a student here."
-      The two of you then sit down to work on an 'academic improvement plan', which is just as boring as it sounds.
+      When you ask about 'other effects' the technican goes into more detail.  "As was mentioned on one of the forms, the feature also greatly increases
+      your sexual desire while it is active.  What fun would denial be for anyone if you just forgot about sex while it was active?  That's certainly not
+      going to happen."  You are wishing you'd paid more attention to the forms.
+      <br><br>
+      Then the dean leads you back to his office.  "If you were honest about your lack of sexual activity, then maybe the denial mode they set on your implant
+      won't beas big of a motivator for you as it normally is.  But you'll still be expected to put in the effort to improve your grades if you want to remain
+      a student here."  The two of you then sit down to work on an 'academic improvement plan', which is just as boring as it sounds.
       <br><br>
       After you leave his office you head to the restroom.  You are surprised to find the mess you've made in your panties, you hope that was just
       from the test, and they aren't going to be like that all the time now.
     <<else>>
       "That... that was so frustrating.", you say.  "I know my body just got off, but I didn't feel anything, and I'm still so horny."
+      <br><br> 
+      "Pefect.", the technican says.  "And with the other effects, you should stay like that most of the time."
+      <br><br>      
+      When you ask about 'other effects' the technican goes into more detail.  "As was mentioned on one of the forms, the feature also greatly increases
+      your sexual desire while it is active.  What fun would denial be for anyone if you just forgot about sex while it was active?  That's certainly not
+      going to happen."  You are wishing you'd paid more attention to the forms.
       <br><br>
-      "Right.  That's how it's supposed to work.", the dean says.  "We've found it be be a great motivator to encourage students to do what needs to be done
-      to get their grades up."  The two of you then go back to his office and sit down to work on an 'academic improvement plan', which is just as boring as it
-      sounds.
+      As you walk back to the deans office he says, "We've found it be be a great motivator to encourage students to do what needs to be done to get their
+      grades up."  The two of you then go back to his office and sit down to work on an 'academic improvement plan', which is just as boring as it sounds.
       <br><br>
       After you leave his office you head to the restroom.  You aren't surprised to find the mess you've made in your panties, yet more proof of that of the
       orgasm you couldn't feel.
