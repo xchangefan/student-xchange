@@ -491,7 +491,7 @@ setup.isFriendzoned = function(name) {
 	return state.active.variables.friendzone.indexOf(name) >= 0
 }
 
-::EventFunctions [script] <400,50>
+::EventFunctions [script] <405,50>
 $(document).on(':passagestart', function (ev) {
 	setup.addDetailsToRecentSex()
 })
@@ -677,7 +677,7 @@ setup.getTotalEndingCount = function() {
 	return setup.getPossibleEndings().length
 }
 
-::Achievement [script] 
+::Achievement [script] <450,50>
 // adapted from notify.js, by chapel; for sugarcube 2 version 1.0.0
 $(document.body).append("<div id='achievement'></div>");
 $(document).on(':achievement', function (e) {
@@ -776,5 +776,5 @@ Macro.add('achievement', {
     }
 });
 
-::PassageHeader
+::PassageHeader <475,50>
 <span style="display:none"><<if $playerName>>$playerName<<if $MindBlank>>/Marie<</if>>: <</if>></span>
