@@ -1812,14 +1812,19 @@ do your best to make a purring sound for a bit before you fall asleep.
 ::Part6StartLazy  <7200,600>
 <<nobr>>
 	<<set $FunPoints += 4>>
-	
 	<h1><<print "Campus">></h1>
+  You were never a good student, so you should be studying even harder to catch up with your classmates.
 <</nobr>>
-
-<<print "You were never a good student, so you should be studying even harder to catch up with your classmates.">>
 <img src="Part6/Start5.jpg" hspace="10" vspace="10" height="650">
-
-<<print "But you didn’t like studying before, and the X-Change didn’t change that about your personality. So you find much more often you are spending your time doing something more fun than studying like... well, everything else.">>
+<<nobr>>
+  But you didn’t like studying before, and the X-Change didn’t change that about your personality. So you find much more often you are spending your
+  time doing something more fun than studying like... well, everything else.
+  <<if $CampusMinistry>>
+    <br><br>
+    You feel guilty doing it, but even just sitting around fantasizing about the sex you hear about everyone else is having is more fun than doing homework.
+    You don't even mind that you have to change your underwear after they end up all wet and messy afterwards.
+  <</if>>
+<</nobr>>
 
 <<include [[Part6NextAll]]>>
 

@@ -207,35 +207,40 @@
 ::Part8Road4 <200,6450>
 <<nobr>>
 	<h1><<print "Road Home">></h1>
+  You try to make up for lost time and drive fast the whole way. Between gas and tolls you spend $100 on your trip. But your speeding eventually gets
+  you pulled over going considerably over the speed limit.
+  <<set $PlayerMoney -= 100>>
+  <img src="Part8/Road4.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+<<nobr>>
+  The officer explains that for someone going as fast as you were, he has to arrest you. But as soon as the judge sets bail you can pay it and be on your way.
+  <<if !$KidnapEscape>>You’ve heard of women crying their way out of a ticket, but you’re pretty sure that won’t help here.<</if>>
 <</nobr>>
 
-<<print "You try to make up for lost time and drive fast the whole way. Between gas and tolls you spend $100 on your trip. But your speeding eventually gets you pulled over going considerably over the speed limit.">><<set $PlayerMoney -= 100>>
-<img src="Part8/Road4.jpg" hspace="10" vspace="10" height="650">
-
-<<print "The officer explains that for someone going as fast as you were, he has to arrest you. But as soon as the judge sets bail you can pay it and be on your way.">><<if !$KidnapEscape>>You’ve heard of women crying their way out of a ticket, but you’re pretty sure that won’t help here.<</if>>
-
-<<if $KidnapEscape>>
-	<<nobr>>
+<<nobr>>
+  <<if $KidnapEscape>>
 		<<set $PlayerMoney -= 150>>
 		<<if $PlayerMoney < 0>><<set $PlayerCredit = 1>><</if>>
 		You start sobbing uncontrollably at the thought of being in handcuffs and then locked in a cell.  The officer sees how upset you are, and has been doing
 		this long enough to realize it's not an act.  He tells you that he'll put it down as a much lower speeding ticket.  You'll be able to the pay $150 online when
-		you get home and he won't need to arrest you at all.  You thank him as you try to wipe away your tears. [[You’re careful to stay under the speed limit the rest of your trip.|Part8Home1]]
-	<</nobr>>
-<<elseif $CampusMinistry>>
-	[[You can't believe this is happening to you.|Part8Jail]]
-<<else>>
-	<<print "From the way the officer is looking at you, you suspect that something else might though.">>
-
-	<<nobr>>
-		<<if !$PlayerChastityBelt>>
-			<<print "If you tell the officer you’re really sorry for speeding, ">>
-			[[that you’d do *anything* to make this just go away,|Part8Road5]]
-			<<print " and ask if maybe there’s somewhere private you could go to make it up to him for wasting his time like this. ">>
+		you get home and he won't need to arrest you at all.  You thank him as you try to wipe away your tears.
+    [[You’re careful to stay under the speed limit the rest of your trip.|Part8Home1]]
+  <<elseif $CampusMinistry>>
+    [[You can't believe this is happening to you.|Part8Jail]]
+  <<else>>
+	  From the way the officer is looking at you, you suspect that something else might though.
+    <br><br>
+    <<if $PlayerChastityBelt>>
+      But with your chastity belt, your options are limited.  And you suspect a blowjob isn't going to be enough to get you out of this.
+      So [[you'll just have to pay for your crime|Part8JailChastity]].
+    <<else>>
+			Maybe you can go home right now.  Well, soon anyway.  You could probably tell the officer you’re really sorry for speeding,
+      [[that you’d do *anything* to make this just go away,|Part8Road5]], and ask if maybe there’s somewhere private you could go
+      to make it up to him for wasting his time like this.
+      [[Or you could just pay for your crime with your wallet instead of your body.|Part8Jail]]
 		<</if>>
-		[[Or you would rather just pay for your crime.|Part8Jail]]
-	<</nobr>>
-<</if>>
+  <</if>>
+<</nobr>>
 
 ::Part8Road2 <600,6325>
 <<nobr>>
@@ -292,24 +297,141 @@
 
 <<if !$CampusMinistry and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>>[[You can masturbate|Part8Home2]]<<print " if you think that might help take your mind off it and get to sleep, or you can ">><<else>><<print "You ">><</if>><<print "just toss and turn a while longer, ">>[[but eventually get to sleep.|Part8Home3]]
 
+::Part8JailChastity <0,6425>>
+<<nobr>>
+	<h1>Jail Inspection</h1>
+  <img src="Part8/Road8.png" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  The officer notices your chastity belt as soon as he pats you down checking for weapons.  As soon as he realizes it's not a weapon you are hiding, he's
+  very curious about it.  "Well, what do we have here?"  When you are too embarrassed to talk he says, "You can be shy if you like, we'll get a good look
+  back at the station."
+<</nobr>>
+
+<<nobr>>
+  He calls all the other officers over to see as you are ordered to strip.  Well, as far as you can.  At first they don't believe you that you don't have the key.
+  The search your purse looking for it.  When they find a leather collar you'd left in there, they use it to chain you to the wall while they keep looking.  You
+  think they normally would have used your cuffs for that, but that they are having too much fun humiliating you.
+<</nobr>>
+
+<<nobr>>
+  When they are convinced you really don't have the key they tease you some more.  "Are you that big of a slut, that your boyfriend has to lock you in that
+  to keep you under control.", one of them says.
+<</nobr>>
+
+<<nobr>>
+  "She hasn't said much.  Maybe she put the key in her mouth when you pulled her over.", one of the officers suggests.  "Or maybe there's a pocket hidden in
+  the belt somewhere."  With you still bound to wall they decide to thoroughly check both possibilities.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectOral>>
+    As the officers latex-gloved finger slides into your mouth to probe for the key, your instincts take over.  Your lips wrap around it and begin their
+    familiar motions on it before you even realize it. "No, I think you were right the first time, she's locked in this because of what a slut she is, and
+    she doesn't have the key.  But I don't think it matters anyway.  I think she'd be thrilled if we let her have an hour or two of
+    [[community service|Part8JailChastity2]] instead of a night in jail."  You nod enthusiastically with your lips still wrapped around the his latex-covered
+    finger. 
+  <<elseif $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist or $PlayerSideEffectLibido or $PlayerSideEffectPheromones>>
+    After one of the officers probes your mouth with a latex-gloved finger and finds nothing, he then moves down to your belt checking for hidden releases
+    or anywhere a key could be hidden.  When he checks the underside of your belt he sees how much you are leaking through the panel covering your lips.
+    You can't help how horny
+    <<if $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist or $PlayerSideEffectPheromones>>
+      being bound and displayed like this, and surrounded by all of these men, makes you.
+    <<else>>
+      you always are.
+    <</if>>
+    <br><br>
+    As he pulls a thin thread of your juices away from your belt with his gloved finger to show his coworkers, he laughs.
+    "No, I think you were right the first time, she's locked in this because of what a slut she is, and
+    she doesn't have the key.  But I don't think it matters anyway.  I think she'd be thrilled if we let her have an hour or two of
+    [[community service|Part8JailChastity2]] instead of a night in jail."  You nod enthusiastically, only wishing they could have found a key so you
+    mouth wasn't the only thing they could fill.
+  <<else>>
+    After one of the officers probes your mouth with a latex-gloved finger and finds nothing, he then moves down to your belt checking for hidden releases
+    or anywhere a key could be hidden.  He finds nothing, of course.
+    "No, I think you were right the first time, she's locked in this because of what a slut she is, and she doesn't have the key."
+    <br><br>
+    "Well, I guess it'll be fine.  She's going to [[be in a cell by herself|Part8Jail]] anyway.  How much trouble could she get into in one night?"
+  <</if>>
+<</nobr>>
+
+::Part8JailChastity2
+<<nobr>>
+	<h1>Community Service</h1>
+  <img src="Part8/Road9.jpg" hspace="10" vspace="10" height="500">
+  <<set $sex.push({sex: 'male', anon: 'Police Officer'})>>
+  <<set $sex.push({sex: 'male', anon: 'Police Officer'})>>
+  <<set $sex.push({sex: 'male', anon: 'Police Officer'})>>
+  <<set $sex.push({sex: 'male', anon: 'Police Officer'})>>
+  <<set $sex.push({sex: 'male', anon: 'Police Officer', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Police Officer', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Police Officer', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Police Officer', repeat:true})>>
+<</nobr>>
+<<nobr>>
+  As soon as they remove the collar from your neck you drop to your knees, eager for the first cock.  When they see how much you love it with your hands
+  still cuffed behind your back, they leave them like that.
+<</nobr>>
+
+<<nobr>>
+  You work your way through all four of the officers at the jail.  By then the first one is ready for another.  After you give each of them another blowjob,
+  they let you know your 'community service' is complete, and unlock your handcuffs.
+<</nobr>>
+
+<<nobr>>
+  You still feel the familiar need beneath your belt, but you decide this was far more fun than a night in jail.  And cleaning a bit of cum off your top
+  is something you've gotten used to by now.  Even if it stains, a new blouse costs much less than the $300 you would have had to pay if they hadn't tore
+  up the ticket for you.
+<</nobr>>
+
+<<nobr>>
+  After one of them takes you back to your car, [[you’re careful to stay under the speed limit the rest of your trip.|Part8Home1]]
+<</nobr>>
+
 ::Part8Jail <0,6475>
 <<nobr>>
 	<<set $PlayerMoney -= 300>>
 	<<if $PlayerMoney < 0>><<set $PlayerCredit = 1>><</if>>
-	
 	<h1><<print "Jail Cell">></h1>
 <</nobr>>
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    After they've finished humiliating you and inspecting your belt, they remove the collar and cuffs and let you dress yourself before they finish processing you.
+  <<else>>
+    You’re cuffed and placed in the back of the police car and taken to the station. 
+  <</if>>
+  By the time you’re processed, they say it’s too late in the evening to call the judge. You’ll have to stay overnight and they’ll call him in the morning to set
+  your bail.
+<</nobr>>
 
-<<print "You’re cuffed and placed in the back of the police car and taken to the station. By the time you’re processed, they say it’s too late in the evening to call the judge. You’ll have to stay overnight and they’ll call him in the morning to set your bail.">>
-
-<<print "They let you text your mom, and you tell her you got tired and decided to pull over at a motel for the night. Then they confiscate your phone. Next they search you, inside and out, before taking you your cell.">>
+<<nobr>>
+  They let you text your mom, and you tell her you got tired and decided to pull over at a motel for the night. 
+  <<if $PlayerChastityBelt>>
+    Then they confiscate your phone and take you to your cell.
+  <<else>>
+    Then they confiscate your phone.  Next they search you, inside and out, before taking you your cell.
+  <</if>>
+<</nobr>>
 <img src="Part8/Jail.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  You guess that the jail mainly has male prisoners as you’re the only woman here and you have a cell to yourself. There’s several men in the cells
+  nearby though, and they are quite vocal about exactly what they’d like to do to you.
+  <<if $PlayerChastityBelt>>
+    The fact that your belt would prevent some of their suggestions somehow doesn't make you feel any better.
+  <</if>>
+<</nobr>>
 
-<<print "You guess that the jail mainly has male prisoners as you’re the only woman here and you have a cell to yourself. There’s several men in the cells nearby though, and they are quite vocal about exactly what they’d like to do to you.">>
+<<nobr>>
+  As you glance over at your ‘bathroom’ and it’s complete absence of privacy, you are regretting all the coffee you drank on your ride.
+  <<if $PlayerChastityBelt>>
+    You are hoping you'll be able to conceal your belt if you have to use it.  You can only imagine the other prisoners' reactions if they see it.
+  <</if>>
+<</nobr>>
 
-<<print "As you glance over at your ‘bathroom’ and it’s complete absence of privacy, you are regretting all the coffee you drank on your ride.">>
-
-<<print "You survive the night. In the morning, the judge sets your bail at $300. You pay it and drive away as just fast as legally allowed. You arrive at home a while later and head straight to the shower ">>[[to try to wash away the experience from your mind.|Part8HomeShower]]
+<<nobr>>
+  You survive the night. In the morning, the judge sets your bail at $300. You pay it and drive away as just fast as legally allowed. You arrive at
+  home a while later and head straight to the shower [[to try to wash away the experience from your mind.|Part8HomeShower]]
+<</nobr>>
 
 ::Part8Road5 <400,6475>
 <<nobr>>
@@ -391,11 +513,11 @@
 ::Part8HomeMorning2 <600,6600>
 <<nobr>>
 	<h1><<print "Kitchen">></h1>
+  “Oh my goodness! Let’s take a look at you!”, your mom says when you join them near the kitchen table. They both complement you on your new appearance
+  and pepper you with questions about how you’ve been adjusting, and with more general questions about how school has been going too. After a while she
+  stops with her questions to comment on what a beautiful young woman you’ve become.
 <</nobr>>
-
-<<print "“Oh my goodness! Let’s take a look at you!”, your mom says when you join them near the kitchen table. They both complement you on your new appearance and pepper you with questions about how you’ve been adjusting, and with more general questions about how school has been going too. After a while she stops with her questions to comment on what a beautiful young woman you’ve become.">>
 <img src="Part8/Home7.jpg" hspace="10" vspace="10" height="650">
-
 <<nobr>>
 	<<if $KidnapEscape>>
 		You're clearly uncomfortable after your sister slaps your ass jokingly and says,
@@ -406,32 +528,31 @@
 	<</if>>
 <</nobr>>
 
-<<if $KidnapEscape>>
-	<<nobr>>
-		Your mom sees that your sister's teasing has upset you and tells her to stop.  She tells your sister,
-		 "Clearly this change has been difficult for her.  It's a big adjustment. I know you like to tease
-		 Cassandra, but give her some time for now before you start."
-		 You want to change the subject, so you [[mention that you need to do some shopping.|Part8HomeMall1]]
-	<</nobr>>
-<<else>>
-	<<print "“Cassandra Grace!”, your mom yells at Cassie, “Don’t tease your sister.” Then she turns to you and starts with new questions. “But I am wondering though, they said whether you like boys or girls changes sometimes after your body changes. It’s fine either way, I’m just curious I guess. I’m guessing you would have figured out by now...”">>
-
-	<<print "You answer: ">>
-	<<nobr>>
+<<nobr>>
+  <<if $KidnapEscape>>
+    Your mom sees that your sister's teasing has upset you and tells her to stop.  She tells your sister,
+    "Clearly this change has been difficult for her.  It's a big adjustment. I know you like to tease
+    Cassandra, but give her some time for now before you start."
+    You want to change the subject, so you [[mention that you need to do some shopping.|Part8HomeMall1]]
+  <<else>>
+  	“Cassandra Grace!”, your mom yells at Cassie, “Don’t tease your sister.” Then she turns to you and starts with new questions.
+    “But I am wondering though, they said whether you like boys or girls changes sometimes after your body changes. It’s fine either
+    way, I’m just curious I guess. I’m guessing you would have figured out by now...”
+    <br><br>
+    You answer:
+    <br>
 		<<if !setup.areDating('Veronica') and !$MasterKate>>
 			<span id="MorningSpan1">
 				* <<link "“I’m attracted to men.”">>
 					<<replace "#MorningSpan1">>
-						<<print "“I’m attracted to men.”">>
+						“I’m attracted to men.”
 					<</replace>>
 					<<replace "#MorningSpan2">>
-						<<print "">>
 					<</replace>>
 					<<replace "#MorningSpan3">>
-						<<print "">>				
 					<</replace>>
 					<<replace "#MorningSpan4">>
-						<<print "Mom: “I guess that’s normal. Most women prefer men after all.”">>
+						Mom: “I guess that’s normal. Most women prefer men after all.
 						<br><br>
 						<<print "Sister: “I’m guessing you’ve already figured out a good man is hard to find, but a hard man is ...”">>
 						<br><br>
@@ -444,25 +565,22 @@
 		<<else>>
 			<span id="MorningSpan1"></span>
 		<</if>>
-	<</nobr>>
-	<<nobr>>
+    <br>
 		<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !setup.isFWB('Zack') and !setup.areDating('Peter') and !setup.isFWB('James') and !setup.isFWB('Josh') and !setup.areDating('Paul')>>
 			<span id="MorningSpan2">
 				* <<link "“I’m still attracted to women.”">>
 					<<set $LikeFemales = 1>>
 					<<replace "#MorningSpan1">>
-						<<print "">>
 					<</replace>>
 					<<replace "#MorningSpan2">>
-						<<print "“I’m still attracted to women.”">>
+						“I’m still attracted to women.”
 					<</replace>>
 					<<replace "#MorningSpan3">>
-						<<print "">>				
 					<</replace>>
 					<<replace "#MorningSpan4">>
-						<<print "Mom: “I guess that makes sense. X-Change just changed your body, not the person inside.”">>
+						Mom: “I guess that makes sense. X-Change just changed your body, not the person inside.”
 						<br><br>
-						<<print "Sister: “Yep, and she’s still my horny little brother on the inside, right?”">>
+						Sister: “Yep, and she’s still my horny little brother on the inside, right?”
 						<br><br>
 						<<if $PlayerChastityBelt>>[[Your mom leaves the room for a bit.|Part8HomeMorning3]]<<else>>[[Mention that you need to do some shopping.|Part8HomeMall1]]<</if>>
 					<</replace>>
@@ -471,8 +589,7 @@
 		<<else>>
 			<span id="MorningSpan2"></span>
 		<</if>>
-	<</nobr>>
-	<<nobr>>
+    <br>
 		<span id="MorningSpan3">
 			* <<link "“I’m attracted to both.”">>
 				<<set $LikeBoth = 1>>
@@ -496,8 +613,8 @@
 				<</replace>>
 			<</link>>
 		</span>
-	<</nobr>>
-<</if>>
+  <</if>>
+<</nobr>>
 <span id="MorningSpan4"></span>
 
 ::Part8HomeMorning1 <400,6600>
@@ -1072,7 +1189,7 @@
 		<<set $CampusMinistryFail to 1>>
 		<<set $CampusMinistryFailChristmas to 1>>
 		<<unset $CampusMinistry>>
-		You've waited to long for this, you need this too bad to resist any longer.
+		You've waited too long for this, you need this too bad to resist any longer.
 	<</if>>
 	You don’t waste much time once you are in Cody’s apartment. You have his clothes off and are kissing him while you stroke his cock,
 	feeling it stiffen in your hand. When you can’t resist any longer, you drop to your knees. You begin licking the underside of his
