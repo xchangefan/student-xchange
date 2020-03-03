@@ -47,31 +47,172 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 ::Start2 <200,200>
 <h1>Freshman Orientation</h1>
 <<nobr>>
-	In a moment, you’ll be asked to sign the disclosure and consent form.  I won’t go over everything again since I’m sure you all closely read the
-	disclosure documents we mailed you, right? But as a reminder, here are the key parts...
+	"In a moment, you’ll be asked to sign the disclosure and consent form.  I won’t go over everything again since I’m sure you all closely read the
+	disclosure documents we mailed you, right? But as a reminder, here are the key parts..."
+  <<set $playerName to setup.getDefaultName()>>
 <</nobr>>
 
 <<nobr>>
-	The implant you are about to receive will release X-Change continually into your system throughout your time at the University.  So, for the next
-	four years, you’ll experience all the joys and all of the difficulties of being a woman. Just like each of our students that were born that way.
+	"The implant you are about to receive will release X-Change continually into your system throughout your time at the University.  So, for the next
+	four years, you’ll experience all the joys and all of the difficulties of being a woman. Just like each of our students that were born that way."
 <</nobr>>
 
 <<nobr>>
-	After graduation, what you do will be up to you.
+	"After graduation, what you do will be up to you."
 <</nobr>>
 <img src="Part1/Start2A.jpg" hspace="10" vspace="10" height="550"><img src="Part1/Start2B.jpg" hspace="10" vspace="10" height="550"><img src="Part1/Start2C.jpg" hspace="10" vspace="10" height="550">
 
 <<nobr>>
-	Keep in mind, you’ll have all the concerns of any other woman now.  In particular, this includes the possibility of getting pregnant. And
-	remember, if you do get pregnant, we won’t be able to change you back to your male body after graduation.
+	"Keep in mind, you’ll have all the concerns of any other woman now.  In particular, this includes the possibility of getting pregnant. And
+	remember, if you do get pregnant, we won’t be able to change you back to your male body after graduation."
 <</nobr>>
 
 <<nobr>>
-	We do have an on-campus daycare though, so at least you’ll be able to continue your studies.
+	"We do have an on-campus daycare though, so at least you’ll be able to continue your studies."
 <</nobr>>
 
 <<nobr>>
-	[[After your forms are complete, you can head over to the implantation specialists to discuss your new body|Body]].  They can also discuss your options for preventing pregnancy.
+  "Based on your transcript and application, we have preselected a set of implant options we think might appeal to you.
+  You are welcome to [[visit with one of our implantation specialists|Body]] if you wish to make any changes from what was selected for you."
+<</nobr>>
+
+<<nobr>>
+  "A prescription for birth control pills will also be provided.  If you want to discuss other birth control options, then continue on to speak with one our
+  specialists.  A brief discussion will occur after your body selection process."
+<</nobr>>
+
+<<nobr>>
+  "The new name you provided us on your application was <b><i>$playerName</i></b>.  If you've changed your mind about this, then please visit with one of our implant specialists
+  and he or she can assist you with changing it before we submit your information officially."
+<</nobr>>
+
+<<nobr>>
+  "If you are happy with the selections provided, then you can proceed directly to the implantation station.  Then come back here and get to know each other while you
+  wait for the others."
+<</nobr>>
+
+<<nobr>>
+  Looking over your documentation... for you, they've selected the
+  <<if $PlayerGoodStudent>>
+    <b><i>[[Natural Woman Package|BodyNaturalPackage]]</i></b><br>
+    <ul>
+      <li>You'll be to enjoy your new body, but still focus on your studies with this package.</li>
+      <li>This package gives you a body type determined by how the X-Change interacts with your DNA 'naturally'</li>
+      <li>There is no chance of any side-effect occurring during activation with this package</li>
+    </ul>
+  <<elseif $PlayerLazyStudent>>
+    <b><i>[[Party Girl Package|BodyPartyPackage]]</i></b><br>
+    <ul>
+      <li>You'll be the center of attention at every party with this package.</li>
+      <li>This package gives you the standard X-Change look we all love.  You'll be average to tall for a woman, and traditionally beautiful.</li>
+      <li>You won't ever have to worry about body hair.</li>
+      <li>Eat as much as you want, and you won't gain weight!</li>
+      <li>You'll find it much easier to orgasm than most women! And they'll be more powerful orgasms too!</li>
+      <li>Modifying the stanard settings for the implant to give you these great features results in unavoidable activation side effects.  But with
+        this standard package we were able to control which ones are likely to activate and selected ones we expect you'll enjoy.  These are:</li>
+        <ul>
+          <li>You'll have a much hightened desire for sex.  Although, are sure the X-Change is entirely to blame for that?</li>
+          <li>You're likely to have vivid and sexually charged dreams.  Try not to wake your roommate!</li>
+          <li>A love for both oral and anal sex. (And of course more traditional sex as well.)</li>
+          <li>You won't be able to orgasm from masturbation. But of course why would you want to when sex with someone else is so much more fun?</li>
+        </ul>
+    </ul>
+  <<else>>
+    <b><i>[[Student-Athlete Package|BodyAthletePackage]]</i></b><br>
+    <ul>
+      <li>You'll have a fit body, in peak athletic condition with this package.</li>
+      <li>This package doesn't come with our weight-control option, since you'll be working out so much you won't need it.</li>
+      <li>Modifying the stanard settings for the implant to give you the perfect body results in unavoidable activation side effects.  But with
+        this standard package we were able to control which ones are likely to activate and selected ones we expect you'll enjoy.  These are:</li>
+        <ul>
+          <li>You'll love the smell of men, especially when they've working out.  You're going to be around athletes all the time, why not enjoy it?</li>
+          <li>You'll enjoy showing off your new body.  And why shouldn't you?</li>
+        </ul>
+      <li>Note: Securing a position on the univeristy team in your chosen sport is not a guarantee.  We only promise the body.  The talent and effort
+      needed is up to you.</li>
+    </ul>
+  <</if>>
+<</nobr>>
+
+::BodyNaturalPackage <385,200>
+<<nobr>>
+  <h1>Natural Woman Package</h1>
+  <<set $female to 1>>
+	<<set $PlayerProtectionPill to 1>>
+	<<set $PlayerSideEffects = 0>>
+	<<switch either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
+		<<case 1 2 3 4 5 6 7 8>>
+    	<<set $BodyType to 'Standard'>>
+      <img src="Part1/BodyStandard1.jpg" align="left" hspace="10" vspace="10" height="500">
+      <img src="Part1/BodyStandard2.jpg" align="right" hspace="10" vspace="10" height="500">
+		<<case 9 10 11 12>>
+    	<<set $BodyType to 'Plus'>>
+      <img src="Part1/BodyCurvy1.jpg" align="left" hspace="10" vspace="10" height="500">
+      <img src="Part1/BodyCurvy2.jpg" align="right" hspace="10" vspace="10" height="500">
+		<<case 13 14 15 16>>
+    	<<set $BodyType to 'Petite'>>
+      <img src="Part1/BodyPetite1.jpg" align="left" hspace="10" vspace="10" height="500">
+      <img src="Part1/BodyPetite2.jpg" align="right" hspace="10" vspace="10" height="500">
+		<<case 17 18 19 20>>
+    	<<set $BodyType to 'Fit'>>
+      <img src="Part1/BodyFit.jpg" align="left" hspace="10" vspace="10" height="500">
+	<</switch>>
+<</nobr>>
+
+<<nobr>>
+  Congratulations $playerName, I hope you're happy with your new body.
+  <<if $BodyType == 'Standard'>>
+    Don't let all of the boys fawning over you interfere with your studies!
+  <<elseif $BodyType == 'Plus'>>
+    I think the more realistic bodies are the best, don't you?
+  <<elseif $BodyType == 'Petite'>>
+    Aren't you just the cutest thing ever!
+  <<else>>
+    I can already picture you out on the track now, winning first place!
+  <</if>>
+  You don't have any side-effects to worry about so, you can [[head on over|EndPart1]] to meet your mentor.
+<</nobr>>
+
+::BodyAthletePackage <390,200>
+<<nobr>>
+  <<set $female to 1>>
+	<<set $PlayerProtectionPill to 1>>
+	<<set $PlayerSideEffects = 0>>
+	<<set $BodyType to 'Fit'>>
+  <<set $PlayerSideEffectExhibitionist to 1>>
+  <<set $PlayerSideEffectExhibitionistShow to 1>>
+  <<set $PlayerSideEffectPheromones to 1>>
+  <<set $PlayerRollDice to 5>>
+	<h1>Student-Athlete Package</h1>
+  <img src="Part1/BodyFit.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+
+<<nobr>>
+  Congratulations $playerName, I hope you're happy with your new body.  I can already picture you out on the track now, winning first place!  Now let me go
+  over your implants [[side-effects|BodySideEffectsChoose2]] for you quickly before you head over to meet your mentor.
+<</nobr>>
+
+::BodyPartyPackage <395,200>
+<<nobr>>
+  <<set $female to 1>>
+	<<set $PlayerProtectionPill to 1>>
+	<<set $PlayerSideEffects = 0>>
+	<<set $BodyType to 'Standard'>>
+  <<set $PlayerSideEffectMasturbationBlock to 1>>
+  <<set $PlayerSideEffectMasturbationBlockShow to 1>>
+  <<set $PlayerSideEffectLibido to 2>>
+  <<set $PlayerSideEffectDreams to 1>>
+  <<set $PlayerSideEffectOral to 1>>
+  <<set $PlayerSideEffectAnal to 1>>
+  <<set $PlayerRollDice to 3>>
+	<h1>Party Girl Package</h1>
+  <img src="Part1/BodyStandard1.jpg" align="left" hspace="10" vspace="10" height="500">
+  <img src="Part1/BodyStandard2.jpg" align="right" hspace="10" vspace="10" height="500">
+<</nobr>>
+
+<<nobr>>
+  Congratulations $playerName, I hope you're happy with your new body.  I can already tell you are going to have a lot of fun this year!  Now let me go
+  over your implants [[side-effects|BodySideEffectsChoose2]] for you quickly before you head over to meet your mentor.
 <</nobr>>
 
 ::Body <400,200>
@@ -155,7 +296,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <</nobr>>
 
 <<nobr>>
-	&nbsp;&nbsp;&nbsp;&nbsp;<i>The name you've decided on is: </i> <<textbox "$playerName" setup.getDefaultName()>>
+	&nbsp;&nbsp;&nbsp;&nbsp;<i>The name you've decided on is: </i> <<textbox "$playerName" $playerName>>
 <</nobr>>
 
 <<nobr>>

@@ -1139,13 +1139,15 @@
 		She senses something has been bothering you though and asks you about it.  After a long pause you tell her the whole story of your kidnapping, what you
 		know of it anyway.  She listens in shock and horror imagining what must have happened to you that you don't remember.  She does her best to comfort you.
 		You ask her to not tell your parents, brother, or anyone else about it.
-	<<elseif !$CampusMinistry and ($PlayerChastityBelt or $PlayerSideEffectLibido or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock)>>
-		<<print "She senses the need you have and tells you she feels a similar need and knows just how to help you with yours. ">>
+	<<elseif $CampusMinistry>>
+		You thank her for listening to everything and head back to your room.  [[Before you fall asleep|Part8Christmas1]] you think you hear her car pull
+    out of the driveway.
+	<<elseif $PlayerChastityBelt or $PlayerSideEffectLibido or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock>>
+		She senses the need you have and tells you she feels a similar need and knows just how to help you with yours.
 		[[You put your arm around her and kiss her.|Part8EveningSister2]]
 	<<else>>
-		<<print "You thank her for listening to everything and head back to your room. ">>
-		[[Before you fall asleep|Part8Christmas1]]
-		<<print " you think you hear her car pull out of the driveway.">>
+    She gives you a mischevious grin and says "I can tell that you are looking for a little fun tonight.  I know just the thing."
+    You can either [[put your arm around her and kiss her.|Part8EveningSister2]] or [[tell her you're starting to get tired and head to bed|Part8Christmas1]].
 	<</if>>
 <</nobr>>
 
@@ -1331,7 +1333,7 @@
 <img src="Part8/Evening7.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
-	<<print "She was feeling horny too, and had been texting with him to hook up just before you’d came to her door. She decided to bring you on as a bonus. He is pleasantly surprised when he opens his door to ">>
+	<<print "She was feeling horny too, and had been texting with her boyfriend to hook up just before you’d came to her door. She decided to bring you on as a bonus. He is pleasantly surprised when he opens his door to ">>
 	<<link "see both of you standing there.">>
 		<<if $PlayerChastityBelt>>
 			<<goto [[Part8EveningSister5]]>>

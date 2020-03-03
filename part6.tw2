@@ -2645,10 +2645,24 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<if $AcademicPoints > 9>>
 		You’re doing great and you are pretty sure you have nothing to worry about.
 		<<if $CampusMinistry>>
-			[[Eventually it is time for you semester finals.|Part6Exam]]
+			[[Eventually it is time for your semester finals.|Part6Exam]]
 		<<else>>
 			You wonder if there's [[any way to be more sure you'll pass|Part6Professor1]]
 		<</if>>
+  <<elseif $AcademicPoints < 5 and !$PlayerGoodStudent and ($JobAthlete or $JobCheerleader or $JobCheerleaderFundraiser)>>
+    You are really struggling in the class, and you don't see how you are ever going to pass.  You have to do something though if you
+    want to stay on the
+    <<if $JobAthlete>>team<<else>>squad<</if>>.
+    <<if $CampusMinistry>>
+      One of the other girls tells you exactly how she plans to make sure she passes one of her classes.  It involves getting on her
+      knees in the professors office, and she didn't mean to pray.
+      <br><br>
+      You are in tears as you tell Mark about it.  He suggests just talking to the professor about the trouble you are having.
+		  So, you stop by to [[talk to the professor|Part6ProfessorRecover]] to see if there is anything you can do to pass.  Anything <b>except</b>
+      what your friend suggested that is.
+    <<else>>
+      You wonder if there's [[any way to still pass|Part6Professor1]].
+    <</if>>    
 	<<elseif $AcademicPoints < 5 and !$PlayerGoodStudent>>
 		You’re going to fail, there’s no way to pull your grade up enough to pass now.
 		[[Eventually it is time for you semester finals.|Part6Exam]]
