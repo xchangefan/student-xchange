@@ -310,7 +310,15 @@
 
 <<nobr>>
   He calls all the other officers over to see as you are ordered to strip.  Well, as far as you can.  At first they don't believe you that you don't have the key.
-  The search your purse looking for it.  When they find a leather collar you'd left in there, they use it to chain you to the wall while they keep looking.  You
+  They search your purse looking for it.  When they find the leather collar
+  <<if $Mentor == 'Olivia'>>
+    Olivia had loaned you to play with over the summer,
+  <<elseif setup.haveFucked('Barry')>>
+    Barry had left on your bed the last time you'd been together,
+  <<else>>
+    you'd left in there,
+  <</if>>
+  they use it to chain you to the wall while they keep looking.  You
   think they normally would have used your cuffs for that, but that they are having too much fun humiliating you.
 <</nobr>>
 
@@ -321,7 +329,7 @@
 
 <<nobr>>
   "She hasn't said much.  Maybe she put the key in her mouth when you pulled her over.", one of the officers suggests.  "Or maybe there's a pocket hidden in
-  the belt somewhere."  With you still bound to wall they decide to thoroughly check both possibilities.
+  the belt somewhere."  With you still bound to the wall, they decide to thoroughly check both possibilities.
 <</nobr>>
 
 <<nobr>>
@@ -329,7 +337,7 @@
     As the officers latex-gloved finger slides into your mouth to probe for the key, your instincts take over.  Your lips wrap around it and begin their
     familiar motions on it before you even realize it. "No, I think you were right the first time, she's locked in this because of what a slut she is, and
     she doesn't have the key.  But I don't think it matters anyway.  I think she'd be thrilled if we let her have an hour or two of
-    [[community service|Part8JailChastity2]] instead of a night in jail."  You nod enthusiastically with your lips still wrapped around the his latex-covered
+    [[community service|Part8JailChastity2]] instead of a night in jail."  You nod enthusiastically, with your lips still wrapped around the his latex-covered
     finger. 
   <<elseif $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist or $PlayerSideEffectLibido or $PlayerSideEffectPheromones>>
     After one of the officers probes your mouth with a latex-gloved finger and finds nothing, he then moves down to your belt checking for hidden releases
@@ -387,6 +395,8 @@
 <<nobr>>
   After one of them takes you back to your car, [[you’re careful to stay under the speed limit the rest of your trip.|Part8Home1]]
 <</nobr>>
+
+<<achievement>>train<</achievement>>
 
 ::Part8Jail <825,6475>
 <<nobr>>
@@ -2000,7 +2010,7 @@
 <</nobr>>
 
 <<nobr>>
-	<<if !setup.areDating('Aaron') and !$KidnapEscape and !setup.areDating('Veronica') and !setup.areDating('Andrew') and !setup.areDating('Josh') and $PlayerSideEffectLibido < 3 and $PlayerSideEffectPheromones < 3>>
+	<<if !setup.areDating('Aaron') and !$KidnapEscape and !setup.areDating('Veronica') and !setup.areDating('Andrew') and !setup.areDating('Josh') and (!$PlayerSideEffectLibido or $PlayerSideEffectLibido < 3) and (!$PlayerSideEffectPheromones or $PlayerSideEffectPheromones < 3)>>
 		<<if $PlayerPregnant>>
 			<<print "Or you can stay at the party for ">>[[some more dancing.|Part8NewYear4]]
 		<<else>>

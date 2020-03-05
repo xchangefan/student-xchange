@@ -318,7 +318,7 @@ setup.getPossibleConceptions = function() {
 
 setup.pregnantFirstTime = function() {
   const intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
-  return intercourse.length && intercourse[0].conception && intercourse[0].trying
+  return intercourse.length && intercourse[0].conception && !intercourse[0].trying
 }
 
 setup.notPregnant = function(reason) {
