@@ -1,18 +1,20 @@
-LAST_VERSION=1.12.00
-VERSION=1.13.00
+LAST_VERSION=1.13.00
+VERSION=1.14.00
 HTML_FILENAME=student-xchange-program.html
 ZIP_FILENAME=student-xchange-program-$VERSION.zip
 DIFF_FILENAME=student-xchange-program-DIFF-$LAST_VERSION-to-$VERSION.zip
 echo COMPILING...
 twee2 build combined.tw2 build/$HTML_FILENAME --format SugarCube2_25
 echo BUILDING MAIN ZIP...
-zip build/$ZIP_FILENAME -j -9 build/$HTML_FILENAME
+# zip build/$ZIP_FILENAME -j -9 build/$HTML_FILENAME
 cd ..
-zip src/build/$ZIP_FILENAME -9 Part*/* 
-echo BUILDING DIFFERENTIAL ZIP...
-zip src/build/$DIFF_FILENAME -9 src/build/$HTML_FILENAME
-find Part*/* -exec test ! -e src/build/release-$LAST_VERSION/{} \; -exec zip src/build/$DIFF_FILENAME -9 {} \;
-find Part*/* -exec test -e src/build/release-$LAST_VERSION/{} \; \! -exec cmp -s {} src/build/release-$LAST_VERSION/{} \; -exec zip src/build/$DIFF_FILENAME -9 {} \;
+# zip src/build/$ZIP_FILENAME -9 Part*/* 
+cp src/build/$HTML_FILENAME .
+zip src/build/$ZIP_FILENAME -s 500M -9 $HTML_FILENAME Part*/*
+#echo BUILDING DIFFERENTIAL ZIP...
+#zip src/build/$DIFF_FILENAME -9 src/build/$HTML_FILENAME
+#find Part*/* -exec test ! -e src/build/release-$LAST_VERSION/{} \; -exec zip src/build/$DIFF_FILENAME -9 {} \;
+#find Part*/* -exec test -e src/build/release-$LAST_VERSION/{} \; \! -exec cmp -s {} src/build/release-$LAST_VERSION/{} \; -exec zip src/build/$DIFF_FILENAME -9 {} \;
 echo "** BUILD COMPLETE** "
-
+# TODO DIFFERENTIAL diabled since so many chances from previous version and it's been over a year, reenable after 1.14.00
 # TODO Fix build. Currently DIFF is putting zip file into src/build in zip, change to have it put it in root of zip

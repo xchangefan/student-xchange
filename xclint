@@ -1,16 +1,23 @@
 #!/bin/bash
-echo 'Looking for missing coordinates (needed for Twine compatibility)'
+echo "Looking for missing coordinates (needed for Twine compatibility)"
 grep "^\:\:" *.tw2 | grep -v "<[0-9]\+,[0-9]\+>"
 #| grep -v "::StoryTitle" | grep -v "::Configuration" | grep -v "::StoryCSS"
 
-echo
-echo Looking for incorrect if statements
+echo "Looking for incorrect if statements"
 grep -n "<<if>$" *.tw2
 grep -n "<</if>$" *.tw2
 grep -n "<<if>>>" *.tw2
 grep -n "<</if>>>" *.tw2
 grep -n "<<else if" *.tw2
 
-echo Looking for broken coordinates
+echo "Looking for broken coordinates"
 grep -n "^::.*> <" *.tw2
 grep -n "^::.*<.*<" *.tw2
+
+echo "Looking for broken images (in source, but not on disk, or there with different capitalization)"
+grep -Eoh "src=[\"\'](.*/.*\.....?)[\"\'] " *.tw2 | grep -Eo "Part\w\.?\w*/\w*\.\w*" | sort | uniq > tmp/imagesFromSource
+ls ../Part*/* | grep -Eo "Part.*$" > tmp/imagesFromDisk
+comm -23 tmp/imagesFromSource tmp/imagesFromDisk
+
+echo "Looking for unused images (on disk but not in source, or there with different capitalization)"
+comm -13 tmp/imagesFromSource tmp/imagesFromDisk | grep -v "PartAch"
