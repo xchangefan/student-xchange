@@ -65,33 +65,37 @@ function UpdateLinks() {
 	}
 };
 
-$(document).on('keyup', function (e) {
+$(document).on("keyup", function (e) {
 	// Trigger next link click on right arrow key
-	if (((e.key == "ArrowRight") || (e.keyCode == 49) || (e.keyCode == 97)) && $('#NextLink') && (!tags().includes("DisableClick"))) {
+	if (((e.key == "ArrowRight") || (e.keyCode == 49) || (e.keyCode == 97)) && $("#NextLink").length && (!tags().includes("DisableClick"))) {
 		e.preventDefault();
-		$('#NextLink').trigger('click');
+		$("#NextLink").trigger("click");
+		return false;
 	}
 
 	// Trigger link click on keys "0" through "9"
 	if ((e.keyCode > 47) && (e.keyCode < 58) && (!tags().includes("DisableClick"))) {
-		if ($('#Link' + (e.keyCode - 48))) {
+		if ($("#Link" + (e.keyCode - 48)).length) {
 			e.preventDefault();
-			$('#Link' + (e.keyCode - 48)).trigger('click');
+			$("#Link" + (e.keyCode - 48)).trigger("click");
+			return false;
 		}
 	}
 	if ((e.keyCode > 95) && (e.keyCode < 106) && (!tags().includes("DisableClick"))) {
-		if ($('#Link' + (e.keyCode - 96))) {
+		if ($("#Link" + (e.keyCode - 96)).length) {
 			e.preventDefault();
-			$('#Link' + (e.keyCode - 96)).trigger('click');
+			$("#Link" + (e.keyCode - 96)).trigger("click");
+			return false;
 		}
 	}
 
-	// Trigger random click on "." key
-	if ((e.key == ".") && (!tags().includes("DisableClick"))) {
+	// Trigger random click on ".", "`", and "r" keys
+	if (([".", "`", "r"].includes(e.key)) && (!tags().includes("DisableClick"))) {
 		e.preventDefault();
 		var Links = $("#passages a");
 		if (Links.length > 0) {
 			Links[Math.floor(Math.random() * Links.length)].click();
+			return false;
 		}
 	}
 
@@ -99,6 +103,7 @@ $(document).on('keyup', function (e) {
 	if ((e.key == "ArrowLeft") && (!tags().includes("DisableClick"))) {
 		e.preventDefault();
 		Engine.backward();
+		return false;
 	}
 });
 

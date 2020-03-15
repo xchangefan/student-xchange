@@ -1999,10 +1999,16 @@
 		<<print "You enjoy a romantic kiss with Josh as the clock strikes twelve, before making your exit soon after to ">>[[continue the party at home.|Part8NewYear3]]
 	<<elseif $KidnapEscape>>
 		<<print "You cheer as the clock strikes twelve, then you stay at the party for [[a bit more champagne.|Part8NewYear4]]">>
+    <<if $PlayerPregnant>>
+      Well, sparkling grape juice for you, champagne for everyone else.
+    <</if>>
 	<<elseif setup.areDating('Aaron')>>
 		It's too bad Daddy doesn't get back to campus for another couple days, you'd rather have him here to share a New Year's kiss with.  But you are excited
 		that at least you won't need to hide your relationship anymore.  Tonight though, you just cheer as the clock strikes twelve,
 		then stay at the party for [[a bit more champagne.|Part8NewYear4]]
+    <<if $PlayerPregnant>>
+      Well, sparkling grape juice for you, champagne for everyone else.
+    <</if>>
 	<<else>>
 		As the clock strikes twelve, you can kiss one of the [[guys|Part8NewYear3]] or [[girls|Part8NewYear2]] you were dancing with at midnight.
 		Feeling the way you do right now, you know you'll probably leave here tonight with them as well.
