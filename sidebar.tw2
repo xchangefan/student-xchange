@@ -620,6 +620,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       You are currently locked in a chastity belt.
       <<if $Keyholder>>
         $Keyholder has your key.
+        <<if $Keyholder != 'Kate' and $MasterKate>>
+          Kate has a copy.
+        <</if>>
       <</if>>
     <</if>>
   <<elseif setup.haveInventory('sex toys', 'chastity belt')>>
@@ -1003,8 +1006,8 @@ In addition to the standard click navigation, the following is supported for one
     <ul>
       <li>There will be a small number to the right of the link ( Example<sup>[1]</sup> )</li>
       <li>You can then select any of the options by pressing the corresponding number.</li>
-      <li>If you want to randomly select any of the options displayed, you can press '.'</li>
-      <li>(If there are too many options on the page, this is disabled)</li>
+      <li>If you want to randomly select any of the options displayed, you can press '.' or 'r' or '`' (back quote)  </li>
+      <li>(If there are too many options on the page, number selection is disabled)</li>
     </ul>
   </li>
   <li>For either of these, or with standard navigation, you can press the left arrow to go back.

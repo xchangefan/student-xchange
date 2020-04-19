@@ -474,7 +474,7 @@
 
 <<nobr>>
 	Peter wrote your review for you, and it was everything you'd hoped for.  The Delta's were impressed with his devotion to you.  They
-	joke about how blue Peter's balls must be by now.  "But Smurfette here likes their balls blue.", one of them says.  You quickly realize
+	joke about how blue Peter's balls must be by now.  "But Smurfette here likes their balls blue," one of them says.  You quickly realize
 	that your new nickname at your sorority is going to be Smurfette.
 <</nobr>>
 
@@ -612,7 +612,7 @@
 	<<if $DTFNickname == 'Smurfette'>>
 		Dispite her assurances, you know Peter is imagining all the things the fraternity full of guys might do to you.  When he sees the outfit
 		you are going to wear you can see the pained look on his face as his cock furiously strains at it's metal prison.  "Bye for now, I'll be
-		sure to tell you everything when I get back.", you tell him.
+		sure to tell you everything when I get back," you tell him.
 	<<else>>
 		Your boyfriend accepts their assurances, and yours, that nothing will happen. And if he had any remaining objections, they vanish when he learns
 		that the outfit is yours to keep afterwards.
@@ -1582,6 +1582,12 @@ care what she thinks though.  If God didn't want you having sex, why did he make
 			<<print "You are sure Veronica would ">>
 			<<link "accept dating you, should you ask her">>
 				<<set setup.startDating('Veronica')>>
+        <<if $JobOfficePA and setup.areDating('Paul')>>
+          <<set setup.breakupWith('Paul')>>
+          <<unset $JobOfficePA>>
+          <<unset $JobOffice>>
+          <<set $JobBarista to 1>>
+        <</if>>
 				<<if $PlayerPregnant>>
 				<<goto [[Part9SororityPregnant]]>>
 				<<else>>
@@ -1590,6 +1596,12 @@ care what she thinks though.  If God didn't want you having sex, why did he make
 			<</link>>
 			<<print " and that the sorority would give you a room together in that case.">>
 			Or if you want to stay single, [[you are assigned a random roommate from your sisters.|Part9SororityEndYes]]
+      <<if $JobOfficePA and setup.areDating('Paul')>>
+        <br><br>
+        Of course, you'd have to stop seeing your boss Paul if you started dating Veronica.  And since you are far better at sucking his cock than
+        anything you are supposed to be doing there, it'd probably be easier if you just got a job somewhere else.  It shouldn't be that hard,
+        you know the coffee shop is always hiring.
+      <</if>>
 		<<else>>
 			[[You are assigned a random roommate from your sisters.|Part9SororityEndYes]]
 		<</if>>
