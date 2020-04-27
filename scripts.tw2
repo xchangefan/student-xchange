@@ -434,6 +434,20 @@ setup.overrideForcePregnancy = function(pregnancyTestType) {
 	}
 }
 
+::LibidoFunctions [script] <325,50>
+setup.libido = function (delta) {
+  if (state.active.variables.Libido) {
+    state.active.variables.Libido += delta;
+  } else {
+    state.active.variables.Libido = delta;
+  }
+  if (state.active.variables.Libido > 100) {
+    state.active.variables.Libido = 100
+  } else if (state.active.variables.Libido < 0) {
+    state.active.variables.Libido = 0
+  }
+}
+
 ::NeighbourFunctions [script] <350,50>
 setup.addNeighbour = function (name) {
 	return state.active.variables.neighbours.push(name)

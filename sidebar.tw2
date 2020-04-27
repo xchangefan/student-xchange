@@ -32,7 +32,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 </div>
 
 <div style="font-size: 125%">\
-  <<include [[SideBarHorninessLevel]]>>\
+  <<include [[SideBarPartyHorninessLevel]]>>\
   <<include [[SideBarMasterPartyTime]]>>\
 </div>
 
@@ -102,6 +102,11 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       mother.
     <<else>>
       woman.
+    <</if>>
+    <<if $PlayerPregnant and $PregnancyWeek>>
+      You are $PregnancyWeek
+      <<if $PregnancyWeek == 1>>week<<else>>weeks<</if>>
+      pregnant.
     <</if>>
   <</if>>
 <</nobr>>
@@ -895,8 +900,36 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <<if $StudentBreak>>
       You are taking a semester off.
     <</if>>
+    <<if $SchoolWeek>>
+      This is week $SchoolWeek.
+    <</if>>
   <<elseif $Dropout>>
     <br>You have dropped out of college.
+  <</if>>
+<</nobr>>
+
+::SideBarHorny <<2595,0>>
+<<nobr>>
+  <<if $CampusMinistry>>
+    <<if $Libido > 90>>
+      Waiting for sex is stupid.  You need it too much to wait!
+    <<elseif $Libido > 75>>
+      You can't help the perverted thoughts that are filling your mind right now.
+    <<elseif $Libido > 50>>
+      You are struggling to ignore the sexual thoughts you keep having.
+    <<elseif $Libido > 25>>
+      You are trying to ignore the naughty thoughts you are having.
+    <</if>>
+  <<else>>
+    <<if $Libido > 90>>
+      You ache to be fucked right now.
+    <<elseif $Libido > 75>>
+      You are feeling really horny.
+    <<elseif $Libido > 50>>
+      You are feeling horny.
+    <<elseif $Libido > 25>>
+      You are feeling a little horny today.
+    <</if>>
   <</if>>
 <</nobr>>
 
@@ -937,8 +970,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <</nobr>>\
 <<if $student && $AcademicProbation>><br>You are on academic probation.<</if>>\
 <<if $FatherDisown>><br>Your father has disowned you.<</if>>\
+<<include [[SideBarHorny]]>>
 
-::SideBarHorninessLevel <2700,0>
+::SideBarPartyHorninessLevel <2700,0>
 <<nobr>>
   <<if $PartyHorniness <= 0>>
     Your need is satisfied.  For the moment.
