@@ -344,7 +344,7 @@
     <</if>>
   <<elseif setup.haveInventory('sex toys', 'chastity belt')>>
     <<unset $Keyholder>>
-    <<unset $PlayerChastity>>
+    <<unset $PlayerChastityBelt>>
     "You can keep your chastity belt as a going away present.", he tells you as he pulls out the keys.
     "I can give these keys to you.  But if you'd rather, you can
     <<if $PlayerChastityBelt>>
@@ -358,7 +358,7 @@
     "Have a fun time."
   <<else>>
     <<unset $Keyholder>>
-    <<unset $PlayerChastity>>
+    <<unset $PlayerChastityBelt>>
     <<set setup.addInventory('sex toys', 'chastity belt')>>
     "But I've decided to give you this chastity belt as a going away present.", he tells you handing you the box.
     "Of course the keys are in there also.  But if you'd rather, you can lock it on now and I can have the keys couriered over to
@@ -692,9 +692,13 @@
   <<if $JobEngineering and $AcademicProbationDenial>>
     You are curious about your meeting coming up with the campus X-Change office about their new 'Buddy' program.  But first you need to
     [[stop by the Engineering department|Part15EngineerProbation]] to meet with the department head about your job.
-  <<elseif $JobTestSubject and $AcademicProbationDenial>>
+  <<elseif $JobTestSubject>>
     You are curious about your meeting coming up with the campus X-Change office about their new 'Buddy' program.  But first you need to
-    [[stop by the Engineering department|Part15TestSubjectProbation]] to meet with the testing supervisor about your job.
+    <<if $AcademicProbationDenial>>
+      [[stop by the Engineering department|Part15TestSubjectProbation]] to meet with the department head about your job.
+    <<else>>
+      [[stop by the Engineering department|Part15TestSubject]] for a big meeting.
+    <</if>>
   <<else>>
     You are curious about your meeting coming up with the campus X-Change office [[about their new 'Buddy' program|Part15YearBuddy]].
   <</if>>
@@ -702,20 +706,20 @@
 
 <<nobr>>
   <i>
-    <b><u>Note</u>:</b> For this school year, you will have choices each week on what actions to take, whether you want to study, to party, etc.  And these
+    <b><u>Note</u>:</b> For this school year, you will have choices most weeks on what actions to take, whether you want to study, to party, etc.  And these
     decisions will affect what happens.  If you have side effects, or if you get too horny, this may limit what your choices are.
   </i>
 <</nobr>>
 
-::Part15Week
-TODO
 
 ::Part15Notes
 TODO TO BE CONTINUED...
+TODO Faith volunteers for chasity belt beta testing (then realizes about the teasing)
 TODO Update mentor and roommate
 TODO You are a freshman's buddy
 TODO Tracking of when pregnant
 TODO Tracking of horniess and lose control of decisions if too high?
+TODO Beta Tester belt not strict denail like penetration testing is
 
 Changes to previous
   - Dylan holding onto the key
@@ -752,16 +756,770 @@ May
 Jobs
 
 ::Part15EngineerProbation
-TODO
-- your boss calls you in for a meeting and lets you know that because of your academic problems you can't participate in the engineering program any longer
-- you know how things work at this univeristy by now and tell him you'll be off probation soon, and ask if
-theres _anything_ you can do to stay in the program
-- bj
-- get put into the test subect program for a while, but not a regular test subject since that would invalidate the experiment
-- you are used to calibrate the machines
+<<nobr>>
+  <h1>Meeting with the Engineering department head</h1>
+  <<set $sex.push({sex: 'male', name: 'Engineering Department Head'})>>
+  You are summoned to a meeting with your boss, the head of the Engineering department.  "I've received noticed at the end of last semester that you
+  were still on academic probation.  You still are, correct?", he asks you.
+<</nobr>>
+
+<<nobr>>
+  "Yes sir.", you say meekly.  "I promise you, I'll be working to resolve that as quickly as I can."
+<</nobr>>
+
+<<nobr>>
+  "That's all well and good.", he says.  "But unfortunately I can't let you continue in the program as long as you are on probation.  It's a univeristy
+  requirement.  I was able to ignore it during the summer, but now that a new school year has started, I can't any longer."
+<</nobr>>
+
+<<nobr>>
+  You've been at this university, and in this department, long enough to know how things work.  "Sir, this program is a tremendous opportunity for me,
+  and I really don't want to lose it.", you tell him as you walk behind his desk.  "I'm willing to do whatever it takes to stay in the program.",
+  you say as you drop to your knees and begin to unbuckle his pants.
+<</nobr>>
+
+<video src="Part15/Engineer1.webm" autoplay loop muted height="500"></video>
+
+<<nobr>>
+  "I do have another option.", he says as you begin to suck his cock.  He waits to explain more until after you've made him come.
+<</nobr>>
+
+<<nobr>>
+  "That was wonderful.  Now the other option.", he continues finally.  "You're familiar with the project Kyle has been working on, right?"
+<</nobr>>
+
+<<nobr>>
+  You know about the computerized chastity belt Kyle was trying to perfect last year.  You'd really hoped to continue with your own projects, but
+  if being Kyle's assistant or something for a month or two lets you stay in the program, it's worth it.  "Yes, sir.  He was making excellent
+  progress on his belt I recall.", you answer.
+<</nobr>>
+
+<<nobr>>
+  "He has indeed.  We are hoping to to get it ready to market by the end of the school year.  And you can
+  [[play a valuable part|Part15EngineerProbation2]] in that if you are interested.  And I can even get the dean to remove that horrible
+  block they've placed on your orgasms.", he says.  You of course say that you are interested.
+<</nobr>>
+
+::Part15EngineerProbation2
+<<nobr>>
+  <h1>Meeting with the Engineering department head</h1>
+  <img src="Part15/Engineer2.jpg" hspace="10" vspace="10" height="400" align="left">
+  "We have beta testers testing out the belt.  They won't be testing here though, but on their own time.  They'll be testing 24/7 to be precise.
+  That's how the belt is intended to be used, obviously.  So that's how we need to test it."  You start to feel sorry for the poor girls, but
+  then you remember the belt can also generate orgasms if it's programmed to, so you expect they'll have a better time than your past few months
+  on probation.
+<</nobr>>
+
+<<nobr>>
+  "Part of your job will be compiling the data from their weekly questionnaires and the readings their belts sent back and creating reports
+  based on that."  It sounds boring, but you are betting the questionnaires might be amusing to read.  And it keeps you on the project.
+<</nobr>>
+
+<<nobr>>
+  "We'll also be needing your technical expertise to test the belt's security.  We think it's secure, be we need you to perform some pentration
+  testing on it."  He chuckles at his little pun.  "Do you think you are up to that?", he asks.
+<</nobr>>
+
+<<nobr>>
+  "Yes sir.", you quickly answer.  You pause to lick up a bit of cum you feel down your face, getting the last bit with your finger before licking it clean.
+  "That sounds very interesting, especially the security testing.  I'm definitely up for the challenge."  You want to make sure he doesn't forget about the
+  other part he'd mentioned.  "And you'll be able to talk to the dean about my denial once I start?"
+<</nobr>>
+
+<<nobr>>
+  "Of course.  I've already cleared it with him.", he says.  You realize he'd planned to allow you this other option long before you'd sucked his cock.
+  He certainly wasn't going to stop you to tell you that though.  "I'll send an email over when you leave today.  You can head right over to the X-Change
+  office to get that denial setting removed as soon as [[your fitting is done|Part15EngineerProbation3]]."
+<</nobr>>
+
+<<nobr>>
+  "My... fitting...", is all you can say in response.
+<</nobr>>
+
+
+::Part15EngineerProbation3
+<<nobr>>
+  <h1>Your Belt Fitting</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Engineer3.mp4" autoplay loop muted height="700"></video>
+  </div>
+  "Of course.  We can have your fitting right now, then you can get to work right away testing.", he says excitedly as he leads you back to the lab.
+  <<if $PlayerChastityBelt>>
+    Of course, I have the key for your old manual belt.  I'll send that back to <<if $Keyholder>>$Keyholder<<else>>your keyholder<</if>> for you.
+  <</if>>
+  You reluctantly follow him.  "What better test of the security could there be than a very well motivated, technical user, with full access to the
+  specifications, source code, and schematics.", he says clearly excited.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Kate') or setup.areDating('Veronica')>>
+    You hope $dating[0] won't mind you agreeing to this without discussing it with her first, but you don't really have time.  And you really want to
+    stay in the program.  You doubt that she'll be too upset that all the orgasms are hers until you are done with the testing.
+  <<elseif $dating.length > 0>>
+    You hope $dating[0] won't mind you agreeing to this without discussing it with him first, but you don't really have time.  And you really want to
+    stay in the engineering program.  Hopefully you can still keep him happy with your mouth and ass until you are done with the testing.
+  <</if>>
+  You sigh with resignation as he begins measuring you in the lab.  
+  <<if !$PlayerPregnant and $PlayerProtectionTry>>
+    You suppose you'll just have to wait until your testing is done before you can try to get
+    <<if $PlayerMother or $PlayerAbortion or $PlayerAdoption>>pregnant again.<<else>>pregnant.<</if>>
+  <</if>>
+  "The fit will adjust as you sleep
+  <<if $PlayerPregnant>>
+    though your pregnancy may test the limits of that feature.  Let me know if you have any issues and I'll make manual adjustments.", he tells you.
+    "And let me know when you have any doctor appointments so we can make arrangements for that."
+  <<else>>
+    to adjust for any weight gain or loss.  But let me know if you have any issues and I'll make manual adjustments.", he tells you.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Your heart stops for a second as he clicks the belt closed around your waist.  "Now, for your testing parameters.  You have two objectives.
+  Both are their own reward, but will also come with a bonus payment as well:
+<</nobr>>
+
+<<nobr>>
+  "Your first goal is to have an unauthorized orgasm.  That means an orgasm that the registered 'owner' of the belt, me in this case,
+  has not specifically authorized.  And I won't be authorizing any, so if you orgasm, then you've succeeded.  You just get one payment for each
+  method you might discover, but feel free to enjoy the orgasms until we fix the flaw you've uncovered.  Once we believe it's been corrected,
+  you'll be eligible for another payment if you can still orgasm that way, or find another flaw.
+<</nobr>>
+
+<<nobr>>
+  "You can use whatever means necessary with the belt still on for your orgasm.  Whether that's utilizing the parts of your body that aren't locked away,
+  sneaking anything around or through the belt, vibrations, hacking the programming, whatever you want to try.
+<</nobr>>
+
+<<nobr>>
+  "Your other goal, is to remove the belt entirely.  If you are able to remove the belt, then you've succeeded.  You can use any mechnical, electronic,
+  really any means you want to accomplish this.  I'd be very careful trying to do anything destructive though.  As you know, this isn't simple steel here,
+  and I don't want you to injury yourself.  We are fairly confident you won't succeed on this goal, but we'd rather no know than after we get to market if
+  there's a flaw.  If you manage to escape, then you'll get an substantial bonus payable after you help us fix the flaw and you resume your testing." 
+<</nobr>>
+
+<<nobr>>
+  You are excited when you see what looks like a very pickable lock on the front cover.
+  <<if $PlayerProtectionPill or $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerPregnant>>
+    He sees you looking it at it and says, "You may be able to pick the hygiene shield lock.
+  <<else>>
+    But then he just hands you the key to it.  "You'll probably need to remove the hygiene shield once a month or so.
+  <</if>>
+  But you should read about the countermeasures in the specifications before you try to orgasm that way, or leave the hygiene shield off for too long."
+<</nobr>>
+
+<<nobr>>
+  <<unset $JobEngineering>>
+  <<unset $AcademicProbationDenial>>
+  <<set $JobEngineerLock to 1>>
+  <<set $PlayerChastityBelt to 1>>
+  <<set $Keyholder to "computer">>
+  <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
+  "Now, lets just take a few pictures and a video or two showing your fit before you
+  <<if setup.areDating('Kate') or setup.areDating('Veronica')>>
+    [[start your testing|Part15EngineerProbation4Girlfriend]].",
+  <<else>>
+    [[start your testing|Part15EngineerProbation4]].",
+  <</if>>
+  he says. "Then you can head over to get the dean's denial turned off.  You should receive the technical information by the time you are finished.
+  The same NDAs apply as always of course.  Good luck!"
+<</nobr>>
+
+::Part15EngineerProbation4
+<<nobr>>
+  <h1>Your First Tests</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Engineer4.mp4" autoplay loop muted height="700"></video>
+  </div>
+  <<set $Libido to 100>>
+  <<if $dating.length>>
+    <<set $sex.push({sex: 'male', name: $dating[0]})>>
+    <<set $sex.push({sex: 'male', name: $dating[0]})>>
+    <<set $sex.push({sex: 'male', name: $dating[0]})>>
+    <<set $sex.push({sex: 'male', name: $dating[0]})>>
+  <<else>>
+    <<set $sex.push({sex: 'male'})>>
+    <<set $sex.push({sex: 'male', repeat:true})>>
+    <<set $sex.push({sex: 'male'})>>
+    <<set $sex.push({sex: 'male', repeat:true})>>
+  <</if>>
+  <<if $dating.length>>
+    $dating is upset at first when you tell him about the belt.  But he starts to be more understanding when you explain how much you want to
+    remain in the engineering program.  Or maybe his mood changed when you dropped to your knees and pulled out his cock.  Either way, he
+    stopped complaining about the belt, at least for now.
+  <<else>>
+    It doesn't take you long to find guys willing to help you try to orgasm with your belt still on.  Well, they are trying to orgasm with your
+    belt still on, you aren't sure they care much if you do.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Now that the dean's denial has been lifted, you were too eager to try to orgasm, so you hadn't bothered to check all of the settings your boss had given
+  your belt.  You quickly discover one of them as you start on <<if $dating.length>>$dating<<else>>the first guy<</if>>'s cock.  You think you feel
+  something as soon as his cock hits your tongue, but after you work it a while, there's no doubting the belt is stimulating you while you suck his cock.
+  <<if $PlayerSideEffectOral>>
+    As if you needed any more encouragement to suck cock.
+  <<else>>
+    You only planned on sucking him for a little while, then having him fuck your ass.  But now you don't want to stop.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectOral > 2>>
+    You loved giving blowjobs before, the warm pleasure that spread through your body anytime you had a cock in your mouth.  But with the added
+    stimulation from the belt, you are sure you'll be able to cum while you suck his cock.  You are approaching an orgasm quickly, and are confident you
+    are about to beat the belt already.
+    <br><br>
+    The vibrations quickly slow and then stop altogether, but you are already so close.  You enthusiastically keep working his cock, focusing on how
+    good it feels in your mouth, and imagining that wonderful feeling when his cum hit your tongue.
+    <br><br>
+    But just when you think your orgasm is a moment away, you feel a shock, right against your clit.  The pain is just for an instant, and then it's gone.
+    But it's enough to drive your orgasm back.  A few moments later, you are reveling in the taste of his cum, but there's no orgasm for you like you'd
+    hoped.
+    <br><br>
+    You don't care about the shock, it wasn't that bad, and it felt so good before then.  You can't wait to you can give your next blowob.  You hope
+    now that you are expecting the shock, it won't surprise you and prevent your orgasm like this time.  It'll take several more blowobs before you
+    accept how naive that hope was.
+  <<else>>
+    You <<if $PlayerSideEffectOral>>loved<<else>>enjoyed<</if>> giving blowjobs before, but you soon discover you are going to
+    <<if $PlayerSideEffectOral>>love it even more<<else>>absolutely love it<</if>> now.
+    You eagerly suck his cock, hoping he doesn't cum before you do.  You know if he lasts long enough, the vibrations the belt is giving you will make
+    you cum.  But as you start to get close to your orgasm, you feel the vibratons start to fade until they are just a soft, pleasant buzz.  A bit later
+    they pick up again, keeping you tantalizingly close to an orgasm, but never letting you cum.
+    <br><br>
+    Your hand instinctively reaches between your legs and hits hard steel, or rather titanium-carbon-fiber-whatever, you don't really care right now.
+    You keep sucking his cock because you don't want the pleasure to stop.  It isn't much longer and he his filling your mouth with cum.  You
+    suck a bit longer as the ramps the vibrations up to high again, but just long enough to leave you right on the edge before stopping.
+    <br><br>
+    You keep trying later with more blowjobs, hoping the belt will make a mistake and go to far one of the times, or see if playing with your
+    breasts, or anything else, will give you the bit extra you need, but it's still not enough.
+  <</if>>
+  But sucking cock [[isn't the only option|Part15EngineerProbation5]] the belt has given you.
+<</nobr>>
+
+::Part15EngineerProbation5
+<<nobr>>
+  <h1>Trying something different</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Engineer5.mp4" autoplay loop muted height="700"></video>
+  </div>
+  <<if $dating.length>>
+    <<set $sex.push({sex: 'male', name: $dating[0]})>>
+    <<set $sex.push({sex: 'male', name: $dating[0]})>>
+    <<set $sex.push({sex: 'male', name: $dating[0]})>>
+    <<set $sex.push({sex: 'male', name: $dating[0]})>>
+  <<else>>
+    <<set $sex.push({sex: 'male'})>>
+    <<set $sex.push({sex: 'male', repeat:true})>>
+    <<set $sex.push({sex: 'male'})>>
+    <<set $sex.push({sex: 'male', repeat:true})>>
+  <</if>>
+  <<if $dating.length>>
+    You are already sure from your first round of testing that $dating is going to be perfectly happy with the new situation.  He's also willing
+    and eager to give your second plan a try.
+  <<else>>
+    You don't think the guys you find much care if you can manage to get off from it or not.  But they are perfectly happy fucking your ass.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You think the belt is stimulating you again, but if it is, it's more subtle than before.
+  <<if $PlayerSideEffectAnal>>
+    Then again, maybe it isn't stimuating you at all.  You've always loved anal and maybe that's all it is.
+  <</if>>
+  Either way you love the feeling of fullness his cock gives you.  But it also leaves you aching even more to feel his cock filling you
+  the one place he can't.
+<</nobr>>
+
+<<nobr>>
+  As he gets less nervous about your belt and more eager about fucking your ass, your pleasure builds too.
+  <<if $PlayerSideEffectAnal > 2>>
+    You've came from anal before, and you are hoping you can now.   You are sure you are going to be able to but at the last moment
+    <<if $PlayerSideEffectOral > 2>>
+      you are shocked again.  "Not this too!", you think to yourself.
+    <<else>>
+      you feel a shock, right against your clit.  The pain is just for an instant, and then it's gone.
+      But it's enough to drive your orgasm back.  A few moments later, you feel his cum fill your ass, but there's no orgasm for you like you'd
+      hoped.
+      <br><br>
+      You don't care about the shock, it wasn't that bad, and it felt so good before then.  You can't wait to he can fuck your ass again.
+      You hope now that you are expecting the shock, it won't surprise you and prevent your orgasm like this time.  It'll take several more
+      times before you accept how naive that hope was.
+    <</if>>
+  <<else>>
+    By the time his cum fills your ass you are on the verge of an orgasm, but he seemed to cum just a moment too soon.  It felt so good though,
+    you want to try again hoping he can last a little longer the second time.
+    <br><br>
+    He does last longer, but you are left right on the edge again, aching for just that little bit more that would let you cum.  You realize the
+    belt must be softly stimulating you, just enought to slowly push you right to the edge, but never pushing you the rest of the way.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You accept now that you aren't going to be able to cum this easily, but you also love how good it feels just to try.
+  <<if $PlayerSideEffectOral > 2 or $PlayerSideEffectAnal > 2>>It's even worth the shocks you know you'll get.<</if>>
+  As good as it feels though, you are always left with a desperate need for more when he's done.
+<</nobr>>
+
+<<nobr>>
+  You realize you are going to have to get more creative if you want to have any chance to defeat this belt.  You decide to dig into the documents
+  your boss sent over tonight.  You also want to read the email the X-Change office sent [[about their new 'Buddy' program|Part15YearBuddy]] so you
+  can be sure to show up at the right time.
+<</nobr>>
+
+::Part15EngineerProbation4Girlfriend
+<<nobr>>
+  <h1>Making it up to her</h1>
+  <<set $sex.push({sex: 'female', name: $dating[0]})>>
+  <<set $sex.push({sex: 'female', name: $dating[0]})>>
+  <<set $sex.push({sex: 'female', name: $dating[0]})>>
+  <<set $sex.push({sex: 'female', name: $dating[0]})>>
+  She understands that there wasn't time, and knows how much you want to stay in the engineering program, so she isn't upset with you.
+  But you still feel bad for not discussing it with her first before you agreed to this belt.  But you are more than capable of showing her
+  the two of you can still have fun, even with you in this belt.  You figure you and her can try to figure out a way around your belt later.
+<</nobr>>
+
+  <video src="Part15/Engineer6.webm" autoplay loop muted height="550"></video>
+
+<<nobr>>
+  You were eager to be with $dating[0], and you hadn't bothered to check all of the settings your boss had given your belt.  You quickly discover
+  one of them.  You think you feel something as soon as your tongue first tastes her, but after you continue for a while and she gets more and
+  more wet from your attention, there's no doubting the belt is stimulating you while you pleasure her.
+  <<if $PlayerSideEffectOral>>
+    As if you needed any more encouragement to eat her out.
+  <<else>>
+    You might have switched to your fingers after a while, but now you don't want to stop.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You hope as you keep going the pleasure will keep building, but as you start to get close the vibrations lessen until you can barely feel them.
+  They pick back up after a while.  The cycle repeats as the belt keeps you agonizingly close to an orgasm you know it won't give you.
+<</nobr>>
+
+<<nobr>>
+  $dating[0]'s orgasm isn't going to be denied though.  She holds your head against her as she screams out with an orgasm.  You throb as you
+  ache for one too.  But you feel the pleasure fade away as the belt stops stimulating you after your tongue leaves $dating[0].
+<</nobr>>
+
+<<nobr>>
+  You try several more things, but the belt seems to only stimulate you when your tongue is on or inside $dating[0].  She doesn't mind though
+  and lets you experiment with trying to orgasm from eating her out as much as you want.  Eventually she tries some of her toys on you.  The dildo
+  is your ass feels nice, but isn't going to get you off.  Fucking her with a strap-on is fun as always, but you don't get those teasing vibrations.
+<</nobr>>
+
+<<nobr>>
+  You quickly discover not to try to generate your own vibrations.  She tries her magic wand against your belt.  You can feel the vibrations, but
+  they are damped by the belt.  Even so, if she kept it up long enough you might be able to cum.  But the belt ensures that won't happen.  After a few
+  seconds with the vibrator you feel a painful shock hit your clit.  Another one hits a second or two later.  They stop once she pulls the vibrator
+  away.  "Well, I guess we won't be trying that then.", she says.
+<</nobr>>
+
+<<nobr>>
+  You accept now that you aren't going to be able to cum easily in this, but you still love how you feel when you eat $dating[0] out, so you
+  do that as often as she wants.  As good as it feels though, you are always left with a desperate need for more when you're done.
+<</nobr>>
+
+<<nobr>>
+  You realize you are going to have to get more creative if you want to have any chance to defeat this belt.  You decide to dig into the documents
+  your boss sent over tonight.  You also want to read the email the X-Change office sent [[about their new 'Buddy' program|Part15YearBuddy]] so you
+  can be sure to show up at the right time.
+<</nobr>>
 
 ::Part15TestSubjectProbation
-TODO Deal with denial and test subject
+<<nobr>>
+	<h1>Meeting with the Engineering department head</h1>
+  <img src="Part15/TestSubject1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You've been dreading this meeting.  You knew the denial effect from the dean's punishment would be a problem for the testing they do on you.  You'd
+  hoped to be off of academic probation before it was time to return, but just hoping for it didn't make it happen.  Now you have to go meet with someone
+  about it.
+<</nobr>>
+
+<<nobr>>
+  You know what the meeting is about your probation but you don't know what they are going to say.  Are you getting fired?  Are they going to have you
+  cleaning up the mess you and the other subjects always leave in the testing rooms until you get off probation? Have they worked something out with
+  the dean.  You really hope it's that last one.
+<</nobr>>
+
+<<nobr>>
+  You don't whether to show up looking sexy and willing to do anything the supervisor wants to keep your job, or whether to try to look like a good
+  student who is working on improving her grades.  After struggling with it a bit, you try to find a middle ground and then head to your meeting.
+<</nobr>>
+
+<<nobr>>
+  When you get there you meeting with the department head.  "We are meetng with all of the test subjects from your cohort, but given your special
+  circumstances, I thought it best to meet with you individually.", he starts.  "You won't be participating in the same sort of testing you were
+  last year.  A new batch of incomming freshmen will be starting in your place."  You wonder if he is firing all of you then?  But then he continues,
+  "But we have another opportunity for you all.  And in your case the offer also includes having the dean lift your orgasm block."
+<</nobr>>
+
+<<nobr>>
+  "We are in the beta testing phase of an exciting product we hope to be placing on the market soon.", you were already sold on participating
+  as soon as you heard that you'd get your orgasms back.  Then he starts to explain the product, "It is a computerized
+  chastity belt."  Great. So you'll be trading one form of denial for another one, you think.  "I can see your disappointment, but it's not
+  as simple as that.  This belt doesn't just deny your pleasure, it can also give you pleasure.  It all depends on the settings used, and we will
+  be using a variety of them during the beta testing.  I can guarantee you'll have more orgasms help us with this than you would staying on the
+  dean's denial list."
+<</nobr>>
+
+<<nobr>>
+  You'll get to keep your job, <b>and</b> orgasm again.  Of course you agree to participate in the beta testing.
+  <<if $dating.length>>
+    You hope $dating[0] isn't angry with you for agreeing without discussing it first.
+  <</if>>
+  "Great, let's head over to the lab right now [[for your fitting|Part15TestSubjectBetaTest]] then.", he says.
+<</nobr>>
+
+::Part15TestSubject
+<<nobr>>
+	<h1>Meeting in the Engineering department</h1>
+  <img src="Part15/TestSubject2.jpg" hspace="10" vspace="10" height="400" align="left">
+  You are bit early and have a chance to talk to some of the other girls that started as test subjects last year, just like you.  You recognize some
+  of them from the X-Change orientation and other events as well.  Some of the others you don't.  But that makes sense, since they've been testing
+  women both born that way, and recently transformed thanks X-Change.  But none of you know what the meeting is supposed to be about, only that
+  it was mandatory that you attend.
+<</nobr>>
+
+<<nobr>>
+  The four of you go into the meeting and wait.  By the time the department head comes up to the front of the room, nearly all the other test subjects
+  that joined at the same time you did are there.  "Welcome back, ladies.", he begins.  "I have some bad news for you and some good news.  I'll start
+  with the bad.
+<</nobr>>
+
+<<nobr>>
+  "The testing program you were working on last year, won't be needing any of you this year.  I want to thank you all for your participation.
+  You have helped a great deal in helping us evaluate and perfect our potential products.  You've also helped advance science, we now have much
+  more data on the female orgasm and how it varies from woman to woman as well whether or to what degree X-Change transformation affect them...
+<</nobr>>
+
+<<nobr>>
+  "However, we have gathered all of the data we need from all of you.  We are now very familiar with the nature, quality, and many other details
+  of your orgasms, and many other details.  For any of you that would like a personal report of your own data, let one of the research
+  assistants know and they will send it to you.  But don't worry, even though your participation is ending, the experiments, but with a new cohort
+  of test subjects starting soon.
+<</nobr>>
+
+<<nobr>>
+  "The good news for all of you though, is that while your participation as test subects has ended, we have another exciting opportunity for you.
+  We have a new product that we hope to be bringing to market soon, and we'd like all of you to test it.  The pay will be the same as you were
+  receiving as a test subject, and you will only rarely need to visit the lab here.
+<</nobr>>
+
+<<nobr>>
+  "Now, I'm sure you're wondering what the product is.  It is a computerizd chastity belt.", but before any of you get up leave let me explain
+  a few of it's features.  This belt doesn't just deny your pleasure, it can also give you pleasure.  It all depends on the settings used, and we will
+  be using a variety of them during the beta testing.  I can guarantee you will have an amazing orgasm today if you agree, and many more during
+  your testing.  If you'd like to know more about what to expect, you can read through the 'Wearer's Manual' we will provide if you participate.
+<</nobr>>
+
+<<nobr>>
+  "I know at least one of you is pregnant, so I will disclosure one feature now.  The belt's fit auto-adjusts as you sleep, so it will expand
+  with you as you progress.  If you have any issues let us know and we will address them.  And of course we will coordinate with any doctor
+  visits you have.
+<</nobr>>
+
+<<nobr>>
+  "For those wishing to sign up, you'll need to do so before you leave today.  Your testing will begin as soon as you leave the lab today.
+  During your fitting you will need to sign the "Beta-tester Non-disclosure Agreement" we will provide.  On your way out we will provide a
+  secure link to the documentation.  Sorry we can't just hand you a booklet right now, but this is still a pre-market product and we don't want
+  information leaking out.
+<</nobr>>
+
+<<nobr>>
+  <<if $dating.length or $JobCallGirl or $JobCallGirlSide or $JobStripper>>
+    <<set $tempRejectBelt to 1>>
+    <<unset $tempChooseBelt>>
+  <<elseif $PlayerChastityBelt>>
+    <<set $tempChooseBelt to 1>>
+    <<unset $tempRejectBelt>>
+  <<else>>
+    <<unset $tempChooseBelt>>
+    <<unset $tempRejectBelt>>
+  <</if>>
+  So, if you wish to participare, please line up for
+  <<if $tempRejectBelt and !$tempChooseBelt>>
+    your fitting
+  <<else>>
+    [[your belt fitting|Part15TestSubjectBetaTest]]
+  <</if>>
+  over here.  For those that do not wish to participate, I'd like to thank you again for the help you provided us last year, and wish you the
+  best in the future.  If you need a recommendation to aid in your
+  <<if !$tempRejectBelt and $tempChooseBelt>>
+    search for a new job,
+  <<else>>
+    [[search for a new job|Part15TestSubjectJobChange]],
+  <</if>>
+  please let me know how explicit I should be about the nature of your work here."
+<</nobr>>
+
+<<nobr>>
+  <<if $tempChooseBelt>>
+    After you discretely ask about the chastity belt you are already wearing he tells you, "We are especially interested in hearing from
+    a chastity enthusiast such as yourself.  I still have a copy of your key, and have discussed it with
+    <<if $Keyholder>>$Keyholder<<else>>your keyholder<</if>>.  If you wish to participate, we'll remove that belt and immediately fit you with
+    ours.  My promise of an orgasm today still applies.  And if you don't want to participate, I'll have my copy of your key sent back to
+    <<if $Keyholder>>$Keyholder<<else>>your keyholder<</if>>.
+    <br><br>
+    With the promise of an orgasm today, and many more to come, there's no way you are going to turn down their offer.
+  <<elseif $tempRejectBelt>>
+    <<if $dating.length>>
+      If you are going to be in a chastity belt, you'd want $dating[0] to have the key.  If that's not the case, then your answer is no.
+    <<elseif $JobCallGirlSide or $JobCallGirl>>
+      You couldn't very well continue working as call girl if you were wearing one of their belts.
+    <<elseif $JobStripper>>
+      You couldn't very well continue working as stripper if you were wearing one of their belts.
+    <<else>>
+      There's no way you are signing up for this.  
+    <</if>>
+    You guess you'll just need to find a new job.
+  <<elseif !$PlayerPregnant and $PlayerProtectionTry>>
+    You suppose if you want to participate, you'll just have to wait until your testing is done before you can try to get
+    <<if $PlayerMother or $PlayerAbortion or $PlayerAdoption>>pregnant again.<<else>>pregnant.<</if>>
+  <</if>>
+  <<unset $tempChooseBelt>>
+  <<unset $tempRejectBelt>>
+<</nobr>>
+
+::Part15TestSubjectBetaTest
+<<nobr>>
+  <h1>Your Belt Fitting</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Engineer3.mp4" autoplay loop muted height="700"></video>
+  </div>
+  First they have you sign the non-disclosure agreement he mentioned.
+  <<if $PlayerChastityBelt>>
+    Then, before removing your current chastity belt, they restrain you.  "Sorry this is necessary.", he tells you.  "But it was the one condition
+    <<if $Keyholder>>$Keyholder<<else>>your keyholder<</if>> had.  I suppose so you don't go running out the door half-naked as soon as you are
+    unlocked. I know you would never do that though.  But still, a promise is a promise."
+    <br><br>
+    Your heart stops for a second as he clicks the belt closed around your waist.  Once you hear the click of your new belt locking closed,
+    your restraints are removed.
+  <<else>>
+    TODO Not already belted
+
+    Your heart stops for a second as he clicks the belt closed around your waist.
+  <</if>>
+  <<unset $JobTestSubject>>
+  <<set $PlayerChastityBelt to 1>>
+  <<set $Keyholder to "computer">>
+  <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
+  <<set $JobBetaTester to 1>>
+  <<set $PlayerChastityBelt to 1>>
+<</nobr>>
+
+<<nobr>>
+  After checking over your fit the technician tells you, "Thank you, you are all set.  Have a fun time and be sure to fill out the user surveys
+  we send out every few weeks, and to report if you encounter any problems.
+  <<if $PlayerProtectionPill or $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerPregnant>>
+    You shouldn't have any hygiene issues, but if you do, let us know."
+  <<else>>
+    Oh, and here's the key to the hygiene shield in the front there, try not to lose it.  You'll probably need to remove the hygiene shield
+    occasionally when you're menstrating.  But don't leave it off too long, or try to use it for anything other than its intended purpose, or
+    you'll regret it.  You can read in the manual about the countermeasures if you are curious."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He's clearly expecting you to leave at that point.  "Ummm... he... the department head, said we'd get an orgasm.", you ask meekly as
+  instinctively you already realize you are at their mercy.
+<</nobr>>
+
+<<nobr>>
+  "Not right now.  We have quite a few girls to get fitted, and that would take forever.  But it is set to give you one sometime today.", he tells you
+  quickly, eager to get on to the next fitting.
+<</nobr>>
+
+<<nobr>>
+  "But if you don't feel like being patient, the 'Oral Encouragement' feature should speed it along.
+  You can look over the manual when they send the link out, but I'm guessing you don't want to wait for that either.  I'm sure you can
+  [[find a friend and figure it out|Part15TestSubjectBetaTest2]] on your own before then."
+<</nobr>>
+
+<<nobr>>
+  "Oh, and if you were the one on academic probation, be sure to stop by the X-Change office when you leave here to get that taken care of.", he adds
+  as you are leaving.
+<</nobr>>
+
+::Part15TestSubjectBetaTest2
+<<nobr>>
+  <h1>Your promised orgasm</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Engineer4.mp4" autoplay loop muted height="700"></video>
+  </div>
+  <<set $Libido to 75>>
+  <<set $sex.push({sex: 'male'})>>
+  <<set $sex.push({sex: 'male', repeat:true})>>
+  <<set $sex.push({sex: 'male'})>>
+  <<set $sex.push({sex: 'male', repeat:true})>>
+  <<if $AcademicProbationDenial>>
+    <<unset $AcademicProbationDenial>>
+    After a quick visit to the X-Change office to get the probation denial setting removed, you head back over to the student center.
+  <</if>>
+  It doesn't take you long to find a guy willing to help you try to trigger the orgasm you were promised.  Well, he probably doesn't care if that
+  hppens or not, but he is certainly willing to let you suck his cock if that's what it takes.
+<</nobr>>
+
+<<nobr>>
+  It also doesn't take you long to figure out what the 'Oral Encouragement' feature does.  Just a few seconds after his cock is in your mouth,
+  you can feel the vibrations start.  Gently at first, but picking up in intensity as the intensity of your blowjob increases.
+  You <<if $PlayerSideEffectOral>>loved<<else>>enjoyed<</if>> giving blowjobs before, but if this setting stays on, you are going to
+  <<if $PlayerSideEffectOral>>love it even more<<else>>absolutely love it<</if>> now.
+<</nobr>>
+
+<<nobr>>
+  You know if he lasts long enough, you'll cum.  Your only worry is that he'll cum too soon, and the belt will stop.  But you don't want
+  to slow down, and you only take his cock out of your mouth long enough to occasionally catch your breath.
+<</nobr>>
+
+<<nobr>>
+  But as you start to get close to your orgasm, you feel the vibratons start to fade until they are just a soft, pleasant buzz.  A bit later
+  they pick up again, keeping you tantalizingly close to an orgasm, but never letting you cum.
+<</nobr>>
+
+<<nobr>>
+  You are desperate for an orgasm by the time he cums.  You keep sucking a bit longer as the cums, hoping for just a bit more to put you over
+  the edge.  But then the belt kicks into high gear or something and you get quite a bit more.
+<</nobr>>
+
+<<nobr>>
+  His cum oozes down your face as you scream out before you can even swallow his cum.  The vibrations continue as you hold onto him for support as
+  your body shakes with a powerful orgasm.  The vibrations continue a while longer.  Just when you think you can't take it anymore, they slowly
+  die down.  You lie down next to him with a messy smile on your face.
+<</nobr>>
+
+<<nobr>>
+  As soon as he is ready, you go again.  The vibrations continue as before, keeping you on the edge as you suck his cock.  But it doesn't give
+  you the orgam at the end.  He leaves happy and drained, but you are still horny when he gone.  You try a few more times with a different guy, but
+  you can't get another orgasm from it.
+<</nobr>>
+
+<<nobr>>
+  You decide to give up for today and wait until the [["Wearer's Guide" email arrives|Part15TestSubjectBetaTest3]] to see how to trigger an orgasm again.
+<</nobr>>
+
+::Part15TestSubjectBetaTest3
+<<nobr>>
+  <<set $DailyBJRecord to 4>>
+	<h1>RTFM</h1>
+  <div style="float:left;padding:12px;">
+    <img src="Part15/TestSubject3.jpg" hspace="10" vspace="10" height="650" align="left">
+  </div>
+<</nobr>>
+<<nobr>>
+  The email finally arrives, and there's a number of featues you'll read up on later, but the "Oral Encouragement" feature is the one your status page
+  says is active right now, and that's the one you wanted to focus on anyway.
+<</nobr>>
+
+<<nobr>>
+  <blockquote style="width: 35%;">
+    The <b><i>Owner</i></b> may set an initial daily oral target for the <b><i>Wearer</i></b> when activating the Oral Encouragement feature.
+    If no target is set, it will default to 1.  <b><i>Wearer</i></b> will receive encouraging stimulation throughout their oral service each time.
+    Once the <b><i>Wearer</i></b> reaches her daily target, she will be rewarded with an orgasm (assuming no other feature is prohibiting this).
+  </blockquote>
+<</nobr>>
+
+<<nobr>>
+  Well, that's why it triggered an orgasm.  You keep reading.
+<</nobr>>
+
+<<nobr>>
+  <blockquote style="width: 35%;">
+    The <b><i>Owner</i></b> may keep the daily target constant, increase it at constant or geometic rate, or leave it at the default "Personal Best"
+    setting.  With the Personal Best setting the <b><i>Wearer</i></b>'s daily target will always be one more than her previous daily best.
+  </blockquote>
+<</nobr>>
+
+<<nobr>>
+  Ok, well why didn't I get a second, third, and fourth orgasm then, you wonder.  As far as this thing knows those each exceeded my personal
+  best too.  You keep reading to see if it explains that.
+<</nobr>>
+
+<<nobr>>
+  <blockquote>
+    Once the <b><i>Wearer</i></b> reaches her daily target, she will not receive any further orgasm rewards that day from Oral Encouragement feature.
+    She will still receive encouraging stimulation for any oral service above and beyond her target and orgasms related to any other enabled features
+    are still possible.
+    <br><br>
+    If the daily target is exceeded, then the actual number achieved that day, not the previous goal, will be used to calculate the next day's goal.
+    This also applies if the goal was otherwise set to be fixed.  This will ensure that even if an initial goal is set too low, she will soon reach a
+    level that she finds challenging thus encouraging constant improvement.
+  </blockquote>
+<</nobr>>
+
+<<nobr>>
+  Wait, does that mean... You reread the passages serveral times.  You realize it's saying that you would have only had to give two blowjobs tomorrow
+  for an orgasm.  But since you already gave four of them today, you'll have to give five tomorrow! Then six the next day, and... You wonder how long
+  many orgasms you'll actually be able to get from this feature before you'll have to be spending all your free time sucking cock just for one orgasm.
+<</nobr>>
+
+<<nobr>>
+  Well, you figure it could have been worse.  You'd almost went out to find a third guy to try with.  At least stopping when you did gave you a few
+  extra days before the targets get out of hand.
+<</nobr>>
+
+<<nobr>>
+  You don't see any other active features on your status page, just the one guaranteed orgasm he promised you today, but it's marked as complete.
+  You do see it is set to count a new day as starting at 6 AM.  That's good, having it reset at midnight would have been annoying.  You go ahead and
+  follow the instructions to download the app for your phone before [[going to sleep|Part15TestSubjectBetaTest4]].
+<</nobr>>
+
+
+::Part15TestSubjectBetaTest4
+<<nobr>>
+	<h1>Wakeup Call</h1>
+  <img src="Part15/TestSubject4.jpg" hspace="10" vspace="10" height="450">
+  <<set $DailyBJMinimum to 1>>
+<</nobr>>
+<<nobr>>
+  You are awoken the next morning at 6 AM to your belt stimulating you again.  You feel yourself getting close to an orgasm, but at the
+  last minute the vibrations stop abruptly.  You are left wide awake now and wanting more.  Your phone beeps with a notification. "Congratulations
+  on exceeding your oral target of 1 yesterday.  Your target for today is 5."  And there is also another silent notification you had received before
+  you woke up.  "Belt Configuration Change Received From Owner."
+<</nobr>>
+
+<<nobr>>
+  When you check the app, it says that "Morning Wakeup" was enabled, and that it's set to wake you with an edge if you'd met your target, with
+  'gentle teasing' if you did not.  You also see a "Minimum target" setting, but it says "0".  As you are looking at the settings on the page, you
+  accidently hit the "+" next to the "0" and it instantly changes to a "1".  Below that it now says "if minimum daily target is not achived, punishment
+  shocks will be used for Morning Wakeup routine.  You frantically try to hit the "-" to switch it back to zero, but it ignores you.
+<</nobr>>
+
+<<nobr>>
+  Does that mean I have to suck a cock every day if I don't want to be punished now, you wonder.  You open up the manual again to see how to disable
+  that. You don't see anything in the "Oral Encouragement" section but you do find a relevant passage elsewhere.  But it's not what you wanted to see.
+<</nobr>>
+
+<<nobr>>
+  <blockquote>
+    By default, if the <b><i>Wearer</i></b> desires to challenge herself, most settings will allow a manual increase in difficulty.  However any decrease
+    in difficulty can only be authorized by the <b><i>Owner</i></b>.
+  </blockquote>
+<</nobr>>
+
+<<nobr>>
+  You go back to the app again, this time being extremely careful not to accidentally click anything.  You try to see what the other settings that
+  changed were, but all you can see enabled are "Oral Encouragement" and "Morning Wakeup".  You do see a small indicator in the corner of the screen.
+  When you check the manual it says it indicates that there are enabled settings or features hidden from the wearer.  You suppose you'll just have
+  to wait and see what those might be.
+<</nobr>>
+
+<<nobr>>
+  You've been looking through the app and manual for a while when another notification pops up, a regular one from your calendar this time.  It's
+  reminding you of the your meeting in an hour at the campus X-Change office [[about their new 'Buddy' program|Part15YearBuddy]].
+<</nobr>>
+
+<<nobr>>
+  You quickly head to the shower.  An hour is plenty of time to get ready and get over there.  But you are hoping to be able to have some extra
+  time to find someone to help you get that minimum daily target you set for yourself out of the way.  The rest of your goal for
+  today will have to wait until after the meeting.
+<</nobr>>
+
+::Part15TestSubjectJobChange
+TODO Quit as tester, need to find a new job
 
 ::Part15YearBuddy
 TODO Assigned a freshmen buddy you are supposed to help
+
+::Part15Week
+TODO (weekly loop)
