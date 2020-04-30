@@ -1735,23 +1735,30 @@
 
 <<nobr>>
 	<<print "When he undoes the straps and releases you from the chair, you look back and see what a mess you’ve left for him on it.  ">>
-	<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
-		[[As you leave to head home,|Part8ChristmasReturn]]
-	<<else>>
-		<<print "As you leave to head home,">>
-	<</if>>
-	<<print " you wonder if he made the chair himself, or if it is something you could find ">>
-	<<if setup.areDating('Veronica')>><<print "online and talk Veronica into into purchasing as well. ">>
-	<<elseif setup.areDating('Andrew')>><<print "online and talk Andrew into into purchasing as well. ">>
-	<<elseif setup.areDating('Josh')>><<print "online and talk Josh into into purchasing as well. ">>
-	<<elseif setup.areDating('Aaron')>><<print "online and talk Daddy into into purchasing as well. ">>
-	<<elseif setup.areDating('Peter')>><<print "online and talk Peter into into purchasing as well. ">>
-	<<elseif $MasterKate>><<print "online and talk your Mistress into into purchasing as well. ">>
-	<<elseif $MasterRobert>><<print "online and talk your Master into into purchasing as well. ">>
-	<<elseif setup.haveFucked('Cassie')>>online.<br><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]
-	<<elseif setup.haveFucked('Dylan')>>online.<br><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]
-	<<elseif setup.haveFucked('Cody')>>online.<br><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]
-  <<else>>online.<</if>>
+  <<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Aaron') or setup.areDating('Peter')>>
+    [[As you leave to head home,|Part8ChristmasReturn]] you wonder if he made the chair himself, or if it is something you could find online
+    and talk $dating[0] into into purchasing as well.
+  <<elseif $MasterKate>>
+    [[As you leave to head home,|Part8ChristmasReturn]] you wonder if he made the chair himself, or if it is something you could find online
+    and talk your Mistress into into purchasing as well.
+  <<elseif $MasterRobert>>
+    [[As you leave to head home,|Part8ChristmasReturn]] you wonder if he made the chair himself, or if it is something you could find online
+    and talk your Master into into purchasing as well.
+  <<elseif setup.haveFucked('Cassie')>>
+    As you leave to head home, you wonder if he made the chair himself, or if it is something you could find online.
+    <br><br>
+    [[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]
+  <<elseif setup.haveFucked('Dylan')>>
+    As you leave to head home, you wonder if he made the chair himself, or if it is something you could find online.
+    <br><br>
+    [[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]
+  <<elseif setup.haveFucked('Cody')>>
+    As you leave to head home, you wonder if he made the chair himself, or if it is something you could find online.
+    <br><br>
+    [[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]
+  <<else>>
+    [[As you leave to head home,|Part8ChristmasReturn]] you wonder if he made the chair himself, or if it is something you could find online.
+  <</if>>
 <</nobr>>
 
 ::Part8Uncle5 <1200,7400>
