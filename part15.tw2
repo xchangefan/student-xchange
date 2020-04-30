@@ -436,14 +436,6 @@
   <</if>>
 <</nobr>>
 
-::Part15Begin
-<<nobr>>
-  <<if $MasterRobert or ($PlayerChastityBelt and $Keyholder=='Robert')>>
-    <<include [[Part15RobertRelease]]>>
-  <<else>>
-    <<include [[Part15BeginNormal]]>>
-  <</if>>
-<</nobr>>
 
 ::Part15Clinic
 <<nobr>>
@@ -700,7 +692,7 @@
       [[stop by the Engineering department|Part15TestSubject]] for a big meeting.
     <</if>>
   <<else>>
-    You are curious about your meeting coming up with the campus X-Change office [[about their new 'Buddy' program|Part15YearBuddy]].
+    You are curious about your meeting coming up with the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]].
   <</if>>
 <</nobr>>
 
@@ -908,6 +900,7 @@ Jobs
 <</nobr>>
 
 <<nobr>>
+  <<set $JobEngineeringFormer to 1>>
   <<unset $JobEngineering>>
   <<unset $AcademicProbationDenial>>
   <<set $JobEngineerLock to 1>>
@@ -1062,7 +1055,7 @@ Jobs
 
 <<nobr>>
   You realize you are going to have to get more creative if you want to have any chance to defeat this belt.  You decide to dig into the documents
-  your boss sent over tonight.  You also want to read the email the X-Change office sent [[about their new 'Buddy' program|Part15YearBuddy]] so you
+  your boss sent over tonight.  You also want to read the email the X-Change office sent [[about their new 'Buddy' program|Part15Buddy]] so you
   can be sure to show up at the right time.
 <</nobr>>
 
@@ -1121,7 +1114,7 @@ Jobs
 
 <<nobr>>
   You realize you are going to have to get more creative if you want to have any chance to defeat this belt.  You decide to dig into the documents
-  your boss sent over tonight.  You also want to read the email the X-Change office sent [[about their new 'Buddy' program|Part15YearBuddy]] so you
+  your boss sent over tonight.  You also want to read the email the X-Change office sent [[about their new 'Buddy' program|Part15Buddy]] so you
   can be sure to show up at the right time.
 <</nobr>>
 
@@ -1296,10 +1289,10 @@ Jobs
     Your heart stops for a second as he clicks the belt closed around your waist.  Once you hear the click of your new belt locking closed,
     your restraints are removed.
   <<else>>
-    TODO Not already belted
-
+    Then he has you strip below the waist and measures you.  Then he selects a belt from the table nearby and positions it in place on you.
     Your heart stops for a second as he clicks the belt closed around your waist.
   <</if>>
+  <<set $JobTestSubjectFormer to 1>>
   <<unset $JobTestSubject>>
   <<set $PlayerChastityBelt to 1>>
   <<set $Keyholder to "computer">>
@@ -1498,15 +1491,15 @@ Jobs
 <</nobr>>
 
 <<nobr>>
-  You go back to the app again, this time being extremely careful not to accidentally click anything.  You try to see what the other settings that
-  changed were, but all you can see enabled are "Oral Encouragement" and "Morning Wakeup".  You do see a small indicator in the corner of the screen.
-  When you check the manual it says it indicates that there are enabled settings or features hidden from the wearer.  You suppose you'll just have
-  to wait and see what those might be.
+  You don't expect the chances of them doing that for you to be very high.  You go back to the app again, this time being extremely careful not to
+  accidentally click anything.  You try to see what the other settings that changed were, but all you can see enabled are "Oral Encouragement" and
+  "Morning Wakeup".  You do see a small indicator in the corner of the screen. When you check the manual it says it indicates that there are enabled
+  settings or features hidden from the wearer.  You suppose you'll just have to wait and see what those might be.
 <</nobr>>
 
 <<nobr>>
   You've been looking through the app and manual for a while when another notification pops up, a regular one from your calendar this time.  It's
-  reminding you of the your meeting in an hour at the campus X-Change office [[about their new 'Buddy' program|Part15YearBuddy]].
+  reminding you of the your meeting in an hour at the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]].
 <</nobr>>
 
 <<nobr>>
@@ -1515,11 +1508,440 @@ Jobs
   today will have to wait until after the meeting.
 <</nobr>>
 
-::Part15TestSubjectJobChange
-TODO Quit as tester, need to find a new job
 
-::Part15YearBuddy
-TODO Assigned a freshmen buddy you are supposed to help
+::Part15TestSubjectJobChangeAllowance
+<<nobr>>
+	<h1>Discussing it with Daddy</h1>
+  <img src="Part15/TestSubject5.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $ProfessorAllowance to 1>>
+  <<set $JobTestSubjectFormer to 1>>
+  <<unset $JobTestSubject>>
+  <<set $sex.push({sex: 'male', name:'Aaron'})>>
+  <<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+  <<set $sex.push({sex: 'male', name:'Aaron'})>>
+  <<set $sex.push({sex: 'male', name:'Aaron', vaginal:true})>>
+<</nobr>>
+<<nobr>>
+  Daddy says you made the right decision turning down their offer.
+  <<if $PlayerChastity and $Keyholder == "Aaron">>
+    He decides to reward you by letting you out of the chastity belt he keeps you in too!
+    <<unset $PlayerChastity>>
+    <<unset $Keyholder>>
+  <</if>>
+  You are eager to celebrate your freedom from the belt with Daddy, but you are worried about money now that you've lost your job.
+<</nobr>>
+
+<<nobr>>
+  "Don't worry about that.", Aaron tells you.  "My Babygirl doesn't need to work.  You can just focus on your studies, and I'll give you an allowance
+  to take the place of the money you were getting for testing."
+<</nobr>>
+
+<<nobr>>
+  "Oh, thank you Daddy!", you say as you crawl across the bed.  Then you unbuckle Aaron's pants and begin to suck his cock.  You look up at him and
+  smile in gratitude for taking that stress from your mind.
+<</nobr>>
+
+<<nobr>>
+  The next morning Daddy wakes you with a kiss, then reminds you of the meeting you have soon.  "Oh right.", you say still sleepy.
+  "The one over at the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]]."
+<</nobr>>
+
+::Part15TestSubjectJobChangeDating
+<<nobr>>
+	<h1>Looking over your job prospects with $dating[0]</h1>
+  <img src="Part15/TestSubject5.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $JobTestSubjectFormer to 1>>
+  <<unset $JobTestSubject>>
+  <<if setup.areDating("Kate") or setup.areDating("Veronica")>>
+    <<set $sex.push({sex: 'female', name:$dating[0]})>>
+    <<set $sex.push({sex: 'female', name:$dating[0]})>>
+    <<set $sex.push({sex: 'female', name:$dating[0]})>>
+    <<set $sex.push({sex: 'female', name:$dating[0]})>>
+  <<else>>
+    <<set $sex.push({sex: 'male', name:$dating[0]})>>
+    <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+    <<set $sex.push({sex: 'male', name:$dating[0]})>>
+    <<set $sex.push({sex: 'male', name:$dating[0], vaginal:true})>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  You know $dating[0] doesn't want to share you with anyone else, so the list of job prospects you came up with are limited.  You've found that so many
+  of the jobs at this university available to you involve sex.  You've only ever been a woman here, so you aren't sure if it's just this place, or if
+  it's like this for women everywhere.  But either way, you an $dating[0] found two openings that you think you can manage.
+<</nobr>>
+
+<<nobr>>
+  After you decide between the job [[at the library|Part15TestSubjectJobChangeLibrary]] and the one
+  [[at the coffee shop|Part15TestSubjectJobChangeBarista]].  You and $dating[0] decide to celebrate your freedom from the their
+  computerized chastity belt.
+  <<if $PlayerChastityBelt and $Keyholder == $dating[0]>>
+    <<if setup.areDating("Kate") or setup.areDating("Veronica")>>
+      She even lets you out of the belt she keeps you in for the day.
+    <<else>>
+      He even lets you out of the belt he keeps you in for the day.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part15TestSubjectJobChangeNormal
+<<nobr>>
+	<h1>Looking for a new job</h1>
+  <img src="Part15/TestSubject1.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $JobTestSubjectFormer to 1>>
+  <<unset $JobTestSubject>>
+<</nobr>>
+<<nobr>>
+  Since you aren't about to be locked into some experimental chastity belt for... you realize they never even said how long it would be.  Anyway,
+  you'll need to find a new job.  The department has helpfully provided a list of a few jobs they knew had openings, so they could provide them to
+  any test subject not interested in their beta testing program.
+<</nobr>>
+
+<<nobr>>
+  The department head said he could write you a discrete reference describing your job as a 'lab assistant' if you were interested in one of the
+  available jobs [[at the library|Part15TestSubjectJobChangeLibrary]], or in applying to [[the coffee shop on campus|Part15TestSubjectJobChangeBarista]].
+<</nobr>>
+
+<<nobr>>
+  He also mentioned that he was aware of openings in the fitness center's [[massage room|Part15TestSubjectJobChangeFitnessMassage]] and at
+  a different coffee shop, one where the [[baristas wear bikinis|Part15TestSubjectJobChangeBikiniBarista]] instead of aprons.  The fact that he said
+  he'd be more specific about your work in recommending you to these employers lets you know something of what your job might be like at those places.
+<</nobr>>
+
+<<nobr>>
+  <<if $JobCallGirlSide>>
+    Of course, you could always just switch from [[seeing clients as a call girl|Part15TestSubjectJobChangeCallGirl]] every now and then, to making
+    it your main job.
+  <<else>>
+    Finally, you are also aware of a escort agency in town you could call if you are interested in
+    [[working as a call girl|Part15TestSubjectJobChangeCallGirl]].  You don't think you'll need any recomendation for that job though.
+  <</if>>
+<</nobr>>
+
+::Part15TestSubjectJobChange
+<<nobr>>
+  <<if setup.areDating('Aaron')>>
+    <<include [[Part15TestSubjectJobChangeAllowance]]>>
+  <<elseif $dating.length>>
+    <<include [[Part15TestSubjectJobChangeDating]]>>
+  <<else>>
+    <<include [[Part15TestSubjectJobChangeNormal]]>>
+  <</if>>
+<</nobr>>
+
+::Part15TestSubjectJobChangeLibrary
+<<nobr>>
+	<h1>Starting at the library</h1>
+  <img src="Part15/Library1.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $JobLibrary to 1>>
+<</nobr>>
+<<nobr>>
+  Your new job is quite the change.  Before you were stapped down to a machine the whole time completely helpless,
+  <<if $PlayerSideEffectSubmissive>>
+    you miss that part,
+  <</if>>
+  now you spend your day wandering the aisles reshelving books or working behind the counter checking people out.  Before you heard
+  the constant, loud buzz of the machine you were on.  But now it's always so quiet, and you are supposed to shush anyone speaking too loud.
+<</nobr>>
+
+<<nobr>>
+  They are fairly flexible with your dress code, so you try to play up the "sexy librarian" look as much as you can.
+  <<if $PlayerSideEffectExhibitionist>>
+    You might try pushing the line more to see just how much, or rather how little, you can get away.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Overall it's a big change from your old job, but you think you are going to enjoy it here.
+<</nobr>>
+
+<<nobr>>
+  Now that your job situation is settled, you can focus on getting ready for classes which are about to start.  But before then, there's
+  a meeting at the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]] that you plan on attending.
+<</nobr>>
+
+::Part15TestSubjectJobChangeBarista
+<<nobr>>
+	<h1>Starting at the Coffee Shop</h1>
+  <img src="Part3/JobBarista2.jpg" hspace="10" vspace="10" height="500">
+  <<set $JobBarista to 1>>
+<</nobr>>
+<<nobr>>
+  It takes you a while before you are good at your new job, but they are very understanding and help you learn.  Before long you are making
+  the perfect latte, and even enjoying a little artistic flair with the foam sometimes.
+<</nobr>>
+
+<<nobr>>
+  Working a full shift is certainly more hours than you'd spend at your visits to the lab, but you have much more energy we you go home afterwards.
+  Part of that is the espresso, of course.  But mostly is that you didn't spend an hour or two befored to cum again and again.
+  <<if $PlayerSideEffectSubmissive>>
+    Not that you mind being tied and helpless, but it always took so much out of you.
+  <</if>>
+  You were always completely exausted when you came home from the lab.
+<</nobr>>
+
+<<nobr>>
+  One part you definitely love about the new job is being able to interact with other people.  At the lab you were alone.  Well, usually.  Now
+  you have coworkers to talk to and customers to interact with.  You think you are going to like it here.
+<</nobr>>
+
+<<nobr>>
+  Now that your job situation is settled, you can focus on getting ready for classes which are about to start.  But before then, there's
+  a meeting at the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]] that you plan on attending.
+<</nobr>>
+
+::Part15TestSubjectJobChangeFitnessMassage
+<<nobr>>
+	<h1>Starting at the Fitness Center</h1>
+    <video src="Part15/Massage1.webm" autoplay loop muted height="500"></video>
+  <<set $JobFitnessMassage to 1>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)', vaginal:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Athlete (massage client)'})>>
+<</nobr>>
+<<nobr>>
+  At first you are worried that your lack of training in massage will be a problem, but they don't have any problems teaching you what little
+  you need to know.  You quickly learn that giving massages is only a small part of your job.
+<</nobr>>
+
+<<nobr>>
+  Your actual job is to help the university's athletes relax and "relieve their stress" so that they can perform their best.  Though you find
+  yourself relieving a load of stress from the coaches from time to time too.
+<</nobr>>
+
+<<nobr>>
+  You don't mind though, you enjoy a good fuck, especially since you are getting paid for it.  But now instead of being strapped helpless to
+  some machine, you are often on top, letting him relax while you do all the work.  You can work his cock to hit just the right spots and often
+  you can "relieve your stress" too before he finishes.
+<</nobr>>
+
+<<nobr>>
+  Even if you don't get off, or if all he wants is a quick handjob, or even just an actual massage, you know you won't be merciless teased
+  for an hour only to be denied.
+  <<if $PlayerSideEffectSubmissive>>
+    As frustrating as that was, you still sometimes missed that helpless feeling it gave you.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  And orgasm or not, at least you usually have a hot guy here with you instead of being alone in testing chamber most of the time.  You think
+  you are going to adjust well to your new job.
+<</nobr>>
+
+<<nobr>>
+  Now that your job situation is settled, you can focus on getting ready for classes which are about to start.  But before then, there's
+  a meeting at the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]] that you plan on attending.
+<</nobr>>
+
+::Part15TestSubjectJobChangeBikiniBarista
+<<nobr>>
+	<h1>Starting at the Coffee Shop</h1>
+  <img src="Part15/Barista1.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $JobBikiniBarista to 1>>
+<</nobr>>
+<<nobr>>
+  <<if $PlayerSideEffectExhibitionist>>
+    You are really loving the new job.  You get to work all day in a bikini, and often even less than that.  And the tips are great!
+  <<else>>
+    You are enjoying the new job.  You aren't tied down to some machine,
+    <<if $PlayerSideEffectSubmissive>>
+      which you miss.  But the
+    <<else>>
+      which is nice. The
+    <</if>>
+    tips are nice.  Especially when you are willing to wear even less than your bikini.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You see some of the other girls making even more money, heading out to customer's cars.  You see them climb into the seat next to the
+  driver and then see their head disappear below the dash.  Or sometimes they just drive off for a while.  Either way, your coworker always
+  comes back with a huge tip.
+<</nobr>>
+
+<<nobr>>
+  You've thought about earning a little extra that way too.  But for now you are happy just pocketing the few extra dollars she tosses your way
+  for covering for her while she was out.  Between that and your regular tips, you don't really need the extra.  Still... more money is always nice.
+<</nobr>>
+
+<<nobr>>
+  Now that your job situation is settled, you can focus on getting ready for classes which are about to start.  But before then, there's
+  a meeting at the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]] that you plan on attending.
+<</nobr>>
+
+::Part15TestSubjectJobChangeCallGirl
+<<nobr>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noPullout:true, noCondom: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noPullout:true, noCondom: true, repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noPullout:true, noCondom: true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', repeat:true})>>
+  <<set $sex.push({sex: 'male', anon: 'Call Girl Client', vaginal:true, noPullout:true, noCondom: true, repeat:true})>>
+  <<if $JobCallGirlSide>>
+    <h1>With a client</h1>
+  <<else>>
+    <h1>Seeing your first client</h1>
+  <</if>>
+  <video src="Part15/CallGirl1.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  <<if $JobCallGirlSide>>
+    You always loved working as a call girl, it's going to be a relief now that it's going to be your main job instead of just a little fun
+    cash on the side.  
+  <<else>>
+    You weren't sure about working as a call girl at first, but as soon as you see your first client, you feel much better about it.
+  <</if>>
+  In the lap you were usually tied to a machine,
+  <<if $PlayerSideEffectSubmissive>>
+    you do miss that part,
+  <</if>>
+  and then you might be teased and denied, or even forced to orgasm until you couldn't take it anymore.  But now you're usually the one in control.
+<</nobr>>
+
+<<nobr>>
+  Of course, now the goal is making him happy, not getting you off.  But that doesn't mean you can't have both sometimes.
+  <<if $JobCallGirlSide>>
+    You think you are going to be very happy being able to just focus on this job now, and your studies of course.
+  <<else>>
+    You think you are going to be very happy with your new job.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<unset $JobCallGirlSide>>
+  <<set $JobCallGirl to 1>>
+  Now that your job situation is settled, you can focus on getting ready for classes which are about to start.  But before then, there's
+  a meeting at the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]] that you plan on attending.
+<</nobr>>
+
+::Part15Buddy
+<<nobr>>
+	<h1>Meeting with your 'Buddy'</h1>
+  <img src="Part15/Buddy1.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+<<nobr>>
+  This year, for the incomming freshmen, they are again assigning natural-born women as mentors for the newly converted, to help them transition
+  into their new bodies and new lives.
+<</nobr>>
+
+<<nobr>>
+  But they've figured out that not ever challenge a newly converted woman will face will be something her natural-born mentor will have any experience
+  with.  So this year they are also adding a new program where the previous years convertees are paired off with a freshman convertee to help give her
+  first-hand advice.
+<</nobr>>
+
+<<nobr>>
+  You can tell your buddy is a bit shy, and very naive.  She tells you she signed up for the Student X-Change Program because she wanted to know
+  what it was like to be a woman, so she can be a better husband someday after she graduates and changes back.  You accept that that may be one of
+  her goals, but you also know from experience she must at some level wanted to be a woman.  Maybe permanently, maybe just for a while, but you
+  aren't going to force her to admit that to you or to herself.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    Given your current state, of course the 
+  <<else>>
+    The
+  <</if>>
+  first topic you discuss with her is pregnancy.  "They did have one slide on that," she tells you, "but it didn't really apply to me, so I just
+  marked 'no' on the birth control stuff."  When you press her on what she means it didn't apply, she explains.  "I'm not planning on starting
+  a relationship right now, I want to focus on school.  And even if I were, I'm not going to going to be having sex with guys. I'm not gay. Not
+  that there's anything with being gay.  I'm just not.  And birth control pills have side effects sometimes. Not the X-Change kind, just the
+  normal medicine kind I mean.  I don't want to take them if there's no need to."
+<</nobr>>
+
+<<nobr>>
+  You don't point out that now that she is a woman now, so what is gay and what is not gay have reversed.  You understand what she was trying to say.
+  But you also notice her checking out a few hot guys that walk past, and also her face flushing when she notices them checking her out too.  She may
+  have been interested in women before, but the X-Change seems to have made her interests more varied now.
+<</nobr>>
+
+<<nobr>>  
+  You can tell she's not going to consider getting on the pill, but otherwise she still seems open to your advice on the subject.  But you aren't
+  sure of what route you want to take.
+  <<if $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+    <<if setup.areDating('Kate') or setup.areDating('Veroncia')>>
+      You can [[introduce her|Part15BuddyGirlfriend]] to $dating[0] or [[take her down to the lesbian bar|Part15BuddyBar]] so she can see
+      if she's right about still preferring women.
+    <<else>>
+      You can [[take her down to the lesbian bar|Part15BuddyBar]] or [[take back to her room|Part15BuddyRoom]] so she can see if she's right
+      about still preferring women.
+    <</if>>
+  <<elseif setup.areDating('Kate') or setup.areDating('Veroncia')>>
+    You can [[introduce her|Part15BuddyGirlfriend]] to $dating[0] so she can see if she's right about still liking women.
+  <<else>>
+    You can [[take back to her room|Part15BuddyRoom]] so she can see if she's right about still liking women.
+  <</if>>
+  If you play up the risks of getting drunk and then taken advantage of on campus, you might be able to talk her into
+  [[wearing a chastity belt|Part15BuddyChastity]] for her own protection.
+  Or, you could take her [[shopping for a good vibrator|Part15BuddyToy]], so she can make sure she can keep her needs in check.
+  Or, you could just drop the subject and taker her [[shopping for clothes and makeup|Part15BuddyClothes]].
+<</nobr>>
+
+<<nobr>>
+  Or, you could just help her make friends.  You know the guys that were checking her out earlier.
+  [[You could introduce her|Part15BuddyGuys]] to them.
+<</nobr>>
+
+TODO Set variables for each of the buddy options
+
+::Part15BuddyBar
+<video src="Part15/Buddy2.webm" autoplay loop muted height="500"></video>
+TODO Take Buddy to Lesbian Bar, she goes home with someone, you hear about it later
+[[Part15BuddyPlug]]
+
+::Part15BuddyGirlfriend
+<video src="Part15/Buddy3.webm" autoplay loop muted height="500"></video>
+or
+<video src="Part15/Buddy4.webm" autoplay loop muted height="500"></video>
+TODO Hava threesome with her and your girlfriend, fff lesbian scene
+[[Part15BuddyPlug]]
+
+::Part15BuddyRoom
+<video src="Part15/Buddy5.webm" autoplay loop muted height="500"></video>
+TODO Take Buddy back to her room, ff lesbian scene
+[[Part15BuddyPlug]]
+
+::Part15BuddyChastity
+<img src="Part15/Buddy6.jpg" hspace="10" vspace="10" height="450" align="left">
+TODO Talk her into a chastity belt, her locked in chastity
+TODO [[Part15Week]]
+
+::Part15BuddyToy
+<video src="Part15/Buddy7.webm" autoplay loop muted height="500"></video>
+TODO Get her a sex toy to tend to her needs, her masturbating
+TODO She tells you later she  'accidently' put the dildo in her ass and wants to know if it's wrong that she liked it
+TODO [[Part15BuddyPlug]]
+
+::Part15BuddyClothes
+Already pretty, but help teach her how to dress and do makeup
+<img src="Part15/Buddy11.jpg" hspace="10" vspace="10" height="450">
+
+Then:
+
+<img src="Part15/Buddy12.jpg" hspace="10" vspace="10" height="450">
+and
+<img src="Part15/Buddy13.jpg" hspace="10" vspace="10" height="450">
+TODO Drop the subject and go shopping with her, also lingire? (sp)
+TODO [[Part15Week]]
+
+::Part15BuddyGuys
+<img src="Part15/Buddy9.jpg" hspace="10" vspace="10" height="450" align="left">
+TODO Introduce her to the guys
+TODO [[Part15BuddyGuys2]]
+
+::Part15BuddyGuys2
+<video src="Part15/Buddy10.webm" autoplay loop muted height="500"></video>
+TODO Her banging those guys, she tells you were right afterwards, and gets on the pill, she loves sex now
+[[Part15BuddyPlug]]
+
+::Part15BuddyPlug
+<video src="Part15/Buddy8.mp4" autoplay loop muted height="500"></video>
+TODO You have her wear a butt plug
+TODO [[Part15Week]]
 
 ::Part15Week
 TODO (weekly loop)
+TODO Track menstral cycle, pregnancy each week,
