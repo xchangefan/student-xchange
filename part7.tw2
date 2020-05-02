@@ -604,7 +604,7 @@
 			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
 		<</if>>
 	<<elseif setup.areDating('Paul')>>
-		<<set $sex.push({sex: 'male', name: 'Paul'})>>
+		<<set setup.fuck({sex: 'male', name: 'Paul'})>>
 		<<if $PregnancyCheck.actualFather == 'Paul'>>
 			You are relieved when she tells you, "Congratulations! [[Paul|Part7OfficeBoss1]] is the father!".
 		<<else>>
@@ -615,7 +615,7 @@
 			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
 		<</if>>
 	<<elseif setup.areDating('Josh')>>
-		<<set $sex.push({sex: 'male', name: 'Josh'})>>
+		<<set setup.fuck({sex: 'male', name: 'Josh'})>>
 		<<if $PregnancyCheck.actualFather == 'Josh'>>
 			You are relieved when she tells you, "Congratulations! [[Josh|Part7Josh]] is the father!".
 		<<else>>
@@ -626,7 +626,7 @@
 			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
 		<</if>>
 	<<elseif setup.areDating('Peter')>>
-		<<set $sex.push({sex: 'male', name: 'Peter'})>>
+		<<set setup.fuck({sex: 'male', name: 'Peter'})>>
 		<<if $PregnancyCheck.actualFather == 'Peter'>>
 			You are a happy when she tells you, "Congratulations! [[Peter|Part7Peter]] is the father!".
 		<<elseif $PregnancyCheck.possibleFathers.indexOf('Peter')  >= 0>>
@@ -644,7 +644,7 @@
 			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
 		<</if>>
 	<<elseif setup.areDating('Aaron')>>
-		<<set $sex.push({sex: 'male', name: 'Aaron'})>>
+		<<set setup.fuck({sex: 'male', name: 'Aaron'})>>
 		<<if $PregnancyCheck.actualFather == 'Aaron'>>
 			You are a absolutely giddy when she tells you, "Congratulations! [[Aaron|Part7Aaron]] is the father!".
 		<<else>>
@@ -659,7 +659,7 @@
 		<ul>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Andrew')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'Andrew'})>>
+					<<set setup.fuck({sex: 'male', name: 'Andrew'})>>
 					<<if $PregnancyCheck.actualFather == 'Andrew'>>
 						<<set $isNamed to 1>>
 						"Congratulations! [[Andrew|Part7AndrewBoss]] is the father!"
@@ -670,7 +670,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Josh')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'Josh'})>>
+					<<set setup.fuck({sex: 'male', name: 'Josh'})>>
 					<<if $PregnancyCheck.actualFather == 'Josh'>>
 						<<set $isNamed to 1>>
 						"Congratulations! [[Josh|Part7Josh]] is the father!"
@@ -681,7 +681,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Paul')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'Paul'})>>
+					<<set setup.fuck({sex: 'male', name: 'Paul'})>>
 					<<if $PregnancyCheck.actualFather == 'Paul'>>
 						<<set $isNamed to 1>>
 						"Congratulations! [[Paul|Part7OfficeBoss1]] is the father!"
@@ -692,7 +692,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Aaron')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'Aaron'})>>
+					<<set setup.fuck({sex: 'male', name: 'Aaron'})>>
 					<<if $PregnancyCheck.actualFather == 'Aaron'>>
 						<<set $isNamed to 1>>
 						"Congratulations! [[Aaron|Part7Aaron]] is the father!"
@@ -703,7 +703,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Barry')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'Barry'})>>
+					<<set setup.fuck({sex: 'male', name: 'Barry'})>>
 					<<if $PregnancyCheck.actualFather == 'Barry'>>
 						<<set $isNamed to 1>>
 						"Congratulations! [[Barry|Part7Barry]] is the father!"
@@ -714,7 +714,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('James')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'James'})>>
+					<<set setup.fuck({sex: 'male', name: 'James'})>>
 					<<if $PregnancyCheck.actualFather == 'James'>>
 						<<set $isNamed to 1>>
 						"Congratulations! [[James|Part7James]] is the father!"  Though, if you don't want to involve him in this you could just tell him [[it's not his|Part7Unknown]].
@@ -725,7 +725,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Peter')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'Peter'})>>
+					<<set setup.fuck({sex: 'male', name: 'Peter'})>>
 					<<if $PregnancyCheck.actualFather == 'Peter'>>
 						<<set $isNamed to 1>>
 						"Congratulations! [[Peter|Part7Peter]] is the father!"
@@ -736,7 +736,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Zack')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'Zack'})>>
+					<<set setup.fuck({sex: 'male', name: 'Zack'})>>
 					<<if $PregnancyCheck.actualFather == 'Zack'>>
 						<<set $isNamed to 1>>
 						"Congratulations!
@@ -751,7 +751,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('Troy')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'Troy'})>>
+					<<set setup.fuck({sex: 'male', name: 'Troy'})>>
 					<<if $PregnancyCheck.actualFather == 'Troy'>>
 						<<set $isNamed to 1>>
 						"Congratulations!
@@ -767,7 +767,7 @@
 			<</if>>
 			<<if $PregnancyCheck.possibleFathers.indexOf('David')  >= 0>>
 				<li>
-					<<set $sex.push({sex: 'male', name: 'David'})>>
+					<<set setup.fuck({sex: 'male', name: 'David'})>>
 					<<if $PregnancyCheck.actualFather == 'David'>>
 						<<set $isNamed to 1>>
 						"Congratulations!
@@ -1177,7 +1177,7 @@
 	<<else>>
 		<img src="Part7/Preg11.jpg" hspace="10" vspace="10" height="650">
 	<</if>>
-	<<set $sex.push({sex: 'male', name: 'Peter'})>>
+	<<set setup.fuck({sex: 'male', name: 'Peter'})>>
 	<<set $StatedFather to 'Peter'>>
 <</nobr>>
 <<include [[Part7Breakup]]>>

@@ -1,8 +1,8 @@
 ::GeneralFunctions [script] <200,50>
 
 setup.getDefaultName = function () {
-	const unusedPopularNames = ["Madison","Abigail","Taylor","Alyssa","Lauren","Brianna","Anna","Megan","Destiny","Jasmine","Jennifer","Julia","Isabella","Morgan"]
-	const randomIndex = Math.floor(Math.random() * unusedPopularNames.length)
+	var unusedPopularNames = ["Madison","Abigail","Taylor","Alyssa","Lauren","Brianna","Anna","Megan","Destiny","Jasmine","Jennifer","Julia","Isabella","Morgan"]
+	var randomIndex = Math.floor(Math.random() * unusedPopularNames.length)
 	return unusedPopularNames[randomIndex]
 }
 
@@ -151,6 +151,20 @@ setup.nextCycleWeek = function () {
 }
 
 ::SexFunctions [script] <300,50>
+
+setup.fuck =  function (obj) {
+  // check for orgasm
+  // check for horniness
+  // check for conception
+  state.active.variables.sex.push(obj)
+}
+
+setup.fucks = function(arr) {
+  arr.forEach(function (obj) {
+    setup.fuck(obj);
+  })
+}
+
 setup.sexCount = function () {
 	return state.active.variables.sex.length
 }
@@ -331,7 +345,7 @@ setup.getPossibleConceptions = function() {
 }
 
 setup.pregnantFirstTime = function() {
-  const intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
+  var intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
   return intercourse.length && intercourse[0].conception && !intercourse[0].trying
 }
 
@@ -560,7 +574,7 @@ setup.getAchievementDetails = function() {
 }
 
 setup.getAchievements = function() {
-	const achievements = localStorage.getItem("student-x-change-program.achievements")
+	var achievements = localStorage.getItem("student-x-change-program.achievements")
 	if (achievements) {
 		return JSON.parse(achievements)
 	} else {
@@ -569,13 +583,13 @@ setup.getAchievements = function() {
 }
 
 setup.getAchievementSaveData = function() {
-	const achievements = localStorage.getItem("student-x-change-program.achievements")
+	var achievements = localStorage.getItem("student-x-change-program.achievements")
 	return btoa(achievements)
 }
 
 setup.restoreLoadedAchievementData = function(saveData) {
 	try {
-		const achievements = JSON.parse(atob(saveData))
+		var achievements = JSON.parse(atob(saveData))
 		if (achievements.length > 0) {
 			setup.saveAchievements(achievements)
 			return true
@@ -594,14 +608,14 @@ setup.saveAchievements = function(achievements) {
 }
 
 setup.addMultipartAchievement = function(achId) {
-	const currAchievements = setup.getAchievements()
+	var currAchievements = setup.getAchievements()
 	if (currAchievements.indexOf(achId) < 0) {
-		const newAchievements = currAchievements.concat([achId])
+		var newAchievements = currAchievements.concat([achId])
 		setup.saveAchievements(newAchievements)
 	}
 		
-	const mainAchId = achId.split(":")[0]
-	const achInfo = setup.getAchievementDetails()[mainAchId]
+	var mainAchId = achId.split(":")[0]
+	var achInfo = setup.getAchievementDetails()[mainAchId]
 	if (!achInfo || !achInfo.parts || !achInfo.parts.length) return false
 
 	let hasAllParts = true
@@ -619,9 +633,9 @@ setup.addAchievement = function(achId) {
 		return setup.addMultipartAchievement(achId)
 	}
 
-	const currAchievements = setup.getAchievements()
+	var currAchievements = setup.getAchievements()
 	if (currAchievements.indexOf(achId) < 0) {
-		const newAchievements = currAchievements.concat([achId])
+		var newAchievements = currAchievements.concat([achId])
 		setup.saveAchievements(newAchievements)
 		return true
 	} else {
@@ -642,7 +656,7 @@ setup.getAchievementCount = function() {
 }
 
 setup.getPossibleEndings = function() {
-	const details = setup.getAchievementDetails()
+	var details = setup.getAchievementDetails()
 	let endings = []
 	for (let ach in details) {
 		if (details[ach].isEnding) {
@@ -655,8 +669,8 @@ setup.getPossibleEndings = function() {
 setup.getAchievementTable = function() {
 	var st = "<table>\n"
 
-	const achToRow = (achId) => {
-		const achInfo = setup.getAchievementDetails()[achId]
+	var achToRow = (achId) => {
+		var achInfo = setup.getAchievementDetails()[achId]
 		if (achId.indexOf(":") >= 0) {
 			return ""
 		} else if (!achInfo) {
@@ -664,7 +678,7 @@ setup.getAchievementTable = function() {
 		} else if (achInfo.isEnding) {
 		 	return ""
 		} else {
-			const imgText = (achInfo.image) ? "<img src=\"PartAch/" + achInfo.image + "\" hspace=\"10\" vspace=\"10\" height=\"100\" align=\"left\"/>" : ""
+			var imgText = (achInfo.image) ? "<img src=\"PartAch/" + achInfo.image + "\" hspace=\"10\" vspace=\"10\" height=\"100\" align=\"left\"/>" : ""
 		 	return "<tr><td>" + imgText + "</td><td>" + achInfo.text + "</td></tr>\n"	
 		}
 	}
@@ -678,10 +692,10 @@ setup.getAchievementTable = function() {
 setup.getAchievementEndingTable = function() {
 	var st = "<table>\n"
 
-	const achToRow = (achId) => {
-		const achInfo = setup.getAchievementDetails()[achId]
+	var achToRow = (achId) => {
+		var achInfo = setup.getAchievementDetails()[achId]
 		if (achInfo && achInfo.isEnding) {
-			const imgText = (achInfo.image) ? "<img src=\"PartAch/" + achInfo.image + "\" hspace=\"10\" vspace=\"10\" height=\"100\" align=\"left\"/>" : ""
+			var imgText = (achInfo.image) ? "<img src=\"PartAch/" + achInfo.image + "\" hspace=\"10\" vspace=\"10\" height=\"100\" align=\"left\"/>" : ""
 		 	return "<tr><td>" + imgText + "</td><td>" + achInfo.text + "</td></tr>\n"	
 		} else {
 		 	return ""
@@ -696,7 +710,7 @@ setup.getAchievementEndingTable = function() {
 
 setup.getAchievementEndingCount = function() {
 	return setup.getAchievements().filter((ach) => {
-		const achInfo = setup.getAchievementDetails()[ach]
+		var achInfo = setup.getAchievementDetails()[ach]
 		return achInfo && achInfo.isEnding
 	}).length
 }
@@ -711,15 +725,15 @@ $(document.body).append("<div id='achievement'></div>");
 $(document).on(':achievement', function (e) {
     if (e.message && typeof e.message === 'string') {
         // trim message
-        const achId = e.message.trim();
+        var achId = e.message.trim();
 
 				let achInfo = setup.getAchievementDetails()[achId]
 				if (!achInfo) {
 					achInfo = { text: "Unknown Achievement: " + achId }
 				}
 
-				const imageText = achInfo.image ? "<img src=\"PartAch/" + achInfo.image + "\" height=\"200\">" : ""				
-				const endingText = achInfo.isEnding ? "The End: " : ""
+				var imageText = achInfo.image ? "<img src=\"PartAch/" + achInfo.image + "\" height=\"200\">" : ""				
+				var endingText = achInfo.isEnding ? "The End: " : ""
 				e.message = imageText + (endingText + achInfo.text).replace(" ","&nbsp;")
 				
         // classes
@@ -778,7 +792,7 @@ Macro.add('achievement', {
             }
         }
 
-				const isMultiPart = (msg.indexOf(":") >= 0)
+				var isMultiPart = (msg.indexOf(":") >= 0)
 
 				if (msg.indexOf(":") >= 0) {
 					if (setup.addMultipartAchievement(msg)) {
