@@ -344,6 +344,15 @@ setup.getPossibleConceptions = function() {
   })
 }
 
+setup.firstTimeWith = function() {
+  var intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
+  if (intercourse.length) {
+    return intercourse[0].name || ("Some " + intercourse[0].anon);
+  } else {
+    return "no one"
+  }
+}
+
 setup.pregnantFirstTime = function() {
   var intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
   return intercourse.length && intercourse[0].conception && !intercourse[0].trying
