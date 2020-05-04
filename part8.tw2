@@ -715,7 +715,9 @@
   <<else>>
     <<set setup.addInventory('underwear', 'sexy underwear')>>
   <</if>>
-  <<set setup.addInventory('sex toys', 'remote vibrator')>>
+  <<if $dating.length>>
+    <<set setup.addInventory('sex toys', 'remote vibrator')>>
+  <</if>>
 	<h1><<print "Shopping Mall">></h1>
 <</nobr>>
 
