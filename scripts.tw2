@@ -151,18 +151,12 @@ setup.nextCycleWeek = function () {
 }
 
 ::SexFunctions [script] <300,50>
-
-setup.fuck =  function (obj) {
+setup.addSex =  function (obj) {
+  //todo example: setup.pageMessage(`Fucked ${obj.name || obj.anon || "someone"}`)
   // check for orgasm
   // check for horniness
   // check for conception
   state.active.variables.sex.push(obj)
-}
-
-setup.fucks = function(arr) {
-  arr.forEach(function (obj) {
-    setup.fuck(obj);
-  })
 }
 
 setup.sexCount = function () {
@@ -273,7 +267,7 @@ setup.haveFuckedVaginal = function (name) {
 	return state.active.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)}).length > 0
 } 
 
-setup.fuckedVaginalCount = function (name) {
+setup.addSexedVaginalCount = function (name) {
 	return state.active.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)})
 }
 
@@ -478,6 +472,15 @@ setup.libido = function (delta) {
   } else if (state.active.variables.Libido < 0) {
     state.active.variables.Libido = 0
   }
+}
+
+setup.orgasm = function() {
+  // todo check to make sure allowed and not blocked
+  // todo lower libido if orgasmed
+}
+
+setup.orgasmDenied = function() {
+  // todo orgasm denied, libido goes way up
 }
 
 ::NeighbourFunctions [script] <350,50>
@@ -827,5 +830,28 @@ Macro.add('achievement', {
     }
 });
 
+::PageMessages [script] <470,50>
+setup.pageMessage = function(msg) {
+  //todo need to add messages about arousal, denial, etc and show up in footer
+  if (!state.active.variables.pageMessages) {
+    state.active.variables.pageMessages = []
+  }
+
+  state.active.variables.pageMessages.push(msg)
+}
+
+
 ::PassageHeader <475,50>
-<span style="display:none"><<if $playerName>>$playerName<<if $MindBlank>>/Marie<</if>>: <</if>></span>
+<<nobr>>
+  <span style="display:none"><<if $playerName>>$playerName<<if $MindBlank>>/Marie<</if>>: <</if>></span>
+  <<set $pageMessages = []>>
+<</nobr>>
+
+
+::PassageFooter <480,50>
+<<nobr>>
+  <br><br>
+  <i>
+    <<print $pageMessages.join("<br>")>>
+  </i>
+<</nobr>>
