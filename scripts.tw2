@@ -141,22 +141,12 @@ setup.listInventory = function(itemClass) {
   
 }
 
-::MenstrationFunctions [script] <295,50>
-setup.startPeriod = function () {
-  //todo
-}
-
-setup.nextCycleWeek = function () {
-  //todo
-}
-
 ::SexFunctions [script] <300,50>
-setup.addSex =  function (obj) {
-  //todo example: setup.pageMessage(`Fucked ${obj.name || obj.anon || "someone"}`)
-  // check for orgasm
-  // check for horniness
-  // check for conception
-  state.active.variables.sex.push(obj)
+setup.addSex =  function (fuck) {
+	if (!state.active.variables.sex) {
+    state.active.variables.sex = []
+  }
+  state.active.variables.sex.push(fuck)
 }
 
 setup.sexCount = function () {

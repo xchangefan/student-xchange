@@ -378,22 +378,12 @@
   <h1>Back at School</h1>
   <img src="Part15/School1.jpg" hspace="10" vspace="10" height="550">
   <<set $SchoolWeek to 1>>
-
-  <<set $LastBirthControl to 0>>
   <<if $PlayerPregnant and $PregnancySpring>>
     <<set $PregnancyWeek to 12>>
   <<elseif $PlayerPregnant>>
     <<set $PregnancyWeek to 4>>
   <<else>>
     <<unset $PregnancyWeek>>
-  <</if>>
-  <<set $Study to 0>>
-  <<if $PlayerSideEffectLibido > 1 or $PlayerChastityBelt or $AcademicProbationDenial>>
-    <<set $Libido to 100>>
-  <<elseif $PlayerSideEffectLibido>>
-    <<set $Libido to 80>>
-  <<else>>
-    <<set $Libido to 50>>
   <</if>>
 <</nobr>>
 <<nobr>>
@@ -497,6 +487,7 @@
   <<else>>
     <img src="PartP/PregTest2.jpg" hspace="10" vspace="10" height="550">
   <</if>>
+  <<set $tempMinistryDenial to !$PlayerPregnant and ($CampusMinistry or $CampusMinistryFailSummer) and $AcademicProbationDenial>>
 <</nobr>>
 
 <<nobr>>
@@ -548,6 +539,8 @@
       The doctor sees you need a moment to process the news.  He says he'll give you a bit to think about whether you want to
       [[keep the baby|Part15ClinicKeep]] or [[terminate the pregnancy|Part15ClinicAbort]].
     <</if>>
+  <<elseif $tempMinistryDenial or $sex.length == 0>>
+    You are not pregnant.
   <<else>>
     You are [[not pregnant|Part15ClinicNotPregnant]].
   <</if>>
@@ -556,6 +549,42 @@
 <<nobr>>
   All your other test results are fine.
 <</nobr>>
+
+<<nobr>>
+  <<if $tempMinistryDenial>>
+    There's something else the doctor wants to talk to you about.  You had mentioned to him that your level of sexual desire 
+    <<if $CampusMinistry>>
+      had increased greatly since your last visit, and that you think it's as a result of the academic probation denial.  You'd said that
+      <<if setup.haveFucked('Andrew') and setup.sexUniqueMaleCount() == 1>>
+        while you'd only been sexually active with one man, you didn't
+      <<else>>
+        felt you couldn't 
+      <</if>>
+      trust yourself not to lose control.
+    <<else>>
+      and activity had increased greatly since your last visit and that you had seemed to be concerned with the change. 
+    <</if>>
+    You had also complained about the denial you received due to your academic probation and your understandable dislike of its effects.
+    He was aware of something that might be able to help you with both problems.
+    <br><br>
+    "The Engineering department had sent us information saying they were looking for beta testers for a new product they are planning to market.
+    The email was short on details, but they did say they can get your academic probation denial lifted.  And they also said that your sexual activity
+    will be under control once you sign up.
+    <br><br>
+    "If you're interested here is their location, feel free to [[stop by and sign up to be one of their testers|Part15MinistryTester]].
+  <<elseif $sex.length == 0>>
+    There's something else the doctor wants to talk to you about.  You had said that had chosen to remain a virgin still, but had complained about
+    all the temptations around the campus.  He'd said he'd heard about something that might be able to help you keep your virginity, if that's what
+    you want to do.
+    <br><br>
+    "The Engineering department had sent us information saying they were looking for beta testers for a new product they are planning to market.
+    The email was short on details, but it did say that your sexual activity will be under control once you sign up.  Maybe whatever they have can
+    help you avoid those temptations you were concerned about.
+    <br><br>
+    "If you're interested here is their location, feel free to [[stop by and sign up to be one of their testers|Part15MinistryTester]].
+  <</if>>
+<</nobr>>
+<<unset $tempMinistryDenial>>
 
 ::Part15ClinicPregnant
 <<nobr>>
@@ -612,7 +641,6 @@
   <<achievement>>childfree<</achievement>>
   <<unset $PlayerPregnant>>
   <<unset $PregnancyWeek>>
-  <<set $Libido to 0>>
 <</nobr>>
 <<nobr>>
   After talking it over with you the doctor gave you a pill in the office.  He also gave you another to take the next day.  He also told you to expect
@@ -656,23 +684,7 @@
 
 ::Part15YearTwoExplain
 <<nobr>>
-  After a year in this body, you've learned a bit more about yourself.  You are more aware now when you start to
-  <<if $CampusMinistry>>
-    obsess about sex,
-  <<else>>
-    get horny,
-  <</if>>
-  and how your decisions aren't always the best when you get like that.  You know you are going to have to
-  <<if $CampusMinistry>>
-    pray, meditate, or just focus on your music, to take your mind off of it.  Otherwise you might end up doing something you'd regret.
-  <<else>>
-    take care of your needs, one way or another.  If you don't then you'll probably end up getting your need answered any way you can.
-  <</if>>
-<</nobr>>
-
-<<nobr>>
-  You are also thinking this year will be a bit more structured for you than last year was.  You aren't a freshman anymore, and plan on being more organized
-  than you were last year.
+  You aren't a freshman anymore. and you are going to try to be more organized than you were last year.
   <<if $AcademicProbationDenial>>
     You want to get off academic probation as quick as possible, and make sure you stay off of it.
   <</if>>
@@ -696,21 +708,11 @@
   <</if>>
 <</nobr>>
 
-<<nobr>>
-  <i>
-    <b><u>Note</u>:</b> For this school year, you will have choices most weeks on what actions to take, whether you want to study, to party, etc.  And these
-    decisions will affect what happens.  If you have side effects, or if you get too horny, this may limit what your choices are.
-  </i>
-<</nobr>>
-
-
 ::Part15Notes
 TODO TO BE CONTINUED...
 - Ministry-path volunteers for chasity belt beta testing (then realizes about the teasing)
 - Update mentor and roommate
 - You are a freshman's buddy
-- Tracking of when pregnant
-- Tracking of horniess and lose control of decisions if too high?
 - Beta Tester belt not strict denail like penetration testing is
 
 Changes to previous
@@ -760,6 +762,439 @@ Penetration testing attempt #1
           - Didn't manage to get unlocked or orgasm, so no payment.  He does switch the punishment over to something more plesant as a reward,
           - Random teasing / edging at any time of day or night in public or not.  For several days until the bug is fixed
 
+::Part15MinistryTester
+<<nobr>>
+	<h1>Deciding to visit the Engineering department</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Ministry1.webm" autoplay loop muted height="650"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  <<if $CampusMinistryFailSummer>>
+    <<set setup.addSex({sex: 'male', anon: 'Frat Guy', vaginal:true, noPullout:true, noCondom: true})>>
+    <<set setup.addSex({sex: 'male', anon: 'Frat Guy'})>>
+    <<set setup.addSex({sex: 'male', anon: 'Frat Guy'})>>
+    <<set setup.addSex({sex: 'male', anon: 'Frat Guy', vaginal:true, noPullout:true, noCondom: true})>>
+    <<set setup.addSex({sex: 'male', anon: 'Frat Guy'})>>
+    <<set setup.addSex({sex: 'male', anon: 'Frat Guy'})>>
+    You used to be a good girl, but now you feel like you don't have control anymore.  All you think about is sex.  And even when you have it,
+    you are left wanting more when you're done.
+    <br><br>
+    You can't even walk across campus without a chance meeting with a few fat guys turning into much more.  Before you know it, you are back at
+    their frat house, letting them use you.
+    <br><br>
+    When they are finished, you are still unsatisfied and as horny as when you got there.  They all enjoyed using you though, and they left you
+    covered in evidence of just how much they enjoyed you.
+    <br><br>
+    As you stumble out of the their frat house, feeling the dried cum on your skin and in your hair, you decided you should at least go talk to the
+    Engineering department.  If there's soemthing that can help you prevent these desires, or help you to stop acting on them.  You owe it to yourself
+    to check it out.
+  <<else>>
+    You are trying to be a good girl, to
+    <<if setup.areDating('Andrew')>>
+      <<if setup.haveFucked('Andrew')>>
+        be faithful to Andrew.
+      <<else>>
+        to save yourself for Andrew, when you are ready.
+      <</if>>
+    <<else>>
+      save yourself for the right person.
+    <</if>>
+    But there's so many things on campus that seemed designed to make you think about sex.  But even when you aren't confronted with any of that, your
+    body does it for you.
+    <br><br>
+    Even just walking passed a few frat guys, and your mind is fantasizing about having sex with all of them.  All of them at once!  You decide that
+    you should at least go talk to the Engineering department.  If there's soemthing that can help you prevent these desires, you owe it to
+    yourself, and your future husband, to check it out before you start acting on them.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  So you decide you need [[go to the Engineering department|Part15MinistryTester2]] right away to find out what they have that can help.  Well, maybe
+  not right this second.  You need to go by your room first 
+  <<if $CampusMinistryFailSummer>>
+    for a shower.
+  <<else>>
+    to change panties.  The ones you are wearing are soaked through.
+  <</if>>
+<</nobr>>
+
+::Part15MinistryTester2
+<<nobr>>
+	<h1>At the Engineering department</h1>
+  <img src="Part15/TestSubject1.jpg" hspace="10" vspace="10" height="500" align="left">
+  Once you arrive in the Engineering department you let them know the X-Change doctor referred you here.  After having you fill out a questionnaire
+  and wait a few minutes you directed into the department head's office.
+<</nobr>>
+
+<<nobr>>
+  "Good afternoon, Miss," he says.  "So I take it from your answers here that you are looking for help controlling your sexual activity, is that correct?"
+<</nobr>>
+
+<<nobr>>
+  "Yes, very much so," you confirm.
+  <<if $CampusMinistryFailSummer>>
+    "I feel like I'm completely out of control, and it started when the dean had them activate that academic probation denial thing.
+  <<elseif setup.areDating('Andrew')>>
+    "I've been faithful to my boyfriend so far, but I feel constantly tempted to cheat on him.  And I would hate myself if I did that.
+  <<else>>
+    "I've somehow managed not to act on all the desires I have.  I want to wait until the right person.  But I feel like I could break down and
+    have sex with anyone in a moment of weakness.
+  <</if>>
+  The doctor said you had something that maybe could help me.  Like a pill or a shot or something?  Or some support program?"
+<</nobr>>
+
+<<nobr>>
+  "No, it's nothing like that.  It's actually something you wear.  I'm not sure if you are familiar with the term, but it's called a 'Chastity Belt',
+  and it will ensure that you can never succumb to your desires in a moment of weakness like you
+  <<if $CampusMinistryFailSummer>>
+    complain you have been doing.
+  <<else>>
+    are worried you might.
+  <</if>>
+  And if you have heard of chastity belts before, I can assure you that this one is far more advanced than anything on the market now.
+<</nobr>>
+
+<<nobr>>
+  "The belt you'd be testing is actually a computerizd chastity belt.  With a traditional belt, most would only prevent vaginal intercourse.  There
+  are ones that also prevent anal sex, but those present obvious daily hygiene issues.  And no traditional belt would prevent you from engaging in oral sex.
+  Ours can. Or at least it can strongly discourage them both.
+  <<if setup.areDating('Andrew')>>
+    But we can set it to allow either or both when you are at your boyfriend's apartment, 
+    <<if !setup.haveFucked('Andrew')>>
+      should you wish to become sexually active with him,
+    <</if>>
+    ensuring your monogamy.
+  <</if>>
+  It is also capable of providing you pleasure if so configured.
+<</nobr>>
+
+<<nobr>>
+  "Women like you, that wish to
+  <<if $CampusMinistryFailSummer>>
+    return to a chaste lifestyle,
+  <<else>>
+    maintain a
+    <<if setup.haveFucked('Andrew')>>
+      monogamous
+    <<else>>
+      chaste or monogamous
+    <</if>>
+    relationship,
+  <</if>>
+  are difficult to find on campus, but are obviously a key demographic we want to test the belt with.  So we will be able to offer you a higher than
+  normal compensation for your participation in our beta testing program.
+  <<if $AcademicProbationDenial>>
+    And, as your doctor mentioned, we have agreement from the dean for him to release any student participating in our testing from any denial he
+    had assigned to them due to being on academic probation.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "So, are you wanting to participate and help us test this new product?", he asks finally.  "Unfortunately, I'll need your answer before you leave today
+  as the testing period is beginning this week."
+<</nobr>>
+
+<<nobr>>
+  <<if $AcademicProbationDenial>>
+    As soon as he confirmed that it would get you off the academic probation denial thing that has made you like this, you knew your answer.
+    "[[Yes, I'd love to participate|Part15MinistryTester3]]," you answer.
+  <<else>>
+    <<if setup.haveFucked('Andrew')>>
+      You wish you could talk it over with Andrew first.  But then again, that would mean confessing to him the thoughts you'd had about having sex with
+      other men.  So maybe it's better you are making this decision on your own.
+      <br><br>
+    <</if>>
+    You think it over, and then tell him either "[[Yes, I'd love to participate|Part15MinistryTester3]]," or
+    "[[I'm sorry, but no,|Part15MinistryTesterNo]] I don't want to participate."
+  <</if>>
+<</nobr>>
+
+::Part15MinistryTester3
+<<nobr>>
+  <h1>Your Belt Fitting</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Engineer3.mp4" autoplay loop muted height="700"></video>
+  </div>
+  First he has you sign a non-disclosure agreement.  The belt is not on the market yet and they don't want any competitors finding out about it.
+  Then he sends you in to have a technician take care of your fitting.  The technician has you strip below the waist and measures you.
+  <<if $CampusMinistryFailSummer>>
+    The thoughts you have of his hands roaming your body confirm to you that you've made the right decision.
+  <<else>>
+    He's professional about it though, so it's easy for you think of it like a medical exam.
+  <</if>>
+  Then he selects a belt from the table nearby and positions it in place on you.
+  You aren't sure why, but your heart skips a beat as he clicks the belt closed around your waist.
+  <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
+  <<set $JobBetaTester to "chaste">>
+  <<set $PlayerChastityBelt to 1>>
+  <<set $Keyholder to "computer">>
+<</nobr>>
+
+<<nobr>>
+  After checking over your fit the technician tells you, "Thank you, you are all set.  Have a fun time and be sure to fill out the user surveys
+  we send out every few weeks, and to report if you encounter any problems.
+  <<if $PlayerProtectionPill or $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerPregnant>>
+    You shouldn't have any hygiene issues, but if you do, let us know."
+  <<else>>
+    Oh, and here's the key to the hygiene shield in the front there, try not to lose it.  You'll probably need to remove the hygiene shield
+    occasionally when you're menstrating.  But don't leave it off too long, or try to use it for anything other than its intended purpose, or
+    you'll regret it.  You can read in the manual about the countermeasures if you are curious."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He checks your chart for a second and then adds,
+  <<if setup.areDating('Andrew')>>
+    "Oh, and please have Andrew come by sometime soon with a photo ID.  We will configure him as a secondary/limited owner.
+    But that's just during testing, so he can't unlock you or alter anything that would affect the testing parameters.  Don't worry, as soon as
+    testing is completed, we will automatically convert him to a full owner with full access.  Then he'll be able to unlock you if he wishes."
+  <<else>>
+    "Oh, and if you enter in a monogamous relationship and wish to enable certain features for your boy or girlfriend, please let us know
+    as soon as possible.  After a waiting period, we will add them as a secondary/limited owner.  But that's just during testing, so they can't
+    unlock you or alter anything that would affect the testing parameters.  Don't worry, as soon as testing is completed, we will automatically
+    convert them to a full owner with full access.  Then they'll be able to unlock you if they wish.
+    <br><br>
+    "But don't feel rushed," he says.  "We'll keep you locked and chaste as long as you need to take to find Mr., or Miss, Right."
+  <</if>>
+  <<if $AcademicProbationDenial>>
+    <br><br>
+    "Oh, and stop by the X-Change office to get the denail removed from your implant.  The dean should have already called over."
+  <</if>>  
+<</nobr>>
+
+<<nobr>>
+  You tug at the belt, checking how secure it is as you walk out
+  <<if $AcademicProbationDenial>>
+    and head back to the X-Change office.
+  <<else>>
+    and head out of the lab.
+  <</if>>
+  <<if setup.areDating('Andrew')>>
+    You'll are nervous about how [[Andrew is going to react|Part15MinistryTesterAndrew]] when he finds out that you've let them lock you into a chastity belt,
+    and have given him control of it.  Or at least partial control.
+  <<elseif $CampusMinistryFailSummer>>
+    TODO fail summer [[Part15MinistryTesterFail]]
+  <<else>>
+    TODO not dating, not fail [[Part15MinistryTester4]]
+  <</if>>
+<</nobr>>
+
+::Part15MinistryTesterAndrew
+<<nobr>>
+	<h1>Waiting for Andrew</h1>
+  You thought he'd just be in and out, but Andrew's meeting at the Engineering department seems to be taking forever.  They wouldn't let you join him, so you
+  are doing your best to be patient as you wait on the bench outside their building.  You remind yourself to thank him for taking so much time out of his
+  day to do this for you.  After all, this was your decision to test this belt out, not his.
+<</nobr>>
+<<nobr>>
+<img src="Part15/Ministry2.jpg" hspace="10" vspace="10" height="500" align="left">
+  Finally, he comes out of the building.  "I'm so sorry that took so long," you say.  "I feel really bad for asking you now.  I thought you'd be in, they'd
+  check your id, help you download the app, and then be done.  What on earth did they do that took so long?"
+<</nobr>>
+
+<<nobr>>
+  "Well, it started like you said," Andrew explains. "But then they had training on how to use the app.  And then much more training on..."  He pauses for
+  a second before continuing.  "On how to help us make the most of this experience.  On how to use the belt's punishment and reward features to help
+  encourage proper behavior, on how..."
+<</nobr>>
+
+<<nobr>>
+  "Wait... Did you say punishment?", you interrupt.
+<</nobr>>
+
+<<nobr>>
+  "Right.  It shocks you," Andrew explains.  "There's different levels, but they all sound very unpleasant.  There's pretty severe automatic ones which
+  would happen if you cheated on me, though obviously you never would.
+  <<if setup.haveFucked('Andrew')>>
+    But remind me to keep my phone charged and with me if we are ever fooling around outside of my apartment.  Otherwise it might get confused and punish you
+    by mistake.
+  <</if>>
+  Oh, and if you try to use the app on my phone it triggers an automatic punishment too.  So definitely don't try that.
+  Didn't they go over all this with you before you put it on?"
+<</nobr>>
+
+<<nobr>>
+  "I knew it would stop me from cheating on you, but I guess I didn't ask how, or really very many other questions.  Maybe I should have.  But I just knew I
+  need this if I was going to be able to trust myself to stay
+  <<if $sex.length>>faithful to<<else>>chaste for<</if>>
+  you."
+<</nobr>>
+
+<<nobr>>
+  "Ok.  Well, I can also trigger manual punishments," he continues.  "Not that I would do that to you.  But it would be if you were doing something bad but
+  that the belt couldn't detect.  One of the examples they gave was if you were drunk at some party, and getting naked in front of everyone.  But, obviously
+  you'd never do that.  And I can also trigger rewards.  The belt can
+  <<if setup.haveFucked('Andrew')>>
+    stimulate you as much as I tell it to, even giving you an orgasm if I set that."
+  <<else>>
+    ... stimulate you, if you understand what I mean."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You blush at the thought of Andrew pressing a button and then this belt teasing your most intimate places right here in public.
+  "It also shows me here how much you liked that idea," Andrew says holding up the app and showing you an 'arousal level'.
+  <<if $sex.length == 0>>
+    "That's nothing to be ashamed of, it's a perfectly natural reaction."  That may be true, but that doesn't mean you aren't still embarrassed.
+  <</if>>
+  You realize Andrew is soon going to be acutely aware whenever you are aroused, probably seeing it on his app even before you consciously realize it.
+  You hope he doesn't want to leave you when he realizes how much you are always thinking about sex.
+<</nobr>>
+
+<<nobr>>
+  Andrew continues, "Anyway, you should probably check the manual they are emailing you to learn everything it can do.  But keep in mind, I can't do everything it says
+  in there, since I only have limited privileges while they are testing it.  I can't unlock you for example.  And threre's some other settings they have
+  locked in as well.  Some of them obviously won't matter for us.  [[Others you may start to notice.|Part15MinistryTesterAndrew2]]
+<</nobr>>
+
+::Part15MinistryTesterAndrew2
+<<nobr>>
+	<h1>Lunch with Andrew</h1>
+  <img src="Part15/Ministry3.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You realize it's started to get warm this afternoon as you and Andrew eat lunch outside.  You are distracted as you eat your meal, and
+  don't even finish it.  As you look at Andrew, your thoughts keep drifting back and forth between how much you care for him and between
+  remembering how good his hands felt
+  <<if setup.haveFucked('Andrew')>>
+    sliding up your thighs.
+  <<else>>
+    under your shirt.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Have I told you how much I love you?", you ask as you stare into his eyes.
+<</nobr>>
+
+<<nobr>>
+  "I love you too," Andrew says as he strokes your hair softly.  You find yourself leaning in to his hand, loving the feel of it against your head.
+  Then he smiles and says, "And yes you have told me.  Including three times this meal already."
+<</nobr>>
+
+<<nobr>>
+  You laugh a little and say, "Oh.  Well, I just feel very affectionate today for some reason.  Part of it is probably that I'm so happy you
+  that you were so understanding about this, and not being upset with me for needing it in the first place."
+<</nobr>>
+
+<<nobr>>
+  You continue, "I hate that you have to go back to work now.  I'd rather spend the whole day with you.
+  <<if setup.haveFucked('Andrew')>>
+    I know you have to go now, but I wish we had a little time alone before you had to go.  I really want you right now.
+  <</if>>
+  But can I have a kiss before [[you leave|Part15MinistryTesterAndrew3]]?"
+  <<if !setup.haveFucked('Andrew')>>
+    You are thinking about wanting so much more than a kiss, but you aren't going to say that.
+  <</if>>
+<</nobr>>
+
+::Part15MinistryTesterAndrew3
+<<nobr>>
+	<h1>After Andrew Leaves</h1>
+  <img src="Part15/Ministry4.jpg" hspace="10" vspace="10" height="650" align="left">
+  You don't want your kiss to end, but it only lasts a moment.  Then Andrew has to head back to work.  He's barely left and you feel it start to get
+  cooler outside.  But no one else seemed to have noticed it getting warmer earlier and cooler now, so maybe it's just you.  One thing you know is
+  just you is the longing you feel to be with Andrew again.
+<</nobr>>
+
+<<nobr>>
+  Thankfully, you have a date planned with him this evening, so you won't have to wait that long.  But still, as you are back in your room a few hours
+  seem like an eternity.
+<</nobr>>
+
+<<nobr>>
+  The time alone does give you time to think.  
+  <<if setup.haveFucked('Andrew')>>
+    You think about how much you want Andrew inside you.  But you realize that won't be possible now.  Why won't they let Andrew unlock you,
+    even when it's just you two.  You couldn't cheat then.  He could lock it back on afterwards.  But he made it clear they won't let him do that.
+    <br><br>
+    You'll still be able to enjoy the feel of Andrew's skin against your again.  To feel his hardness in your hand, to taste it in your mouth.
+    But you won't be able to feel his tongue circling your clit again, or your lower lips parting as he slides into you
+    <<if setup.haveFuckedVaginal('Andrew')>>
+      again.
+    <<else>>
+      for the first time.
+    <</if>>
+    <br><br>
+    But the more you think about it, the more you are just looking forward to hearing him moan and then tasting his warm cum in your mouth.
+  <<else>>
+    You think about how good it felt when you and Andrew had messed around before, but that you never let him
+    get past "second base".  You wanted to go further, you wanted it so bad, but you knew if his hand went down your pants, you wouldn't have
+    been able to stop there.
+    <br><br>
+    And you'd also worried that once you started having sex, you might lose control.  You'd heard from some of the other girls at the X-Change meetings,
+    and you'd worried you wouldn't be able to stay faithful.
+    <br><br>
+    But now you don't have to worry about either of those.  You know that neither you or Andrew could get the belt off, so you won't be going all the way
+    even if you wanted to.  And you feel safe that the belt will prevent you from cheating on him in any other way too.
+    <br><br>
+    You want to bury Andrew's head between your legs tonight.  But you realize that isn't possible either.  You'll have to just settle for doing that
+    for him, without the hope of anything in return.  The more you think about it, the more you are looking forward to seeing what he looks like down
+    there, what he tastes like.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  This evening can't [[come soon enough|Part15MinistryTesterAndrew4]].
+<</nobr>>
+
+::Part15MinistryTesterAndrew4
+<<nobr>>
+  <h1>After your date</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Engineer4.mp4" autoplay loop muted height="700"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  <<if setup.haveFucked('Andrew')>>
+    TODO Not first time
+  <<else>>
+    TODO First Time
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  TODO Orgasm first blowjob, but not second or third<br>
+  TODO Andew says he wishes he could have it give you one every time, but they would only let him set it to do it randomly after the first time<br>
+  TODO Can we try tomorrow?  Of course.
+  <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
+<</nobr>>
+
+TODO Return to main path
+
+::Part15MinistryTesterFail
+TODO 
+
+::Part15MinistryTester4
+TODO
+
+TODO this is the text from the normal tester path, change to fit here
+<<nobr>>
+  He's clearly expecting you to leave at that point.  "Ummm... he... the department head, said we'd get an orgasm," you ask meekly as
+  instinctively you already realize there's nothing you can do if they decide to change their mind.
+<</nobr>>
+
+<<nobr>>
+  "Not right now.  We have quite a few girls to get fitted, and that would take forever.  But it is set to give you one sometime today," he tells you
+  quickly, eager to get on to the next fitting.
+<</nobr>>
+
+<<nobr>>
+  "But if you don't feel like being patient, the 'Oral Encouragement' feature should speed it along.
+  You can look over the manual when they send the link out, but I'm guessing you don't want to wait for that either.  I'm sure you can
+  [[find a friend and figure it out|Part15TestSubjectBetaTest2]] on your own before then."
+<</nobr>>
+
+<<nobr>>
+  "Oh, and if you were the one on academic probation, be sure to stop by the X-Change office when you leave here to get that taken care of," he adds
+  as you are leaving.
+<</nobr>>
+
+::Part15MinistryTesterNo
+TODO Decline testing
 
 ::Part15EngineerProbation
 <<nobr>>
@@ -905,6 +1340,10 @@ Penetration testing attempt #1
 <</nobr>>
 
 <<nobr>>
+  "And obviously the belt is yours to keep whenever the testing is complete."
+<</nobr>>
+
+<<nobr>>
   You are excited when you see what looks like a very pickable lock on the front cover.
   <<if $PlayerProtectionPill or $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerPregnant>>
     He sees you looking it at it and says, "You may be able to pick the hygiene shield lock.
@@ -938,7 +1377,6 @@ Penetration testing attempt #1
   <div style="float:left;padding:12px;">
     <video src="Part15/Engineer4.mp4" autoplay loop muted height="700"></video>
   </div>
-  <<set $Libido to 100>>
   <<if $dating.length>>
     <<set setup.addSex({sex: 'male', name: $dating[0]})>>
     <<set setup.addSex({sex: 'male', name: $dating[0]})>>
@@ -1183,7 +1621,7 @@ Penetration testing attempt #1
   chastity belt."  Great. So you'll be trading one form of denial for another one, you think.  "I can see your disappointment, but it's not
   as simple as that.  This belt doesn't just deny your pleasure, it can also give you pleasure.  It all depends on the settings used, and we will
   be using a variety of them during the beta testing.  I can guarantee you'll have more orgasms help us with this than you would staying on the
-  dean's denial list."
+  dean's denial list.  And obviously the belt will be yours to keep at the end of testing."
 <</nobr>>
 
 <<nobr>>
@@ -1327,7 +1765,7 @@ Penetration testing attempt #1
   <<set $PlayerChastityBelt to 1>>
   <<set $Keyholder to "computer">>
   <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
-  <<set $JobBetaTester to 1>>
+  <<set $JobBetaTester to "normal">>
   <<set $PlayerChastityBelt to 1>>
 <</nobr>>
 
@@ -1370,7 +1808,6 @@ Penetration testing attempt #1
   <div style="float:left;padding:12px;">
     <video src="Part15/Engineer4.mp4" autoplay loop muted height="700"></video>
   </div>
-  <<set $Libido to 75>>
   <<set setup.addSex({sex: 'male', orgasm:true})>>
   <<set setup.addSex({sex: 'male', repeat:true})>>
   <<set setup.addSex({sex: 'male'})>>
