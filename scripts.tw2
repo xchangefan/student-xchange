@@ -149,6 +149,22 @@ setup.addSex =  function (fuck) {
   state.active.variables.sex.push(fuck)
 }
 
+setup.addMinimumBJs = function() {
+  if (state.active.variables.DailyBJMinimum) {
+    for (let i = 0; i < state.active.variables.DailyBJMinimum; i++) {
+      if (state.active.variables.dating.length) {
+        if (state.active.variables.dating[0] == 'Kate' || state.active.variables.dating[0] == 'Veronica') {
+          setup.addSex({sex: 'female', name: state.active.variables.dating[0]});
+        } else {
+          setup.addSex({sex: 'male', name: state.active.variables.dating[0]});
+        }
+      } else {
+        setup.addSex({sex: 'male'});
+      }
+    }
+  }
+}
+
 setup.sexCount = function () {
 	return state.active.variables.sex.length
 }
