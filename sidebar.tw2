@@ -115,7 +115,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $PlayerCumslutPermanent>>
     You are a permanent cumslut
   <<else>>
-    This body
+    [[This body|SideBarBodyDetail]]
     <<if $PlayerSlave>>
       doesn't belong to you anymore.
     <<elseif $PlayerSideEffectPermanent>>
@@ -129,29 +129,40 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <</if>>
 <</nobr>>
 
+::SideBarBodyDetail
 <<nobr>>
   <<if $PlayerSlave>>
   <<elseif $DropoutCumslut>>
-    You've adjusted to the [[permanent conditions|SideBarSideEffects]] your body has now.
+    You've adjusted to the permanent conditions your body has now.
+    <br><br>
+    <<include [[SideBarSideEffects]]>>
   <<elseif $DropoutBreeder>>
-    You've adjusted to the [[permanent conditions|SideBarSideEffects]] your body has now.
+    You've adjusted to the permanent conditions your body has now.
+    <br><br>
+    <<include [[SideBarSideEffects]]>>
   <<elseif $ExWifeTrap>>
     You are unable to orgasm thanks to Paul's ex-wife.
     <<if $PlayerSideEffectMasochist or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
-      The [[side effects|SideBarExWifeTrapSideEffects]] your implant gave your new body seem minor now.
+      The side effects your implant gave your new body seem minor now.
     <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep >>
-      The [[features|SideBarExWifeTrapSideEffects]] your implant has don't change that.
+      The features your implant has don't change that.
     <<elseif $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
-      You miss the [[features|SideBarExWifeTrapSideEffects]] your implant used to have.
+      You miss the features your implant used to have.
     <<else>>
-      That has [[affected you|SideBarExWifeTrapSideEffects]] in other ways as well.
+      That has affected you in other ways as well.
     <</if>>
+    <br><br>
+    <<include [[SideBarExWifeTrapSideEffects]]>>
   <<else>>
     You are 
     <<if $PlayerSideEffectNude or $PlayerSideEffectMasochist or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams or $PlayerSideEffectBreeder>>
-      trying to adjust to the [[side effects|SideBarSideEffects]] your implant gave your new body.
+      trying to adjust to the side effects your implant gave your new body.
+      <br><br>
+      <<include [[SideBarSideEffects]]>>
     <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep or $PlayerEasytoOrgasm or $PlayerPowerfulOrgasms or $PlayerSuperOrgasms>>
-      enjoying the [[features|SideBarSideEffects]] of your new body.
+      enjoying the features of your new body.
+      <br><br>
+      <<include [[SideBarSideEffects]]>>
     <<else>>
       enjoying your new body.
     <</if>>

@@ -874,13 +874,7 @@ Penetration testing attempt #1
   <<if $CampusMinistryFailSummer>>
     return to a chaste lifestyle,
   <<else>>
-    maintain a
-    <<if setup.haveFucked('Andrew')>>
-      monogamous
-    <<else>>
-      chaste or monogamous
-    <</if>>
-    relationship,
+    remain chaste or to maintain a monogamous relationship,
   <</if>>
   are difficult to find on campus, but are obviously a key demographic we want to test the belt with.  So we will be able to offer you a higher than
   normal compensation for your participation in our beta testing program.
@@ -926,7 +920,11 @@ Penetration testing attempt #1
   Then he selects a belt from the table nearby and positions it in place on you.
   You aren't sure why, but your heart skips a beat as he clicks the belt closed around your waist.
   <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
-  <<set $JobBetaTester to "chaste">>
+  <<if setup.areDating('Andrew')>>
+    <<set $JobBetaTester to "monogamous">>
+  <<else>>
+    <<set $JobBetaTester to "chaste">>
+  <</if>>
   <<set $PlayerChastityBelt to 1>>
   <<set $Keyholder to "computer">>
 <</nobr>>
@@ -960,6 +958,8 @@ Penetration testing attempt #1
   <<if $AcademicProbationDenial>>
     <br><br>
     "Oh, and stop by the X-Change office to get the denail removed from your implant.  The dean should have already called over."
+    <<set $tempAcademicProbationDenialRelease to 1>>
+    <<unset $AcademicProbationDenial>>
   <</if>>  
 <</nobr>>
 
@@ -974,9 +974,10 @@ Penetration testing attempt #1
     You'll are nervous about how [[Andrew is going to react|Part15MinistryTesterAndrew]] when he finds out that you've let them lock you into a chastity belt,
     and have given him control of it.  Or at least partial control.
   <<elseif $CampusMinistryFailSummer>>
-    TODO fail summer [[Part15MinistryTesterFail]]
+    You are tempted again when you see a hot guy jogging by, sweat glistening from his skin... But you remember your belt
+    [[and keep walking home|Part15MinistryTesterFail]].
   <<else>>
-    TODO not dating, not fail [[Part15MinistryTester4]]
+    You feel an odd sense of security knowing that your chastity is protected as you [[walk home|Part15MinistryTester4]]
   <</if>>
 <</nobr>>
 
@@ -1070,7 +1071,7 @@ Penetration testing attempt #1
 
 <<nobr>>
   "I love you too," Andrew says as he strokes your hair softly.  You find yourself leaning in to his hand, loving the feel of it against your head.
-  Then he smiles and says, "And yes you have told me.  Including three times this meal already."
+  Then he smiles and says, "And yes you have told me.  Including three times this meal already.  Not that I mind though."
 <</nobr>>
 
 <<nobr>>
@@ -1127,7 +1128,8 @@ Penetration testing attempt #1
     and you'd worried you wouldn't be able to stay faithful.
     <br><br>
     But now you don't have to worry about either of those.  You know that neither you or Andrew could get the belt off, so you won't be going all the way
-    even if you wanted to.  And you feel safe that the belt will prevent you from cheating on him in any other way too.
+    even if you wanted to.  Not even with Andrew, and certaily not with anyone else.  And you feel safe that the belt will prevent you from cheating on
+    him in any other way too.
     <br><br>
     You want to bury Andrew's head between your legs tonight.  But you realize that isn't possible either.  You'll have to just settle for doing that
     for him, without the hope of anything in return.  The more you think about it, the more you are looking forward to seeing what he looks like down
@@ -1141,56 +1143,299 @@ Penetration testing attempt #1
 
 ::Part15MinistryTesterAndrew4
 <<nobr>>
+  <h1>On a date with Andrew</h1>
+  <img src="Part15/Ministry5.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  As you and Andrew are out on your date, you find yourself wanting to be close to him, even more than normal.  You also feel yourself getting warm again.
+  But unlike earlier today, you are inside this time, so it can't be the weather.  When you mention it to Andrew he says the temperature feels fine.  After
+  a moment he adds, "Oh, it's probably the bonding mode on your belt.  It's supposed to gently stimulate you whenever you and I are close.  I was
+  skeptical when they said you wouldn't feel it, but it would still work.  But I guess they were right."
+<</nobr>>
+
+<<nobr>>
+  When he sees your confused look he asks, "Is it not covered in the wearer's guide they sent you?  Or have you just not had a chance to read it yet?"
+  He unlocks his phone and shows you one of the screens in his app.  It says "bonding mode" at the top and is marked as "Active".  As you glance at it you
+  see settings for intensity, Maximum Distance, maximum arousal, and sleep window, but it looks like all the settings are locked at their current values.
+  "It's not bothering you is it?", Andrew asks with a hint of concern in his voice.
+<</nobr>>
+
+<<nobr>>
+  "No, no, not all," you answer as you pull closer to him.  "Actually, it's great.  I love the way I've been feeling around you today.  And now I don't have
+  to worry that I'm coming down with a fever or something.  I might just have to dress a little lighter when you're around."
+<</nobr>>
+
+<<nobr>>
+  He smiles at that.  Then you add, "I hope they bring our check soon.  I'm really ready for us to [[get home|Part15MinistryTesterAndrew5]]."
+<</nobr>>
+
+::Part15MinistryTesterAndrew5
+<<nobr>>
   <h1>After your date</h1>
+  Your hands are all over Andrew as soon as you through the door.  You don't know how much of the need you feel for him right now is because of
+  what the belt is doing and how much is natural.  You don't care either.  You just want to be close to him.  Actually, what you really want right
+  now is him inside you, but you know you can't have that.  So his lips on yours is fine for now, for a start.
+<</nobr>>
+
+<<nobr>>
+  When his hand finds its way under your shirt, you quickly pull off the shirt and toss it aside.  He then begins to stroke your breast, then to tease
+  your nipple through your bra.  You are about to take off your bra for him too when you see the bulge in his pants.  You decide to take something else off
+  instead.
+<</nobr>>
+<<nobr>>
   <div style="float:left;padding:12px;">
     <video src="Part15/Engineer4.mp4" autoplay loop muted height="700"></video>
   </div>
 <</nobr>>
 <<nobr>>
   <<if setup.haveFucked('Andrew')>>
-    TODO Not first time
+    You unbuckle Andrew's pants and pull them down along with his underwear as he removes his shirt.
+    You don't want to wait any longer and a moment later you are on your knees taking Andrew's cock into your mouth.
   <<else>>
-    TODO First Time
+    Andrew is a bit surprised as you fumble at the buckle to his pants, but he quickly helps you take them off.  Your quickly pull down his underwear too
+    as he takes off his shirt.
+    You don't want to wait any longer and a moment later you are on your knees taking Andrew's cock into your mouth for the first time.
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  TODO Orgasm first blowjob, but not second or third<br>
-  TODO Andew says he wishes he could have it give you one every time, but they would only let him set it to do it randomly after the first time<br>
-  TODO Can we try tomorrow?  Of course.
+  <<if setup.haveFucked('Andrew')>>
+    You always love the moans Andrew makes, and they are turning you on even more than normal this evening.  But soon you notice something else.
+  <<else>>
+    You hadn't realized how much the moans Andrew is making would turn you on.  It makes you want to keep going to make him moan even more.  You were right
+    about one thing, if you weren't in this belt, you would have already climbed on top of him and started riding his cock.  But after a moment
+    you can feel something else.
+  <</if>>
+  <<if $tempAcademicProbationDenialRelease>>
+    <<unset $tempAcademicProbationDenialRelease>>
+    After so long on the dean's denial, you recognize the new sensations instantly.
+  <<else>>
+    It's soft at first so it takes you a moment to realize it.  But soon the sensations are unmistakable.
+  <</if>>
+  The belt is stimulating you, noticeably this time, as you suck Andrew's cock.
+  <<if $PlayerSideEffectOral and setup.haveFucked('Andrew')>>
+    As if you needed any more encouragement to suck Andrew's cock.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  The longer you suck his cock, the more more intense the vibrations from the belt get.  Soon you can feel yourself on the edge of an orgasm.
+  Before you can cum though the belt eases off on the vibrations.  That makes you want to suck his cock even more, hoping to get the belt
+  to start up again like before.  Soon you are taking his cock deep into your mouth, and not wanting it out except long enough to occasionally
+  catch your breath.  After a while the vibrations pick back up again, keeping you constantly on the edge of an orgasm.
+<</nobr>>
+
+<<nobr>>
+  You are desperate for an orgasm by the time he cums.
+  <<if !setup.haveFucked('Andrew')>>
+    You are surprised by how much you love the feeling and the taste of his warm cum hitting your tongue and filling your mouth.
+  <</if>>
+  You keep sucking a bit longer as he cums, hoping for just a bit more from the belt to put you over the edge.  But then the belt kicks into
+  high gear or something and you get quite a bit more.
+<</nobr>>
+
+<<nobr>>
+  His cum oozes down your face as you scream out before you can even swallow his cum.  The vibrations continue as you hold onto him for support as
+  your body shakes with a powerful orgasm.  The vibrations continue a while longer.  Just when you think you can't take it anymore, they slowly
+  die down.  You lie down next to him with a messy smile on your face.
+<</nobr>>
+
+<<nobr>>
+  "That was amazing!", you tell him.
+  <<if !setup.haveFucked('Andrew')>>
+    "Why weren't we doing this sooner?  Can
+  <<else>>
+    "Can
+  <</if>>
+  we do it again?"  
   <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
   <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
   <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
 <</nobr>>
 
-TODO Return to main path
+<<nobr>>
+  As soon as he is ready, you go again.  The vibrations continue as before, keeping you on the edge as you suck his cock.  But it doesn't give
+  you the orgasm at the end.  He's left happy and drained, but you are still horny.  You want to know if he can go again, but he says not tonight.
+<</nobr>>
+
+<<nobr>>
+  "They said it would be random.  The orgasms while you, you take care of me, that is.  After the first one anyway," Andrew says.  "They recommended
+  that over the other option which would have made you give me more and more each day.  I agree.  This way, you could get one at any time.  That seems
+  much more exciting for you, I think.  Besides, as wonderful as that was, I can only take so many of those."  He gives you a smile as he strokes your hair.
+<</nobr>>
+
+<<nobr>>
+  "But we can try again tomorrow?", you ask hopefully.  He happily agrees.  After you clean up your face, you give him an kiss goodnight before
+  [[heading home|Part15MinistryTesterAndrew6]].
+<</nobr>>
+
+::Part15MinistryTesterAndrew6
+<<nobr>>
+  <h1>Back home</h1>
+  <img src="Part15/TestSubject4.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+
+<<nobr>>
+  When you get home, you decide you should probably read that "Wearer's Guide" they emailed you.  After seeing some of the possible options,
+  you follow the instructions and download the app.  You can see the "Oral Encouragement" and "Bonding Mode" settings active, and an indiator that the guide
+  says means there are enabled settings or features that you don't have permissions as wearer to see.  Maybe you can ask Andrew about those.
+<</nobr>>
+
+<<nobr>>
+  All the "Bonding Mode" settings are locked for you too, but looking at "Oral Encouragement" you see there's one setting you can change.  It says
+  "Minimum Daily Target" and it's set at "0".  You click the "+" and see it change to "1".  It then tells you you'll be punished the next morning if you
+  don't give Andrew at least that many blowjobs every day.  You also see you that the "-" button is disabled still, you wonder if it is for Andrew or not.
+  Either way, one seems like a reasonable goal.  To easy even.  You wouldn't want to settle for one.  You click the "+" again and watch it change to "2".
+  Even if Andrew isn't able to lower it, you don't think he'll mind.
+<</nobr>>
+
+<<nobr>>
+  You decide to get to sleep.  You have a meeting tomorrow at the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]].
+<</nobr>>
 
 ::Part15MinistryTesterFail
-TODO 
+<<nobr>>
+  <h1>Back home</h1>
+  <img src="Part15/Ministry6.jpg" hspace="10" vspace="10" height="550">
+<</nobr>>
+<<nobr>>
+  Obviously the belt prevents you from having intercourse, that's what you wanted.  You needed something so you stopped the slutty behavior you'd
+  been giving into lately.  But you soon discover just how frustrating the inability to masturbate either is.
+<</nobr>>
+
+<<nobr>>
+  You toss and turn a while, trying to forget about it, but you can't.  Eventually you throw on a skirt and decide to [[go find a guy|Part15MinistryTesterFail2]].
+  <<if $PlayerSideEffectOral>>
+    You love sucking cock.  And maybe
+  <<else>>
+    Maybe
+  <</if>>
+  you can get off if he fucks your ass.
+<</nobr>>
+
+<<nobr>>
+  "What's wrong with me?", you wonder as you head out the door.
+<</nobr>>
+
+::Part15MinistryTesterFail2
+<<nobr>>
+  <h1>Finding a workaround</h1>
+  <video src="Part15/Ministry7.webm" autoplay loop muted height="500"></video>
+  <<set setup.addSex({sex: 'male', anon: 'Guy with a big cock'})>>
+<</nobr>>
+<<nobr>>
+  You find a guy and head back to his room with him.  As soon as you pull out his cock, you wish you weren't in this belt.  You can only imagine what
+  it would feel like inside you.  But at least you don't have imagine trying to fit it all in your mouth.
+<</nobr>>
+
+<<nobr>>
+  But you've barely started sucking his cock when you feel a shock from the belt, pain radiates out from your clit.  You try to ignore it and a few
+  moments later are hit with another, strong shock.  You have to stop.
+<</nobr>>
+
+<<nobr>>
+  But seeing his hard cock alone, begging for attention, you don't want to stop.  You don't know how the belt knows you are sucking his cock, they didn't
+  explain any of the technical stuff to you.  You doubt they even cover that in the manual you haven't bothered to read yet.  You try sitting up and
+  stroking his cock instead.  You hear moans from him, but don't get any shocks.
+<</nobr>>
+
+<<nobr>>
+  You play a porn video on his computer as you are grabbing the lube from his desk.  At least you can watch some other girl ride a cock today, even if
+  you can't.  You keep stroking and soon you can feel his magnificent cock stiffen and then twitch in your hand.
+<</nobr>>
+
+<<nobr>>
+  You can't resist leaning over and licking the cum from his cock.  You've licked it mostly clean when the shock hits, but thankfully just the lower
+  intensity one again.
+<</nobr>>
+
+<<nobr>>
+  You say good bye, and tell him you are sorry you couldn't finish his blowjob.  But he says he didn't mind at all.  Then you
+  [[head home again|Part15MinistryTesterFail3]].
+<</nobr>>
+
+::Part15MinistryTesterFail3
+<<nobr>>
+	<h1>RTFM</h1>
+  As you head home, you are feeling guilty about your failure.  You didn't even last a day in your belt and you were already trying, and failing,
+  to give a blowjob to a guy you'd just met.  You are curious about how the belt knew you were doing it though, and why it shocked you for it.
+  So you start looking through the manual they sent you.
+<</nobr>>
+
+<<nobr>>
+  First you follow the instructions and download the app.  While it's syncing up, you keep looking through the manual.  You spot something called
+  'Oral Encouragement Mode'.  It would actually give you orgasms for giving blowjobs.  You wonder why the hell you didn't get that options.  "Because
+  I told them I wanted to stop being a slut, not to turn myself into an even bigger one," you say to yourself.
+<</nobr>>
+<img src="Part15/TestSubject4.jpg" hspace="10" vspace="10" height="450">
+<<nobr>>
+  When you get to "Chaste" mode in the manual, you eyes are quickly drawn to "Orgasm Request".  It says that you can request an orgasm.
+  It says that occasional requests will usually be granted.  You quickly go to the app and find the request option.  "Request Denied" it comes
+  back with instantly.  "Only good girls are rewarded with orgasms," it tells you below that.  "You have made 2 attempts at sexual activity.  As a
+  result, no orgasm requests will be granted for a minimum of 4 days."
+<</nobr>>
+
+<<nobr>>
+  "Shit", you think.  "It counted me trying to give him a blowjob and me licking him clean after jerking him off as two different attempts.  Now
+  I have to wait twice as long.  I guess I'll just need behave myself for the next several days.  Maybe it'll be easier knowing I might be able
+  to get an orgasm then.  And that anything else will get me punished."
+<</nobr>>
+
+<<nobr>>
+  You look through the manual some more, but most of it doesn't seem to apply to you.  There seems to be three main ways to use the belt, for
+  chaste girls like you, for sluts that want to to be teased and denied, and for couples.  Well, you suppose you should read up on the couples settings
+  later incase you meet someone while you're wearing this.  But not tonight.  You decide to get some sleep, you have that meeting at the
+  You realize you are going to have to get more creative if you want to have any chance to defeat this belt.  You decide to dig into the documents
+  the X-Change office tomorrow [[about their new 'Buddy' program|Part15Buddy]].
+<</nobr>>
 
 ::Part15MinistryTester4
-TODO
-
-TODO this is the text from the normal tester path, change to fit here
 <<nobr>>
-  He's clearly expecting you to leave at that point.  "Ummm... he... the department head, said we'd get an orgasm," you ask meekly as
-  instinctively you already realize there's nothing you can do if they decide to change their mind.
+	<h1>Reading the manual</h1>
+  <img src="Part15/TestSubject4.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  As you read throught he manual, you blush at some of the options.  Most of them definitely seem geared to girls that want to wear the belt
+  to help the be <b>more</b> slutty, not less.  Some of the other options look to be intended for couples.  You can feel yourself getting aroused
+  as you think of your future husband using some of them on you.  But you try not to twell on that section.
 <</nobr>>
 
 <<nobr>>
-  "Not right now.  We have quite a few girls to get fitted, and that would take forever.  But it is set to give you one sometime today," he tells you
-  quickly, eager to get on to the next fitting.
+  The "Chaste" mode is obviously the one they've set your belt to, thankfully.  The options for that seem fairly normal.  It says it will provide
+  punishment shocks of increasing severity if sexual activity is attempted.  It doesn't really say how it can tell that, but you assume they'd
+  probably not want to say exactly as that would make it easier to cheat it.  It does mention a "safe word" to yell if you are attacked and it
+  will not trigger the punishment but instead call for help, "that's a nice feature," you think to yourself.
 <</nobr>>
 
 <<nobr>>
-  "But if you don't feel like being patient, the 'Oral Encouragement' feature should speed it along.
-  You can look over the manual when they send the link out, but I'm guessing you don't want to wait for that either.  I'm sure you can
-  [[find a friend and figure it out|Part15TestSubjectBetaTest2]] on your own before then."
+  Your eyes then fix on the section labled "Orgasm Request".  It says that you can request an orgasm and that occasional requests will usually be granted.
+  You are still aroused from your earlier thoughts, so you decide to try it out.
 <</nobr>>
 
 <<nobr>>
-  "Oh, and if you were the one on academic probation, be sure to stop by the X-Change office when you leave here to get that taken care of," he adds
-  as you are leaving.
+  You get comfortable in your bed, pull up the right page in the app.  Then you lie back and start thinking about your wedding day, though you quickly
+  move to thinking about your wedding night.  You imagine your husband carrying you into the honeymoon suite then helping you out of your wedding dress.
+  He lays you down on the bed, naked except for your chastity belt.  Then he unlocks and slowly removes it from you.  You reach over to your phone and
+  press the "Request Orgasm" button.
+<</nobr>>
+
+<<nobr>>
+  You lie back close your eyes and start imagining your new husband begin to pleasure you.  You are expecting the belt to do someting, to give some
+  real fealing to your fantasy, but nothing happens.  You stop fantasizing and wait a bit, but nothing.  You look back at the phone thinking thinking
+  something went wrong, but you see, "Request Granted". And below that, "You've been a good girl.  Enjoy your orgasm."  But still nothing is happening.
+<</nobr>>
+
+<<nobr>>
+  You go back to the manual and read more and then you see that even though your request was granted, the reward isn't given to you immediately, or at
+  last not usually.  It can be anytime in the next 48 hours.  The manual says that lets you receive rewards for good behavior and occasional satisfaction
+  without becoming addicted.  The manual wasn't clear on what 'occasional requests' meant, but it seems like you probably need to wait at least two days
+  between requests then, or at least two days after one was granted before requesting another one.
+<</nobr>>
+
+<<nobr>>
+  <<set $tempOrgasmRequestGranted to 1>>
+  You decide you best go to sleep then.  You have no idea if you'll be woken up in the middle of the night with a pleasan surprise, or not, and you want
+  to be well rested.  You have the meeting tomorrow at the X-Change office [[about their new 'Buddy' program|Part15Buddy]].
 <</nobr>>
 
 ::Part15MinistryTesterNo
@@ -1838,7 +2083,7 @@ TODO Decline testing
 <</nobr>>
 
 <<nobr>>
-  You are desperate for an orgasm by the time he cums.  You keep sucking a bit longer as the cums, hoping for just a bit more to put you over
+  You are desperate for an orgasm by the time he cums.  You keep sucking a bit longer as he cums, hoping for just a bit more to put you over
   the edge.  But then the belt kicks into high gear or something and you get quite a bit more.
 <</nobr>>
 
@@ -1850,7 +2095,7 @@ TODO Decline testing
 
 <<nobr>>
   As soon as he is ready, you go again.  The vibrations continue as before, keeping you on the edge as you suck his cock.  But it doesn't give
-  you the orgam at the end.  He leaves happy and drained, but you are still horny when he gone.  You try a few more times with a different guy, but
+  you the orgasm at the end.  He leaves happy and drained, but you are still horny when he gone.  You try a few more times with a different guy, but
   you can't get another orgasm from it.
 <</nobr>>
 
@@ -1923,7 +2168,6 @@ TODO Decline testing
   You do see it is set to count a new day as starting at 6 AM.  That's good, having it reset at midnight would have been annoying.  You go ahead and
   follow the instructions to download the app for your phone before [[going to sleep|Part15TestSubjectBetaTest4]].
 <</nobr>>
-
 
 ::Part15TestSubjectBetaTest4
 <<nobr>>
@@ -2291,7 +2535,7 @@ TODO Decline testing
 <</nobr>>
 
 <<nobr>>
-  But they've figured out that not ever challenge a newly converted woman will face will be something her natural-born mentor will have any experience
+  But they've figured out that not every challenge a newly converted woman will face will be something her natural-born mentor will have any experience
   with.  So this year they are also adding a new program where the previous years convertees are paired off with a freshman convertee to help give her
   first-hand advice.
 <</nobr>>
@@ -3427,6 +3671,8 @@ TODO Decline testing
   as the student union.  If she remembers she can probably make her purchase on her way there.
 <</nobr>>
 
+TODO if $tempOrgasmRequestGranted then orgasm happens while having meal with Bailey
+
 ::Part15BuddyGuys
 <<nobr>>
 	<h1>Helping Bailey make friends</h1>
@@ -3684,6 +3930,9 @@ TODO Decline testing
     "Have fun!", you tell her.  "And be sure to give me all the details when I see you."
   <</if>>
 <</nobr>>
+
+TODO if $tempOrgasmRequestGranted then orgasm happens while at mall with Bailey
+
 
 ::Part15Week
 TODO (weekly loop)

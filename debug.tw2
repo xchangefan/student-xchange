@@ -1,226 +1,284 @@
 ::VariablesMasterDebugger <1600,0>
-Mentor   $Mentor
-Roommate   $Roommate
-Neighbours  $neighbours
-Body Type: $BodyType
+<table width="100%">
 
-Sexual History [[(Details)|DebugSexualHistory]]
-Summary:
-<table>
-	<tr>
-		<td></td>
-		<td>Male (V)</td>
-		<td>Female</td>
-		<td>Total</td>
-	</tr>
-	<tr>
-		<td>Overall</td>
-		<td><<print setup.sexMaleCount()>> (<<print setup.sexVaginalCount()>>)</td>
-		<td><<print setup.sexFemaleCount()>></td>
-		<td>$sex.length</td>
-	</tr>
-	<tr>
-		<td>Unique Partners</td>
-		<td><<print setup.sexUniqueMaleCount()>> (<<print setup.sexUniqueVaginalCount()>>)</td>
-		<td><<print setup.sexUniqueFemaleCount()>></td>
-		<td><<print setup.sexUniqueMaleCount() + setup.sexUniqueFemaleCount()>></td>
-	</tr>
+<tr>
+<td width="50%">
+  <u><b><span style="font-size: 125%">Core Attributes</span></b></u>
+  Mentor   $Mentor
+  Roommate   $Roommate
+  Neighbours  $neighbours
+  Body Type: $BodyType
+  PlayerSideEffectPermanent   $PlayerSideEffectPermanent
+  Dating: <<print JSON.stringify($dating)>>
+  Exes: <<print JSON.stringify($exes)>>
+  FWBs: <<print JSON.stringify($fwb)>>
+  Friend Zone: <<print JSON.stringify($friendZone)>>
+  Engaged: $Engaged
+  Spouse: $Spouse
+  Children: <<print JSON.stringify($children)>>
+  Keyholder	$Keyholder
+
+</td>
+<td width="50%">
+  <u><b><span style="font-size: 125%">Sexual Activity</span></b></u>
+  Sexual History [[(Details)|DebugSexualHistory]]
+  Summary:
+  <table>
+    <tr>
+      <td></td>
+      <td>Male (V)</td>
+      <td>Female</td>
+      <td>Total</td>
+    </tr>
+    <tr>
+      <td>Overall</td>
+      <td><<print setup.sexMaleCount()>> (<<print setup.sexVaginalCount()>>)</td>
+      <td><<print setup.sexFemaleCount()>></td>
+      <td>$sex.length</td>
+    </tr>
+    <tr>
+      <td>Unique Partners</td>
+      <td><<print setup.sexUniqueMaleCount()>> (<<print setup.sexUniqueVaginalCount()>>)</td>
+      <td><<print setup.sexUniqueFemaleCount()>></td>
+      <td><<print setup.sexUniqueMaleCount() + setup.sexUniqueFemaleCount()>></td>
+    </tr>
+  </table>
+</td>
+</tr>
+
+<tr>
+<td>
+  <u><b><span style="font-size: 125%">Year 2 Variables</span></b></u>
+  SchoolWeek  $SchoolWeek
+  PregnancyWeek $PregnancyWeek
+</td>
+<td>
+  <u><b><span style="font-size: 125%">Buddy (Year 2)</span></b></u>
+  BuddyClean  $BuddyClean
+  BuddyLesbian  $BuddyLesbian
+  BuddyBoys $BuddyBoys
+  BuddyThreesomeGirlfriend  $BuddyThreesomeGirlfriend
+  BuddyThreesomeGuy $BuddyThreesomeGuy
+  BuddyBar  $BuddyBar
+  BuddyChastity $BuddyChastity
+  BuddyVibrator $BuddyVibrator
+  BuddyPregnant $BuddyPregnant
+  BuddyDating $BuddyDating
+  BuddyCondoms  $BuddyCondoms
+  BuddyPeterChastity  $BuddyPeterChastity
+</td>
+</tr>
+
+<tr>
+<td>
+  <u><b><span style="font-size: 125%">Pregnancy</span></b></u>
+  PlayerPregnant   $PlayerPregnant
+  PlayerMother   $PlayerMother
+  PlayerAbortion   $PlayerAbortion
+  PlayerAdoption  $PlayerAdoption
+  PlayerMenstruation   $PlayerMenstruation
+  PregnancyCheck <<print JSON.stringify($PregnancyCheck)>>
+  PotentialFathers  $PotentialFathers
+</td>
+<td>
+  <u><b><span style="font-size: 125%">Birth Control</span></b></u>
+  PlayerProtectionTry   $PlayerProtectionTry
+  PlayerProtectionNone   $PlayerProtectionNone
+  PlayerProtectionWithdraw   $PlayerProtectionWithdraw
+  PlayerProtectionCondoms   $PlayerProtectionCondoms
+  PlayerProtectionPill   $PlayerProtectionPill
+  PlayerProtectionPermanent   $PlayerProtectionPermanent
+  PlayerProtectionPerfect   $PlayerProtectionPerfect
+  PlayerProtectionFertile   $PlayerProtectionFertile
+  PlayerProtectionPrince		$PlayerProtectionPrince
+</td>
+</tr>
+
+
+<tr>
+<td>
+  <u><b><span style="font-size: 125%">Side Effects</span></b></u>
+  PlayerNoBodyHair   $PlayerNoBodyHair
+  PlayerSideEffectPermanent   $PlayerSideEffectPermanent
+  PlayerSideEffects   $PlayerSideEffects
+  PlayerWeightControl   $PlayerWeightControl
+  PlayerReducedSleep   $PlayerReducedSleep
+  PlayerEasytoOrgasm   $PlayerEasytoOrgasm
+  PlayerPowerfulOrgasms   $PlayerPowerfulOrgasms
+  PlayerSuperOrgasms   $PlayerSuperOrgasms
+  PlayerSideEffectOrgasmBlock   $PlayerSideEffectOrgasmBlock
+  PlayerSideEffectMasturbationBlock   $PlayerSideEffectMasturbationBlock
+  PlayerSideEffectExhibitionist   $PlayerSideEffectExhibitionist
+  PlayerSideEffectSubmissive   $PlayerSideEffectSubmissive
+  PlayerSideEffectPheromones   $PlayerSideEffectPheromones
+  PlayerSideEffectOral   $PlayerSideEffectOral
+  PlayerSideEffectAnal   $PlayerSideEffectAnal
+  PlayerSideEffectLibido   $PlayerSideEffectLibido
+  PlayerSideEffectDreams   $PlayerSideEffectDreams
+</td>
+<td>
+  <u><b><span style="font-size: 125%">Side Effects (temp flags)</span></b></u>
+  PlayerSideEffectPermanentShow   $PlayerSideEffectPermanentShow
+  PlayerSideEffectOrgasmBlockShow   $PlayerSideEffectOrgasmBlockShow
+  PlayerSideEffectMasturbationBlockShow   $PlayerSideEffectMasturbationBlockShow
+  PlayerSideEffectExhibitionistShow   $PlayerSideEffectExhibitionistShow
+  PlayerSideEffectSubmissiveShow   $PlayerSideEffectSubmissiveShow
+  PlayerSideEffectPheromonesShow   $PlayerSideEffectPheromonesShow
+  PlayerSideEffectOralShow   $PlayerSideEffectOralShow
+  PlayerSideEffectAnalShow   $PlayerSideEffectAnalShow
+  PlayerSideEffectLibidoShow   $PlayerSideEffectLibidoShow
+  PlayerSideEffectDreamsShow   $PlayerSideEffectDreamsShow
+  PlayerSuperOrgasmsShow   $PlayerSuperOrgasmsShow
+</td>
+</tr>
+
+<tr>
+<td>
+  <u><b><span style="font-size: 125%">Student</span></b></u>
+  PlayerGoodStudent   $PlayerGoodStudent
+  PlayerAverageStudent   $PlayerAverageStudent
+  PlayerLazyStudent   $PlayerLazyStudent
+  AcademicProbation   $AcademicProbation
+  AcademicProbationDenial $AcademicProbationDenial
+  DTF Nickname: $DTFNickname
+</td>
+<td>
+  <u><b><span style="font-size: 125%">BDSM</span></b></u>
+  MasterKate   $MasterKate
+  MasterKen   $MasterKen
+  MasterRobert   $MasterRobert
+  MasterMike  $MasterMike
+  PlayerItemBuddyKey  $PlayerItemBuddyKey
+  PlayerItemNerdKey   $PlayerItemNerdKey
+  PlayerItemNerdKeyStripper $PlayerItemNerdKeyStripper
+  OliviaChastityBelt   $OliviaChastityBelt
+  PlayerChastityBelt   $PlayerChastityBelt
+  Keyholder	$Keyholder<<if $Keyholder>>
+    KeyholderPronoun	$KeyholderPronoun
+    KeyholderPronounPossessive	$KeyholderPronounPossessive
+  <</if>>
+</td>
+</tr>
+   
+<tr>
+<td>
+  <u><b><span style="font-size: 125%">Inventory</span></b></u>
+  <<print JSON.stringify($inventory)>>
+</td>
+<td>
+  <u><b><span style="font-size: 125%">Items</span></b></u>
+  PlayerMoneySet   $PlayerMoneySet
+  PlayerMoney   $PlayerMoney
+  PlayerCredit   $PlayerCredit
+</td>
+</tr>
+
+<tr>
+<td>
+  <u><b><span style="font-size: 125%">Engineering Special Project</span></b></u>
+  Subject Punishment Level: $SubjectPunish
+  Subject Horniness: $SubjectHorniness
+  CorporalPunishment: $CorporalPunishment
+</td>
+<td>
+  <u><b><span style="font-size: 125%">Engineering Beta Testing</span></b></u>
+  JobBetaTester $JobBetaTester
+  JobEngineerLock $JobEngineerLock
+  DailyBJRecord $DailyBJRecord
+  DailyBJMinimum $DailyBJMinimum
+</td>
+</tr>
+
+<tr>
+<td>
+  <u><b><span style="font-size: 125%">Jobs</span></b></u>
+  PlayerJobSet   $PlayerJobSet
+  JobBarista   $JobBarista
+  JobBaristaOld   $JobBaristaOld
+  JobBikiniBarista   $JobBikiniBarista
+  JobOffice   $JobOffice
+  JobOfficePA   $JobOfficePA
+  JobOfficeManager   $JobOfficeManager
+  JobOfficeIntern   $JobOfficeIntern
+  PaulSeverance   $PaulSeverance
+  JobCallGirl   $JobCallGirl
+  JobCallGirlSide   $JobCallGirlSide
+  JobBartender   $JobBartender
+  JobBartenderGirls   $JobBartenderGirls
+  JobBartenderGuys   $JobBartenderGuys
+  JobBartenderBi   $JobBartenderBi
+  JobBartenderSub   $JobBartenderSub
+  JobWebModel   $JobWebModel
+  JobWebModelSide   $JobWebModelSide
+  JobPornOral   $JobPornOral
+  JobPornOralSide   $JobPornOralSide
+  JobPornAnal   $JobPornAnal
+  JobPornAnalSide   $JobPornAnalSide
+  JobPorn   $JobPorn
+  JobPornSide   $JobPornSide
+  JobPornGang   $JobPornGang
+  JobPornGangSide   $JobPornGangSide
+  JobAthlete   $JobAthlete
+  JobCheerleader   $JobCheerleader
+  JobCheerleaderFundraiser   $CheerleaderFundraiser
+  JobFitness   $JobFitness
+  JobFitnessYoga   $JobFitnessYoga
+  JobFitnessMassage   $JobFitnessMassage
+  JobLibrary   $JobLibrary
+  JobEngineer   $JobEngineer
+  JobEngineerLock $JobEngineerLock
+  JobTestSubject   $JobTestSubject
+  JobArt   $JobArt
+  JobStripper   $JobStripper
+  JobStripperOld   $JobStripperOld
+  JobGloryHole   $JobGloryHole
+  JobBetaTester  $JobBetaTester
+</td>
+<td>
+  <u><b><span style="font-size: 125%">Other</span></b></u>
+  PlayerPointsSet   $PlayerPointsSet
+  FunPoints   $FunPoints
+  AcademicPoints   $AcademicPoints
+  CheatedJosh   $CheatedJosh
+  HideJobJosh   $HideJobJosh
+  EngineerJosh   $EngineerJosh
+  EngineerGoo   $EngineerGoo
+  PaulPregnancyMoney   $PaulPregnancyMoney
+  ProfessorAllowance   $ProfessorAllowance
+  NumberCody   $NumberCody
+  CarBrad   $CarBrad
+  BrotherThong   $BrotherThong
+  BrotherFlashed   $BrotherThong
+  BrotherCrush   $BrotherCrush
+  BrotherFlirt   $BrotherFlirt
+  RideBrad   $RideBrad
+  LikeFemales   $LikeFemales
+  HomeMasturbate   $HomeMasturbate
+  UncleChair   $UncleChair
+  MindBlank   $MindBlank
+  CampusMinistry $CampusMinistry
+  CampusMinistryFail $CampusMinistryFail
+  CampusMinistryFailSummer $CampusMinistryFailSummer
+  CampusMinistrySaves $CampusMinistrySaves
+</td>
+</tr>
+
+<tr>
+<td>
+  <u><b><span style="font-size: 125%">Random Temp Variables</span></b></u>
+  Dice Roll   Dice Roll
+  PlayerRollDice   $PlayerRollDice
+  PlayerRollDiceArray   $PlayerRollDiceArray
+  PlayerRollDice1   $PlayerRollDice1
+  PlayerRollDice2   $PlayerRollDice2
+  PlayerRollMultiplier   $PlayerRollMultiplier
+</td>
+<td>
+</td>
+</tr>
+
 </table>
 
-Dating: <<print JSON.stringify($dating)>>
-Exes: <<print JSON.stringify($exes)>>
-FWBs: <<print JSON.stringify($fwb)>>
-Friend Zone: <<print JSON.stringify($friendZone)>>
-Engaged: $Engaged
-Spouse: $Spouse
-Children: <<print JSON.stringify($children)>>
-Keyholder	$Keyholder
-
-Year 2 Variables:
-SchoolWeek  $SchoolWeek
-PregnancyWeek $PregnancyWeek
-
-Pregnancy:
-PlayerPregnant   $PlayerPregnant
-PlayerMother   $PlayerMother
-PlayerAbortion   $PlayerAbortion
-PlayerAdoption  $PlayerAdoption
-PlayerMenstruation   $PlayerMenstruation
-PregnancyCheck <<print JSON.stringify($PregnancyCheck)>>
-PotentialFathers  $PotentialFathers
-
-Master
-MasterKate   $MasterKate
-MasterKen   $MasterKen
-MasterRobert   $MasterRobert
-MasterMike  $MasterMike
-   
-DTF Nickname: $DTFNickname
-
-Student type
-student   $student
-PlayerGoodStudent   $PlayerGoodStudent
-PlayerAverageStudent   $PlayerAverageStudent
-PlayerLazyStudent   $PlayerLazyStudent
-AcademicProbation   $AcademicProbation
-AcademicProbationDenial $AcademicProbationDenial
-
-Side effects
-PlayerNoBodyHair   $PlayerNoBodyHair
-PlayerSideEffectPermanent   $PlayerSideEffectPermanent
-PlayerSideEffects   $PlayerSideEffects
-PlayerWeightControl   $PlayerWeightControl
-PlayerReducedSleep   $PlayerReducedSleep
-PlayerEasytoOrgasm   $PlayerEasytoOrgasm
-PlayerPowerfulOrgasms   $PlayerPowerfulOrgasms
-PlayerSuperOrgasms   $PlayerSuperOrgasms
-PlayerSideEffectOrgasmBlock   $PlayerSideEffectOrgasmBlock
-PlayerSideEffectMasturbationBlock   $PlayerSideEffectMasturbationBlock
-PlayerSideEffectExhibitionist   $PlayerSideEffectExhibitionist
-PlayerSideEffectSubmissive   $PlayerSideEffectSubmissive
-PlayerSideEffectPheromones   $PlayerSideEffectPheromones
-PlayerSideEffectOral   $PlayerSideEffectOral
-PlayerSideEffectAnal   $PlayerSideEffectAnal
-PlayerSideEffectLibido   $PlayerSideEffectLibido
-PlayerSideEffectDreams   $PlayerSideEffectDreams
-
-PlayerSideEffectPermanentShow   $PlayerSideEffectPermanentShow
-PlayerSideEffectOrgasmBlockShow   $PlayerSideEffectOrgasmBlockShow
-PlayerSideEffectMasturbationBlockShow   $PlayerSideEffectMasturbationBlockShow
-PlayerSideEffectExhibitionistShow   $PlayerSideEffectExhibitionistShow
-PlayerSideEffectSubmissiveShow   $PlayerSideEffectSubmissiveShow
-PlayerSideEffectPheromonesShow   $PlayerSideEffectPheromonesShow
-PlayerSideEffectOralShow   $PlayerSideEffectOralShow
-PlayerSideEffectAnalShow   $PlayerSideEffectAnalShow
-PlayerSideEffectLibidoShow   $PlayerSideEffectLibidoShow
-PlayerSideEffectDreamsShow   $PlayerSideEffectDreamsShow
-PlayerSuperOrgasmsShow   $PlayerSuperOrgasmsShow
-   
-Birth Control
-PlayerProtectionTry   $PlayerProtectionTry
-PlayerProtectionNone   $PlayerProtectionNone
-PlayerProtectionWithdraw   $PlayerProtectionWithdraw
-PlayerProtectionCondoms   $PlayerProtectionCondoms
-PlayerProtectionPill   $PlayerProtectionPill
-PlayerProtectionPermanent   $PlayerProtectionPermanent
-PlayerProtectionPerfect   $PlayerProtectionPerfect
-PlayerProtectionFertile   $PlayerProtectionFertile
-PlayerProtectionPrince		$PlayerProtectionPrince
-   
-Inventory
-<<print JSON.stringify($inventory)>>
-
-Items
-PlayerItemBuddyKey  $PlayerItemBuddyKey
-PlayerItemNerdKey   $PlayerItemNerdKey
-PlayerItemNerdKeyStripper $PlayerItemNerdKeyStripper
-PlayerMoneySet   $PlayerMoneySet
-PlayerMoney   $PlayerMoney
-PlayerCredit   $PlayerCredit
-   
-Jobs   Jobs
-PlayerJobSet   $PlayerJobSet
-JobBarista   $JobBarista
-JobBaristaOld   $JobBaristaOld
-JobBikiniBarista   $JobBikiniBarista
-JobOffice   $JobOffice
-JobOfficePA   $JobOfficePA
-JobOfficeManager   $JobOfficeManager
-JobOfficeIntern   $JobOfficeIntern
-PaulSeverance   $PaulSeverance
-JobCallGirl   $JobCallGirl
-JobCallGirlSide   $JobCallGirlSide
-JobBartender   $JobBartender
-JobBartenderGirls   $JobBartenderGirls
-JobBartenderGuys   $JobBartenderGuys
-JobBartenderBi   $JobBartenderBi
-JobBartenderSub   $JobBartenderSub
-JobWebModel   $JobWebModel
-JobWebModelSide   $JobWebModelSide
-JobPornOral   $JobPornOral
-JobPornOralSide   $JobPornOralSide
-JobPornAnal   $JobPornAnal
-JobPornAnalSide   $JobPornAnalSide
-JobPorn   $JobPorn
-JobPornSide   $JobPornSide
-JobPornGang   $JobPornGang
-JobPornGangSide   $JobPornGangSide
-JobAthlete   $JobAthlete
-JobCheerleader   $JobCheerleader
-JobCheerleaderFundraiser   $CheerleaderFundraiser
-JobFitness   $JobFitness
-JobFitnessYoga   $JobFitnessYoga
-JobFitnessMassage   $JobFitnessMassage
-JobLibrary   $JobLibrary
-JobEngineer   $JobEngineer
-JobTestSubject   $JobTestSubject
-JobArt   $JobArt
-JobStripper   $JobStripper
-JobStripperOld   $JobStripperOld
-JobGloryHole   $JobGloryHole
-   
-Chastity
-OliviaChastityBelt   $OliviaChastityBelt
-PlayerChastityBelt   $PlayerChastityBelt
-Keyholder	$Keyholder<<if $Keyholder>>
-	KeyholderPronoun	$KeyholderPronoun
-	KeyholderPronounPossessive	$KeyholderPronounPossessive
-<</if>>
-
-Buddy:
-BuddyClean  $BuddyClean
-BuddyLesbian  $BuddyLesbian
-BuddyBoys $BuddyBoys
-BuddyThreesomeGirlfriend  $BuddyThreesomeGirlfriend
-BuddyThreesomeGuy $BuddyThreesomeGuy
-BuddyBar  $BuddyBar
-BuddyChastity $BuddyChastity
-BuddyVibrator $BuddyVibrator
-BuddyPregnant $BuddyPregnant
-BuddyDating $BuddyDating
-BuddyCondoms  $BuddyCondoms
-BuddyPeterChastity  $BuddyPeterChastity
-
-Other   Other
-PlayerPointsSet   $PlayerPointsSet
-FunPoints   $FunPoints
-AcademicPoints   $AcademicPoints
-CheatedJosh   $CheatedJosh
-HideJobJosh   $HideJobJosh
-EngineerJosh   $EngineerJosh
-EngineerGoo   $EngineerGoo
-PaulPregnancyMoney   $PaulPregnancyMoney
-ProfessorAllowance   $ProfessorAllowance
-NumberCody   $NumberCody
-CarBrad   $CarBrad
-BrotherThong   $BrotherThong
-BrotherFlashed   $BrotherThong
-BrotherCrush   $BrotherCrush
-BrotherFlirt   $BrotherFlirt
-RideBrad   $RideBrad
-LikeFemales   $LikeFemales
-HomeMasturbate   $HomeMasturbate
-UncleChair   $UncleChair
-MindBlank   $MindBlank
-CampusMinistry $CampusMinistry
-CampusMinistryFail $CampusMinistryFail
-CampusMinistrySaves $CampusMinistrySaves
-
-Engineering Special Project
-Subject Punishment Level: $SubjectPunish
-Subject Horniness: $SubjectHorniness
-CorporalPunishment: $CorporalPunishment
-
-Engineering Beta Testing
-DailyBJRecord $DailyBJRecord
-DailyBJMinimum $DailyBJMinimum
-
-Dice Roll   Dice Roll
-PlayerRollDice   $PlayerRollDice
-PlayerRollDiceArray   $PlayerRollDiceArray
-PlayerRollDice1   $PlayerRollDice1
-PlayerRollDice2   $PlayerRollDice2
-PlayerRollMultiplier   $PlayerRollMultiplier
 
 ::DebugSexualHistory <1750,0>
 You may not remember most of it, but...
