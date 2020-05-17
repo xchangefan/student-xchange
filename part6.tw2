@@ -844,6 +844,7 @@
 				<<link "Pills">>
 					<<set $PlayerProtectionNone to 0>>
 					<<set $PlayerProtectionPill to 1>>
+          <<replace "#StoryKeyFlag">>TRUE<</replace>>
 					<<replace "#SubjectBirthControlChangeSpan">>
 						You decide to start using birth control pills.
 						<br><br>
@@ -854,6 +855,7 @@
 			<<link "Condoms">>
 					<<set $PlayerProtectionNone to 0>>
 					<<set $PlayerProtectionCondoms to 1>>
+          <<replace "#StoryKeyFlag">>TRUE<</replace>>
 					<<replace "#SubjectBirthControlChangeSpan">>
 						You decide to have guys start using condoms when they are with you.
 						<br><br>
@@ -863,6 +865,7 @@
 			<<link "Withdrawal">>
 					<<set $PlayerProtectionNone to 0>>
 					<<set $PlayerProtectionWithdraw to 1>>
+          <<replace "#StoryKeyFlag">>TRUE<</replace>>
 					<<replace "#SubjectBirthControlChangeSpan">>
 						You decide to have guys pull out when they are with you.
 						<br><br>
@@ -872,6 +875,7 @@
 			or
 			<<link "None">>
 					<<set $PlayerProtectionNone to 1>>
+          <<replace "#StoryKeyFlag">>TRUE<</replace>>
 					<<replace "#SubjectBirthControlChangeSpan">>
 						You decide not to bother with birth control anymore.
 						<br><br>
@@ -882,6 +886,7 @@
 			<<link "Try to get pregnant">>
 					<<set $PlayerProtectionNone to 0>>
 					<<set $PlayerProtectionTry to 1>>
+          <<replace "#StoryKeyFlag">>TRUE<</replace>>
 					<<replace "#SubjectBirthControlChangeSpan">>
 						You decide you might as well start trying to get pregnant.
 						<br><br>
@@ -1840,6 +1845,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<span id="Sleep1Span1">
 		<<link "You can use it all to study,">>
 			<<set $AcademicPoints += 2>>
+      <<replace "#StoryKeyFlag">>TRUE<</replace>>
 			<<replace "#Sleep1Span1">>
 				<<print "You can use it all to study,">>
 			<</replace>>
@@ -1925,6 +1931,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<span id="Sleep2Span1">
 		<<link "unless you never finish and just have fun the whole night.">>
 			<<set $FunPoints += 2>>
+      <<replace "#StoryKeyFlag">>TRUE<</replace>>
 			<<replace "#Sleep2Span1">>
 				<<print "unless you never finish and just have fun the whole night.">>
 			<</replace>>
@@ -1941,6 +1948,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<<link "finally do a little bit of homework.">>
 			<<set $FunPoints += 1>>
 			<<set $AcademicPoints += 1>>
+      <<replace "#StoryKeyFlag">>TRUE<</replace>>
 			<<replace "#Sleep2Span1">>
 				<<print "unless you never finish and just have fun the whole night.">>
 			<</replace>>

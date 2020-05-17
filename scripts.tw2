@@ -32,36 +32,72 @@ $(document).on(':passageend', function (ev) {
 	IntervalID = setInterval(UpdateLinks, 300);  // Triggers UpdateLinks() 300ms after the passage is rendered.
 });
 
+function UpdateStoryLinks() {
+  if ($("#StoryKeyFlag").html()) {
+    $("#StoryKeyFlag").html("")
+    var storyLinkId = state.active.variables.StoryKeys[0] - 1;
+    state.active.variables.StoryKeys = state.active.variables.StoryKeys.slice(1);
+
+    var Links = $("#passages a");
+    if (Links.length === 1) {
+      //only one link anyway
+      Links[0].id = "NextLink";
+      return;
+    }
+
+    if (storyLinkId >= Links.length) {
+      console.warn("storyLinkId: " + storyLinkId + ", Links.length: " + Links.length + " : Exiting story mode");
+      state.active.variables.StoryKeys = "";
+      return;
+    }
+
+    let i = 0
+    Links.each(function()
+    {
+      if (i == storyLinkId) {
+        this.id = "NextLink";
+      } else {
+        this.outerHTML = this.innerHTML;
+      }
+      i++;
+    });
+  }
+}
+
 // Search passages for links every 300ms and marks them for key clicks
 function UpdateLinks() {
 	if (Engine.isIdle()) {
-		var Links = $("#passages a");
-		if (Links.length === 1) {
-			Links[0].id = "NextLink";
-		} else if (Links.length >= 1 && Links.length <= 10) {
-			var n = 1;
-			for (var i = 0; i < Links.length; i++) {
-				if (!Links[i].id.includes("Link")) {
-					while ($('#Link' + n).length) {
-						++n;
-						if (n > 10) {
-							break;
-						}
-					}
+    if (state.active.variables.StoryKeys) {
+      UpdateStoryLinks()
+    } else {
+      var Links = $("#passages a");
+      if (Links.length === 1) {
+        Links[0].id = "NextLink";
+      } else if (Links.length >= 1 && Links.length <= 10) {
+        var n = 1;
+        for (var i = 0; i < Links.length; i++) {
+          if (!Links[i].id.includes("Link")) {
+            while ($('#Link' + n).length) {
+              ++n;
+              if (n > 10) {
+                break;
+              }
+            }
 
-					if (n < 10) {
-						$("<sup>[" + n + "]</sup>").appendTo(Links[i]);
-						Links[i].id = "Link" + n;
-					} else if (n === 10) {
-						$("<sup>[0]</sup>").appendTo(Links[i]);
-						Links[i].id = "Link0";
-					}
-					if (n >= 10) {
-						break;
-					}
-				}
-			}
-		}
+            if (n < 10) {
+              $("<sup>[" + n + "]</sup>").appendTo(Links[i]);
+              Links[i].id = "Link" + n;
+            } else if (n === 10) {
+              $("<sup>[0]</sup>").appendTo(Links[i]);
+              Links[i].id = "Link0";
+            }
+            if (n >= 10) {
+              break;
+            }
+          }
+        }
+      }
+    }
 	}
 };
 
@@ -105,6 +141,15 @@ $(document).on("keyup", function (e) {
 		Engine.backward();
 		return false;
 	}
+
+	if ((["x"].includes(e.key)) && (!tags().includes("DisableClick"))) {
+		e.preventDefault();
+    state.active.variables.StoryKeys = "";
+    if ($("#StoryModeMessage").html()) {
+      $("#StoryModeMessage").html("<i>Story Mode Exited - Normal navigation resumes on next page</i>");
+    }
+    return false;
+  }
 });
 
 ::InventoryFunctions [script] <275,50>
@@ -141,27 +186,70 @@ setup.listInventory = function(itemClass) {
   
 }
 
+::WeekFunctions [script] <295,50>>
+setup.advanceWeek = function() {
+  setup.addMinimumBJs()
+  setup.addTutorSex()
+  setup.nextCycleWeek()
+  if (state.active.variables.SchoolWeek) {
+    state.active.variables.SchoolWeek += 1
+  }
+}
+
+setup.startCycle = function (startWeekIsRandom, forgetPill) {
+  let startWeek = startWeekIsRandom ? Math.floor(Math.random() * 4) : 0
+  state.active.variables.MenstrualWeek = startWeek + 1
+}
+
+setup.nextCycleWeek = function (forgetPill) {
+  setup.checkForNewPregnancyHidden()
+  if (state.active.variables.PregnancyWeek == -1) {
+    state.active.variables.PregnancyWeek = 1; //if getting pregnant right after their period
+  } else if (state.active.variables.PregnancyWeek) {
+    state.active.variables.PregnancyWeek += 1;
+  } else if (state.active.variables.MenstrualWeek) {
+    state.active.variables.MenstrualWeek += 1;
+    if (state.active.variables.MenstrualWeek == 5) {
+      state.active.variables.MenstrualWeek = 1;
+    }
+  } else {
+    setup.startCycle(false, forgetPill)
+  }
+
+  if (state.active.variables.MenstrualWeek == 4) {
+    setup.checkForNewPregnancy("period")
+  }
+}
+
 ::SexFunctions [script] <300,50>
 setup.addSex =  function (fuck) {
-	if (!state.active.variables.sex) {
-    state.active.variables.sex = []
-  }
   state.active.variables.sex.push(fuck)
 }
 
+setup.addSexRepeat = function (repeatCount, fuck) {
+  for (let i = 0; i < repeatCount; i++) {
+    setup.addSex(fuck);
+  }
+}
+
+setup.addTutorSex = function() {
+  if (state.active.variables.AcademicProbationTutorSex && state.active.variables.AcademicProbation) {
+    state.active.variables.AcademicProbationTutorSex.forEach(setup.addSex)
+  }
+}
+
 setup.addMinimumBJs = function() {
+  var fuck
+  if (setup.haveGirlfriend()) {
+    fuck = {sex: 'female', name: state.active.variables.dating[0]};
+  } else if (state.active.variables.dating.length) {
+    fuck = {sex: 'male', name: state.active.variables.dating[0]};
+  } else {
+    fuck = {sex: 'male'};
+  }
+
   if (state.active.variables.DailyBJMinimum) {
-    for (let i = 0; i < state.active.variables.DailyBJMinimum; i++) {
-      if (state.active.variables.dating.length) {
-        if (state.active.variables.dating[0] == 'Kate' || state.active.variables.dating[0] == 'Veronica') {
-          setup.addSex({sex: 'female', name: state.active.variables.dating[0]});
-        } else {
-          setup.addSex({sex: 'male', name: state.active.variables.dating[0]});
-        }
-      } else {
-        setup.addSex({sex: 'male'});
-      }
-    }
+    setup.addSexRepeat(state.active.variables.DailyBJMinimum * 7, fuck);
   }
 }
 
@@ -329,11 +417,13 @@ setup.addDetailsToRecentSex = function() {
 	})
 }
 
-setup.getPossibleConceptions = function() {
+setup.getPossibleConceptions = function(hideHiddenChecked) {
   setup.addDetailsToRecentSex()
   return state.active.variables.sex.filter(function(fuck) {
+    var shouldHide = fuck.checkedForPregnancy && (fuck.checkedForPregnancy != "hidden" || hideHiddenChecked)
+
     return fuck.vaginal &&
-      !fuck.checkedForPregnancy &&
+      !shouldHide &&
       fuck.birthControl != 'pregnant' &&
       fuck.birthControl != 'implant-perfect' &&
       fuck.birthControl != 'injection' &&
@@ -377,8 +467,13 @@ setup.checkForPregnancy = function (fuck, oddsBoost, ovulationOverride) {
     1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
     1.0, 1.0, 0.5, 0.2, 0.2, 0.1, 0.1
   ]
-             
-  var ovulationRoll = Math.floor(Math.random() * 28)
+  
+  var ovulationRoll
+  if (state.active.variables.MenstrualWeek) {
+    ovulationRoll = Math.floor(Math.random() * 7) + (state.active.variables.MenstrualWeek - 1) * 7
+  } else {
+    ovulationRoll = Math.floor(Math.random() * 28)
+  }
   var baseProbability
   if (ovulationOverride) {
     baseProbability = state.active.variables.PlayerProtectionFertile ? 1.0 : 0.6
@@ -405,6 +500,40 @@ setup.checkForPregnancy = function (fuck, oddsBoost, ovulationOverride) {
   return (conceptionRoll + oddsBoost) >= 0.5
 }
 
+setup.getUnrevealedPregnancy = function() {
+  var recentVaginal = setup.getPossibleConceptions()
+  return recentVaginal.find(function(fuck) {
+    return fuck.conception
+  });
+}
+
+setup.checkForNewPregnancyHidden = function() {
+  if (state.active.variables.PlayerPregnant || state.active.variables.PregnancyWeek) {
+    return // already pregnant
+  }
+
+  var recentVaginal = setup.getPossibleConceptions(true)
+
+  var isPregnant
+  recentVaginal.forEach(function(fuck) {
+    fuck.checkedForPregnancy = "hidden"
+    if (!isPregnant) {
+      var areDefinitelyOvulating = (fuck.ovulating && !state.active.variables.PlayerProtectionPill) || fuck.noPill
+      fuck.conception = setup.checkForPregnancy(fuck, 0, areDefinitelyOvulating)
+      fuck.checkedForPregnancy = "hidden"
+      if (fuck.conception) {
+        isPregnant = true // but player doesn't know yet, so don't set visible state variable
+        if (state.active.variables.MenstrualWeek == 4) {
+          state.active.variables.PregnancyWeek = -1
+        } else {  
+          state.active.variables.PregnancyWeek = state.active.variables.MenstrualWeek
+        }
+        state.active.variables.MenstrualWeek = 0
+      }
+    }
+  })
+}
+
 setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
   if (state.active.variables.PlayerPregnant) {
     return {isPregnant: false, possibleFathers: []} // already pregnant
@@ -413,11 +542,19 @@ setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
     var possibleFathers = Array.from(new Set(recentVaginal.map(function(fuck) {
       return setup.getPartnerName(fuck)
     })))
+
+    var unrevealedPregnancyEvent = setup.getUnrevealedPregnancy()
+    if (unrevealedPregnancyEvent) {
+       var actualFather = setup.getPartnerName(unrevealedPregnancyEvent)
+       return {isPregnant:true, possibleFathers, actualFather, conceptionEvent:unrevealedPregnancyEvent, count: recentVaginal.length}
+    }
     
     var isPregnant, actualFather, conceptionEvent
     recentVaginal.forEach(function(fuck) {
       if (isPregnant) {
         fuck.checkedForPregnancy = "already pregnant"
+      } else if (fuck.checkedForPregnancy == "hidden" && !fuck.conception) {
+        fuck.checkedForPregnancy = pregnancyTestType
       } else {
 				var areDefinitelyOvulating = (fuck.ovulating && !state.active.variables.PlayerProtectionPill) || fuck.noPill
         fuck.conception = setup.checkForPregnancy(fuck, oddsBoost, areDefinitelyOvulating)
@@ -466,29 +603,6 @@ setup.overrideForcePregnancy = function(pregnancyTestType) {
 	}
 }
 
-::LibidoFunctions [script] <325,50>
-setup.libido = function (delta) {
-  if (state.active.variables.Libido) {
-    state.active.variables.Libido += delta;
-  } else {
-    state.active.variables.Libido = delta;
-  }
-  if (state.active.variables.Libido > 100) {
-    state.active.variables.Libido = 100
-  } else if (state.active.variables.Libido < 0) {
-    state.active.variables.Libido = 0
-  }
-}
-
-setup.orgasm = function() {
-  // todo check to make sure allowed and not blocked
-  // todo lower libido if orgasmed
-}
-
-setup.orgasmDenied = function() {
-  // todo orgasm denied, libido goes way up
-}
-
 ::NeighbourFunctions [script] <350,50>
 setup.addNeighbour = function (name) {
 	return state.active.variables.neighbours.push(name)
@@ -533,6 +647,11 @@ setup.friendZone = function(name) {
 
 setup.areDating = function (name) {
 	return state.active.variables.dating.indexOf(name) >= 0
+}
+
+setup.haveGirlfriend = function () {
+  var potentialGirlfriends = ["Kate", "Veronica"];
+  return potentialGirlfriends.find(function(name) {return setup.areDating(name)});
 }
 
 setup.isEx = function (name) {
@@ -849,13 +968,16 @@ setup.pageMessage = function(msg) {
 
 ::PassageHeader <475,50>
 <<nobr>>
-  <span style="display:none"><<if $playerName>>$playerName<<if $MindBlank>>/Marie<</if>>: <</if>></span>
+  <span style="display:none"><<if $playerName>>$playerName<<if $MindBlank>>Marie<</if>>: <</if>></span>
   <<set $pageMessages = []>>
+  DEBUG: $StoryKeys
 <</nobr>>
 
 
 ::PassageFooter <480,50>
 <<nobr>>
+  <span id="StoryKeyFlag" style="display:none">TRUE</span>
+  <span id="StoryModeMessage"><<if $StoryKeys>><br><br><i>(Story mode - press "X" to disable)</i><</if>></span>
   <br><br>
   <i>
     <<print $pageMessages.join("<br>")>>

@@ -974,6 +974,7 @@
   <span id="MoveInSpan">
     Do you answer:
     <<link "Yes!">>
+      <<replace "#StoryKeyFlag">>TRUE<</replace>>
       <<replace "#MoveInSpan">>
         You tell her you feel the same way, and accept her offer to move in.
         She thrilled of course.  The two of you have a passionate night
@@ -983,6 +984,7 @@
     <</link>>
     &nbsp;&nbsp;or&nbsp;&nbsp;
     <<link "Ummm...">>
+      <<replace "#StoryKeyFlag">>TRUE<</replace>>
       <<replace "#MoveInSpan">>
         You tell her how much fun your time together is, but that you aren’t looking for anything serious right now.
         She's disappointed, of course, but understands.  The two of you continue your fun that evening, but you
@@ -1729,30 +1731,34 @@ You’re even used by a few women, using strap-ons, or their own fist.
   <<unset $ShowHorniness>>
   <<unset $PartyButtplug>>
   <<unset $PartyTease>>
-
-  After Master has locked you back in your chastity belt, you head back home. You don’t
-  know when you’ll be out of the belt again.  You do your best to clean yourself up with the belt on.
-<</nobr>>
-
-<<nobr>>
-  <<if $PartyOrgasm>>
-    Orgasming tonight has certainly eased the frustration you've been feeling lately.  You know the memory of how
-    good it felt will be fresh in your mind for quite a while.  But you wonder if that memory will make being
-    locked back in the belt even more frustrating until your next orgasm.  Whenever that might be.
-  <<else>>
-    You stare down at your locked belt.
-    <<if $PartyDenial>>
-      If only your implant's side effect hadn't blocked your one chance at an orgasm.
-    <<elseif $PartyNo>>
-      You can't help but feel some regret, your one chance at an orgasm, and you let it slip away.
+  After Master has locked you back in your chastity belt, you head back home.
+  <<if $PlayerChastityBelt or !$JobLibrary>>
+    You don’t know when you’ll be out of the belt again. You do your best to clean yourself up with the belt on.
+    <br><br>
+    <<if $PartyOrgasm>>
+      Orgasming tonight has certainly eased the frustration you've been feeling lately.  You know the memory of how
+      good it felt will be fresh in your mind for quite a while.  But you wonder if that memory will make being
+      locked back in the belt even more frustrating until your next orgasm.  Whenever that might be.
     <<else>>
-      You can't believe your one chance at an orgasm is gone.
+      You stare down at your locked belt.
+      <<if $PartyDenial>>
+        If only your implant's side effect hadn't blocked your one chance at an orgasm.
+      <<elseif $PartyNo>>
+        You can't help but feel some regret, your one chance at an orgasm, and you let it slip away.
+      <<else>>
+        You can't believe your one chance at an orgasm is gone.
+      <</if>>
+      Who knows when you'll have another opportunity.
     <</if>>
-    Who knows when you'll have another opportunity.
+    <br><br>
+    You hope it will be soon.
+    <br><br>
+  <<else>>
+    It's been so long since you last had to pick the lock, you aren't sure where you picks are.  You might have to order a new set.  The thought of
+    being stuck in the belt for a few days, once again unable to orgasm when you want, quickly has you horny again.  Though at least your freedom won't
+    have to wait that long.
   <</if>>
 <</nobr>>
-
-<<nobr>>You hope it will be soon.<</nobr>>
 
 <<nobr>>
   <<if $PartyOrgasm and $PlayerSideEffectDreams>>

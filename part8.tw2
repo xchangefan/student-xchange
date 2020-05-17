@@ -554,6 +554,7 @@
 		<<if !setup.areDating('Veronica') and !$MasterKate>>
 			<span id="MorningSpan1">
 				* <<link "“I’m attracted to men.”">>
+          <<replace "#StoryKeyFlag">>TRUE<</replace>>
 					<<replace "#MorningSpan1">>
 						“I’m attracted to men.”
 					<</replace>>
@@ -580,6 +581,7 @@
 			<span id="MorningSpan2">
 				* <<link "“I’m still attracted to women.”">>
 					<<set $LikeFemales = 1>>
+        <<replace "#StoryKeyFlag">>TRUE<</replace>>
 					<<replace "#MorningSpan1">>
 					<</replace>>
 					<<replace "#MorningSpan2">>
@@ -603,6 +605,7 @@
 		<span id="MorningSpan3">
 			* <<link "“I’m attracted to both.”">>
 				<<set $LikeBoth = 1>>
+        <<replace "#StoryKeyFlag">>TRUE<</replace>>
 				<<replace "#MorningSpan1">>
 					<<print "">>
 				<</replace>>

@@ -89,10 +89,9 @@ As you look over the responses you see:
 * Mostly acceptance letters. You’ve always been [[a good student|Start1][$PlayerGoodStudent to 1]].
 * Only acceptance letters from your ‘safety’ school choices. You’re [[an average student|Start1][$PlayerAverageStudent to 1]], you knew some of those others were a stretch anyway.
 * All rejection letters so far. You’ve [[never been that great of a student|Start1][$PlayerLazyStudent to 1]].  You hope to turn things around when you get to college. If you get to college, that is.
-
 * <<nobr>>
 	<<set $PlayerRollDice to either(1,2,3)>>
-	Actually, you realize you haven't received any responses yet.
+	Or, now that you think about, you realize you haven't received any responses yet.
 	<<switch $PlayerRollDice>>
 		<<case 1>>
 			[[(Random)|Start1][$PlayerGoodStudent to 1]]
@@ -103,9 +102,15 @@ As you look over the responses you see:
 	<</switch>>
 <</nobr>>
 
+
+* <<nobr>>
+Actually, your college days are in the past, but you remember it all like it were yesterday. [[(Story Mode)|StoryMode]]
+<</nobr>>
+
 ::StoryIncludes <100,100>
 scripts.tw2
 sidebar.tw2
+storymode.tw2
 part1.tw2
 part2.tw2
 part3.tw2

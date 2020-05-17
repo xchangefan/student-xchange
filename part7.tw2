@@ -182,6 +182,7 @@
 						<<set $PlayerProtectionWithdraw = 0>>
 						<<set $PlayerProtectionCondoms = 0>>
 						<<set $PlayerProtectionPill = 1>>
+            <<replace "#StoryKeyFlag">>TRUE<</replace>>
 						<<replace "#NotPregSpan1">>
 							<<print "birth control pills">>
 						<</replace>>
@@ -197,6 +198,7 @@
 							<<set $PlayerProtectionNone = 0>>
 							<<set $PlayerProtectionWithdraw = 0>>
 							<<set $PlayerProtectionCondoms = 1>>
+              <<replace "#StoryKeyFlag">>TRUE<</replace>>
 							<<replace "#NotPregSpan2">>
 								<<print "using condoms for protection.">>
 							<</replace>>
@@ -822,6 +824,7 @@
 						<<set $PlayerProtectionWithdraw = 0>>
 						<<set $PlayerProtectionCondoms = 0>>
 						<<set $PlayerProtectionPill = 1>>
+            <<replace "#StoryKeyFlag">>TRUE<</replace>>
 						<<replace "#AbortSpan1">>
 							<<print "start using birth control pills,">>
 						<</replace>>
@@ -837,6 +840,7 @@
 							<<set $PlayerProtectionNone = 0>>
 							<<set $PlayerProtectionWithdraw = 0>>
 							<<set $PlayerProtectionCondoms = 1>>
+              <<replace "#StoryKeyFlag">>TRUE<</replace>>
 							<<replace "#NotPregSpan2">>
 								<<print "use condoms for protection,">>
 							<</replace>>
@@ -867,6 +871,7 @@
 	<<print "Do you plan on ">>
 	<span id="AndrewBossSpan1">
 		<<link "putting the baby up for adoption,">>
+      <<replace "#StoryKeyFlag">>TRUE<</replace>>
 			<<replace "#AndrewBossSpan1">>
 				<<print "putting the baby up for adoption,">>
 			<</replace>>
@@ -888,6 +893,7 @@
 	<span id="AndrewBossSpan2">
 		<<link "keeping the baby after it’s born?">>
 			<<set setup.startDating('Andrew')>>
+      <<replace "#StoryKeyFlag">>TRUE<</replace>>
 			<<replace "#AndrewBossSpan1">>
 				<<print "putting the baby up for adoption,">>
 			<</replace>>
@@ -1094,6 +1100,7 @@
 						<<set $PlayerProtectionWithdraw = 0>>
 						<<set $PlayerProtectionCondoms = 0>>
 						<<set $PlayerProtectionPill = 1>>
+            <<replace "#StoryKeyFlag">>TRUE<</replace>>
 						<<replace "#AbortSpan1">>
 							<<print "start using birth control pills,">>
 						<</replace>>
@@ -1109,6 +1116,7 @@
 							<<set $PlayerProtectionNone = 0>>
 							<<set $PlayerProtectionWithdraw = 0>>
 							<<set $PlayerProtectionCondoms = 1>>
+              <<replace "#StoryKeyFlag">>TRUE<</replace>>
 							<<replace "#NotPregSpan2">>
 								<<print "use condoms for protection,">>
 							<</replace>>

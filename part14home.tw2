@@ -107,7 +107,7 @@
     car has made you.  "Now, you can watch me [[fuck him too|Part14Drive3]]."
   <<elseif $dating.length > 0>>
     "I am so turned on right now, but I have a
-    <<if setup.areDating("Kate") or setup.areDating("Veronica")>>
+    <<if setup.haveGirlfriend()>>
       girlfriend, and I want to be faithful to her.
     <<else>>
       boyfriend, and I want to be faithful to him.
@@ -5578,7 +5578,6 @@
 
 ::Part14Home4Start <29200,10700>
 <<nobr>>
-todo <<unset $AcademicProbationDenial>><<unset $AcademicProbation>>
   <<if $PlayerChastityBelt and $Keyholder != 'Dylan'>>
     <h1>Waking up Horny</h1>
     <img src="Part14/Chastity23.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -7509,9 +7508,11 @@ todo <<unset $AcademicProbationDenial>><<unset $AcademicProbation>>
     <br><br>
     You know Faith and Mark will be disappointed when they learn you won't be working with them anymore to control the impulses your X-Change gave you.
     But this is your body, and you going to start enjoying it.  Well, you will once you get off probation anyway.
-    <<unset $CampusMinistry>>
-    <<set $CampusMinistryFail to 1>>
-    <<set $CampusMinistryFailSummer to 1>>
+    <<if $CampusMinistry>>
+      <<unset $CampusMinistry>>
+      <<set $CampusMinistryFail to 1>>
+      <<set $CampusMinistryFailSummer to 1>>
+    <</if>>
   <</if>>
   <<if setup.areDating('Barry')>>
     <br><br>

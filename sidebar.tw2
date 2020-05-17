@@ -694,6 +694,10 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <<if $OliviaChastityBelt>>
       She is currently locked in a chastity belt.
     <</if>>
+  <<elseif !$Roommate and $SororityDTD>>
+    You are staying at the Δ Τ F house, but don't have a roommate yet.
+  <<elseif !$Roommate and $SororitySEX>>
+    You are staying at the Σ Ε Ξ house, but don't have a roommate yet.
   <</if>>
 <</nobr>>
 
@@ -762,11 +766,51 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
         Aaron is your Daddy and you are his Baby Girl.
       <</if>>
     <</if>>
-    <<if setup.areDating('Veronica') and !$JobCheerleader>><br><<print "You are in a relationship with your sorority sister, Veronica. ">><</if>>
-    <<if setup.areDating('Veronica') and $JobCheerleader>><br><<print "You are in a relationship with your chearleader colleague, Veronica. ">><</if>>
-    <<if setup.areDating('Josh')>><br><<print "You are in a relationship with Josh. ">><</if>>
-    <<if setup.areDating('Peter')>><br><<print "Peter is your boyfriend. ">><<if $PlayerItemNerdKey>>You keep him locked in chastity.<</if>><</if>>
-    <<if setup.areDating('Barry')>><br><<print "You serve Barry as his pet. ">><</if>>
+    <<if $Spouse == 'Veronica' or $Engaged == 'Veronica' or setup.areDating('Veronica')>>
+      <<if $Spouse == 'Veronica'>>
+        You are married to Veronica.
+      <<elseif $Engaged == 'Veronica'>>
+        You are engaged to Veronica, and living together.
+      <<elseif $Roommate=='Veronica'>>
+        You are in a relationship with Veronica, and living together.
+      <<else>>
+        You are in a relationship with Veronica.
+      <</if>>
+    <</if>>
+    <<if $Spouse == 'Josh' or $Engaged == 'Josh' or setup.areDating('Josh')>>
+      <<if $Spouse == 'Josh'>>
+        You are married to Josh.
+      <<elseif $Engaged == 'Josh'>>
+        You are engaged to Josh, and living together.
+      <<elseif $Roommate=='Josh'>>
+        You are in a relationship with Josh, and living together.
+      <<else>>
+        You are in a relationship with Josh.
+      <</if>>
+    <</if>>
+    <<if $Spouse == 'Peter' or $Engaged == 'Peter' or setup.areDating('Peter')>>
+      <<if $Spouse == 'Peter'>>
+        You are married to Peter.
+      <<elseif $Engaged == 'Peter'>>
+        You are engaged to Peter, and living together.
+      <<elseif $Roommate=='Peter'>>
+        You are in a relationship with Peter, and living together.
+      <<else>>
+        You are in a relationship with Peter.
+      <</if>>
+      <<if $PlayerItemNerdKey>>You keep him locked in chastity.<</if>>
+    <</if>>
+    <<if $Spouse == 'Barry' or $Engaged == 'Barry' or setup.areDating('Barry')>>
+      <<if $Spouse == 'Barry'>>
+        You are married to Barry.
+      <<elseif $Engaged == 'Barry'>>
+        You are engaged to Barry, and live with him as his pet.
+      <<elseif $Roommate=='Barry'>>
+        You live with Barry as his pet.
+      <<else>>
+        You serve Barry as his pet.
+      <</if>>
+    <</if>>
 
     <<if $Spouse == 'Mason'>>
       You are married to Mason.
@@ -918,6 +962,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
     <<if $SchoolWeek>>
       This is week $SchoolWeek.
+      <br>Debugging: <<if $PregnancyWeek>>PW:$PregnancyWeek<<else>>MW:$MenstrualWeek<</if>> <!--TODO-->
     <</if>>
   <<elseif $Dropout>>
     <br>You have dropped out of college.
