@@ -273,7 +273,7 @@
   <<elseif !$PlayerSideEffectPermanent>>
     <<achievement>>girlpower<</achievement>>
     make your change permanent.  You can't imagine ever wanting your old body back.
-    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Dan', 0)>>
     <<if $PregnancyCheck.isPregnant>>
       <<set $PlayerPregnant to 1>>
       <<set $PregnantSummer to 1>>
@@ -304,7 +304,7 @@
     <</if>>
   <<else>>
     run some tests, since you won't be making your start-of-semester visit.
-    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Dan', 0)>>
     <<if $PregnancyCheck.isPregnant>>
       <<set $PlayerPregnant to 1>>
       <<set $PregnantSummer to 1>>
@@ -976,7 +976,7 @@
   <<set setup.addSex({sex: 'male', name:'Dan'})>>
   <<set setup.addSex({sex: 'male', name:'Dan', vaginal:true})>>
   <<set setup.addSex({sex: 'male', name:'Dan'})>>
-  <<set $PregnancyCheck = setup.overrideForcePregnancy('home test')>>
+  <<set $PregnancyCheck = setup.overrideForcePregnancy('home test - Dan')>>
   <<set $PlayerPregnant to 1>>
 <</nobr>>
 <<nobr>>

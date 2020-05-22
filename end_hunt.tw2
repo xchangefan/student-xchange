@@ -87,12 +87,16 @@
 <</nobr>>
 
 <<nobr>>
+  <<if $StoryModeHuntRoll>>
+    <<set $tempHunt to $StoryModeHuntRoll[0]>>
+  <<else>>
+    <<set $tempHunt to random(1, 10)>>
+  <</if>>
   <<if $BodyType == 'Plus'>>
     Of course, you have a few extra pounds compared to the other girls, and they are all faster than you are.  So you don't have any chance of being one of
     the two that gets away.  Before you know it, one of the hunters is on top of you with his arms around you.  Once his partner has captured one of your
     friends, the two of them carry you and her off somewhere to [[do whatever they want with you|IslandHuntGroup3]].
   <<elseif $BodyType == 'Fit'>>
-    <<set $tempHunt to random(1, 10)>>
     You are in better shape than the other girls,
     <<if $tempHunt <= 2 >>
       but that doesn't help you.  One of the hunters grabs you from behind before you even think to run.  You're upset at yourself for letting yourself get
@@ -109,7 +113,6 @@
       of the hunters' compound.
     <</if>>
   <<else>>
-    <<set $tempHunt to random(1, 10)>>
     <<if $tempHunt <= 2 >>
       One of the hunters grabs you from behind before you even think to run.  You're upset at yourself for letting yourself get caught so easily.  As you
       and one of your friends are carried off somwhere, you wonder [[what the two of them plan on doing with you|IslandHuntGroup3]].
@@ -193,6 +196,12 @@
 <</nobr>>
 
 <<nobr>>
+  <<if $StoryModeHuntRoll>>
+    <<set $tempHunt to $StoryModeHuntRoll[0]>>
+  <<else>>
+    <<set $tempHunt to random(1, 4)>>
+  <</if>>
+
   You decide to find someplace safe to hide and
   <<if random(1,4) == 1>>
     [[sleep for the night|IslandHuntSleepLose]].
@@ -245,6 +254,11 @@
 <</nobr>>
 
 <<nobr>>
+  <<if $StoryModeHuntRoll>>
+    <<set $tempHunt to $StoryModeHuntRoll[0]>>
+  <<else>>
+    <<set $tempHunt to random(1, 4)>>
+  <</if>>
   You manage to get your pants up and start back on your way.  You walk, until it starts to get dark.  You can either,
   <<if random(1, 2) == 1>>
     [[keep walking into the night|IslandHuntAlone2]]
@@ -480,6 +494,11 @@
 <<nobr>>
   But it's not just the two of you on the trip.  Your other friend is outside the tent, watching and patiently waiting for his turn.  Then you wonder why
   they have to take turns at all.  You'd love to
+  <<if $StoryModeHuntRoll>>
+    <<set $tempHunt to $StoryModeHuntRoll[2]>>
+  <<else>>
+    <<set $tempHunt to random(1, 4)>>
+  <</if>>
   <<if $AcademicProbationDenial or random(1,4) == 4>>
     <<if $HuntCaptures>>
       [[take them both at once|IslandHuntNakedMorning]]
@@ -657,8 +676,8 @@
   <video src="Part14/Hunt13.mp4" autoplay loop muted height="540"></video>
 <</nobr>>
 <<nobr>>
-  He nails your clothes to the tree telling you, "Lets make sure this is nice and tight to your skin.  It's not like you'll be wearing after this anyway."
-  The his hands begin to explore you body.
+  He nails your clothes to the tree telling you, "Lets make sure this is nice and tight to your skin.  It's not like you'll be wearing it after this anyway."
+  Then his hands begin to explore you body.
 <</nobr>>
 
 <<nobr>>
@@ -741,7 +760,11 @@
 <</nobr>>
 
 <<nobr>>
-  <<set $tempHunt to random(1, 10)>>
+  <<if $StoryModeHuntRoll>>
+    <<set $tempHunt to $StoryModeHuntRoll[3]>>
+  <<else>>
+    <<set $tempHunt to random(1, 10)>>
+  <</if>>
   <<if $HuntHeadStart and ($BodyType == 'Fit')>>
     You have a head start from travelling into the night last night, and you are in better shape than the other girls.  So hopefully you'll have a big
     advantage today.  Assuming you don't get caught first, that is.  Though you hope you'll be able to stay ahead of the hunters too.
@@ -1050,7 +1073,7 @@
 
 ::IslandHuntPostPregnancyCheck <6200,11500>
 <<nobr>>
-  <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+  <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - hunt end', 0)>>
   <<if !$IslandPregnantPrevent && $PregnancyCheck.isPregnant>>
     <br><br>
     As the resort doctor is giving you and the other prey a post-hunt check-up to make sure no one has any injuries that need attention, he sees something on
@@ -1899,7 +1922,7 @@
   <<set $IslandPet to 1>>
   <<unset $student>>
   <<set $Dropout to "Pet">>
-  <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+  <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - island collar', 0)>>
   <<set setup.addInventory('sex toys', 'permanent collar')>>
 <</nobr>>
 <<nobr>>

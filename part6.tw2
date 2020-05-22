@@ -2641,39 +2641,57 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 <</nobr>>
 
+::Part6Grades1WillPass <14785,600>
+<<nobr>>
+  You’re doing great and you are pretty sure you have nothing to worry about.
+  <<if $CampusMinistry>>
+    [[Eventually it is time for your semester finals.|Part6Exam]]
+  <<else>>
+    You wonder if there's [[any way to be more sure you'll pass|Part6Professor1]]
+  <</if>>
+<</nobr>>
+
+::Part6Grades1MightPass <14790,600>
+<<nobr>>
+  You are really struggling in the class, and you don't see how you are ever going to pass.  You have to do something though if you
+  want to stay on the
+  <<if $JobAthlete>>team<<else>>squad<</if>>.
+  <<if $CampusMinistry>>
+    One of the other girls tells you exactly how she plans to make sure she passes one of her classes.  It involves getting on her
+    knees in the professors office, and she didn't mean to pray.
+    <br><br>
+    You are in tears as you tell Mark about it.  He suggests just talking to the professor about the trouble you are having.
+    So, you stop by to [[talk to the professor|Part6ProfessorRecover]] to see if there is anything you can do to pass.  Anything <b>except</b>
+    what your friend suggested that is.
+  <<else>>
+    You wonder if there's [[any way to still pass|Part6Professor1]].
+  <</if>>    
+<</nobr>>
+
+::Part6Grades1WillFail <14795,600>
+<<nobr>>
+  You’re going to fail, there’s no way to pull your grade up enough to pass now. [[Eventually it is time for you semester finals.|Part6Exam]]
+<</nobr>>
+
 ::Part6Grades1  <14800,600>
 <<nobr>>
 	<h1><<print "Campus">></h1>
 <</nobr>>
-
 <<print "You check the grades for the class you’ve been struggling in.">>
-<img src="Part6/Grades1.jpg" hspace="10" vspace="10" height="650">
-
+<img src="Part6/Grades1.jpg" hspace="10" vspace="10" height="600">
 <<nobr>>
-	<<if $AcademicPoints > 9>>
-		You’re doing great and you are pretty sure you have nothing to worry about.
-		<<if $CampusMinistry>>
-			[[Eventually it is time for your semester finals.|Part6Exam]]
-		<<else>>
-			You wonder if there's [[any way to be more sure you'll pass|Part6Professor1]]
-		<</if>>
+  <<if $StoryModePassClass>>
+    <<include [[Part6Grades1WillPass]]>>
+  <<elseif $StoryModeMaybePassClass>>
+    <<include [[Part6Grades1MightPass]]>>
+  <<elseif $StoryModeFailClass>>
+    <<include [[Part6Grades1WillFail]]>>
+	<<elseif $AcademicPoints > 9>>
+    <<include [[Part6Grades1WillPass]]>>
   <<elseif $AcademicPoints < 5 and !$PlayerGoodStudent and ($JobAthlete or $JobCheerleader or $JobCheerleaderFundraiser)>>
-    You are really struggling in the class, and you don't see how you are ever going to pass.  You have to do something though if you
-    want to stay on the
-    <<if $JobAthlete>>team<<else>>squad<</if>>.
-    <<if $CampusMinistry>>
-      One of the other girls tells you exactly how she plans to make sure she passes one of her classes.  It involves getting on her
-      knees in the professors office, and she didn't mean to pray.
-      <br><br>
-      You are in tears as you tell Mark about it.  He suggests just talking to the professor about the trouble you are having.
-		  So, you stop by to [[talk to the professor|Part6ProfessorRecover]] to see if there is anything you can do to pass.  Anything <b>except</b>
-      what your friend suggested that is.
-    <<else>>
-      You wonder if there's [[any way to still pass|Part6Professor1]].
-    <</if>>    
+    <<include [[Part6Grades1MightPass]]>>
 	<<elseif $AcademicPoints < 5 and !$PlayerGoodStudent>>
-		You’re going to fail, there’s no way to pull your grade up enough to pass now.
-		[[Eventually it is time for you semester finals.|Part6Exam]]
+    <<include [[Part6Grades1WillFail]]>>
 	<<elseif $KidnapEscape>>
 		You are in-between, it could go either way.  You know missing so much class didn't help.  You stop by to [[talk to the professor|Part6ProfessorRecover]]
 		to see if there is anything you can do to pass.
@@ -3754,8 +3772,8 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<unset $PlayerPointsSet>>
 	<<set $PlayerRollDice to either(1,2,3,4,5,6)>>
 	<<set $PlayerRollDice += $AcademicPoints>>
-	<<if !$ProfessorHelp and !$PlayerProfessorVisit and $PlayerRollDice < 11>><<set $AcademicProbation to 1>><</if>>
-	
+	<<if !$StoryModePassClass and !$ProfessorHelp and !$PlayerProfessorVisit and $PlayerRollDice < 11>><<set $AcademicProbation to 1>><</if>>
+  <<if $StoryModeFailClass>><<set $AcademicProbation to 1>><</if>>
 	<h1><<print "Campus">></h1>
 <</nobr>>
 

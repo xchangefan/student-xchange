@@ -117,7 +117,7 @@
     even his baby inside you lets you know he'll make an excellent father someday when it is.  It also makes you want to [[hurry home and be with him|UncleSub4]].
   <<elseif !$PlayerSideEffectPermanent>>
     <<set $PlayerSideEffectPermanent to 1>>
-    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test')>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Mike')>>
     <<if $PregnancyCheck.isPregnant>>
       <<if $PlayerAbortion>>
         <<set $PlayerAbortion += 1>>
@@ -157,7 +157,7 @@
       when you get home.
     <</if>>    
   <<else>>
-    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test', 0)>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Mike', 0)>>
     <<if $PregnancyCheck.isPregnant>>
       <<set $PlayerSideEffectPermanent to 1>>
       <<achievement>>pregnant<</achievement>>

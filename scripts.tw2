@@ -105,6 +105,7 @@ $(document).on("keyup", function (e) {
 	// Trigger next link click on right arrow key
 	if (((e.key == "ArrowRight") || (e.keyCode == 49) || (e.keyCode == 97)) && $("#NextLink").length && (!tags().includes("DisableClick"))) {
 		e.preventDefault();
+    state.active.variables.StoryKeysLearn += "1"
 		$("#NextLink").trigger("click");
 		return false;
 	}
@@ -113,6 +114,7 @@ $(document).on("keyup", function (e) {
 	if ((e.keyCode > 47) && (e.keyCode < 58) && (!tags().includes("DisableClick"))) {
 		if ($("#Link" + (e.keyCode - 48)).length) {
 			e.preventDefault();
+      state.active.variables.StoryKeysLearn += (e.keyCode - 48)
 			$("#Link" + (e.keyCode - 48)).trigger("click");
 			return false;
 		}
@@ -120,6 +122,7 @@ $(document).on("keyup", function (e) {
 	if ((e.keyCode > 95) && (e.keyCode < 106) && (!tags().includes("DisableClick"))) {
 		if ($("#Link" + (e.keyCode - 96)).length) {
 			e.preventDefault();
+      state.active.variables.StoryKeysLearn += (e.keyCode - 96)
 			$("#Link" + (e.keyCode - 96)).trigger("click");
 			return false;
 		}
@@ -130,6 +133,7 @@ $(document).on("keyup", function (e) {
 		e.preventDefault();
 		var Links = $("#passages a");
 		if (Links.length > 0) {
+      state.active.variables.StoryKeysLearn += ":RANDOM:"
 			Links[Math.floor(Math.random() * Links.length)].click();
 			return false;
 		}
@@ -535,8 +539,38 @@ setup.checkForNewPregnancyHidden = function() {
 }
 
 setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
+  console.log("Pregnancy check", pregnancyTestType, oddsBoost);
   if (state.active.variables.PlayerPregnant) {
     return {isPregnant: false, possibleFathers: []} // already pregnant
+  } else if (state.active.variables.StoryKeys && state.active.variables.StoryModePregnant) {
+    var recentVaginal = setup.getPossibleConceptions()
+    var storyModePregnancy = state.active.variables.StoryModePregnant[pregnancyTestType]
+    if (storyModePregnancy) {
+      var luckyFuck = recentVaginal.find(function(fuck) {return fuck.name == storyModePregnancy || fuck.anon == storyModePregnancy});
+      if (!luckyFuck) {
+  		  luckyFuck = recentVaginal[Math.floor(Math.random() * recentVaginal.length)]
+      }
+
+      var possibleFathers = Array.from(new Set(recentVaginal.map(function(fuck) {
+        return setup.getPartnerName(fuck)
+      })))
+
+		  luckyFuck.conception = true
+
+      return {
+		  	isPregnant: true,
+  			possibleFathers,
+	  		conceptionEvent: luckyFuck,
+		  	actualFather: setup.getPartnerName(luckyFuck),
+  			count: recentVaginal.length
+	  	}
+    } else {
+      recentVaginal.forEach(function(fuck) {
+        fuck.conception = false
+        fuck.checkedForPregnancy = pregnancyTestType
+      })
+      return {isPregnant: false, possibleFathers: []} 
+    }
   } else {
     var recentVaginal = setup.getPossibleConceptions()
     var possibleFathers = Array.from(new Set(recentVaginal.map(function(fuck) {
@@ -970,7 +1004,8 @@ setup.pageMessage = function(msg) {
 <<nobr>>
   <span style="display:none"><<if $playerName>>$playerName<<if $MindBlank>>Marie<</if>>: <</if>></span>
   <<set $pageMessages = []>>
-  DEBUG: $StoryKeys
+  DEBUG: $StoryKeys<br>
+  DEBUG2: $StoryKeysLearn<br>
 <</nobr>>
 
 

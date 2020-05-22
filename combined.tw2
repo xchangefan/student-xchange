@@ -65,6 +65,7 @@ blockquote {
 ::Start <0,0>
 <h1>Home</h1>
 <<nobr>>
+  <<set $StoryKeysLearn to "">>
 	<<set $body to {}>>
 	<<set $student to true>>
 	<<set $sex to []>>
@@ -104,7 +105,11 @@ As you look over the responses you see:
 
 
 * <<nobr>>
-Actually, your college days are in the past, but you remember it all like it were yesterday. [[(Story Mode)|StoryMode]]
+<<if setup.getAchievementEndingCount()>>
+  Actually, your college days are in the past, but you remember it all like it were yesterday. [[(Story Mode)|StoryMode]]
+<<else>>
+  <i>Story Mode available after reaching at least one ending</i>
+<</if>>
 <</nobr>>
 
 ::StoryIncludes <100,100>
