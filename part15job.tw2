@@ -1,0 +1,486 @@
+::Part15Job
+
+::Part15JobMain
+<<nobr>>
+  <<if $JobEngineerLock>>
+    <<include [[Part15JobEngineerLock]]>>
+  <<elseif $JobEngineer>>
+    <<include [[Part15JobEngineer]]>>
+  <<elseif $JobBarista>>
+    <<include [[Part15JobBarista]]>>
+  <<elseif $JobBikiniBarista>>
+    <<include [[Part15JobBikiniBarista]]>>
+  <<elseif $JobOffice or $JobOfficeManager or $JobOfficeIntern>>
+    <<include [[Part15JobOffice]]>>
+  <<elseif $JobCallGirl>>
+    <<include [[Part15JobCallGirl]]>>
+  <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub>>
+    <<include [[Part15JobBartender]]>>
+  <<elseif $JobAthlete>>
+    <<include [[Part15JobAthlete]]>>
+  <<elseif $JobCheerleader or $CheerleaderFundraiser>>
+    <<include [[Part15JobCheer]]>>
+  <<elseif $JobFitnessYoga>>
+    <<include [[Part15JobYoga]]>>
+  <<elseif $JobFitnessMassage>>
+    <<include [[Part15JobMassage]]>>
+  <<elseif $JobLibrary>>
+    <<include [[PartJobLibrary]]>>
+  <<elseif $JobBetaTester or $JobCallGirlSide or $JobStripper or $JobGloryHole>>
+    <<include [[Part15JobSide]]>>
+  <<elseif $dating.length>>
+    <<include [[Part15Relationship]]>>
+  <<else>>
+    <<include [[Part15NoJob]]>>
+  <</if>>
+<</nobr>>
+
+::Part15NoJob
+TODO They had no job, no side job, no relationship.  What are they doing with their lives?  Just have them study
+<<include [[Part15BackToMain]]>>
+
+::Part15AfterMainJob
+<<nobr>>
+  <<if $JobBetaTester or $JobCallGirlSide or $JobStripper or $JobGloryHole>>
+    TODO [[Part15JobSide]]
+  <<elseif $dating.length>>
+    TODO [[Part15Relationship]]
+  <<else>>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
+<</nobr>>
+
+::Part15JobSide
+<<nobr>>
+  <<if $JobBetaTester>>
+    <<include [[Part15JobBetaTester]]>>
+  <<elseif $JobCallGirlSide>>
+    <<include [[Part15JobCallGirl]]>>
+  <<elseif $JobStripper>>
+    <<include [[Part15JobStripper]]>>
+  <<elseif $JobGloryHole>>
+    <<include [[Part15JobGloryHole]]>>
+  <<else>>
+    <!-- shouldn't be here -->
+    <<if $dating.length>>
+      <<include [[Part15Relationship]]>>
+    <<else>>
+      <<include [[Part15NoJob]]>>
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part15AfterSideJob
+<<nobr>>
+  <<if $dating.length>>
+    TODO [[Part15Relationship]]
+  <<else>>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
+<</nobr>>
+
+::Part15JobYoga
+TODO
+TODO [[Part15AfterMainJob]]
+
+::Part15JobMassage
+TODO
+TODO [[Part15AfterMainJob]]
+
+::PartJobLibrary
+TODO
+TODO [[Part15AfterMainJob]]
+
+::Part15JobAthlete
+TODO
+TODO [[Part15AfterMainJob]]
+
+::Part15JobCheer
+TODO
+TODO [[Part15AfterMainJob]]
+
+::Part15JobBartender
+TODO
+TODO [[Part15AfterMainJob]]
+
+::Part15JobOffice
+TODO 
+TODO [[Part15AfterMainJob]]
+
+::Part15JobBarista
+TODO
+TODO [[Part15AfterMainJob]]
+
+::Part15JobBikiniBarista
+TODO
+TODO [[Part15AfterMainJob]]
+
+::Part15JobCallGirl
+TODO
+TODO [[Part15AfterMainJob]]
+
+::Part15JobStripper
+TODO
+TODO [[Part15AfterSideJob]]
+
+::Part15JobGloryHole
+TODO
+TODO [[Part15AfterSideJob]]
+
+::Part15JobCallGirlSide
+TODO
+TODO [[Part15AfterSideJob]]
+
+::Part15JobBetaTester
+TODO Beta testing different features
+TODO Maybe challenges to get an orgasm (or chance of one)
+TODO (Treating beta tester as a side job because it might be for ministry path.  Also have special handling for beta tester + glory hole)
+
+::Part15JobEngineer
+TODO Non-belted engineer
+TODO [[Part15AfterMainJob]]
+
+::Part15JobEngineerLock
+<<nobr>>
+  <<if $SchoolWeek == 3>>
+    <<include [[Part15JobEngineerLock1]]>>
+  <<elseif $SchoolWeek == 7>>
+    TODO (Second Engineering Lock)
+  <<else>>
+    TODO (Not sure what other weeks would be yet)
+  <</if>>
+<</nobr>>
+
+::Part15JobEngineerLock1
+<<nobr>>
+  <h1>Trying to hack your belt</h1>
+  <img src="Part15/Engineer7.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+<<nobr>>
+  You try thinking of ways to attack the belt you are wearing.  You know better than to try any physical attacks, so you dismiss that.  You think you can
+  probably trick the oral detection routines to think you are giving a blowjob when you are not.  If you do that then... You realize that does nothing for you.
+  It's not going to give you an orgasm, or unlock you.
+  <<if $dating.length>>
+    And it's not like $dating[0] isn't eager to let you test whenever you like on them.
+  <<else>>
+    And it's not like finding a cock to suck on campus is that difficult anyway.
+  <</if>>
+  You keep thinking.
+<</nobr>>
+
+<<nobr>>
+  You pull up the app and look around, most of the settings are disabled... Then you have an idea.  You make sure your phone is on the wifi, and fire up a
+  packet sniffer.  Then you restart the app and record the traffic to and from your phone.  You get excited as soon as you see the results.  All the data
+  back in forth is right there, in plain text.  You can see the values for all the settings comming back, even though the app wouldn't show you most of them.
+  Though the settings in your case a boring, nearly everything is disabled.
+<</nobr>>
+
+<<nobr>>
+  Your eyes stop at:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<code>accessLevel: 'WEARER'</code><br>
+  in the messages from the server to the app.  You have an idea, but you can't believe it'd be this easy.  There's a mountain of source code, but you search
+  it and find where that's being set, and where's it's being checked.  You can't believe it,  you're pretty sure this will work.  You write a small
+  program that just intercepts the data from the server and changes the value to<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<code>accessLevel: 'OWNER'</code><br>
+  Then you restart the app to see what happens.
+<</nobr>>
+
+<<nobr>>
+  It worked! It comes back with the owner version of the status screen.  It shows your last orgasm: "Never", at least as far as the belt is concerned. it
+  has your current arousal level, all the settings you'd seen from the network traffic.  But most importantly, all the controls to change the settings are no
+  longer disabled!  Still, even though the app was fooled, the server might be smart enough to ignore the request, because it still knows you're the wearer.
+  The code is a mess, you'd spend hours trying to figure it from looking at that, and still probably not be sure.  So you decide to just test it.
+<</nobr>>
+
+<<nobr>>
+  You look around through the settings looking for settings to change.  "Global Orgasm Block" was set to on, which tells it not to let you orgasm, regardless
+  of any other setting.  That's the first thing you are going to turn off.  You hit the button and wait.  A moment later the app shows that it's been disbled.
+  You check the network traffic and it looks good too!  You notice your arousal ticking up on the status page.  The belt knows you are thinking you might
+  be able to cum tonight.
+<</nobr>>
+
+<<nobr>>
+  You go to the oral settings page, and you see it's activate, but orgasms are disabled.  You decide to change that, setting it to "Every time" instead.
+  You see that change was accepted also.  You also see your arousal level rising even faster.  The belt detects how much you are thinking about pausing your
+  testing for now so you can [[go verify your new setting|Part15JobEngineerLockOrgasm]] with
+  <<if setup.haveGirlfriend()>>
+    $dating[0].  You are aleady wet thinking about the belt giving you an orgasm with your head burried between her legs.
+  <<elseif $dating.length > 0>>
+    $dating[0].  You are already wet thinking about the belt giving you an orgasm just as his cum fills your mouth.
+  <<else>>
+    the first cock you can find.  You are already wet thinking about the belt giving you an orgasm just as his cum fills your mouth. 
+  <</if>>
+  <<if $PlayerSideEffectOral>>
+    The thought of finally having an orgasm, and having it while
+    <<if setup.haveGirlfriend()>>
+      you give $dating[0] one too,
+    <<elseif $dating.length > 0>>
+      you suck $dating[0]'s cock,
+    <<else>>
+      you suck some guy's cock,
+    <</if>>
+    it's too much to resist.  You'll try more testing afterwards.
+  <<else>>
+    Or you could resist that urge and [[keep looking for other options to change|Part15JobEngineerLockUnlock]].
+  <</if>>
+<</nobr>>
+
+::Part15JobEngineerLockOrgasm
+<<nobr>>
+  <h1>Testing the new setting</h1>
+  <<if setup.haveGirlfriend()>>
+    <video src="Part15/Engineer9.mp4" autoplay loop muted height="500"></video>
+  <<else>>
+    <video src="Part15/Engineer8.mp4" autoplay loop muted height="500"></video>
+  <</if>>
+  <<set $EngineerLockPacketOrgasm to 6>>
+<</nobr>>
+<<nobr>>
+  <<if setup.haveGirlfriend()>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    $dating[0] is happy to help you test.  Not long after your tongue first slides into her you can feel the vibrations start, just as before.  You know it's
+    the same as before so far, but it still feels so much better knowing, or at least hoping, that its going to end an orgasm for you.
+    <br><br>
+    It builds as before, but this time it doesn't stop.  Soon you have to pause your work on $dating[0] as your orgasm overwhelms you.  After so many
+    months without one, it feels so amazing.  As soon as you can, you get back to work on $dating[0], and before you know it she's holding your head against
+    her as she has her own orgasm.
+    <br><br>
+    The whole time, you belt has resumed it's stimulation of you.  You keep going, eating her out until you cum again, and then she cums again.  By the time
+    you have to stop, you and $dating[0] have both lost track of how many times you came.
+  <<elseif $dating.length>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    $dating[0] is happy to help you test.  Not long after his cock hits your tongue, you can feel the vibrations start, just as before.  You know it's the
+    same as before so far, but it still feels so much better knowing, or at least hoping, that its going to end an orgasm for you.
+    <br><br>
+    It builds as before, and then holds as you continue to work his cock.  You get more and more frantic as you suck his cock, hungry for your own orgasm.
+    Before long you feel $dating[0]'s hand on your head and then hear him groan as your mouth fills with his cum.  Then your belt stops keeping you on the
+    edge and instead increases the vibrations until you too are cumming.
+    <br><br>
+    After so many months without an orgasm, it feels so amazing.  You want to go again right away, but you know $dating[0] needs a few minutes.  You lie
+    next to him with a huge smile on your face.
+    <br><br>
+    As soon as he's ready, you go again, and the belt gives you an orgasm again just as he cums for you.  You want to go again, and again, but $dating[0]
+    says that's enough testing for now.    
+  <<else>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male"})>>
+    As before, it doesn't take long to find a guy that wants his cock sucked.  Not long after his cock hits your tongue, you can feel the vibrations start,
+    just as before.  You know it's the same as before so far, but it still feels so much better knowing, or at least hoping, that its going to end an orgasm
+    for you.
+    <br><br>
+    It builds as before, and then holds as you continue to work his cock.  You get more and more frantic as you suck his cock, hungry for your own orgasm.
+    Before long he tells you he's about to cum, and then you hear him groan and then your mouth fills with his cum.  Finally your belt stops keeping you on the
+    edge and instead increases the vibrations until you too are cumming.
+    <br><br>
+    After so many months without an orgasm, it feels so amazing.  You want to go again right away, but you know he needs a few minutes.  You lie
+    next to him with a huge smile on your face.
+    <br><br>
+    As soon as he's ready, you go again, and the belt gives you an orgasm again just as he cums for you.  You want to go again, and again, but he says
+    that he's good for tonight.  He gives you his number to call next time you have the urge to suck a cock.  After he leaves you try to decide if that's
+    enough for tonight, or if you want to go find another cock.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  As you are laying there on the bed, still in the afterglow of your orgasm you glance of at your phone.  You see a text from your boss.  "Congratulations
+  on the orgasm!" it says.  A year ago you would have been embarrassed at him knowing you just came, multiple times in fact.  But he's seen you cum many
+  times on testing videos by now, so him getting a notification from your belt doesn't surprise or concern you.
+<</nobr>>
+
+<<nobr>>
+  "I see you changed the settings from the app somehow.  Great job!  We can go over the details tomorrow.  Have fun with your new settings until then," he
+  has after that.  You check the app and it now says "Sorry, this app is down for routine maintenance".  He must have turned it off until the bug is fixed.
+  I guess that's one of the benefits of testing pre-release.
+<</nobr>>
+
+<<nobr>>
+  Knowing tonight might be your only chance for a while, you
+  <<if setup.haveGirlfriend()>>
+    consider seeing if $dating[0] is up for another round.  But you are still exhausted from before and decide thats enough for now.  You talk to $dating[0]
+    and she says that since tonight might be it for a while, if you wake up horny in the middle of the night, feel free to wake her up with your tongue.  You
+    do just that several times during the night.
+  <<elseif $dating.length>>
+    $dating[0] doesn't want another blowjob right now, but he says to feel free to wake him up tonight with one if you wake up horny.  "Actually, not just tonight,
+    feel free to do that anything," he adds with a smile.  You do just that several times during the night.
+  <<else>>
+    decide to go out and find another guy.  After he's ready to stop, you go out to another one.  After he's been emptied twice, you notice the time.  It's going
+    to be hard to find another guy without knocking on doors and waking someone up.  And you need some sleep too.  So you decide that will have to be enough.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You wake up tired the next morning, but at least not as desperately horny as you have been for so long.  You quickly dress and
+  [[head to the Engineering department|Part15JobEngineerLock2]].
+<</nobr>>
+
+::Part15JobEngineerLockUnlock
+<<nobr>>
+  <h1>Tripping the alarm</h1>
+  <img src="Part15/Engineer11.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  You keep looking through the options, then you see the "Unlock" hidden two or three pages in from the Owner menu.  Either their design needs some
+  usability work, or this isn't an option they are expecting Owners to be using that often.  But obviously, it's the option you want, so you hit "Unlock".
+  "Are you sure?" it asks.  "Yes I'm sure!", you say as you hit the button.
+<</nobr>>
+
+<<nobr>>
+  "Enter unlock code." it says asking for a six digit number.  You don't know what to type, and there's no cancel button.  You think about just killing the
+  app, but you don't know what that will do, so you just guess.  They didn't have much security on the network, so maybe it's just as bad here. "000000",
+  instantly comes back with "incorrect unlock code".  You try "123456" and "654321" and they don't work either.
+<</nobr>>
+
+<<nobr>>
+  Then you think about the mostly guys you work with and how they think.  And then you type "696969".  This time it doesn't come back immediately with an
+  incorrect message, it seems to be processing it.  You wait in anticipation to hear a click from your belt.  You are already getting wet imagining
+  getting bent over your desk and feeling
+  <<if setup.haveGirlfriend()>>
+    $dating[0]'s strap-on
+  <<elseif $dating.length>>
+    $dating[0]'s cock 
+  <<else>>
+    some guy's cock
+  <</if>>
+  slide into you.
+<</nobr>>
+
+<<nobr>>
+  Then the screen turns red and the message "Unauthorized access attempted - Account Locked".  A second later you feel pain shoot though your clit as
+  the belt gives you some sort of a shock.  You close the app and reopen it.  It immediately gives you a prompt to enter a pass code to unlock the account.
+  You are afraid to enter anything by guessing anymore and close the app.  You turn off your hack so it won't think you are the owner anymore, but the
+  wearer.  When you do, there's a message that says.  "Your unauthorized access was detected.  Punishment shocks will continue until deactivated by Owner".
+<</nobr>>
+
+<<nobr>>
+  You close the app and try to think.  After a few minutes you feel the pain hit again. There's nothing you can do to get away from it, even though
+  you try.  A couple minutes later you get a text message from your boss.
+<</nobr>>
+
+<<nobr>>
+  "Oops, looks like someone tried to hack something. :-)", his text says.  A few moments later he says, "I would turn off the shocks you are probably
+  receiving right now, but the unlock codes are all random, and I have them locked away in my office.  I'll take care of it first thing in the morning.
+  Sorry, you're going to have an unpleasant night.  Let me know tomorrow what happened."
+<</nobr>>
+
+<<nobr>>
+  You deside to at least enjoy the setting you made earlier.  You
+  <<if setup.haveGirlfriend()>>
+    <<set setup.addSex({sex:"female", name:$dating[0]})>>
+    ask $dating[0] if you can eat her out.  Of course she says yes.
+  <<elseif $dating.length>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    ask $dating[0] if you can suck his cock.  Of course he says yes.
+  <<else>>
+    <<set setup.addSex({sex:"male"})>>
+    go out to find some guy's cock to suck.  It doesn't take long to find a volunteer.
+  <</if>>
+  You soon discover that not only is the orgasm setting not working, but it isn't even giving you the teasing vibrations it was before.  It must
+  have disabled anything it thought you might enjoy.  You don't stop though, that would be rude.  It's not
+  <<if $dating.length>>
+    $dating[0]'s
+  <<else>>
+    this guy's
+  <</if>>
+  fault.  One nice thing you discover though is that it isn't shocking you while you are taking care of
+  <<if setup.haveGirlfriend()>>her<<else>>him<</if>>.  So you take your time, making as slow and sensual as you can and enjoying not being shocked
+  for a while.  But eventually it ends, and the shocks resume.
+
+<</nobr>>
+
+<<nobr>>
+  With shocks waking you up at random times throughout the night, you wake up exhausted.  The shocks are still hitting you as you start on your way to
+  [[the Engineering department|Part15JobEngineerLock2]].  Hopefully you boss gets in soon and turns them off!
+<</nobr>>
+
+::Part15JobEngineerLock2
+<<nobr>>
+  <h1>Explaining the problem</h1>
+  <img src="Part15/Engineer10.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  <<if $EngineerLockPacketOrgasm>>
+    Of course, you're tempted to not tell them how to fix the hack so you can enjoy your new setting.  But that wouldn't work.  Your boss could just
+    disable you're belts orgasms from some admin interface, and then they'd eventually figure out the bug anyway.  Then end result would be the same,
+    except you wouldn't get your bonus, so you might as well tell how you did it.
+    <br><br>
+    "You look exhausted," your boss says when you sit down in his office.  Then he laughs.  "Well, I guess you didn't get much sleep last night, did you?"
+    After a moment he asks, "So, how did you do it?"
+  <<else>>
+    "You look exhausted," your boss says when you sit down in his office.  Then he laughs.  "Well, I guess you didn't get much sleep last night, did you?"
+    After a moment he says, "As I'm sure you've felt, or haven't felt, I turned off the punishment shocks this morning when I came in to the office.  But
+    the fact that you got far enough to even trigger the account down shows you found a flaw.  So, what did you find?"
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You explain how the communications between the app and the server aren't encrpyted and how the app responded as if you were the owner just by changing
+  one value.  And the server accepted the commands the app sent back even though it knew you were the wearer not the owner.
+<</nobr>>
+
+<<nobr>>
+  "Those are some pretty glaring flaws, I'm glad you found them now," he tells you. "And thankfully it sounds like it won't require any major work.  A few
+  lines of code on the server to use it's own authorization information instead of whatever the app says.  And of course, encrypting everything.  I'm
+  guessing a few weeks and then you can get back to testing."
+<</nobr>>
+
+<<nobr>>
+  <<if $EngineerLockPacketOrgasm>>
+    "I'll send the paperwork in for your bonus payment, good work," he says.  "Oh, and your belt's settings.
+    We'll leave them like they are now until the bugs are fixed and you can test again.  Have fun the next week or two!"  You know you
+    <<if $dating.length>>and $dating[0]<</if>> will.
+  <<else>>
+    "As you probably discovered, when you triggered the account lockdown, it automatically re-activated the Global Orgasm Block," he says.  "And you weren't
+    able to orgasm before then, and obviously weren't able to unlock the belt.  So, I'm sorry, but I can't authorized a bonus payment.  But you did a great
+    job, and I do still want to reward you."
+    <br><br>
+    "So I'm activating random teases and edges for you," he says.  "Your classes shouldn't be that challenging yet this early in the semester, so hopefully
+    it won't be too much of a distraction.  I'll turn it off whenever you can go back to testing again.  Oh, and I turned the non-orgasm oral encouragement
+    back on, from the log here it seems like you really enjoyed that."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He also has you give a talk to your fellow student engineers about encryption and not trusting client-side data.  Though many of the male engineers
+  seem to not be paying much attention.  Not that you mind, the more mistakes they make, the more bugs you'll be able to find.
+<</nobr>>
+
+<<nobr>>
+  There's not much testing you can do now, at least not for another week or more.
+  <<if $EngineerLockPacketOrgasm>>
+    <<set $tempLockOralCount to 28>>
+  <<else>>
+    <<set $tempLockOralCount to 7>>
+  <</if>>
+  <<if setup.haveGirlfriend()>>
+    <<set $tempLockOralCount += 10>>
+  <</if>>
+  <<if setup.haveGirlfriend()>>
+    <<set setup.addSexRepeat($tempLockOralCount, {sex:"female", name:$dating[0]})>>
+  <<elseif $dating.length>>
+    <<set setup.addSexRepeat($tempLockOralCount, {sex:"male", name:$dating[0]})>>
+  <<else>>
+    <<set setup.addSexRepeat($tempLockOralCount, {sex:"male"})>>
+  <</if>>
+  <<unset $tempLockOralCount>>
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15AfterMainJob]]>>
+<</nobr>>

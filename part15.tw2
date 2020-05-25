@@ -1768,6 +1768,8 @@
   The same NDAs apply as always of course.  Good luck!"
 <</nobr>>
 
+TODO Handle if $JobStripper or $JobCallGirlSide
+
 ::Part15EngineerProbation4
 <<nobr>>
   <h1>Your First Tests</h1>
@@ -2205,6 +2207,8 @@
   "Oh, and if you were the one on academic probation, be sure to stop by the X-Change office when you leave here to get that taken care of," he adds
   as you are leaving.
 <</nobr>>
+
+TODO Handle if $JobStripper or $JobCallGirlSide
 
 ::Part15TestSubjectBetaTest2
 <<nobr>>
@@ -3951,7 +3955,7 @@
   <<if either(0,1) == 1>><<set $BuddyCondoms to 1>><</if>>
   "I'll do that," she says.  Though you aren't sure if she actually will or not.  "When [[we meet up again in a few days|Part15Week]], hopefully I'll
   have another story or two to tell", she says hopefully before you two head in different directions.
-<</nobr>>
+<</nobr>> Part15ClassesStart
 
 ::Part15BuddyClothes
 <<nobr>>
@@ -4192,7 +4196,292 @@ TODO Remove from academic probation
 <<unset $tempNoAdvanceWeek>>
 todo [[Part15Week]]
 
+::Part15AcademicProbationFollowUp
+TODO Followup on academic probation
+
 ::Part15WeekStandard
+<<nobr>>
+  <<if $AcademicProbation>>
+    <<if $SchoolWeek == 2>>
+      <<include [[Part15Probation1]]>>
+    <<elseif $AcademicProbationTutor == "math">>
+      <<include [[Part15TutorFollowupMath]]>>
+    <<elseif $AcademicProbationTutor == "maid">>
+      <<include [[Part15TutorFollowupMaid]]>>
+    <<else>>
+      <<include [[Part15TutorFollowupClean]]>>
+    <</if>>
+  <<else>>
+    <<include [[Part15WeekByWeek]]>>
+  <</if>>
+<</nobr>>
+
+::Part15TutorFollowupMath
+<<nobr>>
+  <<if $SchoolWeek == 3>>
+    <<include [[Part15TutorFollowupMath1]]>>
+  <<elseif $SchoolWeek == 4>>
+    TODO Maid Followup (based on week 4)
+    TODO [[Part15WeekByWeek]]
+  <<else>>
+    TODO Maid Followup (based on week 5)
+    TODO [[Part15WeekByWeek]]
+  <</if>>
+<</nobr>>
+
+::Part15TutorFollowupMath1
+<<nobr>>
+  <h1>Heading to meeting with your tutor</h1>
+  <img src="Part15/Probation10.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  Your tutor only wants to look, not to touch.  So you've decided to make looking more fun for him, even before you get your first problem wrong and
+  have to start removing something.
+<</nobr>>
+
+<<nobr>>
+  And of course you don't mind the looks your sexy schoolgirl outfit gets as you [[walk towards the lecture hall|Part15TutorFollowupMath2]].  Sometimes,
+  when they find out where you are going and the rules for your tutoring sessions, the guys that flirt with you on the way decide to join you to watch
+  your session.
+<</nobr>>
+
+::Part15TutorFollowupMath2
+<<nobr>>
+  <h1>Mid-session break</h1>
+  <img src="Part15/Probation11.jpg" hspace="10" vspace="10" height="550">
+<</nobr>>
+<<nobr>>
+  You've given up on the "no photos" rule you tried to enforce on the spectators that gather for your tutoring sessions.  But you still don't want the constant
+  sounds and flashes of the photos from distracting from your learning.
+<</nobr>>
+
+<<nobr>>
+  The compromise that you've worked out is a to have a photo break in the middle of the session.  They can take all the pictures they want, while your
+  tutor goes to the bathroom, gets a coffee, or whatever.  Then continue when he gets back.  Of course they also take photos
+  [[after the tutoring is done|Part15TutorFollowupMath3]], before, during, and after the fun that follows.  But there's no need to stop anything for those
+  photos.
+<</nobr>>
+
+::Part15TutorFollowupMath3
+<<nobr>>
+  <h1>Fun with your audience</h1>
+  <img src="Part15/Probation12.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  After the tutoring is over you start to entertain the guys that have been watching.  They've already queued up by then for their cocks to be sucked.  And you
+  are eager to start as well.  It's your tutor's turn to sit in the audience and watch.
+<</nobr>>
+
+<<nobr>>
+  As you suck each cock, you yearn for one of the others in line to fuck you.  But your
+  <<if $PlayerChastityBelt>>
+    belt prevents it.  Even your ass isn't allowed, as your tutor is worried about the mess it might make in the lecture hall.
+  <<else>>
+    tutor forbids it.  He's worried about leaving a mess in the lecture hall.
+  <</if>>
+  He makes sure what mess you do make is cleaned up.  You always obediently lick up any cum you've failed to swallow before you leave the lecture hall.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    <<if $Keyholder == "computer">>
+      Your belt constantly teases you, keeping you on the edge of an orgasm the entire time.
+      <<if $JobBetaTester>>
+        <<set $DailyBJRecord += 50>>
+        Except for a few, amazing times when it's actually let you cum.
+        <br><br>
+        As you audience has grown and grown, several times your belt has rewarded
+        you for beating your past record for daily blowjobs.  But now your audience seems to have peaked, and you've had to beg them to stay for a second
+        blowjob, and even that isn't enough to reach your target anymore.
+        <br><br>
+      <</if>>
+      At the end of nearly every session you are left desperately horny, after having been on the edge of orgasm for so long.  After you've cleaned up your mess,
+      you [[leave the lecuture hall|Part15WeekByWeek]].  You can feel your lubrication running down your leg.  Your body kept making more, hoping for a cock that
+      would never be inside anywhere but your mouth.
+    <<else>>
+      When they've all been satisfied, and you've cleaned up your mess, [[you leave the lecture hall|Part15WeekByWeek]], still aching for the cocks you
+      couldn't have.
+    <</if>>
+  <<else>>
+    When they've all been satisfied, and you've cleaned up your mess, it's time to leave the lecture hall.  But you are still aching for a cock inside you.
+    You've already asked two, or three, or more of the guys to stay around at bit longer.  You know you'll be
+    [[heading home with them|Part15TutorFollowupMath4]] to continue the fun back at one of their homes.
+  <</if>>
+<</nobr>>
+
+::Part15TutorFollowupMath4
+<<nobr>>
+  <h1>Going home with your favorites</h1>
+  <img src="Part15/Probation13.jpg" hspace="10" vspace="10" height="550">
+  <<set setup.addSex({sex:"male",vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male",vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male",vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male",vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male",vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male",vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male",vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+<</nobr>>
+<<nobr>>
+  It's different ones each time, but there's always plenty to pick from.  When you get back to their house, there's no longer any need to take turns, they
+  can both go at once.  Or better yet, all three of them.
+  <<if $AcademicProbationDenial>>
+    <br><br>
+    You don't cum, or even feel the plesure you should, of course.  But there's still something satisfying about feeling a cock inside you.  And the feeling
+    of them holding you, using your body for their pleasure, gives you joy even if it can't give you the orgasm it should.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  By the time you stagger out their door and [[head back home|Part15WeekByWeek]], you often think to yourself,
+  <<if $AcademicProbationDenial>>
+    "I'll be so glad when I'm finally off probation, then it can feel as good for me as it did for them."
+  <<else>>
+    "If learning had been this much fun last year, I'd never had ended up on probation in the first palce."
+  <</if>>
+<</nobr>>
+
+::Part15TutorFollowupMaid
+<<nobr>>
+  <<if $SchoolWeek == 3>>
+    <<include [[Part15TutorFollowupMaid1]]>>
+  <<elseif $SchoolWeek == 4>>
+    TODO Maid Followup (based on week 4)
+    TODO [[Part15WeekByWeek]]
+  <<else>>
+    TODO Maid Followup (based on week 5)
+    TODO [[Part15WeekByWeek]]
+  <</if>>
+<</nobr>>
+
+::Part15TutorFollowupMaid1
+<<nobr>>
+  <h1>Meeting with your tutor</h1>
+  <<if $PlayerChastityBelt>>
+    <img src="Part15/Probation6.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+    <video src="Part15/Probation7.mp4" autoplay loop muted height="550"></video>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Your tutor picked you up another uniform, so you didn't get hot and sweaty on your long walk to and from his apartment each visit.  The new one
+  doesn't have that problem at all.  Of course, walking across campus in your skimpy maid uniform, with
+  <<if $PlayerChastityBelt>>
+    your chastity belt barely visible
+  <<else>>
+    no panties
+  <</if>>
+  underneath, draws a good bit of attention during your walk.  You've gotten the number of quite a few guys that would really like to hire you to
+  clean for them wearing the same uniform.
+<</nobr>>
+
+<<nobr>>
+  Knowing everyone is watching you on the walk over always has you wet when you arrive.
+  <<if $PlayerChastityBelt>>
+    Not that you can do anything about it.
+    <<if $Keyholder == "computer" and $JobBetaTester != "chaste">>
+      But your belt, detecting your arousal, helpfully sends you a notification as you are arriving at his door.  "Wouldn't a nice, hard cock feel good right now?"
+      You want to scream "Yes! Yes! It would!" at your phone, but you don't.  You just knock on his door and wait.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You wish he <<if $PlayerChastityBelt>>could<<else>>would<</if>> throw you to the floor and fuck you as soon as you walk through the door.  But instead you
+  start cleaning.  He supervises closely, especially watching you reach high with your duster or crawl across his bed, both revealing what little your
+  uniform concealed.
+<</nobr>>
+
+<<nobr>>
+  His small apartment doesn't take long to clean, and besides you both know that isn't the reason you are here.  You keep cleaning until you finally hear
+  the words you are waiting for.  [[That's enough cleaning for today|Part15TutorFollowupMaid2]].
+<</nobr>>
+
+::Part15TutorFollowupMaid2
+<<nobr>>
+  <h1>Done cleaning for today</h1>
+  <<if $PlayerChastityBelt>>
+    <video src="Part15/Probation8.mp4" autoplay loop muted height="550"></video>
+  <<else>>
+    <video src="Part15/Probation9.mp4" autoplay loop muted height="550"></video>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    You pull down the top of your uniform for him, but it's your mouth he wants today.  "Yes, sir." you tell him as you unbuckle his jeans.
+    <br><br>
+    You start sucking his cock, loving the feel of it in your
+    <<if $Keyholder == "computer">>
+      mouth, and especially loving the vibrations your belt is giving you.
+    <<else>>
+      mouth.
+    <</if>>
+    Which each moan he makes, the need to feel his cock inside you grows.  You can only suck his cock more hungrily.
+    <br><br>
+    When his cum finally fills your mouth you are left
+    <<if $Keyholder == "computer">>
+      gasping on the edge of an orgasm, desperate for just a bit more stimulation from your belt.
+    <<else>>
+      with an aching emptiness between your legs where you wish his cock was.
+    <</if>>
+    You won't be getting that today.  But the familiar, pleasant feeling as his warm cum slides down your throat makes you feel happy that he enjoyed your
+    work at least.
+    <br><br>
+    "You did a great job today," he tells you.  "The cleaning and the blowjob.  I'll see you at our next tutoring appointment.  Though obviously it's your
+    next visit here I'm really looking forward to."  You straighten your uniform back up again, and [[head out|Part15WeekByWeek]] for another walk across
+    campus in your uniform.
+  <<else>>
+    <<set setup.addSex({sex:"male",name:"Tutor",vaginal:true,noPullout:true,noCondom:true})>>
+    You are already on your hands and knees on his bed when he said it.  The view he had of you like that was probably what made him decide his apartment
+    was clean enough.  You've been wet and waiting for this for a while.  You stay on your hands and knees and move closer to the edge of the bed, waiting
+    for his cock.
+    <br><br>
+    You moan as his cock slides into you.
+    <<if $PlayerProtectionCondoms>>
+      It feels different today.  Then you remember he had said he was out of condoms and to pick some up on the way over if you wanted him to use one.
+      You were almost there when you'd read it and had said not to worry about it today.
+      <br><br>
+    <</if>>
+    As he starts to fuck you, he pulls the top of your uniform towards him, letting your breasts hang free beneath you.
+    They sway back and forth as he grabs your hips and thrusts his thick cock again and again.    
+    <br><br>
+    You feel your orgasm getting close when he starts to slow down.  You want more, so you thrust back faster.  You realize a few seconds later why
+    he had slowed down when you hear a familiar moan as he cums inside you.  You know you won't be coming during today's visit, but you're happy that
+    he enjoyed himself, and it felt good while it lasted.
+    <br><br>
+    <<if !$PlayerPregnant and ($PlayerProtectionWithdraw or $PlayerProtectionCondoms)>>
+      You know you should probably be worried about the cum he left inside you, but you aren't.  For some reason it makes you happy as you dip a finger into it.
+      It just feels right somehow.  Like this is how you should have guys cum for you every time.  Like this is how they were meant to cum.  "But..." you think
+      a moment later, "maybe I should be more careful next time."
+    <<elseif !$PlayerPregnant and $PlayerProtectionTry>>
+      You smile as you dip your finger into the cum he gave you.  You wonder if this will be the time that you get pregnant.
+    <<else>>
+      You smile as you dip your finger into the cum he left inside of you.  It makes you happy seeing how good you felt for him, and how he
+      couldn't hold back any longer.
+    <</if>>
+    <br><br>
+    He knows how close you were, so he begins playing with your clit and soon you are cumming too.  "I feel better about comming a little early now,"
+    he confesses.  "You did a great job cleaning today, and I would have hated for you to leave here unsatisfied.  I'll see you at our next tutoring
+    appointment.  Though obviously it's your next visit here I'm really looking forward to."
+    <br><br>
+    You straighten your uniform back up again, and [[head out|Part15WeekByWeek]] for another walk across campus in your uniform.  This time you wonder
+    if anyone will notice the trail of cum that's started to run down your leg as you walk.
+  <</if>>
+<</nobr>>
+
+::Part15TutorFollowupClean
+TODO Clean Followup (based on week 3-11)
+TODO [[Part15WeekByWeek]]
+
+::Part15WeekByWeek
 <<nobr>>
   <<switch $SchoolWeek>>
     <<case 2>>
@@ -4200,7 +4489,7 @@ todo [[Part15Week]]
       <<include [[Part15ClassesStart]]>>
     <<case 3>>
       <!-- Sept w1 -->
-      <<include [[Part15Job]]>>
+      <<include [[Part15BabyJobsRelationships]]>>
     <<case 4>>
       <!-- Sept w2 -->
       <<include [[Part15BuddyPart2]]>>
@@ -4212,7 +4501,7 @@ todo [[Part15Week]]
       <<include [[Part15Greek]]>>
     <<case 7>>
       <!-- Oct w1 -->
-      <<include [[Part15JobPart2]]>>
+      <<include [[Part15BabyJobsRelationships]]>>
     <<case 8>>
       <!-- Oct w2 -->
       <<include [[Part15BuddyPart3]]>>
@@ -4245,16 +4534,6 @@ todo [[Part15Week]]
   <</switch>>
 <</nobr>>
 
-TODO Occasional followups with tutor scene if on probation and had tutor scene
-
-::Part15ClassesStart
-<<nobr>>
-  <<if $AcademicProbation>>
-    <<include [[Part15Probation1]]>>
-  <<else>>
-    <<include [[Part15ClassesStartMain]]>>
-  <</if>>
-<</nobr>>
 
 ::Part15Probation1
 <<nobr>>
@@ -4281,7 +4560,7 @@ TODO Occasional followups with tutor scene if on probation and had tutor scene
 <<nobr>>
   Unfortunately for you, the only times they are free are the same for both of them.  So you can only schedule with one of them.  You'll have to finish
   one subject and then move on to the other one.  And each one will take a month or more!  It's going to take you
-  [[most of the semester|Part15ClassesStartMain]] to get off of probation!
+  [[most of the semester|Part15ClassesStart]] to get off of probation!
 <</nobr>>
 
 <<nobr>>
@@ -4355,7 +4634,7 @@ TODO Occasional followups with tutor scene if on probation and had tutor scene
     <br><br>
     While he may not be interested, [[most of the audience|Part15ProbationMath2]] that has started to show up for your session is.
   <<else>>
-    It's going to [[take a while still|Part15ClassesStartMain]], for both this class, and your other one, but at least an end is in sight.  Maybe in a
+    It's going to [[take a while still|Part15ClassesStart]], for both this class, and your other one, but at least an end is in sight.  Maybe in a
     month or so you'll be finally off probation.
   <</if>>
 <</nobr>>
@@ -4384,7 +4663,7 @@ TODO Occasional followups with tutor scene if on probation and had tutor scene
 <</nobr>>
 
 <<nobr>>
-  It's going to [[take a while still|Part15ClassesStartMain]], for both this class, and your other one, but at least an end is in sight.  Maybe in a
+  It's going to [[take a while still|Part15ClassesStart]], for both this class, and your other one, but at least an end is in sight.  Maybe in a
   month or so you'll be finally off probation.  Though you wonder if maybe you'll want to keep coming to the lecture hall anyway after you're done.
 <</nobr>>
 
@@ -4488,11 +4767,11 @@ TODO Occasional followups with tutor scene if on probation and had tutor scene
 <</nobr>>
 
 <<nobr>>
-  It's going to [[take a while still|Part15ClassesStartMain]], for both this class, and your other one, but at least an end is in sight.  Maybe in a
+  It's going to [[take a while still|Part15ClassesStart]], for both this class, and your other one, but at least an end is in sight.  Maybe in a
   month or so you'll be finally off probation.  Though you wonder if maybe you'll want to keep coming to his apartment anyway after you're done.
 <</nobr>>
 
-::Part15ClassesStartMain
+::Part15ClassesStart
 <<nobr>>
   <h1>TODO</h1>
   TODO Image
@@ -4555,344 +4834,20 @@ TODO Goth
 TODO Passive Aggressive -> Switch later, end up with guy
 TODO [[Part15Week]]
 
-::Part15Job
+::Part15BabyJobsRelationships
 <<nobr>>
-  <h1>TODO</h1>
-  TODO Image
-<</nobr>>
-TODO Dealing with Job, dealing with relationship [[Part15Week]]
-TODO Dealing with Baby if any
-TODO if $JobEngineerLock then [[Part15JobEngineerLock]]
-
-::Part15JobEngineerLock
-<<nobr>>
-  <h1>Trying to hack your belt</h1>
-  <img src="Part15/Engineer7.jpg" hspace="10" vspace="10" height="450" align="left">
-<</nobr>>
-<<nobr>>
-  You try thinking of ways to attack the belt you are wearing.  You know better than to try any physical attacks, so you dismiss that.  You think you can
-  probably trick the oral detection routines to think you are giving a blowjob when you are not.  If you do that then... You realize that does nothing for you.
-  It's not going to give you an orgasm, or unlock you.
-  <<if $dating.length>>
-    And it's not like $dating[0] isn't eager to let you test whenever you like on them.
+  <<if $PlayerMother>>
+    <<include [[Part15Baby]]>>
   <<else>>
-    And it's not like finding a cock to suck on campus is that difficult anyway.
-  <</if>>
-  You keep thinking.
-<</nobr>>
-
-<<nobr>>
-  You pull up the app and look around, most of the settings are disabled... Then you have an idea.  You make sure your phone is on the wifi, and fire up a
-  packet sniffer.  Then you restart the app and record the traffic to and from your phone.  You get excited as soon as you see the results.  All the data
-  back in forth is right there, in plain text.  You can see the values for all the settings comming back, even though the app wouldn't show you most of them.
-  Though the settings in your case a boring, nearly everything is disabled.
-<</nobr>>
-
-<<nobr>>
-  Your eyes stop at:<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;<code>accessLevel: 'WEARER'</code><br>
-  in the messages from the server to the app.  You have an idea, but you can't believe it'd be this easy.  There's a mountain of source code, but you search
-  it and find where that's being set, and where's it's being checked.  You can't believe it,  you're pretty sure this will work.  You write a small
-  program that just intercepts the data from the server and changes the value to<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;<code>accessLevel: 'OWNER'</code><br>
-  Then you restart the app to see what happens.
-<</nobr>>
-
-<<nobr>>
-  It worked! It comes back with the owner version of the status screen.  It shows your last orgasm: "Never", at least as far as the belt is concerned. it
-  has your current arousal level, all the settings you'd seen from the network traffic.  But most importantly, all the controls to change the settings are no
-  longer disabled!  Still, even though the app was fooled, the server might be smart enough to ignore the request, because it still knows you're the wearer.
-  The code is a mess, you'd spend hours trying to figure it from looking at that, and still probably not be sure.  So you decide to just test it.
-<</nobr>>
-
-<<nobr>>
-  You look around through the settings looking for settings to change.  "Global Orgasm Block" was set to on, which tells it not to let you orgasm, regardless
-  of any other setting.  That's the first thing you are going to turn off.  You hit the button and wait.  A moment later the app shows that it's been disbled.
-  You check the network traffic and it looks good too!  You notice your arousal ticking up on the status page.  The belt knows you are thinking you might
-  be able to cum tonight.
-<</nobr>>
-
-<<nobr>>
-  You go to the oral settings page, and you see it's activate, but orgasms are disabled.  You decide to change that, setting it to "Every time" instead.
-  You see that change was accepted also.  You also see your arousal level rising even faster.  The belt detects how much you are thinking about pausing your
-  testing for now so you can [[go verify your new setting|Part15JobEngineerLockOrgasm]] with
-  <<if setup.haveGirlfriend()>>
-    $dating[0].  You are aleady wet thinking about the belt giving you an orgasm with your head burried between her legs.
-  <<elseif $dating.length > 0>>
-    $dating[0].  You are already wet thinking about the belt giving you an orgasm just as his cum fills your mouth.
-  <<else>>
-    the first cock you can find.  You are already wet thinking about the belt giving you an orgasm just as his cum fills your mouth. 
-  <</if>>
-  <<if $PlayerSideEffectOral>>
-    The thought of finally having an orgasm, and having it while
-    <<if setup.haveGirlfriend()>>
-      you give $dating[0] one too,
-    <<elseif $dating.length > 0>>
-      you suck $dating[0]'s cock,
-    <<else>>
-      you suck some guy's cock,
-    <</if>>
-    it's too much to resist.  You'll try more testing afterwards.
-  <<else>>
-    Or you could resist that urge and [[keep looking for other options to change|Part15JobEngineerLockUnlock]].
+    <<include [[Part15JobMain]]>>
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLockOrgasm
-<<nobr>>
-  <h1>Testing the new setting</h1>
-  <<if setup.haveGirlfriend()>>
-    <video src="Part15/Engineer9.mp4" autoplay loop muted height="500"></video>
-  <<else>>
-    <video src="Part15/Engineer8.mp4" autoplay loop muted height="500"></video>
-  <</if>>
-  <<set $EngineerLockPacketOrgasm to 6>>
-<</nobr>>
-<<nobr>>
-  <<if setup.haveGirlfriend()>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    $dating[0] is happy to help you test.  Not long after your tongue first slides into her you can feel the vibrations start, just as before.  You know it's
-    the same as before so far, but it still feels so much better knowing, or at least hoping, that its going to end an orgasm for you.
-    <br><br>
-    It builds as before, but this time it doesn't stop.  Soon you have to pause your work on $dating[0] as your orgasm overwhelms you.  After so many
-    months without one, it feels so amazing.  As soon as you can, you get back to work on $dating[0], and before you know it she's holding your head against
-    her as she has her own orgasm.
-    <br><br>
-    The whole time, you belt has resumed it's stimulation of you.  You keep going, eating her out until you cum again, and then she cums again.  By the time
-    you have to stop, you and $dating[0] have both lost track of how many times you came.
-  <<elseif $dating.length>>
-    <<set setup.addSex({sex:"male", name:$dating[0]})>>
-    <<set setup.addSex({sex:"male", name:$dating[0]})>>
-    <<set setup.addSex({sex:"male", name:$dating[0]})>>
-    <<set setup.addSex({sex:"male", name:$dating[0]})>>
-    <<set setup.addSex({sex:"male", name:$dating[0]})>>
-    <<set setup.addSex({sex:"male", name:$dating[0]})>>
-    $dating[0] is happy to help you test.  Not long after his cock hits your tongue, you can feel the vibrations start, just as before.  You know it's the
-    same as before so far, but it still feels so much better knowing, or at least hoping, that its going to end an orgasm for you.
-    <br><br>
-    It builds as before, and then holds as you continue to work his cock.  You get more and more frantic as you suck his cock, hungry for your own orgasm.
-    Before long you feel $dating[0]'s hand on your head and then hear him groan as your mouth fills with his cum.  Then your belt stops keeping you on the
-    edge and instead increases the vibrations until you too are cumming.
-    <br><br>
-    After so many months without an orgasm, it feels so amazing.  You want to go again right away, but you know $dating[0] needs a few minutes.  You lie
-    next to him with a huge smile on your face.
-    <br><br>
-    As soon as he's ready, you go again, and the belt gives you an orgasm again just as he cums for you.  You want to go again, and again, but $dating[0]
-    says that's enough testing for now.    
-  <<else>>
-    <<set setup.addSex({sex:"male"})>>
-    <<set setup.addSex({sex:"male"})>>
-    <<set setup.addSex({sex:"male"})>>
-    <<set setup.addSex({sex:"male"})>>
-    <<set setup.addSex({sex:"male"})>>
-    <<set setup.addSex({sex:"male"})>>
-    As before, it doesn't take long to find a guy that wants his cock sucked.  Not long after his cock hits your tongue, you can feel the vibrations start,
-    just as before.  You know it's the same as before so far, but it still feels so much better knowing, or at least hoping, that its going to end an orgasm
-    for you.
-    <br><br>
-    It builds as before, and then holds as you continue to work his cock.  You get more and more frantic as you suck his cock, hungry for your own orgasm.
-    Before long he tells you he's about to cum, and then you hear him groan and then your mouth fills with his cum.  Finally your belt stops keeping you on the
-    edge and instead increases the vibrations until you too are cumming.
-    <br><br>
-    After so many months without an orgasm, it feels so amazing.  You want to go again right away, but you know he needs a few minutes.  You lie
-    next to him with a huge smile on your face.
-    <br><br>
-    As soon as he's ready, you go again, and the belt gives you an orgasm again just as he cums for you.  You want to go again, and again, but he says
-    that he's good for tonight.  He gives you his number to call next time you have the urge to suck a cock.  After he leaves you try to decide if that's
-    enough for tonight, or if you want to go find another cock.
-  <</if>>
-<</nobr>>
+TODO For all the Job, Baby, Relationship, then look at week number and jump to the specific one for that for that week
 
+::Part15BackToMain
 <<nobr>>
-  As you are laying there on the bed, still in the afterglow of your orgasm you glance of at your phone.  You see a text from your boss.  "Congratulations
-  on the orgasm!" it says.  A year ago you would have been embarrassed at him knowing you just came, multiple times in fact.  But he's seen you cum many
-  times on testing videos by now, so him getting a notification from your belt doesn't surprise or concern you.
-<</nobr>>
-
-<<nobr>>
-  "I see you changed the settings from the app somehow.  Great job!  We can go over the details tomorrow.  Have fun with your new settings until then," he
-  has after that.  You check the app and it now says "Sorry, this app is down for routine maintenance".  He must have turned it off until the bug is fixed.
-  I guess that's one of the benefits of testing pre-release.
-<</nobr>>
-
-<<nobr>>
-  Knowing tonight might be your only chance for a while, you
-  <<if setup.haveGirlfriend()>>
-    consider seeing if $dating[0] is up for another round.  But you are still exhausted from before and decide thats enough for now.  You talk to $dating[0]
-    and she says that since tonight might be it for a while, if you wake up horny in the middle of the night, feel free to wake her up with your tongue.  You
-    do just that several times during the night.
-  <<elseif $dating.length>>
-    $dating[0] doesn't want another blowjob right now, but he says to feel free to wake him up tonight with one if you wake up horny.  "Actually, not just tonight,
-    feel free to do that anything," he adds with a smile.  You do just that several times during the night.
-  <<else>>
-    decide to go out and find another guy.  After he's ready to stop, you go out to another one.  After he's been emptied twice, you notice the time.  It's going
-    to be hard to find another guy without knocking on doors and waking someone up.  And you need some sleep too.  So you decide that will have to be enough.
-  <</if>>
-<</nobr>>
-
-<<nobr>>
-  You wake up tired the next morning, but at least not as desperately horny as you have been for so long.  You quickly dress and
-  [[head to the Engineering department|Part15JobEngineerLock2]].
-<</nobr>>
-
-::Part15JobEngineerLockUnlock
-<<nobr>>
-  <h1>Tripping the alarm</h1>
-  <img src="Part15/Engineer11.jpg" hspace="10" vspace="10" height="600" align="left">
-<</nobr>>
-<<nobr>>
-  You keep looking through the options, then you see the "Unlock" hidden two or three pages in from the Owner menu.  Either their design needs some
-  usability work, or this isn't an option they are expecting Owners to be using that often.  But obviously, it's the option you want, so you hit "Unlock".
-  "Are you sure?" it asks.  "Yes I'm sure!", you say as you hit the button.
-<</nobr>>
-
-<<nobr>>
-  "Enter unlock code." it says asking for a six digit number.  You don't know what to type, and there's no cancel button.  You think about just killing the
-  app, but you don't know what that will do, so you just guess.  They didn't have much security on the network, so maybe it's just as bad here. "000000",
-  instantly comes back with "incorrect unlock code".  You try "123456" and "654321" and they don't work either.
-<</nobr>>
-
-<<nobr>>
-  Then you think about the mostly guys you work with and how they think.  And then you type "696969".  This time it doesn't come back immediately with an
-  incorrect message, it seems to be processing it.  You wait in anticipation to hear a click from your belt.  You are already getting wet imagining
-  getting bent over your desk and feeling
-  <<if setup.haveGirlfriend()>>
-    $dating[0]'s strap-on
-  <<elseif $dating.length>>
-    $dating[0]'s cock 
-  <<else>>
-    some guy's cock
-  <</if>>
-  slide into you.
-<</nobr>>
-
-<<nobr>>
-  Then the screen turns red and the message "Unauthorized access attempted - Account Locked".  A second later you feel pain shoot though your clit as
-  the belt gives you some sort of a shock.  You close the app and reopen it.  It immediately gives you a prompt to enter a pass code to unlock the account.
-  You are afraid to enter anything by guessing anymore and close the app.  You turn off your hack so it won't think you are the owner anymore, but the
-  wearer.  When you do, there's a message that says.  "Your unauthorized access was detected.  Punishment shocks will continue until deactivated by Owner".
-<</nobr>>
-
-<<nobr>>
-  You close the app and try to think.  After a few minutes you feel the pain hit again. There's nothing you can do to get away from it, even though
-  you try.  A couple minutes later you get a text message from your boss.
-<</nobr>>
-
-<<nobr>>
-  "Oops, looks like someone tried to hack something. :-)", his text says.  A few moments later he says, "I would turn off the shocks you are probably
-  receiving right now, but the unlock codes are all random, and I have them locked away in my office.  I'll take care of it first thing in the morning.
-  Sorry, you're going to have an unpleasant night.  Let me know tomorrow what happened."
-<</nobr>>
-
-<<nobr>>
-  You deside to at least enjoy the setting you made earlier.  You
-  <<if setup.haveGirlfriend()>>
-    <<set setup.addSex({sex:"female", name:$dating[0]})>>
-    ask $dating[0] if you can eat her out.  Of course she says yes.
-  <<elseif $dating.length>>
-    <<set setup.addSex({sex:"male", name:$dating[0]})>>
-    ask $dating[0] if you can suck his cock.  Of course he says yes.
-  <<else>>
-    <<set setup.addSex({sex:"male"})>>
-    go out to find some guy's cock to suck.  It doesn't take long to find a volunteer.
-  <</if>>
-  You soon discover that not only is the orgasm setting not working, but it isn't even giving you the teasing vibrations it was before.  It must
-  have disabled anything it thought you might enjoy.  You don't stop though, that would be rude.  It's not
-  <<if $dating.length>>
-    $dating[0]'s
-  <<else>>
-    this guy's
-  <</if>>
-  fault.  One nice thing you discover though is that it isn't shocking you while you are taking care of
-  <<if setup.haveGirlfriend()>>her<<else>>him<</if>>.  So you take your time, making as slow and sensual as you can and enjoying not being shocked
-  for a while.  But eventually it ends, and the shocks resume.
-
-<</nobr>>
-
-<<nobr>>
-  With shocks waking you up at random times throughout the night, you wake up exhausted.  The shocks are still hitting you as you start on your way to
-  [[the Engineering department|Part15JobEngineerLock2]].  Hopefully you boss gets in soon and turns them off!
-<</nobr>>
-
-::Part15JobEngineerLock2
-<<nobr>>
-  <h1>Explaining the problem</h1>
-  <img src="Part15/Engineer10.jpg" hspace="10" vspace="10" height="600" align="left">
-<</nobr>>
-<<nobr>>
-  <<if $EngineerLockPacketOrgasm>>
-    Of course, you're tempted to not tell them how to fix the hack so you can enjoy your new setting.  But that wouldn't work.  Your boss could just
-    disable you're belts orgasms from some admin interface, and then they'd eventually figure out the bug anyway.  Then end result would be the same,
-    except you wouldn't get your bonus, so you might as well tell how you did it.
-    <br><br>
-    "You look exhausted," your boss says when you sit down in his office.  Then he laughs.  "Well, I guess you didn't get much sleep last night, did you?"
-    After a moment he asks, "So, how did you do it?"
-  <<else>>
-    "You look exhausted," your boss says when you sit down in his office.  Then he laughs.  "Well, I guess you didn't get much sleep last night, did you?"
-    After a moment he says, "As I'm sure you've felt, or haven't felt, I turned off the punishment shocks this morning when I came in to the office.  But
-    the fact that you got far enough to even trigger the account down shows you found a flaw.  So, what did you find?"
-  <</if>>
-<</nobr>>
-
-<<nobr>>
-  You explain how the communications between the app and the server aren't encrpyted and how the app responded as if you were the owner just by changing
-  one value.  And the server accepted the commands the app sent back even though it knew you were the wearer not the owner.
-<</nobr>>
-
-<<nobr>>
-  "Those are some pretty glaring flaws, I'm glad you found them now," he tells you. "And thankfully it sounds like it won't require any major work.  A few
-  lines of code on the server to use it's own authorization information instead of whatever the app says.  And of course, encrypting everything.  I'm
-  guessing a few weeks and then you can get back to testing."
-<</nobr>>
-
-<<nobr>>
-  <<if $EngineerLockPacketOrgasm>>
-    "I'll send the paperwork in for your bonus payment, good work," he says.  "Oh, and your belt's settings.
-    We'll leave them like they are now until the bugs are fixed and you can test again.  Have fun the next week or two!"  You know you
-    <<if $dating.length>>and $dating[0]<</if>> will.
-  <<else>>
-    "As you probably discovered, when you triggered the account lockdown, it automatically re-activated the Global Orgasm Block," he says.  "And you weren't
-    able to orgasm before then, and obviously weren't able to unlock the belt.  So, I'm sorry, but I can't authorized a bonus payment.  But you did a great
-    job, and I do still want to reward you."
-    <br><br>
-    "So I'm activating random teases and edges for you," he says.  "Your classes shouldn't be that challenging yet this early in the semester, so hopefully
-    it won't be too much of a distraction.  I'll turn it off whenever you can go back to testing again.  Oh, and I turned the non-orgasm oral encouragement
-    back on, from the log here it seems like you really enjoyed that."
-  <</if>>
-<</nobr>>
-
-<<nobr>>
-  He also has you give a talk to your fellow student engineers about encryption and not trusting client-side data.  Though many of the male engineers
-  seem to not be paying much attention.  Not that you mind, the more mistakes they make, the more bugs you'll be able to find.
-<</nobr>>
-
-<<nobr>>
-  There's not much testing you can do now, at least not for [[another week|Part15Week]] or more.
-
-  <<if $EngineerLockPacketOrgasm>>
-    <<set $tempLockOralCount to 28>>
-  <<else>>
-    <<set $tempLockOralCount to 7>>
-  <</if>>
-  <<if setup.haveGirlfriend()>>
-    <<set $tempLockOralCount += 10>>
-  <</if>>
-  <<if setup.haveGirlfriend()>>
-    <<set setup.addSexRepeat($tempLockOralCount, {sex:"female", name:$dating[0]})>>
-  <<elseif $dating.length>>
-    <<set setup.addSexRepeat($tempLockOralCount, {sex:"male", name:$dating[0]})>>
-  <<else>>
-    <<set setup.addSexRepeat($tempLockOralCount, {sex:"male"})>>
-  <</if>>
-  <<unset $tempLockOralCount>>
+  [[Continue|Part15Week]]
 <</nobr>>
 
 ::Part15BuddyPart2
@@ -4915,13 +4870,6 @@ TODO dealing with baby if have one, struggling with belt if in it, Choosing a ma
   TODO Image
 <</nobr>>
 TODO Sorority stuff if in one, frat part, etc. [[Part15Week]]
-
-::Part15JobPart2
-<<nobr>>
-  <h1>TODO</h1>
-  TODO Image
-<</nobr>>
-TODO Dealing with Job again, dealing with baby [[Part15Week]]
 
 ::Part15BuddyPart3
 <<nobr>>

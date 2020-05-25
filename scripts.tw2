@@ -539,7 +539,6 @@ setup.checkForNewPregnancyHidden = function() {
 }
 
 setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
-  console.log("Pregnancy check", pregnancyTestType, oddsBoost);
   if (state.active.variables.PlayerPregnant) {
     return {isPregnant: false, possibleFathers: []} // already pregnant
   } else if (state.active.variables.StoryKeys && state.active.variables.StoryModePregnant) {
@@ -999,15 +998,12 @@ setup.pageMessage = function(msg) {
   state.active.variables.pageMessages.push(msg)
 }
 
-
 ::PassageHeader <475,50>
 <<nobr>>
   <span style="display:none"><<if $playerName>>$playerName<<if $MindBlank>>Marie<</if>>: <</if>></span>
   <<set $pageMessages = []>>
-  DEBUG: $StoryKeys<br>
-  DEBUG2: $StoryKeysLearn<br>
+<!--  DEBUG: $StoryKeys<br>  DEBUG2: $StoryKeysLearn<br> -->
 <</nobr>>
-
 
 ::PassageFooter <480,50>
 <<nobr>>
