@@ -4174,6 +4174,9 @@ TODO Having the baby now
   <<if $MenstrualWeek == 4>>
     <img src="PartP/PeriodSupplies.jpg" hspace="10" vspace="10" height="177"><br>
     You started your period this week.
+    <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+      It's light though thanks to your birth control
+    <</if>>
   <<elseif $PregnancyWeek >= 6 and $PregnancyWeek <= 14 and Math.random() < 0.6>>
     <<if $PregnancyWeek <= 10>>
       <img src="PartP/MorningSickness1.jpg" hspace="10" vspace="10" height="177"><br>
@@ -4352,11 +4355,9 @@ TODO Followup on academic probation
   <<if $SchoolWeek == 3>>
     <<include [[Part15TutorFollowupMaid1]]>>
   <<elseif $SchoolWeek == 4>>
-    TODO Maid Followup (based on week 4)
-    TODO [[Part15WeekByWeek]]
+    <<include [[Part15TutorFollowupMaid3]]>>
   <<else>>
-    TODO Maid Followup (based on week 5)
-    TODO [[Part15WeekByWeek]]
+    <<include [[Part15TutorFollowupMaid5]]>>
   <</if>>
 <</nobr>>
 
@@ -4444,7 +4445,14 @@ TODO Followup on academic probation
     was clean enough.  You've been wet and waiting for this for a while.  You stay on your hands and knees and move closer to the edge of the bed, waiting
     for his cock.
     <br><br>
-    You moan as his cock slides into you.
+    <<if $AcademicProbationDenial>>
+      You feel a surge of desire as you feel his cock part your lower lips, and then the disappointing nothingness as he thrusts in.  You know it's going to
+      to happen, but every time it his you like a surprise.  But you know it feels good for him, and he's helping you get off the damned probation that
+      has done this to you.  So you moan for him, pretending it feels as good as it should.
+      <br><br>
+    <<else>>
+      You moan as his cock slides into you.
+    <</if>>    
     <<if $PlayerProtectionCondoms>>
       It feels different today.  Then you remember he had said he was out of condoms and to pick some up on the way over if you wanted him to use one.
       You were almost there when you'd read it and had said not to worry about it today.
@@ -4453,9 +4461,13 @@ TODO Followup on academic probation
     As he starts to fuck you, he pulls the top of your uniform towards him, letting your breasts hang free beneath you.
     They sway back and forth as he grabs your hips and thrusts his thick cock again and again.    
     <br><br>
-    You feel your orgasm getting close when he starts to slow down.  You want more, so you thrust back faster.  You realize a few seconds later why
-    he had slowed down when you hear a familiar moan as he cums inside you.  You know you won't be coming during today's visit, but you're happy that
-    he enjoyed himself, and it felt good while it lasted.
+    <<if $AcademicProbationDenial>>
+      You feel him start to slow down.  You wonder if he's getting tired, so you thrust back faster to help out.
+    <<else>>
+      You feel your orgasm getting close when he starts to slow down.  You want more, so you thrust back faster.
+    <</if>>    
+    You realize a few seconds later why he had slowed down when you hear a familiar moan as he cums inside you.  You know you won't be coming during
+    today's visit, but you're happy that he enjoyed himself, and it felt good while it lasted.
     <br><br>
     <<if !$PlayerPregnant and ($PlayerProtectionWithdraw or $PlayerProtectionCondoms)>>
       You know you should probably be worried about the cum he left inside you, but you aren't.  For some reason it makes you happy as you dip a finger into it.
@@ -4468,13 +4480,158 @@ TODO Followup on academic probation
       couldn't hold back any longer.
     <</if>>
     <br><br>
-    He knows how close you were, so he begins playing with your clit and soon you are cumming too.  "I feel better about comming a little early now,"
-    he confesses.  "You did a great job cleaning today, and I would have hated for you to leave here unsatisfied.  I'll see you at our next tutoring
-    appointment.  Though obviously it's your next visit here I'm really looking forward to."
+    <<if $AcademicProbationDenial>>
+      "We'll have you off of probation soon," he says as he pats your ass.  "Then you'll be able to enjoy that too.  I'll see you at our next tutoring
+      appointment.  Though obviously it's your next visit here I'm really looking forward to."
+    <<else>>
+      He knows how close you were, so he begins playing with your clit and soon you are cumming too.  "I feel better about comming a little early now,"
+      he confesses.  "You did a great job cleaning today, and I would have hated for you to leave here unsatisfied.  I'll see you at our next tutoring
+      appointment.  Though obviously it's your next visit here I'm really looking forward to."
+    <</if>>
     <br><br>
     You straighten your uniform back up again, and [[head out|Part15WeekByWeek]] for another walk across campus in your uniform.  This time you wonder
     if anyone will notice the trail of cum that's started to run down your leg as you walk.
   <</if>>
+<</nobr>>
+
+::Part15TutorFollowupMaid3
+<<nobr>>
+  <h1>Cleaning the kitchen</h1>
+  <img src="Part15/Probation14.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+<<nobr>>
+  You make your tutor a cup of coffee before you start cleaning the kitchen.  He sits at the table and drinks his coffee as he watches you.  You imagine he
+  watches even closer when you keep 'accidently' dropping your towel and have to bend over to pick it up.
+<</nobr>>
+
+<<nobr>>
+  The kitchen is barely cleaned and his coffee is just finished when he decides [[that is enough cleaning for today|Part15TutorFollowupMaid4]].
+<</nobr>>
+
+<<nobr>>
+<</nobr>>
+
+<<nobr>>
+<</nobr>>
+
+::Part15TutorFollowupMaid4
+<<nobr>>
+  <h1>Done cleaning for today</h1>
+  <video src="Part15/Probation15.mp4" autoplay loop muted height="550"></video>
+<</nobr>>
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    As much as you'd love him to bend you over the kitchen counter and fuck you right there, your belt still prevents that.  So instead you
+    drop to your knees and start sucking his cock again.
+    <<if $EngineerLockPacketOrgasm>>
+      Though this time, thanks to your little hack, you know there's an orgasm waiting for you when he cums.  "My horny little hacker is even more
+      enthusiastic than normal today I see.  Mmmmm," he says between moans.  "I hope they take their time fixing that bug.  Oh god, right there."
+    <<elseif $Keyholder == "computer">>
+      As always your belt teases you, driving you crazy with lust as it keeps you close but never lets you cum.  "Is it that belt making you such a
+      wonderfully cock-hungry slut?  Mmmmm," he says between moans.  "Or are you naturally like that.  Oh god, right there.  Probably both."  You
+      keep sucking and only nod your agreement.
+    <<else>>
+      You eagerly suck his cock, still longing for it to be inside you instead.  "Poor thing.  I can see how much you want to be fucked.  Mmmmm,"
+      he says between moans.  "I'd love that too.  Oh god, right there.  But this is wondeful too."  You nod your agreement, but think how it
+      be wonderful for both of you it weren't for the belt.
+    <</if>>
+  <<elseif $MenstrualWeek == 4>>
+    You'd love for him to bend you over the kitchen counter and fuck you right there, but you just started your period.  You'd be fine with period
+    sex, but not in your freshly cleaned kitchen.  And you don't know how he'd feel about.  He certainly doesn't mind your blowjob.  You suck
+    enthusiastically as you imagine the cock you'll find after this.  It shouldn't be hard to find a guy that won't mind runining a towel or two and
+    [[fucking you despite your period|Part15TutorFollowupMaid4Period]].
+  <<else>>
+    You'd love for him to bend you over the counter and fuck you right there, but your visits here are to give him what he wants not what you want.
+    And you know he's wanting his cock sucked today.  "Oh god, you are good at this.  Mmmmm," he says between moans.  "You're definitely my favorite
+    tutoring client ever.  Oh god, right there." 
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $EngineerLockPacketOrgasm>>
+    Just as he cums, your belt stops teasing you and finally lets you cum.  You hungrily suck up every drop of his cum and continue on his cock until
+    you feel his hands start to push you away.  "I'm glad you enjoyed that as much as I did," he tells you.  "I'll see you at your next appointment."
+    You leave his apartment with a smile on your face as you [[head back across campus|Part15WeekByWeek]].
+  <<elseif $Keyholder == "computer">>
+    Just as he cums, your belt stops teasing you and goes silent.  You hungrily suck up every drop of his cum and continue on his cock, hoping
+    for it to start back up again.  But you stop when you feel his hands start to push you away.  "You really love sucking cock, don't you?", he
+    asks rhetorically.  "That belt is perfect for you. I'll see you at your next appointment."  You leave his apartment with a familiar needy
+    look on your face as you [[head back across campus|Part15WeekByWeek]].
+  <<elseif $PlayerChastityBelt>>
+    When he cums, you suck a bit longer and swallow every drop before stopping.  "You really love sucking cock, don't you?", he asks rhetorically.
+    "Maybe a belt like that is the prefect place for you.  I'll see you at your next appointment."  You leave his apartment with a familiar needy
+    look on your face as you [[head back across campus|Part15WeekByWeek]].
+  <<else>>
+    When he cums, you suck a bit longer and swallow every drop before stopping.  "You really love sucking cock, don't you?", he asks rhetorically.
+    "Maybe next time I can return the favor for you.  Anyway, I'll see you at your next appointment."  You leave his apartment with a familiar needy
+    look on your face as you [[head back across campus|Part15WeekByWeek]].
+  <</if>>
+<</nobr>>
+
+::Part15TutorFollowupMaid4Period
+<<nobr>>
+  <h1>Don't want to wait</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Period1.mp4" autoplay loop muted height="550"></video>
+  </div>
+  <<set setup.addSex({sex:"male", vaginal:true, birthControl: "cycle"})>>
+  <<set setup.addSex({sex:"male", repeat:true})>>
+  <<set $PeriodSex to 1>>
+<</nobr>>
+
+<<nobr>>
+  As soon as you leave your tutor's apartment you start looking for a guy.  It doesn't take long to find one, and he doesn't care about your period at all.
+  <<if $AcademicProbationDenial>>
+    You still can't cum, but you missed the feeling of a cock inside you too much to wait.  It isn't long until he is cumming for you though.
+  <<else>>
+    It isn't long until you are both cumming.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When you're finished you get a wash cloth and wash up his cock for him before getting into the shower to clean yourself up.  When you return, you see
+  he'd fallen asleep, still naked.  When you walk back into the bedroom his eyes open.  He sees that you have showered and dressed again.  You smile at him
+  and then kneel between his legs.
+<</nobr>>
+
+<<nobr>>
+  After sucking his cock for a while, you are tempted to strip again and climb on top of it.  But you resist and keep going.  Soon he is cumming for you
+  again.  "Let's go get something to eat.  I'm starving.", you tell him before he falls asleep again.  The two of you then
+  [[head out|Part15WeekByWeek]] to get food.
+<</nobr>>
+
+::Part15TutorFollowupMaid5
+<<nobr>>
+  <h1>A final session</h1>
+  <img src="Part15/Probation16.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set setup.addInventory('costumes', 'sex maid')>>
+  <<set setup.addInventory('costumes', 'sex maid latex')>>
+<</nobr>>
+
+<<nobr>>
+  You have one last tutuoring session, and so one last promised private visit with your tutor.  Though, that doesn't mean you won't be making more visits
+  just for fun.
+<</nobr>>
+
+<<nobr>>
+  It's a bit cooler today, so he has you wear your original uniform.  And this time he wants to meet you out in public.  You know it's because he wants
+  to see you walking around, wearing your uniform, with everyone watching.
+<</nobr>>
+
+<<nobr>>
+  Your uniform doesn't hide much, but then again his jeans aren't doing a great job of hiding his erection.  But he isn't embarrassed by it.  And as you look
+  around, he's hardly the only guy staring at you with one right now.
+<</nobr>>
+
+<<nobr>>
+  He is the only one that you'll be leaving to go take care of his hard cock for him.  At least right now he is anyway, the others will have to wait.
+<</nobr>>
+
+<<nobr>>
+  There's no pretense of cleaning today.  He's too eager to wait, and it's straight to the bedroom when you reach his apartment.  Once he's satisfied,
+  you [[leave his apartment again|Part15WeekByWeek]].  You know it won't be your last time there.  But the next time will be for fun only, and you won't
+  be on probation any longer.
 <</nobr>>
 
 ::Part15TutorFollowupClean
