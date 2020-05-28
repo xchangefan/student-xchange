@@ -284,6 +284,7 @@ setup.sexAllUniquePartners = function () {
 }
 
 setup.sexUniqueCount = function (fucks) {
+  console.log(fucks);
 	var unnamed = fucks.filter(function(fuck) {return !fuck.name})
 	return unnamed.length + setup.sexUniquePartners(fucks).length
 }
@@ -364,10 +365,6 @@ setup.haveFuckedVaginal = function (name) {
 	// different than daddyCheck, since doesn't care about birth control
 	return state.active.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)}).length > 0
 } 
-
-setup.addSexedVaginalCount = function (name) {
-	return state.active.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)})
-}
 
 setup.addDetailsToRecentSex = function() {
 	if (!state.active.variables.sex) return;

@@ -1899,14 +1899,14 @@
 
 ::Part8Return6 <1000,7775>
 <<nobr>>
-
-	
 	<h1><<print "Mechanic">></h1>
 <</nobr>>
-
-<<print "Brad drops you off at the service station where you’d left your car. They’d called while you were gone and let you know that the turbo encabulator was about to go out too and suggested you take care of now so it didn’t fail while you were driving down the highway. That sounded dangerous, so you told them to fix it as well.">>
+<<nobr>>
+  Brad drops you off at the service station where you’d left your car. They’d called while you were gone and let you know that the turbo encabulator
+  was about to go out too and suggested you take care of now so it didn’t fail while you were driving down the highway. That sounded dangerous, so
+  you told them to fix it as well.
+<</nobr>>
 <img src="Part8/Return6.jpg" hspace="10" vspace="10" height="650">
-
 <<nobr>>
 	<<print "Now you get the total and it’s $150 for the tire AND another $300 for the turbo-whatever. He notices the shocked look on your face at the large total and hints that he might be able to ">>
 	<<link [[‘work something out’|Part8Return7]]>>
@@ -1914,7 +1914,7 @@
 	<</link>>
 	<<print " to lower that amount for you. ">>
 	<<if $PlayerMoney < 450>>
-		<<if $KidnapEscape or $CampusMinistry or setup.isGoldStarLesbian()>>
+		<<if $KidnapEscape or $CampusMinistry or setup.isGoldStarLesbian() or (setup.sexUniqueMaleCount() + setup.sexUniqueFemaleCount()) <= 1>>
 			You ask him about paying on credit, but he insists on cash only, and you really need your car back.
 			You could go to the ATM and get a
 			<<link [[cash advance from your credit card.|Part8Return8]]>>
