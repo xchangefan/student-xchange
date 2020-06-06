@@ -392,7 +392,11 @@
   <<if $Roommate and !setup.areDating($Roommate)>>
     <<unset $Roommate>>
   <</if>>
-
+  <<if setup.isNeighbour("Emily")>>
+    <<set $FormerNeighbours to [$Roommate]>>
+  <<else>>
+    <<set $FormerNeighbours to $neighbours>>
+  <</if>>
   <<set $neighbours to []>>
   <<set $FormerMentor to $Mentor>>
   <<unset $Mentor>>

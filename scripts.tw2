@@ -642,6 +642,11 @@ setup.isNeighbour = function (name) {
 	return state.active.variables.neighbours.indexOf(name) >= 0
 }
 
+setup.isFormerNeighbour = function (name) {
+	return state.active.variables.FormerNeighbours && state.active.variables.FormerNeighbours.indexOf(name) >= 0
+}
+
+
 setup.removeNeighbour = function (name) {
 	state.active.variables.neighbours = setup.removeItem(state.active.variables.neighbours, name)
 }

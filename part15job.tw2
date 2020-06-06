@@ -145,7 +145,7 @@ TODO [[Part15AfterMainJob]]
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobEngineerLock1]]>>
   <<elseif $SchoolWeek == 7>>
-    TODO (Second Engineering Lock)
+    <<include [[Part15JobEngineerLock3]]>>
   <<else>>
     TODO (Not sure what other weeks would be yet)
   <</if>>
@@ -484,3 +484,154 @@ TODO [[Part15AfterMainJob]]
 <<nobr>>
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
+
+::Part15JobEngineerLock3
+<<nobr>>
+  <h1>Considering your options</h1>
+  <img src="Part15/Engineer12.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  You check your previous method, and confirm that they have fixed it, all the data to and from the belt is completely unreadable now.  You don't know how
+  strong the enryption they are using is, but its definitely beyond your abilities to decipher.  You'll have to find someing else.
+<</nobr>>
+
+<<nobr>>
+  You suspect they don't have any encryption, and maybe not even security checks on the belts disagnostic interface. Unfortunately, the small port you need
+  to access it is under a waterproof cover on the inner side of the belt.  And it's completely inaccessibile while you are wearing it.  That doesn't help you at
+  all.
+<</nobr>>
+
+<<nobr>>
+  Though you make a note to mention the possibility of a belt failure and some poor girl being stuck because the can't access it.  But you suspect that
+  since they aren't the ones at risk of having that happen to them, they are going to think it's an acceptable risk for the added security.
+<</nobr>>
+
+<<nobr>>
+  In a moment of technical and sexual frustration you have the urge to just violently attack the belt, but it quickly passes.  You know you are very likely
+  to injure yourself, and very unlikely to have effect at all on the belt, except possibly to trigger a punishment.
+<</nobr>>
+
+<<nobr>>
+  You also toss out the idea of hacking the administrative website directly.  It's beyond the scope of what you are supposed to test, and couldn't earn you
+  any bonus.  Not any financial bonus anyway.  Besides, they already have someone else working on testing it.  He's one of the brighter guys on the team,
+  so he's probably doing a good job, though you doubt he's as motivated as you are right now.
+<</nobr>>
+
+<<nobr>>
+  After looking through the documentation again you come across a section on adding accessory devices and resolving owner conflicts,
+  and you have an idea.  You'll need a bit of help with this one though.
+<</nobr>>
+
+<<nobr>>
+  <<if $dating.length>>
+    <<set $tempLockAssist to $dating[0]>>
+    <<if setup.areDating('Barry')>>
+      Hopefully you can talk Barry into [[helping you with your testing|Part15JobEngineerLock4]].
+    <<else>>
+      But you are sure $dating[0] [[will help you with your testing|Part15JobEngineerLock4]].
+      <<if setup.haveGirlfriend()>>
+        The pronouns in the instructions kept saying 'he', but she's the one you'd want to be your owner if anybody would be.  You'll let them know
+        to update their language in the manuals to be more inclusive.  Later though, right now you have work to do.
+      <</if>>
+    <</if>>
+  <<else>>
+    <<if $PlayerItemNerdKey>>
+      <<set $tempLockAssist to "Peter">>
+      But you are sure Peter [[will help you with your testing|Part15JobEngineerLock4]].  He'll do anything you ask for a chance to be unlocked, let
+      alone a chance for sex with you.
+    <<elseif $FormerNeighbours and $FormerNeighbours.length >= 2 and setup.haveFucked($FormerNeighbours[0]) and setup.haveFucked($FormerNeighbours[1]) and !setup.isEx($FormerNeighbours[0]) and !setup.isEx($FormerNeighbours[1])>>
+      Hopefully
+      <<link $FormerNeighbours[0] Part15JobEngineerLock4>><<set $tempLockAssist to $FormerNeighbours[0]>><</link>>
+      or
+      <<link $FormerNeighbours[1] Part15JobEngineerLock4>><<set $tempLockAssist to $FormerNeighbours[1]>><</link>>
+      will help you with your testing.  It will take some of his time, but you have a pretty good idea of how to persuade either of them to help.
+    <<elseif $FormerNeighbours and $FormerNeighbours.length >= 2 and setup.haveFucked($FormerNeighbours[1]) and !setup.isEx($FormerNeighbours[1])>>
+      <<set $tempLockAssist to $FormerNeighbour[1]>>
+      Hopefully $FormerNeighbour[1] [[will help you with your testing|Part15JobEngineerLock4]].
+      It will take some of his time, but you have a pretty good idea of how to him to help.
+    <<elseif $FormerNeighbours and $FormerNeighbours.length >= 1 and setup.haveFucked($FormerNeighbours[0]) and !setup.isEx($FormerNeighbours[0])>>
+      <<set $tempLockAssist to $FormerNeighbours[0]>>
+      Hopefully $FormerNeighbour[0] [[will help you with your testing|Part15JobEngineerLock4]].
+      It will take some of his time, but you have a pretty good idea of how to him to help.
+    <<else>>
+      You know this is going to get... intimate.
+      <<if setup.sexFemaleCount()>>
+        You could probably find another woman to help you, but the frequently use of 'he' throughout the manuals make you think having a guy help you with
+        this might be better.  You can talk to team about using more inclusive language later, right now you don't want to take any chances that they might
+        not have considered a lesbian couple as a possibility.
+        <br><br>
+      <</if>>
+      You wish there was a guy you were already close enough with, but there isn't.  It looks like it's time to put one of your friendships to the test.
+      <<if setup.isFormerNeighbour('Zack') and !setup.isEx('Zack')>>
+        Your friend Zack didn't come back this year, so obviously you can't ask him.
+      <</if>>
+      <<if setup.isFormerNeighbour('Josh') and !setup.isEx('Josh')>>
+        Your friend Josh isn't an option since he has a girlfriend now.
+      <</if>>
+      <<if setup.isFormerNeighbour('Peter') and !setup.isEx('Peter')>>
+        <<set $tempLockAssist to "Peter">>
+        You know your friend Peter would like to be more than that.  You have no doubt he
+        [[will be willing to help you with your testing|Part15JobEngineerLock4]].
+      <<elseif setup.isFormerNeighbour('James') and !setup.isEx('James')>>
+        <<set $tempLockAssist to "James">>
+        You know James would be [[willing to spend an hour or two helping you|Part15JobEngineerLock4]] in exchange for sex, or at least a blowjob.
+      <<elseif setup.isFormerNeighbour('Barry') and !setup.isEx('Barry')>>
+        <<set $tempLockAssist to "Barry">>
+        You're nervous about asking Barry to help, you know what he can be like sometimes.  You are sure he'll make fun of you when he finds out about your
+        belt.  But you are pretty sure he'll be [[willing to spend an hour or two helping you|Part15JobEngineerLock4]] in exchange for sex, or at least a
+        blowjob.
+      <<elseif setup.haveFucked('David')>>
+        <<set $tempLockAssist to "David">>
+        You haven't had sex with David for a while, but you know he's still single.  You are pretty sure he'll be
+        [[willing to spend an hour or two helping you|Part15JobEngineerLock4]] in exchange for sex, or at least a blowjob.
+      <<else>>
+        <<set $tempLockAssist to "David">>
+        You've hung out with your friend David a few times last year.  He's flirted with you and you know he wanted things to go farther between you, but
+        they never did.  You are pretty sure he'll be [[willing to spend an hour or two helping you|Part15JobEngineerLock4]] in exchange for sex, or at
+        least a blowjob.
+      <</if>>
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part15JobEngineerLock4
+<<nobr>>
+  <h1>Explaining your plan</h1>
+  <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+TODO $tempLockAssist
+TODO [[Part15JobEngineerLock5]] pr [[Part15JobEngineerLock6]]
+
+::Part15JobEngineerLock5
+<<nobr>>
+  <h1>Rewarding him for helping</h1>
+  <img src="Part15/Engineer14.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+TODO [[Part15JobEngineerLock6]]
+
+::Part15JobEngineerLock6
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="Part15/Engineer15.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+
+TODO Add two additional devices you obtained from the lab.  Assigning your helper as the owner of those, then attempting to join everything together
+TODO Expect the owner of 2+ devices to take precidence over the owner of just 1 (your belt)
+TODO If female helper, then it fails.  It mistakenly classifies her as a self-locked wearer and adds her as a sub to your owner (Eng dept head)
+TODO If male helper, then it does work, but unlocking requires both approval.  Whether you get an orgasm or not depends on who helped
+
+  TODO [[Part15JobEngineerLock7]] or [[Part15JobEngineerLock8]]
+
+::Part15JobEngineerLock7
+<video src="Part15/Engineer16.webm" autoplay loop muted height="650"></video>
+TODO Lets you orgasm when he sucks you off (maybe)
+TODO Leaves it where you can only orgasm or het teasing while BJ with him
+TODO Part15JobEngineerLock7
+TODO [[Part15JobEngineerLock8]]
+
+::Part15JobEngineerLock8
+  <img src="Part15/Engineer17.jpg" hspace="10" vspace="10" height="600" align="left">
+TODO Boss leaves you like this (so you can't repeat this attempt) until the problem is fixed.  Or at least until then.
+TODO Part15JobEngineerLock8
