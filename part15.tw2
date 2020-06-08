@@ -1709,10 +1709,14 @@
   "The fit will adjust as you sleep
   <<if $PlayerPregnant>>
     though your pregnancy may test the limits of that feature.  Let me know if you have any issues and I'll make manual adjustments," he tells you.
-    "And let me know when you have any doctor appointments so we can make arrangements for that."
+    "And let me know when you have any doctor appointments so we can make arrangements for that.
   <<else>>
-    to adjust for any weight gain or loss.  But let me know if you have any issues and I'll make manual adjustments," he tells you.
+    to adjust for any weight gain or loss.  But let me know if you have any issues and I'll make manual adjustments,
+    <<if $PlayerWeightControl>>
+      Though that seems unlikely given the weight control feature on your implant.
+    <</if>>
   <</if>>
+  Or I could activate the exercise enforcement option if you'd like, to make sure there aren't any issues." he offers, jokingly you think.
 <</nobr>>
 
 <<nobr>>
@@ -1722,14 +1726,15 @@
 
 <<nobr>>
   "Your first goal is to have an unauthorized orgasm.  That means an orgasm that the registered 'owner' of the belt, me in this case,
-  has not specifically authorized.  And I won't be authorizing any, so if you orgasm, then you've succeeded.  You just get one payment for each
-  method you might discover, but feel free to enjoy the orgasms until we fix the flaw you've uncovered.  Once we believe it's been corrected,
-  you'll be eligible for another payment if you can still orgasm that way, or find another flaw.
+  has not authorized either directly or allowed to occur automatically from one of the other settings.  I won't be authorizing any, so if you orgasm,
+  then you've succeeded.  You just get one payment for each method you might discover, but feel free to enjoy the orgasms until we fix the flaw you've
+  uncovered.  Once we believe it's been corrected, you'll be eligible for another payment if you can still orgasm that way, or find another flaw.
 <</nobr>>
 
 <<nobr>>
   "You can use whatever means necessary with the belt still on for your orgasm.  Whether that's utilizing the parts of your body that aren't locked away,
-  sneaking anything around or through the belt, vibrations, hacking the programming, whatever you want to try.
+  sneaking anything around or through the belt, vibrations, hacking the programming, whatever you want to try.  Just don't go breaking into my office or
+  something. You are testing the belts security, not my safe's.
 <</nobr>>
 
 <<nobr>>
@@ -1772,7 +1777,26 @@
   The same NDAs apply as always of course.  Good luck!"
 <</nobr>>
 
-TODO Handle if $JobStripper or $JobCallGirlSide
+<<nobr>>
+  <<if $JobStripper and $JobCallGirlSide>>
+    <<set $JobStripperOld to 1>>
+    <<unset $JobStripper>>
+    <<unset $JobCallGirlSide>>
+    This is the job you really want, but you did find your side jobs fun.  And you certainly enjoyed the extra money.  But you obviously won't be stripping
+    like this.  And you don't want to force your call girl agency to have to find clients that are ok with you being in a chastity belt.  So it looks like
+    your side income is gone for the time being.  All the more incentive to find some security flaws and earn a few bonuses.
+  <<elseif $JobStripper>>
+    <<set $JobStripperOld to 1>>
+    <<unset $JobStripper>>
+    This is the job you really want, but you did find your side job fun.  And you certainly enjoyed the extra money.  But you obviously won't be stripping
+    like this.  So it looks like your side income is gone for the time being.  All the more incentive to find some security flaws and earn a few bonuses.
+  <<elseif $JobCallGirlSide>>
+    <<unset $JobCallGirlSide>>
+    This is the job you really want, but you did find your side job fun.  And you certainly enjoyed the extra money.  But you don't want to force your
+    call girl agency to have to find clients that are ok with you being in a chastity belt.  So it looks like your side income is gone for the time being.
+    All the more incentive to find some security flaws and earn a few bonuses.
+  <</if>>
+<</nobr>>
 
 ::Part15EngineerProbation4
 <<nobr>>
@@ -4230,7 +4254,7 @@ TODO Followup on academic probation
   <<elseif $SchoolWeek == 4>>
     <<include [[Part15TutorFollowupMath5]]>>
   <<else>>
-    <<include [[Part15TutorFollowupMath8]]>>
+    <<include [[Part15TutorFollowupMath9]]>>
   <</if>>
 <</nobr>>
 
@@ -4460,9 +4484,72 @@ TODO Followup on academic probation
 <</nobr>>
 
 ::Part15TutorFollowupMath9
-    TODO Math Followup (based on week 5)
-    TODO [[Part15WeekByWeek]]
+<<nobr>>
+  <h1>More students needing tutoring</h1>
+  <img src="Part15/Probation21.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  I would seem that word of your tutoring sessions haven't just spread to the guys on campus.  Lately a number of other women have joined your
+  "study group".  Your tutor doesn't mind as they are very eager to follow the same rules you've been following during your sessions.
+<</nobr>>
 
+<<nobr>>
+  A couple you recognize from the X-Change meet-ups but some you don't.  Most end up completely naked well before the end of the session.
+<</nobr>>
+
+<<nobr>>
+  But one never strips down all the way.  She is wearing
+  <<if $JobEngineerLock>>
+    a computerized chastity belt also.  She must be one of the beta testers.  She probably thinks you are also, and you aren't going to tell her
+    otherwise.
+  <<elseif $JobEngineer>>
+    One of the computerized chastity belts that Kyle's team is testing.  She must be one of the beta testers.
+  <<elseif $PlayerChastityBelt>>
+    a chastity belt like you.  Except hers looks much more high-tech than the one you have on.
+  <<else>>
+    a high-tech-looking chastity belt.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  As you, her, and the other 'pupils' work your way through the audience cock-by-cock, she is definitely the most enthusastic of the group.
+  Though [[the unbelted girls are quite enthusiastic themselves|Part15TutorFollowupMath10]].  It's almost like they came here more interested in sucking
+  cocks than in the learning that preceeded it.
+<</nobr>>
+
+::Part15TutorFollowupMath10
+<<nobr>>
+  <h1>A new participant</h1>
+  <img src="Part15/Probation22.jpg" hspace="10" vspace="10" height="650" align="left">
+    <img src="Part15/Probation23.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  <<if $EngineerLockPacketOrgasm>>
+    You wish they hadn't fixed the flaw you'd found and reset your belt back to it's original settings.  But you still love the teasing it gives you, even
+    if you know it woun't be giving you orgasms too this time.
+    <br><br>
+  <</if>>
+  You are excited, but surprised, when your tutor suggests you start with his cock this time.  He explains as you drop to your knees and start to unbuckle
+  his pants.  "Word made it back to my girlfriend about our study sessions.  She didn't believe me at first that I only watched.  She was upset, but not for
+  the reason I thought she'd be.  She was just upset that she was getting left out of all the fun."
+<</nobr>>
+
+<<nobr>>
+  Then he points to one of the women kneeling by the front row of seats.  "So, now she's right in the middle of it.  And of course, there's no reason I
+  can't participate now too."  You do your best to give him an amazing blowjob.  You assume he's been fantasizing about you giving him one every week as
+  he watched you give so many others.
+<</nobr>>
+
+<<nobr>>
+  Once you finish with him you move on to another cock.  You take a moment to glance over at his girlfriend and see that she's done the same.  Watching
+  must have gotten him hard again as you notice one of the other girls head over and get to work on his cock again.
+<</nobr>>
+
+<<nobr>>
+  When everyone is finished, you [[head back home|Part15WeekByWeek]].  You know you'll be off probation soon, but you expect these tutoring session will
+  continue long after you've stopped.  Your tutor was enjoying the session enough when he was just watching, he's certainly not going to stop now that
+  he's able to join in too.
+<</nobr>>
 
 ::Part15TutorFollowupMaid
 <<nobr>>
