@@ -364,7 +364,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
   <<if $SideEffectsForHusband>>
     <<set $tempHusbandText to " and usually about " + $Spouse>>
   <</if>>  
-  <<if $PlayerSideEffectDominant>>
+  <<if $PlayerSideEffectDominant and $PlayerSideEffectSubmissive>>
+    <li>You can be either dominant or submissive in sexual situations, depending on the situation.</li>
+  <<elseif $PlayerSideEffectDominant>>
     <li>You are usually dominant in sexual situations.</li>
   <<elseif $PlayerSideEffectSubmissive >4 >>
     <li>You long to be controlled.  You want nothing more to serve and to be dominated
@@ -616,6 +618,8 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarChastity <1600,0>
 <<nobr>>
+  <<set $tempHaveBelt to setup.haveInventory('sex toys', 'chastity belt') or setup.haveInventory('sex toys', 'electronic chastity belt')>>
+  <<set $tempHaveBra to setup.haveInventory('sex toys', 'chastity bra') or setup.haveInventory('sex toys', 'electronic chastity bra')>>
   <<if $PlayerChastityPiercing>>
     You wear a chastity piercing.
     <<if $Keyholder>>
@@ -623,20 +627,54 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
   <<elseif $PlayerChastityBelt>>
     <<if $PeterKeyPurchase>>
-      Peter has locked you in a chastity belt.  Your father would approve.
+      Peter has locked you in a chastity
+      <<if $PlayerChastityBra>>
+        belt and bra.
+      <<else>>
+        belt.
+      <</if>>
+      Your father would approve.
     <<elseif $BoyfriendStrictChastity>>
-      $Keyholder has locked you in a chastity belt, as your father instructed.
+      $Keyholder has locked you in a chastity
+      <<if $PlayerChastityBra>>
+        belt and bra,
+      <<else>>
+        belt,
+      <</if>>
+      as your father instructed.
     <<elseif $FatherChastity>>
-      Your father has locked you in a chastity belt until your wedding day.
+      Your father has locked you in a chastity
+      <<if $PlayerChastityBra>>
+        belt and bra.
+      <<else>>
+        belt.
+      <</if>>
+      until your wedding day.
     <<elseif $PlayerCumslut>>
-      You are locked in a chastity belt, as you should be.
+      You are locked in a chastity
+      <<if $PlayerChastityBra>>
+        belt and bra,
+      <<else>>
+        belt,
+      <</if>>
+      as you should be.
       <<if $Keyholder>>
         $Keyholder has your key.
       <</if>>
     <<elseif $Keyholder == "computer">>
-      You are currently locked in a computerized chastity belt.
+      You are currently locked in a computerized chastity
+      <<if $PlayerChastityBra>>
+        belt and bra.
+      <<else>>
+        belt.
+      <</if>>
     <<else>>
-      You are currently locked in a chastity belt.
+      You are currently locked in a chastity.
+      <<if $PlayerChastityBra>>
+        belt and bra.
+      <<else>>
+        belt.
+      <</if>>
       <<if $Keyholder>>
         $Keyholder has your key.
         <<if $Keyholder != 'Kate' and $MasterKate>>
@@ -644,8 +682,20 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
         <</if>>
       <</if>>
     <</if>>
-  <<elseif setup.haveInventory('sex toys', 'chastity belt')>>
+  <<elseif $PlayerChastityBra>>
+    You are locked in a chastity bra.
+    <<if $Keyholder>>
+      $Keyholder has your key.
+    <</if>>
+    <<if $tempHaveBelt>>
+      You are currently locked in your chastity belt.
+    <</if>>
+  <<elseif $tempHaveBelt and $tempHaveBra>>
+    You have a chastity belt and bra, but you aren't currently locked.
+  <<elseif $tempHaveBelt>>
     You have a chastity belt, but you aren't currently locked.
+  <<elseif $tempHaveBra>>
+    You have a chastity bra, but you aren't currently locked.
   <</if>>
 <</nobr>>
 
