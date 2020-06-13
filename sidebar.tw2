@@ -635,13 +635,19 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       <</if>>
       Your father would approve.
     <<elseif $BoyfriendStrictChastity>>
-      $Keyholder has locked you in a chastity
+      <<if $Keyholder == "computer">>
+        $ComputerChastityOwner
+      <<else>>
+        $Keyholder
+      <</if>>
+      has locked you in a chastity
       <<if $PlayerChastityBra>>
         belt and bra,
       <<else>>
         belt,
       <</if>>
       as your father instructed.
+      <<if $Keyholder == "computer">>You are beta testing a new computerized model<</if>>
     <<elseif $FatherChastity>>
       Your father has locked you in a chastity
       <<if $PlayerChastityBra>>
