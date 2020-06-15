@@ -1,0 +1,637 @@
+::BeltTest
+<<nobr>>
+  <h1>Belt Configuration Testing</h1>
+  <<set $BeltGlobalBlock to 1>>
+  <<set $BeltMode to "Single">>
+  <<set $BeltArousalMode to "None">>
+  <<set $BeltEncouragelMode to "Oral">>
+  <<set $BeltRequestMode to "No">>
+  <<set $BeltLowerClothesWorkMode to "Conservative">>
+  <<set $BeltLowerClothesHomeMode to "Slutty">>
+  <<set $BeltLowerClothesGenderMode to "Same">>
+  <<set $MinBJ to 0>>
+  <<set $GoalBJ to 0>>
+<</nobr>>
+<<nobr>>
+  [[Owner Functions|BeltOwner]]
+<</nobr>>
+
+<<nobr>>
+  [[Wearer Functions|BeltWearer]]
+<</nobr>>
+
+<<nobr>>
+  [[Self Locking Functions|BeltSelfLock]]
+<</nobr>>
+
+::BeltOwner
+<<nobr>>
+  <<if $BeltSelfLock>>
+    <h1>Belt Configuration (Self-locking)</h1>
+  <<else>>
+    <h1>Belt Configuration (Owner)</h1>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <h2>Belt Mode</h2>
+  <span id="beltMode">
+    <<include [[BeltModeSetting]]>>
+  </span>
+  <br>
+  <span id="beltModeChange">
+    <<include [[BeltModeSettingChange]]>>
+  </span>
+<</nobr>>
+
+<<nobr>>
+  <hr>
+  <h2>Mode Configuration</h2>
+  <span id="beltModeDetails">
+    <<include [[BeltModeAdditionalSettings]]>>
+  </span>
+  <<if $BeltSelfLock>>
+    <hr>
+    <h2>Self Locking Unlock Requirements</h2>
+    <span id="beltLockMode">
+      <<include [[BeltLockMode]]>>
+    </span>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <hr>
+  <h2>Global Orgasm Block</h2>
+  <span id="globalBlock">
+    <<include [[BeltOrgasmBlockSetting]]>>
+  </span>
+  <<link CHANGE>>
+    <<set $BeltGlobalBlock to ($BeltGlobalBlock + 1) % 3>>
+    <<if $BeltGlobalBlock == 0 and $BeltSelfLock>>
+      <<set $BeltGlobalBlock to 1>>
+    <</if>>
+    <<replace "#globalBlock">><<include [[BeltOrgasmBlockSetting]]>><</replace>>
+  <</link>>
+  <<if $BeltSelfLock>>
+    <br>(Note: Option to ALLOW all orgasms is disabled for self-locking mode)
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <hr>
+  <span id="beltGeneralSettings">
+    <<include [[BeltModeGeneralSettings]]>>
+  </span>
+<</nobr>>
+
+<<nobr>>
+  <hr>
+  <h2>Blacklists</h2>
+  <<include [[BeltBlacklist]]>>
+<</nobr>>
+
+::BeltOrgasmBlockSetting
+<<nobr>>
+  <<if $BeltGlobalBlock == 2>>
+    All Orgasms are PREVENTED (even if other settings would allow them)
+  <<elseif $BeltGlobalBlock == 1>>
+    Orgasms provided by the belt are ENABLED, unauthorized orgasms are prevented.
+  <<else>>
+    Orgasms are ALLOWED regardless of method.
+  <</if>>
+<</nobr>>
+
+::BeltModeSetting
+<<nobr>>
+  <<if $BeltMode == "Chaste">>
+    <b>CHASTE</b>: Wearer must remain chaste.  Any attempted oral or anal sexual activity is punished.
+  <<elseif $BeltMode == "Faithful">>
+    <b>FAITHFUL RELATIONSHIP</b>: Wearer is rewarded for engaging in oral or anal sexual activity with registered partner(s).  Attempted sexual activity with anyone else is punished.
+  <<elseif $BeltMode == "Open">>
+    <b>OPEN RELATIONSHIP</b>: Wearer is rewarded for engaging in oral or anal sexual activity with registered partner(s).  Sexual activity with anyone else is permitted, but not rewarded.
+  <<elseif $BeltMode == "Public">>
+    <b>PUBLIC ACCESS</b>: Wearer is rewarded for engaging in oral or anal sexual activity, regardless of sexual partner.
+  <<elseif $BeltMode == "Service">>
+    <b>COMMUNITY SERVICE</b>: Wearer is <i><u>required</u></i> to engage in oral or anal sexual activity to avoid punishment.
+  <<else>>
+    <b>SINGLE</b>: Wearer is allowed to engage in oral or anal sexual activity without additional reward or penalty.
+  <</if>>
+<</nobr>>
+
+::BeltLockMode
+<<nobr>>
+  <h3>Time</h3>
+  <ul>
+    <li>todo (Minimum lock time)</li>
+    <li>todo Denial Length (locked until no orgasm for x days)</li>
+    <li>todo Self-control (locked until no oral/anal sexual activity for x days)</li>
+  </ul>
+
+  <h3>Service</h3>
+  <ul>
+    <li>todo Service Based (locked until X BJs and Y anal)</li>
+  </ul>
+
+  <h3>Ownership</h3>
+  <ul>
+    <li>TODO</li>
+    <li>Option 1: Can add owner, but they take control after self-locking session</li>
+    <li>Option 2: Can add owner, with immediate effect</li>
+    <li>Option 3: Indefinite unlocking until an owner is added. $BeltSelfLock - "ToOwn"</li>
+  </ul>
+<</nobr>>
+
+::BeltModeSettingChange
+<<nobr>>
+  Change Mode:
+  <<if $BeltMode == "Chaste">>
+    CHASTE
+  <<else>>
+    <<link CHASTE>>
+      <<set $BeltMode to "Chaste">>
+      <<set $BeltEncouragelMode to "None">>
+      <<set $BeltLowerClothesHomeMode to "Conservative">>
+      <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
+      <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
+      <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
+      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
+    <</link>>
+  <</if>>
+  <<if $BeltMode == "Single">>
+    | SINGLE
+  <<else>>
+    | <<link SINGLE>>
+      <<set $BeltMode to "Single">>
+      <<set $BeltEncouragelMode to "Oral">>      
+      <<set $BeltLowerClothesHomeMode to "Slutty">>
+      <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
+      <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
+      <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
+      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
+    <</link>>
+  <</if>>
+  <<if $BeltMode == "Faithful">>
+    | FAITHFUL RELATIONSHIP
+  <<elseif !$BeltSelfLock>>
+    | <<link "FAITHFUL RELATIONSHIP">>
+      <<set $BeltMode to "Faithful">>
+      <<set $BeltEncouragelMode to "Oral">>      
+      <<set $BeltLowerClothesHomeMode to "None">>
+      <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
+      <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
+      <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
+      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
+    <</link>>
+  <</if>>
+  <<if $BeltMode == "Open">>
+    | OPEN RELATIONSHIP
+  <<elseif !$BeltSelfLock>>
+    | <<link "OPEN RELATIONSHIP">>
+      <<set $BeltMode to "Open">>
+      <<set $BeltEncouragelMode to "Oral">>
+      <<set $BeltLowerClothesHomeMode to "Slutty">>
+      <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
+      <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
+      <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
+      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
+    <</link>>
+  <</if>>
+  <<if $BeltMode == "Public">>
+    | PUBLIC ACCESS
+  <<else>>
+    | <<link "PUBLIC ACCESS">>
+      <<set $BeltMode to "Public">>
+      <<set $BeltEncouragelMode to "Oral">>      
+      <<set $BeltLowerClothesHomeMode to "Slutty">>
+      <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
+      <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
+      <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
+      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
+    <</link>>
+  <</if>>
+  <<if $BeltMode == "Service">>
+    | COMMUNITY SERVICE
+  <<else>>
+    | <<link "COMMUNITY SERVICE">>
+      <<set $BeltMode to "Service">>
+      <<set $BeltEncouragelMode to "Oral">>      
+      <<set $BeltLowerClothesHomeMode to "Slutty">>
+      <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
+      <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
+      <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
+      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
+    <</link>>
+  <</if>>
+  <<if $BeltSelfLock>>
+    <br>
+    (Note: Relationship modes disabled for self-locking.  Just grant ownership to your partner instead.)
+  <</if>>
+<</nobr>>
+
+::BeltScheduledOrgasms
+<li>(todo scheduled orgasms (y/n, freq), disable if in an orgasm/denial based self-locking)</li>
+
+::BeltModeAdditionalSettings
+<<nobr>>
+  <<if $BeltMode == "Chaste">>
+    <ul>
+      <<include [[BeltForceOrPreventArousal]]>>
+      <<include [[BeltOrgasmRequest]]>>
+      <<include [[BeltScheduledOrgasms]]>>
+    </ul>
+  <<elseif $BeltMode == "Faithful">>
+    <ul>
+      <<include [[BeltForceOrPreventArousal]]>>
+      <<include [[BeltOralAnalEncourage]]>>
+      <<include [[BeltOrgasmRequest]]>>
+      <<include [[BeltRewardMinimums]]>>
+      <<include [[BeltPunishMinimums]]>>
+      <<include [[BeltScheduledOrgasms]]>>
+    </ul>
+    <<include [[BeltPartners]]>>
+    <<include [[BeltExceptions]]>>
+  <<elseif $BeltMode == "Open">>
+    <ul>
+      <<include [[BeltForceOrPreventArousal]]>>
+      <<include [[BeltOralAnalEncourage]]>>
+      <<include [[BeltOrgasmRequest]]>>
+      <<include [[BeltRewardMinimums]]>>
+      <<include [[BeltPunishMinimums]]>>
+      <<include [[BeltScheduledOrgasms]]>>
+    </ul>
+    <<include [[BeltPartners]]>>
+  <<elseif $BeltMode == "Public">>
+    <ul>
+      <<include [[BeltForceOrPreventArousal]]>>
+      <<include [[BeltOralAnalEncourage]]>>
+      <<include [[BeltOrgasmRequest]]>>
+      <<include [[BeltRewardMinimums]]>>
+      <li>todo (count only unique partners)</li>
+      <<include [[BeltScheduledOrgasms]]>>
+    </ul>
+  <<elseif $BeltMode == "Service">>
+    <ul>
+      <<include [[BeltForceOrPreventArousal]]>>
+      <<include [[BeltOralAnalEncourage]]>>
+      <<include [[BeltOrgasmRequest]]>>
+      <<include [[BeltRewardMinimums]]>>
+      <<include [[BeltPunishMinimums]]>>
+      <li>todo (count only unique partners)</li>
+      <<include [[BeltScheduledOrgasms]]>>
+    </ul>
+  <<elseif $BeltMode == "Single">>
+    <ul>
+      <<include [[BeltForceOrPreventArousal]]>>
+      <<include [[BeltOralAnalEncourage]]>>
+      <<include [[BeltOrgasmRequest]]>>
+      <<include [[BeltScheduledOrgasms]]>>
+    </ul>
+  <</if>>
+<</nobr>>
+
+::BeltForceOrPreventArousal
+<<nobr>>
+  <li>
+  <span id="beltArousalMode">
+    <<include [[BeltForceOrPreventArousalText]]>>
+  </span>
+  <<link CHANGE>>
+    <<if $BeltArousalMode == "Prevent">>
+      <<set $BeltArousalMode to "Force">>
+    <<elseif $BeltArousalMode == "None">>
+      <<set $BeltArousalMode to "Prevent">>
+    <<else>>
+      <<set $BeltArousalMode to "None">>
+    <</if>>
+    <<replace "#beltArousalMode">><<include [[BeltForceOrPreventArousalText]]>><</replace>>
+  <</link>>
+  </li>
+<</nobr>>
+
+::BeltForceOrPreventArousalText
+<<nobr>>
+    <<if $BeltArousalMode == "Prevent">>
+      Wearer will be punished if high levels of arousal are detected.
+    <<elseif $BeltArousalMode == "Force">>
+      Wearer will be teased and/or edged to keep arousal high.
+    <<else>>
+      Wearer's arousal level will be monitored and recorded for later review.
+    <</if>>
+<</nobr>>
+
+::BeltOralAnalEncourage
+<<nobr>>
+  <li>
+  <span id="beltEncourageMode">
+    <<include [[BeltOralAnalEncourageText]]>>
+  </span>
+  <<link CHANGE>>
+    <<if $BeltEncouragelMode == "Both">>
+      <<set $BeltEncouragelMode to "Oral">>
+    <<elseif $BeltEncouragelMode == "Oral">>
+      <<set $BeltEncouragelMode to "Anal">>
+    <<elseif $BeltEncouragelMode == "Anal">>
+      <<set $BeltEncouragelMode to "None">>
+    <<else>>
+      <<set $BeltEncouragelMode to "Both">>
+    <</if>>
+    <<replace "#beltEncourageMode">><<include [[BeltOralAnalEncourageText]]>><</replace>>
+  <</link>>
+  </li>
+<</nobr>>
+
+::BeltOralAnalEncourageText
+<<nobr>>
+  <<if $BeltEncouragelMode == "Both">>
+    Teasing and/or edging will occur during both oral and anal sex.
+  <<elseif $BeltEncouragelMode == "Oral">>
+    Teasing and/or edging will occur during oral sex.
+  <<elseif $BeltEncouragelMode == "Anal">>
+    Teasing and/or edging will occur during anal sex.
+  <<else>>
+    Teasing and/or edging will not occur during either oral or anal sex.
+  <</if>>
+<</nobr>>
+
+::BeltOrgasmRequest
+<<nobr>>
+  <li>
+  <span id="beltOrgasmRequestMode">
+    <<include [[BeltOrgasmRequestText]]>>
+  </span>
+  <<link CHANGE>>
+    <<if $BeltRequestMode == "Maybe">>
+      <<set $BeltRequestMode to "No">>
+    <<elseif $BeltRequestMode == "No">>
+      <<set $BeltRequestMode to "Extend">>
+    <<elseif $BeltRequestMode == "Extend">>
+      <<set $BeltRequestMode to "Maybe Extend">>
+    <<elseif $BeltRequestMode == "Maybe Extend">>
+      <<set $BeltRequestMode to "Yes">>
+    <<else>>
+      <<set $BeltRequestMode to "Maybe">>
+    <</if>>
+    <<if ($BeltRequestMode == "Extend" or $BeltRequestMode == "Maybe Extend") and (!$BeltSelfLock or $BeltSelfLock == "ToOwn")>>
+      <<set $BeltRequestMode to "Yes">>
+    <</if>>
+    <<replace "#beltOrgasmRequestMode">><<include [[BeltOrgasmRequestText]]>><</replace>>
+  <</link>>
+  </li>
+<</nobr>>
+
+::BeltOrgasmRequestText
+<<nobr>>
+  <<if $BeltRequestMode == "Maybe">>
+    Orgasm requests by wearer are permitted.  Requests may be granted, granted but ruined, or denied.
+  <<elseif $BeltRequestMode == "No">>
+    Orgasm requests by wearer are not permitted.
+  <<elseif $BeltRequestMode == "Extend">>
+    Orgasm requests by wearer are permitted and will be granted, but will extend self-locking.
+  <<elseif $BeltRequestMode == "Maybe Extend">>
+    Orgasm requests by wearer are permitted.  Requests may be granted, granted but ruined, or denied.
+    Requests will extend self-locking regardless of whether granted or not.
+  <<else>>
+    Orgasm requests by wearer are permitted and will be granted.
+  <</if>>
+  <<if $BeltRequestMode != "No">>
+    (
+      <<if $BeltSelfLock>>
+        Requests can only be made after at least 50% of unlocking target has been achieved.
+        <<if $BeltRequestMode == "Extend" or $BeltRequestMode == "Maybe Extend">>
+          Progress towards unlocking will be reset to zero.  Unlocking goals will be increased to 150% of current targets.
+        <</if>>
+      <<else>>
+        Requests can be made no more than once per week.  Owner may override and reject any orgasm requests.
+      <</if>>
+    )
+  <</if>>
+<</nobr>>
+
+::BeltScheduledOrgasms
+<li>(todo scheduled orgasms (y/n, freq))</li>
+
+::BeltRewardMinimums
+<<nobr>>
+  <li>todo (minimum daily blowjobs for reward)</li>
+  <li>todo (minimum daily anal for reward)</li>
+<</nobr>>
+
+::BeltPunishMinimums
+<<nobr>>
+  <li>todo (minimum daily blowjobs to avoid punishment)</li>
+  <li>todo (minimum daily anal to avoid punishment)</li>
+<</nobr>>
+
+::BeltModeGeneralSettings
+<<nobr>>
+  <h2>Other Belt Settings</h2>
+  <h3>Wardrobe Limits</h3>
+  If restrictions are enabled, only approved RFID-tagged and classified clothing is allowed.
+  <ul>
+    <li>Upper Body: <i>(Purchase and pair nipple piercing or chastity bra add-ons to enable control of upper-body garments)</i></li>
+    <<include [[BeltLowerClothesControl]]>>
+  </ul>
+  <h3>Language Filter</h3>
+  The following words, phrases, and phrase types will result in punishment if spoken or communicated via texting.
+  Severity will increase with repeated use. (Note: Pattern matching will attempt to identify any similar words or phrases.)
+  <ul>
+    <li>(basic curse words)</li>
+    <<if !$BeltSelfLock>>
+      <li>(requests for unlocking/release)</li>
+      <li>(requests for own orgasm)</li>
+      <li>(requests for sex, other than oral or anal)</li>
+    <</if>>
+  </ul>
+  Contact Customer Service to request any changes to the language filter.
+  <<if $BeltSelfLock>>
+    Requests by a self-locked wearer to add restrictions will be honored.  Requests to remove restrictions will not.
+  <</if>>
+<</nobr>>
+
+::BeltLowerClothesControl
+<<nobr>>
+  <li>Lower Body:
+    <ul>
+      <li>During designated Work Hours: 
+      <span id="lowerClothesWorkMode">
+        <<include [[BeltLowerClothesControlWorkText]]>>
+      </span>
+      <<link CHANGE>>
+        <<if $BeltLowerClothesWorkMode == "All">>
+          <<set $BeltLowerClothesWorkMode to "Sexy">>
+        <<elseif $BeltLowerClothesWorkMode == "Sexy">>
+          <<set $BeltLowerClothesWorkMode to "Slutty">>
+        <<elseif $BeltLowerClothesWorkMode == "Slutty">>
+          <<set $BeltLowerClothesWorkMode to "Conservative">>
+        <<else>>
+          <<set $BeltLowerClothesWorkMode to "All">>
+        <</if>>
+        <<replace "#lowerClothesWorkMode">><<include [[BeltLowerClothesControlWorkText]]>><</replace>>
+      <</link>>
+      </li>
+      <li>During Non-Work Hours:
+      <span id="lowerClothesHomeMode">
+        <<include [[BeltLowerClothesControlHomeText]]>>
+      </span>
+      <<link CHANGE>>
+        <<if $BeltLowerClothesHomeMode == "All">>
+          <<set $BeltLowerClothesHomeMode to "None">>
+        <<elseif $BeltLowerClothesHomeMode == "None">>
+          <<set $BeltLowerClothesHomeMode to "Slutty">>
+        <<elseif $BeltLowerClothesHomeMode == "Slutty">>
+          <<set $BeltLowerClothesHomeMode to "Sexy">>
+        <<elseif $BeltLowerClothesHomeMode == "Sexy">>
+          <<set $BeltLowerClothesHomeMode to "Lingerie">>
+        <<elseif $BeltLowerClothesHomeMode == "Lingerie">>
+          <<set $BeltLowerClothesHomeMode to "Fetish">>
+        <<elseif $BeltLowerClothesHomeMode == "Fetish">>
+          <<set $BeltLowerClothesHomeMode to "Conservative">>
+        <<else>>
+          <<set $BeltLowerClothesHomeMode to "All">>
+        <</if>>
+        <<replace "#lowerClothesHomeMode">><<include [[BeltLowerClothesControlHomeText]]>><</replace>>
+      <</link>>
+      </li>
+      <li>
+      <span id="lowerClothesGenderMode">
+        <<include [[BeltLowerClothesControlGenderText]]>>
+      </span>
+      <<link CHANGE>>
+        <<if $BeltLowerClothesGenderMode == "All">>
+          <<set $BeltLowerClothesGenderMode to "Same">>
+        <<elseif $BeltLowerClothesGenderMode == "Same">>
+          <<set $BeltLowerClothesGenderMode to "Cross">>
+        <<elseif $BeltLowerClothesGenderMode == "Cross">>
+          <<set $BeltLowerClothesGenderMode to "Neutral">>
+        <<else>>
+          <<set $BeltLowerClothesGenderMode to "All">>
+        <</if>>
+        <<replace "#lowerClothesGenderMode">><<include [[BeltLowerClothesControlGenderText]]>><</replace>>
+      <</link>>
+      </li>
+    </ul>
+  </li>
+<</nobr>>
+
+::BeltLowerClothesControlWorkText
+<<nobr>>
+  <<if $BeltLowerClothesWorkMode == "All">>
+    No restrictions
+  <<else>>
+    Only clothing classified as
+    <<if $BeltLowerClothesWorkMode == "Slutty">>
+      "Slutty"
+    <<elseif $BeltLowerClothesWorkMode == "Sexy">>
+      "Sexy"
+    <<else>>
+      "Conservative"
+    <</if>>
+    is permitted.
+  <</if>>
+<</nobr>>
+
+::BeltLowerClothesControlHomeText
+<<nobr>>
+  <<if $BeltLowerClothesHomeMode == "All">>
+    No restrictions
+  <<elseif $BeltLowerClothesHomeMode == "None">>
+    No clothing permitted
+  <<else>>
+    Only clothing classified as
+    <<if $BeltLowerClothesHomeMode == "Slutty">>
+      "Slutty", "Lingerie", or "Fetish"
+    <<elseif $BeltLowerClothesHomeMode == "Sexy">>
+      "Sexy" or "Lingerie"
+    <<elseif $BeltLowerClothesHomeMode == "Lingerie">>
+      "Lingerie"
+    <<elseif $BeltLowerClothesHomeMode == "Fetish">>
+      "Fetish"
+    <<else>>
+      "Conservative"
+    <</if>>
+    is permitted.
+  <</if>>
+<</nobr>>
+
+::BeltLowerClothesControlGenderText
+<<nobr>>
+  <<if $BeltLowerClothesGenderMode == "All">>
+    Clothing is not restricted with regard to gender.
+  <<elseif $BeltLowerClothesGenderMode == "Cross">>
+    Only clothing tagged as typical for a different gender than wearer is allowed.
+  <<elseif $BeltLowerClothesGenderMode == "Same">>
+    Only clothing tagged as typical for wearer's gender is allowed.
+  <<else>>
+    Only clothing tagged as gender-neutral is allowed.
+  <</if>>
+<</nobr>>
+
+::BeltPartners
+<<nobr>>
+  <h2>Registered Partners</h2>
+  <ul>
+    <li>None current configured</li>
+  </ul>
+<</nobr>>
+
+::BeltExceptions
+<<nobr>>
+  <h2>Allowed Exceptions</h2>
+  No punishments will be administred for sexual activity involving the following:
+  <ul>
+    <li>[Registered Owner] (always allowed)</li>
+    <li>No others currently configured</li>
+  </ul>
+<</nobr>>
+
+::BeltBlacklist
+<<nobr>>
+  Engaging in any of the following prohibited activity will result severe punishment
+  <<if $BeltSelfLock>>
+    and will posted as a status update to wearer's social media accounts.
+  <<else>>
+    and alert will be sent to the registered owner.
+  <</if>>
+  <h3>Prohibited Individuals</h3>
+  No sexual contact, non-sexual contact, communications, or prolonged proximity to or with the following individuals is permitted:
+  <ul>
+    <li>(Ex-boyfriend)</li>
+  </ul>
+
+  <h3>Prohibited Locations for Sexual Activity</h3>
+  No sexual activity or attempted sexual activity at the following locations is permitted:
+  <ul>
+    <li>(Work Address)</li>
+  </ul>
+
+  <h3>Prohibited Locations for Non-sexual Activity</h3>
+  The wearer will be warned if detected at or near the following locations.  Continued presence at these locations is not permitted:
+  <ul>
+    <li>(Ex-boyfriend's Address)</li>
+  </ul>
+
+  <h3>Prohibited times</h3>
+  Sexual activity or attempted sexual activity is not permitted during the following times:
+  <ul>
+    <li>Monday-Friday, 8 AM - 5PM, Excluding holidays</li>
+  </ul>
+
+  <h3>Contact Customer Service to request any changes to the probitited activities lists.</h3>
+  <<if $BeltSelfLock>>
+    Requests by a self-locked wearer to add restrictions will be honored.  Requests to remove restrictions will not.
+  <</if>>
+  <hr>
+<</nobr>>
+
+::BeltWearer
+TODO (Can view (sometimes) settings)
+TODO (Can make settings worse/stricter but not easier)
+
+::BeltSelfLock
+<<nobr>>
+  <<set $BeltSelfLock to 1>>
+  <<set $BeltGlobalBlock to 1>>
+  <<set $BeltMode to "Public">>
+  <<set $BeltEncouragelMode to "Oral">>
+  <<set $BeltLowerClothesHomeMode to "Slutty">>
+  <<include [[BeltOwner]]>>
+<</nobr>>
