@@ -11,6 +11,7 @@
   <<set $BeltLowerClothesGenderMode to "Same">>
   <<set $MinBJ to 0>>
   <<set $GoalBJ to 0>>
+  <<set $isLockTime to true>>
 <</nobr>>
 <<nobr>>
   [[Owner Functions|BeltOwner]]
@@ -61,9 +62,6 @@
 <<nobr>>
   <hr>
   <h2>Global Orgasm Block</h2>
-  <span id="globalBlock">
-    <<include [[BeltOrgasmBlockSetting]]>>
-  </span>
   <<link CHANGE>>
     <<set $BeltGlobalBlock to ($BeltGlobalBlock + 1) % 3>>
     <<if $BeltGlobalBlock == 0 and $BeltSelfLock>>
@@ -71,6 +69,9 @@
     <</if>>
     <<replace "#globalBlock">><<include [[BeltOrgasmBlockSetting]]>><</replace>>
   <</link>>
+  <span id="globalBlock">
+    <<include [[BeltOrgasmBlockSetting]]>>
+  </span>
   <<if $BeltSelfLock>>
     <br>(Note: Option to ALLOW all orgasms is disabled for self-locking mode)
   <</if>>
@@ -119,25 +120,168 @@
 
 ::BeltLockMode
 <<nobr>>
-  <h3>Time</h3>
-  <ul>
-    <li>todo (Minimum lock time)</li>
-    <li>todo Denial Length (locked until no orgasm for x days)</li>
-    <li>todo Self-control (locked until no oral/anal sexual activity for x days)</li>
-  </ul>
+  <<set $receiverName to "1">>
+  
+  <h3><label><<checkbox "$isLockTime" false true checked>> Time</label></h3>
+  <span id="beltTimeLockSpan">"."</span>
+	<<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltTimeLockSpan">>
+        <<if $isLockTime>>
+          <ul>
+            <li>todo (Minimum lock time)</li>
+            <li>todo Denial Length (locked until no orgasm for x days)</li>
+            <li>todo Self-control (locked until no oral/anal sexual activity for x days)</li>
+          </ul>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
 
-  <h3>Service</h3>
-  <ul>
-    <li>todo Service Based (locked until X BJs and Y anal)</li>
-  </ul>
+  <h3><label><<checkbox "$isLockService" false true autocheck>> Service</label></h3>
+  <span id="beltServiceLockSpan">"."</span>
+	<<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltServiceLockSpan">>
+        <<if $isLockService>>
+          <ul>
+            <<include [[BeltLockModeService]]>>
+          </ul>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
 
-  <h3>Ownership</h3>
-  <ul>
-    <li>TODO</li>
-    <li>Option 1: Can add owner, but they take control after self-locking session</li>
-    <li>Option 2: Can add owner, with immediate effect</li>
-    <li>Option 3: Indefinite unlocking until an owner is added. $BeltSelfLock - "ToOwn"</li>
-  </ul>
+  <h3><label><<checkbox "$isLockOwnership" false true autocheck>> Ownership</label></h3>
+  <span id="beltOwnershipLockSpan">"."</span>
+	<<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltOwnershipLockSpan">>
+        <<if $isLockOwnership>>
+          <ul>
+            <li>TODO</li>
+            <li>Option 1: Can add owner, but they take control after self-locking session</li>
+            <li>Option 2: Can add owner, with immediate effect</li>
+            <li>Option 3: Indefinite unlocking until an owner is added. $BeltSelfLock - "ToOwn"</li>
+          </ul>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+
+  <<if !$isLockTime && !$isLockService && !$isLockOwnership>>
+    <b>WARNING:</b> WITHOUT UNLOCKING SETTINGS, BELT WILL BE PERMANENTLY LOCKED
+  <</if>>
+<</nobr>>
+
+::BeltLockModeService
+<<nobr>>
+  <li>
+  <<link CHANGE>>
+    <<if $BeltLockModeService == "Both">>
+      <<set $BeltLockModeService to "Oral">>
+    <<elseif $BeltLockModeService == "Oral">>
+      <<set $BeltLockModeService to "Anal">>
+    <<elseif $BeltLockModeService == "Anal">>
+      <<set $BeltLockModeService to "Either">>
+    <<elseif $BeltLockModeService == "Either">>
+      <<set $BeltLockModeService to "None">>
+    <<else>>
+      <<set $BeltLockModeService to "Both">>
+    <</if>>
+    <<replace "#beltLockModeService">><<include [[BeltLockModeServiceText]]>><</replace>>
+  <</link>>
+  <span id="beltLockModeService">
+    <<include [[BeltLockModeServiceText]]>>
+  </span>
+  </li>
+<</nobr>>
+
+::BeltLockModeServiceText
+<<nobr>>
+  <<if $BeltLockModeService == "Both">>
+    Number of each oral and anal sex service requirements that must be completed prior to unlocking: 
+    <<include [[BeltLockModeServiceCount]]>>
+  <<elseif $BeltLockModeService == "Oral">>
+    Number of oral service requirements that must be completed prior to unlocking:
+    <<include [[BeltLockModeServiceCount]]>>
+  <<elseif $BeltLockModeService == "Anal">>
+    Number of anal service requirements that must be completed prior to unlocking:
+    <<include [[BeltLockModeServiceCount]]>>
+  <<elseif $BeltLockModeService == "Either">>
+    Combined number of either oral or anal service requirements that must be completed prior to unlocking:
+    <<include [[BeltLockModeServiceCount]]>>
+  <<else>>
+    There are no oral or anal service requirements prior to unlocking.
+  <</if>>
+<</nobr>>
+
+::BeltLockModeServiceCount
+<<nobr>>
+  <b>
+    <<if $BeltLockModeServiceCount > 20>>
+      <<link "[ - ]">>
+        <<set $BeltLockModeServiceCount -= 1>>
+        <<replace "#beltLockModeService">><<include [[BeltLockModeServiceText]]>><</replace>>
+      <</link>>
+    <<else>>
+      [ &nbsp; ]
+    <</if>>
+    $BeltLockModeServiceCount
+    <<if $BeltLockModeServiceCount < 65535>>
+      <<link "[ + ]">>
+        <<if $BeltLockModeServiceCount >= 65515>>
+          <<set $BeltLockModeServiceCount to 65535>>
+        <<else>>
+          <<set $BeltLockModeServiceCount += 20>>
+        <</if>>
+        <<replace "#beltLockModeService">><<include [[BeltLockModeServiceText]]>><</replace>>
+      <</link>>
+    <<else>>
+      [ &nbsp; ]
+    <</if>>
+    <<if $BeltLockModeServiceCount < 65535>>
+      <<link "[+++]">>
+        <<if $BeltLockModeServiceCount <= 50>>
+          <<set $BeltLockModeServiceCount to 100>>
+        <<elseif $BeltLockModeServiceCount >= 32768>>
+          <<set $BeltLockModeServiceCount to 65535>>
+        <<else>>
+          <<set $BeltLockModeServiceCount *= 2>>
+        <</if>>
+        <<replace "#beltLockModeService">><<include [[BeltLockModeServiceText]]>><</replace>>
+      <</link>>
+    <<else>>
+      [ &nbsp; ]
+    <</if>>
+  </b>
+<<include [[BeltLockModeServiceUnique]]>>
+<</nobr>>
+
+::BeltLockModeServiceUnique
+<<nobr>>
+  <li>
+  <<link CHANGE>>
+    <<if $BeltLockModeServiceUnique>>
+      <<set $BeltLockModeServiceUnique to false>>
+    <<else>>
+      <<set $BeltLockModeServiceUnique to true>>
+    <</if>>
+    <<replace "#beltLockModeServiceUnique">><<include [[BeltLockModeServiceUniqueText]]>><</replace>>
+  <</link>>
+  <span id="beltLockModeServiceUnique">
+    <<include [[BeltLockModeServiceUniqueText]]>>
+  </span>
+  </li>
+<</nobr>>
+
+::BeltLockModeServiceUniqueText
+<<nobr>>
+  <<if $BeltLockModeServiceUnique>>
+    Only unique partners are counted.
+  <<else>>
+    Multiple services for the same partner are also counted.
+  <</if>>
 <</nobr>>
 
 ::BeltModeSettingChange
@@ -223,7 +367,7 @@
   <</if>>
   <<if $BeltSelfLock>>
     <br>
-    (Note: Relationship modes disabled for self-locking.  Just grant ownership to your partner instead.)
+    (Note: Relationship modes are not supported for self-locking.  If you grant ownership to your partner, he or she may use them.)
   <</if>>
 <</nobr>>
 
@@ -291,9 +435,6 @@
 ::BeltForceOrPreventArousal
 <<nobr>>
   <li>
-  <span id="beltArousalMode">
-    <<include [[BeltForceOrPreventArousalText]]>>
-  </span>
   <<link CHANGE>>
     <<if $BeltArousalMode == "Prevent">>
       <<set $BeltArousalMode to "Force">>
@@ -304,6 +445,9 @@
     <</if>>
     <<replace "#beltArousalMode">><<include [[BeltForceOrPreventArousalText]]>><</replace>>
   <</link>>
+  <span id="beltArousalMode">
+    <<include [[BeltForceOrPreventArousalText]]>>
+  </span>
   </li>
 <</nobr>>
 
@@ -321,9 +465,6 @@
 ::BeltOralAnalEncourage
 <<nobr>>
   <li>
-  <span id="beltEncourageMode">
-    <<include [[BeltOralAnalEncourageText]]>>
-  </span>
   <<link CHANGE>>
     <<if $BeltEncouragelMode == "Both">>
       <<set $BeltEncouragelMode to "Oral">>
@@ -336,6 +477,9 @@
     <</if>>
     <<replace "#beltEncourageMode">><<include [[BeltOralAnalEncourageText]]>><</replace>>
   <</link>>
+  <span id="beltEncourageMode">
+    <<include [[BeltOralAnalEncourageText]]>>
+  </span>
   </li>
 <</nobr>>
 
@@ -355,9 +499,6 @@
 ::BeltOrgasmRequest
 <<nobr>>
   <li>
-  <span id="beltOrgasmRequestMode">
-    <<include [[BeltOrgasmRequestText]]>>
-  </span>
   <<link CHANGE>>
     <<if $BeltRequestMode == "Maybe">>
       <<set $BeltRequestMode to "No">>
@@ -375,6 +516,9 @@
     <</if>>
     <<replace "#beltOrgasmRequestMode">><<include [[BeltOrgasmRequestText]]>><</replace>>
   <</link>>
+  <span id="beltOrgasmRequestMode">
+    <<include [[BeltOrgasmRequestText]]>>
+  </span>
   </li>
 <</nobr>>
 
@@ -452,9 +596,6 @@
   <li>Lower Body:
     <ul>
       <li>During designated Work Hours: 
-      <span id="lowerClothesWorkMode">
-        <<include [[BeltLowerClothesControlWorkText]]>>
-      </span>
       <<link CHANGE>>
         <<if $BeltLowerClothesWorkMode == "All">>
           <<set $BeltLowerClothesWorkMode to "Sexy">>
@@ -467,11 +608,11 @@
         <</if>>
         <<replace "#lowerClothesWorkMode">><<include [[BeltLowerClothesControlWorkText]]>><</replace>>
       <</link>>
+      <span id="lowerClothesWorkMode">
+        <<include [[BeltLowerClothesControlWorkText]]>>
+      </span>
       </li>
       <li>During Non-Work Hours:
-      <span id="lowerClothesHomeMode">
-        <<include [[BeltLowerClothesControlHomeText]]>>
-      </span>
       <<link CHANGE>>
         <<if $BeltLowerClothesHomeMode == "All">>
           <<set $BeltLowerClothesHomeMode to "None">>
@@ -490,11 +631,11 @@
         <</if>>
         <<replace "#lowerClothesHomeMode">><<include [[BeltLowerClothesControlHomeText]]>><</replace>>
       <</link>>
+      <span id="lowerClothesHomeMode">
+        <<include [[BeltLowerClothesControlHomeText]]>>
+      </span>
       </li>
       <li>
-      <span id="lowerClothesGenderMode">
-        <<include [[BeltLowerClothesControlGenderText]]>>
-      </span>
       <<link CHANGE>>
         <<if $BeltLowerClothesGenderMode == "All">>
           <<set $BeltLowerClothesGenderMode to "Same">>
@@ -507,6 +648,9 @@
         <</if>>
         <<replace "#lowerClothesGenderMode">><<include [[BeltLowerClothesControlGenderText]]>><</replace>>
       <</link>>
+      <span id="lowerClothesGenderMode">
+        <<include [[BeltLowerClothesControlGenderText]]>>
+      </span>
       </li>
     </ul>
   </li>
@@ -631,7 +775,11 @@ TODO (Can make settings worse/stricter but not easier)
   <<set $BeltSelfLock to 1>>
   <<set $BeltGlobalBlock to 1>>
   <<set $BeltMode to "Public">>
+  <<set $BeltRequestMode to "Maybe Extend">>
   <<set $BeltEncouragelMode to "Oral">>
+  <<set $BeltLockModeService to "Either">>
+  <<set $BeltLockModeServiceCount to 20>>
+  <<set $BeltLockModeServiceUnique to true>>
   <<set $BeltLowerClothesHomeMode to "Slutty">>
   <<include [[BeltOwner]]>>
 <</nobr>>

@@ -1966,6 +1966,7 @@
 	<h1>On the Ride Home</h1>
   <img src="Part14/Home41.jpg" hspace="10" vspace="10" height="500" align="left">
 <</nobr>>
+  TODO $JobModel
 <<nobr>>
   <<if $JobBikiniBarista>>
     "So... What's a 'Bikini Barista' anyway.  Do you-", Dylan starts to ask before Cassie cuts him off.
@@ -2020,9 +2021,9 @@
     [[tell you more about it later|Part14GloryHole]] when we're alone."
   <<elseif $JobWebModel or $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang>>
     <<include [[Part14Home2BrotherWithDylan]]>>
-    "So, you had said you were going to try out modelling.  How has that been going?  Is it like on a runway or photos in magazines or something?", Dylan asks.
+    "So, you had said you were going to try out modeling.  How has that been going?  Is it like on a runway or photos in magazines or something?", Dylan asks.
     <br><br>
-    You don't want to tell them that the 'web modelling' job you'd originally looked into led to you being a porn star, so you lie.
+    You don't want to tell them that the 'web modeling' job you'd originally looked into led to you being a porn star, so you lie.
     <br><br>
     "Nothing big yet.  Just a few small clothing sites. I'm not even sure which ones, they just have me model the clothes and send the pictures off.
     But I haven't really got much work.
@@ -6431,6 +6432,7 @@
 <</nobr>>
 
 <<nobr>>
+  TODO $JobModel
   <<if $CampusMinistry>>
     "But it seems my worries were unfounded.  She seems to have developed into a wonderful young woman.  And when I spoke to her friend Faith, she spoke
     very highly of you.  I believe she said the two of you met at a charity event for the church there on campus."
@@ -8379,6 +8381,7 @@
 <<nobr>>
   I've got you a job working as a barista instead.  That should keep you out of trouble."
   <<set $JobBarista to 1>>
+  TODO $JobModel
 <</nobr>>
 
 ::Part14Home5BoyfriendStrict <42600,10700>
@@ -8415,6 +8418,7 @@
 <</nobr>>
 
 <<nobr>>
+  TODO $JobModel
   After you are done sucking his cock $dating[0] tells you, "Obviously you won't be working at the strip club anymore.
   <<if $PlayerItemNerdKeyStripper>>
     <<unset $PlayerItemNerdKeyStripper>>
@@ -8438,6 +8442,7 @@
     Your side job doing porn is out too.
   <</if>>
   As far as your primary job,
+  TODO $JobModel
   <<if $JobAthlete>>
     I'll talk with your coach about your belt.  It'll come off whenever it absolutely needs to, but it'll need to go back on afterwards.  If you don't agree
     with that, we can talk to your father about it."
@@ -8754,11 +8759,21 @@
   <<elseif $AcademicProbationDenial>>
   <<elseif $PlayerChastityBelt>>
       You hope $Keyholder lets you out of this chastity belt soon, at least for a little while.  You think you might go insane if you aren't allowed to cum soon.
+    TODO
   <<else>>
-    <<set setup.addSex({sex: 'male', anon:'Townie', vaginal:true})>>
-    <<set setup.addSex({sex: 'male', anon:'Townie', repeat:true})>>
-    But hearing about the other girls and how horny and frustrated they are now without being able to orgasm has made you horny too.  Thankfully it doesn't
-    take you long to find someone to give you the pleasure your friends can't have.
+    But hearing about the other girls and how horny and frustrated they are now without being able to orgasm, has made you horny too.
+    <<if setup.isGoldStarLesbian()>>
+      Hopefully you'll have better luck finding a woman to enjoy the night with once school has started back up.  Until then
+      <<if $PlayerSideEffectMasturbationBlock>>
+        you'll just be as horny as the ones on probation.
+      <<else>>
+        you always have your vibrator.
+      <</if>>
+    <<else>>
+      <<set setup.addSex({sex: 'male', anon:'Townie', vaginal:true})>>
+      <<set setup.addSex({sex: 'male', anon:'Townie', repeat:true})>>
+      Thankfully it doesn't take you long to find someone to give you the pleasure your friends can't have.
+    <</if>>
   <</if>>
 <</nobr>>
 

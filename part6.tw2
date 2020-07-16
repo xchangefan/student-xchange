@@ -1,7 +1,401 @@
+::Part6ArtReturnReject
+<<nobr>>
+	<h1>One Final Classroom Modeling</h1>
+  <<if $BodyType == 'Plus'>>
+    <img src="Part6/ArtModel11.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+    <img src="Part6/ArtModel12.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
+<</nobr>>
+<<nobr>>
+  Ken is disappointed when you decline his offer, but you doubt it will take him long to find one of your fellow students more than
+  happy to be his 'canvas'.
+  <<if $PlayerChastityBelt and !$JobWebModelSide>>
+    In his disappointment though, he leaves without remembering to put your belt back on you.  You take the belt home with you and hide
+    it in your closet.  You think about maybe locking it onto Olivia while she sleeps some night.
+    <<unset $PlayerChastityBelt>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You talk to the head of the Art department and let him know that you aren't going to be modeling for Ken any longer, and that you'd
+  like to go back to modeling for art sudents in the classroom again.  "I'd like to tell you yes, but unfortunately I can't," he says.
+<</nobr>>
+
+<<nobr>>
+  "We only have a limited number of slots available for our
+  <<if $BodyType == 'Plus'>>larger<<else>>smaller<</if>>
+  models.  When you stopped classroom modeling, I had to find someone else
+  to fill your position.  It wouldn't be fair to ask her to leave now.  I'm sure she wouldn't mind if you took her
+  spot for one final class though.  That way I can justify paying you until through the end of the month."
+<</nobr>>
+
+<<nobr>>
+  You feel a bit exposed your first day in front of a classroom again.  It's not the lack of clothes that makes you feel that way though,
+  you are quite accustomed to that.  It's being untied with not a single rope around you.  But mostly your thoughts are about this
+  being your last session.
+<</nobr>>
+
+<<nobr>>
+  <<unset $JobArt>>
+  <<set $JobArtFormer to 1>>
+  <<if $JobCallGirlSide>>
+    <<set $JobCallGirl to 1>>
+    <<unset $JobCallGirlSide>>
+    You suppose you'll just have to focus on your [[call girl job full time|Part5Hannah1]].
+  <<elseif $JobWebModelSide>>
+    <<set $JobWebModel to 1>>
+    <<unset $JobWebModelSide>>
+    You suppose you'll just have to focus on your [[web model job full time|Part5Olivia1]].
+  <<else>>
+      You suppose you'll have to talk to $Mentor about that
+      <<switch $Mentor>>
+        <<case "Faith">><<link "barista job">><<set $JobBarista = 1>><<goto [[JobBarista1]]>><</link>>
+        <<case "Emily">><<link "office job">><<set $JobOffice = 1>><<goto [[JobOffice1]]>><</link>>
+        <<case "Hannah">><<link "call girl job">><<set $JobCallGirl = 1>><<goto [[JobCall1]]>><</link>>
+        <<case "Samantha">><<link "bartender job">><<set $JobBartender = 1>><<goto [[JobBar1]]>><</link>>
+        <<case "Olivia">><<link "web model job">><<set $JobWebModel = 1>><<goto [[JobWebModel1]]>><</link>>
+      <</switch>>
+      she was suggesting after all.
+  <</if>>
+<</nobr>>
+
+::Part6ArtReturn
+<<nobr>>
+	<h1>Returning to Classroom Modeling</h1>
+  <img src="Part6/ArtModel1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  Ken is disappointed when you decline his offer, but you doubt it will take him long to find one of your fellow students more than
+  happy to be his 'canvas'.
+  <<if $PlayerChastityBelt>>
+    In his disappointment though, he leaves without remembering to put your belt back on you.  You take the belt home with you and hide
+    it in your closet.  You think about maybe locking it onto Olivia while she sleeps some night.
+    <<unset $PlayerChastityBelt>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You talk to the head of the Art department and let him know that you aren't going to be modeling for Ken any longer, and that you'd
+  like to go back to modeling for art sudents in the classroom again.  "Sure, if that's what you want," he tells you.
+<</nobr>>
+
+<<nobr>>
+  "Of course, we can't pay you the increased amount you were making when you were modeling for a professional artist.  Your pay will
+  go back to what it was when you started.  But the work should be less demanding as well."
+<</nobr>>
+
+<<nobr>>
+  "I understand you not wanting to be part of his 'special project', but I hope working with him was rewarding for you.  Regardless,
+  having professional experience with someone of his renown will certainly help your career prospects should you wish to continue
+  modeling."
+<</nobr>>
+
+<<nobr>>
+  You feel a bit exposed your first day in front of a classroom again.  It's not the lack of clothes that makes you feel that way though,
+  you are quite accustomed to that.  It's being untied with not a single rope around you.
+<</nobr>>
+
+<<nobr>>
+  But the unease only lasts a short while. By your second session, its feeling perfectly natural again.  Of course you still miss the
+  feeling of ropes around your wrists, of being tied down unable to move, of feeling helpless and vulnerable.  You'll just have to save
+  that fun for [[when you aren't working from now on|Part6ArtReturn2]].
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectSubmissive>>
+    <i>You realize you are even more submissive than you were before.</i>
+    <<set $PlayerSideEffectSubmissive += 1>>
+  <<else>>
+    <i>You realize you've become much more submissive than you once were.</i>
+    <<set $PlayerSideEffectSubmissive to 2>>
+  <</if>>
+<</nobr>>
+
+::Part6ArtReturn2
+<<nobr>>
+	<h1>Trying it youself</h1>
+  <img src="Part6/ArtModel2.jpg" hspace="10" vspace="10" height="500" align="left">
+  You are missing that helpless feeling you had when Ken tied you during his photo shoots.  All it takes is a quick trip to the hardware
+  store for some rope, and some internet searches on self-bondage, and you're set.
+<</nobr>>
+
+<<nobr>>
+  <<if $Roommate == "Faith">>
+    You don't want to risk Faith walking in and seeing you, so you go over to $neighbours[0] and $neighbours[1]'s room.  They'll both
+  <<elseif $Roommate == "Olivia">>
+    You don't want to risk Olivia finding you helpless like this.  Not after she tricked you into that chastity belt.  So you go
+    over to $neighbours[0] and $neighbours[1]'s room instead.  They'll both
+  <<else>>
+    $Roommate will
+  <</if>>
+  be in class for another couple hours.  And based on what your research showed, you should be able to work yourself loose long before then.
+<</nobr>>
+
+<<nobr>>
+  You leave a bit of slack in your bindings, just like the guide said.  So you get the feeling of the ropes holding you down, but
+  you know you'll be able to release yourself whenever you like.
+<</nobr>>
+
+<<nobr>>
+  It shouldn't feel different than before.  You know all you had to do before is ask and Ken or an assistant would have quickly
+  released you.  But knowing it's entirely in your power makes your captivity seem less 'real' to you.
+<</nobr>>
+
+<<nobr>>
+  But then you start thinking about if you tugged on the ropes in just the right way, the way the instruction said would prevent you
+  from being able to untie yourself.  You don't have to actually do it, but the more you think about it, and how helpless you'd be,
+  the wetter you get.
+<</nobr>>
+
+<<nobr>>
+  You feel your hips moving, as you fantasize about what would happen next.  When you've gotten yourself so horny that eventually you
+  aren't going to be able to resist any longer.  You need so badly to untie yourself, at least one hand, and masturbate.
+  <<if $PlayerSideEffectMasturbationBlock>>
+    For all the good that would do.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  But before you do that another thought flashes through your mind, just for a second.  You yank at the rope in just the right way,
+  tightening your bindings and making escape impossible.  Now you've prevented your release.  You've made sure you're
+  stuck here until
+  <<if $Roommate == "Faith" or $Roommate == "Olivia">>
+    $neighbours[0] or $neighbours[1] [[return home|Part6ArtReturn3Male]].  Then you'll be at his mercy.
+  <<elseif setup.isNeighbour("Emily")>>
+    $Roommate [[gets home|Part6ArtReturn3Male]]. Then you'll be at his mercy.
+  <<elseif $Roommate == "Samantha">>
+    Samantha [[gets home|Part6ArtReturn3Samantha]].  Then you'll be at her mercy.
+  <<elseif $Roommate == "Emily">>
+    Emily [[gets home|Part6ArtReturn3]].  Will she let her boyfriend have his way with you?  Probably not.  Or maybe she'll have him
+    spank you for being such a bad girl and trying to tempt him.  Then maybe she'll make you watch, horny and helpless, as he fucks
+    her instead right in front of you.
+  <<else>>
+    $Roommate [[gets home|Part6ArtReturn3]].  What will she do?  Will she untie you, or leave you tied up and horny like this all night.
+    What if she doesn't come home alone?  It doesn't matter now.  It's too late to change your mind anyway.
+  <</if>>
+  The thought makes you even wetter than before, and you ache for the relief you know you've decide yourself any chance for the time being.
+<</nobr>>
+
+<<nobr>>
+  After a bit, you wonder if you have made a mistake.  But it's too late now.  After double-checking your bonds, you see that you are truely
+  stuck until you are untied by someone else.  The more you struggle against your bindings, the more turned on you get.
+<</nobr>>
+
+::Part6ArtReturn3
+<<nobr>>
+	<h1>In the common area</h1>
+  <video src="Part6/ArtModel3.webm" autoplay loop muted height="500"></video><p/>
+  <<set $tempCommonRoom to 1>>
+<</nobr>>
+<<nobr>>
+  When $Roommate gets home she has
+  <<if $Roommate == "Emily">>
+    her boyfriend
+  <<else>>
+    some guy
+  <</if>>
+  with her.  She laughs when she sees you tied and helpless.  You can't see his reaction, and he doesn't say anything, but you imagine
+  him getting hard seeing you like this.
+<</nobr>>
+
+<<nobr>>
+  "It looks like she's got herself all worked up and horny," $Roommate says.  "You don't mind giving her a little show do you?"  Of course
+  he doesn't mind.  They position you with a clear view of $Roommate's bed, and make you watch as he eats her out.  Your clit throbs with
+  need as she orgasms.  Then when he starts fucking her, it only makes you feel how empty you are right now, and ache to be fucked too.
+<</nobr>>
+
+<<nobr>>
+  Once they've had a bit of fun, she has him move you.  He places your bound body in the common area, the room connecting both your and $Roommate's
+  room and the guy's room.  She tells you, "We are going to fuck some more.  You'll have to just listen this time.  I'm sure
+  $neighbours[0] or $neighbours[1], or maybe both, will take care of you when they get home."  She pauses then adds, "Unless you want to beg
+  me to untie you before then.
+<</nobr>>
+
+<<nobr>>
+  Your mind is racing trying to decide whether to beg for release or not.  You wonder what they guys will do to you if they find you like this.
+  Well, you don't have to wonder, you have a pretty good idea.  But you are imagining it in detail.  You are still trying to decide when she says,
+  "Times up.  You'll have to [[wait for the boys to get home|Part6ArtReturn3Male]]."  Then she ties the belt from her robe around your head like
+  a gag and goes back to her room.  She leaves the door cracked a bit so you can still hear the moans as you wait to be discovered.
+<</nobr>>
+
+::Part6ArtReturn3Male
+<<nobr>>
+	<h1>Discovered and Used</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part6/ArtModel4.webm" autoplay loop muted height="580"></video><p/>
+  </div>
+  <<if setup.isNeighbour("Emily")>>
+    <<set $tempFoundBy to $Roommate>>
+  <<elseif $neighbours.length > 1>>
+    <<set $tempFoundBy to either($neighbours[0], $neighbours[1])>>
+  <<else>>
+    <<set $tempFoundBy to $neighbours[0]>>
+  <</if>>
+	<<set setup.addSex({sex: 'male', name: $tempFoundBy, vaginal:true, noCondom:true, noPullout:true})>>
+	<<set setup.addSex({sex: 'male', name: $tempFoundBy})>>
+	<<set setup.addSex({sex: 'male', name: $tempFoundBy})>>
+<</nobr>>
+<<nobr>>
+  $tempFoundBy is thrilled when he comes home and sees you bound and helpless in
+  <<if $tempCommonRoom>>
+    the common room.
+    You have worked yourself into a horny mess as you struggled against the ropes and waited.  "Please fuck me", you
+    mumble through your gag.  After he unties it so you can speak, you beg, "You can use me however you want, just please let me cum!"
+    You don't have to ask twice, and he quickly carries you off to his room.  Once there he begins stripping off his clothes.
+  <<else>>
+    his room.
+    You have worked yourself into a horny mess as you struggled against the ropes and waited.  "Please fuck me", you
+    tell him.  "You can use me however you want, just please let me cum!", you beg.  You don't have to ask twice, and he quickly
+    beings stripping off his clothes.
+  <</if>>
+  <<if $tempFoundBy == "Peter">>
+    <<if $PlayerItemNerdKey>>
+      <br><br>
+      You tell Peter exactly where you have his key hid, and he quickly comes back and removes his chastity cage.
+    <<else>>
+      <br><br>
+      When Peter's pants come off, you see he's wearing a chastity cage on his cock!  You are worried you are going to be left horny still.
+      But he rumages through his dresser quickly and pulls out a key and frees his cock.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  A finger inside you shows him how wet you already are, so he decides foreplay isn't needed right now.  You moan loudly as he slides into
+  you.  His balls slap against your clit as he fucks you hard and fast.
+  <<if $PlayerEasytoOrgasm>>
+    It doesn't take long and you are screaming out in the orgasm you've been fantasizing about for the last hour or more.
+    Not long after you cum, he does too, thrusting a final time and leaving his cock deep inside you as he cums.
+  <<elseif $tempFoundBy == "Peter">>
+    You feel your orgasm building, but it
+    <<if $PlayerItemNerdKey>>
+      has been
+    <<else>>
+      must have been
+    <</if>>
+    a while since Peter's last orgasm.  The feeling of finally being inside a woman, your moans, probably of just being able to get hard,
+    it all must have been too much for him.  He thrusts a final time and leaves his cock deep inside you as he cums.
+    <br><br>
+    "Please... I need more.", you beg.  Peter quickly complies.  Your hands are still tied behind you as he flips you over onto your back.
+    He buries his head between your legs and soon brings you to first one and then a second orgasm.  He doesn't seem to mind his own cum
+    leaking out of you as he does.  In fact, you think it turns him on even more.
+  <<else>>
+    You feel your orgasm building.  You can also tell $tempFoundBy is getting close.  Your orgasm arrives just before his.  You are still
+    crying out as he thrusts a last time.  You can feel your spasms trying to pull every last drop from him.
+  <</if>>
+  <<if $PlayerProtectionWithdraw>>
+    <br><br>
+    Only afterwards, as you feel his cum leaking out of you, do you think about protection.  You wonder if he would have pulled out if
+    you'd asked.  You needed to cum to bad to even think about stopping him before your orgasm though, so the thought never occurred to you.
+  <<elseif $PlayerProtetionCondoms>>
+    <br><br>
+    Only afterwards, as you feel his cum leaking out of you, do you think about protection.  You wonder if he would have worn a condom if
+    you'd asked.  You were too horny to even think about it.  And it's not like you could have stopped him if he'd said no.  Of course you
+    know you wouldn't have even tried.  You needed to cum too much to wait any longer.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  After he's enjoyed your body a few more times, he finally unties you.  "Feel free to be waiting like that on my bed anytime you like,"
+  he tells you.
+  <<if $tempFoundBy == "Peter">>
+    Before you head to the bathroom to clean up, you ask him,
+    <<if $PlayerItemNerdKey>>
+      "Aren't you forgetting that there's [[something you need to return|]]."
+    <<else>>
+      "Isn't there something else [[you'd like to give me|Part6ArtReturn3Peter]]?"
+    <</if>>
+  <<else>>
+    <<if !setup.areDating($tempFoundBy)>>
+      <<set setup.makeFWB($tempFoundBy)>>
+    <</if>>
+    You smile before [[heading to the bathroom|Part6Start1]] to clean up.
+  <</if>>
+<</nobr>>
+
+::Part6ArtReturn3Peter
+<<nobr>>
+	<h1>Locking Peter's Cock</h1>
+  <img src="Part5/GoNeighbour7.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  "Your cock has been out, and it has had its fun.  Several times, in fact," you tell him.  "Isn't it
+  time it goes back where it belongs?" He quickly obeys and puts his cock back into his chastity cage.  You expect he'd probably have
+  had a harder time of it with you watching, if he hadn't just came three times.  But he manages to stay soft long enough to get it
+  locked on again.
+<</nobr>>
+
+<<nobr>>
+  You place your hand out to receive the key.
+  <<if $PlayerItemNerdKey>>
+    He obediently returns the key.  "Thank you so much for tonight," he tells you.
+    <br><br>
+    "You are very welcome,"
+  <<else>>
+    <<set $PlayerItemNerdKey to 1>>
+    When he gives you a confused look, you tell him.  "There's not much point in wearing a cage like that, if you are going to have your
+    own key, is there?"  There's a look of happiness, with a hint of fear, on his face as he hands you the key.
+    <br><br>
+    "Good boy,"
+  <</if>>
+  you tell him before you [[head to the bathroom|Part6Start1]] to clean up.
+<</nobr>>
+
+::Part6ArtReturn3Samantha
+<<nobr>>
+	<h1>With Samantha</h1>
+  <video src="Part6/ArtModel5.webm" autoplay loop muted height="580"></video><p/>
+  <<set setup.addSex({sex: 'female', name: 'Samantha'})>>
+<</nobr>>
+<<nobr>>
+  Sam laughs when she comes through the door and sees you bound and helpless.  After she stops laughing she asks, "So, did you get stuck
+  like this on accident, or did you leave yourself wrapped up as present for me?"
+<</nobr>>
+
+<<nobr>>
+  While you try to summon the nerve to answer she says, "The bright red shade you are turning tells me you left yourself like this for
+  me to find you. And this..." You gasp as she slides two fingers into you showing how wet you are.  "That shows just how much you've
+  been looking forward to me getting home."
+<</nobr>>
+
+<<nobr>>
+  "Of course, what kind of a roommate would I be if I didn't take care of you when I saw how much in need you were."  Then
+  she flips you over and goes to work on you with her tongue.  She pauses only long enough, of course, you're a good roommate too, so
+  you can [[return the favor|Part6ArtReturn3Samantha2]] once I'm done with you.
+<</nobr>>
+
+<<nobr>>
+  It isn't long before her skilled tongue has you screaming out with an orgasm.  Of course, she doesn't stop at giving you just one.
+<</nobr>>
+
+::Part6ArtReturn3Samantha2
+<<nobr>>
+	<h1>With Samantha</h1>
+  <video src="Part14/Island35.webm" autoplay loop muted height="580"></video><p/>
+  <<set setup.addSex({sex: 'female', name: 'Samantha'})>>
+<</nobr>>
+<<nobr>>
+  After your orgasms, Sam unties you just enough to tie you to her bed.  Then she straddles your face.  As you eagerly begin to eat
+  her out, you see she's nearly as turned on as you were when she came home.
+<</nobr>>
+
+<<nobr>>
+  She only unties you once she's came and came again.  "That was fun," she tells you.  "But let's not make it a regular thing.
+  You're great and all, but it would get weird if we started dating and it didn't work out."
+<</nobr>>
+
+<<nobr>>
+  Whether you think it's worth risking it or not, you tell her you agree.  She smiles at you and says, "If you are planning on
+  going back out today, you'll probably want to [[head to the bathroom|Part6Start1]] to clean up.  I've made quite a mess of
+  your makeup."
+<</nobr>>
+
 ::Part6Start1  <0,600>
 <<nobr>>
 	<<unset $tempShowerGuy>>
 	<<unset $tempStrokeWinner>>
+  <<unset $tempFoundBy>>
 	<<set $PlayerPointsSet to 1>>
 	<<set $FunPoints to 0>>
 	<<set $AcademicPoints to 0>>
@@ -23,7 +417,6 @@
 	With all the other distractions you have now, it can be pretty tempting to blow off classwork and go have fun instead.
 	But this morning you are [[tempted to miss class for a different reason|Part6Period]].
 <</nobr>>
-
 
 ::Part6Period  <200,600>
 <<nobr>>
@@ -1191,7 +1584,7 @@
 			Your mind fills with thoughts of him cumming inside you, of him impregnating you...
 		<</if>>
 		"Wait, what am I saying?", you wonder.  I should tell him [[no thanks, and go back to my room|Part6Halloween2No]].
-	<<elseif $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectLibido > 2>>
+	<<elseif $PlayerSideEffectSubmissive > 2 or $PlayerSideEffectLibido > 2>>
 		You are already horny from walking around like this all night.  You know thanks to your implant's side effects
 		that you can never turn down an offer for sex when you are like this, so you quickly accept his suggestion and
 		[[head back to his room with him|Part6Halloween3]]
@@ -1714,6 +2107,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
 	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
 	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+  <<elseif $JobArt>>[[You have another class to model for.|Part6JobArt]]
 	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
@@ -1731,6 +2125,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
 	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
 	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+  <<elseif $JobArt>>[[You have another class to model for.|Part6JobArt]]
 	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
@@ -1747,6 +2142,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
 	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
 	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+  <<elseif $JobArt>>[[You have another class to model for.|Part6JobArt]]
 	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
@@ -1763,16 +2159,164 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<elseif $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
 	<<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
 	<<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+  <<elseif $JobArt>>[[You have another class to model for.|Part6JobArt]]
 	<<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
+
+::Part6JobArt
+<<nobr>>
+	<h1>Sculpture Class</h1>
+  <img src="Part6/ArtModel6.jpg" hspace="10" vspace="10" height="680" align="left">
+<</nobr>>
+<<nobr>>
+  This time you are modeling for a sculpting class instead of painting or drawing class, but the work is mostly the same.
+<</nobr>>
+
+<<nobr>>
+  For you, the main difference is that you don't just see the back of the canvas as they work.  Now you can see as they turn a lump of
+  clay into a representation of you.  Obviously some are better at this than others.
+<</nobr>>
+
+<<nobr>>
+  As their creations stop looking like lumps of clay and more like a woman, your mind starts to imagine their hands on your actual body
+  instead of just the clay representations of it.  Thankfully, the pose they chose for you today hides most of your arousal.
+<</nobr>>
+
+<<nobr>>
+  Of course by the time the session is over, you ache to feel hands on you like you've been imagining.  And you know just where to go.
+  The only thing you need to decide is whether you want the [[firm hands of a man|Part6JobArt2Male]] or
+  [[the soft hands of another woman|Part6JobArt2Female]] as your 'sculptor'
+<</nobr>>
+
+::Part6JobArt2Female
+<<nobr>>
+  <h1>At the Fitness Center</h1>
+  <video src="Part6/ArtModel7.webm" autoplay loop muted height="600"></video>
+  <<set setup.addSex({sex: 'female', anon: 'Masseuse'})>>
+<</nobr>>
+<<nobr>>
+  Normally the massage rooms at the fitness center are just for the athletes.  But many of those athletes are in the classes you model for.
+  Most of them spend more time admiring you while you model, and relatively little actuall drawing or painting.  From looking at their
+  work, you assume they being graded more on their athletic skill than their artistic skill.  The main benefit for you is that they were
+  able to pull a string or two and get you permission to use the massage rooms too.
+<</nobr>>
+
+<<nobr>>
+  Your massage starts off with her rubbing warm oil all over your body.  You aren't made out of clay and being molded by her like you were
+  imagining in class. But you do feel 'like putty in her hands'.  She already knows what you really want from your body's reactions, your
+  moans as her hands rub your upper thigh, and probably many more signs her trained eyes picked up from your body.
+<</nobr>>
+
+<<nobr>>
+  Her skilled hands soon have you squirming on her table with a wonderful orgasm, and then another, and another.  By the time your hour is
+  up, you feel like you can barely stand and walk out of the room.  As you stumble home, you think to yourself that you'll have to say thank
+  you to the guys later for getting you in here.
+<</nobr>>
+
+[[You join a study group.|Part6StudyGroup]]
+
+::Part6JobArt2Male
+<<nobr>>
+  <h1>At the Fitness Center</h1>
+  <video src="Part6/ArtModel8.mp4" autoplay loop muted height="600"></video>
+  <<set setup.addSex({sex: 'male', anon: 'Masseur', repeat: true})>>
+<</nobr>>
+<<nobr>>
+  Normally the massage rooms at the fitness center are just for the athletes.  But many of those athletes are in the classes you model for.
+  Most of them spend more time admiring you while you model, and relatively little actuall drawing or painting.  From looking at their
+  work, you assume they being graded more on their athletic skill than their artistic skill.  The main benefit for you is that they were
+  able to pull a string or two and get you permission to use the massage rooms too.
+<</nobr>>
+
+<<nobr>>
+  Your massage starts off with him rubbing warm oil all over your body.  You aren't made out of clay and being molded by him like you were
+  imagining in class. But you do feel 'like putty in his hands'.  He already knows what you really want from your body's reactions, your
+  moans as his hands rub your upper thigh, the glances you keep making back at his cock, and probably many more signs his trained eyes
+  picked up from your body.
+<</nobr>>
+
+<<nobr>>
+  His skilled hands soon have you squirming on his table with a wonderful orgasm, and then one another.  You know he'd keep going,
+  focusing on your plesure the entire hour.  But glancing over seeing how hard he's gotten from getting you off, you'd rather
+  [[spend some time pleasuring him|Part6JobArt2Male2]].
+<</nobr>>
+
+::Part6JobArt2Male2
+<<nobr>>
+  <h1>At the Fitness Center</h1>
+  <video src="Part6/ArtModel9.mp4" autoplay loop muted height="600"></video>
+  <<set setup.addSex({sex: 'male', anon: 'Masseur', repeat:true})>>
+  <<set setup.addSex({sex: 'male', anon: 'Masseur', vaginal: true})>>
+<</nobr>>
+<<nobr>>
+  You start by using some of his own oil and stroking his cock.  You don't do that for very long though before the sounds of his moans
+  turn you on even more.  Your hands are still around his hard cock, but they are joined now by your lips.  Of course his moans only
+  increase, making your ache for his cock even more intense.
+<</nobr>>
+
+<<nobr>>
+  You don't even need to ask, he senses what you want - what you need.  Soon you are back on your back on his table.  This time
+  with your knees pressed to your chest and him slowly sliding into you.
+<</nobr>>
+
+<<nobr>>
+  Whether it's going slow but deep, fucking you hard and fast, or reaching a hand down to rub your clit with his thumb,
+  he always seems to know just what to you need at every moment.  You've lost track of your own orgasms when finally he
+  <<if $PlayerProtectionCondoms>>
+    moans and cums for you.  He leaves his cock deep inside you for just a moment, before carefully pulling his cock out and the now-full
+    condom along with it.
+  <<elseif $PlayerProtectionWithdraw>>
+    pulls out.  You roll over as he comes to the other side of the table.  You finish him with your mouth, swallowing every drop.
+  <<else>>
+    moans and cums inside you.  He leaves his cock deep inside you as he kisses you again before slowly pulling out and getting a warm
+    cloth to help you clean yourself up.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Your legs are weak as you gather your things and get dressed.  As you stumble home, you think to yourself that you'll have to
+  [[find a way to thank the guys|Part6JobArt2Male3]] for getting you in here.
+<</nobr>>
+
+::Part6JobArt2Male3
+<<nobr>>
+  <h1>Thanking the Team</h1>
+  <video src="Part6/ArtModel10.webm" autoplay loop muted height="600"></video>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player", vaginal:true})>>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player"})>>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player"})>>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player", vaginal:true})>>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player"})>>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player"})>>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player", vaginal:true})>>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player"})>>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player"})>>
+  <<set setup.addSex({sex:"male", anon: "Baseball Player"})>>
+<</nobr>>
+<<nobr>>
+  They guys from the team had gotten you permission to use the massage room at the fitness center.  All they wanted in 'payment'
+  was for you go give them a full and detailed report of how your session went.
+<</nobr>>
+
+<<nobr>>
+  But as your description of your hour went on, you were getting more and more turned on recounting your story.  And they were clearly
+  getting excited from listening to it.
+<</nobr>>
+
+<<nobr>>
+  You end up never finishing your story, but they are more than happy with helping you make a new one instead.
+<</nobr>>
+
+[[You join a study group.|Part6StudyGroup]]
+
+<<achievement>>train<</achievement>>
 
 ::Part6StartBeltMaster  <6600,600>
 <<nobr>>
 	<<set $FunPoints += 2>>
 	<<set setup.addSex({sex: 'male', anon:'Classmate'})>>
 	<<set setup.addSex({sex: 'male', anon:'Classmate'})>>
-	
 	<h1><<print "Campus">></h1>
 <</nobr>>
 
@@ -2298,21 +2842,24 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 ::Part6Club1  <10200,600>
 <<nobr>>
-	<h1><<print "Club">></h1>
+	<h1>Club</h1>
 <</nobr>>
-<<print "When you get to the club and see the sign about being 21, you remember you don’t have a fake ID - not one with your new face on it anyway.">>
+<<nobr>>
+  When you get to the club and see the sign about being 21, you remember you don’t have a fake ID - not one with your new face on it anyway.
+<</nobr>>
+
 <img src="Part6/Club1.jpg" hspace="10" vspace="10" height="500">
 
 <<nobr>>
 	<<if setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Veronica')>>
-		<<if setup.areDating('Andrew')>><<print "Fortunately, Andrew ">><</if>>
-		<<if setup.areDating('Josh')>><<print "Fortunately, Josh ">><</if>>
-		<<if setup.areDating('Veronica')>><<print "Fortunately, Veronica ">><</if>>
-		<<print "sees the worried look on your face and realizes the problem, then slips some cash to the bouncer and he looks the other way ">>
+		<<if setup.areDating('Andrew')>>Fortunately, Andrew<</if>>
+		<<if setup.areDating('Josh')>>Fortunately, Josh<</if>>
+		<<if setup.areDating('Veronica')>>Fortunately, Veronica<</if>>
+		sees the worried look on your face and realizes the problem, then slips some cash to the bouncer and he looks the other way
 		[[while you both enter the club.|Part6ClubDate1]]
 	<</if>>
 	<<if !$CampusMinistry and !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica')>>
-		<<print " You can see the way the bouncer is looking at you. You’re pretty sure you ">>
+		You can see the way the bouncer is looking at you. You’re pretty sure you
 		[[can ‘persuade’ him to let you in.|Part6ClubPersuade]]
 	<</if>>
 	<<if $CampusMinistryFail>>
@@ -2322,7 +2869,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<elseif $CampusMinistry>>
 		You [[give up and go back home|Part6Frat1]].
 	<<elseif !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica') and !$PlayerSideEffectOral and $FunPoints < 4 and $PlayerSideEffectOral < 3>>
-		<<print "Or you .">>
+		Or you
 		<<link "can just give up and go back home.">>
 			<<if setup.isFWB('Josh')>><<goto [[Part6StartJosh2]]>>
 			<<elseif $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
@@ -3058,10 +3605,15 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<nobr>>
 	<h1><<print "Professor’s House">></h1>
 <</nobr>>
+<<nobr>>
+  You try to be a good girl, but sometimes you aren’t. Sometimes you don’t do your homework, are late to class, or forget your chores.
+<</nobr>>
 
-<<print "You try to be a good girl, but sometimes you aren’t. Sometimes you don’t do your homework, are late to class, or forget your chores.">>
-
-<video src="Part6/Professor6.webm" autoplay loop muted height="640"></video>
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="Part6/Professor6.webm" autoplay loop muted height="640"></video>
+  </div>
+<</nobr>>
 
 <<nobr>>
 	<<if $JobPornOralSide or $JobPornAnalSide or $JobPornGangSide or $JobPornSide or $JobCallGirlSide>>
@@ -3070,7 +3622,8 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<<if $JobPornGangSide>><<set $JobPornGangSide =　0>><<set $JobPornGangSideOld =　1>><</if>>
 		<<if $JobPornSide>><<set $JobPornSide =　0>><<set $JobPornSideOld =　1>><</if>>
 		<<if $JobCallGirlSide>><<set $JobCallGirlSide =　0>><<set $JobCallGirlSideOld =　1>><</if>>
-		<<print "As you have a naughty side job, you know you need to be punished for that too. Your Daddy convinces to quit your side job.">><br><br>
+		As you have a naughty side job, you know you need to be punished for that too. Your Daddy convinces to quit your side job.
+    <br><br>
 	<</if>>
 <</nobr>>
 <<nobr>>
@@ -3089,6 +3642,11 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<<if setup.areDating('Paul')>>
 			<<set setup.breakupWith('Paul')>>
 		<</if>><br><br>
+  <<elseif $JobArt>>
+    "Don't worry, baby," Daddy tells you.  "There won't be any marks that will still be showing when you have to model next.  Though
+    if the students ever want to paint your ass with a healthy red glow or some well placed stripes, just stop by my office before
+    the art class, and I'll take care of it."
+    <br><br>
 	<</if>>
 
 	When Daddy punishes you know it’s only because he loves you.
@@ -3679,16 +4237,26 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<set setup.addSex({sex: 'male', name:'Josh', vaginal:true})>>
 	<<set setup.addSex({sex: 'male', name:'Josh', vaginal:true})>>
 	<<set setup.addSex({sex: 'male', name:'Josh', vaginal:true})>>
-	
-	<h1><<print "Josh">></h1>
+	<h1>Josh</h1>
 <</nobr>>
-
-<<print "Josh and you still meet from time to time, at first to study, but you soon realize that you don’t really care that much about talking to each other anymore.">>
-
-<video src="Part6/Josh2.webm" autoplay loop muted height="640"></video>
-
-
-<<print "You do however enjoy the sex between the two of you. It is no longer romantic like before, but more raw and rough. Not that you are complaining about the orgasms you are getting from it.">>
+<<nobr>>
+  <<if $WasRomanticWithJosh>>
+    Josh and you still meet from time to time, at first to study, but you soon realize that you don’t really care that much
+    about talking to each other anymore.
+    <br><br>
+    <video src="Part6/Josh2.webm" autoplay loop muted height="600"></video>
+    <br><br>
+    You do however enjoy the sex between the two of you. It is no longer romantic like before, but more raw and rough. Not that you are
+    complaining about the orgasms you are getting from it.
+  <<else>>
+    Josh and you still fuck sometimes, but it's only about the sex.  It's so convenient having a fuck buddy available whenever you need one.
+    <br><br>
+    <video src="Part6/Josh2.webm" autoplay loop muted height="600"></video>
+    <br><br>
+    You love sex between the two of you.  But that's all it will ever be between you too.  Not that you are complaining about the orgasms
+    you are getting from it.  And he certainly isn't complaining either.
+  <</if>>
+<</nobr>>
 
 <<nobr>>
 	<<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>[[You have to go to work at the office.|Part6Office]]
