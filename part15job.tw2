@@ -29,9 +29,9 @@
   <<elseif $JobModel>>
     <<include [[Part15JobModel]]>>
   <<elseif $JobBetaTester or $JobCallGirlSide or $JobStripper or $JobGloryHole>>
-    <<include [[Part15JobSide]]>>
+    <<include [[Part15JobSideInclude]]>>
   <<elseif $dating.length>>
-    <<include [[Part15Relationship]]>>
+    <<include [[Part15RelationshipInclude]]>>
   <<else>>
     <<include [[Part15NoJob]]>>
   <</if>>
@@ -44,13 +44,16 @@ TODO They had no job, no side job, no relationship.  What are they doing with th
 ::Part15AfterMainJob
 <<nobr>>
   <<if $JobBetaTester or $JobCallGirlSide or $JobStripper or $JobGloryHole>>
-    TODO [[Part15JobSide]]
+    <<include [[Part15JobSideInclude]]>>
   <<elseif $dating.length>>
-    TODO [[Part15Relationship]]
+    <<include [[Part15RelationshipInclude]]>>
   <<else>>
     <<include [[Part15BackToMain]]>>
   <</if>>
 <</nobr>>
+
+::Part15JobSideInclude
+TODO And also side job [[Part15JobSide]]
 
 ::Part15JobSide
 <<nobr>>
@@ -65,7 +68,7 @@ TODO They had no job, no side job, no relationship.  What are they doing with th
   <<else>>
     <!-- shouldn't be here -->
     <<if $dating.length>>
-      <<include [[Part15Relationship]]>>
+      <<include [[Part15RelationshipInclude]]>>
     <<else>>
       <<include [[Part15NoJob]]>>
     <</if>>
@@ -75,77 +78,78 @@ TODO They had no job, no side job, no relationship.  What are they doing with th
 ::Part15AfterSideJob
 <<nobr>>
   <<if $dating.length>>
-    TODO [[Part15Relationship]]
+    <<include [[Part15RelationshipInclude]]>>
   <<else>>
     <<include [[Part15BackToMain]]>>
   <</if>>
 <</nobr>>
 
 ::Part15JobYoga
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Yoga
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobMassage
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Massage
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobModel
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Model
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobLibrary
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Library
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobAthlete
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Athlete
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobCheer
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Cheer
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobBartender
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Bar
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobOffice
-TODO 
-TODO [[Part15AfterMainJob]]
+TODO Office
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobBarista
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Barista
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobBikiniBarista
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Bikini Barista
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobCallGirl
-TODO
-TODO [[Part15AfterMainJob]]
+TODO Call Girl
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobStripper
-TODO
-TODO [[Part15AfterSideJob]]
+TODO Stripper
+<<include [[Part15AfterSideJob]]>>
 
 ::Part15JobGloryHole
-TODO
-TODO [[Part15AfterSideJob]]
-
+TODO Glory Hole
+<<nobr>>
+  <<include [[Part15AfterMainJob]]>>
+<</nobr>>
 ::Part15JobCallGirlSide
-TODO
-TODO [[Part15AfterSideJob]]
+TODO Call Girl Side
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobBetaTester
 TODO Beta testing different features
 TODO Maybe challenges to get an orgasm (or chance of one)
 TODO (Treating beta tester as a side job because it might be for ministry path.  Also have special handling for beta tester + glory hole)
-TODO [[Part15AfterMainJob]] or [[Part15AfterSideJob]]
+TODO [[Part15AfterMainJob]] or [[Part15AfterSideJob]] (include don't link)
 
 ::Part15JobEngineer
 TODO Non-belted engineer
-TODO [[Part15AfterMainJob]]
+<<include [[Part15AfterMainJob]]>>
 
 ::Part15JobEngineerLock
 <<nobr>>

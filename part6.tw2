@@ -2857,50 +2857,54 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<<if setup.areDating('Veronica')>>Fortunately, Veronica<</if>>
 		sees the worried look on your face and realizes the problem, then slips some cash to the bouncer and he looks the other way
 		[[while you both enter the club.|Part6ClubDate1]]
-	<</if>>
-	<<if !$CampusMinistry and !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica')>>
-		You can see the way the bouncer is looking at you. You’re pretty sure you
-		[[can ‘persuade’ him to let you in.|Part6ClubPersuade]]
-	<</if>>
-	<<if $CampusMinistryFail>>
-		You are done being too timid to enjoy yourself, and decide to do what you need to do to get in.
-	<<elseif $SubjectOrgasmDenialGoo>>
-		You decide to do whatever it takes, maybe some drinks will take your mind off your frustration.
-	<<elseif $CampusMinistry>>
+  <<elseif $CampusMinistry>>
 		You [[give up and go back home|Part6Frat1]].
-	<<elseif !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Veronica') and !$PlayerSideEffectOral and $FunPoints < 4 and $PlayerSideEffectOral < 3>>
-		Or you
-		<<link "can just give up and go back home.">>
-			<<if setup.isFWB('Josh')>><<goto [[Part6StartJosh2]]>>
-			<<elseif $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
-			<<elseif $JobPornOralSide or $JobPornOral>><<goto [[JobPornOral3]]>>
-			<<elseif $JobPornGangSide or $JobPornGang>><<goto [[JobPornGang3]]>>
-			<<else>><<goto [[Part6Frat1]]>>
-			<</if>>
-		<</link>>
+  <<else>>
+		You can see the way the bouncer is looking at you. You’re pretty sure you [[can ‘persuade’ him to let you in|Part6ClubPersuade]].
+  	<<if $CampusMinistryFail>>
+	  	You are done being too timid to enjoy yourself, and decide to do what you need to do to get in.
+  	<<elseif $SubjectOrgasmDenialGoo>>
+	  	You decide to do whatever it takes, maybe some drinks will take your mind off your frustration.
+    <<elseif $PlayerSideEffectOral >= 2>>
+      It sounds like the perfect idea for you.  You can do what you love, and you get into the bar without an ID.
+    <<elseif setup.areDating('Peter')>>
+      Or you can stay faithful to Peter, and [[give up and go home|Part6Frat1]]
+    <<elseif $FunPoints >= 4>>
+      You'd hate to lose your 'party girl' reputation by heading home without even getting into the club.
+    <<else>>
+      Or you
+      <<link "can just give up and go back home.">>
+        <<if setup.isFWB('Josh')>><<goto [[Part6StartJosh2]]>>
+        <<elseif $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<goto [[Part6Office]]>>
+        <<elseif $JobPornOralSide or $JobPornOral>><<goto [[JobPornOral3]]>>
+        <<elseif $JobPornGangSide or $JobPornGang>><<goto [[JobPornGang3]]>>
+        <<else>><<goto [[Part6Frat1]]>>
+        <</if>>
+      <</link>>
+    <</if>>
 	<</if>>
 <</nobr>>
 
 ::Part6Frat1  <10400,600>
 <<nobr>>
-	<h1><<print "Campus">></h1>
+	<h1>Campus</h1>
+  After one of your classes, a classmate hands you a flyer and tells you about a party his fraternity has this weekend.
+  He promises you’ll have a great time.
 <</nobr>>
-
-<<print "After one of your classes, a classmate hands you a flyer and tells you about a party his fraternity has this weekend. He promises you’ll have a great time.">>
 <img src="Part6/Frat1.jpg" hspace="10" vspace="10" height="650">
-
 <<nobr>>
 	<<if $CampusMinistry or setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh')>>
-		<<print "You decide it’ll be a sausage fest, and ">>
-		[[toss the flyer when you get to your next class.|Part6Grades1]]
+		You decide it’ll be a sausage fest, and [[toss the flyer when you get to your next class|Part6Grades1]].
 	<<else>>
-		<<print "You can hold on to the flyer and try to decide if ">>
-		[[you’re going to go.|Part6Frat2]]
+		You can hold on to the flyer and try to decide if [[you’re going to go|Part6Frat2]].
 		<<if $CampusMinistryFail>>
 			Of course you are going to go!
+    <<elseif setup.areDating('Peter')>>
+      You suspect it'll be sausage fest, since they said not to bring your boyfriend Peter.  A frat party isn't really his thing
+      anyway, but the fact that they mentioned it means they're probably trying to get you buzzed and get in your pants.
+      It might be a good idea to [[toss the flyer when you get to your next class|Part6Grades1]].
 		<<elseif $FunPoints < 6 and !$SubjectOrgasmDenialGoo>>
-			<<print " Or, you can decide it’ll be a sausage fest, and ">>
-			[[toss the flyer when you get to your next class.|Part6Grades1]]
+			Or, you can decide it’ll be a sausage fest, and [[toss the flyer when you get to your next class.|Part6Grades1]].
 		<</if>>
 	<</if>>
 <</nobr>>
