@@ -2101,9 +2101,8 @@
 
 <<nobr>>
   "However, we have gathered all of the data we need from all of you.  We are now very familiar with the nature, quality, and many other details
-  of your orgasms, and many other details.  For any of you that would like a personal report of your own data, let one of the research
-  assistants know and they will send it to you.  But don't worry, even though your participation is ending, the experiments, but with a new cohort
-  of test subjects starting soon.
+  of your orgasms.  For any of you that would like a personal report of your own data, let one of the research assistants know and they will send
+  it to you.  But don't worry, even though your participation is ending, the experiments, but with a new cohort of test subjects starting soon.
 <</nobr>>
 
 <<nobr>>
@@ -2113,7 +2112,7 @@
 <</nobr>>
 
 <<nobr>>
-  "Now, I'm sure you're wondering what the product is.  It is a computerizd chastity belt," but before any of you get up leave let me explain
+  "Now, I'm sure you're wondering what the product is.  It is a computerized chastity belt," but before any of you get up leave let me explain
   a few of it's features.  This belt doesn't just deny your pleasure, it can also give you pleasure.  It all depends on the settings used, and we will
   be using a variety of them during the beta testing.  I can guarantee you will have an amazing orgasm today if you agree, and many more during
   your testing.  If you'd like to know more about what to expect, you can read through the 'Wearer's Manual' we will provide if you participate.
@@ -2246,9 +2245,25 @@
 <<nobr>>
   "Oh, and if you were the one on academic probation, be sure to stop by the X-Change office when you leave here to get that taken care of," he adds
   as you are leaving.
+  <<if $JobStripper>>
+    <br><br>
+    You know you can't strip at the club anymore wearing this belt, so you let the club manager know you won't be back.
+    <<unset $JobStripper>>
+    <<set $JobStripperOld to 1>>
+  <</if>>
+  <<if $JobCallGirlSide or $JobCallGirl>>
+    <br><br>
+    While, you could still serve clients with your mouth, hands, and ass, you know working as a call girl now isn't really going to work.
+    Even if they just want your ass, many of your clients would be turned off by the belt.  Or, more specifically, by knowing they couldn't
+    fuck you if they changed their mind.
+    <br><br>
+    Though, you do know a former client or two that might actually get off on seeing you horny and helpless and sucking his cock, so you
+    might be able to pick up a little bit extra here and there.
+    <<unset $JobCallGirlSide>>
+    <<unset $JobCallGirl>>
+    <<set $JobCallGirlOld>>
+  <</if>>
 <</nobr>>
-
-TODO Handle if $JobStripper or $JobCallGirlSide
 
 ::Part15TestSubjectBetaTest2
 <<nobr>>
@@ -2513,12 +2528,21 @@ TODO Handle if $JobStripper or $JobCallGirlSide
 <<nobr>>
   The department head said he could write you a discrete reference describing your job as a 'lab assistant' if you were interested in one of the
   available jobs [[at the library|Part15TestSubjectJobChangeLibrary]], or in applying to [[the coffee shop on campus|Part15TestSubjectJobChangeBarista]].
-<</nobr>>
-
-<<nobr>>
-  He also mentioned that he was aware of openings in the fitness center's [[massage room|Part15TestSubjectJobChangeFitnessMassage]] and at
-  a different coffee shop, one where the [[baristas wear bikinis|Part15TestSubjectJobChangeBikiniBarista]] instead of aprons.  The fact that he said
-  he'd be more specific about your work in recommending you to these employers lets you know something of what your job might be like at those places.
+  <<if $PlayerPregnant or $PregnancyWeek>>
+    He says that
+    <<if $PlayerPregnant>>
+      that, given your pregnancy,
+    <<else>>
+      that
+    <</if>>
+    he thinks those would probably the best choices for you.
+  <<else>>
+    <br><br>
+    He also mentioned that he was aware of openings in the fitness center's [[massage room|Part15TestSubjectJobChangeFitnessMassage]] and at
+    a different coffee shop, one where the [[baristas wear bikinis|Part15TestSubjectJobChangeBikiniBarista]] instead of aprons.  The fact that
+    he said he'd be more specific about your work in recommending you to these employers lets you know something of what your job might be like
+    at those places.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -2768,7 +2792,7 @@ TODO Handle if $JobStripper or $JobCallGirlSide
 <</nobr>>
 
 <<nobr>>
-  You don't point out that now that she is a woman now, so what is gay and what is not gay have reversed.  You understand what she was trying to say.
+  You don't point out that she is a woman now, so what is gay and what is not gay have reversed.  You understand what she was trying to say.
   But you also notice her checking out two cute guys that walk past, and also her face flushing when she notices them checking her out too.  She may
   have been interested in women before, but the X-Change seems to have made her interests more varied now.
 <</nobr>>
@@ -3465,7 +3489,7 @@ TODO Handle if $JobStripper or $JobCallGirlSide
 
 <<nobr>>
   You love watching as you bring her to her first orgasm in this body.  Followed closely by her second.
-  <<if $AcademicProbationDenial or true >>
+  <<if $AcademicProbationDenial>>
     You tell her that normally it would be her turn to pleasure you now.  But since you can't really enjoy it right now anyway, maybe it's best
     to just keep focused on her.
   <<else>>
@@ -5161,8 +5185,70 @@ TODO [[Part15WeekByWeek]]
 <</nobr>>
 
 <<nobr>>
-  You are hoping to stay on top of your assignments and
-  studying for your exams so there won't be any danger of you having trouble this year.
+  You also have a [[Women's Studies|Part15WomensStudies]] class you are signed up for.  It gives you one of the Humanities credits you need, and you
+  figure it would especially good for you.  You've only had a year as a woman, so you are sure there's a lot you can learn.
+<</nobr>>
+
+<<nobr>>
+  You are a little worried.  You've heard some 'radical' feminist don't like X-Change users.  You assume shes a feminist if she's teaching
+  a woman studies class.  She's new to the university this year, so you can't even ask around about her.  Hopefully she won't be an X-hater.
+<</nobr>>
+
+<<nobr>>
+  Then you remember, you don't need this specific class.  So if she turns out to be one of those people, then you can always switch classes
+  the first week or two of the term.
+<</nobr>>
+
+::Part15WomensStudies
+<<nobr>>
+  <h1>Women's Studies Class</h1>
+  <img src="Part15/Class2.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  When you get to your class, you are relieved during your professor's introductory lecture.  She isn't like you had worried she might
+  be at all. Now that you think about it, you were probably silly to be worried at all.  Of course the university wouldn't have hired
+  someone that hated X-Change users given their involvement with the implant trial.
+<</nobr>>
+
+<<nobr>>
+  "It doesn't matter to me what sex or gender you were born as, or which one you are now.  All I ask is that you treat me and your
+  fellow students in this class with respect," she tells the class.  "And Ladies, in particular," she continues, though most of the
+  class appear to be female.  "I want to point out that while obviously those that transitioned recently as part of the X-Change
+  program have had different experiences that you up to this point.  That doesn't mean they are any less of a woman now."
+<</nobr>>
+
+<<nobr>>
+  "They may have had 18 years of male privilege before they came here, but they gave that up so they could be their true selves.",
+  she continues.  "We should be welcoming even to those that will eventually return to their old bodies after they leave here.
+  First I expect many of them that plan on changing back never will, either by choice or by circumstance.  But even those that
+  do change back, with four years of experience as a woman, they will return to their old bodies as much better men than they were
+  before."
+<</nobr>>
+
+<<nobr>>
+  "In addition to X-Shaming, something else that won't be allowed in this class is so-called 'Slut Shaming'.  Your bodies are yours.
+  And so long as everyone involved is consenting, no one here should judge you for how or with whom you seek pleasure.  Or whether
+  you choose not to, for that matter."
+<</nobr>>
+
+<<nobr>>
+  After going over her expectations, she goes over the syllabus, and then starts with the main part of her first lecture.
+  Near the end of the class she sends out a link to a survey she hopes everyone will fill out.  It's completely anonymous, so
+  please be as honest as you can.  I want to get an idea of everyones past experiences.  I'll share the summarized information with you
+  all after I've gone through the data.  And any comments I share will be anonymized to remove any personal details.
+<</nobr>>
+
+<<nobr>>
+  You have to hurry to your next class as you are running late.  You and several other students stayed around talking to her after class.
+  You think she may end up being your favorite professor.
+  <<if setup.areDating('Aaron')>>
+    Well, second favorite.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You make it to your next class on time.  You are hoping to be better about your attendance this term.
+  You are also hoping to stay on top of your assignments and studying for your exams so there won't be any danger of you having trouble this year.
 <</nobr>>
 
 <<nobr>>
@@ -5185,7 +5271,7 @@ TODO [[Part15WeekByWeek]]
     the only thing your father talked to him about.  They both also want to make sure you do well in school.
     <br><br>
     You know [[your boyfriend|Part15BoyfriendEngineeringChastity]] won't be unlocking you if you start falling behind in class.
-  <<elseif $dating.length>>
+  <<elseif $dating.length and $sex.length > 0>>
     Of course $dating[0] is encouraging you as well.  And he can do it full time now that the two of
     you [[will be living together|Part15MovingIn]]
   <<elseif $SororityDTD or $SororitySEX>>
@@ -5193,6 +5279,9 @@ TODO [[Part15WeekByWeek]]
     but you're determined to do well this year.
   <<elseif $PlayerMother>>
     TODO Have a baby. get an apartment
+  <<elseif $dating.length>>
+    Of course $dating[0] is encouraging you as well.  Hopefully whomever [[you'll be sharing a dorm room with|Part15Dorm]]
+    this year will be able to help you stay on track too.
   <<else>>
     Maybe whoever [[you'll be sharing a dorm room with|Part15Dorm]] this year will be able to help you stay on track.
   <</if>>
@@ -5461,6 +5550,14 @@ TODO [[Part15Week]]
 
 ::Part15Dorm
 <<nobr>>
+  <h1>Meeting your roommate</h1>
+  You'll be staying in the dorm this year again.  But you are in a different building this year.  This one just has two person rooms,
+  not the shared four person 'pods' the other building has.  You wouldn't mind that.  But what you don't like is that now, instead of
+  just sharing a bathroom with another woman and two guys, you have to share one with every girl on the floor.  On the good side, there
+  are multiple stalls and showers, so you won't be waiting as much.  And the guys have a different one, at the other end of the hall.
+  <<set $DormFriendLevel to 0>>
+<</nobr>>
+<<nobr>>
   <<switch either(1,2,3)>>
     <<case 1>>
       <<include [[Part15DormStoner]]>>
@@ -5471,30 +5568,445 @@ TODO [[Part15Week]]
   <</switch>>
 <</nobr>>
 
-TODO If conflict then may end up either reconciling or having to switch rooms and ending up with a guy
-
 ::Part15DormStoner
 <<nobr>>
-  <h1>Meeting your roommate</h1>
   <img src="Part15/Dorm1.jpg" hspace="10" vspace="10" height="650" align="left">
-  TODO Set roommate variable to stoner
+  <<set $Roommate to "Marissa">>
+<</nobr>>
+<<nobr>>
+  When your new roommate Marissa comes in, you introduce yourself.  Before you even start talking to her, you notice her shirt.
+  The bong she pulls out of her luggage and stashes in a drawer confirms your initial assumption.  While pot is technically against
+  the dorm rules, no one seemed to care last year.
 <</nobr>>
 
 <<nobr>>
-  TODO Living in the dorms - Stoner
+  When she's done unpacking Marissa open the drawer and pulls her bong back out.  After she hits it, she looks over you and
+  <<if $PlayerPregnant>>
+    <<if $PregnancyWeek > 12>>
+      glances at your stomach and says, "Well, I would offer you a hit..., but I guess not."
+    <<else>>
+      offers you a hit.  "Thanks, but no.  I'm pregnant," you tell her.
+      <br><br>
+      "Oh, I couldn't tell.", she says.  "Oh well."
+    <</if>>
+    She then takes another hit. As the smell from her bong starts to fill the room, you can help but wonder if it's
+    harmful for the baby. You [[leave the room|Part15DormStonerConflict]], not wanting to risk it.
+  <<else>>
+    offers you a hit.
+    <<if $PlayerLazyStudent and !$CampusMinistry>>
+      You thank her before [[taking your turn|Part15DormStonerFriendly]].  You're so glad you got matched with someone chill this year.
+      <<if $FormerMentor == "Faith">>
+      You don't know if you could have handled sharing a room with someone uptight all year again.
+      <</if>>
+    <<else>>
+      You thank her, but then do you tell her, "[[But I'll pass|Part15Week]]." Or do you [[take your turn|Part15DormStonerFriendly]].
+    <</if>>
+  <</if>>
 <</nobr>>
 
-<<nobr>>
+::Part15DormStonerConflict
+<<set $DormFriendLevel -= 1>>
+TODO Conflcit
+TODO [[Part15Week]]
 TODO Conflict if Pregnant (Reconcile ???)
+
+::Part15DormStonerFriendly
+<<nobr>>
+  <h1>Smoking with Marissa</h1>
+  <img src="Part15/Dorm4.jpg" hspace="10" vspace="10" height="550" align="left">
+  <<set $DormFriendLevel += 1>>
+<</nobr>>
+<<nobr>>
+  As the two of you get high, you talk and get to know each other.  You know you and Marissa are going to get along great this year.
 <</nobr>>
 
+<<nobr>>
+  After a bit of silence, Marissa speaks up again.  You can see she's a bit flushed when she says, "God, I always get so horny when I smoke."  
+<</nobr>>
+
+<<nobr>>
+  "Oh my god! Me too!", you say.
+  <<if $CampusMinistry>>
+    Then you blush and cover your mouth for a second before 
+  <<else>>
+    Then
+  <</if>>
+  you both start laughing uncontrollably.
+<</nobr>>
+
+<<nobr>>
+  "I have a friend, he's usually DTF.  I know he'll come running over if I tell him there's two of us ready to go here," she suggests.
+<</nobr>>
+
+<<nobr>>
+  <<if $dating.length>>
+    <<if setup.haveGirlfriend()>>
+      When you tell her you have a girlfriend she says, "Oh... Well, you can [[go hook up with her|Part15DormStonerGirlfriend]] while I
+      call my friend Craig over here."
+    <<else>>
+      When you tell her you have a boyfriend she says, "Great! [[Tell him to come over here instead then!|Part15DormStonerMFF]] Or if you don't
+      want to share, you can [[go hook up with him|Par14DormStonerBoyfriend]] while I call my friend Craig over here."
+      <<if $sex.length == 0>>
+        <br><br>
+        "I don't know," you tell her.  "I'm... I'm still a virgin."
+        <br><br>
+        "I can see how much you want it right now.  So why keep waiting?  Trust me high sex is amazing!", she says. "I'm sure he'll be down
+        for it either way, but I understand if you want your first time to be just the two of you."
+      <</if>>
+    <</if>>
+  <<elseif $CampusMinistry>>
+    "I don't know," you tell her.  "I'm... I'm still a virgin."
+    <br><br>
+    "I can tell you are as horny as I am.  Probably even more," she says. You can't deny it.  "I'll tell him to be gentle."  Then she
+    picks up the phone and starts to call her friend.
+    <br><br>
+    You can either stay here with her and [[wait for her friend to arrive|Part15DormStonerMFF]], or you can
+    [[tell her to have fun without you|Part15DormStonerMinistry]] and find someplace else to be while her and her friend have sex.
+  <<elseif setup.isGoldStarLesbian()>>
+    "I don't know," you tell her.  "Guys aren't usually my thing.  But don't let that stop you from having your fun."
+    <br><br>
+    She calls him and says he'll be over soon.  The more you think about how horny you are, and that you could get laid right here,
+    in just a few minutes, you start wondering if maybe you should give him a chance.
+    <br><br>
+    After all, you figure, Marissa will be there too, you could just focus on her.  [[Maybe it'll be fun|Part15DormStonerMFF]]
+    But you are wondering if maybe you should just leave and go find [[a girl to hook up with|Part15DormStonerLesbian]].  Then Marissa and her fuck-buddy
+    can have the room to themselves.
+  <<else>>
+    "Yes! That sounds great," you tell her.  "Tell him to get his ass over here.  Or get his dick here at least.", you both start laughing
+    again as she starts to call.
+    <br><br>
+    She hangs up and says, "He's [[on his way|Part15DormStonerMFF]] now!"
+  <</if>>
+<</nobr>>
+
+::Part15DormStonerMFF
+<<nobr>>
+  <h1>Side-by-side with Marissa</h1>
+  <video src="Part15/Dorm5.webm" autoplay loop muted height="600"></video>
+<</nobr>>
+<<nobr>>
+  <<if $dating.length>>
+    $dating[0]
+  <<else>>
+    Marissa's friend Craig
+  <</if>>
+  is barely through the door of your dorm room before you and her start stripping off his clothes.
+  <<if $sex.length>>
+    "I love how horny you get when you're high," he tells
+    <<if $dating.length>>you.<<else>>her.<</if>>
+    "And I think I'll love it even more now that there are two of you," he says as he grabs
+    <<if $dating.length>>her<<else>>your<</if>>
+    ass with one hand and squeezes it.
+  <<else>>
+    "I've never seen this side of you, $playerName. But I love it!", $dating[0] tells you.  "But are you sure this is what
+    you want, and it's not not..."  His words trail off as your hand wraps around his cock.
+    <br><br>
+    "I've wanted this for months!", you tell him.  "The weed, and Marissa's encouragement just helped me decide to quit
+    wasting time and grab what I want."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  It isn't long before you are both on your hands and knees on the bed waiting for him.
+  <<if $sex.length == 0 and $dating.length>>
+    He starts with you.  You moan as you feel his cock push against your wet lips and slides into you.  You don't know why you waited
+    so long for this.  You and him could have been doing this for months!  He's going slow and gentle, knowing it's your first time.
+    You can hear Mairssa aching for her turn next to you.
+    <br><br>
+    You don't want him to stop, but you also don't want to be selfish.  After all, if you'd wanted him all to yourself then you would
+    have just gone alone to his house.  "It's her turn now," you tell $dating[0].  He pulls out of you and moves over to her.  He uses
+    his hand to keep you entertain as he starts fucking her.
+    <br><br>
+    He continues switching back and forth between the two of you.  Each time he comes back to you, he fucks you harder, faster,
+    and deeper than before.  This time, you don't think he's holding back anymore like he was at the beginning.
+  <<elseif $sex.length == 0>>
+    "Start with me," Marissa instructs.  As he starts to fuck her, you feel an aching need for him to switch to you.  You feel
+    your heart race as his fingers slide into you and then start playing with your clit.  "Be gentle with her," Marissa remembers to say.
+    "This is her first time."
+    <br><br>
+    That's enough to encourage him to switch to you.  You feel his cock push against your wet lips and then part them as he slowly
+    enters you.  You moan as you feel his cock, all of his cock, finally inside you.  He starts fucking you faster when he sees
+    how much you are enjoying it.
+    <br><br>
+    It feels so good.  You wonder why you'd waited this long.  You could have been doing this for an entire year!
+  <<else>>
+    You whimper a bit when he starts with Marissa, but he gives you some attention with his hand while you wait your turn.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $CampusMinistry>>
+    He keeps going, you don't want him to ever stop.  You feel an orgasm building inside you.  But before it arrives, you
+    feel him grab your hips and pull you back into him.  You feel his cock thrusting deep into you.  Then you feel it throbbing
+    inside you.
+    <br><br>
+    You want him to keep going, but he keeps his cock there for a moment before pulling it out.  You feel something warm and wet leak
+    out of you as he pulls out.  His cum, you realize.
+    <<if $PlayerProtectionCondoms>>
+      <br><br>
+      It's only then that you remembered about birth control.  You'd planned on using condoms.  But you were too horny and excited to
+      think about it.  You'll have to use some next time.  Well, not right now, after you can go to the store and buy some.
+    <<elseif $PlayerProtectionWithdraw>>
+      <br><br>
+      It's only then that you remembered about birth control.  You'd planned on having guys pull out.  But you were too horny and excited to
+      think about it.  You'll have to remember to do that next time.
+    <</if>>
+    <br><br>
+    "It looks like you are still horny," Marissa says.  "Let me [[take care of that|Part15DormStonerMFF2]]."
+  <<else>>
+    After he's fucked her for a while, it's her turn to whimper as he pulls out of her and slides into you.
+    <<if $PlayerProtectionCondoms>>
+      You were too horny to even think about condoms,
+      <<if $dating.length>>
+        and $dating[0] was too excited to remember either,
+      <</if>>
+      though he doesn't fuck you long enough for it to matter anyway.
+    <<elseif $PlayerProtectionWithdraw and !$dating.length>>
+      You were too horny to even think about telling him to pull out, though he doesn't fuck you long enough for it to matter anyway.
+    <<else>>
+      You know he's not going to make it long enough to get you off, not after having been fucking her before he even started with you.
+      You are looking forward to feeling him cum inside you though.  He doesn't fuck you long enough for that either.
+    <</if>>
+    He's back to fucking Marissa when he finally cums.  You can't help but be a little jealous when he grabs her hips, and plunges
+    deep inside her.  You imagine the feel of his warm cum inside you as he groans and [[cums inside her|Part15DormStonerMFF2]].
+  <</if>>
+  <<if $dating.length>>
+    <<set setup.addSex({name:$dating[0], sex:"male", vaginal:true, pullOut:true, noCondom:true})>>
+  <<elseif $CampusMinistry>>
+    <<set setup.addSex({name:"Craig", sex:"male", vaginal:true, noPullout:true, noCondom:true})>>
+  <<else>>
+    <<set setup.addSex({name:"Craig", sex:"male", vaginal:true, pullOut:true, noCondom:true})>>
+  <</if>>
+<</nobr>>
+
+<<achievement>>threesome:FMF<</achievement>>
+
+::Part15DormStonerMFF2
+<<nobr>>
+  <h1>Cleaning up with Marissa</h1>
+  <img src="Part15/Dorm6.jpg" hspace="10" vspace="10" height="550">
+  <<set setup.addSex({name:"Marissa", sex:"female"})>>
+  <<set setup.addSex({name:"Marissa", sex:"female"})>>
+  <<if $dating.length>>
+    <<set setup.addSex({name:$dating[0], sex:"male", vaginal:true})>>
+  <<elseif $CampusMinistry>>
+    <<set setup.addSex({name:"Craig", sex:"male"})>>
+  <<else>>
+    <<set setup.addSex({name:"Craig", sex:"male", vaginal:true, noPullout:true, noCondom:true})>>
+  <</if>>
+  <<set setup.addSex({name:"Marissa", sex:"female"})>>
+  <<set setup.addSex({name:"Marissa", sex:"female"})>>
+<</nobr>>
+<<nobr>>
+  <<if $CampusMinistry>>
+    <<if !$dating.length>>
+      <<set $CampusMinistryFail to 1>>
+      <<set $CampusMinistryFailFall2 to 1>>
+      <<unset $CampusMinistry>>
+    <</if>>
+    "He won't be ready again for a little bit, but that doesn't mean we can't have fun until then," Marissa says.  You feel her finger
+    slide inside you.  Then she takes it out and licks it before having you roll over onto your back.
+    <br><br>
+    Her tongue on your clit feels amazing.  It's not the same feeling as the deep fullness you felt from
+    <<if $dating.length>>
+      $dating[0]'s
+    <<else>>
+      Craig's
+    <</if>>
+    cock inside you.  This
+    time it's a sharper, more focused pleasure.  It's like when you've played with your clit before, but so much better.
+    <br><br>
+    Soon she has you crying out as waves and waves of pleasure wash over you.  "Th..Thank you," you manage to say.
+    You start returning the favor for Marissa, trying to do what she seems to enjoy, what felt good for you.  You haven't been doing it
+    long when you see
+    <<if $dating.length>>
+      $dating[0]'s
+    <<else>>
+      Craig's
+    <</if>>
+    cock in your face.
+    <br><br>
+    His cock is so hard and wet, your wetness you realize.  You are tempted to start sucking it, but it's clear
+    <<if $dating.length>>
+      $dating[0]
+    <<else>>
+      Craig
+    <</if>>
+    has something else in mind.
+    You move out of the way, and he takes your place between Marissa's legs.  You watch as he slides into her.  As he fucks her, you kiss her.
+    With your tongue in her mouth, and your fingers on her clit, you try to watch as he continues.
+    <br><br>
+    She grabs your head as she cums.  Your fingers stop after that, but
+    <<if $dating.length>>
+      $dating[0]
+    <<else>>
+      Craig
+    <</if>>
+    keeps going until you see him thrust a last time.  You
+    move over a bit making room for him to lie between you and her.
+  <<else>>
+    You and Marissa are even hornier now than when you started, and
+    <<if $dating.length>>
+      $dating[0]'s
+    <<else>>
+      Craig's
+    <</if>>
+    cock won't be any help for a while. Your tongue plunges into her, trying to finish what he started.  You hungrily lick up his cum as it
+    drains from her, and soon you have her squeezing the sheets and crying out with an orgasm.
+    <br><br>
+    After she recovers, she start returning the favor.  Before you can cum though,
+    <<if $dating.length>>
+      $dating[0]
+    <<else>>
+      Craig
+    <</if>>
+    is ready to go again.  This time he starts with you.  With his cock inside you, and Marissa's fingers toying with your clit, it doesn't
+    take much longer for your orgasm.
+    <br><br>
+    Marissa's hand pulls away after you cum, but
+    <<if $dating.length>>
+      $dating[0]
+    <<else>>
+      Craig
+    <</if>>
+    keeps fucking you a bit longer, at least until Marissa is in position and ready for her turn.  
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  A bit later, after the three of you have finished,
+  <<if $dating.length>>
+    $dating[0]
+  <<else>>
+    Craig
+  <</if>>
+  says, "So I hope you two left some for me."  Then he picks the bong up from the table. You have a feeling you and Marissa are
+  going to have a lot of fun together [[this year|Part15Week]]. 
+<</nobr>>
+
+::Part15DormStonerMinistry
+<<nobr>>
+  <h1>Back in your dorm</h1>
+  <video src="Part15/Dorm7.mp4" autoplay loop muted height="550"></video>
+<</nobr>>
+
+<<nobr>>
+  You leave Marissa and her friend to themselves in the dorm, while you go find somewhere else to be until they are done.  You still
+  feel a need, something to fill the emptyness between your legs.  But you try not to think about it.  You tell yourself you are saving that
+  for someone special.
+<</nobr>>
+
+<<nobr>>
+  As you sit on a bench near the quad you see a nun walk by.  You think to yourself, at least I'm not like that.  Someday I'll
+  know what it's like.  You are lost in your thoughts, trying to imagine if you'd be horny all the time or forget about sex completely
+  if you knew you would never have it.  Your thoughts are interrupted by a text from your roommate.  "It's safe now.  Craig and I have left."
+<</nobr>>
+
+<<nobr>>
+  When you get back to the dorm, your thoughts are still filled with the thoughts of what it'd be like as a nun.  As you sit on your bed,
+  you imagine sliding your hand up your leg, trying to relieve the need you feel.  Of course in your imagination you aren't dressed quite
+  the same as the actual nun you'd seen.
+<</nobr>>
+
+<<nobr>>
+  After you've came, you feel a bit better.  "That will have to do for now," you think to yourself.  "At least I don't have to worry about
+  Faith judging me for masturbating anymore.  Maybe I should [[get a good vibrator|Part15DormStonerMinistry2]] if I'm going to be like that
+  every time I smoke with Marissa.  I'm sure that won't be the last time we do that this year.
+<</nobr>>
+
+::Part15DormStonerMinistry2
+<<nobr>>
+  <h1>At the sex shop</h1>
+  <img src="Part15/Shop1.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  You feel so naughty browsing through the store looking at all the toys, clothes, and everything else.  But you keep telling yourself
+  that masturbation is perfectly normal, no matter what Faith said.
+<</nobr>>
+
+<<nobr>>
+  You are curious about the other items in the store, but you decide to focus on the vibrators first, since that what you came here for.
+<</nobr>>
+<img src="Part15/Shop2.png" hspace="10" vspace="10" height="450">
+<<nobr>>
+  After looking throught he many different styles and types of vibrators, you find one that seems perfect.  Discrete, but with enough power
+  to... well, do what it's supposed to do.  You'll get some extra batteries too when you check out.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectSubmissive>>
+    You are eager to go home and try your new toy.
+    But you are also tempted to [[explore the rest of the store|Part15DormStonerMinistry3]] too.
+    But then you see the ropes and cuffs, paddles, and gags, and so many other toys on the far wall, and your mind is made up.
+    You definitely want to take a look at those.
+  <<elseif $PlayerSideEffectExhibitionist>>
+    You are eager to go home and try your new toy.
+    But you are also tempted to [[explore the rest of the store|Part15DormStonerMinistry3]] too.
+    But then you see the lingerie, latex skirts, role-play costumes, and much more on racks nearby.  You start fantasizing about buy
+    something, maybe the latex outfit, and wearing it out in public.  You aren't going to buy anything, much less wear it in public.
+    But you know you don't want to leave without checking out what they have first.
+  <<else>>
+    You are eager to [[go home and try your new toy|Part15DormStonerMinistry4]].
+    But you are also tempted to [[explore the rest of the store|Part15DormStonerMinistry3]] too.
+  <</if>>
+<</nobr>>
+
+::Part15DormStonerMinistry3
+<img src="Part15/Shop3.jpg" hspace="10" vspace="10" height="550">
+<img src="Part15/Shop4.jpg" hspace="10" vspace="10" height="550">
+<img src="Part15/Shop5.png" hspace="10" vspace="10" height="550">
+<<nobr>>
+  todo see sexy clothes, video booths, bondage toys. Now what
+  TODO [[Check out something to wear in public|Part15DormStonerMinistryOutfit]]
+  TODO [[Check out the video booth|Part15DormStonerBooth]]
+  TODO [[Check out the bondage toys|Part15DormStonerBondage]]
+<</nobr>>
+
+::Part15DormStonerMinistry4
+<<nobr>>
+  <h1>todo</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Dorm8.webm" autoplay loop muted height="650"></video>
+  </div>
+<</nobr>>
+
+TODO Part15DormStonerMinistry4
+TODO [[Part15Week]]
+
+::Part15DormStonerMinistryOutfit
+<img src="Part15/Shop6.jpg" hspace="10" vspace="10" height="550">
+<img src="Part15/Shop7.jpg" hspace="10" vspace="10" height="550">
+TODO Part15DormStonerMinistryOutfit
+TODO [[Part15Week]]
+
+::Part15DormStonerBooth
+TODO Part15DormStonerBooth
+TODO BJ, ministry fail
+TODO [[Part15Week]]
+
+::Part15DormStonerBondage
+    <video src="Part15/Dorm9.mp4" autoplay loop muted height="650"></video>
+TODO Part15DormStonerBondage
+TODO Self-bondage masturbation
+TODO [[Part15Week]]
+
+::Par14DormStonerBoyfriend
+TODO Par14DormStonerBoyfriend
+TODO Special handling if Ministry path and this is first time having sex
+TODO [[Part15Week]]
+
+::Part15DormStonerGirlfriend
+TODO Part15DormStonerGirlfriend
+TODO [[Part15Week]]
+
+::Part15DormStonerLesbian
+TODO Lesbian
 TODO [[Part15Week]]
 
 ::Part15DormSlutty
 <<nobr>>
-  <h1>Meeting your roommate</h1>
   <img src="Part15/Dorm3.jpg" hspace="10" vspace="10" height="650" align="left">
-  TODO Set roommate variable to Slutty
+  <<set $Roommate to "Lily">>
 <</nobr>>
 
 TODO Living in the dorms - Slut
@@ -5505,9 +6017,8 @@ TODO [[Part15Week]]
 
 ::Part15DormNerdy
 <<nobr>>
-  <h1>Meeting your roommate</h1>
   <img src="Part15/Dorm2.jpg" hspace="10" vspace="10" height="650" align="left">
-  TODO Set roommate variable to Nerdy
+  <<set $Roommate to "Natalie">>
 <</nobr>>
 
 <<nobr>>
