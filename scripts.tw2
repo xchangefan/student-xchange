@@ -67,8 +67,11 @@ function UpdateStoryLinks() {
 // Search passages for links every 300ms and marks them for key clicks
 function UpdateLinks() {
 	if (Engine.isIdle()) {
+    var NoKeyLinks = $(".NoKeyLinks");
     if (state.active.variables.StoryKeys) {
       UpdateStoryLinks()
+    } else if (NoKeyLinks.length > 0 ) {
+      // to nothing
     } else {
       var Links = $("#passages a");
       if (Links.length === 1) {

@@ -1,14 +1,18 @@
 ::BeltTest
 <<nobr>>
-  <h1>Belt Configuration Testing</h1>
+  <h1 class="NoKeyLinks">Belt Configuration Testing</h1>
   <<set $BeltGlobalBlock to 1>>
   <<set $BeltMode to "Single">>
   <<set $BeltArousalMode to "None">>
   <<set $BeltEncouragelMode to "Oral">>
   <<set $BeltRequestMode to "No">>
+  <<set $BeltUpperClothesBraMode to "All">>
+  <<set $BeltUpperClothesWorkMode to "Conservative">>
+  <<set $BeltUpperClothesHomeMode to "Slutty">>
   <<set $BeltLowerClothesWorkMode to "Conservative">>
   <<set $BeltLowerClothesHomeMode to "Slutty">>
-  <<set $BeltLowerClothesGenderMode to "Same">>
+  <<set $BeltClothesGenderMode to "Same">>
+  <<set $BeltPoolClothesMode to "BikiniBottom">>
   <<set $MinBJ to 0>>
   <<set $GoalBJ to 0>>
   <<set $isLockTime to true>>
@@ -25,15 +29,29 @@
   [[Self Locking Functions|BeltSelfLock]]
 <</nobr>>
 
-::BeltOwner
+
+
+
+
+
+
+<<nobr>>
+  Note: This does not affect game play in any way.  I was just having fun making  it while considering the belt that appears in the game.
+  And also thinking about possiblities to maybe include in the game.
+<</nobr>>
+
+::BeltConfigTitle
 <<nobr>>
   <<if $BeltSelfLock>>
-    <h1>Belt Configuration (Self-locking)</h1>
+    <h1 class="NoKeyLinks">Belt Configuration (Self-locking)</h1>
   <<else>>
-    <h1>Belt Configuration (Owner)</h1>
+    <h1 class="NoKeyLinks">Belt Configuration (Owner)</h1>
   <</if>>
 <</nobr>>
+
+::BeltOwner
 <<nobr>>
+  <<include [[BeltConfigTitle]]>>
   <h2>Belt Mode</h2>
   <span id="beltMode">
     <<include [[BeltModeSetting]]>>
@@ -51,7 +69,19 @@
     <<include [[BeltModeAdditionalSettings]]>>
   </span>
   <<if $BeltSelfLock>>
-    <hr>
+    [[Configure Unlocking Requirements|BeltSelfLockUnlockRequirements]]
+  <<else>>
+    [[Configure Additional Settings|BeltAdditionalSettings]]
+  <</if>>
+<</nobr>>
+
+::BeltLock
+TODO *CLICK*
+
+::BeltSelfLockUnlockRequirements
+<<nobr>>
+  <<include [[BeltConfigTitle]]>>
+  <<if $BeltSelfLock>>
     <h2>Self Locking Unlock Requirements</h2>
     <span id="beltLockMode">
       <<include [[BeltLockMode]]>>
@@ -59,8 +89,9 @@
   <</if>>
 <</nobr>>
 
+::BeltAdditionalSettings
 <<nobr>>
-  <hr>
+  <<include [[BeltConfigTitle]]>>
   <h2>Global Orgasm Block</h2>
   <<link CHANGE>>
     <<set $BeltGlobalBlock to ($BeltGlobalBlock + 1) % 3>>
@@ -85,9 +116,11 @@
 <</nobr>>
 
 <<nobr>>
-  <hr>
-  <h2>Blacklists</h2>
-  <<include [[BeltBlacklist]]>>
+  <<if $thisIsDisabledForNow>>
+    <hr>
+    <h2>Blacklists</h2>
+    <<include [[BeltBlacklist]]>>
+  <</if>>
 <</nobr>>
 
 ::BeltOrgasmBlockSetting
@@ -120,8 +153,6 @@
 
 ::BeltLockMode
 <<nobr>>
-  <<set $receiverName to "1">>
-  
   <h3><label><<checkbox "$isLockTime" false true checked>> Time</label></h3>
   <span id="beltTimeLockSpan">"."</span>
 	<<silently>>
@@ -169,9 +200,471 @@
     <</repeat>>
   <</silently>>
 
-  <<if !$isLockTime && !$isLockService && !$isLockOwnership>>
-    <b>WARNING:</b> WITHOUT UNLOCKING SETTINGS, BELT WILL BE PERMANENTLY LOCKED
+  <span id="beltUnlockDetailsSpan">"."</span>
+  <<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltUnlockDetailsSpan">>
+        <<if !$isLockTime && !$isLockService && !$isLockOwnership>>
+          <b>WARNING:</b> WITHOUT UNLOCKING REQUIREMENTS, BELT WILL BE PERMANENTLY LOCKED<br>
+          [[Configure Additional Settings|BeltAdditionalSettings]]
+        <<elseif !$isLockTime && !$isLockService>>
+          [[Configure Additional Settings|BeltAdditionalSettings]]
+        <<else>>
+          [[Configure Unlocking Details|BeltUnlockDetails]]
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+<</nobr>>
+
+::BeltUnlockDetails
+<<nobr>>
+  <<if $isLockOwnership>>
+    NOTE: If an owner is added, then unlocking will be determined by owner, not the options below.
+    <br>
   <</if>>
+
+  <h2>Self Locking Unlock Actions</h2>
+  The following actions may occur once the unlocking conditions are met.
+
+  <h3><label> (X) Immediate Unlock</label></h3>
+  <<include [[BeltUnlockImmediateText]]>>
+
+  <h3><label><<checkbox "$isAskAgain" false true checked>> Tease and Try Again</label></h3>
+  <span id="beltUnlockAskAgainSpan">"."</span>
+  <<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltUnlockAskAgainSpan">>
+        <<if $isAskAgain>>
+          <<include [[BeltUnlockAskAgainText]]>>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+
+  <h3><label><<checkbox "$isDouble" false true checked>> Double or Nothing</label></h3>
+  <span id="beltUnlockDoubleSpan">"."</span>
+  <<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltUnlockDoubleSpan">>
+        <<if $isDouble>>
+          <<include [[BeltUnlockDoubleText]]>>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+<</nobr>>
+
+<<nobr>>
+  [[Choose unlock decision method|BeltUnlockMethod]]
+<</nobr>>
+
+::BeltUnlockMethod
+<<nobr>>
+  <h2>Self Locking Unlock Decision Method</h2>
+  The following methods may be used to determine which action is selected.<br>
+  If multiple options are selected one will be chosen for you by the system each time you are eligible.<br>
+  If no options are selected one will be chosen for you by the system each time you are eligible.
+<</nobr>>
+
+<<nobr>>
+  <h3><label><<checkbox "$isRandomUnlock" false true checked>> <<if $isAskAgain or $isDouble>>Random<<else>>Immediate<</if>></label></h3>
+  <span id="beltUnlockMethodRandomSpan">"."</span>
+  <<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltUnlockMethodRandomSpan">>
+        <<if $isRandomUnlock>>
+          <<if !$isAskAgain and !$isDouble>>
+            <ul><li>Wearer is given the option to immediately unlock</li></ul>
+          <<else>>
+            <<include [[BeltUnlockMethodRandomText]]>>
+          <</if>>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+
+  <h3><label><<checkbox "$isServiceChoice" false true checked>> Service Choice</label></h3>
+  <span id="beltUnlockMethodServiceSpan">"."</span>
+  <<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltUnlockMethodServiceSpan">>
+        <<if $isServiceChoice>>
+          <<include [[BeltUnlockMethodServiceText]]>>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+
+  <h3><label><<checkbox "$isFriendChoice" false true checked>> Friend's Choice</label></h3>
+  <span id="beltUnlockMethodFriendSpan">"."</span>
+  <<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltUnlockMethodFriendSpan">>
+        <<if $isFriendChoice>>
+          <<include [[BeltUnlockMethodFriendText]]>>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+
+  <h3><label><<checkbox "$isExesChoice" false true checked>> Ex's Choice</label></h3>
+  <span id="beltUnlockMethodExSpan">"."</span>
+  <<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltUnlockMethodExSpan">>
+        <<if $isExesChoice>>
+          <<include [[BeltUnlockMethodExText]]>>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+
+  <h3><label><<checkbox "$isStrangerChoice" false true checked>> Stranger</label></h3>
+  <span id="beltUnlockMethodStrangerSpan">"."</span>
+  <<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltUnlockMethodStrangerSpan">>
+        <<if $isStrangerChoice>>
+          <<include [[BeltUnlockMethodStrangerText]]>>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+
+  <h3><label><<checkbox "$isSacrificeChoice" false true checked>> Sacrifice Choice</label></h3>
+  <span id="beltUnlockMethodSacrificeSpan">"."</span>
+  <<silently>>
+		<<repeat 200ms>>
+      <<replace "#beltUnlockMethodSacrificeSpan">>
+        <<if $isSacrificeChoice>>
+          <<include [[BeltUnlockMethodSacrificeText]]>>
+        <</if>>
+      <</replace>>
+    <</repeat>>
+  <</silently>>
+<</nobr>>
+
+<<nobr>>
+  [[Configure Additional Settings|BeltAdditionalSettings]]
+<</nobr>>
+
+::BeltUnlockImmediateText
+<<nobr>>
+  <ul>
+    <li>Wearer is given the option to immediately unlock</li>
+    <li>This is the only option that allows unlocking and is always enabled if unlocking is allowed.</li>
+    <li>At this time wearer may also choose to:</li>
+      <ul>
+        <li>Exit the session while remaining locked.  They may then choose to start a new session or unlock,
+          either now or at a later time.</li>
+        <li>Extend the lock-up period with additional time and/or service requirements</li>
+        <li>Add an owner.  The session will end, wearer will remain locked,
+          and full access will transfer immediately to the owner.</li>
+      </ul>
+  </ul>
+<</nobr>>
+
+::BeltUnlockAskAgainText
+<<nobr>>
+  <ul>
+    <li>Wearer will not be unlocked now</li>
+    <li>Wearer will be required to wait for between 1 to 24 hours</li>
+      <ul>
+        <li>During this time, wearer will be teased or edged at random intervals</li>
+        <li>If oral and/or service requirements were required at any point during the session,
+          then a service requirement will be assigned.  The 'wait timer' will not start until
+          this requirement has been met.</li>
+      </ul>
+    <li>At the end of the waiting period an unlocking action will be chosen at random again</li>
+    <li>This option may be randomly selected multiple times during the same session</li>
+    <li>Each time this option is randomly selected</li>
+      <ul>
+        <li>The odds of a larger wait time, and higher service requirements (if enabled), will increase</li>
+        <li>The odds of this option being selected again this session will decrease,
+          but only if this session has exceeded the wearer's previous maximum lockup time.</li>
+      </ul>
+  </ul>
+<</nobr>>
+
+::BeltUnlockDoubleText
+<<nobr>>
+  <ul>
+    <li>Wearer will not be unlocked now</li>
+    <li>Wearer will be teased for a random duration and then given a choice</li>
+      <ul>
+        <li>Option 1: no orgasm - Teasing is stopped.  50% of original unlock requirements added back on.  All orgasms are disabled until those requirements are met.</li>
+        <li>Option 2: ruined orgasm - Wearer is given an immediate ruined orgasm.  Session is repeated with original settings.</li>
+        <li>Option 3: orgasm - Wearer is given an immediate orgasm.  Session is repeated with double the original requirements.  If orgasms are allowed during session, 50% will now be denied or ruined.</li>
+      </ul>
+    <li>When extentended requirements are met, an unlocking action will be chosen at random again</li>
+    <li>This option may be randomly selected multiple times during the same session</li>
+    <li>Each time this option is randomly selected during the same session</li>
+      <ul>
+        <li>If option 1 is chosen, the odds of this option being selected again wil increase</li>
+        <li>If option 3 The odds of it being selected again this session will decrease</li>
+      </ul>
+  </ul>
+<</nobr>>
+
+::BeltUnlockMethodRandomText
+<<nobr>>
+  <ul>
+    <li>One of the enabled unlock actions (
+      <<if $isAskAgain and $isDouble>>
+        Immediate, Ask Again, or Double-or-Nothing
+      <<elseif $isAskAgain>>
+        Immediate or Ask Again
+      <<else>>
+        Immediate or Double-or-Nothing
+      <</if>>
+      ) will be selected at random</li>
+    <li>The relative chance of each option</li>
+    <ul>
+      <li>Will likely not be equal for every option enabled.</li>
+      <li>May not be configured or altered by the wearer, but will be set by algorithm.</li>
+      <li>Is not displayed to the wearer.</li>
+      <li>May depend on factors such as session duration, maximum previous session length, arousal levels during session,
+        or other factors.</li>
+      <li>May change during a session or between sessions</li>
+    </ul>
+  </ul>
+<</nobr>>
+
+::BeltUnlockMethodRequestOwnerText
+<<nobr>>
+  <li>The person selected will have the option to request ownership.</li>
+    <ul>
+      <li>Wearer may decline.</li>
+      <li>If the wearer accepts, then the session will end, wearer will remain locked,
+      and full access will transfer immediately to the owner.</li>
+    </ul>
+  <li>If ownership is not requested, or is declined, then the person selected will be asked to choose between the
+    following options for you.</li>
+<</nobr>>
+
+::BeltUnlockMethodServiceText
+<<nobr>>
+  <ul>
+    <li>A random person you have serviced orally or anally during this session will be selected and notified.</li>
+    <li>If no oral or anal service has been performed this session, then one of the other "Choice" options will be
+      selected by the system.</li>
+    <<include [[BeltUnlockMethodRequestOwnerText]]>>
+      <ul>
+        <li>Allow immediate unlocking</li>
+        <li>Tease and Try again</li>
+          <ul>
+            <<if !$isAskAgain>>
+              <li><b>NOTE:</b>This option is enabled for Service Choice, regardless of other settings.</li>
+            <</if>>
+            <li>The duration of the extension, and any additional service requirements are set by them, within
+              the maximum values that might have been randomly selected.</li>
+            <li>Teasing and/or edging may be enabled or disabled by them</li>
+          </ul>
+        <<if $isDouble>>
+          <li>Double or Nothing</li>
+        <</if>>
+        <li>Random</li>
+          <ul>
+            <li>A random choice of the enabled actions will be chosen by the system.  "Allow immediate unlocking" will
+              have 50% of its usual likelyhood of being selected.</li>
+          </ul>
+      </ul>
+    <li>If the person chosen does not respond with 24 hours, then they will be excluded and another person that was serviced
+      this session will be randomly selected</li>
+      <ul>
+        <li>Any daily minimum oral or anal service requirements remain in effect during this time.</li>
+        <li>If there are no one remaining that has been serviced this session, then one of the other
+          "Choice" options will be selected by the system.</li>
+      </ul>
+  </ul>
+<</nobr>>
+
+::BeltUnlockMethodFriendText
+<<nobr>>
+  <ul>
+    <li>A random person from your list of friends will be selected.  Anyone you have been intimate with (that the belt is aware of)
+      will be excluded.</li>
+    <li>Preference will be given to your preferred gender, if any.  But friends of a different gender may be chosen.</li>
+    <li>If no friends are configured, or if you have been intimate with all of your friends, then one of the other "Choice" options
+      will be selected by the system.</li>
+    <<include [[BeltUnlockMethodRequestOwnerText]]>>
+      <ul>
+        <li>Allow immediate unlocking</li>
+        <li>Upgrade to Friend with Benefits</li>
+          <ul>
+            <li>From 1 to 10 oral and/or anal service requirements will be added that must be performed with the selected
+              friend as the recipient</li>
+            <li>
+              If enabled, CHASTE mode is disabled and a temporary version of FAITHFUL RELATIONSHIP
+              mode is enabled until these requirements are met.
+            </li>
+            <li>Upon completion of requirements "Allow immediate unlocking" is automatically selected</li>
+          </ul>
+        <li>Tease and Try again</li>
+          <ul>
+            <<if !$isAskAgain>>
+              <li><b>NOTE:</b>This option is enabled for Friend's Choice, regardless of other settings.</li>
+            <</if>>
+            <li>The duration of the extension, and any additional service requirements are set by them, within
+              the maximum values that might have been randomly selected.</li>
+            <li>Teasing and/or edging may be enabled or disabled by the friend</li>
+          </ul>
+        <<if $isDouble>>
+          <li>Double or Nothing</li>
+        <</if>>
+      </ul>
+    <li>If your friend does not respond with 48 hours, then they will be excluded and another eligible
+      friend will be randomly selected</li>
+      <ul>
+        <li>Any daily minimum oral or anal service requirements remain in effect during this time.</li>
+        <li>If there are no eligible friends remaining, then one of the other "Choice" options will be
+        selected by the system.</li>
+      </ul>
+  </ul>  
+<</nobr>>
+
+::BeltUnlockMethodExText
+<<nobr>>
+  <ul>
+    <li>A random person from your list of exes will be selected.  This includes anyone specifically configured as an ex,
+      or anyone that you have been intimate with multiple times but not within the past 30 days (that the belt is aware of).</li>
+    <li>If selected, the chosen ex will be automatically removed from your block list.</li>
+    <li>If there are no eligible exes, then one of the other "Choice" options will be selected by the system.</li>
+    <<include [[BeltUnlockMethodRequestOwnerText]]>>
+      <ul>
+        <li>Allow immediate unlocking</li>
+        <li>Get back in touch</li>
+          <ul>
+            <li>From 1 to 10 oral and/or anal service requirements will be added that must be performed with the selected
+              ex as the recipient</li>
+            <li>
+              If enabled, CHASTE mode is disabled and a temporary version of FAITHFUL RELATIONSHIP
+              mode is enabled until these requirements are met.
+            </li>
+            <li>Upon completion of requirements "Allow immediate unlocking" is automatically selected</li>
+          </ul>
+        <li>Tease and Try again</li>
+          <ul>
+            <<if !$isAskAgain>>
+              <li><b>NOTE:</b>This option is enabled for Ex's Choice, regardless of other settings.</li>
+            <</if>>
+            <li>The duration of the extension, and any additional service requirements are set by them, within
+              the maximum values that might have been randomly selected.</li>
+            <li>Teasing and/or edging may be enabled or disabled by the ex</li>
+          </ul>
+        <<if $isDouble>>
+          <li>Double or Nothing</li>
+        <</if>>
+      </ul>
+    <li>If your ex does not respond with 24 hours, then they will be excluded and another eligible
+      ex will be randomly selected</li>
+      <ul>
+        <li>Any daily minimum oral or anal service requirements remain in effect during this time.</li>
+        <li>If there are no eligible exes remaining, then one of the other "Choice" options will be
+        selected by the system.</li>
+      </ul>
+  </ul>  
+<</nobr>>
+
+::BeltUnlockMethodBegText
+<<nobr>>
+  <li>They will be provided with data on your session including arousal history, session duration,
+    oral and anal service events, and other non-identifying information.</li>
+  <li>If you choose to, you may anonymously message them to 'plead your case'.  Photo and video
+    messaging is also available, but a permanant copy may be retained by the other user.</li>
+<</nobr>>
+
+::BeltUnlockMethodStrangerText
+<<nobr>>
+  <ul>
+    <li>A random user of the system, that you are not connected with in any way, will be selected.</li>
+    <li>Locked wearers are excluded.  Any other dominant, submissive, or other user may be selected.</li>
+    <<include [[BeltUnlockMethodBegText]]>>
+    <li>They will be asked to choose between the following options for you.</li>
+      <ul>
+        <li>Allow immediate unlocking</li>
+        <li>Tease and Try again</li>
+          <ul>
+            <<if !$isAskAgain>>
+              <li><b>NOTE:</b>This option is enabled for Stranger's Choice, regardless of other settings.</li>
+            <</if>>
+            <li>The duration of the extension, and any additional service requirements are set by them, within
+              the maximum values that might have been randomly selected.</li>
+            <li>Teasing and/or edging may be enabled or disabled by them</li>
+          </ul>
+        <<if $isDouble>>
+          <li>Double or Nothing</li>
+        <</if>>
+        <li>Random</li>
+          <ul>
+            <li>A random choice of the enabled actions will be chosen by the system.  "Allow immediate unlocking" will
+              have 50% of its usual likelyhood of being selected.</li>
+          </ul>
+      </ul>
+    <li>If the person chosen does not respond within 4 hours, then they will be excluded and another eligible user
+      will be randomly selected</li>
+      <ul>
+        <li>Any daily minimum oral or anal service requirements remain in effect during this time.</li>
+      </ul>
+  </ul>
+<</nobr>>
+
+::BeltUnlockMethodSacrificeText
+<<nobr>>
+  <ul>
+    <li>A random, locked self-locked wearer, that you are not connected with in any way, will be selected.</li>
+    <li>Owned wearers are excluded</li>
+    <<include [[BeltUnlockMethodBegText]]>>
+    <li>The other wearer will be asked to choose between the following options for you.</li>
+      <ul>
+        <li>Allow immediate unlocking</li>
+          <ul>
+            <li>Choosing this option will have:</li>
+              <ul>
+                <li>a 100% chance of allowing immediate unlocking for you.</li>
+                <li>a 100% chance of adding from 1 - 24 hours to the current lockup period of the choosing wearer.</li>
+              </ul>
+          </ul>
+        <li>Tease and Try again</li>
+          <ul>
+            <<if !$isAskAgain>>
+              <li><b>NOTE:</b>This option is enabled for Sacrifice Choice, regardless of other settings.</li>
+            <</if>>
+            <li>The duration of the extension, and any additional service requirements are set by them, within
+              the maximum values that might have been randomly selected.</li>
+            <li>Teasing and/or edging may be enabled or disabled by them</li>
+            <li>Choosing this option will have:</li>
+              <ul>
+                <li>a 90% chance of activating "Tease and Try again" for you and having no effect on the choosing wearer's lockup.</li>
+                <li>a 5% chance of activating "Tease and Try again" for the choosing wearer, and enabling immediate unlocking for you.</li>
+                <li>a 5% chance of activating "Tease and Try again" for both you AND the choosing wearer.</li>
+                <li>The odds above are a base level.  The odds of this choice affecting the choosing wearer increase
+                  with her arousal level</li>
+              </ul>
+          </ul>
+        <li>Double or Nothing</li>
+          <ul>
+            <<if !$isDouble>>
+              <li><b>NOTE:</b>This option is enabled for Sacrifice Choice, regardless of other settings.</li>
+            <</if>>
+            <li>Choosing this option will have:</li>
+              <ul>
+                <li>a 90% chance of activating "Double or Nothing" for you and having no effect on the choosing wearer's lockup.</li>
+                <li>a 5% chance of activating "Double or Nothing" for the choosing wearer, and enabling immediate unlocking for you.</li>
+                <li>a 5% chance of activating "Double or Nothing" for both you AND the choosing wearer.</li>
+                <li>The odds above are a base level.  The odds of this choice affecting the choosing wearer increase
+                  with her arousal level</li>
+              </ul>
+          </ul>
+      </ul>
+    <li>The wearer chosen to decide for you will be ineligible for unlocking or orgasms until she responds.  She will begin receiving
+      punishment shocks if she do not respond within 4 hours.  If she does not respond within 24 hours, then her lockup will be extended
+      by the length-to-date of your current session.  She will then be excluded and another eligible user will be randomly selected.</li>
+      <ul>
+        <li>Any daily minimum oral or anal service requirements remain in effect during this time.</li>
+      </ul>
+  </ul>
 <</nobr>>
 
 ::BeltLockModeService
@@ -297,7 +790,6 @@
       <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
       <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
       <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
-      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
     <</link>>
   <</if>>
   <<if $BeltMode == "Single">>
@@ -310,7 +802,6 @@
       <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
       <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
       <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
-      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
     <</link>>
   <</if>>
   <<if $BeltMode == "Faithful">>
@@ -323,7 +814,6 @@
       <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
       <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
       <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
-      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
     <</link>>
   <</if>>
   <<if $BeltMode == "Open">>
@@ -336,7 +826,6 @@
       <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
       <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
       <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
-      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
     <</link>>
   <</if>>
   <<if $BeltMode == "Public">>
@@ -349,7 +838,6 @@
       <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
       <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
       <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
-      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
     <</link>>
   <</if>>
   <<if $BeltMode == "Service">>
@@ -362,7 +850,6 @@
       <<replace "#beltMode">><<include [[BeltModeSetting]]>><</replace>>
       <<replace "#beltModeChange">><<include [[BeltModeSettingChange]]>><</replace>>
       <<replace "#beltModeDetails">><<include [[BeltModeAdditionalSettings]]>><</replace>>
-      <<replace "#beltGeneralSettings">><<include [[BeltModeGeneralSettings]]>><</replace>>
     <</link>>
   <</if>>
   <<if $BeltSelfLock>>
@@ -569,10 +1056,16 @@
 <<nobr>>
   <h2>Other Belt Settings</h2>
   <h3>Wardrobe Limits</h3>
-  If restrictions are enabled, only approved RFID-tagged and classified clothing is allowed.
+  If restrictions are enabled, only approved RFID-tagged and classified clothing is allowed.  Visit our local store or online catalog
+  to purchase additional tagged clothing.
   <ul>
-    <li>Upper Body: <i>(Purchase and pair nipple piercing or chastity bra add-ons to enable control of upper-body garments)</i></li>
+    <li><i>Nipple pierings have been paired and enabled and may be used for upper-body clothing detection and enforcement.</i></li>
+    <li><i>If any upper body restrictions are enabled, then removal of piercings, except for brief cleaning or adjustment,
+      will result in the belt administering shocks of increasing severity until piercings are back in place.</i></li>
+    <<include [[BeltUpperClothesControl]]>>
     <<include [[BeltLowerClothesControl]]>>
+    <<include [[BeltSwimwearClothesControl]]>>
+    <<include [[BeltClothesGenderControl]]>>
   </ul>
   <h3>Language Filter</h3>
   The following words, phrases, and phrase types will result in punishment if spoken or communicated via texting.
@@ -588,6 +1081,200 @@
   Contact Customer Service to request any changes to the language filter.
   <<if $BeltSelfLock>>
     Requests by a self-locked wearer to add restrictions will be honored.  Requests to remove restrictions will not.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  [[ACCEPT SETTINGS AND LOCK BELT|BeltLock]]
+<</nobr>>
+
+::BeltClothesGenderControl
+<<nobr>>
+  <li>
+  <<link CHANGE>>
+    <<if $BeltClothesGenderMode == "All">>
+      <<set $BeltClothesGenderMode to "Same">>
+    <<elseif $BeltClothesGenderMode == "Same">>
+      <<set $BeltClothesGenderMode to "Cross">>
+    <<elseif $BeltClothesGenderMode == "Cross">>
+      <<set $BeltClothesGenderMode to "Neutral">>
+    <<else>>
+      <<set $BeltClothesGenderMode to "All">>
+    <</if>>
+    <<replace "#clothesGenderMode">><<include [[BeltClothesControlGenderText]]>><</replace>>
+  <</link>>
+  <span id="clothesGenderMode">
+    <<include [[BeltClothesControlGenderText]]>>
+  </span>
+  </li>
+<</nobr>>
+
+::BeltUpperClothesControl
+<<nobr>>
+  <li>Upper Body:
+    <ul>
+      <li>Bras: 
+        <<link CHANGE>>
+          <<if $BeltUpperClothesBraMode == "All">>
+            <<set $BeltUpperClothesBraMode to "None">>
+          <<elseif $BeltUpperClothesBraMode == "None">>
+            <<set $BeltUpperClothesBraMode to "Required">>
+          <<else>>
+            <<set $BeltUpperClothesBraMode to "All">>
+          <</if>>
+          <<replace "#upperClothesBraMode">><<include [[BeltUpperClothesControlBraText]]>><</replace>>
+        <</link>>
+        <span id="upperClothesBraMode">
+          <<include [[BeltUpperClothesControlBraText]]>>
+        </span>
+      </li>
+      <li>During designated Work Hours: 
+        <<link CHANGE>>
+          <<if $BeltUpperClothesWorkMode == "All">>
+            <<set $BeltUpperClothesWorkMode to "Sexy">>
+          <<elseif $BeltUpperClothesWorkMode == "Sexy">>
+            <<set $BeltUpperClothesWorkMode to "Slutty">>
+          <<elseif $BeltUpperClothesWorkMode == "Slutty">>
+            <<set $BeltUpperClothesWorkMode to "Conservative">>
+          <<else>>
+            <<set $BeltUpperClothesWorkMode to "All">>
+          <</if>>
+          <<replace "#upperClothesWorkMode">><<include [[BeltUpperClothesControlWorkText]]>><</replace>>
+        <</link>>
+        <span id="upperClothesWorkMode">
+          <<include [[BeltUpperClothesControlWorkText]]>>
+        </span>
+      </li>
+      <li>During Non-Work Hours:
+        <<link CHANGE>>
+          <<if $BeltUpperClothesHomeMode == "All">>
+            <<set $BeltUpperClothesHomeMode to "None">>
+          <<elseif $BeltUpperClothesHomeMode == "None">>
+            <<set $BeltUpperClothesHomeMode to "Slutty">>
+          <<elseif $BeltUpperClothesHomeMode == "Slutty">>
+            <<set $BeltUpperClothesHomeMode to "Sexy">>
+          <<elseif $BeltUpperClothesHomeMode == "Sexy">>
+            <<set $BeltUpperClothesHomeMode to "Lingerie">>
+          <<elseif $BeltUpperClothesHomeMode == "Lingerie">>
+            <<set $BeltUpperClothesHomeMode to "Fetish">>
+          <<elseif $BeltUpperClothesHomeMode == "Fetish">>
+            <<set $BeltUpperClothesHomeMode to "Conservative">>
+          <<else>>
+            <<set $BeltUpperClothesHomeMode to "All">>
+          <</if>>
+          <<replace "#upperClothesHomeMode">><<include [[BeltUpperClothesControlHomeText]]>><</replace>>
+        <</link>>
+        <span id="upperClothesHomeMode">
+          <<include [[BeltUpperClothesControlHomeText]]>>
+        </span>
+      </li>
+    </ul>
+  </li>
+<</nobr>>
+
+::BeltSwimwearClothesControl
+<<nobr>>
+  <li>When at desginated pool or beach areas:
+    <ul>
+      <li>
+        <<link CHANGE>>
+          <<if $BeltPoolClothesMode == "All">>
+            <<set $BeltPoolClothesMode to "BikiniBottom">>
+          <<elseif $BeltPoolClothesMode == "BikiniBottom">>
+            <<set $BeltPoolClothesMode to "None">>
+          <<elseif $BeltPoolClothesMode == "None">>
+            <<set $BeltPoolClothesMode to "BikiniOptional">>
+          <<elseif $BeltPoolClothesMode == "BikiniOptional">>
+            <<set $BeltPoolClothesMode to "Bikini">>
+          <<elseif $BeltPoolClothesMode == "Bikini">>
+            <<set $BeltPoolClothesMode to "Schoolgirl">>
+          <<elseif $BeltPoolClothesMode == "Schoolgirl">>
+            <<set $BeltPoolClothesMode to "Onepiece">>
+          <<elseif $BeltPoolClothesMode == "Onepiece">>
+            <<set $BeltPoolClothesMode to "Street">>
+          <<else>>
+            <<set $BeltPoolClothesMode to "All">>
+          <</if>>
+          <<replace "#swimClothesMode">><<include [[BeltSwimwearClothesControlText]]>><</replace>>
+        <</link>>
+        <span id="swimClothesMode">
+          <<include [[BeltSwimwearClothesControlText]]>>
+        </span>
+      </li>
+    </ul>
+  </li>
+<</nobr>>
+
+::BeltSwimwearClothesControlText
+<<nobr>>
+  <<if $BeltPoolClothesMode == "BikiniBottom">>
+    Bikini bottoms may optionally be worn over the belt.  No other clothing or swimwear is permitted.
+  <<elseif $BeltPoolClothesMode == "None">>
+    No clothing or swimwear is permitted.
+  <<elseif $BeltPoolClothesMode == "BikiniOptional">>
+    A bikini may optionally be worn.  No other clothing or swimwear is permitted.
+  <<elseif $BeltPoolClothesMode == "Bikini">>
+    A bikini top must be worn.  A bikini bottom may optionally be worn over the belt.  No other clothing or swimwear is permitted.
+  <<elseif $BeltPoolClothesMode == "Schoolgirl">>
+    A "schoolgirl" one piece swimsuit must be worn.  No other clothing or swimwear is permitted.
+  <<elseif $BeltPoolClothesMode == "Onepiece">>
+    A conservative one piece swimsuit or casual clothing may be worn.  No other clothing or swimwear is permitted.
+  <<elseif $BeltPoolClothesMode == "Street">>
+    Swimwear is not permitted.  Only standard clothing otherwise permitted during "Non-Work Hours" is allowed.
+  <<else>>
+    Any swimwear is permitted. Any clothing otherwise permitted during "Non-Work Hours" is allowed.
+  <</if>>
+<</nobr>>
+
+::BeltUpperClothesControlBraText
+<<nobr>>
+  When dressed, a bra
+  <<if $BeltUpperClothesBraMode == "All">>
+    is neither required nor forbidden.
+  <<elseif $BeltUpperClothesBraMode == "None">>
+    may not be worn.
+  <<else>>
+    must be worn.
+  <</if>>
+<</nobr>>
+
+::BeltUpperClothesControlWorkText
+<<nobr>>
+  <<if $BeltUpperClothesWorkMode == "All">>
+    No restrictions
+  <<else>>
+    Only clothing classified as
+    <<if $BeltUpperClothesWorkMode == "Slutty">>
+      "Slutty"
+    <<elseif $BeltUpperClothesWorkMode == "Sexy">>
+      "Sexy"
+    <<else>>
+      "Conservative"
+    <</if>>
+    is permitted.
+  <</if>>
+<</nobr>>
+
+::BeltUpperClothesControlHomeText
+<<nobr>>
+  <<if $BeltUpperClothesHomeMode == "All">>
+    No restrictions
+  <<elseif $BeltUpperClothesHomeMode == "None">>
+    No clothing permitted
+  <<else>>
+    Only clothing classified as
+    <<if $BeltUpperClothesHomeMode == "Slutty">>
+      "Slutty", "Lingerie", or "Fetish"
+    <<elseif $BeltUpperClothesHomeMode == "Sexy">>
+      "Sexy" or "Lingerie"
+    <<elseif $BeltUpperClothesHomeMode == "Lingerie">>
+      "Lingerie"
+    <<elseif $BeltUpperClothesHomeMode == "Fetish">>
+      "Fetish"
+    <<else>>
+      "Conservative"
+    <</if>>
+    is permitted.
   <</if>>
 <</nobr>>
 
@@ -635,23 +1322,6 @@
         <<include [[BeltLowerClothesControlHomeText]]>>
       </span>
       </li>
-      <li>
-      <<link CHANGE>>
-        <<if $BeltLowerClothesGenderMode == "All">>
-          <<set $BeltLowerClothesGenderMode to "Same">>
-        <<elseif $BeltLowerClothesGenderMode == "Same">>
-          <<set $BeltLowerClothesGenderMode to "Cross">>
-        <<elseif $BeltLowerClothesGenderMode == "Cross">>
-          <<set $BeltLowerClothesGenderMode to "Neutral">>
-        <<else>>
-          <<set $BeltLowerClothesGenderMode to "All">>
-        <</if>>
-        <<replace "#lowerClothesGenderMode">><<include [[BeltLowerClothesControlGenderText]]>><</replace>>
-      <</link>>
-      <span id="lowerClothesGenderMode">
-        <<include [[BeltLowerClothesControlGenderText]]>>
-      </span>
-      </li>
     </ul>
   </li>
 <</nobr>>
@@ -696,13 +1366,13 @@
   <</if>>
 <</nobr>>
 
-::BeltLowerClothesControlGenderText
+::BeltClothesControlGenderText
 <<nobr>>
-  <<if $BeltLowerClothesGenderMode == "All">>
+  <<if $BeltClothesGenderMode == "All">>
     Clothing is not restricted with regard to gender.
-  <<elseif $BeltLowerClothesGenderMode == "Cross">>
+  <<elseif $BeltClothesGenderMode == "Cross">>
     Only clothing tagged as typical for a different gender than wearer is allowed.
-  <<elseif $BeltLowerClothesGenderMode == "Same">>
+  <<elseif $BeltClothesGenderMode == "Same">>
     Only clothing tagged as typical for wearer's gender is allowed.
   <<else>>
     Only clothing tagged as gender-neutral is allowed.
