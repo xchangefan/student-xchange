@@ -447,6 +447,11 @@ setup.firstTimeWith = function() {
   }
 }
 
+setup.isFirstVaginal = function(targetFuck) {
+  var intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
+  return intercourse.length && intercourse[0] == targetFuck
+}
+
 setup.pregnantFirstTime = function() {
   var intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
   return intercourse.length && intercourse[0].conception && !intercourse[0].trying
@@ -517,13 +522,13 @@ setup.checkForNewPregnancyHidden = function() {
   }
 
   var recentVaginal = setup.getPossibleConceptions(true)
-
   var isPregnant
   recentVaginal.forEach(function(fuck) {
     fuck.checkedForPregnancy = "hidden"
     if (!isPregnant) {
       var areDefinitelyOvulating = (fuck.ovulating && !state.active.variables.PlayerProtectionPill) || fuck.noPill
-      fuck.conception = setup.checkForPregnancy(fuck, 0, areDefinitelyOvulating)
+      var firstTimeBoost = setup.isFirstVaginal(fuck) ? 0.2 : 0
+      fuck.conception = setup.checkForPregnancy(fuck, firstTimeBoost, areDefinitelyOvulating)
       fuck.checkedForPregnancy = "hidden"
       if (fuck.conception) {
         isPregnant = true // but player doesn't know yet, so don't set visible state variable
@@ -590,7 +595,8 @@ setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
         fuck.checkedForPregnancy = pregnancyTestType
       } else {
 				var areDefinitelyOvulating = (fuck.ovulating && !state.active.variables.PlayerProtectionPill) || fuck.noPill
-        fuck.conception = setup.checkForPregnancy(fuck, oddsBoost, areDefinitelyOvulating)
+        var firstTimeBoost = setup.isFirstVaginal(fuck) ? 0.2 : 0        
+        fuck.conception = setup.checkForPregnancy(fuck, Math.max(firstTimeBoost, oddsBoost), areDefinitelyOvulating)
         fuck.checkedForPregnancy = pregnancyTestType
         if (fuck.conception) {
           isPregnant = true // but player doesn't know yet, so don't set visible state variable
