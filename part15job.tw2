@@ -29,7 +29,7 @@
   <<elseif $JobModel>>
     <<include [[Part15JobModel]]>>
   <<elseif $JobBetaTester or $JobCallGirlSide or $JobStripper or $JobGloryHole>>
-    <<include [[Part15JobSideInclude]]>>
+    <<include [[Part15JobSide]]>>
   <<elseif $dating.length>>
     <<include [[Part15RelationshipInclude]]>>
   <<else>>
@@ -44,17 +44,12 @@ TODO They had no job, no side job, no relationship.  What are they doing with th
 ::Part15AfterMainJob
 <<nobr>>
   <<if $JobBetaTester or $JobCallGirlSide or $JobStripper or $JobGloryHole>>
-    <<include [[Part15JobSideInclude]]>>
+    <<include [[Part15JobSide]]>>
   <<elseif $dating.length>>
     <<include [[Part15RelationshipInclude]]>>
   <<else>>
     <<include [[Part15BackToMain]]>>
   <</if>>
-<</nobr>>
-
-::Part15JobSideInclude
-<<nobr>>
-  [[Continue|Part15JobSide]]
 <</nobr>>
 
 ::Part15JobSide
@@ -266,7 +261,7 @@ TODO Massage
 <<nobr>>
   "I made her latte just the way she asked.  It's not my fault she misordered," you continue.  "And I was going to remake
   the fucking thing..."  Another, slightly stronger shock hits and you can't help but cry out, "Fuck!"  Then a much stronger
-  shock hits.  You slap your hand over your mouth so you don't say anything more as you realize what is happening.
+  shock hits.  It dawns on you what is happening, so you instinctively slap your hand over your mouth as you double over in pain.
 <</nobr>>
 
 <<nobr>>
@@ -287,17 +282,17 @@ TODO Massage
 <</nobr>>
 
 <<nobr>>
-  You briefly check to see if theres a way to turn it off, and aren't surprised when you find none.  You don't have time to worry
+  You briefly check to see if there's a way to turn it off, and aren't surprised when you find none.  You don't have time to worry
   about it now.  You have to get back to work, and it's not like you curse in front of customers, so it doesn't matter for now.
   You can worry about it more
     <<if $JobBetaTester == "chaste">>
-      [[after work|Part15JobBaristaWeek3Chastity2Chaste]].
+      [[after work|Part15ChastityLanguageChaste]].
     <<else>>
-      [[after work|Part15JobBaristaWeek3Chastity2]].
+      [[after work|Part15ChastityLanguage]].
     <</if>>
 <</nobr>>
 
-::Part15JobBaristaWeek3Chastity2Chaste
+::Part15ChastityLanguageChaste
 <<nobr>>
   <h1>Bad girls get denied</h1>
   <div style="float:left;padding:12px;">
@@ -305,7 +300,12 @@ TODO Massage
   </div>
 <</nobr>>
 <<nobr>>
-  It has been a long day at work.  You know an orgasm would help you take your mind off your stressful day, but you know better than
+  <<if $JobBarista>>
+    It has been a long day at work.
+  <<else>>
+    When you get home you're stressed from the new setting on your belt, and from watching your team lose.
+  <</if>>
+  You know an orgasm would help you take your mind off your stressful day, but you know better than
   to even bother requesting one right now.  You know the belt won't give you one today, not after deciding to punish you earlier in the day.
 <</nobr>>
 
@@ -358,113 +358,6 @@ TODO Massage
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobBaristaWeek3Chastity2
-<<nobr>>
-  <h1>Putting your dirty mouth to work</h1>
-  <<if $dating.length>>
-    <<set setup.addSexRepeat($DailyBJMinimum, {sex:"male", name:$dating[0]})>>
-    After work, you confront $dating[0] about the new setting, though you are careful to stay calm and make sure you don't curse.
-    "It wasn't me," he says.  "It was one of the beta testing things they pushed out.  From the email they sent me about it, I won't
-    have the ability to turn it off or on until they are done trying it out."
-    <br><br>
-    "You knew though? And didn't warn me?" You say, upset.
-    <br><br>
-    "First, I assumed they emailed you too.  But I guess not," $dating[0] explains.  "And second, you hardly ever curse, except
-    when we are in bed, and their email said they've set it not to punish for dirty talk between us.  If I'd known I would have said
-    something.  Oh, and third, they said it would give you a couple warning shocks first before the bad ones started.  But I guess
-    that didn't help if you didn't know why it was happening."
-    <br><br>
-    <video src="Part15/Chastity2.webm" autoplay loop muted height="500"></video>
-    <br><br>
-    "Ok. I'm sorry for getting mad at you.  Can I make it up to you?"  Of course he doesn't object when you pull down his pants
-    and start working on his cock.  You are glad he didn't do this to you on purpose, but it's not like you were going to want
-    to stay mad at him anyway.  Not after the notification the app had sent you a bit earlier.
-    <br>
-    <blockquote>
-      <b>Put your dirty mouth to use, and remember to swallow every drop.</b><br>
-      You haven't met your Minimum Daily Target yet today.<br>
-      Failure to meet it will result in extra severe punishment today.
-    </blockquote>
-    <br>
-    You notice the wonderful teasing the belt normally gives you isn't there this time.  You hope that's just for today.  But even
-    without it, you love having $dating[0]'s cock in your mouth.  You love hearing his moans.  And you really love feeling his
-    cock start to twitch in your mouth.
-    <br><br>
-    After you finish swallowing $dating[0]'s cum, you smile and say, "Well, at least that's much nicer than having to wash my mouth out
-    with soap.  I guess I'll need to be a good girl, at least until they let you turn that setting off, right?"
-    <br><br>
-    $dating[0] just strokes your hair, not saying anything but "You are a very good girl."
-    <br><br>
-    After a few moments, when his thoughts start to become more clear again, he mentions something else to you.  "Since you didn't get
-    an email, I should warn you there's some words I didn't expect on the list of forbidden ones.  I can look them up for you if
-    you want"  You nod and he continues, "And there were some vague categories listed too.  Things like asking to have the belt removed,
-    complaining about the belt, or being 'definant'.  It didn't say exactly what it was looking for, so I guess you should avoid anything
-    like that if you want to be sure."
-  <<else>>
-    One you get home you start looking through the app and the manual.  You confirm the profanity monitor has been activated, and
-    unsurprisingly find that there's no way for you to turn it off.
-    <br><br>
-    You start looking through the words it says are forbidden.  Of course, you find all the basic words, including the ones you
-    discovered the hard way.  There are also some other ones you hadn't thought off.
-    <br><br>
-    And then there's some vague categories where it doesn't say the actual words you aren't allowed to use.  It just says things like
-    "Requesting Belt Removal", "Belt Complaints", and "Defiant Tone" are forbidden, but you are left to guess what words or phrases or
-    maybe even tone of voice might trigger them.  Then you realize is maybe that's intended, so you'll avoid saying anything at all it
-    might decide to punish you for.
-    <br><br>
-    You worrying about the details of the settings stop when the phone pops up with another notification:
-    <br><br>
-    <blockquote>
-      <b>Put your dirty mouth to use, and remember to swallow every drop.</b><br>
-      <<if $DailyBJMinimum == 1>>
-        You now have a Minimum Daily Target of 1 oral service per day.<br>
-      <<else>>
-        Your Minimum Daily Target is doubled starting today.<br>
-      <</if>>
-      Failure to meet it will result in extra severe punishment today.
-    </blockquote>
-    <br><br>
-    <<if !$DailyBJMinimum>>
-      <<set $DailyBJMinimum to 1>>
-    <<else>>
-      <<set $DailyBJMinimum *= 2>>
-    <</if>>
-    <<set setup.addSexRepeat($DailyBJMinimum, {sex:"male"})>>
-    <br>
-    Your eyes stop on the phrase 
-    <<if $DailyBJMinimum == 1>>
-      "per day"
-    <<else>>
-      "starting today"
-    <</if>>
-    on the second line.  "Does that mean...," you wonder.  A quick check of the app confirms it.  You are now require to suck
-    at least
-    <<if $DailyBJMinimum == 1>>one cock<<else>>$DailyBJMinimum cocks<</if>>
-    every day from now on if you don't want to be punished.  And extra severely punished today.
-    <br><br>
-    You decide not to dwell on what you can't change, or it would appear, even complain about now.  Instead you head out to find some
-    eager guy to help you reach your <<if $DailyBJMinimum == 1>>new<<else>>new, higher<</if>> daily target. It doesn't take you long
-    to find one.
-    <br><br>
-    <video src="Part15/Chastity2.webm" autoplay loop muted height="500"></video>
-    <br><br>
-    You notice the wonderful teasing the belt normally gives you isn't there this time.  You hope that's just for today.  But even
-    without it, you love having a cock in your mouth.
-    <br><br>
-    After you finish swallowing his cum he thanks you as he strokes your hair.  You are happy to remember the app said you wouldn't
-    be punish for any sex-related language.  That's good, because as soon as you think he's ready, you're going to be offering to
-    suck his cock again, and you aren't planning on being coy about it.
-  <</if>>
-<</nobr>>
-
-<<nobr>>
-  <<if $dating.length>>
-    <<include [[Part15RelationshipInclude]]>>
-  <<else>>
-    <<include [[Part15BackToMain]]>>
-  <</if>>
-<</nobr>>
-
 ::Part15JobBikiniBarista
 <<nobr>>
   <<if $SchoolWeek == 3>>
@@ -510,10 +403,71 @@ TODO Call Girl Side
 <<include [[Part15AfterMainJob]]>>
 
 ::Part15JobBetaTester
-TODO Beta testing different features (If not already triggered from job)
-TODO Maybe challenges to get an orgasm (or chance of one)
-TODO (Treating beta tester as a side job because it might be for ministry path.  Also have special handling for beta tester + glory hole)
-TODO [[Part15AfterMainJob]] or [[Part15AfterSideJob]] (include don't link)
+<<nobr>>
+  <<if $SchoolWeek == 3>>
+    <<include [[Part15BetaTestLanguage]]>>
+  <<elseif $SchoolWeek == 7>>
+    TODO Part15JobBetaTester Week 7
+    TODO Maybe challenges to get an orgasm (or chance of one)
+    TODO [[Part15AfterSideJob]]
+  <<else>>
+    TODO Part15JobBetaTester after that
+    TODO [[Part15AfterSideJob]]
+  <</if>>
+<</nobr>>
+
+
+::Part15BetaTestLanguage
+<<nobr>>
+  <h1>At the game</h1>
+  <img src="Part15/Chastity4.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You're at the game with some friends.  The refs have made some questionable calls and your friends are talking about it.
+  "I know," you agree.  "We're going to lose if these shitty calls keep happening."
+<</nobr>>
+
+<<nobr>>
+  You flinch a bit when you feel a shock from your chastity belt hit.  You wonder what it's for?
+  <<if $DailyBJMinimum>>
+    You know it isn't your minimum blow job target.  You definitely exceeded it yesterday.
+    <<if $dating.length && !setup.haveGirlfriend()>>
+      You smile, hoping $dating[0]'s balls don't still ache today.
+    <</if>>
+  <</if>>
+  You figure they must be testing something with the belt again.  Wonderful.
+<</nobr>>
+  
+<<nobr>>
+  A few beers later, the ref makes another horrible call.  "What the fuck is that shit!", you yell as you jump up.
+  As soon as you do, you are hit with two more shocks, one after another.  The second of them hurting far worse.
+  You double over from the pain.
+<</nobr>>
+  
+<<nobr>>
+  Your friends ask if you are ok.  They don't all know about your belt, so you just say you twisted something when you
+  jumped up, and that you're fine now.
+<</nobr>>
+  
+<<nobr>>
+  Then you you think to check your phone.  When you do, you see several "Profanity Filter Violation" notifications.
+<</nobr>>
+  
+<<nobr>>
+  You can't do anything about it now.  And from past experience, you dobut you'll be able to do anything about it later
+  either.
+<</nobr>>
+  
+<<nobr>>
+  So you just sit back down and try not curse again.  It's difficult to do as you watch your team lose a game
+  they probably should have won.  It's not until
+  <<if $JobBetaTester == "chaste">>
+    [[you get home|Part15ChastityLanguageChaste]].
+  <<else>>
+    [[you get home|Part15ChastityLanguage]].
+  <</if>>
+  that you can look into what these "Profanity Violations" were all about.
+<</nobr>>
 
 ::Part15JobEngineer
 <<nobr>>
