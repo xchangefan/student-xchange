@@ -1294,7 +1294,7 @@
 <</nobr>>
 
 <<nobr>>
-  You an her have barely been at the mall for an hour, and she's already gotten phone numbers from several guys.
+  You and her have barely been at the mall for an hour, and she's already gotten phone numbers from several guys.
   <<if $CampusMinistry>>
     "You should be careful," you warn her. "Most guys are only after one thing."
     <br><br>
@@ -1454,9 +1454,11 @@
 <<nobr>>
   <h1>Meeting with Bailey</h1>
   <img src="Part15/Buddy28.jpg" hspace="10" vspace="10" height="650" align="left">
-  <<if !$BuddyPregnant and !$BuddyLesbian and !$BuddyChastity>>
+  <<if !$BuddyPregnant and !$BuddyDating and !$BuddyChastity>>
     <<if $BuddyStraight>>
       <<set $tempBuddyOrientationFactor to 10>>
+    <<elseif $BuddyLesbian>>
+      <<set $tempBuddyOrientationFactor to 2>>
     <<else>>   
       <<set $tempBuddyOrientationFactor to 6>>
     <</if>>
@@ -1481,8 +1483,10 @@
     <<include [[Part15BuddyPart2Chastity]]>>
   <<elseif $BuddyPeterChastity or $BuddyThreesomeGuy or $BuddyBoys>>
     <<include [[Part15BuddyPart2Straight]]>>
-  <<elseif $BuddyDating or $BuddyThreesomeGirlfriend or $BuddySex>>
+  <<elseif $BuddyDating or $BuddyThreesomeGirlfriend>>
     <<include [[Part15BuddyPart2Lesbian]]>>
+  <<elseif $BuddySex>>
+    <<include [[Part15BuddyPart2Hookup]]>>
   <<elseif $BuddyVibrator>>
     <<include [[Part15BuddyPart2Bi]]>>
   <<else>>
@@ -1492,8 +1496,12 @@
 
 ::Part15BuddyPeriodTalk
 <<nobr>>
-  "Well, that's clearly one of your favorite parts of being a woman now," you say.  "But what about what I assume is your least favorite part?
-  How have you managed with that?"
+  <<if $CampusMinistry>>
+    "So, is there any part of being a woman you don't like so far?" you ask.
+  <<else>>
+    "Well, that's clearly one of your favorite parts of being a woman now," you say.  "But what about what I assume is your least favorite part?
+    How have you managed with that?"
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -1504,7 +1512,7 @@
     She thinks a bit longer and continues, "I know a lot of the
     guys in my classes, and a couple of my professors, they look at me sometimes like they want to fuck me over the desk in front of the class.  And I get
     guys yelling things at me sometimes when I'm in the city.  I'm sure that's all going to get old eventually.  And I know it sucks for girls that had
-    to deal with it their whole life.  But it's new and kind of exciting me for me so far." 
+    to deal with it their whole life.  But it's still new and kind of exciting me for me so far." 
     <br><br>
     "So, I guess you haven't had to deal with your period yet," you reply.
     <<if $MenstrualWeek == 4>>
@@ -1516,8 +1524,13 @@
     <<else>>
       You think for a minute and confirm that it's been about a month since she changed.
     <</if>>
-    It could just be a little late, or even that she didn't have one this first month as a woman.  But after hearing about how much sex she's been
-    having, and knowing she's not on birth control, you wonder.
+    It could just be a little late, or even that she didn't have one this first month as a woman.
+    <<if $CampusMinistry>>
+      But if she's been having as much sex as you assume
+    <<else>>
+      But after hearing about how much sex
+    <</if>>
+    she's been having, and knowing she's not on birth control, you wonder.
     <br><br>
     "It might be nothing," you tell her.  But let's be sure.  You head across the street to the [[drug store|Part15BuddyPregnancyTest]] with her.
   <<else>>
@@ -1584,6 +1597,10 @@
     "I'll find out for you," you tell her.
   <</if>>
   "You aren't alone.  I'm here for you.  I'll be with you every step of the way."
+  <<if $CampusMinistry>>
+    <br><br>
+    You doubt Faith or Pastor Mark would approve, but you are committed to being here for Bailey, not pushing their beliefs on her.
+  <</if>>
 <</nobr>>
 <<if $tempTestCount > 1 and $PregnancyWeek>>
   <<achievement>>pregnant<</achievement>>
@@ -1639,14 +1656,14 @@
 <<nobr>>
   They gave
   <<if $tempPlayerAbortion>>
-    you both the first pill at the clinic.  And sent you each home with the second to take today.
+    you both the first pill at the clinic.  They sent you each home with the second to take today.
   <<else>>
-    Bailey the first pill at the clinic.  And sent her home with the second to take today.
+    Bailey the first pill at the clinic.  They sent her home with the second to take today.
   <</if>>
   <<if $PlayerAbortion>>
     You knew from experience
   <<else>>
-    They warned you
+    They warned you both
   <</if>>
   that it was going to be very unpleasant the next day, after the second pill kicked in.  So you spend the
   night at Bailey's so you
@@ -1731,18 +1748,114 @@
 <</nobr>>
 
 ::Part15BuddyPart2Clean
-todo clean (assumed bi)
-todo [[Part15BuddyPeriodTalk]]
+<<nobr>>
+  <<if $CampusMinistry>>
+    "I've been having a lot of fun, but I can't promise that I've been staying out of trouble," she answers with a grin.
+    You decide not to press for details.
+    <br><br>
+    She more or less confirms what you suspected she meant when she adds, "I can confirm that I do like guys now, probably
+    more than girls.  But I guess since I'm a woman now, that makes sense."  You nod, imagining her making some man
+    a very happy husband someday.
+    <br><br>
+    You try not to, but your mind can't help but wander to thoughts of exactly how she confirmed her new
+    [[preference for men|Part15BuddyPart2Clean2Ministry]].
+  <<else>>
+    "I've been having a lot of fun," she confirms.  "I was right about liking guys now.  Though I also still like girls too.
+    But, I think I like guys more.  Especially since it's easier to find one that is eager to tie me up and
+    [[use me the way I like|Part15BuddyPart2Clean2]].
+  <</if>>
+<</nobr>>
+
+::Part15BuddyPart2Clean2Ministry
+<<nobr>>
+  <h1>Imagining Bailey's fun</h1>
+  <video src="Part15/Buddy35.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  As Bailey steps away to the restroom, your mind starts to wander and you think of exaclty how Bailey might have "confirmed" she prefers men now.
+  You imagine her with two guys, having sex with both of them at the same time!  Your can practically hear their moans as you picture it.
+<</nobr>>
+
+<<nobr>>
+  One of them cums inside her, and it makes you so happy as you instictively know you are soon to be pregnant.  The other one
+  cums on your face making you look like a slut.  That feels so right too.
+<</nobr>>
+
+<<nobr>>
+  After the action stops for a moment in your fantasy, you realize the two guys in it are nothing like the ones that were hitting on
+  Bailey at the mall.  You also realize that somewhere in your fantasy it stopped being Bailey they were with, and became you.
+<</nobr>>
+
+<<nobr>>
+  As Bailey returns to the table, you push the fantasy out of your mind.  Though one part of the fantasy reminds you of something important to ask about.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BuddyPeriodTalk]]>>
+<</nobr>>
+
+::Part15BuddyPart2Clean2
+<<nobr>>
+  <h1>Listening to Bailey</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Buddy36.webm" autoplay loop muted height="550"></video>
+  </div>
+  Bailey starts talking about how she loves it when a guy ties her up, or even just holds her down, and then fucks her.  "I love feeling like I'm just
+  his, to use however he wants, with no control," she says with a big smile.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BuddyProgramReview]]>>
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BuddyPeriodTalk]]>>
+<</nobr>>
+
+
+::Part15BuddyProgramReview
+<<nobr>>
+  Bailey is clearly excited talking about some of the guys she has been with.  You guess she doesn't feel comfortable talking about it
+  with any of her friends from before her change.  She seems thrilled to have someone to talk to that understands what it's like for her.
+  <<if setup.sexVaginalCount() == 0>>
+    Well, some of what it's like at least.
+  <</if>>
+  You'll have to send some feedback to the X-Change people about what a good idea this 'Buddy' program was.
+<</nobr>>
 
 ::Part15BuddyPart2Bi
-todo vibrator (assumed bi)
-todo [[Part15BuddyPart2Bi2]]
+<<nobr>>
+  "I've been having a lot of fun.  And not just with the toys," she answers with a smile.  "It turns out you were right,
+  well partly right, about X-Change changing what I like.  I've figured out that I still like women, but I also really
+  like guys too."
+<</nobr>>
+
+<<nobr>>
+  "I did get the second dildo like you told me to," she confirms.  "But do you know what is even more fun than using two dildos at once?"
+  You smile, knowing what her answer is going to be.  "Having [[two guys use me|Part15BuddyPart2Bi2]] at once, of course!"
+<</nobr>>
 
 ::Part15BuddyPart2Bi2
-<img src="Part15/Buddy34.jpg" hspace="10" vspace="10" height="600" align="left">
-TODO Part15BuddyPart2Bi2
+<<nobr>>
+  <h1>Listening to Bailey</h1>
+  <img src="Part15/Buddy34.jpg" hspace="10" vspace="10" height="650" align="left">
+  You listen as Bailey tells you about several times where she's been with two guys.  She says she loves the feeling of both of them inside
+  her at once.  "I really loved it when they had me wear a ball gag.", she says excitedly.  "It made me feel like I was just a toy to be used for
+  their pleasure, that I had no control.  It was great."
+<</nobr>>
 
-<<include [[Part15BuddyPeriodTalk]]>>
+<<nobr>>
+  She sips her coffee and continues, "It was even better when I found out there were also gags that would hold my mouth open, so they could
+  use me in other ways too."
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BuddyProgramReview]]>>
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BuddyPeriodTalk]]>>
+<</nobr>>
 
 ::Part15BuddyPart2Straight
 <<nobr>>
@@ -1768,12 +1881,7 @@ TODO Part15BuddyPart2Bi2
   <video src="Part15/Buddy32.webm" autoplay loop muted height="500"></video>
 <</nobr>>
 <<nobr>>
-  Bailey's clearly excited talking about some of the guys she has been with.  You guess she doesn't feel comfortable talking about it
-  with any of her friends from before her change.  She seems thrilled to have someone to talk to that understands what it's like for her.
-  <<if setup.sexVaginalCount() == 0>>
-    Well, some of what it's like at least.
-  <</if>>
-  You'll have to send some feedback to the X-Change people about what a good idea this 'Buddy' program was.
+  <<include [[Part15BuddyProgramReview]]>>
 <</nobr>>
 
 <<nobr>>
@@ -1782,13 +1890,156 @@ TODO Part15BuddyPart2Bi2
 
 ::Part15BuddyPart2Lesbian
 <<nobr>>
+  "I've been having a lot of fun!" Bailey exclaims.
   <<if $BuddyDating>>
-     todo she is dating someone (lesbian)
-  <<elseif $BuddyThreesomeGirlfriend>>
-    todo she hooked up with you and your girlfried (Lesbian)
+    "$BuddyDating is amazing!  Thank you so much, I probably never would have met her if it weren't for you."
   <<else>>
-    todo hooked up with her otherwise (Lesbian)
+    <<set $BuddyDating to "Kelsey">>
+    You were right about my preferences being more flexible after the X-Change.  I've experimented a bit with guys, and it was actually fun.
+    There's something about big strong hands holding your wrists down as he...," she stops and pauses for a second.
+    <br><br>
+    "But I think my experimentation with boys is over now," she continues. "I've met the perfect woman.  Her name is $BuddyDating and she's amazing!"
   <</if>>
+<</nobr>>
+
+<<nobr>>
+  "I'd hoped I'd meet someone when I went off to college," she says.  "But I never dreamed It'd happen so quickly, or that the woman I'd meet
+  would be as perfect as she is."
+<</nobr>>
+
+<<nobr>>
+  After going on about their relationship, she starts talking about some of the more [[intimate details|Part15BuddyPart2Girlfriend]].
+<</nobr>>
+
+::Part15BuddyPart2Girlfriend
+<<nobr>>
+  <h1>Listening to Bailey</h1>
+  <img src="Part15/Buddy37.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You listen as Bailey talks about how she loves it when $BuddyDating ties her up and has her way with her.  "It's just such a thrill
+  to be helpless and at her mercy," she explains excitedly.
+<</nobr>>
+
+<<nobr>>
+  "Of course, it's not all about the sex," she adds after going on and on about how great the sex is.  "It's wonderful just spending time with
+  her too."
+<</nobr>>
+
+<<nobr>>
+  You realize it's been about a month since she changed.
+  <<if $BuddyDating == "Kelsey">>
+    Obviously she's probably safe in the future.  But her talk of the guys she was with before meeting $BuddyDating,
+    and knowing she's not on birth control make you wonder.
+  <<else>>
+    She has $BuddyDating to help her, but you feel like as her 'buddy' you should at least check to see how she is coping with one of
+    less fun parts of being a woman.
+  <</if>>
+  <<include [[Part15BuddyPeriodTalk]]>>
+<</nobr>>
+
+::Part15BuddyPart2Hookup
+<<nobr>>
+  "I have been having fun," she says before pausing.  "But, not as much fun as that first night with you." She looks down at her coffee,
+  slightly embarrassed, before continuing.
+<</nobr>>
+
+<<nobr>>
+  "I loved being helpless, and under your control," she explains.  "I thought that was all it was, and I've experiment with a few other girls,
+  and several guys too.  But it wasn't the same.  The sex was fun with them, of course, especially the ones that liked tying me up as much
+  as I loved it.  But there was never that same connection I felt when I was with you."
+<</nobr>>
+
+<<nobr>>
+  She glances down at her coffee again, and then looks up to see how [[you are reacting|Part15BuddyPart2Dating]] to her confession.
+<</nobr>>
+
+::Part15BuddyPart2Dating
+<<nobr>>
+	<h1>With Bailey</h1>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  You tell Bailey you feel the same way.  You'd loved your night together.  You hadn't said anything then because you wanted her to find her own way,
+  to discover what she really wanted now that she was a woman.  But you let her know how happy you are that she shares your feelings for her.
+<</nobr>>
+
+<<nobr>>
+  Having learned you both have been thinking about each other for the past month, you quickly finish your drinks so you can head
+  back to Bailey's room to be alone.
+<</nobr>>
+<video src="Part15/Buddy29.mp4" autoplay loop muted height="500"></video>
+<<nobr>>
+  Bailey eagerly lets you tie her to her bed.  You know part of her excitment is just being bound and helpless.  But the look in her eyes lets you
+  know how happy she is that it's you that is controlling her.  As you start making out with her, her hips rock towards you.
+  Her body is eager for your touch, but that will wait a bit longer.
+<</nobr>>
+
+<<nobr>>
+  When your hands do find their way to her body, it's to rub baby oil over her skin, massaging every inch of her body.  All except for the few
+  inches that most ache for your touch.
+<</nobr>>
+
+<<nobr>>
+  As you see her body writhe, desperate for an orgasm, and see her eyes look up at you with need, you know she'd do anything for you right now.  She'd
+  agree to anything, promise anything, do anything, for an orgasm.  Seeing that look in her eyes, and realizing the power you have over her,
+  thrills you 
+  <<if $PlayerSideEffectDominant>>
+    too.
+  <<elseif $PlayerSideEffectSubmissive>>
+    too - much more than you thought it would.
+  <<else>>
+    too - more than you thought it would.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You kiss her as your hand finally moves between her legs.  She eagerly and passionately kisses back, moaning deeply as your fingers slide into her.
+  As you slowly but steadily help her build towards an orgasm, she continues to look at you with the same look of utter desperation.  She knows
+  you could decide to stop at any moment.  You aren't going to though. 
+<</nobr>>
+
+<<nobr>>
+  You smile at the look of joy and contentment on her face after her orgasm.  
+  <<if true or $PlayerChastityBelt>>
+    "I hope you weren't expecting me to stop after just one," you tell her.  This belt may be stopping me getting an orgasm, but I'm going to make sure
+    you come enough for both of us.  You're going to orgasm until you beg me to stop.  Who knows, maybe I even will."
+    <br><br>
+    You leave her tied as your begin kissing her feet and then slowly working your way up her leg.  When you gently suck her clit in between your
+    lips, she throws her head back as she moans again.
+  <<else>>
+    You smile and tell her, "Now it's my turn."  Then you move over
+    her with her still tied to the bed.  You moan softly as her tongue finds your clit.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+    You've lost track of how much time has passed when the two of you are [[too exhausted to continue|Part15BuddyPart2Dating2]].
+<</nobr>>
+
+::Part15BuddyPart2Dating2
+<<nobr>>
+	<h1>Talking with Bailey</h1>
+  <img src="Part11/Veronica2.jpg" hspace="10" vspace="10" height="500">
+  <<set setup.startDating("Bailey")>>
+<</nobr>>
+<<nobr>>
+  As you lie in bed together, you and Bailey talk about how how attracted you were to each other from the moment you met.  You both agree that
+  you don't want to be friends, or 'buddies', but something more.
+<</nobr>>
+
+<<nobr>>
+  After the two of you makeout for a while, you stop and tell her, "I know you're bi, so if you want, we can bring the occasional guy home with us.
+  I know it'll be fun for both of us, and I'm sure it'll make his year."
+  <<if $DailyBJMinimum>>
+    In fact, with my belt, I'm required to suck at least <<if $DailyBJMinimum > 1>>$DailyBJMinimum cocks<<else>>one cock<</if>> a day, or it
+    punishes me.  It'll be much more fun if we do it together
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You're sure that whatever the [[next week|Part15Week]] brings, it will be less fun than tonight was.
 <</nobr>>
 
 ::Part15BuddyPart2Chastity
@@ -1852,7 +2103,7 @@ TODO Part15BuddyPart2Bi2
 <<nobr>>
   Bailey eagerly lets you tie her to her bed.  You know part of her excitment is the hope for an orgasm soon.  But you can also se she's loving just
   the feeling of being tied and helpless.  Once she's secured, you remove her belt.  As you start making out with her, her hips rock towards you.
-  Her body is eager for you touch, but that will wait a bit longer.
+  Her body is eager for your touch, but that will wait a bit longer.
 <</nobr>>
 
 <<nobr>>
@@ -1892,7 +2143,7 @@ TODO Part15BuddyPart2Bi2
   <<set setup.startDating("Bailey")>>
 <</nobr>>
 <<nobr>>
-  "Thank you," Bailey says to you once she finally speaks.  "That was amazing.  Are all orgasms that good as woman?"
+  "Thank you," Bailey says to you once she finally speaks.  "That was amazing.  Are all orgasms that good as a woman?"
 <</nobr>>
 
 <<nobr>>
