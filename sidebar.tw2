@@ -893,6 +893,16 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       You are in a relationship with Dan.
     <</if>>
 
+    <<if $Spouse == 'Bailey'>>
+      You are married to Bailey.
+    <<elseif $Engaged == 'Bailey'>>
+      You are engaged to Bailey. You live with him.
+    <<elseif setup.areDating('Bailey') and $Roommate == 'Bailey'>>
+      You are in a relationship with Bailey. You live with her.
+    <<elseif setup.areDating('Bailey')>>
+      You are in a relationship with Bailey.
+    <</if>>
+
     <<if $Spouse == 'Mike'>>
       You are married to your master, Mike.
     <<elseif $Engaged == 'Mike'>>

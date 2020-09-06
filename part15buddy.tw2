@@ -1,0 +1,2054 @@
+::Part15Buddy
+<<nobr>>
+	<h1>Meeting with your 'Buddy'</h1>
+  This year, for the incoming freshmen, they are again assigning natural-born women as mentors for the newly converted, to help them transition
+  into their new bodies and new lives.
+<</nobr>>
+
+<<nobr>>
+  But they've figured out that not every challenge a newly converted woman will face will be something her natural-born mentor will have any experience
+  with.  So this year they are also adding a new program where the previous year's convertees are paired off with a freshman convertee to help give her
+  first-hand advice.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Buddy1.jpg" hspace="10" vspace="10" height="450" align="left">
+  You can tell your buddy, Bailey, is a bit shy, and very naive and suggestible.  Bailey tells you she signed up for the Student X-Change Program
+  because she wanted to know what it was like to be a woman, so she can be a better husband someday after she graduates and changes back.  You
+  accept that that may be one of her goals, but you also know from experience she must at some level wanted to be a woman.  Maybe permanently,
+  maybe just for a while, but you aren't going to force her to admit that to you or to herself.
+<</nobr>>
+
+<<nobr>>
+  She gets money from her parents every week, and has her dad's credit card for expenses.  So you don't have to warn her about most of the jobs
+  around here as she won't be needing one.  So
+  <<if $PlayerPregnant>>
+    given your current state, of course
+  <</if>>
+  the first topic you discuss with her is pregnancy.  You know if she really does want to change back after graduation, then she'll need to be careful.
+  "They did have one slide on that," she tells you, "but it didn't really apply to me, so I just marked 'no' on the birth control stuff."
+<</nobr>>
+
+<<nobr>>
+  When you press her on what she means when she said it didn't apply, she explains.  "I'm not planning on starting
+  a relationship right now, I want to focus on school.  And even if I were, I'm not going to be having sex with guys. I'm not gay. Not
+  that there's anything wrong with being gay.  I'm just not.  
+<</nobr>>
+
+<<nobr>>
+  You don't point out that she is a woman now, so what is gay and what is not gay have reversed.  You understand what she was trying to say.
+  But you also notice her checking out two cute guys that walk past, and also her face flushing when she notices them checking her out too.  She may
+  have been interested in women before, but the X-Change seems to have made her interests more varied now.
+<</nobr>>
+
+<<nobr>>
+  "And birth control pills have side-effects sometimes. Not the X-Change kind of side-effects of course.  But I already have two of those X-Change
+  side-effects, so I'd rather not add regular medicine side effects on top of it.  They used to give my sister horrible migraines until she switched
+  to something else,"  when you ask about her X-Change side-effects she explains.  "I had them make sure I got the kind of body I wanted.  And they  
+  did, I love the way I look now.  But they said I'd think more about sex than normal, which doesn't seem like a big deal to me.  I
+  mean it's probably still going to be less than I thought about it as a guy, right?"  You don't answer.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Buddy14.jpg" hspace="10" vspace="10" height="600" align="left">
+  "And they also said I'd be very passive... no 'submissive' was the word he used.  I was always kind of quiet, so I don't see how that's going to
+  be any different now."  Your mind can't help but picture Bailey naked, cuffed, and ready to submit.  With that side-effect, you expect she'd enjoy
+  that quite a bit no matter who it was controlling her.
+  <<if $CampusMinistry>>
+    You try to push the thought of her that way out of your head, but you can't help it.  Everytime you look at her now, you are imagining her
+    like that.
+  <</if>>
+<</nobr>>
+
+<<nobr>>  
+  You can tell she's not going to consider getting on the pill and you don't want to press it.  But otherwise she still seems open to your advice
+  on the subject of avoiding pregnancy.  Though you know she's probably not going to listen if you talk about condoms or pulling-out,
+  <<if $CampusMinistry>>
+    not just because you'd be embarrassed, but
+  <</if>>
+  because she still doesn't think that applies to her.  Maybe she's right.
+  <<if $CampusMinistry>>
+    And she's mentioned how she feels about religion, so you aren't even going to suggest talking to Mark or Faith.
+  <</if>>
+<</nobr>>
+
+<<nobr>>  
+  You aren't sure of what route you want to take now with her.
+  <<set $tempCantUnlock to $PlayerChastityBelt && (!$dating.length || $Keyholder != $dating[0])>>
+  <<if $CampusMinistry or setup.areDating('Andrew')>>
+  <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+    <<if !$tempCantUnlock and (setup.haveGirlfriend())>>
+      You can [[introduce her|Part15BuddyGirlfriend]] to $dating[0] or [[take her down to the lesbian bar|Part15BuddyBar]] so she can see
+      if she's right about still preferring women.
+    <<elseif !$tempCantUnlock and $dating.length == 0>>
+      You can [[take her down to the lesbian bar|Part15BuddyBar]] or [[take her to your room|Part15BuddyRoom]] so she can see if she's right
+      about still preferring women.
+    <<else>>
+      You can [[take her down to the lesbian bar|Part15BuddyBar]] so she can see if she's right about still preferring women.
+      <<if !$tempCantUnlock>>
+        <<if $dating.length > 0>>
+          Or you can let her meet $dating[0].  You're fairly confident [[all three of you will have a fun time|Part15BuddyFMF]], and she'll leave
+          knowing for sure whether she preferes men or women now.
+        <<elseif $fwb.length > 0 and $fwb[0] != "Kate">>
+          Or you can let her meet $fwb[0].  You're fairly confident [[all three of you will have a fun time|Part15BuddyFMF]], and she'll leave
+          knowing for sure whether she preferes men or women now.
+        <</if>>
+      <</if>>
+    <</if>>
+    <br><br>
+  <<elseif $tempCantUnlock>>
+  <<elseif setup.areDating('Aaron')>>
+  <<elseif setup.haveGirlfriend()>>
+    You can [[introduce her|Part15BuddyGirlfriend]] to $dating[0] so she can see if she's right about still liking women.
+    <br><br>
+  <<elseif setup.areDating('Peter') and $PlayerItemNerdKey>>
+    You could let her meet Peter to [[show her another way to avoid getting pregnant|Part15BuddyPeterChastity]] that they didn't cover in their slides.
+    <br><br>
+  <<elseif $dating.length > 0>>
+    You could let her meet $dating[0].  You're fairly confident [[all three of you will have a fun time|Part15BuddyFMF]], and she'll leave
+    knowing for sure whether she preferes men or women now.
+    <br><br>
+  <<elseif $fwb.length > 0 and $fwb[0] != "Kate">>
+    You could let her meet $fwb[0].  You're fairly confident [[all three of you will have a fun time|Part15BuddyFMF]], and she'll leave
+    knowing for sure whether she preferes men or women now.
+    <br><br>
+  <<else>>
+    You can [[take her to your room|Part15BuddyRoom]] so she can see if she's right about still liking women.  If you're going to find out
+    you were wrong, then you'd like to have fun while you do.
+    <br><br>
+  <</if>>
+
+  <<if !$CampusMinistry>>
+    If you play up the risks that if she gets drunk on campus, she might get taken advantage of, you might be able to talk her into
+    [[wearing a chastity belt|Part15BuddyChastity]] for her own protection.  With her submissive side effect, you doubt she'll be able to
+    resist the idea once she hears it.
+    <br><br>
+    You could explain how the first side effect she mentioned will make her horny all the time, and offer to take her
+    [[shopping for a good vibrator|Part15BuddyToy]], so she can make sure she can keep her needs in check.
+    <br><br>
+  <<elseif $PlayerChastityBelt and $Keyholder == "computer">>
+    It's too late for her to join the chastity belt testing, so you don't bother seeing if she'd be interested in that.
+  <</if>>
+
+  <<if $CampusMinistry>>
+    You could offer to help her make friends.  You know the guys that were checking her out earlier.  [[You could introduce her|Part15BuddyGuysMinistry]]
+    to them. Though, you do wonder if she might hit it off too well with them.  But you can't prevent her from meeting guys for four years, and
+    the two of them are nice enough.  Maybe it would be better for her to know right away if she is wrong about liking guys and should go get
+    on birth control or something.
+  <<else>>
+    You could offer to help her make friends.  You know the guys that were checking her out earlier.  [[You could introduce her|Part15BuddyGuys]]
+    to them. If you're right about her desires, then she'll have a fun night and wake up tomorrow a bit wiser.  And if you're wrong, she'll at least
+    have made two new friends.
+  <</if>>
+  <br><br>
+
+  Or, you could just drop the subject, and taker her [[shopping for clothes and makeup|Part15BuddyClothes]].
+  <<unset $tempCantUnlock>>
+<</nobr>>
+
+::Part15BuddyBar
+<<nobr>>
+	<h1>At the bar with Bailey</h1>
+  Bailey says she's still interested in girls, so you decide to put that to the test.  You know she'll end the night either being right, and having
+  a great time, or at least having learned something important about herself.  You take her down to the lesbian bar where you work.
+  <<set $BuddyBar to 1>>
+<</nobr>>
+
+<<nobr>>
+<img src="Part15/Buddy24.jpg" hspace="10" vspace="10" height="500" align="left">
+  She's there with you, so the doorwoman just waves her in.  Though to be honest, she would have done that anyway with a girl as cute as Bailey.  It's
+  really only the curious guys they are careful to card.  You catch the glances of a few regulars wonder as they try to figure out if this new girl
+  <<if $dating.length>>
+    means you and $dating[0] aren't together anymore, or whether she is just going to be part of a fun threesome tonight, or what.
+  <<else>>
+    is here as your date or as a friend.
+  <</if>>
+  But as soon as you introduce her around, and everyone realizes she's just your friend, the free drinks start getting sent Bailey's way.
+<</nobr>>
+
+<<nobr>>
+  You sense you are only go to be in the way now, so you decide to make your exit. "It looks like you are having a good time. I'm going to head home.
+  Just let the bartnder know if you need her to call a ride home for you later. Though, I'm expecting you'll be getting a ride somewhere else instead."
+  Her smile back confirms that is what she is hoping as well. "You can tell me everything [[when we meet up tomorrow|Part15BuddyBar2]]," you say as you
+  leave.
+<</nobr>>
+
+::Part15BuddyBar2
+<<nobr>>
+	<h1>Hearing about Bailey's Evening</h1>
+  "Thank you so much for taking me there.  That place was amazing!", Bailey begins.
+  <<set $BuddyLesbian to 1>>
+  <<set $BuddyDating to "Ava">>
+<</nobr>>
+
+<<nobr>>
+  "I thought you would enjoy it.  I hope you didn't wake up with a massive hangover this morning," you reply.
+<</nobr>>
+
+<<nobr>>
+  "Actually I was only there about another hour after you left.  Then I left too... with Ava."  Bailey smiles remembering her evening before
+  continuing.
+<</nobr>>
+
+<video src="Part15/Buddy2.webm" autoplay loop muted height="500"></video>
+
+<<nobr>>
+  Bailey goes on telling how with all the women hiting on her, one girl there in particular caught her eye.  A cute sophmore name Ava.  You'd seen
+  her in the bar a few times before last year.
+<</nobr>>
+
+<<nobr>>
+  "When we got back to her place, it was amazing," Bailey's face flushes a bit as she recounts her story.  "She knew my body so well and had me screaming
+  with orgasm after orgasm all night.  And she was really understanding that I wasn't as good... as good at pleasuring her.  She said she plans on letting
+  me get lots of practice learning.  We are meeting up for a second date tomorrow."
+<</nobr>>
+
+<<nobr>>
+  You wonder if Bailey might be moving too fast with Ava, but then you figure that's natural too.  They are both adults.  Barely, but still they can
+  make their own decisions.  You still suspect Bailey's at least a bit bi, but if she's going to be in a relationship with a woman, at least you won't
+  have to worry about her getting pregnant.
+<</nobr>>
+
+<<nobr>>
+  "That sounds wonderful," you say.  "Let me know how it goes when I see you [[later in the week|Part15Week]]"
+<</nobr>>
+
+::Part15BuddyGirlfriend
+<<nobr>>
+	<h1>Introducing Bailey to $dating[0]</h1>
+  <<set $BuddySex to 1>>
+  <<set $BuddyThreesomeGirlfriend to 1>>
+  <<set $BuddyLesbian to 1>>
+  <<if setup.areDating('Kate')>>
+    <video src="Part15/Buddy4.webm" autoplay loop muted height="500"></video>
+  <<else>>
+    <video src="Part15/Buddy3.webm" autoplay loop muted height="500"></video>
+  <</if>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'female', name: $dating[0]})>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'female', name: $dating[0]})>>
+<</nobr>>
+<<nobr>>
+  While Bailey is using the restroom, you take a moment to give $dating[0] a call about Bailey, and she's as excited about your idea as you are.
+  When Bailey returns, you tell her that since she thinks she is a lesbian now, you'd like to introduce her to your
+  <<if $Spouse>>wife $Spouse<<elseif $Engaged>>fiancée $Engaged<<else>>girlfriend $dating[0]<</if>>, so she can see what a real lesbian couple is like.
+<</nobr>>
+
+<<nobr>>
+  Of course, you and $dating[0] have more than just talking to her in mind.
+  <<if $PlayerChastityBelt>>$dating[0] even unlocks you for the evening so you can participate fully.<</if>>
+  You want to know for sure if she really does still like women after her
+  change, and you know what the most fun way to figure that out is.  It doesn't take long before your talk in the living room makes a move to the bedroom.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Kate')>>
+    Kate has already picked up on Bailey's submissive side, and orders her to her knees.  It's only after Bailey has given
+    <<if $AcademicProbationDenial>>
+      Kate serveral orgasms
+    <<else>>
+      both you and Kate each an orgasm
+    <</if>>
+    that Kate decides it's time for Bailey's first in her new body.  It's definitely not her last that evening though.
+  <<else>>
+    You and Veronica both focus on Bailey's pleasure.  You don't want to turn her into a pillow princess though, so after several orgasms for her, it's
+    her turn to focus on
+    <<if $AcademicProbationDenial>>
+      Veronica.  She didn't have much experience in her old body either.  But Veronica is patient and lets
+    <<else>>
+      you and Veronica.  She didn't have much experience in her old body either.  But you and Veronica are patient and let
+    <</if>>            
+    her take as long as she needs, and as many times as she needs, to learn to give pleasure as well..
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  By the time the night is over, Bailey has learned several things.  She knows much more about pleasuring a woman than she did before.  She's learned
+  just how much pleasure her own body can provide her.  And, she's confirmed that she does still prefer women.  Though, you still think she might be a
+  bit bi.
+<</nobr>>
+
+<<nobr>>
+  When she leaves the next morning, she thanks you for a fun evening.  You let her know about the lesbian bar in town, so she can check it
+  out on her own later.  "Let me know if you do when we meet up [[later in the week|Part15Week]]," you tell her.
+<</nobr>>
+
+::Part15BuddyPeterChastity
+<<nobr>>
+	<h1>Introducing Bailey to Peter</h1>
+  <img src="Part15/Buddy27.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $BuddyPeterChastity to 1>>
+<</nobr>>
+<<nobr>>
+  Bailey is curious when you tell her about Peter's chastity cage and is excited to see it.  She laughs when she finally sees his cock inside it's tiny
+  prison.  Once she is done laughing at his inability to even get hard, you give her a choice.
+<</nobr>>
+
+<<nobr>>
+  "Either way you get off," you tell Bailey.  But we can either
+  <<if $PlayerChastityBelt and $Keyholder != "Peter">>
+    leave Peter in his cage and make him watch or [[we can unlock him|Part15BuddyPeterChastity2]] and let him be the one to give you
+    your first orgasm.  Which would you prefer?"  She chooses Peter, since you have the key to his cage, unlock your belt which will be staying on tonight.
+  <<else>>
+    [[leave Peter in his cage and make him watch|Part15BuddyRoom]] or [[we can unlock him|Part15BuddyPeterChastity2]] and let him be the one to give you
+    your first orgasm.  Which would you prefer?"
+    <<if $PlayerChastityBelt and $Keyholder == "Peter">>
+      You and Peter both agree that whomever she chooses gets unlocked, but not their other.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part15BuddyPeterChastity2
+<<nobr>>
+	<h1>Watching Bailey and Peter</h1>
+  <video src="Part15/Buddy17.webm" autoplay loop muted height="500"></video>
+  <<set $BuddyStraight to 1>>
+<</nobr>>
+<<nobr>>
+  You unlock Peter's cock, but he's not allowed to touch it, or to cum as he gives Bailey her first orgasm in her new body.  "I know it's been a while
+  since your last orgasm," you warn him.  "But if you cum before your reward, then that pitiful orgasm will be your reward."
+<</nobr>>
+
+<<nobr>>
+  His cock is happy to finally be free and allowed to get hard.  But your eyes are on Bailey, not Peter.
+  <<if $PlayerChastityBelt>>
+    As you watch her moan has his tongue circles her clit and probes inside her, you wish you weren't in this chastity belt right now.  You'd climb on top 
+    of Peter and ride his cock until all three of you came.
+  <<else>>
+    You can't help but play with your clit as you watch her grind into his face as her body experiences pleasures she'd only fantasized about.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When Bailey cums for the first time, Peter's face is covered with is juices.  You glace down at his twitching cock, wondering if he's going to cum,
+  and know how much he loves it.
+<</nobr>>
+
+<<nobr>>
+  Once she's ready, you tell Peter it's time [[for his reward|Part15BuddyPeterChastity3]].
+<</nobr>>
+
+::Part15BuddyPeterChastity3
+<<nobr>>
+	<h1>Rewarding Peter</h1>
+  <img src="Part15/Buddy18.gif" hspace="10" vspace="10" height="450">
+  <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+<</nobr>>
+<<nobr>>
+  With Peter's hands tied to the headboard you guide Bailey along with teasing his cock.  You make sure to go slow and Peter is in heaven with two tongues
+  on his long-caged cock.
+<</nobr>>
+
+<<nobr>>
+  You pause to whisper in Bailey's ear, so Peter can't hear.  "I'm going to stop when he get's close to cumming.  You can stop too and see what an
+  edge or maybe even a ruined orgasm look like.  Or you can do as you want."
+<</nobr>>
+
+<<nobr>>
+  When you can see Peter getting close to an orgasm, you pull away and wait to see what Bailey does.  As soon as you move away, she stops with the
+  teasing licks and instead takes his cock into her mouth.  She goes down on it as far as she can and then back up again.
+<</nobr>>
+
+<<nobr>>
+  She doesn't suck his cock for very long as he was already near the edge.  A moment later he groans as he cums.  She eagerly keeps going until the
+  headboard shakes as he struggles to get away from the overstimulation.  "Ok, that's enough," you tell her after a bit.
+<</nobr>>
+
+<<nobr>>
+  He squirms a bit more as her lips slide off his cock with a small 'pop' sound.  She swallows the cum he'd given her and smiles at him.  "You gave me
+  so much pleasure, I didn't want to deny you," she tells him.
+<</nobr>>
+
+<<nobr>>
+  Once Peter is caged and untied, you talk with Bailey some more.  "Ok. You were right. I do like guys now," Bailey confesses.  "But I don't think
+  I could keep one caged like that.  Even today, seeing his cock as he ate me out, I would have climbed on top it right then if I had thought you'd
+  be ok with it."
+<</nobr>>
+
+<<nobr>>
+  "I wouldn't have minded the treat for Peter," you tell her.  "But I would have been worried for you.  On top of the disappointment you would have had when he
+  came right after he was inside you, he also could have gotten you pregnant.  So it's probably best that you didn't.
+<</nobr>>
+
+<<nobr>>
+  "But you shouldn't have any problem finding an uncaged guy.  They last longer inside you if you let them cum more often," you joke. "But if you want to be
+  able to change back to your old body in four years, make sure you have them wear a condom.  Actually, I have a box right here you can have.
+  <<if $PlayerPregnant>>
+    It's not like I have any need for them for quite a while anyway.
+  <<elseif $PlayerProtectionTry>>
+    I'm actually trying to get pregnant.
+  <<elseif $PlayerProtectionPill or $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
+    I'm on birth control, so I don't really need them.
+  <<elseif $PlayerProtectionCondoms>>
+    I'll certainly have time to pick up some more before Peter is unlocked again.
+  <<else>>
+    We don't usually use them.  And it's not like I plan on unlocking Peter any time soon anyway.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Hopefully you'll get a chance to use some of them by the time I see you [[later in the week|Part15Week]].  I'll be expecting lots of details
+  when we meet."
+<</nobr>>
+<<achievement>>threesome:FMF<</achievement>>
+
+::Part15BuddyFMF
+<<nobr>>
+  <<if $dating.length>>
+    <<set $tempGuy to $dating[0]>>
+  <<else>>
+    <<set $tempGuy to $fwb[0]>>
+  <</if>>
+	<h1>Introducing Bailey to $tempGuy</h1>
+  <<set $BuddySex to 1>>
+  <<set $BuddyStraight to 1>>
+  <<set $BuddyThreesomeGuy to $tempGuy>>
+  <video src="Part15/Buddy15.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  You take Bailey to meet $tempGuy. He is
+  <<if setup.areDating('Barry')>>
+    knows you are helping her this year, but doesn't much care to get to know her.
+    <br><br>
+    His interest level take a huge leap up when you tell him, "Bailey just got this body.  I told her she looks beautiful, but she was wanting another
+    opinion, specifically a guy's opinion.  What do you think?"  Bailey glances over at you because she didn't tell you anything like that, but she doesn't
+    say anything. $tempGuy puts down his phone and smiles.
+  <<elseif setup.areDating($tempGuy)>>
+    glad to be able to meet her, since he knows you'll be spending a lot of time this year as you help her.  But you can tell his mind is
+    somewhere else, probably thinking about the start of the school year.
+    <br><br>
+    His interest level take a huge leap up when you tell him, "Bailey just got this body.  I told her she looks beautiful, but she was wanting another
+    opinion, specifically a guy's opinion.  What do you think?"  Bailey glances over at you because she didn't tell you anything like that, but she doesn't
+    say anything. $tempGuy puts down his phone and smiles.
+  <<else>>
+    always glad to see you, and is even more happy to see that you've brought a friend this time.
+    <br><br>
+    You tell him, "Bailey just got this body.  I told her she looks beautiful, but she was wanting another
+    opinion, specifically a guy's opinion.  What do you think?"  Bailey glances over at you because she didn't tell you anything like that, but she doesn't
+    say anything. $tempGuy just smiles.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He says, "Hmmm, looks good so far.  But I think I'd need to see more to say for sure."  Bailey slowly starts to
+  undress.  After a moment, $tempGuy adds, "And I'll need someone to compare her to."
+  <<if $PlayerChastityBelt>>
+    After he unlocks your belt, you start to undress too.
+    <<if $BoyfriendStrictChastity>>
+      It seems he's happy enough with your surprise to today that he's not going to enforce that three week minimum wait after all.
+    <</if>>
+  <<else>>
+    You start to undress too.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When she's down to her bra an panties, Bailey stops.  You start to kiss her.  As you do, you reach around and undo her bra.  She quickly does likewise
+  on yours.  "Well, you both look amazing so far," $tempGuy says.
+  <<if $PregnancyWeek > 12 || $BodyType == 'Plus' || $BodyType == 'Fit'>>
+    Your bodies are quiet different, of course.  One a classic beauty, the other
+    <<if $PregnancyWeek > 12>>
+      glowing from the new life growing inside her.
+    <<elseif $BodyType == 'Plus'>>
+      a rubenesque angel, with curves in all the right places.
+    <<else>>
+      tight, firm, and ready to pounce.
+    <</if>>
+    But both are so beautiful, it's difficult to say which is more beautiful.
+  <<else>>
+    But it's difficult to say which is more beautiful.  
+  <</if>>
+  I think I'll need another angle to help me judge," he jestures 
+<</nobr>>
+
+<<nobr>>
+  "Yes, sir," you say as you start to move toward the sofa.  Bailey quickly answers with her own "Yes, sir," as she does the same.  You both
+  [[wait with your asses presented|Part15BuddyFMF2]] for $tempGuy's inspection.  You don't have to wait for long.
+<</nobr>>
+
+::Part15BuddyFMF2
+<<nobr>>
+	<h1>With Bailey and $tempGuy</h1>
+  <<set setup.addSex({sex: 'male', name: $tempGuy})>>
+  <video src="Part15/Buddy16.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  Bailey is looking out the window as $tempGuy's firm hand strokes her ass,
+  <<if $BoyfriendStrictChastity or setup.areDating('Barry')>>
+    gives it a good swat,
+  <</if>>
+  and then slowly pulls down her panties.  You can tell from her breathing that she is probably as wet as you are right now.
+<</nobr>>
+
+<<nobr>>
+  Looking away at first may have let Bailey believe she wasn't interested in guys for a few seconds longer, but you know as soon as
+  $tempGuy's tongue slides between her lips for the first time, she has realized she was mistaken.  A few moments later when his tongue plunges
+  into her newly created ass, you doubt she even remembers why she'd thought that in the first place.
+<</nobr>>
+
+<<nobr>>
+  After a while $tempGuy turns his attention to you.  You can hear the small whimper from Bailey when his tongue leaves her.  After you enjoy
+  $tempGuy's tongue a bit, you lean over slightly and, just loud enough that $tempGuy can hear too, tell Bailey, "If you want him to continue
+  with you, you'll need [[to give him something in return|Part15BuddyFMF3]]."
+<</nobr>>
+
+::Part15BuddyFMF3
+<<nobr>>
+	<h1>With Bailey and $tempGuy</h1>
+  <video src="Part15/Buddy19.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  $tempGuy stands as Bailey drops to her knees.  She's a quick learner as she starts to suck his cock.  You wonder if she's fantasized about
+  what giving a blowjob would be like before.  You expect she probably has many times, probably long before she learned about the Student X-Change
+  Program.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectOral>>
+    If she's anything like you, she would probably love to keep going until his cum filled her mouth.
+  <<else>>
+    She is clearly enjoying being on her knees, doing as she was told.  Even though you know she aches to feel him inside her, she'd probably
+    keep going if he told her to.
+  <</if>>
+  But $tempGuy isn't going to pass up the chance to be the first to go where no man has been before.
+  <<if setup.firstTimeWith() == $tempGuy>>
+    Not after how much he enjoyed being your first.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When he tells her to [[move to the bed|Part15BuddyFMF4]] she eagerly complies and answers with "Yes, sir" again.
+<</nobr>>
+
+::Part15BuddyFMF4
+<<nobr>>
+	<h1>With Bailey and $tempGuy</h1>
+  <video src="Part15/Buddy20.mp4" autoplay loop muted height="500"></video>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'male', name: $tempGuy, vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+<</nobr>>
+<<nobr>>
+  You can see the look in Bailey's eyes as $tempGuy's cock slides into her.  And you can see the way she looks up at him as he start to fuck her.
+  There was never a chance she wasn't going to end up in this position sometime this year.  But it's much better it is with someone
+  <<if setup.areDating('Barry')>>mostly<</if>> safe like $tempGuy.  And with you there to watch.
+<</nobr>>
+
+<<nobr>>
+  You know when $tempGuy is getting close, so you ask Bailey.  "He's about to cum inside you.  Do you want him to keep going?"  You can tell from
+  the desperate need in her eyes what her answer is going to be.
+<</nobr>>
+
+<<nobr>>
+  "Yes! Cum inside me.  Don't stop!  Please don't stop," she begs.  You warn her if she gets pregnant she won't ever change back to her old body.  Again
+  You know what her answer will be. "Fill me with your cum. I don't care about my old body, I just need you inside me!" Bailey pleads with him not to stop.
+<</nobr>>
+
+<<nobr>>
+  She's made it clear to $tempGuy what she wants, but you look up at him and gently shake your head 'No', letting him know not to listen to her
+  and to pull out instead.  You don't know what part of it is natural hormones or something and what part is X-Change, but you know from experience
+  she's not thinking clearly right now.  Thankfully you are thinking a bit clearer than her, so you can signal to $tempGuy, but let Bailey enjoy
+  the moment.
+<</nobr>>
+
+<<nobr>>
+  <<set $tempCum to either(0,1,2,3)>>
+  <<set $tempCumInside to ($tempGuy == 'Barry') or ($tempCum == 0) or ($tempCum < 2 and $tempGuy == 'Peter')>>
+  <<if $tempCumInside>>
+    <img src="Part15/Buddy22.jpg" hspace="10" vspace="10" height="450" align="right">
+    <<if $tempGuy == 'Barry'>>
+      Barry decides to give her what she's begging for, and to ignore you.  You expect she feels too good for him to want to pull out now.
+      He keeps going until he cums inside her.
+    <<elseif $tempGuy == 'Peter'>>
+      But she feels too good for Peter.  Before he realizes what you are trying to signal he's already came inside her.
+    <<else>>
+      But $tempGuy doesn't notice you signalling him.  Either that or he decided to follow her instructions instead of yours, because soon
+      he is cumming inside her.
+    <</if>>
+    <br><br>
+    As he does, it pushes her over the top and she cries out with her first orgasm. "Oh yes! Cum inside me!"  He thrusts a few more times.  You
+    imagine what it feels like for her, in the throes of her first orgasm as $tempGuy's cock pulses inside her giving her all its cum.
+    <<if either(0,1,2) == 0>>
+      <<set $BuddyPregnant to $tempGuy>>
+    <</if>>
+    <br><br>
+    She's still enjoying the bliss of her orgasm and doesn't realize the implications of what just happened.  You decide to let her enjoy the
+    moment as long as she can before she starts to focus on the possible consequences.
+    <br><br>
+    You kneel and begin to clean the cum that's leaked out of her.  You love the familiar taste of $tempGuy's cum mixed with the new taste of
+    her.  Soon, with your tongue circling her clit she's enjoying her second orgasm as she holds your head in place afraid you'll stop too
+    soon.
+  <<else>>
+    <img src="Part15/Buddy21.gif" hspace="10" vspace="10" height="450" align="right">
+    You can see the reluctance in $tempGuy's eyes.  Both Bailey's begging and his own body are crying out for him to keep going.  But he pulls out
+    and instead covers her stomach with his cum.  Bailey lets out a disappointed whimper, having needed just a little more before she could cum.
+    <br><br>
+    You kneel between her legs.  It doesn't take long for your tongue to finish the job, brining Bailey to her first orgasm.  You then lick
+    clean the cum $tempGuy left. Some of it is still in your mouth as you crawl up to kiss Baily, sharing the cum with her as you kiss.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  With her still on her back, you straddle her face.  She quickly gets to work.  By the time you've came, $tempGuy is ready to go again.  This time,
+  it's you he's fucking.
+  <<if $PlayerPregnant>>
+    And of course, he's going to cum inside you.  It's not like you can get more pregnant.
+  <<elseif $PlayerProtectionWithdraw>>
+    Normally you'd tell him to pull out. But
+    <<if $tempCumInside>>
+      you don't want Bailey to have all the fun,
+    <<else>>
+      you want to make it up to him for making him pull out with Bailey,
+    <</if>>
+    so you let him cum inside you this time.
+  <<elseif $PlayerProtectionCondoms>>
+    You were too lost in the moment to remind him to use a condom with Bailey, and you still aren't thinking about it now.
+    <<if $tempCumInside>>
+      You don't want Bailey to have all the fun,
+    <<else>>
+      You want to make it up to him for making him pull out with Bailey,
+    <</if>>
+    so you let him cum inside you this time.
+  <<else>>
+    Of course, with you he can cum inside.
+  <</if>>
+  Bailey joins the fun, straddling your face.
+  <<if $tempCumInside>>
+    As you eat her out, more of $tempGuy's cum leaks down.  You eagerly catch as much as you can, the rest drips down your face.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  After the fun with $tempGuy is done, you take Bailey home.  You let her enjoy the moment and don't talk about what
+  <<if !$tempCumInside>>almost<</if>> happened.  They'll be time to [[talk about it when you meet tomorrow|Part15BuddyFMFPlug]].
+<</nobr>>
+
+<<achievement>>threesome:FMF<</achievement>>
+
+::Part15BuddyFMFPlug
+<<nobr>>
+	<h1>Talking with Bailey about protection</h1>
+  The next day you meet with Bailey again.  You explain what happened yesterday.  You don't even mention that she'd claimed to not be interested in
+  guys.  It's obvious to her now how wrong she was there.  She had fun with you too, of course.  You think she's probably a bit bi, but with
+  a preference for guys.  But you don't talk about that, just about the risk she took yesterday.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part7/Start3B.jpg" hspace="10" vspace="10" height="400" align="right">
+  "In the passion of the moment, you weren't thinking about the consequences at all.  I think right then you even wanted him to get you pregnant.
+  Don't feel bad, it's like that for me sometimes too.  But I did
+  <<if $tempCumInside>>
+    try to protect you from yourself.  I signalled for $tempGuy to pull out.  But he was too lost in the moment also.  Or maybe he just ignored me
+    and listened to you because that was going to feel better for him. 
+  <<else>>
+    protect you from yourself.  I signalled for $tempGuy to pull out.
+    <br><br>
+    But I won't always be there, and even if you remember to tell the guy, that doesn't mean he'll always listen.  Sometimes they'll cum too soon on
+    accident. Sometimes they'll come inside you just because they know it will feel better for him.  Sometimes they actually want to get you pregnant.
+  <</if>>
+  It's not like the consequences are the same for him, is it?
+<</nobr>>
+
+<<nobr>>
+  "So you know now that having him pull out isn't realiable.  You can't even count on yourself sometimes.  And I understand you not wanting to take
+  the pill because of your family history.  But those aren't your only options.  There's also condoms."
+<</nobr>> 
+
+<<nobr>>
+  "If you ask, some guys might complain about them, if they do, just tell them it's a condom or no sex at all, and they'll change their mind pretty quick.
+  But It's better to not even ask.  If you put a condom on him the right way, he's not going to complain about it at all.  Let me show you."
+<</nobr>> 
+
+<<nobr>>
+  You pull out small box of condoms you'd bought on the way over.  You take one out and demonstrate on the realistic dildo you'd also purchased.  Once
+  you've shown her, you let her practice until you are out of condoms.  By then, it's clear she'll be able to get it on him using her mouth alone.
+  You know he'll be too busy moaning in pleasure to complain about anything.
+<</nobr>>
+
+<<nobr>>
+  "Now, I want to make you remember this lesson.  So pull down your panties, lift up your skirt, and bend over," you order.
+<</nobr>>
+
+<video src="Part15/Buddy8.mp4" autoplay loop muted height="500"></video>
+
+<<nobr>>
+  Her submissive nature shows again, and you can sense her excitement at being ordered like that.  "Y..yes, ma'am", she says as complies with your orders.
+  You can tell she's expecting to be spanked, but instead you pull out the new butt plug you'd bought.  You wet it in your mouth before sliding into her
+  ass.  She lets out a soft moan as you do.
+<</nobr>>
+
+<<nobr>>
+  "Now, you are to keep that in your ass all day to remind you to go to the store and buy condoms.  I expect you'll need a big box of them.  You can't
+  take it out yet though.  You need to go find a guy, any guy.  Just not $tempGuy.  And practice what you learned.  Once he's came for you, with the
+  condom on, then you can take the plug out.  Understood?"
+<</nobr>>
+
+<<nobr>>
+  <<set $BuddyCondoms to 1>>
+  You get an excited 'Yes ma'am' from her.  She's clearly excited to go follow your instructions so you tell her goodbye for now.
+  "I'll see you [[in a few days|Part15Week]] and you can tell me how well everything went for you."
+  <<unset $tempCumInside>>
+  <<unset $tempCum>>
+  <<unset $tempGuy>>
+<</nobr>>
+
+::Part15BuddyRoom
+<<nobr>>
+  <<if $BuddyPeterChastity>>
+    <h1>Having Peter Watch</h1>
+  <<else>>
+	  <h1>With Bailey</h1>
+  <</if>>
+  <video src="Part15/Buddy5.webm" autoplay loop muted height="500"></video>
+  <<set $BuddySex to 1>>
+  <<set $BuddyLesbian to 1>>
+<</nobr>>
+<<nobr>>
+  <<if $BuddyPeterChastity>>
+    Peter watches on from the chair he's tied to as you start making out with Bailey.
+  <<else>>
+    Bailey is very excited when you offer to join take her to your room to see if she truly is a lesbian now or not.  You try to make sure
+    her expectations are in the right place though.  "This isn't anything serious.  I'm just helping you see you still like women.  It's just
+    going to be this one time.  Well, probably just this one time."  She quickly agrees.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  As you are making out with her, you already know she was right.  She is still attracted to women.
+  <<if setup.sexFemaleCount() == 0>>
+    You've stuck with just guys until now, but you decided to make an exception to help Bailey out.  The fact that she's so beautiful might have
+    played a role in your decision too.
+  <<elseif setup.sexMaleCount() > setup.sexFemaleCount()>>
+    You normally prefer guys, but you certainly would never turn down an evening with a beautiful girl like Bailey.  Especially since you are helping her
+    learn about herself too.
+  <<else>>
+    You remember your first time with a woman.  You hope this evening is as memorable for Bailey.
+  <</if>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+<</nobr>>
+
+<<nobr>>
+  You love watching as you bring her to her first orgasm in this body.  Followed closely by her second.
+  <<if $AcademicProbationDenial>>
+    You tell her that normally it would be her turn to pleasure you now.  But since you can't really enjoy it right now anyway, maybe it's best
+    to just keep focused on her.
+  <<else>>
+    Once she's recovered a bit, you have her get to work on you.  If she's going to be a lesbian, she'll need to know how to eat a girl out properly.
+    She's a quick learner, and you have fun teaching her.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  She clearly enjoys being with another woman, but you still suspect she might be bi.  That's fine, though if she wants to change back in four years, sticking
+  with women is going to be a much safer choice.
+  <<if $BuddyPeterChastity>>
+    Well, that or keeping their cocks safely locked away like Peter's.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  That's going to be up to her, but you at least [[want to show her|Part15BuddyRoom2]], that another woman can satisify her needs in many different ways.
+<</nobr>>
+
+::Part15BuddyRoom2
+<<nobr>>
+  <<if $BuddyPeterChastity>>
+    <h1>Having Peter Watch</h1>
+  <<else>>
+	  <h1>With Bailey</h1>
+  <</if>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set setup.addSex({sex: 'female', name: 'Bailey'})>>
+  <<set $BuddyCondoms to 1>>
+  <img src="Part7/Start3B.jpg" hspace="10" vspace="10" height="500" align="left">
+  You see Bailey's eye's light up as your pull out a of box of toys.  As you put your cuffs on her wrists and ankles she's eager for you to use
+  her however you want.  She watches closely as you put on a strapon harness.  "Would you like me to fuck you with this?" you ask her.
+<</nobr>>
+
+<<nobr>>
+  You get a quick 'Yes ma'am' from her.  "Well, there's something you need to do first," you say as you hand her a condom.  After she takes it out of
+  the wrapper and starts to put it on your dildo you tell her, "No hands.  Just your mouth."
+  <<if $BuddyPeterChastity>>
+    <br><br>
+    You ignore the few soft groans you hear from Peter as he imagines how good her lips would feel around his poor, caged cock.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You talk her through it, offering her praise when she finally
+  gets it on.  "See safety can be fun," you tell her.  If you ever experience a real cock, make sure to put a condom on it, just like that."
+<</nobr>>
+
+<<nobr>>
+  She knows what her real reward is though, and eagerly bends over waiting for it.  Unlike if this had been a real cock, she won't have to worry about
+  you stopping before she cums.
+<</nobr>>
+<video src="Part15/Buddy26.webm" autoplay loop muted height="500"></video>
+<<nobr>>
+  <<if $BuddyPeterChastity>>
+    You glance over at Peter and smile.  You wonder which he's fantasizing about right now, being the one fucking Bailey, or being the one you are
+    fucking with your strap-on.  Maybe he'll have a chance to enjoy the later of those possibilities after she leaves.
+    <br><br>
+  <</if>>
+  Soon Bailey is crying out with another orgasm.
+<</nobr>>
+
+<<nobr>>
+  "Thank you, that was amazing," she tells you much later, when you are finally done for the evening.  You let her know you had a wonderful time too.
+<</nobr>>
+
+<<nobr>>
+  You know she won't have the energy for it tonight, but you let her know about the lesbian bar
+  <<if $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+    where you work.
+  <<else>>
+    in town.
+  <</if>>
+  You know she'll be able to find someone there to explore her new body with even more.
+  "If you make it there before I see you [[later in the week|Part15Week]], let me know how it goes."
+<</nobr>>
+
+::Part15BuddyChastity
+<<nobr>>
+	<h1>Talking with Bailey about safety</h1>
+  <img src="Part15/Buddy11.jpg" hspace="10" vspace="10" height="600" align="left">
+  From the looks she was giving the guys earlier, you suspect Bailey is interested in guys now, or perhaps in both men and women.  But you go ahead
+  and let her believe she still only likes women.
+<</nobr>>
+
+<<nobr>>
+  You tell her, "Of course, I know you'd never be interested in having sex with a guy."  You take on a more somber expression as you continue.
+  "Unfortunately you might not get a choice in the matter."  She gives you a confused look as you continue.  "Unfortunately you now have to deal with
+  the bad parts of being a woman on campus too.  And unfortunately guys don't always care what you want.  And they are bigger, stronger, and can make
+  you do things you don't want to do."  
+<</nobr>>
+
+<<nobr>>
+  When she protests that not all guys are like that, you continue.  "No.  Most are not.  But it only takes one encounter with one guy like that, and
+  this could be your body forever.  It could be someone grabbing you as you walk back to your dorm and pulling you into the bushes, it could be someone
+  slipping something in your drink when you're out.
+<</nobr>>
+
+<<nobr>>
+  "Or you could just wake-up with a hangover and your first sign something happened after you passed out is the evidence oozing down your leg."  You
+  pause for a second then add, "Of course more evidence will arrive nine months later."
+<</nobr>>
+
+<<nobr>>
+  She looks concerned now and asks, "Does that happen a lot?  I thought the media just talked about it a lot to get clicks.  Is it common enought that
+  it's worth trying the pill just in case?  Is there anything else I can do to protect myself, a rape whistle or something?"
+<</nobr>>
+
+<<nobr>>
+  [["Well...," you begin.|Part15BuddyChastity2]]
+<</nobr>>
+
+::Part15BuddyChastity2
+<<nobr>>
+	<h1>Keeping Bailey safe</h1>
+  <<if setup.haveFucked('Kidnapper 1')>>
+    "I... don't normally talk about it.  But something happened to me my first few months as a woman," Bailey is listening closely as you recount
+    your story.  "I was out with some friends from a study group, and someone slipped something in my drink.  The next thing I remember I was waking
+    up in a hospital having the doctors tell me that, that I'd been raped.  And drugged and then just dumped on the side of the road.."
+    <br><br>
+    There's a look of sympathy and of shock on Bailey's face as you conclude.
+    <<if $PlayerSideEffectPermanent>>
+      "I don't remember any of it.  But I do know that this is my body for the rest of my life."
+    <<else>>
+      "I don't remember any of it.  Luckily the doctors told me I wasn't
+      <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+        pregnant, thanks to my birth control."
+      <<else>>
+        pregnant."
+      <</if>>
+    <</if>>
+  <<elseif $TroyHelp>>
+    "It almost happened to me once," you tell her.  "I was out with some friends from a study group, and I think someone slipped something in my drink
+    because I'd never gotten drunk that fast before or since.  And I woke up in a guy's dorm room with no memory of how I got there.  My friends told me
+    later that I had started acting funny.  They thought I just couldn't handle my alcohol, and my friend Troy took me home when I couldn't walk straight
+    anymore."
+    <br><br>
+    There's a look of concern on Bailey's face as she asks.  "Did... did he take advantage of you while you were unconscious?"
+    <br><br>
+    She is relieved when you say, "Thankfully, no.  It turns out Troy isn't like that.  But my point is, he could have been.  Or whoever drugged me could
+    have taken me home, or god knows where to do god knows what.  After that one drink, I didn't have any control over what happened afterwards.
+  <<elseif setup.haveFucked('Frat guy') or setup.haveFucked('Frat guy') or setup.haveFucked('David')>>
+    "I've been to my share of frat houses.  And if you're there, and you're drinking, things can happen.  In my case, I got exactly what I wanted while
+    I was there.  But if it were you, and you were just there for the free beer, who knows.  They don't make the best decisions when they are drunk and
+    horny."
+  <<else>>
+    "I've certainly heard about it happenining to other girls, include at least one from the group that changed last year with me.  The point is though,
+    you never know if it's going to happen to you or not.  So you have to plan as if it might," you explain.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  She seems open to talking about the pill now, but you have a completely different suggestion for her.  "There is a way to prevent any of that though.
+  You'll know that no matter how drunk get you won't wake up pregnant, and if someone grabs you, they may be able to rob you, but they certainly won't
+  rape you.  "And you won't have to worry about taking the pill and getting migraines either."
+<</nobr>>
+
+<<nobr>>
+  "That sounds great," she says with a mix of relief and excitement.  "How?"
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Buddy6.jpg" hspace="10" vspace="10" height="650" align="left">
+  "It's called a chastity belt," you tell her.  "You lock it on yourself, and then even if you are drunk, drugged, or passed out, guys won't be able
+  to use you at all.  Lots of girls wear them now."  You don't actually know how many wear them, but you are trying to convince her, and it's probably
+  true.
+  <<if $PlayerChastityBelt>>
+    "In fact, I'm wearing one now," you say as you show her yours.
+    <<if $Keyholder == "computer">>"Though you wouldn't need one this fancy."<</if>>
+  <<elseif setup.haveInventory('sex toys', 'chastity belt') or setup.haveInventory('sex toys', 'electronic chastity belt')>>
+    "In fact, I have one myself," you say.  "I can show it to you if you want to see what one looks like.  I'm just not wearing it now because
+    <<if $dating.length>>
+      $dating[0] and I are going to have some fun tonight as soon as I get there.
+    <<else>>
+      I'm going to head down to the bar to find a hookup for tonight. 
+      <<if setup.sexMaleCount() >= setup.sexFemaleCount()>>
+        You many not be interested in guys, but I certainly am.
+      <<else>>
+        <<if setup.sexMaleCount() * 2 < setup.sexFemaleCount()>>
+          Guys aren't really my thing either,
+        <<else>>
+          I'm prefer girls too, 
+        <</if>>
+        so I'm heading down to the lesbian bar in town later.
+      <</if>>
+    <</if>>
+  <<elseif $Mentor == 'Olivia'>>
+    "In fact, I used to wear one myself," you say.  "I just haven't gotten a new one yet since my last one broke."
+  <<else>>
+    "I know for a fact that Olivia, one of the mentors last year, wears one sometimes," you say.
+    <<if setup.areDating('Veronica') or setup.areDating('Kate')>>
+      "And I've been dropping hints for my girlfriend to get one for me for our anniversary."
+    <<elseif $dating.length>>
+      "And I've been dropping hints for my boyfriend to get one for me for our anniversary."
+    <<else>>
+      "And I'd get one myself, if I didn't have such a 'active' lifestyle, if you know what I mean."
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Oh," Bailey says.  "I guess maybe I should get one then."  You try not to smile as you relize you've convinced her.  You quickly head out with her
+  to buy one before she has any second thoughts.  She's using her dad's credit card and isn't concerned about the price.  She's just impressed with the
+  selection.  "Wow, it's great that they have them here in stock.  I guess they are really popular."  You realize she's right, they must be popular for them
+  to keep an inventory.  You wonder if that's everywhere, or just near the university.
+<</nobr>>
+
+<<nobr>>
+  <<set $BuddyChastity to 1>>
+  <<set $PlayerItemBuddyKey to 1>>
+  You help Bailey into her belt.  You notice her nipples getting hard as you position it over her hips.  You see her breathe in sharply as you click
+  the lock closed.
+  <<if $PlayerChastityBelt>>
+    "Now we are both safe," she says.
+  <</if>>
+  She snaps a few pictures of herself in belt so she can see how she looks.  "Is it bad that I think I look hot in this?"  You tell her that's perfectly
+  natural and that she does indeed look hot in it.
+<</nobr>>
+
+<<nobr>>
+  You discuss when you'll meet up again and then you start to leave.  "Wait, what about my key?" she asks.
+<</nobr>>
+
+<<nobr>>
+  "If you have the key in your pocket, it isn't much protection is it?  They could just take it from you and unlock it.  Besides, it's best you wear it
+  a while to make sure the fit is perfect.  Overnight at least.  Give me a call if it starts to chafe or anything," you say matter-of-factly.
+<</nobr>>
+
+<<nobr>>
+  "But, tonight I was wanting to...," she's too embarrassed to finish her sentence."
+<</nobr>>
+
+<<nobr>>
+  "Or maybe a couple days, just to be sure," you say.  Her eyes widen a bit as she realizes she is completely at your mercy.
+<</nobr>>
+
+<<nobr>>
+  "Yes ma'am," she says as you've clearly coaxed out her submissive side.  "I guess I'll see you [[in a few days|Part15Week]] like we planned then."
+  You can see her biting her lower lip before you turn towards the door.  You assume she's imagining how she was planning on masturbating for the first
+  time in her new body tonight, and tomorrow, and now realizes she won't be.  Not until you allow it.
+<</nobr>>
+
+<<nobr>>
+  "Good night," you tell her as you walk out.  "Sleep safe and sound tonight."
+<</nobr>>
+
+::Part15BuddyToy
+<<nobr>>
+	<h1>Keeping Bailey satisfied</h1>
+  <<set $BuddyVibrator to 1>>
+  "You need to really be careful about that libido side-effect you have," you tell her.  "Trust me,
+  <<if $PlayerSideEffectLibido>>
+    I have it too.
+  <<elseif $PlayerSideEffectDreams>>
+    I have something similar.  Though mine mainly affects me in the mornings.
+  <<else>>
+    I've heard some of the other girls that have it talk about it.
+  <</if>>
+  You may not be interested in guys normally.  But if you let your desires get out of control, then you'll take any offer you get.  And a beautiful
+  woman like will be getting many offers from guys, especially if they can tell how horny you are."
+<</nobr>>
+
+<<nobr>>
+  "So, I guess that means I should mastrubate a lot then?" she says failing to hide the eagerness in her voice.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectMasturbationBlock or $PlayerChastityBelt>>
+    "Since you can, absolutely," you say.
+    <<if $PlayerSideEffectMasturbationBlock>>
+      "I can't thanks to one of the side-effects I ended up with."
+    <<else>>
+      "I can't.
+      <<if $Keyholder == "computer">>
+        I can only get off when this belt I'm testing for work decides to let me."
+      <<else>>
+        $Keyholder doesn't allow me to masturbate."
+      <</if>>
+      You lift up your skirt to show the chastity belt you are wearing.
+    <</if>>
+    <br><br>
+    "God, that must drive you insane. I guess I should consider myself lucky then.
+    <br><br>
+  <</if>>
+  "But you should know, getting off as a woman usually takes a lot more work than it did as a guy," you warn her.  "Especially at first,
+  when you are just learning how your body works.  We should probably get you a few toys, and definitely a good vibrator."
+<</nobr>>
+
+<video src="Part15/Buddy7.webm" autoplay loop muted height="500"></video>
+
+<<nobr>>
+  "Oh, that sounds great.  Do you want to go now?" she says excitedly.  You and her head down to the adult toy shop near campus and begin exploring
+  the aisles.  You think it is her first time in a store like this, and obviously her first time in this body.  She wants to buy half the store.
+<</nobr>>
+
+<<nobr>>
+  "Let's stick to the basics for now," you tell her.  "Once you learn what you like, you can always come back here for more."  You help her settle
+  on a dildo.  She finds a pretty glass one she likes.  You think she's mainly just going on look, and are scared off from the more realistic
+  cock-looking ones.  You don't mention that the one she picked out is intended for anal-play, it'll work either way.
+<</nobr>>
+
+<<nobr>>
+  You also get her a magic wand vibrator.  She's spending her dad's money, so there's no point in skimping, she might as well start with the best.  He'll
+  see 'R. J. Boutique' on his credit card bill and just think she was buying clothes.  "With this one, you don't have to worry about running out of
+  batteries at the worst time, and you can control how intense it is with this dial here," you explain to her.
+<</nobr>>
+
+<<nobr>>
+  Once you get back to her room, you leave her to her fun.  "[[Let me know tomorrow|Part15BuddyToyPlug]] how it went," you tell her as you leave.
+<</nobr>>
+
+::Part15BuddyToyPlug
+<<nobr>>
+	<h1>Teaching Bailey about toy safety</h1>
+  The next morning you talk with Bailey on the phone, and she describes how after she had been playing with her vibrator and glass dildo
+  for a while, the dildo was slick from being inside her.  She says she 'accidentlly' put it her butt once.  "It went in much easier than I would have
+  thought.  And it felt much better than I thought it would have.  It's not wrong that I liked it is it?"
+<</nobr>>
+
+<<nobr>>
+  She isn't really looking for an answer and continues her story. "I'd just switch it back and forth from place to palce to keep it wet.  You were
+  right, it took longer to orgasm than with my old body, but oh my god was it worth it.  I just laid there with the dildo in my butt still and the
+  vibrator bouncing around the floor until my mind was there enough to move again."
+<</nobr>>
+
+<<nobr>>
+  You don't tell her, but you have to admit to yourself that her story made you wet, hearing about her first orgasm as a woman.  But one part of her
+  story did concern you.  You'll have to teach her an important lesson and you know just how to make sure she'll remember.  You tell her you'll be over
+  shortly and the two of you can go out for breakfast.  Before you leave you grab one of the new toys you'd picked up for yourself at the store,
+  but hadn't used yet.
+<</nobr>>
+
+<video src="Part15/Buddy8.mp4" autoplay loop muted height="500"></video>
+
+<<nobr>>
+  When you get there you explain her mistake.  "You can't switch back and forth with a toy like you did.  At least not if you don't want to risk
+  getting a UTI... an infection.  It's best to just keep your anal toys separate from your vaginal toys.  This is a very important lesson and I
+  want to make sure you remember.  So pull down your panties, lift up your skirt, and bend over."
+<</nobr>>
+
+<<nobr>>
+  Her submissive nature shows and you can sense her excitement at being ordered like that.  "Y..yes, ma'am", she says as complies with your orders.
+  You can tell she's expecting to be spanked, but instead you pull out the new butt plug you'd bought yesterday.  You wet it in your mouth before
+  sliding into her ass.  She lets out a soft moan as you do.
+<</nobr>>
+
+<<nobr>>
+  "Now, you are to keep that in your ass all day and your vagina empty, so you remember where anal toys are supposed to go.  Then later we can go
+  back to the store and get you another dildo.  Then you'll have one for each hole.  You can even play with both at the same time if you like,"
+  you instruct.
+<</nobr>>
+
+<<nobr>>
+  You see her eyes light up at the last part of your instructions, and you get a quick 'Yes ma'am' from her.  Later at the store, she buys you a
+  new butt plug to replace the one you'd given her, and of course another dildo.  "Have a good evening," you tell her with a smile as you leave
+  her room.  "I'll see you [[in a few days|Part15Week]] and you can tell me how well your new dildo works then."
+<</nobr>>
+
+::Part15BuddyGuysMinistry
+<<nobr>>
+	<h1>Helping Bailey make friends</h1>
+  <<set $BuddyBoys to 1>>
+  Zane and Larry are always flirty.  They even flirted with you at first, until they realized it made you uncomfortable.  So you weren't supprised
+  that they were flirting with Bailey.  She is a cute girl.  But they are nice guys, and you'd rather she meet some of them her first day on
+  campus, than some of the other guys she might run into.
+<</nobr>>
+
+ <img src="Part15/Buddy9.jpg" hspace="10" vspace="10" height="450">
+<<nobr>>
+  They seem to really hit it off.  You stay and chat with them for a while.  When your phone beeps with a reminder, you ask Bailey if
+  she is fine with you leaving her with Zane and Larry. "I'll be fine.  Go ahead to your meeting or whatever.
+  [[I'll see you tomorrow|Part15BuddyGuysMinistry2]],", Bailey tells you.
+<</nobr>>
+
+<<nobr>>
+  You walk away as her and the guys keep chatting.
+<</nobr>>
+
+::Part15BuddyGuysMinistry2
+<<nobr>>
+	<h1>Meeting with Bailey</h1>
+  <<if either(0,1,2) == 0>>
+    <<set $BuddyPregnant to either('Zane','Larry')>>
+  <</if>>
+  You meet up with bailey the next day and ask her how her evening went.  "It was wonderful!", she says.  She defintely seems happy.
+  "We went up to Zane's room to after you left and I didn't leave until after midnight!"
+<</nobr>>
+
+<img src="Part15/Buddy23.jpg" hspace="10" vspace="10" height="550" align="left">
+<<nobr>>
+  You feel bad for the dirty thoughts that fill your mind.  Of course reality is nothing like your peverted imagination.  "Ummm,
+  we were playing board games and talking, and lost all track of time," she explains.
+<</nobr>>
+
+<<nobr>>
+  "After I got home I was thinking though.  I still don't want to take the pill.  But maybe I should pick up some condoms."
+  After a moment she adds, "Just in case I ever need them.  Is there anywhere on campus I can get them."
+<</nobr>>
+
+<<nobr>>
+  "I'm not sure.  But I think I've seen them in that little convience store in the student union building," you tell her.
+<</nobr>>
+
+<<nobr>>
+  <<set $BuddyCondoms to 1>>
+  <<if $tempOrgasmRequestGranted>>
+    "Are you feeling ok?" Bailey asks.  You only realize [[what is happening|Part15BuddyOrgasm]] when she asks the question.
+  <<else>>
+    "Great! Thanks! It was nice chatting with you this morning, but I have to run.  Hopefully we can talk more
+    [[later in the week|Part15Week]]," she tells you before heading off.  Wherever is she's heading is in the same direction
+    as the student union.  If she remembers she can probably make her purchase on her way there.
+  <</if>>
+<</nobr>>
+
+::Part15BuddyGuys
+<<nobr>>
+	<h1>Helping Bailey make friends</h1>
+  <<set $BuddyBoys to 1>>
+  Your friends Larry and Zane were checking out Bailey earlier, and she was clearly checking them out back.  It may be obvious to you that she has
+  an interest in guys now, you were having no luck convincing her.  The X-Change people tell you in the presentation that your preference often change
+  after your body does, but many people just don't want to listen.
+<</nobr>>
+
+<<nobr>>
+  You aren't going to have any luck talking to about birth control, but at least you know how to keep her from being unhappy for months denying who
+  she really is now.
+<</nobr>>
+
+<img src="Part15/Buddy9.jpg" hspace="10" vspace="10" height="450">
+<<nobr>>
+  You decide to introduce her to Larry and Zane, and they instantly hit it off.  She's new to flirting, as a woman at least, but her interest in them
+  is clear to everyone.  Larry and Zane will only ever be friends to you, and you don't want to interfere with everyone else's fun, so you decide to
+  say goodbye and leave Bailey with the guys.
+<</nobr>>
+
+<<nobr>>
+  You know she's safe with them.  They'd never do anything to her.  Well, anything that she didn't want them to do.  Though you wonder if there's
+  much she won't want them to do to her before the night is over.  "I have to run by the bookstore before it closes," you lie.  No
+  one seems to much care.  "I'll [[give you a call tomorrow|Part15BuddyGuys2]]," you tell Bailey as you are leaving.  
+<</nobr>>
+
+<<nobr>>
+  They are still talking when you look back a bit later.  Though from their body language, you expect they'll be heading up to one of the guy's
+  room soon.
+<</nobr>>
+
+::Part15BuddyGuys2
+<<nobr>>
+	<h1>Hearing about Bailey's Evening</h1>
+  "Ok. You were right. I do like guys now. I really like guys now," is the first thing Bailey says as she sits down at your table.
+  "I never did before, but I guess since my body is different, what I want is different too.  I should have listened to you."  She pauses for a second
+  then continues.  "But thank you for introducing me to Zane and Larry.  Last night.  Last night was amazing."
+  <<if either(0,1,2) == 0>>
+    <<set $BuddyPregnant to either('Zane','Larry')>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Tell me everything," you say.
+<</nobr>>
+
+<<nobr>>
+  "Well, not long after you left," she starts, "we decided to go up to Zane's room to talk more in private.  But we didn't talk very long.  Soon
+  we were kissing.  I mean me and both of them.  It was overwhelming, feeling Zane's lips on mine, and Larry's on my neck.  And the smell of them...
+  Guy's never smelled so wonderful before.
+<</nobr>>
+
+<video src="Part15/Buddy10.webm" autoplay loop muted height="500"></video>
+
+<<nobr>>
+  "When I felt... felt them getting hard, I couldn't help myself.  Before I knew it I was on my knees and unbuckling Zane's pants, and Larry's too.
+  I didn't know what I was doing at first, but I was able to figure it out pretty quickly.  The hardest part was,", she giggles a bit.  "I mean the
+  part I had trouble with was I that wanted them both so much, but I couldn't only take one in my mouth at once.  I kept switching back and forth
+  between them. 
+<</nobr>>
+
+<<nobr>>
+  "But when we moved to the bed, it got so much better."  You see a far away look in her eye and a smile on her face as she continues, "I continued
+  sucking on Zane's cock.  And Larry went behind me.  When he slid inside me... It felt so good.  They switched back and forth a few times.  But then
+  we tried something different.
+<</nobr>>
+
+<<nobr>>
+  "Larry started playing with my ass while he was fucking me.  When he saw how much I liked that he asked if he could fuck me there instead.
+  Of course I told him he could."  She finally starts to blush a bit, her story has just been pouring out.  You suppose she has to tell someone about
+  this experience, and you are the only one she can talk to about it.
+<</nobr>>
+
+<<nobr>>
+  When she continues she says, "Then they both started to fuck me.  One in my ass, and the other normally.  It was amazing, I wanted them to keep
+  going forever.  Or... at least a little bit longer than they did.  But it must have felt as good for them too, because they couldn't hold back
+  any longer."
+<</nobr>>
+
+<<nobr>>
+  "They didn't come inside you did they?" you ask.  Though you aren't really concerned about whichever one was in her ass at the time.
+<</nobr>>
+
+<<nobr>>
+  "No. They pulled out before then," she says to your relief.  "I told them to cum on my face.  It'd always looked so hot in porn I'd watched.  And
+  they were happy to.  They both came so much all over my face.  I made me feel like such a slut.  But in a good way, if you know what I mean."  You
+  don't say anything, but you definitely know what she means.
+<</nobr>>
+
+<<nobr>>
+  "They took turns eating me out after that, and it felt amazing," she continues her story.  "I'd never felt anything like the orgasm I had.
+  It seemed to go on forever.  By the time it stopped, they were both hard again.
+<</nobr>>
+
+<<nobr>>
+  "This time when they took turns. First Zane and then Larry.  Or maybe Larry, then Zane.  I guess it doesn't matter.  It was wonderful, one of the fucked
+  me while the other played with my breasts, my clit, everything.  I'd had another orgasm before the the first one had came.  I had him cum inside
+  me this time.  It's not like in porn though.  He went deep inside me when he came, and it felt amazing.  Then the other one kept going as soon
+  as he was done, and I came again before he'd finished!"
+<</nobr>>
+
+<<nobr>>
+  "Anyway, I got their info before I left.  They said we can do that again any time I want."  She starts to finish up her story.  "I'm sure I will,
+  but first I think I want to try it again, with different guys.  Is that wrong?"
+<</nobr>>
+
+<<nobr>>
+  You tell her of course not.  It's perfectly natural to want to explore.  Other girls have had years since puberty to experiment, she's had a day.
+  "But you probably want to stop by the store and pick up some condoms," you warn her.  "If you don't want to take the pill, and want to avoid getting
+  pregnant."
+<</nobr>>
+
+<<nobr>>
+  <<if either(0,1) == 1>><<set $BuddyCondoms to 1>><</if>>
+  "I'll do that," she says.  Though you aren't sure if she actually will or not.  "When [[we meet up again in a few days|Part15Week]], hopefully I'll
+  have another story or two to tell", she says hopefully before you two head in different directions.
+<</nobr>> Part15ClassesStart
+
+::Part15BuddyClothes
+<<nobr>>
+	<h1>Shopping with Bailey</h1>
+  <img src="Part15/Buddy11.jpg" hspace="10" vspace="10" height="450" align="left">
+  <img src="Part15/Buddy12.jpg" hspace="10" vspace="10" height="450" align="right">
+  <<set $BuddyClean to 1>>
+<</nobr>>
+<<nobr>>
+  Even with just the basic clothes and makeup they provided Bailey after her change, there's no denying how beautiful she is.
+<</nobr>>
+
+<<nobr>>
+  But the make-up salesperson you two meet while you are shopping makes her look absolutely stunning.  The saleswoman is very happy when Bailey
+  uses her Dad's credit card to buy every product she'd used.
+<</nobr>>
+
+<<nobr>>
+  It's no surprise there's so many
+  guys <<if $CampusMinistry>>flirting with<<else>>hitting on<</if>> her. 
+  You are used to <<if $CampusMinistry>>ignoring<</if>> that, but it's a completely new experience for her for her.  One that she clearly enjoys.
+<</nobr>>
+
+<<nobr>>
+  You an her have barely been at the mall for an hour, and she's already gotten phone numbers from several guys.
+  <<if $CampusMinistry>>
+    "You should be careful," you warn her. "Most guys are only after one thing."
+    <br><br>
+    You blush when she replies, "What if I only want one thing from them?  You know, maybe I was wrong early when I said I didn't like guys.  Because
+    I'm definitely thinking a lot about them right now."  You blush even more when she adds, "It's a shame you're a virgin, because I'd really like to ask
+    you what it's like"
+    <br><br>
+    <<if setup.sexVaginalCount() > 0>>
+      <<if setup.areDating('Andrew')>>
+        "Well..., I'm not actually.", you confess.  "I told myself I was waiting for the right person, and I did.  I know I'll marry Andrew eventually, and
+        I didn't think we needed to wait until then.  But I'm also not still hoping to change back like you are.  So if you want to change back four years
+        from now, be sure to use protection if you do anything."
+      <<else>>
+        <!-- don't think this is possible -->
+        "Well..., I'm not actually.  But I also don't want to talk about it," you say stopping that line of discussion.
+      <</if>>
+    <<elseif setup.sexMaleCount() > 0>>
+      "Well..., I'm not a complete virgin," you confess.  "I have done... some things.  You can still have some fun without going all the way, you know.
+      You should still wait until you find the right person though."
+    <<else>>
+      "Well, I'm saving myself for the right person," you tell her.  I understand if you don't want do that.  But if you aren't, then at
+      least... protect yourself.  If you want to be able to change back after you graduate."
+    <</if>>
+  <<else>>
+    "You should be careful," you warn her.  "Most guys are only after one thing."
+    <br><br>
+    You laugh when she replies, "What if I only want one thing from them?  You know, maybe I was wrong early when I said I didn't like guys.  Because
+    I'm definitely thinking a lot about them right now."  Then adds, "So, what's it like the first time.  Does it hurt much?"
+    <br><br>
+    You reassure her, "Not at all.  I don't know if it's the same for natural women.  I'm guessing it varies.  But that's one of the benefits of
+    X-Change, at least normal X-Change, is that it feels amazing from the very first time."  She seems relieve by that.  "One bit of advice for your first time
+    though.  If he hasn't already gotten you off before you start, don't be afraid to play with yourself while he's inside you.  Or for that matter, even if he
+    has gotten you off.  Your body will take more work to get to an orgasm now, and I want your first time to be amazing."
+    <br><br>
+    "Oh, and maybe we should stop by the store and pick you up some condoms when we are done here.  I understand you not wanting to take the pill, but if
+    you are still planning on changing back after graduation, you'll need to be careful."
+    <<set $BuddyCondoms to 1>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Buddy13.jpg" hspace="10" vspace="10" height="450" align="left">
+  <img src="Part15/Buddy25.jpg" hspace="10" vspace="10" height="450" align="right">
+  You and her keep shopping, collecting bag after bag of new clothes.  And several more phone numbers.  You remember how much you enjoyed getting to shop
+  for your new body the first time too.  It puts a smile on your face seeing how happy it makes her.
+<</nobr>>
+
+<<nobr>>
+  She seems especially excited when you come upon the lingerie store.
+  <<if $CampusMinistry>>
+    "I don't mind if you want to wait out here," Bailey tells you.  "But I really want to check this store out."
+  <<else>>
+    "Oh, I've been wanting to find one of these," Bailey says excitedly.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $CampusMinistry and setup.areDating('Andrew')>>
+    <<set setup.addInventory('underwear', 'elegant lingerie')>>
+    "It's ok," you tell her.  "I've seen underwear before."
+    <<if setup.haveFucked('Andrew')>>
+      You look for something nice to wear for Andrew.  Well for you too, you love the feeling wearing something sexy gives you.  And you
+      especially love the way Andrew looks at you when you wear it.  As you look around the store you end up finding an elegant lingerie set.
+      <br><br>
+      You find Bailey nearby.  "Oh, I guess I don't need to ask you if you like what I was planning on buying," she says seeing you both holding
+      nearly the same item.  The only difference is yours is in white, and hers is in black.
+      <br><br>
+      She tries it on and it looks beautiful on her.  You only hope you look as beautiful in yours when Andrew sees it.
+    <<else>>
+      You start off looking for a nice matching bra and panty set while she explores the rest of the store.  But as you look around, your
+      mind wanders, and you are soon imagining Andrew undressing you.  You quickly tell yourself that you are imagining it was your wedding day,
+      but you know you were imagining it happening tonight.
+      <br><br>
+      When you see a beautiful elegant lingerie set that you'd want to be what Andrew saw you wearing your first time together, you also
+      find Bailey nearby.  "Oh, I guess I don't need to ask you if you like what I was planning on buying," she says seeing you both holding
+      nearly the same item.  The only difference is yours is in white, and hers is in black.
+      <br><br>
+      She tries it on and it looks beautiful on her.  You only hope you look as beautiful in yours when Andrew sees it someday.
+    <</if>>
+  <<elseif $CampusMinistry>>
+    <<set setup.addInventory('underwear', 'regular underwear')>>
+    "It's ok," you tell her.  "I've seen underwear before."  You look for a nice matching bra and panty set while she explores the rest of the store.
+    You are fairly confident in your size now, so you decide not to try it on.  So once you have your purchase ready you look to go find her.
+    <br><br>
+    When you do find her, she wants to try something on so she can get your opinion on it.  When you see what she is wearing you tell her it looks lovely,
+    and she looks beautiful in it.  "I might want to wear something like that on my wedding day.  But in white, of course," you tell her.  But then you
+    realize she isn't going to be waiting until then, and is more likely going to be showing it off again really soon to one of the guys she'd met
+    early today.
+  <<else>>
+    <<set setup.addInventory('underwear', 'sexy underwear')>>
+    You love the look of wonder as she sees all the possibilities and choices she has now.  You let her explore while you look around for something
+    sexy for yourself.
+    <<if $PlayerChastityBelt>>
+      You think you can even wear it over you belt, but you aren't going to try it on here.
+    <</if>>
+    When you've picked out something you like, you start looking for Bailey.
+    <br><br>
+    When you do find her, she wants to try something on so she can get your opinion on it.  She's picked out a lovely black lingerie set.  When she tries
+    it on, she looks absolutely stunning in it.  "One of those guys we met earlier is going to be a very happy man I think.", you say, getting a big smile
+    and a laugh from her.
+  <</if>>
+  You see that she couldn't decide on just the one item though, as her basket as quite a few other items in it as well.
+<</nobr>>
+
+<<nobr>>
+  Once all of your and her shopping is done,
+  <<if $tempOrgasmRequestGranted>>
+    you and her stop for a [[bite to eat|Part15BuddyOrgasm]].
+  <<else>>
+    you take her back home.  "I'll talk you again when we meet up [[later in the week|Part15Week]]," she says.  "But
+    right now I need to go change, and then make a few phone calls."
+    <br><br>
+    <<if !$CampusMinistry>>
+      "Have fun!", you tell her.  "And be sure to give me all the details when I see you."
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part15BuddyOrgasm
+<<nobr>>
+	<h1>A surprise while eating with Bailey</h1>
+  <video src="Part14/Kate6.mp4" autoplay loop muted height="500"></video>
+  <<unset $tempOrgasmRequestGranted>>
+<</nobr>>
+
+<<nobr>>
+  <<if $BuddyBoys>>
+    It was too soft for you to realize it at first, but it's been building.  You realize now that your belt has decided that
+    now is when it's going to grant the orgasm you'd requested.
+    <br><br>
+    You tell Bailey that you're fine.  Your meal was just a little spicy, that's all. You know from the manual that
+    the belt could decide to quickly get you there and be done with it.  Or it could take an hour building you up to and
+    then keeping you at the edge of an orgasm, and then finally let you.  Or it could do anything in between.  You
+    quickly figure out it's not going to be one of the quick and done orgasms.  Either way you don't want Bailey here when it happens.
+    <br><br>
+    "Ok.  Well if you're fine, then I'm going to head out.  I'll talk you again when we meet up [[later in the week|Part15Week]],"
+    she says.  "But right now I need to head over to the student union.
+    <br><br>
+    You feel like the belt is going to be making you orgasm soon now, so you quickly pay your bill and head somewhere more private so
+    you don't start screaming in the middle of the restaurant.
+  <<else>>
+    You are part way through your meal when you feel it, soft at first, but constantly building.  Your belt has decided that now is when it's going to
+    grant the orgasm you'd requested.  You know from the manual that it could decide to quickly get you there and be done with it.  Or it could take
+    an hour building you up to and then keeping you at the edge of an orgasm, and then finally let you.  Or it could do anything in between.  You
+    quickly figure out it's not going to be one of the quick and done orgasms.
+    <br><br>
+    "Are you ok?" Bailey asks.  You tell her you're fine. Your meal was just a little spicy, that's all.  "Ok.  Well if you're fine, then
+    I'm going to head out.  I'll talk you again when we meet up [[later in the week|Part15Week]]," she says.  "But right now I need to go change, and
+    then make a few phone calls."
+    <br><br>
+    You have a feeling that before the day is over she'll be requesting her own orgasm, or two, or three, from the guys she met earlier.  You are going to have
+    yours soon though, so you quickly pay your bill and head somewhere more private so you don't start screaming in the middle of the restaurant.
+  <</if>>
+<</nobr>>
+
+::Part15BuddyPart2
+<<nobr>>
+  <h1>Meeting with Bailey</h1>
+  <img src="Part15/Buddy28.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<if !$BuddyPregnant and !$BuddyLesbian and !$BuddyChastity>>
+    <<if $BuddyStraight>>
+      <<set $tempBuddyOrientationFactor to 10>>
+    <<else>>   
+      <<set $tempBuddyOrientationFactor to 6>>
+    <</if>>
+
+    <<set $BuddyPregnant to setup.checkForBuddyPregnancy($tempBuddyOrientationFactor, [])>>
+  <</if>>
+  <<if $PlayerItemBuddyKey>>
+    Bailey has tried to meet up with you several times over the past few weeks but you've been so busy.
+  <<else>>
+    You and Bailey have both been so busy.  
+  <</if>>
+  The two of you have only had time to text, or maybe a quick chat between classes.  But today you've set aside some time so you and her
+  could actually talk for a while over coffee.
+<</nobr>>
+
+<<nobr>>
+  "So how's your first month as a woman gone?" you ask her.  "Been having fun?  Staying out of trouble?  Have you been making it to class?"
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerItemBuddyKey>>
+    <<include [[Part15BuddyPart2Chastity]]>>
+  <<elseif $BuddyPeterChastity or $BuddyThreesomeGuy or $BuddyBoys>>
+    <<include [[Part15BuddyPart2Straight]]>>
+  <<elseif $BuddyDating or $BuddyThreesomeGirlfriend or $BuddySex>>
+    <<include [[Part15BuddyPart2Lesbian]]>>
+  <<elseif $BuddyVibrator>>
+    <<include [[Part15BuddyPart2Bi]]>>
+  <<else>>
+    <<include [[Part15BuddyPart2Clean]]>>
+  <</if>>
+<</nobr>>
+
+::Part15BuddyPeriodTalk
+<<nobr>>
+  "Well, that's clearly one of your favorite parts of being a woman now," you say.  "But what about what I assume is your least favorite part?
+  How have you managed with that?"
+<</nobr>>
+
+<<nobr>>
+  She thinks for a
+  <<if $BuddyPregnant>>
+    while, and then replies, "I'm not sure what you mean.  It's all been great!"
+    <br><br>
+    She thinks a bit longer and continues, "I know a lot of the
+    guys in my classes, and a couple of my professors, they look at me sometimes like they want to fuck me over the desk in front of the class.  And I get
+    guys yelling things at me sometimes when I'm in the city.  I'm sure that's all going to get old eventually.  And I know it sucks for girls that had
+    to deal with it their whole life.  But it's new and kind of exciting me for me so far." 
+    <br><br>
+    "So, I guess you haven't had to deal with your period yet," you reply.
+    <<if $MenstrualWeek == 4>>
+      You know she should be having one about now.  Your last period was around the start of the semester, and you're dealing with yours again
+      right now.
+    <<elseif $PregnancyWeek and !$PlayerPregnant>>
+      You think for a minute and confirm that it's been about a month since she changed.  You also realized that your own period also should have
+      arrived by now.
+    <<else>>
+      You think for a minute and confirm that it's been about a month since she changed.
+    <</if>>
+    It could just be a little late, or even that she didn't have one this first month as a woman.  But after hearing about how much sex she's been
+    having, and knowing she's not on birth control, you wonder.
+    <br><br>
+    "It might be nothing," you tell her.  But let's be sure.  You head across the street to the [[drug store|Part15BuddyPregnancyTest]] with her.
+  <<else>>
+    second, and then replies, "I assume you mean my period.  Yeah it sucks, I'm dealing with it right now."  You nod as she continues.
+    "I knew about the bleeding, of course.  But I didn't realize the cramps would be this bad.  I thought my sister was just being dramatic when
+    she complained about them.  I'm going to have to call and apologize."
+    <br><br>
+    "Well hopefully it will be over soon," you tell her.  Before [[the week is over|Part15Week]] I'm sure you'll be back to normal again.
+  <</if>>
+<</nobr>>
+
+
+::Part15BuddyPregnancyTest
+<<nobr>>
+  <h1>Testing with Bailey</h1>
+  <img src="PartP/PregTest8.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You and Bailey go into the drug store, and you take her back to where the pregnancy tests are.
+  <<if !$PlayerPregnant and $MenstrualWeek != 4 and setup.sexVaginalCount != 0>>
+    <<set $tempTestCount to 2>>
+    You decide to pick up two of them, one for her and one for you.
+    <<if $PlayerProtectionTry>>
+      Though, you expect you are hoping for a different outcome than she is.
+    <<else>>
+      There's no harm in being sure you're not pregnant, and you figure it'll make her more comfortable if you take a test too.
+    <</if>>
+    The two of you then go back to her dorm to take the tests.
+    <br><br>
+    You each write your initials on your tests, so they don't get mixed up.
+    Then you both try to distract yourselves until enough time has passed for both of the tests to be ready.
+  <<else>>
+    <<set $tempTestCount to 1>>
+    You help her pick out a pregnancy test from the many options there, then you head back to her dorm with her while she takes the test.
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <<if $tempTestCount == 1 or !$PregnancyWeek>>
+    <img src="PartP/PregTest10.jpg" hspace="10" vspace="10" height="400">
+  <<else>>
+    <img src="PartP/PregTest9.jpg" hspace="10" vspace="10" height="400">
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $tempTestCount == 1>>
+    Bailey stares at her positive test for a long time.  After a while, you hug her for support.
+  <<elseif $PregnancyWeek>>
+    You see the initials weren't necessary, when <b>both</b> tests come out positive.  You both stare at your individual tests for a long time,
+    then you hug each other in solidarity.
+  <<else>>
+    You look at your negative test with
+    <<if $PlayerProtectionTry>>disappointment<<else>>relief<</if>>
+    as bailey stares at her positive test for a long time.  After a while, you hug her for support.
+  <</if>>
+  <<unset $tempTestCount>>
+  "Do you know how to... where to go... [[to end it|Part15BuddyAbortion]]?" Bailey asks uneasily.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerAbortion>>
+    "I know exactly where it is," you tell her.
+  <<else>>
+    "I'll find out for you," you tell her.
+  <</if>>
+  "You aren't alone.  I'm here for you.  I'll be with you every step of the way."
+<</nobr>>
+<<if $tempTestCount > 1 and $PregnancyWeek>>
+  <<achievement>>pregnant<</achievement>>
+  <<if setup.pregnantFirstTime()>>
+    <<achievement>>firsttime<</achievement>>
+  <</if>>
+<</if>>
+
+::Part15BuddyAbortion
+<<nobr>>
+  <h1>At the clinic with Bailey</h1>
+  <img src="PartP/Clinic.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+    When you reach the check-in desk at the clinic the receptionist asks, "Which one of you is the patient today?"
+<</nobr>>
+
+<<nobr>>
+  <<if $PregnancyWeek and !$PlayerPregnant>>
+    "Actually we both are,"
+  <<else>>
+    "My friend is,"
+  <</if>>
+  you tell her.
+  <span id="clinic">
+    <<if $PregnancyWeek and !$PlayerPregnant>>
+      Bailey wants to end her pregnancy.
+      And you've already decided whether you want to
+      <<link "keep yours">>
+        <<replace "#clinic">>
+          <<set $tempPlayerPregnant to 1>>
+          <<set $PlayerPregnant to 1>>
+          "My friend and I are both pregnant.  She wants to [[terminate hers|Part15BuddyAbortion2]].  I'm just wanting a confirmation test on mine."
+        <</replace>>
+      <</link>>
+      or
+      <<link "end yours also.">>
+        <<replace "#clinic">>
+          <<set $tempPlayerAbortion to 1>>
+          "My friend and I are both pregnant.  And we are both wanting to [[terminate the pregnancies|Part15BuddyAbortion2]]."
+        <</replace>>
+      <</link>>
+    <<else>>
+      "My friend is pregnant, and she wants to [[terminate the pregnancy|Part15BuddyAbortion2]]."
+    <</if>>
+  </span>
+<</nobr>>
+
+::Part15BuddyAbortion2
+<<nobr>>
+	<h1>Bailey's Room</h1>
+<</nobr>>
+<<nobr>>
+  They gave
+  <<if $tempPlayerAbortion>>
+    you both the first pill at the clinic.  And sent you each home with the second to take today.
+  <<else>>
+    Bailey the first pill at the clinic.  And sent her home with the second to take today.
+  <</if>>
+  <<if $PlayerAbortion>>
+    You knew from experience
+  <<else>>
+    They warned you
+  <</if>>
+  that it was going to be very unpleasant the next day, after the second pill kicked in.  So you spend the
+  night at Bailey's so you
+  <<if $tempPlayerAbortion>>
+    could support each other.
+  <<else>>
+    can support her.
+  <</if>>
+<</nobr>>
+<img src="PartP/Cramps3.jpg" hspace="10" vspace="10" height="500">
+<<nobr>>
+  The cramps and bleeding
+  <<if $tempPlayerAbortion and $PlayerAbortion>>
+    are just as bad as you remembered, for both of you.
+  <<elseif $PlayerAbortion>>
+    seem to be just as bad for her as you remembered them to be.
+  <<elseif $tempPlayerAbortion>>
+    are horrible for both of you.
+  <<else>>
+    seem horrible for her.  
+  <</if>>
+  <<if $tempPlayerAbortion>>
+    You both spend most of the day in bed, doing what you can to comfort each other.
+  <<else>>
+    She spends most of the day in bed, while you do what you can to comfort her.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Eventually it eases up.  When late afternoon arrives, you and Bailey get cleaned up and leave to
+  [[get something to eat|Part15BuddyAbortion3]], and to talk.
+<</nobr>>
+<<if $tempPlayerAbortion>>
+  <<achievement>>childfree<</achievement>>
+<</if>>
+
+::Part15BuddyAbortion3
+<<nobr>>
+	<h1>Having dinner with Bailey</h1>
+  <img src="Part15/Buddy33.jpg" hspace="10" vspace="10" height="450">
+  <<unset $BuddyPregnant>>
+  <<set $BuddyAbortion to 1>>
+  <<set $BuddyPermanent to 1>>
+<</nobr>>
+<<nobr>>
+  Over dinner you and Bailey talk about what it means for
+  <<if !$PlayerSideEffectPermanent and $PregnancyWeek>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    you both, now that you are permanently women and will never be changing back to your old bodies.
+    <br><br>
+    Neither of you are particularly upset about it though.  You think, deep down, you both knew you were never going back anyway.
+  <<else>>
+    her, now that she is permanently a woman, and will never be changing back to her old body.
+    <br><br>
+    She isn't that upset about it though.  You think, deep down, she knew she was never going back anyway.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $tempPlayerAbortion>>
+    <<unset $tempPlayerAbortion>>
+    <<if $PlayerAbortion>>
+      <<set $PlayerAbortion += 1>>
+    <<else>>
+      <<set $PlayerAbortion to 1>>
+    <</if>>
+    <<unset $PlayerPregnant>>
+    <<unset $PregnancyWeek>>
+  <<elseif $tempPlayerPregnant>>
+    <<unset $tempPlayerPregnant>>
+    <<if $dating.length>>
+      You also realize you are going to have to tell $dating[0] about the pregnancy.
+      <<if setup.haveGirlfriend()>>
+        Of course, she knew this was a possibility given some of the more adventurous nights you've had.
+      <<else>>
+        Of course, he knew this was a possiblity.
+      <</if>>
+      <br><br>
+    <</if>>
+  <</if>>
+  You are sure that whatever happens [[next week|Part15Week]], it won't compare to this week.
+<</nobr>>
+
+::Part15BuddyPart2Clean
+todo clean (assumed bi)
+todo [[Part15BuddyPeriodTalk]]
+
+::Part15BuddyPart2Bi
+todo vibrator (assumed bi)
+todo [[Part15BuddyPart2Bi2]]
+
+::Part15BuddyPart2Bi2
+<img src="Part15/Buddy34.jpg" hspace="10" vspace="10" height="600" align="left">
+TODO Part15BuddyPart2Bi2
+
+<<include [[Part15BuddyPeriodTalk]]>>
+
+::Part15BuddyPart2Straight
+<<nobr>>
+  "I've been having a lot of fun.  Thank you for showing me I was wrong about guys.  It was so much fun, and I learned something about myself too.
+  X-Change has changed what I like, and I definitely like sex with guys.  Like a lot," she smiles before continuing.
+<</nobr>>
+
+<<nobr>>
+  "Though, I've figured out that
+  <<if $BuddyPeterChastity>>
+    Peter isn't really my type.
+  <<elseif $BuddyThreesomeGuy>>
+    threesomes aren't really what I enjoy the most.
+  <<else>>
+    Zane and Larry aren't really my type.
+  <</if>>
+  What I love the most is a guy that will [[dominate me|Part15BuddyPart2Straight2]]."
+<</nobr>>
+
+::Part15BuddyPart2Straight2
+<<nobr>>
+	<h1>Talking with Bailey</h1>
+  <video src="Part15/Buddy32.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  Bailey's clearly excited talking about some of the guys she has been with.  You guess she doesn't feel comfortable talking about it
+  with any of her friends from before her change.  She seems thrilled to have someone to talk to that understands what it's like for her.
+  <<if setup.sexVaginalCount() == 0>>
+    Well, some of what it's like at least.
+  <</if>>
+  You'll have to send some feedback to the X-Change people about what a good idea this 'Buddy' program was.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BuddyPeriodTalk]]>>
+<</nobr>>
+
+::Part15BuddyPart2Lesbian
+<<nobr>>
+  <<if $BuddyDating>>
+     todo she is dating someone (lesbian)
+  <<elseif $BuddyThreesomeGirlfriend>>
+    todo she hooked up with you and your girlfried (Lesbian)
+  <<else>>
+    todo hooked up with her otherwise (Lesbian)
+  <</if>>
+<</nobr>>
+
+::Part15BuddyPart2Chastity
+<<nobr>>
+    "I've been staying out of trouble," she tells you.  "And I've been going to class.  Well, most of the time."  She looks down at her coffee
+    before continuing.  "But... I haven't been having as much fun as I would like."
+<</nobr>>
+
+<<nobr>>
+    <<if $PlayerChastityBelt>>
+      "I know you are in a chastity belt too," she says.
+      <<if setup.haveInventory("sex toys", "electronic chastity belt")>>
+        "Yours lets you orgasm sometimes, right.
+      <<else>>
+        <<if $Keyholder>>"$Keyholder<<else>>"Your keyholder<</if>> unlocks you sometimes to let you orgasm, right. 
+      <</if>>
+      But
+    <<elseif $PlayerSideEffectMasturbationBlock>>
+      "I know you can't masturbate and get off, but you can still have sex and orgasm whenever you want," she says. "But
+    <<else>>
+      "You can masturbate, or have sex, and orgasm whenever your want," she says.  "But
+    <</if>>
+    I haven't had a single orgasm since becoming woman.  And I really, really need one."
+<</nobr>>
+
+<<nobr>>
+  "You're not pregnant though, are you?" you point out.  "I know quite a few of the girls that changed with you are.  It was certainly the case with
+  my group last year."  You pause to let her appreciate that before you question her more.  "Are you telling me you haven't had any fun in your belt?"  
+<</nobr>>
+
+<<nobr>>
+  She lowers her head confirm she has, so you press for details.  "Have you hooked up with any girls?  I'm sure most of them love someone that is only
+  interested in their pleasure."  She nods.  "What about guys?  They'd be disappointed about the belt, but a blowjob would probably get them over that
+  real quick.  Have you given many of those?"
+<</nobr>>
+
+<<nobr>>
+  "Quite a few," she confirms.  She smiles, then looks down guiltily.  When you point out that her belt has an open-backed design she responds,
+  "Yes, I've done that too.  It feels good, but it's never enough to get off with.  I sometimes wish I'd gotten that anal side effect I heard about."
+<</nobr>>
+
+<<nobr>>
+  "I could give you your key," you tell her.  "But I worry you'd be pregnant by the end of the week.  Especially since you can't take birth control
+  pills."
+  <<if $dating.length>>
+    <br><br>
+    She interrupts before you can continue.  "But, I've started dating someone.  Maybe if you [[met him|Part15BuddyPart2ChastityBoyfriend]]
+    and talked to him about always using condoms, then you could trust him with the key?"
+  <<else>>
+    She looks down, disappointed, as you pause.  Then you continue, "But maybe I could [[help you with your orgasm|Part15BuddyPart2ChastityOrgasm]]."
+    Her eyes light up at the mention of that.
+  <</if>>
+<</nobr>>
+
+::Part15BuddyPart2ChastityOrgasm
+<<nobr>>
+	<h1>Giving Bailey an orgasm</h1>
+  <video src="Part15/Buddy29.mp4" autoplay loop muted height="500"></video>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+<</nobr>>
+<<nobr>>
+  Bailey eagerly lets you tie her to her bed.  You know part of her excitment is the hope for an orgasm soon.  But you can also se she's loving just
+  the feeling of being tied and helpless.  Once she's secured, you remove her belt.  As you start making out with her, her hips rock towards you.
+  Her body is eager for you touch, but that will wait a bit longer.
+<</nobr>>
+
+<<nobr>>
+  When your hands do find their way to her body, it's to rub baby oil over her skin, massaging every inch of her body.  All except for the few
+  inches that most ache for your touch.
+<</nobr>>
+
+<<nobr>>
+  As you see her body writhe, desperate for an orgasm, and see her eyes look up at you with need, you know she'd do anything for you right now.  She'd
+  agree to anything, promise anything, do anything, for an orgasm.  Seeing that look in her eyes, and realizing the power you have over her,
+  thrills you 
+  <<if $PlayerSideEffectDominant>>
+    too.
+  <<elseif $PlayerSideEffectSubmissive>>
+    too - much more than you thought it would.
+  <<else>>
+    too - more than you thought it would.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You kiss her as your hand finally moves between her legs.  She eagerly and passionately kisses back, moaning deeply as your fingers slide into her.
+  As you slowly but steadily help her build towards an orgasm, she continues to look at you with the same look of utter desperation.  She knows
+  you could decide to stop at any moment.  You aren't going to though.  Not today. 
+<</nobr>>
+
+<<nobr>>
+  You smile at the look of joy and contentment on her face after her orgasm.  She doesn't say a word as you secure the belt back on her before
+  uncuffing her.  "I want to [[talk to you now about your key|Part15BuddyPart2ChastityDating]]," you tell her as you hold out her key.
+<</nobr>>
+
+::Part15BuddyPart2ChastityDating
+<<nobr>>
+	<h1>Talking with Bailey</h1>
+  <img src="Part11/Veronica2.jpg" hspace="10" vspace="10" height="500">
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  <<set setup.startDating("Bailey")>>
+<</nobr>>
+<<nobr>>
+  "Thank you," Bailey says to you once she finally speaks.  "That was amazing.  Are all orgasms that good as woman?"
+<</nobr>>
+
+<<nobr>>
+  "They're usually wonderful," you answer.  "But they don't always feel as wonderful as that one probably did after a month denied."
+  You pause a moment, then continue, Speaking of that, I can give you your key now if you want, but... I'd much rather hold on to it."
+<</nobr>>
+
+<<nobr>>
+  You talk with Bailey about how much you've enjoyed having control of her orgasms.  About how attracted you were to her from the moment you met, and
+  how that was part of the reason you talked her into giving her orgasms over to you.  You tell her that you'd like to keep control of them.
+  But not as a friend, or a 'buddy', but as something more.
+<</nobr>>
+
+<<nobr>>
+  She lets you know that she felt the same way about you, and that's why it was so easy for you to convince her to wear the belt.  She says that
+  knowing you held the key to her belt was a constant source of excitement to her, even if not being able to orgasm was maddening at times.
+  "I'd love for you to keep my key," she says before kissing you.
+<</nobr>>
+
+<<nobr>>
+  After the two of you makeout for a while, you stop and tell her,
+  <<if $PlayerChastityBelt>>
+    "I know you're bi, so if you need to suck the occasional cock, that's fine with me.  I know what it's like when you are locked and denied for
+    a while.  It's just <b>your</b> orgasms that belong to me.
+    <<if $DailyBJMinimum>>
+      In fact, with my belt, I'm required to suck at least <<if $DailyBJMinimum > 1>>$DailyBJMinimum cocks<<else>>one cock<</if>> a day, or it
+      punishes me.
+    <</if>>
+    If you want, maybe we can suck one together sometime.  I'm sure that will make some lucky guy's year."
+  <<else>>
+    "I know you're bi, so if you want, we can bring the occasional guy home with us.  I'm sure it'll make his year.  Who knows, I might even
+    unlock you for the occasion.  Now, why don't you repay that orgasm I gave you, while I decide when your next one will be."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You're sure that whatever the [[next week|Part15Week]] brings, it will be less fun than tonight was.
+<</nobr>>
+
+::Part15BuddyPart2ChastityBoyfriend
+<<nobr>>
+  <h1>Meeting with Bailey's boyfriend</h1>
+  You noticed she didn't even try to insist on getting her key back.  With her submissive nature she just assumed her new boyfriend having the
+  key, and control of her orgasms, was the proper state of things.  You tend to agree.  So you have her setup a time for you to meet with him.
+<</nobr>>
+
+<<nobr>>
+  You see the two of them together when you arive, but Bailey quickly gets up.  You'd told her you needed to talk to Caleb alone first.
+<</nobr>>
+<img src="Part15/Buddy30.jpg" hspace="10" vspace="10" height="450">
+<<nobr>>
+  Bailey has already told him about the Student X-Change Program, so you can be honest with him.  "I'm not sure if Bailey has also told you
+  that I'm in the X-Change program too," you tell him.  "I changed last year.  So I have some experience with what it's like.  I'm fairly
+  certain that Bailey would be pregnant already if I hadn't talked her into wearing the chastity belt."
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant and $PregnancyWeek > 12>>
+    "I mean, look at me," you say gesutering to your growing belly.
+  <<elseif $PlayerPregnant>>
+    "I mean, I am right," you say gesutering to your soon to be growing belly.
+  <<elseif $PlayerMother>>
+    "I already have a child, but I don't that's what Bailey wants.  At least right now," you say as you pull up a photo of little $children[0].name
+    on your phone.
+  <<elseif $PlayerAdoption>>
+    "I've already had a baby," you confess.  "We found a nice family for it.  But I don't think Bailey wants to spend most of freshman year
+    pregnant."
+  <<elseif $PlayerAbortion>>
+    "I've already been pregnant," you confess.  "Of course, there are options.  But if you don't want a baby, it's much better to just not get
+    pregnant in the first place."
+  <<elseif $PlayerChastityBelt>>
+    "I would have probably have gotten pregnant by now if I wasn't in a chastity belt too," you say.
+  <<elseif $sex.length == 0>>
+    <!-- don't think this is possible here -->
+    "I'm a virgin, but obviously that's not the plan for you and Bailey," you explain.
+  <<elseif setup.haveGirlfriend() or setup.sexUniqueMaleCount() == 0>>
+    "I would have probably have gotten pregnant by now if I wasn't a lesbian," you say.
+  <<elseif setup.sexVaginalCount() == 0>>
+    "I would have probably have gotten pregnant by now, but I've never gone all the way with a guy before," you say.
+    "But obviously that's not the plan for you and Bailey I assume."
+  <<elseif $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+    "I would have probably have gotten pregnant by now if I hadn't opted for the birth control feature on my implant," you say.
+    "But given her family history, it's understandable why Bailey didn't want to risk that."
+  <<elseif $PlayerProtectionPill>>
+    "I would have probably have gotten pregnant by now if I wasn't on birth control," you say.
+    "But given her family history, it's understandable why Bailey didn't want to risk that."
+  <<else>>
+    "It's a wonder I've not gotten pregnant by now," you tell him.  "God knows there's been a enough
+    <<if $PlayerProtectionCondoms>>
+      times the condom has came off, or we've forgotten about it entirely when we were drunk and horny."
+    <<elseif $PlayerProtectionWithdraw>>
+      times the guy I was with couldn't hold back or pull out in time."
+    <<else>>
+      chances."
+    <</if>>
+  <</if>>
+  
+  He nods and you continue. "You see, the implant makes Bailey very horny.  Even more than it does with most girls."
+  His smile tells you that he's already well aware of that.  "Obviously you are already aware of the fun part of that.
+  But it could also make it very difficult for her to stay faithful to you.  At least until she is more accustomed to her
+  body's urges, and used to saving them up for you."
+<</nobr>>
+
+<<nobr>>
+  You continue talking with him, suggesting that he keep her locked in her belt except when he unlocks her for fun together.
+  You give him some suggestions on how to use the hope of an orgasm, or the threat of withholding one to help train her.
+  <<if $PlayerChastityBelt or setup.haveInventory("sex toys", "chastity belt")>>
+    You have plenty of first-hand experience with how effective it can be.
+  <<elseif $PlayerItemNerdKey>>
+    You've seen first-hand how effective it can be with Peter.
+  <<else>>
+    You've read about just how effective it can be.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "I assume she's dropped any thoughts of changing back in four years," you say.  "I could tell from the beginning that was
+  only something she thought she wanted anyway.  So, I wouldn't worry too much about the condoms when you do unlock her.  It's better if you
+  and her both enjoy those rare times as much as possible.  It's up to you though.  Trust me, she's going to be far to horny to care.  There's
+  always options if she gets pregnant."
+<</nobr>>
+
+<<nobr>>
+  You wave across the cafe to Bailey to let her know to rejoin the table [[for the rest of the conversation|Part15BuddyPart2ChastityBoyfriend2]].
+<</nobr>>
+
+::Part15BuddyPart2ChastityBoyfriend2
+<<nobr>>
+	<h1>Handing over Bailey's key</h1>
+  "Here you go," you say as you hand the key to Bailey's chastity belt over to Caleb.  "Have fun."
+  The two of them are eager to leave at that point and quickly say their goodbye's and leave the cafe.
+  You are there alone, imagining how their afternoon is going to go.
+  <video src="Part15/Buddy31.webm" autoplay loop muted height="500"></video>
+  <<unset $PlayerItemBuddyKey>>
+<</nobr>>
+
+<<nobr>>
+  You wonder if he's going to make sure she's bound and helpless before he unlocks her like you suggested.  You know how much it would
+  excite her knowing that he could stop at any moment, and she'd be powerless to finish herself, or to stop him from putting the belt
+  back on her.
+<</nobr>>
+
+<<nobr>>
+  Though you know, with as submissive as she is, it probably doesn't matter.  Even if she's unlocked, all he'll have to do is to tell her to
+  put the belt back on, and she will. You could tell as you handed over the key what she was excited about, more than even the hope for an orgasm
+  today, was knowing it'd be him controlling her orgasms now.
+<</nobr>>
+
+<<nobr>>
+  As you leave the cafe, you know that whatever happens to you over the [[next week|Part15Week]], it probably won't compare to the fun the two of
+  them will be having.
+<</nobr>>
+
+::Part15BuddyPart3
+<<nobr>>
+  <h1>TODO</h1>
+  TODO Image
+<</nobr>>
+TODO More with Bailey, [[Part15Week]]

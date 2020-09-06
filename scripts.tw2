@@ -239,6 +239,24 @@ setup.addSexRepeat = function (repeatCount, fuck) {
   }
 }
 
+setup.checkForBuddyPregnancy = function (repeatCount, guys) {
+  if (!guys) {guys=[]};
+
+  var chanceEachTime = state.active.variables.BuddyCondoms ? 0.02 : 0.1;
+
+  for (var i = 0; i < repeatCount; i++) {
+    var currGuy = (guys.length > i) ? guys[i] : "Unknown";
+
+    if (Math.random() < chanceEachTime) {
+      return currGuy;
+    }
+  }
+
+  return undefined;
+}
+
+
+
 setup.addTutorSex = function() {
   if (state.active.variables.AcademicProbationTutorSex && state.active.variables.AcademicProbation) {
     state.active.variables.AcademicProbationTutorSex.forEach(setup.addSex)
@@ -694,7 +712,7 @@ setup.areDating = function (name) {
 }
 
 setup.haveGirlfriend = function () {
-  var potentialGirlfriends = ["Kate", "Veronica"];
+  var potentialGirlfriends = ["Kate", "Veronica","Bailey"];
   return potentialGirlfriends.find(function(name) {return setup.areDating(name)});
 }
 
