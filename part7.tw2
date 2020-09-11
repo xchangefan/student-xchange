@@ -55,8 +55,20 @@
 <</nobr>>
 
 <<nobr>>
-	<<if setup.sexVaginalCount() == 0>>
+  <<if setup.sexCount() == 0>>
 		[[You write “Abstinence”.|Part7Start4]]
+  <<elseif setup.sexMaleCount() == 0>>
+		[[You write “Lesbian”.|Part7Start4]]
+  <<elseif setup.sexVaginalCount() == 0>>
+		[[You write “Abstinence”.|Part7Start4]]  You figure it's true enough, at least with regard to birth control.  You aren't going
+    to get pregnant from
+    <<if setup.sexMaleCount() == 1>>
+      a blowjob.
+    <<elseif setup.sexMaleCount() == 2>>
+      a blowjob or two.
+    <<else>>
+      a blowjob, no matter how many of them you give.
+    <</if>>
 	<<else>>
 		<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>[[You write “Implant”.|Part7Start4]]<</if>>
 		<<if $PlayerProtectionPill>>[[You write “Pill”.|Part7Start4]]<</if>>
@@ -117,10 +129,15 @@
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
-
-<<print "You give them a urine sample, and they take it off to test it. How it’s likely to come back ‘positive’ obviously depends on what kind of protection you’ve been using and how often you’ve had vaginal intercourse.">>
+<<nobr>>
+  You give them a urine sample, and they take it off to test it.
+  <<if setup.sexVaginalCount() == 0>>
+    Obviously, you know what the outcome is going to be.
+  <<else>>
+    You can't help but be a little nervous about what the answer is going to be.
+  <</if>>
+<</nobr>>
 <img src="PartP/PregTest1.jpg" hspace="10" vspace="10" height="500">
-
 <<nobr>>
 	<<if $PregnancyCheck.count == 0 and $PlayerProtectionTry>>
 		<<if $CampusMinistry>>

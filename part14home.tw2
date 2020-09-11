@@ -1130,7 +1130,7 @@
     <br><br>
     "[[I will later.|Part14ChastityCage]]", you tell him as you grab the cage from his hand and stuff it into a different box.  "For now, just help me pick all
     this up before someone else sees it."
-  <<elseif ($PlayerSideEffectSubmissive and !$AcademicProbationDenial)>>
+  <<elseif $PlayerSideEffectSubmissive and !$AcademicProbationDenial>>
     <img src="Part14/Bondage1.jpg" hspace="10" vspace="10" height="300" align="left">
     His eyes go right to your bondage restraints.  "Looks like someone has had a fun time at college.  Care to share any stories, Sis?", your brother asks.
     <br><br>
@@ -1143,6 +1143,18 @@
     <br><br>
     "[[I will later.|Part14ChastityBelt]]", you tell him as you grab the belt from his hand and stuff it into a different box.  "For now, just help me pick
     all this up before someone else sees it."
+  <<elseif $AcademicProbationDenial>>
+    He picks up the letter the dean's office gave you, laying out the requirements to get off probation.  And also describing in details the effects of
+    the denial setting they've enabled for you.
+    <br><br>
+    Dylan is taller than you now, so he holds it up in the air as you try to take it back, finally reading most of it before giving it back.
+    "Pleae don't tell Mom and Dad," you ask.
+    <br><br>
+    He might normally want to tease you, but after reading about you not being able to orgasm all summer, or next semester until you get off probation,
+    he feels more sorry for you.  "I won't say a word," he tells you as he hands back the letter.  "I don't think I could go a week, let alone months,
+    with cumming.  That must really suck."
+    <br><br>
+    After unpacking, you try to take a [[relaxing bath|Part14HomeBath]] to forget about.
   <<else>>
     <img src="Part14/Wand1.jpg" hspace="10" vspace="10" height="300" align="left">
     His eyes go right to your vibrator.  "Looks like someone's been enjoying her new body, huh sis?", your brother jokes.
@@ -1805,7 +1817,6 @@
   stop.  Please, I'll..."
 <</nobr>>
 
-TODO Handle this if on academic probation denial
 <<nobr>>
   Your pleas are cut short as his hand covers your mouth.  The other hand hadn't moved much, and places the vibrator firmly against you again.  "You were
   already getting loud, and I didn't want you to scream and have everyone hear you," he explains.
@@ -6455,7 +6466,7 @@ TODO Handle this if on academic probation denial
 <</nobr>>
 
 <<nobr>>
-  TODO $JobModel
+  TODO $JobModel1
   <<if $CampusMinistry>>
     "But it seems my worries were unfounded.  She seems to have developed into a wonderful young woman.  And when I spoke to her friend Faith, she spoke
     very highly of you.  I believe she said the two of you met at a charity event for the church there on campus."
@@ -7879,8 +7890,11 @@ TODO Handle this if on academic probation denial
     You know you weren't going to feel the orgasm he just denied you anyway.  But your body still screams for him to continue with the dildo just a bit longer.
     You'd do anything for just a bit more of it, even though you know you couldn't feel most of it.
   <</if>>
-  "Now do that a few more times, and she'll do anything you want
-  to be allowed to cum.  It can be even more persuasive than a paddle or whip."
+  "Now do that a few more times, and she'll do anything you want to be allowed to cum.
+  <<if $AcademicProbationDenial>>
+    And her body still begs her for it, even though her brain knows it is blocked by the implant anyway.
+  <</if>>
+  The hope of an orgasm can be even more persuasive than a paddle or whip."
   <<if $MasterMike>>
     Then he adds, "Obviously, it's easier with her since she's been denied for a while.  But after a few edges any submissive girl will be willing to offer
     anything for an orgasm."
@@ -7921,7 +7935,9 @@ TODO Handle this if on academic probation denial
 <</nobr>>
 
 <<nobr>>
-  No orgasm is coming yet for you though.  With your Uncle's supervision, Dylan ties you to the sofa, spread open and helpless.  You hope they are going to
+  No orgasm is coming
+  <<if !$AcademicProbationDenial>>yet<</if>>
+  for you though.  With your Uncle's supervision, Dylan ties you to the sofa, spread open and helpless.  You hope they are going to
   fuck you now, but instead they just turn on a baseball game!  They ignore you and your muffled pleas for an orgasm.
 <</nobr>>
 
@@ -7929,8 +7945,6 @@ TODO Handle this if on academic probation denial
   The gag only comes off when Dylan gets bored with the game, and takes it out as he stands on the sofa and fucks your face before putting the gag back in.
   You are kept in a constant state of need since between most of the innings one of them comes by to tease you or to edge you yet again.
 <</nobr>>
-
-TODO Handle this if on academic probation denial
 
 <<nobr>>
   "She needs an orgasm so bad right now she can't think about anything else," your uncle correctly points out to Dylan.
@@ -7940,9 +7954,9 @@ TODO Handle this if on academic probation denial
     <br><br>
     You'd be thanking him so much if you could speak when he says, "And I've decided to [[allow her an orgasm|Part14UncleOrgasm]] to celebrate her new ownership.
   <<elseif $AcademicProbationDenial>>
-    "What she wants right now is a nice hard cock, or two, right now," isn't that right.  You nod yes.
+    "What she wants right now is a nice hard cock, or two, isn't that right?"  You nod yes.
     <<include [[Part14UncleBeg]]>>
-    You moan into your gag when Dylan leans over and whispers, "[[Yes|Part14UncleOrgasm]]" into you ear
+    You moan into your gag when Dylan leans over and whispers, "[[No|Part14UncleNoOrgasm]]" into you ear
   <<elseif $PlayerChastityBelt and $Keyholder == "Dylan">>
     "And she knows she's leaving here locked in that chastity belt again.  So if she's going to cum anytime soon, it'll be right now."
     <<include [[Part14UncleBeg]]>>
@@ -8096,7 +8110,7 @@ TODO Handle this if on academic probation denial
   Each day you submit yourself to whatever Mike wants you to do, and Dylan too if he's there.  Each day they use you however they please.  Every day you are eager
   to please
     <<if $AcademicProbationDenial>>
-      them.  You only wish that on the rare days they let you cum, you could actually feel it.
+      them.  You only wish that on the rare days they let you "cum", you could actually feel it.
     <<else>>
       them, hoping that that day they will let you cum. Some of the days, they actually do.
     <</if>>
@@ -8406,7 +8420,7 @@ TODO Handle this if on academic probation denial
 <<nobr>>
   I've got you a job working as a barista instead.  That should keep you out of trouble."
   <<set $JobBarista to 1>>
-  TODO $JobModel
+  TODO $JobModel2
 <</nobr>>
 
 ::Part14Home5BoyfriendStrict <42600,10700>
@@ -8443,7 +8457,7 @@ TODO Handle this if on academic probation denial
 <</nobr>>
 
 <<nobr>>
-  TODO $JobModel
+  TODO $JobModel3
   After you are done sucking his cock $dating[0] tells you, "Obviously you won't be working at the strip club anymore.
   <<if $PlayerItemNerdKeyStripper>>
     <<unset $PlayerItemNerdKeyStripper>>
@@ -8467,7 +8481,7 @@ TODO Handle this if on academic probation denial
     Your side job doing porn is out too.
   <</if>>
   As far as your primary job,
-  TODO $JobModel
+  TODO $JobModel4
   <<if $JobAthlete>>
     I'll talk with your coach about your belt.  It'll come off whenever it absolutely needs to, but it'll need to go back on afterwards.  If you don't agree
     with that, we can talk to your father about it."

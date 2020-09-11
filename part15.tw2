@@ -375,6 +375,10 @@
 
 ::Part15Begin
 <<nobr>>
+  <<if $SororitySEX and setup.areDating('Veronica')>>
+    <!-- not sure why this wasn't already set -->
+    <<set $Roommate to "Veronica">>
+  <</if>>
   <<if $JobPornSide or $JobPornOralSide or $JobPornAnalSide or $JobPornGangSide or $JobWebModelSide or $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang or $JobWebModel>>
     <<include [[Part15PornStar]]>>
   <<elseif $MasterRobert or ($PlayerChastity and $Keyholder == 'Robert')>>
@@ -2770,7 +2774,7 @@
   <<else>>
     You weren't sure about working as a call girl at first, but as soon as you see your first client, you feel much better about it.
   <</if>>
-  In the lap you were usually tied to a machine,
+  In the lab you were usually tied to a machine,
   <<if $PlayerSideEffectSubmissive>>
     you do miss that part,
   <</if>>
@@ -3030,7 +3034,6 @@ TODO Followup on academic probation
   <video src="Part15/Probation18.webm" autoplay loop muted height="550"></video>
 <</nobr>>
 <<nobr>>
-  TODO $JobModel
   <<if $EngineerLockPacketOrgasm>>
     Now, more than ever, you are looking forward to the end of your session too.  Your settings change from your belt hacking is still active, so for
     every blowjob orgasm you give, you get an orgasm too.
@@ -3470,7 +3473,7 @@ TODO Followup on academic probation
 <</nobr>>
 
 ::Part15TutorFollowupClean
-TODO Clean Followup (based on week 3-11)
+TODO Clean Tutor Followup (based on week 3-11)
 TODO [[Part15WeekByWeek]]
 
 ::Part15WeekByWeek
@@ -4098,7 +4101,7 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
-  It's going to be great.  Every morning you'll wake up next to him.  You know
+  It's going to be great.  Every morning you'll wake up next to him. You know
   <<if $PlayerChastityBelt>>
     he'll leave for class feeling great every morning when you wake him with a blowjob.
     <<if $PlayerItemNerdKey and setup.areDating('Peter')>>
@@ -4471,6 +4474,11 @@ TODO [[Part15Week]]
     so long for this.  You and him could have been doing this for months!  He's going slow and gentle, knowing it's your first time.
     You can hear Mairssa aching for her turn next to you.
     <br><br>
+    <<if $AcademicProbationDenial>>
+      You can't feel the pleasue you know you should though, just the fullness his cock gives you.  But it feels perfect, like you are meant
+      to have his cock inside you.  Maybe you are.
+      <br><br>
+    <</if>>
     You don't want him to stop, but you also don't want to be selfish.  After all, if you'd wanted him all to yourself then you would
     have just gone alone to his house.  "It's her turn now," you tell $dating[0].  He pulls out of you and moves over to her.  He uses
     his hand to keep you entertain as he starts fucking her.
@@ -4486,14 +4494,36 @@ TODO [[Part15Week]]
     enters you.  You moan as you feel his cock, all of his cock, finally inside you.  He starts fucking you faster when he sees
     how much you are enjoying it.
     <br><br>
-    It feels so good.  You wonder why you'd waited this long.  You could have been doing this for an entire year!
+    <<if $AcademicProbationDenial>>
+      You can't feel the pleasue you know you should though, just the fullness his cock gives you.  But it feels perfect, like you are meant
+      to have a cock inside you.  Maybe you are.
+    <<else>>
+      It feels so good.  You wonder why you'd waited this long.  You could have been doing this for an entire year!
+    <</if>>
   <<else>>
     You whimper a bit when he starts with Marissa, but he gives you some attention with his hand while you wait your turn.
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  <<if $CampusMinistry>>
+  <<if $AcademicProbationDenial>>
+    After he's fucked her for a while, it's her turn to whimper as he pulls out of her and slides into you.
+    <<if $PlayerProtectionCondoms>>
+      You were too horny to even think about condoms,
+      <<if $dating.length>>
+        and $dating[0] was too excited to remember either,
+      <</if>>
+      though he doesn't fuck you long enough for it to matter anyway.
+    <<elseif $PlayerProtectionWithdraw and !$dating.length>>
+      You were too horny to even think about telling him to pull out, though he doesn't fuck you long enough for it to matter anyway.
+    <<else>>
+      Even if you were able to orgasm, it's not likely he'd last long enough to get the job done this time,
+      not after having been fucking her before he even started with you.
+      You are looking forward to feeling him cum inside you though.  He doesn't fuck you long enough for that either.
+    <</if>>
+    He's back to fucking Marissa when he finally cums.  You can't help but be a little jealous when he grabs her hips, and plunges
+    deep inside her.  You imagine the feel of his warm cum inside you as he groans and [[cums inside her|Part15DormStonerMFF2]].
+  <<elseif $CampusMinistry>>
     He keeps going, you don't want him to ever stop.  You feel an orgasm building inside you.  But before it arrives, you
     feel him grab your hips and pull you back into him.  You feel his cock thrusting deep into you.  Then you feel it throbbing
     inside you.
@@ -4602,6 +4632,32 @@ TODO [[Part15Week]]
     <</if>>
     keeps going until you see him thrust a last time.  You
     move over a bit making room for him to lie between you and her.
+  <<elseif $AcademicProbationDenial>>
+    You and Marissa are even hornier now than when you started, and
+    <<if $dating.length>>
+      $dating[0]'s
+    <<else>>
+      Craig's
+    <</if>>
+    cock won't be any help for a while. Your tongue plunges into her, trying to finish what he started.  You hungrily lick up his cum as it
+    drains from her, and soon you have her squeezing the sheets and crying out with an orgasm.
+    <br><br>
+    After she recovers, she offers to return the favor, but you know you can't come anyway.  You are far more eager to watch her orgasm again
+    Before she can cum again though,
+    <<if $dating.length>>
+      $dating[0]
+    <<else>>
+      Craig
+    <</if>>
+    is ready to go again.  With his cock inside her, and your fingers toying with her clit, it doesn't take much longer for her orgasm.
+    <br><br>
+    Your hand pulls away after she cums, but
+    <<if $dating.length>>
+      $dating[0]
+    <<else>>
+      Craig
+    <</if>>
+    keeps fucking her a bit longer before cumming inside her again.  You eagerly lick her clean again, though it's less than last time.  
   <<else>>
     You and Marissa are even hornier now than when you started, and
     <<if $dating.length>>
@@ -5362,14 +5418,13 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
 ::Part15BackToMain
 <<nobr>>
   [[Continue|Part15Week]]
 <</nobr>>
-
 
 ::Part15Major
 <<nobr>>
