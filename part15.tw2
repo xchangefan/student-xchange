@@ -4154,6 +4154,7 @@ TODO [[Part15Week]]
 
 ::Part15Dorm
 <<nobr>>
+TODO
   <h1>Meeting your roommate</h1>
   You'll be staying in the dorm this year again.  But you are in a different building this year.  This one just has two person rooms,
   not the shared four person 'pods' the other building has.  You wouldn't mind that.  But what you don't like is that now, instead of
@@ -4162,7 +4163,7 @@ TODO [[Part15Week]]
   <<set $DormFriendLevel to 0>>
 <</nobr>>
 <<nobr>>
-  <<switch either(1,2,3)>>
+  <<switch either(2,2,2)>> <--either(1,2,3)-->
     <<case 1>>
       <<include [[Part15DormStoner]]>>
     <<case 2>>
@@ -5273,24 +5274,120 @@ TODO [[Part15Week]]
 
 ::Part15DormSlutty
 <<nobr>>
-  <img src="Part15/Dorm3.jpg" hspace="10" vspace="10" height="650" align="left">
   <<set $Roommate to "Kiera">>
+  <img src="Part15/Dorm3.jpg" hspace="10" vspace="10" height="650" align="left">
+  When your new roommate Kiera comes in, you introduce yourself.  She introduces herself as well, "Hi, I'm Kiera," she starts.
+  After telling you where's from, and a bit of other small talk she shares something else.  "I hope you don't mind, but I'm going
+  to be bringing guys home sometimes.  And by 'Sometimes', I mean a lot."
 <</nobr>>
 
 <<nobr>>
-  When your new roommate Kiera comes in, you introduce yourself.
-  (TODO Slutty)
   <<if $PregnancyWeek >= 12>>
-    (TODO She sees you are pregnant, and assumes you won't be a prude)
+    "Obviously you like to have a bit of fun yourself," she says glancing at your growing stomach.  "You are welcome to join in sometimes if you
+    want.  Or if you're still with your baby daddy, maybe the we could have a threesome or a foursome some time if you want.  Don't worry, I'm on
+    birth control, so he won't be getting me pregnant too."
+  <<elseif setup.haveInventory('piercings', 'tongue')>>
+    "I'm guessing you like to have a bit of fun yourself," she says glancing at your tongue piercing. "You are welcome to join in sometimes if you
+    want.  If you a have boyfriend or regular fuckbuddy, maybe the we could have a threesome or a foursome some time if you want."
   <<else>>
-    (TODO She asks to make sure you aren't a prude)
+    "Hopefully you like to have some fun yourself. Not like my last roommate.  She was a real prude," she says hopefully.
+    "You are welcome to join in sometimes if you want.  If you have boyfriend or regular fuckbuddy, maybe the we could have a threesome or a
+    foursome some time if you want."
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  TODO Conflict if ministry path or in chastity (Reconcile by threesome)
+  "If you aren't wanting to share, I understand," she continues. "But you two can feel free to have fun over on your side of the room whenever
+  you want and I'll keep my guys on my side.  It'll be fun that way too. Guys love competing to see which one can make the girl they are fucking
+  moan more."
 <</nobr>>
 
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    <<if $JobBetaTester == "chaste">>
+      "I couldn't join in, even if I wanted to,"
+    <<elseif setup.areDating($Keyholder)>>
+      "Well, if I [[did join in|Part15DormSluttyChasteSex]] my options would be somewhat limited unless $Keyholder desided to unlock me,"
+    <<else>>
+      "Well, if I [[did join in|Part15DormSluttyChasteSex]] my options would be somewhat limited,"
+    <</if>>
+    you tell her as you reveal your chastity belt.
+    <br><br>
+    "Oh damn," she says when she sees your belt.  "I think I would lose my mind if I was in one of those.  You must be horny all the fucking time!"
+    <<if $JobBetaTester == "chaste">>
+      You blush but don't respond.
+    <<else>>
+      You confirm that it does make you insanely horny being in the belt.
+    <</if>>
+    <br><br>
+    "Well, guys would love it," she says.  "Having a insanely horny girl, on her knees sucking their cock.  Desperate to get fucked, but
+    unable to feel a man inside her no matter how much she begs."
+    <br><br>
+    You
+    <<if $JobBetaTester == "chaste">>
+      try to ignore it as you
+    <</if>>
+    feel a trickle of wetness run down your leg as she describes it to you.  Smiling, she adds, "Of course, they'd also love being able to fuck
+    my brains out after that, especially with you watching on with envy."
+    <<if $JobBetaTester == "chaste">>
+      <br><br>
+      You see disappointment, and perhaps pity, on her face as you let her know that your belt prevents that too... well all of it except the
+      watching part.  At least you don't think it would shock you for just watching.
+    <</if>>
+  <<elseif $CampusMinistry>>
+    You know it's wrong, but you can't help but picture yourself, and her, [[in bed together|Part15DormSluttySexMinistry]] with
+    <<if $dating.length>>
+      <<print $dating[0]>>.
+    <<else>>
+      some guy.
+    <</if>>
+  <<else>>
+    As she talks about it, you can't help but think that a [[threesome might be fun|Part15DormSluttySex]].
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerChastityBelt and $JobBetaTester == "chaste">>
+    Joining in with her definitely isn't an option.  But you do have a choice between
+    [[letting her have her fun|Part15DormSluttyWatch]], as long as she keeps it to her side of the room or
+    [[asking her to warn you|Part15DormSluttyWarn]] when she's going to have a guy over so you can stay away.
+  <<elseif $CampusMinistry>>
+    As much as you keep thinking about it, you know joining in with her is wrong.  You wonder if you should
+    [[let her have her fun|Part15DormSluttyWatch]], as long as she keeps it to her side of the room or
+    [[ask her to warn you|Part15DormSluttyWarn]] when she's going to have a guy over so you can stay away.
+  <<else>>
+    As much as you keep thinking about it, you could also
+    [[let her have her fun|Part15DormSluttyWatch]], as long as she keeps it to her side of the room or
+    [[ask her to warn you|Part15DormSluttyWarn]] when she's going to have a guy over so you can stay away.
+  <</if>>
+<</nobr>>
+
+::Part15DormSluttyWarn
+TODO minus friendship points
+TODO She leaves panties on door know when a guy is there
+TODO you are annoyed because it's so often and you have to wait elsewhere
+TODO you start walking in on her a lot because guys are steeling the panties from the door knob
+TODO Maybe get too horny to just watch
+TODO [[Part15Week]]
+
+::Part15DormSluttyWatch
+TODO no friendship points
+TODO Maybe get too horny to just watch
+TODO [[Part15Week]]
+
+::Part15DormSluttySexMinistry
+TODO friendship points
+TODO Part15DormSluttyMinistry
+TODO [[Part15Week]]
+
+::Part15DormSluttySex
+TODO friendship points
+TODO Part15DormSluttySex
+TODO [[Part15Week]]
+
+::Part15DormSluttyChasteSex
+TODO friendship points
+TODO Part15DormSluttyChasteSex
 TODO [[Part15Week]]
 
 ::Part15DormNerdy
