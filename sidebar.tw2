@@ -674,6 +674,9 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       <<else>>
         belt.
       <</if>>
+      <<if setup.haveInventory('piercings', 'tongue sensor')>>
+        You have a tongue sensor installed as well.
+      <</if>>
     <<else>>
       You are currently locked in a chastity.
       <<if $PlayerChastityBra>>
@@ -1034,8 +1037,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       You are taking a semester off.
     <</if>>
     <<if $SchoolWeek>>
-      This is week $SchoolWeek.
-      <br>Debugging: <<if $PregnancyWeek>>PW:$PregnancyWeek<<else>>MW:$MenstrualWeek<</if>> <!--TODO-->
+      <br><br>Debugging: <<if $PregnancyWeek>>PW:$PregnancyWeek<<else>>MW:$MenstrualWeek<</if>>  School: $SchoolWeek <!--TODO-->
     <</if>>
   <<elseif $Dropout>>
     <br>You have dropped out of college.
