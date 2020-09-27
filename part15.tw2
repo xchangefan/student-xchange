@@ -948,7 +948,7 @@
     unlock you or alter anything that would affect the testing parameters.  Don't worry, as soon as testing is completed, we will automatically
     convert them to a full owner with full access.  Then they'll be able to unlock you if they wish.
     <br><br>
-    "But don't feel rushed," he says.  "We'll keep you locked and chaste as long as you need to take to find Mr., or Miss, Right."
+    "But don't feel rushed," he says.  "We'll keep you locked and chaste as long as you need to take in order to find Mr., or Miss, Right."
   <</if>>
   <<if $AcademicProbationDenial>>
     <br><br>
@@ -2833,7 +2833,8 @@ TODO Having the baby now
 <</nobr>>
 
 <<nobr>>
-  <<if $MenstrualWeek == 4>>
+  <<if $TO_BE_CONTINUED>>
+  <<elseif $MenstrualWeek == 4>>
     <img src="PartP/PeriodSupplies.jpg" hspace="10" vspace="10" height="177"><br>
     You started your period this week.
     <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
@@ -3508,10 +3509,11 @@ TODO [[Part15WeekByWeek]]
       <<include [[Part15Halloween]]>>
     <<case 11>>
       <!-- Nov w1 -->
-      To be continued...
+      <<include [[Part15BabyJobsRelationships]]>>
     <<case 12>>
       <!-- Nov w2 -->
-	    week 12 todo [[Part15Week]]
+      <h1>To be continued...</h1>
+      <<set $TO_BE_CONTINUED to 1>>
     <<case 13>>
       <!-- Nov w3 -->
 	    week 13 todo [[Part15Week]]
@@ -4154,7 +4156,6 @@ TODO [[Part15Week]]
 
 ::Part15Dorm
 <<nobr>>
-TODO
   <h1>Meeting your roommate</h1>
   You'll be staying in the dorm this year again.  But you are in a different building this year.  This one just has two person rooms,
   not the shared four person 'pods' the other building has.  You wouldn't mind that.  But what you don't like is that now, instead of
@@ -4163,7 +4164,7 @@ TODO
   <<set $DormFriendLevel to 0>>
 <</nobr>>
 <<nobr>>
-  <<switch either(2,2,2)>> <--either(1,2,3)-->
+  <<switch either(1,2,3)>>
     <<case 1>>
       <<include [[Part15DormStoner]]>>
     <<case 2>>
@@ -5549,7 +5550,7 @@ TODO [[Part15Week]]
 <</nobr>>
 <<nobr>>
   You think nothing of it as you pee the next morning, your urine trickling through the mesh panel on your belt as always.  You hop into
-  shower, like usual in the mornings, eliminating the need to wipe down the belt afterwards.
+  the shower, again, like you do every morning, eliminating the need to wipe down the belt after peeing this time.
 <</nobr>>
 
 <<nobr>>
@@ -5584,28 +5585,62 @@ TODO [[Part15Week]]
   <<if setup.haveInventory('piercing', 'tongue')>>
     You relucantly stop by the engineering department on the way to class, where they replace your old stud with their 'sensor'.
   <<else>>
-    After class you stop by a piercer.  After a brief momen of pain, you have a pierced tongue.  You only have the simple stud he installed for a few
-    minutes though.
+    You'd never planned on getting a tongue piercing!  But you know it's no use complaining, so after class you stop by a piercer.
+    After a brief momen of pain, you have a pierced tongue.  He puts some sort of spray on your tongue that is supposed to make it
+    heal much faster than normal.  "Still, you should wait a day or two before you have too much fun with it," he says.
     <br><br>
-    Once you reach the engineering department, they replace the simple one with their 'sensor'.  The piercer had told you to keep a piercing in
-    for the next several weeks.  That won't be a problem for you, since you won't be able to remove this one on your own anyway.
+    On your way out of the shop you blush, as you realize what he meant by "too much fun".  You are distacted from that though as you
+    move your tongue around your mouth and feel the odd, new sensations of having a stud through your tongue!  He'd offered a
+    selection of options to choose from, but you'd chosen the cheapest one.  You told him you'd be replacing it later today.  You said a
+    "friend" has a different one already picked out for you.
+    <br><br>
+    Once you reach the engineering department, they replace the simple metal stud with their 'sensor'.  As you see their sensor you realize
+    you'd never even realize it was anything more than the one they were taking out, if you didn't already know.
+    <br><br>
+    Your piercer had said it was fine replacing the stud with a different one, but just be sure to keep something in your piercing for the
+    next several weeks, so your body doesn't heal too much and close the piering back up.  That certainly won't be a problem for you, since
+    you won't be able to remove this one on your own anyway.
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  After their sensor is installed, they question you as to what happened to trigger the inconsistent results.  You give them the whole story,
-  and about how you never even touched... whatever his name was.  They take detailed notes and thank you before you leave.
+  After the new tongue sensor is installed, the engineer questions you as to what happened to trigger the inconsistent results.  You are
+  embarrassed, but are obligated to talk with him since it's related to your testing of the belt. You give him the whole story.
+  You tell him about how aroused you got just hearing, and then watching, Kiera and that guy go at it.
 <</nobr>>
 
 <<nobr>>
-  You check the mirror after you leave their office.
+  And you tell him how you never even touched... whatever his name was.  You explain that you'd kissed Kiera, and you'd had tasted a bit
+  of his cum on her face. "A bit?" he says skeptically.  "The levels the belt registered suggest more than just a drop or two."
+<</nobr>>
+
+<<nobr>>
+  "Ok, ok.  I tasted a bit when I kissed her, but then I licked the rest of it off her face," you confess.
+  "But, I never touched him," you repeat.
+<</nobr>>
+
+<<nobr>>
+  "So you must have liked the taste then?", he asks.
+<</nobr>>
+
+<<nobr>>
+  You feel your face blush with embarrassment as you answer, "Yes.  It tasted wond..." You stop and ask, "What does that
+  have to do with the testing?"
+<</nobr>>
+
+<<nobr>>
+  "Nothing, I was just curious," he says as you seem him making notes on his tablet.  "I think you're good to go now."
+<</nobr>>
+
+<<nobr>>
+  You stop in the restroom to check the mirror after you leave their office.
   <<if setup.haveInventory('piercing', 'tongue')>>
     You can't even tell it's anything more than a regular stud by looking at it. Of course, if it were a regular stud,
     you could unscrew in take it off.  This one won't be coming off without their help.
   <<else>>
     <<set setup.addInventory('piercings', 'tongue')>>
     You stare at your tongue.  You can't believe that you have a pierced tongue now.  You know what people assume about girls with a pierced tongue.
-    Now everyone is going to think you are sucking guys cocks all the time.  If they only that your piercing is designed to make sure you
+    Now everyone is going to think you are sucking guys' cocks all the time.  If they only that your piercing is designed to make sure you
     <b>can't</b> do that!
   <</if>>
 <</nobr>>

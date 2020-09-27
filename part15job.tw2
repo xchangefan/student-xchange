@@ -204,6 +204,12 @@ TODO Massage
     <<else>>
       <<include [[Part15JobBaristaWeek7]]>>
     <</if>>  
+  <<elseif $SchoolWeek == 11>>
+    <<if $JobBetaTester == "chaste">>
+      <<include [[Part15JobBaristaWeek11Chaste]]>>
+    <<else>>
+      <<include [[Part15JobBaristaWeek11]]>>
+    <</if>>  
   <<else>>
     TODO Barista after that
     <<nobr>>
@@ -249,7 +255,7 @@ TODO Massage
 <</nobr>>
 
 <<nobr>>
-  You flinch a bit when you feel a shock from the belt hit.  You wonder what it's for?
+  You flinch a bit when you feel a shock from the belt hit. You wonder what it's for?
   <<if $DailyBJMinimum>>
     You know it isn't your minimum blow job target.  You definitely exceeded it yesterday.
     <<if setup.areDating('Andrew')>>
@@ -328,7 +334,7 @@ TODO Massage
     <blockquote>
       <b>Orgasms are a reward for good girls.  Bad girls get denied.</b><br>
       As a reminder of this, you will be receiving multiple daily teases and edges.<br>
-      Orgasms will be allowed again once you learn to be a good girl.
+      Orgasms will be allowed again once you learn to be a good girl and watch your language.
     </blockquote>
 <</nobr>>
 <<nobr>>
@@ -478,7 +484,6 @@ TODO Part15JobBaristaWeek7 (Maybe in a belt but not chaste)
   <blockquote>
     <b>Wearer addiction protocols enabled</b><br>
     Orgasm capability reenabled, but wearer orgasm request functionality disabled.<br>
-    Scheduled / automatic orgasms disabled.<br>
     Only reward-based or owner-provided orgasms will now be allowed.<br>
     Previously activated behavior reminders continuing.
   </blockquote>
@@ -490,8 +495,13 @@ TODO Part15JobBaristaWeek7 (Maybe in a belt but not chaste)
 
 <<nobr>>
   You are left wondering what the 'reward-based' orgasms are.  You know the belts the slutty girls are in gives them orgasms for
-  giving out blowjobs, but you know your belt isn't going to do that.  They were very clear about how painful it would be for you if you even tried
-  to give one of those.  Not that you would, of course.  You don't even notice your finger teasing your lips as you think about it.
+  giving out blowjobs, but you know your belt isn't going to do that.
+  <<if setup.haveInventory('piercings', 'tongue sensor')>>
+    You've already had a taste of how painful giving one of those would be.
+  <<else>>
+    They were very clear about how painful it would be for you if you even tried to give one of those.
+  <</if>>
+  Not that you would, of course.  You don't even notice your finger teasing your lips as you think about it.
 <</nobr>>
 
 <<nobr>>
@@ -661,13 +671,197 @@ TODO Part15JobBaristaWeek7 (Maybe in a belt but not chaste)
 <<nobr>>
   Later that day, when you are counting out your points, you realize that even if you earn all
   <<if $PlayerNoBodyHair>>
+    <<set $BeltPointsPerWeek to 13>>
     13 points per week, it'll still be 7 or 8 
   <<else>>
+    <<set $BeltPointsPerWeek to 16>>
     16 points per week, it'll still be 6 or 7
   <</if>>
   weeks until your next orgasm.  But there's nothing you can do about that right now.  You decide to earn the 1 bonus point it has
   offered you by spending 30 minutes rewatching the recording it made of your affirmations.  You can only hope that it will
   offer more bonus points sometime later.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15AfterSideJob]]>>
+<</nobr>>
+
+::Part15JobBaristaWeek11
+TODO Part15JobBaristaWeek11 (Maybe in a belt but not chaste)
+
+<<nobr>>
+  <<include [[Part15AfterMainJob]]>>
+<</nobr>>
+
+::Part15JobBaristaWeek11Chaste
+<<nobr>>
+  <h1>Exciting notification while studying</h1>
+  <img src="Part15/Chastity10.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $tempBeltPoints to ($BeltPointsPerWeek * 4 - 5)>>
+  <<set $tempBeltPointsWish to ($tempBeltPoints + 25)>>
+  Between the weekly points you've been earning and the bonus points you've earned you should have had $tempBeltPointsWish points by now.
+  You could have been having an orgasm
+  <<if $tempBeltPointsWish + $BeltPointsPerWeek >= 100>>
+    next week!
+  <<else>>
+    in a couple weeks!
+  <</if>>
+  But you've also lost points along the way: for being late for class once, for cursing, for complaining about your belt, and more.
+  So instead you only have $tempBeltPoints points, and an orgasm is still weeks away!
+<</nobr>>
+
+<<nobr>>
+  You need that orgasm so much right now, so your heart races when you see the notification on your phone:
+<</nobr>>
+<<nobr>>
+  <blockquote>
+    <b>Congratulations! 100 additional points have been awarded.</b><br>
+    Based on your profile, you've been selected for an optional training program.<br>
+    Once the easy signup requirements are completed you will recieve your orgasm!<br>
+    Please check your email for details on how to accept or decline this offer.<br>
+    Note: There is no penalty for declining this offer. (*)
+  </blockquote>
+<</nobr>>
+<<nobr>>
+  You hurry to your email to see the details.  It says that you've been signed up because your profile indicated that you were a heterosexual
+  virgin, but have a strong desire to have a rewarding sex life with your husband someday.  "I suppose that's pretty accurate," you think to
+  yourself.  Reading it makes you realize you've been fantasizing a lot about your wedding night lately.
+<</nobr>>
+
+<<nobr>>
+  They are promising to help "Teach you to be the best wife you can be" and that their "[[Wife training program|Part15JobBaristaWeek11Chaste2]]"
+  program is "consistent with your desire to remain chaste."
+<</nobr>>
+
+<<nobr>>
+  You see there are only two requirements to earn your orgasm. You have to stop by the engineering department and pick up your "training kit".
+  Then go home and complete an "easy initial training session". You will orgasm at then completion of your session!
+<</nobr>>
+
+<<nobr>>
+  You already know your points reset after an orgasm, so the extra the extra $tempBeltPoints you have now will be lost.  But this new program
+  says it can award you "up to 40 points/week, plus occasional bonus points"!  With that and your regular points, you could be having an orgasm
+  every other week!
+<</nobr>>
+
+<<nobr>>
+  You see the footnote at the end, and see what that asterisk meant on the notification.  It looks like if you decline you won't be punished,
+  but your points will be reset to zero, whether you get the orgasm from signing up or not.  You'd already decided you couldn't pass up the offer.
+  You didn't need any more convincing.
+<</nobr>>
+
+::Part15JobBaristaWeek11Chaste2
+<<nobr>>
+  <h1>Your first training session</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Chastity11.mp4" autoplay loop muted height="450"></video>
+  </div>
+  <<set setup.addInventory('tools', 'wife training kit')>>
+  <<set setup.addInventory('tools', 'anal cleaning kit')>>
+  <<set setup.addInventory('tools', 'makeup')>>
+  <<set setup.addInventory('tools', 'razors')>>
+  <<set setup.addInventory('sex toys', 'practice dildo')>>
+  <<set setup.addInventory('sex toys', 'anal training plugs')>>
+  When you get to the engineering department and pick up your "wife training kit", you are a bit shocked when you see the contents.
+  "You don't want to disappoint your future husband on your wedding night do you?" the person giving you the kit asks.
+<</nobr>>
+
+<<nobr>>
+  "No. Of course not.  I guess I just thought that he..." you don't finish the sentence.
+<</nobr>>
+
+<<nobr>>
+  "You expected him to have experience even if you didn't?  Or that you assumed he would enjoy himself while you just laid there?"
+  Actually, you realize you'd assumed both of those.  But you sense this technician has had this same conversation several times today
+  and is a bit annoyed.  You just nod and apologize and take the kit.
+<</nobr>>
+
+<<nobr>>
+  When you get home you open the belt's app again.  It knows you've picked up the kit and gives you the option to start your first
+  training session.  You are eager for the orgasm it promised, you start it immediately.  It tells you to get out the practice dildo and
+  how to get it ready.
+<</nobr>>
+
+<<nobr>>
+  You are alone in the room, but you still feel embarrassed as you begin the session.  Especially since you are required to have your
+  phone pointing at you, so the system can observe and record your whole session.  But the gentle stimulation the belt starts
+  giving you soon make you forget about the embarrassment and eager to continue.
+<</nobr>>
+
+<<nobr>>
+  You still don't know what you are doing and are constantly getting instructions told to you by your phone as you go.  You feel like you
+  are getting beter though, and the stimulation from your belt is increase and you feel yourself getting closer to an orgasm.
+<</nobr>>
+
+<<nobr>>
+  But then one of the sensors in the dildo notices when you accidently let your teeth hit the dildo.  The stimulation abruptly stops
+  as your phone tells you what you did wrong.
+<</nobr>>
+
+<<nobr>>
+  It then tells you to take a 15 minute rest and hydration break before you [[begin again|Part15JobBaristaWeek11Chaste3]].
+<</nobr>>
+
+::Part15JobBaristaWeek11Chaste3
+<<nobr>>
+  <h1>Finishing your first training session</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Chastity12.mp4" autoplay loop muted height="450"></video>
+  </div>
+  You are on your third try, you've been practicing on your dildo for well over an hour now.  But you think you've gotten much better.
+<</nobr>>
+
+<<nobr>>
+  There's very few instructions coming from your phone now.  It's mostly just the recorded moans of some guy that it is giving you
+  now to encourage you.  The app has also switched to a deeper 'male' voice to give the occasional compliment on how well you are doing.
+<</nobr>>
+
+<<nobr>>
+  The 'moans' have increased and the apps regular voice returns to tell you, "Don't stop.  Your husband is about to cum.  Make
+  sure you swallow every drop for him."
+  <<if setup.haveInventory('piercings', 'tongue sensor')>>
+    You wonder if you'll get punished tomorrow for swallowing it, but you don't care.  You'll do whatever it tells you to do
+    for the orgasm it's promised.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You hear another moan, the kind you've heard guys make in porn when they cum.  Then you feel your practice dildo shoot the fluid
+  you'd loaded it with earlier into your mouth.
+  <<if setup.haveInventory('piercings', 'tongue sensor')>>
+    It tastes and feels so much like before that you wonder if the 'simulation cum' was real cum, maybe from one the engineering
+    technicians.
+  <<else>>
+    It tastes and feels... strange.
+  <</if>>
+  But with the belt stimulating you much more now, you eagerly swallow it down, making sure to get every ounce of it 
+<</nobr>>
+
+<<nobr>>
+  "Good girl," the app tells you.  "You've earned a reward."  The stimulation from your belt increases even more. Soon you are crying
+  out as it pushes you over the edge.  It keeps going as weeks of denied pleasure finally flow through you.  Just when it starts to become
+  too much, the belt begins to die down.
+<</nobr>>
+
+<<nobr>>
+  You are sitting there, with your head resting on your desk basking in the afterglow when you hear $Roommate say, "Well, it looks
+  like that belt of yours lets you have some fun after all."  Mortified and wondering how much she saw, you quickly pack your dildo
+  back into the 'kit'.
+  <<if $Roommate == "Kiera">>
+    Though, if you can work up the nerve, you might ask her later for some advice.  You know she's sucked her share of guys off, and
+    you want to do a good job for your next lesson.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Your throat is a bit sore the next day, but still you are eager to go again and start earning the points towards your next orgasm.
+  But the app says it is giving you mouth the day off to rest because of how long your session lasted.  It says that instead you will
+  be focusing on your 'anal cleaning routine'.
+<</nobr>>
+
+<<nobr>>
+  You are nervous as you pull out that part of the kit and realize where the nozzle is going to be going in a few minutes.  But you
+  are eager to whatever it takes to earn your points.  Oh... and to learn to be a good wife for your future husband, you think afterwards.
 <</nobr>>
 
 <<nobr>>
