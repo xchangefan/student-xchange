@@ -883,7 +883,15 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $AcademicProbationDenial>>
+  <<if $JobAthlete>>
+    "[[I'm sorry but I can't|Part15MinistryTesterNo]]," you tell him.  "I'm an athlete and there's now way I could compete wearing one of those
+    things. You figure you'll just have to 
+    <<if setup.haveFucked('Andrew')>>
+      focus all of your desires on Andrew so you can stay faithful to him.
+    <<else>>
+      learn to control your desires naturally.  Working out whenever you get horny has certainly helped keep you in shape so far.
+    <</if>>
+  <<elseif $AcademicProbationDenial>>
     As soon as he confirmed that it would get you off the academic probation denial thing that has made you like this, you knew your answer.
     "[[Yes, I'd love to participate|Part15MinistryTester3]]," you answer.
   <<else>>
@@ -1442,11 +1450,19 @@
 <</nobr>>
 <<nobr>>
   The thought of knowing <<if $sex.length>>you<<else>>your virginity<</if>> would be safe, both from someone taking advantage of you, and even from a
-  moment of poor judgement from yourself was very tempting.  And you have to admit the extra money would have been nice too, but you turn down the offer
-  and leave the office unbelted. 
+  moment of poor judgement from yourself was very tempting.  And you have to admit the extra money would have been nice too,
+  <<if $JobAthlete>>
+    but it just wasn't an option for you. So you
+  <<else>>
+    but you turn down the offer and
+  <</if>>
+  leave the office unbelted. 
 <</nobr>>
 
 <<nobr>>
+  <<if $JobAthlete>>
+    But even if you could have said yes, you don't think you would have wanted to agree to wear that thing.
+  <</if>>
   Part of it is that you don't really trust them.  Something in the back of your mind worries that maybe it's a trick somehow. But really,
   <<if setup.areDating('Andrew')>>
     you don't want to be locked away from Andrew.
@@ -1854,7 +1870,7 @@
 <</nobr>>
 
 <<nobr>>
-  You remember Kyle and some of his teammates always looking for volunteer to help them perfect their oral-detection algorithms.  You know they talked
+  You remember Kyle and some of his teammates always looking for a volunteer to help them perfect their oral-detection algorithms.  You know they talked
   about body position, capacitive sensing, and all the rest.  But you still assumed it was mostly bullshit, just an excuse to get you or one of the
   other female engineers to suck their cock.  Not that anyone minded, everyone was always horny at the end of a shift.  But now you have to admit, they
   reallly had been working on something.
@@ -3491,7 +3507,11 @@ TODO [[Part15WeekByWeek]]
       <<include [[Part15BuddyPart2]]>>
     <<case 5>>
       <!-- Sept w3 -->
-      <<include [[Part15Major]]>>
+      <<if $PlayerMother>>
+        <<include [[Part15Baby2]]>>
+      <<else>>
+        <<include [[Part15Major]]>>
+      <</if>>
     <<case 6>>
       <!-- Sept w4 -->
       <<include [[Part15Greek]]>>
@@ -3531,7 +3551,6 @@ TODO [[Part15WeekByWeek]]
   <</switch>>
 <</nobr>>
 
-
 ::Part15Probation1
 <<nobr>>
   <h1>Struggling to catch back up</h1>
@@ -3539,15 +3558,20 @@ TODO [[Part15WeekByWeek]]
   <<set $AcademicProbationEndWeek to 12>>
 <</nobr>>
 <<nobr>>
-  You want to get off academic probation as quick as you can.
   <<if $AcademicProbationDenial>>
-    You think you are going to go crazy
+    You want to get off academic probation as quick as you can. You think you are going to go crazy
     <<if $CampusMinistry or $CampusMinistryFailSummer>>
       from how horny the denial the dean put you on is making you.
     <<else>>
       if you don't orgasm soon.
     <</if>>
+  <<else>>
+    You are still expected to get off of academic probation.  Though you aren't nearly as worried about it now that the dean
+    has removed the orgasm block that was denying you. 
   <</if>>
+<</nobr>>
+
+<<nobr>>
   But you have so much to catch up on from last year, and you have to do it without falling behind again this year.
   To get off probation, you have to get help in both the classes you failed last year.  The math class you failed in the spring, and then the class you
   failed back in December too.  The professors are too busy taking care of their current students, you'd missed your chance to get their help.  But there
@@ -3564,6 +3588,9 @@ TODO [[Part15WeekByWeek]]
   <<if $CampusMinistry>>
     If only there were some way you could convince one of them to work a bit longer.  If they only new how much you needed this.  Oh well, it takes however
     long as it takes.  You're determined to get off probation eventually.
+  <<elseif !$AcademicProbationDenial>>
+    But you aren't that worried about how long it will take, now that you can orgasm again.
+    <<if $PlayerChastityBelt>>Well, at least in theory that is.<</if>>
   <<elseif $PlayerChastityBelt and $Keyholder == "computer" and $JobBetaTester == "chaste">>
     You know how to concince at least one of them, probably both.  But you know how your belt would punish you if you tried.  So you decide it's
     better to spend $AcademicProbationEndWeek weeks on probation than half that but in pain.  And maybe, if you behave yourself, maybe your belt
@@ -4417,7 +4444,7 @@ TODO [[Part15Week]]
 
 <<nobr>>
   You stop just watching and start making out with Marissa as he continues to fuck her.  After a while, she holds onto your head and
-  pulls you toward when she cums.
+  pulls you toward her when she cums.
 <</nobr>>
 
 <<nobr>>
@@ -5308,7 +5335,7 @@ TODO [[Part15Week]]
     <<if $JobBetaTester == "chaste">>
       "I couldn't join in, even if I wanted to,"
     <<elseif setup.areDating($Keyholder)>>
-      "Well, if I [[did join in|Part15DormSluttyChasteSex]] my options would be somewhat limited unless $Keyholder desided to unlock me,"
+      "Well, if I [[did join in|Part15DormSluttyChasteSex]] my options would be somewhat limited unless $Keyholder decided to unlock me,"
     <<else>>
       "Well, if I [[did join in|Part15DormSluttyChasteSex]] my options would be somewhat limited,"
     <</if>>
@@ -5733,7 +5760,7 @@ TODO [[Part15Week]]
     After you finish swallowing $dating[0]'s cum, you smile and say, "Well, at least that's much nicer than having to wash my mouth out
     with soap.  I guess I'll need to be a good girl, at least until they let you turn that setting off, right?"
     <br><br>
-    $dating[0] just strokes your hair, not saying anything but "You are a very good girl."
+    $dating[0] just strokes your hair, not saying anything but, "You are a very good girl."
     <br><br>
     After a few moments, when his thoughts start to become more clear again, he mentions something else to you.  "Since you didn't get
     an email, I should warn you there's some words I didn't expect on the list of forbidden ones.  I can look them up for you if
@@ -5798,7 +5825,7 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15AfterMainJob]]>>
+  <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15BackToMain
@@ -5811,7 +5838,132 @@ TODO [[Part15Week]]
   <h1>TODO</h1>
   TODO Image
 <</nobr>>
-TODO dealing with baby if have one, struggling with belt if in it, Choosing a major [[Part15Week]]
+<<nobr>>
+  It's your sophmore year now and while you've definitely thought about it before now, it's time to finalize your choice of a major.
+  Of course you could always change it later, but that would probably mean graduating later and you don't want that.
+  <<if $Engaged == "Andrew">>
+    <br><br>
+    Of course you expect once you are married, you expect Andrew will be making enough that you wouldn't even need to work outside
+    the home.  But you might still want to, so you should pick a major still.  But it's probably safe to pick something you enjoy,
+    and not really worry about how much it pays.
+  <<elseif $Engaged>>
+    Once you and $Engaged are married, you'll both be brining money in, so you are probably safe picking something you know you'll
+    enjoy, and not worrying as much about how much it pays.
+  <<elseif $ProfessorAllowance and setup.areDating('Aaron')>>
+    You hope someday you and Aaron will be married, and he'll be paying most of the bills while you take care of him and the house.
+    But he hasn't proposed yet.  Besides he's always talking about how important your education is.
+  <<elseif $PlayerMother>>
+    You're going to be taking care of <<print $children[0].name>>, so you'll probably want to choose something that pays well
+    enough for a single mom.
+  <</if>>
+  <<if $JobEngineer or $JobEngineerLock>>
+    todo already chosen comp sci/math/engineering, no need to pick major
+    <<set $Major to "Engineering">>
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
+    todo not likely to be a professional cheerleader - pick major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobAthlete and $BodyType == 'Fit'>>
+    todo might want to be a pro athlete, but need a back plan - pick backup major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobAthlete>>
+    todo not likely to be a pro athlete - pick major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobFitnessYoga>>
+    todo might want to be a yoga Instructor - pick major with that as an option
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobFitnessMassage>>
+    todo might want to be a massage therapist - pick major with that as an option
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobLibrary>>
+    todo might want to be a librarian - pick major with that as an option
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobTestSubject or $JobBetaTester>>
+    It's not like you can keep being a 'tester' for the engineering department after graduation.
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobModel>>
+    todo pick art major
+    <<set $Major to "Art">>
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<elseif $JobOffice or $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>
+    todo pick business major
+    <<set $Major to "Business">>
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<elseif $JobBarista or $JobBikiniBarista or $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+    todo not planning on doing this forever, pick a major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobCallGirl>>
+    You make more as a call girl than you could probably make at any other job you'd choose.  But you have to pick something, and you're
+    going to want something to tell family and friends that don't know what you really do for a living.  The more you think about it the
+    more a business major appeals to you.
+    <br><br>
+    It'll give you something to tell people now, and it'll help you manage the money side of the job.  And who knows, maybe when you're older
+    and don't want to see clients as much anymore, you could start your could start your own placement service instead.
+    <<set $Major to "Business">>
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<else>>
+    todo general pick a major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <</if>>  
+<</nobr>>
+
+::Part15MajorChoose
+<<nobr>>
+  <<if $JobFitnessYoga>>
+    You've enjoyed your work as a yoga instructor.  There isn't any set requirements if you want to continue with that after you
+    graduate, but you could always pick "Health Sciences" and focus on exercise science or kinesiology.
+    Of course, there's a lot of competition out there.  But if you get word get around about your private sessions, then maybe
+    that won't be a problem.
+    <br><br>
+  <<elseif $JobFitnessMassage>>
+    You've enjoyed your work in the fitness center.  You could always pick "Health Sciences" and become a massage therapist or
+    maybe even a physical therapist.  Then you could work as a real therapist during the day, and then pick up some extra money
+    doing other types of sessions in your free time.
+    <br><br>
+  <<elseif $JobLibrary>>
+    You've enjoyed your work a a librarian.  "Library Science" is an option you could choose.  Of course most libraries aren't
+    going to be as flexible about your after-hours behavior as the university library.  But you've found you can be quite convincing
+    with your boss when you want to be, so maybe you can negotiate some fexibility wherever you end up.
+    <br><br>
+  <</if>>  
+  TODO Pick a major
+<</nobr>>
+
+Child care
+AGRICULTURE & NATURAL RESOURCES CONSERVATION (Ag, Environmental, Forestry)
+ARCHITECTURE
+AREA, ETHNIC, & MULTIDISCIPLINARY STUDIES (Women's studies, library science, general studies)
+ARTS
+BUSINESS
+COMMUNICATIONS
+COMMUNITY, FAMILY, & PERSONAL SERVICES (family, child care, parks and rec, health and pe, culinary, CCJ, corrections, law enforcement, social work)
+COMPUTER SCIENCE & MATHEMATICS
+EDUCATION
+ENGINEERING
+ENGLISH & FOREIGN LANGUAGES
+HEALTH ADMINISTRATION & ASSISTING (Assistant, office work)
+HEALTH SCIENCES & TECHNOLOGIES (doctor, nurse, PT, athletic trainer, massage therapy)
+PHILOSOPHY, RELIGION, & THEOLOGY
+REPAIR, PRODUCTION, & CONSTRUCTION
+SCIENCES: BIOLOGICAL & PHYSICAL
+SOCIAL SCIENCES & LAW
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
 
 ::Part15Greek
 <<nobr>>

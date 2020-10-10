@@ -1073,7 +1073,7 @@ TODO Call Girl Side
   <<elseif $SchoolWeek == 7>>
     <<include [[Part15JobEngineerLock3]]>>
   <<else>>
-    TODO (Not sure what other weeks would be yet)
+    <<include [[Part15JobEngineerLock11]]>>
   <</if>>
 <</nobr>>
 
@@ -1307,7 +1307,7 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  You deside to at least enjoy the setting you made earlier.  You
+  You decide to at least enjoy the setting you made earlier.  You
   <<if setup.haveGirlfriend()>>
     <<set setup.addSex({sex:"female", name:$dating[0]})>>
     ask $dating[0] if you can eat her out.  Of course she says yes.
@@ -1344,7 +1344,7 @@ TODO Call Girl Side
 <<nobr>>
   <<if $EngineerLockPacketOrgasm>>
     Of course, you're tempted to not tell them how to fix the hack so you can enjoy your new setting.  But that wouldn't work.  Your boss could just
-    disable you're belts orgasms from some admin interface, and then they'd eventually figure out the bug anyway.  Then end result would be the same,
+    disable your belt's orgasms from some admin interface, and then they'd eventually figure out the bug anyway.  Then end result would be the same,
     except you wouldn't get your bonus, so you might as well tell how you did it.
     <br><br>
     "You look exhausted," your boss says when you sit down in his office.  Then he laughs.  "Well, I guess you didn't get much sleep last night, did you?"
@@ -1541,7 +1541,7 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  You continue, "Since there will be two devices with you as the onwer, and just one from my boss, you should be made the primary owner.  Then you can unlock
+  You continue, "Since there will be two devices with you as the owner, and just one from my boss, you should be made the primary owner.  Then you can unlock
   me.  And I'll be very, very grateful.  I'm already so horny just thinking about being free of this."
 <</nobr>>
 
@@ -1755,11 +1755,13 @@ TODO Call Girl Side
   <h1>Making do wtih $tempLockAssist</h1>
   <img src="Part15/Engineer21.jpg" hspace="10" vspace="10" height="750" align="left">
   <<set setup.addSexRepeat(10, {sex:"female", name:$tempLockAssist})>>
-<</nobr>>
-<<nobr>>
   <<if $tempLockAssist == "Kate">>
-    "Seeing you horny and frustrated always turns me on.  See you like this, and knowing you can't do anything about has me
+    "Seeing you horny and frustrated always turns me on.  Seeing you like this, and knowing you can't do anything about has me
     needing an orgasm, and soon.  Come over here and give me one," Kate commands.
+  <<elseif $PlayerItemBuddyKey and $tempLockAssist == "Bailey">>
+    Bailey's finger is circling her nipple, enjoying what sensations she can with her belt still on.
+    "Seeing you as horny as frustrated as I am, is driving me crazy," she tells you.  "I did everything I could to try to
+    help you.  Maybe..."  She looks down and doesn't finish her sentence.  But she doesn't need to, you know exactly what she wants.
   <<else>>
     "I'm sorry, but seeing how horny and frustrated you are, and how you can't do anything about it is such a turn on.
     I really need to get off.  Like right now.  I hope you don't mind," $tempLockAssist says.  Though if you want to help,
@@ -1768,8 +1770,16 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  You crawl over as she is pulling off her panties and get to work giving her the orgasm you can't have.  And then another one
-  after that, and then another, until finally she's satisified.
+  <<if $PlayerItemBuddyKey and $tempLockAssist == "Bailey">>
+    "Thank you for trying," you say.  "You're right.  You did everything you could.  It's not your fault my plan didn't work."
+    Her face lights up when you add, "How about I unlock you for the weekend?  And then Monday you'll be back in your belt, just like
+    me."
+    <br><br>
+    Soon her belt is off, and she's grabbing your head, as you give
+  <<else>>
+    You crawl over as she is pulling off her panties and get to work giving 
+  <</if>>
+  her the orgasm you can't have.  And then another one after that, and then another, until finally she's satisified.
 <</nobr>>
 
 <<nobr>>
@@ -1786,9 +1796,16 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  The rest of the weekend your head is frequently between $tempLockAssist's legs, giving orgasm after orgasm.  That much
-  hasn't changed.  The onyl thing different this weekend, is that now in addition to your belt, the bra is also gently teasing your
-  nipples as eat your girlfriend out.
+  The rest of the weekend your head is frequently between $tempLockAssist's legs, giving orgasm after orgasm.
+  <<if $PlayerItemBuddyKey and $tempLockAssist == "Bailey">>
+    When Monday arrives though, she willingly stands in front of you with her hands behind her head, waiting for you to lock her belt back on.
+    <br><br>
+    You reward her good behavior as you drop to your knees and give her one last orgasm before you lock her belt back on.  Of course the
+    gentle teasing your nipples and clit are receiving as you do almost make you reluctant to stop.
+  <<else>>
+    That much hasn't changed.  The only thing different this weekend, is that now in addition to your belt, the bra is also gently
+    teasing your nipples as you eat your girlfriend out.
+  <</if>>
 <</nobr>>
 
 ::Part15JobEngineerLock7Barry
@@ -2000,15 +2017,15 @@ TODO Call Girl Side
     <</if>>
     In addition to the monetary reward,
   <<else>>
-    Unfortunately you weren't able to unlock youself or orgasm, so I can provide a cash bonus.  However 
+    Unfortunately you weren't able to unlock youself or orgasm, so I can't provide a cash bonus.  However 
   <</if>>
   there is something else I can offer you as a reward.  Well, 'Offer' probably isn't the right word."
 <</nobr>>
 
 <<nobr>>
-  He explains, "This particular bug is going to take a while longer to resolve.  But I don't want you to have to stop your
-  testing.  So I came up with the perfect work-around.  I'll just leave your accessories locked on you.  Or at least the
-  chastity bra and the collar.  The rest is up to you and $tempLockAssist."
+  "You can keep the new restraints." He explains, "This particular bug is going to take a while longer to resolve.  But I don't want you
+  to have to stop your testing.  So I came up with the perfect work-around.  I'll just leave your accessories locked on you.  Or at
+  least the chastity bra and the collar.  The rest is up to you and $tempLockAssist."
 <</nobr>>
 
 <<nobr>>
@@ -2018,7 +2035,7 @@ TODO Call Girl Side
     reset myself as the sole owner, and restored the other settings to their previous values.  Well, near enough, adjusting
     for your new toys."
   <<else>>
-    correct the wearer to be you on all the devices.  Though if $tempLockAssist ever does want to make me her owner, tell her
+    corrected the wearer to be you on all the devices.  Though if $tempLockAssist ever does want to make me her owner, tell her
     to let me know."  He laughs at his joke.  Though joking or not, you doubt he would turn her down if she did offer herself.
   <</if>>
 <</nobr>>
@@ -2032,3 +2049,182 @@ TODO Call Girl Side
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
+
+::Part15JobEngineerLock11
+<<nobr>>
+  <h1>Waking up horny</h1>
+  <img src="Part15/Engineer22.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  You wake up horny every morning.  You long to feel
+  <<if setup.haveGirlfriend()>>
+    <<set setup.addSexRepeat(20, {sex:"female", name:$dating[0]})>>
+    $dating[0]'s tongue on your clit, her lips on your nipple.  You ache to be filled with a huge strap-on as she fucks you from behind.
+    Giving her the pleasure you crave is the most you can usually hope for.
+    <<if $PlayerItemBuddyKey and setup.areDating("Bailey")>>
+      You find yourself using her key to unlock her from her belt for an orgasm, much more than you ever thought you would.
+    <</if>>
+  <<elseif $dating.length>>  
+    <<set setup.addSexRepeat(20, {sex:"male", name:$dating[0]})>>
+    $dating[0]'s cock inside you.  To feel it swell and fill you with his cum, as you cry out with the orgasm you so desperately need.
+    But feeling him fill your mouth with his cum is the most you can usually hope for.
+    <<if $PlayerItemNerdKey and setup.areDating("Peter")>>
+      You find yourself using his key to unlock him from his cock cage, much more than you ever thought you would.
+    <</if>>
+  <<else>>
+    <<set setup.addSexRepeat(20, {sex:"male"})>>
+    a cock inside you.  To feel it swell and fill you with his cum, as you cry out with the orgasm you so desperately need.
+    But finding a guy to fill your mouth with his cum is the most you can usually hope for.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  At least you were able to eventually
+  <<if setup.haveFucked('Engineering Department Head')>>
+    <<set setup.addSex({sex: 'male', name: 'Engineering Department Head'})>>
+    "persuade"
+  <<else>>
+    convince
+  <</if>>
+  the department head to remove the collar you'd locked on.  Like you told him
+  <<if setup.haveFucked('Engineering Department Head')>>
+    before you sucked his cock,
+  <</if>>
+  you can't try your ownership trick again with only one available device.  You only wish it'd been the chastity bra he'd removed like you'd wanted.
+<</nobr>>
+
+<<nobr>>
+  <<if $EngineerLockPacketOrgasm or $EngineerLockOwnerOrgasm>>
+    You don't have any classes today.  So hopefully you'll be able to [[do some more testing|Part15JobEngineerLock11Normal]] and maybe figure out a
+    way to orgasm again today!
+
+  <<else>>
+    You don't have any classes today, so you should probably do some more testing.  You want to orgasm so much, and figuring out another flaw
+    is the only way you will.  But it's been months since you've orgasmed, and you
+    <<if setup.areDating("Bailey") and $PlayerItemBuddyKey>>
+      [[are feeling hopeless|Part15JobEngineerLock11HopelessBailey]]
+    <<else>>
+      [[are feeling hopeless|Part15JobEngineerLock11Hopeless]]
+    <</if>>
+    that you'll ever succeed.
+  <</if>>
+<</nobr>>
+
+::Part15JobEngineerLock11Normal
+  TODO Belted engineer, another hacked orgasm
+  TODO boss is letting you out, but finally challenge.  (Some huge number of blowjobs?)
+  TODO Continue on as regular engineer now
+
+::Part15JobEngineerLock11HopelessBailey
+<<nobr>>
+  <h1>On your knees with Bailey</h1>
+  <img src="Part15/Engineer24.jpg" hspace="10" vspace="10" height="500" align="left">
+  <<set setup.addSexRepeat(30, {sex:"male"})>>
+  <<if !$DailyBJMinimum or $DailyBJMinimum < 5>>
+    <<set $DailyBJMinimum to 5>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  Attempt after attempt has failed.  And worse, you've accidently added requirements to suck multiple cocks every day.  If you fall short of your
+  goal, the belt punishes you.  But even if your belt didn't punish you, you wouldn't want to miss a day.  Since your belt stopped stimulating
+  you when you eat out Bailey, the only teasing you get is with a cock in your mouth.
+<</nobr>>
+
+<<nobr>>
+  Of course, Bailey's belt isn't going to punish her, but she's usually right there beside you taking turns on his cock.  You always make sure you
+  do enough of the work that your belt gives you full credit though.
+<</nobr>>
+
+<<nobr>>
+  She can't always be with you though.  In addition to the daily minimum requirement, your belt also decides randomly it wants you to suck a
+  cock, immediately.  When that happens you better be on your knees coaxing a cock to life when the timer runs out, or the punishment starts.
+  Then it gives you a few more minutes and then the punishment starts to get worse.  You've never waited any longer to see what happens after that.
+<</nobr>>
+
+<<nobr>>
+  Your guy friends are all willing and able to help you out.  But even when they aren't around, you haven't had any problems convincing a stranger
+  in time.  If you are honest with yourself, you have to admit you've started to like it.  It adds excitement to your day, never knowing when
+  it's going to message you, or [[where you'll be|Part15JobEngineerLock11HopelessBailey2]] when it happens.
+<</nobr>>
+
+::Part15JobEngineerLock11HopelessBailey2
+<<nobr>>
+  <h1>Five minute warning</h1>
+  <video src="Part15/Engineer23.webm" autoplay loop muted height="500"></video>
+  <<set setup.addSexRepeat(30, {sex:"male"})>>
+<</nobr>>
+<<nobr>>
+  Even a walk through the park can turn exciting when your belt messages you.  Within a couple minutes you are in a hidden spot with a stranger, and
+  soon after you are swallowing his cum as he thanks you and walks away.  His cum is still sliding down your throat when the pleasant vibrations from
+  your belt stop.
+<</nobr>>
+
+<<nobr>>
+  Now your mind is filled with thoughts of where to find another cock to suck, so you can get your belt to reward you with more of those wonderful
+  vibrations.  The thoughts that were there before you received your 'five minute warning', the ones about how next to test your belt, are long
+  gone.
+<</nobr>>
+
+<<nobr>>
+  You spend most of the day on your knees.  By the time you [[go to bed|Part15JobEngineerLock11Hopeless2]], you've well exceeded your daily reqirement
+  of blowjobs.  Your last thoughts of the day are about which of the cocks you sucked you enjoyed the most.  It never even occurs to you that you
+  hadn't bothered to even try to hack the belt again today.
+<</nobr>>
+
+::Part15JobEngineerLock11Hopeless
+<<nobr>>
+  <h1>Five minute warning</h1>
+  <video src="Part15/Engineer23.webm" autoplay loop muted height="500"></video>
+  <<set setup.addSexRepeat(30, {sex:"male"})>>
+  <<if !$DailyBJMinimum or $DailyBJMinimum < 5>>
+    <<set $DailyBJMinimum to 5>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  Attempt after attempt has failed.  And worse, you've accidently added requirements to suck multiple cocks every day.  If you fall short of your
+  goal, the belt punishes you.  But even if your belt didn't punish you, you wouldn't want to miss a day.
+  <<if setup.haveGirlfriend()>>
+    Since your belt stopped stimulating you when you eat out $dating[0], the only teasing you get is with a cock in your mouth.  But
+    at least $dating[0] is understanding about it.
+  <<else>>
+    The only teasing your poor, locked-away clit gets is is when you have a cock in your mouth.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  In addition to the daily minimum requirement, your belt also decides randomly it wants you to suck a cock, immediately.  When that happens you
+  better be on your knees coaxing a cock to life when the timer runs out, or the punishment starts.  Then it gives you a few more minutes and then
+  the punishment starts to get worse.  You've never waited any longer to see what happens after that.
+<</nobr>>
+
+<<nobr>>
+  Your guy friends are all willing and able to help you out.  But even when they aren't around, you haven't had any problems convincing a stranger
+  in time.  If you are honest with yourself, you have to admit you've started to like it.  It adds excitement to your day, never knowing when
+  it's going to message you, or where you'll be when it happens.
+<</nobr>>
+
+<<nobr>>
+  Even a walk through the park can turn exciting when your belt messages you.  Within a couple minutes you are in a hidden spot with a stranger, and
+  soon after you are swallowing his cum as he thanks you and walks away.  His cum is still sliding down your throat when the pleasant vibrations from
+  your belt stop.
+<</nobr>>
+
+<<nobr>>
+  Now your mind is filled with thoughts of where to find another cock to suck, so you can get your belt to reward you with more of those wonderful
+  vibrations.  The thoughts that were there before you received your 'five minute warning', the ones about how next to test your belt, are long
+  gone.
+<</nobr>>
+
+<<nobr>>
+  You spend most of the day on your knees.  By the time you [[go to bed|Part15JobEngineerLock11Hopeless2]], you've well exceeded your daily reqirement
+  of blowjobs.  Your last thoughts of the day are about which of the cocks you sucked you enjoyed the most.  It never even occurs to you that you
+  hadn't bothered to even try to hack the belt again today.
+<</nobr>>
+
+::Part15JobEngineerLock11Hopeless2
+TODO If with bailey and she's locked, then both of you go to a new owner
+TODO If with girlfriend (incl unlocked bailey), then you break up with her and go to a new owner
+TODO If with a boyfriend, then he becomes your owner
+TODO Otherwise, you get a new owner
+TODO In any case you drop out and become a mindless slut
+TODO leads to an ending
