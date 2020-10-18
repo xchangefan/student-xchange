@@ -1815,7 +1815,7 @@ TODO Call Girl Side
     <video src="Part15/Engineer17.webm" autoplay loop muted height="725"></video>
   </div>
   <<set $EngineerLockOwnerOrgasm to 1>>
-  <<set $tempBarryEngineerStrict to 1>>
+  <<set $BarryEngineerStrict to 1>>
 <</nobr>>
 <<nobr>>
   "Ok, so unlocking won't work.  But you should still be able to tell it to give me an orgasm.", you tell him.  Then you start directing him
@@ -1824,7 +1824,7 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  "Quie," Barry says calmly.  "I'm looking at my options."  You want to say something, but you don't want another shock so you stay quiet.
+  "Quiet," Barry says calmly.  "I'm looking at my options."  You want to say something, but you don't want another shock so you stay quiet.
   <<if setup.haveFucked('Resort Submissive')>>
     You feel yourself getting wet remembering what it was like over the summer on the island.
   <</if>>
@@ -1973,7 +1973,7 @@ TODO Call Girl Side
 <<nobr>>
   You take off your clothes, to let your boss inspect your restraints.  You don't know why you are nervous.  You couldn't
   get naked now no matter how much you might want to.  Besides, he's seen much more of you anyway.  You guess you're just
-  <<if $tempBarryEngineerStrict>>
+  <<if $BarryEngineerStrict>>
     wondering if he's judging you for how many cocks you sucked this weekend.
   <<elseif $EngineerLockOwnerOrgasm>>
     wondering if saw how many times you sucked $tempLockAssist's cock this weekend.  You're sure he did.
@@ -1990,7 +1990,7 @@ TODO Call Girl Side
 <<nobr>>
   When he finally says something again, he asks why you have the ankle, wrist, and thigh cuffs on as they don't lock
   electronically.  They just use the standard keys that come with them.
-  <<if $tempBarryEngineerStrict>>
+  <<if $BarryEngineerStrict>>
     Your voice is shaky and uneven after the workout your throat received this weekend.  But you manage to
   <<else>>
     You
@@ -2007,9 +2007,9 @@ TODO Call Girl Side
   "Well, it is a beautiful look," your boss agrees.  "At any rate, congratulations on finding another bug.
   <<if $EngineerLockOwnerOrgasm>>
     You've earned
-    <<if $EngineerLockPacketOrgasm>>another<</if>>
+    <<if $EngineerLockPacketOrgasm>>another<<else>>a<</if>>
     bonus for managing to orgasm also.
-    <<if $tempBarryEngineerStrict>>
+    <<if $BarryEngineerStrict>>
       Your friend set quite the challenge for you, I wasn't sure if you'd make it or not, but you definitely earned your orgasm
       this weekend, and your bonus.
     <<else>>
@@ -2044,6 +2044,24 @@ TODO Call Girl Side
   "Yes sir, thank you," you say.  Then the two of you sit down to go over the details of what you've found.  Including the
   owner gender assumptions the manual and programming were making, and the other issues with adding devices.  You try to
   focus, but you keep getting distracted each time your feel the bra start to softly tease your nipples.
+  <<if $BarryEngineerStrict>>
+    <<if !$DailyBJMinimum>>
+      <<set $DailyBJMinimum to 1>>
+    <</if>>
+    <<set setup.addSexRepeat(5, {sex:"male", name:"Barry"})>>
+    <<set setup.addSexRepeat(15, {sex:"male"})>>
+    <<set setup.addSexRepeat(5, {sex:"male", name:"Barry"})>>
+    <<set setup.addSexRepeat(25, {sex:"male"})>>
+    <br><br>
+    "Oh, I almost forgot," he adds before you leave. "I turned off the 100 blowjob orgasm reward he set, obviously.  But I left the other
+    settings Barry enabled for you.  There's no orgasm chance, so it won't affect the testing.  And besides, I don't want to prevent you
+    kids from having a bit of fun."
+    <br><br>
+    "Given your experience I doubt one blowjob a day is going to be much of challenge anyway," he continues.  "But make sure
+    you don't forget or the belt will punish you.  We haven't had many people trying the other setting he turned on, so let me know how that
+    goes.  Be sure to keep your phone with you at all times so you don't miss a notification.  Whenever the belt messages you, you'll just
+    have five minutes to start a blowjob before the punishment starts.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -2053,7 +2071,7 @@ TODO Call Girl Side
 ::Part15JobEngineerLock11
 <<nobr>>
   <h1>Waking up horny</h1>
-  <img src="Part15/Engineer22.jpg" hspace="10" vspace="10" height="500" align="left">
+  <img src="Part15/Engineer22.jpg" hspace="10" vspace="10" height="550">
 <</nobr>>
 <<nobr>>
   You wake up horny every morning.  You long to feel
@@ -2091,13 +2109,34 @@ TODO Call Girl Side
     before you sucked his cock,
   <</if>>
   you can't try your ownership trick again with only one available device.  You only wish it'd been the chastity bra he'd removed like you'd wanted.
+  "What fun would that be?" he said with a smile as he'd unlocked your collar.  "Speaking of fun, I'll let you have this.  That way you and your
+  <<if setup.haveGirlfriend()>>
+    girlfriend
+  <<elseif $dating.length>>
+    boyfriend
+  <<else>>
+    'friend'
+  <</if>>
+  can still play with you in a collar.  It just takes a regular key though," he says as he hands you a box with a picture of a collar that looks similar to the
+  one he'd just removed.
 <</nobr>>
 
 <<nobr>>
-  <<if $EngineerLockPacketOrgasm or $EngineerLockOwnerOrgasm>>
+  <<if $BarryEngineerStrict>>
+    <<if !$DailyBJMinimum or $DailyBJMinimum < 5>>
+      <<set $DailyBJMinimum to 5>>
+    <</if>>
+    It's been nearly a month since your last orgasm, and you really need another one.  Your last attempt wasn't very successful, and you weren't even trying
+    to orgasm that time.  Well, you weren't only trying to orgasm.  You tried to see if you could either set the belt to let you orgasm when you were
+    giving your daily blowjob, or if you couldn't do that then just turn the requirement entirely.
+    <br><br>
+    But you weren't playing close enough attention and it backfired.  Instead of disabling it, you ended up raising the daily minimum to five blowjobs a day!
+    And the extra ones it randomly decides you have to give sometimes don't even count towards the five.
+    <br><br>
+    Maybe [[today|Part15JobEngineerLock11Hopeless]] you'll hve better luck with your testing.
+  <<elseif $EngineerLockPacketOrgasm or $EngineerLockOwnerOrgasm>>
     You don't have any classes today.  So hopefully you'll be able to [[do some more testing|Part15JobEngineerLock11Normal]] and maybe figure out a
     way to orgasm again today!
-
   <<else>>
     You don't have any classes today, so you should probably do some more testing.  You want to orgasm so much, and figuring out another flaw
     is the only way you will.  But it's been months since you've orgasmed, and you
@@ -2125,9 +2164,13 @@ TODO Call Girl Side
   <</if>>
 <</nobr>>
 <<nobr>>
-  Attempt after attempt has failed.  And worse, you've accidently added requirements to suck multiple cocks every day.  If you fall short of your
-  goal, the belt punishes you.  But even if your belt didn't punish you, you wouldn't want to miss a day.  Since your belt stopped stimulating
-  you when you eat out Bailey, the only teasing you get is with a cock in your mouth.
+  Attempt after attempt has failed.  And worse, some of you attempts have backfired on you, and you've accidently added requirements to suck multiple
+  cocks every day.  If you fall short of your goal, the belt punishes you.
+<</nobr>>
+
+<<nobr>>
+  But even if your belt didn't punish you, you wouldn't want to miss a day. Your belt has stopped stimulating you when you eat out Bailey.
+  But it does still tease or edge you when you have a cock in your mouth.
 <</nobr>>
 
 <<nobr>>
@@ -2136,8 +2179,9 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  She can't always be with you though.  In addition to the daily minimum requirement, your belt also decides randomly it wants you to suck a
-  cock, immediately.  When that happens you better be on your knees coaxing a cock to life when the timer runs out, or the punishment starts.
+  She can't always be with you though.  In addition to the daily minimum requirement, in another one of your attempts where you were too horny and
+  not paying atention, you accidently activated another feature.  This one causes your belt to randomly decide it wants you to suck a cock,
+  immediately.  When that happens you better be on your knees coaxing a cock to life when the timer runs out, or the punishment starts.
   Then it gives you a few more minutes and then the punishment starts to get worse.  You've never waited any longer to see what happens after that.
 <</nobr>>
 
@@ -2150,12 +2194,19 @@ TODO Call Girl Side
 ::Part15JobEngineerLock11HopelessBailey2
 <<nobr>>
   <h1>Five minute warning</h1>
+  With nothing else planned today, you are planning to spend most of the day testing your belt again.  With a whole day to focus on it, maybe you'll
+  finally manage to get it to give you the orgasm you need.  You just need to take a morning walk across the park to the store, so you can pick up a
+  couple parts you might need.  And then you have the whole day for testing when you get home.
+<</nobr>>
+
+<<nobr>>
   <video src="Part15/Engineer23.webm" autoplay loop muted height="500"></video>
   <<set setup.addSexRepeat(30, {sex:"male"})>>
 <</nobr>>
+
 <<nobr>>
-  Even a walk through the park can turn exciting when your belt messages you.  Within a couple minutes you are in a hidden spot with a stranger, and
-  soon after you are swallowing his cum as he thanks you and walks away.  His cum is still sliding down your throat when the pleasant vibrations from
+  But your borning walk through the park turns exciting when your belt messages you.  Within a couple minutes you are in a hidden spot with a stranger, and
+  soon after that, you are swallowing his cum as he thanks you and walks away.  His cum is still sliding down your throat when the pleasant vibrations from
   your belt stop.
 <</nobr>>
 
@@ -2166,7 +2217,7 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  You spend most of the day on your knees.  By the time you [[go to bed|Part15JobEngineerLock11Hopeless2]], you've well exceeded your daily reqirement
+  You spend most of the day on your knees.  By the time you [[go to bed|EngineerLockHopeless]], you've well exceeded your daily requirement
   of blowjobs.  Your last thoughts of the day are about which of the cocks you sucked you enjoyed the most.  It never even occurs to you that you
   hadn't bothered to even try to hack the belt again today.
 <</nobr>>
@@ -2181,30 +2232,33 @@ TODO Call Girl Side
   <</if>>
 <</nobr>>
 <<nobr>>
-  Attempt after attempt has failed.  And worse, you've accidently added requirements to suck multiple cocks every day.  If you fall short of your
-  goal, the belt punishes you.  But even if your belt didn't punish you, you wouldn't want to miss a day.
-  <<if setup.haveGirlfriend()>>
-    Since your belt stopped stimulating you when you eat out $dating[0], the only teasing you get is with a cock in your mouth.  But
-    at least $dating[0] is understanding about it.
+  <<if $BarryEngineerStrict>>
+    With nothing else planned today, you are planning to spend most of the day testing your belt again.  With a whole day to focus on it, maybe you'll
+    finally manage to get it to give you the orgasm you need.  You just need to take a morning walk across the park to the store, so you can pick up a
+    couple parts you might need.  And then you have the whole day for testing when you get home.
+    <br><br>
+    But even
   <<else>>
-    The only teasing your poor, locked-away clit gets is is when you have a cock in your mouth.
+    Attempt after attempt has failed.  And worse, you've accidently added requirements to suck multiple cocks every day.  If you fall short of your
+    goal, the belt punishes you.  But even if your belt didn't punish you, you wouldn't want to miss a day.
+    <<if setup.haveGirlfriend()>>
+      Since your belt stopped stimulating you when you eat out $dating[0], the only teasing you get is with a cock in your mouth.  But
+      at least $dating[0] is understanding about it.
+    <<else>>
+      The only teasing your poor, locked-away clit gets is is when you have a cock in your mouth.
+    <</if>>
+    <br><br>
+    In addition to the daily minimum requirement, your belt also decides randomly it wants you to suck a cock, immediately.  When that happens you
+    better be on your knees coaxing a cock to life when the timer runs out, or the punishment starts.  Then it gives you a few more minutes and then
+    the punishment starts to get worse.  You've never waited any longer to see what happens after that.
+    <br><br>
+    Your guy friends are all willing and able to help you out.  But even when they aren't around, you haven't had any problems convincing a stranger
+    in time.  If you are honest with yourself, you have to admit you've started to like it.  It adds excitement to your day, never knowing when
+    it's going to message you, or where you'll be when it happens.
+    <br><br>
+    But, like happens today, even
   <</if>>
-<</nobr>>
-
-<<nobr>>
-  In addition to the daily minimum requirement, your belt also decides randomly it wants you to suck a cock, immediately.  When that happens you
-  better be on your knees coaxing a cock to life when the timer runs out, or the punishment starts.  Then it gives you a few more minutes and then
-  the punishment starts to get worse.  You've never waited any longer to see what happens after that.
-<</nobr>>
-
-<<nobr>>
-  Your guy friends are all willing and able to help you out.  But even when they aren't around, you haven't had any problems convincing a stranger
-  in time.  If you are honest with yourself, you have to admit you've started to like it.  It adds excitement to your day, never knowing when
-  it's going to message you, or where you'll be when it happens.
-<</nobr>>
-
-<<nobr>>
-  Even a walk through the park can turn exciting when your belt messages you.  Within a couple minutes you are in a hidden spot with a stranger, and
+  a walk through the park can turn exciting when your belt messages you.  Within a couple minutes you are in a hidden spot with a stranger, and
   soon after you are swallowing his cum as he thanks you and walks away.  His cum is still sliding down your throat when the pleasant vibrations from
   your belt stop.
 <</nobr>>
@@ -2216,15 +2270,8 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  You spend most of the day on your knees.  By the time you [[go to bed|Part15JobEngineerLock11Hopeless2]], you've well exceeded your daily reqirement
+  You spend most of the day on your knees.  By the time you [[go to bed|EngineerLockHopeless]], you've well exceeded your daily requirement
   of blowjobs.  Your last thoughts of the day are about which of the cocks you sucked you enjoyed the most.  It never even occurs to you that you
   hadn't bothered to even try to hack the belt again today.
 <</nobr>>
 
-::Part15JobEngineerLock11Hopeless2
-TODO If with bailey and she's locked, then both of you go to a new owner
-TODO If with girlfriend (incl unlocked bailey), then you break up with her and go to a new owner
-TODO If with a boyfriend, then he becomes your owner
-TODO Otherwise, you get a new owner
-TODO In any case you drop out and become a mindless slut
-TODO leads to an ending
