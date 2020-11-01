@@ -917,12 +917,18 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
 
     <<if $dating.length == 0>> 
-      <<if setup.isFWB('Josh')>><br><<print "You are friends with benefits with Josh. ">><</if>>
-      <<if setup.isFWB('Zack')>><br><<print "You are friends with benefits with Zack. ">><</if>>
-      <<if setup.isFriendzoned('Peter')>><br><<print "Peter is your boy toy. ">><<elseif $PlayerItemNerdKey>>You have the key to Peter's chastity cage<</if>>
-      <<if setup.isFWB('Barry')>><br><<print "Barry likes to humiliate you. ">><</if>>
-      <<if setup.isFWB('David')>><br><<print "You are friends with benefits with David. ">><</if>>
-      <<if setup.isFWB('James')>><br><<print "You are friends with benefits with James. ">><</if>>
+      <<if setup.isFWB('Josh')>><br>You are friends with benefits with Josh.<</if>>
+      <<if setup.isFWB('Zack')>><br>You are friends with benefits with Zack.<</if>>
+      <<if setup.isFriendzoned('Peter')>>
+        <br>Peter is your boy toy.
+      <<elseif $PlayerItemNerdKey>>
+        <br>You have the key to Peter's chastity cage.
+      <<elseif setup.isFWB('Peter')>>
+        <br>You are friends with benefits with Peter.
+      <</if>>
+      <<if setup.isFWB('Barry')>><br>Barry likes to humiliate you.<</if>>
+      <<if setup.isFWB('David')>><br>You are friends with benefits with David.<</if>>
+      <<if setup.isFWB('James')>><br>You are friends with benefits with James.<</if>>
     <</if>>
     <<if !setup.areDating('Peter') and !setup.isFriendzoned('Peter') and $PlayerItemNerdKeyStripper>><br>Peter is a regular at the strip club, you hold the key to his chastity cage.<</if>>
   <</if>>

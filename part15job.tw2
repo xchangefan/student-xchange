@@ -1472,14 +1472,23 @@ TODO Call Girl Side
       or
       <<link $FormerNeighbours[1] Part15JobEngineerLock4>><<set $tempLockAssist to $FormerNeighbours[1]>><</link>>
       will help you with your testing.  It will take some of his time, but you have a pretty good idea of how to persuade either of them to help.
+      <<if $FormerNeighbours[0] != "Peter" and $FormerNeighbours[1] != "Peter" and setup.isFWB("Peter")>>
+        You are sure <<link "Peter" Part15JobEngineerLock4>><<set $tempLockAssist to "Peter">><</link>> would also be eager to help again.
+      <</if>>
     <<elseif $FormerNeighbours and $FormerNeighbours.length >= 2 and setup.haveFucked($FormerNeighbours[1]) and !setup.isEx($FormerNeighbours[1])>>
       <<set $tempLockAssist to $FormerNeighbours[1]>>
       Hopefully $FormerNeighbours[1] [[will help you with your testing|Part15JobEngineerLock4]].
       It will take some of his time, but you have a pretty good idea of how to him to help.
+      <<if $FormerNeighbours[0] != "Peter" and $FormerNeighbours[1] != "Peter" and setup.isFWB("Peter")>>
+        You are sure <<link "Peter" Part15JobEngineerLock4>><<set $tempLockAssist to "Peter">><</link>> would also be eager to help again.
+      <</if>>
     <<elseif $FormerNeighbours and $FormerNeighbours.length >= 1 and setup.haveFucked($FormerNeighbours[0]) and !setup.isEx($FormerNeighbours[0])>>
       <<set $tempLockAssist to $FormerNeighbours[0]>>
       Hopefully $FormerNeighbours[0] [[will help you with your testing|Part15JobEngineerLock4]].
       It will take some of his time, but you have a pretty good idea of how to him to help.
+      <<if $FormerNeighbours[0] != "Peter" and $FormerNeighbours[1] != "Peter" and setup.isFWB("Peter")>>
+        You are sure <<link "Peter" Part15JobEngineerLock4>><<set $tempLockAssist to "Peter">><</link>> would also be eager to help again.
+      <</if>>
     <<else>>
       You know this is going to get... intimate.
       <<if setup.sexFemaleCount()>>
@@ -1551,7 +1560,7 @@ TODO Call Girl Side
   <<elseif setup.haveGirlfriend() and setup.areDating($tempLockAssist)>>
     "Ok. [[Let's get started then|Part15JobEngineerLock6]]," $tempLockAssist tells you.
   <<else>>
-    "You seem distracted.", you say to $tempLockAssist as you point to their erection.  "Let me [[take care of that for you|Part15JobEngineerLock5]] so you
+    "You seem distracted.", you say to $tempLockAssist as you point to his erection.  "Let me [[take care of that for you|Part15JobEngineerLock5]] so you
     can concentrate. I don't want us making any mistakes."
   <</if>>
 <</nobr>>
@@ -1824,7 +1833,7 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  "Quiet," Barry says calmly.  "I'm looking at my options."  You want to say something, but you don't want another shock so you stay quiet.
+  "Quiet," Barry says calmly.  "I'm looking at my options."  You want to say something, but you don't want another shock, so you stay quiet.
   <<if setup.haveFucked('Resort Submissive')>>
     You feel yourself getting wet remembering what it was like over the summer on the island.
   <</if>>
@@ -1854,7 +1863,7 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  You want to beg for an orgasm but instead you say, "To please you ,sir.  May I suck your cock?"  You are hoping he's set it to
+  You want to beg for an orgasm but instead you say, "To please you, sir.  May I suck your cock?"  You are hoping he's set it to
   give you an orgasm when you do.  And even if he hasn't, you want to make sure to keep him happy.
 <</nobr>>
 
@@ -2032,8 +2041,7 @@ TODO Call Girl Side
   "That way," he continues. "You won't be able to repeat this particular exploit as there are no more devices to add.  Of
   course I've
   <<if $EngineerLockOwnerOrgasm>>
-    reset myself as the sole owner, and restored the other settings to their previous values.  Well, near enough, adjusting
-    for your new toys."
+    reset myself as the sole owner, and re-enabled the orgasm block."
   <<else>>
     corrected the wearer to be you on all the devices.  Though if $tempLockAssist ever does want to make me her owner, tell her
     to let me know."  He laughs at his joke.  Though joking or not, you doubt he would turn her down if she did offer herself.
@@ -2041,7 +2049,7 @@ TODO Call Girl Side
 <</nobr>>
 
 <<nobr>>
-  "Yes sir, thank you," you say.  Then the two of you sit down to go over the details of what you've found.  Including the
+  "Yes sir, thank you," you say submissively.  Then the two of you sit down to go over the details of what you've found.  Including the
   owner gender assumptions the manual and programming were making, and the other issues with adding devices.  You try to
   focus, but you keep getting distracted each time your feel the bra start to softly tease your nipples.
   <<if $BarryEngineerStrict>>
@@ -2060,7 +2068,7 @@ TODO Call Girl Side
     "Given your experience I doubt one blowjob a day is going to be much of challenge anyway," he continues.  "But make sure
     you don't forget or the belt will punish you.  We haven't had many people trying the other setting he turned on, so let me know how that
     goes.  Be sure to keep your phone with you at all times so you don't miss a notification.  Whenever the belt messages you, you'll just
-    have five minutes to start a blowjob before the punishment starts.
+    have five minutes to start a blowjob before the punishment starts."
   <</if>>
 <</nobr>>
 
@@ -2127,12 +2135,12 @@ TODO Call Girl Side
     <</if>>
     It's been nearly a month since your last orgasm, and you really need another one.  Your last attempt wasn't very successful, and you weren't even trying
     to orgasm that time.  Well, you weren't only trying to orgasm.  You tried to see if you could either set the belt to let you orgasm when you were
-    giving your daily blowjob, or if you couldn't do that then just turn the requirement entirely.
+    giving your daily blowjob, or if you couldn't do that then just turn off the requirement entirely.
     <br><br>
-    But you weren't playing close enough attention and it backfired.  Instead of disabling it, you ended up raising the daily minimum to five blowjobs a day!
-    And the extra ones it randomly decides you have to give sometimes don't even count towards the five.
+    But you weren't paying close enough attention and it backfired.  Instead of disabling it, you ended up raising the daily minimum to five blowjobs a day!
+    And the random ones it decides you have to give immediately don't even count towards the five!
     <br><br>
-    Maybe [[today|Part15JobEngineerLock11Hopeless]] you'll hve better luck with your testing.
+    Maybe [[today|Part15JobEngineerLock11Hopeless]] you'll have better luck with your testing.
   <<elseif $EngineerLockPacketOrgasm or $EngineerLockOwnerOrgasm>>
     You don't have any classes today.  So hopefully you'll be able to [[do some more testing|Part15JobEngineerLock11Normal]] and maybe figure out a
     way to orgasm again today!
@@ -2150,7 +2158,7 @@ TODO Call Girl Side
 
 ::Part15JobEngineerLock11Normal
   TODO Belted engineer, another hacked orgasm
-  TODO boss is letting you out, but finally challenge.  (Some huge number of blowjobs?)
+  TODO boss is letting you out, but finally challenge.  (Some huge number of blowjobs? Takes weeks or months to accomplish?)
   TODO Continue on as regular engineer now
 
 ::Part15JobEngineerLock11HopelessBailey
@@ -2221,6 +2229,11 @@ TODO Call Girl Side
   hadn't bothered to even try to hack the belt again today.
 <</nobr>>
 
+<<nobr>>
+  You'll have to find time some other day to test your belt some more.  You'd like to have some progress before your next one-on-one meeting with the
+  department head.
+<</nobr>>
+
 ::Part15JobEngineerLock11Hopeless
 <<nobr>>
   <h1>Five minute warning</h1>
@@ -2274,3 +2287,7 @@ TODO Call Girl Side
   hadn't bothered to even try to hack the belt again today.
 <</nobr>>
 
+<<nobr>>
+  You'll have to find time some other day to test your belt some more.  You'd like to have some progress before your next one-on-one meeting with the
+  department head.
+<</nobr>>

@@ -1842,6 +1842,11 @@
     <<set setup.addSex({sex: 'male', name: $dating[0]})>>
     <<set setup.addSex({sex: 'male', name: $dating[0]})>>
     <<set setup.addSex({sex: 'male', name: $dating[0]})>>
+  <<elseif $PlayerItemNerdKeyStripper>>
+    <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+    <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+    <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+    <<set setup.addSex({sex: 'male', name: 'Peter'})>>
   <<else>>
     <<set setup.addSex({sex: 'male'})>>
     <<set setup.addSex({sex: 'male', repeat:true})>>
@@ -1852,16 +1857,24 @@
     $dating is upset at first when you tell him about the belt.  But he starts to be more understanding when you explain how much you want to
     remain in the engineering program.  Or maybe his mood changed when you dropped to your knees and pulled out his cock.  Either way, he
     stopped complaining about the belt, at least for now.
+    <<set $tempSuck to $dating[0]>>
+  <<elseif $PlayerItemNerdKeyStripper>>
+    You look at the key you still have from one of your regulars at the strip club, and then you know exactly who to call to help you test out your
+    belt.  Peter is excited to get your call.  Before you'd only texted him to let you know when you'd be working.  He's disappointed when you tell
+    him you won't be stripping at the club anymore.  But he's thrilled at the offer to help you try to orgasm in your belt and quickly heads over
+    to meet you.
+    <<set $tempSuck to "Peter">>
   <<else>>
     It doesn't take you long to find guys willing to help you try to orgasm with your belt still on.  Well, they are trying to orgasm with your
     belt still on, you aren't sure they care much if you do.
+    <<set $tempSuck to "the first guy">>
   <</if>>
 <</nobr>>
 
 <<nobr>>
   Now that the dean's denial has been lifted, you were too eager to try to orgasm, so you hadn't bothered to check all of the settings your boss had given
-  your belt.  You quickly discover one of them as you start on <<if $dating.length>>$dating<<else>>the first guy<</if>>'s cock.  You think you feel
-  something as soon as his cock hits your tongue, but after you work it a while, there's no doubting the belt is stimulating you while you suck his cock.
+  your belt.  You quickly discover one of them as you start on $tempSuck's cock.  You think you feel something as soon as his cock hits your tongue, but
+  after you work it a while, there's no doubting the belt is stimulating you while you suck his cock.
   <<if $PlayerSideEffectOral>>
     As if you needed any more encouragement to suck cock.
   <<else>>
@@ -1918,6 +1931,7 @@
   You think about trying to setup a packet sniffer to see if you can see anything in the data the app is sending that might help.  But you quickly realize
   that after the teasing and edging the belt gave you, you are too horny to focus on that right now.  For tonight you'll need to try something that doesn't
   require as much thought.  Luckily sucking cock [[isn't the only option|Part15EngineerProbation5]] the belt has given you.
+  <<unset $tempSuck>>
 <</nobr>>
 
 ::Part15EngineerProbation5
@@ -1931,6 +1945,11 @@
     <<set setup.addSex({sex: 'male', name: $dating[0]})>>
     <<set setup.addSex({sex: 'male', name: $dating[0]})>>
     <<set setup.addSex({sex: 'male', name: $dating[0]})>>
+  <<elseif $PlayerItemNerdKeyStripper>>
+    <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+    <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+    <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+    <<set setup.addSex({sex: 'male', name: 'Peter'})>>
   <<else>>
     <<set setup.addSex({sex: 'male'})>>
     <<set setup.addSex({sex: 'male', repeat:true})>>
@@ -1940,6 +1959,10 @@
   <<if $dating.length>>
     You are already sure from your first round of testing that $dating is going to be perfectly happy with the new situation.  He's also willing
     and eager to give your second plan a try.
+  <<elseif $PlayerItemNerdKeyStripper>>
+    Peter is happy to come over to try your second plan for getting off in your belt.  Back when you were grinding against his caged cock at the
+    club, you bet he never imagined he'd actually be fucking your ass one day.  Well, he probably imagined it, but never thought it would actually
+    happen.
   <<else>>
     You don't think the guys you find much care if you can manage to get off from it or not.  But they are perfectly happy fucking your ass.
   <</if>>
@@ -1982,6 +2005,15 @@
   You accept now that you aren't going to be able to cum this easily, but you also love how good it feels just to try.
   <<if $PlayerSideEffectOral > 2 or $PlayerSideEffectAnal > 2>>It's even worth the shocks you know you'll get.<</if>>
   As good as it feels though, you are always left with a desperate need for more when he's done.
+  <<if $PlayerItemNerdKeyStripper>>
+    <br><br>
+    <<unset $PlayerItemNerdKeyStripper>>
+    "Thank you for all your help," you tell Peter as you hand back his chastity cage's key.  "I know you'd probably be happy with me holding on
+    to your key.  But right now, I just need to focus on how to defeat my own chastity device.  I hope you understand."
+    He nods disappointingly.  His expression changes though when you add, "I hope I can still call you sometimes if I need a guy to help me
+    try with something on the belt.  Or, you know, if I just need a cock to suck again."
+    <<set setup.makeFWB('Peter')>>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
