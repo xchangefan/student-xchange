@@ -711,17 +711,23 @@
 <<nobr>>
 	<<set $PlayerRollDice = $PlayerSideEffectExhibitionist>>
 	<<set $PlayerRollDice += $PlayerSideEffectSubmissive>>
-	
-	<h1><<print "Engineering Department">></h1>
+	<h1>Engineering Department</h1>
+  "Welcome to the Engineering Department’s Special Projects Lab," the Department Head tells you.
 <</nobr>>
 
-<<print "Welcome to the Engineering Department’s Special Projects Lab.">>
-
-<<print "As you are still clothed, I assume you are here for the engineering role. We don’t require any prior experience but we require that you be pursing a science, technology, engineering, or mathematics degree.">>
+<<nobr>>
+  "As you are still clothed, I assume you are here for the engineering role. We don’t require any prior experience but we require that
+  you be pursing a science, technology, engineering, or mathematics degree."
+<</nobr>>
 
 <<nobr>>
 	<<if $PlayerSideEffectExhibitionist > 3 or ($PlayerSideEffectExhibitionist > 1 and $PlayerRollDice > 3)>>
-		<<print "If that’s you, then you can stay while I give the orientation for the new subjects.  And if it’s not, then you are welcome to strip and stay as a subject. I’ll wait while you go change. You are not sure what this is for, but ">>
+    <<if $PlayerLazyStudent>>
+      "Though, looking here at your transcript, I'm not sure if Engineering is a good fit for you.  But you are more than
+    <<else>>
+		  "If that’s you, then you can stay while I give the orientation for the new subjects.  And if it’s not, then you are
+    <</if>>
+    welcome to strip and stay as a subject. I’ll wait while you go change." You are not sure what this is for, but
 		<span id="Engineer1SubjectSpan">
 			<<link "the thought of getting naked arouses you too much.">>
 				<<set $JobEngineer = 0>>
@@ -729,40 +735,74 @@
 				<<set $Engineer1Update = 1>>
         <<replace "#StoryKeyFlag">>TRUE<</replace>>
 				<<replace "#Engineer1SubjectSpan">>
-					<<print "the thought of getting naked arouses you too much.">>
+					the thought of getting naked arouses you too much.
+				<</replace>>
+			<</link>>
+		</span>
+  <<elseif $PlayerLazyStudent>>
+    "Though, looking here at your transcript, I'm not sure if Engineering is a good fit for you.  But you are more than
+    welcome to strip and
+    <span id="Engineer1Span">
+			<<link "stay while I give the orientation for the new subjects.">>
+				<<set $Engineer1Update = 1>>
+				<<set $JobEngineer to 0>>
+				<<set $JobTestSubject to 1>>
+        <<replace "#StoryKeyFlag">>TRUE<</replace>>
+				<<replace "#Engineer1SubjectSpan">>
+					persuade him to reconsider letting you be an engineer.
+				<</replace>>
+				<<replace "#Engineer1Span">>
+					stay while I give the orientation for the new subjects.
+				<</replace>>
+			<</link>>
+		</span>
+    "
+    Looking at the hard-on he has with all these naked women standing around, you wonder if you could
+    <span id="Engineer1SubjectSpan">
+			<<link "persuade him to reconsider letting you be an engineer.">>
+				<<set $JobEngineer to 1>>
+				<<set $JobTestSubject to 0>>
+				<<set $Engineer1Update to 1>>
+        <<set $tempEngineerReconsider to 1>>
+        <<replace "#StoryKeyFlag">>TRUE<</replace>>
+				<<replace "#Engineer1SubjectSpan">>
+					persuade him to reconsider letting you be an engineer.
+				<</replace>>
+				<<replace "#Engineer1Span">>
+					stay while I give the orientation for the new subjects.
 				<</replace>>
 			<</link>>
 		</span>
 	<<else>>
-		<<print "If that’s you, then you can ">>
+		If that’s you, then you can
 		<span id="Engineer1Span">
 			<<link "stay while I give the orientation for the new subjects.">>
-				<<set $Engineer1Update = 1>>
+				<<set $Engineer1Update to 1>>
         <<replace "#StoryKeyFlag">>TRUE<</replace>>
 				<<replace "#Engineer1SubjectSpan">>
-					<<print "to strip and stay as a subject.">>
+					to strip and stay as a subject.
 				<</replace>>
 				<<replace "#Engineer1Span">>
-					<<print "stay while I give the orientation for the new subjects.">>
+					stay while I give the orientation for the new subjects.
 				<</replace>>
 			<</link>>
 		</span>
-		<<print " And if it’s not, then you are welcome ">>
+		And if it’s not, then you are welcome
 		<span id="Engineer1SubjectSpan">
 			<<link "to strip and stay as a subject.">>
-				<<set $JobEngineer = 0>>
-				<<set $JobTestSubject = 1>>
-				<<set $Engineer1Update = 1>>
+				<<set $JobEngineer to 0>>
+				<<set $JobTestSubject to 1>>
+				<<set $Engineer1Update to 1>>
         <<replace "#StoryKeyFlag">>TRUE<</replace>>
 				<<replace "#Engineer1SubjectSpan">>
-					<<print "to stay as a subject.">>
+					to stay as a subject.
 				<</replace>>
 				<<replace "#Engineer1Span">>
-					<<print "stay while I give the orientation for the new subjects.">>
+					stay while I give the orientation for the new subjects.
 				<</replace>>
 			<</link>>
 		</span>
-		<<print " I’ll wait while you go change.">>
+		I’ll wait while you go change."
 	<</if>>
 <</nobr>><span id="Engineer2Span"></span>
 
@@ -772,27 +812,58 @@
 			<<replace "#Engineer2Span">>
 				<img src="Part3/JobEngineer1.jpg" hspace="10" vspace="10" height="650">
 
-				<<print "Subjects, as described in the forms you signed earlier, the primary purpose here is to gather data for a research study comparing orgasm response between natal women and X-Change users.">>
+        "Subjects, as described in the forms you signed earlier, the primary purpose here is to gather data for a research study comparing orgasm response between natal women and X-Change users."
 
-				<<print "Please do not disclose which you are to any of our staff, the fewer of us aware of your status, the better. Researchers from the Biology department will be analyzing all the data we collect and will have access to the information you provided earlier.">>
+				"Please do not disclose which you are to any of our staff, the fewer of us aware of your status, the better. Researchers from the Biology department will be analyzing all the data we collect and will have access to the information you provided earlier."
 
-				<<print "The secondary purpose is to help our engineering students gather useful design skills as part of a technology program funded by a generous contributor to the university.">>
+				"The secondary purpose is to help our engineering students gather useful design skills as part of a technology program funded by a generous contributor to the university."
 
 				<<nobr>>
-					<<print "You may be assigned to different test groups each week. Please don’t bother begging our staff to change which group you are in for a given week, ">>
-					<<link "the assignments are all done by computer.">>
-						<<if $JobEngineer>>
-							<<goto [[JobEngineer2]]>>
-						<<else>>
-							<<goto [[JobEngineerSubject1]]>>
-						<</if>>
-					<</link>>
+					"You may be assigned to different test groups each week. Please don’t bother begging our staff to change which group you are in for a given week,
+          <<if $tempEngineerReconsider>>
+            the assignments are all done by computer.  $playerName please [[follow me to my office|EngineerReconsider]] so we can discuss that issue you'd mentioned.
+            The rest of you may proceed to your first round of testing."
+          <<else>>
+            <<link "the assignments are all done by computer.\"">>
+              <<if $JobEngineer>>
+                <<goto [[JobEngineer2]]>>
+              <<else>>
+                <<goto [[JobEngineerSubject1]]>>
+              <</if>>
+            <</link>>
+          <</if>>
 				<</nobr>>
 			<</replace>>
 			<<stop>>
 		<</if>>
 	<</repeat>>
 <</silently>>
+
+::EngineerReconsider
+<<nobr>>
+	<h1>In the Engineering department head's office</h1>
+<</nobr>>
+<<nobr>>
+  "I know my academic past is less than great, but a lot has changed for me since then, and the new me is going to be a much better
+  student.  And, if you notice, Math and Science classes were the ones I did well in, it was all the other ones that brought my GPA
+  down to where it was," you plead your case but he doesn't look convinced.
+<</nobr>>
+
+<<nobr>>
+  "And I'm willing to do whatever it takes to be part of this program," you say as you drop down to your knees in front of him.
+  You look up and see a smile on his face, then you unbuckle his pants and get to work giving your
+  <<if setup.sexMaleCount() - setup.sexVaginalCount() > 0>>
+    second blowjob today.
+  <<else>>
+    first blowjob - in this body at least.
+  <</if>>
+  <<set setup.addSex({sex: 'male', name: 'Engineering Department Head'})>>
+<</nobr>>
+<img src="PartX/BackHome20.jpg" hspace="10" vspace="10" height="550">
+<<nobr>>
+  Once you are finished he tells you, "If you are as motivated as this to improve your academic performance, I'm sure you'll do well.
+  Now, there's always a few late arrival subjects.  You can go make sure they strip down and [[start testing|JobEngineer2]]."
+<</nobr>>
 
 ::AthleteReconsider <2100,1875>
 <<nobr>>
@@ -1661,6 +1732,13 @@
 <</nobr>>
 
 <<nobr>>
+  You especially love to taunt Kyle.  He's leading a team on some special project, and always thinks he's better than everyone else.
+  You like taking him down a notch sometimes.  "The only thing my 'rocker' is missing is something for my mouth.  It'd be great to have a
+  nice, hard cock to wrap my lips around while I rode it."  When you see him shift uncomfortably as his erection strains against his jeans,
+  you smile and walk away.
+<</nobr>>
+
+<<nobr>>
   <<if $PlayerSideEffectMasturbationBlock>>
     While you can get a good idea of what will work during your experiments, you can't get off playing with your creations by yourself.
     It sure feels good though.  When you are left incredibly horny at the end of one of your equipment tests, you know you are on the
@@ -1688,6 +1766,7 @@
 
 ::JobEngineer4 <1200,3300>
 <<nobr>>
+	<<set setup.addSex({sex: 'male', name: 'Kyle'})>>
 	<<set setup.addSex({sex: 'male', anon: 'Engineering Coworker'})>>
 	<<set setup.addSex({sex: 'male', anon: 'Engineering Coworker'})>>
 	<<set setup.addSex({sex: 'male', anon: 'Engineering Coworker'})>>
@@ -1698,12 +1777,22 @@
   The new equipment still needs to be tested. And instead of letting the other woman on the team get all the fun, you come up with
   another way. If you are locked in, and someone else is controlling the machine, it works fine on you.
 <</nobr>>
-
 <video src="Part3/JobEngineer4.mp4" autoplay loop muted height="640"></video>
+<<nobr>>
+  Your male coworkers soon find that you are quite horny and very willing to negotiate when you’re bound, helpless, and desperate for
+  them to leave the machine on long enough to let you orgasm.  
+<</nobr>>
 
-<<print "Your male coworkers soon find that you are quite horny and very willing to negotiate when you’re bound, helpless, and desperate for them to leave the machine on long enough to let you orgasm.">>
+<<nobr>>
+  Kyle usually makes sure to be at the front of the line when he knows you are going to be helpless and willing to do anything.
+  He's always more forceful than the other guys, more than happy to fuck your throat until you gag, or slap your tits or clit until
+  you cry out in pain.  You'd regret teasing him as much you do, if you didn't love being treated like that when you are bound.
+<</nobr>>
 
-<<print "And they find you are even more willing to do what they want later, when you want them to turn off the machine after you cum.">>
+<<nobr>>
+  And your fellow engineers also find you are even more willing to do what they want later, when you want them to turn off the machine after you cum.
+  Though, after they've gotten off, sometimes they prefer to just watch you struggle for a while as you are forced to cum again and again.
+<</nobr>>
 
 <<nobr>>
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>
