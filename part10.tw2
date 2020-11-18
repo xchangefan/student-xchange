@@ -1285,7 +1285,13 @@ Now you can [[think about something more fun|Part10End]].
 <<nobr>>
   You’re glad you did, because your quick fuck with him after closing was far more satisfying than anything
   you've had for weeks.  You definitely plan on stopping by to visit the bartender after your
-  [[next shift|Part10StripPeter]] too.
+  <<if setup.isEx("Peter")>>
+    next shift too.
+    <br><br>
+    [[Continue|Part10End]]
+  <<else>>
+    [[next shift|Part10StripPeter]] too.
+  <</if>>
 <</nobr>>
 
 ::Part10StripPeter <6800,10300>

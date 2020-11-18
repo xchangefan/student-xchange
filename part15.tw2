@@ -1432,7 +1432,7 @@
 
 <<nobr>>
   You go back to the manual and read more and then you see that even though your request was granted, the reward isn't given to you immediately, or at
-  last not usually.  It can be anytime in the next 48 hours.  The manual says that way allows you to receive rewards for good behavior and occasional
+  least not usually.  It can be anytime in the next 48 hours.  The manual says that way allows you to receive rewards for good behavior and occasional
   satisfaction, but without becoming addicted.  The manual wasn't clear on what 'occasional requests' meant, but it seems like you probably need to
   wait at least two days between requests then, or at least two days after one was granted before requesting another one.
 <</nobr>>
@@ -3933,8 +3933,19 @@ TODO [[Part15WeekByWeek]]
     Hopefully taking care of $children[0].name won't prevent you from getting your coursework done.  Thankfully
     [[the apartment|Part15LivingMotherApt]] the university assigned to you is close to the daycare.  
   <<elseif $SororityDTD or $SororitySEX>>
-    It might be hard with all of the craziness that goes on [[at the sorority house|Part15Sorority]] sometimes,
-    but you're determined to do well this year.
+    It might be hard with all of the craziness that goes on at the sorority house sometimes, but you're determined to do well this
+    year.  Though there's one distraction you are looking forward to this week, the [[back-to-school competition|Part15Sorority]]
+    the different greek organizations are having.
+  <<elseif $SororityELP>>
+    <<if $dating.length>>
+      Of course $dating[0] is encouraging you as well.  Hopefully 
+    <<else>>
+      Maybe
+    <</if>>
+    whomever you'll be sharing a dorm room with this year will be able to help you stay on track too.
+    <br><br>
+    But right now all you can think about is the [[back-to-school competition|Part15Sorority]] the different greek organizations
+    are having.  You think it's nice that they include your sorority too.
   <<elseif $dating.length>>
     Of course $dating[0] is encouraging you as well.  Hopefully whomever [[you'll be sharing a dorm room with|Part15Dorm]]
     this year will be able to help you stay on track too.
@@ -4120,7 +4131,7 @@ TODO [[Part15Week]]
 
 ::Part15LivingVeronica
 TODO Living with Veronica
-TODO [[Part15Week]]
+TODO [[Part15Sorority]]
 
 ::Part15LivingAaron
 <<nobr>>
@@ -4188,17 +4199,189 @@ TODO [[Part15Week]]
 
 ::Part15Sorority
 <<nobr>>
-  <h1>Life at the Sorority house</h1>
+  <h1>At the Greek Competition</h1>
   <img src="Part15/Sorority1.jpg" hspace="10" vspace="10" height="550" align="left">
 <</nobr>>
+<<nobr>>
+  You are excited to be competing with the fraternities and the other sororities in various competitions today.  There's no actual prizes, a small trophy
+  for the winning frat and sorority houses.  It's mainly just for bragging rights.  And to have fun, and promote the sororities and frats to incomming
+  freshmen.
+<</nobr>>
 
-TODO Living at the sorority, not with Veronica
-TODO [[Part15Sorority2]]
+<<nobr>>
+  There's a number of different events going on.
+  <<if $PlayerChastityBelt>>
+    You enjoy watching many of them.  But since you are wearing your chastity belt, the only one you can join in on is the
+    [[Tug-of-War|Part15SororityTug]] at the end.
+  <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
+    But as a cheerleader, it's expected that you'll join in on the [[football competition|Part15SororityFootball]].  Some of the guys you normally
+    cheer for will instead be on the sidelines cheering you and your sorority sisters on.
+  <<elseif $BodyType == 'Plus'>>
+    But you are pretty sure you'll dominate in the [["jousting"|Part15SororityJoust]] event.  They are using foam sticks and a bouncy mat instead
+    of horses and lances.  Your sisters agree, saying you'll probably knock whatever skinny little twig they pair you against on her bony ass.
+  <<else>>
+    In addition to the the tug-of-war that everyone participates in, there's a couple of them that that look interesting to you.
+    <br><br>
+    You could join in on the [[football game|Part15SororityFootball]].  You, your sorority sisters, and some girls from another sorority will play
+    against girls from a couple other sororities.  And the whole time, the guys from the actual football team will be cheering you all on.
+    <br><br>
+    Or there's [["jousting"|Part15SororityJoust]], though thankfully they are using foam sticks and a bouncy mat instead of horses and lances.
+  <</if>>
+<</nobr>>
+
+::Part15SororityFootball
+<<nobr>>
+  <h1>Watching Football</h1>
+  <<if $CampusMinistry>>
+    When they described the Football game to you, you'd thought it was like those 'powderpuff' games you remember the cheerleaders back in high school
+    having once a year.  They did it as a fundraiser, but you'd always thought they looked kind of cute.  Pretty cheerleaders, but wearing football jerseys
+    and pads, with eye black like the guys wear under their eyes.
+  <<else>>
+    TODO
+  <</if>>
+  <<set $SororityFootball to 1>>
+<</nobr>>
+<img src="Part15/Sorority5.jpg" hspace="10" vspace="10" height="550">
+<<nobr>>
+  <<if $CampusMinistry>>
+    But you soon see it's nothing like that.  As you watch the first two teams play, you see that you'll have football pads.  But instead of a jersey and
+    leggings, you'll be competing wearing lingerie!
+    <br><br>
+    <<if $PlayerSideEffectExhibitionist>>
+      You feel a bit ashamed at how much you are turned on at the thought of all of these people watching you run around in sexy underwear.
+    <<else>>
+      You consider backing out, but if you do then your team would forfeit and lose, so you'll go through with it.
+      <<if $dating.length>>
+        And besides, you can see how excited $dating[0] is about the whole thing.
+      <</if>>
+    <</if>>
+  <<else>>
+    TODO
+  <</if>>
+  You and your teammates watch the other two teams play.  One of the girls who'd played last years shares some advice for everyone whenever
+  she thinks of something. 
+<</nobr>>
+<img src="Part15/Sorority7.jpg" hspace="10" vspace="10" height="550" align="left">
+<<nobr>>
+  At the end of the game most of the players on the competing teams shake hands.  Two of them decide to kiss instead, a rather long and passionate one
+  at that.  Of course there is a huge roar of approval from the crowd when they do.
+<</nobr>>
+
+<<nobr>>
+  You are a bit disappointed that you can't stay to watch as the guys on the actual football team come out in cheerleader uniforms and start to put on
+  a show.  But while they are peforming, you and your team head down to the locker room.  Once you are there you open up one of the 'uniforms' in your size
+  and you all start to get dressed for [[your turn on the field|Part15SororityFootball2]].
+<</nobr>>
+
+::Part15SororityFootball2
+<<nobr>>
+  <h1>Playing Football</h1>
+  <img src="Part15/Sorority6.jpg" hspace="10" vspace="10" height="550">
+<</nobr>>
+<<nobr>>
+  Once you are into your uniform, you are
+  <<if $CampusMinistry and $PlayerSideEffectExhibitionist>>
+    nervous but excited
+  <<elseif $CampusMinistry>>
+    nervous
+  <<elseif $PlayerSideEffectExhibitionist>>
+    excited
+  <<else>>
+    surprised
+  <</if>>
+  when you see that your team's uniform is even skimpier than the ones the first two teams had!  As you leave the locker room and walk out onto the
+  field you hear the crowd cheer, and many of the guys whistle too.
+  <<if $PlayerSideEffectExhibitionist>>
+    You feel yourself getting wet
+  <<else>>
+    You feel the blood rushing to your face, and to other places as well,
+  <</if>>
+  as you realize that there are thousands of eyes on you and your teammates right now.
+<</nobr>>
+
+<<nobr>>
+  Once the game gets going you mostly forget about how little you are wearing.  The only thing that really reminds you is the occasional whistle or
+  other comments from the guys in the crowd whenever you or one of your teammates happen to give them a view they especially like.  Though that does
+  happen frequently throughout the game.
+<</nobr>>
+
+<<nobr>>
+  You are definitely reminded of how little you re wearing when of girls on the other team grabs you and pulls you to the ground.  When you get up,
+  you find your bottoms were torn, and are still laying on the field.  One of the guys on the sidelines runs a new pair out, handing them to you with a
+  glance down and a smile.  You couldn't even count how many camera flashes you see from the crowd before he gets there though.  Your teammates hardly
+  even notice.  They are just happy about the 15-yard penalty the referee gave the other girl.
+<</nobr>>
+
+<<nobr>>
+  As you stand there mostly-naked on the 40-yard-line, you realize you
+  <<if $PlayerSideEffectExhibitionist>>
+    <<set $PlayerSideEffectExhibitionist += 1>>
+    are even more of an exhibitionist than you'd thought you were.
+    <br>
+    <i>You are have become more of an exhibitionist.</i>
+  <<else>>
+    <<set $PlayerSideEffectExhibitionist to 1>>
+    really enjoy being naked and exposed in public.
+    <br>
+    <i>You have discovered that you are a bit of an exhibitionist.</i>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $SororityELP>>
+    The other girls invite you to a party at their sorority house tonight.  You tell them you'll definitely think about it.
+  <<else>>
+    You are excited about the party at the sority house tonight.
+  <</if>>
+  But first there's the big [[tug-o-war|Part15SororityTug]] event that everyone is competing in.
+<</nobr>>
+
+::Part15SororityJoust
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="Part15/Sorority4.jpg" hspace="10" vspace="10" height="450" align="left">
+  <<set $SororityJoust to 1>>
+<</nobr>>
+
+TODO And then there's the [[tug-o-war|Part15SororityTug]], which teams 
+
+::Part15SororityTug
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="Part15/Sorority2.jpg" hspace="10" vspace="10" height="450" align="left">
+  <img src="Part15/Sorority3.jpg" hspace="10" vspace="10" height="450" align="left">
+  <<set $SororityTug to 1>>
+<</nobr>>
+
+<<if $SororityFootball>>
+  <<if $dating.length and !setup.haveGirlfriend()>>
+    TODO [[]]
+  <<else>>
+    TODO [[Part15SororityFootball3]]
+  <</if>>
+<<elseif $SororityJoust>>
+  TODO Oil wrestling for jousting ?
+<<else>>
+  TODO Nothing if only did tug of war?
+<</if>>
+
+::Part15SororityFootball3
+TODO Follow up with lingerie at party
+TODO Fucking football players? (Or girlfriend if have girlfriend)
+TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+
+::Part15SororityFootballBoyfriend
+TODO Followup with lingerie with boyfriend (what if ministry and still virgin)
+TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+
+::Part15SororityELP
+TODO helping homeless, possible bad event?
+TODO [[Part15Dorm]]
 
 ::Part15Sorority2
 <<nobr>>
   <h1>TODO Life at the Sorority house</h1>
-  <img src="Part15/Sorority2.jpg" hspace="10" vspace="10" height="550" align="left">
+  TODO <img src="Part15/SororityX.jpg" hspace="10" vspace="10" height="550" align="left">
 <</nobr>>
 
 TODO Living at the sorority, not with Veronica
@@ -4207,7 +4390,7 @@ TODO [[Part15Sorority3]]
 ::Part15Sorority3
 <<nobr>>
   <h1>TODO Life at the Sorority house</h1>
-  <img src="Part15/Sorority3.jpg" hspace="10" vspace="10" height="550" align="left">
+  TODO <img src="Part15/SororityXX.jpg" hspace="10" vspace="10" height="550" align="left">
 <</nobr>>
 
 TODO Living at the sorority, not with Veronica
@@ -5653,8 +5836,8 @@ TODO [[Part15Week]]
     selection of options to choose from, but you'd chosen the cheapest one.  You told him you'd be replacing it later today.  You said a
     "friend" has a different one already picked out for you.
     <br><br>
-    Once you reach the engineering department, they replace the simple metal stud with their 'sensor'.  As you see their sensor you realize
-    you'd never even realize it was anything more than the one they were taking out, if you didn't already know.
+    Once you reach the engineering department, they replace the simple metal stud with their 'sensor'.  As you see their sensor you note
+    that you'd never even realize it was anything more than the one they were taking out, if you didn't already know.
     <br><br>
     Your piercer had said it was fine replacing the stud with a different one, but just be sure to keep something in your piercing for the
     next several weeks, so your body doesn't heal too much and close the piering back up.  That certainly won't be a problem for you, since
@@ -5699,7 +5882,7 @@ TODO [[Part15Week]]
   <<else>>
     <<set setup.addInventory('piercings', 'tongue')>>
     You stare at your tongue.  You can't believe that you have a pierced tongue now.  You know what people assume about girls with a pierced tongue.
-    Now everyone is going to think you are sucking guys' cocks all the time.  If they only that your piercing is designed to make sure you
+    Now everyone is going to think you are sucking guys' cocks all the time.  If they only knew that your piercing is designed to make sure you
     <b>can't</b> do that!
   <</if>>
 <</nobr>>
