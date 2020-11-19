@@ -4250,9 +4250,11 @@ TODO [[Part15Week]]
     <<if $PlayerSideEffectExhibitionist>>
       You feel a bit ashamed at how much you are turned on at the thought of all of these people watching you run around in sexy underwear.
     <<else>>
-      You consider backing out, but if you do then your team would forfeit and lose, so you'll go through with it.
+      You consider backing out, but if you do then your team would forfeit and lose, so you'll go through with it.  And besides,
       <<if $dating.length>>
-        And besides, you can see how excited $dating[0] is about the whole thing.
+        you can see how excited $dating[0] is about the whole thing.
+      <<else>>
+        it's no more revealing than a bikini, right?
       <</if>>
     <</if>>
   <<else>>
@@ -4268,7 +4270,7 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
-  You are a bit disappointed that you can't stay to watch as the guys on the actual football team come out in cheerleader uniforms and start to put on
+  You are a bit disappointed that you can't stay to watch as the guys from the actual football team come out in cheerleader uniforms and start to put on
   a show.  But while they are peforming, you and your team head down to the locker room.  Once you are there you open up one of the 'uniforms' in your size
   and you all start to get dressed for [[your turn on the field|Part15SororityFootball2]].
 <</nobr>>
@@ -4347,31 +4349,141 @@ TODO And then there's the [[tug-o-war|Part15SororityTug]], which teams
 
 ::Part15SororityTug
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>Tug of war</h1>
   <img src="Part15/Sorority2.jpg" hspace="10" vspace="10" height="450" align="left">
-  <img src="Part15/Sorority3.jpg" hspace="10" vspace="10" height="450" align="left">
   <<set $SororityTug to 1>>
 <</nobr>>
-
-<<if $SororityFootball>>
-  <<if $dating.length and !setup.haveGirlfriend()>>
-    TODO [[]]
+<<nobr>>
+  It's the girls in your sorority and the guys in your 'brother' fraternity pulling together.
+  <<if $BodyType == 'Fit'>>
+    But even though you are probably the strongest girl on either end of the rope, most of the guys are still stronger.
   <<else>>
-    TODO [[Part15SororityFootball3]]
+    None of the girls are as strong as most of the guys on either theam though.
   <</if>>
-<<elseif $SororityJoust>>
-  TODO Oil wrestling for jousting ?
-<<else>>
-  TODO Nothing if only did tug of war?
-<</if>>
+  But it's still fun, pulling and adding what you can to the effort.
+<</nobr>>
+
+<<nobr>>
+  The game is over once
+  <<if $SororityELP>>
+    you, and then the rest of your team, are pulled across the line.  You don't really mind that you lost, you had a great time.
+  <<else>>
+    first player from the other team is pulled across the line.  She is followed soon after by the rest of her team.  You are
+    thrilled that your team actually won!
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  At the awards ceremony the hand out separate first, second, and third place trophies to separately to the sororities and fraternities.
+  <<if $SororityELP>>
+    Your team doesn't earn one, but you didn't expected to either.  It was nice just be included.
+  <<else>>
+    You are so proud when you and your sisters go up to claim the first place trophy!
+  <</if>>
+  After that they hand out a few individual awards.
+<</nobr>>
+
+<<nobr>>
+  <<if $SororityFootball>>
+    You blush as you are called up to receive the "Fan Favorite" award.  You can't beleive they had someone run out to get a color print of
+    you, pantyless in the middle of the football field, printed and then framed it for you.
+  <<else>>
+    They have a "Fan Favorite" award for some girl who's top came off during a football game.
+  <</if>>
+  <<if $SororityJoust>>
+    TODO Something Joust (you)
+  <<else>>
+    TODO Something Joust (other)
+  <</if>>
+  <<if $PlayerChastityBelt>>
+    TODO Something Chastity (you)
+  <<else>>
+    TODO Something Chastity (other)
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You remember that there's a party later
+  <<if $SororityELP>>
+    at one of the sororities houses, and you've been invited.
+  <<else>>
+    back at the sorority house.
+  <</if>>
+  <<if setup.haveGirlfriend()>>
+    You and $dating[0] can hardly wait for
+    <<if $SororityFootball>>  
+      [[the party to start|Part15SororityFootball3]].
+    <<elseif $SororityJoust>>
+      [[the party to start|Part15SororityJoust2]].
+    <<else>>
+      [[the party to start|Part15SororityChastity]].
+    <</if>>
+  <<elseif $dating.length>>
+    <<link $neighbours[0]>><<set $tempStrokeWinner = 0>><<goto [[Part5HannahNeighbour2]]>><</link>>
+    But you'd rather
+    <<link "spend the time with $dating[0]">>
+      <<if $SororityFootball>>
+        <<goto [[Part15SororityFootballBoyfriend]]>>      
+      <<elseif $SororityJoust>>
+        <<goto [[Part15SororityJoustBoyfriend]]>>
+      <<else>>
+        <<goto [[Part15SororityChastityBoyfriend]]>>
+      <</if>>
+    <</link>>.
+  <<elseif $PlayerChastityBelt and $JobBetaTester == "chaste">>
+    It sounds like it'd be a lot of fun.  But you are worried you might be tempted to have too much fun.  So you [[pass on the party|Part15SororityELP]].
+  <<elseif $CampusMinistry>>
+    It's sounds like it would be a lot of fun to
+    <<if $SororityFootball>>  
+      [[attend the party|Part15SororityFootball3]].
+    <<elseif $SororityJoust>>
+      [[attend the party|Part15SororityJoust2]].
+    <<else>>
+      [[attend the party|Part15SororityChastity]].
+    <</if>>
+    But, you've heard these sorority parties can get pretty wild, so maybe it would be better to
+    <<if $SororityFootball and $PlayerSideEffectExhibitionist > 1>>
+      skip the party.  But when you hear you are expected to wear your 'uniform' from the game, you can't resist it.  The thought of being at a party
+      full of people in just your lingire uniform is just too exciting.
+    <<else>>
+      [[skip the party|Part15SororityELP]].
+    <</if>>
+  <<else>>
+    You can hardly wait for
+    <<if $SororityFootball>>  
+      [[the party to start|Part15SororityFootball3]].
+    <<elseif $SororityJoust>>
+      [[the party to start|Part15SororityJoust2]].
+    <<else>>
+      [[the party to start|Part15SororityChastity]].
+    <</if>>
+  <</if>>  
+<</nobr>>
 
 ::Part15SororityFootball3
 TODO Follow up with lingerie at party
 TODO Fucking football players? (Or girlfriend if have girlfriend)
 TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
 
+::Part15SororityJoust2
+TODO Follow up with joust at party
+TODO oil wrestling
+TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+
+::Part15SororityChastity
+TODO Followup with just tug-of-war (chastity)
+TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+
 ::Part15SororityFootballBoyfriend
 TODO Followup with lingerie with boyfriend (what if ministry and still virgin)
+TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+
+::Part15SororityJoustBoyfriend
+TODO Followup with wrestling with boyfriend (what if ministry and still virgin)
+TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+
+::Part15SororityChastityBoyfriend
+TODO Followup with just tug-of-war (chastity) with boyfriend
 TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
 
 ::Part15SororityELP
@@ -4395,6 +4507,7 @@ TODO [[Part15Sorority3]]
 
 TODO Living at the sorority, not with Veronica
 TODO [[Part15Week]]
+TODO Image # not used Sorority3
 
 ::Part15Dorm
 <<nobr>>
