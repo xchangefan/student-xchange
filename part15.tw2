@@ -4340,12 +4340,80 @@ TODO [[Part15Week]]
 
 ::Part15SororityJoust
 <<nobr>>
-  <h1>TODO</h1>
+  <h1>"Jousting"</h1>
   <img src="Part15/Sorority4.jpg" hspace="10" vspace="10" height="450" align="left">
   <<set $SororityJoust to 1>>
 <</nobr>>
+<<nobr>>
+  The jousting event has girls competing one-on-one in an inflatable "ring".  There's a small platform for each of you, and giant foam
+  sticks you have to hit each other with.  The first one to knock her opponent off of her platform is the winner.  They then take
+  the winners and have them compete with each other, and so on until they have an overall winner.
+<</nobr>>
 
-TODO And then there's the [[tug-o-war|Part15SororityTug]], which teams 
+<<nobr>>
+  <<if $BodyType == 'Petite'>>
+    You don't last long.  In your first match, the referee had barely blown his whistle when the other girl hits you hard in the head.
+    You have a helmet on, but you are still dazed.  When her second hit comes you are completely unprepared.  You are knocked off your platform, and
+    as you stumble trying to catch yourself, you manage to fall out of the ring entirely.
+    <br><br>
+    Luckily one of the fans watching the match catch you, and you end up in his strong hands intead of in your face on the ground.
+    <<if $CampusMinistry>>
+      You don't know which you are more embarrassed by: losing so quickly and spectacularly, or how much you blood raced from the brief moment
+      his hands were on your bare skin.
+    <<else>>
+      You are so embarrassed by how quickly and spectacularly you lost.
+    <</if>>
+    You sneak away for a moment in shame, but after you change you come back to watch the rest of the competiation.
+  <<elseif $BodyType == 'Plus'>>
+    <<set $SororityJoustWin to 1>>
+    Match after match, you completely dominate your opponent.  Obviously the tiny girls don't stand a chance.  But even the more athletic girls,
+    can't knock you off.  Most of them would probably beat you in many other athletic competitions, but not this one.  While some of them can hit
+    hard, as long as you maintain your footing, it's not enough to move you off your platform.
+    <br><br>
+    The last fight is a long one, as the other girl is hard to knock off as well.  But you eventually manage to hit her once and cause her to get
+    off balance, then you quickly hit her again and she finally falls.  Your sorority sisters all cheer for you when they see her fall.
+  <<elseif $BodyType == 'Fit'>>
+    Match after match, you dominate your opponent.  Obviously the tiny girls don't stand a chance.  Even the ones a similar size to you aren't much
+    harder.  Their hits don't pack much of a punch, and eventually you always manage to land a good one or two that knocks them off.
+    It's not until the final match that you really have much of a challenge.
+    <br><br>
+    Your last fight, the one to see who the overall winner is, doesn't look very athletic.  She's a bigger girl, and you quickly find that hits
+    that would have knocked your earlier opponents complete off the platform, barely even faze her.  Though you do a good job of block her hits
+    as well.
+    <br><br>
+    <<if either(0,1) == 1>>
+      <<set $SororityJoustWin to 1>>
+      Finally, you manage to hit her and knock her slightly off balance.  You quickly follow that up with another hit that causes her to stumble off
+      her platform.  Your sorority sisters all cheer for you when they see her fall.
+    <<else>>
+      Eventually she gets the better of you, her first hit made you unstead.  But before you could regain your footing, she hits you again and
+      you are off the platform.  Your sorority sisters still cheer for you for your second place finish.
+    <</if>>
+  <<else>>
+    You win your first round.  But in your second round you are paired against a girl with muscles more impressive than any you had as a guy.
+    Her first hit is much powerful than you were expecting and you end up knocked on your ass.  Thankfully the padded ring means you just bounce
+    a bit.  Your sorority sister console you on your loss.
+    <br><br>
+    You keep watching the competition, though you are pretty confident that the girl that just beat you will be the one that wins in the end.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $SororityELP>>
+    The other girls invite you to a party at their sorority house tonight.  They said they'll have a similar competition then,
+    <<if $BodyType == 'Petite'>>
+      but they promise you'll have much more fun than you did just now.
+    <<elseif $SororityJoustWin>>
+      and they promise to make it more of a challenge for you than this was.
+    <<else>>
+      and they promise it'll be more fun than this was.
+    <</if>>
+    You tell them you'll definitely think about it.
+  <<else>>
+    You are excited about the party at the sority house tonight.
+  <</if>>
+  But first there's the big [[tug-o-war|Part15SororityTug]] event that everyone is competing in.
+<</nobr>>
 
 ::Part15SororityTug
 <<nobr>>
@@ -4358,7 +4426,7 @@ TODO And then there's the [[tug-o-war|Part15SororityTug]], which teams
   <<if $BodyType == 'Fit'>>
     But even though you are probably the strongest girl on either end of the rope, most of the guys are still stronger.
   <<else>>
-    None of the girls are as strong as most of the guys on either theam though.
+    None of the girls are as strong as most of the guys on either team though.
   <</if>>
   But it's still fun, pulling and adding what you can to the effort.
 <</nobr>>
@@ -4374,7 +4442,7 @@ TODO And then there's the [[tug-o-war|Part15SororityTug]], which teams
 <</nobr>>
 
 <<nobr>>
-  At the awards ceremony the hand out separate first, second, and third place trophies to separately to the sororities and fraternities.
+  At the awards ceremony they hand out separate first, second, and third place trophies to the sororities and fraternities.
   <<if $SororityELP>>
     Your team doesn't earn one, but you didn't expected to either.  It was nice just be included.
   <<else>>
@@ -4388,17 +4456,19 @@ TODO And then there's the [[tug-o-war|Part15SororityTug]], which teams
     You blush as you are called up to receive the "Fan Favorite" award.  You can't beleive they had someone run out to get a color print of
     you, pantyless in the middle of the football field, printed and then framed it for you.
   <<else>>
-    They have a "Fan Favorite" award for some girl who's top came off during a football game.
+    They have a "Fan Favorite" award for some girl whose top came off during a football game.
   <</if>>
   <<if $SororityJoust>>
-    TODO Something Joust (you)
+    <<if $SororityJoustWin>>
+      They give you your trophy for your first place finish in the joust.
+    <<elseif $BodyType == 'Petite'>>
+      You laugh as they give you the "Rag Doll" award for getting knocked out of the joust ring.  It's a childs rag doll with one
+      eye made to look like it has black eye.  Thankfully you don't have one of those though.
+    <<else>>
+      You laugh when the petite girl you saw get knocked completely out of the joust ring gets awarded a "Rag doll" award.
+    <</if>>
   <<else>>
-    TODO Something Joust (other)
-  <</if>>
-  <<if $PlayerChastityBelt>>
-    TODO Something Chastity (you)
-  <<else>>
-    TODO Something Chastity (other)
+    You wonder how much she must have been knock around when they give a petite girl a "Rag Doll" award for the joust competition.
   <</if>>
 <</nobr>>
 
@@ -4437,7 +4507,7 @@ TODO And then there's the [[tug-o-war|Part15SororityTug]], which teams
     <<if $SororityFootball>>  
       [[attend the party|Part15SororityFootball3]].
     <<elseif $SororityJoust>>
-      [[attend the party|Part15SororityJoust2]].
+      [[attend the party|Part15SororityJoust2Ministry]].
     <<else>>
       [[attend the party|Part15SororityChastity]].
     <</if>>
@@ -4461,53 +4531,306 @@ TODO And then there's the [[tug-o-war|Part15SororityTug]], which teams
 <</nobr>>
 
 ::Part15SororityFootball3
+<<nobr>>
+  <h1>"In Uniform" at the party</h1>
+  <img src="Part15/Sorority13.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+
 TODO Follow up with lingerie at party
 TODO Fucking football players? (Or girlfriend if have girlfriend)
-TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15Week]] or [[Part15SororityFootball4]]
+
+TODO Handle if with Veronica and both are here
+
+::Part15SororityFootball4
+<<nobr>>
+  <h1>TODO</h1>
+  <video src="Part15/Sorority14.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+TODO End ministry path if on it
+TODO [[Part15Week]]
+
+::Part15SororityJoust2MinistryWinner
+<<nobr>>
+  <h1>Sorority Mixed Wrestling</h1>
+  <img src="Part15/Sorority10a.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+<<nobr>>
+  Since you were the winner today, that want you to compete first.  They promise they have someone that will be more of a challenge for you
+  today.  When they explain that it's <i>mixed</i> wrestling and you'll be competing against a guy, it makes sense.
+<</nobr>>
+
+<<nobr>>
+  You aren't certain about competing against a guy, not because you are afraid of losing, but just because the thought of rolling around
+  the mat with some guy is turning you on too much.  But after a few drinks you tell them you'll do it.  That's when they tell you you'll
+  be competing naked.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectExhibitionist>>
+    The thought of you grappling naked with guy, in front of everyone at the party, is too exciting to resist.
+    "What the hell, [[let's do this|Part15SororityJoust3]]!" you tell them.
+  <<else>>
+    "N...naked?" you ask to make sure you heard her right.  Though you supposed you aren't really that shocked.
+    You know you shouldn't, but the more you think about it, the more the thought of some
+    <<if $PlayerSideEffectSubmissive>>
+      guy holding you down
+    <<elseif $PlayerSideEffectPheromones>>
+      sweaty guy with his arms around you
+    <<else>>
+      naked guy grabbing you
+    <</if>>
+    is exciting you.  If you don't [[leave the party|Part15Week]] right now, you know you're going to give in to the temptation
+    and tell her [[you'll do it|Part15SororityJoust3]].
+  <</if>>
+<</nobr>>
+
+::Part15SororityJoust2MinistryLoser
+<<nobr>>
+  <h1>Sorority Mixed Wrestling</h1>
+  <img src="Part15/Sorority10.jpg" hspace="10" vspace="10" height="450" align="left">
+  The girl who won the competition today is going first.  You quickly realize that she'll be competing against a guy, and that they'll be naked!
+<</nobr>>
+
+<<nobr>>
+  It's not until they are in the ring and the referee says that the "first one to cum, loses" that you realize the two of them are probably
+  going to be having sex, right in front of you!
+<</nobr>>
+
+<<nobr>>
+  You know you should probably leave now, but you can't help but stay and watch, at least the first 'fight'.  You soon see that this guy isn't
+  going to be any more of a match for her than you and the other girls were.  She soon has him in a headlock with her legs wrapped around him.
+  He can't move much except to kick and try and wriggle free or try to pull her legs apart.  Neither is very effective.
+<</nobr>>
+
+<<nobr>>
+  When she licks her free hand and starts stroking his cock he struggles even more, but only for few seconds.  Then you can tell he's given up
+  trying to win, and just wants her to keep going.
+<</nobr>>
+
+<<nobr>>
+  After you see him groan and a spurt of cum squirt out onto the mat, someone rings a bell and she unlocks her legs.  He's on his hands and knees,
+  starting to get up when she grabs his head and pushes it back down towards the mat.  She orders him, "Lick up your mess first."
+<</nobr>>
+
+<<nobr>>
+  When her other hand reaches under him and grabs his balls, his hestiation ends and he starts licking.  The guys in the crowd start laughing and
+  the girls start cheering.  When the mat is clean she finally lets him get up, giving him a loud smack on the ass with her open hand.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectPheromones>>
+    You know you should probably leave the party right now, before it's your turn to go out there.  But you've gotten so wet watching
+    her dominate him like that, and from hearing him moan as she stroked his cock.  Oh god, and the smell of him as he struggled, naked on the mat.
+    All that, and the thought of some other guy, the scent of his sweaty body next to yours, it's too much to resist.  You can't help but to stick
+    around and [[give it a try|Part15SororityJoust3]].
+  <<elseif $PlayerSideEffectExhibitionist>>
+    You know you should probably leave the party right now, before it's your turn to go out there.  But you've gotten so wet watching
+    her dominate him like that, and from hearing him moan as she stroked his cock.  And the thought of being naked, in front of all these people,
+    it's too much to resist.  You can't help but to stick around and [[give it a try|Part15SororityJoust3]].
+  <<else>>
+    You know you should [[leave the party|Part15Week]] right now, before it's your turn to go out there.  But you've gotten so wet watching
+    her dominate him like that, and from hearing him moan as she stroked his cock.  And you suspect that, and the beers you've drank, have made you
+    much more eager to [[give it a try|Part15SororityJoust3]].
+  <</if>>
+<</nobr>>
+
+::Part15SororityJoust2Ministry
+<<nobr>>
+  <<if $SororityJoustWin>>
+    <<include [[Part15SororityJoust2MinistryWinner]]>>
+  <<else>>
+    <<include [[Part15SororityJoust2MinistryLoser]]>>
+  <</if>>
+<</nobr>>
+
+  TODO [[Temp2|Part15SororityJoust2]]
 
 ::Part15SororityJoust2
+<<nobr>>
+  <h1>Sorority Mixed Wrestling 222 TODO</h1>
+  <video src="Part15/Sorority8.webm" autoplay loop muted height="600"></video>
+  <video src="Part15/Sorority9.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
 TODO Follow up with joust at party
 TODO oil wrestling
-TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15SororityELP]] or [[Part15Week]]
+
+::Part15SororityJoust3Winner
+<<nobr>>
+  <h1>Sorority Mixed Wrestling 333A TODO</h1>
+  <video src="Part15/Sorority9.mp4" autoplay loop muted height="600"></video>
+<</nobr>>
+
+::Part15SororityJoust3Loser
+<<nobr>>
+  <h1>Sorority Mixed Wrestling</h1>
+  <video src="Part15/Sorority8.webm" autoplay loop muted height="450"></video>
+  <<set setup.addSex({sex:"male", anon:"wrestler", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  Your "fight" doesn't go anything at all like the first one had.  Before long you he has your arms pinned down and your legs already apart.
+  <<if $CampusMinistry>>
+    You could "tap-out" and end it, but you know everyone would be disappointed.  And more importantly, you don't want him to stop.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You are already wet from watching the earlier fights, and from struggling against him.  When he slides into you can hear sound of the crowd
+  cheering over your moan.  You keep "struggling" as he fucks you, but not very hard.  Him stopping is the last thing you want.  You just do it
+  because of how helpless it makes you feel, and that is turning you on.  And, it would seem, him and the crowd as well.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
+    You don't care that you lost when you cry out as you cum.  You barely even hear the roar of the crowd as the cheer your orgasm, and his
+    victory.  He doesn't stop though, not for a little while longer when he's managed to cum too.  Only after his cock is done twitching inside
+    you does he let go of your arms and climb off of you.
+  <<else>>
+    You don't care about winning or losing, and just want to cum.  But he groans and thrusts a last time before you can orgasm.  He lays there
+    on top of you for a moment, clearly not minding that he just "lost".  The crowd cheers for your victory, but you care more about your orgasm
+    that was so close.
+    <br><br>
+    <<if $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock>>
+      <<set setup.addSex({sex:"male", anon:"wrestling spectator", vaginal:true, noPullout:true, noCondom:true})>>
+      "I can't get myself off.  Can somone please fuck me until I cum!" you beg.  You don't have to wait.  There is soon another guy on top of you.
+      You put your arms down on the mat like they were before, so he can hold them down too.
+      <br><br>
+      You were close, so you cum long before he can, the crowd errupting with cheers again.  He keeps fucking you a while longer until he too cums.
+    <<else>>
+      You quickly begin masturbating, right were he'd fucked you on the mat.  Soon you are crying out with the orgasm you had been so close to
+      reaching.  The crowd cheers again for you.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You lay there a moment before you finally get up.  Someone hands you a towel to wipe yourself, and to keep the cum leaking out of you from dripping
+  everywhere.  Someone else quickly cleans up the mat for the next "fight".
+<</nobr>>
+
+<<nobr>>
+  <<if $CampusMinistry>>
+    You don't know why you've waited so long for this.  You feel like you've wasted a whole year trying to be 'good'.  You aren't sure when you'll be
+    at another party like this, so you decide to [[have as much fun as you can tonight|Part15SororityJoustCampusMinistryFail]].
+  <<else>>
+    You have a fun time watching the rest of the "fights", and the remainder of the party after those is great too.  When you finally
+    [[head home|Part15Week]] you know this will be a night to remember.
+  <</if>>
+<</nobr>>
+
+::Part15SororityJoust3
+<<nobr>>
+  <<if $SororityJoustWin>>
+    <<include [[Part15SororityJoust3Winner]]>>
+  <<else>>
+    <<include [[Part15SororityJoust3Loser]]>>
+  <</if>>
+<</nobr>>
+
+::Part15SororityJoustCampusMinistryFail
+<<nobr>>
+  <h1>Drinking Games</h1>
+  <img src="Part15/Sorority11.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You start to get dressed again after your "fight", but the guys tell you not to bother.  They say everyone has already seen you naked,
+  <<if $PlayerSideEffectExhibitionist>>
+    and honestly you didn't need much convincing,
+  <<else>>
+    and you figure they are right,
+  <</if>>
+  so you don't bother.  You just keep the little towel they gave you nearby incase you have any more "leakage" from earlier.
+<</nobr>>
+
+<<nobr>>
+  They invite you to play beer pong with them.  "Normally we'd say you have to drink after each ball in, and then remove a piece of clothing if your team
+  loses.  But we can come up with something different for you," one of them says.  They decide that instead of removing a piece of clothing, you'll kiss
+  the guys on the winning team.
+<</nobr>>
+
+<<nobr>>
+  Most of your "kisses" usually are more than that, as the guys hands roam your naked body as he kisses you.  Between that, the beers you've had,
+  and wanting to make up for a wasted year of missed fun, you are wishing for a lot more.
+<</nobr>>
+
+<<nobr>>
+  Of course, once you've had enough beers to actually say that out loud, it isn't long before the guys are taking you somewhere to
+  [[give you exactly what you want|Part15SororityJoustCampusMinistryFail2]].
+<</nobr>>
+
+::Part15SororityJoustCampusMinistryFail2
+<<nobr>>
+  <h1>Making up for lost time</h1>
+  <img src="Part15/Sorority12.jpg" hspace="10" vspace="10" height="450" align="left">
+  <<set setup.addSex({sex:"male", anon:"frat guy"})>>
+  <<set setup.addSex({sex:"male", anon:"frat guy", vaginal:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", anon:"frat guy"})>>
+  <<set setup.addSex({sex:"male", anon:"frat guy"})>>
+  <<set setup.addSex({sex:"male", anon:"frat guy", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", anon:"frat guy"})>>
+  <<set setup.addSex({sex:"male", anon:"frat guy"})>>
+  <<set setup.addSex({sex:"male", anon:"frat guy", vaginal:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", anon:"frat guy"})>>
+  <<unset $CampusMinistry>>
+  <<set $CampusMinistryFail to 1>>
+  <<set $CampusMinistryFailFall2 to 1>>
+  Your heart is racing as they take you into a bedroom.  You'd always pictured your first time being a romantic thing with candles and rose petals, maybe
+  even on your wedding night.  You certainly didn't picture it being on a wrestling mat in a sorority basement, with dozens of people watching.  Nor did
+  you expect your second time would be having a line of frat boys fuck you.  But you are so wet in anticipation of it now.
+<</nobr>>
+
+<<nobr>>
+  If you'd known how good it would feel having a cock
+  <<if $PlayerSideEffectAnal>>
+    in your ass,
+  <<elseif $PlayerSideEffectOral>>
+    in your mouth,
+  <<else>>
+    inside you,
+  <</if>>
+  then you would have been doing it long before now.  Whenever your mouth isn't filled, you are begging for more: either the next cock to start, or
+  for the one inside you now to fuck you harder and faster.  One guy after another eagerly give you what you want.
+<</nobr>>
+
+<<nobr>>
+  The next several hours are a fog of pleasure.  You have no idea how many times you came, let alone how many times the guys came in or on you.
+<</nobr>>
+
+<<nobr>>
+  The next morning, despite being sore and hungover, you regret nothing.  "I'm definitely not going to wait a year until I get laid again!" you think
+  to yourself.  Though you do plan on maybe having it with few guys at once next time.
+  <<if $PlayerProtectionCondoms>>
+    "And, I should probably pick up some condoms if I don't want to end up pregnant."
+  <</if>>
+<</nobr>>
+
+[[Continue|Part15Week]]
+
+<<achievement>>train<</achievement>>
+<<achievement>>threesome:FMF<</achievement>>
+
 
 ::Part15SororityChastity
 TODO Followup with just tug-of-war (chastity)
-TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15SororityELP]] or [[Part15Week]]
 
 ::Part15SororityFootballBoyfriend
 TODO Followup with lingerie with boyfriend (what if ministry and still virgin)
-TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15SororityELP]] or [[Part15Week]]
 
 ::Part15SororityJoustBoyfriend
 TODO Followup with wrestling with boyfriend (what if ministry and still virgin)
-TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15SororityELP]] or [[Part15Week]]
 
 ::Part15SororityChastityBoyfriend
 TODO Followup with just tug-of-war (chastity) with boyfriend
-TODO [[Part15Sorority2]] or [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15SororityELP]] or [[Part15Week]]
 
 ::Part15SororityELP
 TODO helping homeless, possible bad event?
 TODO [[Part15Dorm]]
-
-::Part15Sorority2
-<<nobr>>
-  <h1>TODO Life at the Sorority house</h1>
-  TODO <img src="Part15/SororityX.jpg" hspace="10" vspace="10" height="550" align="left">
-<</nobr>>
-
-TODO Living at the sorority, not with Veronica
-TODO [[Part15Sorority3]]
-
-::Part15Sorority3
-<<nobr>>
-  <h1>TODO Life at the Sorority house</h1>
-  TODO <img src="Part15/SororityXX.jpg" hspace="10" vspace="10" height="550" align="left">
-<</nobr>>
-
-TODO Living at the sorority, not with Veronica
-TODO [[Part15Week]]
-TODO Image # not used Sorority3
 
 ::Part15Dorm
 <<nobr>>
