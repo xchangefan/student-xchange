@@ -103,16 +103,22 @@ TODO Massage
 ::Part15JobModel
 <<nobr>>
   <<if $SchoolWeek == 3>>
-    TODO Model Week 3
+    <<if $PregnancyWeek > 12>>
+      <<include [[Part15JobModel1Pregnant]]>>
+    <<else>>
+      <<include [[Part15JobModel1]]>>
+    <</if>>
   <<elseif $SchoolWeek == 7>>
     TODO Model Week 7
+    <<nobr>>
+      <<include [[Part15AfterMainJob]]>>
+    <</nobr>>
   <<else>>
     TODO Model after that
+  <<nobr>>
+    <<include [[Part15AfterMainJob]]>>
+  <</nobr>>
   <</if>>
-<</nobr>>
-
-<<nobr>>
-  <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
 ::Part15JobLibrary
@@ -2296,3 +2302,260 @@ TODO Call Girl Side
   You'll have to find time some other day to test your belt some more.  You'd like to have some progress before your next one-on-one meeting with the
   department head.
 <</nobr>>
+
+::Part15JobModel1Pregnant
+<<nobr>>
+  <h1>Maternity Modeling</h1>
+    <img src="Part15/Model8.jpg" hspace="10" vspace="10" height="500" align="left">
+    <img src="Part15/Model7.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  With your growning belly, your modeling options are more limited than they were before.  But thankfully there's plenty of women that
+  still want to look sexy when they're pregnant. So, that means there's companies wanting to advertise to them.
+<</nobr>>
+
+<<nobr>>
+  You are a bit relieved that there's less work right now though, you start to get exhausted after a few hours on your feet
+  in front of the camera.  So you're always glad when your [[shoot is over for the day|Part15AfterMainJob]].
+<</nobr>>
+
+::Part15JobModel1
+<<nobr>>
+  <h1>Swimsuit Modeling</h1>
+  <video src="Part15/Model1.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  <<if $BodyType == "Fit">>
+    You're not a famous athlete, so none of the athletic brands are interested in keeping you on long-term.  You have an opportunity
+    here and there, but then you are looking for work again.  Your agent suggest broading your availability to swimsuit and maybe lingerie
+    modeling.  You give him a definite yes on the swimsuits, but tell him you'll need to think about the rest.
+  <<else>>
+    Your agent has mostly been finding lingerie jobs for you.  You remind him that you appreciate that work, but you are open to other
+    opportunities as well.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  After your discussion, your agent has lined up a swimsuit shoot for you.
+  <<if $BodyType == "Fit">>
+    Sports magazines have an annual swimsuit issue, right, so it's still just as respectable of a modeling job as any you figure.
+  <<else>>
+    You figure it's nothing after all the lingerie shoots you've done.  You realize you'll be showing more skin in a bikini than in most of
+    the other things you've worn, but somehow it still seems more 'respectable'.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Once your shoot begins you realize there's no changing room, or even a screen to stand behind.  The shoot is on a beach, and there's
+  dozens of suits for you to try on.  So you'll be changing in front of the entire crew.
+  <<if $PlayerSideEffectExhibitionist>>
+    You do your best to hide how much that excites you.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Model2.jpg" hspace="10" vspace="10" height="500" align="left">
+  There are a few one-pieces, but it's mostly bikinis.  Though some of them they have you only wearing the bottoms and holding the tops like you
+  just took them off.  Not wanting to miss anything, the are taking photos non-stop.  While you change, when you wash off the sand between shoots,
+  and of course from many angles for each outfit, or partial outfit, you are wearing.
+<</nobr>>
+
+<<nobr>>
+  But they assure you they'll only be able to use the shots that don't show anything revealing.  "The only ones that will ever see those shots are
+  you, me, and my assistant here," the photographer tells you.
+<</nobr>>
+
+<<nobr>>
+  "And the VIP members," his assistant say.
+<</nobr>>
+
+<<nobr>>
+  "Oh right, and the VIP members of the website," he clarifies.  "They get access to all the 'behind the scenes' shots as well."
+<</nobr>>
+
+<<nobr>>
+  You are sure it was in your photo release, but you hadn't thought about that part of it.  You would have probably been more
+  <<if $PlayerSideEffectExhibitionist>>
+    excited when you told
+  <<else>>
+    reluctant to tell
+  <</if>>
+  your friends and relatives about the big shoot you were going to be doing if you had realized that any of them could pay a
+  for a membership and see you completely naked.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectExhibitionist and (!$PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist > $PlayerSideEffectSubmissive)>>
+    You are so turned on by today's events, and everyone watching you.
+    <<if $dating.length>>
+      You know you are going to be all over $dating[0] as soon as you leave the shoot today.  But
+      that's hours away, and your mind keeps wandering to what [[you could be doing|Part15JobModel2]] right now.
+    <<else>>
+      You can't help but [[fantasize about what you could be doing|Part15JobModel2]] right now instead of this photo shoot.
+    <</if>>       
+  <<elseif $PlayerSideEffectSubmissive>>
+    You are so turned on by today's events, and especially the photographers stern voice when he tells you were
+    to stand, how to pose.  It makes you feel like his little doll to pose and play with.
+    <<if $dating.length>>
+      You know you are going to be all over $dating[0] as soon as you leave the shoot today.  But
+      that's hours away, and your mind keeps wandering to what [[you could be doing|Part15JobModel2]] right now.
+    <<else>>
+      You can't help but [[fantasize about what you could be doing|Part15JobModel2]] right now instead of this photo shoot.
+    <</if>>       
+  <<else>>
+    <<set $PlayerSideEffectExhibitionist to 1>>
+    Finally, after a long day of shooting you are finished.  You change back into your street clothes, at this point not even thinking
+    about the fact that everyone cam see you.  Well, definitely thinking about it.  But certainly not minding anymore.
+    <br><br>
+    <i>You've started to enjoy being naked or exposed in public.</i>
+    <br><br>
+    [[Continue|Part15AfterMainJob]].
+  <</if>>
+<</nobr>>
+
+::Part15JobModel2
+<<nobr>>
+  <h1>Fantasizing about your photographer</h1>
+  <video src="Part15/Model3.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  You aren't working the whole time.  Sometimes you are just waiting around while another model works, or they are setting up for the next set.
+  And your mind has time to wander.
+<</nobr>>
+
+<<nobr>>
+  You imagine your photographer stops giving you instructions on how to pose or turn, or anything else.  Instead he just tells you get on your
+  knees and suck his cock.  You feel yourself getting wet as you imagine doing just that.
+<</nobr>>
+
+<<nobr>>
+  Of course, in your fantasy it soon leads to much more.  Soon he is fucking you right here on the beach, with the whole crew watching.
+<</nobr>>
+
+<<nobr>>
+  "$playerName, you're up!" someone yells waking you from your fantasy.  You get back to
+  <<if !$sex.length>>
+    work, and try to keep the dirty thoughts out of your mind.
+    <br><br>
+    [[Continue|Part15AfterMainJob]].
+  <<elseif $dating.length>>
+    work.  But you know as soon as you are done today, you aren't going to be able to keep your hands off of $dating[0].
+    <br><br>
+    [[Continue|Part15AfterMainJob]].
+  <<elseif !setup.sexMaleCount()>>
+    work.  You wonder why you were fantasizing about the photographer and not his cute assistant.  She's much more your type after all.
+    You wonder if having him order you around all day was bringing out your submissive side too.
+    <br><br>
+    [[Continue|Part15AfterMainJob]].
+  <<else>>
+    work for now.
+    <br><br>
+    When the set is done, the photographer pulls you aside.  "I couldn't help noticing some of the glances you were giving me between sets.
+    Do you want to get a bite to eat after we pack up the equipment?"  He notices you biting your lower lip and then adds, "Or perhaps just
+    [[head back to my studio|Part15JobModel3]] for a 'more intimate' session?"
+  <</if>>
+<</nobr>>
+
+::Part15JobModel3
+<<nobr>>
+  <h1>Private session with the photographer</h1>
+  <video src="Part15/Model4.mp4" autoplay loop muted height="500"></video>
+  <<set $MysteryModelVideo to 1>>
+<</nobr>>
+<<nobr>>
+  When Joseph takes you back to his private studio he goes to a rack of clothes.  He searches until he finds one he likes, and and then brings
+  it back to you.  He's watched you undress dozens of times today, but you do your best to make this time more enticing than the quick
+  changes before.
+<</nobr>>
+
+<<nobr>>
+  This is nothing like what you've been modeling before.  The top frames and pushes up your breasts, but leaves them completely uncovered.
+  And the buckles on the collar make you feel like his horny slave girl.  Of course the soft cuffs he has you put on your wrists only reinforce
+  that.
+<</nobr>>
+
+<<nobr>>
+  He can see your unease when he pulls out a camera, a small video camera this time.  "Don't worry, this is just for me.  I'll delete it before
+  you leave if you want."  You are too turned on to object, and eagerly obey as he hands you a bowl of ice cubes and has you tease your exposed
+  breasts with one.  When your nipples are fully erect he hands you nipple clamps and orders you to wear them.
+<</nobr>>
+
+<<nobr>>
+  He hasn't even touched you, merely instructed you on how to touch yourself.  But you can barely control yourself.  You are ready
+  to rip off the shiny panties he's had you wear and beg him to fuck you.  But he tells you to stop before you can get them off.
+<</nobr>>
+
+<<nobr>>
+  "[[We're not done yet|Part15JobModel4]]," he says as he continues to hands you a box with more toys.
+<</nobr>>
+
+::Part15JobModel4
+<<nobr>>
+  <h1>Private session with the photographer</h1>
+  <video src="Part15/Model5.mp4" autoplay loop muted height="500"></video>
+  <<set setup.addInventory('sex toys', 'black PVC bust harness')>>
+  <<set setup.addInventory('sex toys', 'black leather cuffs')>>
+  <<set setup.addInventory('sex toys', 'breathable ball gag')>>
+<</nobr>>
+<<nobr>>
+  First he has you put the ball gag in your mouth.  Once you are silenced he hands you the candle he'd lit earlier.
+  You are nervous when he tells you to pour the hot wax it's collected on yourself.  "Don't worry," he tells you.
+  "It's not a regular candle.  It's hot, but not enought to burn you."
+<</nobr>>
+
+<<nobr>>
+  It takes you a minute to work up the courage to do it, but you tip the candle over dripping the hot wax down onto you
+  breasts.  You cry out into your gag when you do.  The wax quickly hardens on your skin.
+<</nobr>>
+
+<<nobr>>
+  You'd be begging for his cock if you weren't still gagged, but he makes you wait a bit longer still.  He hands you the camera
+  and has it play back what he's recorded for you as he goes to grab something else from the rack.
+<</nobr>>
+
+<<nobr>>
+  You'd be playing with your clit as you watch, if he handn't ordered you not to.  But besides how much it is turning you on, you
+  notice something else.  He's been very careful to not show your face, not enough of to recognize you anyway.
+<</nobr>>
+
+<<nobr>>
+  Once he returns, he tells you to take off the gag and the rest and change into the new outfit.  You obey and begin to change.  As you
+  are changing, he asks you what you thought of the video.  You tell him you loved it.  "So you don't still want me to delete it?"
+  You tell him not to delete it, and in fact you to send you a copy.  "Do you mind if I share it, as long as I don't let anyone know
+  who the mystery woman is."
+<</nobr>>
+
+<<nobr>>
+  It turns you on thinking about others seeing you submit to him, and get as turned on as you just did rewatching it.
+  "Share it with whomever you like," you tell him.  "Just don't make me wait any longer for this," you say as you begin
+  to [[unbuckle his pants|Part15JobModel5]].
+<</nobr>>
+
+::Part15JobModel5
+<<nobr>>
+  <h1>Private session with the photographer</h1>
+  <video src="Part15/Model6.mp4" autoplay loop muted height="500"></video>
+  <<set setup.addSex({sex:"male", name:"Joseph"})>>
+  <<set setup.addSex({sex:"male", name:"Joseph", vaginal: true})>>
+  <<set setup.addSex({sex:"male", name:"Joseph"})>>
+  <<set setup.addSex({sex:"male", name:"Joseph", vaginal: true})>>
+  <<set setup.addInventory('clothes', 'black PVC dress')>>
+<</nobr>>
+<<nobr>>
+  He doesn't stop you as you unbuckle his belt and pull down his pants.  He smiles as you push him back onto his back and climb
+  on top of him.  You let out a moan as you slide him into you.  He is enjoying how eager he's made you and lets you ride him.
+  He does reach up to pull your breasts free so he can watch them as you bounce up and down on his cock.
+<</nobr>>
+
+<<nobr>>
+  When you cum, you collapse down onto him.  He rolls you over onto your back with his cock still inside and continues fucking where
+  you'd left off.
+<</nobr>>
+
+<<nobr>>
+  Hours later when you leave, he tells you can keep the outfits and toys.  You get the sense there are plenty more where these came from
+  waiting for the next model he brings back here.  "Oh, and your copy of the video, he says as he hands you a thumb drive with the
+  video on it.
+<</nobr>>
+
+[[Continue|Part15AfterMainJob]].
