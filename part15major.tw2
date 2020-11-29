@@ -1,0 +1,292 @@
+::Part15Major
+<<nobr>>
+  <h1>Choosing a Major</h1>
+  It's your sophmore year now, and while you've definitely thought about it before now, it's time to finalize your choice of a major.
+  Of course you could always change it later, but that would probably mean graduating later and you don't want that.
+<</nobr>>
+<<nobr>>
+  <img src="Part15/Major1.jpg" hspace="10" vspace="10" height="330">
+  <<if $Engaged == "Andrew">>
+    Of course you once you are married, you expect Andrew will be making enough that you wouldn't even need to work outside
+    the home.  But you might still want to, so you should pick a major still.  But it's probably safe to pick something you enjoy,
+    and not really worry about how much it pays.
+  <<elseif $Engaged>>
+    Once you and $Engaged are married, you'll both be brining money in, so you are probably safe picking something you know you'll
+    enjoy, and not worrying as much about how much it pays.
+  <<elseif $ProfessorAllowance and setup.areDating('Aaron')>>
+    You hope someday you and Aaron will be married, and he'll be paying most of the bills while you take care of him and the house.
+    But he hasn't proposed yet.  Besides he's always talking about how important your education is.
+  <<elseif $PlayerMother>>
+    You're going to be taking care of <<print $children[0].name>>, so you'll probably want to choose something that pays well
+    enough for a single mom.
+  <</if>>
+  <<if $JobEngineer or $JobEngineerLock>>
+    todo already chosen comp sci/math/engineering, no need to pick major
+    <<set $Major to "Engineering">>
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
+    todo not likely to be a professional cheerleader - pick major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobAthlete and $BodyType == 'Fit'>>
+    todo might want to be a pro athlete, but need a back plan - pick backup major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobAthlete>>
+    todo not likely to be a pro athlete - pick major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobFitnessYoga>>
+    todo might want to be a yoga Instructor - pick major with that as an option
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobFitnessMassage>>
+    todo might want to be a massage therapist - pick major with that as an option
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobLibrary>>
+    todo might want to be a librarian - pick major with that as an option
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobTestSubject or $JobBetaTester>>
+    It's not like you can keep being a 'tester' for the engineering department after graduation.
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobModel>>
+    <br><br>
+    <img src="Part15/Fashion1.jpg" hspace="10" vspace="10" height="600" align="left">
+    <<set $Major to "Fashion Design">>
+    <br><br>
+    You are making your money from modeling now, but you assume that won't last forever.  But spending as much the time as you are,
+    working in the fashion industry, you've developed an interest in it.  So you've settled on [[Fashion Design|Part15FashionDesign]]
+    as your major.
+  <<elseif $JobOffice or $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>
+    todo pick business major
+    <<set $Major to "Business">>
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<elseif $JobBarista or $JobBikiniBarista or $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+    todo not planning on doing this forever, pick a major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobCallGirl>>
+    You make more as a call girl than you could probably make at any other job you'd choose.  But you have to pick something, and you're
+    going to want something to tell family and friends that don't know what you really do for a living.  The more you think about it the
+    more a business major appeals to you.
+    <br><br>
+    It'll give you something to tell people now, and it'll help you manage the money side of the job.  And who knows, maybe when you're older
+    and don't want to see clients as much anymore, you could start your could start your own placement service instead.
+    <<set $Major to "Business">>
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<else>>
+    todo general pick a major
+    <br><br>
+    <<include [[Part15MajorChoose]]>>
+  <</if>>  
+<</nobr>>
+
+::Part15MajorChoose
+<<nobr>>
+  <<if $JobFitnessYoga>>
+    You've enjoyed your work as a yoga instructor.  There isn't any set requirements if you want to continue with that after you
+    graduate, but you could always pick "Health Sciences" and focus on exercise science or kinesiology.
+    Of course, there's a lot of competition out there.  But if you get word get around about your private sessions, then maybe
+    that won't be a problem.
+    <br><br>
+  <<elseif $JobFitnessMassage>>
+    You've enjoyed your work in the fitness center.  You could always pick "Health Sciences" and become a massage therapist or
+    maybe even a physical therapist.  Then you could work as a real therapist during the day, and then pick up some extra money
+    doing other types of sessions in your free time.
+    <br><br>
+  <<elseif $JobLibrary>>
+    You've enjoyed your work a a librarian.  "Library Science" is an option you could choose.  Of course most libraries aren't
+    going to be as flexible about your after-hours behavior as the university library.  But you've found you can be quite convincing
+    with your boss when you want to be, so maybe you can negotiate some fexibility wherever you end up.
+    <br><br>
+  <</if>>  
+  TODO Pick a major
+<</nobr>>
+
+Child care
+AGRICULTURE & NATURAL RESOURCES CONSERVATION (Ag, Environmental, Forestry)
+ARCHITECTURE
+AREA, ETHNIC, & MULTIDISCIPLINARY STUDIES (Women's studies, library science, general studies)
+ARTS
+BUSINESS
+COMMUNICATIONS
+COMMUNITY, FAMILY, & PERSONAL SERVICES (family, child care, parks and rec, health and pe, culinary, CCJ, corrections, law enforcement, social work)
+COMPUTER SCIENCE & MATHEMATICS
+EDUCATION
+ENGINEERING
+ENGLISH & FOREIGN LANGUAGES
+HEALTH ADMINISTRATION & ASSISTING (Assistant, office work)
+HEALTH SCIENCES & TECHNOLOGIES (doctor, nurse, PT, athletic trainer, massage therapy)
+PHILOSOPHY, RELIGION, & THEOLOGY
+REPAIR, PRODUCTION, & CONSTRUCTION
+SCIENCES: BIOLOGICAL & PHYSICAL
+SOCIAL SCIENCES & LAW
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15FashionDesign
+<<nobr>>
+  <h1>Studying Fashion Design</h1>
+  <img src="Part15/Fashion2.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  Of course your classes cover a wide range of styles and working with every sort of material, you are encouraged to find
+  your own individual style as well.
+<</nobr>>
+
+<<nobr>>
+  Your developing style focuses on shiny materials like latex and PVC, among others.  And thankfully, the university has an
+  ample supply available for you to work.  But you aren't quite sure yet how you want to use it.  You've experimented with
+  it in a few ways already.
+<</nobr>>
+
+<<nobr>>
+  You can take what might be simple, but sexy outfit, and bring it to an entirely different level with a change of materials.
+<</nobr>>
+
+<<nobr>>
+  You can also max basic daily clothes with something with a bit of shine and add excitement to an otherwise mundane wardrobe.
+<</nobr>>
+
+<<nobr>>
+  But the more you experiment, the more you find that it's not just the look of your designs that you enjoy, but also
+  [[they way you feel when you wear them|Part15FashionDesign2]].
+<</nobr>>
+
+<img src="Part15/Fashion3.jpg" hspace="10" vspace="10" height="600" align="left">
+
+::Part15FashionDesign2
+<<nobr>>
+  <h1>Enjoying the way you feel when you wear it</h1>
+  <video src="Part15/Fashion4.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  The full-body designs often don't offer as much opportunity for creativity, but you enjoy them for other reasons.  You love
+  the feeling of latex, tight against your skin.  When it's your whole body, and even your face, it's so much better.
+<</nobr>>
+
+<<nobr>>
+  All your designs incorporate locking zippers, or other mechanisms that can be used to prevent the wearer from removing the
+  suit by herself.  Maybe it's the time you spent tied up for Ken, but you also love the feeling of helplessness you get when
+  you wear one of your creations.
+<</nobr>>
+
+<<nobr>>
+  Locks at the neck means your suit and mask wouldn't come off until the key was returned to you.  And maybe
+  <<if setup.haveGirlfriend()>>$dating[0]<<else>>he<</if>>
+  might also lock the zipper between your legs too.  Not only would that prevent you from having too much fun, it'd also mean
+  you'd have to come begging to be unlocked even to use the bathroom.
+<</nobr>>
+
+<<nobr>>
+  In addition to all that, you also love the feeling of anonymity you get when you are completely covered in latex.  You aren't $playerName
+  anymore, you are just a [[mouth to be used|Part15FashionDesign3]].
+<</nobr>>
+
+::Part15FashionDesign3
+<<nobr>>
+  <h1>Testing your design</h1>
+  <<if $dating.length == 0 or (setup.haveGirlfriend() and !setup.areDating('Bailey'))>>
+    <video src="Part15/Fashion5.mp4" autoplay loop muted height="450"></video>
+  <<else>>
+    <video src="Part15/Fashion6.mp4" autoplay loop muted height="450"></video>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Of course just imagining what it would be like to be helpless isn't the same as truly being helpless.  But luckily
+  <<if setup.areDating('Bailey')>>
+    <<set setup.addSexRepeat(3, {sex:"female", name:"Bailey"})>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male", repeat:true})>>
+    Bailey is able to help.  You lock the zippers closed, and hand her the keys.  Now you can really experience what it's like when
+    you know you won't be able to remove anything until she allows it.
+    <br><br>
+    When she connects your wrist cuffs together behind your back, you are even more helpless.  Of course as horny as you are by then, you
+    eagerly pleasure her like she asks.  And when she is satisified and adds the gag and blindfold, you can only accept it and wonder how
+    long until she returns.
+    <br><br>
+    And when she removes the gag and blindfold again, and you a hard cock she'd brought back for you, what choice do you have but to
+    service him too.
+    <br><br>
+    Afterwards, when you talk with Bailey, to see if she enjoyed herself as much as you did, she has just one suggestion.  "We need a second
+    suit. I'd much rather be helpless beside you than in control.  I'm sure we can find a guy willing to hold the keys for both of us."
+  <<elseif $dating.length and setup.haveGirlfriend()>>
+    <<set setup.addSexRepeat(3, {sex:"female", name:$dating[0]})>>
+    $dating[0] is able to help.  You lock the zippers closed, and hand her the keys.  Now you can really experience what it's like when
+    you know you won't be able to remove anything until she allows it.
+    <br><br>
+    When she connects your wrist cuffs together behind your back, you are even more helpless.  Of course as horny as you are by then, you
+    eagerly pleasure her like she asks.  And when she is satisified and adds the gag, blindfold, collar and leash, you can only accept it
+    and wonder where she is leading you.
+    <br><br>
+    She removes the gag and collar when you arrive, but you still can't see.
+    <<if setup.sexMaleCount() > 0>>
+      But you certainly know the difference between the way a dildo feels in your mouth and the way a real cock does.  You are
+    <<else>>
+      But you think you can tell it's a dildo pushed into your mouth and not a real cock.  Though some part of you is
+    <</if>>
+    disappointed that it's the dildo you feel pushed past your lips.  You instinctively wrap them around it.
+    <br><br>
+    When you hear the machine start up and you feel the dildo begin to move in and out of your mouth, you realize where you are.  She must
+    have taken you to her friend from the engineering department.  You wonder if it's just him and $dating[0] watching, or if all his friends
+    are there too.
+    <br><br>
+    Though, it doesn't really matter.  No matter how many people are there, all you can do is let the machine use your mouth for as long
+    as they want it to.  And if $dating[0] decides to let him and all his friends want to use your mouth too, there's nothing you can do
+    to stop that either.
+    <br><br>
+    You ache for them to unlock and unzip the zipper between you legs.  But you know if they did, they would see just how wet you are right
+    now.
+  <<elseif $dating.length>>
+    $dating[0] is eager to help.  You lock the zippers closed, and hand him the keys.  Now you can really experience what it's like when
+    you know you won't be able to remove anything until he allows it.
+    <br><br>
+    When he connects your wrist cuffs together behind your back, you are even more helpless.  Of course as horny as you are by then, you
+    eagerly pleasure him like he asks.  And when he is satisified, he leaves you cuffed and covered in his cum, and adds a gag and blindfold,
+    as well.
+    <br><br>
+    You can't see where he is or what he is doing.  All you can do is kneel and wait to be used again.  But you don't have to wait all that
+    long.  This time he only takes off the gag, leaving you blindfolded.  Your mind can't help but wonder if it's still $dating[0]'s cock
+    in your mouth, or if he's decided to share you with his friends.
+    <br><br>
+    Whether it's still $dating[0] or not, you ache for him to unlock and unzip the zipper between you legs and fuck you.  You know if
+    he did, he would see just how wet and ready you already are.  But you are just there to be used, you don't get to decide how you
+    are used or for how long.
+    <<set setup.addSexRepeat(6, {sex:"male", name:$dating[0]})>>
+  <<else>>
+    you know a couple guys in the engineering department.  They are eager to help you test out your creation while they test out theirs.
+    <br><br>
+    They have you blindfolded, with your wrists cuffs connected together behind you before leading you into the room with whatever
+    machine they have created, so you never see it.  But when you feel the dildo push past your lips you instinctively get to work on
+    it.  A moment later you hear the machine start and feel the dildo start moving in and out of your mouth.
+    <br><br>
+    How long their machine needs to be tested, what speed they want to set it for, or how deep they want it to go, all of it out of your
+    control.  You don't even know if it's just the two of them, or if they've called their whole team to watch.
+    <br><br>
+    You assume they've tested their machine enough when you hear it turn off.  But they aren't done with you yet.  The dildo in your
+    mouth is soon replaced by a real cock.  Maybe if they unlocked and unzipped the zipper between your legs and saw how wet and ready you
+    are, they'd want to fuck you instead.  But you are just there to be used, you don't get to decide how you are used or for how long.
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"male", repeat:true})>>
+    <<set setup.addSex({sex:"male", repeat:true})>>
+    <<set setup.addSex({sex:"male", repeat:true})>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+

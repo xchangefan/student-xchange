@@ -1,35 +1,36 @@
 ::StoryCaption <200,0>
-A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
+  A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 <<if $MindBlank>><<include [[SideBarMindBlank]]>><<elseif $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
-<<include [[SideBarNavigation]]>>
 <<include [[SideBarAchievementLink]]>>
-<<include [[SideBarDebug]]>>
+
+<<include [[SideBarDebug]]>>\
+<<include [[SideBarNavigation]]>>
 
 ::SideBarFemale <250,0>
 <div style="font-size: 90%">\
-  <<include [[SideBarBody]]>>
-  <<include [[SideBarBirthControl]]>>
-
-<<if $PlayerMoneySet and !$PlayerCumslutPermanent and !$DropoutConcubine>><<print "Money: $">>$PlayerMoney<</if>>
-  [[Inventory|SideBarInventory]]
-  <<include [[SideBarChastity]]>>\
-  <<if $student>><<include [[SideBarMentor]]>><</if>>\
-  <<include [[SideBarNeighbours]]>>\
-  <<include [[SideBarRelationship]]>>\
-  <<include [[SideBarJob]]>>\
-  <<include [[SideBarStudentYear]]>>\
-  <<include [[SideBarStudentLifeBalance]]>>\
+    <<include [[SideBarBody]]>>
+    <<include [[SideBarBirthControl]]>>
+<<if $PlayerMoneySet and !$PlayerCumslutPermanent and !$DropoutConcubine>><br><<print "Money: $">>$PlayerMoney<</if>>
+    [[Inventory|SideBarInventory]]\
+    <<include [[SideBarChastity]]>>\
+    <<if $student>><<include [[SideBarMentor]]>><</if>>\
+    <<include [[SideBarNeighbours]]>>\
+    <<include [[SideBarRelationship]]>>\
+    <<include [[SideBarJob]]>>\
+    <<include [[SideBarStudentYear]]>>\
+    <<include [[SideBarStudentLifeBalance]]>>\
 </div>
 
 ::SideBarMale <300,0>
+You are a young man trying to decide where to go to college.
 
 ::SideBarHorniness <350,0>
-<div style="font-size: 90%">\
-  <<include [[SideBarBody]]>>
-  <<include [[SideBarBirthControl]]>>
-  [[Inventory|SideBarInventory]]
-</div>
+  <div style="font-size: 90%">\
+    <<include [[SideBarBody]]>>
+    <<include [[SideBarBirthControl]]>>
+    [[Inventory|SideBarInventory]]
+  </div>
 
 <div style="font-size: 125%">\
   <<include [[SideBarPartyHorninessLevel]]>>\
@@ -110,7 +111,6 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
     <</if>>
   <</if>>
 <</nobr>>
-
 <<nobr>>
   <<if $PlayerCumslutPermanent>>
     You are a permanent cumslut
@@ -548,7 +548,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       <<else>>
         You ask $Spouse
       <</if>>
-    <<elseif setup.areDating('Veronica') or setup.areDating('Kate')>>
+    <<elseif setup.haveGirlfiend()>>
       If it were ever an issue, you would ask guys
     <<else>>
       You ask guys
@@ -586,46 +586,96 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarInventory <800,0>
 <h1>Inventory</h1>
-<<if $PlayerSlave>>
-  You own nothing.
-<<elseif $IslandNudity>>
-  <br><br>Your clothing is in storage
-  <<include [[SideBarToys]]>>\
-  <<include [[SideBarPiercing]]>>\
-<<else>>
-  <<include [[SideBarClothing]]>>\
-  <<include [[SideBarToys]]>>\
-  <<include [[SideBarPiercing]]>>\
-<</if>>
+<<nobr>>
+  <<if $PlayerSlave>>
+    You own nothing.
+  <<elseif $IslandNudity>>
+    Your clothing is in storage<br><br><br>
+    <<include [[SideBarToys]]>><br><br>
+    <<include [[SideBarPiercing]]>>
+  <<else>>
+    <<include [[SideBarClothing]]>><br><br>
+    <<include [[SideBarToys]]>><br><br>
+    <<include [[SideBarPiercing]]>><br><br>
+    <<include [[SideBarSexInventory]]>>
+  <</if>>
+<</nobr>>
+
+::SideBarSexInventory
+<<nobr>>
+  <<if $PlayerCumslut>>
+    You always have hair tie handy to tie back your hair before giving a blowjob.<br>
+  <<elseif $PlayerSideEffectOral && !setup.haveGirlfriend() && $sex.length>>
+    You try to keep a hair tie handy, so you can tie back your hair if you need to.<br>
+  <</if>>
+
+  <<if $sex.length>>
+    <<if $PlayerProtectionPill>>
+      You also have your birth control pills.
+    <<elseif $PlayerProtectionCondoms && !setup.haveGirlfriend()>>
+      You usually try to have a few condoms with you too.
+    <<elseif $PlayerProtectionWithdraw && !setup.haveGirlfriend()>>
+      You usually try to keep a few "moist towelettes" handy to clean up with.
+    <</if>>
+  <<else>>
+    <<if $PlayerProtectionPill>>
+      You also have your birth control pills.
+    <<elseif $PlayerProtectionCondoms>>
+      You still have the condoms they gave you at orientation.  You wonder if those things can expire.
+    <</if>>
+  <</if>>
+<</nobr>>
 
 ::SideBarClothing <1000,0>
-<br><br>Wardrobe:\
-<br>- Clothes: <<print setup.listInventory('clothes')>>\
-<br>- Sleepwear: <<print setup.listInventory('sleepwear')>>\
-<br>- Underwear: <<print setup.listInventory('underwear')>>\
-<br>- Costumes/Uniforms: <<print setup.listInventory('costumes')>>\
+<<nobr>>
+  Wardrobe:
+<</nobr>>
+<<nobr>>
+  - Clothes: <<print setup.listInventory('clothes')>>
+<</nobr>>
+<<nobr>>
+  - Sleepwear: <<print setup.listInventory('sleepwear')>>
+<</nobr>>
+<<nobr>>
+  - Underwear: <<print setup.listInventory('underwear')>>
+<</nobr>>
+<<nobr>>
+  - Costumes/Uniforms: <<print setup.listInventory('costumes')>>
+<</nobr>>
 
 ::SideBarPiercing <1200,0>
-<br><br>Piercings: <<print setup.listInventory('piercings')>>\
+<<nobr>>
+  Piercings: <<print setup.listInventory('piercings')>>
+<</nobr>>
 
 ::SideBarToys <1400,0>
-<br><br>Equipment:\
-<br>- Tools: <<print setup.listInventory('tools')>>\
-<br>- Sex Toys: <<print setup.listInventory('sex toys')>>\
-<br>- Other Toys: <<print setup.listInventory('toys')>>\
-<<if $PlayerItemNerdKey>><br><br><<print "You have Peter's Chastity Key. ">><</if>>\
-<<if $PlayerItemBuddyKey>><br><br><<print "You have Bailey's Chastity Key. ">><</if>>\
+<<nobr>>
+  Equipment:\
+<</nobr>>
+<<nobr>>
+  - Tools: <<print setup.listInventory('tools')>>
+<</nobr>>
+<<nobr>>
+  - Sex Toys: <<print setup.listInventory('sex toys')>>
+<</nobr>>
+<<nobr>>
+  - Other Toys: <<print setup.listInventory('toys')>>
+  <<if $PlayerItemNerdKey>><br><br><<print "You have Peter's Chastity Key. ">><</if>>
+  <<if $PlayerItemBuddyKey>><br><br><<print "You have Bailey's Chastity Key. ">><</if>>
+<</nobr>>
 
 ::SideBarChastity <1600,0>
 <<nobr>>
   <<set $tempHaveBelt to setup.haveInventory('sex toys', 'chastity belt') or setup.haveInventory('sex toys', 'electronic chastity belt')>>
   <<set $tempHaveBra to setup.haveInventory('sex toys', 'chastity bra') or setup.haveInventory('sex toys', 'electronic chastity bra')>>
   <<if $PlayerChastityPiercing>>
+    <br>
     You wear a chastity piercing.
     <<if $Keyholder>>
       Your orgasms belong to $Keyholder.
     <</if>>
   <<elseif $PlayerChastityBelt>>
+    <br>
     <<if $PeterKeyPurchase>>
       Peter has locked you in a chastity
       <<if $PlayerChastityBra>>
@@ -692,6 +742,7 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       <</if>>
     <</if>>
   <<elseif $PlayerChastityBra>>
+    <br>
     You are locked in a chastity bra.
     <<if $Keyholder>>
       $Keyholder has your key.
@@ -700,10 +751,13 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
       You are currently locked in your chastity belt.
     <</if>>
   <<elseif $tempHaveBelt and $tempHaveBra>>
+    <br>
     You have a chastity belt and bra, but you aren't currently locked.
   <<elseif $tempHaveBelt>>
+    <br>
     You have a chastity belt, but you aren't currently locked.
   <<elseif $tempHaveBra>>
+    <br>
     You have a chastity bra, but you aren't currently locked.
   <</if>>
 <</nobr>>
@@ -1031,18 +1085,27 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
 ::SideBarStudentYear <2590,0>
 <<nobr>>
+  <<if $Major>>
+    <<set $tempMajorText to " majoring in " + $Major + ".">>
+  <<else>>
+    <<set $tempMajorText to ".">>
+  <</if>>
   <<if $student>>
     <br>
     <<if $Graduated>>
-      You have graduated!
+      <<if $Major>>
+        You have graduated with a degree in <<print $Major>>.
+      <<else>>
+        You have graduated!
+      <</if>>
     <<elseif $StudentYearsCompleted >= 3>>
-      You are a senior.
+      You are a senior<<print $tempMajorText>>
     <<elseif $StudentYearsCompleted == 2>>
-      You are a junior.
+      You are a junior<<print $tempMajorText>>
     <<elseif $StudentYearsCompleted == 1>>
-      You are a sophomore.
+      You are a sophomore<<print $tempMajorText>>
     <<else>>
-      You are a freshman.
+      You are a freshman<<print $tempMajorText>>
     <</if>>
     <<if $StudentBreak>>
       You are taking a semester off.
@@ -1137,9 +1200,11 @@ A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 <</nobr>>
 
 ::SideBarDebug <2800,0>
-<div style="font-size: 70%">
-  <<print "Debug: Current: ">><<print passage()>><<print " | Previous: ">><<print previous()>><<print " | ">>[[Variables List|VariablesMasterDebugger]]
-</div>
+<<nobr>>
+  <div style="font-size: 70%">
+    <<print "Debug: Current: ">><<print passage()>><<print " | Previous: ">><<print previous()>><<print " | ">>[[Variables List|VariablesMasterDebugger]]
+  </div>
+<</nobr>>
 
 ::SideBarNavigation <2900,0>
 <div style="font-size: 70%">[[One-handed navigation|SideBarNavigationHelp]]</div>

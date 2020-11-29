@@ -4237,7 +4237,8 @@ TODO [[Part15Week]]
     having once a year.  They did it as a fundraiser, but you'd always thought they looked kind of cute.  Pretty cheerleaders, but wearing football jerseys
     and pads, with eye black like the guys wear under their eyes.
   <<else>>
-    TODO
+    It's even more fun than you'd expected, much more exciting than those 'powder puff' games you'd seen back in high school.  And as hot as the
+    girls in lingerie are, you are getting more of kick seeing the muscular football players in their cheerleader uniforms cheering them on.
   <</if>>
   <<set $SororityFootball to 1>>
 <</nobr>>
@@ -4257,8 +4258,12 @@ TODO [[Part15Week]]
         it's no more revealing than a bikini, right?
       <</if>>
     <</if>>
-  <<else>>
-    TODO
+  <<elseif $PlayerSideEffectExhibitionist>>
+    Thinking about how it will soon be you out there is really exciting you.
+  <<elseif setup.areDating('Veronica')>>
+    You and Veronica are both excited and a bit nervous about being out there when it's your turn to play.
+  <<elseif $dating.length>>
+    You wonder what $dating[0] is going to think about seeing you out on the field, with all these people looking at you in your lingerie.
   <</if>>
   You and your teammates watch the other two teams play.  One of the girls who'd played last years shares some advice for everyone whenever
   she thinks of something. 
@@ -4514,7 +4519,7 @@ TODO [[Part15Week]]
     But, you've heard these sorority parties can get pretty wild, so maybe it would be better to
     <<if $SororityFootball and $PlayerSideEffectExhibitionist > 1>>
       skip the party.  But when you hear you are expected to wear your 'uniform' from the game, you can't resist it.  The thought of being at a party
-      full of people in just your lingire uniform is just too exciting.
+      full of people in just your lingerie uniform is just too exciting.
     <<else>>
       [[skip the party|Part15SororityELP]].
     <</if>>
@@ -4572,8 +4577,8 @@ TODO [[Part15Week]]
   <<else>>
     One of the football players seems to have noticed your repeated glances at the bulge in is pants.  Seeing your interest, he comes over
     and starts flirting with you.  You don't want to waste any more time.  You places your hand on his bulge and feel his cock twitch at
-    the touch.  You tell him, "That looks like it hurts.  Why don't we go somewhere private, and you can slip into something more
-    comfortable... [[me for instance|Part15SororityFootball4]]."
+    the touch and strain against his pants.  You tell him, "That looks like it hurts.  Why don't we go somewhere private, and you can slip
+    into something more comfortable... [[me for instance|Part15SororityFootball4]]."
   <</if>>
 <</nobr>>
 
@@ -4701,7 +4706,7 @@ TODO [[Part15Week]]
     that neither of you remember until too late to be careful about where he cums.
   <<elseif $PlayerProtectionCondoms>>
     that you don't remember to ask him to wear a condom.
-    You'll need to remember to pick some <<if !$CampusMinistry>>more<</if>> up tomorrow.
+    You are out anyway.  You'll need to remember to pick some <<if !$CampusMinistry>>more<</if>> up tomorrow.
   <<elseif $PlayerProtectionWithdraw>>
     that you don't remember to ask him to pull out before he cums.
   <<elseif $CampusMinistry>>
@@ -6743,138 +6748,6 @@ TODO [[Part15Week]]
 ::Part15BackToMain
 <<nobr>>
   [[Continue|Part15Week]]
-<</nobr>>
-
-::Part15Major
-<<nobr>>
-  <h1>TODO</h1>
-  TODO Image
-<</nobr>>
-<<nobr>>
-  It's your sophmore year now and while you've definitely thought about it before now, it's time to finalize your choice of a major.
-  Of course you could always change it later, but that would probably mean graduating later and you don't want that.
-  <<if $Engaged == "Andrew">>
-    <br><br>
-    Of course you expect once you are married, you expect Andrew will be making enough that you wouldn't even need to work outside
-    the home.  But you might still want to, so you should pick a major still.  But it's probably safe to pick something you enjoy,
-    and not really worry about how much it pays.
-  <<elseif $Engaged>>
-    Once you and $Engaged are married, you'll both be brining money in, so you are probably safe picking something you know you'll
-    enjoy, and not worrying as much about how much it pays.
-  <<elseif $ProfessorAllowance and setup.areDating('Aaron')>>
-    You hope someday you and Aaron will be married, and he'll be paying most of the bills while you take care of him and the house.
-    But he hasn't proposed yet.  Besides he's always talking about how important your education is.
-  <<elseif $PlayerMother>>
-    You're going to be taking care of <<print $children[0].name>>, so you'll probably want to choose something that pays well
-    enough for a single mom.
-  <</if>>
-  <<if $JobEngineer or $JobEngineerLock>>
-    todo already chosen comp sci/math/engineering, no need to pick major
-    <<set $Major to "Engineering">>
-    <br><br>
-    <<include [[Part15BackToMain]]>>
-  <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
-    todo not likely to be a professional cheerleader - pick major
-    <br><br>
-    <<include [[Part15MajorChoose]]>>
-  <<elseif $JobAthlete and $BodyType == 'Fit'>>
-    todo might want to be a pro athlete, but need a back plan - pick backup major
-    <br><br>
-    <<include [[Part15MajorChoose]]>>
-  <<elseif $JobAthlete>>
-    todo not likely to be a pro athlete - pick major
-    <br><br>
-    <<include [[Part15MajorChoose]]>>
-  <<elseif $JobFitnessYoga>>
-    todo might want to be a yoga Instructor - pick major with that as an option
-    <br><br>
-    <<include [[Part15MajorChoose]]>>
-  <<elseif $JobFitnessMassage>>
-    todo might want to be a massage therapist - pick major with that as an option
-    <br><br>
-    <<include [[Part15MajorChoose]]>>
-  <<elseif $JobLibrary>>
-    todo might want to be a librarian - pick major with that as an option
-    <br><br>
-    <<include [[Part15MajorChoose]]>>
-  <<elseif $JobTestSubject or $JobBetaTester>>
-    It's not like you can keep being a 'tester' for the engineering department after graduation.
-    <br><br>
-    <<include [[Part15MajorChoose]]>>
-  <<elseif $JobModel>>
-    todo pick art major
-    <<set $Major to "Art">>
-    <br><br>
-    <<include [[Part15BackToMain]]>>
-  <<elseif $JobOffice or $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>
-    todo pick business major
-    <<set $Major to "Business">>
-    <br><br>
-    <<include [[Part15BackToMain]]>>
-  <<elseif $JobBarista or $JobBikiniBarista or $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
-    todo not planning on doing this forever, pick a major
-    <br><br>
-    <<include [[Part15MajorChoose]]>>
-  <<elseif $JobCallGirl>>
-    You make more as a call girl than you could probably make at any other job you'd choose.  But you have to pick something, and you're
-    going to want something to tell family and friends that don't know what you really do for a living.  The more you think about it the
-    more a business major appeals to you.
-    <br><br>
-    It'll give you something to tell people now, and it'll help you manage the money side of the job.  And who knows, maybe when you're older
-    and don't want to see clients as much anymore, you could start your could start your own placement service instead.
-    <<set $Major to "Business">>
-    <br><br>
-    <<include [[Part15BackToMain]]>>
-  <<else>>
-    todo general pick a major
-    <br><br>
-    <<include [[Part15MajorChoose]]>>
-  <</if>>  
-<</nobr>>
-
-::Part15MajorChoose
-<<nobr>>
-  <<if $JobFitnessYoga>>
-    You've enjoyed your work as a yoga instructor.  There isn't any set requirements if you want to continue with that after you
-    graduate, but you could always pick "Health Sciences" and focus on exercise science or kinesiology.
-    Of course, there's a lot of competition out there.  But if you get word get around about your private sessions, then maybe
-    that won't be a problem.
-    <br><br>
-  <<elseif $JobFitnessMassage>>
-    You've enjoyed your work in the fitness center.  You could always pick "Health Sciences" and become a massage therapist or
-    maybe even a physical therapist.  Then you could work as a real therapist during the day, and then pick up some extra money
-    doing other types of sessions in your free time.
-    <br><br>
-  <<elseif $JobLibrary>>
-    You've enjoyed your work a a librarian.  "Library Science" is an option you could choose.  Of course most libraries aren't
-    going to be as flexible about your after-hours behavior as the university library.  But you've found you can be quite convincing
-    with your boss when you want to be, so maybe you can negotiate some fexibility wherever you end up.
-    <br><br>
-  <</if>>  
-  TODO Pick a major
-<</nobr>>
-
-Child care
-AGRICULTURE & NATURAL RESOURCES CONSERVATION (Ag, Environmental, Forestry)
-ARCHITECTURE
-AREA, ETHNIC, & MULTIDISCIPLINARY STUDIES (Women's studies, library science, general studies)
-ARTS
-BUSINESS
-COMMUNICATIONS
-COMMUNITY, FAMILY, & PERSONAL SERVICES (family, child care, parks and rec, health and pe, culinary, CCJ, corrections, law enforcement, social work)
-COMPUTER SCIENCE & MATHEMATICS
-EDUCATION
-ENGINEERING
-ENGLISH & FOREIGN LANGUAGES
-HEALTH ADMINISTRATION & ASSISTING (Assistant, office work)
-HEALTH SCIENCES & TECHNOLOGIES (doctor, nurse, PT, athletic trainer, massage therapy)
-PHILOSOPHY, RELIGION, & THEOLOGY
-REPAIR, PRODUCTION, & CONSTRUCTION
-SCIENCES: BIOLOGICAL & PHYSICAL
-SOCIAL SCIENCES & LAW
-
-<<nobr>>
-  <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15Greek
