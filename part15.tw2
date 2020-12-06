@@ -831,15 +831,16 @@
   <<elseif setup.areDating('Andrew')>>
     "I've been faithful to my boyfriend so far, but I feel constantly tempted to cheat on him.  And I would hate myself if I did that.
   <<else>>
-    "I've somehow managed not to act on all the desires I have.  I want to wait until the right person.  But I feel like I could break down and
-    have sex with anyone in a moment of weakness.
+    "I've somehow managed not to act on all the desires I have.  I want to wait until the right
+    <<if $LikeBoth or $KidnapEscape or $LikeFemales>>person<<else>>man<</if>>
+    comes along. But I feel like I could break down and have sex with anyone in a moment of weakness.
   <</if>>
   The doctor said you had something that maybe could help me.  Like a pill or a shot or something?  Or some support program?"
 <</nobr>>
 
 <<nobr>>
-  "No, it's nothing like that.  It's actually something you wear.  I'm not sure if you are familiar with the term, but it's called a 'Chastity Belt',
-  and it will ensure that you can never succumb to your desires in a moment of weakness like you
+  "No, it's nothing like that," he explains.  "It's actually something you wear.  I'm not sure if you are familiar with the term, but it's
+  called a 'Chastity Belt', and it will ensure that you can never succumb to your desires in a moment of weakness like you
   <<if $CampusMinistryFailSummer>>
     complain you have been doing.
   <<else>>
@@ -849,15 +850,21 @@
 <</nobr>>
 
 <<nobr>>
-  "The belt you'd be testing is actually a computerizd chastity belt.  With a traditional belt, most would only prevent vaginal intercourse.  There
-  are ones that also prevent anal sex, but those present obvious daily hygiene issues.  And no traditional belt would prevent you from engaging in oral sex.
-  Ours can. Or at least it can strongly discourage them both.
+  "The belt you'd be testing is actually a computerized chastity belt.  With a traditional belt, most would only prevent vaginal intercourse.
+  And they present challenges during menstration, which our belt addresses.
+<</nobr>>
+
+<<nobr>>
+  "There are belts that also prevent anal sex, but those present obvious daily hygiene issues.  And no traditional belt would prevent you from
+  engaging in oral sex.  Ours can prevent 
   <<if setup.areDating('Andrew')>>
-    But we can set it to allow either or both when you are at your boyfriend's apartment, 
+    both. But we can set it to allow either or both when you are at your boyfriend's apartment, 
     <<if !setup.haveFucked('Andrew')>>
       should you wish to become sexually active with him,
     <</if>>
     ensuring your monogamy.
+  <<else>>
+    both until you meet the right person.
   <</if>>
   It is also capable of providing you pleasure if so configured.
 <</nobr>>
@@ -933,13 +940,19 @@
 <<nobr>>
   After checking over your fit the technician tells you, "Thank you, you are all set.  Have a fun time and be sure to fill out the user surveys
   we send out every few weeks, and to report if you encounter any problems.
+<</nobr>>
+
+<<nobr>>
   <<if $PlayerProtectionPill or $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerPregnant>>
-    You shouldn't have any hygiene issues, but if you do, let us know."
+    "You mentioned you rarely have periods, so you might not need this," he says as he hands you a small key.  "But if you do start
+    menstrating you can use this to open the hygiene shield in the front.
   <<else>>
-    Oh, and here's the key to the hygiene shield in the front there, try not to lose it.  You'll probably need to remove the hygiene shield
-    occasionally when you're menstrating.  But don't leave it off too long, or try to use it for anything other than its intended purpose, or
-    you'll regret it.  You can read in the manual about the countermeasures if you are curious."
+    "Oh, and you'll probably need this," he says as he hands you a small key.  "You can use this to open the hygiene shield in the front
+    when you are menstrating.
   <</if>>
+  Try not to lose it.  Keep in mind it will only work if the belt detects that it is necessary."  You decide not to ask about how it
+  decides that.  He continues, "And don't leave it off too long, or try to use it for anything other than its intended purpose, or
+  you'll regret it.  You can read in the manual about the countermeasures if you are curious."
 <</nobr>>
 
 <<nobr>>
@@ -956,7 +969,11 @@
     unlock you or alter anything that would affect the testing parameters.  Don't worry, as soon as testing is completed, we will automatically
     convert them to a full owner with full access.  Then they'll be able to unlock you if they wish.
     <br><br>
-    "But don't feel rushed," he says.  "We'll keep you locked and chaste as long as you need to take in order to find Mr., or Miss, Right."
+    You start to fantasize about your wedding night, with your spouse reaching up under your dress to remove your belt, and then pushing
+    you back onto the bed...
+    <br><br>
+    "But don't feel rushed," he continues, interrupting your fantasy.  "We'll keep you locked and chaste for as long as you need to take in
+    order to find Mr., or Miss, Right."
   <</if>>
   <<if $AcademicProbationDenial>>
     <br><br>
@@ -1407,9 +1424,9 @@
 <<nobr>>
   The "Chaste" mode is obviously the one they've set your belt to, thankfully.  The options for that seem fairly normal.  It says it will provide
   punishment shocks of increasing severity if sexual activity is attempted.  It doesn't really say how it can tell that, but you assume they'd
-  probably not want to say exactly as that would make it easier to cheat it.  It does mention a "safe word" to yell if you are attacked and it
+  probably not want to say exactly as that would make it easier to cheat it.  It does mention a "safeword" to yell if you are attacked and it
   will not trigger the punishment but instead call for help, "that's a nice feature," you think to yourself.  You also see it mentions how harsh
-  the punishment is if they decide you've 'misused' the safe word feature.  "I guess that's understandable.", you think.
+  the punishment is if they decide you've 'misused' the safeword feature.  "I guess that's understandable.", you think.
 <</nobr>>
 
 <<nobr>>
@@ -1425,7 +1442,7 @@
 <</nobr>>
 
 <<nobr>>
-  You lie back close your eyes and start imagining your new husband begin to pleasure you.  You are expecting the belt to do someting, to give some
+  You lie back close your eyes and start imagining your new husband begining to pleasure you.  You are expecting the belt to do someting, to give some
   real fealing to your fantasy, but nothing happens.  You stop fantasizing and wait a bit, but nothing.  You look back at the phone thinking thinking
   something went wrong, but you see, "Request Granted". And below that, "You've been a good girl.  Enjoy your orgasm."  But still nothing is happening.
 <</nobr>>
@@ -1439,8 +1456,8 @@
 
 <<nobr>>
   <<set $tempOrgasmRequestGranted to 1>>
-  You decide you best go to sleep then.  You have no idea if you'll be woken up in the middle of the night with a pleasan surprise, or not, and you want
-  to be well rested.  You have the meeting tomorrow at the X-Change office [[about their new 'Buddy' program|Part15Buddy]].
+  You decide you best go to sleep then.  You have no idea if you'll be woken up in the middle of the night with a pleasant surprise, or not, and you
+  want to be well rested.  You have the meeting tomorrow at the X-Change office [[about their new 'Buddy' program|Part15Buddy]].
 <</nobr>>
 
 ::Part15MinistryTesterNo
@@ -4478,13 +4495,16 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
-  You remember that there's a party later
-  <<if $SororityELP>>
-    at one of the sororities houses, and you've been invited.
+  <<if !$SororityFootball and !$SororityFootball and $SororityELP>>
+    You know some of the more traditional sororities are having parties tonight, but yours is instead going to be spendig the evening
+    [[feeding the homeless|Part15SororityELP]].
+  <<elseif $SororityELP>>
+    You remember that there's a party later at one of the sororities houses, and you've been invited.
   <<else>>
-    back at the sorority house.
+    You remember that there's a party later back at the sorority house.
   <</if>>
-  <<if setup.haveGirlfriend()>>
+  <<if !$SororityFootball and !$SororityFootball and $SororityELP>>
+  <<elseif setup.haveGirlfriend()>>
     You and $dating[0] can hardly wait for
     <<if $SororityFootball>>  
       [[the party to start|Part15SororityFootball3]].
@@ -4494,7 +4514,6 @@ TODO [[Part15Week]]
       [[the party to start|Part15SororityChastity]].
     <</if>>
   <<elseif $dating.length>>
-    <<link $neighbours[0]>><<set $tempStrokeWinner = 0>><<goto [[Part5HannahNeighbour2]]>><</link>>
     But you'd rather
     <<link "spend the time with $dating[0]">>
       <<if $SororityFootball>>
@@ -4505,8 +4524,6 @@ TODO [[Part15Week]]
         <<goto [[Part15SororityChastityBoyfriend]]>>
       <</if>>
     <</link>>.
-  <<elseif $PlayerChastityBelt and $JobBetaTester == "chaste">>
-    It sounds like it'd be a lot of fun.  But you are worried you might be tempted to have too much fun.  So you [[pass on the party|Part15SororityELP]].
   <<elseif $CampusMinistry>>
     It's sounds like it would be a lot of fun to
     <<if $SororityFootball>>  
@@ -4602,6 +4619,7 @@ TODO [[Part15Week]]
   <<set setup.addSexRepeat(6, {sex:"female", name:$dating[0]})>>
 <</nobr>>
 <<nobr>>
+TODO or [[Part15Dorm]]
   You are barely through the door and
   <<if setup.areDating('Bailey')>>
     you have Bailey's hands held together above her head.  "Did that excite you, my little slut, being dressed like this in front of
@@ -4728,6 +4746,7 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
+TODO or [[Part15Dorm]]
   <<if $dating.length>>
     <<if $sex.length == 4>>
       You don't know why you waited this long, but you don't want to wait again to feel $dating[0] inside you.  Well, you have to
@@ -4770,6 +4789,7 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
+TODO or [[Part15Dorm]]
   <<if $PlayerSideEffectExhibitionist>>
     The thought of you grappling naked with guy, in front of everyone at the party, is too exciting to resist.
     "What the hell, [[let's do this|Part15SororityJoust3]]!" you tell them.
@@ -4822,6 +4842,7 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
+TODO or [[Part15Dorm]]
   <<if $PlayerSideEffectPheromones>>
     You know you should probably leave the party right now, before it's your turn to go out there.  But you've gotten so wet watching
     her dominate him like that, and from hearing him moan as she stroked his cock.  Oh god, and the smell of him as he struggled, naked on the mat.
@@ -4919,6 +4940,7 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
+TODO or [[Part15Dorm]]
   You have a fun time watching the rest of the "fights", and the remainder of the party after those is great too.  When you finally
   [[head home|Part15Week]] you know this will be a night to remember.
 <</nobr>>
@@ -4975,6 +4997,7 @@ TODO [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
+TODO or [[Part15Dorm]]
   <<if $CampusMinistry>>
     You don't know why you've waited so long for this.  You feel like you've wasted a whole year trying to be 'good'.  You aren't sure when you'll be
     at another party like this, so you decide to [[have as much fun as you can tonight|Part15SororityJoustCampusMinistryFail]].
@@ -4982,6 +5005,7 @@ TODO [[Part15Week]]
     You have a fun time watching the rest of the "fights", and the remainder of the party after those is great too.  When you finally
     [[head home|Part15Week]] you know this will be a night to remember.
   <</if>>
+
 <</nobr>>
 
 ::Part15SororityJoust3
@@ -5072,6 +5096,7 @@ TODO [[Part15Week]]
   <</if>>
 <</nobr>>
 
+TODO or [[Part15Dorm]]
 [[Continue|Part15Week]]
 
 <<achievement>>train<</achievement>>
@@ -5080,22 +5105,505 @@ TODO [[Part15Week]]
 
 ::Part15SororityChastity
 TODO Followup with just tug-of-war (chastity)
-TODO [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15Week]] or [[Part15Dorm]]
 
 ::Part15SororityFootballBoyfriend
 TODO Followup with lingerie with boyfriend (what if ministry and still virgin)
-TODO [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15Week]] or [[Part15Dorm]]
 
 ::Part15SororityJoustBoyfriend
 TODO Followup with wrestling with boyfriend (what if ministry and still virgin)
-TODO [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15Week]] or [[Part15Dorm]]
 
 ::Part15SororityChastityBoyfriend
 TODO Followup with just tug-of-war (chastity) with boyfriend
-TODO [[Part15SororityELP]] or [[Part15Week]]
+TODO [[Part15Week]] or [[Part15Dorm]]
 
 ::Part15SororityELP
-TODO helping homeless, possible bad event?
+<<nobr>>
+  <h1>Feeding the homeless</h1>
+  <img src="Part15/Sorority19.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  You leave campus and head out with your sorority to feed the homeless.  The service fraternity your sorority often teams up with is there
+  as well.  As you help hand out plates of food, you are glad you decided to do this instead of going to one of those sorority parties, this
+  is far more rewarding.
+<</nobr>>
+
+<<nobr>>
+  After everyone has been fed, you and your brothers and sisters clean up and get ready to leave.  Your friend who gave you a ride here
+  is heading over to her boyfriends instead of back to campus, so you'll need to find a different way home.
+<</nobr>>
+
+<<nobr>>
+  <<if $dating.length>>
+    You don't want to spend forever taking the bus home, so you give $dating[0] a call and
+    <<if setup.haveGirlfriend()>>she<<else>>he<</if>>
+    comes and picks you up and [[takes you home|Part15Dorm]].
+  <<else>>
+    Some of the girls are heading to one of those sorority parties.  "They don't really get fun until later in the evening anyway, so we
+    probably didn't miss much," she says.  You could [[join them and head to the party|Part15SororityChastity]].
+    <br><br>
+    Or you could stick to your original plan and just [[catch a bus|Part15SororityELPBus]] back to campus.
+  <</if>>
+<</nobr>>
+
+::Part15SororityELPBus
+<<nobr>>
+  <h1>Waiting for the bus</h1>
+  <img src="Part15/Bus1.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  You decided to just stick with your original plan and take the bus back to campus.  You know the route takes a while, but it does drop you off
+  at the bus stop right outside the main entrance.
+<</nobr>>
+
+<<nobr>>
+  As you are waiting, Jaylen, one of the guys from the service fraternity you'd been working with, pulls up next to the bus shelter.
+<</nobr>>
+
+<<nobr>>
+  "Hey, $playerName.  I'm heading back towards campus in a bit.  I am making one stop first.  My friend's band is playing at a bar in town,
+  and I promised I'd come by and say hi after I was done here.  I don't expect to be there for long though."
+<</nobr>>
+
+<<nobr>>
+  You can [[ride along with Jayden|Part15Jaylen]] or you can [[keep waiting for you bus|Part15SororityELPBus2]]
+<</nobr>>
+
+::Part15SororityELPBus2
+<<nobr>>
+  <h1>Long bus ride back to campus</h1>
+  <img src="Part15/Bus2.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+<<nobr>>
+  Eventually your bus shows up, you pay and find a seat.  There's not may be people on it at this hour, so you find a spot near the
+  rear door.  With the motion of the bus, along with the busy day you've had, and you are soon asleep with your head against the bus window.
+<</nobr>>
+
+<<nobr>>
+  When you wake up for a moment, you realize you've slept right through your stop, and are several stops past the campus.
+  You get off at the next intersection so you don't get even further away.
+<</nobr>>
+
+<<nobr>>
+  You are thinking about calling a ride, but your phone dies before you can even see how much it was going to cost.
+<</nobr>>
+
+<<nobr>>
+  So you [[start walking|Part15SororityELPBus3]] the mile or two back to campus.  You decide that's going to be quicker
+  than sitting around waiting for a bus going the other way.  Who knows how long it'd be or if there's any more coming
+  tonight at all.
+<</nobr>>
+
+::Part15SororityELPBus3
+<<nobr>>
+  <h1>Being followed</h1>
+  <img src="Part15/Bus3.jpg" hspace="10" vspace="10" height="450" align="left">
+  You didn't notice him at first, but now you realize there's some strange guy behind you.  He's been walking slightly faster than
+  you and slowly creeping up on you as you walk home.
+<</nobr>>
+
+<<nobr>>
+  <<if $BodyType == 'Fit'>>
+    You are tempted to keep walking and be ready to fight him if needed, but you're exhausted and you have no idea how strong he is.
+    Besides you realize he could have a knife or even a gun for all you know.
+  <<else>>
+    If you were stronger, or still a guy, you might be tempted to keep walking and be ready fight him if needed, but you're not.
+    Besides you realize he could have a knife or even a gun for all you know.
+  <</if>>
+  You do pull your keys out of your pocket to use as a weapon, like you'd heard someone mention before.
+<</nobr>>
+
+<<nobr>>
+  <<if $JobBetaTester == "chaste">>
+    You are wondering if you should just run for
+    <<if $BodyType == 'Fit'>>
+      it, you can probably outrun him.
+    <<else>>
+      it and hope you can outrun him.
+    <</if>>
+    But then you remember reading about the "safeword" feature of your belt you'd read about earlier.  Maybe the guy is harmless,
+    but right now you are too scared to worry about them punishing you if they decide you've 'misused' the safeword.
+    <br><br> 
+    You quickly say the phrase you'd read, loud enough for the belt to hear it.  The belt doesn't make any sound, but you feel a momentary
+    vibration from the belt which means it heard you and activted the safety feature.
+    <br><br>
+    You are still hoping it's nothing, you [[start walking a bit faster|Part15SororityELPBus4Alarm]].  Hopefully he's not following you,
+    and just happens to be going in the same direction.
+  <<else>>
+    You need to decide whether to make a <<include [[Part15SororityELPBusRunChance]]>> or to <<include [[Part15SororityELPBusWalkChance]]>>
+    and hope you are just being paranoid.
+  <</if>>
+<</nobr>>
+
+::Part15SororityELPBusRunChance
+<<nobr>>
+  <<set $tempRoll to either(0,1,2,3,4,5,6,7,8,9)>>
+  <<if $BodyType == 'Fit'>>
+    <<set $tempCaughtScore to 0>>
+    <<set $tempHitScore to 2>>
+  <<elseif $BodyType == 'Plus'>>
+    <<set $tempCaughtScore to 6>>
+    <<set $tempHitScore to 8>>
+  <<else>>
+    <<set $tempCaughtScore to 2>>
+    <<set $tempHitScore to 5>>
+  <</if>>
+  <<if $tempRoll <= $tempCaughtScore>>
+    [[run for it|Part15SororityELPBus4Caught]]
+  <<elseif $tempRoll <= $tempHitScore>>
+    [[run for it|Part15SororityELPBus4Hit]]
+  <<else>>
+    [[run for it|Part15SororityELPBus4Run]]
+  <</if>>  
+<</nobr>>
+
+::Part15SororityELPBusWalkChance
+<<nobr>>
+  <<set $tempRoll to either(0,1,2,3,4,5,6,7,8,9)>>
+  <<if $BodyType == 'Fit'>>
+    <<set $tempSubmitScore to 2>>
+    <<set $tempFightScore to 7>>
+  <<elseif $BodyType == 'Plus'>>  
+    <<set $tempSubmitScore to 4>>
+    <<set $tempFightScore to 8>>
+  <<elseif $BodyType == 'Petite'>>
+    <<set $tempSubmitScore to 8>>
+    <<set $tempFightScore to 9>>
+  <<else>>
+    <<set $tempSubmitScore to 7>>
+    <<set $tempFightScore to 9>>
+  <</if>>
+  <<if $tempRoll <= $tempSubmitScore>>
+    [[keep walking|Part15SororityELPBus4Submit]]
+  <<elseif $tempRoll <= $tempFightScore>>
+    [[keep walking|Part15SororityELPBus4Fight]]
+  <<else>>
+    [[keep walking|Part15SororityELPBus4Nothing]]
+  <</if>>
+<</nobr>>
+
+::Part15SororityELPBus4Alarm
+<<nobr>>
+  <h1>Being attacked</h1>
+  <img src="Part15/Bus4.jpg" hspace="10" vspace="10" height="400">
+  <<set $RapistBeltAlarm to 1>>
+<</nobr>>
+<<nobr>>
+  You keep walking, hoping he just happens to be going the same way as you.  When he's still behind you, you decide to walk a bit faster.
+  But before you know it, he dashes forward and grabs you from behind.  You struggle as he pulls you back towards the alley.  You try to
+  fight back, but he's strong and you are panicing and doesn't it do any good.
+<</nobr>>
+
+<<nobr>>
+  When you start to yell for help, he covers you mouth.  "Shut up, bitch, or I'll cut your fucking throat!"  You haven't seen a knife, but
+  you shut up.
+<</nobr>>
+
+<<nobr>>
+  He's holding you with one hand and struggling to take off your jeans with the other.  "Pull down your fucking pants if you know what's
+  good for you!" he orders.
+<</nobr>>
+
+<<nobr>>
+  You are reluctantly doing as he commanded when you both notice a campus police officer come around the corner.  He takes off running
+  down the alley in the other direction, but before he can get to the street, a police car from the town police pulls up. He tries to
+  run past the other officer before he can get out of his car, but fails.  The officer throws him to the ground and handcuffs him.
+<</nobr>>
+
+<<nobr>>
+  While that's happening, the campus officer is checking on you.  "We got the alarm from your panic button.  It's great that you were
+  carrying one of those.  There's been several attacks like this near campus, but they were all reported after the fact and he was long
+  gone by then."
+<</nobr>>
+
+<<nobr>>
+  You don't correct him that it wasn't exactly a panic button, but you suppose that's how it showed up on his system
+  and it's far less embarrassing than the whole truth.  You give the real officer your information, and then ride with the campus officer
+  [[back home|Part15DormCalm]].
+<</nobr>>
+
+::Part15SororityELPBus4Run
+<<nobr>>
+  <h1>Near miss</h1>
+  When you start running, you think you hear the sound of him chasing after you.  You pick up speed and run as fast as you can.
+  <<set $RapistRun to 1>>
+<</nobr>>
+
+<<nobr>>
+  You are so worried about him, that you aren't paying enough attention to where you are going.  You seen headlights in your
+  face and hear the sound of a car slamming on it's brakes as you narrowly avoid getting hit while crossing the street.
+<</nobr>>
+<img src="Part15/Bus6.jpg" hspace="10" vspace="10" height="400">
+
+<img src="Part15/Bus10.jpg" hspace="10" vspace="10" height="400" align="left">
+<<nobr>>
+  When you look around, you no longer see the man following you anymore, but are still worried he might be following you.
+  You run, more carefully now, until you are back on campus.  Once you reach campus, you see one of the blue emergency
+  phones.  You decide to be safe and use it. You let them know you think you were being followed and they say they'd
+  send an officer over right away to escort you safely [[back to your dorm|Part15DormCalm]].
+<</nobr>>
+
+<<nobr>>
+  When you start to appologize to the officer for being paranoid he tells you not to be sorry.  "There's been several recent
+  attacks in town lately.  It's not on campus, so we can't do much about it, and the town police don't seem to be making it much
+  of a priority.  Anyway, it sounds like you were lucky tonight.  Just give us a call if you need another escort."
+<</nobr>>
+
+::Part15SororityELPBus4Hit
+<<nobr>>
+  <h1>Oncoming car</h1>
+  <img src="Part15/Bus6.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  When you start running, you think you hear the sound of him chasing after you.  You pick up speed and run as fast as you can.
+<</nobr>>
+
+<<nobr>>
+  You are so worried about him, that you aren't paying enough attention to where you are going.  The last thing you remember
+  [[of the accident|Part15Accident]] are the car's headlights and the sound of the its brakes.
+<</nobr>>
+
+<<nobr>>
+  You have brief flashes of other memories, but then everything goes black.
+<</nobr>>
+
+<img src="Part15/Bus7.jpg" hspace="10" vspace="10" height="400">
+
+::Part15Accident
+<<nobr>>
+  <h1>Waking up</h1>
+  <img src="Part15/Bus8.jpg" hspace="10" vspace="10" height="550" align="left">
+  "How do you feel?" someone asks you as wake up.
+<</nobr>>
+
+<<nobr>>
+  You look around, and everything is soft and white and fluffy.  "I feel like a cloud.  Am I a cloud?" you ask.
+<</nobr>>
+
+<<nobr>>
+  "No.  That's just the pain medicine the doctor gave you before your surgery.  It should start to wear off soon.  When you start to feel
+  any pain let me now.  I'll get you some less strong, but that should help," she tells you.
+<</nobr>>
+
+<<nobr>>
+  As you wake up a little more your head is a bit more clear, though everything still feels strange and foggy.  "What happened?" you ask her.
+<</nobr>>
+
+<<nobr>>
+  "You probably don't remember talking to me before your surgery, she says.  "You were in an accident," she tells you.  "A car hit you while
+  you were crossing the street."  You vaguely remember running across the street, but not the details of it.  "Your leg was broken in several
+  places.  You also suffered some internal injuries as well, we can go over the details later [[when you are up to it|Part15Accident2]].
+  But you should be fine in the long run.  You will need to wear a cast for the next couple months though."
+  <<if $PlayerPregnant>>
+    <br><br>
+    She pauses for a moment then continues, "I'm sorry, but with the injuries you suffered, your pregnancy didn't withstand the 
+    accident."  You realize she's saying you've lost the baby you were carrying.  You'd probably be more upset right now, but the
+    drugs are making everything seem far away and distant.  She pauses and adds hopefully, "Though, the doctor says everything is
+    fine, with your body.  So if you want to try again when you are feeling better, you shouldn't have any problems."
+  <<elseif $PregnancyWeek >= 6>>
+    <<set $tempPregnantDiscovered to 1>>
+    <br><br>
+    She pauses for a moment then continues, "When you were briefly conscious before the surgery, you had said you weren't pregnant.
+    But it looks like, prior to the accident you were.  But unfortunately the pregnancy didn't withstand the injuries you
+    suffered."  She pauses and adds hopefully, "Though, the doctor says everything is fine with your body.  So if you want to try
+    again when you are feeling better, you shouldn't have any problems."
+  <<elseif $PregnancyWeek>>
+    <<set $tempPregnantDiscovered to 1>>
+    <br><br>
+    She pauses for a moment then continues, "I don't know if you were even aware of it or not, but your blood work showed that you
+    were likely pregnant prior to the accident, not very far along though.  But the pregnancy didn't withstand the injuries you
+    suffered."  She pauses and adds hopefully, "Though, the doctor says everything is fine with your body.  So if you want to try
+    again when you are feeling better, you shouldn't have any problems."
+  <</if>>
+  <<if $tempPregnantDiscovered and !$PlayerSideEffectPermanent>>
+    <<set $tempEvent to setup.checkForNewPregnancy('medical test - hospital').conceptionEvent>>
+    <<set $tempEvent.miscarriage to true>>
+    <<unset $PlayerPregnant>>
+    <<unset $PregnancyWeek>>
+    <<if $PlayerMiscarriage>>
+      <<set $PlayerMiscarriage += 1>>
+    <<else>>
+      <<set $PlayerMiscarriage to 1>>
+    <</if>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    <br><br>
+    You realize that even though you are no longer pregnant, the fact that you were would have triggered your change to become
+    permanent.  You don't know if it's just the drugs, or not, but knowing this gives you a warm glow and puts a smile on your face.
+    You just hope they'll be able to get your body back as good as new, now that you know this will be the one you'll be staying in.
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <<if $tempPregnantDiscovered>>
+    <<unset $tempPregnantDiscovered>>
+    <<achievement>>pregnant<</achievement>>
+    <<if setup.pregnantFirstTime()>>
+      <<achievement>>firsttime<</achievement>>
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part15Accident2
+<<nobr>>
+  <h1>In Recovery</h1>
+  <img src="Part15/Bus9.jpg" hspace="10" vspace="10" height="550" align="left">
+  <<set $BrokenLeg to $SchoolWeek + 6>>
+<</nobr>>
+<<nobr>>
+  A bit later, they transfer you to a different part of the hospital.  The physical therapist there helps you learn how to walk using
+  the crutches.
+  <<if $BodyType == "Fit">>
+    You are thankful for the upperbody strength you have, since you are going to be using them for a while.
+  <<else>>
+    You are going to be using them for a while.  You bet if you were still in a male body, your arms would be buff by the time you are done.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $JobAthlete>>
+    <<unset $JobAthlete>>
+    <<set $JobAthleteFormer to 1>>
+    <<set $JobBarista to 1>>
+    The doctor is recommending you end your short athletic career now.  The strain of training, and of competing, would likely lead to
+    you reinjuring yourself, possibly more severely.  You reluctantly agree.  You aren't sure if you had a future in sports, but after
+    months on the bench, you doubt you would have been on the same level when you returned anyway.
+    <br><br>
+    You know you'll probably want to find a new job once you are up to working though.  You're pretty sure you could get a job at the
+    coffee shop on campus. They are always hiring.
+  <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
+    <<set $JobCheerleaderFormer to $JobCheerleader>>
+    <<set $JobCheerleaderFundraiserFormer to $JobCheerleaderFundraiser>>
+    <<unset $JobCheerleader>>
+    <<unset $JobCheerleaderFundraiser>>
+    <<set $JobBarista to 1>>
+      The doctor is recommending you stop with cheerleading.  The strain of training ,and of competing, would likely lead to
+    you reinjuring yourself, possibly more severely.  You reluctantly agree.
+    <br><br>
+    You know you'll probably want to find a new job once you are up to working though.  You're pretty sure you could get a job at the
+    coffee shop on campus. They are always hiring.
+  <<elseif $JobBetaTester>>
+  <<else>>
+    They are recommending you take it easy until you are fully recovered.  They don't want you working, just focusing on your school work
+    and on getting better.  You know your old job will be waiting for you once you are better.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Thankfully, money won't be an issue for now.  The driver's car insurance company offered a settlement that pays for your medical bills,
+  and more than enough to cover your expenses for the semester.  The driver still insists it was your fault because you just ran into traffic.
+  But the insurance company is likely worried that a court might decide he could still have stopped in time if he hadn't been texting while
+  driving.  You are satisfied with their compromise offer.
+  <<if $PlayerChastityBelt>>
+    <<unset $PlayerChastityBelt>>
+    <br><br>
+    The doctors spoke with your keyholder and was able to get your chastity belt removed prior to your surgery.
+    <<if $Keyholder == "computer">>
+      Given your situation,
+      <<if $JobEngineerLock>>
+        your boss decides it's best for you to end your 'penetration testing' of the belt.  He tells you to take
+        the time you need to recover, and then you can get back to your old, original job once you are rady to return.  
+        <<unset $JobEngineerLock>>
+        <<set $JobEngineer to 1>>
+      <<else>>
+        the head of the engineering department said you can't continue to be a beta-tester for the belt.  Thankfully, they'll continue
+        to pay you as per your contract, but you don't need to wear the belt anymore.  They just want you to by the office a few times and
+        talk with the engineers about what you liked, what you didn't like, and things like that.
+      <</if>>
+      "The belt is yours to keep," he says.  "I've set it to self-owned for now, feel free to set it however you like once
+      you are better.  Oh, and if you can stop by the office and give us a quote or two on how durable the belt is, that we can use in our
+      marketing, that would be wonderful."
+    <<else>>
+      <<if $Keyholder>>
+        $Keyholder
+      <<else>>
+        Your keyholder
+      <</if>>
+      understands that you can't really wear the belt for the time being.
+      <<if $BoyfriendStrictChastity>>
+        "But we both know what a horny little slut you can be.  So it'll probably go right back on you once you are better.  But who knows,
+        if you're good girl, maybe that won't be necessary."
+      <<else>>
+        "But don't worry, we can get back to keeping you my denied, horny little slut again once you are better."
+      <</if>>
+    <</if>>
+  <</if>>
+  <<if $JobBetaTester>>
+    <<unset $JobBetaTester>>
+    <<set $JobBetaTesterFormer to 1>>
+    <<set $JobBarista to 1>>
+    <br><br>
+    It'll be nice to still get paid for the rest of your testing contract, but you decide you'll still want to work once you are up to it.
+    You're thinking something a bit tamer though, at least at first.  You're pretty sure you could get a job at the coffee shop on campus.
+    They are always hiring.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  As you make your way [[back to your dorm|Part15Dorm]] you are suddenly much more grateful for the elevator than you ever were before.
+<</nobr>>
+
+::Part15SororityELPBus4Caught
+<<nobr>>
+  <h1>TODO</h1>
+  <img src="Part15/Bus11.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+
+TODO If run, but caught anyway
+TODO [[Part15SororityELPBus4Submit]]
+
+::Part15SororityELPBus4Fight
+<<nobr>>
+  <h1>Fighting him off</h1>
+  <<set $RapistFightBack to 1>>
+  You are hoping that you are just overreacting, and that he's not actually following you or planning to attack you.  But you stay on guard just
+  in case.
+<</nobr>>
+
+<<nobr>>
+  But you were right to be worried about him.  Watching from the corner of your eye you see him moving up quickly behind you.
+  You turn to face him so he can't grab you from behind.
+<</nobr>>
+<img src="Part15/Bus5.jpg" hspace="10" vspace="10" height="400">
+<<nobr>>
+  When you see an opening you kick him, as hard as you can, right between the legs.  He doubles over in pain, unable to do anything for a moment.
+  You take your chance and run.
+<</nobr>>
+
+<img src="Part15/Bus10.jpg" hspace="10" vspace="10" height="400" align="left">
+
+<<nobr>>
+  As soon as you are on campus you spot one of the blue emergency phones.  As soon as you tell them what happened, they let you know an officer
+  is on the way.
+<</nobr>>
+
+<<nobr>>
+  Since the incident happened off campus, you'll have to file a report with the town police.  "I'll be happy to take you there and
+  help however we can," the officer [[escorting you home|Part15DormCalm]] says.  "There's been several recent attacks in town lately.
+  It's not on campus, so we can't do much about it, and the town police don't seem to be making it much of a priority.  Anyway, it
+  sounds like you were lucky tonight."
+<</nobr>>
+
+::Part15SororityELPBus4Submit
+TODO Fail to fight him off and submit
+TODO Fucked if not in chastity, forced to give blowjob if are in chastity
+TODO [[Part15DormCalm]]
+
+::Part15SororityELPBus4Nothing
+TODO He didn't attack
+TODO [[Part15DormCalm]]
+
+::Part15DormCalm
+TODO Calm down and relax after attack / almost attacked
+TODO if $RapistBeltAlarm, he's arrested, later they use the recording your belt started making when you activated the alarm, and he gets convicted
+TODO if $RapistFightBack, you file a report
+TODO if $RapistRun, you ran
+TODO if $RapistNothing, he decided not to attack
+TODO [[Part15Dorm]]
+
+::Part15Jaylen
+TODO (black, since all the other potential BFs are white)
+TODO possibly date, possibly hook up
 TODO [[Part15Dorm]]
 
 ::Part15Dorm

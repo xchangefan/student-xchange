@@ -2,7 +2,9 @@
 
 ::Part15JobMain
 <<nobr>>
-  <<if $JobEngineerLock>>
+  <<if $BrokenLeg>>
+    TODO Deal with broken leg
+  <<elseif $JobEngineerLock>>
     <<include [[Part15JobEngineerLock]]>>
   <<elseif $JobEngineer>>
     <<include [[Part15JobEngineer]]>>

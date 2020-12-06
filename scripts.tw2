@@ -360,6 +360,8 @@ setup.sexualHistoryTable = function () {
     if (fuck.conception) {
       if (fuck.aborted) {
         st += "(Aborted)"
+      } else if (fuck.miscarriage) {
+        st += "(Miscarriage)"
       } else {
         st += "CONCEPTION"
       }
@@ -528,11 +530,22 @@ setup.checkForPregnancy = function (fuck, oddsBoost, ovulationOverride) {
   return conceptionRoll < conceptionChance;
 }
 
-setup.getUnrevealedPregnancy = function() {
+setup.getUnrevealedPregnancy = function(pregnancyTestType) {
   var recentVaginal = setup.getPossibleConceptions()
-  return recentVaginal.find(function(fuck) {
+  const actualEvent = recentVaginal.find(function(fuck) {
     return fuck.conception
   });
+
+  let reason = pregnancyTestType || "pregnancy test";
+  recentVaginal.forEach(function(fuck) {
+    if (fuck.conception) {
+      reason = "already pregnant"
+    } else {
+      fuck.checkedForPregnancy = reason
+    }
+  });
+
+  return actualEvent;
 }
 
 setup.checkForNewPregnancyHidden = function() {
@@ -600,7 +613,7 @@ setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
       return setup.getPartnerName(fuck)
     })))
 
-    var unrevealedPregnancyEvent = setup.getUnrevealedPregnancy()
+    var unrevealedPregnancyEvent = setup.getUnrevealedPregnancy(pregnancyTestType)
     if (unrevealedPregnancyEvent) {
        var actualFather = setup.getPartnerName(unrevealedPregnancyEvent)
        return {isPregnant:true, possibleFathers, actualFather, conceptionEvent:unrevealedPregnancyEvent, count: recentVaginal.length}
