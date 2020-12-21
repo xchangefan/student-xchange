@@ -309,7 +309,7 @@
 <</nobr>>
 <<nobr>>
   You meet with Robert at his house to discuss the future and the new year.  He lets you know that he has decided to
-  <<if $MasterRobert and $PlayerChastity and $Keyholder == 'Robert'>>
+  <<if $MasterRobert and $PlayerChastityBelt and $Keyholder == 'Robert'>>
     free you.  You will no longer be his 'slave' and he'll give you the key to your chastity belt as well.
   <<elseif $MasterRobert>>
     free you.  You will no longer be his 'slave'.
@@ -333,7 +333,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerChastity and $Keyholder != 'Robert'>>
+  <<if $PlayerChastityBelt and $Keyholder != 'Robert'>>
     <!-- how did we get here? Is this possible -->
     Hopefully $Keyholder will take good care of you.
     <<if $JobGloryHole>>
@@ -381,7 +381,7 @@
   <</if>>
   <<if $JobPornSide or $JobPornOralSide or $JobPornAnalSide or $JobPornGangSide or $JobWebModelSide or $JobPorn or $JobPornOral or $JobPornAnal or $JobPornGang or $JobWebModel>>
     <<include [[Part15PornStar]]>>
-  <<elseif $MasterRobert or ($PlayerChastity and $Keyholder == 'Robert')>>
+  <<elseif $MasterRobert or ($PlayerChastityBelt and $Keyholder == 'Robert')>>
     <<include [[Part15RobertRelease]]>>
   <<else>>
     <<include [[Part15BeginNormal]]>>
@@ -2560,9 +2560,9 @@
 <</nobr>>
 <<nobr>>
   Daddy says you made the right decision turning down their offer.
-  <<if $PlayerChastity and $Keyholder == "Aaron">>
+  <<if $PlayerChastityBelt and $Keyholder == "Aaron">>
     He decides to reward you by letting you out of the chastity belt he keeps you in too!
-    <<unset $PlayerChastity>>
+    <<unset $PlayerChastityBelt>>
     <<unset $Keyholder>>
   <</if>>
   You are eager to celebrate your freedom from the belt with Daddy, but you are worried about money now that you've lost your job.
@@ -2918,8 +2918,6 @@ TODO Having the baby now
     <</if>>
   <</if>>
 <</nobr>>
-
-
 
 ::Part15OffProbation
 TODO Remove from academic probation
@@ -4619,7 +4617,6 @@ TODO [[Part15Week]]
   <<set setup.addSexRepeat(6, {sex:"female", name:$dating[0]})>>
 <</nobr>>
 <<nobr>>
-TODO or [[Part15Dorm]]
   You are barely through the door and
   <<if setup.areDating('Bailey')>>
     you have Bailey's hands held together above her head.  "Did that excite you, my little slut, being dressed like this in front of
@@ -4636,7 +4633,7 @@ TODO or [[Part15Dorm]]
     After taking them to her lips so she can taste herself, your hand returns.
     <br><br>
     You give Bailey her first orgasm of the night right there, pressed up aginst the wall.  Though there are plenty more after that for
-    both of you before the [[night is over|Part15Week]].
+    both of you before the [[night is over|Part15SororityDormOrNextWeek]].
   <<else>>
     $dating[0] has your hands held together above your head.  "Did that excite you, my little slut, being dressed like this in front of
     all those people?"  You nods submissively.  She pause to remove your bra and panties before continuing.
@@ -4652,7 +4649,7 @@ TODO or [[Part15Dorm]]
     lips and has you taste your wetness on them.  After you've sucked them clean, her hand returns and her fingers slide into you again.
     <br><br>
     She gives you your first orgasm of the night right there, pressed up aginst the wall.  Though there are plenty more after that for
-    both of you before the [[night is over|Part15Week]].
+    both of you before the [[night is over|Part15SororityDormOrNextWeek]].
   <</if>>
 <</nobr>>
 
@@ -4693,26 +4690,35 @@ TODO or [[Part15Dorm]]
   [[your legs instinctively part inviting him in|Part15SororityFootball4]].
 <</nobr>>
 
+::Part15SororityDormOrNextWeek
+<<nobr>>
+  <<if $SororitySEX or $SororityDTD>>
+    <<include [[Part15Week]]>>
+  <<else>>
+    <<include [[Part15Dorm]]>>
+  <</if>>
+<</nobr>>
+
 ::Part15SororityFootball4
 <<nobr>>
   <<if $dating.length>>
     <h1>With $dating[0]</h1>
-    <<set setup.addSex({name:$dating[0], vaginal:true, noCondom:true, noPullout:true})>>
-    <<set setup.addSex({name:$dating[0]})>>
-    <<set setup.addSex({name:$dating[0], vaginal:true})>>
-    <<set setup.addSex({name:$dating[0]})>>
+    <<set setup.addSex({name:$dating[0], sex:"male", vaginal:true, noCondom:true, noPullout:true})>>
+    <<set setup.addSex({name:$dating[0], sex:"male"})>>
+    <<set setup.addSex({name:$dating[0], sex:"male", vaginal:true})>>
+    <<set setup.addSex({name:$dating[0], sex:"male"})>>
   <<elseif $CampusMinistry>>
     <h1>Rewarded for being bad girl</h1>
-    <<set setup.addSex({anon:"football player", vaginal:true, noCondom:true, noPullout:true})>>
-    <<set setup.addSex({anon:"football player", repeat:true})>>
-    <<set setup.addSex({anon:"football player", vaginal:true, noCondom:true, repeat:true})>>
-    <<set setup.addSex({anon:"football player", repeat:true})>>
+    <<set setup.addSex({anon:"football player", sex:"male", vaginal:true, noCondom:true, noPullout:true})>>
+    <<set setup.addSex({anon:"football player", sex:"male", repeat:true})>>
+    <<set setup.addSex({anon:"football player", sex:"male", vaginal:true, noCondom:true, repeat:true})>>
+    <<set setup.addSex({anon:"football player", sex:"male", repeat:true})>>
   <<else>>    
     <h1>With a football player</h1>
-    <<set setup.addSex({anon:"football player", vaginal:true, noCondom:true, noPullout:true})>>
-    <<set setup.addSex({anon:"football player", repeat:true})>>
-    <<set setup.addSex({anon:"football player", vaginal:true, noCondom:true, repeat:true})>>
-    <<set setup.addSex({anon:"football player", repeat:true})>>
+    <<set setup.addSex({anon:"football player", sex:"male", vaginal:true, noCondom:true, noPullout:true})>>
+    <<set setup.addSex({anon:"football player", sex:"male", repeat:true})>>
+    <<set setup.addSex({anon:"football player", sex:"male", vaginal:true, noCondom:true, repeat:true})>>
+    <<set setup.addSex({anon:"football player", sex:"male", repeat:true})>>
   <</if>>
   <video src="Part15/Sorority14.mp4" autoplay loop muted height="450"></video>
 <</nobr>>
@@ -4746,7 +4752,6 @@ TODO or [[Part15Dorm]]
 <</nobr>>
 
 <<nobr>>
-TODO or [[Part15Dorm]]
   <<if $dating.length>>
     <<if $sex.length == 4>>
       You don't know why you waited this long, but you don't want to wait again to feel $dating[0] inside you.  Well, you have to
@@ -4754,7 +4759,7 @@ TODO or [[Part15Dorm]]
     <</if>>
     You give him a few minutes to recover, but then $dating[0]'s cock is in your mouth and you are coaxing it back to life for the next round.
     <br><br>
-    The [[next day|Part15Week]], you notice the dried cum on your 'uniform'.  You make a note to be careful when you wash it, you don't want to
+    The [[next day|Part15SororityDormOrNextWeek]], you notice the dried cum on your 'uniform'.  You make a note to be careful when you wash it, you don't want to
     damage it, not after how much fun you and $dating[0] had this time.
   <<elseif $CampusMinistry>>
     <<unset $CampusMinistry>>
@@ -4763,11 +4768,11 @@ TODO or [[Part15Dorm]]
     on a year you could have been doing this.  You know you aren't going to be wasting any more time now.  Especially not tonight.  You're
     sure he'll be ready to go again in a few mintues.
     <br><br>
-    [[After tonight|Part15Week]], you're sure you'll find many more opportunities to make up for lost time.
+    [[After tonight|Part15SororityDormOrNextWeek]], you're sure you'll find many more opportunities to make up for lost time.
   <<else>>
     You give him a few minutes to recover, but then his cock is in your mouth and you are coaxing it back to life for the next round.
     <br><br>
-    The [[next day|Part15Week]], you notice the dried cum on your 'uniform'.  You make a note to be careful when you wash it, you don't want to
+    The [[next day|Part15SororityDormOrNextWeek]], you notice the dried cum on your 'uniform'.  You make a note to be careful when you wash it, you don't want to
     damage it, not after how much fun you had wearing it this time.
   <</if>>
 <</nobr>>
@@ -4789,7 +4794,6 @@ TODO or [[Part15Dorm]]
 <</nobr>>
 
 <<nobr>>
-TODO or [[Part15Dorm]]
   <<if $PlayerSideEffectExhibitionist>>
     The thought of you grappling naked with guy, in front of everyone at the party, is too exciting to resist.
     "What the hell, [[let's do this|Part15SororityJoust3]]!" you tell them.
@@ -4803,7 +4807,7 @@ TODO or [[Part15Dorm]]
     <<else>>
       naked guy grabbing you
     <</if>>
-    is exciting you.  If you don't [[leave the party|Part15Week]] right now, you know you're going to give in to the temptation
+    is exciting you.  If you don't [[leave the party|Part15SororityDormOrNextWeek]] right now, you know you're going to give in to the temptation
     and tell her [[you'll do it|Part15SororityJoust3]].
   <</if>>
 <</nobr>>
@@ -4842,7 +4846,6 @@ TODO or [[Part15Dorm]]
 <</nobr>>
 
 <<nobr>>
-TODO or [[Part15Dorm]]
   <<if $PlayerSideEffectPheromones>>
     You know you should probably leave the party right now, before it's your turn to go out there.  But you've gotten so wet watching
     her dominate him like that, and from hearing him moan as she stroked his cock.  Oh god, and the smell of him as he struggled, naked on the mat.
@@ -4853,7 +4856,7 @@ TODO or [[Part15Dorm]]
     her dominate him like that, and from hearing him moan as she stroked his cock.  And the thought of being naked, in front of all these people,
     it's too much to resist.  You can't help but to stick around and [[give it a try|Part15SororityJoust3]].
   <<else>>
-    You know you should [[leave the party|Part15Week]] right now, before it's your turn to go out there.  But you've gotten so wet watching
+    You know you should [[leave the party|Part15SororityDormOrNextWeek]] right now, before it's your turn to go out there.  But you've gotten so wet watching
     her dominate him like that, and from hearing him moan as she stroked his cock.  And you suspect that, and the beers you've drank, have made you
     much more eager to [[give it a try|Part15SororityJoust3]].
   <</if>>
@@ -4940,9 +4943,8 @@ TODO or [[Part15Dorm]]
 <</nobr>>
 
 <<nobr>>
-TODO or [[Part15Dorm]]
   You have a fun time watching the rest of the "fights", and the remainder of the party after those is great too.  When you finally
-  [[head home|Part15Week]] you know this will be a night to remember.
+  [[head home|Part15SororityDormOrNextWeek]] you know this will be a night to remember.
 <</nobr>>
 
 ::Part15SororityJoust3Loser
@@ -4997,13 +4999,12 @@ TODO or [[Part15Dorm]]
 <</nobr>>
 
 <<nobr>>
-TODO or [[Part15Dorm]]
   <<if $CampusMinistry>>
     You don't know why you've waited so long for this.  You feel like you've wasted a whole year trying to be 'good'.  You aren't sure when you'll be
     at another party like this, so you decide to [[have as much fun as you can tonight|Part15SororityJoustCampusMinistryFail]].
   <<else>>
     You have a fun time watching the rest of the "fights", and the remainder of the party after those is great too.  When you finally
-    [[head home|Part15Week]] you know this will be a night to remember.
+    [[head home|Part15SororityDormOrNextWeek]] you know this will be a night to remember.
   <</if>>
 
 <</nobr>>
@@ -5096,8 +5097,7 @@ TODO or [[Part15Dorm]]
   <</if>>
 <</nobr>>
 
-TODO or [[Part15Dorm]]
-[[Continue|Part15Week]]
+[[Continue|Part15SororityDormOrNextWeek]]
 
 <<achievement>>train<</achievement>>
 <<achievement>>threesome:FMF<</achievement>>
@@ -5168,7 +5168,7 @@ TODO [[Part15Week]] or [[Part15Dorm]]
 <</nobr>>
 
 <<nobr>>
-  You can [[ride along with Jayden|Part15Jaylen]] or you can [[keep waiting for you bus|Part15SororityELPBus2]]
+  You can [[ride along with Jayden|Part15Jaylen]] or you can [[keep waiting for your bus|Part15SororityELPBus2]]
 <</nobr>>
 
 ::Part15SororityELPBus2
@@ -5280,7 +5280,7 @@ TODO [[Part15Week]] or [[Part15Dorm]]
   <<elseif $tempRoll <= $tempFightScore>>
     [[keep walking|Part15SororityELPBus4Fight]]
   <<else>>
-    [[keep walking|Part15SororityELPBus4Nothing]]
+    [[keep walking|Part15DormCalm]]
   <</if>>
 <</nobr>>
 
@@ -5362,7 +5362,7 @@ TODO [[Part15Week]] or [[Part15Dorm]]
 
 <<nobr>>
   You are so worried about him, that you aren't paying enough attention to where you are going.  The last thing you remember
-  [[of the accident|Part15Accident]] are the car's headlights and the sound of the its brakes.
+  [[of the accident|Part15Accident]] are the car's headlights and the sound of its brakes.
 <</nobr>>
 
 <<nobr>>
@@ -5448,7 +5448,7 @@ TODO [[Part15Week]] or [[Part15Dorm]]
 <<nobr>>
   <h1>In Recovery</h1>
   <img src="Part15/Bus9.jpg" hspace="10" vspace="10" height="550" align="left">
-  <<set $BrokenLeg to $SchoolWeek + 6>>
+  <<set $BrokenLeg to 1>>
 <</nobr>>
 <<nobr>>
   A bit later, they transfer you to a different part of the hospital.  The physical therapist there helps you learn how to walk using
@@ -5545,12 +5545,18 @@ TODO [[Part15Week]] or [[Part15Dorm]]
 
 ::Part15SororityELPBus4Caught
 <<nobr>>
-  <h1>TODO</h1>
-  <img src="Part15/Bus11.jpg" hspace="10" vspace="10" height="450" align="left">
+  <h1>Dead end</h1>
+  You still aren't sure if he's following you or not, so you start running just in case he is.
+<</nobr>>
+<img src="Part15/Bus14.jpg" hspace="10" vspace="10" height="500">
+<<nobr>>
+  Not knowing exactly where you are going, you accidently turn down a dead end alley.  You turn around and see him again.  This
+  time he's at the end of the alley, blocking your only way out.
 <</nobr>>
 
-TODO If run, but caught anyway
-TODO [[Part15SororityELPBus4Submit]]
+<<nobr>>
+  You realize there's no way out except through him, so you [[prepare to try to fight him off|Part15SororityELPBus4Submit]].
+<</nobr>>
 
 ::Part15SororityELPBus4Fight
 <<nobr>>
@@ -5585,21 +5591,330 @@ TODO [[Part15SororityELPBus4Submit]]
 <</nobr>>
 
 ::Part15SororityELPBus4Submit
-TODO Fail to fight him off and submit
-TODO Fucked if not in chastity, forced to give blowjob if are in chastity
-TODO [[Part15DormCalm]]
+<<nobr>>
+  <h1>Overpowered</h1>
+  You try to fight back, but he's
+  <<if $BodyType != "Fit">>much<</if>>
+  stronger than you, and quickly has you overpowered and helpless.
+<</nobr>>
+<img src="Part15/Bus11.jpg" hspace="10" vspace="10" height="450">
+<<nobr>>
+  "Please don't kill me," you say through tears.
+<</nobr>>
 
-::Part15SororityELPBus4Nothing
-TODO He didn't attack
-TODO [[Part15DormCalm]]
+<<nobr>>
+  "Do as you're told and you'll live, bitch!" he says.
+  <<if $PregnancyWeek > 12>>
+    "This obviously ain't your first time.  Someone beat me to it this time.  But don't worry.  I'll find you again later and
+    put another
+  <<else>>
+    "You might even leave here with my 
+  <</if>>
+  baby inside you.  That's all whores like you are good for after all."
+<</nobr>>
+
+<<nobr>>
+  You are shaking in terror as he starts to
+  <<if $PlayerChastityBelt>>
+    [[tear at your clothes|Part15BusRapeChastity]].
+  <<else>>
+    [[tear at your clothes|Part15BusRape]].
+  <</if>>
+<</nobr>>
+
+::Part15BusRapeChastity
+<<nobr>>
+  <h1>Raped</h1>
+  <<set $RapistRaped to 1>>
+  <img src="Part15/Bus15.jpg" hspace="10" vspace="10" height="450" align="left">
+  <<set setup.addSex({sex:"male", anon:"Rapist"})>>
+<</nobr>>
+<<nobr>>
+  "What the fuck?" he says when he says after he rips your clothes and sees the chastity belt you have on.
+  "I guess your man knows what a fucking whore you are."
+<</nobr>>
+
+<<nobr>>
+  He dumps out your bag to make sure you don't have the key, then tugs at the belt and sees that it is secure.  Then he says,
+  "Too bad.  You won't be leaving here with my baby inside you."  He pulls out his already-hard cock and says, "But you'll still
+  leave with a belly full of my cum!"  Then he forces your head down until his cock is in your face.  "Suck it, whore!"
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectSubmissive > 1>>
+    You do as you are told.
+    <<if $sex.length == 1>>
+      You've never done this before, and you certainly didn't imagine your first time like this.  But something about the way he
+      is ordering you around makes you
+    <<elseif setup.sexUniqueMaleCount() > 10>>
+      This is far from the first cock you've had in your mouth.  Though right now you'd rather it was any of the others again than this guy's.
+      But the way he is ordering you around is bringing out your submissive side again, and you are
+    <<else>>
+      You don't want this.  You'd rather be anywhere else right now, with anyone else.  But you can't help but do as he tells you.  The
+      way he is ordering you around his bringing out your submissive side again and you are
+    <</if>>
+    [[powerless to fight back|Part15RapeNoReport]].
+  <<elseif $PlayerSideEffectOral > 1>>
+    <<if $sex.length == 1>>
+      You've never done this before, and you certainly didn't imagine your first time like this.  But something about the way he
+      feels in your mouth [[compels you to continue|Part15RapeNoReport]].
+    <<elseif setup.sexUniqueMaleCount() > 10>>
+      This is far from the first cock you've had in your mouth. Though right now you'd rather it was any of the others again than this guy's.
+      But once you feel a cock in your mouth, your instincts take over and you do your best to [[get him off|Part15RapeNoReport]] as quick
+      as you can.
+    <<else>>
+      You don't want this.  You'd rather be anywhere else right now, with anyone else.  But you can't help your self once his cock is in
+      your mouth.  You want to resist, but your body is telling you to [[keep sucking|Part15RapeNoReport]].  You do your best to just
+      concentrate on the familiar feel of cock in your mouth, and forget about who it belongs to.
+    <</if>>
+  <<else>>
+    <<if $sex.length == 1>>
+      You've never done this before, and you certainly didn't imagine your first time like this.  You think you can manage to get him off,
+      and you are sure [[it will all be over|Part15RapeNoReport]] once you do.
+    <<elseif setup.sexUniqueMaleCount() > 10>>
+      This far from the first cock you've had in your mouth.  Though right now you'd rather it was any of the others again than this guy's.
+      But you know you can get him off without much trouble.  Then hopefully [[this will all be over|Part15RapeNoReport]].
+    <<else>>
+      You don't want him in your mouth.  You don't want to suck his cock.  But you think if you try not to think about it and just
+      get him off, then maybe [[this will all be over|Part15RapeNoReport]].
+    <</if>>
+    But you see how vulnerable he is right now.  You cup his balls in your hand and wonder if he'd still be able to fight you or chase you
+    if you just squeezed as hard as you could and [[bit down|Part15RapeReport]] right now.
+  <</if>>
+<</nobr>>
+
+::Part15BusRape
+<<nobr>>
+  <h1>Raped</h1>
+  <<set $RapistRaped to 1>>
+  <img src="Part15/Bus12.gif" hspace="10" vspace="10" height="450" align="left">
+  <<set setup.addSex({sex:"male", anon:"Rapist", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  After ripping your panties off you, he shoves them in your mouth.  The he grabs your hands and put them around a post, wrapping something
+  over them and pulling it tight.  There's nothing you can do now as he pulls down your top and up your skirt.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectLibido>>
+    Your implant always keeps you wet and ready, but you feel so much more ashamed about it now.  "Don't try to act like you aren't loving
+    this bitch.  Your body tells me how you really feel," he mocks you as he slides into you.
+  <<else>>
+    "Don't say I'm not a gentle lover," he says with a snort as he spits on his hand then rubs his cock with it before sliding into you.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms or $PlayerSideEffectSubmissive>>
+    "Fucking whore!" he says as your body shudders with an orgasm you try and fail to resist.  Your cries are muffled by the panties stuffed in
+    in your mouth.
+  <</if>>
+  He keeps fucking you until you hear him start to groan and know he's about to cum.  You want him out of you before it's too late, but
+  there's nothing you can do.  His hands move to your hips and he thrusts deep into you as he cums, holding there until he's given you every
+  drop.
+<</nobr>>
+
+<<nobr>>
+  You are still there helpless, with cum starting to drip out of you as he stands behind you.  A moment later you struggle when you see him
+  come around in front of you.  "Calm down, whore," he commands.  You relax a bit when he just uses the knife to cut your hands free.
+  "Run along home now," he commands.
+  <<if $PregnancyWeek > 12>>
+    "Don't worry, I'll see you again," he adds.
+  <<else>>
+    Pointing his knife at you he adds, "I'll look you up nine months from now.  If I find out you aborted my baby, I'll abort you."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You hurry away, pulling your panties out of your mouth.  As you feel his cum leaking out of you, you want to just go home, wash up,
+  and [[try to forget this ever happened|Part15RapeNoReport]].  But you also wonder if you should [[report the rape|Part15RapeReport]],
+  especially since he's threatened to find you again.
+<</nobr>>
+
+::Part15RapeNoReport
+<<nobr>>
+  <h1>Not reporting the rape</h1>
+  <<if $PlayerChastityBelt>>
+    <img src="Part15/Bus17.jpg" hspace="10" vspace="10" height="350">
+  <<else>>
+    <img src="Part15/Bus13.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    You keep going until you hear him getting close.  "You'll swallow every drop if you know what's good for you," he commands.  It's
+    not like you have any other option, as he grabs your head, holding it there as he cums.  You do as he ordered and swallow it all down.
+    <br><br>
+    He walks off and you quickly head off in the opposite directon, toward campus.  You think briefly about reporting the crime, but you
+    decide not to.  You feel too ashamed about 
+    <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectOral > 1>>
+      how your implant made you not want to resist.
+    <<else>>
+      not fighting back.
+    <</if>>
+    Besides, you just swallowed all the evidence.
+    <br><br>
+    Instead you try to hold back tears as you [[return home|Part15DormUpset]].  Your brush your teeth and your tongue again and again when
+    you get there, trying to scrub away any trace of him.
+  <<else>>
+    You try to make it [[back to your room|Part15DormUpset]] without anyone seeing what a torn mess your clothes are.
+    <br><br>
+    When you get in, you shower with hot water, scrubbing and scrubbing, trying to wash away every trace of him.  You reach a finger inside
+    yourself to try and get his cum out of you.  You know you can't get it all, but at least hopefully you won't still feel it leaking out.
+    <br><br>
+    You throw your torn clothes in the trash, and do your best to forget what happened tonight.
+  <</if>>
+<</nobr>>
+
+::Part15RapeReport
+<<nobr>>
+  <h1>Reporting the rape</h1>
+  <<set $RapistReported to 1>>
+  <<if $PlayerChastityBelt>>
+    <<set $RapistArrested to 1>>
+    <img src="Part15/Bus16.png" hspace="10" vspace="10" height="305">
+  <<else>>
+    <img src="Part15/Bus13.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    He cries out in agony as you squeeze as hard as you can with your hand and bite down.  A moment later he passes out.  You think
+    about running away right now, leaving him here to hopefully bleed to death.  But you wonder if they'll not know what happens and think
+    someone attacked him.  You don't want to be arrested for murder, so you carefully reach into his pocket and take out his phone.
+    <br><br>
+    It lets you call for the police and an ambulance without unlocking it, and you wait around until they arrive. The paramedics treat him
+    as the police officer talks to you, taking notes as you relay what happened.
+    <br><br>
+    When you are done, the officer thanks you for helping them finally catch him.  "It looks like he got what he deserved too.  If we're lucky
+    the doctors won't be able to reattach that think.  Even if they can, I doubt he'll be attacking any more women where he's going."
+    He lets you know that there have been numerous other women attacked before you, with ample DNA evidence left behind.  They just never had
+    anyone to test the evidence against.
+    <br><br>
+    "I doubt they'll even need you to testify," the officer continues.  "But we should probably take you down to the hospital too, so
+    they can collect the blood evidence.  They'll probably have some pills or shots or something for you too, so you don't catch anything
+    from his blood.  I'll give you a ride [[back home|Part15DormUpset]] once they are finished."
+  <<else>>
+    Once you are safely away, you hurry back to campus and to the campus police.  When you tell them your story, they call the local police.
+    You repeat your story again with the officer they send.
+    <br><br>
+    The officer tells you that your story matches numerous other rapes that have been reported.  They've been looking for the guy for a
+    while, but he's always long gone by the time they get to the victim.  They are still trying to gather as much evidence as they can so
+    when they do eventually catch him, he'll go away for a long time.
+    <br><br>
+    The one relief you hear from the officer is that none of the other victims have ever been contacted again by the rapist.  So hopefully
+    that was just an empty threat.
+    <br><br>
+    The officer then takes you down to the hopsital where they gather some of the 'evidence' he left inside you.
+    They do a number of tests on you and confirm that there's no serious injuries.
+    <<if $PregnancyWeek > 12>>
+      They also confirm that your baby is fine too.
+    <<elseif $PlayerPregnant>>
+      They offer you an emergency contraceptive, but you let them know you are already pregnant.  They
+      do several more tests and confirm that everything is still ok with your pregnancy.
+    <<else>>
+      They offer you an [[emergency contraceptive|Part15RapeReportContraceptive]] if you want it.
+      <<if !$PlayerSideEffectPermanent>>
+        They warn you that it will prevent you from getting pregnant from him, but that it will trigger your change
+        to become permanent regardless of whether you were going to get pregnant or not.
+      <</if>>
+    <</if>>
+    <br><br>
+    Once they are all done, the officer drives you [[back home|Part15DormUpset]].
+  <</if>>
+<</nobr>>
+
+::Part15RapeReportContraceptive
+<<nobr>>
+  <h1>Preventing Pregnancy</h1>
+  <<set $tempRapeEvent to $sex.pop()>>
+  <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - hosptial', 0)>>
+  <<if $PregnancyCheck.isPregnant>>
+    <<set $tempRapeEvent.checkedForPregnancy to "already pregnant">>
+    <<if $PlayerAbortion>>
+      <<set $PlayerAbortion += 1>>
+    <<else>>
+      <<set $PlayerAbortion to 1>>
+    <</if>>
+    <<set $tempPregnantAlready to 1>>
+    <<achievement>>pregnant<</achievement>>
+    <<if setup.pregnantFirstTime()>>
+      <<achievement>>firsttime<</achievement>>
+    <</if>>
+    <<achievement>>childfree<</achievement>>
+  <</if>>
+  <<set $sex.push($tempRapeEvent)>>
+  <<unset $tempRapeEvent>>
+  <<set setup.notPregnant('emergency contraceptive')>>
+  <<if $tempPregnantAlready>>
+    <img src="PartP/Cramps1.jpg" hspace="10" vspace="10" height="400">
+  <<else>>
+    <img src="PartP/Emergency.jpg" hspace="10" vspace="10" height="400">
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <<if $tempPregnantAlready>>
+    They test you prior to giving you the emergency contraceptive and see that you already are pregnant.  They tell you that it was likely
+    from before tonight's events, but you tell them you still don't want it.  They give you a different pill, and another to take later.
+    These will end your pregnancy.  They warn you to expect cramps and bleeding, like a period but worse than normal.
+    <<if !$PlayerSideEffectPermanent>>
+      And, of course, the pregnancy has already triggered your implant to become permanent.
+    <</if>>
+  <<else>>
+    They test you prior to giving you the emergency contraceptive and see that you aren't pregnant.  At least not yet.  As they give
+    you the pill, they warn you expect to expect some minor cramping and spotting overnight, similar to the start of your period.
+    <<if !$PlayerSideEffectPermanent>>
+      And, as they mentioned, the change from your implant will be permanent now.
+    <</if>>
+  <</if>>
+  You don't care, you just can't imagine the thought of something from that monster growing inside you.
+<</nobr>>
+
+<<nobr>>
+  When you are done, the officer drives you [[back home|Part15DormUpset]].
+  <<set $PlayerSideEffectPermanent to 1>>
+  <<unset $tempPregnantAlready>>
+<</nobr>>
+
+::Part15DormUpset
+TODO Upset after being raped
+TODO [[Part15Dorm]]
 
 ::Part15DormCalm
-TODO Calm down and relax after attack / almost attacked
-TODO if $RapistBeltAlarm, he's arrested, later they use the recording your belt started making when you activated the alarm, and he gets convicted
-TODO if $RapistFightBack, you file a report
-TODO if $RapistRun, you ran
-TODO if $RapistNothing, he decided not to attack
-TODO [[Part15Dorm]]
+<<nobr>>
+  <<if $RapistFightBack or $RapistBeltAlarm or $RapistRun>>
+    <h1>Calming down</h1>
+  <<else>>
+    <h1>Worried over nothing</h1>
+    <<set $RapistNothing to 1>>
+  <</if>>
+  <img src="Part15/Bus18.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  <<if $RapistFightBack or $RapistBeltAlarm or $RapistRun>>
+    Your heart is still racing when you get home as you think about how you were nearly raped tonight.  You try to calm down when you
+    get home.
+    <br><br>
+    Once you are home, you put your phone in the charger.  Once you have enough of a charge for it to start back up again, you start checking
+    all the messages you'd missed while it was dead.
+    <br><br>
+    After checking in with your friends, and even telling a couple close ones what happened tonight, you decide to take a nice relaxing bath.
+    <br><br>
+    <video src="Part11/Single2.mp4" autoplay loop muted height="480"></video>
+    <br><br>
+    Once you are done, you are feeling better and able to [[get to sleep|Part15Dorm]].
+  <<else>>
+    You must have been right.  He must have just been going the same direction as you.  At some point he turned off down a different
+    street and you were on your own again.  You are still a bit nervous.  Maybe he wasn't going to attack you, but maybe someone else might.
+    You worry you might just be getting paranoid.
+    <br><br>
+    Once you are home, you put your phone in the charger.  Once you have enough of a charge for it to start back up again, you start checking
+    all the messages you'd missed while it was dead.
+    <br><br>
+    You've forgotten about it completely by the time you [[head to bed|Part15Dorm]].
+  <</if>>
+<</nobr>>
 
 ::Part15Jaylen
 TODO (black, since all the other potential BFs are white)
@@ -5738,20 +6053,7 @@ TODO [[Part15Dorm]]
     like pot all the time.
 <</nobr>>
 
-::Part15DormStonerFriendly
-<<nobr>>
-  <h1>Smoking with Marissa</h1>
-  <img src="Part15/Dorm4.jpg" hspace="10" vspace="10" height="550" align="left">
-  <<set $DormFriendLevel += 1>>
-<</nobr>>
-<<nobr>>
-  As the two of you get high, you talk and get to know each other.  You know you and Marissa are going to get along great this year.
-<</nobr>>
-
-<<nobr>>
-  After a bit of silence, Marissa speaks up again.  You can see she's a bit flushed when she says, "God, I always get so horny when I smoke."  
-<</nobr>>
-
+::Part15DormStonerFriendlyHorny
 <<nobr>>
   "Oh my god! Me too!", you say.
   <<if $CampusMinistry>>
@@ -5799,7 +6101,14 @@ TODO [[Part15Dorm]]
       <</if>>
     <</if>>
   <<elseif $CampusMinistry>>
-    "I don't know," you tell her.  "I'm... I'm still a virgin."
+    "I don't know," you tell her.
+    <<if $BrokenLeg>>
+      "I'm... I'm still a virgin.  And look at me." You gesture towards your broken leg.
+    <<elseif $BrokenLeg>>
+      "I mean, look at me." You gesture towards your broken leg.
+    <<elseif $sex.length == 0>>
+      "I'm... I'm still a virgin."
+    <</if>>
     <br><br>
     "I can tell you are as horny as I am.  Probably even more," she says. You can't deny it.  "I'll tell him to be gentle."  Then she
     picks up the phone and starts to call her friend.
@@ -5826,6 +6135,39 @@ TODO [[Part15Dorm]]
     again as she starts to call.
     <br><br>
     She hangs up and says, "He's [[on his way|Part15DormStonerMFF]] now!"
+  <</if>>
+<</nobr>>
+
+::Part15DormStonerFriendly
+<<nobr>>
+  <h1>Smoking with Marissa</h1>
+  <img src="Part15/Dorm4.jpg" hspace="10" vspace="10" height="550" align="left">
+  <<set $DormFriendLevel += 1>>
+<</nobr>>
+<<nobr>>
+  As the two of you get high, you talk and get to know each other.  You know you and Marissa are going to get along great this year.
+<</nobr>>
+
+<<nobr>>
+  After a bit of silence, Marissa speaks up again.  You can see she's a bit flushed when she says, "God, I always get so horny when I smoke."  
+<</nobr>>
+
+<<nobr>>
+  <<if $RapistRaped>>
+    "Me too usually," you say.  "Not really feeling it today though."
+    <br><br>
+    "Everything ok?" she asks sensing something is bothering you.
+    <br><br>
+    "Its fine. I'm just not really feeling it today," you lie.  You don't want to share the whole story of your recent rape with
+    her already.  "I'm going to go for a walk and clear my head, maybe pick up some snacks at the student union.  I'll be back in a
+    couple hours."
+    <br><br>
+    As you head out she's already calling her friend Craig over.  Whenever you head back home, you plan to be sure to listen to make sure
+    the two of them aren't still going at it before you open the door.
+    <br><br>
+    Maybe you'll feel better about everything [[next week|Part15Week]].
+  <<else>>
+    <<include [[Part15DormStonerFriendlyHorny]]>>
   <</if>>
 <</nobr>>
 
@@ -5897,7 +6239,11 @@ TODO [[Part15Dorm]]
 ::Part15DormStonerMFF
 <<nobr>>
   <h1>Side-by-side with Marissa</h1>
-  <video src="Part15/Dorm5.webm" autoplay loop muted height="600"></video>
+  <<if $BrokenLeg>>
+    <video src="Part15/Dorm16.mp4" autoplay loop muted height="600"></video>
+  <<else>>
+    <video src="Part15/Dorm5.webm" autoplay loop muted height="600"></video>
+  <</if>>
 <</nobr>>
 <<nobr>>
   <<if $dating.length>>
@@ -6196,6 +6542,12 @@ TODO [[Part15Dorm]]
     <br><br>
     You open a window to clear the air in the room and then start trying to study to take your mind off your lingering desire.
     Hopefully [[later in the week|Part15Week]] you'll be able to request another orgasm.
+  <<elseif $BrokenLeg>>
+    You're tempted to head to the store and pick up new vibrator.  You'll probably get some use out of it now that Faith won't be
+    judging you everytime you try to use it.  But you don't want to try to navigate the store with your cast and crutches, so you
+    decide to just order something online later instead.
+    <br><br>
+    [[Continue.|Part15Week]]
   <<else>>  
     "At least I don't have to worry about
     Faith judging me for masturbating anymore.  Maybe I should [[get a good vibrator|Part15DormStonerMinistry2]] if I'm going to be like that

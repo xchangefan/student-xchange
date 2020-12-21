@@ -1,9 +1,7 @@
-::Part15Job
-
 ::Part15JobMain
 <<nobr>>
   <<if $BrokenLeg>>
-    TODO Deal with broken leg
+    <<include [[Part15JobBrokenLeg]]>>
   <<elseif $JobEngineerLock>>
     <<include [[Part15JobEngineerLock]]>>
   <<elseif $JobEngineer>>
@@ -38,6 +36,52 @@
     <<include [[Part15NoJob]]>>
   <</if>>
 <</nobr>>
+
+::Part15JobBrokenLeg
+<<nobr>>
+  <<if $SchoolWeek == 3>>
+    <<include [[Part15JobBrokenLeg1]]>>
+  <<else>>
+    <<include [[Part15JobBrokenLeg2]]>>
+  <</if>>
+<</nobr>>
+
+::Part15JobBrokenLeg1
+<<nobr>>
+  <h1>Enjoying your time off</h1>
+  <img src="Part15/Bus19.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  While you hate how hard it is get around now, you do enjoy not having to rush to work, and how none of your professors complain if you
+  are late to class.
+<</nobr>>
+
+<<nobr>>
+  Getting dressed is still a pain though, at least below the waist.  You've started just wearing a skirt, and now bothering with underwear.
+  It's so much easier that way.
+<</nobr>>
+
+<<nobr>>
+  <<if $dating.length>>
+    <<include [[Part15RelationshipInclude]]>>
+  <<else>>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
+<</nobr>>
+
+::Part15JobBrokenLeg2
+<<nobr>>
+  <h1>Finally getting your cast off</h1>
+  <img src="Part15/Bus20.jpg" hspace="10" vspace="10" height="450">
+  <<unset $BrokenLeg>>
+  <<set $FormerBrokenLeg to 1>>
+<</nobr>>
+<<nobr>>
+    TODO Deal with broken leg Week 7, cast off
+
+<</nobr>>
+
+TODO [[Part15JobMain]]
 
 ::Part15NoJob
 TODO They had no job, no side job, no relationship.  What are they doing with their lives?  Just have them study
@@ -490,7 +534,7 @@ TODO Part15JobBaristaWeek7 (Maybe in a belt but not chaste)
 <</nobr>>
 <<nobr>>
   "Wait, what does that mean?" you wonder but don't say out loud.  "I'm not addicted!" you think.  You want to appeal the decision, but
-  you know it won't be any use.  They'd just see that as desperation, and be more conviced you're addicted -- to what? Orgasm?  Instead you
+  you know it won't be any use.  They'd just see that as desperation, and be more conviced you're addicted -- to what? Orgasms?  Instead you
   try to figure out what these "protocols" it is referring to are.  You don't have to wonder long, because soon another notifications appears.
 <</nobr>>
 <<nobr>>
@@ -652,7 +696,7 @@ TODO Part15JobBaristaWeek7 (Maybe in a belt but not chaste)
 <</nobr>>
 
 <<nobr>>
-  Which each phrase, when you say it sincerly and without hestiation the vibrations increase.  You are warned once to make sure your face is
+  With each phrase, when you say it sincerly and without hestiation the vibrations increase.  You are warned once to make sure your face is
   visible when you cover your mouth to hide a moan.  But thankfully, you are not punished for that.
 <</nobr>>
 
@@ -752,7 +796,7 @@ TODO Part15JobBaristaWeek11 (Maybe in a belt but not chaste)
 <</nobr>>
 
 <<nobr>>
-  You already know your points reset after an orgasm, so the extra the extra $tempBeltPoints you have now will be lost.  But this new program
+  You already know your points reset after an orgasm, so the extra $tempBeltPoints you have now will be lost.  But this new program
   says it can award you "up to 40 points/week, plus occasional bonus points"!  With that and your regular points, you could be having an orgasm
   every other week!
 <</nobr>>
@@ -1158,7 +1202,12 @@ TODO Call Girl Side
     <<else>>
       you suck some guy's cock,
     <</if>>
-    it's too much to resist.  You'll try more testing afterwards.
+    <<if $PlayerSideEffectOral > 2>>
+      it's too much to resist.  You'll try more testing afterwards.
+    <<else>>
+      it's almost too much to resist.  But you can try to push it out of your mind and
+      [[keep looking for other options to change|Part15JobEngineerLockUnlock]].
+    <</if>>
   <<else>>
     Or you could resist that urge and [[keep looking for other options to change|Part15JobEngineerLockUnlock]].
   <</if>>
@@ -1387,12 +1436,12 @@ TODO Call Girl Side
     <<if $dating.length>>and $dating[0]<</if>> will.
   <<else>>
     "As you probably discovered, when you triggered the account lockdown, it automatically re-activated the Global Orgasm Block," he says.  "And you weren't
-    able to orgasm before then, and obviously weren't able to unlock the belt.  So, I'm sorry, but I can't authorized a bonus payment.  But you did a great
+    able to orgasm before then, and obviously weren't able to unlock the belt.  So I'm sorry, but I can't authorized a bonus payment.  But you did a great
     job, and I do still want to reward you."
     <br><br>
     "So I'm activating random teases and edges for you," he says.  "Your classes shouldn't be that challenging yet this early in the semester, so hopefully
-    it won't be too much of a distraction.  I'll turn it off whenever you can go back to testing again.  Oh, and I turned the non-orgasm oral encouragement
-    back on, from the log here it seems like you really enjoyed that."
+    it won't be too much of a distraction.  Maybe I'll turn it off whenever you can go back to testing again.  Oh, and I turned the non-orgasm oral
+    encouragement back on, from the log here it seems like you really enjoyed that."
   <</if>>
 <</nobr>>
 
@@ -2210,6 +2259,8 @@ TODO Call Girl Side
   in time.  If you are honest with yourself, you have to admit you've started to like it.  It adds excitement to your day, never knowing when
   it's going to message you, or [[where you'll be|Part15JobEngineerLock11HopelessBailey2]] when it happens.
 <</nobr>>
+
+<<achievement>>threesome:fmf<</achievement>>
 
 ::Part15JobEngineerLock11HopelessBailey2
 <<nobr>>

@@ -235,7 +235,7 @@ setup.addSex =  function (fuck) {
 
 setup.addSexRepeat = function (repeatCount, fuck) {
   for (let i = 0; i < repeatCount; i++) {
-    setup.addSex(fuck);
+    setup.addSex(JSON.parse(JSON.stringify(fuck)));
   }
 }
 
@@ -754,7 +754,9 @@ $(document).on(':passagestart', function (ev) {
 ::AchievementFunctions [script] <417,50>
 setup.getAchievementDetails = function() {
 	return {
-		married: {text: "Married", image: "Married.png", alwaysShow:true},
+		married: {text: "Married", image: "Married.png", alwaysShow:true,
+      altImage: {poly: "Married-Poly.jpg"}
+    },
 		mileHigh: {text: "Mile High Club", image: "MileHigh.gif"},
 		pregnant: {text: "Pregnant", image: "Pregnant.jpg", alwaysShow:true},
 		mother: {text: "Gave Birth", image: "Baby.jpg"},
@@ -784,6 +786,7 @@ setup.getAchievementDetails = function() {
     uncle: {text: "Submissive Wife", image: "Uncle.png", isEnding:true},
     stepmom: {text: "Stepmother", image: "StepMother.png", isEnding:true},
     hypno: {text: "Stepford Wife", image: "Hypno.gif", isEnding:true},
+    poly: {text: "Polyamorous Pet", image: "Poly.jpg", isEnding:true}
 	}
 }
 
@@ -869,6 +872,17 @@ setup.getAchievementCount = function() {
 	return setup.getAchievements().filter((achId) => {return achId.indexOf(":") < 0}).length
 }
 
+setup.getPossibleNonEndingActivements = function() {
+	var details = setup.getAchievementDetails()
+	let achievements = []
+	for (let ach in details) {
+		if (!details[ach].isEnding) {
+			achievements.push(ach)
+		}
+	}
+	return achievements
+}
+
 setup.getPossibleEndings = function() {
 	var details = setup.getAchievementDetails()
 	let endings = []
@@ -933,6 +947,17 @@ setup.getTotalEndingCount = function() {
 	return setup.getPossibleEndings().length
 }
 
+setup.getAchievementNonEndingCount = function() {
+  	return setup.getAchievements().filter((ach) => {
+		var achInfo = setup.getAchievementDetails()[ach]
+		return achInfo && !achInfo.isEnding
+	}).length
+}
+
+setup.getTotalNonEndingCount = function() {
+	return setup.getPossibleNonEndingActivements().length
+}
+
 ::Achievement [script] <450,50>
 // adapted from notify.js, by chapel; for sugarcube 2 version 1.0.0
 $(document.body).append("<div id='achievement'></div>");
@@ -940,13 +965,20 @@ $(document).on(':achievement', function (e) {
     if (e.message && typeof e.message === 'string') {
         // trim message
         var achId = e.message.trim();
+        var altId = null;
+        if (achId.indexOf("%")) {
+          var parts = achId.split("%");
+          achId = parts[0];
+          altId = parts[1];
+        }
 
 				let achInfo = setup.getAchievementDetails()[achId]
 				if (!achInfo) {
 					achInfo = { text: "Unknown Achievement: " + achId }
 				}
 
-				var imageText = achInfo.image ? "<img src=\"PartAch/" + achInfo.image + "\" height=\"200\">" : ""				
+        var imagePath = altId ? achInfo.altImage[altId] : achInfo.image;
+				var imageText = achInfo.image ? "<img src=\"PartAch/" + imagePath + "\" height=\"200\">" : ""				
 				var endingText = achInfo.isEnding ? "The End: " : ""
 				e.message = imageText + (endingText + achInfo.text).replace(" ","&nbsp;")
 				
@@ -1007,8 +1039,9 @@ Macro.add('achievement', {
         }
 
 				var isMultiPart = (msg.indexOf(":") >= 0)
+				var isAltImage = (msg.indexOf("%") >= 0)
 
-				if (msg.indexOf(":") >= 0) {
+				if (isMultiPart) {
 					if (setup.addMultipartAchievement(msg)) {
 						// fire event
 						$(document).trigger({
@@ -1018,7 +1051,17 @@ Macro.add('achievement', {
 								class   : classes
 						});
 					}
-				} else {
+        } else if (isAltImage) {
+					if (setup.addAchievement(msg.split("%")[0])) {
+            // fire event
+						$(document).trigger({
+								type    : ':achievement',
+								message : msg.split(":")[0],
+								delay   : time,
+								class   : classes
+						});
+          }
+        } else {
 					if (setup.addAchievement(msg)) {
 						// fire event
 						$(document).trigger({
@@ -1034,7 +1077,6 @@ Macro.add('achievement', {
 
 ::PageMessages [script] <470,50>
 setup.pageMessage = function(msg) {
-  //todo need to add messages about arousal, denial, etc and show up in footer
   if (!state.active.variables.pageMessages) {
     state.active.variables.pageMessages = []
   }

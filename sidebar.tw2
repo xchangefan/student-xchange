@@ -958,6 +958,17 @@ You are a young man trying to decide where to go to college.
       You are married to Bailey.
     <<elseif $Engaged == 'Bailey'>>
       You are engaged to Bailey. You live with him.
+    <<elseif $BaileyKyleMarried>>
+      You are married to Bailey and Kyle.
+    <<elseif $BaileyKyleEngaged>>
+      You are engaged to Bailey and Kyle.  You live with them.
+    <<elseif setup.areDating('Bailey') and setup.areDating('Kyle')>>
+      You are in a relationship with Bailey and Kyle.
+      <<if $Roommate == 'Kyle'>>
+        You all live together.
+      <<elseif $Roommate == 'Bailey'>>
+        You live with Bailey.
+      <</if>>
     <<elseif setup.areDating('Bailey') and $Roommate == 'Bailey'>>
       You are in a relationship with Bailey. You live with her.
     <<elseif setup.areDating('Bailey')>>
@@ -1056,6 +1067,7 @@ You are a young man trying to decide where to go to college.
     <<if $JobEngineer>><<print "You work as an Engineer. ">><</if>>
     <<if $JobEngineerLock>>You are an Engineering penetration tester.<</if>>
     <<if $JobEngineerToy>>You are Kyle's personal test subject.<</if>>
+    <<if $JobEngineerAssistant>>You are Kyle's assistant.<</if>>
     <<if $JobTestSubject>><<print "You are a test subject at the lab. ">><</if>>
     <<if $JobBetaTester>>You are a chastity belt beta tester.<</if>>
     <<if $JobArt>><<print "You work as an Art Model. ">><</if>>
@@ -1253,7 +1265,8 @@ In addition to the standard click navigation, the following is supported for one
 ::SideBarAchievements <2960,0>
 <<nobr>>
   <<if setup.getAchievementCount()>>
-    <h1>Earned Achievements</h1>
+    <h1>Earned Achievements
+      (<<print setup.getAchievementNonEndingCount()>> of <<print setup.getTotalNonEndingCount()>>)</h1>
     <<print setup.getAchievementTable()>>
   
     <h1>You have reached <<print setup.getAchievementEndingCount()>> of the <<print setup.getTotalEndingCount()>> endings completed so far</h1>
@@ -1323,7 +1336,7 @@ In addition to the standard click navigation, the following is supported for one
 ::SideBarSaveAchievements <2990,0>
 <<nobr>>
   <h1>Achievement Save Data</h1>
-  Achievements, as well as any Saves that you have "saved to disk", are stored in your browser local storage.
+  Achievements, as well as any Saves except those that you have "saved to disk", are stored in your browser local storage.
   This is lost if you clear it, or if you are in 'incognito/private mode' and close your browser.
 <</nobr>>
 
