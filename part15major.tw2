@@ -21,39 +21,97 @@
     enough for a single mom.
   <</if>>
   <<if $JobEngineer or $JobEngineerLock>>
-    todo already chosen comp sci/math/engineering, no need to pick major
+    <br><br>
+    <img src="Part15/Major2.jpg" hspace="10" vspace="10" height="600" align="left">
+    You enjoy your work as an engineer.
+    <<if $JobEngineerLock>>
+      Well, you enjoyed it a lot more before your current "penetration testing" assignment.  But even with that, you find
+      the technical challenge of it rewarding.  You'd just enjoy it much more if you could orgasm when you wanted.
+    <<else>>
+      You love the technical challenge of it.  Finding some problem, then working on it and solving it.  The fact that it's
+      with toys and devices to give pleasure, or to withhold it, only makes it more fun.
+    <</if>>
+    <br><br>
+    You're obviously to go with something in Engineering.  For now the Math and general Engineering classes are mostly the same
+    regardless of your focus.  So you can specify an exact focus area later.  But you already know it'll be some mix of Electrical
+    Engineering and Computer Science.
     <<set $Major to "Engineering">>
     <br><br>
     <<include [[Part15BackToMain]]>>
   <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
-    todo not likely to be a professional cheerleader - pick major
     <br><br>
+    <img src="Part15/Major3.jpg" hspace="10" vspace="10" height="600" align="left">
+    You enjoy cheerleading, but you know there aren't that many jobs as professional cheerleaders.  You aren't holding out any hopes
+    of continuing after college.
+    <br><br>
+    Most of your general classes are out of the way, so you'll have to decide on a major.
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobAthlete and $BodyType == 'Fit'>>
-    todo might want to be a pro athlete, but need a back plan - pick backup major
     <br><br>
+    <img src="Part15/Major7.jpg" hspace="10" vspace="10" height="600" align="left">
+    <br><br>
+    You know a career as a professional athlete might be possible, but you definitely need a backup plan in case that doesn't work out.
+    <br><br>
+    Most of your general classes are out of the way, so you'll have to decide on a major.
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobAthlete>>
-    todo not likely to be a pro athlete - pick major
     <br><br>
+    You certainly enjoy being a student athlete.
+    <br><br>
+    <img src="Part15/Major8.jpg" hspace="10" vspace="10" height="550">
+    <br><br>
+    But you also know there's little chance of you making a career out of it.  You'll need to figure out something else to do after
+    college.
+    <br><br>
+    Most of your general classes are out of the way, so you'll have to decide on a major.
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobFitnessYoga>>
-    todo might want to be a yoga Instructor - pick major with that as an option
+    <br>
+    You've enjoyed your work as a yoga instructor.
+    <br>
+    <img src="Part15/Major5.jpg" hspace="10" vspace="10" height="450">
+    <br>
+    There isn't any set requirements if you want to continue with that after you
+    graduate, but you could always pick "Health Sciences" and focus on exercise science or kinesiology.
+    Of course, there's a lot of competition out there.  But if you let word get around about your private sessions, then maybe
+    that won't be a problem.
     <br><br>
+    Or maybe you'd like to do something different after college.
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobFitnessMassage>>
-    todo might want to be a massage therapist - pick major with that as an option
+    <br>
+    You've enjoyed your work in the fitness center.  
+    <br>
+    <video src="Part15/Major4.webm" autoplay loop muted height="450"></video>
+    <br>
+    You could always pick "Health Sciences" and become a massage therapist or
+    maybe even a physical therapist.  Then you could work as a real therapist during the day, and then pick up some extra money
+    doing more fun sessions in your free time.
     <br><br>
+    Or maybe you'd like to do something different after college.
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobLibrary>>
-    todo might want to be a librarian - pick major with that as an option
+    <br>
+    <img src="Part15/Major6.jpg" hspace="10" vspace="10" height="600" align="left">
+    <br>
+    You've enjoyed your work a a librarian.  "Library Science" is an option you could choose.  Of course most libraries aren't
+    going to be as flexible about your after-hours behavior as the university library.  But you've found you can be quite convincing
+    with your boss when you want to be, so maybe you can negotiate some fexibility wherever you end up.
     <br><br>
+    Or maybe you'd like to do something different after college.
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobTestSubject or $JobBetaTester>>
-    It's not like you can keep being a 'tester' for the engineering department after graduation.
     <br><br>
+    <img src="Part15/Major9.jpg" hspace="10" vspace="10" height="600" align="left">
+    <br><br>
+    It's not like you can keep being a 'tester' for the engineering department after graduation, even if you wanted to.  And
+    having a job that didn't take control of your orgasms would be nice anyway.  You'll need to figure out what you want to
+    do after college.
+    <br><br>
+    Most of your general classes are out of the way, so you'll have to decide on a major.
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobModel>>
+    TODO
     <br><br>
     <img src="Part15/Fashion1.jpg" hspace="10" vspace="10" height="600" align="left">
     <<set $Major to "Fashion Design">>
@@ -62,71 +120,162 @@
     working in the fashion industry, you've developed an interest in it.  So you've settled on [[Fashion Design|Part15FashionDesign]]
     as your major.
   <<elseif $JobOffice or $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>
-    todo pick business major
+    <br><br>
+    <img src="Part15/Major10.jpg" hspace="10" vspace="10" height="600" align="left">
+    <br><br>
+    You've enjoyed working in an office, and want to continue doing that after college.  You've decided to major in Business Administration.
+    You'll figure out whether you'll go with finance, accounting, or something else later.  For now the classes are all the same anyway.
     <<set $Major to "Business">>
     <br><br>
     <<include [[Part15BackToMain]]>>
-  <<elseif $JobBarista or $JobBikiniBarista or $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
-    todo not planning on doing this forever, pick a major
+  <<elseif $JobBarista or $JobBikiniBarista>>
     <br><br>
+    <<if $JobBikiniBarista>>
+      <img src="Part15/Major11.jpg" hspace="10" vspace="10" height="600" align="left">
+    <<else>>
+      <img src="Part15/Major12.jpg" hspace="10" vspace="10" height="550">
+    <</if>>
+    <br><br>
+    You don't plan on being a barista forever.  So you'll need to figure out what you want to do after college.
+    <br><br>
+    Most of your general classes are out of the way, so you'll have to decide on a major.
+    <<include [[Part15MajorChoose]]>>
+  <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+    <br><br>
+    <img src="Part15/Major13.jpg" hspace="10" vspace="10" height="600" align="left">
+    <br><br>
+    As much fun as your job can be sometimes, you don't plan on tending bar forever.  So you'll need to figure out what you want to do after college.
+    <br><br>
+    Most of your general classes are out of the way, so you'll have to decide on a major.
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobCallGirl>>
+    <br><br>
+    <img src="Part15/Major10.jpg" hspace="10" vspace="10" height="600" align="left">
+    <br><br>
     You make more as a call girl than you could probably make at any other job you'd choose.  But you have to pick something, and you're
     going to want something to tell family and friends that don't know what you really do for a living.  The more you think about it the
     more a business major appeals to you.
     <br><br>
+    You'll choose the university's "Small Business / Entrepreneur" focus, which you suppose is what you'll be after all.
     It'll give you something to tell people now, and it'll help you manage the money side of the job.  And who knows, maybe when you're older
     and don't want to see clients as much anymore, you could start your could start your own placement service instead.
     <<set $Major to "Business">>
     <br><br>
     <<include [[Part15BackToMain]]>>
   <<else>>
-    todo general pick a major
     <br><br>
+    Most of your general classes are out of the way, so you'll have to decide on a major.
     <<include [[Part15MajorChoose]]>>
   <</if>>  
 <</nobr>>
 
 ::Part15MajorChoose
 <<nobr>>
-  <<if $JobFitnessYoga>>
-    You've enjoyed your work as a yoga instructor.  There isn't any set requirements if you want to continue with that after you
-    graduate, but you could always pick "Health Sciences" and focus on exercise science or kinesiology.
-    Of course, there's a lot of competition out there.  But if you get word get around about your private sessions, then maybe
-    that won't be a problem.
-    <br><br>
-  <<elseif $JobFitnessMassage>>
-    You've enjoyed your work in the fitness center.  You could always pick "Health Sciences" and become a massage therapist or
-    maybe even a physical therapist.  Then you could work as a real therapist during the day, and then pick up some extra money
-    doing other types of sessions in your free time.
-    <br><br>
-  <<elseif $JobLibrary>>
-    You've enjoyed your work a a librarian.  "Library Science" is an option you could choose.  Of course most libraries aren't
-    going to be as flexible about your after-hours behavior as the university library.  But you've found you can be quite convincing
-    with your boss when you want to be, so maybe you can negotiate some fexibility wherever you end up.
-    <br><br>
-  <</if>>  
-  TODO Pick a major
+  <br><br>
+  You look through the options the university has and a few interest you:
+  <ul>
+    <li>[[Agriculture|Part15MajorAgriculture]]</li>
+    <li>[[Business|Part15MajorBusiness]]</li>
+    <li>[[Child Care|Part15MajorChildCare]]</li>
+    <li>[[Criminal Justice|Part15MajorCCJ]]</li>
+    <li>[[Education|Part15MajorEducation]]</li>
+    <li>[[English|Part15MajorEnglish]]</li>
+    <li>[[Health Sciences|Part15MajorHealth]]</li>
+    <li>[[Library science|Part15MajorLibrary]]</li>
+    <li>[[Nursing|Part15MajorNursing]]</li>
+  </ul>
 <</nobr>>
 
-Child care
-AGRICULTURE & NATURAL RESOURCES CONSERVATION (Ag, Environmental, Forestry)
-ARCHITECTURE
-AREA, ETHNIC, & MULTIDISCIPLINARY STUDIES (Women's studies, library science, general studies)
-ARTS
-BUSINESS
-COMMUNICATIONS
-COMMUNITY, FAMILY, & PERSONAL SERVICES (family, child care, parks and rec, health and pe, culinary, CCJ, corrections, law enforcement, social work)
-COMPUTER SCIENCE & MATHEMATICS
-EDUCATION
-ENGINEERING
-ENGLISH & FOREIGN LANGUAGES
-HEALTH ADMINISTRATION & ASSISTING (Assistant, office work)
-HEALTH SCIENCES & TECHNOLOGIES (doctor, nurse, PT, athletic trainer, massage therapy)
-PHILOSOPHY, RELIGION, & THEOLOGY
-REPAIR, PRODUCTION, & CONSTRUCTION
-SCIENCES: BIOLOGICAL & PHYSICAL
-SOCIAL SCIENCES & LAW
+<<nobr>>
+  The university has a few more that you've decided against:
+  <br><br>
+  Arts: You aren't interested in being an Art major.
+      <<if $JobArtFormer>>
+        You've had enough of the art world already.
+      <<else>>
+        You've never really had much talent in that area.
+      <</if>>
+  <br><br>
+  Math/Computer Science/Engineering - You aren't interested in being a Computer, Math, or Engineering major.  <<if !$PlayerGoodStudent>>That sounds way too hard<</if>>
+  <br><br>
+  Philosophy - You feel like you'd never get a job with this major.
+  <br><br>
+  Pre-law or Pre-med -
+      <<if $PlayerGoodStudent>>
+        You aren't sure if you could handle law or medical school, and you are positive you don't want to be in school that long.
+      <<else>>
+        You doubt you'd even be able to get into law or medical school after graduation, let alone pass.
+      <</if>>
+  <br><br>
+  Science - You've quickly learned science at university is much harder than it was in high school.  You don't know what you'd do with a
+      Biology, Chemistry, or Physics degree unless you went on to get a Doctorate,
+      <<if $PlayerGoodStudent>>
+        and you aren't interested in that.
+      <<else>>
+        and there's not much chance of that happening
+      <</if>>
+  <br><br>
+  Women's studies - You aren't sure of the job market, and feel like you'd be at a disadvange over the natural-born women studying this anyway.
+<</nobr>>
+
+::Part15MajorAgriculture
+TODO Part15MajorAgriculture
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15MajorBusiness
+TODO Part15MajorBusiness
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15MajorChildCare
+TODO Part15MajorChildCare
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15MajorCCJ
+TODO Part15MajorCCJ
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15MajorEducation
+TODO Part15MajorEducation
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15MajorEnglish
+TODO Part15MajorEducation
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15MajorHealth
+TODO Part15MajorEducation
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15MajorLibrary
+TODO Part15MajorEducation
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15MajorNursing
+TODO Part15MajorNursing
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>

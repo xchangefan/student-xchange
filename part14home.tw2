@@ -2120,7 +2120,6 @@
     <br><br>
     You don't want to go into too much with Cassie listening, so you tell him [[I'll explain it better when we get home|Part14Yoga]].
   <<elseif $JobModel>>
-    TODO Model
     <<include [[Part14Home2BrotherWithDylan]]>>
     "So, you had said you were going to try out modeling.  How has that been going?  Is it like on a runway or photos in magazines or something?",
     Dylan asks.
@@ -6466,7 +6465,6 @@
 <</nobr>>
 
 <<nobr>>
-  TODO $JobModel1
   <<if $CampusMinistry>>
     "But it seems my worries were unfounded.  She seems to have developed into a wonderful young woman.  And when I spoke to her friend Faith, she spoke
     very highly of you.  I believe she said the two of you met at a charity event for the church there on campus."
@@ -8427,7 +8425,6 @@
 <<nobr>>
   I've got you a job working as a barista instead.  That should keep you out of trouble."
   <<set $JobBarista to 1>>
-  TODO $JobModel2
 <</nobr>>
 
 ::Part14Home5BoyfriendStrict <42600,10700>
@@ -8464,7 +8461,6 @@
 <</nobr>>
 
 <<nobr>>
-  TODO $JobModel3
   After you are done sucking his cock $dating[0] tells you, "Obviously you won't be working at the strip club anymore.
   <<if $PlayerItemNerdKeyStripper>>
     <<unset $PlayerItemNerdKeyStripper>>
@@ -8488,12 +8484,15 @@
     Your side job doing porn is out too.
   <</if>>
   As far as your primary job,
-  TODO $JobModel4
   <<if $JobAthlete>>
     I'll talk with your coach about your belt.  It'll come off whenever it absolutely needs to, but it'll need to go back on afterwards.  If you don't agree
     with that, we can talk to your father about it."
     <br><br>
     "No, no.  That sounds good," you quickly agree, wanting to avoid getting your father involved and making things worse.
+  <<elseif $JobModel>>
+    I don't think you need to be posing for pictures half naked anymore.
+    <<unset $JobModel>>
+    <<include [[BoyfriendStrictJobChange]]>>
   <<elseif $JobCheerleader>>
     I'll get you a less bulky belt to wear to practice and games."
   <<elseif $JobCheerleaderFundraiser>>
@@ -8804,8 +8803,7 @@
     <</if>>
   <<elseif $AcademicProbationDenial>>
   <<elseif $PlayerChastityBelt>>
-      You hope $Keyholder lets you out of this chastity belt soon, at least for a little while.  You think you might go insane if you aren't allowed to cum soon.
-    TODO
+    You hope $Keyholder lets you out of this chastity belt soon, at least for a little while.  You think you might go insane if you aren't allowed to cum soon.
   <<else>>
     But hearing about the other girls and how horny and frustrated they are now without being able to orgasm, has made you horny too.
     <<if setup.isGoldStarLesbian()>>
