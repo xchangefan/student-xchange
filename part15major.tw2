@@ -38,9 +38,9 @@
     <<set $Major to "Engineering">>
     <br><br>
     <<include [[Part15BackToMain]]>>
-  <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
+  <<elseif true or $JobCheerleader or $JobCheerleaderFundraiser>>
     <br><br>
-    <img src="Part15/Major3.jpg" hspace="10" vspace="10" height="600" align="left">
+    <img src="Part15/Major3.jpg" hspace="30" vspace="10" height="600" align="left">
     You enjoy cheerleading, but you know there aren't that many jobs as professional cheerleaders.  You aren't holding out any hopes
     of continuing after college.
     <br><br>
@@ -48,7 +48,7 @@
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobAthlete and $BodyType == 'Fit'>>
     <br><br>
-    <img src="Part15/Major7.jpg" hspace="10" vspace="10" height="600" align="left">
+    <img src="Part15/Major7.jpg" hspace="30" vspace="10" height="600" align="left">
     <br><br>
     You know a career as a professional athlete might be possible, but you definitely need a backup plan in case that doesn't work out.
     <br><br>
@@ -58,7 +58,7 @@
     <br><br>
     You certainly enjoy being a student athlete.
     <br><br>
-    <img src="Part15/Major8.jpg" hspace="10" vspace="10" height="550">
+    <img src="Part15/Major8.jpg" hspace="30" vspace="10" height="550">
     <br><br>
     But you also know there's little chance of you making a career out of it.  You'll need to figure out something else to do after
     college.
@@ -69,7 +69,7 @@
     <br>
     You've enjoyed your work as a yoga instructor.
     <br>
-    <img src="Part15/Major5.jpg" hspace="10" vspace="10" height="450">
+    <img src="Part15/Major5.jpg" hspace="30" vspace="10" height="450">
     <br>
     There isn't any set requirements if you want to continue with that after you
     graduate, but you could always pick "Health Sciences" and focus on exercise science or kinesiology.
@@ -92,7 +92,7 @@
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobLibrary>>
     <br>
-    <img src="Part15/Major6.jpg" hspace="10" vspace="10" height="600" align="left">
+    <img src="Part15/Major6.jpg" hspace="30" vspace="10" height="600" align="left">
     <br>
     You've enjoyed your work a a librarian.  "Library Science" is an option you could choose.  Of course most libraries aren't
     going to be as flexible about your after-hours behavior as the university library.  But you've found you can be quite convincing
@@ -102,7 +102,7 @@
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobTestSubject or $JobBetaTester>>
     <br><br>
-    <img src="Part15/Major9.jpg" hspace="10" vspace="10" height="600" align="left">
+    <img src="Part15/Major9.jpg" hspace="30" vspace="10" height="600" align="left">
     <br><br>
     It's not like you can keep being a 'tester' for the engineering department after graduation, even if you wanted to.  And
     having a job that didn't take control of your orgasms would be nice anyway.  You'll need to figure out what you want to
@@ -111,7 +111,6 @@
     Most of your general classes are out of the way, so you'll have to decide on a major.
     <<include [[Part15MajorChoose]]>>
   <<elseif $JobModel>>
-    TODO
     <br><br>
     <img src="Part15/Fashion1.jpg" hspace="10" vspace="10" height="600" align="left">
     <<set $Major to "Fashion Design">>
@@ -131,9 +130,9 @@
   <<elseif $JobBarista or $JobBikiniBarista>>
     <br><br>
     <<if $JobBikiniBarista>>
-      <img src="Part15/Major11.jpg" hspace="10" vspace="10" height="600" align="left">
+      <img src="Part15/Major11.jpg" hspace="30" vspace="10" height="600" align="left">
     <<else>>
-      <img src="Part15/Major12.jpg" hspace="10" vspace="10" height="550">
+      <img src="Part15/Major12.jpg" hspace="30" vspace="10" height="550">
     <</if>>
     <br><br>
     You don't plan on being a barista forever.  So you'll need to figure out what you want to do after college.
@@ -176,17 +175,17 @@
   <ul>
     <li>[[Agriculture|Part15MajorAgriculture]]</li>
     <li>[[Business|Part15MajorBusiness]]</li>
-    <li>[[Child Care|Part15MajorChildCare]]</li>
+    <<if ($dating.length or $Engaged or $Spouse) and !setup.haveGirlfriend()>>
+      <li>[[Child Care|Part15MajorChildCare]]</li>
+    <</if>>
     <li>[[Criminal Justice|Part15MajorCCJ]]</li>
     <li>[[Education|Part15MajorEducation]]</li>
-    <li>[[English|Part15MajorEnglish]]</li>
     <li>[[Health Sciences|Part15MajorHealth]]</li>
-    <li>[[Library science|Part15MajorLibrary]]</li>
-    <li>[[Nursing|Part15MajorNursing]]</li>
+    <li>[[Library Science|Part15MajorLibrary]]</li>
+    <<if !$PlayerLazyStudent>>
+      <li>[[Nursing|Part15MajorNursing]]</li>
+    <</if>>
   </ul>
-<</nobr>>
-
-<<nobr>>
   The university has a few more that you've decided against:
   <br><br>
   Arts: You aren't interested in being an Art major.
@@ -196,7 +195,24 @@
         You've never really had much talent in that area.
       <</if>>
   <br><br>
-  Math/Computer Science/Engineering - You aren't interested in being a Computer, Math, or Engineering major.  <<if !$PlayerGoodStudent>>That sounds way too hard<</if>>
+  <<if (!$dating.length and !$Engaged and !$Spouse) or setup.haveGirlfriend()>>
+    Child Care:
+    <<if $children.length>>
+      You do this already, without a degree.  As a single mom, you need something that that pays better this will.
+    <<else>>
+      You've seen what child care workers make.  Maybe someday you'll want to take care of your own children, but you certainly
+      are going to spend two and half more years learning how to take care of other people's kids.
+    <</if>>
+    You don't need a degree for this do you?
+    <br><br>
+  <</if>>
+  Math/Computer Science/Engineering - You aren't interested in being a Computer, Math, or Engineering major.
+  <<if !$PlayerGoodStudent>>That sounds way too hard<</if>>
+  <<if $PlayerLazyStudent>>
+    <br><br>
+    Nursing - You'd looked into the classes they have to take.  While it's not as bad as for doctors, or as long, but you know you aren't the best student.
+    You rather enjoy your remaining time at the university, rather than be over your head and fail out.
+  <</if>>
   <br><br>
   Philosophy - You feel like you'd never get a job with this major.
   <br><br>
@@ -219,63 +235,262 @@
 <</nobr>>
 
 ::Part15MajorAgriculture
-TODO Part15MajorAgriculture
+<<nobr>>
+  <h1>Agriculture Science Major</h1>
+  <img src="Part15/Major14.jpg" hspace="10" vspace="10" height="550">
+  <<set $Major to "Agriculture">>
+<</nobr>>
+<<nobr>>
+  Your college friends joked a bit when they found out you were planning on majoring in Agricultural Stuides.  "You don't need to go to
+  college to be a farmer!" they said and laughed.  They are all from big cities, and are probably thinking of farming like it was when your
+  grandfather or great-grandfather started farming.  But things have changed a lot since then.
+<</nobr>>
+
+<<nobr>>
+  Your grandfather has struggled to keep up with all the technology in farming now.  He's avoided using drones or satelites to map his fields
+  like you've talked to him about, even though you know he could use the information to choose what to plant where, and to make him more
+  money.  He certainly wasn't happy when he replaced his aging combine and his new one was "more computer than tractor".
+<</nobr>>
+
+<<nobr>>
+  You know your grandfather has been wanting to retire for a while.  He had originally planned on passing the farm down to your dad, but
+  your dad had ended up with an office job, and no interest in farming.  When you were growing up, and much more interested in farming, he
+  had been excited.  You and him had talked about maybe helping him out on the farm after college, and then taking over once you were ready.
+<</nobr>>
+
+<<nobr>>
+  Of course, that all had been before your change.  You wonder if he's going to feel the same about his granddaughter taking over as he
+  did about his grandson.  Luckily he's more open minded than your mom's dad, so it'll probably be ok.
+<</nobr>>
+
+<<nobr>>
+  Your are glad that you are mostly done with your general classes.  You are sure you'll do much better now that your classes are in thing
+  you are actually interested in, and that you know you'll be using.
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15MajorBusiness
-TODO Part15MajorBusiness
+<<nobr>>
+  <h1>Business Major</h1>
+  <img src="Part15/Major10.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $Major to "Business">>
+<</nobr>>
+<<nobr>>
+  Some of your friends think working for some big corporation sounds horrible.  But they can rant all they want about
+  'late-stage capitalism', or whatever.  While they are struggling to figure out what to do with their Philosophy degree,
+  you'll have a nice, steady job and paying your bills on time every month. 
+<</nobr>>
+
+<<nobr>>
+  <<if $dating.length == 0>>
+    They also like to joke about you trying to find some rich,
+    <<if setup.isGoldStarLesbian()>>sexy<<else>>handsome<</if>>
+    executive to snatch up, so you don't have to work at all.  You don't tell them, but maybe there's a bit more truth to
+    that than the rest of what they say.  Though maybe you'd rather be the rich executive instead some day.
+  <<else>>
+    They also like to joke that it's just because $dating[0] thinks you look hot in heels and stockings.  You usually laugh and
+    tell them that they are half right.  That is A reason, just not the only one.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You'll figure out whether you'll go with finance, accounting, or something else later.  For now the classes are all the same anyway.
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15MajorChildCare
-TODO Part15MajorChildCare
+<<nobr>>
+  <h1>Child Care Major</h1>
+  <img src="Part15/Major15.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $Major to "Child Care">>
+<</nobr>>
+<<nobr>>
+  With a child care major, you know you'll be qualified if you want to be work at, or even run, a daycare.  But what you
+  think about much more than that is raising your and $dating[0]'s kids some day.
+<</nobr>>
+
+<<nobr>>
+  You also plan on working in some culinary and home economics classes too.  Your mother had never bothered to teach you as
+  much about running a household as she had your sister, so it's probably good to pick it up now.
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15MajorCCJ
-TODO Part15MajorCCJ
+<<nobr>>
+  <h1>Criminology and Criminal Justice Major</h1>
+  <img src="Part15/Major16.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $Major to "Criminal Justice">>
+<</nobr>>
+
+<<nobr>>
+  You aren sure yet if you want to be in law enforcement, a probation officer, or maybe a private investigator.  But you know Criminal
+  Justice is what you want to major in.  You can decide what you want to do with your degree later.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.haveFuckedVaginal('Police Officer')>>
+    You wonder if you could get in touch with that officer you got to know so well on your way home last Christmas.  Maybe he
+    could give you some career advice, or give you a recommendation if you ever need one.
+  <<elseif setup.haveFucked('Police Officer')>>
+    You wonder if you could get in touch with one of the officers you got to know so well on your way home last Christmas.  Maybe one
+    of them could give you some career advice, or give you a recommendation if you ever need one.
+  <<elseif setup.haveFucked('Campus Police Officer')>>
+    You wonder if you should get in touch with one of the campus officers you got to know so well pledge week last year.  Maybe one
+    of them could give you some career advice, or give you a recommendation if you ever need one.
+  <<else>>
+    You know one of your sister's ex-boyfriends is an officer back home.  Maybe you could give him a call if you ever need any career advice,
+    or maybe a recommendation if you ever need one.
+  <</if>>
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15MajorEducation
-TODO Part15MajorEducation
-
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <h1>Education Major</h1>
+  <img src="Part15/Major17.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $Major to "Education">>
 <</nobr>>
 
-::Part15MajorEnglish
-TODO Part15MajorEducation
+<<nobr>>
+  You've always thought about being a teacher.  You aren't sure what grade level you are interested in, but you can decide that a
+  bit later.  You just know you want to teach, to be able to make an impact on a students future, to help them grow to be the
+  best person they can be.
+  <<if setup.haveFucked('Mr. B')>>
+    <br><br>
+    Though you doubt you'll ever have as much impact on a student's life as Mr. B did on yours when he recommended you for the
+    Student X-Change Program.  You might want to ask him for some career advice some time.  After your last visit together, you
+    are positive he'd be excited to see you again.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  If it's going to be high school, then you'll have pick a subject to focus on as well.  Well, and you'll probably also
+  have to learn to deal with horny teenagers being 'hot for teacher' as well.
+<</nobr>>
+
+<<nobr>>
+  You wonder if maybe focusing on younger ages might be easier.  You've also heard that focusing on special education
+  can also be rewarding, if difficult at times.
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15MajorHealth
-TODO Part15MajorEducation
+<<nobr>>
+  <h1>Health Sciences Major</h1>
+  <img src="Part15/Major18.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $Major to "Health Sciences">>
+<</nobr>>
+<<nobr>>
+  <<if $JobFitnessMassage>>
+    Of course you know how to make someone feel good on your massage table.  But learning about how the body works, and
+    how to actually help them heal from your touch would be even better.
+    <br><br>
+    Of course, having training and being qualified to have your own legitimate massage business would make it much easier
+    to also have your more fun and profitable massage business right along side it.
+    <br><br>
+    Or maybe, you'll bore of giving happy endings and want to focus on
+    <<if $BodyType == 'Fit'>>
+      working as a personal trainer.
+    <<else>>
+      just the legitimate massage work.
+    <</if>>
+  <<elseif $JobFitnessYoga>>
+    You enjoy teaching yoga, clothed or not.  Learning about how the body works, and how to better help people improve their
+    health and wellness would be even better.
+    <br><br>
+    With proper training you'll be able to get a job anywhere.  But if you decide to go out on your own and start your own studio, then
+    your 'Private Session' will probably be as popular as they are at school.  Even if you want to keep it legal, there's nothing
+    against the law about having fully nude yoga classes as long as you make sure your students are all adults.
+  <<elseif $BodyType == 'Fit'>>
+    Your body helps you stay fit, but you know it's not as easy for others.  Learning more about nutrition, exercise, and how the body
+    works could help you later if you want to be a personal trainer.
+    <br><br>
+    Your clients won't know how easy it comes to you, so your fit, toned body will be a walking advertisement for your skills as a trainer.
+    And from what you know about guys, and excellent motivator for them as well.
+  <<else>>
+    You aren't sure exactly what you want to do after graduation.  Whether it's as a personal trainer, as a massage therapist,
+    <<if $BodyType != 'Plus'>>
+      a fitness coach, a nutritionist,
+    <</if>>
+    or something else, you know you want to do something the health sciences.
+    <br><br>
+    Learning about how the body works and how to improve health and wellness will help you with any of them. You can worry about exactly
+    what you want to do further on when you know more about the possibilities.
+  <</if>>
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15MajorLibrary
-TODO Part15MajorEducation
+<<nobr>>
+  <h1>Library Science Major</h1>
+  <img src="Part15/Major19.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $Major to "Library Science">>
+<</nobr>>
+<<nobr>>
+  <<if $JobLibrary>>
+    It's not all about sex in the stacks aftr dark, you also love
+  <<else>>
+    You love the thought of
+  <</if>>
+  helping people with whatever they are researching, helping everyone from students to professors find the information they need.
+<</nobr>>
+
+<<nobr>>
+  It could also be fun to work at a public library away from a university.  You can imagine how rewarding it would be helping little kids
+  learn to read, or even reading to the younger ones and helping them develop a love of books early on.
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15MajorNursing
-TODO Part15MajorNursing
+<<nobr>>
+  <h1>Nursing Major</h1>
+  <img src="Part15/Major20.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $Major to "Nursing">>
+<</nobr>>
+<<nobr>>
+  You know it's going to be a lot of hard work, but you know
+  <<if $PlayerGoodStudent>>
+    you are up to it.
+  <<else>>
+    it'll be worth it in the end.
+  <</if>>
+  The thought of being there taking care of patients in their moment of need, seems like it would be very rewarding.
+  <<if !$dating.length>>
+    Of course if you happened to meet a cute doctor in the process, that wouldn't be bad either.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Ever since you were little, you'd always dreamed of being a nurse, of caring for the sick or injured, of helping make people
+  better.
+<</nobr>>
+
+<<nobr>>
+  You know there are male nurses, but when you were little your friends would tease you.  So you started saying you wanted to be a
+  doctor instead.  But then, and even more now, you'd much rather be a nurse.  You want to be the one helping the patients directly
+  instead of rushing from room to room and only seeing each patient for a few minutes.
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
