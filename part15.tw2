@@ -3577,22 +3577,24 @@ TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
       <<include [[Part15BabyJobsRelationships]]>>
     <<case 12>>
       <!-- Nov w2 -->
-      <h1>To be continued...</h1>
-      <<set $TO_BE_CONTINUED to 1>>
+      <<include [[Part15WomensStudies2]]>>
     <<case 13>>
       <!-- Nov w3 -->
-	    week 13 todo [[Part15Week]]
+      <<include [[Part15BabyJobsRelationships]]>>
     <<case 14>>
       <!-- Nov w4 Thanksgiving-->
-	    week 14 todo [[Part15Week]]
+
+	    (to be continued week 14)
     <<case 15>>
       <!-- Dec w1 -->
-	    week 15 todo [[Part15Week]]
+      <h1>To be continued...</h1>
+      <<set $TO_BE_CONTINUED to 1>>
+	    (to be continued week 15)
     <<case 16>>
       <!-- Dec w2 -->
-	    week 16 todo [[Part15Week]]
+	    (to be continued week 16)
     <<default>>
-      todo start of winter break 
+      (to be continued start of winter break)
   <</switch>>
 <</nobr>>
 
@@ -3965,6 +3967,13 @@ TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
   <<else>>
     Maybe whoever [[you'll be sharing a dorm room with|Part15Dorm]] this year will be able to help you stay on track.
   <</if>>
+<</nobr>>
+
+::Part15WomensStudies2
+TODO Follow on women's study professor
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15LivingMotherApt
@@ -7574,29 +7583,128 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
 <</nobr>>
 
 ::Part15Greek
-TODO Sorority stuff if in one, frat part, etc. [[Part15Week]]
+<<nobr>>
+  <<if $SororityDTD>>
+    <<include [[Part15PartyDTD]]>>
+  <<elseif $SororitySEX>>
+    <<include [[Part15PartySEX]]>>
+  <<elseif $SororityELP>>
+    <<include [[Part15SororityELP2]]>>
+  <<else>>
+    <<include [[Part15FratParty]]>>
+  <</if>>
+<</nobr>>
+
+::Part15PartyDTD
+TODO DTD Party w/ guys, you with bf/gf if have one
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15PartySEX
+TODO SEX Party, wild, you with bf/gf if have one
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15SororityELP2
+TODO Another ELP charity project (be careful if had an incident last time)
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+::Part15FratParty
+  TODO frat party, optionally sex with your bf/gf  afterwards if have one
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
 
 ::Part15Study
-TODO Studying or try but fail to study [[Part15Week]]
+<<nobr>>
+  <h1>Trying to read</h1>
+  <img src="Part15/Study1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You are caught up for now with all your current classes.  You are taking a little time between classes to start reading the
+  biography on
+  <<if $Major == "Engineering">>Ada Lovelace
+  <<elseif $Major == "Fashion Design">>Coco Chanel
+  <<elseif $Major == "Agriculture">>Robyn Van En
+  <<elseif $Major == "Child Care" or $Major == "Education">>Maria Montessori
+  <<elseif $Major == "Criminal Justice">>Ruth Bader Ginsburg
+  <<elseif $Major == "Health Sciences">>Elizabeth Blackwell
+  <<elseif $Major == "Library Sciences">>Margaret Mann
+  <<elseif $Major == "Nursing">>Florence Nightingale
+  <<elseif $Major == "Business">>Sheryl Sandberg
+  <<else>>Sheryl Sandberg<<set $Major to "Business">>
+  <</if>>
+  that your advisor recommended.
+<</nobr>>
+
+<<nobr>>
+  Your advisor was right. You've barely started and you are already excited to read more about her and all she did to affect the field of
+  <<print $Major.toLowerCase()>>.  But you don't get very far before [[you are interrupted|Part15Study2]].
+<</nobr>>
+
+::Part15Study2
+<<nobr>>
+  <h1>Interrupted</h1>
+  <img src="Part15/Study2.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  It's hardly the first time, but it's just as annoying every time.  You are starting to get engrossed in your book, but some guy
+  decides to interrupt.
+<</nobr>>
+
+<<nobr>>
+  You do your best to ignore his "Hey Beautiful" and similar comments at first, but it's not working.  Eventually you look up from
+  your book to respond to him.  "Do you need something?", you say annoyed.
+<</nobr>>
+
+<<nobr>>
+  "Just your phone number," he says either not realizing or not caring how annoyed you are.
+<</nobr>>
+
+<<nobr>>
+  "I'm not giving you my phone number," you say flatly.
+  <<if setup.haveGirlfriend()>>
+    "Even if I didn't have a girlfriend, I wouldn't want to
+  <<elseif $dating.length>>
+    "Even if I didn't have a boyfriend, I wouldn't want to
+  <<else>>
+    "There's no way I'd
+  <</if>>
+  give my number to someone like you.  I was minding my own business, trying to read.  Why can't you just let me read my book in peace."
+<</nobr>>
+
+<<nobr>>
+  "Well fuck you then," he says quickly turning angry.
+  <<if $BodyType == "Plus">>
+    "I just felt sorry for you.  I never would have bothered if I knew that you were such a fat,
+  <<else>>
+    "I was just trying to pay you a compliment. I never would have bothered if I knew that you were such a 
+  <</if>>
+  <<if setup.haveGirlfriend()>>
+    man-hating
+  <<else>>
+    frigid
+  <</if>>
+  bitch!"
+<</nobr>>
+
+<<nobr>>
+  You usally handle guys like him more gently.  Not that you don't want to tell them all off, but you're afraid how they will react.
+  Luckily things don't escalate and he leaves and walks on, probably to annoy someone else.
+<</nobr>>
+
+<<nobr>>
+  But now you are too on edge to keep reading.  It will have to wait [[until another day|Part15Week]].  You put your book in your
+  bag and head towards you next class a bit early.
+<</nobr>>
 
 ::Part15Halloween
 TODO Halloween [[Part15Week]]
-
-
-::Part15Notes
-TODO TO BE CONTINUED...
-- Update mentor and roommate
-- You are a freshman's buddy
-
-Changes to previous
-  - Dylan holding onto the key
-  - Add back an art option that doesn't have to end
-
-October
-  - Halloween
-November
-  - Thanksgiving
-December
-  - Christmas
-
-

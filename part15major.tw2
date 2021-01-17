@@ -38,7 +38,7 @@
     <<set $Major to "Engineering">>
     <br><br>
     <<include [[Part15BackToMain]]>>
-  <<elseif true or $JobCheerleader or $JobCheerleaderFundraiser>>
+  <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
     <br><br>
     <img src="Part15/Major3.jpg" hspace="30" vspace="10" height="600" align="left">
     You enjoy cheerleading, but you know there aren't that many jobs as professional cheerleaders.  You aren't holding out any hopes
@@ -105,7 +105,11 @@
     <img src="Part15/Major9.jpg" hspace="30" vspace="10" height="600" align="left">
     <br><br>
     It's not like you can keep being a 'tester' for the engineering department after graduation, even if you wanted to.  And
-    having a job that didn't take control of your orgasms would be nice anyway.  You'll need to figure out what you want to
+    having a job that didn't take control of your orgasms would be nice anyway.
+    <<if $JobBarista>>
+      And you don't want to be a barista the rest of your life either.
+    <</if>>
+    You'll need to figure out what you want to
     do after college.
     <br><br>
     Most of your general classes are out of the way, so you'll have to decide on a major.
