@@ -274,7 +274,7 @@
     you are sure the production assistant's job is secure.
     <br><br>
     As Robert drives you [[back home|Part15Begin]], you both chuckle bit imagining the poor, reluctant production assistant
-    and the double pentration scene he endured.  He clearly didn't enjoy those as much as you did.
+    and the double penetration scene he endured.  He clearly didn't enjoy those as much as you did.
   <<else>>
     You are filming one final scene today.  You thought you were good with your decision to 'retire' from porn, but it
     seems the stress of everything was getting to you more than you thought.
@@ -1464,6 +1464,7 @@
 <<nobr>>
 	<h1>Happy with your decision</h1>
   <img src="Part15/Ministry2.jpg" hspace="10" vspace="10" height="500">
+  <<set $MinistryBeltDecline to 1>>
 <</nobr>>
 <<nobr>>
   The thought of knowing <<if $sex.length>>you<<else>>your virginity<</if>> would be safe, both from someone taking advantage of you, and even from a
@@ -1708,7 +1709,7 @@
 <</nobr>>
 
 <<nobr>>
-  "We'll also be needing your technical expertise to test the belt's security.  We think it's secure, but we need you to perform some pentration
+  "We'll also be needing your technical expertise to test the belt's security.  We think it's secure, but we need you to perform some penetration
   testing on it."  He chuckles at his little pun.  "Do you think you are up to that?" he asks.
 <</nobr>>
 
@@ -2873,15 +2874,10 @@ TODO Have second trimester visit (ultrasound), then [[Part15WeekStandard]]
 TODO Have third trimester visit, then [[Part15WeekStandard]]
 
 ::Part15Delivery
-TODO Having the baby now 
+TODO Having the baby now [[Part15WeekStandard]]
 
-::Part15Week
+::Part15WeekNoAdvance
 <<nobr>>
-  <<if $tempNoAdvanceWeek>>
-    <<unset $tempNoAdvanceWeek>>
-  <<else>>
-    <<set setup.advanceWeek()>>
-  <</if>>
   <<if $AcademicProbation and $AcademicProbationEndWeek and $AcademicProbationEndWeek <= $SchoolWeek>>
     <<include [[Part15OffProbation]]>>
   <<elseif $PregnancyWeek >= 40 or ($PregnancyWeek == 39 and Math.random() < 0.2) or ($PregnancyWeek == 38 and Math.random() < 0.1) or ($PregnancyWeek == 37 and Math.random() < 0.1)>>
@@ -2894,6 +2890,42 @@ TODO Having the baby now
     <<include [[Part15FirstTrimester]]>>
   <<else>>
     <<include [[Part15WeekStandard]]>>
+  <</if>>
+<</nobr>>
+
+::Part15Week
+<<nobr>>
+  <<set setup.advanceWeek()>>
+  <<include [[Part15WeekNoAdvance]]>>
+<</nobr>>
+
+::Part15OffProbation
+<<nobr>>
+  <<unset $AcademicProbationTutorSex>>
+  <<unset $AcademicProbationDenial>>
+  <<unset $AcademicProbation>>
+  todo Remove from academic probation
+<</nobr>>
+
+TODO [[Part15WeekNoAdvance]]
+
+::Part15AcademicProbationFollowUp
+TODO Followup on academic probation
+
+::Part15WeekStandard
+<<nobr>>
+  <<if $AcademicProbation>>
+    <<if $SchoolWeek == 2>>
+      <<include [[Part15Probation1]]>>
+    <<elseif $AcademicProbationTutor == "math">>
+      <<include [[Part15TutorFollowupMath]]>>
+    <<elseif $AcademicProbationTutor == "maid">>
+      <<include [[Part15TutorFollowupMaid]]>>
+    <<else>>
+      <<include [[Part15TutorFollowupClean]]>>
+    <</if>>
+  <<else>>
+    <<include [[Part15WeekByWeek]]>>
   <</if>>
 <</nobr>>
 
@@ -2916,33 +2948,6 @@ TODO Having the baby now
     <<else>>
       You are feeling nauseous today.
     <</if>>
-  <</if>>
-<</nobr>>
-
-::Part15OffProbation
-<<unset $AcademicProbationTutorSex>>
-<<unset $AcademicProbationDenial>>
-<<unset $AcademicProbation>>
-<<unset $tempNoAdvanceWeek>>
-todo Remove from academic probation [[Part15Week]]
-
-::Part15AcademicProbationFollowUp
-TODO Followup on academic probation
-
-::Part15WeekStandard
-<<nobr>>
-  <<if $AcademicProbation>>
-    <<if $SchoolWeek == 2>>
-      <<include [[Part15Probation1]]>>
-    <<elseif $AcademicProbationTutor == "math">>
-      <<include [[Part15TutorFollowupMath]]>>
-    <<elseif $AcademicProbationTutor == "maid">>
-      <<include [[Part15TutorFollowupMaid]]>>
-    <<else>>
-      <<include [[Part15TutorFollowupClean]]>>
-    <</if>>
-  <<else>>
-    <<include [[Part15WeekByWeek]]>>
   <</if>>
 <</nobr>>
 
@@ -3970,11 +3975,924 @@ TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
 <</nobr>>
 
 ::Part15WomensStudies2
-TODO Follow on women's study professor
+<<nobr>>
+  <h1>Going over the Women's Studies class survey results</h1>
+  <img src="Part15/Class3.png" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  Today in your Women's Studies class, your professor has the results of the survey she had the female-identifying students in your class,
+  and many other students, take earlier in the semester.  "I have compiled the results of the survey and his confirmed some of my suspicions,"
+  she begins.
+<</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  "Nationwide, if you exclude universities with a strong religious focus, then 21% percent of undergraduate women have never had sex before,"
+  she informs the class. "That number drops to 10% if you concentrate solely on long-term or permanent X-Change users.  The possible reasons
+  for that difference is an entire topic of discussion itself, but not one we'll be addressing today.
 <</nobr>>
+
+<<nobr>>
+  "However, as you can see on this graph, the numbers are much different here at this university.  Only 5% of the women surveyed reported
+  never having had sex before, and only a single one of the X-Change respondants reported that way.  Just one, out of several hundered
+  X-Change users that responded."
+  <<if $CampusMinistryFailFall2>>
+    You blush, knowing that it's you that she is referring to.  Not that it's true anymore though.
+  <<elseif $sex.length == 1 and $sex[0].anon == 'Rapist'>>
+    You cringe, knowing that it's you that she is referring to.  You know it's no longer true though, and not by your choice.
+  <<elseif $sex.length > 5>>
+    You smile a bit, knowing that certainly wasn't you she was talking about.
+  <<elseif $sex.length>>
+    You listen, wondering who the one X-Change users was, if it's someone you know from the program.
+  <<else>>
+    You blush, knowing that it's you that she is referring to.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "There were several others that identified as heterosexual and reported never having had intercourse, but having had a great deal of
+  experience with oral sex, but only on the giving end of it, never having been the recipient.  From some of the free-response answers I
+  suspect there may be an unusually high prevalence of BDSM activity at the university, but I didn't ask any specific questions to tease
+  out that detail.  It will have to be something to explore in the future.
+<</nobr>>
+
+<<nobr>>
+  "If the large discrepancies between this university and the national averages were the only findings from the survey, it would be interesting,
+  but perhaps explainable by the repretation the university has developed, and the sort of students that might attract.  However, there were
+  some [[more troubling findings|Part15WomensStudies3]] from the survey as well."
+<</nobr>>
+
+::Part15WomensStudies3
+<<nobr>>
+  <h1>Troubling results</h1>
+  <img src="Part15/Class3.png" hspace="10" vspace="10" height="300" align="left">
+  "I've also find a distubing level of workplace sexual activity in the survey results," you professor continues.  "The vast majority of jobs,
+  for young women at least, at the university and nearby, seem to have an sexual component.  While sex among coworkers can be common in your
+  age group, this goes far, far beyond that.
+<</nobr>>
+
+<<nobr>>
+  "There were many, many reports of inappropriate sexual relationships between students and professors, and between students and their
+  bosses.  It isn't clear to what extent the university is aware of these activitiy and doing nothing, or whether they are just not
+  aware of it.
+<</nobr>>
+
+<<nobr>>
+  "There was a somewhat higher than normal of respondants that reported prostituion or other forms of adult entertainment as their primary
+  source of income.  However, of more concern are the other jobs, especially those from the university itself.
+<</nobr>>
+
+<<nobr>>
+  "There seems to be numerous young women being paid primarily to provide sexual services to the university's athletes.  Presumably young
+  men as well, from the reports of some of the female athletes that responded.  
+<</nobr>>
+
+<<nobr>>
+  "Many cheerleaders reported sex with athletes as well, though this is not surprising.  Of concern though, is that some of them seem to
+  be engaging in what sounds like prostitution for the benefit of the universities athletic program!
+<</nobr>>
+
+<<nobr>>
+  "The sexual services for athletes and donors is a clear violation of NCAA rules, and I would expect several state laws as well.
+  Ordinarily this would be my biggest concern.  However there is something [[much more troubling|Part15WomensStudies4]] that seems
+  to be going on.
+<</nobr>>
+
+::Part15WomensStudies4
+<<nobr>>
+  <h1>Troubling reports about the Engineering department</h1>
+  <<if $JobEngineer or $JobEngineerLock or $JobTestSubject or $JobBetaTester or $JobTestSubjectFormer or $JobEngineerFormer or $JobEngineerOld>>
+    <<set $tempEngineeringDeptJob to 1>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  "And then there's university's Engineering department..." she pauses for a moment.  "The Engineering department seems to be experimenting
+  on students - female students primarily.  From the survey responses it isn't clear what their goals are.  And they haven't filed their
+  study protocols with the universities IRB, as would be required at any other institution engaging in human research.  In fact the
+  university doesn't even seem to <i>have</i> an IRB. 
+<</nobr>>
+
+<<nobr>>
+  "Most of the free-form responses regarding the department report young women being physically restrained then sexually stimulated for
+  an extended period of time. The young women are then either forced to orgasm repeatedly, or prevented from orgasming altogether.  There
+  are also a couple reports of the department attempting to impregnant test subjects, or at least telling them that they are.
+<</nobr>>
+<video src="Part13/Engineer1.webm" autoplay loop muted height="500"></video>
+<<nobr>>
+  <<if $tempEngineeringDeptJob>>
+    Your mind wanders as you remember some of the experiments she's referring to.
+  <<else>>
+    Your mind wanders as you imagine the experiments they might be doing over there.
+    <<if $PlayerSideEffectSubmissive>>
+      You fantasize about going over and seeing if you can volunteer.
+    <<else>>
+      You are starting to get wet imagining what it'd be like to orgasm over and over and not be able to stop it.
+    <</if>>
+  <</if>>
+  <<if $JobBetaTester or $PlayerChastityBelt or $MinistryBeltDecline>>
+    But you quickly focus and listen more carefully when you hear her mention 'chastity belts'.
+  <</if>>
+  "And there are also responses regarding 'chastity belts' being worn.  These seem closely correlated to those involved with the Engineering
+  department.  Though from the limited questions in this regard it's not clear how this relates.
+<</nobr>>
+
+<<nobr>>
+  "If any of you have any personal experience working with the Engineering department and would like to share it with me so I can get to the
+  bottom of whatever is going on there, please see me during my office hours, or if you prefer, email me and we can arrange a place and time
+  to meet off campus."
+<</nobr>>
+
+<<nobr>>
+  <<if $JobBetaTester == "chaste">>
+    You don't know about the experiments she is talking about, but you do know about the chastity belts she mentioned.
+    You could arrange to meet with her and tell her about yours, but you signed those non-disclosure agreements.
+    You wouldn't want to violate any rules and have them take your belt away.
+    "<b><i>I am not capable of controlling my sexual urges. I need to be locked in my chastity belt to protect me
+    from my urges</i></b>," you think.  Then you think "<b><i>I can't be trusted to decide when I orgasm.  My orgasms
+    should be a rare and precious gift.</i></b>"  Your mind drifts away to thoughts of your husband unlocking you on
+    your honeymoon.
+    <br><br>
+    When you start to focus again, you wonder what came over you.  Maybe it would be good to
+    [[talk to your professor|Part15WomensStudiesTalkChastityChaste]] so she knows it's not as bad as she thinks.  You could also
+    stop by the department and [[talk to the department head|Part15WomensStudiesReport]].  Maybe if he knew your professor was
+    concerned, he could tell her about the wonderful work they are doing.  Or you could just [[stay out of it|Part15WomensStudiesQuiet]].
+  <<elseif $tempEngineeringDeptJob>>
+    You know exactly the experiments she's talking about.  You could arrange to meet with her and
+    [[tell her all you know|Part15WomensStudiesTalkTesting]] about what is going on in the Engineering department.  The survey was anonymous,
+    so she doesn't know you were one of the students working with them, or you could just [[keep quiet about it|Part15WomensStudiesQuiet]].
+    You could also stop by the department and [[warn the department head|Part15WomensStudiesReport]]
+    that she is investigating them.
+  <<elseif $MinistryBeltDecline>>
+    You don't know about the experiments she is talking about, but you were offered one of the chastity belts she mentioned.
+    Since you turned down the offer, you don't have anything more to tell her about them though.  From hearing the other
+    things the department is doing, you think you made the right decision not getting involved with them.
+    You hope some of the students that know more come forward and help her get to the bottom of all this.
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<elseif $CampusMinistry or $dating.length>>
+    You don't know about the experiments she is talking about or the belts.  But that department sounds like a real menace.
+    You hope some of the students that know more come forward and help her get to the bottom of all this.
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<elseif $PlayerChastityBelt>>
+    You don't know about the experiments she is talking about, though your are horny enough right now you'd be tempted to
+    volunteer for that forced orgasm experiment if you could.  You certainly know about chastity belts, though not from
+    the Engineering department.  But overall, it sounds like that department is menace. You hope some of the students that
+    know more come forward and help her get to the bottom of all this.
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<else>>
+    You don't know about the experiments she is talking about, but you can't help thinking about them.
+    Despite how bad she says they are, the thought of being tied and forced to orgasm sounds
+    <<if $PlayerSideEffectSubmissive>>amazing.<<else>>fun.<</if>>
+    Maybe you could stop by the department and [[tell them you heard rumors|Part15WomenStudiesAskAbout]] about girls having a
+    lot of fun there. You could have an exciting time and lots of orgasm, then report back what you find out.  Or you could just
+    [[stay out of it|Part15WomensStudiesQuiet]] and wait to see what she finds out.
+  <</if>>
+<</nobr>>
+
+::Part15WomensStudiesTalkTesting
+<<nobr>>
+  <h1>Telling her about the testing</h1>
+  <<if $JobEngineerLock>>
+    You know your belt can listen on what you say, so you don't want to trigger anything by say the wrong words.  You also don't
+    trust that there isn't spyware installed with the belt software on your phone.
+  <<elseif $JobBetaTester>>
+    With all the things that got installed on your phone when you setup your belt, you don't trust that they aren't monitoring
+    your emails.
+  <<else>>
+    You know the information you have is under that non-disclosure agreement you signed, and you don't want to have evidence in
+    your email that you are about to violate it.
+  <</if>>
+  So you are very vague in your email, just mentioning that you want to "come by your office hours to discuss some
+  issues you had with the topic brought up in today's class."  She seems to grasp your concern and arranges a time when there won't
+  be many others in the building.
+  <<if $JobEngineerLock or $JobBetaTester>>
+    <br><br>
+    As soon as you close the door to her office, you make a "shh" sign with your finger and mouth, and then show her your belt.
+    You write on her whiteboard:
+    <<if $JobEngineerLock>>
+      "The belt can listen to what I say!"
+    <<else>>
+      "I've heard the belt can listen to what I say."
+    <</if>>
+    You then write several code words you and her should use to make it sound like you are talking about something else.
+    As you talk with her about the engineering department, you occasionally go to the whiteboard whenever you want to 'say' something
+    you think the belt might pick up on.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $JobEngineer or $JobEngineerLock or $JobEngineerFormer or $JobEngineerOld>>
+    <<include [[Part15WomensStudiesTalkTestingEngineer]]>>
+  <<else>>
+    <<include [[Part15WomensStudiesTalkTestingSubject]]>>
+  <</if>>
+<</nobr>>
+
+::Part15WomensStudiesTalkTestingSubject
+<<nobr>>
+  <<if setup.haveFucked('Remote Tester')>>
+    <video src="Part6/SpecialProject3.mp4" autoplay loop muted height="450"></video>
+  <<else>>
+    <video src="Part3/JobEngineer7.webm" autoplay loop muted height="450"></video>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "They were paying me.  But I thought what they were doing as legitimate science," you start.  "And I'll admit it was fun,
+  sometimes at least."  You proceed to tell her about how they'd usually strap you down so you were bound, helpless, and
+  unable to move.  Sometimes blindfolded or gagged too.  Then they'd attach things to your nipples, fuck you with machines,
+  stimulate your clit.  You tell her it was different almost every time.
+<</nobr>>
+
+<<nobr>>
+  "Sometimes they'd keep me on the edge for an hour and not let me orgasm, then make me walk out horny and desperate.  Other times, they'd
+  make me come so many times I'd barely be able to walk at all when I left."
+<</nobr>>
+
+<<nobr>>
+  "Sometimes they'd leave the room, but I know they were watching and listening, and recording from somewhere.  Other times they'd stay
+  in the room and control part of it themselves.  Or they'd just be there waiting for me to beg.  Sometimes it'd be begging to be able to
+  orgasm, other times it'd be begging for them to make it stop.  Usually they'd just ignore my pleas, but other times they'd give me
+  what I wanted, but only after I sucked their cock."
+<</nobr>>
+
+<<nobr>>
+  <<if setup.haveFucked('Remote Tester')>>
+    Then you tell her about the 'special project' from last Halloween.  "They promised $500 and orgasms, but once I was bound and
+    unable to remove, they told me I was supposed to try not to orgasm if I didn't want them to take money away or punish me in other ways.
+    Then they had guys on the internet some were fuck some toy and the machine would fuck me to match what they were doing.
+    <br><br>
+    <<if $SpecialProjectMoney == 500>>
+      I did get the $500, but only because I managed not to orgasm.  Still, $500 for a couple hours of frustration wasn't a bad deal for me.
+      I heard it wasn't such a great deal for some of the other girls.
+    <<else>>
+      <<if $SpecialProjectMoney >= 400>>
+        I did end up getting <<print '$'>>$SpecialProjectMoney out of it.
+      <<else>>
+        I only ended up getting <<print '$'>>$SpecialProjectMoney out of it.
+      <</if>>
+      <<if $ProjectPunishmentDenial>>
+        But for one of their punishments for orgasming, they put something on my clit and inside me, and I couldn't cum for over a month!
+      <</if>>
+      <<if $ProjectPunishmentBirthControl>>
+        I had a birth control feature on my X-Change implant, and they turned it off - permanently, as a punishment for orgasming.
+      <</if>>
+      <<if $ProjectPunishmentFertile>>
+        As another punishment they changed my X-Change implant make me much more fertile than normal.  And now I can't even use birth control
+        pills.
+      <</if>>
+      <<if $ProjectPunishmentCorporal>>
+        They punished me after they were done fucking me too.  They tied me to a post and whipped my breasts.  Then they put something on
+        them where I couldn't wear anything, a bra, a shirt, or anything, for over a week.  And I had to go to class and everywhere else
+        like that!
+      <</if>>
+      <<if $ProjectPunishmentSemen>>
+        <br><br>
+        And what you heard about them trying to impregnate students is true too.  After I came too many times, they started using real
+        semen instead of their fake lube stuff.
+        <<if setup.specialProjectPossibleImpregnated()>>
+          And I did get pregnant around that same time, so I don't think they were bluffing about it either.
+        <<else>>
+          Or at least that's what they said they were doing.
+        <</if>>
+      <</if>>
+    <</if>>
+  <<else>>
+    And I think I was almost one of those girls they tried to impregnant.  There was some special project they emailed about
+    that promised $500 and orgasms.  From what I heard other girls say, they were fuck by some machine controlled remotely over the
+    internet, and punished if they orgasmed.  But all I have is an email and rumors, since I didn't join in.
+  <</if>>
+<</nobr>>
+    
+<<nobr>>
+  You also go over the new
+  <<if $JobBetaTester>>
+    [[chastity belts|Part15WomensStudiesTalkChastity]]
+  <<else>>
+    [[chastity belts|Part15WomensStudiesTalkTestingSubjectChastity]]
+  <</if>>
+  the department is testing now.
+<</nobr>>
+
+::Part15WomensStudiesTalkTestingEngineer
+<<nobr>>
+  <video src="Part3/JobEngineer4.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+<<nobr>>
+  You start telling her, "I didn't know they were violating any rules.  I thought what I was doing was legal, and for science."
+  She listens and doesn't offer any forgiveness or condemnation as you continue with your confession.  "I thought we were making products
+  to make women's lives better, more fun, and pleasurable.  Maybe they still are, even if they aren't following review board rules like they
+  should." 
+<</nobr>>
+
+<<nobr>>
+  You start telling her about all the testing you've done while you worked in the engineering department.  Binding women to equipment, then
+  sometimes forcing them to orgasm, other times keeping them on the edge and denying them for the entire session.  You tell her how some of
+  the machines were even your own designs.
+<</nobr>>
+
+<<nobr>>
+  "But they were all volunteers," you stress.  "And I wouldn't testing anything on them that I wouldn't use myself.  In fact, I've been
+  in their place many times."  You start telling her about your experiences being bound to one of your own creations, or one of your
+  coworker's creations.  Or just being bound and fucked at the end of a shift when you are all so horny from watching the testing all
+  day.
+<</nobr>>
+
+<<nobr>>
+  When she asks about the purpose of the testing you tell her that there are several different teams working on different things, so there
+  may be other things going on too.  But you know they are testing the difference between orgasms in natural-born women and those that
+  took X-Change.  You also know they are testing the equipment's ability to detect when an orgasm is approaching.  And, of course, just
+  general testing for how enjoyable various products are.
+<</nobr>>
+
+<<nobr>>
+  You and her go over in great detail all the different tests and products you are aware of, how they've been tested on students, and how
+  the subjects have no 'safeword' to end an experiment before the session's time is up.
+<</nobr>>
+
+<<nobr>>
+  You also go over the new [[chastity belts|Part15WomensStudiesTalkTestingSubjectChastity]] the department is testing now.
+<</nobr>>
+
+::Part15WomensStudiesTalkTestingSubjectChastity
+<<nobr>>
+  <h1>Telling her about the computerized chastity belts</h1>
+  <<if $JobBetaTester>>
+    <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+    <img src="Part11/Chastity1.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <<if $JobBetaTester>>
+    With all the stuff they had you put on your phone when you installed the belt's app, you don't trust that they can't
+    read your emails.  So you are very vague in your email, just mentioning that you want to "come by your office hours to discuss
+    some issues you had with the topic brought up in today's class."  She seems to grasp your concern and arranges a time when there
+    won't be many others in the building.
+    <br><br>
+    As soon as you close the door to her office, you make a "shh" sign with your finger and mouth, and then show her your belt.
+    You write on her whiteboard: "The belt listens to what I say!"
+    You then write several code words you and her should use to make it sound like you are talking about something else.
+    <br><br>
+    You then go on to tell her about your experiences with the belt, using your code words and the whiteboard as needed.  You let her
+    know about how your belt keeps you so horny
+    <<if $JobBetaTester == "monogamous">>
+      whenever you are near $dating[0].
+    <<else>>
+      all the time.
+    <</if>>
+    <<if $DailyBJMinimum>>
+      You write that if you don't give <<if $JobBetaTester == "monogamous">>him<</if>> at least
+      <<if $DailyBJMinimum == 1>>one blowjob<<else>>$DailyBJMinimum blowjobs<</if>>
+      every day, your belt punishes you.
+      "I don't mind though, I love sucking <<if $JobBetaTester == "monogamous">>$dating[0]'s<</if>> cock," you say
+      excitedly.
+    <</if>>
+    TODO is belted
+  <<else>>
+    "Now they are testing some sort of computer chastity belt," you tell her.  "I quit rather than let them put one of those on me.
+    So all I know is what they said at the meeting."
+    <br><br>
+    "They said this one wasn't like regular chastity belts, and could also get you off, if they wanted it to.  They promised an orgasm
+    the first day if you put one on.  That sounded like a trap to me.  Some of the girls on academic probation couldn't resist the
+    chance though.  Some of the other girls either just want the money, or like the idea of being controlled, or for whatever reason said yes."
+    <br><br>
+    Your professor sighs when you mention academic probation.  She must have already heard what happens to the X-Change girls who are
+    struggling with their grades.  You continue on about the belt.  "They wouldn't tell much more until you signed an NDA, and put on a belt,
+    so that's all I know about it."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  After much more discussion with her, she thanks you for your honesty and lets you know how she
+  [[plans to proceed|Part15WomensStudiesPlan]] with the information you've given her.
+<</nobr>>
+
+::Part15WomensStudiesTalkTestingEngineerChastity
+<<nobr>>
+  <h1>Telling her about the computerized chastity belts</h1>
+  <<if $ComputerChastityOwner>>
+    <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+    <img src="Part11/Chastity1.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
+  You tell her about the chastity belts the department is testing now, and how they plan on marketing them very soon.
+  <<if $ComputerChastityOwner>>
+    "I was doing security testing on it until recently," you tell her.  "So, I've been wearing it for most of the semester."
+    You tell her how you were forced to start testing it if you wanted to stay in the Engineering program after you got on
+    academic probation, and how you thought you would go insane.  "My boyfriend is in full control now though, which I like
+    <i>a lot</i> more."
+  <<elseif $JobEngineerLockFormer>>
+    "I was doing security testing on it until recently," you tell her.  "So, I've been wearing it for most of the semester."
+    You tell her how you were forced to start testing it if you wanted to stay in the Engineering program after you got on
+    academic probation, and how you thought you would go insane.  "I'm so happy I'm done with that testing now."
+  <<else>>
+    "I been compiling most of the belt status reports, and user comments coming back.  The majority of the testers seem insanely
+    horny all the time.  And most of their comments are them begging for an orgasm, and offering to do anything for me if I
+    give them one." You pause and add, "I can't even if I wanted to.  The department head and the project manager control all
+    that.  I just write up the reports."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "The belts have several different modes.  There's a 'monogomous' mode meant to be used by couples.  There's a 'chaste' mode
+  that is intended for those wanting to wait until marriage for sex - they don't have many testers for that one.  The standard
+  mode is the one most are on, and it keeps them horny all the time.  It also makes them want to give blowjobs, lots of blowjobs."
+  You recount some of the crazy reports you've written up on the number of blowjobs some of the users have given in hopes of thier
+  next 'reward' orgasm.
+<</nobr>>
+
+<<nobr>>
+  You also mention that there's a timed 'self-lock' mode that isn't being tested right now, and several other modes you don't know
+  much about.
+<</nobr>>
+
+<<nobr>>
+  When she asks about women that want to exit the testing program, you let her know that they don't.  You know of a few that requested it,
+  but their belt's "Complaint Detection" systems were activated and they stopped complaining to avoid the punishments from the belt.
+  You then go into a discussion of the various punishments the belt can inflict on whatever it's current mode considers 'bad' behaivor.
+<</nobr>>
+
+<<nobr>>
+  After much more discussion with her, she thanks you for your honesty and lets you know how she
+  [[plans to proceed|Part15WomensStudiesPlan]] with the information you've given her.
+<</nobr>>
+
+::Part15WomensStudiesTalkChastityChaste
+<<nobr>>
+  <h1>Telling her about your belt</h1>
+  <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="650" align="left">
+  You stop by your professor's office during her normal office hours.  "Can I speak with you a moment about the Engineering
+  department?" you ask her.  She invites you in, and after you close her office door, you lift up your top to show her the belt you
+  are wearing.
+<</nobr>>
+
+<<nobr>>
+  "I don't know anything about those other tests you were talking about, but I do know something about the Engineering department, and
+  they don't seem as bad as you were saying.
+<</nobr>>
+
+<<nobr>>
+  "I'm the one X-Change student in your survey that is still a virgin," you tell her.  "And I probably wouldn't be if the engineering
+  department hadn't let me wear this.  Last year was such a struggle to resist all the urges my new body had, but I somehow managed.
+  When I heard the Engineering department had something that could help me, I met with them right away.
+<</nobr>>
+
+<<nobr>>
+  "I was a little nervous at first, because I thought chastity was something horny guys did."  You blush a bit and try to explain.
+  "I was search on the internet on 'how to remain chaste'.  I kept getting results about guys, or their girlfriends, locking their...
+  you know... in a cage, so they couldn't touch themselves.  The guys then usually ended up having sex, just not..."
+<</nobr>>
+
+<<nobr>>
+  "Penetration?" she finishes for you when she sees you struggling to finish your sentence.
+<</nobr>>
+
+<<nobr>>
+  "Right.  Or at least not the normal kind," you respond.  "They still do stuff with the girlfriends though, or their girlfriends
+  do stuff to them." You don't want to go into more detail about what you saw with the girlfriends using toys on their boyfriends.
+  "Or sometimes their girlfriends do stuff with other guys, somethings both of them do stuff with other guys together."
+<</nobr>>
+
+<<nobr>>
+  "But anyway, that definitely wasn't what I was wanting.  But when I talked to them about this belt, they assured me that it
+  would prevent me from doing anything with my mouth, or... or my butt.  Then I'd be able to stay a real virgin."
+<</nobr>>
+
+<<nobr>>
+  "So I take it you like your belt, and don't want out of then?" [[she asks|Part15WomensStudiesTalkChastityChasteNo]].
+<</nobr>>
+
+::Part15WomensStudiesTalkChastityChasteNo
+<<nobr>>
+  <h1>Confirming you belong in your belt</h1>
+  <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="400" align="left">
+  "No, I definitely don't want out of my belt," you say quickly. "<b><i>I am not capable of controlling my sexual urges.
+  I need to be locked in my chastity belt to protect me from my urges</i></b>," you think.  Then you think "<b><i>I can't
+  be trusted to decide when I orgasm.  My orgasms should be a rare and precious gift.</i></b>"
+<</nobr>>
+
+<<nobr>>
+  She looks at you oddly after your response, but doesn't say anything for a moment.  Then she say, "From your talk of desires
+  and urges, I assume you aren't asexual.   Are you interested in a romantic relationship, or marriage eventually?"
+<</nobr>>
+
+<<nobr>>
+  "Of course, I want to get married some day, when I meet the right man," you answer excitedly. "<b><i>I am committed to staying chaste
+  until I am married</i></b>," you add.
+<</nobr>>
+
+<<nobr>>
+  "And once you are married?" she asks.
+<</nobr>>
+
+<<nobr>>
+  "<b><i>Sexual desire is natural and a wonderful part of a healthy marriage</i></b>," you say. "<b><i>But, I am not capable of controlling
+  my sexual urges. My orgasms should be a rare and precious gift.</i></b>"
+<</nobr>>
+
+<<nobr>>
+  She's looking at you oddly again.  You wonder if she is thinking you will be a horrible, frigid wife, never having sex with her husband.
+  "<b><i>I am learning how to give pleasure to my future husband with my belt still on</i></b>," you say.  "<b><i>He will only ever
+  need to unlock me if he wants to impregnante me</i></b>," you say before adding, "though of course he can unlock me any other time
+  he wants to be inside me too."  You bite your lower lip imagining your future wedding night again.
+<</nobr>>
+
+<<nobr>>
+  "I see," you professor says.  "If you are comfortable with discussing it, please tell me more about how you are learning to
+  'give pleasure' given the restrictions of your belt."
+<</nobr>>
+
+<<nobr>>
+  You tell her all about the special toy they gave you, and how it helping you learn how to service your future husband.  You also tell
+  her about how you are learning to keep yourself clean for him, so he'll be able to use the parts of your body that aren't locked whenever
+  he wants.
+<</nobr>>
+
+<<nobr>>
+  She asks you a number of other questions, some of them embarrassing ones.  Still you do your best to answer.  Finally she seems to be
+  done with her questions and [[starts responding|Part15WomensStudiesTalkChastityChasteNo2]] to what you have told her.
+<</nobr>>
+
+
+
+::Part15WomensStudiesTalkChastityChasteNo2
+<<nobr>>
+  <h1>Your professor's interpretation</h1>
+  <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="500" align="right">
+  "Well, while it does sound like you volunteered for the belt you are in, and aren't actively seeking to be free of it,"
+  she starts.  "I don't think your will is fully your own at this point.
+<</nobr>>
+
+<<nobr>>
+  "Many of your responses seem to be learned, reflexive answers.  I suspect part of the 'training' you mentioned is also conditioning
+  you to be subservient, docile, and unquestioning of being locked in chastity.
+<</nobr>>
+
+<<nobr>>
+  Frankly, this sort of brainwashing is even more disturbing than the sexual experimentation that I'd already heard about from this
+  department."
+<</nobr>>
+
+<<nobr>>
+  You try to tell her that you don't think it's like that.  You really do want to stay chaste for your husband.  You belong in a belt like
+  this, it's what is best for you.  But she doesn't seem to believe you.
+<</nobr>>
+
+<<nobr>>
+  "I hope you understand, I still [[plan on proceeding|Part15WomensStudiesPlan]] with my investigation into the department.  I hope
+  you will trust me and cooperate with my research."
+<</nobr>>
+
+::Part15WomensStudiesTalkChastity
+<<nobr>>
+  <h1>Telling her about your belt</h1>
+  <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  With all the things that got installed on your phone when you setup your belt, you don't trust that they aren't monitoring
+  your emails.  So you are very vague in your email, just mentioning that you want to "come by your office hours to discuss some
+  issues you had with the topic brought up in today's class."  She seems to grasp your concern and arranges a time when there won't
+  be many others in the building.
+<</nobr>>
+
+<<nobr>>
+  As soon as you close the door to her office, you make a "shh" sign with your finger and mouth, and then show her your belt.
+  You write on her whiteboard:
+  <<if $JobBarista>>
+    "The belt listens to what I say!"
+  <<else>>
+    "I've heard the belt can listen to what I say."
+  <</if>>
+  You then write several code words you and her should use to make it sound like you are talking about something else.
+<</nobr>>
+
+<<nobr>>
+  You then go on to tell her about your experiences with the belt, using your code words and the whiteboard as needed.  You let her
+  know about how your belt keeps you so horny
+  <<if $JobBetaTester == "monogamous">>
+    whenever you are near $dating[0].
+  <<else>>
+    all the time.
+  <</if>>
+  <<if $DailyBJMinimum>>
+    You write that if you don't give <<if $JobBetaTester == "monogamous">>him<</if>> at least
+    <<if $DailyBJMinimum == 1>>one blowjob<<else>>$DailyBJMinimum blowjobs<</if>>
+    every day, your belt punishes you.
+    "I don't mind though, I love sucking <<if $JobBetaTester == "monogamous">>$dating[0]'s<</if>> cock," you say
+    excitedly.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You let her know about how your belt teases you whenever you are giving a blowjob, and how wonderful it feels
+  when it gives you an orgasm right as your mouth fills with his cum.
+  <<if $JobBetaTester == "monogamous">>
+    You let her know its not every time. You never know which blowjob will give you an orgasm, which only makes you want to suck
+    $dating[0]'s cock more.
+  <<else>>
+    You let her know that at first it gave you an orgasm whenever you set a new daily record, but you quickly were sucking so
+    many a day that you couldn't manage it anymore.  You let her know that now you get one, very rarely, anyway.  And you never
+    know when it will be, or if it will be a single orgasm, a ruined orgasm, or multiple orgasms.  And you let her know that
+    not knowing makes you want to try again and again.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  She writes numerous follow up questions on the board.  Some you don't have answers for her, others you do and communicate back
+  to her with your codewords or the whiteboard.  Finally she asks, "Do you want out of it?"
+<</nobr>>
+
+<<nobr>>
+  You think how to respond,
+  <<if $JobBetaTester == "monogamous">>
+    then write,"[[No.|Part15WomensStudiesTalkChastityNo]]  I love how horny it makes me around $dating[0], and how it makes me want
+    to serve him.  I just want to get to the end of the beta test, when they give $dating[0] control.  I want him to control my
+    orgasms, not some computer.  I want to feel $dating[0] inside me, if he wants.  I can wait a while longer though."
+  <<elseif $PlayerSideEffectSubmissive > 2>>
+    then write,"[[No.|Part15WomensStudiesTalkChastityNo]]  I love not being in control.  I'm a horny slut that shouldn't be allowed
+    to control her own orgasms.  I love that the belt makes me serve others and not being able to cum unless it thinks I deserve it."
+  <<else>>
+    as competing feelings make it hard to decide between answers.  Finally:
+    <ul>
+      <li>you say, "[[No.|Part15WomensStudiesTalkChastityNo]] I'd be such a whore if I wasn't in this belt.  I deserve to be locked up and
+      not in control of my orgasms." or</li>
+      <li>you write, "[[Yes!|Part15WomensStudiesTalkChastityYes]]  I need a cock inside me so bad!  I thought it was worth the money they
+      were paying, but I'm so horny all the time, I can't think about anything else!"</li>
+    </ul>
+  <</if>>
+<</nobr>>
+
+::Part15WomensStudiesTalkChastityNo
+<<nobr>>
+  <h1>Ending your conversation</h1>
+  <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="400" align="left">
+<</nobr>>
+<<nobr>>
+  "Well, I'm happy that you at least seem to be enjoying your situation," she says.  "But it sounds like there are likely other young women
+  who aren't as pleased with it as you are.  And what you said before about the 'testing' they did last year is completely unacceptable by
+  any standards of consent, ethics, or likely the law.
+<</nobr>>
+
+<<nobr>>
+  "I hope you understand, I still [[plan on proceeding|Part15WomensStudiesPlan]] with my investigation into the department."
+<</nobr>>
+
+::Part15WomensStudiesTalkChastityYes
+<<nobr>>
+  <h1>Ending your conversation</h1>
+  <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="400" align="left">
+<</nobr>>
+<<nobr>>
+  "I understand completely.  It must be absolutely maddening for you," she says.  You nod as she continues.
+  "I don't think talking to the department would help though, and doing so would only alert them that I am looking into them.
+<</nobr>>
+
+<<nobr>>
+  "No.  I think your best chance for getting out of that belt will be to [[proceed with my investigation|Part15WomensStudiesPlan]].
+  Once the law gets involved, a judge can order them to release you and everyone else."
+<</nobr>>
+
+::Part15WomensStudiesPlan
+<<nobr>>
+  <h1>Discussing next steps</h1>
+  <img src="Part15/School3.jpg" hspace="10" vspace="10" height="400" align="left">
+  "First, I'll give it a little time to see if anyone else comes forward," she tells you.
+  <<if $JobBetaTester == "chaste">>
+    "The brainwashing alone is disturbing enough to proceed with, but hopefully someone with experience with the sexual experimentation
+    'testing' they are doing will come forward also.  Perhaps I can listen in one one of these "training sessions" the belt gives you,
+    and perhaps record it, if you don't mind.  The more evidence we have, the better.
+  <<else>>
+    "It's not necessary with the information you've provided, but more evidence would be even better.  And given what you've said,
+    there could be more they are up to that you don't know about.
+    <<if $PlayerChastityBelt and $ComputerChastityOwner>>
+      You said that your boyfriend $ComputerChastityOwner has the ability to unlock you.  I'd recommend that you talk to him right away and
+      take off that belt.  You probably don't want to risk them using your belt as some sort of retribution against you.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "I know going to the university administration would be pointless.  This wouldn't have been allowed to happen if they weren't at least
+  complicit in what is going on.  I also don't trust the local police to do anything either.  I've heard they like to help the university
+  push problems under the rug.
+<</nobr>>
+
+<<nobr>>
+  "No, I think the best course of action would to do some more research.  Any documents or other evidence you can get and bring to me
+  would be great.  Then when we are ready, we can [[publish what we know|Part15WomensStudiesPublish]].  Once the story is out, the
+  authorities won't be able to ignore the problem and will have to act.
+<</nobr>>
+
+<<nobr>>
+  "I'll keep your name anonymous for as long as I can.  Though when this hopefully becomes a criminal case, you'll be called as a witness,
+  which will be public.  Though maybe they'll plead guilty before that happens."
+  <<if $PlayerChastityBelt and $ComputerChastityOwner>>
+    <br><br>
+    As soon as you leave her office, you go to talk to $ComputerChastityOwner and tell him whats happening.  He's a bit upset you didn't
+    talk to him first before going to her, but he quickly moves on.  Once you are free of the department's belt, you don't have to worry
+    about any retribution.  But your hopes of being complete free were misplaced though, as $ComputerChastityOwner locks you into a regular,
+    non-computer chastity belt instead.
+    <<set $Keyholder to $ComputerChastityOwner>>
+    <<unset $ComputerChastityOwner>>
+    <<set setup.addInventory('sex toys', 'chastity belt')>>
+    <<set setup.removeInventory('sex toys', 'electronic chastity belt')>>
+  <</if>>
+<</nobr>>
+
+::Part15WomensStudiesPublish
+<<nobr>>
+  <h1>Publishing her findings</h1>
+<</nobr>>
+<<nobr>>
+  Once your professor mentions that someone has came forward, several more students come forward with stories of their interactions with
+  the Engineering department.  Your professor gathers as much information as she can and combs through the evidence you gave her.  She then
+  writes up her findings and submits them to an women's studies academic journal.
+<</nobr>>
+<<nobr>>
+<blockquote>
+  <b>A case study in misogyny and unethical human experimentation at a major univeristy</b>
+  <br><br>
+  <b>Abstract:</b><br>
+  Investigation into the practices of the engineering and other departments at a major university<br>
+  revealed widespread abuse of student trust, lack of consent, flouting of standard reseach protocols,<br>
+  ...
+</blockquote>
+<</nobr>>
+
+<<nobr>>
+  Thanks to the salacious nature of the scandal, as soon as her paper is published, the story is quickly picked up by the media.
+<</nobr>>
+  <img src="Part15/News1.png" hspace="10" vspace="10" height="400">
+<<nobr>>
+  Not long after that police are showing up at the university with search warrants.  The university shuts down the entire Engineering
+  program after the head of the Engineering department, several of the professors, and
+  <<if $JobEngineer or $JobEngineerLock or $JobEngineerFormer or $JobEngineerOld>>
+    Kyle, who was running the chastity belt program,
+  <<else>>
+    the project leader for the chastity belt program
+  <</if>>
+  are all arrested.  One of the deans also resigns in disgrace, but most of the rest of the administration quickly moves to cover
+  their ass, and place all the blame on the one dean and the department.
+<</nobr>>
+
+<<nobr>>
+  <<if $JobBetaTester or $JobEngineerLock>>
+    <<if $JobBetaTester == "chaste">>
+      You obviously won't be getting the extra money they were giving you for beta testing anymore.
+    <<else>>
+      You obviously are out of a job now too.
+    <</if>>
+    But you have another, [[more serious problem|Part15WomensStudiesStuck]] to deal with first.
+  <<elseif $JobEngineer>>
+    You obviously are out of a job now too. But you should be able to [[find a new one|Part15WomensStudiesJobChange]] fairly quickly. 
+  <<else>>
+    Thankfully you already have a job, so you can just wait to [[see what happens with the criminals involved|Part15WomensStudiesAlreadyQuit]]
+    in this whole mess.
+  <</if>>
+<</nobr>>
+
+::Part15WomensStudiesPlea
+<<nobr>>
+  <h1>Plea Bargain Deal</h1>
+  TODO Img
+<</nobr>>
+<<nobr>>
+  It is quickly discovered that once the story broke about what was going on with the Engineering department, the department head
+  locked down all of the chastity belts remotely!  When the judge orders him to reveal the codes, his lawyer argues that doing so
+  would be a form of self-incrimination and a violation of his rights.  And the judge agrees!
+<</nobr>>
+
+<<nobr>>
+  <<if $JobBetaTester or $JobEngineerLock>>
+    You and those other
+  <<else>>
+    Those
+  <</if>>
+  poor women are locked in the belts, with the settings he put on them, with no way out!
+  Ten blowjobs every day to avoid the painful shocks the next day,
+  <<if $JobBetaTester or $JobEngineerLock>>
+    <<if $sex.length>>
+      it's not a huge challenge for you, but you wonder how the poor girls that had been in 'chaste' mode are coping
+      with their new setting.  The 'monogamous' ones probably aren't faring much better.  You know after the guys start 'shooting dry',
+      it doesn't count anymore. So they'll need to be blowing more than just their boyfriends to reach 10 a day.
+    <<else>>
+      even for you!  His new settings didn't care about what 'mode' your belt was in before, everyone received the same new settings.
+      After a day of the shocks, you quickly got over your desire to 'wait for your husband', and got to work sucking cock right now.
+      The teasing the belt gave you while you did certaily helped with the transition.  By the third day you were enjoying the new setting,
+      and now you only wish you could get out of the belt to have sex, or at least have an orgasm.
+    <</if>>
+    <<set setup.addSexRepeat(1200, {sex:"male"})>>
+    <<set $DailyBJMinimum to 10>>
+    <<if !$DailyBJRecord or $DailyBJRecord < 15>>
+      <<set $DailyBJRecord to 15>>
+    <</if>>
+  <<else>>
+    you imagine it's a real challenge for some of them.  It's probably especially difficult for the ones that had been in
+    'chaste' mode.  Well, at first anyway.  You doubt it will take them long to adjust.  The 'monogamous' ones are probably in for
+    an adjustment too, assuming their boyfriends can't handle 10 blowjobs every day.
+  <</if>>
+<</nobr>>
+
+::Part15WomensStudiesStuck
+<<nobr>>
+  <<include [[Part15WomensStudiesPlea]]>>
+  <<unset $JobBetaTester>>
+  <<unset $JobEngineer>>
+  <<unset $JobEngineerLock>>
+  <<set $JobBarista to 1>>
+<</nobr>>
+
+<<nobr>>
+  The other defendants have all reached deals with and started to serve their time in prison, or on probation. But for months, you
+  and the others are stuck like this as the district attorney negotiates a plea deal with the department head's attorney.
+  Finally the DA's office calls you telling you they've reached a deal with the deptartment head too.
+<</nobr>>
+
+<<nobr>>
+  "$playerName...  Is it ok if I call you $playerName?" the DA starts.  "I wanted to talk to you individually before the others as
+  there's some information that concerns you personally."  You wonder what he could mean as he continues, "He has agreed to turn over the
+  encryption key that will allow us to access and unlock nearly all of the chastity belts."  
+<</nobr>>
+
+<<nobr>>
+  "<b><i>Nearly</i></b> all?" you say with concern as you quickly start to grasp why he wanted to talk to you individually.
+<</nobr>>
+
+<<nobr>>
+  "Yes.  Unfortunately his lawyer has informed us that one code is not in the file that his client will be giving us the key for.  He says
+  yours is in a different file, and this his client has 'forgotten' the key for it amid all the stress of his arrest.  Obviously we don't
+  believe this, and assume it is retribution because he somehow knows you were one of the ones who came forward with evidence.  That's why
+  it has taken so long to negoitate a deal."
+<</nobr>>
+
+<<nobr>>
+  "But, it isn't fair to the other women in your circumstance to continue negotiating as it doesn't look like we will be making any progress
+  anytime soon.  So we have agreed to a plea agreement, 10 years.  He'll serve at least 30 months of that in prison.  After that he will
+  be eligible for parole.  I promise to do everything I can to make sure that he gets parole only if he 'remembers' your key as well."
+<</nobr>>
+
+<<nobr>>
+  As you start to imagine 2 1/2 years of no orgasms, and 10 blowjobs a day, he tries to reassure you.  "Don't worry, with a soft,
+  privileged academic like him, he'll be more than willing to do anything it takes to get out as soon as he can."
+<</nobr>>
+
+<<nobr>>
+  You try to get back into your studies, and focus on your new job at the coffee shop, but most times all you can think about is the need
+  you feel, and know you probably won't be able to satisfy until after you graduate!  Your new coworkers don't mind your situation though,
+  and are more than happy to volunteer to be one of your ten a day whenever you ask.
+<</nobr>>
+
+<<nobr>>
+  You watch the news stories as the only person who could free you is sentenced and shipped off to jail. Sometimes you fantasize about
+  them letting you have a conjugal, and trying to 'earn' your release from him before then.  But you know they'd never allow that.
+  You also fantasize sometimes that he'll stubbornly refuse to give up your code, and ten years from now he'll be released anyway, and
+  still have full control of your belt!  You try not to think about either scenario, as it only makes you hornier and more frustrated.
+<</nobr>>
+
+<<nobr>>
+  A few weeks later, when someone tells you he's [[in the news again|Chaste]], you quickly pull out your phone to check.
+<</nobr>>
+
+::Part15WomensStudiesJobChange
+<<nobr>>
+  <<include [[Part15WomensStudiesPlea]]>>
+<</nobr>>
+
+TODO Department shut down and have to get a different job
+TODO Department head in jail, gets a plea deal if he provides the unlock codes.  He does, except yours (if relevant).
+TODO (if relevant) Your belt is on constant tease but no orgasm.  Required to give X bj a day (even if were on chaste mode).
+TODO (if relevant) End up permanently denied if wearing a computer controlled belt (and not owned: $ComputerChastityOwner)
+
+::Part15WomensStudiesAlreadyQuit
+<<nobr>>
+  <<include [[Part15WomensStudiesPlea]]>>
+<</nobr>>
+
+TODO Department shut down, but you already have a new job
+TODO Department head in jail, gets a plea deal if he provides the unlock codes.  He does, except yours (if relevant).
+TODO (if relevant) Your belt is on constant tease but no orgasm.  Required to give X bj a day (even if were on chaste mode).
+TODO (if relevant) End up permanently denied if wearing a computer controlled belt (and not owned: $ComputerChastityOwner)
+
+::Part15WomensStudiesBarista
+TODO Start new job as a Barista
+
+::Part15WomensStudiesReport
+TODO Report back to engineering dept
+TODO if rat out then they use the mind control belt settings on her
+
+::Part15WomensStudiesQuiet
+<<nobr>>
+  You decide it's best not to get involved in her investigation at all, and say nothing.  You'll wait and see if she reports back
+  anything to the class later.
+<</nobr>>
+
+<<include [[Part15BackToMain]]>>
+
+::Part15WomenStudiesAskAbout
+TODO Curious, tell engineering department you've heard rumors
+
 
 ::Part15LivingMotherApt
 <<nobr>>
@@ -4080,7 +4998,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 <</nobr>>
 
 <<nobr>>
-  "Have fun you two.", he says.  Then he laughs and adds, "Well I'm sure you will at least $dating[0]."  They
+  "Have fun you two.", he says.  Then he laughs and adds, "Well I'm sure you will at least, $dating[0]."  They
   you both [[head towards the door|Part15BoyfriendEngineeringChastity4]]
 <</nobr>>
 
@@ -4473,7 +5391,7 @@ TODO Living with Andrew [[Part15Week]]
 
 <<nobr>>
   <<if $SororityFootball>>
-    You blush as you are called up to receive the "Fan Favorite" award.  You can't beleive they had someone run out to get a color print of
+    You blush as you are called up to receive the "Fan Favorite" award.  You can't believe they had someone run out to get a color print of
     you, pantyless in the middle of the football field, printed and then framed it for you.
   <<else>>
     They have a "Fan Favorite" award for some girl whose top came off during a football game.

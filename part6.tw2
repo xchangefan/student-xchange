@@ -721,10 +721,12 @@
 		<<set $SpecialProjectMoney -= 50>>
 	<<elseif $SubjectPunish == 2>>
 		<<set $SubjectOrgasmDenialGoo to 1>>
+    <<set $ProjectPunishmentDenial to 1>>
 		"Orgasm Denial Agent punishment will be administered after final session"
 	<<elseif $SubjectPunish == 3>>
 		<<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
 			"Implant Birth Control Permanently Deactivated - Ovulation likely within next 24 hours"
+      <<set $ProjectPunishmentBirthControl to 1>>
       <<if $PlayerProtectionPerfect>>
   			<<unset $PlayerProtectionPerfect>>
   			<<set $PlayerProtectionNone to 1>>
@@ -736,6 +738,7 @@
     		<<set $SubjectBirthControlChange to 1>>
 	    <</if>>
 		<<elseif $PlayerProtectionFertile>>
+      <<set $ProjectPunishmentSemen to 1>>
 			<<set $SubjectPunishLastMessage to 4>>
 			"ERROR - Fertility Feature Already Active"  The dildo plunges into you again and you feel it release something inside you, but less than
 			before. "Live Semen Sample deposited".  You thrash at your bonds again. "What!? Whose? No!", you yell to the empty room.
@@ -751,6 +754,7 @@
 			<<set setup.addSex({sex: 'male', anon: 'Remote Tester', vaginal: true, ovulating: true, noCondom: true, noPullout: true})>>
 			<<set setup.addSex({sex: 'male', anon: 'Remote Tester', vaginal: true, ovulating: true, noCondom: true, noPullout: true})>>
 		<<else>>
+      <<set $ProjectPunishmentFertile to 1>>
 			"Implant Enhanced Fertility Feature Permanently Activated - Oral Contraceptives Ineffective - Ovulation likely within next 24 hours"
 			<<if $PlayerProtectionPill>>
 				<<set $SubjectBirthControlChange to 1>>
@@ -760,17 +764,20 @@
 			<<set $PlayerProtectionFertile to 1>>
 		<</if>>
   <<elseif $SubjectPunish == 4 and $PlayerSideEffectOrgasmBlock>>
+    <<set $ProjectPunishmentCorporal to 1>>
     <<set $tempCorporalPunishmentDue to 1>>
     "Corporal Punishment will be administered after final session"
   <<elseif $SubjectPunish == 5 and $PlayerSideEffectOrgasmBlock>>
     "$400 Penalty Applied"
 		<<set $SpecialProjectMoney -= 400>>
 	<<elseif $SubjectPunish == 4>>
+    <<set $ProjectPunishmentSemen to 1>>
 		"Live Semen Sample deposited"
 		<<if $PlayerProtectionTry>>
 			You wonder if you'll look back on this as the moment your future baby was concieved.
 		<</if>>
 	<<elseif $SubjectPunish == 5>>
+    <<set $ProjectPunishmentSemen to 1>>
 		"Live Semen Sample deposited, $400 Penalty Applied"
 		<<set $SpecialProjectMoney -= 400>>
 	<</if>>
@@ -1072,7 +1079,7 @@
 			He seems to last forever,
 			<<if $SubjectHorniness >= $SubjectOrgasmThreshold>>
 				fucking you to a second orgasm before he finaly cums.  Thankfully the machine only counts one per session.
-				Before disconnecting he says, "I know you didn't beleive me about turning off the punishment.  But you came anyway.  That's
+				Before disconnecting he says, "I know you didn't believe me about turning off the punishment.  But you came anyway.  That's
 				hilarious.  It's too bad I couldn't actually record all this."
 			<<else>>
 				though you're able to avoid orgasming.  Before disconnecting he says, "Aww, I guess you didn't believe me about turning off the
@@ -1118,7 +1125,7 @@
 		<<elseif $SubjectSessionNumber == 3>>
 			Before disconnecting he says, 
 			<<if $SubjectHorniness >= $SubjectOrgasmThreshold>>
-				"You really beleived me about turning off the punishment!  It's too bad I couldn't actually record this, because I'd love to
+				"You really believed me about turning off the punishment!  It's too bad I couldn't actually record this, because I'd love to
 				rewatch this."
 			<<else>>
 				"You should probably consider yourself lucky you didn't manage to get off, because I made all that up about turning off the

@@ -674,6 +674,13 @@ setup.overrideForcePregnancy = function(pregnancyTestType) {
 	}
 }
 
+setup.specialProjectPossibleImpregnated = function () {
+  var projectFucks = state.active.variables.sex.filter(function(fuck) {return fuck.anon == "Remote Tester"});
+  var projectConception = projectFucks.filter(function(fuck) {return fuck.conception});
+  var projectAlreadyPregnant = projectFucks.filter(function(fuck) {return fuck.checkedForPregnancy == "already pregnant"});
+  return projectConception.length > 0 || projectAlreadyPregnant.length > 0;
+}
+
 ::NeighbourFunctions [script] <350,50>
 setup.addNeighbour = function (name) {
 	return state.active.variables.neighbours.push(name)
@@ -786,7 +793,8 @@ setup.getAchievementDetails = function() {
     uncle: {text: "Submissive Wife", image: "Uncle.png", isEnding:true},
     stepmom: {text: "Stepmother", image: "StepMother.png", isEnding:true},
     hypno: {text: "Stepford Wife", image: "Hypno.gif", isEnding:true},
-    poly: {text: "Polyamorous Wife", image: "Poly.jpg", isEnding:true}
+    poly: {text: "Polyamorous Wife", image: "Poly.jpg", isEnding:true},
+    permaChaste: {text: "Permanent Chastity", image:"PermaChaste.jpg", isEnding:true}
 	}
 }
 
