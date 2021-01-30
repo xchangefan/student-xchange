@@ -3476,7 +3476,7 @@
 
 <<nobr>>
   "A good double-sided dildo can fill both girls up at the same time, and either one can thrust fucking both her and her partner.  If one of them has
-  a vibrator, then she can be stimulating either are both of their clits too.  They'll both be cumming in no time."
+  a vibrator, then she can be stimulating either or both of their clits too.  They'll both be cumming in no time."
 <</nobr>>
 
 <<nobr>>
@@ -7538,15 +7538,13 @@
 <<nobr>>
   As you stand there, still half out of the lingerie you'd worn, you say.  "I could use a ride [[back home|Part14Home5Ready]] in a while."  Then you unfurl
   what's left of what was a full box condoms at the start of last night.  "But there's no reason I need to leave right away."
-  <<if $AcademicProbationDenial>>
+  <<if $CampusMinistry>>
+    <<unset $CampusMinistry>>
+    <<set $CampusMinistryFail to 1>>
+    <<set $CampusMinistryFailSummer to 1>>
     <br><br>
     You know Faith and Mark will be disappointed when they learn you won't be working with them anymore to control the impulses your X-Change gave you.
     But this is your body, and you going to start enjoying it.  Well, you will once you get off probation anyway.
-    <<if $CampusMinistry>>
-      <<unset $CampusMinistry>>
-      <<set $CampusMinistryFail to 1>>
-      <<set $CampusMinistryFailSummer to 1>>
-    <</if>>
   <</if>>
   <<if setup.areDating('Barry')>>
     <br><br>
@@ -8511,13 +8509,13 @@
     <<include [[BoyfriendStrictJobChange]]>>
   <<elseif $JobEngineer>>
     <<unset $JobEngineer>>
-    <<set $JobEngineerFormer to 1>>
+    <<set $JobEngineerOld to 1>>
     if it were a legitimate engineering job, then your belt wouldn't be a problem, would it?  The fact that it is a concern shows just what kind of job it really is.
     If you find a real job in your major, let me know, but this one is out.
     <<include [[BoyfriendStrictJobChange]]>>
   <<elseif $JobTestSubject>>
     <<unset $JobTestSubject>>
-    <<set $JobTestSubjectFormer to 1>>
+    <<set $JobTestSubjectOld to 1>>
     I hope you know there's no chance of you continuing to work as a so-called test subject.
     <<include [[BoyfriendStrictJobChange]]>>
   <<elseif $JobBarista>>

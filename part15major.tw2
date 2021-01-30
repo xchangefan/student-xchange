@@ -1,8 +1,13 @@
 ::Part15Major
 <<nobr>>
-  <h1>Choosing a Major</h1>
-  It's your sophmore year now, and while you've definitely thought about it before now, it's time to finalize your choice of a major.
-  Of course you could always change it later, but that would probably mean graduating later and you don't want that.
+  <<if $tempMajorChange>>
+    <h1>Changing Majors</h1>
+    You've decided to change majors.  Hopefully changing now won't delay your graduation any.
+  <<else>>
+    <h1>Choosing a Major</h1>
+    It's your sophmore year now, and while you've definitely thought about it before now, it's time to finalize your choice of a major.
+    Of course you could always change it later, but that would probably mean graduating later and you don't want that.
+  <</if>>
 <</nobr>>
 <<nobr>>
   <img src="Part15/Major1.jpg" hspace="10" vspace="10" height="330">
@@ -211,8 +216,10 @@
     You don't need a degree for this do you?
     <br><br>
   <</if>>
-  Math/Computer Science/Engineering - You aren't interested in being a Computer, Math, or Engineering major.
-  <<if !$PlayerGoodStudent>>That sounds way too hard<</if>>
+  <<if !$EngineeringShutdown>>
+    Math/Computer Science/Engineering - You aren't interested in being a Computer, Math, or Engineering major.
+    <<if !$PlayerGoodStudent>>That sounds way too hard<</if>>
+  <</if>>
   <<if $PlayerLazyStudent>>
     <br><br>
     Nursing - You'd looked into the classes they have to take.  While it's not as bad as for doctors, or as long, but you know you aren't the best student.
