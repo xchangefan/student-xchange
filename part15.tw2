@@ -4082,7 +4082,7 @@ TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
 <</nobr>>
 <video src="Part13/Engineer1.webm" autoplay loop muted height="500"></video>
 <<nobr>>
-  <<if $tempEngineeringDeptJob>>
+  <<if $tempEngineeringDeptJob and $JobBetaTester != "chaste" and $JobBetaTester != "monogamous">>
     Your mind wanders as you remember some of the experiments she's referring to.
   <<else>>
     Your mind wanders as you imagine the experiments they might be doing over there.
@@ -4765,6 +4765,7 @@ TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
   It is quickly discovered that once the story broke about what was going on with the engineering department, the department head
   locked down all of the chastity belts remotely "allegedly" so he could use it as a bargaining chip!  At that point they were
   all inactive, so everyone thought they were just turned off.
+  <<set $oldBetaTestMode to $JobBetaTester>>
 <</nobr>>
 
 <<nobr>>
@@ -4778,7 +4779,7 @@ TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
   he was arrested it, and not checking in to wherever he has set it up, the belts all activated.  He set all the belts to
   require ten blowjobs every day to avoid painful shocks the next day,
   <<if $JobBetaTester or $JobEngineerLock>>
-    <<if $sex.length>>
+    <<if $sex.length and $oldBetaTestMode != "monogamous">>
       including yours.
     <<else>>
       even for you!
@@ -4803,9 +4804,20 @@ TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
 <<nobr>>
   <<if $JobBetaTester or $JobEngineerLock>>
     <<if $sex.length>>
-      It's not a huge challenge for you, but you wonder how the poor girls that had been in 'chaste' mode are coping
-      with their new setting.  The 'monogamous' ones probably aren't faring much better.  You know after the guys start 'shooting dry',
-      it doesn't count anymore. So they'll need to be blowing more than just their boyfriends to reach 10 a day.
+      <<if $oldBetaTestMode == "monogamous" and $dating.length>>
+        <<set setup.addSexRepeat(120, {sex:"male", name:$dating[0]})>>
+        After a day of the shocks, you are going to make sure you reach your ten blowjobs every day, at least until
+        your belt is finally off.  You don't want that to ever happen again.
+        <br><br>
+        $dating[0] tries, but after a few days, he says he can't take it anymore.  He needs time between each blowjob, and he can't be
+        home all day long every day.  And he says his penis and testicles are both starting to hurt.  He reluctantly agrees that
+        you need to give other guys blowjobs if you are going to be able to avoid your punishment from the belt.  "Just until they
+        reach a deal with that asshole," he repeats.
+      <<else>>
+        It's not a huge challenge for you, but you wonder how the poor girls that had been in 'chaste' mode are coping
+        with their new setting.  The 'monogamous' ones probably aren't faring much better.  You doubt most guys would be up to
+        ten blowjobs every single day.
+      <</if>>
     <<else>>
       After a day of the shocks, you quickly got over your desire to 'wait for your husband', and got to work sucking cock right now.
       The teasing the belt gave you while you did certaily helped with the transition.  Your training must have worked too, because you didn't
@@ -4890,6 +4902,12 @@ TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
 <<nobr>>
   As you start to imagine 2 1/2 years of no orgasms, and 10 blowjobs a day, he tries to reassure you.  "Don't worry, with a soft,
   privileged academic like him, he'll be more than willing to do anything it takes to get out as soon as he can."
+  <<if $oldBetaTestMode == "monogamous" and $dating.length>>
+    <br><br>
+    $dating[0] is not happy with the news.  He visits the DA's office and complains, but there's nothing more the DA can do.  When he
+    gets back home, he says he's not mad at you, that it's not your fault.  But you can still tell he's upset.  Thankfully he still
+    lets you suck his cock twice that evening though, as you hadn't been able to get all the guys in today you normally would have.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -4971,7 +4989,100 @@ TODO (if relevant) End up permanently denied if wearing a computer controlled be
 TODO Start new job as a Barista
 
 ::Part15WomensStudiesReport
-TODO Report back to engineering dept
+<<nobr>>
+  <h1>Talking to the head of the engineering department</h1>
+  "Thank you for bringing this to my attention," the department head tells you.  "Clearly this professor has gotten the wrong idea about
+  the work we do here.  I'll meet with her as soon as possible to clear up the misunderstanding.
+<</nobr>>
+
+<<nobr>>
+  "I wish there was some way I could thank you for alerting me to this," he adds.
+  <<if $JobBetaTester or $JobEngineerLock>>
+    <br>
+    <div style="float:left;padding:12px;">
+      <video src="Part13/Breeder1.webm" autoplay loop muted height="400"></video> 
+    </div>
+    <br>
+    "Actually, I know the perfect way," he says after a moment.  He pulls up something on his computer and types for a while.
+    When he's done typing you feel your belt start to come alive, very softly teasing you.
+    <br><br>
+    "I've set it for a long build up, so you should have plenty of time to get home or wherever you're going," he informs you.
+    <br><br>
+    "You were very helpful today, so I set it to keep you on the edge for a while after that, to make your fun last as long as
+    possible.  Then it should do it's best to stretch your orgasm out as long as it can as well."
+    <br><br>
+    You leave his office and quickly start making your way home.
+    <br><br>
+    The build up was even slower than you were expecting, taking at least another hour after you get home.  Then it keeps you
+    hovering on the edge of an orgasm... you don't know for how long, you lost track of time.  Finally the first wave of your
+    orgasm crashes over you.  The belt keeps going, changing what it's doing, but keeping your orgasm coming and coming.  It's
+    hard to guage whether it was many orgasms one after another or one long orgasm.
+    <br><br>
+    By the time you finally stop, you are covered in sweat and you feel an incredible glow as the warmth of your orgasms starts
+    to slowly fade.
+  <<elseif $JobEngineer>>
+    <img src="Part15/Class4.jpg" hspace="10" vspace="10" height="600" align="left">
+    <br>
+    "I know, I still have some money left in the budget for bonus payments.  I think you've earned one," he tells you.  "You have to
+    promise to buy something nice for yourself though."  Then he pulls out several hundred dollar bills from his desk.
+    <br><br>
+    After you thank him, you do as you promised and head straight to the mall.  After spending a few hours there, you leave with several
+    new outfits, along with some pretty things to wear under them too.
+    <br>
+    <img src="Part15/Class5.jpg" hspace="10" vspace="10" height="350">
+  <<else>>
+    "I know, how about a visit to one of the testing rooms, for old times sake," he suggests.  "No restraints, no control group,
+    as many orgasms as you want, stop whenever you want.  And no filming.  It'll just be you, the machines, and one tech for safety
+    and to control the machines for you.  I'll even tell him not to try to take advantage of you if you get horny, unless you want
+    me to tell him <i>to</i> do that."
+    <br>
+    <video src="Part15/Class6.webm" autoplay loop muted height="500"></video>
+    <br>
+    You pick out dildo just the size you want.  Then you strip as the technician sets up two machines for you.  He starts them out
+    going shallow, giving you time to get used to them.  Once you are horny and eager for more, he slowly adjusts them to go
+    deeper and deeper.  Eventually you are being filled on either end with each thrust.
+    <br><br>
+    You are gasping for breath as you orgasm with dildos pounding you from both sides.  The technician slows down the machine
+    after you cum and asks you if you want out.
+    <br><br>
+    <<if $dating.length>>
+      You do your best to say 'more' when the cock has pulled partially out of your mouth.  You imagine you are stuck, that the dildos
+      are too deep inside you, and there's no way to move away, you just have to keep taking the pounding.
+      <br><br>
+      Many orgasms later, you finally collapse down on the floor.  You thank the technician for all his help.  As he packs away the machines,
+      you lie there trying to gather enough energy to get up again.
+    <<else>>
+      <<set setup.addSex({sex:"male", anon:"Engineering Technician", repeat:true})>>
+      <<set setup.addSex({sex:"male", anon:"Engineering Technician", vaginal:true, condom:true})>>
+      <<set setup.addSex({sex:"male", anon:"Engineering Technician", repeat:true})>>
+      <<set setup.addSex({sex:"male", anon:"Engineering Technician", vaginal:true, condom:true})>>
+      You pull your head back and let the front dildo flop next to your face as you say, "No I don't want out.  But I want you to
+      take the place of one of these machines."
+      <br><br>
+      "I have an even better idea," he tells you as he puts the dildo back in your mouth.  You watch eagerly as he takes off his pants
+      and puts on a condom.  When you see him start to lube it up, you realize what his plan is and smile over the dildo fucking your face.
+      <br><br>
+      A moment later you feel his cock sliding into your ass and you are being fucked three different ways at once.  You've came again
+      by the time he's pulling out of you and tossing the condom in the trash.  "All done, or do you want more?" he asks as he turns off
+      the machine that was fucking your mouth.
+      <br><br>
+      "I'm all done with the machines," you answer.  "But maybe you and a friend can take their place?"  He smiles and steps out of the
+      testing room.  A moment later he comes back with another guy.  Before long, you are between them, enjoying the feeling of
+      being filled again, this time by two real cocks.
+    <</if>>
+    <br><br>
+    Eventually you head home, with a big smile on your face.  Not just from the orgasms, but also from knowing you prevented a big
+    blowup between your professor and the engineering department.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Hopefully your professor is as pleased as the department head was that you were able to help facilitate a
+  [[non-confrontational resolution|Part15WomensStudiesReport2]] to their differences.  Just in case she's not, you decide not to
+  mention you were the one that talked to the engineering department.
+<</nobr>>
+
+::Part15WomensStudiesReport2
 TODO if rat out then they use the mind control belt settings on her
 
 ::Part15WomensStudiesQuiet
@@ -8385,7 +8496,7 @@ TODO Maybe get too horny to just watch<br> [[Part15Week]]
 <img src="Part2/Emily4.jpg" hspace="10" vspace="10" height="350" align="left">
 <<nobr>>
   <<if setup.haveInventory('piercing', 'tongue')>>
-    You relucantly stop by the engineering department on the way to class, where they replace your old stud with their 'sensor'.
+    You reluctantly stop by the engineering department on the way to class, where they replace your old stud with their 'sensor'.
   <<else>>
     You'd never planned on getting a tongue piercing!  But you know it's no use complaining, so after class you stop by a piercer.
     After a brief momen of pain, you have a pierced tongue.  He puts some sort of spray on your tongue that is supposed to make it
