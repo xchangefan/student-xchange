@@ -2868,16 +2868,16 @@
 
 
 ::Part15FirstTrimester
-TODO Start showing pregnancy, discover if haven't already, then [[Part15WeekStandard]]
+TODO Preg: Start showing pregnancy, discover if haven't already, then [[Part15WeekStandard]]
 
 ::Part15SecondTrimester
-TODO Have second trimester visit (ultrasound), then [[Part15WeekStandard]]
+TODO Preg: Have second trimester visit (ultrasound), then [[Part15WeekStandard]]
 
 ::Part15ThirdTrimester
-TODO Have third trimester visit, then [[Part15WeekStandard]]
+TODO Preg: Have third trimester visit, then [[Part15WeekStandard]]
 
 ::Part15Delivery
-TODO Having the baby now [[Part15WeekStandard]]
+TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 ::Part15WeekNoAdvance
 <<nobr>>
@@ -2904,17 +2904,95 @@ TODO Having the baby now [[Part15WeekStandard]]
 
 ::Part15OffProbation
 <<nobr>>
+  <h1>Getting off academic probation</h1>
   <<unset $AcademicProbationTutorSex>>
   <<unset $AcademicProbationDenial>>
   <<set $AcademicProbationDenialFormer to 1>>
   <<unset $AcademicProbation>>
-  todo Remove from academic probation
+  You head over to the X-Change office as soon as you get notification that the dean has released the academic hold and that they could
+  disable the block they'd put on your orgasms.
 <</nobr>>
 
-TODO [[Part15WeekNoAdvance]]
+<<nobr>>
+  You were hoping the technician would repeat the 'test' he performed when he'd disabled your ability to cum, but he says it's not
+  necessary.  "I'm sure you'll verify soon enough," he smiles and adds, "and will let us know if there's an issue."
+<</nobr>>
 
-::Part15AcademicProbationFollowUp
-TODO Followup on academic probation
+<<nobr>>
+  So instead your thoughts turn to doing exactly that the moment you get home.
+<</nobr>>
+  <video src="Part14/Home67.webm" autoplay loop muted height="400"></video>
+<<nobr>>  
+  But
+  <<if $PlayerChastityBelt and $PlayerSideEffectMasturbationBlock>>
+    of course, your belt and your X-Change side effect prevent that.  You'll just [[have to keep waiting|Part15WeekNoAdvance]].
+  <<elseif $PlayerChastityBelt>>
+    of course, your belt prevents that.  You'll just [[have to keep waiting|Part15WeekNoAdvance]].
+  <<else>>
+    <<if $PlayerSideEffectMasturbationBlock>>
+      of course, your X-Change side effect prevents that.  You'll just have
+    <<else>>
+      <<set $PlayerSideEffectMasturbationBlock to 1>>
+      then the technician says, "Oh.  It looks like there was a small glitch."  He types some more then adds, "Well, it looks like
+      your orgasms are enabled now.  But it looks like a related side effect was triggered on your implant.  You won't be able to
+      get off from masturbation anymore.  But orgasms are more fun with someone else anyway, right?"
+      <br><br>
+      Your plans to masturbate are gone,
+      <<if $PlayerSideEffectPermanent>>
+        forever in fact.
+      <<else>>
+        for the next several years in fact.
+      <</if>>
+      As far as testing your implant, and finally getting an orgasm or two after so long, you'll just have to
+    <</if>>
+    <<if $dating.length>>
+      [[ask for some help|Part15OffProbation2]] from $dating[0].
+    <<else>>
+      [[find someone to help|Part15OffProbation2]].
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part15OffProbation2
+<<nobr>>
+  <h1>Celebrating getting off probation</h1>
+  <<if setup.haveGirlfriend()>>
+    <<set setup.addSexRepeat(6, {sex:"female", name:$dating[0]})>>
+    $dating[0] hurries home when she hears the news.
+    <br><br>
+    <video src="Part15/Probation23.webm" autoplay loop muted height="400"></video>
+    <br><br>
+    It isn't long until she has you screaming out with the first of many orgasms of the night.
+  <<else>>
+    <<if $dating.length>>
+      $dating[0] hurries home when he hears the news.      
+      <<set setup.addSexRepeat(6, {sex:"male", name:$dating[0], vaginal:true})>>
+    <<elseif setup.haveFucked("Tutor")>>
+      Your tutor is thrilled when you let him know you are officially off of probation.  Of course he's also thrilled
+      to invite you over so he can help you celebrate and verify that your denial setting has been lifted.
+      <<set setup.addSexRepeat(6, {sex:"male", name:"Tutor", vaginal:true, noCondom:true, noPullout:true})>>
+    <<elseif $fwb.length and $fwb[0] != "Kate">>
+      $fwb[0] hurries over when he hears the news.      
+      <<set setup.addSexRepeat(6, {sex:"male", name:$fwb[0], vaginal:true})>>
+    <<else>>
+      It doesn't take you much time to find a guy willing and eager for you to test that your denial setting has been lifted.
+      <<set setup.addSexRepeat(6, {sex:"male", vaginal:true, noCondom:true, noPullout:true})>>
+    <</if>>
+    <br><br>
+    <video src="Part15/Probation24.mp4" autoplay loop muted height="400"></video>
+    <br><br>
+    It isn't long until he has you screaming out with the first of several orgasms of the night.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  It feels so amazing to finally be able to cum again.  You promise yourself you'll never going to get on academic probation again.  And
+  if you do, you know you'll drop out sooner than go through what you did the past few months again.
+<</nobr>>
+
+<<nobr>>
+  You know [[this week|Part15WeekNoAdvance]] is going to be better than ever since your body is finally whole again.
+<</nobr>>
 
 ::Part15WeekStandard
 <<nobr>>
@@ -3545,7 +3623,177 @@ TODO Followup on academic probation
 <</nobr>>
 
 ::Part15TutorFollowupClean
-TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
+<<nobr>>
+  <<if $SchoolWeek == 3>>
+    <<include [[Part15TutorFollowupClean2]]>>
+  <<elseif $SchoolWeek == 6>>
+    <<include [[Part15TutorFollowupClean4]]>>
+  <<elseif setup.haveFucked("Tutor")>>
+    <<include [[Part15TutorFollowupBJ]]>>
+  <<else>>
+    <<include [[Part15TutorFollowupClean3]]>>
+  <</if>>
+<</nobr>>
+
+::Part15TutorFollowupClean2
+<<nobr>>
+  <h1>After your tutoring session</h1>
+  <img src="Part15/Probation28.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  Maybe it's just because you've been so long without an orgasm, but it's so hard to concentrate during your tutoring sessions.
+  Being alone with a guy, you can't help but notice the bulge in his pants.  And then all you can think about is him pushing the
+  homework to the side, and bending you over the desk.
+<</nobr>>
+
+<<nobr>>
+  When you get home,
+  <<if $PlayerChastityBelt>>
+    even through your chastity belt,
+  <</if>>
+  your panties are always a sticky mess.  Still, you [[have to keep going|Part15WeekByWeek]], you'll be off probation eventually.
+<</nobr>>
+
+::Part15TutorFollowupClean3
+<<nobr>>
+  <h1>Still a mess</h1>
+  <<if $SchoolWeek % 2 == 0>>
+    <img src="Part15/Probation29.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<else>>
+    <img src="Part15/Probation28.jpg" hspace="10" vspace="10" height="600" align="left">
+  <</if>>
+<</nobr>>
+<<nobr>>
+  Your tutoring sessions aren't getting any easier.  Every time you get home, you have to change your panties.
+<</nobr>>
+
+<<nobr>>
+  Though, to be honest, your panties are usually a mess at the end of the day anyway.
+<</nobr>>
+
+<<nobr>>
+  You can't wait until you can get off probation and be able to orgasm again.
+  <<if $PlayerChastityBelt>>
+    Maybe you can even talk your way out of your chastity belt long enough to actually accomplish it too.
+  <</if>>
+  But you know it [[won't be happening this week|Part15WeekByWeek]].
+<</nobr>>
+
+::Part15TutorFollowupClean4
+<<nobr>>
+  <h1>Fantasizing during your tutoring session</h1>
+  You're even more distracted than normal during today's tutoring session.  You've zoned out while your tutor is explaining
+  something boring.  You've seen all the posters and action figures in his room, and you fantasize about dressing up for
+  him and thanking you for all the tutoring he's done.
+<</nobr>>
+
+<video src="Part15/Probation25.mp4" autoplay loop muted height="500"></video>
+
+<<nobr>>
+  "$playerName, do you want to take a little break?  You look like maybe we've been at it too long," he says when he notices
+  your far-away look.
+<</nobr>>
+
+<<nobr>>
+  You wonder if you should say
+  <<if $dating.length>>
+    "yes", then go spash some cold water on your face and [[push the thought from your mind|Part15TutorFollowupClean4Ignore]].  But
+    part of you desperately wants to drop to your knees and tell him exactly what is really bothering you.  But you want to be
+    loyal to $dating[0], so you push that thought from your mind.
+  <<elseif $PlayerSideEffectOral>>
+    "yes", then go spash some cold water on your face and push the thought from your mind.  But the thought of sucking his cock
+    has made you too horny to do that.  You can't resist the urge to [[drop to your knees|Part15TutorFollowupClean4BJ]] and tell
+    him exactly what is really bothering you.
+  <<elseif $PlayerSideEffectLibido > 2>>
+    "yes", then go spash some cold water on your face and push the thought from your mind.  But you are far too turned on right
+    now to do that.  You can't resist the urge to [[drop to your knees|Part15TutorFollowupClean4BJ]] and tell him exactly what is
+    really bothering you.
+  <<else>>
+    "yes", then go spash some cold water on your face and [[push the thought from your mind|Part15TutorFollowupClean4Ignore]].  But
+    part of you desperately wants to [[drop to your knees|Part15TutorFollowupClean4BJ]] and tell him exactly what is really bothering you.
+  <</if>>
+<</nobr>>
+
+::Part15TutorFollowupClean4Ignore
+<<nobr>>
+  <h1>Dreaming that night</h1>
+  <video src="Part15/Probation26.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  You resist the urge.  After you compose yourself in the bathroom and come back, you are able to finish your session.
+<</nobr>>
+
+<<nobr>>
+  That night though, your dreams are full of the same fantasy you'd had during the session, only more vivid now.  The suit you
+  are wearing for him, has no openings, no access, no way to take it off.  There's no hope of you being able to have any pleasure.
+  But you are happy use your mouth to make him cum, again, and again, and again.
+<</nobr>>
+
+<<nobr>>
+  When you wake up, you are amazed at how vivid the dream was.  You can still remember what his cock felt like on your tongue.
+  You can still remember the wonderful taste of his neverending supply of cum.
+<</nobr>>
+
+<<nobr>>
+  As you dress and [[get ready for the day|Part15WeekByWeek]], some part of you wishes you'd acted on your fantasy instead
+  of just dreaming about it.
+<</nobr>>
+
+::Part15TutorFollowupClean4BJ
+<<nobr>>
+  <h1>Thanking your tutor</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Probation27.webm" autoplay loop muted height="500"></video>
+  </div>
+  <<set setup.addSexRepeat(4, {sex:"male", name:"Tutor"})>>
+  <<set $AcademicProbationEndWeek = $SchoolWeek + 2>>
+<</nobr>>
+<<nobr>>
+  "Actually," you start, "the reason I'm so distracted is because I'm I've been wanting to thank you..."
+  Your hand reaches out and feels his erection through his jeans "For all of your <i>hard</i> work."
+<</nobr>>
+
+<<nobr>>
+  Seeing the smile on his face, you drop to your knees and start to unzip his pants.  You pull them, and
+  his underwear down until his cock springs free.  You then quickly get to work on his cock.
+<</nobr>>
+
+<<nobr>>
+  You aren't wearing any costumes, like in your fantasy, but he doesn't seem to mind.  After he's filled
+  your mouth with his cum, you swallow then say, "I think I can concentrate better now.  I'm probably good
+  to continue studying when you are."  After a moment you add, "Though I might need to take another break
+  before we are finished."
+<</nobr>>
+
+<<nobr>>
+  Your little 'focus breaks' are now a regular part of your tutoring sessions with him.  It has made you much more productive
+  the rest of the session.  And, even better, he is much more eager to meet you now, and able to schedule more sessions
+  every week with you.  You realize you are going to be done with your tutoring weeks ahead of schedule.
+<</nobr>>
+
+<<nobr>>
+  Sadly, it won't be [[this week|Part15WeekByWeek]] though,
+<</nobr>>
+
+::Part15TutorFollowupBJ
+<<nobr>>
+  <h1>Nearly off probation</h1>
+  <video src="Part15/Probation30.mp4" autoplay loop muted height="500"></video>
+  <<set setup.addSexRepeat(40, {sex:"male", name:"Tutor"})>>
+<</nobr>>
+<<nobr>>
+  You are so glad you decided to add a bit of fun to your tutoring sessions.  It makes the time much more enjoyable for you, and
+  especially for your tutor.
+<</nobr>>
+
+<<nobr>>
+  With all the extra time he's been willing to spend with you and the additional sessions, you think you are nearly done with
+  done with your sessions.  You can't wait to be off probation!  Just [[another week or two|Part15WeekByWeek]]!
+<</nobr>>
+
+<<nobr>>
+  Of course, you'll probably want to pay a visit or two to your tutor to celebrate once you can enjoy it as much as he does.
+<</nobr>>
 
 ::Part15WeekByWeek
 <<nobr>>
@@ -5272,6 +5520,11 @@ TODO Clean Tutor Followup (based on week 3-11) [[Part15WeekByWeek]]
   He hits a button on the machine and it slows it's movements and then stops.  Still bound to the machine, you pant and try to catch your
   breath.  Eventually he starts to release you from the bindings holding you to the machine.  As you start to stand, he tosses towel over
   to you to clean yourself up with.  "Feel free to come by for a visit any time you like," he says.  You hope to do exactly that.
+<</nobr>>
+
+<<nobr>>
+  You definitely aren't going to mention anything to your professor about your visit though.  Even though you volunteered and had a
+  wonderful time, she might get the wrong idea because of the restraints and everything.
 <</nobr>>
 
 <<include [[Part15BackToMain]]>>
@@ -8742,18 +8995,18 @@ TODO Maybe get too horny to just watch<br> [[Part15Week]]
 <</nobr>>
 
 ::Part15DormSluttySexMinistry
-<<set setup.addSex({sex:"female", name: "Kiera"}>>
-<<set setup.addSex({sex:"male", vaginal: true}>>
+<<set setup.addSex({sex:"female", name: "Kiera"})>>
+<<set setup.addSex({sex:"male", vaginal: true})>>
 TODO ministry fail,  friendship points,  Part15DormSluttyMinistry, [[Part15Week]]
 
 ::Part15DormSluttySex
-<<set setup.addSex({sex:"female", name: "Kiera"}>>
-<<set setup.addSex({sex:"male", vaginal: true}>>
+<<set setup.addSex({sex:"female", name: "Kiera"})>>
+<<set setup.addSex({sex:"male", vaginal: true})>>
 TODO more sex variables, friendship points, Part15DormSluttySex [[Part15Week]]
 
 ::Part15DormSluttyChasteSex
-<<set setup.addSex({sex:"female", name: "Kiera"}>>
-<<set setup.addSex({sex:"male"}>>
+<<set setup.addSex({sex:"female", name: "Kiera"})>>
+<<set setup.addSex({sex:"male"})>>
 TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15Week]]
 
 ::Part15DormNerdy
