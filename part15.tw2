@@ -4354,7 +4354,13 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  <<if $JobBetaTester == "chaste">>
+  <<if setup.areDating("Eric")>>
+    You know exactly the experiments she's talking about.  But you aren't about to talk to her about it.  She seems
+    out for blood, and you don't want Eric, Kyle, you, or anyone else getting caught up in her crusade or whatever.
+    <br><br>
+    At first you plan on just staying out of it entirely, but when you tell Eric about it, he urges you to go to the
+    department head to [[let him know about your professor|Part15WomensStudiesReport]] and her investigation.
+  <<elseif $JobBetaTester == "chaste">>
     You don't know about the experiments she is talking about, but you do know about the chastity belts she mentioned.
     You could arrange to meet with her and tell her about yours, but you signed those non-disclosure agreements.
     You wouldn't want to violate any rules and have them take your belt away.
@@ -5251,7 +5257,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   "I wish there was some way I could thank you for alerting me to this," he adds.
-  <<if $JobBetaTester or $JobEngineerLock>>
+  <<if $JobBetaTester or $JobEngineerLock or setup.areDating("Eric")>>
     <br>
     <div style="float:left;padding:12px;">
       <video src="Part13/Breeder1.webm" autoplay loop muted height="400"></video> 
@@ -5334,6 +5340,17 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   Hopefully your professor is as pleased as the department head was that you were able to help facilitate a
   [[non-confrontational resolution|Part15WomensStudiesReport2]] to their differences.  Just in case she's not, you decide not to
   mention you were the one that talked to the engineering department.
+  <<if setup.areDating("Eric")>>
+    <<set setup.addSex({sex:"male", name:"Eric"})>>
+    <<set setup.addSex({sex:"male", name:"Eric"})>>
+    <br><br>
+    When Eric gets home, you are worried he might be upset that you had an orgasm without his permission.  "Don't worry,
+    I knew about it and said it was fine," he reassures you.  "The only thing I don't like about it is that I wasn't here to
+    see it."  He unzips his pants and says, "Take care of me, and then I'll trigger the same thing again so I can watch this time."
+    <br><br>
+    Of course after he watches you he's harder than ever.  Though you are completely drained of energy by then, you do your best to
+    suck his cock again.
+  <</if>>
 <</nobr>>
 
 ::Part15WomensStudiesReport2

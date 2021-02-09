@@ -853,12 +853,15 @@ You are a young man trying to decide where to go to college.
     <<elseif setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.
     <<elseif $MasterKate>><br>You are Mistress Kate's pet.
     <</if>>
+
     <<if $Spouse == 'Ken'>>
       <br>You are married to Ken.
     <<elseif $MasterKen>>
       <br><<print "Ken, the artist, is your master and you are living in his loft.">>
     <</if>>
+
     <<if $MasterRobert>><br><<print "You are a slave to Robert. ">><</if>>
+
     <<if $Spouse == 'Andrew' or $Engaged == 'Andrew' or setup.areDating('Andrew')>>
       <<if $Spouse == 'Andrew'>>
         You are married to Andrew.
@@ -870,6 +873,7 @@ You are a young man trying to decide where to go to college.
         You are in a relationship with Andrew.
       <</if>>
     <</if>>
+
     <<if $Spouse == 'Paul' or $Engaged == 'Paul' or setup.areDating('Paul')>>
       <<if $Spouse == 'Paul'>>
         <br>You are married to Paul.
@@ -881,6 +885,7 @@ You are a young man trying to decide where to go to college.
         You are your boss, Paul's, mistress. 
       <</if>>
     <</if>>
+
     <<if $Spouse == 'Aaron' or $Engaged == 'Aaron' or setup.areDating('Aaron')>>
       <<if $Spouse == 'Aaron'>>
         <br>You are married to your "Daddy", Aaron.
@@ -892,6 +897,7 @@ You are a young man trying to decide where to go to college.
         Aaron is your Daddy and you are his Baby Girl.
       <</if>>
     <</if>>
+
     <<if $Spouse == 'Veronica' or $Engaged == 'Veronica' or setup.areDating('Veronica')>>
       <<if $Spouse == 'Veronica'>>
         You are married to Veronica.
@@ -903,6 +909,7 @@ You are a young man trying to decide where to go to college.
         You are in a relationship with Veronica.
       <</if>>
     <</if>>
+
     <<if $Spouse == 'Josh' or $Engaged == 'Josh' or setup.areDating('Josh')>>
       <<if $Spouse == 'Josh'>>
         You are married to Josh.
@@ -914,6 +921,7 @@ You are a young man trying to decide where to go to college.
         You are in a relationship with Josh.
       <</if>>
     <</if>>
+
     <<if $Spouse == 'Peter' or $Engaged == 'Peter' or setup.areDating('Peter')>>
       <<if $Spouse == 'Peter'>>
         You are married to Peter.
@@ -926,6 +934,7 @@ You are a young man trying to decide where to go to college.
       <</if>>
       <<if $PlayerItemNerdKey>>You keep him locked in chastity.<</if>>
     <</if>>
+
     <<if $Spouse == 'Barry' or $Engaged == 'Barry' or setup.areDating('Barry')>>
       <<if $Spouse == 'Barry'>>
         You are married to Barry.
@@ -986,6 +995,18 @@ You are a young man trying to decide where to go to college.
       You are living with your master, Mike.
     <<elseif $MasterMike>>
       Mike is your master.
+    <</if>>
+
+    <<if $Spouse == 'Eric' or $Engaged == 'Eric' or setup.areDating('Eric')>>
+      <<if $Spouse == 'Eric'>>
+        You are married to Eric.
+      <<elseif $Engaged == 'Eric'>>
+        You are engaged to Eric.
+      <<elseif $Roommate=='Eric'>>
+        You live with Eric.
+      <<else>>
+        You are in a relationship with Eric.
+      <</if>>
     <</if>>
 
     <<if $dating.length == 0>> 

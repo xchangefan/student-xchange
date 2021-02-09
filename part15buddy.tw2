@@ -1580,7 +1580,7 @@
     <<include [[Part15BuddyPart2Chastity]]>>
   <<elseif $BuddyPeterChastity or $BuddyThreesomeGuy or $BuddyBoys>>
     <<include [[Part15BuddyPart2Straight]]>>
-  <<elseif $BuddyDating or $BuddyThreesomeGirlfriend>>
+  <<elseif $BuddyDating or $BuddyThreesomeGirlfriend or ($BuddySex and $dating.length)>>
     <<include [[Part15BuddyPart2Lesbian]]>>
   <<elseif $BuddySex>>
     <<include [[Part15BuddyPart2Hookup]]>>
@@ -2143,10 +2143,17 @@
 
 <<nobr>>
   After the two of you makeout for a while, you stop and tell her, "I know you're bi, so if you want, we can bring the occasional guy home with us.
-  I know it'll be fun for both of us, and I'm sure it'll make his year."
+  I know it'll be fun for both of us, and I'm sure it'll make his
   <<if $DailyBJMinimum>>
-    In fact, with my belt, I'm required to suck at least <<if $DailyBJMinimum > 1>>$DailyBJMinimum cocks<<else>>one cock<</if>> a day, or it
-    punishes me.  It'll be much more fun if we do it together
+    year. In fact, with my belt, I'm required to suck at least <<if $DailyBJMinimum > 1>>$DailyBJMinimum cocks<<else>>one cock<</if>> a day, or it
+    punishes me.  It'll be much more fun if we do it together"
+  <<elseif $JobFitness or $JobCallGirl or $JobStripper or $JobGloryHole or $JobCallGirlSide>>
+    year. I'll probably being doing that and more at work, so if you want to have a little fun without me sometimes, that's fine too."
+  <<elseif setup.sexMaleCount() > 0>>
+    year. Or if you want to have some fun without me that's fine too, I'll probably do the same occasionally.  I know it's fun to just
+    let a guy focus on only you."
+  <<else>>
+    year."
   <</if>>
 <</nobr>>
 
