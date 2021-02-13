@@ -20,7 +20,7 @@
     <<include [[Part15JobAthlete]]>>
   <<elseif $JobCheerleader or $CheerleaderFundraiser>>
     <<include [[Part15JobCheer]]>>
-  <<elseif $JobFitnessYoga>>
+  <<elseif $JobFitnessYoga or $JobEros>>
     <<include [[Part15JobYoga]]>>
   <<elseif $JobFitnessMassage>>
     <<include [[Part15JobMassage]]>>
@@ -126,18 +126,483 @@ TODO They had no job, no side job, no relationship.  What are they doing with th
 ::Part15JobYoga
 <<nobr>>
   <<if $SchoolWeek == 3>>
-    TODO Yoga Week 3 Horniness from water still
-    <<include [[Part15AfterMainJob]]>>
+    <<if $dating.length>>
+      <<include [[Part15JobYogaJobChange]]>>
+    <<else>>
+      <<include [[Part15JobYoga1]]>>
+    <</if>>
   <<elseif $SchoolWeek == 7>>
-    TODO Yoga Week 7
-    <<include [[Part15AfterMainJob]]>>
+    <<include [[Part15JobYogaDecide]]>>
   <<elseif $SchoolWeek == 11>>
-    TODO Yoga Week 11
+    TODO Yoga Week 11 Continued MLM for Eros
     <<include [[Part15AfterMainJob]]>>
   <<else>>
-    TODO Yoga after that (13) (Bring your buddy to work day)
+    TODO Yoga after that (13) (Bring your buddy to work day?) Possibly ending for MLM
     <<include [[Part15BackToMain]]>>
   <</if>>
+<</nobr>>
+
+::Part15JobYogaJobChange
+<<nobr>>
+  <h1>Quiting your job at the fitness center</h1>
+  <<if setup.haveGirlfriend()>>
+    <img src="Part8.5/Talk2.jpg" hspace="10" vspace="10" height="500">
+    <<set $tempPronoun to "She">>
+  <<else>>
+    <img src="Part8.5/Talk1.jpg" hspace="10" vspace="10" height="500">
+    <<set $tempPronoun to "He">>
+    <<set setup.addSexRepeat(20, {sex:"male", name:$dating[0], vaginal:true})>>
+    <<set setup.addSexRepeat(20, {sex:"male", name:$dating[0]})>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  You and $dating[0] have had some time to talk.  $tempPronoun isn't really comfortable with your job at the fitness
+  center.  $tempPronoun knows how horny you are now, and is fairly certain you'll find it difficult to teach much yoga
+  in a class full of naked students.  You'll just want to fuck instead.  $tempPronoun is probably right.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating("Bailey")>>
+    Things are just starting out with you and Bailey.  You'd rather be spending your intimate time with her.  Or
+    at least most of it.
+  <<elseif setup.areDating("Peter")>>
+    Of course it's not like being faithful to Peter is a requirement.  He's the only one that has his fidelity
+    strictly enforced.  But you'd rather keep the decision of when or if to cuckold him under your own free will.
+    You don't want it to be something you do just because you can't control yourself.
+    <br><br>
+  <</if>>
+  So you agree, that a job change is needed.  At first you are thinking about the coffee shop on campus, several of your
+  friends already work there.  But then you here about a [[different coffee shop|Part15JobYogaJobChange2]], that seems
+  to interest you more.
+<</nobr>>
+
+::Part15JobYogaJobChange2
+<<nobr>>
+  <h1>Your new job</h1>
+  <<if $BodyType == "Fit">>
+    <img src="Part13/BaristaB2Fit.jpg" hspace="10" vspace="10" height="500" align="left">
+  <<elseif $BodyType == "Petite">>
+    <img src="Part13/BaristaB2Petite.jpg" hspace="10" vspace="10" height="500" align="left">
+  <<elseif $BodyType == "Plus">>
+    <img src="Part13/BaristaB2Plusjpg" hspace="10" vspace="10" height="500" align="left">
+  <<else>>
+    <img src="Part13/BaristaB2.jpg" hspace="10" vspace="10" height="500" align="left">
+  <</if>>
+  <<set $JobFitnessYogaOld to 1>>
+  <<unset $JobFitnessYoga>>
+  <<set $JobBikiniBarista to 1>>
+  <<set setup.addInventory('clothes', 'bikini')>>
+  <<set setup.addInventory('underwear', 'sexy underwear')>>
+  <<set setup.addInventory('sleepwear', 'lingerie')>>
+<</nobr>>
+<<nobr>>
+  The regular barista job seemed far too boring.  When you heard there was a coffee shop where you could serve customers
+  in your bikini, or lingerie, you knew it'd be perfect for you.
+<</nobr>>
+
+<<nobr>>
+  And you've assured $dating[0] that you won't be one of the girls that go out to the parking lot to provide extra service
+  to their customers.  They get to look, and not touch.  Well... maybe a little groping through the window, but only if they
+  tip really well.
+<</nobr>>
+
+<<nobr>>
+  You think you are really going to [[like the new job|Part15WeekByWeek]].
+<</nobr>>
+
+::Part15JobYoga1
+<<nobr>>
+  <h1>Coed yoga classes</h1>
+  You started off the year with separate male and female yoga classes.  You were thinking that would make
+  the new students, especially the female ones, more comfortable with doing yoga nude.
+  <<set setup.addSexRepeat(20, {sex:"male", anon:"Yoga Helper", vaginal:true, noCondom:true, noPullout:true})>>
+<</nobr>>
+
+<<nobr>>
+  But when classes start, you realize you don't have all that many new students plus nearly all of your male
+  students are gone. Most of your male students where athletes, and the coach has banned them from your class
+  after testing positive for a performance enhancing substance.  They let him off with a warning when it was
+  traced to the new <b>StaminaWater for Men</b> that Eros is having you promote this year.  You knew it
+  "enhanced performance", but you didn't think it would get them in trouble.  Regardless, it's a big chunk of
+  your class gone.  Luckily nearly all of your female students from last year are back though.  There's just
+  a few that are missing.
+<</nobr>>
+
+<<nobr>>
+  One of your returning students explains, "Well Nancy and Beth graduated, that's why they're not back.
+  Though they asked me if you still had any extra <b>ErosH<sub>2</sub>O</b> coupons, if I could mail them
+  a few.  And Lynn and Erin both are pregnant and not back at school this year."
+<</nobr>>
+
+<<nobr>>
+  "I got pregnant, and I'm still here," Tanya says from in back.  "Me too...", "And me" you
+  here a couple others volunteer from around the room.
+  <<if $PlayerPregnant>>
+    <<if $PregnancyWeek > 12>>
+      "And obviously so am I," you say.
+    <<else>>
+      "As am I," you inform them.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When you wonder why so many are pregnant your students have some ideas.  "Well, I'm horny all the time, so I'm
+  having a lot of sex," one say with nods of agreement around the room.  "And, masturbating just doesn't do it for
+  me like it used to, so I always want a nice hard cock."  There's surprised agreement from around the room.  It
+  seems that's the case with everyone.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectMasturbationBlock>>
+    "Well it's true for me too," you confirm.  "Though it's not anything new for me."
+  <<else>>
+    "You're right," you confirm.  I don't remember the last time I got myself off.  Last time I tried I just ended up
+    getting horny and going out to find someone to fuck!"
+    <<set $PlayerSideEffectMasturbationBlock to 1>>
+    <br><br>
+    <i>You are now unable to orgasm from masturbation.</i>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When you get back to the class itself, your students are having hard time paying attention.  Most of them are barely listening
+  when you remind your students about practicing at home with a friend, to help them stretch.  But one of them was listening, and
+  has a different idea.  The class quickly has her attention when she suggests it.  "Why don't we invite some guys here, during
+  class, to help us?"
+<</nobr>>
+
+<<nobr>>
+  <table>
+    <tr>
+      <td><video src="Part15/Yoga1.webm" autoplay loop muted width="600"></video></td>
+      <td><video src="Part15/Yoga2.webm" autoplay loop muted width="600"></video></td>
+    </tr>
+  </table>
+<</nobr>>
+
+<<nobr>>
+  You realize that's a brilliant idea.  Your students are too horny to pay attention in class, and that would definitely help
+  with that. And you promised Eros you'd market their new male product just like you did the women's version you'd already be
+  using and giving away.  And, of course, having a good fuck in the middle of the day is exactly what you need too.
+<</nobr>>
+
+<<nobr>>
+  Some of the girls start bringing their boyfriends to class with them.  You've also managed to find a few volunteers as well.
+  The girls still dating athletes can't bring their boyfriends, so they share their classmates' boyfriends or get help
+  from one of the volunteers.
+<</nobr>>
+
+<<nobr>>
+  There's still not as many guys as there are girls in the class, and some of the girls that don't get to go first worry
+  the guys won't have anthing left when it's their turn.  But they soon see that's not going to a problem.  "Isn't the
+  Stamina Water amazing?" you ask them rhetorically.
+<</nobr>>
+
+<<nobr>>
+  A few of the girls whose boyfriends couldn't come feel guilty at first for 'cheating' on their boyfriends.  But
+  after a few rounds with the guys in class, most decide it was time for a new boyfriend anyway.
+<</nobr>>
+
+<<nobr>>
+  You may have a lot fewer students now.  But the ones that you do have, have never been happier to be here.  "Don't forget to
+  grab a bottle of Eros on your way out," you remind them at the end of class.  "You need to stay hydrated after that workout.
+  Grab a couple for home too."  Once they all leave, you decide to go checkout the [[new popular class|Part15JobYoga2]] that
+  seems to have attracted all the new signups this year instead of yours.
+<</nobr>>
+
+::Part15JobYoga2
+<<nobr>>
+  <h1>The new fad</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Yoga3.webm" autoplay loop muted width="600"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  When you look in on the new class you see row after row of women... twerking.  "This is what they doing instead
+  of my class?" you think to yourself.
+<</nobr>>
+
+<<nobr>>
+  "Whatever," you think.  You aren't going to try to figure out the sudden interest in this.  It doesn't really
+  matter to you.  What matters is that they aren't interested in your class like they were before.
+<</nobr>>
+
+<<nobr>>
+  You realize with your class not as popular, it doesn't matter how much your remaning students love the class, it's
+  probably going to get cancelled soon.  You plan on enjoying your class, and making sure your students do, as long as
+  it lasts.  But you also start thinking about what your other options might be when it does end.
+<</nobr>>
+
+<<nobr>>
+    <<include [[Part15AfterMainJob]]>>
+<</nobr>>
+
+::Part15JobYogaDecide
+<<nobr>>
+  <h1>Cancelled Class</h1>
+  You were right to worry, you've found out your yoga classes have been cancelled.  There just aren't enough students
+  for them to want to continue paying you to teach them.  And you've already let them know you don't have any interest in
+  teaching any twerking classes.
+  <<set setup.addSexRepeat(5, {sex:"male", anon:"Yoga Helper", vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSexRepeat(5, {sex:"male", anon:"Yoga Helper"})>>
+<</nobr>>
+
+<<nobr>>
+  You are cleaning out your locker and deciding what to do next when you see one of your classroom yoga helpers looking
+  confused in the hallway.  You find out he didn't get the email about class being cancelled, permanently.
+<</nobr>>
+
+<<nobr>>
+  He's understandably disappointed, but you decide there's no reason his afternoon needs to be completely ruined.  Besides
+  you need a good, hard fuck right now really bad, and you aren't in the mood to go searching for one.  You
+  ask if he wants go back to his place to comfort each other about the cancellation.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Yoga4.webm" autoplay loop muted width="650"></video>
+<</nobr>>
+
+<<nobr>>
+  You've been with him before, but normally you've had to share him with the rest of the class.  But this time you have him
+  all to yourself.
+<</nobr>>
+
+<<nobr>>
+  In your horniness you get carried away sucking his cock.  You smile as his cum covers your face, but are expecting to
+  still be left horny until he recovers.  As he goes behind you, you quickly realize that's not something you have to
+  worry about.
+<</nobr>>
+
+<<nobr>>
+  Before you leave his apartment, you have to wipe yourself down with a towel.  You lost track of how many times he came on
+  you.  And that's not even counting the ones you swallowed or when he came in you.
+<</nobr>>
+
+<<nobr>>
+  You expect he could probably go longer still, except he has to get ready for his evening job.  Before you go, he tells you
+  his disappointed about the class ending, but seems more worried that you'll still be able to keep supplying him with Stamina
+  Water.
+<</nobr>>
+
+<<nobr>>
+  "I'll have to talk to the Eros people and let you know," you tell him.  You wonder if you can work something out
+  with them now that the class is over.
+<</nobr>>
+
+<<nobr>>
+  As you walk back home you wonder if you should go ahead and [[call your contact at Eros|Part15JobYogaEros]] now.
+  Or, should you put that off, and [[start looking for a new job|Part15JobYogaJobChange3]] instead.
+<</nobr>>
+
+::Part15JobYogaEros
+<<nobr>>
+  <h1>Meeting with your Eros representative</h1>
+  <img src="Part15/Eros1.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<unset $JobFitnessYoga>>
+  <<set $JobFitnessYogaOld>>
+  <<unset $JobFitness>>
+  "Hello, $playerName, I'm glad you were able to stop by. I was concerned when i got your call," your Eros 
+  representative Gwen tells you when you stop by her house to meet her.  "It's really a shame about your yoga job.
+  It seemed like you really enjoyed your work.
+<</nobr>>
+
+<<nobr>>
+  "And you did such a wonderful job introducing young women to ErosWater, and more recently, young men to our
+  Stamina Water.  I can't tell you how much I appreciate all the marketing you did for me and for Eros.
+<</nobr>>
+
+<<nobr>>
+  "I'm not surprised you have many friends and former students asking you about getting more for them.  Once people
+  experience the excitement our products add to their lives, they don't usually want to go back.  You probably feel
+  the same way.  I know I do.
+<</nobr>>
+
+<<nobr>>
+  "As you know, Eros products aren't sold in any store.  They are only available through distributors like me.  The
+  free Water from the promotion has done it's part I think.  We've definitely sparked interest in the college
+  community as I had hoped.
+<</nobr>>
+
+<<nobr>>
+  "Now, I could sell the water and our other products to the new customers you have made for us.  But I have another
+  idea.  <i><b>You</b></i> can become a distributor!
+<</nobr>>
+
+<<nobr>>
+  "You'll pay the wholesale price, and then your friends will pay the retail price.  The difference is all profit.
+  A percentage of that goes to me as your upstream distributor.  And I share part of my percentage with my upstream and
+  so on.  But the rest will be all yours!
+<</nobr>>
+
+<<nobr>>
+  "And with as high as I expect your personal sales volume will be, you should qualify for more than enough free product
+  for your own personal needs, and some for a male friend or two.
+<</nobr>>
+
+<<nobr>>
+  "And if any of your female friends want to be distributors like us, you can sign them up.  Then you'll get a percentage
+  of everything they sell too!"
+<</nobr>>
+
+<<nobr>>
+  You really need the money now that you have just became unemployed, but still aren't quiet sure.  She continues,
+  "I'm [[hosting a party|Part15JobYogaEros2]] this evening for some women I know.  Why don't you come along.  I expect
+  everyone will be a bit quiet and shy at first.  But with an young, enthusiastic, and energetic woman like you there,
+  they'll see just how fun Eros can be and the party should really get going."
+<</nobr>>
+
+::Part15JobYogaEros2
+<<nobr>>
+  <h1>Co-hosting your first Eros party</h1>
+  <<set $JobEros to 1>>
+  <<set setup.addSex({sex:"male", name:"Trevor"})>>
+  <<set setup.addSex({sex:"male", name:"Trevor", vaginal:true, birthControl:"pullout-perfect"})>>
+  <<set setup.addSex({sex:"female", anon:"Eros Guest"})>>
+  <<set setup.addSex({sex:"female", anon:"Eros Guest"})>>
+  <<set setup.addSex({sex:"female", anon:"Eros Guest"})>>
+  <<set setup.addSex({sex:"female", anon:"Eros Guest"})>>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Eros2.mp4" autoplay loop muted width="400"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  The party is a bit boring at first, as Gwen goes over the products and their benefits.  Then there's a
+  discussion among the women there, and it's only women, about how they are just too tired for sex when
+  they get home from work, or how their boyfriend just rolls over and falls asleep after he gets off, or
+  about whatever other problem their sex life is facing.  Gwen frequently points out various ways that
+  one Eros product or another can help.
+<</nobr>>
+
+<<nobr>>
+  Everything changes though when Gwen says it's time for the product demonstration.  She opens a door and waves to
+  a handsome guy that had been waiting in the hall.  "Trevor here just finished his bottle of Stamina Water while
+  we were talking, and he's very eager for us to begin," Gwen says.
+<</nobr>>
+
+<<nobr>>
+  "I can see that," someone says with a giggle referring to his barely concealed erection.
+<</nobr>>
+
+<<nobr>>
+  "And $playerName, has been drinking ErosWater for a while now, and she's excited for you to see how fun it is,"
+  Gwen says.  "$playerName, Why don't you start by showing Trevor how grateful we all our for him volunteering to
+  help us tonight?" 
+<</nobr>>
+
+<<nobr>>
+  A few moments later, you are own your knees pulling Trevor's pants down and taking his massive cock into your mouth.
+  Sucking his cock in front of all these people soon has you wet and
+  <<if $PlayerSideEffectExhibitionist>>
+    eager for him to fuck you in front of them too.
+  <<else>>
+    ready for him to fuck you.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  But like you and Gwen had discussed, you keep going until Trevor's cum fills your mouth.  You resist the urge to swallow
+  it right away.  Instead you turn your head with your mouth wide open, letting everyone see the massive load Trevor gave you.
+  When everyone has seen, you eagerly swallow it down.
+<</nobr>>
+
+<<nobr>>
+  Trevor doesn't need any time to wait though, and he soon has you bent over one of the chairs.  He fucks you to one orgasm
+  and then another while the partygoers look on.  Finally he's ready to cum too.  He cums on your face this time, making
+  even easier for everyone to see. 
+<</nobr>>
+
+<<nobr>>
+  "Now, while I'm sure $playerName and Trevor would be eager to keep going for some time still, we should probably
+  give others a chance," Gwen says. "Anyone who already you'll be buying a case for yourself, for your husband, or
+  one of our 50/50 couples cases, just put your name here on one of the order forms.  We can finish filling it out
+  after you've had your fun with Trevor.  Or with $playerName, if that's more your style."
+<</nobr>>
+
+<<nobr>>
+  By the time the part is over, there's a huge stack of completed orders and Trevor's energy finally seems to be running out.
+  After he and the party guests have left, you and Gwen talk some more.  "Thanks for all your help tonight," she says.
+  "I don't need to ask, I can see that you had a good time. I'm pretty sure you've decided to join the Eros family, right?"
+<</nobr>>
+
+<<nobr>>
+  When you enthusiasticly agree, she continues, "Normally new distributors are expected to pay up front for their
+  'Seller's Kit'.  But since you were such a help tonight, I'll front you the money for it.  When you start selling the
+  products from your kit to your friends, and getting orders for more, then you can pay me back."
+<</nobr>>
+
+<<nobr>>
+  I doubt you'll have much trouble selling since your students have already seen how well the product works.  But if
+  you need any advice on hosting a party, let me know.  It sounds like you already have your own 'Trevor' or two available,
+  so you already have a good start."
+<</nobr>>
+
+<<nobr>>
+  You head back home with your Seller's Kit, excited at how much money you are going to make at your new job selling Eros
+  products.
+<</nobr>>
+
+<<include [[Part15AfterMainJob]]>>
+
+
+::Part15JobYogaJobChange3
+<<nobr>>
+  <h1>Your new job</h1>
+  <<if $BodyType == "Fit">>
+    <img src="Part13/BaristaB2Fit.jpg" hspace="10" vspace="10" height="500" align="left">
+  <<elseif $BodyType == "Petite">>
+    <img src="Part13/BaristaB2Petite.jpg" hspace="10" vspace="10" height="500" align="left">
+  <<elseif $BodyType == "Plus">>
+    <img src="Part13/BaristaB2Plusjpg" hspace="10" vspace="10" height="500" align="left">
+  <<else>>
+    <img src="Part13/BaristaB2.jpg" hspace="10" vspace="10" height="500" align="left">
+  <</if>>
+  <<set $JobFitnessYogaOld to 1>>
+  <<unset $JobFitnessYoga>>
+  <<set $JobBikiniBarista to 1>>
+  <<set setup.addInventory('clothes', 'bikini')>>
+  <<set setup.addInventory('underwear', 'sexy underwear')>>
+  <<set setup.addInventory('sleepwear', 'lingerie')>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado'})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true, noCondom:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado'})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true, noCondom:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado'})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true, noCondom:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado'})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true, noCondom:true})>>
+  <<set setup.addSexRepeat(2, {sex: 'male', anon: 'coffee aficionado', vaginal:true, noCondom:true, noPullout:true})>>
+<</nobr>>
+<<nobr>>
+  You'd thought about getting a job as a barista, but that job seemed far too boring.  When you heard there was
+  a coffee shop where you could serve customers in your bikini, or lingerie, you knew it'd be perfect for you.
+<</nobr>>
+
+<<nobr>>
+  You were already liking the job, especially the extra tips you were getting when you let customers grop you through
+  the drive-thru window.  Of course that just made you hornier, and making out with your coworker always got the
+  customers excited, but didn't get you off.
+<</nobr>>
+
+<<nobr>>
+  But then you found out some of the girls make special trips to deliver certain customer's orders out to their
+  vehicles in the parking lot.  And those girls always come back with a smile and a wad of cash.
+<</nobr>>
+
+<<nobr>>
+  You are soon providing 'curbside service' as well.  You aren't even doing it for the money, you just need to
+  get fucked. The fact that they are paying you for it just makes it that much nicer.
+<</nobr>>
+
+<<nobr>>
+  You think you are really going to [[like the new job|Part15WeekByWeek]].
 <</nobr>>
 
 ::Part15JobMassage
@@ -157,12 +622,12 @@ TODO They had no job, no side job, no relationship.  What are they doing with th
 <<nobr>>
   <h1>An athletic massage</h1>
   <video src="Part15/Massage2.webm" autoplay loop muted height="450"></video>
-  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athelete"})>>
-  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athelete"})>>
-  <<set setup.addSex(1, {sex:"male", anon:"Athelete", vaginal:true, noPullout:true, noCondom:true})>>
-  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athelete"})>>
-  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athelete"})>>
-  <<set setup.addSex(1, {sex:"male", anon:"Athelete", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athlete"})>>
+  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athlete"})>>
+  <<set setup.addSex(1, {sex:"male", anon:"Athlete", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athlete"})>>
+  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athlete"})>>
+  <<set setup.addSex(1, {sex:"male", anon:"Athlete", vaginal:true, noPullout:true, noCondom:true})>>
 <</nobr>>
 <<nobr>>
   Normally your goal is to let the athletes that come in for a massage have a nice, relaxing session.  You'll work
@@ -185,12 +650,12 @@ TODO They had no job, no side job, no relationship.  What are they doing with th
 ::Part15JobMassage3
 <<nobr>>
   <h1>Celebrating her victory</h1>
-  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athelete"})>>
-  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athelete"})>>
-  <<set setup.addSex(1, {sex:"male", anon:"Athelete", vaginal:true, noPullout:true, noCondom:true})>>
-  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athelete"})>>
-  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athelete"})>>
-  <<set setup.addSex(1, {sex:"male", anon:"Athelete", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athlete"})>>
+  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athlete"})>>
+  <<set setup.addSex(1, {sex:"male", anon:"Athlete", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athlete"})>>
+  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athlete"})>>
+  <<set setup.addSex(1, {sex:"male", anon:"Athlete", vaginal:true, noPullout:true, noCondom:true})>>
   You've seen a number of girls wearing those fancy electronic chastity belts this year.  Friends mainly, none of the female
   athletes though.  You guess it doesn't work with competing.  Today you finally have an athlete in wearing a belt, though it
   isn't one of the fancy ones.
@@ -258,12 +723,12 @@ TODO They had no job, no side job, no relationship.  What are they doing with th
   <h1>Roleplaying being the client</h1>
   One of your clients likes roleplaying that he's the one giving you a massage.  It actually starts off with him
   giving you a nice, relaxing massage.
-  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athelete"})>>
-  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athelete"})>>
-  <<set setup.addSex(1, {sex:"male", anon:"Athelete", vaginal:true, noPullout:true, noCondom:true})>>
-  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athelete"})>>
-  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athelete"})>>
-  <<set setup.addSex(1, {sex:"male", anon:"Athelete", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athlete"})>>
+  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athlete"})>>
+  <<set setup.addSex(1, {sex:"male", anon:"Athlete", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athlete"})>>
+  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athlete"})>>
+  <<set setup.addSex(1, {sex:"male", anon:"Athlete", vaginal:true, noPullout:true, noCondom:true})>>
 <</nobr>>
 
 <<nobr>>
@@ -295,12 +760,12 @@ TODO They had no job, no side job, no relationship.  What are they doing with th
     when they are naked on your table.
   <</if>>
   So she's eager to join you today.
-  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athelete"})>>
-  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athelete"})>>
-  <<set setup.addSex(1, {sex:"male", anon:"Athelete", vaginal:true, noPullout:true, noCondom:true})>>
-  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athelete"})>>
-  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athelete"})>>
-  <<set setup.addSex(1, {sex:"male", anon:"Athelete", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athlete"})>>
+  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athlete"})>>
+  <<set setup.addSex(1, {sex:"male", anon:"Athlete", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(10, {sex:"male", anon:"Athlete"})>>
+  <<set setup.addSexRepeat(2, {sex:"female", anon:"Athlete"})>>
+  <<set setup.addSex(1, {sex:"male", anon:"Athlete", vaginal:true, noPullout:true, noCondom:true})>>
 <</nobr>>
 
 <<nobr>>

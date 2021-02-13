@@ -76,13 +76,14 @@
     <br>
     <img src="Part15/Major5.jpg" hspace="30" vspace="10" height="450">
     <br>
-    There isn't any set requirements if you want to continue with that after you
-    graduate, but you could always pick "Health Sciences" and focus on exercise science or kinesiology.
-    Of course, there's a lot of competition out there.  But if you let word get around about your private sessions, then maybe
-    that won't be a problem.
+    Though with the uncertain you have hanging of you and your class's future, you aren't sure you want to make a career out of it.
+    Or if you do, you want it to be on your own terms, where you decide what classes to offer or not.
     <br><br>
-    Or maybe you'd like to do something different after college.
-    <<include [[Part15MajorChoose]]>>
+    You don't really need a degree to teach yoga anyway, so you decide a [[Business|Part15MajorBusiness]] would be pefect.
+    You already know the yoga, with a business degree maybe you can learn how to run the business.  Then you'd be all set to
+    start your own yoga studio after you graduate.
+    <br><br>
+    And even if you decide to do something else, it should provide a lot of flexiblity to try something different.
   <<elseif $JobFitnessMassage>>
     <br>
     You've enjoyed your work in the fitness center.  
@@ -291,25 +292,38 @@
   <<set $Major to "Business">>
 <</nobr>>
 <<nobr>>
-  Some of your friends think working for some big corporation sounds horrible.  But they can rant all they want about
-  'late-stage capitalism', or whatever.  While they are struggling to figure out what to do with their Philosophy degree,
-  you'll have a nice, steady job and paying your bills on time every month. 
-<</nobr>>
-
-<<nobr>>
-  <<if $dating.length == 0>>
-    They also like to joke about you trying to find some rich,
-    <<if setup.isGoldStarLesbian()>>sexy<<else>>handsome<</if>>
-    executive to snatch up, so you don't have to work at all.  You don't tell them, but maybe there's a bit more truth to
-    that than the rest of what they say.  Though maybe you'd rather be the rich executive instead some day.
+  <<if $JobFitnessYoga>>
+    A lot of the other students in your major seem to have plans to work for one big, nameless corporation or another
+    after graduation. Though there are a few others, like you, with a more entrepreneurial mindset.  Instead of lining
+    some CEO's pocket after graduation, you'll be working for yourself.
+    <br><br>
+    You'll take the same marketing and accounting and most of the other classes with the future corporate drones.
+    There's a few small business classes specific to your focus area, and you plan on paying extra attention during those.    
+    <br><br>
+    You don't talk down your classmates with corporate plans though.  In fact you plan on doing as much networking as you
+    can.  A few corporate clients, adding memberships to your studio as a corporate benefit, would really help get your
+    studio off the ground.
+    <br><br>
+    So having a few friends on the inside might get you a foot in the door to talk to the right people when that time comes.
+    And, who knows, if things don't work out the way you plan and you need something to fall back on, they could probably
+    help you get a job too.
   <<else>>
-    They also like to joke that it's just because $dating[0] thinks you look hot in heels and stockings.  You usually laugh and
-    tell them that they are half right.  That is A reason, just not the only one.
+    Some of your friends think working for some big corporation sounds horrible.  But they can rant all they want about
+    'late-stage capitalism', or whatever.  While they are struggling to figure out what to do with their Philosophy degree,
+    you'll have a nice, steady job and paying your bills on time every month. 
+    <br><br>
+    <<if $dating.length == 0>>
+      They also like to joke about you trying to find some rich,
+      <<if setup.isGoldStarLesbian()>>sexy<<else>>handsome<</if>>
+      executive to snatch up, so you don't have to work at all.  You don't tell them, but maybe there's a bit more truth to
+      that than the rest of what they say.  Though maybe you'd rather be the rich executive instead some day.
+    <<else>>
+      They also like to joke that it's just because $dating[0] thinks you look hot in heels and stockings.  You usually laugh and
+      tell them that they are half right.  That is A reason, just not the only one.
+    <</if>>
+    <br><br>
+    You'll figure out whether you'll go with finance, accounting, or something else later.  For now the classes are all the same anyway.
   <</if>>
-<</nobr>>
-
-<<nobr>>
-  You'll figure out whether you'll go with finance, accounting, or something else later.  For now the classes are all the same anyway.
 <</nobr>>
 
 <<nobr>>
