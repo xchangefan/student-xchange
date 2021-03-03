@@ -208,15 +208,31 @@
 <<nobr>>
   Once they've had a bit of fun, she has him move you.  He places your bound body in the common area, the room connecting both your and $Roommate's
   room and the guy's room.  She tells you, "We are going to fuck some more.  You'll have to just listen this time.  I'm sure
-  $neighbours[0] or $neighbours[1], or maybe both, will take care of you when they get home."  She pauses then adds, "Unless you want to beg
-  me to untie you before then.
+  <<if $Mentor == "Emily">>
+    $neighbours[1] will take care of you when he gets
+  <<else>>
+    $neighbours[0] or $neighbours[1], or maybe both, will take care of you when they get
+  <</if>>
+  home."  She pauses then adds, "Unless you want to beg me to untie you before then."
 <</nobr>>
 
 <<nobr>>
-  Your mind is racing trying to decide whether to beg for release or not.  You wonder what they guys will do to you if they find you like this.
+  Your mind is racing trying to decide whether to beg for release or not.  You wonder what
+  <<if $Mentor == "Emily">>
+    $neighbours[1] will do if he finds
+  <<else>>
+    the guys will do to you if they find
+  <</if>>
+  you like this.
   Well, you don't have to wonder, you have a pretty good idea.  But you are imagining it in detail.  You are still trying to decide when she says,
-  "Times up.  You'll have to [[wait for the boys to get home|Part6ArtReturn3Male]]."  Then she ties the belt from her robe around your head like
-  a gag and goes back to her room.  She leaves the door cracked a bit so you can still hear the moans as you wait to be discovered.
+  "Times up.  You'll have to
+  <<if $Mentor == "Emily">>
+    [[wait for him to get home|Part6ArtReturn3Male]]."
+  <<else>>
+    [[wait for the boys to get home|Part6ArtReturn3Male]]."
+  <</if>>
+  Then she ties the belt from her robe around your head like a gag and goes back to her room.  She leaves the door cracked a bit so you can
+  still hear the moans as you wait to be discovered.
 <</nobr>>
 
 ::Part6ArtReturn3Male
@@ -227,6 +243,8 @@
   </div>
   <<if setup.isNeighbour("Emily")>>
     <<set $tempFoundBy to $Roommate>>
+  <<elseif $Mentor == "Emily">>
+    <<set $tempFoundBy to $neighbours[1]>>
   <<elseif $neighbours.length > 1>>
     <<set $tempFoundBy to either($neighbours[0], $neighbours[1])>>
   <<else>>

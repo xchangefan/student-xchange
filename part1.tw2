@@ -814,11 +814,13 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <</nobr>>
 
 ::BodySideEffects <1400,200>
-<<if $PlayerSideEffects>>
-  <<include [[BodySideEffectsYes]]>>
-<<else>>
-  <<include [[EndPart1]]>>
-<</if>>
+<<nobr>>
+  <<if $PlayerSideEffects>>
+    <<include [[BodySideEffectsYes]]>>
+  <<else>>
+    <<include [[SideEffectDisclaimer]]>>
+  <</if>>
+<</nobr>>
 
 ::BodySideEffectsYes <1425,200>
 <<nobr>>
@@ -896,27 +898,24 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <</if>>
   <</if>>
   <<set $validOptionsThisRoll.push(11, 11)>>
-<</nobr>>
-
-<<nobr>>
   <<switch either($validOptionsThisRoll)>>
-    <<case 1>>	<<include [[BodySideEffectPermanent]]>>
-    <<case 2>>	<<include [[BodySideEffectOrgasmBlock]]>>
-    <<case 3>>	<<include [[BodySideEffectMasturbationBlock]]>>
-    <<case 4>>	<<include [[BodySideEffectSubmissive]]>>
-    <<case 5>>	<<include [[BodySideEffectExhibitionist]]>>
-    <<case 6>>	<<include [[BodySideEffectPheromones]]>>
-    <<case 7>>	<<include [[BodySideEffectOral]]>>
-    <<case 8>>	<<include [[BodySideEffectAnal]]>>
-    <<case 9>>	<<include [[BodySideEffectLibido]]>>
-    <<case 10>>	<<include [[BodySideEffectDreams]]>>
-    <<case 11>>	<<include [[BodySideEffectSuperOrgasm]]>>
-    <<default>> <<include [[BodySideEffectFail]]>>
+    <<case 1>><<include [[BodySideEffectPermanent]]>>
+    <<case 2>><<include [[BodySideEffectOrgasmBlock]]>>
+    <<case 3>><<include [[BodySideEffectMasturbationBlock]]>>
+    <<case 4>><<include [[BodySideEffectSubmissive]]>>
+    <<case 5>><<include [[BodySideEffectExhibitionist]]>>
+    <<case 6>><<include [[BodySideEffectPheromones]]>>
+    <<case 7>><<include [[BodySideEffectOral]]>>
+    <<case 8>><<include [[BodySideEffectAnal]]>>
+    <<case 9>><<include [[BodySideEffectLibido]]>>
+    <<case 10>><<include [[BodySideEffectDreams]]>>
+    <<case 11>><<include [[BodySideEffectSuperOrgasm]]>>
+    <<default>><<include [[BodySideEffectFail]]>>
   <</switch>>
 <</nobr>>
 
 ::BodySideEffectFail <1600,200>
-	Actually, it looks like there weren't quite as many as I had thought.  That was [[your last side effect.|EndPart1]]
+	Actually, it looks like there weren't quite as many as I had thought.  That was [[your last side effect.|SideEffectDisclaimer]]
 
 ::BodySideEffectPermanent <1800,200>
 	<<nobr>>
@@ -981,7 +980,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 		
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1029,7 +1028,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 		
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1075,7 +1074,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 		
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1122,7 +1121,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 		
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1170,7 +1169,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 		
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1218,7 +1217,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 		
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1273,7 +1272,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 		
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1328,7 +1327,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 		
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1379,7 +1378,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 		
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1414,7 +1413,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<<nobr>>
 		It looks like
 		<<if $PlayerSideEffects == 0>>
-			that was [[your last side effect.|EndPart1]]
+			that was [[your last side effect.|SideEffectDisclaimer]]
 		<<elseif $PlayerSideEffects == 1>>
 			you have one side effect left.  [[Let's see what it is.|BodySideEffects]]
 		<<else>>
@@ -1422,6 +1421,27 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			[[Let's see what the next one effect is.|BodySideEffects]]
 		<</if>>
 	<</nobr>>
+
+::SideEffectDisclaimer
+<<nobr>>
+  <h1>Disclaimer</h1>
+  <img src="Part1/SideEffectDisclaimer.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  "Please note," the technician starts reading some disclaimer off of a card.  "The descriptions of your side effects and their severity
+  are intended as an estimate for most users in most situations.  Side-effect severity may vary from individual to individual.  How a
+  side-effect presents for the same individual may vary from situation to situation.
+<</nobr>>
+
+<<nobr>>
+  "Side-effects may be more or less severe than described.  Multiple side-effects may interact in unforseen ways.  Additional side-effects
+  may present at a later time.
+  Please use caution until you understand how your individual side-effect or side-effects impact you."
+<</nobr>>
+
+<<nobr>>
+  He puts down the card.  "Sorry, I had to read that part.  But I'm sure [[you'll be fine|EndPart1]]"
+<</nobr>>
 
 ::EndPart1 <4000,200>
 <h1>Freshman Orientation</h1>
