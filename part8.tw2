@@ -3,29 +3,27 @@
 	<<set $PlayerMoney = 0>>
 	<<set $PlayerMoneySet = 1>>
 	<h1><<print "Bedroom">></h1>
+  Before you leave for home, you check how much money you have left. You know you won’t be getting paid again until after New Years.
+  You have a credit card now though, so you can spend more if you need to, but you want to avoid doing that... again.
 <</nobr>>
-
-<<print "Before you leave for home, you check how much money you have left. You know you won’t be getting paid again until after New Years. You have a credit card now though, so you can spend more if you need to, but you want to avoid doing that... again.">>
 <img src="Part8/Start1.jpg" hspace="10" vspace="10" height="650">
-
 <<nobr>>
-	<<if $ProfessorAllowance>><<set $PlayerMoney += 500>><<print "You have saved $500 from your Daddy's allowance.">><</if>>
-	<<if $JobEngineer>><<set $PlayerMoney += 700>><<print "You have saved $700 from working as an engineer.">><</if>>
-	<<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<set $PlayerMoney += 700>><<print "You have saved $700 from working at the office.">><</if>>
-	<<if $JobCallGirl>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a call girl.">><</if>>
-	<<if $JobWebModel>><<set $PlayerMoney += 500>><<print "You have saved $500 from working as a web model.">><</if>>
-	<<if $JobPornOral or $JobPornAnal or $JobPorn or $JobPornGang>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a porn actress.">><</if>>
-	<<if !$ProfessorAllowance and !$JobEngineer and !$JobOfficePA and !$JobOfficeManager and !$JobOfficeIntern and !$JobCallGirl and !$JobWebModel and !$JobPornOral and !$JobPornAnal and !$JobPorn and !$JobPornGang>><<set $PlayerMoney += 500>><<print "You have saved $500 from working at your job.">><</if>>
-	<<if $SpecialProjectMoney>><<set $PlayerMoney += ($SpecialProjectMoney / 2)>>You have $<<print $SpecialProjectMoney / 2>> left of the 'Special Project' money you received.<</if>>
-	<<if $JobCallGirlSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a call girl.">><</if>>
-	<<if $JobWebModelSide>><<set $PlayerMoney += 300>><<print " You have also saved $300 from occasionally working as a web model.">><</if>>
-	<<if $JobPornOralSide or $JobPornAnalSide or $JobPornSide or $JobPornGangSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a porn actress.">><</if>>
-	<<if $PaulPregnancyMoney>><<set $PlayerMoney += 500>><<print " You have an additional $500 from your former boss, Paul, to keep quiet about your pregnancy.">><</if>>
-	<<if $BarryBribe>><<set $PlayerMoney += 1900>><<print " You have $1900 left from what Barry paid you to get an abortion.">><</if>>
-	<<if $JamesBribe>><<set $PlayerMoney += 2800>><<print " You have $2800 left from what the attorney gave you to cover 'first trimester expenses'.">><</if>>
+	<<if $ProfessorAllowance>><<set $PlayerMoney += 500>><<print "You have saved $500 from your Daddy's allowance.">><br><</if>>
+	<<if $JobEngineer>><<set $PlayerMoney += 700>><<print "You have saved $700 from working as an engineer.">><br><</if>>
+	<<if $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>><<set $PlayerMoney += 700>><<print "You have saved $700 from working at the office.">><br><</if>>
+	<<if $JobCallGirl>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a call girl.">><br><</if>>
+	<<if $JobWebModel>><<set $PlayerMoney += 500>><<print "You have saved $500 from working as a web model.">><br><</if>>
+	<<if $JobPornOral or $JobPornAnal or $JobPorn or $JobPornGang>><<set $PlayerMoney += 1000>><<print "You have saved $1000 from working as a porn actress.">><br><</if>>
+	<<if !$ProfessorAllowance and !$JobEngineer and !$JobOfficePA and !$JobOfficeManager and !$JobOfficeIntern and !$JobCallGirl and !$JobWebModel and !$JobPornOral and !$JobPornAnal and !$JobPorn and !$JobPornGang>><<set $PlayerMoney += 500>><<print "You have saved $500 from working at your job.">><br><</if>>
+	<<if $SpecialProjectMoney>><<set $PlayerMoney += ($SpecialProjectMoney / 2)>>You have $<<print $SpecialProjectMoney / 2>> left of the 'Special Project' money you received.<br><</if>>
+	<<if $JobCallGirlSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a call girl.">><br><</if>>
+	<<if $JobWebModelSide>><<set $PlayerMoney += 300>><<print " You have also saved $300 from occasionally working as a web model.">><br><</if>>
+	<<if $JobPornOralSide or $JobPornAnalSide or $JobPornSide or $JobPornGangSide>><<set $PlayerMoney += 500>><<print " You have also saved $500 from occasionally working as a porn actress.">><br><</if>>
+	<<if $PaulPregnancyMoney>><<set $PlayerMoney += 500>><<print " You have an additional $500 from your former boss, Paul, to keep quiet about your pregnancy.">><br><</if>>
+	<<if $BarryBribe>><<set $PlayerMoney += 1900>><<print " You have $1900 left from what Barry paid you to get an abortion.">><br><</if>>
+	<<if $JamesBribe>><<set $PlayerMoney += 2800>><<print " You have $2800 left from what the attorney gave you to cover 'first trimester expenses'.">><br><</if>>
+  <<print "In total, you have $">>$PlayerMoney<<print " saved.">>
 <</nobr>>
-
-<<print "In total, you have $">>$PlayerMoney<<print " saved.">>
 
 <<nobr>>
 	<<if $PlayerChastityBelt and $Keyholder == 'Veronica'>>
@@ -39,6 +37,421 @@
 	<</if>>
 <</nobr>>
 
+<<nobr>>
+  <<if !$PlayerChastityBelt>>
+    (Or you can [[skip past|Part8ChristmasSkip]] the holiday break)
+  <</if>>
+<</nobr>>
+
+::Part8ChristmasSkip
+<<nobr>>
+	<<if setup.haveInventory('underwear', 'sexy underwear')>>
+    <<set setup.addInventory('underwear', 'erotic underwear')>>
+  <<else>>
+    <<set setup.addInventory('underwear', 'sexy underwear')>>
+  <</if>>
+  <<if $dating.length and $PlayerChastityBelt>>
+    <<set setup.addInventory('sex toys', 'remote vibrator')>>
+  <</if>>
+  <<if $CampusMinistry>>
+    <<include [[Part8ChristmasSkipMinistry]]>>
+  <<elseif $KidnapEscape>>
+    <<include [[Part8ChristmasSkipKidnapEscape]]>>
+  <<elseif $dating.length>>
+    <<include [[Part8ChristmasSkipDating]]>>
+  <<elseif $PlayerChastityBelt>>
+    <<include [[Part8ChristmasSkipChastity]]>>
+  <<elseif $PlayerMenstruation or $PlayerAbortion>>
+    <<include [[Part8ChristmasSkipRide]]>>
+  <<else>>
+    <<include [[Part8ChristmasSkipDrive]]>>
+  <</if>>
+<</nobr>>
+
+::Part8ChristmasSkipChastity
+<<nobr>>
+  <h1>There and back again</h1>
+  <table>
+    <tr><td style="vertical-align:center">
+      <<if true or $PlayerMenstruation or $PlayerAbortion>>
+        <<set $CarBrad = 1>>
+        <img src="Part8/Start4.jpg" hspace="10" vspace="10" height="350" align="left">
+        You got started packing a bit late and left late too.  When you discovered your flat tire, it was too late to get it fixed.  Thankfully
+        your friend Brad was willing to give you a ride home.
+        <<set setup.addSex({sex: 'male', name: 'Brad'})>>
+        <<set $PlayerMoney -= 150>>
+        You figured you should give him something for your share of gas each way.  But then you figured there was something you
+        could give him that he'd enjoy more that $50.
+        <video src="Part8/Road3.webm" autoplay loop muted height="300"></video>
+        <br><br>
+        You know you'll be paying to get your tire fixed later, so there was no reason to spend another $100, especially
+        when this way is more fun for both of you.
+        When you get back to school, it ends up being $150 to get your tire fixed.  It was almost another $300, but thankfully you were able
+        to 'work something out' with the mechanic, and keep it at just the $150 for the tire.
+      <<else>>
+        <img src="Part8/Road8.png" hspace="10" vspace="10" height="650" align="left">
+        <br>
+        Thankfully you got an early start on your trip home, because you came out to find your tire flat.  It cost $150 to get
+        it fixed.  Then, in your hurry to get home on time after the delay, you get pulled over for speeding.  When the officer arrests
+        you, he discovers your chastity belt.
+        <br><br>
+        Back at the jail, while inspecting your belt they discover how wet and horny you are.  You end up eagerly sucking nearly
+        every cock in the department before they let you go.  But they decide to drop the ticket at least.
+        <br>
+        <img src="Part8/Road9.jpg" hspace="10" vspace="10" height="350" align="left">
+        <<set $PlayerMoney -= 100>>
+        <<set setup.addSex({sex: 'male', anon: 'Police Officer'})>>
+        <<set setup.addSex({sex: 'male', anon: 'Police Officer'})>>
+        <<set setup.addSex({sex: 'male', anon: 'Police Officer'})>>
+        <<set setup.addSex({sex: 'male', anon: 'Police Officer'})>>
+        <<set setup.addSex({sex: 'male', anon: 'Police Officer', repeat:true})>>
+        <<set setup.addSex({sex: 'male', anon: 'Police Officer', repeat:true})>>
+        <<set setup.addSex({sex: 'male', anon: 'Police Officer', repeat:true})>>
+        <<set setup.addSex({sex: 'male', anon: 'Police Officer', repeat:true})>>
+        <<achievement>>train<</achievement>>
+      <</if>>
+    </td></tr>
+    <tr><td>
+      <br>
+      You have fun shopping with your sister Cassie at the mall.  It's even more exciting when guys are hitting on you.
+      You meet up with one of them later.  You wish you could get out of your chastity belt, but he doesn't seem to mind
+      that you are only able to suck his cock.
+    </td></tr>
+    <tr><td>
+      <<set setup.addSex({sex: 'male', name: 'Cody'})>>
+      <<set setup.addSex({sex: 'male', name: 'Cody', vaginal: true, birthControlOverride:'cycle'})>>
+      <<set $PlayerMoney -= 150>>
+      <video src="Part8/Evening11.mp4" autoplay loop muted height="600"></video>
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="300">
+      <img src="Part8/Uncle4.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      <<set setup.addSex({sex: 'male', name: 'Mike', vaginal: true, birthControlOverride:'cycle'})>>
+      <img src="Part8/Christmas6.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <br><br>
+      Presents with your family was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
+      You decided to avoid dealing with your grandfather's reaction to your change by skipping the big family meal and watching the
+      game at your ex-uncle's house instead.
+      <br><br>
+      That turned out to be much more exciting that you had expected after your uncle discovers your chastity belt.  You spend
+      most of your time at his house watching the game from a cage, sucking his cock whenever he wants.
+      <br><br>
+      After Christmas, the rest of your visit was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
+    </td></tr>
+    <tr><td>
+      <<if true or $PlayerMenstruation or $PlayerAbortion>>
+        <<set setup.addSex({sex: 'male', name: 'Brad'})>>
+        <<set setup.addSex({sex: 'male', name: 'Brad'})>>
+        <<set setup.addSex({sex: 'male', name: 'Mechanic'})>>
+        <video src="Part8/Return3.webm" autoplay loop muted height="540"></video>
+        <br><br>
+        You and Brad have more fun on the ride back home.  Well, Brad had considerably more fun, but it did make the trip
+        seem much shorter for you too.
+        <br><br>
+        But you are glad to be [[back at school|Part8Return8]].
+      <<else>>
+        Your return trip is much less eventful, and before you know it you are [[back at school|Part8Return8]].
+      <</if>>
+    </td></tr>
+  </table>
+<</nobr>>
+
+
+::Part8ChristmasSkipKidnapEscape
+<<nobr>>
+  <h1>There and back again</h1>
+  <table>
+    <tr><td style="vertical-align:center">
+      <img src="Part8/Start4.jpg" hspace="10" vspace="10" height="350" align="left">
+      <<if ($PlayerMenstruation or $PlayerAbortion)>>
+        <<set $CarBrad = 1>>
+        <<set $PlayerMoney -= 50>>
+        <<set $PlayerMoney -= 150>>
+        <<set $PlayerMoney -= 50>>
+        You got started packing a bit late and left late too.  When you discovered your flat tire, it was too late to get it fixed.  Thankfully
+        your friend Brad was willing to give you a ride home.  You ended up giving him $50 for gas each way.
+        <br><br>
+        You also had to pay another $450 to get your car fixed when you came home.
+        <<set $PlayerMoney -= 450>>
+        <<if $PlayerMoney < 0>>
+          <<set $PlayerMoney -= 50>>
+          Plus another $50 in fees from the cash advance you had to take out on your credit card.
+        <</if>>
+        <img src="Part8/Road1.jpg" hspace="10" vspace="10" height="250">
+      <<else>>
+        <br><br>
+        Thankfully you got an early start on your trip home, because you came out to find your tire flat.  It cost $150 to get
+        it fixed.  Then, in your hurry to get home on time after the delay, you get pulled over for speeding.  But when the thought
+        of being in handcuffs and in jail triggers memories of your recent kidnapping, the officer decides to let you off with a warning.
+        <<set $PlayerMoney -= 150>>
+        <<set $PlayerMoney -= 100>>
+        <<set $PlayerMoney -= 350>>    
+      <</if>>
+    </td></tr>
+
+    <tr><td>
+      <<set $PlayerMoney -= 150>>
+      <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <<if $PlayerMenstruation or $PlayerAbortion>>
+        Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+      <<else>>
+        You probably shouldn't have spent the $150 with your sister at the mall.
+      <</if>>
+      But it was so much fun being able to shop as a girl now, and having her there to help.  She even did her best to divert
+      the attention of some guys that were hitting on you when she saw it was making you uncomfortable.
+      <br>
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="300">
+      <img src="Part8/Christmas5.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas6.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <br><br>
+      The rest of the visit was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
+      After a long talk with your sister about what happened to you, you feel better.  Hopefully you'll be able to move on now
+      that you are [[back at school|Part8Return8]].
+    </td></tr>
+  </table>
+<</nobr>>
+
+::Part8ChristmasSkipDating
+<<nobr>>
+  <h1>There and back again</h1>
+  <table>
+    <tr><td style="vertical-align:center">
+      <img src="Part8/Start4.jpg" hspace="10" vspace="10" height="350" align="left">
+      <<if $PlayerMenstruation or $PlayerAbortion>>
+        <<set $CarBrad = 1>>
+        You got started packing a bit late and left late too.  When you discovered your flat tire, it was too late to get it fixed.  Thankfully
+        your friend Brad was willing to give you a ride home.
+        <<set $PlayerMoney -= 50>>
+        <<set $PlayerMoney -= 50>>
+        <<set $PlayerMoney -= 450>>
+        You ended up giving him $50 for gas each way.
+        <br><br>
+        You also had to pay another $450 to get your car fixed when you came home.
+        <<if $PlayerMoney < 0>>
+          <<set $PlayerMoney -= 50>>
+          Plus another $50 in fees from the cash advance you had to take out on your credit card.
+        <</if>>
+        <img src="Part8/Road1.jpg" hspace="10" vspace="10" height="250">
+      <<else>>
+        Thankfully you got an early start on your trip home, because you came out to find your tire flat.  It cost $150 to get
+        it fixed.  Then, in your hurry to get home on time after the delay, you ended up getting a speeding ticket and arrested!
+        <img src="Part8/Jail.jpg" hspace="10" vspace="10" height="250">
+        <<set $PlayerMoney -= 150>>
+        <<set $PlayerMoney -= 350>>    
+      <</if>>
+    </td></tr>
+    <tr><td>
+      <<set $PlayerMoney -= 150>>
+      <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <<if $PlayerMenstruation or $PlayerAbortion>>
+        Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+      <<else>>
+        You probably shouldn't have spent the $150 with your sister at the mall.
+      <</if>>
+      But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
+      at the mall, even if you did tell him you weren't interested.
+      <br>
+      <img src="Part8/Mall3.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="300">
+      <img src="Part8/Uncle3.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+    	<<set $UncleChair = 1>>
+      <img src="Part8/Christmas6.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <br><br>
+      Presents with your family was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
+      You decided to avoid dealing with your grandfather's reaction to your change by skipping the big family meal and watching the
+      game at your ex-uncle's house instead.
+      <br><br>
+      That turned out to be much more exciting that you had expected.  It could have been even more exciting, but you stopped Mike,
+      letting him know you wanted to stay faithful to $dating[0].  You watched the rest of the game from his "Time-out" Chair.
+      You don't remember a single play from the game.
+      <br><br>
+      The rest of the visit was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
+      But you are glad to be [[back at school|Part8Return8]] and back with $dating[0].
+    </td></tr>
+  </table>
+<</nobr>>
+
+::Part8ChristmasSkipMinistry
+<<nobr>>
+  <h1>There and back again</h1>
+  <table>
+    <tr><td style="vertical-align:center">
+      <img src="Part8/Start4.jpg" hspace="10" vspace="10" height="350" align="left">
+      <<if $PlayerMenstruation or $PlayerAbortion>>
+        <<set $CarBrad = 1>>
+        <<set $PlayerMoney -= 50>>
+        <<set $PlayerMoney -= 150>>
+        <<set $PlayerMoney -= 50>>
+        You got started packing a bit late and left late too.  When you discovered your flat tire, it was too late to get it fixed.  Thankfully
+        your friend Brad was willing to give you a ride home.  You ended up giving him $50 for gas each way.
+        <br><br>
+        You also had to pay another $450 to get your car fixed when you came home.
+        <<set $PlayerMoney -= 450>>
+        <<if $PlayerMoney < 0>>
+          <<set $PlayerMoney -= 50>>
+          Plus another $50 in fees from the cash advance you had to take out on your credit card.
+        <</if>>
+        <img src="Part8/Road1.jpg" hspace="10" vspace="10" height="250">
+      <<else>>
+        Thankfully you got an early start on your trip home, because you came out to find your tire flat.  It cost $150 to get
+        it fixed.  Then, in your hurry to get home on time after the delay, you ended up getting a speeding ticket and arrested!
+        <img src="Part8/Jail.jpg" hspace="10" vspace="10" height="250">
+        <<set $PlayerMoney -= 150>>
+        <<set $PlayerMoney -= 350>>    
+      <</if>>
+    </td></tr>
+
+    <tr><td>
+      <<set $PlayerMoney -= 150>>
+      <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <<if $PlayerMenstruation or $PlayerAbortion>>
+        Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+      <<else>>
+        You probably shouldn't have spent the $150 with your sister at the mall.
+      <</if>>
+      But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
+      at the mall, even if you did tell him you weren't interested.
+      <br>
+      <img src="Part8/Mall3.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="300">
+      <img src="Part8/Christmas5.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas6.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <br><br>
+      The rest of the visit was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.  But you are glad
+      to be [[back at school|Part8Return8]].
+    </td></tr>
+  </table>
+<</nobr>>
+
+::Part8ChristmasSkipRide
+<<nobr>>
+  <<set $CarBrad = 1>>
+  <h1>There and back again</h1>
+  <table>
+    <tr><td style="vertical-align:center">
+      <img src="Part8/Start4.jpg" hspace="10" vspace="10" height="350" align="left">
+      You got started packing a bit late and left late too.  When you discovered your flat tire, it was too late to get it fixed.  Thankfully
+      your friend Brad was willing to give you a ride home.
+      <<set setup.addSex({sex: 'male', name: 'Brad'})>>
+      <<set $PlayerMoney -= 150>>
+      You figured you should give him something for your share of gas each way.  But then you figured there was something you
+      could give him that he'd enjoy more that $50.
+      <video src="Part8/Road3.webm" autoplay loop muted height="300"></video>
+      <br><br>
+      You know you'll be paying to get your tire fixed later, so there was no reason to spend another $100, especially
+      when this way is more fun for both of you.
+      When you get back to school, it ends up being $150 to get your tire fixed.  It was almost another $300, but thankfully you were able
+      to 'work something out' with the mechanic, and keep it at just the $150 for the tire.
+    </td></tr>
+
+    <tr><td>
+      <<set setup.addSex({sex: 'male', name: 'Cody'})>>
+      <<set setup.addSex({sex: 'male', name: 'Cody', vaginal: true, birthControlOverride:'cycle'})>>
+      <<set $PlayerMoney -= 150>>
+      <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+      But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
+      at the mall, especially that cute guy Cody you hooked up with later.
+      <br>
+      <video src="Part8/Evening12.mp4" autoplay loop muted height="300"></video>
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="300">
+      <img src="Part8/Uncle6.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      <<set setup.addSex({sex: 'male', name: 'Mike', vaginal: true, birthControlOverride:'cycle'})>>
+      <img src="Part8/Christmas6.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <br><br>
+      Presents with your family was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
+      You decided to avoid dealing with your grandfather's reaction to your change by skipping the big family meal and watching the
+      game at your ex-uncle's house instead.
+      <br><br>
+      That turned out to be much more exciting that you had expected.  
+      <br><br>
+      The rest of the visit was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
+    </td></tr>
+    <tr><td>
+      <<set setup.addSex({sex: 'male', name: 'Brad', vaginal: true, birthControlOverride:'cycle'})>>
+      <<set setup.addSex({sex: 'male', name: 'Mechanic'})>>
+      <img src="Part8/Return5.jpg" hspace="10" vspace="10" height="300" align="left">
+      <br><br>
+      <br><br>
+      Your ride back with Brad was even more fun the ride to your parents.
+      <br><br>
+      But you are glad to be [[back at school|Part8Return8]].
+    </td></tr>
+  </table>
+<</nobr>>
+
+::Part8ChristmasSkipDrive
+<<nobr>>
+  <h1>There and back again</h1>
+  <table>
+    <tr><td style="vertical-align:center">
+    	<<set setup.addSex({sex: 'male', name: 'Police Officer', vaginal: true, birthControlOverride:'cycle'})>>
+      <<set $PlayerMoney -= 150>>
+      <img src="Part8/Start4.jpg" hspace="10" vspace="10" height="350" align="left">
+        Thankfully you got an early start on your trip home, because you came out to find your tire flat.  It cost $150 to get
+      it fixed.  Then, in your hurry to get home on time after the delay, you ended up getting pulled over for speeding.  Luckily
+      you and the officer were able to work something out so you didn't get a ticket.
+      <video src="Part8/Road5.mp4" autoplay loop muted height="300"></video>
+    </td></tr>
+    <tr><td>
+      <<set setup.addSex({sex: 'male', name: 'Cody'})>>
+      <<set setup.addSex({sex: 'male', name: 'Cody', vaginal: true, birthControlOverride:'cycle'})>>
+      <<set $PlayerMoney -= 150>>
+      <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+      But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
+      at the mall, especially that cute guy Cody you hooked up with later.
+      <br>
+      <video src="Part8/Evening12.mp4" autoplay loop muted height="300"></video>
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="300">
+      <img src="Part8/Uncle6.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      <<set setup.addSex({sex: 'male', name: 'Mike', vaginal: true, birthControlOverride:'cycle'})>>
+      <img src="Part8/Christmas6.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br><br>
+      Presents with your family was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
+      You decided to avoid dealing with your grandfather's reaction to your change by skipping the big family meal and watching the
+      game at your ex-uncle's house instead.
+      <br><br>
+      That turned out to be much more exciting that you had expected.  
+      <br><br>
+      The rest of the visit was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
+      <br><br>
+      Your ride back was pretty uneventful, but you are glad to finally be [[back at school|Part8Return8]].
+    </td></tr>
+  </table>
+<</nobr>>
 
 ::Part8ChristmasSister <300,7650>
 <<nobr>>
@@ -179,18 +592,29 @@
 
 ::Part8StartChastity <300,6325>
 <<nobr>>
-	<<if $Keyholder == 'Veronica'>><<unset $PlayerChastityBelt>><</if>>
-
+	<<if $Keyholder == 'Veronica'>>
+    <<unset $PlayerChastityBelt>>
+  <</if>>
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
-
 <<nobr>>
 	<<if $Keyholder == 'Veronica'>><<print "You are very grateful as she unlocks you and leaves you unbelted for your trip home.">><<set $PlayerChastityBelt = 0>>
 	<<else>><<print "Your request to be unlocked for the trip home was denied. ">><<if !$PlayerProtectionPermanent and !$PlayerProtectionPill and !$PlayerProtectionPerfect>><<print "If you are on your period, Olivia instructs you on using pads and period panties to deal with it, and on using the shower sprayer to clean up.">><</if>><</if>>
 <</nobr>>
-<<if $Keyholder == 'Veronica'>><img src="Part8/Start3.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part8/Start2.jpg" hspace="10" vspace="10" height="650"><</if>>
-
+<<nobr>>
+  <<if $Keyholder == 'Veronica'>>
+    <img src="Part8/Start3.jpg" hspace="10" vspace="10" height="650">
+  <<else>>
+    <img src="Part8/Start2.jpg" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
+<</nobr>>
+<<nobr>>
 [[Start driving home.|Part8Start2]]
+<</nobr>>
+
+<<nobr>>
+  (Or you can [[skip past|Part8ChristmasSkip]] the holiday break)
+<</nobr>>
 
 ::Part8Road1 <400,6325>
 <<nobr>>
@@ -1568,16 +1992,16 @@
 
 <<nobr>>
 	<<if $KidnapEscape>>
-	<<elseif $CampusMinistry>>
+	<<elseif $CampusMinistry and $dating.length>>
 		You let her know that you want to [[go to your grandparents|Part8Christmas4]] for Christmas dinner, with the rest of the family.
-	<<elseif !$ChristmasEveOrgasm>>
-		<<print "You’ve been crabby all morning from being so aroused last night but not getting any release. Your mom doesn’t know what has you so on edge, but decides the added stress of your grandparents isn’t a good idea. She decides for you that it’ll be better to">>
-		[[go to your uncle’s to watch football.|Part8Uncle1]]
-	<<else>>
+	<<elseif $CampusMinistry or $ChristmasEveOrgasm>>
 		<<print "Your mother asks you if you want to ">>
-		[[going to your uncle’s to watch football,|Part8Uncle1]]
+		[[go to your uncle’s to watch football,|Part8Uncle1]]
 		<<print "or to ">>
 		[[go to your grandparents for the Christmas dinner.|Part8Christmas4]]
+	<<else>>
+		<<print "You’ve been crabby all morning from being so aroused last night but not getting any release. Your mom doesn’t know what has you so on edge, but decides the added stress of your grandparents isn’t a good idea. She decides for you that it’ll be better to">>
+		[[go to your uncle’s to watch football.|Part8Uncle1]]
 	<</if>>
 <</nobr>>
 
@@ -1725,18 +2149,33 @@
 <<nobr>>
 	<<set $UncleChair = 1>>
 	<h1><<print "Uncle Mike’s Playroom">></h1>
+  “You were thinking about being a naughty girl, weren’t you?”, he asks. When you admit that you were, he tells you that you’re going
+  to have to go to timeout.
 <</nobr>>
 
-<<print "“You were thinking about being a naughty girl, weren’t you?”, he asks. When you admit that you were, he tells you that you’re going to have to go to timeout.">>
+<<nobr>>
+  He leads you back upstairs, then he goes back downstairs to get the “Time-out chair”. He points it at the television and seats you on the chair.
+<</nobr>>
+<<nobr>>
+  <img src="Part8/Uncle3.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  He uncuffs your hands only to secure them and your feet to the four straps attached to the chair. Once those are secure, he attaches a
+  belt around your waist as well. You realize you are unable to move at all, and you feel the bulb of the magic wand that pokes through
+  the chair pressing firmly against you.
+<</nobr>>
 
-<<print "He leads you back upstairs, then he goes back downstairs to get the “Time-out chair”. He points it at the television and seats you on the chair.">>
-<img src="Part8/Uncle3.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  You are still fully clothed, but even on “Low”, the wand is powerful enough that you gasp when he turns it on. Once he does he goes
+  back to watching them game. Whenever the action on screen stops though, he returns to you to switch the vibrator to its high setting
+  until the game returns.
+<</nobr>>
 
-<<print "He uncuffs your hands only to secure them and your feet to the four straps attached to the chair. Once those are secure, he attaches a belt around your waist as well. You realize you are unable to move at all, and you feel the bulb of the magic wand that pokes through the chair pressing firmly against you.">>
-
-<<print "You are still fully clothed, but even on “Low”, the wand is powerful enough that you gasp when he turns it on. Once he does he goes back to watching them game. Whenever the action on screen stops though, he returns to you to switch the vibrator to its high setting until the game returns.">>
-
-<<print "Your memory of halftime is a fog of orgasm after orgasm you are unable to prevent until finally they kick-off again and the vibrator is returned to a teasing low setting. After the game is over he again turns the vibrator to high once again, though mercifully turning it off after you cum one last time.">>
+<<nobr>>
+  Your memory of halftime is a fog of orgasm after orgasm you are unable to prevent until finally they kick-off again and the vibrator
+  is returned to a teasing low setting. After the game is over he again turns the vibrator to high once again, though mercifully turning
+  it off after you cum one last time.
+<</nobr>>
 
 <<nobr>>
 	<<print "When he undoes the straps and releases you from the chair, you look back and see what a mess you’ve left for him on it.  ">>
@@ -1766,47 +2205,112 @@
   <</if>>
 <</nobr>>
 
+<<nobr>>
+  <<if $sex.length == 0>>
+    Even if you did just have more orgasms you could count, right in front of your uncle, you still consider yourself a virgin.  You tell
+    yourself, that you have still never had sex, at least not in this body.
+    <br><br>
+    But whenever your thoughts turn to sex, now you remember the feeling of being forced to orgasm over and over again.
+    Thinking about how you couldn't move turns you on whenever you think about it.  And when you remember what it was like when he gagged
+    you too, so your moans would stop distracting from the game, you know your panties will be soaked if you dwell on those thoughts too long.
+    <br><br>
+    You hope whenever you do meet the right man, he won't mind the perverted thoughts you have, and will tie you up and have his way with you
+    sometimes.
+    <br><br>
+    <<if $PlayerSideEffectSubmissive>>
+      <i>You realize you are even more submissive than you were before.</i>
+      <<set $PlayerSideEffectSubmissive += 1>>
+    <<else>>
+      <i>You realize you've become more submissive than you once were.</i>
+      <<set $PlayerSideEffectSubmissive to 1>>
+    <</if>>
+  <</if>>
+<</nobr>>
+
 ::Part8Uncle5 <1200,7400>
 <<nobr>>
 	<h1><<print "Uncle Mike’s Playroom">></h1>
+  He removes your handcuffs and has you strip.
+  <<if $CampusMinistry>>
+    As he orders to take of your clothes, you know you could refuse, you could run back upstairs.  But you don't want to.
+    You yearn to submit to him, to do whatever he tells you, even though you know where it will lead.  Or where you hope
+    it will lead.
+  <</if>>
+  He then cuffs your hands and feet to the bondage cross in the playroom.
+  <<if $CampusMinistry>>
+    You tell yourself that it doesn't matter now if you have sex, since it's no longer up to you to decide what happens.
+  <</if>>
 <</nobr>>
 
-<<print "He removes your handcuffs and has you strip. He then cuffs your hands and feet to the bondage cross in the playroom.">>
+<<nobr>>
+  As he goes to select a riding crop you stare into the mirror across the room. The reflection of a beautiful,
+  helpless woman stares back at you.
+<</nobr>>
+<<nobr>>
+  <img src="Part8/Uncle5.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  Your are quickly snapped out of your self-admiration as you feel the first sting of his crop against your bare ass.
+<</nobr>>
 
-<<print "As he goes to select a riding crop you stare into the mirror across the room. The reflection of a beautiful, helpless woman stares back at you.">>
-<img src="Part8/Uncle5.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  You tremble as the crop approaches your clit, scared of how much it will hurt, but instead of a swift strike he gently
+  pats your sensitive area with the crop.
+<</nobr>>
 
-<<print "Your are quickly snapped out of your self-admiration as you feel the first sting of his crop against your bare ass.">>
+<<nobr>>
+  It is a pleasant, teasing sensation. But it still terrifies and excites you. You know if he chose to strike harder,
+  you’d be powerless to stop him.
+<</nobr>>
 
-<<print "You tremble as the crop approaches your clit, scared of how much it will hurt, but instead of a swift strike he gently pats your sensitive area with the crop.">>
+<<nobr>>
+  [[You are both relieved and disappointed when he returns his attention again to your ass.|Part8Uncle6]]
+<</nobr>>
 
-<<print "It is a pleasant, teasing sensation. But it still terrifies and excites you. You know if he chose to strike harder, you’d be powerless to stop him.">>
-
-[[You are both relieved and disappointed when he returns his attention again to your ass.|Part8Uncle6]]
+<<nobr>>
+  <<if !$PlayerSideEffectSubmissive>>
+    <i>You realize you've become more submissive than you once were.</i>
+    <<set $PlayerSideEffectSubmissive to 1>>
+  <</if>>
+<</nobr>>
 
 ::Part8Uncle6 <1200,7525>
 <<nobr>>
   <<set setup.addSex({sex: 'male', name: 'Mike', vaginal: true, birthControlOverride:'cycle'})>>
 	<h1><<print "Uncle Mike’s Playroom">></h1>
+  After a while he takes you down from the cross and straps you down to a bench. He gives your ass a few more
+  swats with his hand, but soon his hand is stroking your clit and sliding inside you. You can do nothing but
+  moan and enjoy it.
 <</nobr>>
 
-<<print "After a while he takes you down from the cross and straps you down to a bench. He gives your ass a few more swats with his hand, but soon his hand is stroking your clit and sliding inside you. You can do nothing but moan and enjoy it.">>
-
-<<print "You are disappointed when his hands pull away, but it soon changes to excitement as you hear him tearing open a condom wrapper. You try to push back against him as he thrusts into you, but can scarcely move.">>
+<<nobr>>
+  You are disappointed when his hands pull away, but it soon changes to excitement as you hear him tearing
+  open a condom wrapper. You try to push back against him as he thrusts into you, but can scarcely move.
+<</nobr>>
 <img src="Part8/Uncle6.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  He pulls your head back as he plunges deep into you as you cum. But he doesn’t stop, continuing through
+  your orgasm. It isn’t much longer though until you feel him make a final thrust inside you. After his cock
+  stops twitching inside you and filling the condom, he pulls out of you.
+<</nobr>>
 
-<<print "He pulls your head back as he plunges deep into you as you cum. But he doesn’t stop, continuing through your orgasm. It isn’t much longer though until you feel him make a final thrust inside you. After his cock stops twitching inside you and filling the condom, he pulls out of you.">>
-
-<<print "He removes the condom and goes around to the other end of the bench to have you clean his cock with your tongue and mouth before he finally unbuckles the straps holding you down.">>
+<<nobr>>
+  He removes the condom and goes around to the other end of the bench to have you clean his cock with your
+  tongue and mouth before he finally unbuckles the straps holding you down.
+<</nobr>>
 
 <<nobr>>
 	<<if !setup.areDating('Veronica') and !setup.areDating('Andrew') and !setup.areDating('Josh') and !setup.areDating('Aaron') and !$MasterKate and !$MasterRobert and !setup.areDating('Peter')>>
-		<<print "After you dress and return upstairs. Before you leave, the two of you watch the highlight reel from game you’d missed, just in case anyone asks how it was. You know it won't be long before you ">>[[visit him again.|Part8Uncle7]]
+		After you dress, the two of you return upstairs. Before you leave, the two of you watch the highlight reel from
+    game you’d missed, just in case anyone asks how it was. You know it won't be long before you
+    [[visit him again.|Part8Uncle7]]
 	<<else>>
 		<<if !setup.haveFucked('Cassie') and !setup.haveFucked('Dylan') and !setup.haveFucked('Cody')>>
-			<<print "After you dress and return upstairs. ">>[[Before you leave,|Part8ChristmasReturn]]<<print " the two of you watch the highlight reel from game you’d missed, just in case anyone asks how it was.">>
+			After you dress, the two of you return upstairs. [[Before you leave,|Part8ChristmasReturn]]  the two of you watch
+      the highlight reel from game you’d missed, just in case anyone asks how it was.
 		<<else>>
-			<<print "After you dress and return upstairs. Before you leave, the two of you watch the highlight reel from game you’d missed, just in case anyone asks how it was. ">>
+			After you dress, the two of you return upstairs. Before you leave, the two of you watch the highlight reel from
+      game you’d missed, just in case anyone asks how it was.
 			<<if setup.haveFucked('Cassie')>><br>[[You spend most of the remaining holiday time with Cassie.|Part8ChristmasSister]]<</if>>
 			<<if setup.haveFucked('Dylan')>><br>[[You spend most of the remaining holiday time with Dylan.|Part8ChristmasBrother]]<</if>>
 			<<if setup.haveFucked('Cody')>><br>[[You spend most of the remaining holiday time with Cody.|Part8ChristmasCody]]<</if>>
@@ -1814,19 +2318,36 @@
 	<</if>>
 <</nobr>>
 
-::Part8Return2 <200,7775>
 <<nobr>>
-	<h1><<print "Road to School">></h1>
+  <<if $CampusMinistry>>
+    <<unset $CampusMinistry>>
+    <<set $CampusMinistryFailChristmas to 1>>
+    You can't help but wonder why you waited so long to finally start having some fun.  You feel like you've wasted half a year
+    in your new body.  You don't want to waste any more time.  Hopefully Faith and Mark won't be too disappointed with your decision.
+  <</if>>
 <</nobr>>
 
-<<print "Brad picks you up to give you a ride back to school. You want to compensate him for his trouble and gas again.">>
-<<if !setup.haveFucked('Brad')>><img src="Part8/Return2.jpg" hspace="10" vspace="10" height="640"><<else>><br><video src="Part8/Road7.webm" autoplay loop muted height="640"></video><br><</if>>
+::Part8Return2 <200,7775>
+<<nobr>>
+	<h1>Road to School</h1>
+  Brad picks you up to give you a ride back to school. You want to compensate him for his trouble and gas again.
+<</nobr>>
+<<nobr>>
+  <<if setup.haveFucked('Brad')>>
+    <br><video src="Part8/Road7.webm" autoplay loop muted height="640"></video><br>
+  <<else>>
+    <img src="Part8/Return2.jpg" hspace="10" vspace="10" height="640">
+  <</if>>
+<</nobr>>
 
 <<nobr>>
 	<<if setup.haveFucked('Brad')>>
 		<<print "He is certainly hoping for more of the ">>[[same kind of payment as last time.|Part8Return3]]
 	<<elseif $KidnapEscape or $CampusMinistry>>
 		You <<link [[pay him another $50|Part8Return6]]>><<set $PlayerMoney -= 50>><</link>> for the ride back.
+  <<elseif $CampusMinistryFailChristmas>>
+    You know you could pay Brad another $50 for the ride back.  But decide it would be much more fun to see if he'd enjoy
+    a [[different form of payment|Part8Return3]] instead.
 	<<else>>
 		<<print "You can ">><<link [[pay him another $50|Part8Return6]]>><<set $PlayerMoney -= 50>><</link>><<print " for the ride back. Although he certainly wouldn’t mind if you decided to ">>[[pay him a different way instead.|Part8Return3]]
 	<</if>>
@@ -1883,19 +2404,37 @@
 
 ::Part8Return3 <400,7775>
 <<nobr>>
+	<h1>Road to School</h1>
+  You give him a blowjob as he drives. It makes the long drive much more enjoyable for both of you. Well, especially for him.
+  <<if $CampusMinistryFailChristmas>>
+    It turns you on much more than you thought it would.  You don't hestiate when suggests you
+    [[stop somewhere for something more.|Part8Return4]]
+  <<else>>
+    It turns you on as much as it did the last time, but
+    <<if $PlayerChastityBelt>>
+      there’s nothing you can do about it anyway.
+    <<else>>
+      now you have more than enough time to [[stop for something more.|Part8Return4]]
+    <</if>>
+  <</if>>
   <<set setup.addSex({sex: 'male', name: 'Brad'})>>
-	
-	<h1><<print "Road to School">></h1>
+<</nobr>>
+<<nobr>>
+  <video src="Part8/Return3.webm" autoplay loop muted height="640"></video>
 <</nobr>>
 
-<<print "You give him a blowjob as he drives. It makes the long drive much more enjoyable for both of you. Well, especially for him. It turns you on as much as it did the last time">><<if $PlayerChastityBelt>><<print ", but there’s nothing you can do about it anyway.">><<else>><<print ", but now you have more than enough time to ">>[[stop for something more.|Part8Return4]]<</if>>
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    He keeps driving and you wait until he’s ready for another blowjob and then give him a repeat performance.
+  <<elseif setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Aaron') or $MasterKate or $MasterRobert or setup.areDating('Peter')>>
+    Or, maybe you should try to stay somewhat more faithful and resist the urge to do more with Brad, and
+    instead give him a little show as you [[try to take care of your needs yourself.|Part8Return5]]
+  <</if>>
+<</nobr>>
 
-<video src="Part8/Return3.webm" autoplay loop muted height="640"></video>
-
-
-<<if $PlayerChastityBelt>><<print "He keeps driving and you wait until he’s ready for another blowjob and then give him a repeat performance.">><<else>><<if setup.areDating('Veronica') or setup.areDating('Andrew') or setup.areDating('Josh') or setup.areDating('Aaron') or $MasterKate or $MasterRobert or setup.areDating('Peter')>><<print "Or, maybe you should try to stay somewhat more faithful and resist the urge to do more with Brad, and instead give him a little show as you ">>[[try to take care of your needs yourself.|Part8Return5]]<</if>><</if>>
-
-<<if $PlayerChastityBelt>>[[You eventually arrive at your destination.|Part8Return6]]<</if>>
+<<nobr>>
+  <<if $PlayerChastityBelt>>[[You eventually arrive at your destination.|Part8Return6]]<</if>>
+<</nobr>>
 
 ::Part8Return6 <1000,7775>
 <<nobr>>
@@ -1968,7 +2507,7 @@
 	<h1><<print "Mechanic">></h1>
 <</nobr>>
 
-<<print "He can’t drop the $150 for the tire, so you still have to pay that part. But you and him come to another arrangement for the encabulator.">><<if $PlayerCredit>><<print " He even agrees to make an exception and let yo pay for it on credit.">><</if>>
+<<print "He can’t drop the $150 for the tire, so you still have to pay that part. But you and him come to another arrangement for the encabulator.">><<if $PlayerCredit>><<print " He even agrees to make an exception and let you pay for it on credit.">><</if>>
 <img src="Part8/Return7.jpg" hspace="10" vspace="10" height="650">
 
 <<print "As you kneel on the dirty floor in the back of his garage with your lips around his cock, you keep reminding yourself of the $300 you are saving. That’s worth a couple minutes of embarrassment, right?">>
