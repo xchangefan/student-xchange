@@ -740,6 +740,190 @@
 <</nobr>>
 
 <<nobr>>
+  <<if $JobStripper or $JobGloryHole or $JobCallGirlSide>>
+    You have a bit of money saved up now, and have gotten better at budgeting, so you don't have to keep two jobs anymore.  You decide
+    to [[drop one of them|Part15SideJobEliminate]] so you can focus more on your studies.
+  <<elseif $JobEngineer and $AcademicProbationDenial>>
+    You are curious about your meeting coming up with the campus X-Change office about their new 'Buddy' program.  But first you need to
+    [[stop by the engineering department|Part15EngineerProbation]] to meet with the department head about your job.
+  <<elseif $JobTestSubject>>
+    You are curious about your meeting coming up with the campus X-Change office about their new 'Buddy' program.  But first you need to
+    <<if $AcademicProbationDenial>>
+      [[stop by the engineering department|Part15TestSubjectProbation]] to meet with the department head about your job.
+    <<else>>
+      [[stop by the engineering department|Part15TestSubject]] for a big meeting.
+    <</if>>
+  <<else>>
+    You are curious about your meeting coming up with the campus X-Change office [[about their new 'Buddy' program|Part15Buddy]].
+  <</if>>
+<</nobr>>
+
+::Part15SideJobEliminate
+<<nobr>>
+  <h1>Choosing Jobs</h1>
+  <<if $JobGloryHole>>
+    <<set $tempQuitJob to "glory hole">>
+    <img src="Part15/GloryHole1.gif" hspace="10" vspace="10" height="300">
+    <br>
+    You decide to [[stop working at the glory hole|Part15SideJobEliminateAfter]].  Or at least tell them to not schedule you any more.
+    You can always stop by whenever you are needing a little extra money.  Or when you are needing a little of something else.
+    <<unset $JobGloryHole>>
+    <<set $JobGloryHoleFormer to 1>>
+  <<elseif ($JobCheerleader and setup.areDating('Veronica'))>>
+    You aren't going to quit your job with Veronica as a cheerleader, so you decide to
+    <<if $JobStripper>>
+      <<set $tempQuitJob to "stripper">>
+      <<set $JobStripperOld to 1>>
+      <<unset $JobStripper>>
+      [[quit working as a stripper|Part15SideJobEliminateAfter]].
+    <<else>>
+      <<set $tempQuitJob to "call girl">>
+      <<set $JobCallGirlOld to 1>>
+      <<unset $JobCallGirlSide>>
+      [[quit working as a call girl|Part15SideJobEliminateAfter]].
+    <</if>>
+  <<elseif $JobStripper and $JobCallGirl>>
+    <img src="Part15/Strip1.jpg" hspace="10" vspace="10" height="500" align="left">
+    <img src="Part15/CallGirl3.jpg" hspace="10" vspace="10" height="500">
+    <br><br>
+    Both are fun and bring in great money.  But it's time to decide whether you want to
+    <<link "keep working as a call girl">>
+      <<unset $JobStripper>>
+      <<set $JobStripperOld to 1>>
+      <<goto [[Part15SideJobEliminateAfter]]>>
+    <</link>>
+    or to 
+    <<link "keep stripping at the club">>
+      <<unset $JobCallGirl>>
+      <<set $JobCallGirlOld to 1>>
+      <<set $JobStripperMain to 1>>
+      <<goto [[Part15SideJobEliminateAfter]]>>
+    <</link>>.
+  <<else>>
+    <<if $JobStripper or true>>
+      <<set $tempSideJob to "stripper">>
+      <img src="Part15/Strip1.jpg" hspace="10" vspace="10" height="500" align="left">
+      Your job as a stripper will still mostly be on the weekends, but it provides enough money that you don't really need another job.  You
+      could free up time for other things by just stripping, and quitting your job
+    <<else>>
+      <<set $tempSideJob to "call girl">>
+      <img src="Part15/CallGirl3.jpg" hspace="10" vspace="10" height="500" align="left">
+      While your job as a call girl would certainly bring in more money if you switched to full time, but do you want that as your only job.
+      Or would you rather keep your job as
+    <</if>>
+    <<if $JobAthlete>>
+      <<set $tempMainJob to "an athlete">>
+    <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
+      <<set $tempMainJob to "a cheerleader">>
+    <<elseif $JobFitness or $JobFitnessYoga>>
+      <<set $tempMainJob to "a yoga insturctor">>
+    <<elseif $JobFitnessMassage>>
+      <<set $tempMainJob to "a massage insturctor">>
+    <<elseif $JobLibrary>>
+      <<set $tempMainJob to "a librarian">>
+    <<elseif $JobEngineer or $JobEngineerLock or $JobEngineerToy or $JobEngineerAssistant>>
+      <<set $tempMainJob to "an engineer">>
+    <<elseif $JobTestSubject or $JobBetaTester>>
+      <<set $tempMainJob to "a tester">>
+    <<elseif $JobArt or $JobModel>>
+      <<set $tempMainJob to "a model">>
+    <<elseif $JobOffice or $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>
+      <<set $tempMainJob to "an office worker">>
+    <<elseif $JobCallGirl and $JobStripper>>
+      <<set $tempMainJob to "a call girl">>
+    <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+      <<set $tempMainJob to "a bartender">>
+    <<else>>
+      <!-- assume barista if couldn't find anything -->
+      <<set $tempMainJob to "a barista">>
+    <</if>>
+    $tempMainJob?
+    <br><br>
+    Which job would you rather keep, your
+    <<link "main job">>
+      <<set $tempQuitJob to $tempSideJob>>
+      <<set $JobStripperOld to $JobStripperOld or $JobStripper>>
+      <<set $JobCallGirlOld to $JobCallGirlOld or $JobCallGirlSide>>
+      <<unset $JobStripper>>
+      <<unset $JobCallGirlSide>>
+      <<goto [[Part15SideJobEliminateAfter]]>>
+    <</link>>
+    as $tempMainJob or your
+    <<link "second job">>
+      <<set $tempQuitJob to $tempMainJob>>
+      <<set $JobAthleteFormer to $JobAthleteFormer or $JobAthlete>>
+      <<unset $JobAthlete>>
+      <<set $JobCheerleaderFormer to $JobCheerleaderFormer or $JobCheerleader>>
+      <<unset $JobCheerleader>>
+      <<set $JobCheerleaderFundraiserFormer to $JobCheerleaderFundraiserFormer or $JobCheerleaderFundraiser>>
+      <<unset $JobCheerleaderFundraiser>>
+      <<unset $JobFitness>>
+      <<set $JobFitnessYogaOld to $JobFitnessYogaOld or $JobFitnessYoga>>
+      <<unset $JobFitnessYoga>>
+      <<set $JobFitnessMassageOld to $JobFitnessMassageOld or $JobFitnessMassage>>
+      <<unset $JobFitnessMassage>>
+      <<set $JobLibraryOld to $JobLibraryOld or $JobLibrary>>
+      <<unset $JobLibrary>>
+      <<set $JobEngineerOld to $JobEngineerOld or $JobEngineer or $JobEngineerLock or $JobEngineerToy or $JobEngineerAssistant>>
+      <<unset $JobEngineer>>
+      <<unset $JobEngineerLock>>
+      <<unset $JobEngineerToy>>
+      <<unset $JobEngineerAssistant>>
+      <<set $JobTestSubjectOld to $JobTestSubjectOld or $JobTestSubject or $JobBetaTester>>
+      <<unset $JobTestSubject>>
+      <<unset $JobBetaTester>>
+      <<set $JobArtFormer to $JobArtFormer or $JobTestSJobArt>>
+      <<unset $JobTestSubject>>
+      <<set $JobModelOld to $JobModelOld or $JobModel>>
+      <<unset $JobModel>>
+      <<set $JobOfficeOld to $JobOfficeOld or $JobOffice or $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>
+      <<unset $JobOffice>>
+      <<unset $JobOfficePA>>
+      <<unset $JobOfficeManager>>
+      <<unset $JobOfficeIntern>>
+      <<set $JobBartenderOld to $JobBartenderOld or $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+      <<unset $JobBartender>>
+      <<unset $JobBartenderGirls>>
+      <<unset $JobBartenderGuys>>
+      <<unset $JobBartenderBi>>
+      <<unset $JobBartenderSub>>
+      <<unset $JobBartenderDom>>
+      <<if $JobCallGirl and $JobStripper>>
+        <<set $JobCallGirlOld to 1>>
+        <<unset $JobCallGirl>>
+      <</if>>
+      <<if $JobCallGirlSide>>
+        <<set $JobCallGirl to 1>>
+        <<unset $JobCallGirlSide>>
+      <</if>>
+      <<if $JobStripper>>
+        <<set $JobStripperMain to 1>>
+      <</if>>
+      <<goto [[Part15SideJobEliminateAfter]]>>
+    <</link>>
+    as $tempSideJob.
+  <</if>>
+<</nobr>>
+
+::Part15SideJobEliminateAfter
+<<nobr>>
+  <h1>Quitting your other job</h1>
+  You let 
+  <<if $tempQuitJob == "call girl">>
+    your booking agency
+  <<elseif $tempQuitJob == "an athlete">>
+    your coach
+  <<elseif $tempQuitJob == "a model">>
+    your agent
+  <<elseif $tempQuitJob == "a tester">>
+    the engineering department
+  <<else>>
+    your boss
+  <</if>>
+  know your decision.  Now you can hopefully focus more on your academics.  Well, and maybe your social life too.
+<</nobr>>
+
+<<nobr>>
   <<if $JobEngineer and $AcademicProbationDenial>>
     You are curious about your meeting coming up with the campus X-Change office about their new 'Buddy' program.  But first you need to
     [[stop by the engineering department|Part15EngineerProbation]] to meet with the department head about your job.
@@ -9264,8 +9448,23 @@ TODO Another ELP charity project (be careful if had an incident last time)
 <</nobr>>
 
 <<nobr>>
+  <<if $PlayerSideEffectLibido > 2 or $PlayerSideEffectSubmissive > 2 or $PlayerSideEffectOral > 3 or ($PlayerChastityBelt and $JobBetaTester != "chaste")>>
+    <<if $dating.length>>
+      <<include [[Part15Study3HornyFaithful]]>>
+    <<else>>
+      <<include [[Part15Study3Horny]]>>
+    <</if>>
+  <<else>>
+    <<include [[Part15Study3Annoyed]]>>
+  <</if>>
+<</nobr>>
+
+::Part15Study3Annoyed
+<<nobr>>
   "I'm not giving you my phone number," you say flatly.
-  <<if setup.haveGirlfriend()>>
+  <<if $sex.length == 0>>
+    "I know what you want, and I'm not it.  I'm saving myself for the right person.  And it's certainly not you.  I'd never
+  <<elseif setup.haveGirlfriend()>>
     "Even if I didn't have a girlfriend, I wouldn't want to
   <<elseif $dating.length>>
     "Even if I didn't have a boyfriend, I wouldn't want to
@@ -9291,13 +9490,141 @@ TODO Another ELP charity project (be careful if had an incident last time)
 <</nobr>>
 
 <<nobr>>
-  You usally handle guys like him more gently.  Not that you don't want to tell them all off, but you're afraid how they will react.
+  You usually handle guys like him more gently.  Not that you don't want to tell them all off, but you're afraid how they will react.
   Luckily things don't escalate and he leaves and walks on, probably to annoy someone else.
 <</nobr>>
 
 <<nobr>>
   But now you are too on edge to keep reading.  It will have to wait [[until another day|Part15Week]].  You put your book in your
   bag and head towards you next class a bit early.
+<</nobr>>
+
+::Part15Study3HornyFaithful
+<<nobr>>
+  When you first looked up you were a bit angry, you know this guy doesn't want your number.  He just wants you back in his room, on your
+  back, with your legs in the air, his cock deep inside you.  But as your mind pictures it, you realize how much you want that 
+  <<if $PlayerChastityBelt>>
+    too, even though you know you can't have it.
+  <<else>>
+    too.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Your body's needs have pushed your anger at the interruption out of your mind.  Now instead of scolding him like you'd intended, you have
+  an almost overwhelming urge to
+  <<if $PlayerSideEffectOral > 3 or $PlayerChastityBelt>>
+    suck his cock right here.
+  <<elseif $PlayerSideEffectSubmissive > 2>>
+    get down on your knees and do whatever he commands.
+  <<else>>
+    go back to his room and fuck him right now.
+  <</if>>
+  But you want to be loyal to $dating[0].
+<</nobr>>
+  
+<<nobr>>
+  "I'm sorry
+  <<if $PlayerSideEffectSubmissive>>sir<</if>>,
+  I would give you my number, but I have a
+  <<if setup.haveGirlfriend()>>girlfriend.<<else>>boyfriend.<</if>>"
+<</nobr>>
+
+<<nobr>>
+  "Ok then." he says disappointed, before turn and walking away.
+<</nobr>>
+
+<<nobr>>
+  You did want to continue with your book, but now you are too horny to keep reading.  It will have to wait [[until another day|Part15Week]].
+  You wish you had time to meet up with $dating[0], but you have class soon.  You put your book in your bag and head towards you next
+  class a bit early.
+<</nobr>>
+
+::Part15Study3Horny
+<<nobr>>
+  When you first looked up you were a bit angry, you know this guy doesn't want your number.  He just wants you back in his room, on your
+  back, with your legs in the air, his cock deep inside you.  But as your mind pictures it, you realize how much you want that
+  <<if $PlayerChastityBelt>>
+    too, even though you know you can't have it.
+  <<else>>
+    too.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Your body's needs have pushed your anger at the interruption out of your mind.  Now instead of scolding him like you'd intended, you have
+  an almost overwhelming urge to
+  <<if $PlayerSideEffectOral > 3 or $PlayerChastityBelt>>
+    suck his cock right here.
+  <<elseif $PlayerSideEffectSubmissive > 2>>
+    get down on your knees and do whatever he commands.
+  <<else>>
+    go back to his room and fuck him right now.
+  <</if>>
+<</nobr>>
+  
+<<nobr>>
+  "How about I give you my number on the [[way back to your dorm room|Part15Study3Fuck]]
+  <<if $PlayerSideEffectSubmissive>>sir<</if>>
+  ?" you ask him.  He's very happy with that arrangement.  You throw your book in your bag and quickly follow him to his room.
+<</nobr>>
+
+::Part15Study3Fuck
+<<nobr>>
+  <h1>Back in his room</h1>
+  <<if $PlayerSideEffectOral > 3 or $PlayerChastityBelt>>
+    <<set setup.addSex({sex: 'male', anon: 'interrupting guy'})>>
+    <div style="float:left;padding:12px;">
+      <video src="Part15/Study3.webm" autoplay loop muted height="650"></video>
+    </div>
+    <br>
+    <<if $PlayerChastityBelt>>
+      "I'm in this stupid belt," you tell him as you show him your chastity belt.
+    <<else>>
+      "I don't have a lot of time until my next class," you tell him.
+    <</if>>
+    "But I really wanted to suck your cock.  Is that ok?"  You already on your knees unbuckling his pants when he answers.  A few moments later
+    and you are pulling out his cock and taking it into your mouth.
+    <br><br>
+    You feel how wet you are getting as you move up and down his cock.
+    You wish
+    <<if $PlayerChastityBelt>>
+      he could throw you over his bed and fuck you right now.  But he can't,
+    <<else>>
+      he would throw you over his bed and fuck you right now.  But you told him you don't have time,
+    <</if>>
+    and he seems more than happy with your blowjob.
+    <br><br>
+    After your mouth fills with his cum, you swallow down then check the time.  He's still laying down on his bed, in post-orgasm stupor
+    as you grab your bag and hurry to class.  You make it to class on time, though you would have liked to have time to clean up a bit,
+    you've managed to soak your panties through while you were sucking his cock.
+  <<else>>
+    <<set setup.addSex({sex: 'male', anon: 'interrupting guy', vaginal:true, noCondom: true, birthControl:'pullout'})>>
+    <video src="Part15/Study4.mp4" autoplay loop muted height="450"></video>
+    <br>
+    "I have class soon, so lets skip the small talk and get right to fucking," you tell him.  He happily agrees.  Thankfully the
+    effects of your implant have already made you wet, so you don't need much foreplay either.
+    <br><br>
+    <<if !$PlayerPregnant and $PlayerProtectionCondoms>>
+      You didn't have any condoms, so you know you should have him pull out at least.  "Please don't cum inside me," you tell him when he
+      startrs to get close.
+    <<elseif !$PlayerPregnant and $PlayerProtectionWithdraw>>
+      "Please don't cum inside me," you tell him when he startrs to get close.
+    <<else>>
+      "Cum inside me or wherever you want," you tell him when he gets close.
+    <</if>>
+    He pulls out before he cums and decides to cum on your breasts.  After he's done he notes the quantity he left and says.  "It's been a while
+    since I last came."
+    <br><br>
+    As he lays on his bed in a post-orgasm stupor, you start to look for a towel to clean up with.  But then you notice the time.  You need to
+    hurry if you aren't going to be late for class. You make it to class on time, barely.  But you would have liked to have time to clean
+    up a bit.  You can feel his dry cum on your skin as you sit in class.  You are only glad you wore a sweater so no one else notices it.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  As you go about the [[rest of your week|Part15Week]], you wonder if he'll actually call you, or that he won't bother now that he's
+  gotten what he wants.
 <</nobr>>
 
 ::Part15Halloween

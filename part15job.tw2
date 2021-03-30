@@ -1,5 +1,6 @@
 ::Part15JobMain
 <<nobr>>
+  <<unset $tempShowedBetaTester>>
   <<if $BrokenLeg>>
     <<include [[Part15JobBrokenLeg]]>>
   <<elseif $JobEngineerLock>>
@@ -28,8 +29,10 @@
     <<include [[Part15JobLibrary]]>>
   <<elseif $JobModel>>
     <<include [[Part15JobModel]]>>
-  <<elseif $JobBetaTester or $JobCallGirlSide or $JobStripper or $JobGloryHole>>
-    <<include [[Part15JobSide]]>>
+  <<elseif $JobStripper>>
+    <<include [[Part15JobStripper]]>>
+  <<elseif $JobBetaTester>>
+    <<include [[Part15JobBetaTester]]>>
   <<elseif $dating.length>>
     <<include [[Part15RelationshipInclude]]>>
   <<else>>
@@ -104,38 +107,9 @@ TODO Deal with broken leg Week 7, cast off [[Part15JobMain]]
 
 ::Part15AfterMainJob
 <<nobr>>
-  <<if $JobBetaTester or $JobCallGirlSide or $JobStripper or $JobGloryHole>>
-    <<include [[Part15JobSide]]>>
-  <<elseif $dating.length>>
-    <<include [[Part15RelationshipInclude]]>>
-  <<else>>
-    <<include [[Part15BackToMain]]>>
-  <</if>>
-<</nobr>>
-
-::Part15JobSide
-<<nobr>>
-  <<if $JobBetaTester>>
+  <<if $JobBetaTester and !$tempShowedBetaTester>>
     <<include [[Part15JobBetaTester]]>>
-  <<elseif $JobCallGirlSide>>
-    <<include [[Part15JobCallGirl]]>>
-  <<elseif $JobStripper>>
-    <<include [[Part15JobStripper]]>>
-  <<elseif $JobGloryHole>>
-    <<include [[Part15JobGloryHole]]>>
-  <<else>>
-    <!-- shouldn't be here -->
-    <<if $dating.length>>
-      <<include [[Part15RelationshipInclude]]>>
-    <<else>>
-      <<include [[Part15NoJob]]>>
-    <</if>>
-  <</if>>
-<</nobr>>
-
-::Part15AfterSideJob
-<<nobr>>
-  <<if $dating.length>>
+  <<elseif $dating.length>>
     <<include [[Part15RelationshipInclude]]>>
   <<else>>
     <<include [[Part15BackToMain]]>>
@@ -846,7 +820,7 @@ TODO Deal with broken leg Week 7, cast off [[Part15JobMain]]
     <<include [[Part15AfterMainJob]]>>
   <<else>>
     TODO Library after that (13)  (Bring your buddy to work day)
-    <<include [[Part15BackToMain]]>>
+    <<include [[Part15AfterMainJob]]>>
   <</if>>
 <</nobr>>
 
@@ -1261,7 +1235,24 @@ TODO Deal with broken leg Week 7, cast off [[Part15JobMain]]
 <</nobr>>
 
 ::Part15JobBaristaWeek7
-TODO Part15JobBaristaWeek7 (Maybe in a belt but not chaste)
+<<nobr>>
+  <h1>Promotion</h1>
+  <img src="Part15/Barista3.jpg" hspace="10" vspace="10" height="450">
+  <<set $JobBaristaManager to 1>>
+<</nobr>>
+<<nobr>>
+  You are worried you've done something wrong when the boss calls you into his office.  But then he lets you know that he's what a great
+  worker you are, and how you've managed to deal with some of the difficult customers that come in sometimes.
+<</nobr>>
+
+<<nobr>>
+  Now you are an 'assistant shift leader', or something like that.  Your job will mostly be the same, except a bit more training of the newer
+  staff, and it comes with a small raise, which is nice.  And it puts you on the management track for future promotions.
+<</nobr>>
+
+<<nobr>>
+  The only down-side is that now when some annoying person demands to speak with the manager, it might be you that has to deal with them.
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15AfterMainJob]]>>
@@ -1584,7 +1575,8 @@ TODO Part15JobBaristaWeek7 (Maybe in a belt but not chaste)
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15AfterSideJob]]>>
+  <<set $tempShowedBetaTester to 1>>
+  <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
 ::Part15JobBaristaWeek11
@@ -1766,7 +1758,8 @@ TODO Part15JobBaristaWeek11 (Maybe in a belt but not chaste)
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15AfterSideJob]]>>
+  <<set $tempShowedBetaTester to 1>>
+  <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
 ::Part15JobBaristaWeek13
@@ -1842,7 +1835,7 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
   <<else>>
     watched
   <</if>>
-  the videos you were told to that demonstrated it.  But actually feeling it push past it's your ass's initial resistance
+  the videos you were told to that demonstrated it.  But actually feeling it push past your ass's initial resistance
   for the first time is something completely different.
 <</nobr>>
 
@@ -2006,24 +1999,15 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 
 ::Part15JobStripper
 TODO Stripper
-<<include [[Part15AfterSideJob]]>>
-
-::Part15JobGloryHole
-TODO Glory Hole
-<<nobr>>
-  <<include [[Part15AfterMainJob]]>>
-<</nobr>>
-
-::Part15JobCallGirlSide
-TODO Call Girl Side
 <<include [[Part15AfterMainJob]]>>
 
 ::Part15JobBetaTester
 <<nobr>>
+  <<set $tempShowedBetaTester to 1>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15BetaTestLanguage]]>>
   <<elseif $SchoolWeek == 7>>
-    TODO Part15JobBetaTester Week 7<br> Maybe challenges to get an orgasm (or chance of one)<br> [[Part15AfterSideJob]]<br>
+    TODO Part15JobBetaTester Week 7<br> Maybe challenges to get an orgasm (or chance of one)<br> [[Part15AfterMainJob]]<br>
     <<include [[Part15BackToMain]]>>
   <<elseif $SchoolWeek == 11>>
     TODO Part15JobBetaTester Week 11<br>
