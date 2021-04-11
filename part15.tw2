@@ -772,6 +772,10 @@
   <<elseif ($JobCheerleader and setup.areDating('Veronica'))>>
     You aren't going to quit your job with Veronica as a cheerleader, so you decide to
     <<if $JobStripper>>
+      <<if $PlayerItemNerdKeyStripper>>
+        <<set $PlayerItemNerdKey>>
+        <<unset $PlayerItemNerdKeyStripper>>
+      <</if>>
       <<set $tempQuitJob to "stripper">>
       <<set $JobStripperOld to 1>>
       <<unset $JobStripper>>
@@ -788,6 +792,10 @@
     <br><br>
     Both are fun and bring in great money.  But it's time to decide whether you want to
     <<link "keep working as a call girl">>
+      <<if $PlayerItemNerdKeyStripper>>
+        <<set $PlayerItemNerdKey>>
+        <<unset $PlayerItemNerdKeyStripper>>
+      <</if>>
       <<unset $JobStripper>>
       <<set $JobStripperOld to 1>>
       <<goto [[Part15SideJobEliminateAfter]]>>
@@ -841,6 +849,10 @@
     <br><br>
     Which job would you rather keep, your
     <<link "main job">>
+      <<if $PlayerItemNerdKeyStripper>>
+        <<set $PlayerItemNerdKey>>
+        <<unset $PlayerItemNerdKeyStripper>>
+      <</if>>
       <<set $tempQuitJob to $tempSideJob>>
       <<set $JobStripperOld to $JobStripperOld or $JobStripper>>
       <<set $JobCallGirlOld to $JobCallGirlOld or $JobCallGirlSide>>
@@ -964,7 +976,7 @@
     covered in evidence of just how much they enjoyed you.
     <br><br>
     As you stumble out of the their frat house, feeling the dried cum on your skin and in your hair, you decided you should at least go talk to the
-    engineering department.  If there's soemthing that can help you prevent these desires, or help you to stop acting on them.  You owe it to yourself
+    engineering department.  If there's something that can help you prevent these desires, or help you to stop acting on them.  You owe it to yourself
     to check it out.
   <<else>>
     You are trying to be a good girl, to
@@ -981,7 +993,7 @@
     body does it for you.
     <br><br>
     Even just walking passed a few frat guys, and your mind is fantasizing about having sex with all of them.  All of them at once!  You decide that
-    you should at least go talk to the engineering department.  If there's soemthing that can help you prevent these desires, you owe it to
+    you should at least go talk to the engineering department.  If there's something that can help you prevent these desires, you owe it to
     yourself, and your future spouse, to check it out before you start acting on them.
   <</if>>
 <</nobr>>
@@ -2016,6 +2028,10 @@
 
 <<nobr>>
   <<if $JobStripper and $JobCallGirlSide>>
+    <<if $PlayerItemNerdKeyStripper>>
+      <<set $PlayerItemNerdKey>>
+      <<unset $PlayerItemNerdKeyStripper>>
+    <</if>>
     <<set $JobStripperOld to 1>>
     <<unset $JobStripper>>
     <<unset $JobCallGirlSide>>
@@ -2023,6 +2039,10 @@
     like this.  And you don't want to force your call girl agency to have to find clients that are ok with you being in a chastity belt.  So it looks like
     your side income is gone for the time being.  All the more incentive to find some security flaws and earn a few bonuses.
   <<elseif $JobStripper>>
+    <<if $PlayerItemNerdKeyStripper>>
+      <<set $PlayerItemNerdKey>>
+      <<unset $PlayerItemNerdKeyStripper>>
+    <</if>>
     <<set $JobStripperOld to 1>>
     <<unset $JobStripper>>
     This is the job you really want, but you did find your side job fun.  And you certainly enjoyed the extra money.  But you obviously won't be stripping
@@ -2507,6 +2527,10 @@
   <<if $JobStripper>>
     <br><br>
     You know you can't strip at the club anymore wearing this belt, so you let the club manager know you won't be back.
+    <<if $PlayerItemNerdKeyStripper>>
+      <<set $PlayerItemNerdKey>>
+      <<unset $PlayerItemNerdKeyStripper>>
+    <</if>>
     <<unset $JobStripper>>
     <<set $JobStripperOld to 1>>
   <</if>>
@@ -4023,13 +4047,13 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
       <!-- Nov w3 -->
       <<include [[Part15BabyJobsRelationships]]>>
     <<case 14>>
-      <!-- Nov w4 Thanksgiving-->
-
-	    (to be continued week 14)
+      <<if $WomensStudiesProfessorPublish>>
+        <<include [[Part15WomensStudiesPublish]]>>
+      <<else>>
+        <<include [[Part15Week14]]>>
+      <</if>>
     <<case 15>>
       <!-- Dec w1 -->
-      <h1>To be continued...</h1>
-      <<set $TO_BE_CONTINUED to 1>>
 	    (to be continued week 15)
     <<case 16>>
       <!-- Dec w2 -->
@@ -4038,6 +4062,16 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
       (to be continued start of winter break)
   <</switch>>
 <</nobr>>
+
+::Part15Week14
+<<nobr>>
+  <h1>To be continued...</h1>
+  <<set $TO_BE_CONTINUED to 1>>
+  <!-- Nov w4 Thanksgiving-->
+  (to be continued week 14)
+  
+<</nobr>>
+
 
 ::Part15Probation1
 <<nobr>>
@@ -4560,7 +4594,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   <<elseif $tempEngineeringDeptJob>>
     You know exactly the experiments she's talking about.  You could arrange to meet with her and
     [[tell her all you know|Part15WomensStudiesTalkTesting]] about what is going on in the engineering department.  The survey was anonymous,
-    so she doesn't know you were one of the students working with them, or you could just [[keep quiet about it|Part15WomensStudiesQuiet]].
+    so she doesn't know you were one of the students working with them so you could just [[keep quiet about it|Part15WomensStudiesQuiet]].
     You could also stop by the department and [[warn the department head|Part15WomensStudiesReport]]
     that she is investigating them.
   <<elseif $MinistryBeltDecline>>
@@ -4629,6 +4663,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     As you talk with her about the engineering department, you occasionally go to the whiteboard whenever you want to 'say' something
     you think the belt might pick up on.
   <</if>>
+  <<set $WomensStudiesProfessorTalk to 1>>
 <</nobr>>
 
 <<nobr>>
@@ -4876,6 +4911,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   You stop by your professor's office during her normal office hours.  "Can I speak with you a moment about the Engineering
   department?" you ask her.  She invites you in, and after you close her office door, you lift up your top to show her the belt you
   are wearing.
+  <<set $WomensStudiesProfessorTalk to 1>>
 <</nobr>>
 
 <<nobr>>
@@ -5106,6 +5142,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 ::Part15WomensStudiesPlan
 <<nobr>>
+  <<set $WomensStudiesProfessorPublish to 1>>
   <h1>Discussing next steps</h1>
   <img src="Part15/School3.jpg" hspace="10" vspace="10" height="400" align="left">
   "First, I'll give it a little time to see if anyone else comes forward," she tells you.
@@ -5158,8 +5195,13 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 <<nobr>>
   Once your professor mentions that someone has come forward, several more students come forward with stories of their interactions with
-  the engineering department.  Your professor gathers as much information as she can and combs through the evidence you and others gave her.
-  She then writes up her findings and submits them to an women's studies academic journal.
+  the engineering department.  Your professor gathers as much information as she can and combs through the evidence
+  <<if $WomensStudiesProfessorTalk>>
+    you and others
+  <<else>>
+    they
+  <</if>>
+  gave her. She then writes up her findings and submits them to an women's studies academic journal.
 <</nobr>>
 <<nobr>>
 <blockquote>
@@ -5223,14 +5265,20 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     all the
   <</if>>
   women locked in one his belts discover he had setup some sort of 'dead man's switch' when he locked down the belts.  Once
-  he was arrested it, and not checking in to wherever he has set it up, the belts all activated.
+  he was arrested, and not checking in to wherever he has set it up, the belts all activated.
 <</nobr>>
 
 <<nobr>>
   For most of the girls, the first settings change was hard to notice, since being horny for 16 hours straight wasn't unusual.
-  Though the more chaste of the girls noticed something felt different right away, but they still couldn't feel the subtle
-  stimulation from their belt that was causing their body to feel this way, just the effects it caused.  All of them would
-  soon get used to being horny nearly all the time now.
+  <<if $oldBetaTestMode == "chaste">>
+    Though you noticed something right away.  You couldn't feel the subtle stimulation from your belt that was causing you
+    to feel that way.  All you could tell is that you were extremely horny from the time you woke up, and all day long.
+    Soon you are used to that feeling of constant need that you feel all the time now.
+  <<else>>
+    Though the more chaste of the girls noticed something felt different right away, but they still couldn't feel the subtle
+    stimulation from their belt that was causing their body to feel this way, just the effects it caused.  All of them would
+    soon get used to being horny nearly all the time now.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -5247,8 +5295,15 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     His new settings didn't care about what 'mode' their belt was in before, everyone received the same new settings.
   <</if>>
   Once everyone figured out the one way to stop the punishment shocks, even the most innocent of girls, or the most ardent
-  lesbian, were looking for her daily ten.  Of course the belt keeping her horny all the time, and teasing her while she
-  sucked a cock both helped to make the transition easier.
+  lesbian, were looking for her daily ten.
+  <<if $oldBetaTestMode == "chaste">>
+    <<unset $CampusMinistry>>
+    <<set $CampusMinistryFailBelt to 1>>
+    You were no exception.
+  <<else>>
+    Of course the belt keeping her horny all the time, and teasing her while she sucked a cock both helped to make the
+    transition easier.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -5330,9 +5385,14 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   <<unset $JobBetaTester>>
   <<unset $JobEngineer>>
   <<unset $JobEngineerLock>>
-  The other defendants have all reached deals with and started to serve their time in prison, or on probation. But for months, you
-  and the others are stuck like this as the district attorney negotiates a plea deal with the department head's attorney.
-  Finally the DA's office calls you telling you they've [[reached a deal|Part15WomensStudiesStuck2]] with the deptartment head too.
+  <<if $WomensStudiesProfessorTalk>>
+    The other defendants have all reached deals with and started to serve their time in prison, or on probation. But for months, you
+    and the others are stuck like this as the district attorney negotiates a plea deal with the department head's attorney.
+    Finally the DA's office calls you telling you they've [[reached a deal|Part15WomensStudiesStuck2]] with the department head too.
+  <<else>>
+    The DA's office keeps telling you won't take a plea deal with him until they can negotiate the codes to unlock you and the others.
+    But until then, you're just going to [[have to endure|Part15Week]].
+  <</if>>
 <</nobr>>
 
 ::Part15WomensStudiesStuck2
@@ -5459,6 +5519,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   <h1>Talking to the head of the engineering department</h1>
   "Thank you for bringing this to my attention," the department head tells you.  "Clearly this professor has gotten the wrong idea about
   the work we do here.  I'll meet with her as soon as possible to clear up the misunderstanding.
+  <<set $WomensStudiesProfessorReported to 1>>
 <</nobr>>
 
 <<nobr>>
@@ -5628,16 +5689,70 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  As you leave the class you feel happy that you were able to help the professor and the engineering department work things out.  You'd
-  hate for her to be worrying about all that while she was dealing with her family drama.
+  As you leave the class you
+  <<if $WomensStudiesProfessorReported>>
+    feel happy that you were able to help the professor and the engineering department work things out.  You'd
+    hate for her to be worrying about all that while she was dealing with her family drama.
+  <<elseif $EngineeringGuest>>
+    wonder if anyone ever came forward to report anything to the professor.  Obviously some of the stories about the engineering
+    department are true.  Though it seems much more fun, and less nefarious than she'd thought it was.
+  <<else>>
+    wonder if anyone reported anything to the professor.  You suppose not since she's giving up her plan of looking further into
+    the survey responses.  Then you wonder if maybe someone informed the engineering department about her plan and they did do something
+    to her.  But you realize you are just being silly.  She's just out for some family emergency like her grad student said.
+  <</if>>
 <</nobr>>
 
 <<include [[Part15BackToMain]]>>
 
 ::Part15WomensStudiesQuiet
 <<nobr>>
-  You decide it's best not to get involved in her investigation at all, and say nothing.  You'll wait and see if she reports back
-  anything to the class later.
+  <<set $tempQuietRoll to either ("main", "main", "main", "main", "main", "main", "main", "report", "report", "talk")>>
+  <<if $tempQuietRoll == "report">>
+    <<include [[Part15WomensStudiesReport2]]>>
+  <<elseif $tempQuietRoll == "talk">>
+    <<include [[Part15WomensStudiesQuietTalk]]>>
+  <<else>>
+    <<include [[Part15WomensStudiesQuietMain]]>>
+  <</if>>
+<</nobr>>
+
+::Part15WomensStudiesQuietTalk
+<<nobr>>
+  You decide it's best not to get involved in her investigation at all, and say nothing.
+  <<set $WomensStudiesProfessorPublish to 1>>
+<</nobr>>
+
+<<nobr>>
+  In class a while later, she lets you all know that someone did come by her office and confirm at least some of the stories she'd
+  recieved.  "She was even able to supply evidence to confirm it as well.  I won't be going into any more detail right now.  I am
+  contiuing to gather my findings.  Once I've written them up and submitted them for publication, I'll be sure to copy all of
+  you as well.
+<</nobr>>
+
+<<nobr>>
+  "Until then, please keep quiet about my investigation.  Also, I want to thank all of you for your candor and honesty in filling out
+  the initial survey.  And if anyone else wants to come forward with more detailed stories, my door is still open."
+<</nobr>>
+
+<<include [[Part15BackToMain]]>>
+
+::Part15WomensStudiesQuietMain
+<<nobr>>
+  You decide it's best not to get involved in her investigation at all, and say nothing.
+<</nobr>>
+
+<<nobr>>
+  In class a while later, she lets you all know that no one came by to confirm the stories.  "Ladies, please be more serious when responding
+  to surveys like in the future.  Gentlemen this generally goes for you as well, though you weren't part of this particular survey," she
+  tells you all.
+<</nobr>>
+
+<<nobr>>
+  "Clearly several people thought it would be funny to put some outlandish stories on their survey responses.  And quite a few more were
+  amused by giving extreme responses on the multiple choice questions.  And given some of the other questionable practices on this campus,
+  I fell for it all.  I'm going to toss out the entire survey since the number of 'joke' responses renders it useless.  I'm adding an
+  assignment for all of you, due Monday.  Ten pages on survey response rates and the difficulties posed by non-serious responses."
 <</nobr>>
 
 <<include [[Part15BackToMain]]>>
@@ -5649,6 +5764,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   act like they have no idea what you are talking about.  But once they realize you came here, not because you were upset by the
   rumors, but because you were excited about them, their tone changes.
   <<set $EngineeringGuest to 1>>
+  <<set setup.addSexRepeat(30, {sex:'male', anon:'Engineer'})>>
 <</nobr>>
 
 <<nobr>>
@@ -5712,9 +5828,25 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  "I suppose you want to orgasm now?" the first engineer asks.  You eagerly nod 'Yes'.  "Ok, well we are all horny as hell too.  You
-  can cum while you blow us.  I'll turn it off and untie you once you've taken care of all of us."  You orgasm finally as the first
-  engineer is fucking your face.
+  "I suppose you want to orgasm now?" the first engineer asks.  You eagerly nod 'Yes'.  "Well, what are you willing to do for it?" he asks.
+  After you mumble 'mmythmg!' into your gag, he takes it out and tells you to be more specific.
+<</nobr>>
+
+<<nobr>>
+  "I'll suck your cock!" you answer eagerly.  He tells you that's a given and to try again.  "You can fuck me.  Please fuck me!  Or my
+  ass.  You can fuck my ass!"  He tells you maybe next time.  You go back to "Anything!  I'll do anything you want!  Just please let me cum!"
+<</nobr>>
+
+<<nobr>>
+  "How about you confess which of your little slut friends told you about us?" he says smiling.  "We'll punish her a bit for violating
+  disclosure rules.  But then we'll reward her for sending such a pretty, cocksucking slut our way."  You don't hesitate and start
+  telling him about the survey your professor did, and what she did said class.  Then you tell him how horny you got just listening to
+  her talk about the experiments and how that drove you to visit them.
+<</nobr>>
+
+<<nobr>>
+  "That's a good slut.  Well, we are all horny as hell too, so you can cum while you blow us.  I'll turn it off and untie you once you've
+  taken care of all of us."  You orgasm finally as the first engineer is fucking your face.
 <</nobr>>
 
 <<nobr>>
@@ -5741,16 +5873,14 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   He hits a button on the machine and it slows its movements and then stops.  Still bound to the machine, you pant and try to catch your
-  breath.  Eventually he starts to release you from the bindings holding you to the machine.  As you start to stand, he tosses towel over
+  breath.  Eventually he starts to release you from the bindings holding you to the machine.  As you start to stand, he tosses a towel over
   to you to clean yourself up with.  "Feel free to come by for a visit any time you like," he says.  You hope to do exactly that.
 <</nobr>>
 
 <<nobr>>
-  You definitely aren't going to mention anything to your professor about your visit though.  Even though you volunteered and had a
-  wonderful time, she might get the wrong idea because of the restraints and everything.
+  You definitely aren't going to mention anything [[to your professor|Part15WomensStudiesReport2]] about your visit though.  Even though
+  you volunteered and had a wonderful time, she might get the wrong idea because of the restraints and everything.
 <</nobr>>
-
-<<include [[Part15BackToMain]]>>
 
 ::Part15LivingMotherApt
 <<nobr>>
