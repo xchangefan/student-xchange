@@ -769,7 +769,7 @@
     You can always stop by whenever you are needing a little extra money.  Or when you are needing a little of something else.
     <<unset $JobGloryHole>>
     <<set $JobGloryHoleFormer to 1>>
-  <<elseif ($JobCheerleader and setup.areDating('Veronica'))>>
+  <<elseif $JobCheerleader and setup.areDating('Veronica')>>
     You aren't going to quit your job with Veronica as a cheerleader, so you decide to
     <<if $JobStripper>>
       <<if $PlayerItemNerdKeyStripper>>
@@ -4598,17 +4598,16 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     You could also stop by the department and [[warn the department head|Part15WomensStudiesReport]]
     that she is investigating them.
   <<elseif $MinistryBeltDecline>>
+    <<set $tempWomensStudiesNothingToReport to 1>>
     You don't know about the experiments she is talking about, but you were offered one of the chastity belts she mentioned.
-    Since you turned down the offer, you don't have anything more to tell her about them though.  From hearing the other
-    things the department is doing, you think you made the right decision not getting involved with them.
+    Since you turned down the offer, you [[don't have anything more to tell her|Part15WomensStudiesQuiet]] about them though.
+    From hearing the other things the department is doing, you think you made the right decision not getting involved with them.
     You hope some of the students that know more come forward and help her get to the bottom of all this.
-    <br><br>
-    <<include [[Part15BackToMain]]>>
   <<elseif $CampusMinistry or $dating.length>>
-    You don't know about the experiments she is talking about or the belts.  But that department sounds like a real menace.
-    You hope some of the students that know more come forward and help her get to the bottom of all this.
-    <br><br>
-    <<include [[Part15BackToMain]]>>
+    <<set $tempWomensStudiesNothingToReport to 1>>
+    You don't know about the experiments she is talking about or the belts and have [[nothing to tell her|Part15WomensStudiesQuiet]].
+    But that department sounds like a real menace. You hope some of the students that know more come forward and help her get to the
+    bottom of all this.
   <<elseif $PlayerChastityBelt>>
     You don't know about the experiments she is talking about, though your are horny enough right now you'd be tempted to
     volunteer for that forced orgasm experiment if you could.  You certainly know about chastity belts, though not from
@@ -5719,11 +5718,11 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 ::Part15WomensStudiesQuietTalk
 <<nobr>>
-  You decide it's best not to get involved in her investigation at all, and say nothing.
   <<set $WomensStudiesProfessorPublish to 1>>
-<</nobr>>
-
-<<nobr>>
+  <<if !$tempWomensStudiesNothingToReport>>
+    You decide it's best not to get involved in her investigation at all, and say nothing.
+    <br><br> 
+  <</if>>
   In class a while later, she lets you all know that someone did come by her office and confirm at least some of the stories she'd
   recieved.  "She was even able to supply evidence to confirm it as well.  I won't be going into any more detail right now.  I am
   contiuing to gather my findings.  Once I've written them up and submitted them for publication, I'll be sure to copy all of
@@ -5739,10 +5738,10 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 ::Part15WomensStudiesQuietMain
 <<nobr>>
-  You decide it's best not to get involved in her investigation at all, and say nothing.
-<</nobr>>
-
-<<nobr>>
+  <<if !$tempWomensStudiesNothingToReport>>
+    You decide it's best not to get involved in her investigation at all, and say nothing.
+    <br><br> 
+  <</if>>
   In class a while later, she lets you all know that no one came by to confirm the stories.  "Ladies, please be more serious when responding
   to surveys like in the future.  Gentlemen this generally goes for you as well, though you weren't part of this particular survey," she
   tells you all.
