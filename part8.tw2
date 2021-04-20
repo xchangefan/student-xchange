@@ -61,6 +61,8 @@
     <<include [[Part8ChristmasSkipDating]]>>
   <<elseif $PlayerChastityBelt>>
     <<include [[Part8ChristmasSkipChastity]]>>
+  <<elseif setup.sexMaleCount() == 0 and !$PlayerSideEffectMasturbationBlock>>
+    <<include [[Part8ChristmasSkipLesbian]]>>
   <<elseif $PlayerMenstruation or $PlayerAbortion>>
     <<include [[Part8ChristmasSkipRide]]>>
   <<else>>
@@ -158,7 +160,6 @@
     </td></tr>
   </table>
 <</nobr>>
-
 
 ::Part8ChristmasSkipKidnapEscape
 <<nobr>>
@@ -329,6 +330,73 @@
       at the mall, even if you did tell him you weren't interested.
       <br>
       <img src="Part8/Mall3.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="300">
+      <img src="Part8/Christmas5.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      <img src="Part8/Christmas6.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <br><br>
+      The rest of the visit was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.  But you are glad
+      to be [[back at school|Part8Return8]].
+    </td></tr>
+  </table>
+<</nobr>>
+
+::Part8ChristmasSkipLesbian
+<<nobr>>
+  <h1>There and back again</h1>
+  <table>
+    <tr><td style="vertical-align:center">
+      <img src="Part8/Start4.jpg" hspace="10" vspace="10" height="350" align="left">
+      <<if $PlayerMenstruation or $PlayerAbortion>>
+        <<set $CarBrad = 1>>
+        <<set $PlayerMoney -= 50>>
+        <<set $PlayerMoney -= 150>>
+        <<set $PlayerMoney -= 50>>
+        You got started packing a bit late and left late too.  When you discovered your flat tire, it was too late to get it fixed.  Thankfully
+        your friend Brad was willing to give you a ride home.  You ended up giving him $50 for gas each way.
+        <br><br>
+        You also had to pay another $450 to get your car fixed when you came home.
+        <<set $PlayerMoney -= 450>>
+        <<if $PlayerMoney < 0>>
+          <<set $PlayerMoney -= 50>>
+          Plus another $50 in fees from the cash advance you had to take out on your credit card.
+        <</if>>
+        <img src="Part8/Road1.jpg" hspace="10" vspace="10" height="250">
+      <<else>>
+        Thankfully you got an early start on your trip home, because you came out to find your tire flat.  It cost $150 to get
+        it fixed.  Then, in your hurry to get home on time after the delay, you ended up getting a speeding ticket and arrested!
+        <img src="Part8/Jail.jpg" hspace="10" vspace="10" height="250">
+        <<set $PlayerMoney -= 150>>
+        <<set $PlayerMoney -= 350>>    
+      <</if>>
+    </td></tr>
+    <tr><td>
+      <<if !$CarBrad>>
+        Thankfully once you are home you are able to take your mind off of your ordeal.
+      <</if>>
+      <video src="Part8/Home9.mp4" autoplay loop muted height="350"></video>
+    </td></tr>
+    <tr><td>
+      <<set $PlayerMoney -= 150>>
+      <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
+      <br><br>
+      <<if $PlayerMenstruation or $PlayerAbortion>>
+        Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+      <<else>>
+        You probably shouldn't have spent the $150 with your sister at the mall.
+      <</if>>
+      But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
+      at the mall, even if you did tell him you weren't interested.
+      <br>
+      <img src="Part8/Mall3.jpg" hspace="10" vspace="10" height="300">
+    </td></tr>
+    <tr><td>
+      You certainly don't need some guy to help you take care of your needs.
+      <video src="Part8/Evening14.mp4" autoplay loop muted height="350"></video>
     </td></tr>
     <tr><td>
       <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="300">
@@ -1811,7 +1879,10 @@
 	<<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectPheromones > 3 or $PlayerSideEffectExhibitionist > 3 or $PlayerSideEffectMasturbationBlock > 3 or $PlayerSideEffectDreams > 3 or !$LikeFemales>>
 		<<print "As good as his tongue feels on your clit, you are enjoying kissing your sister as she moans and rides his cock even more.">>
 	<<else>>
-		<<print "As she starts returning the favour and starts sucking him off, you can no longer hold your excitment and start masturbating.">>
+		As she starts returning the favour and starts sucking him off, you can no longer hold your excitment and start masturbating.
+    <<if $PlayerSideEffectMasturbationBlock>>
+      You know better, of course, as you know you won't be able to get off.  It ends up only making you hornier.
+    <</if>>
 	<</if>>
 <</nobr>>
 

@@ -2116,7 +2116,7 @@
   <img src="Part14/Island4.jpg" hspace="10" vspace="10" height="640" align="left">
   You <<if $BarryIslandResist>>reluctantly<<else>>eagerly<</if>> get on your knees and present your ass to Barry.  "Actually, I'm a bit tired from the
   trip at the moment.  Fucking you can wait," he says.
-  <<set $tempWasVirgin to !$sex.length>>
+  <<set $tempWasVirgin to setup.sexMaleCount() == 0>>
   <<set setup.addSex({sex: 'male', name:'Barry'})>>
   <<if !setup.isFWB('Barry')>>
     <<set setup.makeFWB('Barry')>>
