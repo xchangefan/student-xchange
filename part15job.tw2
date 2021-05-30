@@ -2255,22 +2255,37 @@ TODO Deal with broken leg Week 7, cast off [[Part15JobMain]]
 
 ::Part15JobBaristaWeek7
 <<nobr>>
-  <h1>Promotion</h1>
+  <<if $JobBikiniBaristaOld>>
+    <h1>Hired as a manager</h1>
+  <<else>>
+    <h1>Promotion</h1>
+  <</if>>
   <img src="Part15/Barista3.jpg" hspace="10" vspace="10" height="450">
   <<set $JobBaristaManager to 1>>
 <</nobr>>
 <<nobr>>
-  You are worried you've done something wrong when the boss calls you into his office.  But then he lets you know that he's what a great
-  worker you are, and how you've managed to deal with some of the difficult customers that come in sometimes.
-<</nobr>>
-
-<<nobr>>
-  Now you are an 'assistant shift leader', or something like that.  Your job will mostly be the same, except a bit more training of the newer
-  staff, and it comes with a small raise, which is nice.  And it puts you on the management track for future promotions.
-<</nobr>>
-
-<<nobr>>
-  The only down-side is that now when some annoying person demands to speak with the manager, it might be you that has to deal with them.
+  <<if $JobBikiniBaristaOld>>
+    You were worried that having Brian's shop on your resume would kill your chances, but it does the opposite.  Seeing your
+    experience, and how you were essentially a manager at the other shop, they decide to hire you own as
+    an 'assistant shift leader', or something like that.
+    <br><br>
+    Whatever the exact title is, you'll be getting paid a bit more than you were expecting and on the management track for
+    future promotions.
+    <br><br>
+    The only down-side is that now when some annoying person demands to speak with the manager, it might be you that has to deal
+    with them.  That sort of a thing is much more of an issue here.  Customers at your old shop always seemed very happy
+    for some reason.
+  <<else>>
+    You are worried you've done something wrong when the boss calls you into his office.  But then he lets you know what a great
+    worker you are, and how you've managed to deal with some of the difficult customers that come in sometimes.
+    <br><br>
+    Now you are an 'assistant shift leader', or something like that.  Your job will mostly be the same, except a bit more training
+    of the newer staff, and it comes with a small raise, which is nice.  And it puts you on the management track for future
+    promotions.
+    <br><br>
+    The only down-side is that now when some annoying person demands to speak with the manager, it might be you that has to deal
+    with them.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -2604,26 +2619,35 @@ TODO Deal with broken leg Week 7, cast off [[Part15JobMain]]
   <img src="Part15/Barista4.jpg" hspace="10" vspace="10" height="400">
 <</nobr>>
 <<nobr>>
-  <<if $CampusMinistry>>
-    Hearing how so
+  <<if $JobBikiniBaristaOld>>
+    Most days its a refreshing change to not be expected to be nearly naked, or encouraged to sexually service customers,
+    or anything else like that.  You just get to focus on your job, and keep things professional at work now.
+    <br><br>
+    The worst you've had to deal with is the rare customer who has tried slapping your ass or something else wildly inappropriate.
+    Of course they promptly get kicked out and told never to return.  Even if you don't mind it as much, you want to make sure the
+    other girls here don't have to deal with people like that.
+    <br><br>
+    <img src="Part15/Barista5.jpg" hspace="10" vspace="10" height="350" align="left">
+    <br><br>
+    Sometimes you miss the sexy feeling you had working in your bikini, and you definitely miss the tips you got back then.  But
+    for the most part, you are glad to just focus on your work.
   <<else>>
-    Knowing how
+    <<if $CampusMinistry>>
+      Hearing how so
+    <<else>>
+      Knowing how
+    <</if>>
+    many of the jobs around campus revolve around sex in some way, you are glad your job doesn't expect anything like that of you.
+    You just get to focus on your job, and keep things professional at work, which is how you want it.
+    <br><br>
+    The worst you've had to deal with is the rare customer who has tried slapping your ass or something else wildly inappropriate.
+    Of course they promptly get kicked out and told never to return, so you don't have to deal with them for long.
+    <br><br>
+    <img src="Part15/Barista5.jpg" hspace="10" vspace="10" height="350" align="left">
+    <br><br>
+    You are so happy you aren't one of those "bikini baristas" at Brian's coffee shop.  You are much happy just making your customers'
+    orders, and not being on display.
   <</if>>
-  many of the jobs around campus revolve around sex in some way, you are glad your job doesn't expect anything like that of you.
-  You just get to focus on your job, and keep things professional at work, which is how you want it.
-<</nobr>>
-
-<<nobr>>
-  The worst you've had to deal with is the rare customer who has tried slapping your ass or something else wildly inappropriate.
-  Of course they promptly get kicked out and told never to return, so you don't have to deal with them for long.
-<</nobr>>
-<<nobr>>
-  <img src="Part15/Barista5.jpg" hspace="10" vspace="10" height="350" align="left">
-<</nobr>>
-
-<<nobr>>
-  You are so happy you aren't one of those "bikini baristas" at Brian's coffee shop.  You are much happy just making your customers'
-  orders, and not being on display.
 <</nobr>>
 
 <<nobr>>
@@ -2936,19 +2960,317 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 ::Part15JobBikiniBarista
 <<nobr>>
   <<if $SchoolWeek == 3>>
-    TODO Bikini Barista Week 3
-    <<include [[Part15AfterMainJob]]>>
+    <<include [[Part15JobBikiniBarista1]]>>
   <<elseif $SchoolWeek == 7>>
-    TODO Bikini Barista Week 7
-    <<include [[Part15AfterMainJob]]>>
+    <<include [[Part15JobBikiniBarista2]]>>
   <<elseif $SchoolWeek == 11>>
-    TODO Bikini Barista Week 11
-    <<include [[Part15AfterMainJob]]>>
+    <<include [[Part15JobBikiniBarista5]]>>
   <<else>>
     TODO Bikini Barista after that (13)  (Bring your buddy to work day)
     <<include [[Part15BackToMain]]>>
   <</if>>
 <</nobr>>
+
+::Part15JobBikiniBarista1
+<<nobr>>
+  <h1>Understaffed</h1>
+  <img src="Part15/Barista6.jpg" hspace="10" vspace="10" height="550" align="left">
+<</nobr>>
+<<nobr>>
+  You are enjoying your job, making coffee while you give your customers a little eye candy to brighten their day.
+  <<if setup.haveFucked('Coffee Shop Customer') or setup.haveFucked('coffee aficionado')>>
+    <<if setup.haveFuckedVaginal('coffee aficionado')>>
+      <<set setup.addSexRepeat(10, {sex: 'male', anon: 'coffee aficionado'})>>
+      <<set setup.addSexRepeat(10, {sex: 'male', anon: 'coffee aficionado', vaginal:true})>>
+    <<else>>
+      <<set setup.addSexRepeat(20, {sex: 'male', anon: 'coffee aficionado'})>>
+    <</if>>
+    Well, sometimes you give them quite a bit more than that, but you enjoy that part too.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Unfortunately, there aren't enough girls to cover all the shifts well and you and the few other girls are getting
+  too many hours.  You aren't sure if the girls that worked last school year didn't like the job, graduated, or what.
+  But you are glad to hear that Brian is going to be hiring some new girls.
+<</nobr>>
+
+<<nobr>>
+  There are many new freshmen looking for work.  In addition to the walk-ins, you refer Monique, one of the girls that
+  just change as part of the implant program.  It's a great deal for everyone.  She gets a job, he gets an employee,
+  and you get a small bonus and the occasional day off finally.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15AfterMainJob]]>>
+<</nobr>>
+
+::Part15JobBikiniBarista2
+<<nobr>>
+  <h1>Problem with Monique</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Barista7.mp4" autoplay loop muted height="600"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  Everything has been going great with Monique the last month.  Customers love her, she gets tons of tips, she's even
+  decent at making drinks.  But then she makes a big mistake.
+<</nobr>>
+
+<<nobr>>
+  She's certainly not the first girl to show more than she is legally supposed to.  Bending over and showing cleavage is legal
+  and expected. 'Accidently' letting your top fall off happens all the time, as does bending over and giving the customer a
+  little flash.  And, of course some girls
+  <<if setup.haveFucked('Coffee Shop Customer') or setup.haveFucked('coffee aficionado')>>
+    like you
+  <</if>>
+  head out to the parking lot for a lot more in the relative privacy of a customer's car.
+<</nobr>>
+
+<<nobr>>
+  But Monique took things too far.  She gave one happy customers a full show of her masturbating, right there in the
+  drive-thru.  It wouldn't have been a big deal, and just meant a happy customer and a big tip, except she also let him film it.
+  He shared it online, and it went viral.  And some people recognized your shop as the place in the video.  Your boss had
+  to let Monique go, and pretend like it was an isolated incident due to the media coverage.
+<</nobr>>
+
+<<nobr>>
+  Your boss said he doesn't blame you, even though you were the one that referred her.  "No one would have cared, if she'd
+  just hadn't let him film it," he says.  "I should probably make that something we cover during training."  Still, you can't
+  help but feel like this is [[partially your fault|Part15JobBikiniBarista3]].
+<</nobr>>
+
+::Part15JobBikiniBarista3
+<<nobr>>
+  <h1>Visit from the health inspector</h1>
+  <img src="Part15/Barista8.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  "Oh shit," you think to yourself as you see the health inspector walking up for an unscheduled inspection.
+  It's just you and one of the freshmen girls working today.  You try to call Brian to tell him to come in to
+  deal with the inspector, but he doesn't answer.  So you are left to deal with him yourself.  You quickly make
+  sure your and your coworker's 'uniforms' are covering as much as they are able to, and straighten up your workspace,
+  then head to the door to greet the inspector.
+<</nobr>>
+
+<<nobr>>
+  The inspector shows you the video on his phone.  He asks if that was made here.  You already know that he knows
+  it was, so you don't try to lie.  "Yes, sir.  That was Monique, and she was fired immediately when my boss learned
+  of this.  That sort of behavior is completely unacceptable.  We also spent hours cleaning every surface and anything
+  else she might have touched.  And our onboarding training has been expanded to make it even more clear what is expected
+  of us."  You can see he isn't convinced.  "I can assure you that nothing like that will ever happen again," you add.
+<</nobr>>
+
+<<nobr>>
+  The inspector's words are completely professional as he talks about the 'egregious violations of health code, and basic
+  decency' on display in the video.  However, the bulge in his pants tell a completely different story of how he feels about
+  the shop - or at least how he feels about you.
+<</nobr>>
+
+<<nobr>>
+  You notice his eyes occasionally wandering over your body as you call Brian again with no answer again.  Brian immediately
+  calls you back though when you send a text telling him about the inspection.  He says he'll be an hour before he can
+  get back to town, and that you should stall the inspector until then.
+<</nobr>>
+
+<<nobr>>
+  You could tell the inspector it's time for your lunch break and suggest he join you so you can discuss the other measures
+  your boss is taking.  At the very least, it will give Brian some time to get so he can deal with the inspecton himself.
+  Perhaps you can even [[come to an arangement|Part15JobBikiniBarista4]] with the inspector yourself.
+<</nobr>>
+
+<<nobr>>
+  Or, you can just do your best to [[stall until Brian arrives|Part15JobBikiniBaristaShutdown]]
+<</nobr>>
+
+::Part15JobBikiniBaristaShutdown
+<<nobr>>
+  <h1>Failed inspection</h1>
+  You do your best to stall the inspector, talking about the new training your boss has added.  He hasn't of course, you
+  are making it up, but it sounds good.  But soon the inspector pulls out his clipboard and starts looking around.
+<</nobr>>
+
+<<nobr>>
+  He keeps pointing out minor problems like missing reminder signs and thermostats at the wrong temperature, jotting down
+  on his clipboard every time.  He also finds an container of cream in the refrigerator a week passed expiration.  You try to
+  tell him that you and your coworkers always double check before opening and using them, but he notes it anyway.
+<</nobr>>
+<<nobr>>
+  <img src="Part15/Barista10.jpg" hspace="10" vspace="10" height="300">
+<</nobr>>
+<<nobr>>
+  By the time Brian finally arrives, the inspector has finished and put a big orange sign in the window and ordered you
+  to close.  You send your coworker home, but wait there yourself until Brian arrives.
+  He's upset that he couldn't get there sooner, but you tell him it wouldn't have helped.  "I think the inspector had
+  made up his mind to close us before he even arrived," you say.
+<</nobr>>
+
+<<nobr>>
+  Brian tries to reopen later, but after the story got out abotu Monique's video, it seems like the health department and
+  town council are determined to make sure the shop stays closed.  You eventually decide you'll have to
+  [[get a job|Part15JobBarista]] at the regular coffee
+  <<if $JobBaristaOld>>
+    shop again.
+  <<else>>
+    shop.
+  <</if>>
+  <<unset $JobBikiniBarista>>
+  <<set $JobBikiniBaristaOld to 1>>
+  <<set $JobBarista to 1>>
+  The tips obviously aren't going to be as good, but you certainly have the experience.  Hopefully they won't judge
+  you for having worked at Brian's shop.
+<</nobr>>
+
+::Part15JobBikiniBarista4
+<<nobr>>
+  <h1>Working something out with the inspector</h1>
+  He eagerly accepts your lunch invitation and suggests a restuarant nearby.  "Oh, I didn't bring any other clothes
+  today," you lie.  "I'm sure they're not let me in like this, especially if I'm with the health inspector."
+  Before he can suggest something else, you offer a solution.  "Do you live nearby?  Maybe we could just go there and order it
+  for delivery?"  He quickly agrees and you ask to ride with him.
+  <<set setup.addSex({sex:"male", name:"Health Inspector"})>>
+  <<set setup.addSex({sex:"male", name:"Health Inspector", vaginal:true, birthControl:"pullout-perfect"})>>
+  <<set setup.addSex({sex:"male", name:"Health Inspector"})>>
+<</nobr>>
+<<nobr>>
+  <video src="Part15/Barista9.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+<<nobr>>
+  The two of you never actually bother to place any orders.  Your hand on his thigh on the drive to his house ensured it's
+  not food he's thinking about when you arrive.  Not long after the two of you are in his apartment, his pants are on
+  the ground and his cock is in your mouth.
+<</nobr>>
+
+<<nobr>>
+  A while later you leave his apartment with his cum in your ass, and an official warning for the shop in your hand.  He drops
+  you off without even bothering to go in and see Brian.  "The inspector said he'd let you off with a warning this time since
+  Monique was already fired, but not to let it happen again," you tell Brian.  "Oh, and he said he hoped I'd be here for
+  the next scheduled inspection as well."
+<</nobr>>
+
+<<nobr>>
+  Brian thanks you profusely for taking care of the situation.  You wonder if he realizes exactly how you 'took care of it'.
+  But the substational raise he gives you makes it clear he realizes that you went above and beyond today, and probably
+  will do so again every quarter when the inspector returns.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15AfterMainJob]]>>
+<</nobr>>
+
+::Part15JobBikiniBarista5
+<<nobr>>
+  <h1>Veteran's Day promotion</h1>
+  <img src="Part15/Barista11.jpg" hspace="10" vspace="10" height="550" align="left">
+  <<set setup.addSex({sex:"male", anon:"Veteran"})>>
+  <<set setup.addSex({sex:"male", anon:"Veteran"})>>
+  <<set setup.addSex({sex:"male", anon:"Veteran"})>>
+  <<set setup.addSex({sex:"male", anon:"Veteran"})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", anon:"Veteran"})>>
+  <<set setup.addSex({sex:"male", anon:"Veteran"})>>
+  <<set setup.addSex({sex:"male", anon:"Veteran"})>>
+<</nobr>>
+<<nobr>>
+  The shop is having a promotion at the coffee shop, a free drink to any veterans or active military. All they have to do is show
+  their ID.  You'd thought Megan might want the day off today, since she's a vet herself, but when you see the tips she is getting
+  from everyone, you don't blame her for wanting to work today.
+<</nobr>>
+
+<<nobr>>
+  When a vet does come in, unless he's in his car with his wife or something, you have him park off to the side, and then
+  deliver his drink yourself while Megan continues working the window.
+<</nobr>>
+
+<<nobr>>
+  The usually take up your offer for a blowjob in the parking lot.  For some of the older guys, you wonder how many decades
+  it has been since they had a twenty-year-old's lips around their cock.  Luckily everything still works, at least for the
+  ones that take you up on your offer.
+<</nobr>>
+
+<<nobr>>
+  They offer tips, but you tell them not today.  But you are fairly sure some of them will be regulars now, and
+  will be eager for another hand-delivered drink, and will tip generously then.
+<</nobr>>
+
+<<nobr>>
+  Of course they aren't all old guys they are all ages.  One is even a student, using his military benefits to go to the
+  university.  But he's not the youngest, the youngest just turned 18.  Technically he's not a veteran, but he Megan
+  his enlistment papers at the window, and she said he ships out next week.  That was good enough for her, and you.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Barista12.gif" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  When you start sucking his cock, he tells you how amazing it feels.  Then he mentions that he's never had a blow job,
+  or any sex, before.  You tell him to [[drive you someplace private|Part15JobBikiniBarista6]], and you'll give him more
+  than just a blowjob.  You tell yourself that you don't want him risking his life for you and everyone without ever
+  having had sex.  Maybe that's part of it, but you've also never been a guy's first before, and the idea exites you a bit.
+  <<if setup.haveFucked("Peter")>>Even Peter wasn't a virgin when you'd met, though you'd assumed he was.<</if>>
+  You know he'll always remember his first time with you.
+<</nobr>>
+
+<<nobr>>
+  You don't stop with his blowjob, but you do take it easier.  You don't want him to get too excited before the real fun
+  starts.  
+<</nobr>>
+
+::Part15JobBikiniBarista6
+<<nobr>>
+  <h1>His first time</h1>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true, noPullout:true})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  When you actually get someone private, you decide you don't want his first time to be a quick fuck in
+  his car, parked in some alley.  He's thrilled when you tell him you want to finish his blowjob now, and
+  meet him after work for something more memorable.  You make sure it's a slow-sensual blowjob though,
+  since he's still sure to remember it.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Barista13.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  You do most of the work the first time, letting him just enjoy the experience.  You smile knowing he'll always remember
+  looking up at you when he pictures his first time.  Well, that's one of the reasons you are smiling.
+<</nobr>>
+
+<<nobr>>
+  His second time isn't that long after his first.  But this time he starts with you.  Whatever girl he ends up with,
+  you want to make sure he knows how to pleasure her too.  After he's gotten you off, and has you building towards another
+  orgasm, then you tell him to start fucking you.  You have to give him a guiding hand to help his cock find the right
+  spot, but it's worth it when it gets there.
+<</nobr>>
+
+<<nobr>>
+  After that the two of you take a break, and go out and get something to eat.  Several hours later you are alone again.
+  You have him take you from behind this time.
+<</nobr>>
+
+<<nobr>>
+  The two of you hang out quite a bit the rest of the week.  You joke with him that hopefully the "sex boot camp" you've put
+  him though this week will keep his spirits up during the real boot camp.  You see him one last time the night before
+  he leaves.  He promises to write, or email, or whatever they let him do during training.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
+<<achievement>>virgin<</achievement>>
 
 ::Part15JobCallGirl
 <<nobr>>
