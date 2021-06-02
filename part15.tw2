@@ -4448,6 +4448,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <<nobr>>
   <h1>Going over the Women's Studies class survey results</h1>
   <img src="Part15/Class3.png" hspace="10" vspace="10" height="400">
+  TODO Handle if wearing collar
 <</nobr>>
 <<nobr>>
   Today in your Women's Studies class, your professor has the results of the survey she had the female-identifying students in your class,
@@ -4483,6 +4484,12 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   experience with oral sex, but only on the giving end of it, never having been the recipient.  From some of the free-response answers I
   suspect there may be an unusually high prevalence of BDSM activity at the university, but I didn't ask any specific questions to tease
   out that detail.  It will have to be something to explore in the future.
+  <<if setup.haveInventory('sex toys', 'beta test collar 2')>>
+    <br><br>
+    You feel like she is judging you as she glances over at you while mentioning BDSM activity.  You've gotten used to wearing
+    your collar, everywhere but here.  You still feel like she would kick you out of her class for being a failure to feminism or
+    something if she knew you spent most of your free time on your knees servicing men, hoping for an orgasm of your own.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -4592,9 +4599,18 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     stop by the department and [[talk to the department head|Part15WomensStudiesReport]].  Maybe if he knew your professor was
     concerned, he could tell her about the wonderful work they are doing.  Or you could just [[stay out of it|Part15WomensStudiesQuiet]].
   <<elseif $tempEngineeringDeptJob>>
-    You know exactly the experiments she's talking about.  You could arrange to meet with her and
-    [[tell her all you know|Part15WomensStudiesTalkTesting]] about what is going on in the engineering department.  The survey was anonymous,
-    so she doesn't know you were one of the students working with them so you could just [[keep quiet about it|Part15WomensStudiesQuiet]].
+    You know exactly the experiments she's talking about.  You could arrange to meet with her and 
+    <<if setup.haveInventory('sex toys', 'beta test collar 2')>>
+      tell her all you know about what is going on the engineering department.  You won't though.  You already feel like
+      she is judging you, you can only imagine what it'd be like if you told her about being bound to their
+      machines and begging to cum, or begging to suck their cock to make the machine stop making you cum, or any of
+      the other things you've done during testing.
+      <br><br>
+    <<else>>
+      [[tell her all you know|Part15WomensStudiesTalkTesting]] about what is going on
+      in the engineering department.
+    <</if>>
+    The survey was anonymous, so she doesn't know you were one of the students working with them so you could just [[keep quiet about it|Part15WomensStudiesQuiet]].
     You could also stop by the department and [[warn the department head|Part15WomensStudiesReport]]
     that she is investigating them.
   <<elseif $MinistryBeltDecline>>

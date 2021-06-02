@@ -170,6 +170,8 @@ setup.addInventory = function (itemClass, itemName) {
 setup.haveInventory = function (itemClass, itemName) {
   if (!state.active.variables.inventory[itemClass]) {
     return false
+  } else if (itemName === '*') {
+    return true
   } else {
     return state.active.variables.inventory[itemClass].indexOf(itemName) >= 0
   }
