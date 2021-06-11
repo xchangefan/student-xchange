@@ -201,7 +201,7 @@
 ::Part15PornStarStripperSide
 <<nobr>>
   <h1>Working at the strip club</h1>
-  <video src="Part15/StripClub1.mp4" autoplay loop muted height="500"></video>
+  <video src="Part15/Strip2.mp4" autoplay loop muted height="500"></video>
   <<set $JobStripper to 1>>
   <<set setup.addSex({sex: 'male', anon: 'Strip Club Client', vaginal:true, condom: true, noPullout:true})>>
   <<set setup.addSex({sex: 'male', anon: 'Strip Club Client'})>>
@@ -863,6 +863,8 @@
     as $tempMainJob or your
     <<link "second job">>
       <<set $tempQuitJob to $tempMainJob>>
+      <<set $JobBaristaOld to $JobBarista>>
+      <<unset $JobBarista>>
       <<set $JobAthleteFormer to $JobAthleteFormer or $JobAthlete>>
       <<unset $JobAthlete>>
       <<set $JobCheerleaderFormer to $JobCheerleaderFormer or $JobCheerleader>>
@@ -4448,7 +4450,6 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <<nobr>>
   <h1>Going over the Women's Studies class survey results</h1>
   <img src="Part15/Class3.png" hspace="10" vspace="10" height="400">
-  TODO Handle if wearing collar
 <</nobr>>
 <<nobr>>
   Today in your Women's Studies class, your professor has the results of the survey she had the female-identifying students in your class,

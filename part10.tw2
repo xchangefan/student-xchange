@@ -1310,6 +1310,11 @@ Now you can [[think about something more fun|Part10End]].
   <<if $PlayerItemNerdKey>>
     Of course, he's here because you ordered him to come watch you.  You wanted him to see you dance for
     other men, and to make his cock strain at its cage as you [[dance for him|Part10StripPeterOrdered]].
+  <<elseif setup.isEx('Peter')>>
+    When you broke up, you and him parted on friendly terms.  He would have been happy with you holding his
+    chastity key and burying his head between your legs when you wanted.  But that wasn't really what you
+    were looking for in a relationship.  But if wants to [[pay to spend time with you|Part10StripPeterNeighbour]],
+    you aren't going to tell him no.
   <<elseif $Roommate == 'Peter' or setup.isNeighbour('Peter')>>
     Of course you know him very well since he was assigned the dorm room next to yours.  You know how shy
     he is so you plan on [[leading the action|Part10StripPeterNeighbour]] for him.
@@ -1422,11 +1427,11 @@ Now you can [[think about something more fun|Part10End]].
 
 <<nobr>>
   He seems nervous, but you try to reassure him.  "Don’t worry, I’ll be gentle... probably.
-  And I’m giving you the [[first one for free|Part10StripPeterNeighbour2]]".
+  And I’m giving you the [[first one for free|Part10StripPeterNeighbour2]]
+  <<if setup.isEx('Peter')>>, for old time's sake<</if>>."
 <</nobr>>
 
 ::Part10StripPeterNeighbour2 <7800,10300>
-<<set $PlayerItemNerdKey to 1>>
 <img src="Part10/StripPeterNeighbour2.jpg" hspace="10" vspace="10" height="600" />
 <<nobr>>
   Once you start grinding against him, you notice there’s something different about the bulge
@@ -1444,7 +1449,17 @@ Now you can [[think about something more fun|Part10End]].
   "Aww, don’t look so disappointed.  I wasn’t going to let you out.  I was going to keep it.
   You’ll just have to give it to me when we get home then."  Once he agrees, then you continue
   dancing for him.  "Actually, I’ll pick up my own lock on the way home instead," you tell him,
-  "just in case you have another key."  
+  "just in case you have another key."
+  <<if setup.isEx('Peter')>>
+    <br><br>
+    "But don't get the wrong idea," you tell him.  "We aren't a couple again.  I'm just holding your key
+    because we both know you don't deserve to have it yourself."
+    <br><br>
+    "Yes, ma'am," he says obediently.
+    <<set $PlayerItemNerdKeyStripper to 1>>
+  <<else>>
+    <<set $PlayerItemNerdKey to 1>>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
