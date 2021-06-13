@@ -5728,6 +5728,7 @@
         in his dungeon and under his control.  You wonder what he'd do to his favorite former niece if you submitted yourself to him today.
       <</if>>
       You figure there's only [[one way to find out|Part14Uncle]].
+    <<elseif setup.haveFucked('Ethan')>>
     <<else>>
       As Dylan sips at his smoothie, you try to think of what you want to do today.  You realize you haven't spent much time with your high school friends
       since being back this summer.  You admit you'd been avoiding them a bit, wondering how they'd react to the new you.  Of course they know about the
@@ -7361,7 +7362,19 @@
 <<nobr>>
   By then Mason is done filling up the car and paying and is back at the car.  You give them a peek, eliciting cheers from all three. Then Jake responds.
   "Sorry Ethan.  Those are much nicer than your sisters.  But don't be upset.  I assure you, your sister is still a great fuck."  That earns him a glare
-  from Ethan for a moment, but then everyone laughs.  Then the three of you hop back in the car and [[drive off towards the mall|Part14Friends2]].
+  from Ethan for a moment, but then everyone laughs.  Then the three of you hop back in the car and
+    <<if $PlayerChastityBelt>>
+      <<set setup.addInventory('clothes', 'skirts')>>
+      <<set setup.addInventory('clothes', 'blouses')>>
+      <<set setup.addInventory('clothes', 'little black dress')>>
+      <<set setup.addInventory('clothes', 'high heels')>>
+      drive off towards the mall.
+      <br><br>
+      The guys have a fun time helping you pick out clothes they think are sexy and watching you model them for them.
+      After you've picked out a few items, then you all [[head to the bar|Part14Friends3]] for some drinks.
+    <<else>>
+      [[drive off towards the mall|Part14Friends2]].
+    <</if>>
   <<if $CampusMinistry>>
     <br><br>
     On the way you are still surprised at yourself for flashing your friends.  You think back to the guy at the gas station on the way home from school.  But
@@ -7464,10 +7477,43 @@
     to wait for that.  When you suggest that you move the party [[back to Mason's apartment|Part14Friends4Sex]], they quickly agree.
   <<else>>
     You have a good buzz from the beer, and are feeling kind of horny.  You wonder what the guys would say if you suggested
-    [[moving the party to Mason's house|Part14Friends4Sex]].  You have a pretty good idea what will happen there.  Or you could
-    [[keep drinking here|Part14Friends4Drink]] with them instead.
+    <<if $PlayerChastityBelt>>
+      [[moving the party to Mason's house|Part14Friends4SexChastity]].
+    <<else>>
+      [[moving the party to Mason's house|Part14Friends4Sex]].
+    <</if>>
+    You have a pretty good idea what will happen there.  Or you could [[keep drinking here|Part14Friends4Drink]] with them instead.
   <</if>>
 <</nobr>>
+
+::Part14Friends4SexChastity
+<<nobr>>
+  <h1>At Mason's House</h1>
+  <img src="Part14/Chastity25.gif" hspace="10" vspace="10" height="500">
+  <<set setup.addSex({sex: 'male', name:'Ethan'})>>
+  <<set setup.addSex({sex: 'male', name:'Jake'})>>
+  <<set setup.addSex({sex: 'male', name:'Mason'})>>
+  <<set setup.addSex({sex: 'male', name:'Ethan'})>>
+  <<set setup.addSex({sex: 'male', name:'Jake'})>>
+<</nobr>>
+<<nobr>>
+  You are worried they are going to be disappointed when they find out about your chastity belt, but you soon discover they already
+  knew, having seen it when one of the shorter skirts you'd tried let it show.  "We all were discussing it while you were in the
+  ladies room, and we are guessing you've gotten pretty good at sucking cock if you are in that most of the time," Mason says.
+<</nobr>>
+
+<<nobr>>
+  "Maybe you could show us," Jake adds.
+<</nobr>>
+
+<<nobr>>
+  You spend the next several hours showing you old friends some of the skills you've picked up the past year.  As much as you love
+  it, you still long to feel one of them inside you.  Or, even better, all three of them inside you at once.  You clean up your face
+  before you head [[back home|Part14Home5Ready]], but your panties are still hoplessly soaked.
+<</nobr>>
+
+<<achievement>>friends<</achievement>>
+<<achievement>>threesome:MFM<</achievement>>
 
 ::Part14Friends4Sex <37800,10700>
 <<nobr>>

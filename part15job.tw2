@@ -60,7 +60,7 @@
 <</nobr>>
 
 <<nobr>>
-  Getting dressed is still a pain though, at least below the waist.  You've started just wearing a skirt, and now bothering with underwear.
+  Getting dressed is still a pain though, at least below the waist.  You've started just wearing a skirt, and not bothering with underwear.
   It's so much easier that way.
 <</nobr>>
 
@@ -80,7 +80,17 @@
   <<set $FormerBrokenLeg to 1>>
 <</nobr>>
 
-TODO Deal with broken leg Week 7, cast off [[Part15JobMain]]
+<<nobr>>
+  The doctor removes your cast and checks out how your leg has recovered.  "It has healed up very well, and quicker than normal
+  thanks to your implant," he says.  "You should be able to [[resume normal activities|Part15JobMain]]
+  <<if $JobAthleteFormer>>
+    again. Though, like I mentioned before, I don't recommend returning to competitive atheltics as there is a risk of reinjury."
+  <<elseif $JobCheerleaderFormer or $JobCheerleaderFundraiserFormer>>
+    again. Though, like I mentioned before, I don't recommend returning to cheerleading as there is a risk of reinjury."
+  <<else>>
+    again."
+  <</if>>
+<</nobr>>
 
 ::Part15NoJob
 <<nobr>>
@@ -2275,6 +2285,14 @@ TODO Deal with broken leg Week 7, cast off [[Part15JobMain]]
     The only down-side is that now when some annoying person demands to speak with the manager, it might be you that has to deal
     with them.  That sort of a thing is much more of an issue here.  Customers at your old shop always seemed very happy
     for some reason.
+  <<elseif $BrokenLegJobChange>>
+    You are worried he's not happy with your performance when your new boss calls you into his office.  But then he comments on
+    how impressed he is with your leadership skills.  He's happy with how you've helped diffuse some interpersonal conflicts between
+    other workers, handled difficult customers, and been diligient about your own work as well.
+    <br><br>
+    He's decided you are more suited to a management-track role and he promotes you to 'assistant shift leader'.  Your job will
+    mostly be the same, except a bit more training of the newer staff, and it comes with a small raise, which is nice.  And you'll 
+    eventually be in line for future promotions higher up the management chain.
   <<else>>
     You are worried you've done something wrong when the boss calls you into his office.  But then he lets you know what a great
     worker you are, and how you've managed to deal with some of the difficult customers that come in sometimes.
@@ -2645,8 +2663,13 @@ TODO Deal with broken leg Week 7, cast off [[Part15JobMain]]
     <br><br>
     <img src="Part15/Barista5.jpg" hspace="10" vspace="10" height="350" align="left">
     <br><br>
-    You are so happy you aren't one of those "bikini baristas" at Brian's coffee shop.  You are much happy just making your customers'
-    orders, and not being on display.
+    You are so happy you aren't one of those "bikini baristas" at
+    <<if $BrokenLegJobChange>>
+      that other coffee shop you heard about.
+    <<else>>
+      Brian's coffee shop.
+    <</if>>
+    You are much happier just making your customers' orders, and not being on display.
   <</if>>
 <</nobr>>
 
@@ -2935,7 +2958,9 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
   you start your blowjobs.  So you do your best to clean your belt with a few strokes before summoning the courage to take the
   cock into your mouth.
 <</nobr>>
-<img src="Part15/Chastity14.gif" hspace="10" vspace="10" height="450">
+<<nobr>>
+  <img src="Part15/Chastity14.gif" hspace="10" vspace="10" height="450">
+<</nobr>>
 <<nobr>>
   After the first couple time down the dildo, you don't care anymore.  The intense stimulations your belt is giving you make
   you just want to keep going, hoping it grants you <<if $PlayerSideEffectAnal>>another<</if>> orgasm.
@@ -3472,13 +3497,7 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
   <<elseif $SchoolWeek == 7>>
     <<include [[Part15JobStripper4]]>>
   <<elseif $SchoolWeek == 11>>
-    TODO Stripper Week 11
-    <br><br>
-    <<include [[Part15AfterMainJob]]>>
-  <<else>>
-    TODO Stripper Week 13 Bring your buddy to work day
-    <br><br>
-    <<include [[Part15AfterMainJob]]>>
+    <<include [[Part15JobStripper5]]>>
   <</if>>
 <</nobr>>
 
@@ -3708,6 +3727,174 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
+::Part15JobStripper5
+<<nobr>>
+  <h1>University Party</h1>
+  <video src="Part15/Strip12.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+<<nobr>>
+  Normally the club is slow in the middle of the week.  But today it's packed as the club is closed to the public and hosting
+  a private party.  From what you understand it's a private event the university is having for some of its larger donors.
+  Your boss has let you and the other dancers know that the regular rules don't apply tonight.  You are all encouraged to
+  ensure the guests 'have a wonderful time'.
+<</nobr>>
+
+<<nobr>>
+  He says to not worry about tips, as the university has already paid generously and he'll be dividing it up among all the
+  girls who 'do their part'.  You are sure it'll be more than even the girls that do the most 'extras' make in a weekend.
+  But you also expect your boss has already taken his own cut out of, and not had to work for it like the rest of you.
+<</nobr>>
+
+<<nobr>>
+  He also mentions that you are free to accept any tips the guests volunteer on top of what's already been paid.
+  With as generous as they are with the university, you expect they'll be at least that generous with a girl with her
+  lips around their cock.  And you wouldn't even need to let your boss skim his share off of it.
+<</nobr>>
+
+<<nobr>>
+  He's made it clear that no one has to do anything they aren't comfortable with though.  Any girls that
+  <<if setup.haveFucked('Strip Club Customer')>>
+    don't want to go any further
+  <<else>>
+    [[don't want to go any further|Part15JobStripper6No]]
+  <</if>>
+  than they would on a normal night, don't have to.  Of course, they'll get a much smaller share of the
+  'tip' money the university paid.  Though he is definitely encouraging all the girls to
+  [[join in on the fun|Part15JobStripper6Yes]], even if that's not something they normally do.
+  <<if setup.haveFucked('Strip Club Customer')>>
+    Of course, you aren't going to pass up the chance to earn a bunch of extra cash.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  It doesn't take long to see that the regular rules about discretion definitely don't apply tonight.  You even spot a
+  dancer that didn't even have a chance to change from her street clothes into her club clothes, and already some
+  rich, married guy has her bent over a chair and begging for his cock in her ass.  You expect she won't need to wait long.
+  <<if $PlayerSideEffectAnal>>
+    You wish you were her.
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <video src="Part15/Strip13.mp4" autoplay loop muted height="350"></video>
+<</nobr>>
+
+
+::Part15JobStripper6Yes
+<<nobr>>
+  <video src="Part15/Strip14.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+TODO back to hotel room with rich, married guy
+TODO [[SugarDaddy]]
+
+
+::Part15JobStripper6No
+<<nobr>>
+  <h1>Only to look, and not touch</h1>
+  <video src="Part15/Strip15.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+<<nobr>>
+  You and the few other girls that didn't want in on the "extras" tonight are given bracelets to wear to let the guests know
+  you are only to enjoy visually, not for anything more.  Of course you are still doing quite a bit with your fellow dancers
+  to entertain the guests, but the guests are only watching.
+<</nobr>>
+
+<<nobr>>
+  Some of the men see your bracelet and just move on to one of the many other girls.  A few though see your bracelet as a
+  challenge.  They assume if they offer you a large enough extra tip, you'll eagerly head
+  [[back to their hotel room with them|Part15JobStripper6Yes]] at the end of the night.
+<</nobr>>
+
+<<nobr>>
+  <<if $FatherDisown>>
+    Of course, they are right, at least with you.  One of them offers you more money than you can pass up.  You're on your
+    own now that your father has disowned you, so you can't pass up the financial security of his offer.  You'd hate to
+    be homeless months from now just because you were too proud to spend 
+  <<else>>
+    One of them offers you quite a bit of money.  When he sees you hesitate before
+    [[you tell him 'No, thanks'|Part15JobStripper6HoursCut]], he adds even more to the offer.
+    Maybe taking his offer wouldn't be so bad.
+    <<if setup.areDating('Veronica')>>
+      Veroncia will understand, right?  Then it occurs to you, he'd probably be excited and willing to pay even more to take
+      both you and Veronica back to his room.
+    <<elseif $dating.length>>
+      $dating[0] will understand, right?
+      <<if setup.areDating('Peter') and $PlayerItemNerdKey>>
+        Of course he will.  Especially if you unlock and edge him while you tell him all about it.
+      <<else>>
+        It is a lot of money after all.
+      <</if>>      
+    <</if>>
+  <</if>>
+<</nobr>>
+
+
+
+::Part15JobStripper6HoursCut
+<<nobr>>
+  <h1>Having your hours cut</h1>
+  <img src="Part15/Strip16.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  Your boss said that you were welcome to say no to the "extras" the rich guys at the private party wanted, and you did.
+  He said no one would be fired for not wanting to participate.  And you haven't been fired, but you can't help but feel like
+  you are being punished a different way for opting-out of having sex with some old, rich guy.
+<</nobr>>
+
+<<nobr>>
+  You think it's a fluke the first week, when you have fewer hours than normal, and they are on the slow, mid-week nights.
+  But it keeps happening.  When you ask your boss about it, he doesn't specifically mention the private party, but does
+  say he wants to schedule his "more popular, high-earning" girls on the weekends.
+<</nobr>>
+
+<<nobr>>
+  Between the cost of your club outfits and make-up and the pitiful tips you are getting now, you decide it's not
+  worth the hassle of having to fight off guys groping and grabbing at your ass all night.  You decide to just get a
+  normal job instead.  Thankfully you know the [[coffee shop|Part15JobStripper6Quit]] near campus is hiring.
+<</nobr>>
+
+::Part15JobStripper6Quit
+<<nobr>>
+  <h1>Starting your new job</h1>
+  <img src="Part15/Barista3.jpg" hspace="10" vspace="10" height="400">
+  <<unset $JobStripper>>
+  <<unset $JobStripperMain>>
+  <<set $JobStripperOld to 1>>
+  <<set $JobBarista to 1>>
+<</nobr>>
+<<nobr>>
+  <<if $JobBaristaOld>>
+    There's a new manager since you last worked here, but your file shows your previous experience here.  Still
+    you are worried she won't hire you because you've been working as a stripper since you quit.  But you decide
+    to be honest,
+  <<else>>
+    At your interview, you are honest about 'prior experience with customer service'.  You are worried the manager at
+    the coffee shop won't hire you because you used to be a stripper, but
+  <</if>>
+  you know she'd probably find out eventually anyway.  But she is understanding about it, especially when you explain
+  about not wanting to do more than just dance, and how you were punished for it.
+<</nobr>>
+
+<<nobr>>
+  After you are hired, she spends a long time going over the dress code with you.  You can't help but wonder if she
+  does that with everyone, or just because she's worried you might show up in a microskirt and fuck-me boots.  Either
+  way, you are just happy you were able to get a new job so quickly.
+<</nobr>>
+
+<<nobr>>
+  It doesn't take long 
+  <<if $JobBaristaOld>>
+    to get used to your old job. It's nice to be back to being 
+  <<else>>
+    to get used to the new job.  It's nice to be 
+  <</if>>
+  able to work and not have guys groping you or offering you money to get them off. The worst you have to deal with
+  now is the occasional flirt.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15AfterMainJob]]>>
+<</nobr>>
+
 ::Part15JobBetaTester
 <<nobr>>
   <<set $tempShowedBetaTester to 1>>
@@ -3832,15 +4019,26 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
     "[[Accept|Part15BetaTestChallengeNipple2]]".
   <<elseif setup.haveInventory('piercings', '*')>>
     This wouldn't be your first piercing, but you've heard nipple piercings are the most painful.  Still, you know
-    you've considered getting them pierced many times.  Maybe this is the time to finally do it.  Given the reward
-    and penalty, you know if you [[Accept|Part15BetaTestChallengeNipple]] you'll won't chicken out this time.  If you
-    are going to [[Decline|Part15BetaTestChallengeDecline]], you know you need to do it now.
+    you've considered getting them pierced many
+    <<if $dating.length>>
+      times.  And you know $dating[0] thinks they are hot.
+    <<else>>
+      times.
+    <</if>>
+    Maybe this is the time to finally do it.  Given the reward and penalty, you know if you
+    [[Accept|Part15BetaTestChallengeNipple]] you'll won't chicken out this time.  If you are going to
+    [[Decline|Part15BetaTestChallengeDecline]], you know you need to do it now.
   <<else>>
-    You grab your breasts as your mind imagines how much it must hurt to get that done.  You aren't sure if you want
-    to go through that.  You also worry that it's permanent, lasting long after your testing is over.  But some quick
-    searches reassures you that they will close up if you leave the jewelry out long enough.  Still, you aren't sure,
-    but you know if you click "[[Accept|Part15BetaTestChallengeNipple]]", then you'll have to go through with it.
-    If you want to [[Decline|Part15BetaTestChallengeDecline]], then now is the time to do it.
+    You grab your breasts as your mind imagines how much it must hurt to get that done.
+    <<if $dating.length>>
+      You've thought about getting them pierced before because you know $dating[0] thinks they are hot.  But you still
+    <<else>>
+      You
+    <</if>>
+    aren't sure if you want to go through that.  You also worry that it's permanent, lasting long after your testing is
+    over.  But some quick searches reassures you that they will close up if you leave the jewelry out long enough.
+    Still, you aren't sure, but you know if you click "[[Accept|Part15BetaTestChallengeNipple]]", then you'll have to go
+    through with it. If you want to [[Decline|Part15BetaTestChallengeDecline]], then now is the time to do it.
   <</if>>
 <</nobr>>
 
@@ -3938,6 +4136,11 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
     <<set setup.addInventory('piercings', 'nipples')>>
     You are barely out of the studio when a notification appears on your phone.
   <</if>>
+  <<if $dating.length and !setup.haveGirlfriend()>>
+    <<set setup.addSexRepeat(5, {sex:"male", name:$dating[0]})>>
+  <<else>>
+    <<set setup.addSexRepeat(5, {sex:"male"})>>
+  <</if>>
 <</nobr>>
 <<nobr>>
   <blockquote>
@@ -3955,7 +4158,11 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 <</nobr>>
 
 <<nobr>>
-  <img src="Part15/BetaTest2.jpg" hspace="10" vspace="10" height="550">
+  <<if setup.areDating("Jaylen")>>
+    <video src="Part15/BetaTest11.webm" autoplay loop muted height="350"></video>
+  <<else>>
+    <img src="Part15/BetaTest2.jpg" hspace="10" vspace="10" height="550">
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -4044,7 +4251,13 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 
 ::Part15BetaTestCollar
 <<nobr>>
-  <h1>Advertising your availability</h1>
+  <h1>Advertising your
+  <<if $dating.length>>
+    submissiveness
+  <<else>>
+    availability
+  <</if>>
+  </h1>
   <img src="Part15/BetaTest4.jpg" hspace="10" vspace="10" height="600" align="left">
   <<if !$DailyBJMinimum>><<set $DailyBJMinimum to 1>><</if>>
   <<set $DailyBJMinimum *= 2>>
@@ -4480,7 +4693,7 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 ::Part15JobEngineer3Submit
 <<nobr>>
   <h1>No escape</h1>
-  <<set setup.startDating("Eric")>>
+  <<set setup.startDating('Eric')>>
   <<set $PlayerChastityBelt to 1>>
   <<set $Keyholder to "computer">>
   <<set $ComputerChastityOwner to $dating[0]>>

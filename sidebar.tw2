@@ -1009,6 +1009,18 @@ You are a young man trying to decide where to go to college.
       <</if>>
     <</if>>
 
+    <<if $Spouse == 'Jaylen' or $Engaged == 'Jaylen' or setup.areDating('Jaylen')>>
+      <<if $Spouse == 'Jaylen'>>
+        You are married to Jaylen.
+      <<elseif $Engaged == 'Jaylen'>>
+        You are engaged to Jaylen.
+      <<elseif $Roommate=='Jaylen'>>
+        You live with Jaylen.
+      <<else>>
+        You are in a relationship with Jaylen.
+      <</if>>
+    <</if>>
+
     <<if $dating.length == 0>> 
       <<if setup.isFWB('Josh')>><br>You are friends with benefits with Josh.<</if>>
       <<if setup.isFWB('Zack')>><br>You are friends with benefits with Zack.<</if>>
@@ -1022,6 +1034,7 @@ You are a young man trying to decide where to go to college.
       <<if setup.isFWB('Barry')>><br>Barry likes to humiliate you.<</if>>
       <<if setup.isFWB('David')>><br>You are friends with benefits with David.<</if>>
       <<if setup.isFWB('James')>><br>You are friends with benefits with James.<</if>>
+      <<if setup.isFWB('Jaylen')>><br>You are friends with benefits with Jaylen.<</if>>
     <</if>>
     <<if !setup.areDating('Peter') and !setup.isFriendzoned('Peter') and $PlayerItemNerdKeyStripper>><br>Peter is a regular at the strip club, you hold the key to his chastity cage.<</if>>
   <</if>>

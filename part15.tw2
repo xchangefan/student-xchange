@@ -4049,7 +4049,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
       <!-- Nov w3 -->
       <<include [[Part15BabyJobsRelationships]]>>
     <<case 14>>
-      <<if $WomensStudiesProfessorPublish>>
+      <<if $WomensStudiesProfessorPublish and !$EngineeringShutdown>>
         <<include [[Part15WomensStudiesPublish]]>>
       <<else>>
         <<include [[Part15Week14]]>>
@@ -4722,7 +4722,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   <<if setup.haveFucked('Remote Tester')>>
     Then you tell her about the 'special project' from last Halloween.  "They promised $500 and orgasms, but once I was bound and
     unable to remove, they told me I was supposed to try not to orgasm if I didn't want them to take money away or punish me in other ways.
-    Then they had guys on the internet some were fuck some toy and the machine would fuck me to match what they were doing.
+    Then they had guys on the internet somewhere fuck some toy and the machine would fuck me to match what they were doing.
     <br><br>
     <<if $SpecialProjectMoney == 500>>
       I did get the $500, but only because I managed not to orgasm.  Still, $500 for a couple hours of frustration wasn't a bad deal for me.
@@ -4741,7 +4741,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
       <</if>>
       <<if $ProjectPunishmentFertile>>
         As another punishment they changed my X-Change implant make me much more fertile than normal.  And now I can't even use birth control
-        pills.
+        pills!
       <</if>>
       <<if $ProjectPunishmentCorporal>>
         They punished me after they were done fucking me too.  They tied me to a post and whipped my breasts.  Then they put something on
@@ -4851,6 +4851,13 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
       excitedly.
     <</if>>
     TODO is belted
+  <<elseif $JobBetaTesterFormer and $BrokenLegJobChange>>
+    "Now they are testing some sort of computer chastity belt," you tell her.  "I was in one until my accident.  I thought I was going
+    to go insane with how horny it made me all the time."  You then go into much more detail about all the things belt did or that you
+    knew it could do.
+    <br><br>
+    "I'm not sure I'd be talking to you now if I was still in it," you tell her.  "I'd probably be to scared of what they could do
+    to me with the belt if they'd found out."
   <<else>>
     "Now they are testing some sort of computer chastity belt," you tell her.  "I quit rather than let them put one of those on me.
     So all I know is what they said at the meeting."
@@ -4897,7 +4904,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  "The belts have several different modes.  There's a 'monogomous' mode meant to be used by couples.  There's a 'chaste' mode
+  "The belts have several different modes.  There's a 'monogamous' mode meant to be used by couples.  There's a 'chaste' mode
   that is intended for those wanting to wait until marriage for sex - they don't have many testers for that one.  The standard
   mode is the one most are on, and it keeps them horny all the time.  It also makes them want to give blowjobs, lots of blowjobs."
   You recount some of the crazy reports you've written up on the number of blowjobs some of the users have given in hopes of thier
@@ -5324,7 +5331,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   The judge initially orders him to reveal the codes, but his lawyer argues that doing so would be admiting his
-  involvement and be a form of self-incrimination and a violation of his rights.  And the judge agrees!
+  involvement and be a form of self-incrimination and a violation of his rights.  And the judge agreed!
   <<if $JobBetaTester or $JobEngineerLock>>
     You are the one trapped in a belt, but they are worried about <i>his</i> rights?!  You and those other
   <<else>>
@@ -5961,7 +5968,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
   <<elseif $JobTestSubjectOld>>
     TODO Prev Test Subject
   <<else>>
-    TODO Neighter
+    TODO Part15BoyfriendEngineeringChastity2 not former engineer or former test subject
   <</if>>
 <</nobr>>
 
@@ -7087,7 +7094,7 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 <</nobr>>
 
 <<nobr>>
-  You can [[ride along with Jayden|Part15Jaylen]] or you can [[keep waiting for your bus|Part15SororityELPBus2]]
+  You can [[ride along with Jaylen|Part15Jaylen]] or you can [[keep waiting for your bus|Part15SororityELPBus2]]
 <</nobr>>
 
 ::Part15SororityELPBus2
@@ -7395,13 +7402,18 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
     <<set $JobCheerleaderFundraiserFormer to $JobCheerleaderFundraiser>>
     <<unset $JobCheerleader>>
     <<unset $JobCheerleaderFundraiser>>
+    <<set $BrokenLegJobChange to 1>>
     <<set $JobBarista to 1>>
-      The doctor is recommending you stop with cheerleading.  The strain of training ,and of competing, would likely lead to
+    The doctor is recommending you stop with cheerleading.  The strain of training, and of competing, would likely lead to
     you reinjuring yourself, possibly more severely.  You reluctantly agree.
     <br><br>
     You know you'll probably want to find a new job once you are up to working though.  You're pretty sure you could get a job at the
     coffee shop on campus. They are always hiring.
   <<elseif $JobBetaTester>>
+    Your doctor mentions calling the emergency number printed on the back of your chastity belt.  "They sent over the medical
+    information release form you'd signed for them, so I was able to share the details of your injuries," he says.  "When you
+    were unconscious, someone came by and unlocked your belt so we could take care of your injuries.  They took it with them
+    so they could analyze how it stood up to the accident.  But they said you could come by and pick it up later."
   <<else>>
     They are recommending you take it easy until you are fully recovered.  They don't want you working, just focusing on your school work
     and on getting better.  You know your old job will be waiting for you once you are better.
@@ -7416,18 +7428,20 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
   <<if $PlayerChastityBelt>>
     <<unset $PlayerChastityBelt>>
     <br><br>
-    The doctors spoke with your keyholder and was able to get your chastity belt removed prior to your surgery.
+    <<if !$JobBetaTester>>
+      The doctors spoke with your keyholder and was able to get your chastity belt removed prior to your surgery.
+    <</if>>
     <<if $Keyholder == "computer">>
       Given your situation,
       <<if $JobEngineerLock>>
         your boss decides it's best for you to end your 'penetration testing' of the belt.  He tells you to take
-        the time you need to recover, and then you can get back to your old, original job once you are rady to return.  
+        the time you need to recover, and then you can get back to your old, original job once you are ready to return.  
         <<unset $JobEngineerLock>>
         <<set $JobEngineer to 1>>
       <<else>>
         the head of the engineering department said you can't continue to be a beta-tester for the belt.  Thankfully, they'll continue
-        to pay you as per your contract, but you don't need to wear the belt anymore.  They just want you to by the office a few times and
-        talk with the engineers about what you liked, what you didn't like, and things like that.
+        to pay you as per your contract, but you don't need to wear the belt anymore.  They just want you to come by the office a few
+        times and talk with the engineers about what you liked, what you didn't like, and things like that.
       <</if>>
       "The belt is yours to keep," he says.  "I've set it to self-owned for now, feel free to set it however you like once
       you are better.  Oh, and if you can stop by the office and give us a quote or two on how durable the belt is, that we can use in our
@@ -7451,6 +7465,7 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
     <<unset $JobBetaTester>>
     <<set $JobBetaTesterFormer to 1>>
     <<set $JobBarista to 1>>
+    <<set $BrokenLegJobChange to 1>>
     <br><br>
     It'll be nice to still get paid for the rest of your testing contract, but you decide you'll still want to work once you are up to it.
     You're thinking something a bit tamer though, at least at first.  You're pretty sure you could get a job at the coffee shop on campus.
@@ -7598,7 +7613,7 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
       get him off, then maybe [[this will all be over|Part15RapeNoReport]].
     <</if>>
     But you see how vulnerable he is right now.  You cup his balls in your hand and wonder if he'd still be able to fight you or chase you
-    if you just squeezed as hard as you could and [[bit down|Part15RapeReport]] right now.
+    if you just squeezed as hard as you could and [[bite down|Part15RapeReport]] right now.
   <</if>>
 <</nobr>>
 
@@ -7700,20 +7715,22 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 <<nobr>>
   <<if $PlayerChastityBelt>>
     He cries out in agony as you squeeze as hard as you can with your hand and bite down.  A moment later he passes out.  You think
-    about running away right now, leaving him here to hopefully bleed to death.  But you wonder if they'll not know what happens and think
-    someone attacked him.  You don't want to be arrested for murder, so you carefully reach into his pocket and take out his phone.
+    about running away right now, leaving him here to hopefully bleed to death.  But you wonder if they'll not know what happened
+    and think someone attacked him.  You don't want to be arrested for murder, so you carefully reach into his pocket and take out
+    his phone.
     <br><br>
     It lets you call for the police and an ambulance without unlocking it, and you wait around until they arrive. The paramedics treat him
     as the police officer talks to you, taking notes as you relay what happened.
     <br><br>
     When you are done, the officer thanks you for helping them finally catch him.  "It looks like he got what he deserved too.  If we're lucky
-    the doctors won't be able to reattach that think.  Even if they can, I doubt he'll be attacking any more women where he's going."
+    the doctors won't be able to reattach that thing.  Even if they can, I doubt he'll be attacking any more women where he's going."
     He lets you know that there have been numerous other women attacked before you, with ample DNA evidence left behind.  They just never had
     anyone to test the evidence against.
     <br><br>
     "I doubt they'll even need you to testify," the officer continues.  "But we should probably take you down to the hospital too, so
     they can collect the blood evidence.  They'll probably have some pills or shots or something for you too, so you don't catch anything
     from his blood.  I'll give you a ride [[back home|Part15DormUpset]] once they are finished."
+    <<achievement>>bite<</achievement>>
   <<else>>
     Once you are safely away, you hurry back to campus and to the campus police.  When you tell them your story, they call the local police.
     You repeat your story again with the officer they send.
@@ -7835,7 +7852,354 @@ TODO Upset after being raped [[Part15Dorm]]
 <</nobr>>
 
 ::Part15Jaylen
-TODO (black, since all the other potential BFs are white) possibly date, possibly hook up [[Part15Dorm]]
+<<nobr>>
+  <h1>Riding home with Jaylen</h1>
+  <img src="Part15/Jaylen1.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+<<nobr>>
+  "Thank you so much for the ride," you tell Jaylen as you get in.  The two of you continue talking as he drives you back toward
+  campus. First you discuss the charity event, then you start discussing more personal topics. You are quite sure when it happens
+  during your ride, but at some point you realize you and Jaylen have started to hold hands.
+<</nobr>>
+
+<<nobr>> 
+  You and him have mainly just met at charity events and been working your butts off the entire time, so you hadn't really thought
+  much about him romantically.  But now that you are considering him that way, you realize you do find him attractive.
+<</nobr>>
+
+<<nobr>> 
+  <<if $PlayerChastityBelt and $JobBetaTester == "chaste">>
+    When he pulls up to your door, you thank him again for the ride.  Before you get out he responds, "It was great
+    getting to know you better, $playerName.  I'd like to get to you know you even more.  Do you have any plans for
+    Saturday night?"
+    <br><br>
+    You think you'd like to [[go on the date with him|Part15JaylenDate]] and get to know him more too.  But you wonder
+    if it'd be leading him on, going on a date when you have the belt on and know you couldn't give him what he probably
+    wants, what you assume all guys probably want.
+    <br><br>
+    But as your mind tries to imagine what it'd feel like to have him inside you, you have to be honest and admit you
+    want the same thing right now too.  Maybe it'd be better to [[tell him you already have plans|Part15Dorm]] but
+    suggest you hang out as friends some time.
+  <<elseif $PlayerChastityBelt>>
+    The need you feel is too much to ignore.  You want him inside you right now.  Of course, that's not possible, but
+    that doesn't mean you can be close to him, to hear him moan, to feel his cock swell in your mouth, to...
+    <br><br>
+    When he pulls up to your door, you are biting your lower lip when you nervously ask, "Jaylen, do want to
+    [[come inside|Part15JaylenHomeChastity]] for a cup of coffee or something."  He quickly agrees and parks his car.
+    "There is something I need to warn you about first though," you add.
+  <<elseif $PlayerProtectionTry or $PlayerSideEffectDreams > 1 or $PlayerSideEffectLibido > 1 or $PlayerSideEffectMasturbationBlock>>
+    The need you feel is too much to ignore.  You want him inside you right now.
+    <<if $PlayerSideEffectMasturbationBlock>>
+      And you know it's pointless in resisting the urge, since you'll never be able to satisfy the need you feel right
+      now by yourself.
+    <</if>>
+    When he pulls up to your door, you are biting your lower lip when you nervously ask, "Jaylen, do want to
+    [[come inside|Part15JaylenHome]] for a cup of coffee or something."  He quickly agrees and parks his car.
+  <<elseif $sex.length == 0>>
+    When he pulls up to your door, you thank him again for the ride.  Before you get out he responds, "It was great
+    getting to know you better, $playerName.  I'd like to get to you know you even more.  Do you have any plans for
+    Saturday night?"
+    <br><br>
+    You think you'd like to [[go on the date with him|Part15JaylenDate]] and get to know him more too.  Or, you could
+    tell him you have plans on Saturday but suggest they hang out as friends sometime and
+    head to your room alone.  Or alone until a few days from now when your [[new roommate is assigned|Part15Dorm]] at least.
+  <<else>>
+    When he pulls up to your door, you thank him again for the ride.  Before you get out he responds, "It was great
+    getting to know you better, $playerName.  I'd like to get to you know you even more.  Do you have any plans for
+    Saturday night?"
+    <br><br>
+    You think you'd like to [[go on the date with him|Part15JaylenDate]] and get to know him more too.  But you also wonder
+    if you'd rather get to know him more right now.  You could [[invite him inside|Part15JaylenHome]] instead.
+    Or, you could tell him you have plans on Saturday but suggest they hang out as friends sometime and
+    [[head to your room alone|Part15JaylenAlone]]
+  <</if>>
+<</nobr>>
+
+::Part15JaylenDate
+<<nobr>>
+  <h1>On a date with Jaylen</h1>
+  <img src="Part15/Jaylen2.jpg" hspace="10" vspace="10" height="450" align="left">
+  <<set setup.startDating('Jaylen')>>
+<</nobr>>
+<<nobr>>
+  You and Jaylen have a wonderful date and get to know each other much better.  Part of you want to go home with him that night,
+  but you settle for a second date soon after instead.    
+<</nobr>>
+
+<<nobr>>
+  <<if $JobBetaTester == "chaste">>
+    <<set $JobBetaTester to "monogamous">>
+    On your second date you let Jaylen know about your the chastity belt you are beta testing.  He's a bit surprised at first
+    but says "I know you are worth the wait."
+    <br><br>
+    You decide to go by the engineering department the next day and tell them Jaylen is your boyfriend now.  It may not be
+    true official yet, but you know they make you wait a week to switch from "chaste" to "monogamous" mode on your belt, and
+    you want to be ready for your third date.
+    <br><br>
+    You want it all to be a surprise for Jaylen, but unfortunately they require him to come by for a meeting to explain the belt
+    and the program before they'll switch your belt over.  You don't have to be there, in fact they said it should be just him.
+    So he goes by without you a few days before your date.
+    <br><br>
+    You don't know if it's just knowing that you can be more intimate with Jaylen now, or if something has changed with your belt.
+    But from the moment Jaylen picks you up for your date, and the entire night, you want nothing more than for him to tear
+    your belt from your body, and fuck you in front of everyone.  Since that isn't possible, you fantasize about dropping to
+    your knees and sucking his cock right in the restaurant.
+    <br><br>
+    That doesn't happen, but you are eager to leave when the meal is finally over so
+    [[you can be alone with Jaylen|Part15JaylenHomeChastityDating]] finally.
+  <<elseif $JobBetaTester>>
+    On your second date you let Jaylen know about your the chastity belt you are beta testing.  He's a bit surprised at first
+    but says "I know you are worth the wait."
+    <br><br>
+    "Well," you tell him.  "We don't have to wait that long.  Not for everything at least."
+    <br><br>
+    You decide to go by the engineering department the next day and tell them Jaylen is your boyfriend now.  It may not be
+    true official yet, but you have them switch your belt to "monogamous" mode on your belt.  It's set to be effective the same
+    day as your next date with Jayden.
+    <br><br>
+    You want it all to be a surprise for Jaylen, but unfortunately they require him to come by for a meeting to explain the belt
+    and the program before they'll switch your belt over.  You don't have to be there, in fact they said it should be just him.
+    So he goes by without you a few days before your date.
+    <br><br>
+    You don't know if it's just knowing that you can only be intimate with Jaylen now, or if something has changed with your belt.
+    But from the moment Jaylen picks you up for your date, and the entire night, you want nothing more than for him to tear
+    your belt from your body, and fuck you in front of everyone.  Since that isn't possible, you fantasize about dropping to
+    your knees and sucking his cock right in the restaurant.
+    <br><br>
+    That doesn't happen, but you are eager to leave when the meal is finally over so
+    [[you can be alone with Jaylen|Part15JaylenHomeChastityDating]] finally.
+  <<elseif $CampusMinistry>>
+    You'd thought about waiting whether you should wait for marriage, but by your third date with Jaylen, those thoughts are long gone.
+    Your heart is racing as you head [[back home with Jaylen|Part15JaylenHome]] after your date.
+  <<else>>
+    By your third date, you can't wait any longer.  You need Jaylen, and you need him tonight.
+    You are aching for him inside you as you head [[back home with Jaylen|Part15JaylenHome]] after your date.
+  <</if>>
+<</nobr>>
+
+::Part15JaylenHomeChastityDating
+<<nobr>>
+  <h1>Home with Jaylen</h1>
+  <video src="Part15/Jaylen3.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  Your hands are all over Jaylen's body as soon as the two of you are alone.  As the two of you make out, you hand reaches
+  betwen your legs to where you feel the need the greatest.  Of course you find only hard metal.  You instead reach into his
+  pants.
+<</nobr>>
+
+<<nobr>>
+  You feel his already hardening cock firm up as you hold it.  Your hand strokes it a bit as you continue making out.  You
+  part your lips from his just long enough to beg to suck his cock.  "Well, on your knees then." You eagerly drop to your knees.
+<</nobr>>
+
+<<nobr>>
+  You feel your belt come to life as you suck on his cock, stimulating your locked-away clit as you pleasure him.
+  <<if $sex.length == 0>>
+    You've never sucked a cock before, but you've thought about it many times, especially these past few weeks about Jaylen's.
+    You think you quickly get a feel for how to do it, though you are sure your skills will improve with time and practice.
+    But even now, Jaylen's moans tell you that you are doing something right.
+  <<else>>
+    You've though about sucking Jaylen's cock so much these past few weeks, you are glad you finally are.  You want to savor
+    the experience, prolonging his pleasure and yours.  But your eagerness, and Jaylen's moans, say it won't be long now.
+  <</if>>
+  <<set setup.addSexRepeat(20, {sex:"male", name:"Jaylen"})>>
+<</nobr>>
+
+<<nobr>>
+  When he tells you he's about to cum, you want to swallow every drop, but he wants to pull out and cover your face instead.
+  Just as you hear him groan and feel the first of his warm cum hit your face your belt pushes you over the edge and you cum too.
+  More and more his cum hits your face as your orgasm rolls through your body.  When his cock as stopped twitching, and your orgasm
+  as started to fade, you quickly return to his cock, licking it clean and making sure you've drained him of every drop.
+<</nobr>>
+
+<<nobr>>
+  After he's had time to recover you drain his cock once again that evening.  Before he leaves he tells you, "I wish we'd gotten
+  together sooner.  I'd never imagined what a great little cocksucker you are.  But don't worry, we'll be doing this a great deal
+  from now on.  But they did warn me that the orgasm for you is only guaranteed for our first time together.  Any other time, and
+  they said it would be a special thing.  Actually 'rare treat' are the words I think they used."
+<</nobr>>
+
+<<nobr>>
+  Jaylen spends the night, and you suck him as many more times as he lets you that night.  He leaves the next morning.
+  You don't want to suprise your [[new roommate|Part15Dorm]] when she arrives.  Though hopefully she's not going to mind if your
+  boyfriend occasionally stays over.
+<</nobr>>
+
+::Part15JaylenHomeChastity
+<<nobr>>
+  <h1>Home with Jaylen</h1>
+  <video src="Part15/Jaylen3.webm" autoplay loop muted height="450"></video>
+  <<set setup.addSexRepeat(20, {sex:"male", name:"Jaylen"})>>
+  <<set setup.makeFWB('Jaylen')>>
+<</nobr>>
+
+<<nobr>>
+  You let Jaylen know about your chastity belt before you leave the car.  He's a little surprised at first, but as you start to
+  talk about how you are fantasizing about tasting his cock, he is more than happy to head inside with you.
+<</nobr>>
+
+<<nobr>>
+  He soon as you are through the door, he has you out of your clothes, naked except for you belt.  "I guess you weren't joking.
+  It looks just as impenetrable as you said," he comments.  "Well, on your knees then." You eagerly drop to your knees.  You ache
+  to feel him inside you as
+  <<if $Keyholder == "computer">>
+    your belt teases you while
+  <</if>>
+  you suck his cock.
+<</nobr>>
+
+<<nobr>>
+  You want to swallow every drop, but he wants to pull out and cover your face instead.  You moan as you hear him groan and feel the
+  first of his warm cum hit your face.  When he's done you quickly return to his cock, licking it clean and making sure you've drained
+  him of every drop.
+<</nobr>>
+
+<<nobr>>
+  After he's had time to recover you drain his cock once again that evening.  Before he leaves he tells you, "I wish we'd done
+  this sooner.  I'd never imagined what a great little cocksucker you are.  Hopefully we can do this more often."
+<</nobr>>
+
+<<nobr>>
+  You clean up a bit after he leaves.  You don't want the place to be a mess when your [[new roommate|Part15Dorm]] arrives.
+<</nobr>>
+
+::Part15JaylenHome
+<<nobr>>
+  <h1>Home with Jaylen</h1>
+  <video src="Part15/Jaylen4.webm" autoplay loop muted height="450"></video>
+  <<set setup.addSex({sex:"male", name:"Jaylen", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen"})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen"})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen"})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen"})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen"})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", name:"Jaylen"})>>
+<</nobr>>
+<<nobr>>
+  <<if $CampusMinistry>>
+    You'd imagined romantic candles, or even a bed, for your first time.  But now that it's actually here, you don't
+    care about any of that.  All you want is Jaylen and Jaylen's cock.
+  <</if>>
+  You and Jayden can't help yourselves, and are barely through your front door before you are making out and fumbling to remove
+  each other's clothes.  You start to drop to your knees to suck his cock, but instead he turns you around and bends you
+  over the counter.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionCondoms>>
+    You don't want to stop and look for condoms, you need him inside you now.
+  <</if>>
+  <<if $CampusMinistry>>
+    Maybe he'd have been gentler if you'd told him it was your first time, but you hadn't mentioned it.  And feeling him
+    push you to the counter and plunge into you, you are glad that you didn't.  You wonder if it normally feels this good your
+    first time, if it's because of the X-Change, or just how much you wanted it.  You don't care, you just don't want it to stop.
+    <br><br>
+  <<else>>
+    You beg him to fuck you, and a moment later you moan as he slides into you.
+  <</if>>
+  <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
+    Thanks to your implant's effects you've already came twice before he's close to his orgasm, but you still want more.
+  <<else>>
+    You are close to an orgasm when he tells you he's about cum.
+  <</if>>
+  "Don't stop!  Cum inside me!  Don't stop!" you beg as he continues to fuck you.  His final, deep thrust inside you pushes you
+  over the edge.  You cry out with an orgasm as his cock pulses inside you.
+<</nobr>>
+<<nobr>>
+  <img src="Part15/Jaylen7.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  When he pulls out of you, you drop to your knees.  This time he doesn't stop you.  You eagerly lick his cock clean before
+  standing back up.  "Oh, god.  I needed that," you tell him as you embrace him.  It isn't long before he's recovered enough
+  for you to go again.  This time you make it to the bed first though.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Jaylen')>>
+    He leave the next morning before your [[new roommate|Part15Dorm]] is supposed to arrive.
+    You'll have to see how she feels about your boyfriend sleeping over.  If it's a problem, then in the future you may need
+    to have your fun at Jaylen's place instead.
+  <<else>>
+    <<set setup.startDating('Jaylen')>>
+    You and Jaylen makes plans to see each other again soon.  Each end in your bed or in Jaylen's, but by the end of the third evening
+    you both know it's about more than just the sex.
+    <br><br>
+    Tomorrow you'll meet your [[new roommate|Part15Dorm]].  Now that you and Jaylen are officially dating, she won't have a problem if
+    your boyfriend sleeps over sometimes.  If she does, then the two of you will just have to spend your nights together at Jaylen's
+    house instead.
+  <</if>>
+<</nobr>>
+
+::Part15JaylenAlone
+<<nobr>>
+  <h1>Thinking of Jaylen</h1>
+  <video src="Part15/Jaylen6.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  You aren't really wanting to start dating Jaylen.  But you still can't stop thinking of him and if you would have invited
+  him upstairs with you when he dropped you off.  Tonight you just close your eyes and imagine his head between your legs as
+  his tongue brings you to the orgasm you need so badly right now.
+<</nobr>>
+
+<<nobr>>
+  The next day though, you stop by the sex shop and make a purchase or two.  Now it's your turn to repay the favor and kneel down
+  in front of Jaylen's cock.  You imagine telling him all the things you want him to do with you, but he has you continue sucking his cock.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Jaylen5.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  You imagine the taste of his precum, and start moving faster up and down his cock.  Then you imagine load after load of his cum
+  filling your mouth.  You can almost taste it.  Of course you imagine it being too much for your mouth to contain, and it spills
+  out and down your chest as well.
+<</nobr>>
+
+<<nobr>>
+  If it were really Jaylen's cock, you'd have to wait until it was ready to go some more.  But it's not, so you don't need to wait.
+  You adjust it's height, and then turn around.  Now you imagine Jaylen fucking you from behind.  Though he knows how much you need
+  his cock and makes you do all the work, thrusting yourself back onto it has he remains still.
+<</nobr>>
+
+<<nobr>>
+  You imagine him cumming just as you orgasm.  You can almost feel his cock pulse inside you, releasing load after load of
+  his cum.
+  <<if $PlayerProtectionCondoms>>
+    You are so glad you didn't ask him to wear a condom, so you could feel his skin against yours with nothing in between.
+  <<elseif $PlayerProtectionWithdraw>>
+    You are so glad you told him to cum inside you, so you could feel every second of it.
+  <<elseif $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+    You imagine the X-Change people telling you at your last visit that your birth control wasn't working anymore.  They'd
+    told you to use condoms instead, but you didn't want anything between you and Jaylen today.
+  <<elseif $PlayerProtectionPill>>
+    You imagine that you haven't taken your birth control pills for weeks.  Maybe that's why you were so horny and needing
+    Jaylen's cock.  Or at least part of the reason.
+  <<else>>
+    As you imagine Jaylen's cum inside you, you are so glad you aren't using any birth control.
+  <</if>>
+  <<if $PlayerPregnant>>
+    You place a hand on your stomach and wonder if you'd done this with Jaylen soon, and for real, it might have been Jaylen's
+    baby growing inside you.
+  <<elseif $PlayerProtectionFertile>>
+    With how fertile you are, you know you'd be pregnant right now if this were only real.
+  <<else>>
+    You place a hand on your stomach, wondering if you'd be pregnant now with Jaylen's baby.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  After the bliss of your orgasm and fantasy wear off, you clean up the mess you've made and put your toys away.
+  You'll probably need to be more discrete soon, once you [[have a roommate|Part15Dorm]] assigned for the new year.
+<</nobr>>
 
 ::Part15Dorm
 <<nobr>>
@@ -8157,6 +8521,8 @@ TODO (black, since all the other potential BFs are white) possibly date, possibl
   <h1>Side-by-side with Marissa</h1>
   <<if $BrokenLeg>>
     <video src="Part15/Dorm16.mp4" autoplay loop muted height="600"></video>
+  <<elseif setup.areDating('Jaylen')>>
+    <video src="Part15/Dorm19.webm" autoplay loop muted height="600"></video>
   <<else>>
     <video src="Part15/Dorm5.webm" autoplay loop muted height="600"></video>
   <</if>>
@@ -8185,7 +8551,11 @@ TODO (black, since all the other potential BFs are white) possibly date, possibl
 
 <<nobr>>
   It isn't long before you are both on your hands and knees on the bed waiting for him.
-  <<if $sex.length == 0 and $dating.length>>
+  <<if $PlayerChastityBelt and !setup.areDating($Keyholder)>>
+    You open your mouth, eager for his cock, but it's Marissa he starts with.  As he starts to fuck her, you feel an aching need
+    for him to switch to you.  You know that's not going to happen.  You moan though as he reaches over and grabs your breasts,
+    pinching your nipple between his finger.
+  <<elseif $sex.length == 0 and $dating.length>>
     He starts with you.  You moan as you feel his cock push against your wet lips and slides into you.  You don't know why you waited
     so long for this.  You and him could have been doing this for months!  He's going slow and gentle, knowing it's your first time.
     You can hear Mairssa aching for her turn next to you.
@@ -8222,7 +8592,23 @@ TODO (black, since all the other potential BFs are white) possibly date, possibl
 <</nobr>>
 
 <<nobr>>
-  <<if $AcademicProbationDenial>>
+  <<if $PlayerChastityBelt and !setup.areDating($Keyholder)>>
+    After he's filled her with his cum, he pulls out and lets you lick his cock clean.  Once that's done, then it's time for
+    Marissa.  You crawl over between her legs and lick as much of his cum from her as you can while he watches on.
+    <br><br>
+    By the time she's clean, he's nearly ready to go again.  You suck his cock until it's fully hard again.  Then he pulls out
+    of your mouth, and climbs on top of Marissa for another round.
+    <br><br>
+    Much later, after he's completely drained and Marissa has came more times than you can count, the three of you are finally
+    done for the night.
+    <<if $dating.length>>
+      $dating[0]
+    <<else>>
+      Craig
+    <</if>>
+    says, "So I hope you two left some for me."  Then he picks the bong up from the table. You have a feeling you and Marissa are
+    going to have a lot of fun together [[this year|Part15Week]]. 
+  <<elseif $AcademicProbationDenial>>
     After he's fucked her for a while, it's her turn to whimper as he pulls out of her and slides into you.
     <<if $PlayerProtectionCondoms>>
       You were too horny to even think about condoms,
@@ -8274,7 +8660,25 @@ TODO (black, since all the other potential BFs are white) possibly date, possibl
     He's back to fucking Marissa when he finally cums.  You can't help but be a little jealous when he grabs her hips, and plunges
     deep inside her.  You imagine the feel of his warm cum inside you as he groans and [[cums inside her|Part15DormStonerMFF2]].
   <</if>>
-  <<if $dating.length>>
+  <<if $PlayerChastityBelt and !setup.areDating($Keyholder)>>
+    <<if $dating.length>>
+      <<set setup.addSex({name:$dating[0], sex:"male"})>>
+      <<set setup.addSex({sex:"female", name:"Marissa"})>>
+      <<set setup.addSex({name:$dating[0], sex:"male"})>>
+      <<set setup.addSex({sex:"female", name:"Marissa"})>>
+      <<set setup.addSex({name:$dating[0], sex:"male"})>>
+      <<set setup.addSex({sex:"female", name:"Marissa"})>>
+      <<set setup.addSex({sex:"female", name:"Marissa"})>>
+    <<else>>
+      <<set setup.addSex({name:"Craig", sex:"male"})>>
+      <<set setup.addSex({sex:"female", name:"Marissa"})>>
+      <<set setup.addSex({name:"Craig", sex:"male"})>>
+      <<set setup.addSex({sex:"female", name:"Marissa"})>>
+      <<set setup.addSex({name:"Craig", sex:"male"})>>
+      <<set setup.addSex({sex:"female", name:"Marissa"})>>
+      <<set setup.addSex({sex:"female", name:"Marissa"})>>
+    <</if>>
+  <<elseif $dating.length>>
     <<set setup.addSex({name:$dating[0], sex:"male", vaginal:true, pullOut:true, noCondom:true})>>
   <<elseif $CampusMinistry>>
     <<set setup.addSex({name:"Craig", sex:"male", vaginal:true, noPullout:true, noCondom:true})>>
@@ -8288,7 +8692,11 @@ TODO (black, since all the other potential BFs are white) possibly date, possibl
 ::Part15DormStonerMFF2
 <<nobr>>
   <h1>Cleaning up with Marissa</h1>
-  <img src="Part15/Dorm6.jpg" hspace="10" vspace="10" height="550">
+  <<if setup.areDating('Jaylen')>>
+    <img src="Part15/Dorm20.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+    <img src="Part15/Dorm6.jpg" hspace="10" vspace="10" height="550">
+  <</if>>
   <<set setup.addSex({name:"Marissa", sex:"female"})>>
   <<set setup.addSex({name:"Marissa", sex:"female"})>>
   <<if $dating.length>>
@@ -8888,7 +9296,11 @@ TODO (black, since all the other potential BFs are white) possibly date, possibl
 ::Par14DormStonerBoyfriend
 <<nobr>>
   <h1><<if $sex.length == 0>>Your first time with<<else>>With<</if>> $dating[0]</h1>
-  <video src="Part15/Dorm10.webm" autoplay loop muted height="550"></video>
+  <<if setup.areDating('Jaylen')>>
+    <video src="Part15/Dorm17.webm" autoplay loop muted height="450"></video>
+  <<else>>
+    <video src="Part15/Dorm10.webm" autoplay loop muted height="550"></video>
+  <</if>>
 <</nobr>>
 <<nobr>>
   Thankfully $dating[0] is at home, and is excited to hear that you are coming over.
@@ -8956,7 +9368,11 @@ TODO (black, since all the other potential BFs are white) possibly date, possibl
 ::Par14DormStonerBoyfriend2
 <<nobr>>
   <h1>With $dating[0]</h1>
-  <img src="Part15/Dorm11.gif" hspace="10" vspace="10" height="500" align="left">
+  <<if setup.areDating('Jaylen')>>
+    <video src="Part15/Dorm18.webm" autoplay loop muted height="450"></video>
+  <<else>>
+    <img src="Part15/Dorm11.gif" hspace="10" vspace="10" height="500" align="left">
+  <</if>>
   <<set setup.addSex({sex:"male", name:$dating[0]})>>
   <<set setup.addSex({sex:"male", name:$dating[0], vaginal:true})>>
 <</nobr>>
@@ -9413,7 +9829,11 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
     something.  Oh, and third, they said it would give you a couple warning shocks first before the bad ones started.  But I guess
     that didn't help if you didn't know why it was happening."
     <br><br>
-    <video src="Part15/Chastity2.webm" autoplay loop muted height="500"></video>
+    <<if setup.areDating('Jaylen')>>
+      <video src="Part15/Chastity15.webm" autoplay loop muted height="500"></video>
+    <<else>>
+      <video src="Part15/Chastity2.webm" autoplay loop muted height="500"></video>
+    <</if>>
     <br><br>
     "Ok. I'm sorry for getting mad at you.  Can I make it up to you?"  Of course he doesn't object when you pull down his pants
     and start working on his cock.  You are glad he didn't do this to you on purpose, but it's not like you were going to want
