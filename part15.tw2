@@ -7838,7 +7838,8 @@ TODO Upset after being raped [[Part15Dorm]]
     <br><br>
     <video src="Part11/Single2.mp4" autoplay loop muted height="480"></video>
     <br><br>
-    Once you are done, you are feeling better and able to [[get to sleep|Part15Dorm]].
+    After you relax in the hot bath for a bit, you are feeling much better and try to put the evening's events out of your mind.
+    Once you are done, you are much more relaxed and able to [[get to sleep|Part15Dorm]].
   <<else>>
     You must have been right.  He must have just been going the same direction as you.  At some point he turned off down a different
     street and you were on your own again.  You are still a bit nervous.  Maybe he wasn't going to attack you, but maybe someone else might.
@@ -8211,7 +8212,8 @@ TODO Upset after being raped [[Part15Dorm]]
   <<set $DormFriendLevel to 0>>
 <</nobr>>
 <<nobr>>
-  <<switch either(1,2,3)>>
+  (TODO Roll)
+  <<switch 3+either(1,2,3)>>
     <<case 1>>
       <<include [[Part15DormStoner]]>>
     <<case 2>>
@@ -9306,7 +9308,7 @@ TODO Upset after being raped [[Part15Dorm]]
   Thankfully $dating[0] is at home, and is excited to hear that you are coming over.
   <<if $sex.length == 0>>
     He's even more excited when you get there and tell him how you are sick of waiting, and want to have sex with him.  Right here.  Right now.
-  <<elseif $PlayerItemNerdkey and setup.areDating('Peter')>>
+  <<elseif $PlayerItemNerdKey and setup.areDating('Peter')>>
     He's even more excited when you take out your key and unlock his cock.  "You can start with your tongue like normal.  But you are going to
     fuck me and fuck me hard today," you tell him.
   <<else>>
@@ -9411,7 +9413,7 @@ TODO Lesbian [[Part15Week]]
 <<nobr>>
   <<set $Roommate to "Kiera">>
   <img src="Part15/Dorm3.jpg" hspace="10" vspace="10" height="650" align="left">
-  When your new roommate Kiera comes in, you introduce yourself.  She introduces herself as well, "Hi, I'm Kiera," she starts.
+  When your new roommate comes in, you introduce yourself.  She introduces herself as well, "Hi, I'm Kiera," she starts.
   After telling you where's from, and a bit of other small talk she shares something else.  "I hope you don't mind, but I'm going
   to be bringing guys home sometimes.  And by 'Sometimes', I mean a lot."
 <</nobr>>
@@ -9419,14 +9421,14 @@ TODO Lesbian [[Part15Week]]
 <<nobr>>
   <<if $PregnancyWeek >= 12>>
     "Obviously you like to have a bit of fun yourself," she says glancing at your growing stomach.  "You are welcome to join in sometimes if you
-    want.  Or if you're still with your baby daddy, maybe the we could have a threesome or a foursome some time if you want.  Don't worry, I'm on
+    want.  Or if you're still with your baby daddy, maybe we could have a threesome or a foursome some time if you want.  Don't worry, I'm on
     birth control, so he won't be getting me pregnant too."
   <<elseif setup.haveInventory('piercings', 'tongue')>>
     "I'm guessing you like to have a bit of fun yourself," she says glancing at your tongue piercing. "You are welcome to join in sometimes if you
-    want.  If you a have boyfriend or regular fuckbuddy, maybe the we could have a threesome or a foursome some time if you want."
+    want.  If you a have boyfriend or regular fuckbuddy, maybe we could have a threesome or a foursome some time if you want."
   <<else>>
     "Hopefully you like to have some fun yourself. Not like my last roommate.  She was a real prude," she says hopefully.
-    "You are welcome to join in sometimes if you want.  If you have boyfriend or regular fuckbuddy, maybe the we could have a threesome or a
+    "You are welcome to join in sometimes if you want.  If you have boyfriend or regular fuckbuddy, maybe we could have a threesome or a
     foursome some time if you want."
   <</if>>
 <</nobr>>
@@ -9438,7 +9440,12 @@ TODO Lesbian [[Part15Week]]
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerChastityBelt>>
+  <<if setup.haveGirlfriend()>>
+    When you mention that you have a girlfriend she appologizes.  "Oh, I'm sorry, that was a stupid assumption I made.
+    Still, you two can have as much fun over there as you want.  I'm not really into girls though, other than the occasional
+    threesome, so I won't ask you to share."  She gives you a smile and adds, "Though if you and her ever want to have a foursome
+    with me and some guy, I'm sure we'd make him the happiest guy on campus."
+  <<elseif $PlayerChastityBelt>>
     <<if $JobBetaTester == "chaste">>
       "I couldn't join in, even if I wanted to,"
     <<elseif setup.areDating($Keyholder)>>
@@ -9476,13 +9483,19 @@ TODO Lesbian [[Part15Week]]
     <<else>>
       some guy.
     <</if>>
+  <<elseif setup.areDating('Peter') and $PlayerItemNerdKey>>
+    As she talks about it, you can't help but think that a [[threesome might be fun|Part15DormSluttySexPeterChaste]].  Though, you
+    should probably check to see how she feels about Peter's cage first.
   <<else>>
     As she talks about it, you can't help but think that a [[threesome might be fun|Part15DormSluttySex]].
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerChastityBelt and $JobBetaTester == "chaste">>
+  <<if setup.haveGirlfriend()>>
+    You tell her to have as much fun as [[she wants on her side|Part15DormSluttyWatch]].  You warn her, "If I get up in and
+    leave in the middle, don't think I'm angry or upset.  I probably just got too horny and had to leave to find $dating[0]."
+  <<elseif $PlayerChastityBelt and $JobBetaTester == "chaste">>
     Joining in with her definitely isn't an option.  But you do have a choice between
     [[letting her have her fun|Part15DormSluttyWatch]], as long as she keeps it to her side of the room or
     [[asking her to warn you|Part15DormSluttyWarn]] when she's going to have a guy over so you can stay away.
@@ -9611,8 +9624,49 @@ TODO Lesbian [[Part15Week]]
 TODO Mad about it, using a sock instead now [[Part15Week]]
 
 ::Part15DormSluttyWarnShop
-<<set $DormFriendLevel += 1>>
-TODO Now she watches, might get too tempted and join in [[Part15Week]]
+<<nobr>>
+  <h1>A Gift from Kiera</h1>
+  <<if $PlayerChastityBelt>>
+    <img src="Part15/Dorm24.jpg" hspace="10" vspace="10" height="550" align="left">
+  <<else>>
+    <img src="Part15/Dorm27.jpg" hspace="10" vspace="10" height="550" align="left">
+  <</if>>
+  <<set $DormFriendLevel += 1>>
+<</nobr>>
+<<nobr>>
+  You go shopping with Kiera while she buys numerous panties and other lingerie for herself, some to replace what was stolen
+  and some just because she likes it.  You also both get to know each other much better, and you aren't as upset with her
+  as you were before.
+<</nobr>>
+
+<<nobr>>
+  Like she'd said earlier, she also picked up something for you.
+  <<if $PlayerChastityBelt>>
+    "Since you are in that belt, I figured most lingerie is going to be out," she tells you.  So instead I thought something
+    cute that you could wear over your belt would be good.  See, it's even got this belt right in just the right place, so
+    no one will notice the outline of your chastity belt under it."
+  <<else>>
+    You look so hot in this.  I'm sure
+    <<if $dating.length>>
+      $dating[0] will love you in it."
+    <<elseif $sex.length>>
+      the next
+      <<if setup.sexMaleCount() >= setup.sexFemaleCount()>>
+        guy
+      <<else>>
+        girl
+      <</if>>
+      you are with will love you in it."
+    <<else>>
+      when you meet the right guy for you, he'll love you in it.  But you can just wear it for yourself, and enjoy how
+      sexy it makes you feel until then."
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You are glad you and Kiera were able to work things out.  It'll make [[this year|Part15Week]] go much smoother if you two aren't arguing.
+<</nobr>>
 
 ::Part15DormSluttyWatch
 <<nobr>>
@@ -9644,7 +9698,14 @@ TODO Now she watches, might get too tempted and join in [[Part15Week]]
 
 <<nobr>>
   <<if $dating.length>>
-    todo too horny, rush over to $dating[0]<br> [[Part15Week]]
+    Realizing your hand is down in your panties,
+    <<if $PlayerSideEffectMasturbationBlock>>for all the good it would do,<</if>>
+    you realize you need to leave.  You quickly text $dating[0] and then head to meet
+    <<if setup.haveGirlfriend()>>her.<<else>>him.<</if>>
+    Hopefully it'll be you moaning in a few minutes.
+    <br><br>
+    By the time you finish with $dating[0] and return home, Kiera's friend is gone and you have no trouble
+    [[getting to sleep|Part15Week]].
   <<else>>
     Kiera is looking right at you as he fucks her from behind.  You can't help yourself and find yourself on your hands and knees too, kissing her on the lips.
     You taste the cum on her face and eagerly lick it up before returning to kiss her again.
@@ -9666,8 +9727,35 @@ TODO Now she watches, might get too tempted and join in [[Part15Week]]
       "I'm fine," you say as you sit up perfectly straight in your chair. "This stupid belt didn't like me kissing you just now."
       You decide to take a walk while they finish.  You don't want to be tempted to do anything again.  You'll come back in an hour
       and hopefully they'll be done, and you can [[try to sleep|Part15DormSluttyWatchChaste]].
+    <<elseif $CampusMinistry>>
+      You'd never tasted cum before.  Well, maybe you did put a little of your own on your finger once and taste it, back before your
+      change.  But this isn't the same.  This makes you want more.
+      <br><br>
+      "Can... Can I [[join in|Part15DormSluttySexMinistry]]?" you ask timidly.  They both invite you to join them.  
     <<else>>
-TODO Maybe get too horny to just watch<br> [[Part15Week]]
+      You've forgotten why you didn't want to join in in the first place, and are soon naked
+      <<if $PlayerChastityBelt>>
+        except for your belt
+      <</if>>
+      and in bed with them.
+      You are kissing Kiera as she cums, and still when you hear him moan and cum inside her.  You move to lick his cock clean as soon
+      as he pulls out of her.
+      <br><br>
+      You start eating out Kiera, tasting his warm, fresh cum.  It isn't long and he is hard again from watching you.
+      <<set setup.addSex({sex:"female", name: "Kiera"})>>
+      <<if $PlayerChastityBelt>>
+        <<set setup.addSex({sex:"male"})>>
+        He has you suck his cock for a bit, but returns to fuck Kiera after a while.  You ache under your belt, knowing he'd be fucking
+        you right now instead if he could.
+      <<else>>
+        <<set setup.addSex({sex:"male", vaginal:true, noPullout:true})>>
+        This time it's you he fucks.  Kiera makes out with you as he does, playing with her clit the whole time.
+      <</if>>
+      <br><br>
+      After you and Kiera have drained him every big of energy and drop of cum that he has, she sends him on his way.
+      <br><br>
+      You're not sure why you didn't want to join in at first, but you are glad that you did.  You know you and Kiera are going
+      to have a lot of fun [[this year|Part15Week]].
     <</if>>
   <</if>>
 <</nobr>>
@@ -9709,8 +9797,9 @@ TODO Maybe get too horny to just watch<br> [[Part15Week]]
   within the next 24 hours to avoid further punishment.
 </blockquote>
 <</nobr>>
-
-<img src="Part2/Emily4.jpg" hspace="10" vspace="10" height="350" align="left">
+<<nobr>>
+  <img src="Part2/Emily4.jpg" hspace="10" vspace="10" height="350" align="left">
+<</nobr>>
 <<nobr>>
   <<if setup.haveInventory('piercing', 'tongue')>>
     You reluctantly stop by the engineering department on the way to class, where they replace your old stud with their 'sensor'.
@@ -9780,16 +9869,282 @@ TODO Maybe get too horny to just watch<br> [[Part15Week]]
 <</nobr>>
 
 ::Part15DormSluttySexMinistry
-<<set setup.addSex({sex:"female", name: "Kiera"})>>
-<<set setup.addSex({sex:"male", vaginal: true})>>
-TODO ministry fail,  friendship points,  Part15DormSluttyMinistry, [[Part15Week]]
+<<nobr>>
+  <h1>Your first time</h1>
+  "I've never... you know... before," you try to say.
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male", vaginal: true, pullout: true, noCondom: true})>>
+  <<set setup.addSex({sex:"female", name:"Kiera"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male", vaginal: true, noPullout: true, noCondom: true})>>
+  <<set setup.addSex({sex:"female", name:"Kiera"})>>
+  <<unset $CampusMinistry>>
+  <<set $CampusMinistryFailFall2 to 1>>
+  <<set $DormFriendLevel += 1>>
+<</nobr>>
+
+<<nobr>>
+  "Oh, well let's make sure it's a good one then," Kiera says.
+  <<if $KieraWatch>>
+    <<set setup.addSex({sex:"male"})>>
+    "He's pretty close now, and I wouldn't want your first time to be a disappointment.  So lets let him finish and then when he's ready
+    again it'll be your turn."  You nod, then she adds, "But do you want him to finish inside me, or do you want another taste?"
+    You get down on your knees and open your mouth, ready to taste your first cock.
+    <br><br>
+    By the time he's ready to go again, you and Kiera are both dressed for the fantasy she thought up for him.  Though she was the only
+    one that had to change, you were already matching the look she had in mind.
+  <<else>>
+    Kiera decides to a little role play fun.  You think it's partially to turn him on, and partially to calm your nerves a bit.  You
+    are already dressed for the part, but she has to make a quick wardrobe change before her friend arrives.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "My sister and I just turned 18 today," Kiera says trying to act innocent.  "Neither of us have been with a man before, so please
+  be gentle with us."  You both act nervous as he takes turns removing one piece of clothing at a time from each of you, and removing
+  his occassionally as well.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Dorm23.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  When his two virgins are down to only their pink, cotton panties his hands start to roam.  As his strong hands move over your skin
+  your hear races. When his hand slides into your panties you bite your lower lip in anticipation.  You can't help the moan you make
+  as his finger gently slides into you.  You assume Kiera must be as wet as you are when he comments on how ready his two virgins
+  are for thier first time.
+<</nobr>>
+
+<<nobr>>
+  Kiera can't help herself, and is already stroking his cock while you just struggle to stand up as his finger slides slowly
+  in and out of you and across your clit.  You think this feels better than anything could until he drops to his knees, pulls your
+  panties to the slide, and slides his tongue over your clit.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Dorm21.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  You've already came from his tongue, but when you feel the head of his cock slowly easing between your lower lips, you
+  ache for him to go deeper.  You'd heard that it hurt the first time, but it doesn't.  You wonder if it's because of your implant,
+  or how wet you are, or how gentle he is being, but it only feels like pure bliss to you.
+<</nobr>>
+
+<<nobr>>
+  You cum again with him inside you, and Kiera's tongue on your clit at the same time.  You do your best to pleasure her
+  also, but you are so distracted by your own pleasure, you aren't sure if you are doing very well.  But she isn't complaining,
+  so you keep at it.
+<</nobr>>
+<<nobr>>
+  <img src="Part15/Dorm28.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  You lose track of how many times you cum before Kiera's friend... you realize you never caught his name... before he left.
+  As he leaves, you can only lie in bed enjoying the wonderful feeling you still have after the pleasure he, and Kiera, gave you.
+<</nobr>>
+
+<<nobr>>
+  You already don't remember why you ever waited for this.  You could have been having this kind of pleasure for a year now.
+  But you now that you know how good it is, you know you aren't going to waste anymore time.
+<</nobr>>
+
+<<nobr>>
+  You know you and Kiera are going have a lot of fun this year, and you want to start on it
+  [[as soon as possible|Part15DormSluttySexMinistry2]].
+<</nobr>>
+
+::Part15DormSluttySexMinistry2
+<<nobr>>
+  <h1>Making up for lost time</h1>
+  <video src="Part15/Dorm5.webm" autoplay loop muted height="500"></video>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  <<set setup.addSex({sex:"male", vaginal:true})>>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male", vaginal:true})>>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male", vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male", vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male", vaginal:true})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set $DormFriendLevel += 2>>
+<</nobr>>
+
+<<nobr>>
+  Kiera can see how eager you are to make up for lost time, and she's more than happy to help you with that.
+  She has tons of guys she can call, and she makes sure you and her have a different one every night.
+<</nobr>>
+
+<<nobr>>
+  She's even helped you shop for some sexier clothes to wear when the guys come over.  Though, they didn't
+  seem to mind what you were wearing before.  But you certainly enjoy how sexy you feel wearing it.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Dorm19.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Dorm26.webm" autoplay loop muted height="500"></video>
+  </div>
+<</nobr>>
+
+<<nobr>>
+  She's even helped teach you to be a better lover yourself.  You were trying to learn to suck cock better
+  just by watching her, but you are usually too distracted at the time.  But she gives you a few pointers one morning
+  at breakfast.
+<</nobr>>
+
+<<nobr>>
+  When she tells you that you've mastered it now, you can't wait until tonight when you can give it a try.
+<</nobr>>
+
+<<nobr>>
+  "There's no reason we have to wait," she says.  She takes a quick video of you and says, "Let me post this on my feed
+  with the message '$playerName and I are feeling lonely at breakfast... wish someone else were here with us.`  and I'm
+  sure we'll have our pick of guys here in no time.
+<</nobr>>
+
+<<nobr>>
+  She was right of course.  You are so happy that Kiera was able to help you finally get you to open up and have fun.
+  You know the two of you are going to have a lot of fun [[this year|Part15Week]]
+<</nobr>>
+
+::Part15DormSluttySexPeterChaste
+<<nobr>>
+  <h1>Threesome with Kiera and Peter</h1>
+  <video src="Part15/Dorm25.webm" autoplay loop muted height="500"></video>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  <<set setup.addSex({sex:"male", name: "Peter"})>>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  <<set setup.addSex({sex:"male", name: "Peter"})>>
+  <<set $DormFriendLevel += 1>>
+<</nobr>>
+<<nobr>>
+  Peter was thrilled when he found out he was going to be part of threesome with you and another girl.  He was probably a
+  little less excited when he realized you had no intention of unlocking him.  "It's been a while since I let you cum,
+  so I doubt you'd last long.  And that wouldn't be fair to Kiera would it.  She's looking for a long, hard fuck," you tell him.
+<</nobr>>
+
+<<nobr>>
+  "No, ma'am.  That wouldn't be fair to her.  I understand," he says obediently.
+<</nobr>>
+
+<<nobr>>
+  Peter is happy to find out that he still gets to fuck both you and Kiera, even if it is with his strap-on instead of his locked
+  cock.  You let him enjoy the view of Kiera riding his cock for a while first, before you straddle his face and block his
+  view.
+<</nobr>>
+
+<<nobr>>
+  He eats you out as you and you and Kiera kiss as first one of your orgasms, then a bit later the other.  You glance down and see
+  the drops of precum leaking from Peter's caged cock.  There's no need to wait for Peter to recover, so you quick move to him
+  fucking Kiera from behind while she eats you out.
+<</nobr>>
+
+<<nobr>>
+  You lose track of how many orgasms you and Kiera have before the night is over.  Before he gets dressed to leave, Kiera thanks him
+  for his hard work.  When she leans over and kisses his cock through the bars of its cage, you worry Peter might cum right then.
+  But he just winces a bit as his cock swells and presses hard against its prison.
+<</nobr>>
+
+<<nobr>>
+  They way Kiera was talking earlier, you had been worried at first that she loved cock too much to be ok with Peter's being locked
+  most of the time.  But as the two of you talk after he's gone, she thinks it great.  "He's eager to eat me or you out as long
+  as we want," she says. "If we want a good fuck, he'll last until we cum every time.  And there's no mess leaking out of me
+  afterwards.  What's not to love?" 
+<</nobr>>
+
+<<nobr>>
+  The next morning you know for sure you and her are going to have a lot of fun [[this year|Part15Week]], when she asks to borrow
+  your phone to send Peter a text.
+<</nobr>>
+
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Dorm26.webm" autoplay loop muted height="500"></video>
+  </div>
+  <blockquote>
+    Peter, this is Kiera.<br>
+    Thanks for a great time yesterday.<br>
+    It's too bad you couldn't stay over last night.<br>
+    I always wake up horny, and would have been begging $playerName to unlock you.<br>
+    Thinking of you though.
+  </blockquote>
+<</nobr>>
 
 ::Part15DormSluttySex
-<<set setup.addSex({sex:"female", name: "Kiera"})>>
-<<set setup.addSex({sex:"male", vaginal: true})>>
-TODO more sex variables, friendship points, Part15DormSluttySex [[Part15Week]]
+<<nobr>>
+  <h1>Threesome with Kiera and <<if $dating.length>>$dating[0]<<else>>some guy<</if>></h1>
+  <video src="Part15/Dorm21.mp4" autoplay loop muted height="500"></video>
+  <<if $dating.length>>
+    <<set setup.addSex({sex:"female", name: "Kiera"})>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"female", name: "Kiera"})>>
+    <<set setup.addSex({sex:"male", name:$dating[0], vaginal: true})>>
+  <<else>>
+    <<set setup.addSex({sex:"female", name: "Kiera"})>>
+    <<set setup.addSex({sex:"male"})>>
+    <<set setup.addSex({sex:"female", name: "Kiera"})>>
+    <<set setup.addSex({sex:"male", vaginal: true, noPullout:true})>>
+  <</if>>
+  <<set $DormFriendLevel += 1>>
+<</nobr>>
+<<nobr>>
+  <<if $dating.length>>$dating[0]<<else>>Kiera's friend<</if>>
+  was thrilled when he arrived and found not one horny slut waiting for him, but two.  He watches as you and Kiera
+  strip for him, throwing his own clothes off at the same time.  Seeing his cock, hard and waiting, you can't resist any longer
+  and drop to your knees and start sucking it.
+<</nobr>>
+
+<<nobr>>
+  After a little while he says, "On your back."  You aren't sure who he was saying it to, or if he even cared which of you responded,
+  but Kiera is on her back before you can decide.  As soon as he sees her ready and wait, he pulls out of your mouth and moves over
+  to start fucking her.
+<</nobr>>
+
+<<nobr>>
+  When Kiera calls you over, you eagerly straddle her face as she starts to eat you out.  You lean over and find her clit as
+  <<if $dating.length>>$dating[0]<<else>>what's-his-name<</if>> continues to fuck her.
+<</nobr>>
+
+<<nobr>>
+  You are expecting him to cum inside her, so you are surprised at first when he pulls out.  But once you realize what is happening
+  you open your mouth to catch the rest of his cum, then lick his cock clean.  Kiera calls you up so she can lick your face clean.
+  But most of it ends up drying there instead as both of you forget about anything else once you start kissing.
+<</nobr>>
+
+<<nobr>>
+  Watching the two of you soon has him hard again.  This time it's your turn to feel his cock.  He lays on your back as you ride
+  his cock.  Meanwhile, Kiera straddles his face so she can let his tongue do the work this time, while the two of you kiss some more.
+<</nobr>>
+
+<<nobr>>
+  He leaves with a smile on his face as you and Kiera start to clean up the room from the fun.
+  <<if $dating.length>>
+    He couldn't stay tonight, but you have a feeling $dating[0] will be sleeping over at your dorm quite a bit.
+    You are also pretty sure you and Keira are going to have a lot of fun [[this year|Part15Week]].
+  <<else>>
+    You never did catch his name.  It doesn't matter anyway, Kiera has plenty of guys to call so it might not even be him
+    again next time.  But whatever there names are, you know you and Keira are going to have a lot of fun [[this year|Part15Week]].
+  <</if>>
+<</nobr>>
 
 ::Part15DormSluttyChasteSex
+  <video src="Part15/Dorm22.mp4" autoplay loop muted height="500"></video>
 <<set setup.addSex({sex:"female", name: "Kiera"})>>
 <<set setup.addSex({sex:"male"})>>
 TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15Week]]
