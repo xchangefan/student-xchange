@@ -599,6 +599,9 @@
 	<</if>>
 	Then you go in the bathroom to clean up.  Of course instead of just washing it off, you put it in the vial with his name on it
 	that you'd prepared earlier.
+  <<if setup.areDating('Peter') and setup.areDating('Paul')>>
+    You also get a sample from Paul the next day at work.  You are careful to keep them labeled to be sure you don't mix them up.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -610,7 +613,6 @@
 <<nobr>>
 	<<set $isNamed to 0>>
 	<<if setup.areDating('Andrew')>>
-		Peter
 		<<if $PregnancyCheck.actualFather == 'Andrew'>>
 			You are relieved when she tells you, "Congratulations! [[Andrew|Part7AndrewBoyfriend]] is the father!".
 		<<else>>
@@ -622,6 +624,31 @@
 			<br>
 			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
 		<</if>>
+	<<elseif setup.areDating('Paul') and setup.areDating('Peter')>>
+		<<set setup.addSex({sex: 'male', name: 'Peter'})>>
+		<<set setup.addSex({sex: 'male', name: 'Paul'})>>
+		<<if $PregnancyCheck.actualFather == 'Paul'>>
+			You are relieved when she tells you, "Congratulations! [[Paul|Part7OfficeBoss1]] is the father!".
+    <<elseif $PregnancyCheck.actualFather == 'Peter'>>
+			You are happy when she tells you, "Congratulations! [[Peter|Part7Peter]] is the father!".
+    <<else>>
+			You are upset when she tells you, "Neither Peter nor Paul is the father."  But you realize that it doesn't matter really
+      as long as you tell one of them he is.
+			<br><br>
+      If you [[tell Paul he is the father|Part7OfficeBoss1]], it will probably be enough
+      to get him to finally leave his wife like he keeps talking about.  Then he can be with you.  
+			<br><br>
+      Peter would probably be dutifully by your side even if you told him the baby wasn't his.  But he'd probably be happier
+      [[believing the baby was his|Part7Peter]].  Plus, why take the chance he wouldn't accept the baby, and you'd be left raising
+      him or her by yourself.
+      <<if true or $PregnancyCheck.possibleFathers.indexOf('Peter')  < 0>>
+        You'll just need to tell him that it must have been all that precum he's always leaking that got you pregnant, or maybe that
+        ruined orgasm that got on your hand before you masturbated.  He'll want to believe, so it won't take much convincing.
+      <</if>>
+      <br>
+			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
+    <</if>>
+    
 	<<elseif setup.areDating('Paul')>>
 		<<set setup.addSex({sex: 'male', name: 'Paul'})>>
 		<<if $PregnancyCheck.actualFather == 'Paul'>>
@@ -647,7 +674,7 @@
 	<<elseif setup.areDating('Peter')>>
 		<<set setup.addSex({sex: 'male', name: 'Peter'})>>
 		<<if $PregnancyCheck.actualFather == 'Peter'>>
-			You are a happy when she tells you, "Congratulations! [[Peter|Part7Peter]] is the father!".
+			You are happy when she tells you, "Congratulations! [[Peter|Part7Peter]] is the father!".
 		<<elseif $PregnancyCheck.possibleFathers.indexOf('Peter')  >= 0>>
 			You aren't especailly surprised when she tells you, "Peter is NOT the father."  It's not like you let him out that often.  But you know
 			having him at your side will make the next nine months (or longer) much easier than going it alone, so you decide to
@@ -665,7 +692,7 @@
 	<<elseif setup.areDating('Aaron')>>
 		<<set setup.addSex({sex: 'male', name: 'Aaron'})>>
 		<<if $PregnancyCheck.actualFather == 'Aaron'>>
-			You are a absolutely giddy when she tells you, "Congratulations! [[Aaron|Part7Aaron]] is the father!".
+			You are absolutely giddy when she tells you, "Congratulations! [[Aaron|Part7Aaron]] is the father!".
 		<<else>>
 			You are in tears when she tells you, "Aaron is NOT the father."  You must have already been pregnant when he became your Daddy.  You know
 			you can't lie to him, so you tell him the truth.  Daddy holds you in his arms and comforts you.  He tells you that it doesn't matter who the
@@ -994,8 +1021,12 @@
 <</nobr>>
 
 <<nobr>>
-	[[Instead you agree to lie on the forms and say the father is “Unknown”.|Part7Unknown]] He’ll give you get a generous payment every month. And he
-	knows a paternity test awaits if the payments ever stop.
+  <<if setup.areDating('Peter')>>
+    [[Instead you agree to say on the forms that the father is “Unknown”.|Part7PeterAfterPaul]]
+  <<else>>
+    [[Instead you agree to say on the forms that the father is “Unknown”.|Part7Unknown]]
+  <</if>>
+	He’ll give you get a generous payment every month. And he expects a paternity test and court papers if the payments ever stop, so you doubt they will.
 <</nobr>>
 
 <<nobr>>
@@ -1261,6 +1292,45 @@
 	<</if>>
 <</nobr>>
 
+::Part7PeterAfterPaul
+<<nobr>>
+	<h1><<print "Peter">></h1>
+	<<if $PlayerProtectionTry || !setup.areDating('Peter')>>
+		<img src="Part7/Preg12.jpg" hspace="10" vspace="10" height="650">
+	<<else>>
+		<img src="Part7/Preg11.jpg" hspace="10" vspace="10" height="650">
+	<</if>>
+	<<set setup.addSex({sex: 'male', name: 'Peter'})>>
+	<<set $StatedFather to 'Peter'>>
+<</nobr>>
+
+<<nobr>>
+  While Peter is eating you out, you tell him you are pregnant, but you aren't sure who the father is yet.
+  You tell him you had thought it was Paul's but it turns out it wasn't.
+  <<if $PregnancyCheck.possibleFathers.indexOf('Peter') < 0>>
+    You tell them even though you haven't unlocked him, some of what's oozed out of his caged cock might have managed to get
+    you pregnant.
+  <<else>>
+    You tell him that even though you don't let him orgasm very often, it only takes one time.
+  <</if>>
+  But, it could be someone else's.
+  <br><br>
+  Peter tells you he doesn't care if he's the biological father or not, he's going to treat the child as it's his.  "Unless
+  you want me to get tested to be sure," he adds timidly.  You tell him that won't be necessary, and that you couldn't imagine
+  a better father than he will be.
+<</nobr>>
+
+<<nobr>>
+  You submit the forms with Peter's name instead of "Unknown", so Peter's name will be the one on the birth certificate.
+  Of course Paul's not going to know that, so you assume his checks will keep coming.  He still wants you to keep quiet about
+  the affair after all.
+<</nobr>>
+
+<<nobr>>
+  You know he's going to be by your side throughout the pregnancy.  Or, if not by your side, then kneeling in front of you, which is even better.
+  After he finishes up with you, you send him off for the holiday still caged, while you [[start your packing for your own trip home|Part7Pack1]].
+<</nobr>>
+
 ::Part7James <200,6025>
 <<nobr>>
 	<<set setup.breakupWith('James')>>
@@ -1406,7 +1476,7 @@
 		You are in tears as you tell Daddy that you are pregnant and that he might not be the father, that you might have already been pregnant when
 		the two of you got together.  Daddy holds you in his arms and comforts you.  He tells you that it doesn't matter who the baby's father really
 		is, if you decide to keep it, then you and Daddy will [[raise the baby together|Part7Aaron]].  And if you decide on adoption, he'll help you
-		through the next nine months.  
+		through the next nine months.
 	<<elseif $dating.length > 0 and !setup.areDating($StatedFather)>>
 		When you tell $dating[0] you are pregnant, and that he is NOT the father, he's devastated that you've been cheating on him.
 		<<if $dating[0] == 'Paul'>>
