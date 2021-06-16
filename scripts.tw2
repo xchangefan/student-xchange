@@ -782,6 +782,7 @@ setup.getAchievementDetails = function() {
     graduate: {text: "Graduated College", image: "Graduate.jpg", alwaysShow:true},
     virgin: {text: "His first time", image: "Cherry.png"},
     bite: {text: "Taking a bite out of crime", image: "Bite.jpg"},
+    fwb: {numRequired: 6, text: "I've got a friend in me.", image: "FWB.jpg"},
 
 		slave: {text: "Enslaved", image: "Slave.jpg", isEnding: true},
 		cumslut: {text: "Cum Slut", image: "Cumslut.png", isEnding: true},
@@ -839,6 +840,19 @@ setup.saveAchievements = function(achievements) {
 	localStorage.setItem("student-x-change-program.achievements", JSON.stringify(achievements))
 }
 
+setup.getAchievementParts = function(mainAchId) {
+  var count = 0;
+  var currAchievements = setup.getAchievements()
+  currAchievements.forEach((achId) => {
+    var currMainId = achId.split(":")[0];
+    if (currMainId == mainAchId) {
+      count++;
+    }
+  });
+
+  return count;
+}
+
 setup.addMultipartAchievement = function(achId) {
 	var currAchievements = setup.getAchievements()
 	if (currAchievements.indexOf(achId) < 0) {
@@ -848,16 +862,25 @@ setup.addMultipartAchievement = function(achId) {
 		
 	var mainAchId = achId.split(":")[0]
 	var achInfo = setup.getAchievementDetails()[mainAchId]
-	if (!achInfo || !achInfo.parts || !achInfo.parts.length) return false
+  if (achInfo && achInfo.numRequired) {
+    let partsAchieved = setup.getAchievementParts(mainAchId);
+    if (partsAchieved >= achInfo.numRequired) {
+      return setup.addAchievement(mainAchId)
+    } else {
+      return false;
+    }
+  } else if (achInfo && achInfo.parts && achInfo.parts.length) {
+  	let hasAllParts = true
+	  achInfo.parts.forEach((part) => {
+		  if (!setup.hasAchievement(`${mainAchId}:${part}`)) {
+			  hasAllParts = false
+		  }
+	  })
 
-	let hasAllParts = true
-	achInfo.parts.forEach((part) => {
-		if (!setup.hasAchievement(`${mainAchId}:${part}`)) {
-			hasAllParts = false
-		}
-	})
-
-	return hasAllParts && setup.addAchievement(mainAchId)
+  	return hasAllParts && setup.addAchievement(mainAchId)
+  } else {
+    return false;
+  }
 }
 
 setup.addAchievement = function(achId) {

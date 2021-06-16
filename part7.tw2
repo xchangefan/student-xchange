@@ -234,23 +234,39 @@
 
 ::Part7Preg1 <600,5750>
 <<nobr>>
-	<<set $PlayerSideEffectPermanent = 1>>
 	<<set $PlayerPregnant to 1>>
  
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
 <<nobr>>
-	The doctor comes in with the news. You are either shocked or ecstatic (maybe both) depending on whether this was something you were hoping for or not.
+	The doctor comes in with the news. 
+  <<if $PlayerProtectionTry>>
+    You'd wanted to get pregnant, so you ecstatic when you hear that you are.
+  <<else>>
+    You are
+    <<if setup.sexVaginalCount() > 5>>
+      surprised
+    <<else>>
+      shocked
+    <</if>>
+    when you learn of your unplanned pregnancy.
+  <</if>>
 <</nobr>>
-<img src="PartP/PregTest3.jpg" hspace="10" vspace="10" height="650">
+<img src="PartP/PregTest3.jpg" hspace="10" vspace="10" height="550">
 <<nobr>>
-	Regardless of whether this was wanted or not, or what you decide to do now, one thing is certain. This is the body you’ll have from now on. They
-	explained when you got your implant that it’d be permanent if you got pregnant, and here you are. Any side-effects the implant gave you will also
-	be something you’ll have to deal with for the rest of your life as well.
-<</nobr>>
-
-<<nobr>>
-	They go over your options with you in detail, but you already knew what they were.
+  <<if !$PlayerSideEffectPermanent>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    <<if $PlayerProtectionTry>>
+      You'd never wanted to change back anyway, and now you know you'll never have to.
+    <<else>>
+      The doctor informs you that regardless of what you decided to do about the pregnancy, one thing is certain. This is the
+      body you’ll have from now on. They explained when you got your implant that it’d become permanent if you got pregnant,
+      and you have.  They also had said that any side-effects the implant has, or that develop later, will also be something
+      you’ll have to deal with for the rest of your life as well.
+    <</if>>
+    <br><br>
+  <</if>>
+	The doctor goes over your options with you in detail, but you already knew what they were.
 <</nobr>>
 
 <<nobr>>

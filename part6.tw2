@@ -327,6 +327,8 @@
   <<else>>
     <<if !setup.areDating($tempFoundBy)>>
       <<set setup.makeFWB($tempFoundBy)>>
+      <<achievement>>fwb:$tempFoundBy<</achievement>>
+      <<achievement>>fwb:Barry<</achievement>>
     <</if>>
     You smile before [[heading to the bathroom|Part6Start1]] to clean up.
   <</if>>
@@ -3329,6 +3331,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<set setup.addSex({sex: 'male', name:'David', vaginal:true})>>
 	<<set setup.addSex({sex: 'male', name:'David', vaginal:true})>>
 	<<set setup.makeFWB('David')>>
+  <<achievement>>fwb:David<</achievement>>
 
 	<h1><<print "Frat Party">></h1>
 <</nobr>>
