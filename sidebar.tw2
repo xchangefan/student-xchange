@@ -765,16 +765,32 @@ You are a young man trying to decide where to go to college.
   <</if>>
 <</nobr>>
 
+::SideBarDormFriendLevel <1795,0>
+<<nobr>>
+  <<if $DormFriendLevel>>
+    You and her
+    <<if $DormFriendLevel <= -3>>
+      can't stand each other.
+    <<elseif $DormFriendLevel < 0>>
+      don't see eye-to-eye.
+    <<elseif $DormFriendLevel >= 3>>
+      are <<if $SchoolWeek < 4>>becoming<</if>> good friends.
+    <<else>>
+      get along well together.
+    <</if>>
+  <</if>>
+<</nobr>>
+
 ::SideBarMentor <1800,0>
 <br>
 <<nobr>>
   <<if $DropoutCumslut || $DropoutConcubine || $IslandPet || $FatherChastity>>
   <<elseif $Roommate == 'Marissa'>>
-    Your roommate is Marissa.
+    Your roommate is Marissa. <<include [[SideBarDormFriendLevel]]>>
   <<elseif $Roommate == 'Kiera'>>
-    Your roommate is Kiera.
+    Your roommate is Kiera. <<include [[SideBarDormFriendLevel]]>>
   <<elseif $Roommate == 'Natalie'>>
-    Your roommate is Natalie.
+    Your roommate is Natalie. <<include [[SideBarDormFriendLevel]]>>
   <<elseif $Mentor == 'Faith'>>
     Faith is your mentor
     <<if $Roommate == 'Faith'>>
