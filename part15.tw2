@@ -4629,6 +4629,12 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     [[talk to your professor|Part15WomensStudiesTalkChastityChaste]] so she knows it's not as bad as she thinks.  You could also
     stop by the department and [[talk to the department head|Part15WomensStudiesReport]].  Maybe if he knew your professor was
     concerned, he could tell her about the wonderful work they are doing.  Or you could just [[stay out of it|Part15WomensStudiesQuiet]].
+  <<elseif $ComputerChastityOwner>>
+    You don't know about the experiments she is talking about, but you do know about the chastity belts she mentioned.
+    You could arrange to meet with her and tell her about yours, and how there's nothing wrong about it since $dating[0] signed
+    you up for it, and you agreed to it.  But you signed those non-disclosure agreements, so you don't even want to do that.
+    <br><br>
+    You decide it's best to just [[stay out of it|Part15WomensStudiesQuiet]].
   <<elseif $tempEngineeringDeptJob>>
     You know exactly the experiments she's talking about.  You could arrange to meet with her and 
     <<if setup.haveInventory('sex toys', 'beta test collar 2')>>
@@ -4887,6 +4893,10 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <br><br>
     "I'm not sure I'd be talking to you now if I was still in it," you tell her.  "I'd probably be to scared of what they could do
     to me with the belt if they'd found out."
+  <<elseif $ComputerChastityOwner>>
+    You tell her about the chastity belts the department is testing now, and how they plan on marketing them very soon.
+    "My boyfriend is in full control of my belt, which I enjoy.  But most of the other girls they have testing them are
+    being controlled by the department, and it seems much less fun for them."
   <<else>>
     "Now they are testing some sort of computer chastity belt," you tell her.  "I quit rather than let them put one of those on me.
     So all I know is what they said at the meeting."
@@ -4915,11 +4925,14 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <img src="Part11/Chastity1.jpg" hspace="10" vspace="10" height="650" align="left">
   <</if>>
   You tell her about the chastity belts the department is testing now, and how they plan on marketing them very soon.
-  <<if $ComputerChastityOwner>>
+  <<if $ComputerChastityOwner and $JobEngineerLockFormer>>
     "I was doing security testing on it until recently," you tell her.  "So, I've been wearing it for most of the semester."
     You tell her how you were forced to start testing it if you wanted to stay in the Engineering program after you got on
     academic probation, and how you thought you would go insane.  "My boyfriend is in full control now though, which I like
     <i>a lot</i> more."
+  <<elseif $ComputerChastityOwner>>
+    "My boyfriend is in full control of my belt, which I enjoy.  But most of the other girls they have testing them are
+    being controlled by the department, and it seems much less fun for them."
   <<elseif $JobEngineerLockFormer>>
     "I was doing security testing on it until recently," you tell her.  "So, I've been wearing it for most of the semester."
     You tell her how you were forced to start testing it if you wanted to stay in the Engineering program after you got on
@@ -4933,22 +4946,24 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  "The belts have several different modes.  There's a 'monogamous' mode meant to be used by couples.  There's a 'chaste' mode
-  that is intended for those wanting to wait until marriage for sex - they don't have many testers for that one.  The standard
-  mode is the one most are on, and it keeps them horny all the time.  It also makes them want to give blowjobs, lots of blowjobs."
-  You recount some of the crazy reports you've written up on the number of blowjobs some of the users have given in hopes of thier
-  next 'reward' orgasm.
+  "The belts have several different modes.  There's a 'monogamous' mode meant to be used by couples.
+  <<if $ComputerChastityOwner>>That's the one I'm on.<</if>>
+  There's a 'chaste' mode that is intended for those wanting to wait until marriage for sex - they don't have many testers for
+  that one.  The standard mode is the one most are on, and it keeps them horny all the time.  It also makes them want to give
+  blowjobs, lots of blowjobs." You recount some of the crazy reports you've written up on the number of blowjobs some of the
+  users have given in hopes of thier next 'reward' orgasm.
 <</nobr>>
 
 <<nobr>>
-  You also mention that there's a timed 'self-lock' mode that isn't being tested right now, and several other modes you don't know
-  much about.
+  You also mention that there's a timed 'self-lock' mode that you don't think is being tested right now, and several other modes
+  you don't know much about.
 <</nobr>>
 
 <<nobr>>
-  When she asks about women that want to exit the testing program, you let her know that they don't.  You know of a few that requested it,
-  but their belt's "Complaint Detection" systems were activated and they stopped complaining to avoid the punishments from the belt.
-  You then go into a discussion of the various punishments the belt can inflict for whatever it's current mode considers 'bad' behaivor.
+  When she asks about women that want to exit the testing program, you let her know that you don't know of any that have left.
+  You know of a few that requested it, but their belt's "Complaint Detection" systems were activated and they stopped complaining
+  to avoid the punishments from the belt. You then go into a discussion of the various punishments the belt can inflict for whatever
+  it's current mode considers 'bad' behaivor.
 <</nobr>>
 
 <<nobr>>
@@ -5234,6 +5249,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     about any retribution.  But your hopes of being complete free were misplaced though, as $ComputerChastityOwner locks you into a regular,
     non-computer chastity belt instead.
     <<set $Keyholder to $ComputerChastityOwner>>
+    <<set $ComputerChastityOwnerFormer to $ComputerChastityOwner>>
     <<unset $ComputerChastityOwner>>
     <<set setup.addInventory('sex toys', 'chastity belt')>>
     <<set setup.removeInventory('sex toys', 'electronic chastity belt')>>
@@ -5292,7 +5308,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <</if>>
     But you have another, [[more serious problem|Part15WomensStudiesStuck]] to deal with first.
   <<elseif $JobEngineer>>
-    You obviously are out of a job now too. But you should be able to [[find a new one|Part15WomensStudiesJobChange]] fairly quickly. 
+    You obviously are out of a job now too. But you should be able to [[find a new one|Part15WomensStudiesJobChange]] fairly quickly.
   <<else>>
     Thankfully you already have a job, so you can just wait to [[see what happens with the criminals involved|Part15WomensStudiesAlreadyQuit]]
     in this whole mess.
@@ -5318,11 +5334,16 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   <</if>>
   women locked in one his belts discover he had setup some sort of 'dead man's switch' when he locked down the belts.  Once
   he was arrested, and not checking in to wherever he has set it up, the belts all activated.
+  <<if $ComputerChastityOwnerFormer>>
+    <br><br>
+    You are so glad that $ComputerChastityOwnerFormer unlocked you from that belt and locked you into a regular one instead,
+    or you'd be trapped just like all the rest.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
   For most of the girls, the first settings change was hard to notice, since being horny for 16 hours straight wasn't unusual.
-  <<if $oldBetaTestMode == "chaste">>
+  <<if $oldBetaTestMode == "chaste" or $ComputerChastityOwner>>
     Though you noticed something right away.  You couldn't feel the subtle stimulation from your belt that was causing you
     to feel that way.  All you could tell is that you were extremely horny from the time you woke up, and all day long.
     Soon you are used to that feeling of constant need that you feel all the time now.
@@ -5336,8 +5357,8 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <<nobr>>
   Most of the girls found out about the second setting the next day, when the painful punishment shock started.
   He had set all the belts to require ten blowjobs every day to avoid painful shocks the next day,
-  <<if $JobBetaTester or $JobEngineerLock>>
-    <<if $sex.length and $oldBetaTestMode != "monogamous">>
+  <<if $JobBetaTester or $JobEngineerLock or $ComputerChastityOwner>>
+    <<if $sex.length and $oldBetaTestMode != "monogamous" and !$ComputerChastityOwner>>
       including yours.
     <<else>>
       even for you!
@@ -5352,6 +5373,8 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <<unset $CampusMinistry>>
     <<set $CampusMinistryFailBelt to 1>>
     You were no exception.
+  <<elseif $ComputerChastityOwner>>
+    You were no exception.
   <<else>>
     Of course the belt keeping her horny all the time, and teasing her while she sucked a cock both helped to make the
     transition easier.
@@ -5361,7 +5384,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <<nobr>>
   The judge initially orders him to reveal the codes, but his lawyer argues that doing so would be admiting his
   involvement and be a form of self-incrimination and a violation of his rights.  And the judge agreed!
-  <<if $JobBetaTester or $JobEngineerLock>>
+  <<if $JobBetaTester or $JobEngineerLock or $ComputerChastityOwner>>
     You are the one trapped in a belt, but they are worried about <i>his</i> rights?!  You and those other
   <<else>>
     Those
@@ -5370,9 +5393,9 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  <<if $JobBetaTester or $JobEngineerLock>>
+  <<if $JobBetaTester or $JobEngineerLock or $ComputerChastityOwner>>
     <<if $sex.length>>
-      <<if $oldBetaTestMode == "monogamous" and $dating.length>>
+      <<if $oldBetaTestMode == "monogamous" and $dating.length or $ComputerChastityOwner>>
         <<set setup.addSexRepeat(120, {sex:"male", name:$dating[0]})>>
         After a day of the shocks, you are going to make sure you reach your ten blowjobs every day, at least until
         your belt is finally off.  You don't want that to ever happen again.
@@ -5576,7 +5599,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   "I wish there was some way I could thank you for alerting me to this," he adds.
-  <<if $JobBetaTester or $JobEngineerLock or setup.areDating("Eric")>>
+  <<if $JobBetaTester or $JobEngineerLock or setup.areDating("Eric") or $ComputerChastityOwner>>
     <br>
     <div style="float:left;padding:12px;">
       <video src="Part13/Breeder1.webm" autoplay loop muted height="400"></video> 
@@ -5588,7 +5611,12 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     "I've set it for a long build up, so you should have plenty of time to get home or wherever you're going," he informs you.
     <br><br>
     "You were very helpful today, so I set it to keep you on the edge for a while after that, to make your fun last as long as
-    possible.  Then it should do it's best to stretch your orgasm out as long as it can as well."
+    possible.  Then it should do it's best to stretch your orgasm out as long as it can as
+    <<if $ComputerChastityOwner>>
+      well.  And don't worry, I messaged $ComputerChastityOwner, to make sure it was ok."
+    <<else>>
+      well."
+    <</if>>
     <br><br>
     You leave his office and quickly start making your way home.
     <br><br>
@@ -5995,9 +6023,47 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
     As an afterthought he adds, "$dating[0], as we discussed, you'll need you to sign a non-disclosure agreement.  $playerName's
     one from last year still applies, so she won't need sign another one.
   <<elseif $JobTestSubjectOld>>
-    TODO Prev Test Subject
+    You soon realize that your heading to the engineering department, where you used to work.  Has $dating[0] changed his mind
+    about you working there?  You had talked and he... you mean you both had decided that the job brought out your sluttiest
+    impulses.  Of course being forced to orgasm again and again, or desperately begging to be allowed to orgasm, would make
+    anyone horny.
+    <br><br>
+    You soon discover this isn't about your old job, but about one of the projects the department has been working on.
+    Specifically an electronic chastity belt.
+    <br><br>
+    "It's nice to have you back, $playerName," the department head says.  "I was happy to hear you'd be able to help out the
+    program again, but in a different way."  He then takes a moment to describe the computerized chastity belt that $dating[0]
+    has signed you up for.
+    <br><br>
+    "We are hoping to to get it ready to market by the end of the school year.  And we are needing beta testers for that," he
+    glances at a list of names on his tablet before continuing.  "Most of our testers are new to chastity, which is perfect as
+    we are hoping to open up new markets of users with this belt.  But we know a core group of purchases will be existing
+    chastity enthusiasts."
+    <br><br>
+    "And since you, and your owner $dating[0], are clearly enthusiasts, we are thrilled that we are going to have you testing
+    with us.  In addition to the testing payment we will be providing, the belt is free for you and $dating[0] to keep when the
+    testing period is over as well.  So lets go [[get you fitted with a belt|Part15BoyfriendEngineeringChastity3]]!"
+    <br><br>
+    As an afterthought he adds, "$dating[0], as we discussed, you'll both need you to sign a non-disclosure agreement."
   <<else>>
-    TODO Part15BoyfriendEngineeringChastity2 not former engineer or former test subject
+    You are confused when you see the sign for the engineering department, what could $dating[0] have gotten for you there?
+    You soon discover this the 'surprise' $dating[0] has for you is a new belt, and computerized one that the Engineering
+    department has been working on.
+    <br><br>
+    "It's nice to meet you, $playerName," the department head says.  "I was happy to hear from $dating[0] about his interest
+    in helping us with our belt."  He then takes a moment to describe the computerized chastity belt that $dating[0]
+    has signed you up for.
+    <br><br>
+    "We are hoping to to get it ready to market by the end of the school year.  And we are needing beta testers for that," he
+    glances at a list of names on his tablet before continuing.  "Most of our testers are new to chastity, which is perfect as
+    we are hoping to open up new markets of users with this belt.  But we know a core group of purchases will be existing
+    chastity enthusiasts."
+    <br><br>
+    "And since you, and your owner $dating[0], are clearly enthusiasts, we are thrilled that we are going to have you testing
+    with us.  In addition to the testing payment we will be providing, the belt is free for you and $dating[0] to keep when the
+    testing period is over as well.  So lets go [[get you fitted with a belt|Part15BoyfriendEngineeringChastity3]]!"
+    <br><br>
+    As an afterthought he adds, "$dating[0], as we discussed, you'll both need you to sign a non-disclosure agreement."
   <</if>>
 <</nobr>>
 
@@ -6014,7 +6080,13 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 <</nobr>>
 <<nobr>>
   $dating[0] had already sent your measurements over, so it goes very quickly. Once you are out of your old belt and locked
-  into your new one, your old boss goes over the testing parameters.  He's talking to $dating[0], but they don't
+  into your new one,
+  <<if $JobEngineerLockFormer or $JobENgineerOld or $JobBetaTesterFormer>>
+    your old boss
+  <<else>>
+    the department head
+  <</if>>
+  goes over the testing parameters.  He's talking to $dating[0], but they don't
   seem to mind that you listening.
 <</nobr>>
 
@@ -6028,7 +6100,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 <<nobr>>
   "That's a bit more than an hour a day.  I know that sounds like a small amount of time to be intimate with your girlfriend,"
   he tells $dating[0].  But we expect with all the options she has for giving you pleasure with the belt still on, that it will
-  be much more than you actually end up using.  And if not, then that's sort of feedback we'd like to gain during this testing.
+  be much more than you actually end up using.  And if not, then that's the sort of feedback we'd like to gain during this testing.
 <</nobr>>
 
 <<nobr>>
@@ -6062,7 +6134,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 <<nobr>>
   As soon as you are back and alone again, $dating[0] instructs you to suck his cock.  You quickly begin.  You intended to take
   this one slow to maximize his pleasure.  You've only been at it a short time when you start to notice the vibrations coming from
-  your belt.  They are Gentle at first, but slowly pick up in intensity as you continue.
+  your belt.  They are gentle at first, but slowly pick up in intensity as you continue.
 <</nobr>>
 
 <<nobr>>
@@ -6088,7 +6160,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 <</nobr>>
 
 <<nobr>>
-  "It looks like you enjoyed that," $dating[0] says with a smile.  "It will do that sometimes with you suck my cock and only my cock.
+  "It looks like you enjoyed that," $dating[0] says with a smile.  "It will do that sometimes when you suck my cock and only my cock.
   I was going to set it to do that every time for you.  But that tech guy said it's better that it be more random so you never
   know which blowjob will do it for you.  He said it'd be more exciting for you that way."
 <</nobr>>
@@ -6100,7 +6172,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 <</nobr>>
 
 <<nobr>>
-  But it probably won't be right away.  The two of you still have [[boxed to unpack|Part15MovingIn]] and he wants to start
+  But it probably won't be right away.  The two of you still have [[boxes to unpack|Part15MovingIn]] and he wants to start
   on that.
 <</nobr>>
 
