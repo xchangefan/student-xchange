@@ -884,15 +884,15 @@
     I was there.  But if it were you, and you were just there for the free beer, who knows.  They don't make the best decisions when they are drunk and
     horny."
   <<else>>
-    "I've certainly heard about it happenining to other girls, include at least one from the group that changed last year with me.  The point is though,
+    "I've certainly heard about it happenining to other girls, including at least one from the group that changed last year with me.  The point is though,
     you never know if it's going to happen to you or not.  So you have to plan as if it might," you explain.
   <</if>>
 <</nobr>>
 
 <<nobr>>
   She seems open to talking about the pill now, but you have a completely different suggestion for her.  "There is a way to prevent any of that though.
-  You'll know that no matter how drunk get you won't wake up pregnant, and if someone grabs you, they may be able to rob you, but they certainly won't
-  rape you.  "And you won't have to worry about taking the pill and getting migraines either."
+  You'll know that no matter how drunk you get you won't wake up pregnant, and if someone grabs you, they may be able to rob you, but they certainly
+  won't rape you.  "And you won't have to worry about taking the pill and getting migraines either."
 <</nobr>>
 
 <<nobr>>
@@ -928,7 +928,12 @@
     "In fact, I used to wear one myself," you say.  "I just haven't gotten a new one yet since my last one broke."
   <<else>>
     "I know for a fact that Olivia, one of the mentors last year, wears one sometimes," you say.
-    <<if setup.areDating('Veronica') or setup.areDating('Kate')>>
+    <<if $PlayerChastityBelt>>
+      "And I'm wearing one right now."
+    <<elseif $PlayerChastityPiercing>>
+      "And I'm wearing something similar right now.  It's a little more discreet than a belt, but uses piercings.  I'm thinking
+      a belt is better for you."
+    <<elseif setup.areDating('Veronica') or setup.areDating('Kate')>>
       "And I've been dropping hints for my girlfriend to get one for me for our anniversary."
     <<elseif $dating.length>>
       "And I've been dropping hints for my boyfriend to get one for me for our anniversary."
@@ -942,7 +947,7 @@
   "Oh," Bailey says.  "I guess maybe I should get one then."  You try not to smile as you relize you've convinced her.  You quickly head out with her
   to buy one before she has any second thoughts.  She's using her dad's credit card and isn't concerned about the price.  She's just impressed with the
   selection.  "Wow, it's great that they have them here in stock.  I guess they are really popular."  You realize she's right, they must be popular for them
-  to keep an inventory.  You wonder if that's everywhere, or just near the university.
+  to keep an inventory, with multiple different models.  You wonder if that's everywhere these days, or just near the university.
 <</nobr>>
 
 <<nobr>>
@@ -2374,7 +2379,7 @@
 <<nobr>>
   You continue talking with him, suggesting that he keep her locked in her belt except when he unlocks her for fun together.
   You give him some suggestions on how to use the hope of an orgasm, or the threat of withholding one to help train her.
-  <<if $PlayerChastityBelt or setup.haveInventory("sex toys", "chastity belt")>>
+  <<if $PlayerChastityBelt or setup.haveInventory("sex toys", "chastity belt") or $PlayerChastityPiercing or setup.haveInventory("piercings", "chastity piercing")>>
     You have plenty of first-hand experience with how effective it can be.
   <<elseif $PlayerItemNerdKey>>
     You've seen first-hand how effective it can be with Peter.
@@ -2669,8 +2674,8 @@
     <br>
     <img src="Part15/Buddy44.gif" hspace="10" vspace="10" height="500">
     <br>
-    "I want him inside me so bad right then, but he says that just makes my blowjob even better.  I do know I love the feel of his
-    cock as he starts to cum even more than ever right then, and the taste of it too."
+    "I want him inside me so bad right then, but he says that just makes my blowjob even better.  I do know I love the feeling of his
+    cock as he starts to cum even more than normal, and the taste of it too."
   <</if>>
 <</nobr>>
 

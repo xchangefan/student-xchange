@@ -3,6 +3,8 @@
   <<unset $tempShowedBetaTester>>
   <<if $BrokenLeg>>
     <<include [[Part15JobBrokenLeg]]>>
+  <<elseif true>>
+    <<include [[Part15NoJob]]>>
   <<elseif $JobEngineerLock>>
     <<include [[Part15JobEngineerLock]]>>
   <<elseif $JobEngineer>>
@@ -33,8 +35,6 @@
     <<include [[Part15JobStripper]]>>
   <<elseif $JobBetaTester>>
     <<include [[Part15JobBetaTester]]>>
-  <<elseif $dating.length>>
-    <<include [[Part15RelationshipInclude]]>>
   <<else>>
     <<include [[Part15NoJob]]>>
   <</if>>
@@ -66,7 +66,11 @@
 
 <<nobr>>
   <<if $dating.length>>
-    <<include [[Part15RelationshipInclude]]>>
+    Thankfully
+    <<link $dating[0]>>
+      <<goto [[Part15Relationship]]>>
+    <</link>>
+    helps you a lot with your daily tasks, otherwise it would be much harder.
   <<else>>
     <<include [[Part15BackToMain]]>>
   <</if>>
@@ -103,16 +107,35 @@
   <<if $AcademicProbationDenialFormer>>
     You definitely don't want to end up back on academic probation.
   <<elseif $AcademicProbationDenial>>
-    <<set $AcademicProbationEndWeek -= 1>>
-    You even use a bit of time to work on the work your tutor has given you, so hopefully you'll be off probation
-    sooner.
+    <<if $AcademicProbationTutor == "alone">>
+      <<set $tempProbationProgress to either(-1, 0, 1, 1)>>
+      <<set $AcademicProbationEndWeek -= $tempProbationProgress>>
+      <<if $tempProbationProgress < 0>>
+        You don't to a very good job this week though.  Instead of making progress on your work from last year, as you'd hoped.  You
+        end up falling a bit behind on your work from this semester too.
+      <<elseif $tempProbationProgress>>
+        You've also made some progress on catching up on your work from last year though.
+      <<else>>
+        You've been too busy this week to make much progress on catching up on your work from last year though.
+      <</if>>
+    <<else>>
+      <<set $AcademicProbationEndWeek -= 1>>
+      You even use a bit of time to work on the work your tutor has given you, so hopefully you'll be off probation
+      sooner.
+    <</if>>
   <<else>>
     You've heard what can happen if you are on academic probation, and you don't want that happening to you.
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<if $dating.length>>
+    Of course, you also spend as much of your free time
+    <<link "with $dating[0]">><<goto [[Part15Relationship]]>><</link>>
+    as you can.
+  <<else>>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
 <</nobr>>
 
 ::Part15AfterMainJob
@@ -1728,8 +1751,8 @@
     <<include [[Part15JobBartender2Dating]]>>
   <<elseif $SchoolWeek == 7>>
     <<include [[Part15JobBartender2]]>>
-  <<elseif $SchoolWeek == 11 and false and $dating.length>>
-    <<include [[Part15RelationshipInclude]]>>
+  <<elseif $SchoolWeek == 11 and $dating.length and !setup.areDating("Kate")>>
+    <<include [[Part15JobBartender3Clean]]>>
   <<elseif $SchoolWeek == 11>>
     <<include [[Part15JobBartender3]]>>
   <<else>>
@@ -1896,6 +1919,48 @@
 
 <<include [[Part15BackToMain]]>>
 
+::Part15JobBartender3Clean
+<<nobr>>
+  <h1>Telling the girls apart (imagining)</h1>
+  <video src="Part15/Bar8.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  Lots of couples come into the bar.  Some of the regulars are annoyed by them, but you aren't.  For one, the guys usually
+  tip well, probably to look good in front of their girlfriend.  But also because you know many of the girls will be back later
+  without him.
+<</nobr>>
+
+<<nobr>>
+  Of course some of the girls are just here out of curiosity, either their own or their boyfriend's.  But some are here feeling
+  something deeper.  There are three different types of girls that come in as part of a couple, and you can usually figure out
+  which a woman pretty quickly.
+<</nobr>>
+
+<<nobr>>
+  First, there's the ones just here for fun and curiosity, and they'll stay for a while and then leave with their boyfriend.
+  Maybe the boyfriend will be especially turned on and they'll have wild sex tonight.  But you probably will never know, since
+  they usually don't come back right away, if at all.
+<</nobr>>
+
+<<nobr>>
+  Next, there are the closeted lesbians.  They'd had feelings but either suppressed them, or knew about them and kept them quiet.
+  Sometimes the guy they are here with is just a friend, here to help them make the first step into the life the want to live.
+  Sometimes the guy is a boyfriend, someone she's been trying to pretend she has feelings for because that was what was expected.
+  If so, he's probably in for some disappointment, as once his girlfiend discoveres who she really is, their relationship is doomed.
+<</nobr>>
+
+<<nobr>>
+  And finally, there are the ones somewhere in the middle.  Maybe they already know they are bi, maybe they'll discover that about
+  themselves tonight.  Either way, you are sure to let one of your regulars that likes to have fun with couples know.  All three
+  of them are sure to have a fun night.  The guy will get the threesome he's been fantasizing about.  And the girl will discover,
+  or be reminded, that she's never happier than when her head is between a beautiful womans legs, while her boyfriend's cock fills
+  her.  Of course your regular will have another wonderful night too, and be sure to thank you next time she sees you.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
 ::Part15JobBartender3
 <<nobr>>
   <h1>Fun with a couple</h1>
@@ -1929,6 +1994,12 @@
 
 <<nobr>>
   You know everyone will be leaving that evening with a smile on their face.
+  <<if setup.areDating('Kate')>>
+    <br><br>
+    Kate doesn't mind the fun you have when she is away.  Especially since, more often than not, they'll eventually be another
+    threesome.  That one will be just you, Kate, and the girl from the couple.  Her boyfriend will either be dumped by then, or
+    perhaps just home jerking off to the thought of what his girlfriend is doing at that moment.
+  <</if>>
 <</nobr>>
 
 <<include [[Part15BackToMain]]>>
@@ -3814,7 +3885,7 @@ TODO [[SugarDaddy]]
     [[you tell him 'No, thanks'|Part15JobStripper6HoursCut]], he adds even more to the offer.
     Maybe taking his offer wouldn't be so bad.
     <<if setup.areDating('Veronica')>>
-      Veroncia will understand, right?  Then it occurs to you, he'd probably be excited and willing to pay even more to take
+      Veronica will understand, right?  Then it occurs to you, he'd probably be excited and willing to pay even more to take
       both you and Veronica back to his room.
     <<elseif $dating.length>>
       $dating[0] will understand, right?
@@ -4364,7 +4435,7 @@ TODO [[SugarDaddy]]
     <<if setup.haveInventory('piercings', 'nipples')>>
       and nipple piercings
     <</if>>
-    come to life.  You try to be discrete, but you can't help it that your hands start to wander.
+    come to life.  You try to be discreet, but you can't help it that your hands start to wander.
     You need an orgasm so bad and can't help but enjoy the feelings building in you.
     <br><br>
     You probably should have gotten up right away, and escpaed to the hallway or the restroom for the orgasm you

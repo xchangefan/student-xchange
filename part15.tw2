@@ -808,7 +808,7 @@
       <<goto [[Part15SideJobEliminateAfter]]>>
     <</link>>.
   <<else>>
-    <<if $JobStripper or true>>
+    <<if $JobStripper>>
       <<set $tempSideJob to "stripper">>
       <img src="Part15/Strip1.jpg" hspace="10" vspace="10" height="500" align="left">
       Your job as a stripper will still mostly be on the weekends, but it provides enough money that you don't really need another job.  You
@@ -2335,7 +2335,7 @@
 <</nobr>>
 
 <<nobr>>
-  When you get there you meeting with the department head.  "We are meetng with all of the test subjects from your cohort, but given your special
+  When you get there you meet with the department head.  "We are meetng with all of the test subjects from your cohort, but given your special
   circumstances, I thought it best to meet with you individually," he starts.  "You won't be participating in the same sort of testing you were
   last year.  A new batch of incomming freshmen will be starting in your place."  You wonder if he is firing all of you then?  But then he continues,
   "But we have another opportunity for you all.  And in your case the offer also includes having the dean lift your orgasm block."
@@ -2441,7 +2441,7 @@
 
 <<nobr>>
   <<if $tempChooseBelt>>
-    After you discretely ask about the chastity belt you are already wearing he tells you, "We are especially interested in hearing from
+    After you discreetly ask about the chastity belt you are already wearing he tells you, "We are especially interested in hearing from
     a chastity enthusiast such as yourself.  I still have a copy of your key, and have discussed it with
     <<if $Keyholder>>$Keyholder<<else>>your keyholder<</if>>.  If you wish to participate, we'll remove that belt and immediately fit you with
     ours.  My promise of an orgasm today still applies.  And if you don't want to participate, I'll have my copy of your key sent back to
@@ -2849,7 +2849,7 @@
 <</nobr>>
 
 <<nobr>>
-  The department head said he could write you a discrete reference describing your job as a 'lab assistant' if you were interested in one of the
+  The department head said he could write you a discreet reference describing your job as a 'lab assistant' if you were interested in one of the
   available jobs [[at the library|Part15TestSubjectJobChangeLibrary]], or in applying to [[the coffee shop on campus|Part15TestSubjectJobChangeBarista]].
   <<if $PlayerPregnant or $PregnancyWeek>>
     He says that
@@ -3094,6 +3094,8 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <<nobr>>
   <<if $AcademicProbation and $AcademicProbationEndWeek and $AcademicProbationEndWeek <= $SchoolWeek>>
     <<include [[Part15OffProbation]]>>
+  <<elseif $AcademicProbation and $SchoolWeek > 12>>
+    <<include [[OffProbation]]>>
   <<elseif $PregnancyWeek >= 40 or ($PregnancyWeek == 39 and Math.random() < 0.2) or ($PregnancyWeek == 38 and Math.random() < 0.1) or ($PregnancyWeek == 37 and Math.random() < 0.1)>>
     <<include [[Part15Delivery]]>>
   <<elseif $PregnancyWeek == 30>>
@@ -3236,7 +3238,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 ::Part15WeekStandard
 <<nobr>>
-  <<if $AcademicProbation>>
+  <<if $AcademicProbation and $AcademicProbationTutor != "alone">>
     <<if $SchoolWeek == 2>>
       <<include [[Part15Probation1]]>>
     <<elseif $AcademicProbationTutor == "math">>
@@ -4161,8 +4163,17 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <br><br>
     The other TA wants to to [[clean his apartment|Part15ProbationMaid]] for him every week, and he'll give you your lessons there.  Being alone in his
     apartment with just him, you wonder if he has something more in mind than just housework.
+    <br><br>
+    It'll probably take you all semester, but you could also just try to [[get caught up yourself|Part15ProbationAlone]], without
+    some possibly creepy guy's help.
   <</if>>
 <</nobr>>
+
+::Part15ProbationAlone
+TODO Part15ProbationAlone
+<<set $AcademicProbationTutor to "alone">>
+
+[[Part15ClassesStart]]
 
 ::Part15ProbationMath
 <<nobr>>
@@ -4676,6 +4687,11 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <br><br>
     You decide to stop by the department and [[tell your friends that you've heard rumors|Part15WomenStudiesAskAbout]] about girls
     having a lot of fun there.
+  <<elseif $AcademicProbationDenial>>
+    You don't know about the experiments she is talking about, but you can't help thinking about them.
+    Despite how bad she says they are, the thought of being tied and forced to orgasm sounds amazing.
+    If it weren't for your denial from being on probation, you'd go by the department and beg to be a part of it.
+    Instead, you'll just [[stay out of it|Part15WomensStudiesQuiet]] and wait to see what she finds out.
   <<else>>
     You don't know about the experiments she is talking about, but you can't help thinking about them.
     Despite how bad she says they are, the thought of being tied and forced to orgasm sounds
@@ -6175,25 +6191,6 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
   But it probably won't be right away.  The two of you still have [[boxes to unpack|Part15MovingIn]] and he wants to start
   on that.
 <</nobr>>
-
-::Part15LivingKate
-TODO Living with Kate [[Part15Week]]
-
-::Part15LivingVeronica
-TODO Living with Veronica [[Part15Sorority]]
-
-::Part15LivingAaron
-<<nobr>>
-  <h1>Studying before class</h1>
-  <video src="Part15/Aaron1.mp4" autoplay loop muted height="550"></video>
-<</nobr>>
-TODO Living with Aaron [[Part15LivingAaron2]]
-
-::Part15LivingAaron2
-TODO Living with Aaron [[Part15Week]]
-
-::Part15LivingAndrew
-TODO Living with Andrew [[Part15Week]]
 
 ::Part15MovingIn
 <<nobr>>
@@ -8301,7 +8298,7 @@ TODO Upset after being raped [[Part15Dorm]]
 
 <<nobr>>
   After the bliss of your orgasm and fantasy wear off, you clean up the mess you've made and put your toys away.
-  You'll probably need to be more discrete soon, once you [[have a roommate|Part15Dorm]] assigned for the new year.
+  You'll probably need to be more discreet soon, once you [[have a roommate|Part15Dorm]] assigned for the new year.
 <</nobr>>
 
 ::Part15Dorm
@@ -8999,7 +8996,7 @@ TODO Upset after being raped [[Part15Dorm]]
 <</nobr>>
 <img src="Part15/Shop2.png" hspace="10" vspace="10" height="450">
 <<nobr>>
-  After looking through the many different styles and types of vibrators, you find one that seems perfect.  Discrete, but with enough power
+  After looking through the many different styles and types of vibrators, you find one that seems perfect.  discreet, but with enough power
   to... well, do what it's supposed to do.  You'll get some extra batteries too when you check out.
 <</nobr>>
 
@@ -9720,10 +9717,6 @@ TODO Lesbian [[Part15Week]]
   <<link [[shouldn't happen again|Part15Week]]>><<set $KieraSock to 1>><</link>>
 <</nobr>>
 
-::Part15DormSluttyWarnAngry
-<<set $DormFriendLevel -= 1>>
-TODO Mad about it, using a sock instead now [[Part15Week]]
-
 ::Part15DormSluttyWarnShop
 <<nobr>>
   <h1>A Gift from Kiera</h1>
@@ -10265,7 +10258,7 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
 
 <<nobr>>
   As the two of you talk, 
-  <<if false and $CampusMinistry>>
+  <<if $CampusMinistry>>
     you let her know that you've been trying to avoid the parties and wild things going at the university.
     You tell her you try to spend as much time with your church group as you can to keep your focused on school
     and not... other things. But you tell her it's sometimes difficult
@@ -10294,7 +10287,7 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
 <</nobr>>
 
 <<nobr>>
-  <<if false and $CampusMinistry>>
+  <<if $CampusMinistry>>
     "Good, I was worried they might match me with some party girl who would make it hard to study in here.
     But please don't try to convert me or anything.  I had enough of people pushing their religion on me
     back home, and I'm glad to be free of it.  But if it works for you, that's great."
@@ -10317,7 +10310,7 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
     She pauses then adds, "Oh, and
   <</if>>
   I know what you mean
-  <<if false and $CampusMinistry>>
+  <<if $CampusMinistry>>
     about the distractions.
   <<else>>
     [[about the distractions|Part15DormNerdy2]].
@@ -10325,7 +10318,7 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
   It seems like every guy here is trying to get in your
   pants, both the students and some of the professors too.  I'd even heard a lot of the jobs here are bad about that sort
   of thing too, thankfully I haven't needed one, so I haven't had to worry about that problem.  But I've heard stories."
-  <<if false and $CampusMinistry>>
+  <<if $CampusMinistry>>
     <br><br>
     [[Continue|Part15Week]]
   <</if>>

@@ -1,0 +1,150 @@
+::OffProbation
+<<nobr>>
+  <h1>Meeting with the dean again</h1>
+  <<if $PregnancyWeek > 20>>
+    <img src="Part13/Dean3.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<else>>
+    <img src="Part14/Andrew4.png" hspace="10" vspace="10" height="650" align="left">
+  <</if>>
+  You'd thought you still had a long way to go before you'd be off probabtion, so you were thrilled when you received a notice
+  from the X-Change office about the removal of your denial effect that the dean's office had scheduled for you.  You received the
+  email about the appointment with the dean a bit later.
+<</nobr>>
+
+<<nobr>>
+  You are less excited about the meeting with the dean, but since the X-Change people said his final approval is needed before they'll
+  actually deactivate the effect for you, you don't plan on being late for that meeting either.
+<</nobr>>
+
+<<nobr>>
+  You look through your wardobe to find something nice to wear.  You plan on having some fun as soon as you leave the X-Change office
+  and can orgasm again. When you actually get your meeting with the dean, it quickly moves in a different direction than you were expecting.
+<</nobr>>
+
+<<nobr>>
+  "$playerName, I had hoped we wouldn't need to have this meeting," the dean tells you.  "Like I'd mentioned when we met last year,
+  we recognize that students sometimes struggle their first semester.  That's why we have academic probation, to give students a second
+  chance." 
+<</nobr>>
+
+<<nobr>>
+  "Out of consideration for your participation in the X-Change trial, we even gave you a third chance when you continued to struggle
+  second semester," he continues.  "However, to let you continue any longer wouldn't be fair to you, your professors, to some
+  student who could better utilize a place at our university."
+<</nobr>>
+
+<<nobr>>
+  "But... but... I've been 
+  <<if $AcademicProbationTutor == "alone">>
+  <<elseif $AcademicProbationTutor>>
+    working really hard with my tutors and 
+  <<else>>
+    seeing a tutor and
+  <</if>>
+  trying to get caught back up," you try to explain.
+<</nobr>>
+
+<<nobr>>
+  "I'm not saying you haven't tried to improve, $playerName," he says. "But perhaps this university is just too challenging for you.  Or
+  maybe your... other interests... have been too much of a distraction.  Whatever the reason, you haven't made the required progress
+  in your classes from last year, and two of your professors say there's little to no chance of you passing their courses this semester.
+<</nobr>>
+
+<<nobr>>
+  "For the three classes you are doing adequately in, your professors said they'd waive the final for you and give you a 'Pass' grade
+  for the term.  Your professors from the courses you failed last year have also agreed to retroactively change your grades to 'Pass'
+  at well.  That will give you a few additional credits if you decide to transfer to a community college.  The professors for the two
+  classes you are going to fail have agreed to let withdrawl late an not receive a grade, so there won't be any additional "F" grades
+  on your transcript.
+<</nobr>>
+
+<<nobr>>
+  "That is contingent on you [[signing this form|OffProbationContract]], which states that you are withdrawing from the university
+  voluntarily, and that your academic troubles are in no way related to your participating in the X-Change trial."  He then hands you a
+  document that says essentially that.  "Of course, withdrawing from the university is also a prerequisite for removing the academic
+  probation denial on your implant."
+<</nobr>>
+
+::OffProbationContract
+<<nobr>>
+  <h1>Voluntary Withdrawl Agreement</h1>
+  <img src="PartX/Flunk1.png" hspace="10" vspace="10" height="500" align="left">
+  TODO Clear school variables<br>
+  You look over the agreement he's given you to sign, and it essentially says what the dean said it did, though it acts like it is all
+  your idea.  It states that you are withdrawing from the university of your own free will, and that your participation in the X-Change
+  trial is unrelated to your withdrawal.  It mentions the "Pass" grades you will be receiving and that the university will be
+  waiving the drop deadline for the other two classes.
+<</nobr>>
+
+<<nobr>>
+  <<if $Major == "Criminal Justice">>
+    <<set $DropoutContactNegotiate to 1>>
+    You know enough about the law, from the classes you have been doing well in, to know that there's room to negotiate here.
+    Clearly they are wanting to protect the X-Change trial.  If girls in the program start blaming the academic problems on the
+    X-Change trial, then it could look bad on the implant.  But if you decide to leave on your own, then it's not a problem for them.
+  <<elseif $Major == "Business">>
+    <<set $DropoutContactNegotiate to 1>>
+    You know enough about contracts from the classes you have been doing well in, to know that you probably shouldn't take
+    the first offer.  This is a negotiation.  They clearly want to keep the X-Change trial from looking bad.  So it's just a matter
+    of figuring out how far they are willing to go to protect their study statistics from whatever you flunking out would do to them.
+  <<elseif $JamesBribe>>
+    <<set $DropoutContactNegotiate to 1>>
+    You know dealing with lawyers and contracts from the business with James and the pregnancy.  The university is  clearly willing
+    to offer you more than normal to withdrawal and protect the X-Change trial from looking bad.  Now it's just a matter of seeing
+    how much you can get out of that.
+  <<elseif $BrokenLeg or $FormerBrokenLeg>>
+    <<set $DropoutContactNegotiate to 1>>
+    You know dealing with lawyers and contracts from dealing with the insurance companies over your leg.  The university is clearly
+    willing to offer you more than normal to withdrawal and protect the X-Change trial from looking bad.  Now it's just a matter of
+    seeing how much you can get out of that.
+  <<else>>
+    It seems generous that they are letting you get grades for the classes you are doing well in, and not making you have Fs for
+    the ones you failed, or are about to fail.  You wonder why they are being so nice, but you aren't going to complain - especially
+    since it means you could be orgasming an hour from now.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $DropoutContactNegotiate>>
+    "The academic portion of the agreement sounds adequate," you say trying to sound professional.  "However, I don't see anything
+    about financial compensation."  You then mention the money you've paid for books and other school expenses not covered by your
+    scholarship.  You mention how you'll likely have moving expenses, and other unexpected living expenses when you leave the
+    university.
+    <br><br>
+    Of course, the dean doesn't know or care if those are really what you are needing money for.  He knows you understand their
+    position and are trying make the best of it.  And he clearly was expecting it as he pulls out an envelope with cash.  "This
+    should help you with the transition period," he tells you.  "We don't need to add it to the written agreement, but it's yours
+    if you sign."
+    <br><br>
+    You glance at the money, and at the dean.  You doubt you can get much more from him, so you go ahead and sign the agreement.
+    As soon as you do he pushes the envelope of cash over to you.  You quickly pick it up and put it away.
+  <<else>>
+    You go ahead and sign the contract and hand it over to the dean.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Thank you, $playerName.  It's unfortunate that things didn't work out better for you here.  I'll send a message over to
+  the X-Change office giving them final approval to turn off that setting on your implant," the dean tells you.
+  You quickly [[head over to the X-Change office|OffProbationXChange]] so they can do just that.
+<</nobr>>
+
+<<achievement>>dropout<</achievement>>
+
+::OffProbationXChange
+TODO Discover pregnant if didn't already know
+
+<<if !$PlayerSideEffectPermanent>>
+  TODO Something about not being able to change back until the four years are up
+<</if>>
+
+<<if $FatherDisown>>
+  TODO Disowned by father [[FlunkOut]]
+<<else>>
+  TODO Move back home [[MovingBackHome]]
+  TODO Do we want to divert back to the chastity wife ending from the summer if move back home?  What if pregnant?
+<</if>>
+
+::FlunkOut
+TODO Flunk out of school ending
+
