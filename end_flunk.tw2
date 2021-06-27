@@ -52,10 +52,10 @@
 
 <<nobr>>
   "For the three classes you are doing adequately in, your professors said they'd waive the final for you and give you a 'Pass' grade
-  for the term.  Your professors from the courses you failed last year have also agreed to retroactively change your grades to 'Pass'
-  at well.  That will give you a few additional credits if you decide to transfer to a community college.  The professors for the two
-  classes you are going to fail have agreed to let withdrawl late an not receive a grade, so there won't be any additional "F" grades
-  on your transcript.
+  for the term.  Your professors from the courses you failed last year have also generously agreed to retroactively change your grades
+  to 'Pass' as well, based on what progress you have made.  That will give you a few additional credits if you decide to transfer to a
+  community college.  The professors for the two classes you are going to fail have agreed to let withdrawl late an not receive a grade,
+  so there won't be any "F" grades on your transcript.
 <</nobr>>
 
 <<nobr>>
@@ -69,7 +69,9 @@
 <<nobr>>
   <h1>Voluntary Withdrawl Agreement</h1>
   <img src="PartX/Flunk1.png" hspace="10" vspace="10" height="500" align="left">
-  TODO Clear school variables<br>
+  <<unset $SchoolWeek>>
+  <<unset $student>>
+  <<set $Dropout to "Flunk">>
   You look over the agreement he's given you to sign, and it essentially says what the dean said it did, though it acts like it is all
   your idea.  It states that you are withdrawing from the university of your own free will, and that your participation in the X-Change
   trial is unrelated to your withdrawal.  It mentions the "Pass" grades you will be receiving and that the university will be
@@ -129,15 +131,141 @@
   You quickly [[head over to the X-Change office|OffProbationXChange]] so they can do just that.
 <</nobr>>
 
+<<nobr>>
+  <<if $JobEngineer or $JobBetaTester>>
+    Obviously your job with the engineer department is over as well.
+    <<unset $PlayerChastityBelt>>
+    <<set $JobEngineerOld to $JobEngineer>>
+    <<unset $JobEngineer>>
+    <<set $JobBetaTesterFormer to $JobBetaTester>>
+    <<unset $JobBetaTester>>
+  <<elseif $JobAthlete>>
+    Obviously your position on the athletic team is a thing of the past as well.
+    <<set $JobAthleteFormer to 1>>
+    <<unset $JobAthlete>>
+  <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
+    Obviously your position on the cheerleading squad is a thing of the past as well.
+    <<set $JobCheerleaderFormer to $JobCheerleader>>
+    <<unset $JobAthlete>>
+    <<set $JobCheerleaderFundraiserFormer to $JobCheerleaderFundraiser>>
+    <<unset $JobCheerleaderFundraiser>>
+  <<elseif $JobFitnessYoga or $JobFitnessMassage>>
+    Obviously your job in the fitness center is over as well.
+    <<set $JobFitnessYogaOld to $JobFitnessYoga>>
+    <<unset $JobFitnessYoga>>
+    <<set $JobFitnessMassageOld to $JobFitnessMassage>>
+    <<unset $JobFitnessMassage>>
+  <<elseif $JobLibrary>>
+    Obviously your job in the library is over as well.
+    <<set $JobLibraryOld to 1>>
+    <<unset $JobLibrary>>
+  <</if>>
+<</nobr>>
+
 <<achievement>>dropout<</achievement>>
 
 ::OffProbationXChange
-TODO Discover pregnant if didn't already know
+<<nobr>>
+  <h1>Visiting the X-Change office</h1>
+  <<unset $AcademicProbationTutorSex>>
+  <<unset $AcademicProbationDenial>>
+  <<set $AcademicProbationDenialFormer to 1>>
+  <<unset $AcademicProbation>>
+  You head over to the X-Change office as soon as you leave the dean's office.  Now that you aren't a student here anymore, you aren't on
+  academic hold any longer and they'll take the denial setting off of your belt.  You are already fantasizing about what you'll
+  do when you leave their office.
+<</nobr>>
 
-<<if !$PlayerSideEffectPermanent>>
-  TODO Something about not being able to change back until the four years are up
-<</if>>
+<<nobr>>
+  You were hoping the technician would repeat the 'test' he performed when he'd disabled your ability to cum, but he says it's not
+  necessary.  "I'm sure you'll verify soon enough," he smiles and adds, "and will let us know if there's an issue.
+<</nobr>>
 
+<<nobr>>
+  He checks a few things more on your settings and tells you
+  <<if !$PlayerSideEffectMasturbationBlock>>
+    "It looks like your repeated orgasm attempts while you were on the denial setting seemed to have triggered a side effect."  You
+    start to try to deny doing that, but then give up and keep listening.  "Oh, that's good, he says relieved.  It looks like you'll
+    just be unable to get off from masturbation.  It's more fun with someone else anyway, right?"
+    <<set $PlayerSideEffectMasturbationBlock to 1>>
+    <<if !$PlayerPregnant and $PregnancyWeek>>
+      Oh, and it looks like there is another side effect from the fun you've been having.  Though this one isn't as surprising."
+      He pauses for a second and then explains, "You're [[pregnant|OffProbationXChangePregnant]]."
+      <br>
+      <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
+    <</if>>
+  <<elseif !$PlayerPregnant and $PregnancyWeek>>
+    "Oh, I guess you've been having a fun even with your denial effect."  After pausing for a second he says,
+    "You're [[pregnant|OffProbationXChangePregnant]]." 
+      <br>
+      <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
+  <<else>>
+    "It looks like everything is in order."  
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "If you are moving, we can provide a list of testing facilities near wherever your new home is," he offers.  "Be sure to continue to
+  come in for your scheduled visits.  Since the scholarship is no longer a consideration, we'll be proving you with a small stipend for
+  the remainder of your four year
+  <<if !$PregnancyWeek and !$PlayerSideEffectPermanent>>
+    committment.  In the unlikely event you wish to change back at the end of that, we will assist with that at no charge."
+  <<else>>
+    committment."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerPregnant and $PregnancyWeek>>
+  <<elseif setup.haveGirlfriend()>>
+    <video src="Part15/Probation23.webm" autoplay loop muted height="400"></video><br>
+    You are barely out of the X-Change office and you are already calling $dating[0] and telling her your denial setting has been
+    removed and begging her to fuck you.  She's eager to meet up with you, knowing how desperate you are after months of being denied
+    an orgasm.
+    <br><br>
+    You start to go down on her, but she pushes your head back.  "This time is all about you," she tells you.  She then lies on
+    her back and invites you to straddle her face.
+    <br><br>
+    The moment you orgasm, you cover her face with your juices as you scream with months of pent up need.
+    <br><br>
+    You've only had a moment to recover when she pushes you back onto your back.  She kisses you, and then begins moving her
+    way down your body, until her tongue finds your clit again.
+    <br><br>
+    You don't know how many orgasms you have before she stops.  You can barely stand by then and don't think you could have
+    taken another one.  It's only then that the two of you stop to [[discuss your situation|FlunkOut]].
+  <<else>>
+    <<if $PlayerPregnant and $PregnancyWeek > 20>>
+      <img src="Part12/Pregnant2.jpg" hspace="10" vspace="10" height="450" align="left"/>
+    <<else>>
+      <video src="Part15/Probation24.mp4" autoplay loop muted height="400"></video>
+    <</if>>
+    <br>
+    You are barely out of the X-Change office and you are already
+    <<if $dating.length>>
+      <<set setup.addSexRepeat(10, {sex:"male", name:$dating[0], vaginal:true})>>
+      calling $dating[0] and telling him your denial setting has been removed and begging him to fuck you.  He's eager to meet up with
+      you, knowing how desperate you are after months of being denied an orgasm.
+      <br><br>
+      He starts to eat you out, but you want his cock too bad to wait.  "Just fuck me!" you demand.  You don't have to ask twice.
+      <br><br>
+      The moment his cum fills you, your orgasm finally washes over you.  It feels even better than you remember it.
+      <br><br>
+      Of course you aren't going to stop at just one.  You go again as soon as he is ready.  It's only after he can't go on any more
+      that you stop to [[discuss your situation|FlunkOut]].
+    <<else>>
+      <<set setup.addSexRepeat(10, {sex:"male", vaginal:true, noCondom:true, noPullout:true})>>
+      looking for a guy to fuck you.  It doesn't take you long to find one.  The moment his cum fills you, your orgasm
+      finally washes over you.  It feels even better than you remember it.
+      <br><br>
+      Of course you aren't going to stop at just one.  You go again as soon as he is ready.  And after you send him on his way,
+      you quickly find another guy to satisfy your months of need.
+      <br><br>
+      It's only after the last one has gone that you stop to [[assess your situation|FlunkOut]].
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::TODOTemp
 <<if $FatherDisown>>
   TODO Disowned by father [[FlunkOut]]
 <<else>>
@@ -145,6 +273,37 @@ TODO Discover pregnant if didn't already know
   TODO Do we want to divert back to the chastity wife ending from the summer if move back home?  What if pregnant?
 <</if>>
 
+<<nobr>>
+  todo later job changes:
+  <<if $JobBarista>>
+    TODO
+  <<elseif $JobBikiniBarista>>
+    TODO
+  <<elseif $JobOffice or $JobOfficeManager or $JobOfficeIntern>>
+    TODO
+  <<elseif $JobCallGirl>>
+    TODO
+  <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub>>
+    TODO
+  <<elseif $JobModel>>
+    TODO
+  <<elseif $JobStripper>>
+    TODO
+  <</if>>
+<</nobr>>
+
+::OffProbationXChangePregnant
+TODO Deal with pregnancy
+TODO [[FlunkOut]]
+
+<<nobr>>
+TODO
+  "If you are moving, we can provide a list of testing facilities near wherever your new home is," he offers.  "Be sure to continue to
+  come in for your scheduled visits.  Since the scholarship is no longer a consideration, we'll be proving you with a small stipend for
+  the remainder of your four year committment."
+<</nobr>>
+
 ::FlunkOut
 TODO Flunk out of school ending
+
 

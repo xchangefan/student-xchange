@@ -3094,7 +3094,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <<nobr>>
   <<if $AcademicProbation and $AcademicProbationEndWeek and $AcademicProbationEndWeek <= $SchoolWeek>>
     <<include [[Part15OffProbation]]>>
-  <<elseif $AcademicProbation and $SchoolWeek > 12>>
+  <<elseif $AcademicProbation and $AcademicProbationDenial and $SchoolWeek > 12>>
     <<include [[OffProbation]]>>
   <<elseif $PregnancyWeek >= 40 or ($PregnancyWeek == 39 and Math.random() < 0.2) or ($PregnancyWeek == 38 and Math.random() < 0.1) or ($PregnancyWeek == 37 and Math.random() < 0.1)>>
     <<include [[Part15Delivery]]>>
@@ -4079,9 +4079,15 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
       <<include [[Part15WomensStudies2]]>>
     <<case 13>>
       <!-- Nov w3 -->
-      <<include [[Part15BabyJobsRelationships]]>>
+      <<if $AcademicProbation and $AcademicProbationDenial>>
+        <<include [[OffProbation]]>>
+      <<else>>     
+        <<include [[Part15BabyJobsRelationships]]>>
+      <</if>>
     <<case 14>>
-      <<if $WomensStudiesProfessorPublish and !$EngineeringShutdown>>
+      <<if $AcademicProbation and $AcademicProbationDenial>>
+        <<include [[OffProbation]]>>
+      <<elseif $WomensStudiesProfessorPublish and !$EngineeringShutdown>>
         <<include [[Part15WomensStudiesPublish]]>>
       <<else>>
         <<include [[Part15Week14]]>>
@@ -6097,7 +6103,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 <<nobr>>
   $dating[0] had already sent your measurements over, so it goes very quickly. Once you are out of your old belt and locked
   into your new one,
-  <<if $JobEngineerLockFormer or $JobENgineerOld or $JobBetaTesterFormer>>
+  <<if $JobEngineerLockFormer or $JobEngineerOld or $JobBetaTesterFormer>>
     your old boss
   <<else>>
     the department head
@@ -10722,6 +10728,7 @@ TODO Another ELP charity project (be careful if had an incident last time)
 
 ::Part15FratParty
   TODO frat party, optionally sex with your bf/gf  afterwards if have one
+  TODO <<set setup.addSexRepeat(200, {sex:"male",vaginal:true,noCondom:true, noPullout:true})>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
