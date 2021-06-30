@@ -202,10 +202,99 @@
   <<else>>
     "It looks like everything is in order."  
   <</if>>
+  <<if $PlayerSideEffectOrgasmBlock>>
+    <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
+    <<unset $PlayerSideEffectOrgasmBlock>>
+    <br>
+    <img src="PartP/Treatment.jpg" hspace="10" vspace="10" height="550" align="left">
+    <br>
+    "Oh, and there's another thing you'll be excited to hear," he says.  "There's been some new research on the "Orgasm Block" side-effect
+    that some implants, like yours, develop.  They've found a cure.  Well, a treatment technically."
+    <<if !setup.haveGirlfriend() and !$CampusMinistryFailSummer and ($PlayerProtectionTry or $PlayerProtectionNone)>>
+      You tell him that it didn't really seem to affect you much before your academic probation denial was activated.
+      "Well, perhaps you stumbled on the treatment on your own just having fun," he says.
+    <<else>>
+      You tell him that you very much like to hear about it, since you'd hate to be denied by that now, when you finally have a
+      chance to orgasm.
+    <</if>>
+    <br><br>
+    "Well, the breakthrough was when one of our data guys saw the inverse correlation between reported pregnancies and complaints about
+    this particular side-effect..."  He sees your eyes start to glaze over and skips the detailed explaination.  "Anyway, it turns out it
+    is related to the "Breeder" option that some of our pills have, and that has developed on a few of the implants - not yours though."
+    <br><br>
+    "The girls that have been trying to get pregnant have had the least problems with the implant.  Those not actively trying to get pregnant,
+    but also using any form of birth control also have had fewer problems.  Our lesbian users have had the most issues.  Well, technically
+    those trying to get off by masturbating have the most issues, but that's not going to be a factor for you."
+    <<if setup.haveGirlfriend()>>
+      You tell him you are a lesbian, worried now that the treatment won't work on you.
+    <</if>>
+    <br><br>
+    "After a bunch of testing, they found that the proteins in semen suppress the activation of the side effect, while hormonal birth
+    control greatly increases the chance of it triggering.  So if you want to avoid any issues with the side effect, you just need to
+    <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
+      have us deactivate your implant's birth control and continue to have otherwise unprotected sex.
+      <<if setup.haveGirlfriend()>>
+        Except with men, of course.
+      <</if>>
+    <<elseif $PlayerProtectionPill>>
+      stop taking your birth contorl and continue to have otherwise unprotected sex.
+      <<if setup.haveGirlfriend()>>
+        Except with men, of course.
+      <</if>>
+    <<elseif $PlayerProtectionTry or $PlayerProtectionNone>>
+      <<if setup.haveGirlfriend()>>
+        start having sex with men more often.
+      <<else>>
+        keep doing what you've doing
+      <</if>>
+    <<else>>
+      stop using any form of birth control, and letting the men you sleep with cum inside you.
+    <</if>>
+    Though, oral injestion or anal absorbtion also helps suppress the effect, it doesn't do it as well, so you'll need to much more of
+    it to have the same effect."
+    <br><br>
+    <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
+      <<unset $PlayerProtectionPermanent>>
+      <<unset $PlayerProtectionPerfect>>
+      <<set $PlayerProtectionNone to 1>>
+      You have them turn off your implant's birth control for you while you are here.
+    <<elseif $PlayerProtectionPill>>
+      <<unset $PlayerProtectionPill>>
+      <<set $PlayerProtectionNone to 1>>
+      You toss your birth control pills in the trash immediately.  They also give you an injection to counteract the ones you've already
+      taken this month.  They say it'll probably trigger you to ovulate in the next 48 hours.
+    <<elseif $PlayerProtectionCondoms>>
+      <<unset $PlayerProtectionCondoms>>
+      <<set $PlayerProtectionNone to 1>>
+      You toss your condoms in the trash immediately.
+    <<elseif $PlayerProtectionWithdraw>>
+      <<unset $PlayerProtectionWithdraw>>
+      <<set $PlayerProtectionNone to 1>>
+      You know you've asked a guy to pull out for the last time.  You'll be begging the to cum inside you from now on.
+    <</if>>
+    <<if setup.haveGirlfriend()>>
+      "I'm a lesbian though," you tell him.  "Do I have to fuck guys now?"  He tells you that would certainly be the easiest solution.
+      But he also tells you there's another option as well.
+    <</if>>
+    Before you leave, they give you a tall glass of a think white liquid with a familiar odor.  "Is that...," you start to ask.
+    He tells you it's only part semen.  There's also other things in it to keep it fresh and boost its effect.  "But don't worry,"
+    he says, "it'll still have the taste you expect it to."
+    <br><br>
+    <<if setup.haveGirlfriend()>>
+      "Just come in to one of our offices for a glass of that once or twice a week, and you shouldn't have any problems.  Of course,
+      the natural solution is still there if you can't make it in for some reason."
+    <<else>>
+      "That should give your body a boost so shouldn't have any problems the next few days.  If figured you'd want to make sure you
+      can enjoy them.  You'll probably do fine getting it naturally after now though.  Though you can always come by here or one
+      of our other offices if you need another booster in the future."
+    <</if>>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  "If you are moving, we can provide a list of testing facilities near wherever your new home is," he offers.  "Be sure to continue to
+  "If you are moving, we can provide a list of testing facilities
+  <<if $PregnancyWeek>>or qualified obstetricians<</if>>
+  near wherever your new home is," he offers.  "Be sure to continue to
   come in for your scheduled visits.  Since the scholarship is no longer a consideration, we'll be proving you with a small stipend for
   the remainder of your four year
   <<if !$PregnancyWeek and !$PlayerSideEffectPermanent>>
@@ -232,7 +321,7 @@
     way down your body, until her tongue finds your clit again.
     <br><br>
     You don't know how many orgasms you have before she stops.  You can barely stand by then and don't think you could have
-    taken another one.  It's only then that the two of you stop to [[discuss your situation|FlunkOut]].
+    taken another one.  It's only then that the two of you stop to [[discuss your situation|FlunkOutDating]].
   <<else>>
     <<if $PlayerPregnant and $PregnancyWeek > 20>>
       <img src="Part12/Pregnant2.jpg" hspace="10" vspace="10" height="450" align="left"/>
@@ -251,7 +340,7 @@
       The moment his cum fills you, your orgasm finally washes over you.  It feels even better than you remember it.
       <br><br>
       Of course you aren't going to stop at just one.  You go again as soon as he is ready.  It's only after he can't go on any more
-      that you stop to [[discuss your situation|FlunkOut]].
+      that you stop to [[discuss your situation|FlunkOutDating]].
     <<else>>
       <<set setup.addSexRepeat(10, {sex:"male", vaginal:true, noCondom:true, noPullout:true})>>
       looking for a guy to fuck you.  It doesn't take you long to find one.  The moment his cum fills you, your orgasm
@@ -260,19 +349,260 @@
       Of course you aren't going to stop at just one.  You go again as soon as he is ready.  And after you send him on his way,
       you quickly find another guy to satisfy your months of need.
       <br><br>
-      It's only after the last one has gone that you stop to [[assess your situation|FlunkOut]].
+      It's only after the last one has gone that you stop to
+      <<if $PlayerPregnant>>
+        [[assess your situation|FlunkOutPregnant]].
+      <<else>>
+        [[assess your situation|FlunkOut]].
+      <</if>>
     <</if>>
   <</if>>
 <</nobr>>
 
-::TODOTemp
-<<if $FatherDisown>>
-  TODO Disowned by father [[FlunkOut]]
-<<else>>
-  TODO Move back home [[MovingBackHome]]
-  TODO Do we want to divert back to the chastity wife ending from the summer if move back home?  What if pregnant?
-<</if>>
+::OffProbationXChangePregnant
+TODO Deal with pregnancy
+TODO (abort) [[FlunkOut]] or (keep) [[FlunkOutPregnant]]
+TODO Or [[FlunkOutDating]]
 
+::FlunkOut
+<<nobr>>
+  <h1>Leaving Campus</h1>
+  <img src="Part7/Preg7.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  Now that you are no longer a student, you can't stay on campus anymore.
+<</nobr>>
+
+<<nobr>>
+  <<if $FatherDisown>>
+    Since your father kicked you out, you know you are going to have to [[make it on your own|FlunkOutAloneHitch]].
+    Thankfully you
+    <<if $JobCallGirl or $JobModel or $JobStripper or $JobStripperMain or $JamesBribe>>
+      have more than enough money saved up.
+    <<elseif $PlayerStudentLoan>>
+      still have some money left over from your last student loan disbursment.
+    <<else>>
+      a little bit of money saved up.
+    <</if>>
+    So you can afford a motel room until you can get your own apartment.
+  <<else>>
+    You know your family is going to be disappointed with you.  You especially aren't looking forward to how your father is
+    going to react.  Still, they are your family, and he'll surely let you [[move back home|FlunkOutHome]].
+    <br><br>
+    Though, even if you are no longer a student, you are still an adult.  Maybe you should [[do this alone|FlunkOutAloneHitch]] and
+    find your own place instead.  Obviously you'll still have to tell them about school, but at least they can be proud that
+    you are acting like an adult on your own now.
+  <</if>>
+<</nobr>>
+
+::FlunkOutHome
+<<nobr>>
+	<h1>Moving home on one condition</h1>
+  <img src="Part14/Home61.jpg" hspace="10" vspace="10" height="500" align="left">
+  Your mother sounded sympathetic when you let her know you'd be leaving school.  She sounded concerned for you, but not especially surprised.
+  "Of course you can move back home.  I'll let your father know when he gets home from work."
+<</nobr>>
+
+<<nobr>>
+  You drive home with everything you own packed tightly into your car.  When you get home you are expecting a warm, comforting welcome,
+  but instead your father has you sit down in the living room to talk.
+<</nobr>>
+
+<<nobr>>
+  "You've shown that you aren't mature enough to be living on your own," he begins.  "And from what I've heard you aren't mature enough
+  to control the urges you have in this now
+  <<if $PlayerSideEffectLibido or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectSubmissive or $PlayerSideEffectExhibitionist>>
+     body, especially not with these 'side-effects' you apparently have,"
+  <<else>>
+     body."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Now that you are moving back home, I can keep an eye on you and make sure you get back on the right track.  You'll be transfering to the
+  community college, and then to the state school, both right here in town. That should be more suited to your academic abilities, especially
+  once I help you eliminate all the other 'distractions' you've had keeping you from your studies."
+<</nobr>>
+
+<<nobr>>
+  "Don't worry about the cost.  I'll pay for your tuition.  It may delay my retirement by a year or two, but I'll retire happier knowing
+  I've prevented my daughter from becoming a...  Well, I'll retire happier with you a proper young woman."
+  <<if !$PlayerSideEffectPermanent>>
+    <br><br>
+    When you start to talk about not growing into a proper young woman, but becoming a young man again, your father stops you.  "The contract
+    you signed committed you to a minimum of four years.  And look at how you are after not even half that.  But lets be honest, even before
+    the X-Change, you were never going to grow to be a proper man either.  I think it's best if you remove that thought from your mind
+    entirely, so you can focus on becoming the best woman you can be.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "And", he says, pulling out something from a bag next to him.  "You'll be wearing this, starting right now."  He shows you the chastity belt he intends you
+  to wear.  "This is only a temporary one.  We'll be going to back to the store where I purchased this one, and the woman there can take your measurements
+  for the belt I'll be ordering for you.  That one will be much more secure.  But she said it should also be comfortable for long-term wear.
+  You should be relieved at that, as you'll be wearing it until your wedding day."
+<</nobr>>
+
+<<nobr>>
+  You were happy when you heard you'd still be able to go to school.  But you the other part of his plans for you, locking you into
+  a chastity belt until your wedding day, with your father having the keys!  But what choice do you have?
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectSubmissive >2>>
+    None really.  In theory you could say 'No', but you are too submissive to refuse, especially when someone commands you as firmly as your
+    father has.  You know how maddeningly horny you'll be in a chastity belt for that long, but thinking about it is already making you wet.
+    <br><br>
+    "Yes Daddy.  I'm sorry I disappointed you.  [[You know what's best for me|MovingBackHome]]," is all you can say.
+  <<else>>
+    Well, you are an adult, even if your father doesn't think so.  You could [[refuse|FlunkOutHomeDisown]] to have anything to do with his plan
+    for you.  You know that means you'll be on your own now.  But you wonder if maybe that's for the best.  Or you can accept his judgement, and
+    try to earn his forgivness, starting with saying "Yes Daddy.  I'm sorry I disappointed you.  [[You know what's best for me|MovingBackHome]]."
+  <</if>>
+<</nobr>>
+
+::FlunkOutHomeDisown
+<<nobr>>
+	<h1>Getting Kicked Out</h1>
+  <img src="Part8.5/Alone1.jpg" hspace="10" vspace="10" height="450">
+  <<set $FatherDisown to 1>>
+<</nobr>>
+<<nobr>>
+  "I'm a grown woman!  I'm not going to let you put one of those... things on me," you say.  "I never should have
+  came back here.  I'll make it on my own instead!  I'm a grown woman, I don't need you controlling me, or who I fuck!"
+<</nobr>>
+
+<<nobr>>
+  "So go upstairs, get your suitcase, and go," he says.  "Leave the car keys.  If you are a grown woman, you won't be needing
+  the car I pay for anymore.  I'm sure your money from whoring, or whatever it is you do, should be enough to get you wherever you need
+  to go."  You storm up the stairs to grab your suitcase.
+<</nobr>>
+
+<<nobr>>
+  You head back downstairs with your suitcase.  You glare at your father before walking out the front door.  A moment later you hear
+  it lock behind you.
+<</nobr>>
+
+<<nobr>>
+  You walk down towards the entrance to the subdivision trying to decide what to do.  You pull out your phone, trying to call Dylan or anyone really.  But
+  your phone says "Emergency Calls Only".  When you try to use it you get a message saying that your line has been suspended.  "Fuck, already?", you say out
+  loud when you realize your father has already turned off your phone line from his family plan.
+<</nobr>>
+
+<<nobr>>
+  You aren't sure where you want to go yet, but you know it is far away from your father, and this town, so ou start walking down towards a major
+  street so you can try to [[hitch a ride|FlunkOutHomeDisown2]] anywhere else.  You guess you'll need to look for someplace to get a new number
+  for your phone too.
+<</nobr>>
+
+::FlunkOutHomeDisown2
+<<nobr>>
+	<h1>Hitching a ride</h1>
+  <img src="Part14/Hitch1.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  When you see a restaurant with a restroom you stop in to wipe away your tears and fix the mess they made of your make-up.  After you reach the main road out
+  of town, you stop to wait for a ride.  While you wait, you try to look on the bright side of the situation.  The only thing you
+  can think of is that at least you aren't in that fucking belt with your father holding the key.
+<</nobr>>
+
+<<nobr>>
+  Thankfully you don't have to wait long for a car to come by. You've always heard people are reluctant to pick up hitchhikers, so you are glad
+  you find one stopping for you right away.  The young man that stops for you asks where you are going.  "Anywhere else," you tell him.  Luckily
+  he's going far from here, and willing to take you the entire way if you want.
+<</nobr>>
+
+<<nobr>>
+  He doesn't say anything, but you see a hopeful look in his eyes as you get in.  You think for a second.  "Gas, Grass, or Ass", you remember
+  being the saying.  Well, you don't have any grass to share.  It's been a rough morning, so you could just offer him some cash for his
+  gas and trouble.  Though you are quite certain he'd be thrilled if you offered to [[compensate him another way|FlunkOutAloneHitch2]].
+  Though, maybe a little fun would take your mind off the earlier events.
+<</nobr>>
+
+::FlunkOutAloneHitch
+<<nobr>>
+	<h1>Hitching a ride</h1>
+  <img src="Part14/Hitch1.jpg" hspace="10" vspace="10" height="500" align="left">
+  <<if !$FatherDisown>>
+    <<set $FatherDisown to 1>>
+    Your father orders you to come home when he finds out you've failed out of school.  The more you hear from him, the more sure
+    you are you don't want any part of going back home.  "Fine.  If you want to be all on your own, then do that.  Starting with
+    that car you've been driving.  Last I checked, I was making the payments on that."
+    <br><br>
+    "Fine.  Come and get it then!"  You angrily hang up the phone.  A few minutes later you are going to call your brother, since you
+    know he'll be the one your dad will send.  You are wanting to tell him who will have the keys.  But then you discover your phone has
+    been turned off.  Your dad seems to have decided you don't need to be on his family plan anymore either.
+    <br><br>
+    You think about taking the car anyway, but your dad would probably report it stolen.  Instead you toss the keys under in the glove
+    box and lock the car with them inside.  "Now it's your fucking problem," you think.
+    <br><br>
+  <</if>>
+  You don't know where you want to go.  You just know it's not here, and it certainly is not back home.  You leave most of your things
+  with a friend.  She'll ship the rest of your things to you once you get wherever it is you are going.  For now you are just going
+  wherever the road takes you.
+<</nobr>>
+
+<<nobr>>
+  Thankfully you don't have to wait long for a car to come by. You've always heard people are reluctant to pick up hitchhikers, so you are
+  glad you find one stopping for you right away.  The young man that stops for you asks where you are going.  "Anywhere else," you tell him.
+  Luckily he's going far from here, and willing to take you the entire way if you want.
+<</nobr>>
+
+<<nobr>>
+  He doesn't say anything, but you see a hopeful look in his eyes as you get in.  You think for a second.  "Gas, Grass, or Ass", you remember
+  being the saying.  Well, you don't have any grass to share.  It's been a rough morning, so you could just offer him some cash for his
+  gas and trouble.  Though you are quite certain he'd be thrilled if you offered to [[compensate him another way|FlunkOutAloneHitch2]].
+  Though, maybe a little fun would take your mind off the earlier events.
+<</nobr>>
+
+::FlunkOutAloneHitch2
+<<nobr>>
+	<h1>Hitching a Ride</h1>
+  <img src="Part8.5/Car.gif" hspace="10" vspace="10" height="500">
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver'})>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver'})>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver'})>>
+<</nobr>>
+<<nobr>>
+  He happily accepts your offer, but doesn't want to stop, so you give him the first of several blowjobs as he drives on.  Thankfully, there's not need
+  to make smalltalk, as he doesn't expect you to talk with his cock in your mouth.
+  <br><br>
+  You were right, taking care of him did distract you, and the time flies by.  Before you know it it's several hours and several hundred miles later.
+  He pulls into a motel for the night.  He asks if this is goodbye, or if you'll be joining him tomorrow too.  Seeing the look in your eye,
+  he adds, "or you could [[join me right now|FlunkOutAloneHitch3]]."
+<</nobr>>
+
+::FlunkOutAloneHitch3
+<<nobr>>
+  <h1>At the motel for the night</h1>
+  <<if $PlayerProtectionCondoms>>
+    <video src="PartX/Flunk3.webm" autoplay loop muted height="500"></video><br>
+  <<else>>
+    <div style="float:left;padding:12px;">
+      <video src="PartX/Flunk2.mp4" autoplay loop muted height="600"></video><br>
+    </div>
+  <</if>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver'})>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver', vaginal:true})>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver'})>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver', vaginal:true})>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver'})>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver', vaginal:true})>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver'})>>
+  <<set setup.addSex({sex: 'male', anon:'Hitchhiker Driver', vaginal:true})>>
+<</nobr>>
+<<nobr>>
+  You don't hesitate in accepting his offer.  After months of denial you still can't get enough.  You both sleep soundly after you
+  both give out for the night.
+<</nobr>>
+
+<<nobr>>
+  The next morning he drives you the rest of the way [[to the city|FlunkOutAlone]].  You've had a lot of time to think during the drive,
+  between blowjobs that is.  And you've decided you've had enough of small towns, and college towns.  A huge city, with tons of people
+  is where you want to be.  There's sure to be plenty of opportunities for you there.
+<</nobr>>
+
+::TODOTemp
 <<nobr>>
   todo later job changes:
   <<if $JobBarista>>
@@ -292,18 +622,13 @@
   <</if>>
 <</nobr>>
 
-::OffProbationXChangePregnant
-TODO Deal with pregnancy
-TODO [[FlunkOut]]
-
-<<nobr>>
-TODO
-  "If you are moving, we can provide a list of testing facilities near wherever your new home is," he offers.  "Be sure to continue to
-  come in for your scheduled visits.  Since the scholarship is no longer a consideration, we'll be proving you with a small stipend for
-  the remainder of your four year committment."
-<</nobr>>
-
-::FlunkOut
+::FlunkOutPregnant
 TODO Flunk out of school ending
+TODO Dad won't let you move back in (if haven't already disowned)
+TODO On your own
 
+::FlunkOutDating
+TODO FlunkOutDating
 
+::FlunkOutAlone
+TODO All on your own in the city (but not pregnant)

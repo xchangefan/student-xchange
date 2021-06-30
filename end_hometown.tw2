@@ -11,7 +11,8 @@
   <<set $dating to []>>
   <<set $fwb to []>>
   <<set $friendzone to []>>
-  
+<</nobr>>
+<<nobr>>
   Your father goes through your things, looking for any 'contraband'.  He looks through your 'toys' and throws out anything remotely
   sex related - except of course the chastity belt you are locked in.  He also takes any of your clothes he deems 'too slutty'.
   <<if setup.haveInventory('sex toys', 'cumslut collar')>>
@@ -248,6 +249,11 @@
 <<nobr>>
   <h1>At Your New School</h1>
   <img src="PartX/BackHome2.jpg" hspace="10" vspace="10" height="450">
+  <<if $Dropout == "Flunk">>
+    <<unset $Dropout>>
+    <<set $FormerDropout to 1>>
+    <<set $student to 1>>
+  <</if>>
 <</nobr>>
 <<nobr>>
   You are unhappy at first, leaving all the friends you'd made at your university and starting at a completely new school.  But soon you
@@ -296,8 +302,12 @@
 
 <<nobr>>
   And you are too ashamed to ask your mother to let you do any more than what is necessary when she supervises your period cleaning.
-  She'd probably refuse anyway.  She's said she finds your situation uncomfortable, but thinks your father's methods are probably
-  necessary after what he'd seen you doing. 
+  She'd probably refuse anyway.  She's said she finds your situation uncomfortable, but thinks your
+  <<if true>>
+    father is right that is necessary to prevent you from failing again.
+  <<else>>
+    father's methods are probably necessary after what he'd seen you doing. 
+  <</if>>
 <</nobr>>
 
 <<nobr>>
