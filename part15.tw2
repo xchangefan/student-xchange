@@ -589,7 +589,8 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $tempMinistryDenial>>
+  <<if $PregnancyCheck.isPregnant>>
+  <<elseif $tempMinistryDenial>>
     There's something else the doctor wants to talk to you about.  You had mentioned to him that your level of sexual desire 
     <<if $CampusMinistry>>
       had increased greatly since your last visit, and that you think it's as a result of the academic probation denial.  You'd said that
@@ -3092,10 +3093,10 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 ::Part15WeekNoAdvance
 <<nobr>>
-  <<if $AcademicProbation and $AcademicProbationEndWeek and $AcademicProbationEndWeek <= $SchoolWeek>>
-    <<include [[Part15OffProbation]]>>
-  <<elseif $AcademicProbation and $AcademicProbationDenial and $SchoolWeek > 12>>
+  <<if $AcademicProbation and ($AcademicProbationDenial or ($PlayerChastityBelt and $Keyholder == "computer")) and $SchoolWeek >= 12 and either(0,0,0,1) == 0>>
     <<include [[OffProbation]]>>
+  <<elseif $AcademicProbation and $AcademicProbationEndWeek and $AcademicProbationEndWeek <= $SchoolWeek>>
+    <<include [[Part15OffProbation]]>>
   <<elseif $PregnancyWeek >= 40 or ($PregnancyWeek == 39 and Math.random() < 0.2) or ($PregnancyWeek == 38 and Math.random() < 0.1) or ($PregnancyWeek == 37 and Math.random() < 0.1)>>
     <<include [[Part15Delivery]]>>
   <<elseif $PregnancyWeek == 30>>
@@ -10356,7 +10357,7 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
   <<set $tempMaleFWB = $fwb.filter(function (name) {return name != "Kate"})>>
   <<if $PlayerItemNerdKey or $PlayerItemNerdKeyStripper>>
     "Actually, I have an idea that may be just what you need," you say.
-    <<if setup.areDating("Peter")>>
+    <<if setup.areDating('Peter')>>
       My boyfriend,
     <<elseif $PlayerItemNerdKey>>
       My friend,
@@ -10728,7 +10729,7 @@ TODO Another ELP charity project (be careful if had an incident last time)
 
 ::Part15FratParty
   TODO frat party, optionally sex with your bf/gf  afterwards if have one
-  TODO <<set setup.addSexRepeat(200, {sex:"male",vaginal:true,noCondom:true, noPullout:true})>>
+  TODO set sex variable if applicable
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>

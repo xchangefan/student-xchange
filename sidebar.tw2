@@ -104,7 +104,7 @@ You are a young man trying to decide where to go to college.
     <<else>>
       woman.
     <</if>>
-    <<if $PlayerPregnant and $PregnancyWeek>>
+    <<if $PlayerPregnant and $PregnancyWeek and $student>>
       You are $PregnancyWeek
       <<if $PregnancyWeek == 1>>week<<else>>weeks<</if>>
       pregnant.
@@ -1184,6 +1184,8 @@ You are a young man trying to decide where to go to college.
     <<if $SchoolWeek>>
       <br><br>Debugging: <<if $PregnancyWeek>>PW:$PregnancyWeek<<else>>MW:$MenstrualWeek<</if>>  School: $SchoolWeek <!--TODO-->
     <</if>>
+  <<elseif $Dropout == "Flunk">>
+    <br>You have flunked out of college.
   <<elseif $Dropout>>
     <br>You have dropped out of college.
   <<elseif $Expelled>>

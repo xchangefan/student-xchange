@@ -307,7 +307,6 @@ setup.sexAllUniquePartners = function () {
 }
 
 setup.sexUniqueCount = function (fucks) {
-  console.log(fucks);
 	var unnamed = fucks.filter(function(fuck) {return !fuck.name})
 	return unnamed.length + setup.sexUniquePartners(fucks).length
 }

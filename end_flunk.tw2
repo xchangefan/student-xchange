@@ -134,6 +134,9 @@
 <<nobr>>
   <<if $JobEngineer or $JobBetaTester>>
     Obviously your job with the engineer department is over as well.
+    <<if $PlayerChastityBelt>>
+      That means you'll be free of the damn belt at least.
+    <</if>>
     <<unset $PlayerChastityBelt>>
     <<set $JobEngineerOld to $JobEngineer>>
     <<unset $JobEngineer>>
@@ -166,6 +169,7 @@
 
 ::OffProbationXChange
 <<nobr>>
+TODO Barry Kate
   <h1>Visiting the X-Change office</h1>
   <<unset $AcademicProbationTutorSex>>
   <<unset $AcademicProbationDenial>>
@@ -204,10 +208,13 @@
   <</if>>
   <<if $PlayerSideEffectOrgasmBlock>>
     <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
+    <<if $PlayerSideEffectLibido>>
+      <<set $PlayerSideEffectLibido to 1>>
+    <<else>>
+      <<set $PlayerSideEffectLibido += 1>>
+    <</if>>
     <<unset $PlayerSideEffectOrgasmBlock>>
-    <br>
-    <img src="PartP/Treatment.jpg" hspace="10" vspace="10" height="550" align="left">
-    <br>
+    <br><br>
     "Oh, and there's another thing you'll be excited to hear," he says.  "There's been some new research on the "Orgasm Block" side-effect
     that some implants, like yours, develop.  They've found a cure.  Well, a treatment technically."
     <<if !setup.haveGirlfriend() and !$CampusMinistryFailSummer and ($PlayerProtectionTry or $PlayerProtectionNone)>>
@@ -228,7 +235,9 @@
     <<if setup.haveGirlfriend()>>
       You tell him you are a lesbian, worried now that the treatment won't work on you.
     <</if>>
-    <br><br>
+    <br>
+    <img src="PartP/Treatment.jpg" hspace="10" vspace="10" height="606" align="left">
+    <br>
     "After a bunch of testing, they found that the proteins in semen suppress the activation of the side effect, while hormonal birth
     control greatly increases the chance of it triggering.  So if you want to avoid any issues with the side effect, you just need to
     <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
@@ -250,7 +259,7 @@
     <<else>>
       stop using any form of birth control, and letting the men you sleep with cum inside you.
     <</if>>
-    Though, oral injestion or anal absorbtion also helps suppress the effect, it doesn't do it as well, so you'll need to much more of
+    Though, oral injestion or anal absorbtion also helps suppress the effect, it doesn't do it as well, so you'll need to do much more of
     it to have the same effect."
     <br><br>
     <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
@@ -284,11 +293,28 @@
       "Just come in to one of our offices for a glass of that once or twice a week, and you shouldn't have any problems.  Of course,
       the natural solution is still there if you can't make it in for some reason."
     <<else>>
-      "That should give your body a boost so shouldn't have any problems the next few days.  If figured you'd want to make sure you
+      "That should give your body a boost so shouldn't have any problems the next few days.  I figured you'd want to make sure you
       can enjoy them.  You'll probably do fine getting it naturally after now though.  Though you can always come by here or one
       of our other offices if you need another booster in the future."
     <</if>>
+    <br><br>
+    You've barely finished half of your drink and you can already feel yourself getting wet and aching to feel
+    <<if setup.haveGirlfriend()>>
+      $dating[0]'s strap-on
+    <<elseif $dating.length>>
+      $dating[0]'s hard cock
+    <<else>>
+      a hard cock      
+    <</if>>
+    inside you.  You wonder how much of it is just knowing you can finally orgasm again,
+    <<if setup.sexMaleCount() > 0>>
+      how much is the familiar taste of the drink reminding you of the last cock you sucked,
+    <</if>>
+    and how much is due to whatever else they probably added to the mixture.
   <</if>>
+  <br><br>
+  <i>You no longer suffer from the orgasm denial effects of your implant, except if you try to masturbate.  You have a higher
+  libido than you did previously.</i>
 <</nobr>>
 
 <<nobr>>
@@ -325,10 +351,15 @@
   <<else>>
     <<if $PlayerPregnant and $PregnancyWeek > 20>>
       <img src="Part12/Pregnant2.jpg" hspace="10" vspace="10" height="450" align="left"/>
+      <br>
+    <<elseif setup.areDating('Eric')>>
+      <video src="PartX/Army1.mp4" autoplay loop muted height="400"></video><br>
+      <br>
+      You are so happy Eric is here on leave from the Army.
     <<else>>
       <video src="Part15/Probation24.mp4" autoplay loop muted height="400"></video>
+      <br>
     <</if>>
-    <br>
     You are barely out of the X-Change office and you are already
     <<if $dating.length>>
       <<set setup.addSexRepeat(10, {sex:"male", name:$dating[0], vaginal:true})>>
@@ -336,6 +367,10 @@
       you, knowing how desperate you are after months of being denied an orgasm.
       <br><br>
       He starts to eat you out, but you want his cock too bad to wait.  "Just fuck me!" you demand.  You don't have to ask twice.
+      <<if setup.areDating('Barry')>>
+        Barry is much more concerned about your pleasure today than normal.  You think he's excited to see you orgasm after so long
+        of not being able to.  You are excited for that to happen too, obviously.
+      <</if>>
       <br><br>
       The moment his cum fills you, your orgasm finally washes over you.  It feels even better than you remember it.
       <br><br>
@@ -628,7 +663,311 @@ TODO Dad won't let you move back in (if haven't already disowned)
 TODO On your own
 
 ::FlunkOutDating
-TODO FlunkOutDating
+<<nobr>>
+  <<if setup.areDating('Bailey')>>
+    <<include [[FlunkOutDatingBailey]]>>
+  <<elseif setup.areDating('Kate')>>
+    <<include [[FlunkOutDatingKate]]>>
+  <<elseif setup.areDating('Veronica')>>
+    <<include [[FlunkOutDatingVeroncia]]>>
+  <<elseif setup.areDating('Eric')>>
+    <<include [[FlunkOutDatingEric]]>>
+  <<elseif setup.areDating('Andrew')>>
+    <<include [[FlunkOutDatingAndrew]]>>
+  <<elseif setup.areDating('Barry')>>
+    <<include [[FlunkOutDatingBarry]]>>
+  <<else>>
+    <<include [[FlunkOutDatingBreakupGeneric]]>>
+  <</if>>
+<</nobr>>
+
+::FlunkOutDatingBailey
+<<nobr>>
+  <h1>Breaking up with Bailey</h1>
+  <img src="Part8.5/Alone4.jpg" hspace="10" vspace="10" height="400">
+  <<set setup.breakupWith('Bailey')>>
+  <<unset $BuddyChastity>>
+<</nobr>>
+<<nobr>>
+  You and Bailey haven't been together that long. You'd thought the two of you would last, but you know you can't expect her to leave the
+  university, and her scholarship, just because you failed at yours.  You also feel like if you'd try to make it work, you'd just end up
+  dragging her down the same path you ended up on.
+<</nobr>>
+
+<<nobr>>
+  It's a sad talk between the two of you as you decide to break up.  You are confident she'll be able to move on quickly, and hope that you
+  will too.
+<</nobr>>
+
+<<nobr>>
+  As you try think about what you are going to do next, you
+  <<include [[FlunkOutNextStepInclude]]>>
+<</nobr>>
+
+::FlunkOutDatingVeroncia
+<<nobr>>
+  <h1>Breaking up with Veronica</h1>
+  <img src="Part8.5/Alone4.jpg" hspace="10" vspace="10" height="400">
+  <<set setup.breakupWith('Veronica')>>
+<</nobr>>
+<<nobr>>
+  You'd thought the you and Veronica would last, but you know you can't expect her to leave the university, and her scholarship, just
+  because you failed at yours.  You also feel like if you'd try to make it work, you'd just end up dragging her down the same path you
+  ended up on.
+<</nobr>>
+
+<<nobr>>
+  It's a sad talk between the two of you as you decide to break up.  You are confident she'll be able to move on quickly, and hope that you
+  will too.
+<</nobr>>
+
+<<nobr>>
+  As you try think about what you are going to do next, you
+  <<include [[FlunkOutNextStepInclude]]>>
+<</nobr>>
+
+::FlunkOutDatingEric
+<<nobr>>
+  <h1>Making plans with Eric</h1>
+  <img src="PartX/Army2.jpg" hspace="10" vspace="10" height="400" align="left">
+<</nobr>>
+<<nobr>>
+  After Eric is drained and your need is saisfied, for a while at least, the two of you sit down to talk about what to do next.
+  He's done with training now, and has two weeks before his first deployment.  You'll obviously be staying with him in the motel room he'd rented until then.
+<</nobr>>
+
+<<nobr>>
+  You joke about just stowing away in his luggage so you could go with him, even climbing into one of his empty bags.  He zips it closed
+  with only your head sticking out and
+  <<if $BodyType != "Plus">>easily<</if>>
+  lifts you up and jokingly says, "hmm, maybe that would work."
+  <<if $PlayerSideEffectSubmissive>>
+    <br><br>
+    Your mind wanders a bit as you realize how helpless you are zipped up in the bag like this.  Maybe when Eric is able to go again, you'll
+    see if he'll zip you up like this again, and leave the rest of you horny and helpless inside the bag.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Unfortunately," he says seriously, "if we tried to sneak you on base, they'd probably send you back home on the next plane, and I'd spend
+  my first week on base in the stockade.  "I wish though."
+<</nobr>>
+
+<<nobr>>
+  "Oh, well, it was just an idea," you say.  "We've got weeks to figure out what to do next.  For now let's just
+  [[enjoy your leave|EricPropose]].
+  <<if $PlayerSideEffectSubmissive>>
+    <br><br>
+    As Eric reaches to unzip the bag you tell him, "Why don't you leave me like this until you are ready to use me?"  You say.
+    Then, though the small amount he'd unzipped, you toss out the clothes you'd managed to wriggle out of making it obvious that
+    you were naked and ready inside for whenever he was.  He smiles, zips the bag back up as before, and says, "Well, that probably
+    won't be long now."
+  <</if>>  
+<</nobr>>
+
+::FlunkOutDatingAndrew
+<<nobr>>
+  <<if $Roommate != "Andrew">>
+    <<include [[FlunkOutAndrewMoveIn]]>>
+  <<elseif !$PlayerPregnant>>
+    <<include [[FlunkOutAndrewPregnant]]>>
+  <<elseif !$Engaged>>
+    <<include [[FlunkOutAndrewEngaged]]>>
+  <<else>>
+    <<include [[FlunkOutAndrewMarried]]>>
+  <</if>>
+<</nobr>>
+
+::FlunkOutAndrewMoveIn
+<<nobr>>
+  <h1>Moving in with Andrew</h1>
+  <img src="Part5/Master1.jpg" hspace="10" vspace="10" height="450">
+  <<set $Roommate to "Andrew">>
+  <<set setup.addSexRepeat(100, {sex:"Male", name:"Andrew", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(100, {sex:"Male", name:"Andrew"})>>
+<</nobr>>
+<<nobr>>
+  Your [[new living situation|FlunkOutDatingAndrew]] is the best part of leaving school.  When Andrew heard that you didn't have any
+  place to stay, he asked you to move in with him.  Of course you said yes.  You certainly weren't going to move back to your parents
+  and be hundreds of miles away from your boyfriend.
+<</nobr>>
+
+<<nobr>>
+  Without classes to worry about you can see Andrew whenever he's not at work.
+  <<if $sex.length == 0>>
+    Of course when you moved in with him, you knew any thoughts of 'waiting until marriage' would be out the window.  But after the
+    first time you felt Andrew inside you, you wondered why you ever wanted to wait in the first place.
+  <</if>>
+  You frequently try to greet him at the door wearing something sexy.  It's only been embarrassing a couple of times, when he brought home
+  a coworker unannounced.
+<</nobr>>
+
+::FlunkOutAndrewPregnant
+<<nobr>>
+  <h1>Telling Andrew the good news</h1>
+  <video src="PartP/Creampie.mp4" autoplay loop muted height="500"></video><br>
+  <<set setup.addSexRepeat(100, {sex:"Male", name:"Andrew", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(100, {sex:"Male", name:"Andrew"})>>
+<</nobr>>
+<<nobr>>
+  You and Andrew plan on starting a family and decided to just let nature take it's course.
+  <<if $PlayerProtectionCondoms>>
+    <<unset $PlayerProtectionCondoms>>
+    So you and him had stopped using condoms.  You love the feeling of him cumming inside you now.
+  <<elseif $PlayerProtectionWithdraw>>
+    <<unset $PlayerProtectionWithdraw>>
+    So you him he could start coming inside you when he wanted to.
+  <<elseif $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+    <<unset $PlayerProtectionPerfect>>
+    <<unset $PlayerProtectionPermanent>>
+    So you stopped by the X-Change office and had them deactivate the birth control on your implant.  You still love the feeling of
+    him cumming inside you.
+  <<elseif $PlayerProtectionPill>>
+    <<unset $PlayerProtectionPill>>
+    So you stopped taking your birth control pills.  You still love the feeling of him cumming inside you.
+  <<else>>
+    You love the feeling of him cumming inside you.
+  <</if>>
+  <<set $PlayerProtectionSilent to 1>>
+  Though, of course, sometimes it is more fun for him to cum on you, or to finish him with your mouth.
+<</nobr>>
+
+<<nobr>>
+  With
+  <<if $PlayerProtectionFertile>>
+    how fertile you are, and
+  <</if>>
+  how much sex the two of you are having now, it didn't take 'nature' very long.  You are thrilled when you find out the news, and don't
+  waste any time [[letting Andrew know|FlunkOutDatingAndrew]].  You wait a bit before telling everyone else though, just to be sure.
+  <<set $PlayerPregnant to 1>>
+<</nobr>>
+
+::FlunkOutAndrewEngaged
+<<nobr>>
+  <h1>Andrew Proposes</h1>
+  <img src="Part14/Andrew9.png" hspace="10" vspace="10" height="500">
+  <<set $Engaged to "Andrew">>
+<</nobr>>
+<<nobr>>
+  You are thrilled when Andrew proposes to you.  You both know you are moving fast, but you already have a baby on the way,
+  so you don't want to wait.  Your mom and the rest of your family are thrilled with the news.  It sounds like your father is also
+  a bit relieved that you won't be a single mother, or at least [[not for long|FlunkOutDatingAndrew]].
+<</nobr>>
+
+::FlunkOutAndrewMarried
+<<nobr>>
+  <h1>Home with Andrew</h1>
+  <<if $PregnancyWeek >= 12>>
+    <img src="PartX/AndrewFamily3a.gif" hspace="10" vspace="10" height="400">
+  <<else>>
+    <video src="PartX/AndrewFamily15.mp4" autoplay loop muted height="500"></video>
+  <</if>>
+  <<set setup.addSexRepeat(100, {sex:"Male", name:"Andrew", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(100, {sex:"Male", name:"Andrew"})>>
+<</nobr>>
+<<nobr>>
+  <<if $PregnancyWeek >= 12>>
+    You feel like you are huge, but Andrew assures you that he thinks you are even more beautiful now that you are carrying
+    his child. He is clearly is just as interested in sex as he ever was, as are you.  Though, the bigger you get, the more
+    limited your choices in positions become.
+    <br><br>
+    You hope Andrew will still lust after you the way he does now
+  <<else>>
+    You feel like you are getting fat, but Andrew assures you that you aren't even showing yet.  He seems to really be trying
+    to let you know that he finds you just as attractive now that you are carrying his baby, maybe even more than before.
+    <br><br>
+    You hope he'll be just as romantic
+  <</if>>
+  once the two of you are [[married|FlunkOutAndrewMarried2]] and taking care of your baby.
+<</nobr>>
+
+::FlunkOutAndrewMarried2
+<<nobr>>
+  <h1>Setting the date</h1>
+  <img src="Part12/Engaged3.jpg" hspace="10" vspace="10" height="400">
+  <<set $tempBabyNameBoys to ["Casey","Liam","Brandon","Wyatt","Eli"].map((name) => {return {name, sex:"male"}})>>
+  <<set $tempBabyNameGirls to ["Hope","Delilah","Emma","Sophia","Mia"].map((name) => {return {name, sex:'female'}})>>
+	<<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
+<</nobr>>
+<<nobr>>
+  You and Andrew decide you want to be married before the baby is born, which doesn't leave the two of you time for a huge
+  fancy wedding.  You don't care though, you just want to start the [[rest of your life|AndrewWedding]] with Andrew.  And
+  the sooner it begins, the better.
+<</nobr>>
+
+::FlunkOutDatingBarry
+TODO FlunkOutDatingBarry??
+
+::FlunkOutDatingKate
+TODO FlunkOutDatingKate
+
+::FlunkOutDatingBreakupGeneric
+<<nobr>>
+	<h1>Breaking up with $dating[0]</h1>
+  <<set setup.breakupWith($dating[0])>>
+  You and $dating[0] get in a huge argument when you tell him you've been kicked out of school.  You try to tell him it's not your
+  fault, that the school is out to get you and that they make it so hard to focus on your studies.  "It hasn't been a problem for me,"
+  he tells you.  "Maybe if you weren't always trying to slut it up and thinking about fucking every guy on campus, then you would
+  have actually passed a class or two.
+  <<if setup.haveFucked('Mike') >>
+    Maybe you can go back home now and fuck your uncle instead!
+  <<elseif setup.haveFucked('Dylan')>>
+    Maybe you can go back home now and fuck your brother instead!
+  <<elseif setup.haveFucked('Cody')>>
+    Maybe you can go back home now and fuck some stranger from the mall instead!
+  <<elseif setup.haveFucked('Aaron')>>
+    I'm sure there's professors at the community college that'd love to have their cocks sucked too!
+  <<elseif $PlayerAbortion>>
+    Maybe you can have the abortion clinic setup provide tutors.  With as much time as you've probably spent there, it might have helped.
+  <<elseif setup.haveFucked('Brad')>>
+    I'm sure you can suck someones cock to get back home from here.
+  <<elseif setup.haveFucked('Mechanic')>>
+    Too bad you couldn't suck someone's cock to get out of this.  That seems to be your solution to most problems.
+  <<else>>
+    Maybe if you'd spent less time thinking about what some other guy's cock would feel like inside you, and more time studying,
+    that might have helped.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  After more yelling back and forth, you end up leaving in tears.
+<</nobr>>
+<<nobr>>
+  <img src="Part8.5/Alone1.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  Part of you always knew that your relationship with $dating[0] was always going to just be a bit of fun in college.  You and him
+  were never destinited to spend your lives together.  Or at least that's what you tell yourself to try and stop the tears.  It doesn't
+  work though.
+<</nobr>>
+
+<<nobr>>
+  As you try and figure out where you'll be staying tonight, you
+  <<include [[FlunkOutNextStepInclude]]>>
+<</nobr>>
+
+::FlunkOutNextStepInclude
+<<nobr>>
+  <<if $FatherDisown>>
+    realize that since your father kicked you out, you know you are going to have to [[make it on your own|FlunkOutAloneHitch]].
+    Thankfully you
+    <<if $JobCallGirl or $JobModel or $JobStripper or $JobStripperMain or $JamesBribe>>
+      have more than enough money saved up.
+    <<elseif $PlayerStudentLoan>>
+      still have some money left over from your last student loan disbursment.
+    <<else>>
+      a little bit of money saved up.
+    <</if>>
+    So you can afford a motel room until you can get your own apartment.
+  <<else>>
+    think about how disappointed your family is going to be with you.  You especially aren't looking forward to how your father is
+    going to react.  Still, they are your family, and he'll surely let you [[move back home|FlunkOutHome]].
+    <br><br>
+    Though, even if you are no longer a student, you are still an adult.  Maybe you should [[do this alone|FlunkOutAloneHitch]] and
+    find your own place instead.  Obviously you'll still have to tell them about school, but at least they can be proud that
+    you are acting like an adult on your own now.
+  <</if>>
+<</nobr>>
 
 ::FlunkOutAlone
-TODO All on your own in the city (but not pregnant)
+TODO All on your own in the city (but not pregnant - unless very recent and don't know)
