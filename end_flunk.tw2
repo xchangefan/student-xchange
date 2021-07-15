@@ -169,7 +169,6 @@
 
 ::OffProbationXChange
 <<nobr>>
-TODO Barry Kate
   <h1>Visiting the X-Change office</h1>
   <<unset $AcademicProbationTutorSex>>
   <<unset $AcademicProbationDenial>>
@@ -282,12 +281,13 @@ TODO Barry Kate
       You know you've asked a guy to pull out for the last time.  You'll be begging the to cum inside you from now on.
     <</if>>
     <<if setup.haveGirlfriend()>>
-      "I'm a lesbian though," you tell him.  "Do I have to fuck guys now?"  He tells you that would certainly be the easiest solution.
-      But he also tells you there's another option as well.
+      "I'm a lesbian though," you tell him.  "Do I have to fuck guys now too?"  He tells you that would certainly be the easiest
+      solution. But he also tells you there's another option as well.
     <</if>>
-    Before you leave, they give you a tall glass of a think white liquid with a familiar odor.  "Is that...," you start to ask.
+    Before you leave, they give you a tall glass of a thick white liquid with a familiar odor.  "Is that...," you start to ask.
     He tells you it's only part semen.  There's also other things in it to keep it fresh and boost its effect.  "But don't worry,"
     he says, "it'll still have the taste you expect it to."
+    <<set $tempNoMoreRandomDenial to 1>>
     <br><br>
     <<if setup.haveGirlfriend()>>
       "Just come in to one of our offices for a glass of that once or twice a week, and you shouldn't have any problems.  Of course,
@@ -312,17 +312,20 @@ TODO Barry Kate
     <</if>>
     and how much is due to whatever else they probably added to the mixture.
   <</if>>
-  <br><br>
-  <i>You no longer suffer from the orgasm denial effects of your implant, except if you try to masturbate.  You have a higher
-  libido than you did previously.</i>
+  <<if $tempNoMoreRandomDenial>>
+    <<unset $tempNoMoreRandomDenial>>
+    <br><br>
+    <i>You no longer suffer from the orgasm denial effects of your implant, except if you try to masturbate.  You have a higher
+    libido than you did previously.</i>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
   "If you are moving, we can provide a list of testing facilities
   <<if $PregnancyWeek>>or qualified obstetricians<</if>>
   near wherever your new home is," he offers.  "Be sure to continue to
-  come in for your scheduled visits.  Since the scholarship is no longer a consideration, we'll be proving you with a small stipend for
-  the remainder of your four year
+  come in for your scheduled visits.  Since the scholarship is no longer a consideration, we'll be providing you with a small stipend
+  for the remainder of your four year
   <<if !$PregnancyWeek and !$PlayerSideEffectPermanent>>
     committment.  In the unlikely event you wish to change back at the end of that, we will assist with that at no charge."
   <<else>>
@@ -352,10 +355,12 @@ TODO Barry Kate
     <<if $PlayerPregnant and $PregnancyWeek > 20>>
       <img src="Part12/Pregnant2.jpg" hspace="10" vspace="10" height="450" align="left"/>
       <br>
-    <<elseif setup.areDating('Eric')>>
+    <<elseif setup.haveFucked('Justin')>>
       <video src="PartX/Army1.mp4" autoplay loop muted height="400"></video><br>
       <br>
-      You are so happy Eric is here on leave from the Army.
+      You are so happy Justin is here on leave from the Army.  You've been talking with him as much as you could, once he was out
+      of boot camp and to his job training at least.  You haven't seen each other since he left for boot camp.
+      <<set setup.startDating('Justin')>>
     <<else>>
       <video src="Part15/Probation24.mp4" autoplay loop muted height="400"></video>
       <br>
@@ -395,9 +400,138 @@ TODO Barry Kate
 <</nobr>>
 
 ::OffProbationXChangePregnant
-TODO Deal with pregnancy
-TODO (abort) [[FlunkOut]] or (keep) [[FlunkOutPregnant]]
-TODO Or [[FlunkOutDating]]
+<<nobr>>
+  <h1>Deciding what to do</h1>
+  <img src="PartX/Flunk5.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  This is a lot to take in.
+  <<if $PlayerProtectionTry>>
+    You were trying to get pregnant, but your life was much more stable then, so you aren't sure if now is a good time after all.
+  <<else>>
+    You weren't trying to get pregnant, and if you had been, now certainly wouldn't be a good time for it.
+  <</if>>
+  But it doesn't matter if you wanted it, or if it's a good time or not, you're pregnant now.  And you have to decide what you
+  want to do about it.  You sit and imagine what it'd be like 7, 8, 9 months pregnant, while you wait for the doctor to come
+  back.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Kate') or setup.areDating('Barry')>>
+    You and $dating[0] have already talked about it, and you aren't interested in a baby.  At least not right now.
+    <br><br>
+    You let the doctor know you want to [[end the pregnancy|FlunkOutAbort]].
+  <<elseif setup.areDating('Andrew') and $PregnancyCheck.possibleFathers.length != 1>>
+    If you could be sure the baby was $dating[0]'s you might feel differently, but you just can't be sure.
+    <<if $PregnancyCheck.possibleFathers.length > 3>>
+      There's so many different guys it could be.
+    <</if>>
+    That, plus all the changes with leaving school, means now is just not the right time.
+    <br><br>
+    You let the doctor know you want to [[end the pregnancy|FlunkOutAbort]].  Maybe you and $dating[0] will try again when your life
+    is in a better place.
+  <<elseif setup.areDating('Andrew')>>
+    <<set $PlayerPregnant to 1>>
+    You and $dating[0] have talked about a baby.  The time might not be perfect with all the changes happening with leaving school,
+    but no time is ever perfect.  You know the two of you will make it work.
+    <br><br>
+    You let the doctor know you will be [[keeping the baby|FlunkOutDating]].  You can't wait to tell $dating[0] the news!
+  <<elseif setup.haveFuckedVaginal('Justin') and ($PregnancyCheck.possibleFathers.length != 1 or $PregnancyCheck.possibleFathers[0] != "Justin")>>
+    You've been thinking a lot about Justin since he went off to boot camp.  And talking a lot once he left there and went to
+    his job training.  You'd like this baby to be his.  If you could be sure it was, you might feel differently, but you just don't know.
+    <<if $PregnancyCheck.possibleFathers.length > 3>>
+      There's so many different guys it could be.
+    <</if>>
+    <br><br>
+    That, plus all the changes with leaving school, means now is just not the right time.
+    <br><br>
+    You let the doctor know you want to [[end the pregnancy|FlunkOutAbort]].  Maybe later, when your life is in a better place.
+  <<elseif setup.haveFuckedVaginal('Justin')>>
+    <<set $PlayerPregnant to 1>>
+    You've been thinking a lot about Justin since he went off to boot camp.  And talking a lot once he left there and went to
+    his job training.  It hadn't been serious between you and him when you and him conceived this baby.  But now that it more serious,
+    you are thrilled to have his baby inside you.  You know your son or daughter is going to be so proud of their father.
+    <br><br>
+    Maybe it's not the perfect time, with all the changes with leaving school, but when is it ever a perfect time.  And besides, your moving
+    issues are nothing compared to what Justin is going to have to do.
+    <br><br>
+    You let the doctor know you will be [[keeping the baby|FlunkOutDating]].  You'll wait a bit to tell Justin the news.  You want to
+    just celebrate him being home AND you being able to orgasm again.  Maybe later in his leave you'll give him the news.
+  <<else>>
+    Do you want to tell the doctor that you are
+    <<link "keeping the baby">>
+      <<set $PlayerPregnant to 1>>
+      <<if $dating.length>>
+        <<goto [[FlunkOutDating]]>>
+      <<else>>
+        <<goto [[FlunkOut]]>>
+      <</if>>
+    <</link>>
+    or that you are [[ending the pregnancy|FlunkOutAbort]]?
+  <</if>>
+<</nobr>>
+
+::FlunkOutAbort
+<<nobr>>
+	<<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
+  <<if $PlayerAbortion>>
+    <<set $PlayerAbortion += 1>>
+  <<else>>
+	  <<set $PlayerAbortion to 1>>
+  <</if>>
+	<h1><<print "Medical Clinic">></h1>
+  You decide you aren’t ready for this.<br>
+  <img src="PartP/PregTest5.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+
+<<nobr>>
+  After going over everything in great detail with the doctor and signing a bunch of forms, the doctor gives you a pill which you take
+  right then, and then another one to take tomorrow.
+<</nobr>>
+
+<<nobr>>
+  You are going to have
+  <<if setup.haveFucked('Justin')>>
+    [[enough to deal with|FlunkOutAbortJustin]]
+  <<else>>
+    [[enough to deal with|FlunkOut]]
+  <</if>>
+  figuring out what to do now that you are no longer a student here.
+  You certainly don't want to add a pregnancy on top of that.
+<</nobr>>
+
+<<achievement>>childfree<</achievement>>
+
+::FlunkOutAbortJustin
+<<nobr>>
+  <h1>Celebrating begin off denial</h1>
+  <video src="PartX/Army1.mp4" autoplay loop muted height="400"></video><br>
+  <<set setup.startDating('Justin')>>
+  <<set setup.addSexRepeat(10, {sex:"male", name:"Justin", vaginal:true})>>
+<</nobr>>
+<<nobr>>
+  You are so happy Justin is here on leave from the Army.
+<</nobr>>
+
+<<nobr>>
+  You are barely out of the X-Change office and you are already
+  calling Justin and telling him your denial setting has been removed and begging him to fuck you.  He's eager to meet up with
+  you, knowing how desperate you are after months of being denied an orgasm.
+<</nobr>>
+
+<<nobr>>
+  He starts to eat you out, but you want his cock too bad to wait.  "Just fuck me!" you demand.  You don't have to ask twice.
+<</nobr>>
+
+<<nobr>>
+  The moment his cum fills you, your orgasm finally washes over you.  It feels even better than you remember it.
+<</nobr>>
+
+<<nobr>>
+  Of course you aren't going to stop at just one.  You go again as soon as he is ready.  It's only after he can't go on any more
+  that you stop to [[discuss your situation|FlunkOutDating]].
+<</nobr>>
 
 ::FlunkOut
 <<nobr>>
@@ -670,12 +804,12 @@ TODO On your own
     <<include [[FlunkOutDatingKate]]>>
   <<elseif setup.areDating('Veronica')>>
     <<include [[FlunkOutDatingVeroncia]]>>
-  <<elseif setup.areDating('Eric')>>
-    <<include [[FlunkOutDatingEric]]>>
   <<elseif setup.areDating('Andrew')>>
     <<include [[FlunkOutDatingAndrew]]>>
   <<elseif setup.areDating('Barry')>>
     <<include [[FlunkOutDatingBarry]]>>
+  <<elseif (setup.areDating('Justin') or $dating.length == 0) and setup.haveFucked('Justin')>>
+    <<include [[FlunkOutDatingJustin]]>>
   <<else>>
     <<include [[FlunkOutDatingBreakupGeneric]]>>
   <</if>>
@@ -726,13 +860,13 @@ TODO On your own
   <<include [[FlunkOutNextStepInclude]]>>
 <</nobr>>
 
-::FlunkOutDatingEric
+::FlunkOutDatingJustin
 <<nobr>>
-  <h1>Making plans with Eric</h1>
+  <h1>Making plans with Justin</h1>
   <img src="PartX/Army2.jpg" hspace="10" vspace="10" height="400" align="left">
 <</nobr>>
 <<nobr>>
-  After Eric is drained and your need is saisfied, for a while at least, the two of you sit down to talk about what to do next.
+  After Justin is drained and your need is saisfied, for a while at least, the two of you sit down to talk about what to do next.
   He's done with training now, and has two weeks before his first deployment.  You'll obviously be staying with him in the motel room he'd rented until then.
 <</nobr>>
 
@@ -743,7 +877,7 @@ TODO On your own
   lifts you up and jokingly says, "hmm, maybe that would work."
   <<if $PlayerSideEffectSubmissive>>
     <br><br>
-    Your mind wanders a bit as you realize how helpless you are zipped up in the bag like this.  Maybe when Eric is able to go again, you'll
+    Your mind wanders a bit as you realize how helpless you are zipped up in the bag like this.  Maybe when Justin is able to go again, you'll
     see if he'll zip you up like this again, and leave the rest of you horny and helpless inside the bag.
   <</if>>
 <</nobr>>
@@ -755,10 +889,10 @@ TODO On your own
 
 <<nobr>>
   "Oh, well, it was just an idea," you say.  "We've got weeks to figure out what to do next.  For now let's just
-  [[enjoy your leave|EricPropose]].
+  [[enjoy your leave|JustinPropose]].
   <<if $PlayerSideEffectSubmissive>>
     <br><br>
-    As Eric reaches to unzip the bag you tell him, "Why don't you leave me like this until you are ready to use me?"  You say.
+    As Justin reaches to unzip the bag you tell him, "Why don't you leave me like this until you are ready to use me?"  You say.
     Then, though the small amount he'd unzipped, you toss out the clothes you'd managed to wriggle out of making it obvious that
     you were naked and ready inside for whenever he was.  He smiles, zips the bag back up as before, and says, "Well, that probably
     won't be long now."
@@ -899,12 +1033,57 @@ TODO On your own
 TODO FlunkOutDatingBarry??
 
 ::FlunkOutDatingKate
-TODO FlunkOutDatingKate
+<<nobr>>
+  <h1>Kate comforts you</h1>
+  You can Kate start discussing what you are going to do now that you've flunked out of school.
+  <<if $JobBartenderSub>>
+    Obviously, your [[job at the bar|FlunkOutDatingKateBar]] doesn't care if you are student or not.  You'd planned
+    on doing more once you had you degree.  But that's not in the cards, at least not right now.
+  <<else>>
+    Kate makes enough to provide for both of you, so that's not a concern.  But you felt better when you were also
+    contributing.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When Kate sees how stressed out you are getting she starts to comfort you.  A hug turns into a kiss, and eventually it leads to
+  the two of your entwined on the bed, crying out in pleasure.  
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Flunk4.webm" autoplay loop muted height="400"></video><br>
+<</nobr>>
+
+<<nobr>>
+  As wonderful as it is to now be able to orgasm again, right now you love even more the feeling of holding Kate afterwards.  With
+  your arms and legs wrapped around her, holding her close and feeling her weight on top of you feel safe and protected.  You
+  know everything is going to be ok.
+<</nobr>>
+
+<<nobr>>
+  "If you want, I can help you sign up at the community college," Kate says stroking your hair.
+<</nobr>>
+
+<<nobr>>
+  "Maybe eventually," you respond.  "But right now I'd rather focus on
+  <<if $JobBartenderSub>>
+    work and planning our wedding.
+  <<else>>
+    [[planning our wedding|KateWedding]].
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "That sounds wonderful," she says softly in your ear as she continues to stroke your hair.
+<</nobr>>
+
+::FlunkOutDatingKateBar
+TODO Still working at the bar
+
 
 ::FlunkOutDatingBreakupGeneric
 <<nobr>>
 	<h1>Breaking up with $dating[0]</h1>
-  <<set setup.breakupWith($dating[0])>>
   You and $dating[0] get in a huge argument when you tell him you've been kicked out of school.  You try to tell him it's not your
   fault, that the school is out to get you and that they make it so hard to focus on your studies.  "It hasn't been a problem for me,"
   he tells you.  "Maybe if you weren't always trying to slut it up and thinking about fucking every guy on campus, then you would
@@ -943,6 +1122,7 @@ TODO FlunkOutDatingKate
 
 <<nobr>>
   As you try and figure out where you'll be staying tonight, you
+  <<set setup.breakupWith($dating[0])>>
   <<include [[FlunkOutNextStepInclude]]>>
 <</nobr>>
 

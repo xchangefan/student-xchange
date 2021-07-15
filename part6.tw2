@@ -4209,13 +4209,10 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 ::Part6Barista  <21600,600>
 <<nobr>>
-	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and setup.haveFucked('Andrew')>>
-		<<set setup.addSex({sex: 'male', name:'Andrew', vaginal:true})>>
-	<</if>>
 	<h1><<print "Barista">></h1>
-<</nobr>>
-
-<<nobr>>
+	<<if !setup.areDating('Andrew') and !setup.areDating('Josh') and setup.haveFucked('Andrew')>>
+		<<set setup.addSexRepeat(5, {sex: 'male', name:'Andrew', vaginal:true})>>
+	<</if>>
 	<<if setup.areDating('Andrew')>>
 		You are not sure if how long you want to keep working as a barista, but for the moment you do enjoy it.
 		Living with Andrew has made you so happy that you could probably enjoy any work.
@@ -4236,26 +4233,25 @@ do your best to make a purring sound for a bit before you fall asleep.
 		<video src="Part6/Barista2.mp4" autoplay loop muted height="640"></video>
 		<br>
 	<<else>>
-		<img src="Part6/Barista3.jpg" hspace="10" vspace="10" height="640">
+		<img src="Part6/Barista3.jpg" hspace="10" vspace="10" height="640" align="left">
 	<</if>>
 <</nobr>>
-
 <<nobr>>
-<<if setup.areDating('Andrew')>>
-	You spend lots of time practising latte art and you can say that you have become quite skillful at it.
-	You use it as way to share part of the happiness in your life with the customers that come into the cafe.
-		<br>
-<<elseif setup.areDating('Josh')>>
-	You spend lots of time practising latte art and you can say that you have become quite skillful at it.
-	You are sure that Josh appreciates the extra effort you put into his daily coffee.
-	<br>
-<<elseif setup.haveFucked('Andrew')>>
-	But of course, your favorite part at work is the occasional fuck you have with Andrew, sometimes in his office,
-	sometimes behind the counter’s wall. The thought that customers could catch you in the act makes it
-	even more thrilling.
-	<br>
-<</if>>
-[[You join a study group.|Part6StudyGroup]]
+  <<if setup.areDating('Andrew')>>
+    You spend lots of time practising latte art and you can say that you have become quite skillful at it.
+    You use it as way to share part of the happiness in your life with the customers that come into the cafe.
+      <br>
+  <<elseif setup.areDating('Josh')>>
+    You spend lots of time practising latte art and you can say that you have become quite skillful at it.
+    You are sure that Josh appreciates the extra effort you put into his daily coffee.
+    <br>
+  <<elseif setup.haveFucked('Andrew')>>
+    But of course, your favorite part at work is the occasional fuck you have with Andrew, sometimes in his office,
+    sometimes behind the counter’s wall. The thought that customers could catch you in the act makes it
+    even more thrilling.
+    <br>
+  <</if>>
+  [[You join a study group.|Part6StudyGroup]]
 <</nobr>>
 
 

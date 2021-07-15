@@ -367,20 +367,25 @@
 
 ::Part5Olivia1 <2625,2500>
 <<nobr>>
-	<h1><<print "Bedroom">></h1>
-<</nobr>>
-
-<<nobr>>
-	<<print "You’ve noticed Olivia’s master has upgraded her collar to a thicker, more secure one. And he’s added cuffs on her wrists and ankles to go with it. ">>
+	<h1>Bedroom</h1>
+	You’ve noticed Olivia’s master has upgraded her collar to a thicker, more secure one. And he’s added cuffs on her wrists and
+  ankles to go with it.
 	<<if $OliviaChastityBelt>>
-		<<print "You’re not sure if the new hardware she wears is a punishment for you getting out of your chastity belt.">>
+		You’re not sure if the new hardware she wears is a punishment for you getting out of your chastity belt.
 	<<else>>
-		<<print "You’re not sure if the new hardware she wears is a reward to her for getting that chastity belt on you or not.">>
+		You’re not sure if the new hardware she wears is a reward to her for getting that chastity belt on you or not.
 	<</if>>
 <</nobr>>
-<img src="Part5/Olivia1.jpg" hspace="10" vspace="10" height="650">
-
-<<if $OliviaChastityBelt>>[[It doesn’t matter though because she loves wearing it.|Part5OliviaHelp]]<<else>>[[It doesn’t matter though because she loves wearing it.|Part5OliviaChastity]]<</if>>
+<<nobr>>
+  <img src="Part5/Olivia1.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+<<nobr>>
+  <<if $OliviaChastityBelt>>
+    [[It doesn’t matter though because she loves wearing it.|Part5OliviaHelp]]
+  <<else>>
+    [[It doesn’t matter though because she loves wearing it.|Part5OliviaChastity]]
+  <</if>>
+<</nobr>>
 
 ::Part5Samantha1 <1400,2500>
 <<nobr>>
@@ -1422,19 +1427,24 @@
 
 ::Part5OliviaChastity <2625,3125>
 <<nobr>>
-	<<set setup.addSex({sex: 'male', name: $neighbours[0]})>>
-	<<set setup.addSex({sex: 'male', name: $neighbours[1]})>>
 	<h1>Bedroom</h1>
+	<<set setup.addSexRepeat(10, {sex: 'male', name: $neighbours[0]})>>
+	<<set setup.addSexRepeat(10, {sex: 'male', name: $neighbours[1]})>>
+  Every night you struggle to go to sleep, your pussy aching to be filled. And every morning you wake up even hornier than the night before.
 <</nobr>>
 
-<<print "Every night you struggle to go to sleep, your pussy aching to be filled. And every morning you wake up even hornier than the night before.">>
+<<nobr>>
+  It drives you even more insane with lust knowing there are two willing cocks only feet away from you the whole time. If only you weren’t
+  in this damn belt.
+<</nobr>>
 
-<<print "It drives you even more insane with lust knowing there are two willing cocks only feet away from you the whole time. If only you weren’t in this damn belt.">>
+<<nobr>>
+  <video src="Part5/Olivia3.mp4" autoplay loop muted height="640"></video>
+<</nobr>>
 
-<video src="Part5/Olivia3.mp4" autoplay loop muted height="640"></video>
-
-
-<<print "You have to at least suck one, or both, of them off before you can even function in the morning. It doesn’t help much, but it helps a little. Luckily they are both more than willing to help you start your day.">>
+<<nobr>>
+  You have to at least suck one, or both, of them off before you can even function in the morning. It doesn’t help much, but it helps a little. Luckily they are both more than willing to help you start your day.
+<</nobr>>
 
 <<nobr>>
 	<<if $JobAthlete>>
@@ -1465,6 +1475,7 @@
 	
 	<<if $JobCheerleader and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
 	<<if $JobCheerleaderFundraiser and !$JobCallGirlSide and !$JobWebModelSide>>[[Spend some time on campus.|Part6Start1]]<</if>>
+  <<if $JobBarista>>[[You have to work at the cafe.|Part6Barista]]<</if>>
 <</nobr>>
 
 ::Part5Jerk1 <700,2750>
