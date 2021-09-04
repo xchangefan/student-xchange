@@ -13,6 +13,7 @@
     <<include [[SideBarBirthControl]]>>
 <<if $PlayerMoneySet and !$PlayerCumslutPermanent and !$DropoutConcubine>><br><<print "Money: $">>$PlayerMoney<</if>>
     [[Inventory|SideBarInventory]]\
+    
     <<include [[SideBarChastity]]>>\
     <<if $student>><<include [[SideBarMentor]]>><</if>>\
     <<include [[SideBarNeighbours]]>>\
@@ -1022,6 +1023,18 @@ You are a young man trying to decide where to go to college.
         You live with Eric.
       <<else>>
         You are in a relationship with Eric.
+      <</if>>
+    <</if>>
+    
+    <<if $Spouse == 'Justin' or $Engaged == 'Justin' or setup.areDating('Justin')>>
+      <<if $Spouse == 'Justin'>>
+        You are married to Justin.
+      <<elseif $Engaged == 'Justin'>>
+        You are engaged to Justin.
+      <<elseif $Roommate=='Justin'>>
+        You live with Justin.
+      <<else>>
+        You are in a relationship with Justin.
       <</if>>
     <</if>>
 

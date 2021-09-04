@@ -29,8 +29,8 @@
 
 <<nobr>>
   "Out of consideration for your participation in the X-Change trial, we even gave you a third chance when you continued to struggle
-  second semester," he continues.  "However, to let you continue any longer wouldn't be fair to you, your professors, to some
-  student who could better utilize a place at our university."
+  second semester," he continues.  "However, to let you continue any longer wouldn't be fair to you, to your fellow students, to your
+  professors, or to other potential students who could better utilize a place at our university."
 <</nobr>>
 
 <<nobr>>
@@ -53,9 +53,9 @@
 <<nobr>>
   "For the three classes you are doing adequately in, your professors said they'd waive the final for you and give you a 'Pass' grade
   for the term.  Your professors from the courses you failed last year have also generously agreed to retroactively change your grades
-  to 'Pass' as well, based on what progress you have made.  That will give you a few additional credits if you decide to transfer to a
-  community college.  The professors for the two classes you are going to fail have agreed to let withdrawl late an not receive a grade,
-  so there won't be any "F" grades on your transcript.
+  to 'Pass' as well, based on what progress you have made since then.  That will give you a few additional credits if you decide to
+  transfer to a community college.  The professors for the two classes you are going to fail have agreed to let you withdraw late and not
+  receive a grade, so there won't be any "F" grades on your transcript.
 <</nobr>>
 
 <<nobr>>
@@ -174,6 +174,11 @@
   <<unset $AcademicProbationDenial>>
   <<set $AcademicProbationDenialFormer to 1>>
   <<unset $AcademicProbation>>
+  <<if $PlayerPregnant>>
+    <<unset $PregnancyCheck>>
+  <<else>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - flunk out', 0)>>
+  <</if>>
   You head over to the X-Change office as soon as you leave the dean's office.  Now that you aren't a student here anymore, you aren't on
   academic hold any longer and they'll take the denial setting off of your belt.  You are already fantasizing about what you'll
   do when you leave their office.
@@ -181,29 +186,62 @@
 
 <<nobr>>
   You were hoping the technician would repeat the 'test' he performed when he'd disabled your ability to cum, but he says it's not
-  necessary.  "I'm sure you'll verify soon enough," he smiles and adds, "and will let us know if there's an issue.
+  necessary.  "I'm sure you'll verify soon enough," he smiles and adds, "and will let us know if there's an issue."
 <</nobr>>
 
 <<nobr>>
   He checks a few things more on your settings and tells you
   <<if !$PlayerSideEffectMasturbationBlock>>
-    "It looks like your repeated orgasm attempts while you were on the denial setting seemed to have triggered a side effect."  You
+    "It looks like your repeated orgasm attempts while you were on the denial setting have triggered a side effect."  You
     start to try to deny doing that, but then give up and keep listening.  "Oh, that's good, he says relieved.  It looks like you'll
     just be unable to get off from masturbation.  It's more fun with someone else anyway, right?"
     <<set $PlayerSideEffectMasturbationBlock to 1>>
-    <<if !$PlayerPregnant and $PregnancyWeek>>
-      Oh, and it looks like there is another side effect from the fun you've been having.  Though this one isn't as surprising."
-      He pauses for a second and then explains, "You're [[pregnant|OffProbationXChangePregnant]]."
-      <br>
+    <<if !$PlayerPregnant and ($PregnancyWeek or ($PregnancyCheck and $PregnancyCheck.isPregnant))>>
+      <<set $tempNewlyPregnant to 1>>
+      <br><br>
+      Then he adds, "Oh, and it looks like there is another side effect from the fun you've been having.  Though this one isn't
+      as surprising." He pauses for a second and then explains, "You're [[pregnant|OffProbationXChangePregnant]]."
+      <br><br>
+      "Great.  I'm knocked up, and I didn't even get to properly enjoy it," you grumble.
+      <br><br>
       <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
+      <<set $PlayerSideEffectPermanent to 1>>
+      <<set $PlayerPregnant to 1>>
+      <<achievement>>pregnant<</achievement>>
+      <<if setup.pregnantFirstTime()>>
+        <<achievement>>firsttime<</achievement>>
+      <</if>>
     <</if>>
-  <<elseif !$PlayerPregnant and $PregnancyWeek>>
+  <<elseif !$PlayerPregnant and ($PregnancyWeek or ($PregnancyCheck and $PregnancyCheck.isPregnant))>>
+    <<set $tempNewlyPregnant to 1>>
     "Oh, I guess you've been having a fun even with your denial effect."  After pausing for a second he says,
     "You're [[pregnant|OffProbationXChangePregnant]]." 
-      <br>
-      <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
+    <br><br>
+    "Great.  I'm knocked up, and I didn't even get to properly enjoy it," you grumble.
+    <br><br>
+    <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
+    <<set $PlayerSideEffectPermanent to 1>>
+    <<set $PlayerPregnant to 1>>
+    <<achievement>>pregnant<</achievement>>
+    <<if setup.pregnantFirstTime()>>
+      <<achievement>>firsttime<</achievement>>
+    <</if>>
+    <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
   <<else>>
     "It looks like everything is in order."  
+  <</if>>
+  <<if !$PlayerSideEffectPermanent>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    <br><br>
+    He checks over the screen then informs you, "As you know, your implant, and the denial effect you were on are experimental.
+    It seems that something triggered unexpectedly.  It is now permanent."  He sees the look of shock and horror on your face
+    as you contemplate the denial effects you've been suffering the past months being permanent.  He quickly clarifies, "Your
+    implant is permanent.  This body is yours permanently.  The denial effect is still turned off.  Sorry if there was any confusion
+    there."
+    <br><br>
+    After the initial scare,
+    and knowing that you'll be able to cum again, a few minutes from now hopefully, you aren't even upset about the rest.  It's not
+    like you were wanting to change back in a few years anyway, right?
   <</if>>
   <<if $PlayerSideEffectOrgasmBlock>>
     <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
@@ -322,19 +360,13 @@
 
 <<nobr>>
   "If you are moving, we can provide a list of testing facilities
-  <<if $PregnancyWeek>>or qualified obstetricians<</if>>
+  <<if $PlayerPregnant>>or qualified obstetricians<</if>>
   near wherever your new home is," he offers.  "Be sure to continue to
   come in for your scheduled visits.  Since the scholarship is no longer a consideration, we'll be providing you with a small stipend
-  for the remainder of your four year
-  <<if !$PregnancyWeek and !$PlayerSideEffectPermanent>>
-    committment.  In the unlikely event you wish to change back at the end of that, we will assist with that at no charge."
-  <<else>>
-    committment."
-  <</if>>
+  for the remainder of your four year committment."
 <</nobr>>
-
 <<nobr>>
-  <<if !$PlayerPregnant and $PregnancyWeek>>
+  <<if $tempNewlyPregnant>>
   <<elseif setup.haveGirlfriend()>>
     <video src="Part15/Probation23.webm" autoplay loop muted height="400"></video><br>
     You are barely out of the X-Change office and you are already calling $dating[0] and telling her your denial setting has been
@@ -370,6 +402,9 @@
       <<set setup.addSexRepeat(10, {sex:"male", name:$dating[0], vaginal:true})>>
       calling $dating[0] and telling him your denial setting has been removed and begging him to fuck you.  He's eager to meet up with
       you, knowing how desperate you are after months of being denied an orgasm.
+      <<if setup.areDating('Justin')>>
+        He's also very eager to see you orgasm for the first time.
+      <</if>>
       <br><br>
       He starts to eat you out, but you want his cock too bad to wait.  "Just fuck me!" you demand.  You don't have to ask twice.
       <<if setup.areDating('Barry')>>
@@ -517,7 +552,7 @@
 <<nobr>>
   You are barely out of the X-Change office and you are already
   calling Justin and telling him your denial setting has been removed and begging him to fuck you.  He's eager to meet up with
-  you, knowing how desperate you are after months of being denied an orgasm.
+  you, knowing how desperate you are after months of being denied an orgasm.  He's also very eager to see you orgasm for the first time.
 <</nobr>>
 
 <<nobr>>
@@ -596,13 +631,6 @@
 <<nobr>>
   "Don't worry about the cost.  I'll pay for your tuition.  It may delay my retirement by a year or two, but I'll retire happier knowing
   I've prevented my daughter from becoming a...  Well, I'll retire happier with you a proper young woman."
-  <<if !$PlayerSideEffectPermanent>>
-    <br><br>
-    When you start to talk about not growing into a proper young woman, but becoming a young man again, your father stops you.  "The contract
-    you signed committed you to a minimum of four years.  And look at how you are after not even half that.  But lets be honest, even before
-    the X-Change, you were never going to grow to be a proper man either.  I think it's best if you remove that thought from your mind
-    entirely, so you can focus on becoming the best woman you can be.
-  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -809,6 +837,9 @@ TODO On your own
   <<elseif setup.areDating('Barry')>>
     <<include [[FlunkOutDatingBarry]]>>
   <<elseif (setup.areDating('Justin') or $dating.length == 0) and setup.haveFucked('Justin')>>
+    <<if !setup.areDating('Justin')>>
+      <<set setup.startDating('Justin')>>
+    <</if>>
     <<include [[FlunkOutDatingJustin]]>>
   <<else>>
     <<include [[FlunkOutDatingBreakupGeneric]]>>
@@ -889,7 +920,7 @@ TODO On your own
 
 <<nobr>>
   "Oh, well, it was just an idea," you say.  "We've got weeks to figure out what to do next.  For now let's just
-  [[enjoy your leave|JustinPropose]].
+  [[enjoy your leave|JustinOnLeave]].
   <<if $PlayerSideEffectSubmissive>>
     <br><br>
     As Justin reaches to unzip the bag you tell him, "Why don't you leave me like this until you are ready to use me?"  You say.
@@ -1151,3 +1182,4 @@ TODO Still working at the bar
 
 ::FlunkOutAlone
 TODO All on your own in the city (but not pregnant - unless very recent and don't know)
+TODO What ending here? Waitress, street prostitute?, red light district/in-call prostitute?, IR Wife?, fucking landlord?

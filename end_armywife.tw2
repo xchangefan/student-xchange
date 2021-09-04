@@ -1,3 +1,185 @@
-::JustinPropose
-TODO Justin just done with training, about to get shipped overseas, Proposes and you two quickly marry so you can join him
-TODO If $PlayerPregnant, then inform Justin
+::JustinOnLeave
+<<nobr>>
+  <h1>Enjoying Justin's leave</h1>
+  <video src="PartX/Army3.mp4" autoplay loop muted height="400"></video>
+  <<set setup.addSexRepeat(50, {sex:"Male", name:"Justin"})>>
+  <<set setup.addSexRepeat(50, {sex:"Male", name:"Justin", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  You and Justin only have two weeks together before he has to ship off to half way around the world for over a year!  You don't
+  want to miss a minute of it, so you've told Brian you won't be working for the next two weeks.  With no more school, and no work,
+  you can spend every moment with Justin.  And you know exactly how you'll be spending most of it.
+<</nobr>>
+
+<video src="PartX/Army4.mp4" autoplay loop muted height="400"></video>
+
+<<nobr>>
+  The two of you spend as much time as you can together, enjoying each other's bodies until you have to stop to eat, or just to
+  let your bodies recover.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/Army5.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+<<nobr>>
+  You fell asleep after your last round of sex.  You smile a little remembering it as you waking up to the familiar feeling of
+  Justin's cum leaking out of you.
+  <<if $PlayerProtectionCondoms>>
+    <<unset $PlayerProtectionCondoms>>
+    <<set $PlayerProtectionNone>>
+    You'd ran out of condoms days ago, and neither of you were going to let that stop you, or even wait long enough to buy more.
+  <<elseif $PlayerProtectionWithdraw>>
+    <<unset $PlayerProtectionWithdraw>>
+    <<set $PlayerProtectionNone>>
+    The first day back together you'd stopped having Justin even try to pull out before he cums.  It feels too good when his
+    cock starts throbing deep inside you as he cums.  You're pretty sure he enjoyes it too.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Justin must have woke back up before you.  You see him sitting down messaging someone on his phone.  When he notices you waking
+  up, he smiles at you.  "I've been chatting with some of my Army buddies to see if any of them know of a way I could bring you
+  with me," he says.  The smile on his face when he says it, tells you he has an idea that might work.
+<</nobr>>
+
+<<nobr>>
+  "They had [[a solution|JustinWedding]].  An obvious one really.  But I'm not sure if you'll like it or not," he continues.
+<</nobr>>
+
+<<nobr>>
+  "Anything!" you respond.  "I can't stand the thought of us being apart for an entire year!"  Even if I was able to save
+  up for a ticket and visit, it'd be torture.
+<</nobr>>
+
+::JustinWedding
+<<nobr>>
+  <h1>The obvious solution</h1>
+  <img src="PartX/Army6.jpg" hspace="10" vspace="10" height="350" align="left">
+  <<set setup.addSexRepeat(50, {sex:"Male", name:"Justin"})>>
+  <<set setup.addSexRepeat(50, {sex:"Male", name:"Justin", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set $Spouse to "Justin">>
+<</nobr>>
+<<nobr>>
+  Justin was right, the solution was obvious once he said it.  If the Army only allows him to bring you with him if you are married,
+  then the two of you just need to get married before he leaves!
+<</nobr>>
+
+<<nobr>>
+  "I know it's sudden," he says.  "But I'm sure it's something we would have done eventually anyway.  This is getting us
+  to do it sooner
+  <<if $PlayerPregnant>>
+    instead.  Besides, this way our baby will be born to two happily married parents."
+  <<else>>
+    instead."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    Your heart soars when you hear him say "our baby" instead of "your baby".  He's making it clear that he's willing to accept
+    the baby as his, no matter who the father might really be.
+  <</if>>
+  You wrap your arms around him and kiss him say, "Yes! That's a wonderful idea!  Of course, I'll marry you!"
+<</nobr>>
+
+<<nobr>>
+  He'd already researched the process online, and the two of get cleaned up and head down to city hall.  An hour or so later,
+  you walk out as husband and wife!
+<</nobr>>
+
+<<nobr>>
+  You both have things you need to take care of so that you can join him when he ships out, but you decide that can wait an hour
+  or two.  You want to have sex as husband and wife for the first time first!
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Army7.webm" autoplay loop muted height="400"></video>
+<</nobr>>
+
+<<nobr>>
+  Afterwards, you get cleaned up again, and head down to the [[X-Change Office|JustinCheckup]], while Justin starts making calls to let the
+  Army know he's married now.
+<</nobr>>
+
+::JustinCheckup
+<<nobr>>
+  <h1>At the X-Change Office</h1>
+  <img src="PartP/PregTest6.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<unset $JobBikiniBarista>>
+  <<set $JobHomemaker to 1>>
+  <<if !$PlayerPregnant>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Justin wedding', 0)>>
+    <<if $PregnancyCheck.isPregnant>>
+      <<set $tempJustNowPregnant to 1>>
+      <<set $PlayerPregnant to 1>>
+      <<achievement>>pregnant<</achievement>>
+      <<if setup.pregnantFirstTime()>>
+        <<achievement>>firsttime<</achievement>>
+      <</if>>
+    <</if>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  You let the X-Change office know that you are going to be stationed overseas with Justin, and find out what you need to do as far
+  as you regular checkups there.  They congratulate you on wedding, and give you a list of X-Change offices near the base.  "The
+  implant trial is only happening here, but any of our international offices can perform the basic tests, they just won't be able
+  to configure your implant at all."
+<</nobr>>
+
+<<nobr>>
+  <<if !$PlayerSideEffectPermanent>>
+    <<set $tempImplantConfig to 1>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    "Oh, in that case, you make my implant permanent now.  I don't want to ever change back."
+    <<if $tempJustNowPregnant>>
+      Though your request ends up being unnecessary, when his tests show that you are pregnant!
+    <<else>>
+      He has you sign a form, gives you an injection, and then congratulates you on your new, permanent body.
+    <</if>>
+  <</if>>
+  <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
+    <<set $tempImplantConfig to 1>>
+    <<unset $PlayerProtectionPermanent>>
+    <<unset $PlayerProtectionPerfect>>
+    <<set $PlayerProtectionNone to 1>>
+    "Now that I'm married, I don't need the implant's birth control anymore.
+    <<if $PlayerPregnant>>
+      If we want to wait after this one,
+    <<else>>
+      We are wanting our first child soon.  If we want to wait after that,
+    <</if>>
+    then we'll just use regular birth control then."  He confirms your decision and then hits few buttons
+    and sends a signal to your implant.  Then he lets you know it's done.   
+  <</if>>
+  <<if $tempImplantConfig>>
+    <<unset $tempImplantConfig>>
+  <<else>>
+    You let him know you don't need anything changed on your implant, so you should be fine.
+  <</if>>
+  <<if $tempJustNowPregnant>>
+    <<unset $tempJustNowPregnant>>
+    <br><br>
+    The tests he performs during your visit show that you're pregnant now!   It looks like you and Justin won't have to wait after all.
+    Justin's already said that he knows even though you were his first, he wasn't your first.  He doesn't even question who the father is
+    when you tell him after your visit.  You love him so much for accepting the baby as his without a second thought.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  All the other tests look fine, so you [[head back to Justin|JustinMoving]].
+<</nobr>>
+
+::JustinMoving
+TODO Plane overseas
+TODO Living with Justin
+TODO Pregnant if not already
+TODO Give birth
+TODO Continue to ending [[ArmyWife]]
+
+::ArmyWife
+TODO [[ArmyWifeEnd]]
+
+::ArmyWifeEnd
+<h1><<print "Game Over - Army Wife">></h1>
+<img src="PartX/GameOver1.jpg" hspace="10" vspace="10" height="650">
+<<achievement>>armyWife<</achievement>>

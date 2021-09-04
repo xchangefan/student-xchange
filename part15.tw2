@@ -3392,7 +3392,78 @@
 
 
 ::Part15FirstTrimester
-TODO Preg: Start showing pregnancy, discover if haven't already, then [[Part15WeekStandard]]
+<<nobr>>
+  <h1>First Trimester</h1>
+  <<if $PlayerPregnant>>
+    As you glance your stomach, you can finally start to tell you are pregnant, though you aren't sure anyone else would know unless
+    you were naked, or wearing something really tight.  Though some of your clothes have started to fit a little more tightly now
+    anyway.
+  <<else>>
+    <<achievement>>pregnant<</achievement>>
+    <<if setup.pregnantFirstTime()>>
+      <<achievement>>firsttime<</achievement>>
+    <</if>>
+    You've been so busy you hadn't really though about your period.  Now that you are thinking about it, you realize it's been a
+    while since your last one.  Between that and the nausea you've been feeling sometimes, you are
+    <<if $PlayerProtectionTry>>
+      hoping for the best
+    <<else>>
+      dreading what you'll see
+    <</if>>
+    when you take a home pregnancy test.
+    <br><br>
+    <img src="PartP/PregTest7.jpg" hspace="10" vspace="10" height="300">
+    <br><br>
+    You are
+    <<if $PlayerProtectionTry>>
+      thrilled
+    <<else>>
+      not surprised
+    <</if>>
+    when you see the word "Pregnant" appear on the screen.
+    <<if $PlayerProtectionTry>>
+      You know you'll have to schedule a doctor visit to confirm the test, but you are confident their test will show the same thing.
+    <<else>>
+      You know it's still early in the pregnancy.  So now is the time visit the clinic if you want to
+      [[terminate the pregnancy|Part15FirstTrimesterAbort]].  Otherwise, you'll need to schedule a doctor visit to confirm your
+      home test, and start planning for the pregnancy.
+    <</if>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <img src="PartP/Trimester1.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+    <<if !$PlayerPregnant and !$PlayerProtectionTry>>
+      If you decide to keep the baby, you
+    <<else>>
+      You
+    <</if>>
+    know the changes to your body have just begun.  But right now what you are really hoping for is the nausea to stop.
+    It'd be much easier to [[get on with your life|Part15WeekStandard]] if you weren't forced to run to the bathroom and kneeling in
+    front of the toilet several times a week.
+    <<if !$PlayerPregnant>>
+      <<set $PlayerPregnant to 1>>
+    <</if>>
+<</nobr>>
+
+::Part15FirstTrimesterAbort
+<<nobr>>
+	<h1>Back Home</h1>
+  <img src="PartP/PregTest5.jpg" hspace="10" vspace="10" height="400">
+  <<achievement>>childfree<</achievement>>
+  <<unset $PlayerPregnant>>
+  <<unset $PregnancyWeek>>
+<</nobr>>
+<<nobr>>
+  You took the first pill at the clinic, after their test confirmed what your home one said.  They gave you another one the next day.
+  They were right about the bleeding and cramps that followed the next day.  It was worse than your worst period so far, but managable,
+  and thankfully only for part of a day.
+<</nobr>>
+
+<<nobr>>
+  Now you just want to forget about the pregnancy and get [[back to normal|Part15WeekStandard]] like nothing happened.
+<</nobr>>
 
 ::Part15SecondTrimester
 TODO Preg: Have second trimester visit (ultrasound), then [[Part15WeekStandard]]
@@ -4489,10 +4560,30 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 ::Part15ProbationAlone
-TODO Part15ProbationAlone
-<<set $AcademicProbationTutor to "alone">>
-
-[[Part15ClassesStart]]
+<<nobr>>
+  <h1>Trying to catch up on your own</h1>
+  <img src="Part15/Probation31.jpg" hspace="10" vspace="10" height="450">
+  <<set $AcademicProbationTutor to "alone">>
+<</nobr>>
+<<nobr>>
+  You've learned the
+  <<if setup.haveFucked("David") or setup.haveFucked("Ken") or setup.haveFucked("Athlete (massage client)") or setup.haveFucked("Coach") or setup.haveFucked("Engineering Department Head") or setup.haveFucked("University Donor") or setup.haveFucked("Library Boss") or setup.haveFucked("Remote Tester") or setup.haveFucked("Campus Police Officer") or setup.haveFucked("Tutor 1") or setup.haveFucked("Student Activities Guy 1") or setup.haveFucked("Athlete (yoga)") or setup.haveFucked("Art Professor") or setup.haveFucked("Lab Technician") or setup.haveFucked("Professor")>>
+    "hard"
+  <<else>>
+    hard
+  <</if>>
+  way that the men at this university can't be trusted.  You aren't going to put your future in the hands of some horny guys who are probably
+  more interested it whether they can get you bent over their desk getting fucked, or on your knees sucking their cock, than they are with
+  whether you pass or not.
+<</nobr>>
+<<nobr>>
+  <table><tr>
+  <td><img src="Part15/Probation32.jpg" hspace="10" vspace="10" height="300"></td>
+  <td><img src="Part15/Engineer27.jpg" hspace="10" vspace="10" height="300"></td>
+  </tr></table>
+  No!  Suceed or fail, you are determined to do it [[on your own|Part15ClassesStart]], based on your academic abilities,
+  not any other abilities you might have.
+<</nobr>>
 
 ::Part15ProbationMath
 <<nobr>>
@@ -6208,7 +6299,7 @@ TODO Part15ProbationAlone
 
 <<nobr>>
   You are eager for him to start the machine, but first he attaches straps around your neck, arms, and legs, until you can barely move
-  an inch from your current position.  Then he pressed a button on the control panel.  You feel the machine slowly start to come to life
+  an inch from your current position.  Then he presses a button on the control panel.  You feel the machine slowly start to come to life
   inside you.  The engineer then goes elsewhere in the room to work on something.
 <</nobr>>
 
@@ -6262,7 +6353,7 @@ TODO Part15ProbationAlone
 <<nobr>>
   "How about you confess which of your little slut friends told you about us?" he says smiling.  "We'll punish her a bit for violating
   disclosure rules.  But then we'll reward her for sending such a pretty, cocksucking slut our way."  You don't hesitate and start
-  telling him about the survey your professor did, and what she did said class.  Then you tell him how horny you got just listening to
+  telling him about the survey your professor did, and what she said class.  Then you tell him how horny you got just listening to
   her talk about the experiments and how that drove you to visit them.
 <</nobr>>
 
@@ -8686,15 +8777,16 @@ TODO Upset after being raped [[Part15Dorm]]
 ::Part15DormStonerConflict
 <<nobr>>
   <h1>Waiting for the smoke to clear</h1>
-  <img src="Part15/Dorm12.jpg" hspace="10" vspace="10" height="500">
   <<set $DormFriendLevel -= 1>>
-<</nobr>>
-<<nobr>>
   <<if $PregnancyWeek >= 27>>
+    <img src="Part15/Dorm12.jpg" hspace="10" vspace="10" height="400">
+    <br>
     You're in your third trimester so you think the odds of Marissa's smoking affecting the baby are probably low.
     But you don't really want to take any chances.
   <<else>>
-    The baby is still developing, and you don't want to risk whatever affect Marissa's smoking might have on him or her.
+    <img src="Part15/Dorm34.jpg" hspace="10" vspace="10" height="400">
+    <br>
+    The baby is still developing, and you don't want to risk whatever effect Marissa's smoking might have on him or her.
     <<set $DormFriendLevel -= 1>>
   <</if>>
   So you find somewhere else to be for a while.  You only head back to the room when you think enough time has passed and Marissa
@@ -8703,7 +8795,7 @@ TODO Upset after being raped [[Part15Dorm]]
 
 <<nobr>>
   When you get back, you can still smell it in the air.  You don't know if that means she just finished, or it's just that your
-  sense of smell is so much strong during the pregnancy.  Either way it annoys you.
+  sense of smell is so much stronger during the pregnancy.  Either way it annoys you.
 <</nobr>>
 
 <<nobr>>
