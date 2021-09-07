@@ -2,8 +2,8 @@
 <<nobr>>
   <h1>Enjoying Justin's leave</h1>
   <video src="PartX/Army3.mp4" autoplay loop muted height="400"></video>
-  <<set setup.addSexRepeat(50, {sex:"Male", name:"Justin"})>>
-  <<set setup.addSexRepeat(50, {sex:"Male", name:"Justin", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Justin"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Justin", vaginal:true, noPullout:true, noCondom:true})>>
 <</nobr>>
 <<nobr>>
   You and Justin only have two weeks together before he has to ship off to half way around the world for over a year!  You don't
@@ -55,8 +55,8 @@
 <<nobr>>
   <h1>The obvious solution</h1>
   <img src="PartX/Army6.jpg" hspace="10" vspace="10" height="350" align="left">
-  <<set setup.addSexRepeat(50, {sex:"Male", name:"Justin"})>>
-  <<set setup.addSexRepeat(50, {sex:"Male", name:"Justin", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Justin"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Justin", vaginal:true})>>
   <<set $Spouse to "Justin">>
 <</nobr>>
 <<nobr>>
@@ -65,7 +65,7 @@
 <</nobr>>
 
 <<nobr>>
-  "I know it's sudden," he says.  "But I'm sure it's something we would have done eventually anyway.  This is getting us
+  "I know it's sudden," he says.  "But I'm sure it's something we would have done eventually anyway.  This is just getting us
   to do it sooner
   <<if $PlayerPregnant>>
     instead.  Besides, this way our baby will be born to two happily married parents."
@@ -83,13 +83,13 @@
 <</nobr>>
 
 <<nobr>>
-  He'd already researched the process online, and the two of get cleaned up and head down to city hall.  An hour or so later,
+  He'd already researched the process online, and the two of you get cleaned up and head down to city hall.  An hour or so later,
   you walk out as husband and wife!
 <</nobr>>
 
 <<nobr>>
   You both have things you need to take care of so that you can join him when he ships out, but you decide that can wait an hour
-  or two.  You want to have sex as husband and wife for the first time first!
+  or two.  You want to have sex as husband and wife for the first time before you do anything else!
 <</nobr>>
 
 <<nobr>>
@@ -156,6 +156,15 @@
   <<else>>
     You let him know you don't need anything changed on your implant, so you should be fine.
   <</if>>
+  <<if $PlayerProtectionPill>>
+    <<unset $PlayerProtectionPill>>
+    <<set $PlayerProtectionNone to 1>>
+    <<set $PlayerProtectionPillFormer to 1>>
+    <<if !$tempJustNowPregnant>>
+      He also asks you about transfering your birth control prescription to a new pharmacy, but you tell him not to bother.
+      You and Justin are eager to start a family.  You can get on birth control after your first child.
+    <</if>>
+  <</if>>
   <<if $tempJustNowPregnant>>
     <<unset $tempJustNowPregnant>>
     <br><br>
@@ -166,18 +175,388 @@
 <</nobr>>
 
 <<nobr>>
-  All the other tests look fine, so you [[head back to Justin|JustinMoving]].
+  All the other tests look fine, so you [[head back to Justin|JustinShipOut]].
 <</nobr>>
 
-::JustinMoving
-TODO Plane overseas
-TODO Living with Justin
-TODO Pregnant if not already
-TODO Give birth
-TODO Continue to ending [[ArmyWife]]
+::JustinShipOut
+<<nobr>>
+  <h1>A brief separation</h1>
+  <img src="PartX/Army8.png" hspace="10" vspace="10" height="450" align="right">
+<</nobr>>
+<<nobr>>
+  Justin said the Army said you could join him now that you were married, which was wonderful news.  The only bad news is that
+  it will take a few weeks to get all the paperwork taken care of.  So instead of joining him when he leaves, you see him off at
+  the airport, and start preparing for your own flight in a few weeks.
+<</nobr>>
+
+<<nobr>>
+  You've already quit your job, so you start adjusting your sleep schedule to match Justin's.  It's going to make it that much
+  easier when you join him anyway.  Though the real reason is so you can talk or video chat when him whenever he has free time.
+<</nobr>>
+
+<<nobr>>
+  When he starts telling all the things he wants to do to you when you are together again, you decide to give him a show as you
+  follow along as best you can while he watches.  Well, he does more than just watch.  You get even wetter as you see his hard cock in
+  his hand on the screen.
+<</nobr>>
+
+<<nobr>>
+  <<if false and $PlayerSideEffectMasturbationBlock>>
+    Normally you feel very little when you touch yourself.  You were planning on just pretending and giving a show for Justin.
+    But with him telling you exactly what to do and you following along, it's not triggering the side effect.  The moans you are
+    giving are real, not just for Justin's enjoyment.  They'd said your side effect was mental not physical after all.
+    <br><br>
+    Though an orgasm without Justin there is still out of reach. As he starts to get close, your cry out, begging for him to cum
+    inside you.  As he cums for real, you pretend like you do as well to enhance his enjoyment.  But instead you feel the aching
+    need to feel Justin inside you return.
+  <<else>>
+    You moan as you slide your fingers into yourself, thrusting them faster or slower as Justin tells you exactly how he plans to
+    fuck you when you are together again.  It feels so good, though still nowhere near as good as the real thing.  Though Justin's
+    own moans as he follows along with his hand on his cock turn you own even more.
+    <br><br>
+    <<if $PlayerSideEffectOrgasmBlock>>
+      Though an orgasm without Justin there is still out of reach. As he starts to get close, your cry out, begging for him to cum
+      inside you.  As he cums for real, you pretend like you do as well to enhance his enjoyment.  But instead you feel the aching
+      need to feel Justin inside you return.
+    <<else>>
+      As he starts to get close, you beg for him to cum inside you.  As you hear him groan with his orgasm, you can almost feel
+      his warm cum filling you.  It's enough to push you over the edge to your own orgasm.  By the time you've recovered enough
+      to look back up at your screen, you see Justin smiling back at you.  After his orgasm was over, he's been enjoying watching
+      yours.
+      <br><br>
+      You pull your fingers out of you, imagining it's Justin's cock.  But you don't feel the trail of his cum leaking down to your ass
+      like you normally do when he pulls out of you.  You miss that feeling.  Well, you miss everything about being with Justin,
+      but this is the best the two of you can do for now.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Army9.mp4" autoplay loop muted height="400"></video>
+<</nobr>>
+
+<<nobr>>
+  You know the weeks until you and Justin can [[be together again|ArmyWife]] will be excruciating.  But you tell yourself at least
+  it'll only be a few weeks.  You could not have lasted a year.
+<</nobr>>
 
 ::ArmyWife
-TODO [[ArmyWifeEnd]]
+<<nobr>>
+  <h1>Back with Justin</h1>
+  <<set setup.addSexRepeat(3, {sex:"male", name:"Justin"})>>
+  <<set setup.addSexRepeat(3, {sex:"male", name:"Justin", vaginal:true})>>
+  You don't want to wait any longer than you have to be back with Justin, so you take the first flight time that Army offers you.
+<</nobr>>
+
+<<nobr>>
+  Evidently the department that set up your flight didn't let the Justin's base know you'd be arriving that soon, so he's still in a
+  single-person dorm-style room when you arrive.  Thankfully his sergeant has said, given the situation, you can stay in Justin's room
+  for a day or two until the Army straightens things out.  The sergeant warns you that the bed is only sized for one person though.
+  You and Justin don't mind at all.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Army10.mp4" autoplay loop muted height="400"></video>
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/Army11.jpg" hspace="10" vspace="10" height="450" align="right">
+  After everything is sorted out, they move you and Justin into a small, one bedroom apartment on base.  The bedroom is
+  about the size of the dorm-style room they'd had him in, but there's also a small kitchen and living room too.  And,
+  of course, it has its own bathroom.  You won't need to head to the womens' floor every time you need to use one anymore.
+<</nobr>>
+
+<<nobr>>
+  You don't have a job anymore, so you have all day to make the apartment perfect.  A month later it no longer looks
+  like the generic base housing anymore, at least on the inside.  It looks like a real apartment.
+<</nobr>>
+
+<<nobr>>
+  But you know you'll have to do it all again in a year or so when Justin is reassigned. 
+  <<if $PlayerPregnant>>
+    Though, next time it probably won't be a one-bedroom apartment. Once the [[baby is born|ArmyWifePregnant2]], you'll qualify
+    for a two bedroom.  Though, you and Justin already discussed, and aren't going to bother with moving here.  You'll just
+    keep the crib in your bedroom.
+  <<else>>
+    Though it's [[looking like it won't be a one bedroom|ArmyWifePregnant]] next time.
+  <</if>>
+<</nobr>>
+
+::ArmyWifePregnant
+<<nobr>>
+  <h1>A baby on the way</h1>
+  <img src="PartP/PregTest7.jpg" hspace="10" vspace="10" height="450">
+  <<set $PregnancyCheck = setup.overrideForcePregnancy('medical test - Justin')>>
+  <<set $PlayerPregnant to 1>>
+<</nobr>>
+<<nobr>>
+  You take a home test when you realize you haven't had a period since you've arrived on base.  And it confirms what you
+  suspected, [[you're pregnant|ArmyWifePregnant2]]!
+<</nobr>>
+
+<<nobr>>
+  It's agony not being able to call Justin right away.  The army has his whole unit out on some field exercise or something
+  for two days.  But you are ready and waiting with the great news for him once he returns.  He's as thrilled as you are to
+  hear the news.
+<</nobr>>
+
+<<nobr>>
+  The two of you discuss the apartment, and decide to stay with this one after the baby is born.  It'll only be a few months
+  after that when it'll be time to move to his next assignment anyway.  Besides, you'll want the crib in the bedroom with you at first
+  anyway.
+<</nobr>>
+
+::ArmyWifePregnant2
+<<nobr>>
+  <h1>Still having fun</h1>
+  <img src="PartX/BackHome40.jpg" hspace="10" vspace="10" height="450">
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Justin"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Justin", vaginal:true})>>
+<</nobr>>
+<<nobr>>
+  Your growing belly may have started to make some position difficult, but you and Justin haven't let that stop you from having
+  as much fun as possible.  
+<</nobr>>
+
+<<nobr>>
+  As you are both lying next to each other in post-orgasm bliss, you joke with Justin.  You say you aren't sure which you are more
+  stressed out about: worrying what [[child birth|ArmyWifeBirth]] is going to be like, or worrying if you can handle the six weeks without sex
+  after that.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/AndrewFamily7.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+
+<<nobr>>
+  When you see the look of dread cross his face when you mention the six weeks, you try to reassure him.  "That's just for me
+  to heal," you say.  Then you roll over and take his soft cock into your mouth.  As you start to make it harden you add,
+  "There's no reason I can't do this while I heal though."
+<</nobr>>
+
+<<nobr>>
+  When he's fully hard you tell him, "But that's a problem for later.  Right now I want you inside me!"
+<</nobr>>
+
+::ArmyWifeBirth
+<<nobr>>
+  <h1>Labor and Delivery</h1>
+  <img src="PartX/AndrewFamily6.jpg" hspace="10" vspace="10" height="450">
+  <<set $PlayerPregnant to 0>>
+  <<set $PlayerMother to 1>>
+  <<unset $PregnancyCheck>>
+  <<set $tempBabyNameBoys to ["Eli","Wyatt","Casey","Liam","Brandon",].map((name) => {return {name, sex:"male"}})>>
+  <<set $tempBabyNameGirls to ["Mia","Sophia","Delilah","Emma"].map((name) => {return {name, sex:'female'}})>>
+	<<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
+  <<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
+  <<set $children.push($tempBaby)>>
+  <<unset $tempBaby>>
+<</nobr>>
+
+<<nobr>>
+  By your fifth hour of labor, you've tossed the flimsy gown they gave you across the room. You're covered in sweat
+  and don't care if you are naked.  You have your legs spread swith everyone in the room staring between them any,
+  so what does it matter?
+<</nobr>>
+
+<<nobr>>
+  Finally, after what seems like an eternity, the doctor is saying, "Almost there, just push a little more.."
+<</nobr>>
+
+<<nobr>>
+  It hurts worse than you'd ever imagined it would, but eventually it's over.
+<</nobr>>
+<<achievement>>mother<</achievement>>
+<<nobr>>
+  Once you are holding your healthy, new
+  <<if $children[0].sex == "male">>
+    son,
+  <<else>>
+    daughter,
+  <</if>>
+  $children[0].name, you know it was all worth it.  As you hold
+  <<if $children[0].sex == "male">>him<<else>>her<</if>>
+  against you, you forget about the pain.  Seeing Justin look at $children[0].name, you know he's going to make a wonderful
+  father.
+<</nobr>>
+
+<<nobr>>
+  After you and the baby are cleaned up, they get you a gown and move you the room you'll be staying in for a few days, until you and
+  <<print $children[0].name>> are ready to [[go home|ArmyWife2]].
+<</nobr>>
+
+::ArmyWife2
+<<nobr>>
+  <h1>Waiting six weeks</h1>
+  <video src="PartX/Army12.webm" autoplay loop muted height="400"></video>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Justin"})>>
+  <<set setup.addSexRepeat(3, {sex:"male", name:"Justin", vaginal:true})>>
+<</nobr>>
+<<nobr>>
+  The first two weeks you are too tired and sore and sleep-deprived to have any interest in sex.  Justin does what he can to help,
+  taking turns to wake up and change the baby in the middle of the night, for example.  But it's always you that has to wake up
+  when it's time to feed the <<print $children[0].name>>.
+<</nobr>>
+<<nobr>>
+  By the third week you aren't as tired or sore anymore, only just sleep-deprived.  And you are really starting to feel horny again.
+  You hate that you have to wait another whole month before Justin can fuck you again.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectOral > 2 >>
+    But there's nothing you love more than sucking Justin's cock.  And he's more than happy to let you.
+  <<elseif $PlayerSideEffectOral>>
+    But you love sucking Justin's cock, and he's more than happy to let you.
+  <<else>>
+    But you don't want to make Justin wait too.  He asks if that's fair to you, but you make it clear you want it as much as he does.
+    You only wish you could have more.
+  <</if>>
+  Hearing him moan as you suck his cock gets you so wet.  You ache for him to fuck you until he cums inside you.  But
+  hearing him groan and feeling your mouth fill with his cum is wonderful too.
+  <<if $PlayerSideEffectOral == 1>>
+    <br><br>
+    <i>You realize you love sucking Justin's cock even more than you did before.</i>
+    <<set $PlayerSideEffectOral += 1>>
+  <<elseif !$PlayerSideEffectOral>>
+    <br><br>
+    <i>You realize you really love sucking Justin's cock.</i>
+    <<set $PlayerSideEffectOral to 2>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You and Justin have talked, and you want to wait a while before having another child.
+  <<if $PlayerProtectionFertile>>
+    <<set $PlayerProtectionMalePill to 1>>
+    <<unset $PlayerProtectionNone>>
+    Since you can't take birth control, Justin starts taking the new male birth control pill.  Thankfully it's approved by the Army,
+    and free too.
+  <<else>>
+    So you start taking birth control
+    <<set $PlayerProtectionPill to 1>>
+    <<unset $PlayerProtectionNone>>
+    <<if $PlayerProtectionPillFormer>>
+      pills again.
+    <<else>>
+      pills.
+    <</if>>
+  <</if>>
+  They should be in full effect by the time you're allowed to have sex again.
+<</nobr>>
+
+<<nobr>>
+  When the six weeks are finally up, Justin can't help but tease you, making you whimper as he slides his cock against your lips
+  but doesn't enter.  Thankfully, the pleading look in your eyes is enough to make him stop teasing and start fucking you.
+  It feels so amazing after six months you are worried your moans are going to wake the baby.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Army13.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  You finally start to get into a routine, with taking care of the house, the baby, and spending time with Justin.  But before
+  you know it, it's time to start packing and getting ready for the move [[to a new base|ArmyWife3]]
+<</nobr>>
+
+::ArmyWife3
+<<nobr>>
+  <h1>Family visiting at your new base</h1>
+  Thankfully, the short assignment was just for Justin's first base.  The Army told Justin he could expect to be at this new base
+  for at least two, maybe three years.  And even better, this base isn't overseas.
+  <<set setup.addSexRepeat(500, {sex:"male", name:"Justin"})>>
+  <<set setup.addSexRepeat(500, {sex:"male", name:"Justin", vaginal:true})>>
+<</nobr>>
+
+<<nobr>>
+  It's still several states away, but at least know your family can come visit and meet Justin and $children[0].name for the first time.
+  <<if $FatherDisown>>
+    You are even able to patch things up with your dad.  He said he was only worried about you going down 'the wrong path', and he's
+    thrilled that you've settled down and started a family.
+    And he looks so happy holding his new <<if $children[0].sex == "male">>grandson<<else>>granddaughter<</if>>
+    that you can't help but forgive him for your early disagreements.
+  <<else>>
+    They are also so happy to meet them both, and to see you again.  Your father comments on how happy he is that you've settled down
+    and started a family.  He said he was worried you might go down 'the wrong path'.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="Part14/Home60.webm" autoplay loop muted height="400"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  You have a fairly good idea what 'wrong path' your father is thinking you were on.
+  <br><br>
+  You keep to yourselves exactly how the two of you met, so you don't confirm what you know your father was already thinking
+  about you.
+  <br><br>
+  Instead, you've only told them that "We met at the coffee shop where I used to work."  It's not a lie, but it also
+  doesn't include the part with your sucking Justin's cock in his car either.
+<</nobr>>
+
+<<nobr>>
+  The two of you weren't planning on bringing it up, but your father asks Justin what he plans on doing when his enlistment
+  is up.  So you and Justin let them know that he plans on reenlisting, and making a career out of it.  Your father seems very happy
+  with this news.  Your mother seems to just be hoping your next base is closer so she can visit more.
+<</nobr>>
+
+<<nobr>>
+  When your mother asks if $children[0].name is going to be an only child, or if you plan on more, you let her know what you
+  and Justin are planning.  "We are thinking of having another baby in a few years, once [[Justin is a Sergeant|ArmyWife4]]."
+<</nobr>>
+
+<<nobr>>
+  Eventually the visit is over, and your family has to head back to the airport.  Justin starts to help you tidy up from their
+  visit, but you take his hand and lead him back to the bedroom instead.  "I'll deal with that while you are at work.  The baby is
+  sleeping, and I don't want to miss our opportunity."
+<</nobr>>
+
+::ArmyWife4
+<<nobr>>
+  <h1>Promoted</h1>
+  <img src="PartX/Army14.jpg" hspace="10" vspace="10" height="350" align="left">
+  <<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
+  <<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
+  <<set $children.push($tempBaby)>>
+<</nobr>>
+<<nobr>>
+  Part way through his second enlistment, Justin finally gets the promotion to Sergeant you'd both been wait for.
+  <<if $PlayerProtectionMalePill>>He is<<else>>You are<</if>> only off the pill for a few weeks before you are pregnant again.
+  "One of the many benefits of being young, healthy, and having sex all the time," he jokes.
+<</nobr>>
+
+<<nobr>>
+  The new base is closer to your home town, so when $children[1].name is born, your mom is able to come by and stay for a few
+  weeks to help out. Thankfully there's enough room for everyone with the house the Army assigned for Justin.  $children[0].name
+  is thrilled
+  <<if $children[0].sex == "male">>
+    he will still have his
+  <<else>>
+    she will still have her
+  <</if>>
+  own room.
+<</nobr>>
+
+<<nobr>>
+  You and Justin plan on stopping at just two kids, so <<if $PlayerProtectionMalePill>>he<<else>>you<</if>> got back on the pill
+  as soon as $children[1].name is born.  By the time the maddening six weeks are up again, you are eager to feel Justin inside you
+  again.  It's all you can do to wait until $children[0].name and $children[1].name are sound asleep.  Trying to stay quiet so
+  you don't wake them both up is even harder.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/AndrewFamily8.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  You know you are going to have your hands full now with preschooler and a baby in the house, with trying to find time for
+  you and Justin to be intimate.  But you wouldn't want it any other way.  And hopefully, Justin will be at this base for a
+  while, you really like the school $children[0].name will be starting at next year.
+<</nobr>>
+
+[[The End|ArmyWifeEnd]]
 
 ::ArmyWifeEnd
 <h1><<print "Game Over - Army Wife">></h1>
