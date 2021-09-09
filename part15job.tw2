@@ -2418,7 +2418,7 @@
 <<nobr>>
   <<if $JobBikiniBaristaOld>>
     You were worried that having Brian's shop on your resume would kill your chances, but it does the opposite.  Seeing your
-    experience, and how you were essentially a manager at the other shop, they decide to hire you own as
+    experience, and how you were essentially a manager at the other shop, they decide to hire you on as
     an 'assistant shift leader', or something like that.
     <br><br>
     Whatever the exact title is, you'll be getting paid a bit more than you were expecting and on the management track for
@@ -2452,8 +2452,10 @@
   You are happy
   <<if $JobBetaTester == "deny">>
     [[heading home|Part15Week]]
-  <<else>>
+  <<elseif ($JobBetaTester and !$tempShowedBetaTester) or $dating.length>>
     [[heading home|Part15AfterMainJob]]
+  <<else>>
+    [[heading home|Part15Week]]
   <</if>>
   after your first day in the new position.
 <</nobr>>

@@ -586,7 +586,7 @@
     <<elseif $PlayerStudentLoan>>
       still have some money left over from your last student loan disbursment.
     <<else>>
-      a little bit of money saved up.
+      have a little bit of money saved up.
     <</if>>
     So you can afford a motel room until you can get your own apartment.
   <<else>>
@@ -819,10 +819,542 @@
   <</if>>
 <</nobr>>
 
+::UnsetAllJobs
+<<nobr>>
+  <<unset $JobBarista>>
+  <<unset $JobBikiniBarista>>
+  <<unset $JobOffice>>
+  <<unset $JobOfficeManager>>
+  <<unset $JobOfficeIntern>>
+  <<unset $JobCallGirl>>
+  <<unset $JobBartender>>
+  <<unset $JobBartenderBi>>
+  <<unset $JobBartnederGirls>>
+  <<unset $JobBartnederGuys>>
+  <<unset $JobBartenderSub>>
+  <<unset $JobModel>>
+  <<unset $JobStripper>>
+<</nobr>>
+
 ::FlunkOutPregnant
-TODO Flunk out of school ending
-TODO Dad won't let you move back in (if haven't already disowned)
-TODO On your own
+<<nobr>>
+  <h1>Leaving Campus</h1>
+  <img src="Part7/Preg7.jpg" hspace="10" vspace="10" height="500">
+  <<include [[UnsetAllJobs]]>>
+  <<set $fwb to []>>
+  <<set $dating to []>>
+<</nobr>>
+<<nobr>>
+  Now that you are no longer a student, you can't stay on campus anymore.
+<</nobr>>
+
+<<nobr>>
+  <<if $FatherDisown>>
+    Since your father kicked you out, you know you are going to have to make it on your own.
+  <<else>>
+    <<set $FatherDisown to 1>>
+    Any hopes of moving back in with your parents are quickly dashed.  Your father is disgusted and disappointed that you
+    having gotten pregnant. "She won't even say who the father is.  She probably doesn't even know.  This is exactly what
+    I knew was going to happen!" you hear him yelling in the background as you cry on the phone call with your mother.
+    <br><br>
+    There's no way you are going move back there, if he would even let you.  You're going to have to make it on your own.
+  <</if>>
+  Thankfully you
+  <<if $JobCallGirl or $JobModel or $JobStripper or $JobStripperMain or $JamesBribe>>
+    have more than enough money saved up.
+  <<elseif $PlayerStudentLoan>>
+    still have some money left over from your last student loan disbursment.
+  <<else>>
+    have a little bit of money saved up.
+  <</if>>
+  So you can afford a bus ticket [[to the city|FlunkOutPregnant2]] and motel room until you can get your own apartment and a job there.
+<</nobr>>
+
+::FlunkOutPregnant2
+<<nobr>>
+  <h1>Looking for work</h1>
+  <img src="PartX/Flunk10.jpg" hspace="10" vspace="10" height="450" align="left">
+<</nobr>>
+<<nobr>>
+  When you decided to move to the city, you figured there'd be more job opportunities there.  It seems like there is, but none
+  of them are hiring you.  They all have a different, legal, reason for turning you down.  But you are sure the real reason is
+  because you pregnant.  They don't want to hire you just so you can go on matternity leave in a few months.
+  <<if $JobCallGirl or $JobStripper or $JobStripperMain or $JobCallGirlOld or $JobStripperOld>>
+    Your job as a 
+    <<if $JobCallGirl or $JobCallGirlOld>>
+      call girl
+    <<else>>
+      stripper
+    <</if>>
+    paid well, but it's also hard to find a job doing that in your current condition.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  The money you'd had set assigned starts to run low.  Then it runs out entirely and the motel you were staying in kicks you out
+  on the street.  When you beg for them to give you more time due to your condition, they refuse.  One of the staff does tell
+  you about a homeless shelter nearby.
+<</nobr>>
+
+<<nobr>>
+  You spend one night at the shelter.  It's mostly men.  The few other women that are there are much, much older than you.  Even
+  in your current state, you are getting an uncomfortable number of looks from the men there.  You are worried someone is going
+  to force themselves on you while you sleep, and barely manage to sleep at all.
+<</nobr>>
+
+<<nobr>>
+  Thankfully, no one touches you.  You wonder if you'd have been as lucky if you hadn't been pregnant.  But what someone did
+  touch, was your stuff.  Your purse, and your suitcase were both gone when you woke up.  Along with your id, phone, nearly all
+  your clothes, and what little money you had left, they are all gone.  All you have left are the clothes you were wearing,
+  and your coat you were using as a pillow.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Flunk11.mp4" autoplay loop muted height="500"></video><br>
+<</nobr>>
+
+<<nobr>>
+  You decide to sleep outside instead.  You have to find a box to hide under when it starts to rain in the middle of
+  the night.  The next morning you look over the jobs flyer you'd picked up at the shelter thinking about looking for work
+  again.
+<</nobr>>
+
+<<nobr>>
+  You realize though that you have little chance looking like you do now.  It was hard enough trying to find a job before when
+  you looked presentable.  Now, looking like you do after sleeping in a box, on the ground in the rain, you have no chance.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/Flunk6.jpg" hspace="10" vspace="10" height="250" align="left">
+<</nobr>>
+<<nobr>>
+  You decide you'll try begging for money.  Being pregnant will probably be a big help there you figure.  Maybe you can get
+  enough to sleep under a roof tonight.  If not, at least enough to eat.
+<</nobr>>
+
+<<nobr>>
+  By late evening, you'd gotten enough to get a little bit of food for for lunch, but you are still hungry.  And you don't
+  have near enough for a motel.  You are trying to decide which option you are dreading more, the shelter or sleeping outside
+  and hoping it doesn't rain again.
+<</nobr>>
+
+<<nobr>>
+  When a man, maybe 10 or 15 years older than you approaches, you are on edge at first.  But then he drops several meals worth of
+  cash into your bowl.  You thank him for his generousity.
+<</nobr>>
+
+<<nobr>>
+  "If you are wanting to get out of this situation and sleep somewhere warm tonight, let me know.  I can
+  [[help you find a place to stay|FlunkOutPregnant3]], andfood to eat," he says.  "And get you signed up for medical care as well."
+<</nobr>>
+
+<<nobr>>
+  Of course you take him up on the offer.  Anything to avoid sleeping another night in a box, or in that 'shelter'.
+<</nobr>>
+
+::FlunkOutPregnant3
+<<nobr>>
+  <h1>Your own room</h1>
+  <img src="PartX/Flunk7.jpg" hspace="10" vspace="10" height="550" align="left">  
+<</nobr>>
+
+<<nobr>>
+  Marcus gets you a small room.  It's not any place fancy, but it's better than the street and better than the shelter.
+  Marcus even takes you to the discount store to buy some more maternity clothes.
+<</nobr>>
+
+<<nobr>>
+  You feel so great after a shower, you don't even mind when Marcus comes over to you after your shower, and tugs at the towel
+  that was doing its best to try to cover you.
+<</nobr>>
+
+<<nobr>>
+  "I want to see if you look as pretty all cleaned up as I thought you would."  You let go of the towel and let him pull
+  it away.  You are embarrassed, but start smiling when he starts telling you how beautiful you are. 
+<</nobr>>
+
+<<nobr>>
+  "I'll start looking for work again tomorrow, so I can pay you back for all of this," you tell him.
+<</nobr>>
+
+<<nobr>>
+  "Don't worry about that.  Just take it easy until you have the baby.  You can pay me back after.  I'll have work for you then,"
+  Marcus replies.  You thank him again for being so generous.
+<</nobr>>
+
+<<nobr>>
+  He places his hand under you chin and gently pushes up so you are looking him in the eye.  "Though, judging from how you are
+  blusing all over, I think you're thinking of [[another way you could show me your graditude|FlunkOutPregnant4]]."
+<</nobr>>
+
+::FlunkOutPregnant4
+<<nobr>>
+  <h1>Expressing your gratitude</h1>
+  <img src="PartX/Flunk8.gif" hspace="10" vspace="10" height="400">
+  <<set setup.addSexRepeat(20, {sex:"male", name:"Marcus"})>>
+  <<set setup.addSexRepeat(20, {sex:"male", name:"Marcus", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  Marcus was right, being naked in front of him, and seeing the outline of his hard cock through his pants, that was
+  exactly what you were thinking about.
+<</nobr>>
+
+<<nobr>>
+  You drop to your knees and unzip his pants.  As soon as his cock springs out, you take it into your mouth.  After a
+  while he helps you stand back up and lie down on the bed.  His fingers tease your clit, your lips, and finally slide into you.
+  Before long and you can hear your wetness as his fingers slide back and forth.
+<</nobr>>
+
+<<nobr>>
+  He pulls his fingers out and has you suck them.  Then he rubs his hard cock between your lips until he finally thrusts into you.
+  It isn't long until you are screaming out with an orgasm.  Marcus keeps fucking you for a good while longer.  You are orgasming
+  a second time when he thrusts one last time and cums inside you.
+<</nobr>>
+
+<<nobr>>
+  He doesn't have to ask. As soon as he puts his cock near your face, you move toward it and take it into your mouth, cleaning
+  the shine from your juices from it, as well as a few drops of cum.  "Oh, they're going to love you," he says to himself.
+<</nobr>>
+
+<<nobr>>
+  "What?" you ask in a post-orgasm haze.
+<</nobr>>
+
+<<nobr>>
+  He gives your ass a gentle swat and says, "Don't worry about it baby.  Just get a good nights sleep.   I have to go back to
+  work.  I'll be by tomorrow and take you out for a late breakfast.
+<</nobr>>
+
+<<nobr>>
+  He does come by the next morning.  After breakfast he takes you to the little corner grocery store down the block and
+  buys you some groceries to put in the little refrigerator in your room.  Of course after that the two of you head back
+  to your room for sex again.
+<</nobr>>
+
+TODO [[FlunkOutPregnant5]]
+
+::FlunkOutPregnant5
+<<nobr>>
+  <h1>More help from Marcus</h1>
+  <img src="PartX/Flunk13.gif" hspace="10" vspace="10" height="450">
+  <img src="PartX/Flunk12.gif" hspace="10" vspace="10" height="450">
+  <<set setup.addSexRepeat(20, {sex:"male", name:"Marcus"})>>
+  <<set setup.addSexRepeat(20, {sex:"male", name:"Marcus", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  Marcus doesn't come by every day, you know he spends time with his 'other girls'.  You don't know how many other
+  girls he is seeing besides you.  But he's says you are his 'special girl'.  You wonder if that means he might want
+  to settle down exclusively with you eventually.
+<</nobr>>
+
+<<nobr>>
+  He's not there every day, but he does come by whenever you need him.  He's taken you to all your doctor's appointments.
+  He's even helped arrange a private adoption with some rich couple.  You're happy to know your baby is going to have
+  a much better life than you could offer him or her.
+<</nobr>>
+
+<<nobr>>
+  He even takes you shopping for groceries when you need them.  At first you wondered why he just didn't give you a little
+  cash and you could do it.  But then you though, maybe he's worried you by drugs or something with it and hurt the baby.
+  Maybe he'll realize you aren't like that eventually.  But it's fine for now, besides, the help carrying things is great too.
+<</nobr>>
+
+<<nobr>>
+  He's still careful because of the baby, but Marcus is more forceful when you are having sex than he was that first night.
+  You can tell he loves holding your head on his cock while you are sucking it, forcing it deeper.  And he loves spanking
+  your ass when he fucks you from behind.
+<</nobr>>
+
+<<nobr>>
+  You don't want one of those other girls taking your place as his 'special girl', so you are eager to please him.  Though
+  it helps they you get wet every time he puts his hands around your throat or you struggle to breath with his cock in your throat.
+<</nobr>>
+
+<<nobr>>
+  He didn't want you being without a phone while you were pregnant, so he got you one of those cheap disposable ones for
+  emergencies.  It's a good thing too, because you need it to call him when you feel
+  [[your contractions starting|FlunkOutPregnant6]]!
+<</nobr>>
+
+::FlunkOutPregnant6
+<<nobr>>
+  <h1>Giving birth</h1>
+  <img src="PartX/Flunk9.jpg" hspace="10" vspace="10" height="400" align="left">
+  <<set $PlayerPregnant to 0>>
+  <<set $PlayerAdoption += 1>>
+  <<unset $PregnancyCheck>>
+  <<unset $BabyAdoption>>
+  <<unset $tempBaby>>
+  <<unset $BabyBoy>>
+  <<unset $BabyGirl>>
+<</nobr>>
+<<nobr>>
+  Marcus takes you to the hospital, and is with you at first.  But once they have you with a room he leaves you in
+  the care of the doctors and nurses.  He then leaves to go contact the couple that are going to adopt the baby.
+<</nobr>>
+
+<<nobr>>
+  At first your labor is uncomfortable, but not unbearable.  The nurses have you walking up and down the hallway to help
+  the process along.
+<</nobr>>
+
+<<nobr>>
+  But soon the contractions are getting closer together and more painful and they have you return to your room.  After a few
+  more hours your water breaks.  You toss your drenched gown, not carrying if the nurses or doctor see you naked.  It's not
+  like they aren't seeing a lot more everytime they come in to check on you anyway.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/AndrewFamily6.jpg" hspace="10" vspace="10" height="340">
+<</nobr>>
+<<nobr>>
+  As the contractions get stronger and even more frequent, you really wish the free insurance Marcus helped you sign up for
+  would pay for an epideral, but it won't, so you just have to endure.
+<</nobr>>
+
+<<nobr>>
+  But eventually it's over.  You try not to look at the baby, but are happy to hear them say it looks healthy before
+  they take it away for more tests.  They get you a new gown and then move you to a [[recovery room|FlunkOutPregnant7]].
+<</nobr>>
+
+::FlunkOutPregnant7
+<<nobr>>
+  <h1>After delivery</h1>
+  <img src="Part14/Postpartum6.jpg" hspace="10" vspace="10" height="340">
+<</nobr>>
+<<nobr>>
+  Marcus comes by with some paperwork for you to sign to make the adoption official.  He leaves after you sign it.
+  "I'll let you get some rest.  Call me whenever you need a ride home."
+<</nobr>>
+
+<<nobr>>
+  They keep you overnight at the hospital.  But the insurance company says since you are healthy and didn't have any anesthesia,
+  you should leave the next day.  You give Marcus a call and wait for him to come pick you up [[and take you home|FlunkOutPostpartum]]
+<</nobr>>
+
+::FlunkOutPostpartum
+<<nobr>>
+  <h1>Back in your room</h1>  
+  <<set setup.addSex({sex:"male", name:"Marcus"})>>
+  Marcus takes you back home, and makes sure you have food and lets you rest the next few days.  Then he comes buy to see
+  you again and takes you to lunch.
+<</nobr>>
+
+<<nobr>>
+  When you get back to your room, you can tell he wants sex.  Normally you would too.  But even if the doctor hadn't said
+  anything, everything still hurts and you can't imagine how bad sex would feel right now.
+<</nobr>>
+
+<<nobr>>
+  "I'm sorry, I can't have sex right now.  The doctor said not for six weeks," you tell Marcus.
+<</nobr>>
+
+<<nobr>>
+  "They always say that," he says.  "But two weeks is usually enough for you X-Change girls.  You heal so fast, at least from
+  childbirth."  You are happy to hear that, but it still doesn't help today.  Then he adds, "But your mouth is perfectly healthy
+  right now."  He then gently but firmly pushes you down toward you knees.  You unzip his pants and get to work.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Flunk14.mp4" autoplay loop muted height="450"></video><br>
+<</nobr>>
+
+<<nobr>>
+  As you swallow down his cum he tells you, "That's my special girl."  You can't help but smile.  You get even more excited
+  when he tells you he'll have a special surprise for you [[next time he comes over|FlunkOutPostpartum2]].
+<</nobr>>
+
+::FlunkOutPostpartum2
+<<nobr>>
+  <h1>Your special surprise</h1>
+  <<set setup.addSex({sex:"male", name:"Marcus"})>>
+  <<set setup.addSex({sex:"male", name:"Jesse"})>>
+  You aren't sure what you were expecting your 'special surprise' to be, but you certainly weren't expecting Marcus to bring
+  another guy with him.
+<</nobr>>
+
+<<nobr>>
+  "Jesse here didn't believe me when I told him how good you suck cock.  Why don't you show him," Marcus tells you.  He can
+  probably sense your hesitation and adds, "you don't want to disappoint me do you? Or Jesse for that matter?"
+<</nobr>>
+
+<<nobr>>
+  He's right, you'd hate to disappoint him.  Though something in the firmness of the way he said it also makes you a little
+  scared of disappointing him too.  But you tell yourself it should be fun making them both happy, and proving to Jesse the
+  Marcus was right about how good you are.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/Flunk15.gif" hspace="10" vspace="10" height="400">
+<</nobr>>
+
+<<nobr>>
+  After a while taking turns with both of them, Marcus tells you to focus on Jesse's cock.  You get to work giving Jesse's
+  cock the same attention you always give Marcus's.  Jesse clearly loves it, and soon you feel his cock start to twitch and
+  then feel his warm cum fill your mouth.  A little bit later you feel Marcus's cum cover your chest as he finishes himself
+  onto you.
+<</nobr>>
+
+<<nobr>>
+  "You're right.  She's great.  Worth every penny," Jesse says as he hands some cash over to Marcus.  You figure they must have bet
+  on whether you were as good as Marcus said you were.  You are glad you didn't disappoint.
+<</nobr>>
+
+<<nobr>>
+  After Jesse leaves Marcus tells you how happy he is with you.  "And see, I told you I'd have work for you once you were done
+  with the baby."  He puts the cash in his pocket and says, "I'll consider this your first payment towards paying me back what
+  you owe me."
+<</nobr>>
+
+<<nobr>>
+  "Make sure you're home [[tomorrow evening|Whore]]," Marcus tells you before leaving.  "I'll be by sometime to see you."
+<</nobr>>
+
+::Whore
+<<nobr>>
+  <h1>Paying back your debts</h1>
+  <<set setup.addSexRepeat(20, {sex:"male"})>>
+  <<set $JobStreetWhore to 1>>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/Flunk16.mp4" autoplay loop muted height="600"></video><br>
+  </div>
+<</nobr>>
+<<nobr>>
+  At six a clock you hear a knock on your door.  You are surprised when you open it and it's not Marcus.  But when he tells you
+  that Marcus sent him you are less worried.  You don't say anything as he walks in to your room.  You see him put an envelope down
+  on your dresser as you are closing your door.
+<</nobr>>
+
+<<nobr>>
+  "Take your clothes off," he tells you.  "Let's see what I'm paying for."  When you start to say something he adds,
+  "Let's see what you've got under all that.  Don't worry, Marcus already told me your pussy is on the disabled list still."
+<</nobr>>
+
+<<nobr>>
+  You do as he tells you and strip.  He turns you around a few times before pushing you down towards you knees in front of him.
+  You know what to do and being to unzip his pants and start sucking his cock.
+<</nobr>>
+
+<<nobr>>
+  You expect him to leave after he cums in your mouth.  But instead he pulls out more money and sets it next to the envelope.
+  He said that was enough if I wanted to try your ass too.  It's too cute to pass up.
+<</nobr>>
+
+<<nobr>>
+  You don't know what would have happened to you if Marcus hadn't helped you.  And you know if you upset him now, you might
+  be homeless again.  Or something worse could happen.  You don't want to find out.
+  <<if $PlayerSideEffectAnal > 1>>
+    Besides, you can never turn down anal sex, so you'd eagerly accept anyway.
+  <<elseif $PlayerSideEffectAnal>>
+    Besides, you love anal sex, so you'd eagerly accept anyway.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Flunk17.mp4" autoplay loop muted height="400"></video><br>
+<</nobr>>
+
+<<nobr>>
+  It hurts at first, but you think it's probably just because you are tensing up, afraid he's going to 'accidently' miss
+  your ass.  But once it's clear he's not going to miss, and he gets going, you are moaning as much as he is.
+<</nobr>>
+
+<<nobr>>
+  Several more 'friends' of Marcus stop by, each leaving cash and making use of your mouth or ass, before
+  [[Marcus finally shows up|Whore2]].
+<</nobr>>
+
+::Whore2
+<<nobr>>
+  <h1>With Marcus</h1>
+  <<set setup.addSex(2, {sex:"male", name:"Marcus"})>>
+  "That's my special girl," Marcus tells you as he collects the money the men had left.  "I bet the left you all horny
+  and unsatisfied though," he adds.  He slides his hand between your legs.  "Don't worry, I'll stay on the outside."
+  <img src="PartX/Flunk18.gif" hspace="10" vspace="10" height="400">
+  <img src="PartX/Flunk19.gif" hspace="10" vspace="10" height="400" align="left">
+<</nobr>>
+<<nobr>>
+  His touch soon as you moaning. "It's fun doing what you're skilled at isn't it?" he asks rhetorically.  "And you are
+  really skilled at making men feel good."  He keeps playing with your lips, or stroking your clit as he talks, "You
+  might as well keep a roof over your head instead of doing it for free.  Isn't that right?"
+<</nobr>>
+
+<<nobr>>
+  You are close to an orgasm, and eager for him to keep going, "Yes, sir." you say nodding.  The pleading tone of your
+  voice begging him not to stop what he's doing.
+<</nobr>>
+
+<<nobr>>
+  He doesn't stop, and soon you are covering his fingers as you orgasm.  "See, good girls get rewarded.  Hopefully you'll never
+  have to worry about what bad girls get," he tells you.
+<</nobr>>
+
+<<nobr>>
+  "It seems like you are almost healed up down there.  You should be good to go [[next weekend|Whore3]].  Get a good
+  nights rest and I'll be by for lunch tomorrow.  Then we'll go buy some new outfits for you with some of this,"
+  he says holding up the cash you'd collected this evening.
+<</nobr>>
+
+::Whore3
+<<nobr>>
+  <h1>Working Girl</h1>
+  <img src="PartX/Flunk20.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  The next weekend Marcus has you on the street working.  He tells you need to go, and stays nearby to keep
+  you and his other girls safe.  You are nervous at first when you approach a car, but you tell yourself the guy wouldn't
+  have pulled over and rolled down his window if he didn't want what you are selling.  And Marcus said you don't need to worry
+  about the cops either.  "They look the other way in this neighborhood.  They worst they'll do is ask me for a little piece of
+  the action.  Or you for a little piece of something else.  Either way, we just give them what they want and everyone is happy."
+<</nobr>>
+
+<<nobr>>
+  Marcus teaches you what you should charge for what, and how to tell when they can afford to pay more.  Soon you are making
+  as much as his more experienced girls. Whether it's a quick trip in the guys car to somewhere private for a simple blowjob,
+  or a some visting business man or tech nerd wanting you for the whole night, you know to how much to charge, and to get it
+  up front.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Flunk21.mp4" autoplay loop muted height="300"></video>
+  <video src="Part14/Callgirl3.mp4" autoplay loop muted height="300"></video>
+<</nobr>>
+
+<<nobr>>
+  You turn whatever you make over to Marcus at the end of the night, or the next morning.  He keeps track of how much
+  you still owe him.  Adding on a bit for your 'allowance' each week, and for your rent each month.  And when he buys you food or
+  clothes or anything else.  And then subtracting what you make working, less his percentage that is.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionFertile>>
+    <<set $PlayerAbortion to 8>>
+    And he adds the cost for when you need an abortion as well.  Though he's said as often as you need them, it might
+    be worth it to find another rich couple that wants you to make a baby for them.
+  <<else>>
+    <<if !$PlayerAbortion>>
+      <<set $PlayerAbortion to 0>>
+    <</if>>
+    <<set $PlayerAbortion += 2>>
+    And he adds in the cost of your birth control pills, and the cost of your abortions whenever that fails to work.
+    He said hopefully he can find another rich couple that wants you to make a baby for them, then you wouldn't need
+    to worry about either of those for a while.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He said not to worry about how much you still owe him though, he'll make sure you you always have a job and place to stay.
+  You won't end up unemployed and homeless again.
+<</nobr>>
+
+<<nobr>>
+  [[Game Over|WhoreEnd]]
+<</nobr>>
+
+::WhoreEnd
+<h1>Game Over - Street Whore</h1>
+<img src="PartX/GameOver8.jpg" hspace="10" vspace="10" height="600">
+<<achievement>>whore<</achievement>>
 
 ::FlunkOutDating
 <<nobr>>
@@ -1167,7 +1699,7 @@ TODO Still working at the bar
     <<elseif $PlayerStudentLoan>>
       still have some money left over from your last student loan disbursment.
     <<else>>
-      a little bit of money saved up.
+      have a little bit of money saved up.
     <</if>>
     So you can afford a motel room until you can get your own apartment.
   <<else>>
