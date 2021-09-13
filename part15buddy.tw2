@@ -1826,22 +1826,27 @@
   you tell her.
   <span id="clinic">
     <<if $PregnancyWeek and !$PlayerPregnant>>
-      Bailey wants to end her pregnancy.
-      And you've already decided whether you want to
-      <<link "keep yours">>
-        <<replace "#clinic">>
-          <<set $tempPlayerPregnant to 1>>
-          <<set $PlayerPregnant to 1>>
-          "My friend and I are both pregnant.  She wants to [[terminate hers|Part15BuddyAbortion2]].  I'm just wanting a confirmation test on mine."
-        <</replace>>
-      <</link>>
-      or
-      <<link "end yours also.">>
-        <<replace "#clinic">>
-          <<set $tempPlayerAbortion to 1>>
-          "My friend and I are both pregnant.  And we are both wanting to [[terminate the pregnancies|Part15BuddyAbortion2]]."
-        <</replace>>
-      <</link>>
+      <<if setup.areDating('Barry')>>
+        "My friend and I are both pregnant.  And we are both wanting to [[terminate the pregnancies|Part15BuddyAbortion2]]."
+        You and $dating[0] had already talked about this, and neither of you want a baby right now.
+      <<else>>
+        Bailey wants to end her pregnancy.
+        And you've already decided whether you want to
+        <<link "keep yours">>
+          <<replace "#clinic">>
+            <<set $tempPlayerPregnant to 1>>
+            <<set $PlayerPregnant to 1>>
+            "My friend and I are both pregnant.  She wants to [[terminate hers|Part15BuddyAbortion2]].  I'm just wanting a confirmation test on mine."
+          <</replace>>
+        <</link>>
+        or
+        <<link "end yours also.">>
+          <<replace "#clinic">>
+            <<set $tempPlayerAbortion to 1>>
+            "My friend and I are both pregnant.  And we are both wanting to [[terminate the pregnancies|Part15BuddyAbortion2]]."
+          <</replace>>
+        <</link>>
+      <</if>>
     <<else>>
       "My friend is pregnant, and she wants to [[terminate the pregnancy|Part15BuddyAbortion2]]."
     <</if>>
@@ -1929,6 +1934,7 @@
     <<else>>
       <<set $PlayerAbortion to 1>>
     <</if>>
+    <<achievement>>childfree<</achievement>>
     <<unset $PlayerPregnant>>
     <<unset $PregnancyWeek>>
   <<elseif $tempPlayerPregnant>>

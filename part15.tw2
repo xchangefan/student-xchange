@@ -3403,9 +3403,9 @@
     <<if setup.pregnantFirstTime()>>
       <<achievement>>firsttime<</achievement>>
     <</if>>
-    You've been so busy you hadn't really though about your period.  Now that you are thinking about it, you realize it's been a
+    You've been so busy you hadn't really thought about your period.  Now that you are thinking about it, you realize it's been a
     while since your last one.  Between that and the nausea you've been feeling sometimes, you are
-    <<if $PlayerProtectionTry>>
+    <<if $PlayerProtectionTry && !setup.areDating("Barry")>>
       hoping for the best
     <<else>>
       dreading what you'll see
@@ -3415,13 +3415,19 @@
     <img src="PartP/PregTest7.jpg" hspace="10" vspace="10" height="300">
     <br><br>
     You are
-    <<if $PlayerProtectionTry>>
+    <<if $PlayerProtectionTry && !setup.areDating("Barry")>>
       thrilled
     <<else>>
       not surprised
     <</if>>
     when you see the word "Pregnant" appear on the screen.
-    <<if $PlayerProtectionTry>>
+    <<if setup.areDating("Barry")>>
+      You don't even bother telling Barry about this.  You've both discussed this before and don't want to be
+      parents.  At least not yet.  You'll make a visit to the clinic today to
+      [[terminate the pregnancy|Part15FirstTrimesterAbort]].
+      <br><br>
+      You'll tell Barry you started your period, and he won't ask any more about it.
+    <<elseif $PlayerProtectionTry>>
       You know you'll have to schedule a doctor visit to confirm the test, but you are confident their test will show the same thing.
     <<else>>
       You know it's still early in the pregnancy.  So now is the time visit the clinic if you want to
@@ -3431,9 +3437,9 @@
   <</if>>
 <</nobr>>
 <<nobr>>
-  <img src="PartP/Trimester1.jpg" hspace="10" vspace="10" height="400">
-<</nobr>>
-<<nobr>>
+  <<if !setup.areDating("Barry")>>
+    <img src="PartP/Trimester1.jpg" hspace="10" vspace="10" height="400">
+    <br><br>
     <<if !$PlayerPregnant and !$PlayerProtectionTry>>
       If you decide to keep the baby, you
     <<else>>
@@ -3445,6 +3451,7 @@
     <<if !$PlayerPregnant>>
       <<set $PlayerPregnant to 1>>
     <</if>>
+  <</if>>
 <</nobr>>
 
 ::Part15FirstTrimesterAbort

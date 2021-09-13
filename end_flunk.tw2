@@ -515,6 +515,8 @@
   <<else>>
 	  <<set $PlayerAbortion to 1>>
   <</if>>
+  <<achievement>>childfree<</achievement>>
+
 	<h1><<print "Medical Clinic">></h1>
   You decide you aren’t ready for this.<br>
   <img src="PartP/PregTest5.jpg" hspace="10" vspace="10" height="400">
@@ -529,6 +531,8 @@
   You are going to have
   <<if setup.haveFucked('Justin')>>
     [[enough to deal with|FlunkOutAbortJustin]]
+  <<elseif $dating.length>>
+    [[enough to deal with|FlunkOutDating]]
   <<else>>
     [[enough to deal with|FlunkOut]]
   <</if>>
@@ -799,26 +803,6 @@
   is where you want to be.  There's sure to be plenty of opportunities for you there.
 <</nobr>>
 
-::TODOTemp
-<<nobr>>
-  todo later job changes:
-  <<if $JobBarista>>
-    TODO
-  <<elseif $JobBikiniBarista>>
-    TODO
-  <<elseif $JobOffice or $JobOfficeManager or $JobOfficeIntern>>
-    TODO
-  <<elseif $JobCallGirl>>
-    TODO
-  <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub>>
-    TODO
-  <<elseif $JobModel>>
-    TODO
-  <<elseif $JobStripper>>
-    TODO
-  <</if>>
-<</nobr>>
-
 ::UnsetAllJobs
 <<nobr>>
   <<unset $JobBarista>>
@@ -1026,12 +1010,10 @@
 <</nobr>>
 
 <<nobr>>
-  He does come by the next morning.  After breakfast he takes you to the little corner grocery store down the block and
-  buys you some groceries to put in the little refrigerator in your room.  Of course after that the two of you head back
-  to your room for sex again.
+  He does come by [[the next morning|FlunkOutPregnant5]].  After breakfast he takes you to the little corner grocery store
+  down the block and buys you some groceries to put in the little refrigerator in your room.  Of course after that the two
+  of you head back to your room for sex again.
 <</nobr>>
-
-TODO [[FlunkOutPregnant5]]
 
 ::FlunkOutPregnant5
 <<nobr>>
@@ -1327,6 +1309,7 @@ TODO [[FlunkOutPregnant5]]
 <</nobr>>
 
 <<nobr>>
+  <<achievement>>childfree<</achievement>>
   <<if $PlayerProtectionFertile>>
     <<set $PlayerAbortion to 8>>
     And he adds the cost for when you need an abortion as well.  Though he's said as often as you need them, it might
@@ -1592,8 +1575,6 @@ TODO [[FlunkOutPregnant5]]
   the sooner it begins, the better.
 <</nobr>>
 
-::FlunkOutDatingBarry
-TODO FlunkOutDatingBarry??
 
 ::FlunkOutDatingKate
 <<nobr>>
@@ -1639,10 +1620,6 @@ TODO FlunkOutDatingBarry??
 <<nobr>>
   "That sounds wonderful," she says softly in your ear as she continues to stroke your hair.
 <</nobr>>
-
-::FlunkOutDatingKateBar
-TODO Still working at the bar
-
 
 ::FlunkOutDatingBreakupGeneric
 <<nobr>>
@@ -1712,6 +1689,89 @@ TODO Still working at the bar
   <</if>>
 <</nobr>>
 
+::FlunkOutDatingKateBar
+TODO Still working at the bar
+
+::FlunkOutDatingBarry
+<<nobr>>
+  <h1>Still living with Barry</h1>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/Chaste6.mp4" autoplay loop muted height="600"></video><br>
+  </div>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Barry"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Barry", vaginal:true})>>
+<</nobr>>
+
+<<nobr>>
+  Thankfully since Barry's apartment is off-campus, you can still stay there after you drop out.  "Maybe you can show me how
+  grateful you are for having a roof over you head," Barry half-jokes.
+<</nobr>>
+
+<<nobr>>
+  After you've sucked his cock he adds, "Though since you aren't going to be in class all day, doing more of the cooking and
+  cleaning around here would be good.  And chiping in for some of the rent would be good too."
+<</nobr>>
+
+<<nobr>>
+  <<if $JobBikiniBarista>>
+    "That place you are at now is too slutty though.  I don't mind showing off your ass, but only when I'm around
+    so people know I'm the one that gets to fuck it," Barry tells you.  I'm paying for most of the rent, so a few hours
+    a week at a non-slutty coffee shop would probably be enough.
+    <<unset $JobBikiniBarista>>
+    <<set $JobBikiniBaristaFormer to 1>>
+    <<set $tempJobChange to 1>>
+  <<elseif $JobBarista>>
+    "You can cut back on your hours if you want I'm paying for most of the rent and everything else.  And I'd
+    rather have you wet and ready for me when I get home than a few extra dollars in the budget every month,"
+    Barry tells you.
+  <<else>>
+    <<if $JobOffice or $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>
+      <<set $tempJobChange to 1>>
+      <<unset $JobOffice>>
+      <<unset $JobOfficePA>>
+      <<unset $JobOfficeManager>>
+      <<unset $JobOfficeIntern>>
+      "Obviously that office job was expecting you to get a degree.  So unless you've been blowing the boss
+      there or something, you'll probably be fired soon.  Best to find another job before they do," Barry tells you.
+    <<elseif $JobModel or $JobCallGirl or $JobStripperMain or $JobStripper>>
+      <<set $tempJobChange to 1>>
+      <<unset $JobModel>>
+      <<unset $JobCallGirl>>
+      <<unset $JobStripperMain>>
+      <<unset $JobStripper>>
+      "That place you are at now is too slutty though.  I don't mind showing off your ass, or sharing it with my friends,
+      but only when I'm around so people know you're mine," Barry tells you.
+    <<else>>
+      <<set $tempJobStart to 1>>
+    <</if>>
+    "You shouldn't have any trouble getting a job making coffee or something.  I know half of them there have
+    Liberal Arts degrees, but it's not an actual requirement.  So they won't care that you flunked out."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $tempJobChange>>
+    <<unset $tempJobChange>>
+    You do as Barry says and quit your job to work at a <<if $JobBikiniBaristaFormer>>regular<</if>> coffee shop.
+    <<set $JobBarista to 1>>
+  <<elseif $tempJobStart>>
+    <<unset $tempJobStart>>
+    <<set $JobBarista to 1>>
+    He's right, you don't have any trouble getting a job at a coffee shop.  
+  <<else>>
+    You cut back on your hours at the coffee shop.
+  <</if>>
+  You let your manager know when you are available.  You want to make sure you're always there for when
+  [[Barry gets home|FlunkOutDatingBarry2]]
+<</nobr>>
+
+::FlunkOutDatingBarry2
+TODO FlunkOutDatingBarry spank (not home when off work) submissive/degrading sex scenes, then [[Married after he graduates|BarryWedding]]
+<video src="PartX/Barry1.webm" autoplay loop muted height="400"></video><br>
+<video src="PartX/Barry4.webm" autoplay loop muted height="400"></video><br>
+<video src="PartX/Barry2.mp4" autoplay loop muted height="400"></video><br>
+<video src="PartX/Barry3.webm" autoplay loop muted height="400"></video><br>
+
 ::FlunkOutAlone
-TODO All on your own in the city (but not pregnant - unless very recent and don't know)
-TODO What ending here? Waitress, street prostitute?, red light district/in-call prostitute?, IR Wife?, fucking landlord?
+TODO All on your own (or single-mom already) in the city (but not pregnant - unless very recent and don't know)
+-- Waitress, single-mom?, fucking landlord
