@@ -1,17 +1,254 @@
+::BarryGraduate
+<<nobr>>
+  <h1>At Barry's Graduation</h1>
+  <img src="PartX/Barry6.jpg" hspace="10" vspace="10" height="400" align="left">
+  <<set $Engaged to 'Barry'>>
+  <<set setup.addSexRepeat(500, {sex:"male", name:"Barry"})>>
+  <<set setup.addSexRepeat(250, {sex:"male", name:"Barry", vaginal:true})>>
+<</nobr>>
+<<nobr>>
+  At graudation, you are in the stands looking down, patiently waiting for them to call Barry's name.  Of course even if
+  you were going to graduate, it wouldn't have been for another year anyway.  But that wasn't in the cards for you anyway.
+<</nobr>>
+
+<<nobr>>
+  Still, you can't help but think about the degree you didn't finish when they call the names that would have been before and
+  after yours, and you think about walking up to the stage yourself to collect your degree.
+<</nobr>>
+
+<<nobr>>
+  The ceremony itself ends up being hours of boredom, interrupted with a few seconds of excitement when they call Barry's name, and
+  also $FormerMentor's and a few others you know.
+<</nobr>>
+
+<<nobr>>
+  No, for you the excitement isn't at the graduation, but at the dinner you and Barry go out for afterwards.  First, he tells you
+  that he talked with his boss at the internship, and it's official.  He'll be starting as a salaried employee a couple weeks from now.
+  Then he says, "Now that I've graduated, and have a real job, there's no reason we can't get married now."
+<</nobr>>
+
+<<nobr>>
+  It takes you a minute to process before you respond, "Wait... Are you proposing?"
+<</nobr>>
+
+<<nobr>>
+  "I suppose I am," he says.  "We can go out and look at rings after dinner if you want."  He pauses and smiles before adding,
+  "Assuming you say yes, that is."
+<</nobr>>
+
+<<nobr>>
+  "Yes! Yes!  Of course, [[I'll marry you|BarryWedding]]!" you say excitedly.
+<</nobr>>
+
 ::BarryWedding
-TODO Married after his graduation, you either drop out (choice somewhere) or have already flunked out
-TODO [[BarryMarried]]
+<<nobr>>
+  <h1>Your wedding night</h1>
+  <img src="PartX/Barry5.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<unset $Engaged>>
+  <<set $Spouse to 'Barry'>>
+  <<set setup.addSexRepeat(5, {sex:"male", name:"Barry"})>>
+  <<set setup.addSexRepeat(3, {sex:"male", name:"Barry", vaginal:true})>>
+  <<include [[UnsetAllJobs]]>>
+<</nobr>>
+<<nobr>>
+  <<if true or !$PlayerSideEffectPermanent>>
+    With appointments for your hair, lingerie, makeup,
+    <<if !$PlayerNoBodyHair>>
+      waxing,
+    <</if>>
+    and all of the other things you need to take care of before the ceremony, you add one more: a quick visit to
+    the X-Change office.  You let them know you are getting married and have no interest in ever changing back to
+    your old body.
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Barry wedding', 0)>>
+    <<if $PregnancyCheck>>
+      <<if $PlayerAbortion>>
+        <<set $PlayerAbortion += 1>>
+      <<else>>
+	      <<set $PlayerAbortion to 1>>
+      <</if>>
+      <<achievement>>pregnant<</achievement>>
+      <<achievement>>childfree<</achievement>>
+      <br><br>
+      When they tell you it's not necessary since you're pregnant now and the change has become permanent anyway, you
+      tell them you want to terminate the pregnancy.  You have them give you both pills to take later.  You don't want
+      to spend your honeymoon on your 'period, but worse' as he described it.  You'll take them as soon is it's over
+      though.
+    <<else>>
+      <<achievement>>girlpower<</achievement>>
+      He does some tests, has you sign a few things, gives you an injection, then congratulates you again on your wedding,
+      and on your permanant body.
+    <</if>>
+    <<unset $PregnancyCheck>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    <br><br>
+  <</if>>
+  Ever since your change to this body you've imagined yourself as a beautiful bride walking down the asile at a huge wedding.
+  Well, to be honest, a few times before your change as well.  But that's just not to be.
+<</nobr>>
+  
+<<nobr>>
+  Barry just wanted a simple, quick ceremony, and when you saw how much planning and time it'd take for the wedding you'd
+  fantasized about, you decided that's what you wanted to.   You'd rather be [[married to Barry|BarryMarried]] today at small
+  ceremony, than six months from now at your dream wedding.
+<</nobr>>
+  
+<<nobr>>
+  And even if you'd had the big ceremony, that'd just open up other problems.  Most of your family doesn't approve of Barry.
+  Your mom and sister really don't like him, your brother and him are civil but not exactly friends.  Only your dad was
+  happy when you informed them of the wedding plans.  Hopefully the rest of them will come around and accept him eventually.
+<</nobr>>
+  
+<<nobr>>
+  You may not have had the big wedding, and fancy dress you'd fantasized about today.  But you were going to make sure your
+  wedding night was everything you'd imagined it would be.  And hopefully everything Barry had dreamed of too.
+<</nobr>>
+  
+<<nobr>>
+  Once you and him are in your hotel room he booked for the wedding night, you let the simple dress you'd wore to the ceremony
+  fall to the ground.  When you see the look in Barry's eyes when he sees the lingerie you'd been wearing under it this whole
+  time, you know this will be a night neither of you will forget.
+<</nobr>>
 
 ::BarryMarried
-TODO BarryMarried
-TODO [[BarryCaught]]
+<<nobr>>
+  <h1>Married to Barry</h1>
+  Without having graduated, you sometimes wonder where you'd be if you didn't have Barry.  But thankfully you do, and he makes
+  enough that you don't have to work outside the home.
+  <<set setup.addSexRepeat(500, {sex:"male", name:"Barry"})>>
+  <<set setup.addSexRepeat(250, {sex:"male", name:"Barry", vaginal:true})>>
+<</nobr>>
+
+<<nobr>>
+  You do your best to work to keep the home you share beautiful for him.  And yourself as well.  You want to be sure he
+  appreciates you as much as you do him.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Barry3.webm" autoplay loop muted height="400"></video><br>
+<</nobr>>
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/Barry2.mp4" autoplay loop muted height="550"></video><br>
+  </div>
+<</nobr>>
+<<nobr>>
+  "You did a good job today," he tells you some days when he gets home.  "And I know the perfect reward for my horny little
+  slut.  She wants all her holes fucked today, don't you?"  You bite your lower lip and nod eagerly.
+<</nobr>>
+
+<<nobr>>
+  You love when he rewards you for doing a good job.  And you really do like making sure everything is perfect for Barry
+  after work.  It's been several years now since you've had any other job than taking care of him and the house.  You remember
+  exhausted you were you used to get home from work, so you are happy to do anything to make that easier on Barry.
+<</nobr>>
+
+<<nobr>>
+  But still, sometimes you like misbehaving.  Occasionally you'll 'miss' something in your cleaning.  Something that you know will
+  be obvious enough for him to notice.  Not because you want to make things difficult for Barry.  Just the opposite.  You do it
+  because doing a 'bad' job and [[getting punished|BarryPunish]] can be fun too, for you and him.
+<</nobr>>
+
+::BarryPunish
+<<nobr>>
+  <h1>Punished by Barry</h1>
+  When you 'misbehave', Barry likes to punish you.  He might use his belt if he comes home from work and the house is still a mess.
+  Today you are being punished because you didn't have a cold drink ready for him when he came in from mowing the lawn.  He bends
+  you over his knee and uses his bare hand.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Barry4.webm" autoplay loop muted height="450"></video><br>
+<</nobr>>
+<<nobr>>
+  Your panties were doing nothing to protect your bottom, so he just left them on you this time.  Though once your ass is good and
+  red, he pulls them down anyway.  You moan as as finger slides into you.  "What a naughty girl you are," he says.  "That was supposed
+  to be a punishment, but you're dripping wet."  Of course you can feel his rock-hard cock on your leg, so you know he was enjoying
+  it your 'punishment' at least as much as you were.
+<</nobr>>
+
+<<nobr>>
+  "There's no reason to let your wet cunt go to waste though," he tells you as he stands and drops his pants.  "But you aren't allowed
+  to cum, since you are being punished."  As soon as his cock slides into you, you know you
+  <<if $PlayerSideEffectOrgasmBlock>>probably<</if>> aren't going to be able that command, and won't be able to hold back your orgasm.
+  You smile as you wonder what your punishment for that misbehavior will be.
+<</nobr>>
+
+<<nobr>>
+  You must have been 'accidentally' messing up with the cleaning too often, because one day instead of punishing you Barry suggest
+  hiring a house cleaner to come by occasionally to help.  The two of you can afford it, but after five years of being married to
+  Barry, you are a bit shocked that he'd be so willing to pay for one just to make your life easier.  Perhaps he cared more about
+  the house looking nice than you thought.
+<</nobr>>
+
+<<nobr>>
+  When you meet the person he'd hired, you wonder if her being young and hot made it an easier choice for him.  But she seems nice,
+  and does a good job, so you try not to be paranoid about it.  She's there to help you after all so she's usually there with just
+  you and is seldom [[alone with Barry|BarryCaught]] anyway.
+<</nobr>>
 
 ::BarryCaught
-TODO BarryCaught - catch Barry with another woman
-TODO [[BarryDivorce]] or [[BarryForgive]]
+<<nobr>>
+  <h1>Catching Barry and the Maid</h1>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/Barry7.mp4" autoplay loop muted height="550"></video><br>
+  </div>
+  You'd left to go to the grocery store, leaving Barry and Anne at the house.  But you'd only gotten half way there when you
+  realized your credit card was on the counter at home, not in your purse, so you turned around and went back.
+<</nobr>>
+
+<<nobr>>
+  They must have been too caught up in the moment to hear you come back in, because they don't stop at all.  You
+  can't even say anything at first as your brain refuses to accept what you are seeing.  Then you try to tell
+  yourself she's giving him a lapdance, even though you know it's more than that even.
+<</nobr>>
+
+<<nobr>>
+  When she gets up, you see his cock pulling out of her.  A quick tug at her shorts, move them back into place and cover her wet lips,
+  but you already know for a fact that he was just fucking her.  And if even that wasn't enough, her other lips wrapping around his
+  cock confirm it again.  "What the fuck!" is all you manage to say at first.
+<</nobr>>
+
+<<nobr>>
+  "Back so soon?" Barry says not even sounding concern that you just walked in on him fucking the maid.  "Good, then we can stop
+  sneaking around and pretending like you're still top woman around here."  You look on in shock as Barry jestures and Anne goes
+  back to sucking his cock!
+<</nobr>>
+
+<<nobr>>
+  He points to the corner of the room and says, "Since we don't need to hide it anymore, why don't you
+  [[kneel over there and watch|BarryAccept]]. Then you'll see that cleaning isn't the only thing Anne is much better than you at doing.  
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectSubmissive >3 >>
+    You know you should storm out, file for a divorce, something. But you can't help yourself.  You do as he commands and kneel down
+    facing them, so you can watch as some other woman fucks your husband.
+  <<else>>
+    Your faces flushes with shame as part of you wants to do exactly as he commands, and watch as some other woman fucks your husband.
+    But you know you should storm out of the house, hire a lawyer, and [[file for a divorce|BarryDivorce]]!
+  <</if>>
+<</nobr>>
 
 ::BarryDivorce
+<<nobr>>
+	<h1>Attorney's Office</h1>
+  It takes several months, and some back and forth negotiations between your lawyer and Barry's, but eventually your
+  divorce is final.
+  <<set $ExSpouse to "Barry">>
+  <<unset $Spouse>>
+  <<set setup.breakupWith("Barry")>>
+<</nobr>>
+<<nobr>>
+	<img src="PartP/Lawyer.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  Barry gets the house, and the mortgage that goes with it.  You each get one of the cars.
+  TODO settlement, cash, plus alimony?
+<</nobr>>
+
 TODO Leads to [[Divorce]] ending
 
-::BarryForgive
+<<achievement>>divorced<</achievement>>
+
+::BarryAccept
 TODO Leads to Barry Cuckqueen ending

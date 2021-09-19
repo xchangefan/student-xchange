@@ -881,6 +881,8 @@ You are a young man trying to decide where to go to college.
 
     <<if $MasterRobert>><br><<print "You are a slave to Robert. ">><</if>>
 
+    <<if $ExSpouse>>You are divorced.<</if>>
+
     <<if $Spouse == 'Andrew' or $Engaged == 'Andrew' or setup.areDating('Andrew')>>
       <<if $Spouse == 'Andrew'>>
         You are married to Andrew.
@@ -959,7 +961,7 @@ You are a young man trying to decide where to go to college.
         You are married to Barry.
       <<elseif $Engaged == 'Barry'>>
         You are engaged to Barry, and live with him as his pet.
-      <<elseif $Roommate=='Barry'>>
+      <<elseif $Roommate == 'Barry'>>
         You live with Barry as his pet.
       <<else>>
         You serve Barry as his pet.
