@@ -35,8 +35,8 @@ $(document).on(':passageend', function (ev) {
 function UpdateStoryLinks() {
   if ($("#StoryKeyFlag").html()) {
     $("#StoryKeyFlag").html("")
-    var storyLinkId = state.active.variables.StoryKeys[0] - 1;
-    state.active.variables.StoryKeys = state.active.variables.StoryKeys.slice(1);
+    var storyLinkId = State.variables.StoryKeys[0] - 1;
+    State.variables.StoryKeys = State.variables.StoryKeys.slice(1);
 
     var Links = $("#passages a");
     if (Links.length === 1) {
@@ -47,7 +47,7 @@ function UpdateStoryLinks() {
 
     if (storyLinkId >= Links.length) {
       console.warn("storyLinkId: " + storyLinkId + ", Links.length: " + Links.length + " : Exiting story mode");
-      state.active.variables.StoryKeys = "";
+      State.variables.StoryKeys = "";
       return;
     }
 
@@ -68,7 +68,7 @@ function UpdateStoryLinks() {
 function UpdateLinks() {
 	if (Engine.isIdle()) {
     var NoKeyLinks = $(".NoKeyLinks");
-    if (state.active.variables.StoryKeys) {
+    if (State.variables.StoryKeys) {
       UpdateStoryLinks()
     } else if (NoKeyLinks.length > 0 ) {
       // to nothing
@@ -108,7 +108,7 @@ $(document).on("keyup", function (e) {
 	// Trigger next link click on right arrow key
 	if (((e.key == "ArrowRight") || (e.keyCode == 49) || (e.keyCode == 97)) && $("#NextLink").length && (!tags().includes("DisableClick"))) {
 		e.preventDefault();
-    state.active.variables.StoryKeysLearn += "1"
+    State.variables.StoryKeysLearn += "1"
 		$("#NextLink").trigger("click");
 		return false;
 	}
@@ -117,7 +117,7 @@ $(document).on("keyup", function (e) {
 	if ((e.keyCode > 47) && (e.keyCode < 58) && (!tags().includes("DisableClick"))) {
 		if ($("#Link" + (e.keyCode - 48)).length) {
 			e.preventDefault();
-      state.active.variables.StoryKeysLearn += (e.keyCode - 48)
+      State.variables.StoryKeysLearn += (e.keyCode - 48)
 			$("#Link" + (e.keyCode - 48)).trigger("click");
 			return false;
 		}
@@ -125,7 +125,7 @@ $(document).on("keyup", function (e) {
 	if ((e.keyCode > 95) && (e.keyCode < 106) && (!tags().includes("DisableClick"))) {
 		if ($("#Link" + (e.keyCode - 96)).length) {
 			e.preventDefault();
-      state.active.variables.StoryKeysLearn += (e.keyCode - 96)
+      State.variables.StoryKeysLearn += (e.keyCode - 96)
 			$("#Link" + (e.keyCode - 96)).trigger("click");
 			return false;
 		}
@@ -136,7 +136,7 @@ $(document).on("keyup", function (e) {
 		e.preventDefault();
 		var Links = $("#passages a");
 		if (Links.length > 0) {
-      state.active.variables.StoryKeysLearn += ":RANDOM:"
+      State.variables.StoryKeysLearn += ":RANDOM:"
 			Links[Math.floor(Math.random() * Links.length)].click();
 			return false;
 		}
@@ -151,7 +151,7 @@ $(document).on("keyup", function (e) {
 
 	if ((["x"].includes(e.key)) && (!tags().includes("DisableClick"))) {
 		e.preventDefault();
-    state.active.variables.StoryKeys = "";
+    State.variables.StoryKeys = "";
     if ($("#StoryModeMessage").html()) {
       $("#StoryModeMessage").html("<i>Story Mode Exited - Normal navigation resumes on next page</i>");
     }
@@ -161,25 +161,25 @@ $(document).on("keyup", function (e) {
 
 ::InventoryFunctions [script] <275,50>
 setup.addInventory = function (itemClass, itemName) {
-  if (!state.active.variables.inventory[itemClass]) {
-    state.active.variables.inventory[itemClass] = []
+  if (!State.variables.inventory[itemClass]) {
+    State.variables.inventory[itemClass] = []
   }
-  state.active.variables.inventory[itemClass] = setup.addIfNeeded(state.active.variables.inventory[itemClass], itemName)
+  State.variables.inventory[itemClass] = setup.addIfNeeded(State.variables.inventory[itemClass], itemName)
 }
 
 setup.haveInventory = function (itemClass, itemName) {
-  if (!state.active.variables.inventory[itemClass]) {
+  if (!State.variables.inventory[itemClass]) {
     return false
   } else if (itemName === '*') {
     return true
   } else {
-    return state.active.variables.inventory[itemClass].indexOf(itemName) >= 0
+    return State.variables.inventory[itemClass].indexOf(itemName) >= 0
   }
 }
 
 setup.removeInventory = function(itemClass, itemName) {
   if (setup.haveInventory(itemClass, itemName)) {
-    state.active.variables.inventory[itemClass] = setup.removeItem(state.active.variables.inventory[itemClass], itemName)
+    State.variables.inventory[itemClass] = setup.removeItem(State.variables.inventory[itemClass], itemName)
     return true;
   } else {
     return false;
@@ -187,10 +187,10 @@ setup.removeInventory = function(itemClass, itemName) {
 }
 
 setup.listInventory = function(itemClass) {
-  if (!state.active.variables.inventory[itemClass]) {
+  if (!State.variables.inventory[itemClass]) {
     return "none"
   } else {
-    return state.active.variables.inventory[itemClass].join(", ")
+    return State.variables.inventory[itemClass].join(", ")
   }
   
 }
@@ -200,39 +200,39 @@ setup.advanceWeek = function() {
   setup.addMinimumBJs()
   setup.addTutorSex()
   setup.nextCycleWeek()
-  if (state.active.variables.SchoolWeek) {
-    state.active.variables.SchoolWeek += 1
+  if (State.variables.SchoolWeek) {
+    State.variables.SchoolWeek += 1
   }
 }
 
 setup.startCycle = function (startWeekIsRandom, forgetPill) {
   let startWeek = startWeekIsRandom ? Math.floor(Math.random() * 4) : 0
-  state.active.variables.MenstrualWeek = startWeek + 1
+  State.variables.MenstrualWeek = startWeek + 1
 }
 
 setup.nextCycleWeek = function (forgetPill) {
   setup.checkForNewPregnancyHidden()
-  if (state.active.variables.PregnancyWeek == -1) {
-    state.active.variables.PregnancyWeek = 1; //if getting pregnant right after their period
-  } else if (state.active.variables.PregnancyWeek) {
-    state.active.variables.PregnancyWeek += 1;
-  } else if (state.active.variables.MenstrualWeek) {
-    state.active.variables.MenstrualWeek += 1;
-    if (state.active.variables.MenstrualWeek == 5) {
-      state.active.variables.MenstrualWeek = 1;
+  if (State.variables.PregnancyWeek == -1) {
+    State.variables.PregnancyWeek = 1; //if getting pregnant right after their period
+  } else if (State.variables.PregnancyWeek) {
+    State.variables.PregnancyWeek += 1;
+  } else if (State.variables.MenstrualWeek) {
+    State.variables.MenstrualWeek += 1;
+    if (State.variables.MenstrualWeek == 5) {
+      State.variables.MenstrualWeek = 1;
     }
   } else {
     setup.startCycle(false, forgetPill)
   }
 
-  if (state.active.variables.MenstrualWeek == 4) {
+  if (State.variables.MenstrualWeek == 4) {
     setup.checkForNewPregnancy("period")
   }
 }
 
 ::SexFunctions [script] <300,50>
 setup.addSex =  function (fuck) {
-  state.active.variables.sex.push(fuck)
+  State.variables.sex.push(fuck)
 }
 
 setup.addSexRepeat = function (repeatCount, fuck) {
@@ -244,7 +244,7 @@ setup.addSexRepeat = function (repeatCount, fuck) {
 setup.checkForBuddyPregnancy = function (repeatCount, guys) {
   if (!guys) {guys=[]};
 
-  var chanceEachTime = state.active.variables.BuddyCondoms ? 0.02 : 0.1;
+  var chanceEachTime = State.variables.BuddyCondoms ? 0.02 : 0.1;
 
   for (var i = 0; i < repeatCount; i++) {
     var currGuy = (guys.length > i) ? guys[i] : "Unknown";
@@ -260,40 +260,40 @@ setup.checkForBuddyPregnancy = function (repeatCount, guys) {
 
 
 setup.addTutorSex = function() {
-  if (state.active.variables.AcademicProbationTutorSex && state.active.variables.AcademicProbation) {
-    state.active.variables.AcademicProbationTutorSex.forEach(setup.addSex)
+  if (State.variables.AcademicProbationTutorSex && State.variables.AcademicProbation) {
+    State.variables.AcademicProbationTutorSex.forEach(setup.addSex)
   }
 }
 
 setup.addMinimumBJs = function() {
   var fuck
   if (setup.haveGirlfriend()) {
-    fuck = {sex: 'female', name: state.active.variables.dating[0]};
-  } else if (state.active.variables.dating.length) {
-    fuck = {sex: 'male', name: state.active.variables.dating[0]};
+    fuck = {sex: 'female', name: State.variables.dating[0]};
+  } else if (State.variables.dating.length) {
+    fuck = {sex: 'male', name: State.variables.dating[0]};
   } else {
     fuck = {sex: 'male'};
   }
 
-  if (state.active.variables.DailyBJMinimum) {
-    setup.addSexRepeat(state.active.variables.DailyBJMinimum * 7, fuck);
+  if (State.variables.DailyBJMinimum) {
+    setup.addSexRepeat(State.variables.DailyBJMinimum * 7, fuck);
   }
 }
 
 setup.sexCount = function () {
-	return state.active.variables.sex.length
+	return State.variables.sex.length
 }
 
 setup.sexMaleCount = function () {
-	return state.active.variables.sex.filter(function(fuck) {return fuck.sex == 'male'}).length
+	return State.variables.sex.filter(function(fuck) {return fuck.sex == 'male'}).length
 }
 
 setup.sexFemaleCount = function () {
-	return state.active.variables.sex.filter(function(fuck) {return fuck.sex == 'female'}).length
+	return State.variables.sex.filter(function(fuck) {return fuck.sex == 'female'}).length
 }
 
 setup.sexVaginalCount = function () {
-	return state.active.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && fuck.vaginal}).length
+	return State.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && fuck.vaginal}).length
 }
 
 setup.sexUniquePartners = function (fucks) {
@@ -303,7 +303,7 @@ setup.sexUniquePartners = function (fucks) {
 }
 
 setup.sexAllUniquePartners = function () {
-	return setup.sexUniquePartners(state.active.variables.sex)
+	return setup.sexUniquePartners(State.variables.sex)
 }
 
 setup.sexUniqueCount = function (fucks) {
@@ -312,15 +312,15 @@ setup.sexUniqueCount = function (fucks) {
 }
 
 setup.sexUniqueMaleCount = function () {
-	return setup.sexUniqueCount(state.active.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && !fuck.repeat}))
+	return setup.sexUniqueCount(State.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && !fuck.repeat}))
 }
 
 setup.sexUniqueFemaleCount = function () {
-	return setup.sexUniqueCount(state.active.variables.sex.filter(function(fuck) {return fuck.sex == 'female' && !fuck.repeat}))
+	return setup.sexUniqueCount(State.variables.sex.filter(function(fuck) {return fuck.sex == 'female' && !fuck.repeat}))
 }
 
 setup.sexUniqueVaginalCount = function () {
-	return setup.sexUniqueCount(state.active.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && fuck.vaginal && !fuck.repeat}))
+	return setup.sexUniqueCount(State.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && fuck.vaginal && !fuck.repeat}))
 }
 
 setup.isGoldStarLesbian = function () {
@@ -329,7 +329,7 @@ setup.isGoldStarLesbian = function () {
 
 setup.getPartnerName = function(fuck) {
   if (fuck.name) {
-    var kidnapperNote = (state.active.variables.KidnapEscape && fuck.name.indexOf("Kidnapper") >= 0) ? " (no memory)" : ""
+    var kidnapperNote = (State.variables.KidnapEscape && fuck.name.indexOf("Kidnapper") >= 0) ? " (no memory)" : ""
     return fuck.name + kidnapperNote
   } else if (fuck.anon) {
     return "Some " + fuck.anon
@@ -341,12 +341,12 @@ setup.getPartnerName = function(fuck) {
 }
 
 setup.sexualHistoryTable = function () {
-	if (!state.active.variables.sex || state.active.variables.sex.length == 0) {
+	if (!State.variables.sex || State.variables.sex.length == 0) {
 		return "You are still a virgin.  You must be new here."
 	}
 
 	var st = "<table>\n<tr><th>Name / Description</th><th>M/F</th><th>Vaginal?</th><th>Birth Control</th><th>Pregnancy</th></tr>\n"
-	state.active.variables.sex.forEach(function (fuck) {
+	State.variables.sex.forEach(function (fuck) {
 		st += "<tr><td>"
     var partnerName = setup.getPartnerName(fuck)
     if (partnerName.indexOf("Some") >= 0) {
@@ -378,46 +378,46 @@ setup.sexualHistoryTable = function () {
 
 
 setup.haveFucked = function (name) {
-	return state.active.variables.sex.filter(function(fuck) {return fuck.name == name || fuck.anon == name}).length > 0
+	return State.variables.sex.filter(function(fuck) {return fuck.name == name || fuck.anon == name}).length > 0
 } 
 
 setup.haveFuckedMale = function (name) {
-	return state.active.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && (fuck.name == name || fuck.anon == name)}).length > 0
+	return State.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && (fuck.name == name || fuck.anon == name)}).length > 0
 } 
 
 setup.haveFuckedVaginal = function (name) {
 	// different than daddyCheck, since doesn't care about birth control
-	return state.active.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)}).length > 0
+	return State.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)}).length > 0
 } 
 
 setup.addDetailsToRecentSex = function() {
-	if (!state.active.variables.sex) return;
+	if (!State.variables.sex) return;
 
-	state.active.variables.sex.forEach(function(fuck) {
+	State.variables.sex.forEach(function(fuck) {
 		if(fuck.vaginal && !fuck.checkedForPregnancy) {
       if (!fuck.birthControl) {
-        if (state.active.variables.PlayerPregnant) {
+        if (State.variables.PlayerPregnant) {
           fuck.birthControl = 'pregnant'
-        } else if (state.active.variables.PlayerProtectionPerfect) {
+        } else if (State.variables.PlayerProtectionPerfect) {
           fuck.birthControl = 'implant-perfect'
-				} else if (state.active.variables.PlayerProtectionPrince) {
+				} else if (State.variables.PlayerProtectionPrince) {
 					fuck.birthControl = 'injection'
         } else if (fuck.birthControlOverride) {
           fuck.birthControl = fuck.birthControlOverride
-        } else if (state.active.variables.PlayerProtectionPermanent) {
+        } else if (State.variables.PlayerProtectionPermanent) {
           fuck.birthControl = 'implant-pill'
-        } else if (state.active.variables.PlayerProtectionPill && !fuck.noPill) {
+        } else if (State.variables.PlayerProtectionPill && !fuck.noPill) {
           fuck.birthControl = 'pill'
-        } else if ((state.active.variables.PlayerProtectionCondoms && !fuck.noCondom) || fuck.condom) {
+        } else if ((State.variables.PlayerProtectionCondoms && !fuck.noCondom) || fuck.condom) {
           fuck.birthControl = 'condom'
-        } else if ((state.active.variables.PlayerProtectionWithdraw && !fuck.noPullout)  || fuck.pullout) {
+        } else if ((State.variables.PlayerProtectionWithdraw && !fuck.noPullout)  || fuck.pullout) {
           fuck.birthControl = 'pullout'
         } else {
           fuck.birthControl = 'none'
         }
       }
 
-      if (state.active.variables.PlayerProtectionTry) {
+      if (State.variables.PlayerProtectionTry) {
         fuck.trying = true
       }
 
@@ -444,7 +444,7 @@ setup.addDetailsToRecentSex = function() {
 
 setup.getPossibleConceptions = function(hideHiddenChecked) {
   setup.addDetailsToRecentSex()
-  return state.active.variables.sex.filter(function(fuck) {
+  return State.variables.sex.filter(function(fuck) {
     var shouldHide = fuck.checkedForPregnancy && (fuck.checkedForPregnancy != "hidden" || hideHiddenChecked)
 
     return fuck.vaginal &&
@@ -460,7 +460,7 @@ setup.getPossibleConceptions = function(hideHiddenChecked) {
 }
 
 setup.firstTimeWith = function() {
-  var intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
+  var intercourse = State.variables.sex.filter(function(fuck) {return fuck.vaginal})
   if (intercourse.length) {
     return intercourse[0].name || ("Some " + intercourse[0].anon);
   } else {
@@ -469,12 +469,12 @@ setup.firstTimeWith = function() {
 }
 
 setup.isFirstVaginal = function(targetFuck) {
-  var intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
+  var intercourse = State.variables.sex.filter(function(fuck) {return fuck.vaginal})
   return intercourse.length && intercourse[0] == targetFuck
 }
 
 setup.pregnantFirstTime = function() {
-  var intercourse = state.active.variables.sex.filter(function(fuck) {return fuck.vaginal})
+  var intercourse = State.variables.sex.filter(function(fuck) {return fuck.vaginal})
   return intercourse.length && intercourse[0].conception && !intercourse[0].trying
 }
 
@@ -499,15 +499,15 @@ setup.checkForPregnancy = function (fuck, oddsBoost, ovulationOverride) {
   ]
   
   var ovulationRoll
-  if (state.active.variables.MenstrualWeek) {
-    ovulationRoll = Math.floor(Math.random() * 7) + (state.active.variables.MenstrualWeek % 4) * 7
+  if (State.variables.MenstrualWeek) {
+    ovulationRoll = Math.floor(Math.random() * 7) + (State.variables.MenstrualWeek % 4) * 7
   } else {
     ovulationRoll = Math.floor(Math.random() * 28)
   }
   var baseProbability
   if (ovulationOverride) {
-    baseProbability = state.active.variables.PlayerProtectionFertile ? 1.0 : 0.6
-  } else if (state.active.variables.PlayerProtectionFertile) {
+    baseProbability = State.variables.PlayerProtectionFertile ? 1.0 : 0.6
+  } else if (State.variables.PlayerProtectionFertile) {
     baseProbability = ovulationTableExtraFertile[ovulationRoll]
   } else {
     baseProbability = ovulationTableNormal[ovulationRoll]
@@ -550,7 +550,7 @@ setup.getUnrevealedPregnancy = function(pregnancyTestType) {
 }
 
 setup.checkForNewPregnancyHidden = function() {
-  if (state.active.variables.PlayerPregnant || state.active.variables.PregnancyWeek) {
+  if (State.variables.PlayerPregnant || State.variables.PregnancyWeek) {
     return // already pregnant
   }
 
@@ -559,29 +559,29 @@ setup.checkForNewPregnancyHidden = function() {
   recentVaginal.forEach(function(fuck) {
     fuck.checkedForPregnancy = "hidden"
     if (!isPregnant) {
-      var areDefinitelyOvulating = (fuck.ovulating && !state.active.variables.PlayerProtectionPill) || fuck.noPill
+      var areDefinitelyOvulating = (fuck.ovulating && !State.variables.PlayerProtectionPill) || fuck.noPill
       var firstTimeBoost = setup.isFirstVaginal(fuck) ? 0.2 : 0
       fuck.conception = setup.checkForPregnancy(fuck, firstTimeBoost, areDefinitelyOvulating)
       fuck.checkedForPregnancy = "hidden"
       if (fuck.conception) {
         isPregnant = true // but player doesn't know yet, so don't set visible state variable
-        if (state.active.variables.MenstrualWeek == 4) {
-          state.active.variables.PregnancyWeek = -1
+        if (State.variables.MenstrualWeek == 4) {
+          State.variables.PregnancyWeek = -1
         } else {  
-          state.active.variables.PregnancyWeek = state.active.variables.MenstrualWeek
+          State.variables.PregnancyWeek = State.variables.MenstrualWeek
         }
-        state.active.variables.MenstrualWeek = 0
+        State.variables.MenstrualWeek = 0
       }
     }
   })
 }
 
 setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
-  if (state.active.variables.PlayerPregnant) {
+  if (State.variables.PlayerPregnant) {
     return {isPregnant: false, possibleFathers: []} // already pregnant
-  } else if (state.active.variables.StoryKeys && state.active.variables.StoryModePregnant) {
+  } else if (State.variables.StoryKeys && State.variables.StoryModePregnant) {
     var recentVaginal = setup.getPossibleConceptions()
-    var storyModePregnancy = state.active.variables.StoryModePregnant[pregnancyTestType]
+    var storyModePregnancy = State.variables.StoryModePregnant[pregnancyTestType]
     if (storyModePregnancy) {
       var luckyFuck = recentVaginal.find(function(fuck) {return fuck.name == storyModePregnancy || fuck.anon == storyModePregnancy});
       if (!luckyFuck) {
@@ -627,7 +627,7 @@ setup.checkForNewPregnancy = function(pregnancyTestType, oddsBoost) {
       } else if (fuck.checkedForPregnancy == "hidden" && !fuck.conception) {
         fuck.checkedForPregnancy = pregnancyTestType
       } else {
-				var areDefinitelyOvulating = (fuck.ovulating && !state.active.variables.PlayerProtectionPill) || fuck.noPill
+				var areDefinitelyOvulating = (fuck.ovulating && !State.variables.PlayerProtectionPill) || fuck.noPill
         var firstTimeBoost = setup.isFirstVaginal(fuck) ? 0.2 : 0        
         fuck.conception = setup.checkForPregnancy(fuck, Math.max(firstTimeBoost, oddsBoost), areDefinitelyOvulating)
         fuck.checkedForPregnancy = pregnancyTestType
@@ -647,7 +647,7 @@ setup.overrideForcePregnancy = function(pregnancyTestType) {
   var recentVaginal = setup.getPossibleConceptions()
 	var normalCheck = setup.checkForNewPregnancy(pregnancyTestType, 0.25)
 
-  if (state.active.variables.PlayerPregnant || normalCheck.isPregnant) {
+  if (State.variables.PlayerPregnant || normalCheck.isPregnant) {
 		// pregnant without override, do nothing extra
 		return normalCheck 
 	} else {
@@ -676,7 +676,7 @@ setup.overrideForcePregnancy = function(pregnancyTestType) {
 }
 
 setup.specialProjectPossibleImpregnated = function () {
-  var projectFucks = state.active.variables.sex.filter(function(fuck) {return fuck.anon == "Remote Tester"});
+  var projectFucks = State.variables.sex.filter(function(fuck) {return fuck.anon == "Remote Tester"});
   var projectConception = projectFucks.filter(function(fuck) {return fuck.conception});
   var projectAlreadyPregnant = projectFucks.filter(function(fuck) {return fuck.checkedForPregnancy == "already pregnant"});
   return projectConception.length > 0 || projectAlreadyPregnant.length > 0;
@@ -684,53 +684,53 @@ setup.specialProjectPossibleImpregnated = function () {
 
 ::NeighbourFunctions [script] <350,50>
 setup.addNeighbour = function (name) {
-	return state.active.variables.neighbours.push(name)
+	return State.variables.neighbours.push(name)
 }
 
 setup.isNeighbour = function (name) {
-	return state.active.variables.neighbours.indexOf(name) >= 0
+	return State.variables.neighbours.indexOf(name) >= 0
 }
 
 setup.isFormerNeighbour = function (name) {
-	return state.active.variables.FormerNeighbours && state.active.variables.FormerNeighbours.indexOf(name) >= 0
+	return State.variables.FormerNeighbours && State.variables.FormerNeighbours.indexOf(name) >= 0
 }
 
 
 setup.removeNeighbour = function (name) {
-	state.active.variables.neighbours = setup.removeItem(state.active.variables.neighbours, name)
+	State.variables.neighbours = setup.removeItem(State.variables.neighbours, name)
 }
 
 ::DatingFunctions [script] <400,50>
 setup.startDating = function (name) {
-	state.active.variables.exes = setup.removeItem(state.active.variables.exes, name)
-	state.active.variables.dating = setup.addIfNeeded(state.active.variables.dating, name)
-	state.active.variables.fwb = setup.removeItem(state.active.variables.fwb, name)
-	state.active.variables.friendzone = setup.removeItem(state.active.variables.friendzone, name)
+	State.variables.exes = setup.removeItem(State.variables.exes, name)
+	State.variables.dating = setup.addIfNeeded(State.variables.dating, name)
+	State.variables.fwb = setup.removeItem(State.variables.fwb, name)
+	State.variables.friendzone = setup.removeItem(State.variables.friendzone, name)
 }
 
 setup.breakupWith = function (name) {
-	state.active.variables.exes = setup.addIfNeeded(state.active.variables.exes, name)
-	state.active.variables.dating = setup.removeItem(state.active.variables.dating, name)
-	state.active.variables.fwb = setup.removeItem(state.active.variables.fwb, name)
-	state.active.variables.friendzone = setup.removeItem(state.active.variables.friendzone, name)
+	State.variables.exes = setup.addIfNeeded(State.variables.exes, name)
+	State.variables.dating = setup.removeItem(State.variables.dating, name)
+	State.variables.fwb = setup.removeItem(State.variables.fwb, name)
+	State.variables.friendzone = setup.removeItem(State.variables.friendzone, name)
 }
 
 setup.makeFWB = function(name) {
-	state.active.variables.exes = setup.removeItem(state.active.variables.exes, name)
-	state.active.variables.dating = setup.removeItem(state.active.variables.dating, name)
-	state.active.variables.fwb = setup.addIfNeeded(state.active.variables.fwb, name)
-	state.active.variables.friendzone = setup.removeItem(state.active.variables.friendzone, name)
+	State.variables.exes = setup.removeItem(State.variables.exes, name)
+	State.variables.dating = setup.removeItem(State.variables.dating, name)
+	State.variables.fwb = setup.addIfNeeded(State.variables.fwb, name)
+	State.variables.friendzone = setup.removeItem(State.variables.friendzone, name)
 }
 
 setup.friendZone = function(name) {
-	state.active.variables.exes = setup.removeItem(state.active.variables.exes, name)
-	state.active.variables.dating = setup.removeItem(state.active.variables.dating, name)
-	state.active.variables.fwb = setup.removeItem(state.active.variables.fwb, name)
-	state.active.variables.friendzone = setup.addIfNeeded(state.active.variables.friendzone, name)
+	State.variables.exes = setup.removeItem(State.variables.exes, name)
+	State.variables.dating = setup.removeItem(State.variables.dating, name)
+	State.variables.fwb = setup.removeItem(State.variables.fwb, name)
+	State.variables.friendzone = setup.addIfNeeded(State.variables.friendzone, name)
 }
 
 setup.areDating = function (name) {
-	return state.active.variables.dating.indexOf(name) >= 0
+	return State.variables.dating.indexOf(name) >= 0
 }
 
 setup.haveGirlfriend = function () {
@@ -739,7 +739,7 @@ setup.haveGirlfriend = function () {
 }
 
 setup.isEx = function (name) {
-	return state.active.variables.exes.indexOf(name) >= 0
+	return State.variables.exes.indexOf(name) >= 0
 }
 
 setup.haveDated = function (name) {
@@ -747,11 +747,11 @@ setup.haveDated = function (name) {
 }
 
 setup.isFWB = function(name) {
-	return state.active.variables.fwb.indexOf(name) >= 0
+	return State.variables.fwb.indexOf(name) >= 0
 }
 
 setup.isFriendzoned = function(name) {
-	return state.active.variables.friendzone.indexOf(name) >= 0
+	return State.variables.friendzone.indexOf(name) >= 0
 }
 
 ::EventFunctions [script] <405,50>
@@ -1073,9 +1073,9 @@ Macro.add('achievement', {
         if (this.args.length > 0) {
             if (typeof this.args[0] === 'number') {
                 time    = this.args[0];
-                classes = (this.args.length > 1) ? this.args.slice(1).flatten() : false;
+                classes = (this.args.length > 1) ? this.args.slice(1).flat() : false;
             } else {
-                classes = this.args.flatten().join(' ');
+                classes = this.args.flat().join(' ');
             }
         }
 
@@ -1118,11 +1118,11 @@ Macro.add('achievement', {
 
 ::PageMessages [script] <470,50>
 setup.pageMessage = function(msg) {
-  if (!state.active.variables.pageMessages) {
-    state.active.variables.pageMessages = []
+  if (!State.variables.pageMessages) {
+    State.variables.pageMessages = []
   }
 
-  state.active.variables.pageMessages.push(msg)
+  State.variables.pageMessages.push(msg)
 }
 
 ::PassageHeader <475,50>

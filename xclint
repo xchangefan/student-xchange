@@ -1,4 +1,13 @@
 #!/bin/bash
+sugarvalidator ../current-build.html | grep "."
+
+if [ $? -eq 0 ]; then
+echo test1
+    exit 1
+fi
+
+echo test 2
+
 echo "Looking for missing coordinates (needed for Twine compatibility)"
 grep "^\:\:" *.tw2 | grep -v "<[0-9]\+,[0-9]\+>"
 #| grep -v "::StoryTitle" | grep -v "::Configuration" | grep -v "::StoryCSS"
