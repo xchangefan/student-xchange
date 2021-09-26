@@ -1,7 +1,7 @@
 ::StoryCaption <200,0>
   A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
-<<if $MindBlank>><<include [[SideBarMindBlank]]>><<elseif $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
+<<if $MindBlank>><<include [[SideBarMindBlank]]>><<elseif $Dead>><<include [[SideBarDead]]>><<elseif $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
 <<include [[SideBarAchievementLink]]>>
 
 <<include [[SideBarDebug]]>>\
@@ -25,6 +25,40 @@
 
 ::SideBarMale <300,0>
 You are a young man trying to decide where to go to college.
+
+::SideBarDead
+<<nobr>>
+  You were
+  <<if $playerName>>$playerName, <</if>>
+  <<if $BodyType == 'Standard'>>
+    a beautiful,
+  <<elseif $BodyType == 'Plus'>>
+    a curvy,
+  <<elseif $BodyType == 'Petite'>>
+    a petite,
+  <<elseif $BodyType == 'Fit'>>
+    an athletic,
+  <<else>>
+    a mysterious,
+  <</if>>
+  <<if $PlayerPregnant>>
+    pregnant,
+  <</if>>
+  young
+  <<if $PlayerCumslut>>
+    cumslut.
+  <<elseif $IslandPet>>
+    pet.
+  <<elseif $PlayerMother>>
+    mother.
+  <<else>>
+    woman.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Your body was never recovered.<br>
+<</nobr>>
 
 ::SideBarHorniness <350,0>
   <div style="font-size: 90%">\
