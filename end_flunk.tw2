@@ -427,8 +427,6 @@
       It's only after the last one has gone that you stop to
       <<if $PlayerPregnant>>
         [[assess your situation|FlunkOutPregnant]].
-      <<elseif $JobCallGirl>>
-        [[assess your situation|FlunkOutCallgirl]].
       <<else>>
         [[assess your situation|FlunkOut]].
       <</if>>
@@ -573,9 +571,6 @@
   Of course you aren't going to stop at just one.  You go again as soon as he is ready.  It's only after he can't go on any more
   that you stop to [[discuss your situation|FlunkOutDating]].
 <</nobr>>
-
-::FlunkOutCallgirl
-TODO Handle if call.  Can go home (if not disowned) or to city (automatic whore path there)
 
 ::FlunkOut
 <<nobr>>
@@ -739,7 +734,7 @@ TODO Handle if call.  Can go home (if not disowned) or to city (automatic whore 
     know he'll be the one your dad will send.  You are wanting to tell him who will have the keys.  But then you discover your phone has
     been turned off.  Your dad seems to have decided you don't need to be on his family plan anymore either.
     <br><br>
-    You think about taking the car anyway, but your dad would probably report it stolen.  Instead you toss the keys under in the glove
+    You think about taking the car anyway, but your dad would probably report it stolen.  Instead you toss the keys in the glove
     box and lock the car with them inside.  "Now it's your fucking problem," you think.
     <br><br>
   <</if>>
@@ -803,9 +798,14 @@ TODO Handle if call.  Can go home (if not disowned) or to city (automatic whore 
 <</nobr>>
 
 <<nobr>>
-  The next morning he drives you the rest of the way [[to the city|AloneCity]].  You've had a lot of time to think during the drive,
-  between blowjobs that is.  And you've decided you've had enough of small towns, and college towns.  A huge city, with tons of people
-  is where you want to be.  There's sure to be plenty of opportunities for you there.
+  The next morning he drives you the rest of the way
+  <<if $JobCallGirl>>
+    [[to the city|AloneCityCallGirl]].
+  <<else>>
+    [[to the city|AloneCity]].
+  <</if>>
+  You've had a lot of time to think during the drive, between blowjobs that is.  And you've decided you've had enough of small towns,
+  and college towns.  A huge city, with tons of people is where you want to be.  There's sure to be plenty of opportunities for you there.
 <</nobr>>
 
 ::UnsetAllJobs
@@ -1296,6 +1296,8 @@ TODO Handle if call.  Can go home (if not disowned) or to city (automatic whore 
     You are nervous at first when you approach a car, but you tell yourself the guy wouldn't have pulled over and rolled down
     his window if he didn't want what you are selling.
   <<else>>
+    <<unset $JobProstitute>>
+    <<set $JobStreetWhore to 1>>
     You feel safer with Marcus nearby and knowing what he'd do to anyone that would hurt you.  Most of you is still afraid
     your rapist will come by again.  But part of you hopes he does, so you can tell Marcus who it was that hurt you and
     let him make sure he never does it again to anyone else.
@@ -1312,7 +1314,7 @@ TODO Handle if call.  Can go home (if not disowned) or to city (automatic whore 
     You realize you've been undercharging up to now.
   <</if>>
   Soon you are making as much as his more experienced girls. Whether it's a quick trip in the guys car to somewhere private
-  for a simple blowjob, or a some visting business man or tech nerd wanting you for the whole night, you now know to how much to
+  for a simple blowjob, or some visting business man or tech nerd wanting you for the whole night, you now know to how much to
   charge, and to get it up front.
 <</nobr>>
 

@@ -1102,6 +1102,11 @@ You are a young man trying to decide where to go to college.
       <<if setup.isFWB('David')>><br>You are friends with benefits with David.<</if>>
       <<if setup.isFWB('James')>><br>You are friends with benefits with James.<</if>>
       <<if setup.isFWB('Jaylen')>><br>You are friends with benefits with Jaylen.<</if>>
+      <<if setup.isFWB('Gang')>>
+        <br>You are available for any of the guys in the gang to fuck.
+      <<elseif setup.isFWB('Emilio')>>
+        <br>You are friends with benefits with Emilio.
+      <</if>>
     <</if>>
     <<if !setup.areDating('Peter') and !setup.isFriendzoned('Peter') and $PlayerItemNerdKeyStripper>><br>Peter is a regular at the strip club, you hold the key to his chastity cage.<</if>>
   <</if>>
@@ -1114,7 +1119,7 @@ You are a young man trying to decide where to go to college.
       <<print $children.map((child) => {return child.name}).join(" and ")>>.
     <</if>>
   <</if>>
-  <</nobr>>
+<</nobr>>
 
 ::SideBarJob <2400,0>
 <<nobr>>
@@ -1165,6 +1170,9 @@ You are a young man trying to decide where to go to college.
         You are a stay-at-home girlfriend.
       <</if>>
     <</if>>
+    <<if $JobProstitute>><<print "You are a prostitute. ">><</if>>
+    <<if $JobWaitress>><<print "You are a waitress. ">><</if>>
+    <<if $JobDrugMule>><<print "You are a drug mule. ">><</if>>
     <<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>
     <<if $JobCheerleader>><<print "You are a Cheerleader. ">><</if>>
     <<if $JobCheerleaderFundraiser>><<print "You are a Fundraiser for the Cheerleaders.">><</if>>
