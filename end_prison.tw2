@@ -693,15 +693,54 @@
 ::AloneArrested
 <<nobr>>
   <h1>Talking with your attorney</h1>
+  <<unset $JobDrugMule>>
+  <<set $JobDrugTrafficker to "an alleged">>
+  <<set setup.breakupWith("Gang")>>
+  <<set setup.breakupWith("Emilio")>>
   <img src="PartX/Prison7.png" hspace="10" vspace="10" height="500" align="left">
+  You are charged with one count of drug trafficking, as well as a lesser, related crimes.  Your lawyer say the government
+  is sure your other trips were also for trafficking, but they have no evidence to prove it, hence just the one count.
 <</nobr>>
-<<nobr>>
-  TODO
-<</nobr>>
-TODO get arrested [[AloneCourt]] or [[AloneRatOut]]
-TODO Lawyer can try to object to your search
 
-::AloneRatOut
+<<nobr>>
+  He tells you that your only change of winning if [[this goes to trial|AtTrial]] is if he can get the judge to rule that
+  your search was improper, since they were male agents instead of female agents.  If he excluded the drugs you'd been carrying
+  from evidence, then there's no evidence at all.  
+<</nobr>>
+
+<<nobr>>
+  "Given the quantity involved, if you lose at trial you are facing up to 40 years for the trafficking, plus a few additional years
+  for the rest," your lawyer tells you.  He sees the panicked look on your face and continues, "But that's just the maximum sentence.
+  Since this is your first offense, the judge hopefully wouldn't go that high, but there are no guarantees on that."
+<</nobr>>
+
+<<nobr>>
+  "The prosecution is [[offering a plea deal|Guilty]].  You plead guilty to the trafficking charge, they'll drop the other charges.
+  They will recommend 20 years to the judge." He can tell you aren't happy with this offer either.  "You'll be eligible and likely
+  to get parole in 10 years.  You could be walking free again, by the time you are 30.  I know you don't like it, but this is probably
+  your safest choice."
+<</nobr>>
+
+<<nobr>>
+  "Is the best they'll give me?" You ask.  "From what some of other girls I was talking to in jail said, I was expecting half that
+  long from a deal.  I was hoping they were going to offer 10 years, getting out in 5."
+<</nobr>>
+
+<<nobr>>
+  "Well, that was the other part I was about to explain.  They might offer less if it were just you, on your own," he tells you.
+  "But they know about your gang affiliation, and that you had personal... relationships, with many of the suppliers.  What they are
+  really hoping for is for you to [[provide evidence for them|Witness]].  And they are threatening more jail time to get you to
+  cooperate.  They'd much  rather go after the men that run your gang, and their international suppliers."
+<</nobr>>
+
+<<nobr>>
+  "I know how close you are to your fellow gang members, so I though you might be reluctant to take their deal," he tells you.  You
+  suspect the fact that he also represents some of the other guys from the gang as well might also have been part of his reluctance
+  to mention this option.
+<</nobr>>
+
+::Witness
+<<unset $JobDrugTrafficker>>
 TODO Rat out the Gang.  You only actually witness a few involved.  The rest just initiated you
 TODO [[RatCapture]]
 
@@ -709,16 +748,255 @@ TODO [[RatCapture]]
 TODO Captured (going to your X-Change appointment), fucked, tortured?
 TODO [[RatDisappear]]
 
-::AloneCourt
-TODO Court [[WomanAtTheMensPrison]] or [[WomensPrison]]
+::AtTrial
+<<nobr>>
+  <h1>At trial</h1>
+  <img src="PartX/Prison14.jpg" hspace="10" vspace="10" height="400">
+  <<set $LostAtTrial to 1>>
+  <<set $LenientJudge to either(0,0,1)>>
+<</nobr>>
+<<nobr>>
+  During the pretrial motions your lawyer tries to get your search, the video and the drug evidence, thrown out.
+<</nobr>>
+
+<<nobr>>
+  But the judge doesn't exclude it.  Instead
+  <<if $LenientJudge>>
+    she says, "While the search being performed by male agents was a gross deviation from standard procedure, the fact that
+    there was a search was not improper.  The defendant had been flagged for a search before she even arrived at the border.
+    If the agents had, as they should have, waited until one or more female agents could arrive to conduct the search, the
+    same evidence would have been obtained.
+  <<else>>
+    he says, "Given the defendants gender history, it is not entirely obvious which gender is most appropriate to conduct
+    the search.  And, as the recordings of the interview show, the defendant offered no objection to the search being performed
+    by male agents.  Her implied offer for oral sex and possible future sex, in exchange for abandoning the cavity search indicate
+    she may have wanted male agents so she had a better chance to bribe them.  Their conduct on the video however appears to be
+    entirely professional, and the defendant has not alleged otherwise.
+  <</if>>
+  Therefore your request to exclude the search is denied."
+<</nobr>>
+
+<<nobr>>
+  The prosecution isn't interested in a deal any longer, since they know they've won now.  You lawyer also says the offer for
+  leniency in exchange for testifying is also off the table, though you don't know if you believe him or not.  But you'd already
+  decided against that idea anyway.
+<</nobr>>
+
+<<nobr>>
+  The trial doesn't take that long.  You have to sit through your entire search again, watching as you flirt with the border
+  guard, watch as he discovers the sex toys in your bag, as you offer to blow him in exchange for stopping there, and then
+  watching as they pull bag after bag of drugs from your body.  The jury watches the video very closely as it plays,
+  though some glance over at you, probably picturing you naked to see if you match the video.
+<</nobr>>
+
+<<nobr>>
+  The only witnesses the government calls are the two agents who searched you to confirm that you were trying to cross the border,
+  that you are the one in the video, and that you are the one they pulled the drugs from.  You lawyer does question them about their
+  deviation from procedure and they just blame it all the female agents being busy.  You don't think his questions did anything to
+  sway the jury though.
+<</nobr>>
+
+<<nobr>>
+  It takes the jury less than an hour to come back [[with a verdict|Guilty]].
+<</nobr>>
+
+::Guilty
+<<nobr>>
+  <h1>Guilty</h1>
+  <img src="PartX/Prison15.jpg" hspace="10" vspace="10" height="400">
+  <<set $JobDrugTrafficker to "a convicted">>
+<</nobr>>
+<<nobr>>
+  <<if $LostAtTrial>>
+    You stand up as the jury reads off the verdict.  Guilty on all counts.  When you return to court the next time it is to hear
+    what the judge's sentence will be.
+    <br><br>
+    During your sentencing the judge
+    <<if $LenientJudge>>
+      <<set $PrisonSentence to 10>>
+      mentions that your search was highly inappropriate, even if it didn't not violate your
+      constitutional rights.  She scolds the agents, even though they aren't still there, saying they should have followed procedure
+      and waited for a female agent to conduct the search.
+      <br><br>
+      She also suspects that you may have faced undue pressure by the gang members, including an implied fear of sexual or other
+      violence.  But she says since no evidence was presented to support this it won't affect your verdict, but is a factor
+      she is considering in your sentence.
+      <br><br>
+      She tells you to use your time in prison to refect on the choices you've made and to make better choices.  Then she
+    <<else>>
+      <<set $PrisonSentence to 40>>
+      The judge notes the large quantity you were transporting, your gang affiliations, and your attempt to bribe the border guards
+      as reason he has decided to sentence you to high end of the recommended setence range.  From the way he glares at you, you
+      suspect he is angered for some reason by the bribery attempt.
+      <br><br>
+      "Hopefully by time you get out, you'll be an older and hopefully wiser woman.  You'll certainly have a harder time with any
+      bribery attempts by then," the judge says.  He then
+    <</if>>
+  <<else>>
+    <<set $PrisonSentence to 20>>
+    You stand up in court and plead guilty.  You then have to stand up and confess to your crime.  You tell them how you let men
+    insert bag after bag inside you and then how you'd tried to cross the border with it all inside you.  You dont mention who put
+    the drugs inside you or who you were going to give them to though.
+    <br><br>
+    The judge then goes by the recommended sentence you agreed to and
+  <</if>>
+  sentences you to $PrisonSentence years
+  <<set $PrisonSentenceEarly to ($PrisonSentence / 2)>>
+  <<if $PlayerSideEffectPermanent>>
+    [[in prison|WomensPrison]].
+  <<else>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - jail', 0)>>
+    <<if $PregnancyCheck.isPregnant>>
+      at a prison [[to be determined by the Prisons Bureau|PrisonsBureauPregnancy]].
+    <<else>>
+      at a prison [[to be determined by the Prisons Bureau|PrisonsBureau]].
+    <</if>>
+  <</if>>
+  The judge adds that you will be eligible for parole in $PrisonSentenceEarly years.
+<</nobr>>
+
+::PrisonsBureauPregnancy
+<<nobr>>
+  <h1>Jail health check</h1>
+  <img src="PartP/PregTest1.jpg" hspace="10" vspace="10" height="300">
+  <<set $PlayerSideEffectPermanent to 1>>
+  <<unset $PregnancyCheck>>
+  <<if $PlayerAbortion>>
+    <<set $PlayerAbortion += 1>>
+  <<else>>
+    <<set $PlayerAbortion to 1>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  Early on in your lockup, when you realized you might be pregnant, you'd asked to visit the jail infirmary.  They'd confirmed your
+  suspicion, you were pregnant.
+<</nobr>>
+
+<<nobr>>
+  Any uncertainty in that decision vanished when you heard the length of your sentence.  You don't want your child growing up with
+  a mother in prison.  And you aren't even sure how many people would want to adopt a baby know the mother, and almost certainly the
+  father, were criminals.  No, terminating the pregnancy had been the right choice.
+<</nobr>>
+
+<<nobr>>
+  Of course, that means this body is yours for life now.  Though considering at least the next $PrisonSentenceEarly of it will
+  be in prison, you wouldn't have been changing back for quite some time anyway.  You'd much rather spend your time as a
+  woman in a relatively safe [[Women's prison|WomensPrison]] than in one of the prison for men.
+<</nobr>>
+
+<<achievement>>pregnant<</achievement>>
+<<if setup.pregnantFirstTime()>>
+  <<achievement>>firsttime<</achievement>>
+<</if>>
+<<achievement>>childfree<</achievement>>
+
+::PrisonsBureau
+<<nobr>>
+  <h1>Meeting with the Prisons Bureau</h1>
+  You are still at the jail waiting to be sent to the prison where you'll be spending the next $PrisonSentenceEarly to
+  $PrisonSentence years.  It seems there is some uncertainty about which prison you should be sent to.  You are surprised to
+  find out that you have some say in the matter and have to meet with the Prisons Bureau to discuss the matter.
+  <img src="PartX/Prison16.jpg" hspace="10" vspace="10" height="300">
+<</nobr>>
+
+<<nobr>>
+  "The problem is this," he begins.  "The law says that if a convict has permanently changed to a woman, they are to be treated
+  as a woman in all respects and sent to a facility for women.  And if a convict has used X-Change or an X-Change-like product
+  to temporarily change into a woman, they are to be held at the jail until they change back, and then sent to a facility for men."
+<</nobr>>
+
+<<nobr>>
+  But you aren't just on a month-long pill, your change is technically indefinite but technically could be reverted at any time.
+  The courts have said we can only wait until a pill wears off on its own.  We can't compel you to make your change permanent, nor
+  can we compel you to change back.  That has to be your decision.  Though, you are under contract for the next several years, so
+  changing back isn't an option until that obligation is concluded.
+<</nobr>>
+
+<<nobr>>
+  So it's up to you decide.  You can choose to make your [[change to a woman|PrisonChoice]] permanent today, and we will
+  send you to the women's prison.
+<</nobr>>
+
+<<nobr>>
+  Or if you want keep your option to change back to a man someday, and don't make the change permanent. In that case we'll
+  have to send you to the [[men's prison|WomanAtTheMensPrison]].  We will instruct the warden to do what he can to protect
+  you until you are able to change back.
+<</nobr>>
 
 ::WomanAtTheMensPrison
-TODO You aren't permanently changed, and you choose not to make it permanent, get sent to male prison in chastity
+<<nobr>>
+  <h1>Prison Intake</h1>
+  When you were told the warden would take "protective measures", you though it meant a different part of the prison, or maybe
+  more guards, but not this.  But it's too late to change your mind now.
+<</nobr>>
+<<nobr>>
+  <video src="PartX/Prison17.mp4" autoplay loop muted height="400"></video><br>
+<</nobr>>
+<<nobr>>
+  The other inmates are all led down a hallway for processing, while you are taken to a private room.  Well, private meaning you
+  are the only one there.  No that private considering the multiple cameras pointing at you from every direction.
+<</nobr>>
+
+<<nobr>>
+  "The warden said you were already searched by a female officer back at the jail," the guard leading you to the room had said.
+  "So we are to let you change yourself.  Don't try anything though, we'll be watching.  Leave all your clothes, piercings, and
+  anything you want to keep in the plastic bag on the bench.  We will seal it and store it until your discharge.  Drop any...
+  feminine hygiene products, and anything you don't want to keep in the trash can."
+<</nobr>>
+
+<<nobr>>
+
+<</nobr>>
+
+TODO [[WomanAtTheMensPrison2]]
+
+::WomanAtTheMensPrison2
+<video src="PartX/Prison18.mp4" autoplay loop muted height="400"></video><br>
+<video src="PartX/Prison19.mp4" autoplay loop muted height="400"></video><br>
+
+TODO [[WomanAtTheMensPrison3]]
+::WomanAtTheMensPrison3
+<video src="PartX/Prison21.mp4" autoplay loop muted height="400"></video><br>
+<video src="PartX/Prison20.mp4" autoplay loop muted height="400"></video><br>
+
+TODO Missed a piercing (or change previous page and allowed to keep them?)
+TODO keys in the warden's safe and locked up with the meds in the infirmary
+TODO [[WomanAtTheMensPrison4]]
+
+::WomanAtTheMensPrison4
 TODO At end of 4 years (from start of university) you have to choose to change back and stay at the male prison
 TODO [[WomensPrison]] or [[PrisonMaleAgain]]
+(Additional BJ clips from /p dir
 
 ::PrisonChoice
-TODO Become permanently female [[WomensPrison]]
+<<nobr>>
+  <h1>Permanently a woman</h1>
+  <<if $BodyType == 'Plus'>>
+    <img src="Part1/BodyCurvy1.jpg" align="left" hspace="10" vspace="10" height="500">
+    <img src="Part1/BodyCurvy2.jpg" align="right" hspace="10" vspace="10" height="500">
+  <<elseif $BodyType == 'Petite'>>
+    <img src="Part1/BodyPetite1.jpg" align="left" hspace="10" vspace="10" height="500">
+    <img src="Part1/BodyPetite2.jpg" align="right" hspace="10" vspace="10" height="500">
+  <<elseif $BodyType == 'Fit'>>
+    <img src="Part1/BodyFit.jpg" align="left" hspace="10" vspace="10" height="500">
+  <<else>>
+    <img src="Part1/BodyStandard1.jpg" align="left" hspace="10" vspace="10" height="500">
+    <img src="Part1/BodyStandard2.jpg" align="right" hspace="10" vspace="10" height="500">
+  <</if>>
+  <<set $PlayerSideEffectPermanent to 1>>
+<</nobr>>
+<<nobr>>
+  If you are going to be in prison for the next $PrisonSentenceEarly years or more anyway, you'd nuch rather spend your time as a
+  woman in a relatively safe [[Women's prison|WomensPrison]] than in one of the prisons for men.  You doubt you would have ever wanted
+  to change back to being a man anyway.
+<</nobr>>
+
+<<nobr>>
+  They have you sign some forms confirm that you are making this choice freely, and then give you an injection.  It's done.  This
+  is now officially your body for the rest of your life.  It'd be much more exciting if you were still a free woman and could enjoy it.
+<</nobr>>
+
+<<achievement>>girlpower<</achievement>>
 
 ::WomensPrison
 TODO You are permanently female or choose to make it permanent, get sent to women's prison
