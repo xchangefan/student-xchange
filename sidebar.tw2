@@ -114,22 +114,13 @@ You are a young man trying to decide where to go to college.
   <<elseif $PlayerSlave>>
     a slave.
   <<else>>
-    <<if $playerName>>$playerName, <</if>>
+    <<if $playerNickname>>$playerName AKA $playerNickname, <<elseif $playerName>>$playerName, <</if>>
     <<if $BodyType == 'Standard'>>
-      a beautiful,
-    <<elseif $BodyType == 'Plus'>>
-      a curvy,
-    <<elseif $BodyType == 'Petite'>>
-      a petite,
-    <<elseif $BodyType == 'Fit'>>
-      an athletic,
-    <<else>>
-      a mysterious,
-    <</if>>
-    <<if $PlayerPregnant>>
-      pregnant,
-    <</if>>
-    young
+      a beautiful<<elseif $BodyType == 'Plus'>>
+      a curvy<<elseif $BodyType == 'Petite'>>
+      a petite<<elseif $BodyType == 'Fit'>>
+      an athletic<<else>>
+      a mysterious<</if>><<if $PlayerPregnant>>, pregnant<</if>><<if !$PlayerOlder>>, young<</if>>
     <<if $PlayerCumslut>>
       cumslut.
     <<elseif $IslandPet>>
