@@ -1,7 +1,7 @@
 ::StoryCaption <200,0>
   A story by [[xChangeFan|https://www.reddit.com/user/xChangeFan/]].
 
-<<if $MindBlank>><<include [[SideBarMindBlank]]>><<elseif $Dead>><<include [[SideBarDead]]>><<elseif $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<else>><<include [[SideBarMale]]>><</if>>
+<<if $MindBlank>><<include [[SideBarMindBlank]]>><<elseif $Dead>><<include [[SideBarDead]]>><<elseif $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<elseif $Purple>><<include [[SideBarPurple]]>><<else>><<include [[SideBarMale]]>><</if>>
 <<include [[SideBarAchievementLink]]>>
 
 <<include [[SideBarDebug]]>>\
@@ -21,10 +21,45 @@
     <<include [[SideBarJob]]>>\
     <<include [[SideBarStudentYear]]>>\
     <<include [[SideBarStudentLifeBalance]]>>\
+    <<include [[SideBarFamily]]>>\
+</div>
+
+::SideBarPurple
+<div style="font-size: 90%">\
+    <<include [[SideBarBody]]>>
+    [[Inventory|SideBarInventory]]\
+    
+    <<include [[SideBarChastity]]>>\
+    <<if $student>><<include [[SideBarMentor]]>><</if>>\
+    <<include [[SideBarNeighbours]]>>\
+    <<include [[SideBarRelationship]]>>\
+    <<include [[SideBarJob]]>>\
+    <<include [[SideBarStudentYear]]>>\
+    <<include [[SideBarFamily]]>>\
 </div>
 
 ::SideBarMale <300,0>
-You are a young man trying to decide where to go to college.
+<<nobr>>
+  <<if $MaleAgain>>
+    <<include [[SideBarMaleAgain]]>>
+  <<else>>
+    You are a young man trying to decide where to go to college.
+  <</if>>
+<</nobr>>
+
+::SideBarMaleAgain
+<div style="font-size: 90%">\
+    <<include [[SideBarBody]]>>
+    [[Inventory|SideBarInventory]]\
+    
+    <<include [[SideBarChastity]]>>\
+    <<if $student>><<include [[SideBarMentor]]>><</if>>\
+    <<include [[SideBarNeighbours]]>>\
+    <<include [[SideBarRelationship]]>>\
+    <<include [[SideBarJob]]>>\
+    <<include [[SideBarStudentYear]]>>\
+    <<include [[SideBarFamily]]>>\
+</div>
 
 ::SideBarDead
 <<nobr>>
@@ -113,6 +148,8 @@ You are a young man trying to decide where to go to college.
     an obedient slave.
   <<elseif $PlayerSlave>>
     a slave.
+  <<elseif $MaleAgain>>
+    back to [[something similar|SideBarBodyDetail]] to your original body.
   <<else>>
     <<if $playerNickname>>$playerName AKA $playerNickname, <<elseif $playerName>>$playerName, <</if>>
     <<if $BodyType == 'Standard'>>
@@ -127,6 +164,8 @@ You are a young man trying to decide where to go to college.
       pet.
     <<elseif $PlayerMother>>
       mother.
+    <<elseif $Purple>>
+      individual.
     <<else>>
       woman.
     <</if>>
@@ -140,6 +179,7 @@ You are a young man trying to decide where to go to college.
 <<nobr>>
   <<if $PlayerCumslutPermanent>>
     You are a permanent cumslut
+  <<elseif $MaleAgain>>
   <<else>>
     [[This body|SideBarBodyDetail]]
     <<if $PlayerSlave>>
@@ -180,8 +220,12 @@ You are a young man trying to decide where to go to college.
     <br><br>
     <<include [[SideBarExWifeTrapSideEffects]]>>
   <<else>>
-    You are 
-    <<if $PlayerSideEffectNude or $PlayerSideEffectMasochist or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams or $PlayerSideEffectBreeder>>
+    You are
+    <<if $MaleAgain>>
+      trying to adjust to the side effects your original body now has.
+      <br><br>
+      <<include [[SideBarSideEffects]]>>
+    <<elseif $PlayerSideEffectNude or $PlayerSideEffectMasochist or $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams or $PlayerSideEffectBreeder>>
       trying to adjust to the side effects your implant gave your new body.
       <br><br>
       <<include [[SideBarSideEffects]]>>
@@ -295,7 +339,7 @@ You are a young man trying to decide where to go to college.
 </ul>
 
 ::SideBarSideEffects <500,0>
-<h1>Implant Effects</h1>
+<h1><<if $MaleAgain>>Side Effects<<else>>Implant Effects<</if>></h1>
 <ul>
 <<nobr>>
   <<if $PlayerSideEffectNude>>
@@ -495,7 +539,7 @@ You are a young man trying to decide where to go to college.
         As long as they finish in your mouth, that is.
       <<elseif $PlayerSideEffectBreeder>>
         As long as they cum inside you, that is.
-      <<elseif !$PlayerSideEffectPermanent and  $PlayerSideEffectAnalPermanent>>
+      <<elseif !$PlayerSideEffectPermanent and  $PlayerSideEffectAnalPermanent and !$MaleAgain>>
         <i>This effect is permanent, even if you change back to your old body.</i>
       <</if>>
     </li>
@@ -617,6 +661,8 @@ You are a young man trying to decide where to go to college.
 <<nobr>>
   <<if $PlayerSlave>>
     You own nothing.
+  <<elseif $Prison>>
+    Most of your posessions are in storage until you are released from prison.
   <<elseif $IslandNudity>>
     Your clothing is in storage<br><br><br>
     <<include [[SideBarToys]]>><br><br>
@@ -1164,8 +1210,10 @@ You are a young man trying to decide where to go to college.
     <<if $JobProstitute>><<print "You are a prostitute. ">><</if>>
     <<if $JobWaitress>><<print "You are a waitress. ">><</if>>
     <<if $JobDrugMule>><<print "You are a drug mule. ">><</if>>
-    <<if $JobDrugTrafficker>>You are $JobDrugTrafficker drug trafficker.<</if>>
-    <<if $PrisonSentence>><br>You are serving a $PrisonSentence year prison sentence.<</if>>
+    <<if $JobMurderer>>You've been convicted of murder and drug trafficking.
+    <<elseif $JobDrugTrafficker>>You are $JobDrugTrafficker drug trafficker.<</if>>
+    <<if $PrisonSentence > 100>><br>You are serving a life sentence in prison.
+    <<elseif $PrisonSentence>><br>You are serving a $PrisonSentence year prison sentence.<</if>>
     <<if $JobAthlete>><<print "You are training as an Athlete. ">><</if>>
     <<if $JobCheerleader>><<print "You are a Cheerleader. ">><</if>>
     <<if $JobCheerleaderFundraiser>><<print "You are a Fundraiser for the Cheerleaders.">><</if>>
@@ -1284,7 +1332,11 @@ You are a young man trying to decide where to go to college.
 	<</if>>
 <</nobr>>\
 <<if $student && $AcademicProbation>><br>You are on academic probation.<</if>>\
-<<if $FatherDisown>><br>Your father has disowned you.<</if>>\
+
+::SideBarFamily
+<<nobr>>
+  <<if $FatherDisown>><br>Your father has disowned you.<</if>>\
+<</nobr>>
 
 ::SideBarPartyHorninessLevel <2700,0>
 <<nobr>>

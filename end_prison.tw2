@@ -741,12 +741,10 @@
 
 ::Witness
 <<unset $JobDrugTrafficker>>
-TODO Rat out the Gang.  You only actually witness a few involved.  The rest just initiated you
-TODO [[RatCapture]]
+TODO Rat out the Gang.  You only actually witness a few involved.  The rest just initiated you [[RatCapture]]
 
 ::RatCapture
-TODO Captured (going to your X-Change appointment), fucked, tortured?
-TODO [[RatDisappear]]
+TODO Captured (going to your X-Change appointment), fucked, tortured? [[RatDisappear]]
 
 ::AtTrial
 <<nobr>>
@@ -940,6 +938,9 @@ TODO [[RatDisappear]]
   <h1>Prison Intake</h1>
   The other inmates are all led down a hallway for processing, while you are taken to a private room.  Well, private meaning you
   are the only one there.  Not that private considering the multiple cameras pointing at you from every direction.
+  <<set $PlayerChastityBelt to 1>>
+  <<set $Keyholder to "The warden">>
+  <<set $Prison to 1>>
 <</nobr>>
 
 <<nobr>>
@@ -1205,9 +1206,9 @@ TODO [[RatDisappear]]
   Gramps goes over more of the details later when you are back in your cell.  The guards get 10%, there's a 10% "Union Dues"
   you have to pay to the Purples, and 10% to each of your cellmates for protection.
   [[The other half is all yours|WomanAtTheMensPrison8]].  Since you
-  don't have anyone on the outside the Purples make sure it ends up on your prison account so you can by things from the catalog,
-  or the commissary, or make phone or video calls with it.  You feel better about your "dues" knowing that they are doing something
-  for them.
+  don't have anyone on the outside the Purples make sure it ends up either in your prison account so you can by things from the
+  commissary or make phone or video calls with it, or they can hold on to it and you can trade it with other things in the black
+  market prison economy.  You feel better about your "dues" knowing that they are doing something for them.
   <<set setup.addSexRepeat(50, {sex:"male", name:"Gramps"})>>
   <<set setup.addSexRepeat(50, {sex:"male", name:"Tiny"})>>
   <<set setup.addSexRepeat(50, {sex:"male", name:"Badger"})>>
@@ -1268,7 +1269,8 @@ TODO [[RatDisappear]]
 <<nobr>>
   You've been the top earner among the Purples every month since you came here almost two years ago.  Though some
   count Sweet Cheeks or Honey Lips as the usual winner, and consider you a different category.  Either way, you are
-  happy for the money.  Even with the huge markup on makeup and everything else in the commissary, your account is
+  happy for the money.  Even with the huge markup on makeup and everything else in the commissary, and the cost
+  of lingerie and other sexy clothes that are smuggled in for you and the Purples by the guards, your account is
   always flush with cash.
 <</nobr>>
 
@@ -1361,7 +1363,7 @@ TODO [[RatDisappear]]
 
 <<nobr>>
   And, given your special circumstances, they are giving you a third option.  They'll remove your implant, but as soon as
-  you change back, you'll take a [[Plus-strength X-Change Purple pill|JoinThePurples]].  You'll still get to stay where you
+  you change back, you'll take a [[Plus-strength X-Change Purple pill|Purples]].  You'll still get to stay where you
   are with all your friends.  But now you'll be a real member of the "Purples" instead of just an honorary one.
   The only downside is that you'll probably not be that top earner every month anymore.
 <</nobr>>
@@ -1406,24 +1408,543 @@ TODO [[WomensPrisonTwoYears]]
 TODO Change based on whether coming from initial sentence, or after 2 years
 TODO Ending: prison
 
-::JoinThePurples
+::Purples
+<<nobr>>
+  <h1>One of us</h1>
+  <<set setup.addSexRepeat(5, {sex:"purple", anon:"Prisoner"})>>
+  <<set $Purple to 1>>
+  <<unset $female>>
+  <<unset $PlayerChastityBelt>>
+  <<set $PlayerSideEffectPermanent to 1>>
+<</nobr>>
+
+<<nobr>>
+  After you change back and then take your Purple pill, the X-Change guy does a few more tests.  "It looks like all, or at least
+  most, of your side-effects have persisted through both transitions.
+  <<if $PlayerSideEffectMasturbationBlock>>
+    That includes your
+  <<else>>
+    <<set $PlayerSideEffectMasturbationBlock to 1>>
+    And it looks like you've developed a new one, an 
+  <</if>>
+  inability to orgasm through mastrubation. Though given your prison... employment, that's probably not going to be a big issue
+  for you."
+<</nobr>>
+
+<<nobr>>
+  When you return from your visit you are sent over to the meet with the leadership of the Purples.  They congratulate you on your
+  decision and welcome you to their 'guild' as a full member.  "There's just one little thing first before it's official.  A little
+  ceremony to welcome you."
+<</nobr>>
+
+<<nobr>>
   <video src="PartX/Prison27.mp4" autoplay loop muted height="400"></video><br>
-TODO Take the purple pill stay at [[MensPrison]]
-TODO Chastity sometimes (you and other purples)
+<</nobr>>
+<<nobr>>
+  You instinctively hold your mouth open as they initiate you.  Once you are fully initiated they hand you a towel to clean up and
+  then sit down to talk with them, as you try to figure out how things are going to be different for you now than they were before.
+  Feeling the raging hard-on you have, you already know one way it'll be different.
+<</nobr>>
+
+<<nobr>>
+  "Is that your first since taking the pill?" one of them asks about your erection.  When you confirm that it is, then you're asked,
+  "[[Would you like me to take care of it|Purples2]] for you?"  Of course you quickly agree.
+<</nobr>>
+
 <<achievement>>purple<</achievement>>
 
+::Purples2
+<<nobr>>
+  <h1>Your first orgasm</h1>
+  The others watch as she (*)  strips you naked and pushes you back onto the bed.  With her lips on yours,
+  and her soft hand around your cock, you feel incredible.  You know it's not as good as when you had a clit, but after so long
+  in the belt, you barely remember what that was like anyway.
+  <<set setup.addSex({sex:"purple", name:"Sweet Cheeks"})>>
+  <<set setup.addSex({sex:"purple", name:"Sweet Cheeks"})>>
+  <<set setup.addSex({sex:"purple", name:"Sweet Cheeks"})>>
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison28.webm" autoplay loop muted height="500"></video><br>
+<</nobr>>
+<<nobr>>
+  But instead of moving down and taking your cock into her mouth like you had expected, she rolls you over onto your knees.  Soon
+  you feel the familiar feeling of a cock entering your ass.  But it feels even better than it did before.  And that's before
+  she reaches around and grabs your cock.
+<</nobr>>
+
+<<nobr>>
+  She strokes just enough to keep you close to an orgasm, but not make you cum just yet.  Only when she starts to get close to
+  her own orgasm does she start stroking more agressively.  After you cum all over the bed, she pulls her hand aways but keeps
+  fucking your ass until she cums too.  The familiar warm feeling of cum filling your ass feeling even better in the afterglow
+  of your own orgasm.
+<</nobr>>
+
+<<nobr>>
+  After seeing the mess you made under you on the bed, one of the spectators say, "Well, I guess you can keep the name 'Puddles',
+  it looks like it will still apply.
+<</nobr>>
+
+<<nobr>>
+  "I loved getting fucked in the ass before," you tell Sweet Cheeks as collapse onto the mess you made and she lies next to you.
+  "But that felt even better.  And not just because you were stroking my cock, though that was amazing too."
+  She points out that you have a prostate now, so that's probably why it feels better than before.  She says she thinks you
+  are [[going to love working|Purples3]] even more now.
+<</nobr>>
+
+<<nobr>>
+  <<set $PlayerSideEffectAnal += 1>>
+  <i>You love anal sex even more than you did before.</i>
+<</nobr>>
+
+<<nobr>>
+  (*) her perfered pronoun
+<</nobr>>
+
+::Purples3
+<<nobr>>
+  <h1>Working again</h1>
+  You get right back to work after your change.  You're still the number one earner your first month back, but after the
+  curiosity about the new you wears off, you drop down several spots.  You don't think it's an issue with your skills.  Your oral
+  skills as good as they have been, and your anal skills are even better now.
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Gramps"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Tiny"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Stretch"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", anon:"Prisoner"})>>
+  <<set setup.addSexRepeat(500, {sex:"male", anon:"Prisoner", repeat:true})>>
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison32.mp4" autoplay loop muted height="400"></video><br>
+<</nobr>>
+<<nobr>>
+  You are talking it over with "Big Bertha", one of the senior Purples.  Ze (*) doesn't take clients anymore, but is one of
+  overseers of the other Purples, setting rules and procedures for the others.  You tell zir that you think that everyone
+  was probably right, and you did have a bit of an unfair advantage before, and now you are on a level playing field now with
+  all the other Purples.  
+<</nobr>>
+
+<<nobr>>
+  "That is probably part of it," ze agrees. "But I think there's something else that was giving you an advantage besides the sort
+  of X-Change you were on.  Some of the other leaders and I have an idea about that.  We are hoping we can boost numbers overall,
+  but we are planning on [[starting with you|Purples4]] since you have more experience in this regard."
+<</nobr>>
+
+
+::Purples4
+<<nobr>>
+  <h1>Back in chastity</h1>
+  <img src="PartX/Prison29.png" hspace="10" vspace="10" height="400">
+  <<set setup.addSexRepeat(10, {sex:"male", name:"Gramps"})>>
+  <<set setup.addSexRepeat(10, {sex:"male", name:"Tiny"})>>
+  <<set setup.addSexRepeat(10, {sex:"male", name:"Stretch"})>>
+  <<set setup.addSexRepeat(10, {sex:"male", anon:"Prisoner"})>>
+  <<set setup.addSexRepeat(100, {sex:"male", anon:"Prisoner", repeat:true})>>
+<</nobr>>
+<<nobr>>
+  Big Bertha shows you the chastity cage you are expected to wear.  It's the tiniest one you've ever seen.  Your newly-restored
+  cock will be almost non-existant when locked in it.
+  <<if $PlayerSideEffectSubmissive>>
+    You are too submissive to say no anyway, but even if you could, you
+  <<else>>
+    You
+  <</if>>
+  know better than to disobey the Purple leaders.  You've heard stories of what happens to people like you when the other convicts
+  hear you aren't under the guild's protection anymore.
+<</nobr>>
+<<nobr>>
+  <img src="PartX/Prison30.png" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  "I'm sure you'll still be able to get off from anal most times," ze says.  "But you'll still be just as horny afterwards, which
+  is what we think the guys loved more than the pussy they couldn't even see.  But don't worry, you won't have to go years
+  locked up this time.  A few of the guys want their Purple to fuck them in the ass instead, or to 69, or whatever.  Of course we'll
+  give them what they want.  And we also plan on unlocking the top earner each month for a little celebration, and as an added
+  incentive for everyone."
+<</nobr>>
+<<nobr>>
+  <img src="PartX/Prison31.png" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  Big B was right, it hasn't even been a day yet and just knowing you can't touch your cock, or get a reach around, or anything at all,
+  is getting you turned on already.  For a moment you wonder where they even got the chastity cage from.  But then you realize that if
+  this is going to [[boost revenue|Purples5]] like ze said then the guards would probably happily smuggle it since their cut would
+  increase too.
+<</nobr>>
+
+::Purples5
+<<nobr>>
+  <h1>The new normal</h1>
+  After trying it out with you for a month, and seeing the stellar results, the guild leaders decide to instiute chastity
+  cages for all the working Purples.  The guards smuggle in a variety of cages but they all seem to work equally well and
+  keeping you and your fellow workers horny and eager all the time.  And of course keeping the money your clients get
+  sent in from their friends on the outside flowing your way.
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Gramps"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Tiny"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", name:"Stretch"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", anon:"Prisoner"})>>
+  <<set setup.addSexRepeat(500, {sex:"male", anon:"Prisoner", repeat:true})>>
+  <<set setup.addSex({sex:"purple", name:"Sweet Cheeks"})>>
+  <<set setup.addSex({sex:"purple", name:"Sweet Cheeks"})>>
+  <<set setup.addSexRepeat(5, {sex:"purple", anon:"Prisoner"})>>
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison33.webm" autoplay loop muted height="400"></video><br>
+<</nobr>>
+<<nobr>>
+  After the first year, they drop the unlocking and celebration for the top earner each month when they find it
+  counterproductive when no one was ever the top earner twice in a row.  You and and your fellow workers still come often
+  though, its just when you have a nice hard cock in your ass, like it should be.
+<</nobr>>
+
+<<nobr>>
+  <<if $PrisonSentenceEarly <= 10 and false>>
+    You get out in <<if $PrisonSentenceEarly <= 5>>just<</if>> <<print ($PrisonSentenceEarly - 3)>> years, hopefully, but you
+    aren't worried about what you are going to do when you get out.  Your usefulness as a durg mule is gone, but the guild
+    leaders say they have contacts on the outside and can keep you working when you get out, just like you have been in the prison.
+  <<else>>
+    You don't get out for at least another <<print ($PrisonSentenceEarly - 3)>> years.  Maybe years from now when you are older
+    you'll be one of the guild leaders, helping make the rules.  But for now you are having too much fun working and earning to
+    ever want to give it up.  You want to keep working as long as the guys keep paying.
+  <</if>>
+<</nobr>>
+
+  [[The End|GameOverPurple]].
+
 ::PrisonMaleAgain
-TODO Change back, [[MensPrison]]
+<<nobr>>
+  <h1>A man again</h1>
+  <img src="PartX/Male.jpg" hspace="10" vspace="10" height="400" align="left">
+  <<set $MaleAgain to 1>>
+  <<unset $female>>
+  <<unset $PlayerChastityBelt>>
+  <<unset $playerNickname>>
+  <<unset $playerName>>
+  <<unset $PlayerSideEffectBreeder>>
+<</nobr>>
+<<nobr>>
+  Maybe you would have stayed a woman longer if you were free.  But your choices were to permanently be one or change back now.
+  At least this way you can change your mind once you're paroled.  Since you are back in your old body, well mostly anyway,
+  you can always take a regular X-Change later, or the implant once its on the market.
+<</nobr>>
+
+<<nobr>>
+  As you look over your new body, you notice something.  "Umm, sir... It seems like I've gotten smaller than I was before."
+  You look down at your small, soft penis.
+<</nobr>>
+
+<<nobr>>
+  "You are probably just misremembering," the X-Change tech tells you.  "You probably thought it was adequate back when it was
+  probably the only one you'd ever seen that didn't belong to a porn star.  But you've seen, and felt, and tasted, so many since
+  then that you know how yours really compares."
+<</nobr>>
+
+<<nobr>>
+  The tech continues, "The tests show it's fully functional.  More than enough if you want to be a father someday.  However, there
+  were some side effects unrelated to your size.
+  <<if $PlayerSideEffectMasturbationBlock>>
+    That includes your inability to orgasm from masturbation.  Most of the rest of
+  <<else>>
+    <<set $PlayerSideEffectMasturbationBlock to 1>>
+    Just one new one.  You aren't going to be to orgasm from masturbation anymore.  And most of 
+  <</if>>
+  the side effects from when you were a woman seem to have persisted.  Though given your current circumstances, some of them
+  seem like they'll be a blessing.
+<</nobr>>
+
+<<nobr>>
+  There's not you can do about your penis, which you still are convinced is smaller than it was before, or about the side effects.
+  So you [[head back to your cell|MensPrison]]
+<</nobr>>
+
 <<achievement>>maleagain<</achievement>>
 
 ::MensPrison
-TODO You are a man now, but they want you to still be their fuck toy
-TODO Ending: prison
+<<nobr>>
+  <h1>Reassigned</h1>
+  <img src="PartX/Prison34.jpg" hspace="10" vspace="10" height="400" align="left">
+  Gramps, Tiny, and Stretch were all very disappointed in your decision to change back, but not angry with you about it.
+  "I mean, I'd cetainly want to change back if I were a chick," Stretch said.  "But then again, I never would have let them
+  change me into one in the first place."
+<</nobr>>
+
+<<nobr>>
+  Of course with you just another regular guy now, they're protection money, not to mention the free blowjobs and anal, are stopping.
+  Though you do wonder at first if they are going to expect you to continue with those, but they don't.
+<</nobr>>
+
+<<nobr>>
+  What they do want though, and get, is a new cellmate.  They'd done such a good job protecting you that the Purples are more
+  than happy to slip a little extra to a few of the guards and have you [[assigned to a new cell|MensPrison2]], and an incoming
+  Purple assigned to them.  So their supply of cash, blowjobs, and ass will keep coming, it just won't be from you.
+<</nobr>>
+
+::MensPrison2
+<<nobr>>
+  <h1>New Cellmate</h1>
+  <img src="PartX/Prison35.jpg" hspace="10" vspace="10" height="400" align="left">
+  He doesn't realize who you are at first, but you recognize "Red" right away.  He was the scary-looking guy that your old
+  roommates had refused to offer your services to back when you'd first arrived.  Shortly after that you'd heard about what he'd
+  done to cute, little Sweet Cheeks.  It'd take her weeks to recover from the beating he'd given her.
+<</nobr>>
+
+<<nobr>>
+  She hadn't even done anything to prompt it either.  From what you heard Red just came too soon.  Sweet Cheeks didn't laugh or
+  complain or anything.  But Red blamed her instead of himself, and instead of waiting a while and just fucking her some more,
+  he beat her.  That was the last time a Purple ever let him buy their time or attention.
+<</nobr>>
+
+<<nobr>>
+  The Purples, and you before now, were always well protected, so he never tried anything violent with them after that either.
+  But he's spent plenty of time in solitary for what he's done to the guys he'd gone after instead.
+<</nobr>>
+
+<<nobr>>
+  Even if you'd just shown up today, you'd be in danger from him.  But once word gets back to him about who you really are,
+  you're certain he's going to want to have his way with you.  He's probably been thinking about fuck your ass, your old ass anyway,
+  for two years now.
+<</nobr>>
+
+<<nobr>>
+  You think about it and realize you have three options.  You can [[tell him who you are now|MensPrisonBitch]], before he finds out
+  on his own.  Then you can act like you'd wanted to be with him but your cellmates and the Purples wouldn't let you.  You'll have to
+  do whatever he wants from now on if you want to avoid a beating.
+<</nobr>>
+
+<<nobr>>
+  You can buy a shiv, you know just the guy to talk to, and then [[end the Red problem|MensPrisonMurder]] before it starts.  He
+  doesn't know who you are yet, and hopefully sleeps soundly.  If all goes well, it'll look like he killed himself.  You doubt
+  anyone will miss him.
+<</nobr>>
+
+<<nobr>>
+  Or you can [[do nothing now|MensPrisonRed]] and hope he just doesn't find out who you are.  Or if he does, he'll blame the
+  Purples and your former cellmates for what happened, not you.
+<</nobr>>
+
+::MensPrisonRed
+<<nobr>>
+  <<if either(0,1,1,1) == 0>>
+    <<include [[MensPrisonRedKilled]]>>
+  <<else>>
+    <<include [[MensPrisonRedBeaten]]>>
+  <</if>>
+<</nobr>>
+
+::MensPrisonRedCommon
+<<nobr>>
+  <img src="PartX/Prison38.jpg" hspace="10" vspace="10" height="400" align="left">
+  Its only a matter of days before Red figures out that his new cellmate isn't some new convict, but "Puddles" the former
+  woman who wouldn't fuck him years ago.
+  <br><br>
+  You don't realize he knows yet, and he gets you alone in the cell.  "So whore, did you think I wouldn't figure out who
+  you really are?"  He says.  You don't even have time to say anything before his first punch lands, breaking your nose.
+  <br><br>
+  "It's bitches like you that think they are too good for me that put me here in the first place," he snarls before hitting
+  you again and again and again, breaking several ribs.
+  <br><br>
+  "I'll show you and those fucking tranny whore friends of yours what happens to people who cross me," he growls as
+  he hits you repeatedly.  You fall to the floor, unable to get back up.
+<</nobr>>
+
+::MensPrisonRedBeaten
+<<nobr>>
+  <h1>Beaten</h1>
+  <<include [[MensPrisonRedCommon]]>>
+  <<set $RedBeating to 1>>
+<</nobr>>
+
+<<nobr>>
+  "I'm sorry.  They wouldn't let me.  I wanted to fuck you, but they wouldn't let me," you manage to say before you black out.
+<</nobr>>
+
+<<nobr>>
+  You wake up the next day in a hospital bed.  You tell them you fell out of bed, from the top bunk.  They don't believe you,
+  of course.  Weeks later when you are back to health and back at the prison, Red is still in solitary for what he did.  The
+  guards know he did it, but they can charge him with it with you claiming it was just a bad fall.
+<</nobr>>
+
+<<nobr>>
+  He's already here for life, the best you could hope for telling the truth about what happened would be if he were transfered
+  to another prison, but that's not likely.  More likely is just getting assigned to a different cell, and then he'd come
+  looking for you to finish what he started.  You think you were right in keeping quiet, and trying to get on Red's good side.
+  Or at least on his [[less-bad side|MensPrisonBitch]].
+<</nobr>>
+
+::MensPrisonRedKilled
+<<nobr>>
+  <h1>Beaten to death</h1>
+  <<include [[MensPrisonRedCommon]]>>
+<</nobr>>
+
+<<nobr>>
+  Your broken ribs make it impossible to scream for help, or say much of anything.  The last thing you ever see is the sight of Red's
+  foot coming down towards your head.  The coroner's report says he kept going a quite a while after you were unconscious, stopping
+  only when a guard looked in because of the noise.
+<</nobr>>
+
+<<nobr>>
+  It's of no consolation to you, but Red leaves the prison in the same hearse you do.  He was still in a rage when the guard
+  came in.  After attacking the guard, several other guards, armed with batons, come to their fellow officer's defense.  One of
+  the baton blows landed in just the right spot, and ended the Red problem for everyone.
+<</nobr>>
+
+[[The End|GameOverPrisonKilled]].
+<<achievement>>dead<</achievement>>
+
+::MensPrisonMurder
+<<nobr>>
+  <h1>Problem solved</h1>
+  You get your shiv that day.  "If you get caught with that, or fucking use it, it better not come back on me," your supplier tells you.
+  You wait until Red is sound asleep and snoring before you sneak over to put an end to Red.
+<</nobr>>
+<<nobr>>
+  <img src="PartX/Prison36.jpg" hspace="10" vspace="10" height="400" align="left">
+<</nobr>>
+<<nobr>>
+  Red's eyes only open for a moment as you slit his throat, then he's out.  You was your finger prints off the shiv, and then put it
+  in Red's hand so it looks like a suicide.
+<</nobr>>
+
+<<nobr>>
+  As Red finishes bleeding out, you lie back down in your bed and try to sleep.  It takes quite a while as your heart is still pounding
+  in your chest.  But eventually you manage to sleep.  You wake up to one of your remaining cellmates yelling "Guard! Guard!" to summon
+  a guard to your still-locked cell.  
+<</nobr>>
+
+<<nobr>>
+  The three of you are taken away for questioning as they recover the body and the shiv.  All three of you say you don't know anything.
+  "He seemed fine when we went to bed.  But it's not like he'd talk to us about it if the time was getting to him.  Tough guy and all
+  that."
+<</nobr>>
+
+<<nobr>>
+  The guard seem happy with the suicide explaination, and you think you are home free.  But then the Red's autopsy comes back.  It
+  turns out anytime there is violent death an autopsy is required, and his showed homicide, not suicide.  The angle and depth of the
+  cut evidently wasn't what it would have been if he'd done it himself.
+<</nobr>>
+
+<<nobr>>
+  As you were the new guy in the cell, you were prime suspect. A few blood spots on your sheets was enough for them to charge you.
+  You hadn't even realized they'd saved all the sheets when they'd stripped the beds after the murder.
+<</nobr>>
+
+<<nobr>>
+  Your lawyer tried to go for reasonable doubt, since there were three of you in the cell, and no one saw anything.  He also wanted
+  to talk about how many people wanted Red dead, but the judge would only allow the jury to hear about motives from the three men
+  in the cell, since it couldn't have been anyone else except a guard, which your lawyer wasn't claiming.
+<</nobr>>
+
+<<nobr>>
+  <<set $PrisonSentence to 1000>>
+  <<set $PrisonSentenceEarly to 1000>>
+  <<set $JobMurderer to 1>>
+  The blood on your sheets, the premediation to obtain a shiv, and the "callous disregard for life" you had by just going
+  back to sleep next to your "victim" was enough to earn you a [[life sentence|MensPrisonMurder2]] - with no chance for parole.
+<</nobr>>
+
+::MensPrisonMurder2
+<<nobr>>
+  <h1>Respect and Gratitude</h1>
+  After your trial is over and you are back at the same prison as before, you find you have a measure of respect from
+  the other inmates.  No one liked Red, and most there feared him.  You may have done it in his sleep.  But still,
+  no one wants to mess with the guy that managed to kill Red.
+  <<set setup.addSexRepeat(500, {sex:"purple", name:"Sweet Cheeks"})>>
+<</nobr>>
+
+<<nobr>>
+  Sweet Cheeks, who Red had once beaten almost to death feels more strongly about it though.  It starts as just a free session or
+  two, as a thank you for eliminating him once and for all.  But she enjoys spending time with you as much as you do with her.  The
+  two of you become regular partners, sucking each other's cock, or taking as top or bottom when you fuck.  Of course she still
+  sees regular clients as well too.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison39.webm" autoplay loop muted height="500"></video><br>
+<</nobr>>
+<<nobr>>
+  Your here for life, and Sweet Cheeks is eligible for parole in five years.  So eventually the relationship will end, but you know
+  it'll be fun while it lasts.  And when it does end, the Purples have promised you a lifetime discount of 10%, giving up their cut
+  for any future bookings you might make.
+<</nobr>>
+
+[[The End|GameOverPrisonLife]].
+
+::MensPrisonBitch
+<<nobr>>
+  <h1>Becoming Red's Bitch</h1>
+  <<if $RedBeating>>
+    When Red is finally released from solitary, you try to talk to him in public, so he hopefully won't start beating you again.
+    <br><br>
+  <</if>>
+  "I'm sorry I couldn't be with you before, Red, when I was a woman," you lie.  "I wanted to, you were so much more of a man
+  than those guys they made me fuck.  But they wouldn't let me decide.  I'm so sorry, is there any way I can make it up to you
+  now?"
+<</nobr>>
+
+<<nobr>>
+  <<if $RedBeating>>
+    "I heard you try to say that when I was..." he looks around at the people near you.  "When you fell."  Then he continues,
+  <<else>>
+    Red responds,
+  <</if>>
+  "Honesty that made much more sense to me.  Of course you'd want to fuck me, and not those pussy's they'd been sending you.
+  But you were just a weak, stupid woman and had to do what you were told."
+<</nobr>>
+
+<<nobr>>
+  "Exactly, sir," you say.  You'll say whatever he wants to hear, do whatever he wants you to do, to avoid
+  <<if $RedBeating>>another<<else>>a<</if>> beating.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison37.mp4" autoplay loop muted height="500"></video><br>
+<</nobr>>
+<<nobr>>
+  You know you're going to be spending at the next probably <<print ($PrisonSentence - 2)>> years being Red's bitch, sucking his
+  cock whenever he wants and trying not to pass out as he holds your head with his cock in your throat.  With him fucking your ass
+  as often as he likes, viciously beating your ass and telling you what a whore you are as he does.    But at least you are realtively safe as long as you keep him happy.
+<</nobr>>
+
+<<nobr>>
+  He even has you dress like a woman, whenever the guards allow it at least.  And when the Purples start wearing chastity cages, inspired
+  by your belt you think, he gets one for you to wear so he doesn't have to see your cock hard again and make him forget you aren't still
+  a woman.  You though he was going to beat you <<if $RedBeating>>again<</if>> when your erection touched his once before, so it's
+  probably safer for you this way anyway.
+<</nobr>>
+
+<<nobr>>
+  Unfortunately some of the things he's made you do to keep him happy have been against the rules, and you've gotten write-ups,
+  even time in solitary, over it.  You'd hoped to be out in <<print ($PrisonSentenceEarly - 2)>> years, but you aren't as confident
+  that you'll get parole now as you were a couple years ago.
+<</nobr>>
+
+[[The End|GameOverMensPrisonBitch]].
 
 ::RatDisappear
-TODO Never seen again
-TODO [[GameOverRat]]
+TODO Never seen again [[GameOverRat]]
 <<achievement>>dead<</achievement>>
+
+::GameOverMensPrisonBitch
+<h1><<print "Game Over - Prison Bitch">></h1>
+<img src="PartX/GameOver11.jpg" hspace="10" vspace="10" height="600">
+<<achievement>>prisonBitch<</achievement>>
+
+::GameOverPrisonKilled
+<h1><<print "Game Over - Killed in Prison">></h1>
+<img src="PartX/GameOver13.jpg" hspace="10" vspace="10" height="450">
+<<achievement>>prisonKilled<</achievement>>
+
+::GameOverPrisonLife
+<h1><<print "Game Over - Life without Parole">></h1>
+<img src="PartX/GameOver12.jpg" hspace="10" vspace="10" height="600">
+<<achievement>>prisonLife<</achievement>>
+
+::GameOverPurple
+<h1><<print "Game Over - Purple Prison Prostitute">></h1>
+<img src="PartX/GameOver11.jpg" hspace="10" vspace="10" height="600">
+<<achievement>>purplePrison<</achievement>>
 
 ::GameOverRat
 <h1><<print "Game Over - Snitches Get Stitches">></h1>

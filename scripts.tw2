@@ -335,6 +335,8 @@ setup.getPartnerName = function(fuck) {
     return "Some " + fuck.anon
   } else if (fuck.sex == 'male') {
     return "Some Guy"
+  } else if (fuck.sex == 'purple') {
+    return "Someone"
   } else {
     return "Some Girl"
   }
@@ -811,7 +813,11 @@ setup.getAchievementDetails = function() {
     whore: {text: "Street Whore", image:"Whore.jpg", isEnding:true},
     cuckqueen: {text: "Cuckqueen", image:"Cuckqueen.png", isEnding:true},
     prison: {text: "Convict", image:"Prison.png", isEnding:true},
-    rat: {text: "Snitches Get Stitches", image:"Cement.jpg", isEnding: true}
+    rat: {text: "Snitches Get Stitches", image:"Cement.jpg", isEnding: true},
+    purplePrison: {text: "Purple Prison Prostitute", image:"PurplePrison.jpg", isEnding:true},
+    prisonBitch: {text: "Prison Bitch", image:"PrisonBitch.jpg", isEnding:true},
+    prisonKilled: {text: "Killed in Prison", image:"Tombstone.png", isEnding:true},
+    prisonLife: {text: "Life without Parole", image:"Jail.png", isEnding:true}
 	}
 }
 
@@ -1025,7 +1031,7 @@ $(document).on(':achievement', function (e) {
 				}
 
         var imagePath = altId ? achInfo.altImage[altId] : achInfo.image;
-				var imageText = achInfo.image ? "<img src=\"PartAch/" + imagePath + "\" height=\"200\">" : ""				
+				var imageText = achInfo.image ? "<img src=\"PartAch/" + imagePath + "\" height=\"200\"><br>" : ""				
 				var endingText = achInfo.isEnding ? "The End: " : ""
 				e.message = imageText + (endingText + achInfo.text).replace(" ","&nbsp;")
 				
