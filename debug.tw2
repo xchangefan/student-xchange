@@ -34,7 +34,7 @@
       <td>Overall</td>
       <td><<print setup.sexMaleCount()>> (<<print setup.sexVaginalCount()>>)</td>
       <td><<print setup.sexFemaleCount()>></td>
-      <td>$sex.length</td>
+      <td>setup.sexCount()</td>
     </tr>
     <tr>
       <td>Unique Partners</td>
@@ -43,7 +43,7 @@
       <td><<print setup.sexUniqueMaleCount() + setup.sexUniqueFemaleCount()>></td>
     </tr>
   </table>
-  <<if $sex.length > 9000>>
+  <<if setup.sexCount() > 9000>>
     <img src="PartX/DBZ9000.jpg" hspace="10" vspace="10" height="200">
   <</if>>
 </td>

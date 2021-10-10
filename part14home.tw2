@@ -6551,7 +6551,7 @@
   <img src="Part14/Ministry9.jpg" hspace="10" vspace="10" height="550">
 <</nobr>>
 <<nobr>>
-  <<if $sex.length == 0>>
+  <<if setup.sexCount() == 0>>
     You'd always imagined your first time having sex would be somewhere romantic, maybe even on your wedding night.
   <<elseif setup.sexVaginalCount() == 0>>
     You'd always imagined your first time going all the way with Andrew would be somewhere romantic, maybe with candles flickering giving everything
@@ -8339,7 +8339,7 @@
   <<if $dating.length>>
      work.  Now, I'm not saying sex is bad or anything.  It's just that you should save it until it's going to mean something to you.  I am much happier that
      my first time in this body
-    <<if $sex.length>>
+    <<if setup.sexCount()>>
       was
     <<else>>
       will be

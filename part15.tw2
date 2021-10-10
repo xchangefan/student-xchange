@@ -619,7 +619,7 @@
       The doctor sees you need a moment to process the news.  He says he'll give you a bit to think about whether you want to
       [[keep the baby|Part15ClinicKeep]] or [[terminate the pregnancy|Part15ClinicAbort]].
     <</if>>
-  <<elseif $tempMinistryDenial or $sex.length == 0>>
+  <<elseif $tempMinistryDenial or setup.sexCount() == 0>>
     You are not pregnant.
   <<else>>
     You are [[not pregnant|Part15ClinicNotPregnant]].
@@ -653,7 +653,7 @@
     will be under control once you sign up.
     <br><br>
     "If you're interested here is their location, feel free to [[stop by and sign up to be one of their testers|Part15MinistryTester]].
-  <<elseif $sex.length == 0>>
+  <<elseif setup.sexCount() == 0>>
     There's something else the doctor wants to talk to you about.  You had said that had chosen to remain a virgin still, but had complained about
     all the temptations around the campus.  He'd said he'd heard about something that might be able to help you keep your virginity, if that's what
     you want to do.
@@ -1280,7 +1280,7 @@
 <<nobr>>
   "I knew it would stop me from cheating on you, but I guess I didn't ask how, or really very many other questions.  Maybe I should have.  But I just knew I
   need this if I was going to be able to trust myself to stay
-  <<if $sex.length>>faithful to<<else>>chaste for<</if>>
+  <<if setup.sexCount()>>faithful to<<else>>chaste for<</if>>
   you."
 <</nobr>>
 
@@ -1298,7 +1298,7 @@
 <<nobr>>
   You blush at the thought of Andrew pressing a button and then this belt teasing your most intimate places right here in public.
   "It also shows me here how much you liked that idea," Andrew says holding up the app and showing you an 'arousal level'.
-  <<if $sex.length == 0>>
+  <<if setup.sexCount() == 0>>
     "That's nothing to be ashamed of, it's a perfectly natural reaction."  That may be true, but that doesn't mean you aren't still embarrassed.
   <</if>>
   You realize Andrew is soon going to be acutely aware whenever you are aroused, probably seeing it on his app even before you consciously realize it.
@@ -1709,7 +1709,7 @@
   <<set $MinistryBeltDecline to 1>>
 <</nobr>>
 <<nobr>>
-  The thought of knowing <<if $sex.length>>you<<else>>your virginity<</if>> would be safe, both from someone taking advantage of you, and even from a
+  The thought of knowing <<if setup.sexCount()>>you<<else>>your virginity<</if>> would be safe, both from someone taking advantage of you, and even from a
   moment of poor judgement from yourself was very tempting.  And you have to admit the extra money would have been nice too,
   <<if $JobAthlete>>
     but it just wasn't an option for you. So you
@@ -1753,7 +1753,7 @@
   <<else>>
     you just want to do this on your own.  You'd be happier if you didn't have some of the urges you do, but you feel proud of yourself
     that you can resist them.  It feels like admiting you couldn't handle it and putting on that belt would have meant you failed, even if you were
-    still <<if $sex.length>>behaving yourself.<<else>>a virgin.<</if>> 
+    still <<if setup.sexCount()>>behaving yourself.<<else>>a virgin.<</if>> 
     <br><br>
     After a stroll through the park, you head back home.  You set an alarm for tomorrow.  You don't want to be late for your meeting at the X-Change office.
     You are very curious [[about their new 'Buddy' program|Part15Buddy]].
@@ -1767,7 +1767,7 @@
   you and him want to go, the more realize you don't want to go anywhere at all.
   <<if setup.haveFuckedVaginal('Andrew')>>
     Ever since you turned down that belt, all you can think about is having Andrew inside you again.
-  <<elseif $sex.length>>
+  <<elseif setup.sexCount()>>
     Ever since you decided to go all the way with Andrew, you haven't been able to think about anything else.
   <<else>>
     Ever since you decided to stop waiting, and have sex with Andrew, you haven't been able to think about anything else.
@@ -1777,7 +1777,7 @@
 
 <<nobr>>
   As your making out on the sofa gets more heated, you tell him, "Take me to the bedroom.
-  <<if $sex.length>>
+  <<if setup.sexCount()>>
     I need you inside me."
   <<else>>
     I don't want to wait any longer."
@@ -1790,7 +1790,7 @@
 <</nobr>>
 <<nobr>>
   Andrew stops kissing you as he moves down until his head is between your legs.  As his tongue hits your clit you throw your head back and moan.
-  <<if $sex.length == 0>>
+  <<if setup.sexCount() == 0>>
     Now that you know it feels this good, you almost regret waiting as long as you did with Andrew.
   <</if>>
 <</nobr>>
@@ -1806,7 +1806,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $sex.length == 0>>
+  <<if setup.sexCount() == 0>>
     <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
     <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal:true, noPullout:true, noCondom:true})>>
     <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
@@ -4880,7 +4880,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     the only thing your father talked to him about.  They both also want to make sure you do well in school.
     <br><br>
     You know [[your boyfriend|Part15BoyfriendEngineeringChastity]] won't be unlocking you if you start falling behind in class.
-  <<elseif $dating.length and $sex.length > 0>>    
+  <<elseif $dating.length and setup.sexCount() > 0>>    
     Of course $dating[0] is encouraging you as well.    
     And he can do it full time now that the two of you have decided that you [[will be living together|Part15MovingIn]] now.
   <<elseif $PlayerMother>>
@@ -4931,11 +4931,11 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   X-Change users that responded."
   <<if $CampusMinistryFailFall2>>
     You blush, knowing that it's you that she is referring to.  Not that it's true anymore though.
-  <<elseif $sex.length == 1 and $sex[0].anon == 'Rapist'>>
+  <<elseif setup.sexCount() == 1 and $sex[0].anon == 'Rapist'>>
     You cringe, knowing that it's you that she is referring to.  You know it's no longer true though, and not by your choice.
-  <<elseif $sex.length > 5>>
+  <<elseif setup.sexCount() > 5>>
     You smile a bit, knowing that certainly wasn't you she was talking about.
-  <<elseif $sex.length>>
+  <<elseif setup.sexCount()>>
     You listen, wondering who the one X-Change users was, if it's someone you know from the program.
   <<else>>
     You blush, knowing that it's you that she is referring to.
@@ -5802,7 +5802,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   Most of the girls found out about the second setting the next day, when the painful punishment shock started.
   He had set all the belts to require ten blowjobs every day to avoid painful shocks the next day,
   <<if $JobBetaTester or $JobEngineerLock or $ComputerChastityOwner>>
-    <<if $sex.length and $oldBetaTestMode != "monogamous" and !$ComputerChastityOwner>>
+    <<if setup.sexCount() and $oldBetaTestMode != "monogamous" and !$ComputerChastityOwner>>
       including yours.
     <<else>>
       even for you!
@@ -5838,7 +5838,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   <<if $JobBetaTester or $JobEngineerLock or $ComputerChastityOwner>>
-    <<if $sex.length>>
+    <<if setup.sexCount()>>
       <<if $oldBetaTestMode == "monogamous" and $dating.length or $ComputerChastityOwner>>
         <<set setup.addSexRepeat(120, {sex:"male", name:$dating[0]})>>
         After a day of the shocks, you are going to make sure you reach your ten blowjobs every day, at least until
@@ -7209,7 +7209,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 
 <<nobr>>
   <<if $dating.length>>
-    <<if $sex.length == 4>>
+    <<if setup.sexCount() == 4>>
       You don't know why you waited this long, but you don't want to wait again to feel $dating[0] inside you.  Well, you have to
       wait a few minutes.
     <</if>>
@@ -8103,7 +8103,7 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 <<nobr>>
   <<if $PlayerSideEffectSubmissive > 1>>
     You do as you are told.
-    <<if $sex.length == 1>>
+    <<if setup.sexCount() == 1>>
       You've never done this before, and you certainly didn't imagine your first time like this.  But something about the way he
       is ordering you around makes you
     <<elseif setup.sexUniqueMaleCount() > 10>>
@@ -8115,7 +8115,7 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
     <</if>>
     [[powerless to fight back|Part15RapeNoReport]].
   <<elseif $PlayerSideEffectOral > 1>>
-    <<if $sex.length == 1>>
+    <<if setup.sexCount() == 1>>
       You've never done this before, and you certainly didn't imagine your first time like this.  But something about the way he
       feels in your mouth [[compels you to continue|Part15RapeNoReport]].
     <<elseif setup.sexUniqueMaleCount() > 10>>
@@ -8128,7 +8128,7 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
       concentrate on the familiar feel of cock in your mouth, and forget about who it belongs to.
     <</if>>
   <<else>>
-    <<if $sex.length == 1>>
+    <<if setup.sexCount() == 1>>
       You've never done this before, and you certainly didn't imagine your first time like this.  You think you can manage to get him off,
       and you are sure [[it will all be over|Part15RapeNoReport]] once you do.
     <<elseif setup.sexUniqueMaleCount() > 10>>
@@ -8422,7 +8422,7 @@ TODO Upset after being raped [[Part15Dorm]]
     <</if>>
     When he pulls up to your door, you are biting your lower lip when you nervously ask, "Jaylen, do want to
     [[come inside|Part15JaylenHome]] for a cup of coffee or something."  He quickly agrees and parks his car.
-  <<elseif $sex.length == 0>>
+  <<elseif setup.sexCount() == 0>>
     When he pulls up to your door, you thank him again for the ride.  Before you get out he responds, "It was great
     getting to know you better, $playerName.  I'd like to get to you know you even more.  Do you have any plans for
     Saturday night?"
@@ -8523,7 +8523,7 @@ TODO Upset after being raped [[Part15Dorm]]
 
 <<nobr>>
   You feel your belt come to life as you suck on his cock, stimulating your locked-away clit as you pleasure him.
-  <<if $sex.length == 0>>
+  <<if setup.sexCount() == 0>>
     You've never sucked a cock before, but you've thought about it many times, especially these past few weeks about Jaylen's.
     You think you quickly get a feel for how to do it, though you are sure your skills will improve with time and practice.
     But even now, Jaylen's moans tell you that you are doing something right.
@@ -8901,7 +8901,7 @@ TODO Upset after being raped [[Part15Dorm]]
     <<else>>
       When you tell her you have a boyfriend she says, "Great! [[Tell him to come over here instead then!|Part15DormStonerMFF]] Or if you don't
       want to share, you can [[go hook up with him|Par14DormStonerBoyfriend]] while I call my friend Craig over here."
-      <<if $sex.length == 0>>
+      <<if setup.sexCount() == 0>>
         <br><br>
         "I don't know," you tell her.  "I'm... I'm still a virgin."
         <br><br>
@@ -8915,7 +8915,7 @@ TODO Upset after being raped [[Part15Dorm]]
       "I'm... I'm still a virgin.  And look at me." You gesture towards your broken leg.
     <<elseif $BrokenLeg>>
       "I mean, look at me." You gesture towards your broken leg.
-    <<elseif $sex.length == 0>>
+    <<elseif setup.sexCount() == 0>>
       "I'm... I'm still a virgin."
     <</if>>
     <br><br>
@@ -9063,7 +9063,7 @@ TODO Upset after being raped [[Part15Dorm]]
     Marissa's friend Craig
   <</if>>
   is barely through the door of your dorm room before you and her start stripping off his clothes.
-  <<if $sex.length or !$dating.length>>
+  <<if setup.sexCount() or !$dating.length>>
     "I love how horny you get when you're high," he tells
     <<if $dating.length>>you.<<else>>her.<</if>>
     "And I think I'll love it even more now that there are two of you," he says as he grabs
@@ -9084,7 +9084,7 @@ TODO Upset after being raped [[Part15Dorm]]
     You open your mouth, eager for his cock, but it's Marissa he starts with.  As he starts to fuck her, you feel an aching need
     for him to switch to you.  You know that's not going to happen.  You moan though as he reaches over and grabs your breasts,
     pinching your nipple between his finger.
-  <<elseif $sex.length == 0 and $dating.length>>
+  <<elseif setup.sexCount() == 0 and $dating.length>>
     He starts with you.  You moan as you feel his cock push against your wet lips and slides into you.  You don't know why you waited
     so long for this.  You and him could have been doing this for months!  He's going slow and gentle, knowing it's your first time.
     You can hear Mairssa aching for her turn next to you.
@@ -9100,7 +9100,7 @@ TODO Upset after being raped [[Part15Dorm]]
     <br><br>
     He continues switching back and forth between the two of you.  Each time he comes back to you, he fucks you harder, faster,
     and deeper than before.  This time, you don't think he's holding back anymore like he was at the beginning.
-  <<elseif $sex.length == 0>>
+  <<elseif setup.sexCount() == 0>>
     "Start with me," Marissa instructs.  As he starts to fuck her, you feel an aching need for him to switch to you.  You feel
     your heart race as his fingers slide into you and then start playing with your clit.  "Be gentle with her," Marissa remembers to say.
     "This is her first time."
@@ -9824,7 +9824,7 @@ TODO Upset after being raped [[Part15Dorm]]
 
 ::Par14DormStonerBoyfriend
 <<nobr>>
-  <h1><<if $sex.length == 0>>Your first time with<<else>>With<</if>> $dating[0]</h1>
+  <h1><<if setup.sexCount() == 0>>Your first time with<<else>>With<</if>> $dating[0]</h1>
   <<if setup.areDating('Jaylen')>>
     <video src="Part15/Dorm17.webm" autoplay loop muted height="450"></video>
   <<else>>
@@ -9833,7 +9833,7 @@ TODO Upset after being raped [[Part15Dorm]]
 <</nobr>>
 <<nobr>>
   Thankfully $dating[0] is at home, and is excited to hear that you are coming over.
-  <<if $sex.length == 0>>
+  <<if setup.sexCount() == 0>>
     He's even more excited when you get there and tell him how you are sick of waiting, and want to have sex with him.  Right here.  Right now.
   <<elseif $PlayerItemNerdKey and setup.areDating('Peter')>>
     He's even more excited when you take out your key and unlock his cock.  "You can start with your tongue like normal.  But you are going to
@@ -9846,7 +9846,7 @@ TODO Upset after being raped [[Part15Dorm]]
 <<nobr>>
   His tongue circling your clit feels so wonderful, but you can't wait any longer.  "I want you inside me," you say.
   He starts slow and soft,
-  <<if $sex.length == 0>>
+  <<if setup.sexCount() == 0>>
     wanting to be gentle your first time,
   <</if>>
   but you tell him you want it harder, faster.  He flips you over and re-enters you from behind.  You are overwhelmed with the feeling
@@ -9871,7 +9871,7 @@ TODO Upset after being raped [[Part15Dorm]]
 <</nobr>>
 
 <<nobr>>
-  <<if $sex.length == 0>>
+  <<if setup.sexCount() == 0>>
     "Why did I wait so long?" you ask rhetorically.  "Can we do it again?" you add eagerly.
   <<else>>
     "It was.  But I'm still horny," you tell him.  "Let's go again."
@@ -9906,7 +9906,7 @@ TODO Upset after being raped [[Part15Dorm]]
   <<set setup.addSex({sex:"male", name:$dating[0], vaginal:true})>>
 <</nobr>>
 <<nobr>>
-  <<if $sex.length == 4>>
+  <<if setup.sexCount() == 4>>
     You've fantasized about $dating[0]'s cock many times before.  You've wondered what it would feel like with your lips wrapped around it,
     what it would taste like on your tongue.  And now you finally know.  For your first time, you seem to be doing well, as soon $dating[0]
     is hard again.
@@ -9917,7 +9917,7 @@ TODO Upset after being raped [[Part15Dorm]]
 
 <<nobr>>
   With the feel of his cock in your mouth, and the moans he is making, you are tempted to keep going.
-  <<if $sex.length == 4>>
+  <<if setup.sexCount() == 4>>
     But you can find out what his cum tastes like some other time.
   <</if>>
   You are too horny for that though.  Once he's good and hard, you climb on top and slide his cock between your other lips as you lower
@@ -10172,7 +10172,7 @@ TODO Lesbian [[Part15Week]]
     You look so hot in this.  I'm sure
     <<if $dating.length>>
       $dating[0] will love you in it."
-    <<elseif $sex.length>>
+    <<elseif setup.sexCount()>>
       the next
       <<if setup.sexMaleCount() >= setup.sexFemaleCount()>>
         guy
@@ -11257,7 +11257,7 @@ TODO Another ELP charity project (be careful if had an incident last time)
 ::Part15Study3Annoyed
 <<nobr>>
   "I'm not giving you my phone number," you say flatly.
-  <<if $sex.length == 0>>
+  <<if setup.sexCount() == 0>>
     "I know what you want, and I'm not it.  I'm saving myself for the right person.  And it's certainly not you.  I'd never
   <<elseif setup.haveGirlfriend()>>
     "Even if I didn't have a girlfriend, I wouldn't want to

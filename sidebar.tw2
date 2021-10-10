@@ -679,11 +679,11 @@
 <<nobr>>
   <<if $PlayerCumslut>>
     You always have hair tie handy to tie back your hair before giving a blowjob.<br>
-  <<elseif $PlayerSideEffectOral && !setup.haveGirlfriend() && $sex.length>>
+  <<elseif $PlayerSideEffectOral && !setup.haveGirlfriend() && setup.sexCount()>>
     You try to keep a hair tie handy, so you can tie back your hair if you need to.<br>
   <</if>>
 
-  <<if $sex.length>>
+  <<if setup.sexCount()>>
     <<if $PlayerProtectionPill>>
       You also have your birth control pills.
     <<elseif $PlayerProtectionCondoms && !setup.haveGirlfriend()>>
