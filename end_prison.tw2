@@ -844,12 +844,12 @@
   The agents won't fuck you, and you can't get yourself off.  Thankfully they let you find another solution.
   They like ordering food for delivery.  And when you get horny enough, they don't stop you from persuading
   your delivery guy to come into the bathroom with you.
-  <<set setup.addSex({sex:"male", anon:"Pizza Delivery Guy"})>>
-  <<set setup.addSex({sex:"male", anon:"Chinese Food Delivery Guy"})>>
-  <<set setup.addSex({sex:"male", anon:"Restaurant Delivery Guy"})>>
-  <<set setup.addSex({sex:"male", anon:"Pizza Delivery Guy"})>>
-  <<set setup.addSex({sex:"male", anon:"Chinese Food Delivery Guy"})>>
-  <<set setup.addSex({sex:"male", anon:"Restaurant Delivery Guy"})>>
+  <<set setup.addSex({sex:"male", anon:"Pizza Delivery Guy", vaginal: true})>>
+  <<set setup.addSex({sex:"male", anon:"Chinese Food Delivery Guy", vaginal: true})>>
+  <<set setup.addSex({sex:"male", anon:"Restaurant Delivery Guy", vaginal: true})>>
+  <<set setup.addSex({sex:"male", anon:"Pizza Delivery Guy", vaginal: true})>>
+  <<set setup.addSex({sex:"male", anon:"Chinese Food Delivery Guy", vaginal: true})>>
+  <<set setup.addSex({sex:"male", anon:"Restaurant Delivery Guy", vaginal: true})>>
 <</nobr>>
 
 <<nobr>>
@@ -1043,6 +1043,7 @@
       <</if>>
       <<include [[CrossObjectPassage]]>>
       A: Yes.
+      <<set $tempCrossexamSex += 1>><!-- cop encounter counts double -->
     </blockquote>
     <br>
     <<if setup.haveFuckedVaginal("Police Officer")>>
@@ -1174,29 +1175,573 @@
 <</nobr>>
 
 ::Verdict
+TODO <<set $PlayerSideEffectPermanent to 1>>
 <<nobr>>
-  <<if $tempCrossexamSex >= 3>>
+  <h1>After the trial</h1>
+  <<if $tempCrossexamSex > 4 or ($tempCrossexamSex == 4 and either(0,0,0,0,0,0,1)==0)>>
     <<set $GangNotGuilty to 1>>
     <<unset $JobWitness>>
-    TODO Img<br>
-    TODO Not guilty - jury didn't trust you.<br>
-    TODO Your plea deal is still honored because you tried but limit amount they can to for witness relocation if not guilty<br>
-    TODO [[RatCapture]] or [[Cabin]]
+    <img src="PartX/Prison47.jpg" hspace="10" vspace="10" height="400"><br>
+    The trial finally concludes, and the jury comes back with NOT GUILTY for all the major trafficking charges.
+    <br><br>
+    "I know you did your best," the prosecutor tells you.  "So we will honor the plea agreement you made.  It's not your fault
+    that...  Well, it's not due to your lack of cooperation anyway, that we lost the case."
+    <br><br>
+    When you ask him what that means, he explains, "Opposing counsel tried to make it look like you were scared and trying to
+    avoid prison.  That part isn't entirely wrong.  And that you are angry and trying to get back at your ex, and that you had
+    a pattern of using sex as a tool or weapon to get what you want.  He implied that you weren't honest and couldn't be trusted."
+    <br><br>
+    "And the jury believed it," he adds.  "At least enough for reasonable doubt.  So they only came back with convictions for what
+    we had other evidence to support."
+    <br><br>
+    "It was going to be uphill fight as soon as they warehouse search turned up almost nothing.  We'd hoped at least some of
+    the ones you'd gave evidence for would turn and give evidence for the others are someone higher up, but none did.  I guess
+    theit lawyer convinced them how week our case was, and they gambled right."
+    <br><br>
+    "Someone will be by tomorrow to [[discuss finding you a new identity|WitnessProtectionProblem]] and a new home, so we can keep you
+    safe from any reprisals they might want to make.
   <<else>>
     <<set $GangGuilty to 1>>
-    TODO Img<br>
-    TODO Gang guilty [[WitnessRelocation]]
+    <img src="PartX/Prison48.jpg" hspace="10" vspace="10" height="400"><br>
+    The trial finally concludes, and the jury comes back with GUILTY for all the major trafficking charges.  The only
+    convictions were for a few minor posession charges for things found during the search at the warehouse.
+    <br><br>
+    "You did your best and it paid off," the prosecutor tells you.  "you've earned that plea agreement we made.
+    <<if $tempCrossexamSex >= 3>>
+      made. Thankfully the jury didn't by the accusations opposing counsel made against you."
+      <br><br>
+      You ask him what he means and he explains, "Opposing counsel tried to make it look like you were scared and trying to
+      avoid prison.  That part isn't entirely wrong.  And that you are angry and trying to get back at your ex, and that you had
+      a pattern of using sex as a tool or weapon to get what you want.  He implied that you weren't honest and couldn't be trusted.
+      But the jury didn't buy it."
+    <<else>>
+      made."
+    <</if>>
+    <br><br>
+    "You did what you could," he says with a smile.  "But some of the guys we just convicted are in touch with people higher in the
+    organization.  We're confident we can get some of them turn to avoid the setences they are facing.  Even if not, it's still a
+    big win with all of the convictions today."
+    <br><br>
+    "Someone will be by tomorrow to [[discuss finding you a new identity|WitnessRelocation]] and a new home, so we can keep you
+    safe from any reprisals they might want to make.
   <</if>>
 <</nobr>>
 
+::WitnessProtectionProblem
+<<nobr>>
+  <h1>Witness protection problems</h1>
+  <img src="PartX/Prison49.jpg" hspace="10" vspace="10" height="300"><br>
+  <<if !$PlayerSideEffectPermanent>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('home pregnancy test - witness protection', 0)>>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  The witness relocation person comes by the next day.  He tells you, "normally, in a case of this level, we have a relatively
+  small level of funds for relocation.  We generally provide an X-Change Plus pill to the witness, and they can disappear
+  as an entirely new person.  Some object to changing their gender and we try to provide other options within the budget.
+  Thankfully the gang knows you aren't in contact with your family, so your family isn't likely in any danger."
+<</nobr>>
+
+<<nobr>>
+  "Of course, in your case, since you are already changed with X-Change just taking a pill isn't an option.
+  <<if $PlayerSideEffectPermanent>>
+    And changing back or changing again isn't an option, since your change is already permanent.  So we will have to
+    try one of the other options.
+  <<elseif $PregnancyCheck and $PregnancyCheck.isPregnant>>
+    Though your change isn't permanent yet..."
+    <br><br>
+    <img src="PartP/PregTest7.jpg" hspace="10" vspace="10" height="150" align="left"><br>
+    You cut him off there, and let him know about the pregnancy test you took, and the visit to the clinic your agents took you
+    to so you could deal with it..  He's relieved to find out that none of the agents were involved in the conception, and doesn't
+    care about the rest of the details.  "Ok, well then I guess we will have to try one of the other options then."
+    <<set $PlayerPregnant to 1>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    <<set $PlayerAbortion to 1>>
+    <<unset $PregnancyCheck>>
+    <<achievement>>pregnant<</achievement>>
+    <<achievement>>childfree<</achievement>>
+  <<else>>
+    Though your change isn't permanent yet, so we have an option, it's just a bit different with you.  Now, changing back to your
+    old self, isn't an option.  We could likely get the X-Change Corporation to waive the four year term on your implant, but the
+    gang already knows what you used to look like, so that wouldn't be helpful."
+    <br><br>
+    He continues, "when I spoke to them though, they had another option.  They could [[trigger a 'reset'|WitnessReset]] of some
+    sort on your implant.  It would cause your body to change to a different body type entirely, your face would change too.
+    Still it's your DNA or however it works, so it will be somewhat similar, but it would be different enough you wouldn't be
+    recognized."
+    <br><br>
+    He looks down at his notes.  "They said it has some risks of side effects, and would be permanent.  Another reset or changing
+    back wouldn't be possible.  Though it still sounds like your safest choice by far.  But if you really want to risk one of
+    the other options..."
+    <br><br>
+    You cut him off and tell him you don't need to hear the other options.  This one sounds at lot safer than hiding out somewhere
+    in your current face.
+  <</if>>
+  <<if $PlayerSideEffectPermanent>>
+    <br><br>
+    For the other options, we could help you get started somewhere new.  First and last months rent, security deposit, a little
+    cash, and helping you find a job.
+    <br><br>
+    We can either do it at a [[city several states away|WitnessCity]], or we could provide you with
+    a [[rural cabin|WitnessCabin]] we have.  Don't worry, the cabin has been completely and professionally cleaned since it's
+    previous use.
+  <</if>>
+<</nobr>>
+
+::WitnessReset
+<<nobr>>
+  <<set $tempNewNames to setup.getPopularNames().filter((name)=>{return name!==$playerName})>>
+  <<set $playerName to setup.pickRandomName($tempNewNames)>>
+  <<if $BodyType == 'Standard'>>
+    <<set $BodyType to 'Petite'>>
+  <<else>>
+    <<set $BodyType to 'Petite'>>
+  <</if>>
+  <h1>Your new identity</h1>
+  <<if $BodyType == 'Plus'>>
+    <img src="Part1/BodyCurvy1.jpg" align="left" hspace="10" vspace="10" height="500">
+    <img src="Part1/BodyCurvy2.jpg" align="right" hspace="10" vspace="10" height="500">
+  <<elseif $BodyType == 'Petite'>>
+    <img src="Part1/BodyPetite1.jpg" align="left" hspace="10" vspace="10" height="500">
+    <img src="Part1/BodyPetite2.jpg" align="right" hspace="10" vspace="10" height="500">
+  <<elseif $BodyType == 'Fit'>>
+    <img src="Part1/BodyFit.jpg" align="left" hspace="10" vspace="10" height="500">
+  <<else>>
+    <img src="Part1/BodyStandard1.jpg" align="left" hspace="10" vspace="10" height="500">
+    <img src="Part1/BodyStandard2.jpg" align="right" hspace="10" vspace="10" height="500">
+  <</if>>
+  <<set $PlayerSideEffectPermanent to 1>>
+<</nobr>>
+<<nobr>>
+  "Congratulations, $playerName on your beautiful new body," he says after you change. Him using your new name
+  throws you for a moment, but you'd bet get used to it since that's who you are from now on.
+<</nobr>>
+
+<<nobr>>
+  "So as we said before, this change is permanent, as are the side effects that resulted from this 'reset'," the
+  technician tells you.
+<</nobr>>
+
+<<nobr>>
+  "First,
+  <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
+    <<unset $PlayerProtectionPerfect>>
+    <<unset $PlayerProtectionPermanent>>
+    <<set $PlayerProtectionPill to 1>>
+    your implant's birth control feature is no longer active.  We can send you home with a supply of birth control
+    pills instead.  You should use condoms the first month to be safe though.  Next,"
+  <</if>>
+  You'll probably find that you are more submissive than you once were.  But a slut like you will probably like that,
+  won't you?"
+  <<if $PlayerSideEffectSubmissive>>
+    <<set $PlayerSideEffectSubmissive += 1>>
+  <<else>>
+    <<set $PlayerSideEffectSubmissive to 2>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Yes sir, thank you sir," you say instinctively.
+<</nobr>>
+
+<<nobr>>
+  "Just verifying," he says checking something on his tablet.  "Definitely more submissive.  And finally, you'll likely
+  find that your libido is increased, even compared to what it was previously."
+  <<if $PlayerSideEffectLibido>>
+    <<set $PlayerSideEffectLibido += 1>>
+  <<else>>
+    <<set $PlayerSideEffectLibido to 2>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  They give you a change of clothes, since your old ones don't fit.  But the agent says they'll take you out later
+  to buy more, but first they'll need to discuss your [[relocation|WitnessRelocation]].
+<</nobr>>
+
 ::WitnessRelocation
+  <img src="PartX/Prison49.jpg" hspace="10" vspace="10" height="300"><br>
 TODO Some positive? witness relocation ending
 
-::Cabin
+::WitnessCabin
 TODO Cabin in the woods, some redneck wedding or something unpleasant but not killed
 
-::RatCapture
-TODO Captured (going to your X-Change appointment), fucked, tortured? [[RatDisappear]]
+::WitnessCity
+<<nobr>>
+  <h1>Relocated to a new city</h1>
+  <img src="PartX/Prison50.jpg" hspace="10" vspace="10" height="600" align="left"><br>
+  <<set setup.addSexRepeat(50, {sex:"male", anon:"Prostitute Client"})>>
+  <<set setup.addSexRepeat(50, {sex:"male", anon:"Prostitute Client", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set $JobProstitute to 1>>
+<</nobr>>
+<<nobr>>
+  The government paid for your travel to a new city, gave you a new name and identification documents.  They gave you money for
+  your first month.  But after that, you are on your own.
+<</nobr>>
+
+<<nobr>>
+  You look for a job, as a waitress, as anything.  But it's hard to find anything here, especially since you can't provide any work
+  history, or anything else that would tie you back to your old identity.  And even the ones you are finding, would barely give you
+  enough to afford a small apartment.
+<</nobr>>
+
+<<nobr>>
+  But every day you've seen other girls leaning into cars and making deals or hoping out cars with a stacks of cash.  You decide it's
+  your best option.
+  <<if $PlayerSideEffectMasturbationBlock>>
+    Given that you can't masturbate, it solves that problem for you too.  You'll get as much sex as you want every day.
+  <<elseif $PlayerSideEffectLibido>>
+    Given how horny you always are, it solves that problem for you too.  You'll get as much sex as you want every day.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Some women might find it degrading, but really, you've done worse.  You used to be freely available to any of the gang members
+  whenever they wanted.  But this will be one guy at a time, and only when you want it.  You take a little of the cash you have
+  left and go buy something sexy to wear for your first not [[walking the street|WitnessCity2]].
+<</nobr>>
+
+::WitnessCity2
+<<nobr>>
+  <h1>Enjoing your new identity</h1>>
+  <video src="PartX/Prison51.mp4" autoplay loop muted height="400"></video><br>
+  <<set setup.addSexRepeat(250, {sex:"male", anon:"Prostitute Client"})>>
+  <<set setup.addSexRepeat(250, {sex:"male", anon:"Prostitute Client", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/Prison52.webm" autoplay loop muted height="450"></video><br>
+  </div>
+<</nobr>>
+<<nobr>>
+  You are enjoying your new identity, and your new job.
+<</nobr>>
+
+<<nobr>>
+  Whether it's some some young guy wanting to blow off some steam after breaking up with his girlfriend, an older guy wanting
+  something different, or a married man wanting you for [[something his wife isn't willing to do|WitnessCity3]], you make sure
+  he has an amazing time.  More often than not it feels pretty great for you too.
+<</nobr>>
+
+::WitnessCity3
+<<nobr>>
+  <h1>More adventuresome than his wife</h1>
+  <video src="PartX/Prison53.mp4" autoplay loop muted height="450"></video><br>
+<</nobr>>
+<<nobr>>
+  You don't consider anal 'adventuresome' at all, but evidently many wives do because their husbands are always asking you
+  for it.
+  <<if $PlayerSideEffectAnal>>
+    If their wives knew how amazing it felt, they'd be begging for it.  Well, assuming it felt as good for them as it does for you.
+  <</if>>
+  You're happy to give your customers what they want, especially when they are willing to pay extra for it.
+<</nobr>>
+
+<<nobr>>
+  Some want to film you while you suck their cock, or masturbate, or while they fuck you.  You have to turn them down though.
+  You tell them it's for your privacy, which is true, just not for the reason they are thinking it is.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/Prison54.gif" hspace="10" vspace="10" height="400">
+<</nobr>>
+
+<<nobr>>
+  None of them question that you don't even let them take a single photo of your face, but you are happy to let them
+  [[fuck you in clear view of the street|WitnessCityVideo]].  They just enjoy themselves, however far you are willing to go.
+<</nobr>>
+
+::WitnessCityVideo
+<<nobr>>
+  <h1>Caught on camera</h1>
+  <img src="PartX/Prison54.gif" hspace="10" vspace="10" height="200">
+<</nobr>>
+<<nobr>>
+  You never let your clients film you, but you didn't consider that someone watching from outside could just as easily record you.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/Prison55.jpg" hspace="10" vspace="10" height="250" align="left">
+  You don't even realize it when it happens, you are too focused on how good the cock inside you feels to even notice the man
+  with a camera on the sidewalk across the street.
+<</nobr>>
+
+<<nobr>>
+  He films it all, from a few moments after your client first pushes you against the open window.  He films the look on your
+  face as you orgasm, your client thrusting and his face as he cums inside you, and you turning around, dropping to your knees
+  and cleaning his cock.
+<</nobr>>
+
+<<nobr>>
+  Your spectator probably jerked off to the video dozens of times before he uploaded it online to share with others. The high
+  resolution camera he used meant it's easy for others to zoom in on just the action, or even just the look of ecstasy on your face.
+<</nobr>>
+
+<<nobr>>
+  Before long there are several versions online focusing on different aspects of the video, many showing your face clearly.
+<</nobr>>
+
+<<nobr>>
+  You never see any of these, but many, many other people do.  Including some you had hoped
+  [[would never see your face again|WitnessCapture]].
+<</nobr>>
+
+::WitnessCapture
+<<nobr>>
+  <h1>Going back to a client's room</h1>
+  He'd seemed nice, had cash, and was taking you back to his hotel room for sex, not some back alley to fuck in his back seat.
+  So you hadn't been worried.  Everything seemed fine right up until he opened the hotel room door for you and you walked in
+  to the room.
+  <<set setup.addSex({sex:"male", anon:"Hotel Kidnapper"})>>
+  <<set setup.addSex({sex:"male", anon:"Hotel Kidnapper", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", anon:"Hotel Kidnapper"})>>
+  <<set setup.addSex({sex:"male", anon:"Hotel Kidnapper", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+
+<<nobr>>
+  That's when two masked men grab you.  Your initial thought was that they'd broken into his room.  You were hoping your would-be-client
+  would fight them off, or at least run for help. But those hopes are dashed once you see one of the men hand him a bunch of cash,
+  and he just leaves.  That's when you realize the whole thing was a set-up, targeted at you.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison56.mp4" autoplay loop muted height="400"></video><br>
+<</nobr>>
+<<nobr>>
+  "I'll do anything you want, just please don't hurt me!" is all you manage to say before one of them covers your mouth.
+  "What do you think man?  Should we fuck the bitch?  The whore's practically begging for it," one of them says to the other.
+<</nobr>>
+
+<<nobr>>
+  "Fuck yeah! And she's got a bunch of cash here too," his partner says after digging through your purse.
+<</nobr>>
+
+<<nobr>>
+  You do your best to go along with it as the two of the hold you down, tie you up, and use your body however they like.  After
+  they are done and hopefully happy after their orgasms, you ask, "Can you untie me now?  Please?  And I'll pretend like this
+  never happened, I'll never tell anyone about it, just let me go."
+<</nobr>>
+
+<<nobr>>
+  "Well, if we could count on you not talk, then you wouldn't be in this situation, would we?"  one of them tells you.  A moment
+  later you feel the sting of a needle in your butt as they [[inject you with something, and your body goes limp|WitnessCapture2]].
+<</nobr>>
+
+::WitnessCapture2
+<<nobr>>
+  <h1>Getting packed</h1>
+  You can't move but you can see, hear, and feel everything.  Though the seeing part ends when one of them slides his hand across
+  your face and lowers your eyelids.
+  <<unset $JobProstitute>>
+<</nobr>>
+
+<<nobr>>
+  You feel one of them lift you and place you on your side into a box of some sort.  He posistions your legs, then your arms.
+  You try to get up, but you can't move or even cry for help.  You then feel a lid being placed over you.  When it closes you
+  hear the sound of a suitcase being closed and realized they've just packed you into one.  That's confirmed for you as you feel
+  your weight shift as he lifts the suitcase up onto its wheels. 
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison57.mp4" autoplay loop muted height="400"></video><br>
+<</nobr>>
+<<nobr>>
+  You feel as you are wheeled down the hallway and into the elevator.  You can hear the muffled sound of the hotel lobby.  You
+  want to scream for help, but still can't.  You hear what you later realize was a van door open and feel the suitcase lifted
+  up and placed into the van, a few moments later [[the van drives off|WitnessCapture3]].
+<</nobr>>
+
+::WitnessCapture3
+<<nobr>>
+  <h1>Road trip</h1>
+  Once the van is on the highway, one of the guys comes to the back of the van and takes you out of the suitcase.  He binds your
+  hands, cuts off what clothes you still have on, and stuffs your panties in your mouth.  You still can't move, but feel every
+  inch as his cock plunges into you.
+  <<set setup.addSexRepeat(6, {sex:"male", anon:"Hotel Kidnapper"})>>
+  <<set setup.addSex(6, {sex:"male", anon:"Hotel Kidnapper", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+
+<<nobr>>
+  After he cums, he puts his pants back on and goes back to the front of the van. You just lay there unable to move as you
+  feel the cum he left on your back and ass slowly dry.
+<</nobr>>
+
+<<nobr>>
+  They notice you finally starting to move, one of them tosses a bottle water at you.  "Don't drink it too fast, it's still at
+  least an hour before you'll have a chance to piss."  You take the panties out of your mouth and take a few sips of water.
+  You put it back in your mouth when one of them tells you to.
+<</nobr>>
+
+<<nobr>>
+  A while later, they pull off onto a side road, then a dirt road, and then off the road onto some grass.  One of them opens the
+  of the van and grabs the rope holding your wrists together.  He pulls you out of the van and a few steps away from it.  "You
+  need to shit too?" You shake your head 'no' then you squad down and start to pee as he continues to hold your wrists.
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison58.mp4" autoplay loop muted height="400"></video><br>
+<</nobr>>
+<<nobr>>
+  You can't pat yourself dry or anything else so you try to shake a bit instead.  It's far less effective than you remember it being
+  back when you had a cock.  The other man, who had been peeing nearby comes over and grabs you.  As soon as he does, the first
+  one takes out his cock and starts peeing.
+<</nobr>>
+
+<<nobr>>
+  They both decide to fuck you again, with you able to move this time, before getting back on the road.
+<</nobr>>
+
+<<nobr>>
+  They take turns driving while the other fucks you, sometimes sleeping next to you afterwards.  Twice they inject
+  you and package you again as they take the van to get gas and other supplies.   Several more times they find
+  some off-the-road place to let you relieve yourself.
+<</nobr>>
+
+<<nobr>>
+  Through the front of the van you spot a sign you recognize and realize you are almost back to the city where you used to live,
+  the one you'd tried to escape from.  You don't see [[your arrival there|WitnessCapture4]], because one of your kidnappers comes
+  to the back of the van again and ensure you are unable to move and packed away well before then.
+<</nobr>>
+
+::WitnessCapture4
+<<nobr>>
+  <h1>Payback</h1>
+  <<set setup.addSex({sex:"male", name:"Emilio", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(100, {sex:"male", anon:"Angry Gang Member", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  You are unloaded from the van and chained up in what you assume is the gang's new warehouse.  When they take
+  the blindfold off your face you see the angry faces of the gang members you betrayed.  Emilio is standing there at
+  the front of the group.
+<</nobr>>
+
+<<nobr>>
+  "Why did you do it, $playerName?" Emilio asks you.  "You know the risks of this work, we all do.  But we wouldn't have
+  betrayed our friends if we were caught.  We would have just done the time.  But you were too good for that, you decided
+  you'd rather betray all of us, and put us in there instead, didn't you?"
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/Prison61.gif" hspace="10" vspace="10" height="400">
+<</nobr>>
+
+<<nobr>>
+  After a slap across the face you start crying and apologizing and begging for forgivness.  Emilio isn't buying it.
+  "I don't think so.  You didn't come back here begging forgivness on your own.  Maybe we might have, probably not.  But
+  no, you tried to disappear.  If you weren't such a whore we might never have found you.  You are going to make it up
+  to us for the nights we spent in jail and our pain and suffering for being put on trial."
+<</nobr>>
+
+<<nobr>>
+  At that he pulls down his pants and pulls out his hard cock.  He shoves it into you not carring if you are wet or not.
+  <<if $PlayerSideEffectLibido > 2>>
+    Of course you are always wet thanks to your implant.  He mocks you for what a slut you are.
+  <</if>>
+  After Emilio finishes, another guy comes up, and another, and another.  Each takes their turn either hitting you
+  or fucking you, usually both.
+<</nobr>>
+
+<<nobr>>
+  Eventually you pass out, still chained up.  The next day they start again.  They don't even unchain you to relieve yourself.
+  You have to go right where you stand.  They just hose you and the area down whenever you smell starts to annoy them.  After
+  the first few days the punches and kicks become more rare and its mainly just fucking.  None of them fail to mock you when
+  your body reacts despite your desires and you moan or even orgasm.
+<</nobr>>
+
+<<nobr>>
+  Your wrists are raw from the chain, and your body aches.  You don't know how many days have passed when one of them says,
+  "Get the rat cleaned up.  The [[boss is coming by|WitnessCapture5]] to see her."
+<</nobr>>
+
+::WitnessCapture5
+<<nobr>>
+  <h1>Meeting the boss</h1>
+  <img src="PartX/Prison60.gif" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  You'd never met the top leader of the gang before.  And you soon wish you weren't meeting him now.  They have you cleaned
+  up and bound differently when he arrives, with your hands over your head and body helplessly exposed.
+<</nobr>>
+
+<<nobr>>
+  He questions you for what seems like hours, trying to find out exactly what you told the government about them, about
+  whether you'd always planned to betray them or decided after you were arrested, even about whether any other gang
+  members were involved.
+<</nobr>>
+
+<<nobr>>
+  You tell him the truth about all that, and anything else he wants to hear.  You still hear the sound of the whip
+  in the air, followed by the pain when it hits your skin.  But, it's not as frequent as it was when you hesitated to answer
+  one of his questions. 
+<</nobr>>
+
+<<nobr>>
+  "I think that's enough questions," he says finally.  Then he calls Emilio over and tells him, "Get her down and bring her
+  up to my room upstairs.  We are going to have [[one last 'chat'|WitnessCapture6]] before she leaves us.
+<</nobr>>
+
+<<nobr>>
+  Every part of that terrifies you.  You know he isn't planning on 'chatting' with you, and you know he isn't just going
+  to let you leave.  There's nothing you can do though as they untie you from the rafter, only to tie your hands together
+  and lead you upstairs.
+<</nobr>>
+
+::WitnessCapture6
+<<nobr>>
+  <h1>Your last fuck</h1>
+  Once the door is closed and he's alone with you, the gang leader strips down.  He's already hard as he tells you,
+  "I've been a woman or girl's first many times before.  But I don't know if I've ever been their last fuck before."
+  He thinks for a moment and adds, "Actually I have.  But this is the first time we both knew it at the time."
+  <<set setup.addSex({sex:"male", name:"Gang Boss", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", name:"Gang Boss"})>>
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison59.mp4" autoplay loop muted height="400"></video><br>
+<</nobr>>
+<<nobr>>
+  He teases your clit with his finger and tells you, "The boys are downstairs are waiting for you.  When
+  I'm done fucking you, they're going to throw you back into the van, take you down to the dock, and onto our boat.
+  When they get a mile or so out they'll throw you overboard.  They'll tie enough weight to you to make sure you sink
+  right to the bottom and stay there."  He laughs as he feels you getting wet from his touch despite his words.  "It'll
+  let everyone else know what happens to snitches.  There's no way any of them will turn on me or each other if they
+  get arrested after seeing what happens to you."
+<</nobr>>
+
+<<nobr>>
+  "Speaking of bottoms," he says not giving the slightest care about your incoherent crying and pleas for mercy.
+  "I wonder, do I want you last fuck to be that cute ass of yours, or your well-worn pussy."  He pauses a moment
+  and says, "I don't suppose you are in a hurry to leave, so why not both."
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerSideEffectAnal>>
+    You hate yourself as you cum while he's fucking your ass.  Even now, when you are about to die and know it, your
+    implant still forces you to orgasm.  Your tears come even harder as your shame adds to your fear.
+  <<elseif $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
+    You hate yourself as you cum while he's you.  Even now, when you are about to die and know it, your
+    implant still forces you to orgasm.  Your tears come even harder as your shame adds to your fear.
+  <</if>>
+  After he's came inside you, recovered, and came again, he gets dressed and calls for them to come get you.
+<</nobr>>
+
+<<nobr>>
+  When they give you a dress to wear, you put it on, hoping maybe he was just trying to terrify you and they
+  have something else in mind.  You are still hoping when they tie your hands behind you and gag you.  But when
+  they chain your legs together and to a concrete block you know he wasn't joking.
+<</nobr>>
+
+<<nobr>>
+  You try to kick and scream but can do neither well as they load you into the van and head down towards the dock.
+  Your last coherent though between among your panic as they load you into the boat is, "I should have just
+  gone to jail."  It's too late now though.  They take off your gag when they reach their destination.  You
+  frantically beg for mercy but they don't listen.  You frantically try to free yourself as you watch the light from
+  the boat slowly fades as you sink lower and lower into the water.
+<</nobr>>
+
+[[The End|GameOverWitness]].
+<<achievement>>dead<</achievement>>
 
 ::AtTrial
 <<nobr>>
@@ -2052,8 +2597,8 @@ TODO Bimboification
   "I'm sure you'll still be able to get off from anal most times," ze says.  "But you'll still be just as horny afterwards, which
   is what we think the guys loved more than the pussy they couldn't even see.  But don't worry, you won't have to go years
   locked up this time.  A few of the guys want their Purple to fuck them in the ass instead, or to 69, or whatever.  Of course we'll
-  give them what they want.  And we also plan on unlocking the top earner each month for a little celebration, and as an added
-  incentive for everyone."
+  give them what they want.  Though, let's be honest.  There's only a few gurls they ever want that from, and you're not one of them.
+  But we also plan on unlocking the top earner each month for a little celebration, and as an added incentive for everyone."
 <</nobr>>
 <<nobr>>
   <img src="PartX/Prison31.png" hspace="10" vspace="10" height="400">
@@ -2415,10 +2960,6 @@ TODO Bimboification
 
 [[The End|GameOverMensPrisonBitch]].
 
-::RatDisappear
-TODO Never seen again [[GameOverRat]]
-<<achievement>>dead<</achievement>>
-
 ::GameOverBimbo
 <h1><<print "Game Over - Bimbo">></h1>
 TODO Img
@@ -2449,8 +2990,8 @@ TODO achievement
 <img src="PartX/GameOver11.jpg" hspace="10" vspace="10" height="600">
 <<achievement>>purplePrison<</achievement>>
 
-::GameOverRat
+::GameOverWitness
 <h1><<print "Game Over - Snitches Get Stitches">></h1>
 <img src="PartX/GameOver10.png" hspace="10" vspace="10" height="600">
-<<achievement>>rat<</achievement>>
+<<achievement>>snitch<</achievement>>
 <<set $Dead to "gang-execution">>

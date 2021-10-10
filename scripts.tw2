@@ -1,9 +1,16 @@
 ::GeneralFunctions [script] <200,50>
 
+setup.getPopularNames = function () {
+  return ["Abigail","Taylor","Alyssa","Lauren","Brianna","Anna","Destiny","Jasmine","Jennifer","Julia","Isabella","Morgan"]
+}
+
+setup.pickRandomName = function (names) {
+	var randomIndex = Math.floor(Math.random() * names.length)
+	return names[randomIndex]
+}
+
 setup.getDefaultName = function () {
-	var unusedPopularNames = ["Abigail","Taylor","Alyssa","Lauren","Brianna","Anna","Destiny","Jasmine","Jennifer","Julia","Isabella","Morgan"]
-	var randomIndex = Math.floor(Math.random() * unusedPopularNames.length)
-	return unusedPopularNames[randomIndex]
+  return setup.pickRandomName(setup.getPopularNames());
 }
 
 setup.removeItem = function (arr, item) {
@@ -813,7 +820,7 @@ setup.getAchievementDetails = function() {
     whore: {text: "Street Whore", image:"Whore.jpg", isEnding:true},
     cuckqueen: {text: "Cuckqueen", image:"Cuckqueen.png", isEnding:true},
     prison: {text: "Convict", image:"Prison.png", isEnding:true},
-    rat: {text: "Snitches Get Stitches", image:"Cement.jpg", isEnding: true},
+    snitch: {text: "Snitches Get Stitches", image:"Snitches.jpg", isEnding: true},
     purplePrison: {text: "Purple Prison Prostitute", image:"PurplePrison.jpg", isEnding:true},
     prisonBitch: {text: "Prison Bitch", image:"PrisonBitch.jpg", isEnding:true},
     prisonKilled: {text: "Killed in Prison", image:"Tombstone.png", isEnding:true},
