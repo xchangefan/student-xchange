@@ -165,7 +165,7 @@
     <<elseif $PlayerMother>>
       mother.
     <<elseif $Purple>>
-      individual.
+      person.
     <<else>>
       woman.
     <</if>>
@@ -661,6 +661,9 @@
 <<nobr>>
   <<if $PlayerSlave>>
     You own nothing.
+  <<elseif $JobMurderer>>
+    Most of your posessions are in storage until you are "released from prison".  You suppose that means they'll be mailed
+    to your family after you die.
   <<elseif $Prison>>
     Most of your posessions are in storage until you are released from prison.
   <<elseif $IslandNudity>>
@@ -806,7 +809,9 @@
       <</if>>
     <<else>>
       You are currently locked in a chastity
-      <<if $PlayerChastityBra>>
+      <<if $MaleAgain>>
+        cage.
+      <<elseif $PlayerChastityBra>>
         belt and bra.
       <<else>>
         belt.
@@ -928,7 +933,9 @@
 
 ::SideBarRelationship <2200,0>
 <<nobr>>
-  <<if $DropoutCumslut>>
+  <<if $PrisonSentence>>
+    <<if setup.areDating('Brenda')>><br>You are Brenda's bitch.<</if>>
+  <<elseif $DropoutCumslut>>
     You live at home with your parents, but are looking for your own apartment.
   <<elseif $DropoutConcubine>>
     You live at the palace.
