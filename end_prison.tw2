@@ -1830,7 +1830,7 @@ TODO Cabin in the woods, some redneck wedding or something unpleasant but not ki
   <<else>>
     <<set $PrisonSentence to 20>>
     You stand up in court and plead guilty.  You then have to stand up and confess to your crime.  You tell them how you let men
-    insert bag after bag inside you and then how you'd tried to cross the border with it all inside you.  You dont mention who put
+    insert bag after bag inside you and then how you'd tried to cross the border with it all inside you.  You don't mention who put
     the drugs inside you or who you were going to give them to though.
     <br><br>
     The judge then goes by the recommended sentence you agreed to and
@@ -1876,7 +1876,7 @@ TODO Cabin in the woods, some redneck wedding or something unpleasant but not ki
 <<nobr>>
   Of course, that means this body is yours for life now.  Though considering at least the next $PrisonSentenceEarly of it will
   be in prison, you wouldn't have been changing back for quite some time anyway.  You'd much rather spend your time as a
-  woman in a relatively safe [[Women's prison|WomensPrison]] than in one of the prison for men.
+  woman in a relatively safe [[women's prison|WomensPrison]] than in one of the prison for men.
 <</nobr>>
 
 <<achievement>>pregnant<</achievement>>
@@ -2371,6 +2371,7 @@ TODO Cabin in the woods, some redneck wedding or something unpleasant but not ki
 ::PrisonChoice
 <<nobr>>
   <h1>Permanently a woman</h1>
+  TODO <<set $PlayerPregnant to 1>>
   <<if $BodyType == 'Plus'>>
     <img src="Part1/BodyCurvy1.jpg" align="left" hspace="10" vspace="10" height="500">
     <img src="Part1/BodyCurvy2.jpg" align="right" hspace="10" vspace="10" height="500">
@@ -2387,7 +2388,7 @@ TODO Cabin in the woods, some redneck wedding or something unpleasant but not ki
 <</nobr>>
 <<nobr>>
   If you are going to be in prison for the next $PrisonSentenceEarly years or more anyway, you'd nuch rather spend your time as a
-  woman in a relatively safe [[Women's prison|WomensPrison]] than in one of the prisons for men.  You doubt you would have ever wanted
+  woman in a relatively safe [[women's prison|WomensPrison]] than in one of the prisons for men.  You doubt you would have ever wanted
   to change back to being a man anyway.
 <</nobr>>
 
@@ -2662,10 +2663,17 @@ TODO Cabin in the woods, some redneck wedding or something unpleasant but not ki
 <<nobr>>
   <h1>Becoming Brenda's Bitch</h1>
   <<if $PrisonBaby>>
+    When you get out of the infirmary after your beating, your cellmate mentions that Brenda has been asking about you, and
+    the baby, while you were at the infirmary, you decide to pay her a visit.
+    <br><br>
+    She's concerned when she see you injured.  You let her know it's not from the baby, that everything went great with the delivery.
+    You tell her it was from an attack after that.
+    <br><br>
+    She seems angry about you being attacked.  "Good thing for those bitches waited until after, or they'd be dead women."  She calms
+    herself and adds, "But I still don't like seing a pretty face and a beautiful body like that hurt."
     <br><br>
     <video src="PartX/Prison68.mp4" autoplay loop muted height="450"></video>
     <br><br>
-    TODO If brenda protected you while pregnant [[WomensPrison6]] (or some other page?)
   <<else>>
     <<set setup.startDating('Brenda')>>
     When you get out of the infirmary after your beating you approach your cellmate about the offer to join her gang.
@@ -2686,21 +2694,32 @@ TODO Cabin in the woods, some redneck wedding or something unpleasant but not ki
     <br><br> 
     <video src="PartX/Prison68.mp4" autoplay loop muted height="450"></video>
     <br><br>
-    You stop by Brenda's cell and start talking to her.  She's glad to see you are up and healthy again.  After the two of you talk for a bit
-    she confesses, "I thought you were cute from the first day you arrived.  But I heard you and you cellmate were a thing, so I didn't say
-    anything.  But then she told me it was just two girls helping each other out, and that you weren't an item."
-    <br><br>
+    You stop by Brenda's cell and start talking to her.  She's glad to see you are up and healthy again.
+  <</if>>
+  After the two of you talk for a bit she confesses, "I thought you were cute from the first day you arrived.
+  <<if $PrisonBaby>>
+    And not just because you were pregnant.
+  <</if>>
+  But I heard you and you cellmate were a thing, so I didn't say anything. But then she told me it was just two girls helping
+  each other out, and that you weren't an item."
+<</nobr>>
+
+<<nobr>>
     You tell her that you were straight.  Well, mostly straight, on the outside.  "I was too," she tells you.  "But women like us are adaptable."
     She looks you in the eyes and adds, "I've seen that look in your eyes in the mirror before.  And trust me, another woman can help you
-    satisfy that need you are feeling much more reliably than any man can."
-    <br><br>
+    satisfy that need you are feeling much more reliably than any man can."  As she starts to kiss you she adds, "Don't worry, I know
+    you are still healing.  I'll be gentle." 
+<</nobr>>
+
+<<nobr>>
     Before you know it, your pants are on the floor and Brenda's head is between your legs.  It takes every bit of self control you have to not
     cry out when her skilled tongue brings you the first of several orgasms.  A bit later, you are on your way to bringing her to her second
     when a loud and distinct cough comes from the cell next to hers.  She quickly stands up and starts to dress and you do so as well.
-    <br><br>
+<</nobr>>
+
+<<nobr>>
     Both of you are sitting on the bed talking, fully clothed, when a guard walks by and looks in before continuing on.  "Don't worry about those
     bitches that hurt you," Brenda says when he's passed. "They aren't going to touch you now that [[you're with me|WomensPrison6]]."
-  <</if>>
 <</nobr>>
 
 ::WomensPrison6
@@ -2740,10 +2759,30 @@ TODO Cabin in the woods, some redneck wedding or something unpleasant but not ki
 <</nobr>>
 
 ::WomensPrison7
-TODO caught with brenda
+<<nobr>>
+  <h1>Spending time with Brenda</h1>
+  You and Brenda are together, as you frequently are. 
+  <<set setup.addSexRepeat(100, {sex:"female", anon:"Brenda"})>>
+<</nobr>>
+
+<<nobr>>
   <video src="PartX/Prison69.mp4" autoplay loop muted height="450"></video>
-TODO coming from initial sentence as a woman
-TODO Warden wants to fuck you (but just creepy looks video for now) [[WomensPrison8]]
+<</nobr>>
+
+<<nobr>>
+  She's just brought you to your first of what you were hoping were going to be several orgasms when she whispers "guard" and starts
+  quickly dressing.  You quickly start doing the same.  You are both innocent looking by the time the guard walks up.
+<</nobr>>
+
+<<nobr>>
+  Well, she appears innocently in her own cell anyway.  You aren't supposed to be here though, so the guard takes you away and writes you up.
+  You don't know why he cares this time.  You and her have even been caught in the act before.  That time this same guard just watched,
+  with his hand in his pants, until the two of you finished and gave you a mild and half-hearted scolding afterwards.
+<</nobr>>
+
+<<nobr>>
+  The next morning a guard is at your cell door before breakfast.  $playerName, come with me.  The [[warden wants to see you|WomensPrison8]].
+<</nobr>>
 
 ::WomensPrison7a
 <<nobr>>
@@ -2792,8 +2831,37 @@ TODO Warden wants to fuck you (but just creepy looks video for now) [[WomensPris
 <<achievement>>girlpower<</achievement>>
 
 ::WomensPrison8
-TODO warden wants to fuck you (but just creepy looks video for now)
-TODO (direct) Deciding to fuck the warden or not [[WomensPrisonWarden]] or [[WomesPrisonSolitary]]
+<<nobr>>
+  <h1>Meeting the Warden</h1>
+  You are led to the warden's office and told to sit.  
+<</nobr>>
+
+<<nobr>>
+  <video src="PartX/Prison73.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  You wait as he finishes a phone call then begins to talk to you. "So, you seem to have a problem with keeping yourself in your
+  cell, and keeping your tongue inside your mouth instead of inside other inmates."
+<</nobr>>
+
+<<nobr>>
+  You know the same guard that wrote you had seen you and Brenda having sex, so you don't even try to deny anything.  You just
+  say, "I'm sorry, sir," and nothing more.
+<</nobr>>
+
+<<nobr>>
+  "No one witnessed the act, this time, so you were only written up for the cell violation.  And your friend isn't getting written
+  up.  But this sort of behavior isn't acceptable."  Some of the sterness leaves his voice as he adds, "But, I've discovered that
+  X-Change girls like you have powerful urges that you can have trouble controlling.  If that's the problem, let me know and we
+  can work something out to help you deal with those urges.  It will make your time here go much, much easier."
+<</nobr>>
+
+<<nobr>>
+  The way he is leering at you, not to mention his erection, make it clear how he plans to help you deal with your urges.
+  [[Giving him what he wants|WomensPrisonWarden]] would probably make your life here much easier.  But you could just
+  [[appologize again|WomensPrisonSolitary]] and say it won't happen again. 
+<</nobr>>
 
 ::WomensPrison8a
 <<nobr>>
@@ -2844,7 +2912,7 @@ TODO (direct) Deciding to fuck the warden or not [[WomensPrisonWarden]] or [[Wom
   <<else>>
     My
   <</if>>
-  pussy is always wet, aching for a man to fuck me.  Pardon my language sir."
+  pussy is always wet, aching for a man to fuck me.  A woman was the best I could do though.  Pardon my language sir."
 <</nobr>>
 
 <<nobr>>
@@ -3268,123 +3336,6 @@ TODO (direct) Deciding to fuck the warden or not [[WomensPrisonWarden]] or [[Wom
     <i>You realize how erotic your dreams are, and how they always seem to end a bit too soon leaving you wet and horny when you wake.</i>
   <</if>>
 <</nobr>>
-
-::Reeducation
-<<nobr>>
-  <h1>Meeting with the warden again</h1>
-  You are brought into the warden's office again and sat down.  The warden comes over to talk to you, "So, $playerName, now that you've
-  had some time to reflect, have you reconsidered my offer?"
-<</nobr>>
-
-<<nobr>>
-  "Yes, sir," you answer quickly.  "I'm sorry I was being so stubborn last week.  I'll do... whatever it is that you think is best."
-<</nobr>>
-
-<<nobr>>
-  "That's great to hear," he says.  "I've had a bit of time to reflect myself this past week.  Originally I'd planned on handling
-  your... training myself.  But then I remembered that the X-Change company is looking for inmate volunteers for a new re-education
-  program they are working on to help girls just like you become contributing members of society."
-<</nobr>>
-
-<<nobr>>
-  Comparing an actual official program to what you expect the warden's 'training' sounds much more palatable.  Etiquite and job training
-  classes versus being bent over some creepy, old guy's desk, you are already feeling relieved.  That excitement skyrockets when the
-  warden tells you the best part.
-<</nobr>>
-
-<<nobr>>
-  "The program lasts up to 18 months, and if you successfully complete it you'll be released on unsupervised parole," the warden says.
-  He clarifies, "Unsupervised in that you won't be meeting with a parole officer, or have the usual parole conditions imposed.  You'll
-  have to comply with whatever follow-up requirements the X-Change people might have though.  But the key part is that as long as
-  you stay out of any more trouble, you'll stay out of prison."
-<</nobr>>
-
-<<nobr>>
-  <img src="PartX/Prison86.jpg" hspace="10" vspace="10" height="400" align="left">
-<</nobr>>
-
-<<nobr>>
-  You quickly agree to [[join the program|Reeducation2]].  You barely even glance at the X-Change contract he hands, noticing only a
-  few words like "Irrevocable consent to any and all training the Corporation deems appropriate..." among a lot of legal jargon and
-  indecipherable text.
-<</nobr>>
-
-<<nobr>>
-  "Excellent," the warden says.  "I'll send one of the guards with you to your cell to gather your things and then wait in out-processing
-  until they arrive.  I already assumed you would agree and someone from the program is on their way to pick you up this afternoon."
-<</nobr>>
-
-::Reeducation2
-<<nobr>>
-  <h1>Entering Re-education</h1>
-  <<set $JobReeducation to 1>>
-  <<unset $JobDrugTrafficker>>
-  <<unset $PrisonSentence>>
-  <<unset $PrisonSentenceEarly>>
-  <<unset $playerNickname>>
-  <<set $playerNameOld to $playerName>>
-  <<set $playerName to `${Math.floor(Math.random() * 8999) + 1000}`>>
-  The car that picked you up drives for a while as you sit in the passenger seat.  The driver doesn't say much, but you don't mind.
-  You don't even mind that your hands are cuffed behind you.  You are just enjoying the view and being out of the prison. When you
-  eventually arrive at the training facility, it looks like an old boarding school to you, but the sign in front says "X-Change
-  Training and Rehabilitation Institute".
-<</nobr>>
-<<nobr>>
-  <img src="PartX/Reeducation1.jpg" hspace="10" vspace="10" height="600" align="left">
-<</nobr>>
-<<nobr>>
-  "Welcome to the Institute, $playerName," a man greeting you once you enter the main building says.  "That is your name for now.
-  If you behave and do well, you may earn the privilege of choosing your own name, either the one you had before you arrived here,
-  or a new one.  Until then however your name is $playerName.  Do not forget it.  And use of your previous name, or any other
-  without permission, is punishable as a rules violation."
-<</nobr>>
-
-<<nobr>>
-  "You will learn that here at the institue many things you took for granted are now privileges that must be earned, more so even than
-  it was for you in prison.  Things like choosing your name, choosing your own clothing to wear, being able to be seen or heard, all of
-  these must be earned.  Now strip out of your prison clothing and put this on.  It is what you will be wearing until you earn the
-  privilege to do otherwise."
-<</nobr>>
-
-<<nobr>>
-  While he watches, you do as he says and strip.  When you look in the box he handed you see it filled with mostly latex.  You follow
-  as he instructs you in what order to put things on.  At a certain point he has to finish dressing you.
-<</nobr>>
-
-<<nobr>>
-  He tightens everything and fastens the
-  strap of the latex straight jacket behind you.  He pulls a hood over your head revealing only your mouth and eyes, though he covers
-  your mouth with a panel gag a moment later.  The whole time you find yourself getting 
-  <<if $PlayerSideEffectSubmissive>>
-    more and more
-  <<else>>
-    both nervous and 
-  <</if>>
-  aroused the tighter he binds you.  The gag's penis insert, securely in your mouth now, only intensifies the effect.
-<</nobr>>
-
-<<nobr>>
-  "As I mentioned earlier, speech is a privilege you will have to earn.  It will be the first privilege you will earn.  Until then
-  your gag will only be removed when it is time for you to eat or drink or otherwise make use of your mouth."  Without even realizing
-  it at first you suck on your gag's penis insert a few times as you think about what 'otherwise make use of your mouth' means. 
-<</nobr>>
-
-<<nobr>>
-  He then clips a leash to the ring on the front of your collar and leads you down the hallway.  Your are seated in front of a
-  computer screen as he starts what he refers to as your '[[orientation video|Reeducation3]]'.
-<</nobr>>
-
-::Reeducation3
-  TODO
-<<nobr>>
-  <img src="PartX/Reeducation2.jpg" hspace="10" vspace="10" height="600" align="right">
-<</nobr>>
-
-TODO [[Reeducation4]]
-
-::Reeducation4
-TODO Bimboification
-[[The End|GameOverBimbo]].
 
 ::Purples
 <<nobr>>
@@ -3908,11 +3859,6 @@ TODO Bimboification
 <</nobr>>
 
 [[The End|GameOverMensPrisonBitch]].
-
-::GameOverBimbo
-<h1><<print "Game Over - Bimbo">></h1>
-TODO Img
-TODO achievement
 
 ::GameOverChastityParole
 <h1><<print "Game Over - Chastity Parole">></h1>
