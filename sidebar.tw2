@@ -166,6 +166,8 @@
       mother.
     <<elseif $Purple>>
       person.
+    <<elseif $JobCatgirl>>
+      catgirl.
     <<else>>
       woman.
     <</if>>
@@ -667,7 +669,9 @@
 ::SideBarInventory <800,0>
 <h1>Inventory</h1>
 <<nobr>>
-  <<if $PlayerSlave>>
+  <<if $JobCatgirl>>
+    Your owner manages all of your posessions.
+  <<elseif $PlayerSlave>>
     You own nothing.
   <<elseif $JobMurderer>>
     Most of your posessions are in storage until you are "released from prison".  You suppose that means they'll be mailed
@@ -1283,7 +1287,8 @@
   <<else>>
     <<set $tempMajorText to ".">>
   <</if>>
-  <<if $student>>
+  <<if $JobCatgirl>>
+  <<elseif $student>>
     <br>
     <<if $Graduated>>
       <<if $Major>>
@@ -1354,7 +1359,8 @@
 
 ::SideBarFamily
 <<nobr>>
-  <<if $FatherDisown>><br>Your father has disowned you.<</if>>\
+  <<if $JobCatgirl>><br>You have a loving owner who takes good care of you.
+  <<elseif $FatherDisown>><br>Your father has disowned you.<</if>>
 <</nobr>>
 
 ::SideBarPartyHorninessLevel <2700,0>
