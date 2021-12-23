@@ -1241,15 +1241,30 @@
 <</nobr>>
 <<nobr>>
   The graduation program makes it clear what each girls best skills are, and what sort of placement they think she would
-  most excel at.  They also "dress" them appropriately as well.  Some are likely to end up [[working in a stable|ReeducationStable]]
+  most excel at.  They also "dress" them appropriately as well.  Some are likely to end up as a pony girl working in a stable
   after graduation.  Others may end up as someones [[personal pet|ReeducationHousePet]].  And some will likely be heading for a
-  role in public service, either [[overseas|ReeducationFreeUse]] or somewhere remote, but [[a bit closer|ReeducationMining]].
+  role in [[public service|ReeducationFreeUse]] overseas.
 <</nobr>>
 
 <<nobr>>
-  You know which sort of placement your instructors thought would be the best for way for you to give back to society.
-  But you are all trained for each job though since sometimes a bidder wants a particular girl and doesn't care as much
-  about the recommended placement.
+  <<if $PlayerSideEffectExhibitionist && $PlayerSideEffectSubmissive>>
+    <<set $tempRoll to either(1,2)>>
+  <<elseif $PlayerSideEffectSubmissive>>
+    <<set $tempRoll to either(1,1,1,1,2)>>
+  <<elseif $PlayerSideEffectExhibitionist>>
+    <<set $tempRoll to either(1,2,2,2,2)>>
+  <<else>>
+    <<set $tempRoll to either(1,2,3,4)>>
+  <</if>>
+  You know
+	<<switch $tempRoll>>
+		<<case 1>>
+			[[which sort of placement|ReeducationHousePet]]
+		<<case 2>>
+			[[which sort of placement|ReeducationFreeUse]]
+	<</switch>>
+  your instructors thought would be the best for way for you to give back to society.  But you are all trained for each job
+  though since sometimes a bidder wants a particular girl and doesn't care as much about the recommended placement.
 <</nobr>>
 
 <<nobr>>
@@ -1260,22 +1275,9 @@
 <</nobr>>
 
 <<nobr>>
-  You
-	<<switch either(1,2,3,4)>>
-		<<case 1>>
-			[[don't care what sort of placement|ReeducationHousePet]]
-		<<case 2>>
-			[[don't care what sort of placement|ReeducationStable]]
-		<<case 3>>
-			[[don't care what sort of placement|ReeducationFreeUse]]
-		<<case 4>>
-			[[don't care what sort of placement|ReeducationMining]]
-	<</switch>>
-  you get.  Whatever it is, you'll be happy that you are finally able to be a productive
-  part of society again, and able to make up for the things you've done in the past.
+  Whatever your assignment is, you'll be happy that you are finally able to be a productive part of society again, and able
+  to make up for the things you've done in the past.
 <</nobr>>
-
-TODO Change this to encourage letting it choose for you based on past actions, with option to override and pick (like roommate)
 
 ::ReeducationHousePet
 <<nobr>>
@@ -1826,14 +1828,6 @@ TODO Change this to encourage letting it choose for you based on past actions, w
 
 [[The End|GameOverFreeUse]].
 
-::ReeducationMining
-TODO Mining town whore
-[[The End|GameOverMiningCamp]].
-
-::ReeducationStable
-TODO Pony Girl Ending
-[[The End|GameOverPonyGirl]].
-
 ::GameOverCatGirl
 <<nobr>>
   <h1><<print "Game Over - Catgirl">></h1>
@@ -1847,13 +1841,3 @@ TODO Pony Girl Ending
   <img src="PartX/GameOver1.jpg" hspace="10" vspace="10" height="600">
 <</nobr>>
 <<achievement>>freeUse<</achievement>>
-
-::GameOverMiningCamp
-<h1><<print "Game Over - Mining Town Girl">></h1>
-TODO Img
-TODO achievement
-
-::GameOverPonyGirl
-<h1><<print "Game Over - Pony Girl">></h1>
-TODO Img
-TODO achievement
