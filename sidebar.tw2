@@ -1182,6 +1182,9 @@
 ::SideBarJob <2400,0>
 <<nobr>>
   <<if $JobSilent>>
+  <<elseif $JobFreeUse>>
+    <br><br>
+    Your body is freely available to use by any man who wants to do so.
   <<elseif $DropoutCumslut>>
     <br><br>
     You work at a smoothie bar.
@@ -1288,6 +1291,7 @@
     <<set $tempMajorText to ".">>
   <</if>>
   <<if $JobCatgirl>>
+  <<elseif $JobFreeUse>>
   <<elseif $student>>
     <br>
     <<if $Graduated>>
@@ -1360,6 +1364,7 @@
 ::SideBarFamily
 <<nobr>>
   <<if $JobCatgirl>><br>You have a loving owner who takes good care of you.
+  <<elseif $JobFreeUse>>
   <<elseif $FatherDisown>><br>Your father has disowned you.<</if>>
 <</nobr>>
 
