@@ -1222,8 +1222,52 @@
     organization.  We're confident we can get some of them turn to avoid the setences they are facing.  Even if not, it's still a
     big win with all of the convictions today."
     <br><br>
-    "Someone will be by tomorrow to [[discuss finding you a new identity|WitnessRelocation]] and a new home, so we can keep you
-    safe from any reprisals they might want to make.
+    "Someone will be by tomorrow to
+    <<if $PlayerSideEffectPermanent>>
+      [[discuss finding you a new identity|Suburbs]]
+    <<else>>
+      [[discuss finding you a new identity|WitnessProtectionReset]]
+    <</if>>
+    and a new home, so we can keep you safe from any reprisals they might want to make.
+  <</if>>
+<</nobr>>
+
+::WitnessProtectionReset
+<<nobr>>
+  <h1>Discussing your new identity</h1>
+  <img src="PartX/Prison49.jpg" hspace="10" vspace="10" height="300"><br>
+  <<set $PregnancyCheck = setup.checkForNewPregnancy('home pregnancy test - witness protection', 0)>>
+  <<if $PregnancyCheck and $PregnancyCheck.isPregnant>>
+    When discussing your new identity, the agent suggests having the X-Change people trigger a "reset" to change your appearance.
+    <br><br>
+    <img src="PartP/PregTest7.jpg" hspace="10" vspace="10" height="150" align="left"><br>
+    You cut him off there, and let him know about the pregnancy test you took, and the visit to the clinic your agents took you
+    to so you could deal with it..  He's relieved to find out that none of the agents were involved in the conception, and doesn't
+    care about the rest of the details.  "Ok, it wasn't necessary, just a bit safer is all.  We'll proceed with the
+    [[rest of your relocation plan|Suburbs]] we have for you."
+    <<set $PlayerPregnant to 1>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    <<set $PlayerAbortion to 1>>
+    <<unset $PregnancyCheck>>
+    <<achievement>>pregnant<</achievement>>
+    <<achievement>>childfree<</achievement>>
+  <<else>>
+    <<set $WitnessReset to 1>>
+    Since your change isn't permanent yet, we have an option, it's just a bit different with you.  Now, changing back to your
+    old self, isn't an option.  We could likely get the X-Change Corporation to waive the four year term on your implant, but the
+    gang already knows what you used to look like, so that wouldn't be helpful."
+    <br><br>
+    He continues, "when I spoke to the X-Change people though, they had another option.  They could [[trigger a 'reset'|WitnessReset]]
+    of some sort on your implant.  It would cause your body to change to a different body type entirely, your face would change too.
+    Still it's your DNA or however it works, so it will be somewhat similar, but it would be different enough you wouldn't be
+    recognized."
+    <br><br>
+    He looks down at his notes.  "They said it has some risks of side effects, and would be permanent.  Another reset or changing
+    back wouldn't be possible.  Though it still sounds like your safest choice by far.  But if you really want to risk one of
+    the other options..."
+    <br><br>
+    You cut him off and tell him you don't need to hear the other options.  This one sounds at lot safer than hiding out somewhere
+    in your current face.
   <</if>>
 <</nobr>>
 
@@ -1248,7 +1292,7 @@
     And changing back or changing again isn't an option, since your change is already permanent.  So we will have to
     try one of the other options.
   <<elseif $PregnancyCheck and $PregnancyCheck.isPregnant>>
-    Though your change isn't permanent yet..."
+    Since your change isn't permanent yet..."
     <br><br>
     <img src="PartP/PregTest7.jpg" hspace="10" vspace="10" height="150" align="left"><br>
     You cut him off there, and let him know about the pregnancy test you took, and the visit to the clinic your agents took you
@@ -1261,7 +1305,7 @@
     <<achievement>>pregnant<</achievement>>
     <<achievement>>childfree<</achievement>>
   <<else>>
-    Though your change isn't permanent yet, so we have an option, it's just a bit different with you.  Now, changing back to your
+    Since your change isn't permanent yet, we have an option, it's just a bit different with you.  Now, changing back to your
     old self, isn't an option.  We could likely get the X-Change Corporation to waive the four year term on your implant, but the
     gang already knows what you used to look like, so that wouldn't be helpful."
     <br><br>
@@ -1290,6 +1334,7 @@
 
 ::WitnessReset
 <<nobr>>
+  <<set $WitnessReset to 1>>
   <<set $tempNewNames to setup.getPopularNames().filter((name)=>{return name!==$playerName})>>
   <<set $playerName to setup.pickRandomName($tempNewNames)>>
   <<if $BodyType == 'Standard'>>
@@ -1313,8 +1358,8 @@
   <<set $PlayerSideEffectPermanent to 1>>
 <</nobr>>
 <<nobr>>
-  "Congratulations, $playerName on your beautiful new body," he says after you change. Him using your new name
-  throws you for a moment, but you'd better get used to it since that's who you are from now on.
+  "Congratulations, $playerName on your beautiful new body," the X-Change technician says after you change. Him using your
+  new name throws you for a moment, but you'd better get used to it since that's who you are from now on.
 <</nobr>>
 
 <<nobr>>
@@ -1329,10 +1374,11 @@
     <<unset $PlayerProtectionPermanent>>
     <<set $PlayerProtectionPill to 1>>
     your implant's birth control feature is no longer active.  We can send you home with a supply of birth control
-    pills instead.  You should use condoms the first month to be safe though.  Next,"
+    pills instead.  You should use condoms the first month to be safe though.  Next, you'll
+  <<else>>
+    You'll
   <</if>>
-  You'll probably find that you are more submissive than you once were.  But a slut like you will probably like that,
-  won't you?"
+  probably find that you are more submissive than you once were.  But a slut like you will probably like that, won't you?"
   <<if $PlayerSideEffectSubmissive>>
     <<set $PlayerSideEffectSubmissive += 1>>
   <<else>>
@@ -1356,12 +1402,8 @@
 
 <<nobr>>
   They give you a change of clothes, since your old ones don't fit.  But the agent says they'll take you out later
-  to buy more, but first they'll need to discuss your [[relocation|WitnessRelocation]].
+  to buy more, but first they'll need to discuss your [[relocation|Suburbs]].
 <</nobr>>
-
-::WitnessRelocation
-  <img src="PartX/Prison49.jpg" hspace="10" vspace="10" height="300"><br>
-TODO Some positive? witness relocation ending
 
 ::WitnessCabin
 TODO Cabin in the woods, some redneck wedding or something unpleasant but not killed
