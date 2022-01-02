@@ -10,6 +10,7 @@
 <<elseif $PlayerItemNerdKey >><<include [[Part11Peter]]>>
 <<elseif $PlayerChastityBelt >><<include [[Part11Chastity]]>>
 <<elseif setup.isFWB('David') or setup.isFWB('Josh') or setup.isFWB('James') or setup.isFWB('Zack') or setup.isFWB('Barry') or setup.haveFucked('Kim') or setup.haveFucked('Becky') or setup.haveFucked('Troy') or $TroyHelp>><<include [[Part11FWB]]>>
+<<elseif setup.isNeighbour('Barry') and $CampusMinistry>><<include [[Part11BarryMinistry]]>>
 <<else>><<include [[Part11Single]]>><</if>>
 
 ::Part11Andrew <200,10500>
@@ -2431,7 +2432,7 @@ You’re even used by a few women, using strap-ons, or their own fist.
       <li>[[Zack|Part11FWBThrill]]</li>
     <</if>>
     <<if setup.isFWB('Barry')>>
-      <li>[[Barry|Part11FWBJerk]]</li>
+      <li>[[Barry|Part11FWBBarry]]</li>
     <</if>>
     <<if setup.haveFucked('Troy')>>
       <li><<link Troy Part11FWBGuy>><<set $ValentineFWB to "Troy">><</link>></li>
@@ -2589,30 +2590,41 @@ Kim: Oh, is that what I typed?
   tells you it's [[time to leave|Part11FWBGuy]].
 <</nobr>>
 
-::Part11FWBJerk <16200,10500>
+::Part11FWBBarry <16200,10500>
 <<nobr>>
   <h1>Home with Barry</h1>
+  <video src="Part11/FWB7.mp4" autoplay loop muted height="640"></video>
+  <<unset $tempNeedCock>>
 <</nobr>>
-<video src="Part11/FWB7.mp4" autoplay loop muted height="640"></video>
+
 <<nobr>>
   Barry bends you over his desk and flips your skirt up.  As he starts to firmly spank your
-  tender ass, he asks you, "So are you just such a slut that you couldn't go one night without
-  finding a cock to fill you?  Or is it that you just love the way I treat you, because you know
-  that's exactly what you deserve?  Or, was it just that you remembered me saying I was going to
-  fuck your ass next time, and you couldn't wait any longer?"
+  tender ass, he asks you,
+  <<if $CampusMinistry>>
+    "So, are you finally ready to admit you're really a slut, not the prude that Faith has been trying to force you to be?
+    I'll reward you in a minute for finally admitting who you are.  But first I need to punish you for snooping through
+    my stuff the other day.  And for not letting me watch the rest of the show."
+  <<else>>
+    "So are you just such a slut that you couldn't go one night without
+    finding a cock to fill you?  Or is it that you just love the way I treat you, because you know
+    that's exactly what you deserve?  Or, was it just that you remembered me saying I was going to
+    fuck your ass next time, and you couldn't wait any longer?"
+  <</if>>
 <</nobr>>
 
 <<nobr>>
   He doesn't stop spanking your ass until you confess to all three.  After you tell him what a
-  worthless slut you are, and [[beg him to fuck your ass|Part11FWBJerk2]], only then does his
+  worthless slut you are, and [[beg him to fuck your ass|Part11FWBBarry2]], only then does his
   hand stop.
 <</nobr>>
 
-::Part11FWBJerk2 <16400,10500>
+::Part11FWBBarry2 <16400,10500>
 <<nobr>>
   <h1>Home with Barry</h1>
 <</nobr>>
-<video src="Part11/FWB8.mp4" autoplay loop muted height="640"></video>
+<<nobr>>
+  <video src="Part11/FWB8.mp4" autoplay loop muted height="640"></video>
+<</nobr>>
 <<nobr>>
   <<set setup.addSex({sex: 'male', name:'Barry'})>>
   He's already hard from your spanking, and doesn't care whether you cum tonight or not.  As soon
@@ -2643,7 +2655,34 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerSideEffectAnal or $PlayerEasytoOrgasm or !$PlayerSideEffectMasturbationBlock>>
+  <<if $CampusMinistry>>
+    <<if $PlayerSideEffectAnal or $PlayerEasytoOrgasm or !$PlayerSideEffectMasturbationBlock>>
+      As you feel Barry squeeze your butt and pull you towards him, you cry out with your own orgasm.
+      He shoves his cock deep into your ass as he grunts and then cums.  With his cock still inside you,
+      he swats your ass hard repeatedly as your orgasm washes over you.
+      <br><br>
+      "Did you enjoy that slut?",
+      he asks after a moment.  You have to admit that you did before he sends you on your way. You
+      go to sleep that night satisfied, but with your butt stinging from his hand
+      and bits of lube and Barry's cum leaking out of you.
+    <<else>>
+      As you feel Barry squeeze your butt and pull you towards him, you cry out with your own orgasm.
+      He shoves his cock deep into your ass as he grunts and then cums.  With his cock still inside you,
+      he swats your ass hard repeatedly as your orgasm washes over you.
+      <br><br>
+      "Did you enjoy that slut?",
+      he asks after a moment.  You have to admit that you did before he sends you on your way. You
+      go to sleep that night satisfied, but with your butt stinging from his hand
+      and bits of lube and Barry's cum leaking out of you.
+    <</if>>
+    The next morning you wake up with your butt still sore, inside and out, and your panties soaked with the mess that has
+    leaked out of your ass.
+    <br><br>
+    Now that you have had time to reflect you wonder if you
+    [[really are the slut|Part11FWBBarry3]] Barry said you were while you were cumming with his cock in your ass.  But you
+    also think about how disappointed Faith and Pastor Mark will be.  Maybe you should [[forget about last night|Part11StillAVirgin]].
+    After all, technically you're still a virgin.  Anal doesn't count, right?
+  <<elseif $PlayerSideEffectAnal or $PlayerEasytoOrgasm or !$PlayerSideEffectMasturbationBlock>>
     <<if $PlayerSideEffectOrgasmBlock>>
       As you feel Barry squeeze your butt and pull you towards him, you feel your orgasm comming.
       But at the last moment, you feel it fade into nothing.  Your implant has denied you again!
@@ -2654,7 +2693,9 @@ Kim: Oh, is that what I typed?
     <<else>>
       As you feel Barry squeeze your butt and pull you towards him, you cry out with your own orgasm.
       He shoves his cock deep into your ass as he grunts and then cums.  With his cock still inside you,
-      he swats your ass hard repeatedly as your orgasm washes over you.  "Did you enjoy that slut?",
+      he swats your ass hard repeatedly as your orgasm washes over you.
+      <br><br>
+      "Did you enjoy that slut?",
       he asks after a moment.  You have to admit that you did before he sends you on your way. You
       [[go to sleep|Part11PhoneCall]] that night satisfied, but with your butt stinging from his hand
       and bits of lube and Barry's cum leaking out of you.
@@ -2666,6 +2707,45 @@ Kim: Oh, is that what I typed?
     [[go to sleep|Part11PhoneCall]] that night still horny and with your butt stinging from his hand
     and bits of lube and Barry's cum leaking out of you.
   <</if>>
+<</nobr>>
+
+::Part11FWBBarry3
+<<nobr>>
+  <h1>Accepting who you are</h1>
+  <video src="Part11/Barry11.mp4" autoplay loop muted height="400"></video>
+  <<unset $CampusMinistry>>
+  <<set $CampusMinistryFail>>
+  <<set setup.makeFWB("Barry")>>
+<</nobr>>
+<<nobr>>
+  You know Faith and Pastor Mark will be disappointed, but Barry is right.  This is who you are - a slut who would
+  rather have Barry's cock in her ass than keep pretending to be like Faith.  And nothing makes you happier than
+  finally being able to admit it.
+<</nobr>>
+
+<<nobr>>
+  You are planning the next time you are going to get a cock in your ass, and hopefully in your pussy too, when your
+  [[phone rings|Part11PhoneCall]].
+<</nobr>>
+
+::Part11StillAVirgin
+<<nobr>>
+  <h1>Exploiting the loophole</h1>
+  <<set $LoopholeVirgin to 1>>
+  <div style="float:left;padding:12px;">
+    <video src="Part11/Barry7.mp4" autoplay loop muted height="400"></video>
+  </div>
+<</nobr>>
+
+<<nobr>>
+  Well, maybe "forget" wasn't the right word.  You definitely remember how much fun you had.  But maybe Barry and Faith are both
+  partially right.  You did love having his cock in your ass.  But maybe you should save your... vagina, for your future husband.
+  But your ass, and maybe your mouth, those don't count, right?
+<</nobr>>
+
+<<nobr>>
+  Maybe you can have some fun while you are at college, but still stay a virgin too.  Your thoughts are interrupted though when
+  [[your phone starts ringing|Part11PhoneCall]].
 <</nobr>>
 
 ::Part11FWBTroyHelp <16600,10500>
@@ -2726,6 +2806,391 @@ Kim: Oh, is that what I typed?
   to [[sleep alone in your own bed|Part11PhoneCall]].
 <</nobr>>
 
+::Part11BarryMinistry
+<<nobr>>
+  <h1>Cleaning Barry's room</h1>
+  It seems Barry has some big plans for Valentine’s Day.  He's offered to pay you to clean up his and
+  <<print setup.otherRoommate("Barry")>>
+  room.  You don't know if he's just too lazy to do it himself, or he just enjoys making you do domestic work for him.
+  With spring break just around the corner, some extra spending money will be nice.  You still don't know for sure what you
+  are going to do over break, but you'll have more options if you have some extra cash.
+<</nobr>>
+<<nobr>>
+  <img src="Part11/Barry1.jpg" hspace="10" vspace="10" height="300" align="left"/>
+<</nobr>>
+<<nobr>>
+  He's gone until this evening, so you are cleaning the room now.  You have most of the room clean, but then you stumble on 
+  some sexy-looking women's clothes in Barry's closet.  And under them is a pink case. For a second, with the pink box and the
+  girl's clothes, you wonder if Barry wears these when no one is around.  You never would have expected that about him.  But holding
+  one up to yourself, you see that they are about your size, too small for Barry to wear.
+<</nobr>>
+
+<<nobr>>
+  Now you are too curious about the pink case to resist trying to open it.  Luckily the clasps aren't locked and it comes right open.
+  When you look inside you see there are various kinds of restraints.  Gags, cuffs, rope, vibrators, and other things like that.  Now
+  you are guessing this is Barry's "Toy Box" to play with the girls he brings back to his room.  Judging from the sounds his guests
+  usually make, they must be very fun toys.
+<</nobr>>
+
+<<nobr>>
+  You've laid awake many times listening to them, imagining the pleasure the girls must be feeling.  Usually you lie there frustrated
+  and horny, wishing Faith wasn't there to stop you, so you could masturbate while you fantasized.  And after the woman you saw on
+  Halloween, you've also been looking up stuff like this online when you can.  You haven't told Faith or Pastor Mark about it though.
+<</nobr>>
+
+<<nobr>>
+  You can't resist the opportunity to play with some of the toys.  The only thing you need to decide if you want to start with
+  [[playing with the restraints|Part11BarryMinistryRestraint]] or if you'd just like to
+  [[dress up a little bit instead|Part11BarryMinistryDildo]].
+<</nobr>>
+
+::Part11BarryMinistryRestraint
+<<nobr>>
+  <h1>Trying out the restraints</h1>
+  <img src="Part11/Barry2.jpg" hspace="10" vspace="10" height="600" align="left"/>
+  You spotted the skirt and thought it looked cute.  But then when you held it up and saw how short it was, you realized why it was
+  mixed in with the other clothes Barry had.  You imagined how slutty everyone would think you were if you wore a skirt that short
+  in public.  "Especially if you didn't have any panties under it," you think.  You quickly strip off your panties and put on
+  the skirt and the matching shoes and the 'shirt' which barely covers your breasts.
+<</nobr>>
+
+<<nobr>>
+  Feeling sexy and turned on, you start digging through the restraints, fantasizing about being a sex slave for Barry
+  and <<print setup.otherRoommate("Barry")>>.  You put on the leg cuffs first, and clip them to each other.  Sex slaves shouldn't
+  be able to run away.  Then you put on the collar, so everyone will know you are just a sex slave.  Your owners would put a lock through
+  the little hole for one, but you just buckle it instead.  And then you put on the gag, because sex slaves' mouths aren't meant for talking.
+<</nobr>>
+
+<<nobr>>
+  Your hands are roaming your body, imagining your scenario.  Then you see something else it take you a minute to figure out how it
+  works.  Eventually you realize it's like a glove, but for both your hands at the same time.  Its meant to hold your arms together
+  and behind your back.  You see a zipper running the length of it.  It'd be easy enough to get in and out of with it unzipped.
+  There'd be no way to zip or unzip it yourself.  So you'd be a helpless sex slave once one of your owners zipped it up.  You'll
+  just pretend like they did.
+<</nobr>>
+
+<<nobr>>
+  You are rolling around on Barry's bed, imagining all the things being done to your helpless body, and it is really getting you turned
+  on.  Eventually you can't wait any longer, you need to masturbate.  You sit back up and start to take off the arm-thing.  But you
+  realize it's tighter than it was before and you can't get it off.
+<</nobr>>
+
+<<nobr>>
+  You try to look behind you to see what happened, but the collar keeps you from turning around enough to see.  You can only guess
+  that when you were rolling around the zipper caught on something and zipped up, at least part way.
+<</nobr>>
+
+<<nobr>>
+  You obviously can't call anyone for help.  You could try open the door and head out to the hallway and see if you could get help.
+  But at best you'd be mortified being caught like this, and at worst, someone could just pull you into their room, and have their
+  way with you.  You feel arousal increase as both of those ideas also turn you on.
+<</nobr>>
+
+<<nobr>>
+  No.  The best option, is just to lay back down, and try to squirm around on the bed some more, but with the intent of moving
+  the zipper down instead of up.  You try for a while and then get up to see if you've succeeded.  You didn't so you try again.
+  And again.  Each time just makes you think more and more about how you really are helpless now, and get you more and more
+  aroused.
+<</nobr>>
+
+<<nobr>>
+  You are on your back squirming again when you hear [[the door to the room open|Part11BarryMinistryRestraint2]].
+<</nobr>>
+
+::Part11BarryMinistryRestraint2
+<<nobr>>
+  <h1>Caught by Barry</h1>
+  There's nothing you can do, nowhere you can hide.  Barry comes in and catches you, wearing the clothes and restraints meant
+  for his lovers.  When he places his hand on your thigh, you realize you are now just as helpless as you had been fantasizing
+  about.  You do nothing as his hand slowly moves up your thigh.  You only blush when he flips the skirt up and comments first
+  on your lack of panties, and then on how wet you are.
+  <<unset $CampusMinistry>>
+  <<set $CampusMinistryFail to 1>>
+  <<set setup.addSex({sex:"male", name:"Barry"})>>
+  <<set setup.addSex({sex:"male", name:"Barry", vaginal:true, noCondom:true, pullout:true})>>
+  <<set setup.makeFWB("Barry")>>
+<</nobr>>
+
+<<nobr>>
+  "Did the naughty little schoolgirl get herself stuck playing with Barry's toys?" Barry asks.  You nod.  "And I bet all her
+  struggling made her so horny that she'd do anything for an orgasm right now."  You nod again.  "Too bad.  You'll have to wait.
+  First you need to be punished for snooping."  Then he flips you over onto your stomach and begins to spank you.  You cry out
+  with the first smack on your bottom, but not much comes out of the gag you are wearing.  You butt is throbbing and feels like
+  it is probably bright red by the time he stops.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part11/Barry4.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  He flips you back over again so you are face up.  He pulls up your half shirt, exposing your breasts.  He then begins teasing
+  your nipples.  First softly stroking them with his finger tips, then pinching.  Both seem to be only making you ache for an
+  orgasm, preferably with him inside you.
+<</nobr>>
+
+<<nobr>>
+  For an hour or more, he continues to tease you.  Playing with your breasts, sliding a finger inside you, stroking your clit,
+  but always stopping before you can cum.  He gets to cum though, making you beg to suck his cock, and then drop to your knees.
+  The taste of his cum in your mouth is stronger than you expected, but you swallow it all down anyway.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part11/Barry5.gif" hspace="10" vspace="10" height="300" align="left"/>
+  He just goes back to teasing and denying you more after his blowjob though.  Though eventually he decides he's ready to fuck
+  you.  You cum as his cock is still teasing your clit and your lips just below it.  Your pleasure is mixed with pain for a
+  moment as he slides further into you.  But soon it is only the pleasure.  You manage to orgasm again, before he pulls out
+  and covers your stomach with more of his cum. 
+<</nobr>>
+
+<<nobr>>
+  "Isn't being a slut much more fun than being a prude like Faith," Barry says as he removes the last of your restraints.
+  Being called a slut should upset you, but it mostly doesn't.  You feel a little ashamed, but it mostly excites you.  The
+  shame might even be adding to the excitement of it.
+<</nobr>>
+
+<<nobr>>
+  You do feel a little bad about how disappointed Faith and and Pastor Mark will be that their plans to 'help' you have failed.
+  But now you know how much you love being tied up and fucked, you have no interest at all in their plans.  You plan on having as
+  much sex as you can to make up for months of missed time.
+<</nobr>>
+
+<<nobr>>
+  "If you ever need me to treat you like the slut you are, come on over again," Barry tells you.  "And maybe I'll buy you
+  a little maid costume for the next time I pay you to clean my room."  You head to the bathroom to clean up, hopefully before
+  Faith gets home.
+<</nobr>>
+
+<<nobr>>
+  While you are in the shower, you wonder if your fun together today has
+  [[changed Barry's Valentine's Day plans|Part11BarryAfterMinistry]] at all.
+<</nobr>>
+
+
+::Part11BarryMinistryDildo
+<<nobr>>
+  <h1>Trying out the toys</h1>
+  You see the lacy white panties, with the matching collar and cuffs, and you have to try them on.  Once you start to put on the
+  collar and cuffs, you realize there is a chain connecting them.  After you put them on you see that the chain doesn't restrict your
+  movements that much, just keeping your arms from spreading out.
+<</nobr>>
+
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="Part11/Barry3.webm" autoplay loop muted height="600"></video>
+  </div>
+  What it does do is give you a feeling of being controlled, of being owned.  You imagine someone put these on you.  The lace material
+  is thin and looks like it could easily be ripped or escaped from.  The chain looks weak and like it could be snapped
+  <<if $BodyType == "fit">>especially<<else>>even<</if>> by a girl of your strength.  Something must be keeping you from breaking free
+  of your lacy bondage.  Is it your owners psychological control over you?  Or is it something more than that?
+<</nobr>>
+
+<<nobr>>
+  In your fantasy, your owner is a powerful mage.  The collar, cuffs, and chain look weak and easily defeated, but they are actually
+  quite unbreakable and removable only by magic.  Though you would never dream of trying to escape anyway, your devotion to your Master
+  is far to great to even consider it.  Keeping you captive is not why he has you wear these.
+<</nobr>>
+
+<<nobr>>
+  No, he has you wear these for the enchantments he's placed on them, well and because he loves how you look in them.  The collar keeps
+  you here in the tower, unable to leave even if you wanted to.  The panties are enchanted to always make you insatiably horny. It keeps
+  you always wet and waiting for your master. You blush when you imagine that the enchantment even keeps your other hole, your ass,
+  magically lubricated and ready for your master's cock.  
+<</nobr>>
+
+<<nobr>>
+  The cuffs prevent you from touching yourself, from ever satisfying your own needs.  That's a feeling you know outside of your fantasy
+  as well, except it's Faith's watchful eye that keeps you from touching yourself... except for now that is.  You see a pink dildo in the
+  box and imagine it is a toy your Master had used on you.  He'd neglected to lock it away this time.  The enchantment around your wrists
+  don't prevent you from using the toy, only your own hands directly.
+<</nobr>>
+
+<<nobr>>
+  You are starting to get close.  Hopefully your master won't somehow know and punish you.  Or maybe you want him to punish you...
+  You hear a sound at the door.  For a moment you are still in the fantasy and think it is your Master coming home to catch you being
+  a naughty little slave.  But then you snap out of it and realize it's real.  Barry is back early!
+<</nobr>>
+
+<<nobr>>
+  There's no denying what you were doing.  Part of you wants to [[run back to your room|Part11BarryMinistryDildoShame]] and hide in
+  shame.  But another part of you, specifically the part currently wrapped around a pink dildo,
+  [[wants to keep going|Part11BarryMinistryDildo2]].  Barry has already seen everything, and from the look on his face, he doesn't
+  seem to be minding the show.
+<</nobr>>
+
+::Part11BarryMinistryDildo2
+<<nobr>>
+  <<set setup.addSex({sex:"male", name:"Barry"})>>
+  <<if $tempShame>>
+    <h1>Returning to Barry's Room</h1>
+    You ran out in shame, but you walk back to his room out of need.  Barry's already seen you topless and playing with your breast
+    with one hand and fucking yourself with a dildo with the other.  You picture him with a massive hard right now from your show,
+    and you can't resist going to see if it's true.  You plan on going back into the room and picking up where you left off.  Watching
+    him stroke himself while you masturbate too sounds like it would be incredibly hot.
+  <<else>>
+    <h1>Caught by Barry</h1>
+    There's no reason to stop now, Barry's already seen you topless and playing with your breast with one hand and fucking yourself
+    with a dildo with the other.  He might as well see your orgasm too, because you are too close to stop now.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He has other plans though.  He grabs your wrists and pulls them away from your pussy.  Then he grabs both wrists with a single
+  hand, then takes away your toy with the other. "What a naughty slut, playing with other people's things," he teases you.  He then
+  grabs a different set of restraints.  "I think we need something a bit more secure than what you are wearing."
+<</nobr>>
+
+<<nobr>>
+  <video src="Part11/Barry10.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  Once he's secured your hands again, behind you this time, he takes control of the dildo, fucking you with it.  His thumb teasing
+  your clit as he does soon has you on the verge of an orgasm.  He pulls the dildo away and tells you, "No.  You need to earn it
+  first slut."  A few moments later, and Barry's cock is sliding in and out of your mouth.
+<</nobr>>
+
+<<nobr>>
+  As he moans you wonder what your first load of cum will taste like.  But you won't be finding out tonight, or at least not right now.
+  Barry has [[something else|Part11BarryMinistryDildo3]] in mind.
+<</nobr>>
+
+::Part11BarryMinistryDildo3
+<<nobr>>
+  <h1>Bound by Barry</h1>
+  <img src="Part11/Barry8.jpg" hspace="10" vspace="10" height="600" align="left"/>
+  Barry instead pulls out of your mouth.  Then he adds some more cuffs, around your ankles this time.  Then he secures your wrists
+  to your ankles, keeping you face down on the bed, with your virgin pussy open and exposed.
+  <<set setup.addSex({sex:"male", name:"Barry", vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.makeFWB("Barry")>>
+  <<unset $CampusMinistry>>
+  <<set $CampusMinistryFail to 1>>
+<</nobr>>
+
+<<nobr>>
+  He gives your ass a few spanks first, telling you what a naughty slut you are.  Then he teases your clit for a while then stops.
+  Then he does it again.  He tells you that you have to beg if you want him to fuck you.  You can't take anymore, so you beg, "Please,
+  please fuck me!.  Fuck my virgin pussy!  I need you inside me!"
+  <<if $PlayerProtectionCondoms>>
+    Of course, asking him to put on a condom, like you'd planned to do if you ever had sex, is the farthest thing from your mind.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He doesn't make you wait any longer.  You feel your wet lips part as his cock slowly slides into you.  It doesn't hurt like you'd
+  worried it might, in fact it feels amazing.  It's so much better than the dildo was.  It's warm and hard, but that's not even the
+  best part.
+<</nobr>>
+
+<<nobr>>
+  The best part is Barry's hands on your hips, pulling back onto his cock with great urgency.  You know you've driven him to
+  this level of lust, and it makes you feel like a beautiful woman and a slut, and both make you happy right now.
+<</nobr>>
+
+<<nobr>>
+  After a while he starts thrusting deeper and faster, and moaning even more about how tight you are.  You feel his cock get
+  really hard, then you feel him thrust deep a last time and his cum fill you.  That pushes you over the edge, and you cum too.
+  You can feel your body shake, and your pussy grip his cock, trying to keep it inside you.
+<</nobr>>
+
+<<nobr>>
+  "Isn't being a slut much more fun than being a prude like Faith," Barry says as he slowly pulls out of you.  A few hours ago
+  being called a slut would have upset you, but it doesn't now, at least not when Barry says it.  When you
+  [[tell Faith|Part11BarryMinistryDildo4]] about this evening, and she calls you a slut then.  That might upset you.
+<</nobr>>
+
+::Part11BarryMinistryDildo4
+<<nobr>>
+  <h1>Back in your room</h1>
+  <img src="Part11/Barry9.jpg" hspace="10" vspace="10" height="600" align="left"/>
+  You head back to your room.  You'll take a shower in a minute, Faith won't be home for a while still.  Right now you just want
+  to lay here in the warm afterglow of the orgasm from your first time having sex.
+<</nobr>>
+
+<<nobr>>
+  You can't believe you waited this long for this.  You could have been doing this for months!  Why did you ever let Faith and
+  Pastor Mark convince you this was wrong.  Nothing has ever felt more right to you.
+<</nobr>>
+
+<<nobr>>
+  As soon as she gets home, you'll let her know you won't need their 'help' any more.  Though you should probably get up and clean
+  up first.  Faith is going probably going to know why you've changed your mind.  But it'll be better that she doesn't see you
+  naked with Barry's cum leaking out of you, and remove any doubt.
+<</nobr>>
+
+<<nobr>>
+  Once that unpleasantness is over with, you can start looking forward to Valentine’s Day.  You had planned on just staying home
+  or maybe going to some thing boring thing with Faith.  But now you are going to be sure to something that includes you getting
+  fucked again.
+<</nobr>>
+
+<<nobr>>
+  <<set $tempNeedCock to 1>>
+  Barry's plans didn't seem to involve any specific girl, just whoever he ended up with that day.  He'd probably be more than
+  happy it be you that [[ends up in his room|Part11FWBBarry]] on Valentine's Day.  But maybe you'd like to see what a different
+  cock is like.  You know there's a [[single's night|Part11SinglesNight]] at a club near campus, surely you can meet a guy there.
+<</nobr>>
+  
+::Part11BarryMinistryDildoShame
+<<nobr>>
+  <<set $tempShame to 1>>
+  <h1>Back in your room</h1>
+  <<set setup.addInventory('sex toys', 'lace bondage set')>>
+  <<set setup.addInventory('sex toys', 'pink dildo')>>
+  You run back to your room and close the door.  At first you are horribly embarrassed by being caught.  But the more you think about
+  Barry having seen you like that, topless and playing with your breast with one hand and fucking yourself with a dildo with the other,
+  the more you are just getting turned on by it.  You decide to continue where you left off before you do something really crazy, like
+  [[heading back into Barry's room|Part11BarryMinistryDildo2]].
+<</nobr>>
+
+<<nobr>>
+  The collar and cuffs are getting in the way, plus they'd be hard to explain if Faith returned, so you take them off and hide them away.
+  You continue with the fantasy though.  You can use the dildo, but not your hands.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part11/Barry6.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  You fuck yourself with the dildo.  First imagining you are the slave girl in the mage's tower still.  It feels so good, but you can't
+  quite get off.  You know a single stroke on your clit would probably put you over the top, but the magic is too strong.
+<</nobr>>
+
+<<nobr>>
+  But then your fantasy shifts to what might have happened if you'd stayed in or returned to Barry's room.  Barry probably would have
+  taken the dildo from your hand and tossed it across the room.  He then would have replaced it inside you with something warmer, harder,
+  and better - his cock.
+<</nobr>>
+
+<<nobr>>
+  You imagine him keeping you right on the edge until he's about to cum.  Then he starts stroking your clit while he fucks you.  A moment
+  later you explode with an orgasm.  You imagine Barry groaning and then filling you with his warm cum just as you do.
+<</nobr>>
+
+<<nobr>>
+  You hide the dildo away, hoping Faith doesn't stumble upon it or the lacy set either.  Later, when you see Barry again your face is
+  red seeing the way he is looking at you.  You know he is picturing you naked, wantonly fucking yourself with a dildo.  "I enjoyed
+  your little show, though I would have liked to see more," he says.  "You can keep the toy and what you were wearing.  The show was
+  certainly worth that much. Besides, I still have plenty of things to play with for whoever I end up with on
+  [[Valentine's Day|Part11Single]]"
+<</nobr>>
+
+::Part11BarryAfterMinistry
+<<nobr>>
+  <h1>Valentine's Day</h1>
+  <img src="Part11/FWB1.jpg" hspace="10" vspace="10" height="800" align="left"/>
+  Not that long ago, you'd planned on just relaxing at home tonight.  But after your fun with Barry the other day,
+  you don't want to miss this perfect opportunity to get fucked again.
+  <<set $tempNeedCock to 1>>
+<</nobr>>
+
+<<nobr>>
+  You know you are going to do your best to get a cock inside you tonight.  The only question is whether
+  you want to hook up with [[Barry|Part11FWBBarry]] again, assuming he's available.  Or you could try to
+  [[find someone new|Part11Single]]
+<</nobr>>
+
 ::Part11Single <17000,10500>
 <<nobr>>
   <h1>Your Room</h1>
@@ -2746,6 +3211,10 @@ Kim: Oh, is that what I typed?
     You've missed out on too much fun already, you try to find something sexy to wear and [[head to the single-only event|Part11SinglesNight]].
   <<else>>
     You're still not quite sure whether you'd rather [[go there|Part11SinglesNight]], or [[just stay at home|Part11HomeAlone]].
+    <<if setup.isNeighbour('Barry')>>
+      Though part of you is tempted to see if [[Barry|Part11FWBBarry]] would like to tie you to his bed with those toys you'd found, and have
+      his way with you.
+    <</if>>
   <</if>>
 <</nobr>>
 
@@ -2765,7 +3234,7 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  <<if $CampusMinistry>>
+  <<if $CampusMinistry and !setup.isNeighbour("Barry")>>
     You try to ignore it and just relax in the tub.  Eventualy the water starts to get cold and you get up
     and dry off.  As you make you way back to your bed you wonder if you're the only one sleeping alone tonight.
     The faint snoring you hear from Faith's bed makes you think "Well, there's at least one more."
@@ -2785,6 +3254,7 @@ Kim: Oh, is that what I typed?
 <video src="Part11/Single3.mp4" autoplay loop muted height="640"></video>
 
 <<nobr>>
+  <<if $CampusMinistry and setup.isNeighbour("Barry")>>You use the dildo you'd found in Barry's closet.<</if>>
   The suction cup makes sure it doesn’t move as you first tease the dildo and then take more and more of it
   into your mouth.
   <<if setup.sexFemaleCount() > setup.sexMaleCount() >>
@@ -2797,7 +3267,9 @@ Kim: Oh, is that what I typed?
     <<else>>
       cute
     <</if>>
-    guy.  Soon all you can think about is how good it would feel when he fucked you.
+    guy.
+    <<if $CampusMinistry and setup.isNeighbour("Barry")>>Or maybe it's Barry's<</if>>
+    Soon all you can think about is how good it would feel when he fucked you.
   <</if>>
 <</nobr>>
 
@@ -2877,7 +3349,11 @@ Kim: Oh, is that what I typed?
     You were thinking this would be mainly about dancing and avoiding the romance.  But as more and more
     couples pair off and disappear - sometimes for the night, other times for just a few minutes - you
     realize that you were wrong.  You know you should
-    <<if $CampusMinistrySaves>>
+    <<if setup.isNeighbour("Barry")>>
+      go home before something happens, but your body wants this so much.  All it
+      would take would be a smile to one of the guys, and this need you've been feeling will finally
+      be answered.
+    <<elseif $CampusMinistrySaves>>
       <<set $CampusMinistrySaves -= 1>>
       [[go home|Part11HomeAlone]] before something happens, but your body wants this so much.  All it
       would take would be a smile to one of the guys, and this need you've been feeling will finally
@@ -2895,7 +3371,12 @@ Kim: Oh, is that what I typed?
 <</nobr>>
 
 <<nobr>>
-  There are plenty of [[girls|Part11SinglesGirl]] to choose from tonight.  Though there's a few [[guys|Part11SinglesGuy]] here as well.
+  <<if $tempNeedCock or setup.isNeighbour("Barry")>>
+    There are plenty of girls to choose from tonight, but you aren't interested in any of them, not tonight at least.
+    Tonight you want to be filled.  You need a cock, and you need it soon.  Thankfully there are a few [[guys|Part11SinglesGuy]] here as well.
+  <<else>>
+    There are plenty of [[girls|Part11SinglesGirl]] to choose from tonight.  Though there's a few [[guys|Part11SinglesGuy]] here as well.
+  <</if>>
 <</nobr>>
 
 ::Part11SinglesGirl <17800,10500>

@@ -240,6 +240,9 @@ setup.nextCycleWeek = function (forgetPill) {
 ::SexFunctions [script] <300,50>
 setup.addSex =  function (fuck) {
   State.variables.sex.push(fuck)
+  if (fuck.vaginal && State.variables.LoopholeVirgin) {
+    State.variables.LoopholeVirgin = undefined;
+  }
 }
 
 setup.addSexRepeat = function (repeatCount, fuck) {
@@ -707,6 +710,14 @@ setup.isFormerNeighbour = function (name) {
 
 setup.removeNeighbour = function (name) {
 	State.variables.neighbours = setup.removeItem(State.variables.neighbours, name)
+}
+
+setup.otherRoommate = function (name) {
+  if (State.variables.neighbours[0] == name) {
+    return State.variables.neighbours[1];
+  } else {
+    return State.variables.neighbours[0];
+  }
 }
 
 ::DatingFunctions [script] <400,50>

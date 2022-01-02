@@ -5230,8 +5230,51 @@ Plenty of it is spent back in your hotel room having even more fun with just you
   <<else>>
     He seems very nice, and you do find him attractive, and Faith clearly approves of the idea.
   <</if>>
-  You can tell him [[yes, you'd love to go on a date with him|Part12AndrewDate]], or
-  you can let him know you want to focus on school and aren't [[wanting to date anyone right now|Part12BackToClass]].
+  <<if setup.isNeighbour("Barry")>>
+    As you fantasize about what it would be like to be underneath him, you want to tell him 
+    [[yes, you'd love to go on a date with him|Part12AndrewDate]].  Though you know you wouldn't be able to wait to have sex,
+    so maybe it'd be better to tell him that you want to focus on school and aren't
+    <<if $LoopholeVirgin>>
+      [[wanting to date anyone right now|Part12AndrewLoophole]].
+    <<else>>
+      [[wanting to date anyone right now|Part12BackToClass]].
+    <</if>>
+  <<else>>
+    You can tell him [[yes, you'd love to go on a date with him|Part12AndrewDate]], or
+    you can let him know you want to focus on school and aren't [[wanting to date anyone right now|Part12BackToClass]].
+  <</if>>
+<</nobr>>
+
+::Part12AndrewLoophole
+<<nobr>>
+  <h1>A little fun with Andrew</h1>
+  "I'm not looking to date anyone right now", you tell Andrew.  His disappointed expression quickly changes though when you
+  add, "But that doesn't mean we can't have some fun."
+  <<set setup.addSexRepeat(4, {sex:"male", name:"Andrew"})>>
+<</nobr>>
+
+<<nobr>>
+  You head back to Andrew's apartment with him.  Andrew says he admires your decision to save that part of yourself for your
+  future husband, and he's more than happy to work fuck just your mouth and ass instead.  
+<</nobr>>
+
+<<nobr>>
+  <video src="Part12/Andrew14.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  <img src="Part12/Andrew15.jpg" hspace="10" vspace="10" height="400" align="left"/>
+<</nobr>>
+<<nobr>>
+  A bit later, as the two of you are recovering from your orgasms, he leans over and asks "Is it ok, if I eat you out, or is that
+  something you are saving too?"  You are straddling his face moments later.  After a while, when you see how hard his cock has
+  gotten from that, you lie back down and tell him to fuck your ass again.
+<</nobr>>
+
+<<nobr>>
+  Eventually your fun together ends.  You really aren't looking for a relationship right now.  You know you won't be able to stay
+  a virgin long if you started dating Andrew, or anyone else.  So you say goodbye, "I see you around at the next event." and
+  then [[head home|Part12BackToClass]].  
 <</nobr>>
 
 ::Part12AndrewDate <32600,11000>
@@ -5245,8 +5288,12 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 <</nobr>>
 
 <<nobr>>
-  As the evening gets later though, you start to wonder what you'll say if he invites you back to his place for the night.  You
-  realize [[you honestly don't know|Part12AndrewKiss]].
+  As the evening gets later though, you start to wonder what you'll say if he invites you back to his place for the night.
+  <<if setup.isNeighbour("Barry")>>
+    You already know [[you'll say "Yes"|Part12AndrewKiss]].  You've been thinking about what he'd feel like inside you all evening.
+  <<else>>
+    You realize [[you honestly don't know|Part12AndrewKiss]].
+  <</if>>
 <</nobr>>
 
 ::Part12AndrewKiss <32800,11000>
@@ -5279,8 +5326,13 @@ Plenty of it is spent back in your hotel room having even more fun with just you
   <<set $CampusMinistrySaves to 5>>
 <</nobr>>
 <<nobr>>
-  You realize that not very long ago, you wouldn't have been able to resist going back to his apartment with him.  Even now, your mind is flooded with
-  thoughts of doing just that.  But you decide it's best to wait for now.  You think he's decided the same thing.
+  <<if setup.isNeighbour("Barry")>>
+    You wanted him to invite you back to his apartment.  You wanted to wrap your legs around his waist while he fucked you.  But he didn't
+    ask.  And good girls aren't supposed to suggest something like that.  But you wish you had.
+  <<else>>
+    You realize that not very long ago, you wouldn't have been able to resist going back to his apartment with him.  Even now, your mind is flooded with
+    thoughts of doing just that.  But you decide it's best to wait for now.  You think he's decided the same thing.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -5295,7 +5347,7 @@ Plenty of it is spent back in your hotel room having even more fun with just you
   <img src="Part12/BackToClass.jpg" hspace="10" vspace="10" height="600"/>
 <</nobr>>
 <<nobr>>
-  <<if $AndrewPhoneNumber and !setup.areDating('Andrew')>>
+  <<if $AndrewPhoneNumber and !setup.areDating('Andrew') and !setup.haveFucked('Andrew')>>
     "I understand," Andrew says, trying to hide the disappointment in his voice.  "Still, if you'd like to hang out sometime as friends, just give me
     a call."
     <br><br>
