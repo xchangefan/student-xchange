@@ -1121,6 +1121,16 @@
         You are in a relationship with Eric.
       <</if>>
     <</if>>
+
+    <<if $Spouse == 'Nathan' or $Engaged == 'Nathan' or setup.areDating('Nathan')>>
+      <<if $Spouse == 'Nathan'>>
+        You are married to Nate.
+      <<elseif $Engaged == 'Nathan'>>
+        You are engaged to Nate and live together.
+      <<else>>
+        You are in a relationship with Nate.
+      <</if>>
+    <</if>>
     
     <<if $Spouse == 'Justin' or $Engaged == 'Justin' or setup.areDating('Justin')>>
       <<if $Spouse == 'Justin'>>
