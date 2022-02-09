@@ -598,6 +598,7 @@
 <<nobr>>
   <<set $children.push($tempBabyName[either(0,1)].shift())>>
   <<set $PlayerPregnant to 1>>
+  <<set $PlayerSideEffectPermanent to 1>>
   <<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
   Happily it doesn't take long before you are pregnant again.  You know much more what to expect during your pregnancy this time around, but you also have
   <<print $children[0].name>> to take care of too, which starts to be a challenge as you get further and further along.  But Andrew takes the last month of your
@@ -879,6 +880,7 @@
   <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
   <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal: true})>>
   <<set $PlayerPregnant to 1>>
+  <<set $PlayerSideEffectPermanent to 1>>
   <<set $tempBaby to $tempBabyName[either(0,1)].shift()>>
   <<set $tempBaby2 to $tempBabyName[either(0,1)].shift()>>
 <</nobr>>

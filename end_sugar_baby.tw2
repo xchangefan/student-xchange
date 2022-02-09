@@ -1,0 +1,356 @@
+::SugarBabyMedical
+<<nobr>>
+  <h1>Medical check before leaving campus</h1>
+  You decide to pay a visit to the clinic before you leave town.
+<</nobr>>
+<<nobr>>
+  <img src="PartP/Clinic1.jpg" hspace="10" vspace="10" height="300"><br>
+<</nobr>>
+<<nobr>>
+  <<if $AcademicProbationDenial>>
+    You need them to take you off this horrible denial setting so you can orgasm again!
+    <<if $PlayerPregnant>>
+      And you want to end your pregnancy.  With your new situation, you don't want a pregnancy complicating that.
+    <</if>>
+  <<elseif $PlayerPregnant>>
+    You want to end your pregnancy.  With your new situation, you don't want a pregnancy complicating that.
+  <<elseif $PlayerProtectionCondoms>>
+    You want to get on birth control pills.  Vince loved fucking you without a condom and cumming inside you, and
+    so did you.
+  <<elseif $PlayerProtectionWithdraw>>
+    You want to get on birth control pills.  Vince loved cumming inside you, and so did you.
+  <<else>>
+    You were due for a check-up, and you figure it be good to get it out of the way now since you don't know when, or if, you
+    are coming back.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $AcademicProbationDenial>>
+    <<unset $AcademicProbationDenial>>
+    <<set $AcademicProbationDenial to 1>>
+    <<set $AcademicProbationDenialFormer to "Vince">>
+    They can tell how eager you are to get your ability to orgasm back, so they start the exam with that.
+    "The dean emailed his approval already, so we can turn off the denial setting for you today," the technician
+    tells you.  You were hoping he was going to repeat the 'test' he performed when he'd disabled your ability to cum,
+    but he says it's not necessary.  "I'm sure you'll verify soon enough," he smiles and adds, "and will let us know if
+    there's an issue.  But for now, lets proceed with the rest of your exam.  The nurse should be in here in a moment."
+    <br><br>
+  <</if>>
+  <<if $PlayerPregnant>>
+    <<if $PregnancyWeek > 10>>
+      After the nurse confirms you want to terminate your pregnancy, she tells you it's too late for an abortion pill,
+      and that the doctor will have to perform an abortion.  You wait patiently, until he comes in.<br>
+      <img src="PartP/Clinic2.jpg" hspace="10" vspace="10" height="400"><br>
+      You suffer throught the procedure, wishing you'd done this sooner when you could have just taken a pill.  But
+      eventually the ordeal is over.
+    <<else>>
+      After the nurse confirms you want to terminate your pregnancy, she gives you a pill to take immediately, and then
+      another one to take tomorrow morning.<br>
+      <img src="PartP/Emergency.jpg" hspace="10" vspace="10" height="300"><br>
+      You take the pill and then wait for the rest of your examination.
+    <</if>>
+    <<if $PlayerAbortion>>
+      <<set $PlayerAbortion += 1>>
+    <<else>>
+      <<set $PlayerAbortion to 1>>
+    <</if>>
+    <<unset $PregnancyWeek>>
+    <<unset $PlayerPregnant>>
+    <<achievement>>childfree<</achievement>>
+  <<else>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - sugar baby', 0)>>
+    <<if $PregnancyCheck.isPregnant>>
+      <<set $PlayerPregnant to 1>>
+      <<set $PlayerSideEffectPermanent to 1>>
+      <<achievement>>pregnant<</achievement>>
+      <<if setup.pregnantFirstTime()>>
+        <<achievement>>firsttime<</achievement>>
+      <</if>>
+      The nurse comes back with the results of your pregnancy test, and informs you that you are pregnant.  You tell her
+      you want to terminate it.
+      <<if $PregnancyWeek > 10>>
+        She lets you know that you are actually $PregnancyWeek weeks along, and that it's too late for an abortion pill,
+        and that the doctor will have to perform an abortion.  You wait patiently, until he comes in.<br>
+        <img src="PartP/Clinic2.jpg" hspace="10" vspace="10" height="400"><br>
+        You suffer throught the procedure, wishing you'd done this sooner when you could have just taken a pill.  But
+        eventually the ordeal is over.
+      <<else>>
+        After the nurse confirms you want to terminate your pregnancy, she gives you a pill to take immediately, and then
+        another one to take tomorrow morning.<br>
+        <img src="PartP/Emergency.jpg" hspace="10" vspace="10" height="300"><br>
+        You take the pill and then wait for the rest of your examination.
+      <</if>>
+      <<if $PlayerAbortion>>
+        <<set $PlayerAbortion += 1>>
+      <<else>>
+        <<set $PlayerAbortion to 1>>
+      <</if>>
+      <<achievement>>childfree<</achievement>>
+      <<unset $PregnancyWeek>>
+      <<unset $PlayerPregnant>>
+      <<unset $PregnancyCheck>>
+    <<elseif !$PlayerSideEffectPermanent>>
+      <<set $PlayerSideEffectPermanent to 1>>
+      <<achievement>>girlpower<</achievement>>
+      <img src="PartP/PregTest1.jpg" hspace="10" vspace="10" height="300"><br>
+      After your pregnancy test comes back negative, you let the nurse know you want them to make your change permanent.  You aren't sure
+      if your arrangement with Vince is going to be permanent yet, but you know you want your change to be.  There's no way you'd ever
+      want to go back to your old body now.  After filling out a few forms, they give you an injection and congratulate you on your
+      newly permanent body.
+    <<else>>
+      <img src="PartP/PregTest1.jpg" hspace="10" vspace="10" height="300"><br>
+      The nurse informs you that your pregnancy test was negative.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionCondoms or $PlayerProtectionWithdraw>>
+    <<if $PlayerProtectionFertile>>
+      You want to get on birth control pills, but the doctor tells you that there are still no options for you other
+      than condoms due to your side effect.  You resign yourself to the fact that you'll be visiting the abortion clinic
+      in your new city often in the future.  You aren't planning on making Vince use a condom, or pull out every time.
+      <<unset $PlayerProtectionCondoms>>
+      <<unset $PlayerProtectionWithdraw>>
+      <<set $PlayerProtectionNone to 1>>
+    <<else>>
+      You let the doctor know you want to get on birth control pills.  He gives you a box for your first month, and
+      a prescription to take with you.
+      <<unset $PlayerProtectionCondoms>>
+      <<unset $PlayerProtectionWithdraw>>
+      <<set $PlayerProtectionPill to 1>>
+    <</if>>
+  <</if>>
+  Everything else with your visit goes great, and you go back to finish packing for your [[trip to see Vince|SugarBaby]]
+<</nobr>>
+
+::SugarBaby
+<<nobr>>
+  <h1>At the hotel with Vince</h1>
+  <video src="PartX/SugarBaby1.mp4" autoplay loop muted height="500"></video>
+  <<set setup.addSex({sex:"male", name:"Vince"})>>
+  <<set setup.addSex({sex:"male", name:"Vince", vaginal:true})>>
+  <<set setup.addSex({sex:"male", name:"Vince"})>>
+  <<set setup.addSex({sex:"male", name:"Vince", vaginal:true})>>
+<</nobr>>
+
+<<nobr>>
+  Vince meets you at your hotel room your first night there.  You have a great time with him,
+  <<if $AcademicProbationDenialFormer == "Vince">>
+    especially since you can orgasm now too.
+  <<else>>
+    and he clearly enjoys it as well.
+  <</if>>
+  You and him fuck, and he lies down next to you for a while afterwards.  "I'm sorry I can't stay longer.  My wife
+  is expecting me back at the house soon.  Let's meet up for lunch tomorrow."
+<</nobr>>
+
+<<nobr>>
+  He kisses you and then heads home.  You [[fall asleep|SugarBaby2]] in the comfortable bed not long afterwards.
+<</nobr>>
+
+::SugarBaby2
+<<nobr>>
+  <h1>Cleaning up</h1>>
+  <video src="PartX/SugarBaby3.mp4" autoplay loop muted height="550"></video>
+<</nobr>>
+
+<<nobr>>
+  The next morning you can feel the evidence of last night's fun leaking out of you when you get out of bed.  You head
+  to the shower and clean up and get ready for your [[lunch visit with Vince|SugarBaby3]] later.
+<</nobr>>
+
+::SugarBaby3
+<<nobr>>
+  <h1>Getting something sweet with your sugar daddy</h1>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/SugarBaby2.webm" autoplay loop muted height="600"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  He said "dress casual", and it was a nice, warm day.  So you wore something you hoped would keep Vince's attention during lunch.
+  You did have another top in your purse, to wear over your bikini top, just in case Vince wanted to go somewhere where your current
+  top wasn't acceptable. But it turned out to not be necessary.
+<</nobr>>
+
+<<nobr>>
+  He ended up getting you both a table on the patio in front of the restaurant.  You think he was trying to show off the pretty young
+  woman he was with.  You wonder how many of the passers-by realized he was your lover, and how many just though you were his daughter.
+  You expect even more thought you were his daughter when he took you for ice cream after your meal.
+<</nobr>>
+
+<<nobr>>
+  You expect the ones that had guess you were his daughter were rather shocked with the passionate kiss you too had before he had to
+  head back to work.  "Oh, here's some cash for you to do a little shopping and exporing the city," he says handing you some hundred
+  dollar bills.  I wish I could should you around, but I don't have time.  Hopefully I'll be able to
+  [[see you again later in the week|SugarBaby4]]."
+<</nobr>>
+
+::SugarBaby4
+<<nobr>>
+  <h1>Showing Vince some of your purchases</h1>
+  <img src="PartX/SugarBaby8.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  A few days later Vince is able to stop by and see you again at your hotel room.  You give him a little fashion show, showing off
+  some of the purchases you made with the spending money he gave you.
+<</nobr>>
+
+<<nobr>>
+  You make it less than half way through your purchases though before he has something else in mind.
+<</nobr>>
+
+<<nobr>>
+  After a few hours of passion, he kisses you goodbye, leaves you some cash and saysm "here's your allowance for the month."  You'd only been
+  scheduled to be here for a couple weeks.  You don't know if he's meaning to be generous, or is just hoping you plan on staying on after
+  the initial weeks.
+<</nobr>>
+
+<<nobr>>
+  He visits you several times each week.  They don't all involve sex, sometimes he just wants to talk.  Though, usually they do end in sex.
+  They sometimes end with him giving you extra "spending money".  He's also taken you shopping a few times as well, once to a few
+  regular stores, and then another time to an adults-only store for some "play clothes" and toys.
+<</nobr>>
+
+<<nobr>>
+  When it's getting near the end of your planned stay he talks with you about how much he'd like you to stay indefinitely.  He said he'll
+  help you get settled into [[an apartment|SugarBaby5]] instead of just a hotel room, help you get a bank account opened in town, and set up
+  an automatic deposit for your monthly allowance.  He even offers to pay for your tuition if you want to transfer to the local college
+  at the start of next semester.  You've already decided that last part isn't going to be necessary.
+<</nobr>>
+
+::SugarBaby5
+<<nobr>>
+  <h1>At your new apartment</h1>
+  <video src="PartX/SugarBaby4.webm" autoplay loop muted height="500"></video>
+  <<unset $Roommate>>
+  <<set $JobStripperOld to 1>>
+  <<unset $JobStripper>>
+  <<unset $JobStripperMain>>
+  <<unset $Major>>
+  <<unset $student>>
+  <<set $Dropout to "Sugar Baby">>
+<</nobr>>
+<<nobr>>
+  Vince finds you a beautiful apartment.  It has a nice view, it's close to his work, and he's paying the rent! What more could you want?
+<</nobr>>
+<<nobr>>
+  <img src="PartX/SugarBaby9.jpg" hspace="10" vspace="10" height="250" align="right"> 
+<</nobr>>
+<<nobr>>
+  He has the afternoon off and he's planning to take you out to buy some furniture, but first the two of you decide to celebrate the new
+  apartment.  Afterwards you wonder if any of your neighbors watched the show you just gave them through all the windows in your living room.
+<</nobr>>
+
+<<nobr>>
+  You don't even want to think about how much the furniture he let you pick out cost, the store didn't even have price tags on anything.
+  But they'll be delivering all of your new furniture tomorrow, even the items from the "private showroom" in back that Vince picked out
+  for the second bedroom in your apartment.  The room you and him are calling your "play room".
+<</nobr>>
+
+<<nobr>>
+  The next morning you check out of the hotel and head to your new apartment to wait for the furniture to be delivered.  While you wait
+  you take care of some of tasks you need to take care of for your move.
+<</nobr>>
+
+<<nobr>>
+  You arrange things with the movers Vince hired, to so they can pick up your things from your old room on campus.  You withdraw officially
+  from the university.  Vince arranged things so you'd get all "Excused" grades for this semester, even though it's technically passed the
+  deadline.  Though that doesn't really matter much, since you don't have any intentions of enrolling somewhere new next semester.  You also
+  let the strip club know not to schedule you anymore.  And of course, you update everyone with your new address.
+  <<if $PlayerItemNerdKeyStripper>>
+    <<unset $PlayerItemNerdKeyStripper>>
+    <br><br>
+    You also mail Peter's chastity key to Candy, your friend at the strip club.  You'd already talked to her about taking over as his keyholder.
+    You haven't mentioned it to him, since he doesn't get a say in the matter.  But you're sure he won't mind, especially after he hasn't seen
+    you, or his cock, in weeks.  You let Candy know that Peter will be feeling extra horny, and extra generous by now, and even more so once he
+    knows she has his key.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  With your phone calls and emails done, you play on your phone a bit while you wait for the furniture.  Though your mind keeps drifting off
+  to thoughts of [[all the time you'll be spending with Vince|SugarBaby6]] now that you'll be here permanently.
+<</nobr>>
+
+
+::SugarBaby6
+<<nobr>>
+  <h1>Different dates with Vince</h1>
+  <video src="PartX/SugarBaby5.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/SugarBaby6.webm" autoplay loop muted height="500"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  Not every date with Vince is the same.  Sometimes he'll take you a dance club, but only after he has you slide the remote-controlled
+  vibrator inside you.  Then, when you are in the crowded club he starts playing with the vibrations.  And when he takes you out onto
+  the dance floor, he sets it to sync up with the music.  Of course when you start to cum, he always wraps his arms around you so you
+  don't fall over on the dance floor.
+<</nobr>>
+
+<<nobr>>
+  Other times Vince will take you out to a party with some of his friends.  The all have someone along too, their mistress or maybe a
+  high-end call girl.  This time he's decided to have a little more fun, and has had you wear the hidden vibrator to the party on his
+  friend's yacht.
+<</nobr>>
+
+<<nobr>>
+  You struggle to maintain your composure as Vince plays with the settings.  You worry it'll soon be obvious
+  when you orgasm.  But then as Vince starts handing his phone for his friends to take control of your vibrator's settings, you realize
+  that they all already know what you are hiding under your dress.
+<</nobr>>
+
+<<nobr>>
+  As thery take turns making you orgasm in front of everyone, they all say how much the love how much playing with the toy inside you is.
+  Most of them plan on buying one for their mistress.  A few say they might even get one for their wife.
+<</nobr>>
+
+<<nobr>>
+  Of course, as much fun as parties and clubs can be, most of your time together is with just the two of you
+  [[back at your apartment|SugarBaby7]].  Any you love that too.
+<</nobr>>
+
+::SugarBaby7
+<<nobr>>
+  <h1>Life as a sugar baby</h1>
+  <video src="PartX/SugarBaby7.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  You don't have any illusions that Vince is going to leave his wife some day.  But you also aren't worried about her finding out about
+  you.  He said she doesn't care as long as he keeps it discreet.
+<</nobr>>
+
+<<nobr>>
+  Hopefully your arrangement with Vince will continue for many years.  You make sure to invest some of your "allowance" though, to make
+  sure if things ever do end, you'll still be ok.
+<</nobr>>
+
+<<nobr>>
+  Though, in the back of your mind, there's always another 'retirement plan' available to you.  All it would take is to
+  <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+    visit the nearest X-Change office, and have them turn off your implant's birth control.
+  <<elseif $PlayerProtectionPill>>
+    stop taking your birth control pills.
+  <<else>>
+    not visit the clinic the next time you get pregnant.
+  <</if>>
+  Once he knows his baby is growing inside you, you can see if Vince wants to be a father again.  If not, then he'll likely be willing
+  to pay you a lot of money to get an abortion, enough that you'll never need to work again.  And if he does, even better.  You'll have
+  a baby with a huge child support payment coming every month for the next 18 years.
+<</nobr>>
+
+<<nobr>>
+  But for now, you just want to enjoy your time together.
+<</nobr>>
+
+[[The End|GameOverSugarBaby]].
+
+::GameOverSugarBaby
+<h1><<print "Game Over - Sugar Baby">></h1>
+<img src="PartX/GameOver15.jpg" hspace="10" vspace="10" height="600">
+<<achievement>>sugarBaby<</achievement>>

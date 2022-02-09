@@ -467,6 +467,7 @@
     is in a better place.
   <<elseif setup.areDating('Andrew')>>
     <<set $PlayerPregnant to 1>>
+    <<set $PlayerSideEffectPermanent to 1>>
     You and $dating[0] have talked about a baby.  The time might not be perfect with all the changes happening with leaving school,
     but no time is ever perfect.  You know the two of you will make it work.
     <br><br>
@@ -483,6 +484,7 @@
     You let the doctor know you want to [[end the pregnancy|FlunkOutAbort]].  Maybe later, when your life is in a better place.
   <<elseif setup.haveFuckedVaginal('Justin')>>
     <<set $PlayerPregnant to 1>>
+    <<set $PlayerSideEffectPermanent to 1>>
     You've been thinking a lot about Justin since he went off to boot camp.  And talking a lot once he left there and went to
     his job training.  It hadn't been serious between you and him when you and him conceived this baby.  But now that it more serious,
     you are thrilled to have his baby inside you.  You know your son or daughter is going to be so proud of their father.
@@ -496,6 +498,7 @@
     Do you want to tell the doctor that you are
     <<link "keeping the baby">>
       <<set $PlayerPregnant to 1>>
+      <<set $PlayerSideEffectPermanent to 1>>
       <<if $dating.length>>
         <<goto [[FlunkOutDating]]>>
       <<else>>
@@ -1543,6 +1546,7 @@
   how much sex the two of you are having now, it didn't take 'nature' very long.  You are thrilled when you find out the news, and don't
   waste any time [[letting Andrew know|FlunkOutDatingAndrew]].  You wait a bit before telling everyone else though, just to be sure.
   <<set $PlayerPregnant to 1>>
+  <<set $PlayerSideEffectPermanent to 1>>
 <</nobr>>
 
 ::FlunkOutAndrewEngaged

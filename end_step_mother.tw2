@@ -308,6 +308,7 @@
     <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Dan', 0)>>
     <<if $PregnancyCheck.isPregnant>>
       <<set $PlayerPregnant to 1>>
+      <<set $PlayerSideEffectPermanent to 1>>
       <<set $PregnantSummer to 1>>
       <<if !$tempCelebrate>>
         <<set $tempCelebrate to 'pregnant'>>
@@ -979,6 +980,7 @@
   <<set setup.addSex({sex: 'male', name:'Dan'})>>
   <<set $PregnancyCheck = setup.overrideForcePregnancy('home test - Dan')>>
   <<set $PlayerPregnant to 1>>
+  <<set $PlayerSideEffectPermanent to 1>>
 <</nobr>>
 <<nobr>>
   With all the excitement of your cruise and your wedding next week, you almost don't notice that you're two weeks overdue for your period.  A quick trip to the

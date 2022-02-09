@@ -245,8 +245,14 @@
 <</nobr>>
 
 <<nobr>>
-  They do tests on you and make sure you are ok.  You tell them not to even tell you if you are pregnant or not, you don't want to be.
-  You just want them to give you the morning after pill, an abortion pill, or whatever it takes to be sure.
+  They do tests on you and make sure you are ok.
+  <<if $PlayerPregnant>>
+    You also tell them you want an abortion pill.  You don't want to be trying to walk the street months from now
+    when you are eight or nine months pregnant.
+  <<else>>
+    You tell them not to even tell you if you are pregnant or not, you don't want to be. You just want them to
+    give you the morning after pill, an abortion pill, or whatever it takes to be sure.
+  <</if>>
   <<if $PlayerProtectionPerfect>>
     You know your implant's birth control is supposed to prevent it, but nothing is ever 100%, and you don't want to risk it.
   <</if>>
@@ -3633,7 +3639,7 @@ TODO Cabin in the woods, some redneck wedding or something unpleasant but not ki
   So you [[head back to your cell|MensPrison]]
 <</nobr>>
 
-<<achievement>>maleagain<</achievement>>
+<<achievement>>maleAgain<</achievement>>
 
 ::MensPrison
 <<nobr>>

@@ -110,6 +110,7 @@
   <<if !$PlayerPregnant>>
     <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Justin wedding', 0)>>
     <<if $PregnancyCheck.isPregnant>>
+      <<set $PlayerSideEffectPermanent to 1>>
       <<set $tempJustNowPregnant to 1>>
       <<set $PlayerPregnant to 1>>
       <<achievement>>pregnant<</achievement>>
@@ -288,6 +289,7 @@
   <img src="PartP/PregTest7.jpg" hspace="10" vspace="10" height="450">
   <<set $PregnancyCheck = setup.overrideForcePregnancy('medical test - Justin')>>
   <<set $PlayerPregnant to 1>>
+  <<set $PlayerSideEffectPermanent to 1>>
 <</nobr>>
 <<nobr>>
   You take a home test when you realize you haven't had a period since you've arrived on base.  And it confirms what you
