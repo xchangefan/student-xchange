@@ -1284,6 +1284,7 @@
   <<if !$PlayerSideEffectPermanent>>
     <<set $PregnancyCheck = setup.checkForNewPregnancy('home pregnancy test - witness protection', 0)>>
   <</if>>
+  <<set $
 <</nobr>>
 <<nobr>>
   The witness relocation person comes by the next day.  He tells you, "normally, in a case of this level, we have a relatively
@@ -1328,6 +1329,8 @@
     in your current face.
   <</if>>
   <<if $PlayerSideEffectPermanent>>
+    <<set $tempNewNames to setup.getPopularNames().filter((name)=>{return name!==$playerName})>>
+    <<set $playerName to setup.pickRandomName($tempNewNames)>>
     <br><br>
     For the other options, we could help you get started somewhere new.  First and last months rent, security deposit, a little
     cash, and helping you find a job.
@@ -1335,6 +1338,8 @@
     We can either do it at a [[city several states away|WitnessCity]], or we could provide you with
     a [[rural cabin|WitnessCabin]] we have.  Don't worry, the cabin has been completely and professionally cleaned since it's
     previous use.
+    <br><br>
+    Of course, either way we'll set you up with documentation for your new name, $playerName.
   <</if>>
 <</nobr>>
 
@@ -1412,7 +1417,240 @@
 <</nobr>>
 
 ::WitnessCabin
-TODO Cabin in the woods, some redneck wedding or something unpleasant but not killed
+<<nobr>>
+  <h1>Your new home</h1>
+  <img src="PartX/Cabin1.jpg" align="left" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  It's not that big, and it's not that fancy.  But it sits on dozens of acres of land in the middle of nowhere.  And they
+  assure you that it was thoroughly cleaned and tested after they seized it from its previous owners.  So you don't have
+  to worry about any residue from their illegal activities.
+<</nobr>>
+
+<<nobr>>
+  It's a big change from your life in the city, or you life before that at school or back home.  But you figured a change is what
+  you need.  There's too much temptation for you in a city, and you worry you'd fall back into your old habits and ended up with
+  the wrong sort of people.
+<</nobr>>
+
+<<nobr>>
+  And you are also much less likely to ever be found by the gang out here in the wilderness.
+<</nobr>>
+
+<<nobr>>
+  You are hoping to [[meet some of your neighbors|WitnessCabin2]] soon though.  You've been here a few weeks, with no one to talk to
+  except your coworkers from the remote job the witness people set you up with.  You've quickly started
+  to get pretty lonely out here, and very horny.
+  <<if $PlayerSideEffectMasturbationBlock>>
+    Especially since you can't masturbate.  If you don't get fucked soon, you think you might lose your mind.
+  <</if>>
+<</nobr>>
+
+::WitnessCabin2
+<<nobr>>
+  <h1>Meeting your neighbor Emmett</h1>
+  <img src="PartX/Cabin2.gif" hspace="10" vspace="10" height="500" align="left">
+  <<set setup.addSex({sex:"male", name:"Emmett"})>>
+  <<set setup.addSex({sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  You are sitting on your porch sipping coffee and enjoying the sounds of the woods one afternoon, when a handsome man steps out of the woods
+  and starts walking across your yard.  You are turned on as soon as you see him.  Though when you spot the rifle he's carrying you get a
+  bit nervous.
+<</nobr>>
+
+<<nobr>>
+  "Oh,  Hello.  Sorry for cutting through your property.  I thought this place was abandoned," he says when he sees you.
+<</nobr>>
+
+<<nobr>>
+  After you introduce yourselves, he explains that his farm borders your woods.  Him and his friends have been hunting here during deer
+  season the past few years.
+<</nobr>>
+
+<<nobr>>
+  They've already set up camp, but he offers to leave if you don't want them hunting on your property now that you live here.  He also
+  offers to pay you for letting them hunt here this week.
+<</nobr>>
+
+<<nobr>>
+  "Sure you guys can hunt here, and you don't need to pay me or anything," you tell him.  When you notice he's not wearing a wedding ring,
+  you add, "Though it is pretty lonely out here.  Maybe, if you want, you could help a girl out before you join your friends."  Then you add,
+  "Unless you have girlfriend or something."
+<</nobr>>
+
+<<nobr>>
+  "I'd be happy to help, ma'am," he says, smiling.  "No girlfriend currently.  And besides, we have a rule: 'What happens at deer camp, stays
+  at deer camp.'"
+<</nobr>>
+
+<<nobr>>
+  His cock is already hard when you wrap your lips around it.  As much as you want to taste his cum, you need his cock somewhere else
+  right now, so you don't suck it too long.  Instead he lifts you up and lowers you onto his cock.  You cum with your back against a
+  tree and your legs wrapped around his waist.  A moment later he moans into your ear as you feel his warm cum fill you.  God, you
+  missed that feeling.
+<</nobr>>
+
+<<nobr>>
+  "Feel free to stop this week by whenever you're not hunting," you tell him.
+<</nobr>>
+
+<<nobr>>
+  "I certainly will," he says, smiling again.  Then he says, "Or, if you want, you can [[join me a deer camp|WitnessCabin3]].  Normally
+  there's no girls at camp.  But since it's your property, I'm sure the guys will make an exception.  I'm sure they'd happy to meet you."
+<</nobr>>
+
+::WitnessCabin3
+<<nobr>>
+  <h1>Joining the guys at deer camp</h1>
+  When you get to their camp, Emmett introduces you and explains that it's your property, but that you are letting them hunt here still.
+  They are all very grateful, and offer you a beer.  You sit down around the campfire and try to get to know them, especially Emmett.
+  <<set setup.addSexRepeat(6, {sex:"male", anon:"Deer Hunter", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", name:"Emmett"})>>
+  <<set setup.addSex({sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+
+<<nobr>>
+  As they are showing you around the camp, you notice a bunch of rope on one of the tables.  When you ask what it's for, one of the
+  hunters explains that it's for stringing up a deer so they can field dress it.  When you make a disappointed noise, Emmett suggests,
+  "Well, I can think of something else we can do with it if that's what you were hoping for, $playerName."
+<</nobr>>
+<<nobr>>
+  <img src="PartX/Cabin3.gif" hspace="10" vspace="10" height="500">
+<</nobr>>
+
+<<nobr>>
+  After you strip down, Emmett strings you up on one of the stands the made a previous year.  The guys then takes turn fucking you.
+  When they are all done, they leave you there a bit longer, letting some of the cum you've been filled with leak out.  Finally,
+  Emmett comes over an unties you.  It's nice and warm by the fire, so you don't bother putting your clothes back on just yet.
+<</nobr>>
+
+<<nobr>>
+  When it's time for bed, Emmett offers to walk you back to your house, since you don't have a flashlight.  You ask if you can
+  [[sleep in his tent|WitnessCabin4]] instead.  He happily agrees.
+<</nobr>>
+
+::WitnessCabin4
+<<nobr>>
+  <h1>Waking up with Emmett</h1>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/Cabin4.mp4" autoplay loop muted height="400"></video><br>
+  </div>
+  The next morning, you wake up next to Emmett.  You are expecting there to be noise from the other hunters getting ready, but
+  they seem to have all left already.
+  <<set setup.addSexRepeat(10, {sex:"male", name:"Emmett"})>>
+  <<set setup.addSexRepeat(10, {sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSexRepeat(50, {sex:"male", anon:"Deer Hunter", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+
+<<nobr>>
+  "They woke up early," Emmett explains.  "I decided I had all week to hunt, so I could get a late start this morning, and spend
+  a bit more time with you."  You do your best to let him know what a good decision that was.
+<</nobr>>
+
+<<nobr>>
+  After you and him are finished you tell him, "Last night was so much fun," you tell him.  "Especially my time with you, but
+  being the camp's fuck toy was so hot too.
+<</nobr>>
+
+<<nobr>>
+  "I can head back to my cabin when you are ready to go hunt," you tell him.  "But I can also come back by this evening for
+  some more fun, if you and your friends want that," you offer.
+<</nobr>>
+
+<<nobr>>
+  "That sounds great," he says.  "I'm sure the guys will be thrilled.  An I know I look forward to
+  [[spending more time with you|WitnessCabin5]] too."
+<</nobr>>
+
+::WitnessCabin5
+<<nobr>>
+  <h1>Four-wheeling with Emmett</h1>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/Cabin5.mp4" autoplay loop muted height="400"></video><br>
+  </div>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett"})>>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.startDating("Emmett")>>
+  After deer season ended, you and Emmett started dating.  You thought it might be a bit awkward around his friends, considering they
+  all took turns fucking you every night for a week.  But they take their 'What happens at deer camp, stays at deer camp' rule seriously,
+  and don't mention it at all.  Especially not when their wife or girlfriend are around.
+<</nobr>>
+
+<<nobr>>
+  And thankfully, Emmett doesn't seem to think any less of you because of it either.  He just seems to enjoy spending time with you, and
+  enjoys that you can be a little wild sometimes.
+<</nobr>>
+
+<<nobr>>
+  As the months go on, you are spending less and less time at your cabin, and most of your time at his farmhouse.  You've even started
+  helping with some of the morning chores around the farm when you are there.
+<</nobr>>
+
+<<nobr>>
+  One night, Emmett takes you to a nice restaurant in town.  Well, the only nice restaurant in town.  Before they bring out dessert, 
+  he gets down on one knee to propose!  You've been dating less than a year, but you would have said yes six months ago.  You
+  [[happily accept|WitnessCabin6]].
+<</nobr>>
+
+::WitnessCabin6
+<<nobr>>
+  <h1>Wilderness Wedding</h1>
+  <img src="PartX/Cabin6.jpg" align="left" hspace="10" vspace="10" height="500">
+  <<set $Spouse to "Emmett">>
+<</nobr>>
+<<nobr>>
+  Emmett and you decide to have a small wedding in the woods, instead of big formal wedding.  You have a wonderful time.  You, Emmett,
+  and his groomsmen share a few discrete laughs, knowing the fun you all had that first week, not far from this very spot.
+<</nobr>>
+
+<<nobr>>
+  Your bridesmades are mostly the wives of Emmett's friends, so you have to keep them out of the inside humor.
+<</nobr>>
+
+<<nobr>>
+  You weren't that attached to your new last name, so you are happy to take Emmett's, and can't wait to start your new life as
+  [[a married woman|WitnessCabin7]]
+<</nobr>>
+
+::WitnessCabin7
+<<nobr>>
+  <h1>Making lunch for your husband</h1>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/Cabin7.mp4" autoplay loop muted height="600"></video><br>
+  </div>
+<</nobr>>
+<<nobr>>
+  You quit your remote job after the wedding.  You'd much rather help Emmett around the farm, and 
+<</nobr>>
+
+TODO [[WitnessCabin8]]
+
+::WitnessCabin8
+<<nobr>>
+  <h1>TODO </h1>
+  <video src="PartX/Cabin8.mp4" autoplay loop muted height="400"></video><br>
+<</nobr>>
+
+TODO [[WitnessCabin9]]
+
+::WitnessCabin9
+<<nobr>>
+  <h1>TODO </h1>
+  <img src="PartX/Cabin9.gif" align="left" hspace="10" vspace="10" height="500">
+<</nobr>>
+
+TODO [[WitnessCabin10]]
+
+::WitnessCabin10
+<<nobr>>
+  <h1>TODO </h1>
+  <img src="PartX/Cabin10.jpg" align="left" hspace="10" vspace="10" height="500">
+<</nobr>>
+
+TODO Country Girl ending
+
+[[The End|GameOverCountry]].
 
 ::WitnessCity
 <<nobr>>
@@ -3937,3 +4175,8 @@ TODO Cabin in the woods, some redneck wedding or something unpleasant but not ki
 <img src="PartX/GameOver10.png" hspace="10" vspace="10" height="600">
 <<achievement>>snitch<</achievement>>
 <<set $Dead to "gang-execution">>
+
+::GameOverCountry
+<h1><<print "Game Over - Country Girl">></h1>
+<img src="PartX/GameOver1.jpg" hspace="10" vspace="10" height="600">
+<<achievement>>farmGirl<</achievement>>

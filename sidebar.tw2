@@ -1156,6 +1156,14 @@
       <</if>>
     <</if>>
 
+    <<if $Spouse == 'Emmett'>>
+      You are married to Emmett.
+    <<elseif $Engaged == 'Emmett'>>
+      You are engaged to Emmett, and spend most of your time at his house.
+    <<elseif setup.areDating('Emmett')>>
+      You are in a relationship with Emmett.
+    <</if>>
+
     <<if $dating.length == 0>> 
       <<if setup.isFWB('Josh')>><br>You are friends with benefits with Josh.<</if>>
       <<if setup.isFWB('Zack')>><br>You are friends with benefits with Zack.<</if>>
