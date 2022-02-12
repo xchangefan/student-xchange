@@ -1598,6 +1598,9 @@
   <h1>Wilderness Wedding</h1>
   <img src="PartX/Cabin6.jpg" align="left" hspace="10" vspace="10" height="500">
   <<set $Spouse to "Emmett">>
+  <<set setup.notPregnant("Pre-wedding pregnancy test")>>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett"})>>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
 <</nobr>>
 <<nobr>>
   Emmett and you decide to have a small wedding in the woods, instead of big formal wedding.  You have a wonderful time.  You, Emmett,
@@ -1617,38 +1620,215 @@
 <<nobr>>
   <h1>Making lunch for your husband</h1>
   <div style="float:left;padding:12px;">
-    <video src="PartX/Cabin7.mp4" autoplay loop muted height="600"></video><br>
+    <video src="PartX/Cabin7.mp4" autoplay loop muted height="650"></video><br>
   </div>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett"})>>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
 <</nobr>>
 <<nobr>>
-  You quit your remote job after the wedding.  You'd much rather help Emmett around the farm, and 
+  You quit your remote job after the wedding.  You never really enjoyed it that much.  You find helping Emmett around the farm
+  much more rewarding.
 <</nobr>>
 
-TODO [[WitnessCabin8]]
+<<nobr>>
+  You also love having the time to cook him something for lunch, so he doesn't just skip it or eat a bologna sandwich he made that morning,
+  like he used to do.  Having him come inside for lunch also means you and him can have a little fun after you're done eating.  
+<</nobr>>
+
+<<nobr>>
+  And when you are done with that, you can join him when he heads back out [[to the barn|WitnessCabin8]] to get back to work.  
+<</nobr>>
 
 ::WitnessCabin8
 <<nobr>>
-  <h1>TODO </h1>
-  <video src="PartX/Cabin8.mp4" autoplay loop muted height="400"></video><br>
+  <h1>"Working" in the barn</h1>
+  Well, usually you are working when you and Emmett are in the barn.  But sometimes, especially on the days you skip your lunchtime
+  fun, you two are too horny to wait to go back inside. By now, you've gotten used to the feel of your back laying on a pile of hay
+  as Emmett fucks you in the barn.
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett"})>>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
 <</nobr>>
 
-TODO [[WitnessCabin9]]
+<<nobr>>
+  <video src="PartX/Cabin8.mp4" autoplay loop muted height="500"></video><br>
+<</nobr>>
+<<nobr>>
+  It's only the two of you on the farm usually, so you don't even need to clean up right away when he cums on your face.  It's
+  more fun usually to get [[back to work|WitnessCabin9]] with him.  You love the little smile he makes every time he glances over
+  and sees the reminder on your face of your earlier fun.
+<</nobr>>
 
 ::WitnessCabin9
 <<nobr>>
-  <h1>TODO </h1>
-  <img src="PartX/Cabin9.gif" align="left" hspace="10" vspace="10" height="500">
+  <h1>
+    <<if $PlayerProtectionPerfect or $PlayerProtectionPerfect or $PlayerProtectionPill>>
+      "Breeding" you
+    <<else>>
+      Breeding you
+    <</if>>
+  </h1>
+  <img src="PartX/Cabin9.jpg" hspace="10" vspace="10" height="500" align="left" >
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett"})>>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - vet', 0)>>
+  <<if $PregnancyCheck.isPregnant>>
+    <<set $PlayerSideEffectPermanent to 1>>
+    <<set $PlayerPregnant to 1>>
+    <<achievement>>pregnant<</achievement>>
+  <</if>>
+  Sometimes though, Emmett has other plans.  Some days, especially if there's not much work for you that day, he cums inside you and
+  leaves you naked and bound in an empty "breeding stall" while he goes back to work.
 <</nobr>>
 
-TODO [[WitnessCabin10]]
+<<nobr>>
+  You were surprised one time, thinking you had forgotten the vet was coming by that day and worried he was in for a shock.  When the
+  vet pulls a <i>human</i> pregnancy test from his bag, you realized he already knew to expect you here.  
+<</nobr>>
+
+<<nobr>>
+  After all you've done before, you are still embarrassed as the vet makes you stay on your hands and knees and pee on the pregnancy test
+  right there in the stall.  After you do, he pats your rump and tells you, "that's a good girl" as he waits for the test results.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    "Congratulations!" he tells you, as he shows you the positive test.  "It looks like Emmett's efforts breeding you were successful.
+    I'll go let him know the good news so he can come celebrate with you.  Oh, and you should probably
+    [[follow up with an OB/GYN|WitnessCabin9Pregnant]], human pregnancies aren't exactly my specialty."
+    <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+      You guess your birth control wasn't effective enough.
+    <<elseif $PlayerProtectionCondoms>>
+      The news isn't really a huge surprise.  It's not like you an Emmett ever even use those condoms sitting in the night stand drawer.
+    <<elseif $PlayerProtectionWithdraw>>
+      The news isn't really a huge surprise.  You love the feeling of his cock twitching inside you to much to ever ask him to pull out.
+    <<elseif $PlayerProtectionTry>>
+      You can't be more thrilled with the news.
+    <</if>>
+    Hopefully Emmett is going to be as excited with the news as you are.
+  <<else>>
+    "Aww, no luck today," he tells you, as he shows you the negative test.  "It looks like Emmett will have to keep trying to breed you.
+    Though from the mess I saw he left in you, it looks like he's certainly trying."
+    <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
+      Quieter he adds, "Of course, he'll need to get that birth control implant turned off if he want's to do more than just pretend."
+    <<elseif $PlayerProtectionPill>>
+      Quieter he adds, "Of course, he'll need to take away those birth control pills you take if he wants to do more than just pretend."
+    <<else>>
+      Then he adds, "I'm sure if you two keep trying, he'll put a baby in you in no time."
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    After getting back from giving the news to Emmett, the
+  <<else>>
+    After that the
+  <</if>>
+  vet then goes heads to the next stall to start checking on the actual animals, the main reason he's here today.  Later you wonder
+  if Emmett paid extra for his little "check-up" on you, or if the vet gave him a discount today for including him in the fun.
+  <<if !$PlayerPregnant>>
+    <br><br>
+    <<include [[WitnessCabin9Next]]>>
+  <</if>>
+<</nobr>>
+
+::WitnessCabin9Pregnant
+<<nobr>>
+  <h1>Following up with an OB/GYN</h1>
+  <img src="PartP/PregTest1.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  As the vet instructed, you follow up with an actual human doctor who confirms the results of the home pregnancy test that the vet
+  had used in the barn.  
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+    You and Emmett hadn't exactly planned for this, but you are both thrilled with the news.
+  <<else>>
+    You and Emmett are both thrilled with the news.
+  <</if>>
+  It's still early in the pregnancy though, so you and him plan on waiting a bit before you start telling people about it.  Until
+  then, it's just work as normal on the farm.  Well, and the fun too.
+<</nobr>>
+
+<<nobr>>
+  <<include [[WitnessCabin9Next]]>>
+<</nobr>>
+
+::WitnessCabin9Next
+<<nobr>>
+  Though you spend nearly all the time at the farm with Emmett now, you still have the cabin and the land that goes with it.  It's
+  not suitable for farming, but it's still good for [[hunting on every year|WitnessCabin10]] still.
+<</nobr>>
 
 ::WitnessCabin10
 <<nobr>>
-  <h1>TODO </h1>
-  <img src="PartX/Cabin10.jpg" align="left" hspace="10" vspace="10" height="500">
+  <h1>Deer season again </h1>
+  <video src="Part14/Hunt20.mp4" autoplay loop muted height="500"></video><br>
+  <<set setup.addSexRepeat(24, {sex:"male", anon:"Deer Hunter", vaginal:true, noPullout:true, noCondom:true, repeat:true})>>
+  <<set setup.addSexRepeat(7, {sex:"male", name:"Emmett"})>>
+  <<set setup.addSexRepeat(7, {sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  It's deer season again!  Emmett's hunting buddies obviously already knew you'd let them use the land again this year, and every year.
+  But they were all pleasantly surprised when they found out you'd be joining them at camp this year again.
 <</nobr>>
 
-TODO Country Girl ending
+<<nobr>>
+  They had worried that now that you and Emmett were married, he might not want to share anymore, and they wouldn't have a camp whore
+  to entertain them in the evenings any more.
+  <<if $PlayerPregnant>>
+    <br><br>
+    You and Emmett haven't told them about the pregnancy.  You wonder if in a few weeks, when you start to show, if some of them will
+    think that maybe nature has an exception to the "What happens at deer camp..." rule.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You have a wonderfully fun week, but eventually it's back to [[normal life|WitnessCabin11]] again.
+<</nobr>>
+
+::WitnessCabin11
+<<nobr>>
+  <h1>Enjoying country life with Emmett</h1>
+  <img src="PartX/Cabin10.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett"})>>
+  <<set setup.addSexRepeat(100, {sex:"male", name:"Emmett", vaginal:true, noPullout:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  As you think back to all the changes your life has gone through the past few years, you are so happy that you ended up here.
+  Married to a wonderful man,
+  <<if $PlayerPregnant>>
+    enjoying life in the country, and with a baby on the way!
+  <<else>>
+    and enjoying life in the country.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    You know you and Emmett don't plan on stopping at just one.  You'll just need to be careful to time things right so the next
+    one doesn't end up with a mystery father from deer camp.  Or perhaps time things just right so that they do.
+  <<elseif $PlayerProtectionTry>>
+    Hopefully you and Emmett will successfully "breed" you soon.  Or maybe a few week ago in deer camp did the trick.
+  <<elseif $PlayerProtectionNone or $PlayerProtectionCondoms or $PlayerProtectionWithdraw>>
+    Maybe Emmett will successfully "breed" you soon.  Or maybe a few week ago in deer camp, him or one of his buddies already did.
+  <<else>>
+    You and Emmett think you probably want kids eventually.
+    <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+      You'll eventually need to get your birth control turned off whenever you and him decide the time is right.
+    <</if>>
+    You'll just need to be careful to time things right so the baby doesn't end up with a mystery father from deer camp.  Or
+    perhaps time things just right so that they do.
+  <</if>>
+  Emmett already has said if that were to happen, he'd never even test to see who the father was.  In his mind the baby would always
+  be his and yours.  But you know his hunting buddies would always wonder if were theirs though.
+<</nobr>>
+
+<<nobr>>
+  You wonder what the farm, and you life will be like a decade or so down the road, with a bunch of kids running around as well.
+<</nobr>>
 
 [[The End|GameOverCountry]].
 
@@ -4178,5 +4358,5 @@ TODO Country Girl ending
 
 ::GameOverCountry
 <h1><<print "Game Over - Country Girl">></h1>
-<img src="PartX/GameOver1.jpg" hspace="10" vspace="10" height="600">
+<<if $PlayerPregnant>><img src="PartX/GameOver16.jpg" hspace="10" vspace="10" height="600"><<else>><img src="PartX/GameOver1.jpg" hspace="10" vspace="10" height="600"><</if>>
 <<achievement>>farmGirl<</achievement>>
