@@ -928,9 +928,16 @@
   <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
     And periods wouldn't be a concern either, since your birth control prevents yours.
   <<elseif $PlayerProtectionFertile>>
-    Periods would be a problem too, since normal birth control pills won't work on you.  But I found out there's another pill that would help.  It won't affect
-    your fertility, not that yo but it will make you're periods very light.  You should be able to manage them without even needing me to unlock it.
+    <<set $PlayerProtectionPeriodPill to 1>>
+    Periods would be a problem too, since normal birth control pills won't work on you.  But I found out there's another pill that would help.
+    It won't affect your fertility, not that you get fucked by guys that often anyway, but it will make you're periods very light.  You should
+    be able to manage them without even needing me to unlock it.
   <<else>>
+    <<unset $PlayerProtectionCondoms>>
+    <<unset $PlayerProtectionWithdraw>>
+    <<unset $PlayerProtectionNone>>
+    <<unset $PlayerProtectionTry>>
+    <<set $PlayerProtectionPill to 1>>
     Of course, you'll need to start on that birth control pill they'd mentioned that stops your periods.
   <</if>>
 <</nobr>>
@@ -1120,7 +1127,7 @@
 <<nobr>>
   <<if $AcademicProbationDenial>>
     "I read about something called 'Encouragement' mode.  It would help keep you motivated while you attend to me," Kate says as she pushes your head down
-    between her legs.
+    between her legs.  "Of course it won't work for you right now, but imagine how fun it will be when you are off probation."
     <br><br>
     "It'd keep you on the edge as you are eating me out.  Wouldn't that be fun for you right now?"
     <br><br>

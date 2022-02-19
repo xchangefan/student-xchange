@@ -663,6 +663,9 @@
     <<else>>
       fertile.
     <</if>>
+    <<if $PlayerProtectionPeriodPill>>
+      The pill you take to reduce the severity of your periods does nothing to reduce your fertility.
+    <</if>>
   <</if>>
 <</nobr>>
 
@@ -960,7 +963,8 @@
     <<if $Spouse == "Kyle">>your husband<</if>>
     Kyle, and take care of his every need.
   <<else>>
-    <<if $Engaged == 'Kate'>>You are engaged to Kate, and living together.
+    <<if $Spouse == "Kate">>You are married to Kate.
+    <<elseif $Engaged == 'Kate'>>You are engaged to Kate, and living together.
     <<elseif setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.
     <<elseif $MasterKate>><br>You are Mistress Kate's pet.
     <</if>>
