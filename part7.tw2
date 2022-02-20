@@ -273,10 +273,14 @@
 	Do you want to [[end the pregnancy now,|Part7Preg2]] or do you want to [[carry the baby to term,|Part7Preg3]]?<br>
 	(If you are considering adoption, then that's something you can discuss with your obstetrician later.)
 <</nobr>>
-<<achievement>>pregnant<</achievement>>
-<<if setup.pregnantFirstTime()>>
-  <<achievement>>firsttime<</achievement>>
-<</if>>
+<<nobr>>
+  <<if setup.pregnantFirstTime()>>
+    <<achievement>>firsttime+pregnant<</achievement>>
+  <<else>>
+    <<achievement>>pregnant<</achievement>>
+  <</if>>
+<</nobr>>
+
 
 ::Part7Pack1
 <<nobr>>

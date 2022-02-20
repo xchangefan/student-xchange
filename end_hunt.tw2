@@ -2028,9 +2028,9 @@
 <<set $AcademicProbationDenialFormer to 1>>
 <<unset $Keyholder>>
 <<unset $PlayerChastityBelt>>
-<<achievement>>breedingPet<</achievement>>
-<<achievement>>pregnant<</achievement>>
 <<if setup.pregnantFirstTime()>>
-  <<achievement>>firsttime<</achievement>>
+  <<achievement>>breedingPet+firsttime+pregnant<</achievement>>
+<<else>>
+  <<achievement>>breedingPet+pregnant<</achievement>>
 <</if>>
 

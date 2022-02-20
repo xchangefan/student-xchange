@@ -125,10 +125,10 @@
       <<else>>
         <<set $PlayerAbortion to 1>>
       <</if>>
-      <<achievement>>pregnant<</achievement>>
-      <<achievement>>childfree<</achievement>>
       <<if setup.pregnantFirstTime()>>
-        <<achievement>>firsttime<</achievement>>
+        <<achievement>>firsttime+pregnant+childfree<</achievement>>
+      <<else>>
+        <<achievement>>pregnant+childfree<</achievement>>
       <</if>>
       Before making your change permanent they do some tests, and discover that it's not necessary.  You are pregnant!  And so the change is already permanent.
       <br><br>
@@ -162,10 +162,10 @@
     <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Mike', 0)>>
     <<if $PregnancyCheck.isPregnant>>
       <<set $PlayerSideEffectPermanent to 1>>
-      <<achievement>>pregnant<</achievement>>
-      <<achievement>>childfree<</achievement>>
       <<if setup.pregnantFirstTime()>>
-        <<achievement>>firsttime<</achievement>>
+        <<achievement>>firsttime+pregnant+childfree<</achievement>>
+      <<else>>
+        <<achievement>>pregnant+childfree<</achievement>>
       <</if>>
       One of the tests the run is a pregnancy test.  And they discover you are pregnant!  You let them know you aren't ready for that just yet, especially since
       your brother is one of the possible fathers!   (You don't mention that last part.) So they give you a pill that you take now, and then another one for later.

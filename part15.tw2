@@ -598,9 +598,10 @@
       I'll confirm these reading with a physical exam if you want to keep the baby, but it seems you are about
       $PregnancyWeek weeks along.
     <</if>>
-    <<achievement>>pregnant<</achievement>>
     <<if setup.pregnantFirstTime()>>
-      <<achievement>>firsttime<</achievement>>
+      <<achievement>>firsttime+pregnant<</achievement>>
+    <<else>>
+      <<achievement>>pregnant<</achievement>>
     <</if>>
     <<if !$PlayerSideEffectPermanent>>
     	<<set $PlayerSideEffectPermanent to 1>>
@@ -3405,9 +3406,10 @@
       [[terminate the pregnancy|Part15FirstTrimesterAbort]].
     <</if>>
   <<else>>
-    <<achievement>>pregnant<</achievement>>
     <<if setup.pregnantFirstTime()>>
-      <<achievement>>firsttime<</achievement>>
+      <<achievement>>firsttime+pregnant<</achievement>>
+    <<else>>
+      <<achievement>>pregnant<</achievement>>
     <</if>>
     You've been so busy you hadn't really thought about your period.  Now that you are thinking about it, you realize it's been a
     while since your last one.  Between that and the nausea you've been feeling sometimes, you are
@@ -7890,9 +7892,10 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 <<nobr>>
   <<if $tempPregnantDiscovered>>
     <<unset $tempPregnantDiscovered>>
-    <<achievement>>pregnant<</achievement>>
     <<if setup.pregnantFirstTime()>>
-      <<achievement>>firsttime<</achievement>>
+      <<achievement>>firsttime+pregnant<</achievement>>
+    <<else>>
+      <<achievement>>pregnant<</achievement>>
     <</if>>
   <</if>>
 <</nobr>>
@@ -8301,9 +8304,10 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
       <<set $PlayerAbortion to 1>>
     <</if>>
     <<set $tempPregnantAlready to 1>>
-    <<achievement>>pregnant<</achievement>>
     <<if setup.pregnantFirstTime()>>
-      <<achievement>>firsttime<</achievement>>
+      <<achievement>>firsttime+pregnant<</achievement>>
+    <<else>>
+      <<achievement>>pregnant<</achievement>>
     <</if>>
     <<achievement>>childfree<</achievement>>
   <</if>>

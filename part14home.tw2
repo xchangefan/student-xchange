@@ -8656,11 +8656,11 @@
 <<nobr>>
   <<if $PregnancyCheck.isPregnant>>
     <<if setup.pregnantFirstTime()>>
-      <<achievement>>firsttime<</achievement>>
+      <<achievement>>firsttime+pregnant+childfree<</achievement>>
+    <<else>>
+      <<achievement>>pregnant+childfree<</achievement>>
     <</if>>
     <<set $PlayerAbortion to 1>>
-    <<achievement>>pregnant<</achievement>>
-    <<achievement>>childfree<</achievement>>
     When they come back they tell you that the procedure you requested won't be necessary as you are pregnant and your change is already permanent.
     <<if $PlayerProtectionTry>>
       <<unset $PlayerProtectionTry>>

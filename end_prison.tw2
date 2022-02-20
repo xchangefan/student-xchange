@@ -2345,11 +2345,13 @@
   woman in a relatively safe [[women's prison|WomensPrison]] than in one of the prison for men.
 <</nobr>>
 
-<<achievement>>pregnant<</achievement>>
-<<if setup.pregnantFirstTime()>>
-  <<achievement>>firsttime<</achievement>>
-<</if>>
-<<achievement>>childfree<</achievement>>
+<<nobr>>
+  <<if setup.pregnantFirstTime()>>
+    <<achievement>>firsttime+pregnant+childfree<</achievement>>
+  <<else>>
+    <<achievement>>pregnant+childfree<</achievement>>
+  <</if>>
+<</nobr>>
 
 ::PrisonsBureau
 <<nobr>>

@@ -282,9 +282,10 @@
       <<if !$tempCelebrate>>
         <<set $tempCelebrate to 'pregnant'>>
       <</if>>
-      <<achievement>>pregnant<</achievement>>
       <<if setup.pregnantFirstTime()>>
-        <<achievement>>firsttime<</achievement>>
+        <<achievement>>firsttime+pregnant<</achievement>>
+      <<else>>
+        <<achievement>>pregnant<</achievement>>
       <</if>>
       You are
       <<if $PlayerProtectionTry>>
@@ -313,9 +314,10 @@
       <<if !$tempCelebrate>>
         <<set $tempCelebrate to 'pregnant'>>
       <</if>>
-      <<achievement>>pregnant<</achievement>>
       <<if setup.pregnantFirstTime()>>
-        <<achievement>>firsttime<</achievement>>
+        <<achievement>>firsttime+pregnant<</achievement>>
+      <<else>>
+        <<achievement>>pregnant<</achievement>>
       <</if>>
       You are
       <<if $PlayerProtectionTry>>

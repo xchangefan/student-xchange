@@ -5013,10 +5013,12 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 	  <<set $PlayerPregnant to 1>>
     <<set $PregnancySpring to 1>>
     You are pregnant!
-    <<achievement>>pregnant<</achievement>>
     <<if setup.pregnantFirstTime()>>
-      <<achievement>>firsttime<</achievement>>
+      <<achievement>>firsttime+pregnant<</achievement>>
+    <<else>>
+      <<achievement>>pregnant<</achievement>>
     <</if>>
+
     <<if !$PlayerSideEffectPermanent>>
     	<<set $PlayerSideEffectPermanent to 1>>
       She also reminds you that, of course the effects of your implant are permanent now.  This will be the body you have for the rest of your life.

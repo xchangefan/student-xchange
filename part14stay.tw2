@@ -463,9 +463,10 @@
   <<set $PlayerSideEffectPermanent to 1>>
   <<set $PlayerPregnant to 1>>
   <<set $PregnancySummer to 1>>
-  <<achievement>>pregnant<</achievement>>
   <<if setup.pregnantFirstTime()>>
-    <<achievement>>firsttime<</achievement>>
+    <<achievement>>firsttime+pregnant<</achievement>>
+  <<else>>
+    <<achievement>>pregnant<</achievement>>
   <</if>>
   positive.  You're pregnant!
   <br>

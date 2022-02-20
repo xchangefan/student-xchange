@@ -1044,24 +1044,31 @@ setup.getTotalNonEndingCount = function() {
 $(document.body).append("<div id='achievement'></div>");
 $(document).on(':achievement', function (e) {
     if (e.message && typeof e.message === 'string') {
-        // trim message
-        var achId = e.message.trim();
-        var altId = null;
-        if (achId.indexOf("%")) {
-          var parts = achId.split("%");
-          achId = parts[0];
-          altId = parts[1];
-        }
+        var achIds = e.message.trim().split("+");
 
-				let achInfo = setup.getAchievementDetails()[achId]
-				if (!achInfo) {
-					achInfo = { text: "Unknown Achievement: " + achId }
-				}
+        var message = "";
+        for (let i = 0; i < achIds.length; i++) {
+          var achId = achIds[i];
+          var altId = null;
+          if (achId.indexOf("%")) {
+            var parts = achId.split("%");
+            achId = parts[0];
+            altId = parts[1];
+          }
 
-        var imagePath = altId ? achInfo.altImage[altId] : achInfo.image;
-				var imageText = achInfo.image ? "<img src=\"PartAch/" + imagePath + "\" height=\"200\"><br>" : ""				
-				var endingText = achInfo.isEnding ? "The End: " : ""
-				e.message = imageText + (endingText + achInfo.text).replace(" ","&nbsp;")
+          let achInfo = setup.getAchievementDetails()[achId]
+          if (!achInfo) {
+            achInfo = { text: "Unknown Achievement: " + achId }
+          }
+
+          var imagePath = altId ? achInfo.altImage[altId] : achInfo.image;
+          var imageText = achInfo.image ? "<img src=\"PartAch/" + imagePath + "\" height=\"200\"><br>" : ""				
+          var endingText = achInfo.isEnding ? "The End: " : ""
+
+          message += imageText + (endingText + achInfo.text).replace(" ","&nbsp;")
+        } 
+
+        e.message = message;        
 				
         // classes
         if (e.class) {
@@ -1109,6 +1116,7 @@ Macro.add('achievement', {
             time    = false, 
             classes = false, i;
         
+        console.log(`achievement: ${msg}`);
         // arguments
         if (this.args.length > 0) {
             if (typeof this.args[0] === 'number') {
@@ -1119,40 +1127,35 @@ Macro.add('achievement', {
             }
         }
 
-				var isMultiPart = (msg.indexOf(":") >= 0)
-				var isAltImage = (msg.indexOf("%") >= 0)
+        var achIds = msg.trim().split("+");
+        var toTrigger = []
+        for (let i = 0; i < achIds.length; i++) {
+          var achId = achIds[i];
+          var isMultiPart = (achId.indexOf(":") >= 0)
+          var isAltImage = (achId.indexOf("%") >= 0)
 
-				if (isMultiPart) {
-					if (setup.addMultipartAchievement(msg)) {
-						// fire event
-						$(document).trigger({
-								type    : ':achievement',
-								message : msg.split(":")[0],
-								delay   : time,
-								class   : classes
-						});
-					}
-        } else if (isAltImage) {
-					if (setup.addAchievement(msg.split("%")[0])) {
-            // fire event
-						$(document).trigger({
-								type    : ':achievement',
-								message : msg.split(":")[0],
-								delay   : time,
-								class   : classes
-						});
+          if (isMultiPart) {
+            if (setup.addMultipartAchievement(achId)) {
+              toTrigger.push(achId.split(":")[0]);
+            }
+          } else if (isAltImage) {
+            if (setup.addAchievement(achId.split("%")[0])) {
+              toTrigger.push(achId.split(":")[0]);
+            }
+          } else {
+            if (setup.addAchievement(achId)) {
+              toTrigger.push(achId);
+            }
           }
-        } else {
-					if (setup.addAchievement(msg)) {
-						// fire event
-						$(document).trigger({
-								type    : ':achievement',
-								message : msg,
-								delay   : time,
-								class   : classes
-						});
-					}
-				}
+
+          // fire event
+          $(document).trigger({
+              type    : ':achievement',
+              message : toTrigger.join("+"),
+              delay   : time,
+              class   : classes
+          });
+        }
     }
 });
 

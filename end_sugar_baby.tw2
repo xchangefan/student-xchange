@@ -63,9 +63,10 @@
     <<if $PregnancyCheck.isPregnant>>
       <<set $PlayerPregnant to 1>>
       <<set $PlayerSideEffectPermanent to 1>>
-      <<achievement>>pregnant<</achievement>>
       <<if setup.pregnantFirstTime()>>
-        <<achievement>>firsttime<</achievement>>
+        <<achievement>>firsttime+pregnant<</achievement>>
+      <<else>>
+        <<achievement>>pregnant<</achievement>>
       <</if>>
       The nurse comes back with the results of your pregnancy test, and informs you that you are pregnant.  You tell her
       you want to terminate it.

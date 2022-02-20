@@ -1801,9 +1801,10 @@
   <</if>>
 <</nobr>>
 <<if $tempTestCount > 1 and $PregnancyWeek>>
-  <<achievement>>pregnant<</achievement>>
   <<if setup.pregnantFirstTime()>>
-    <<achievement>>firsttime<</achievement>>
+    <<achievement>>firsttime+pregnant<</achievement>>
+  <<else>>
+    <<achievement>>pregnant<</achievement>>
   <</if>>
 <</if>>
 <<unset $tempTestCount>>

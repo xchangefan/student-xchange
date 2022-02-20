@@ -111,9 +111,10 @@
   <<if $PregnancyCheck.isPregnant>>
     <<set $PlayerSideEffectPermanent to 1>>
     <<set $PlayerPregnant to 1>>
-    <<achievement>>pregnant<</achievement>>
     <<if setup.pregnantFirstTime()>>
-      <<achievement>>firsttime<</achievement>>
+      <<achievement>>firsttime+pregnant<</achievement>>
+    <<else>>
+      <<achievement>>pregnant<</achievement>>
     <</if>>
   <</if>>
   <img src="PartP/PregTest6.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -1623,10 +1624,13 @@
   You can't believe it.  In only nine months, well actually probably [[only eight now|MovingBackHomePregnant2]], you and Mason will be parents!
 <</nobr>>
 
-<<achievement>>pregnant<</achievement>>
-<<if setup.pregnantFirstTime()>>
-  <<achievement>>firsttime<</achievement>>
-<</if>>
+<<nobr>>
+  <<if setup.pregnantFirstTime()>>
+    <<achievement>>firsttime+pregnant<</achievement>>
+  <<else>>
+    <<achievement>>pregnant<</achievement>>
+  <</if>>
+<</nobr>>
 
 ::MovingBackHomePregnant2 <7400,11400>
 <<nobr>>

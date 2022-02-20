@@ -4530,9 +4530,10 @@
     Do you want to [[proceed with the pregnancy|Part14IslandReturn]] and head home with Barry? Or do you want to [[prevent the pregnancy|IslandHunt]] and
     continue with your plan to join the hunt.
     <<unset $IslandAlreadyPermanent>>
-    <<achievement>>pregnant<</achievement>>
     <<if setup.pregnantFirstTime()>>
-      <<achievement>>firsttime<</achievement>>
+      <<achievement>>firsttime+pregnant<</achievement>>
+    <<else>>
+      <<achievement>>pregnant<</achievement>>
     <</if>>
   <<else>>
     "Everything looks good with your blood tests," he says.  "You're [[approved to compete|IslandHunt]].  Have fun!"

@@ -204,10 +204,13 @@
 <<print "You look closely at your body in the mirror. You knew that it’d be changing a lot over the next few months, but that it will still be the body you’ll have for the rest of your life.">>
 
 [[You couldn’t be more thrilled at the thought.|JobArt8]]
-<<achievement>>pregnant<</achievement>>
-<<if setup.pregnantFirstTime()>>
-  <<achievement>>firsttime<</achievement>>
-<</if>>
+<<nobr>>
+  <<if setup.pregnantFirstTime()>>
+    <<achievement>>firsttime+pregnant<</achievement>>
+  <<else>>
+    <<achievement>>pregnant<</achievement>>
+  <</if>>
+<</nobr>>
 
 ::JobArt8 <3200,1450>
 <<nobr>>

@@ -207,9 +207,10 @@
       <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
       <<set $PlayerSideEffectPermanent to 1>>
       <<set $PlayerPregnant to 1>>
-      <<achievement>>pregnant<</achievement>>
       <<if setup.pregnantFirstTime()>>
-        <<achievement>>firsttime<</achievement>>
+        <<achievement>>firsttime+pregnant<</achievement>>
+      <<else>>
+        <<achievement>>pregnant<</achievement>>
       <</if>>
     <</if>>
   <<elseif !$PlayerPregnant and ($PregnancyWeek or ($PregnancyCheck and $PregnancyCheck.isPregnant))>>
@@ -222,9 +223,10 @@
     <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
     <<set $PlayerSideEffectPermanent to 1>>
     <<set $PlayerPregnant to 1>>
-    <<achievement>>pregnant<</achievement>>
     <<if setup.pregnantFirstTime()>>
-      <<achievement>>firsttime<</achievement>>
+      <<achievement>>firsttime+pregnant<</achievement>>
+    <<else>>
+      <<achievement>>pregnant<</achievement>>
     <</if>>
     <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
   <<else>>
