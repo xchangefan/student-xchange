@@ -272,7 +272,6 @@
   <<if $PlayerPregnant>>
     check on the baby.
   <<elseif !$PlayerSideEffectPermanent>>
-    <<achievement>>girlpower<</achievement>>
     make your change permanent.  You can't imagine ever wanting your old body back.
     <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Dan', 0)>>
     <<if $PregnancyCheck.isPregnant>>
@@ -297,7 +296,8 @@
       <<if $PregnancyCheck.possibleFathers.length > 1>>
         You assume Dan is the father.  You aren't going to consider any other possibilities.
       <</if>>
-    <<else>>      
+    <<else>>
+      <<achievement>>girlpower<</achievement>>
       <<set $PlayerSideEffectPermanent to 1>>
       <<if !$tempCelebrate>>
         <<set $tempCelebrate to 'perm'>>

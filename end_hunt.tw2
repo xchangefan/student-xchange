@@ -1084,8 +1084,7 @@
       "Of course, it did trigger your change to become permanent.  So I guess congratulations are still in order. So... Congratulations!"
       <<set $PlayerSideEffectPermanent to 1>>
     <</if>>
-    <<achievement>>pregnant<</achievement>>
-    <<achievement>>childfree<</achievement>>
+    <<achievement>>pregnant+childfree<</achievement>>
   <</if>>
 <</nobr>>
 
@@ -1964,8 +1963,7 @@
     <<else>>
       <<set $IslandPregnantPrevent to 1>>
     <</if>>
-    <<achievement>>pregnant<</achievement>>
-    <<achievement>>childfree<</achievement>>
+    <<achievement>>pregnant+childfree<</achievement>>
   <<elseif !$PlayerSideEffectPermanent>>
     <<set $PlayerSideEffectPermanent to 1>>
     I've given you a little shot that triggers your change to become permanent.  He holds up one of the forms you'd signed earlier in the mangers office
