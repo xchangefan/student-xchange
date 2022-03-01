@@ -4493,13 +4493,12 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
         <<include [[Part15Week14]]>>
       <</if>>
     <<case 15>>
-      <!-- Dec w1 -->
-	    TODO (to be continued week 15)
+      <<include [[Part15Week15]]>>
     <<case 16>>
-      <!-- Dec w2 -->
-	    TODO (to be continued week 16)
+      <<include [[Part15Week16]]>>
     <<default>>
-      TODO (to be continued start of winter break)
+      <<set $TO_BE_CONTINUED to 1>>
+      <<include [[Part16]]>>
   <</switch>>
 <</nobr>>
 
@@ -4508,7 +4507,23 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   <h1>To be continued...</h1>
   <<set $TO_BE_CONTINUED to 1>>
   <!-- Nov w4 Thanksgiving-->
-  (TODO to be continued week 14)
+  <!-- to be continued week 14 -->
+<</nobr>>
+
+::Part15Week15
+<<nobr>>
+  <h1>To be continued...</h1>
+  <<set $TO_BE_CONTINUED to 1>>
+  <!-- Dec w1 -->
+  <!-- to be continued week 15 -->
+<</nobr>>
+
+::Part15Week16
+<<nobr>>
+  <h1>To be continued...</h1>
+  <<set $TO_BE_CONTINUED to 1>>
+  <!-- Dec w2 -->
+  <!-- to be continued week 16 -->
 <</nobr>>
 
 ::Part15Probation1
@@ -4968,7 +4983,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <<nobr>>
   <h1>Troubling results</h1>
   <img src="Part15/Class3.png" hspace="10" vspace="10" height="300" align="left">
-  "I've also find a distubing level of workplace sexual activity in the survey results," you professor continues.  "The vast majority of jobs,
+  "I've also found a distubing level of workplace sexual activity in the survey results," you professor continues.  "The vast majority of jobs,
   for young women at least, at the university and nearby, seem to have an sexual component.  While sex among coworkers can be common in your
   age group, this goes far, far beyond that.
 <</nobr>>
@@ -4980,8 +4995,8 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  "There was a somewhat higher than normal of respondants that reported prostituion or other forms of adult entertainment as their primary
-  source of income.  However, of more concern are the other jobs, especially those from the university itself.
+  "There was a somewhat higher than normal number of respondants that reported prostituion or other forms of adult entertainment as
+  their primary source of income.  However, of more concern are the other jobs, especially those from the university itself.
 <</nobr>>
 
 <<nobr>>
@@ -4991,7 +5006,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   "Many cheerleaders reported sex with athletes as well, though this is not surprising.  Of concern though, is that some of them seem to
-  be engaging in what sounds like prostitution for the benefit of the universities athletic program!
+  be engaging in what sounds like prostitution for the benefit of the university's athletic program!
 <</nobr>>
 
 <<nobr>>
@@ -5010,16 +5025,20 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <<nobr>>
   "And then there's university's engineering department..." she pauses for a moment.  "The engineering department seems to be experimenting
   on students - female students primarily.  From the survey responses it isn't clear what their goals are.  And they haven't filed their
-  study protocols with the universities IRB, as would be required at any other institution engaging in human research.  In fact the
+  study protocols with the university's IRB, as would be required at any other institution engaging in human research.  In fact the
   university doesn't even seem to <i>have</i> an IRB. 
 <</nobr>>
 
 <<nobr>>
-  "Most of the free-form responses regarding the department report young women being physically restrained then sexually stimulated for
+  "Most of the free-form responses regarding the department report young women being physically restrained, then sexually stimulated for
   an extended period of time. The young women are then either forced to orgasm repeatedly, or prevented from orgasming altogether.  There
-  are also a couple reports of the department attempting to impregnant test subjects, or at least telling them that they are.
+  are also a couple reports of the department attempting to impregnant test subjects, or at least telling them that they are going to do so.
 <</nobr>>
-<video src="Part13/Engineer1.webm" autoplay loop muted height="500"></video>
+
+<<nobr>>
+  <video src="Part13/Engineer1.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+
 <<nobr>>
   <<if $tempEngineeringDeptJob and $JobBetaTester != "chaste" and $JobBetaTester != "monogamous">>
     Your mind wanders as you remember some of the experiments she's referring to.
@@ -5338,7 +5357,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     to go insane with how horny it made me all the time."  You then go into much more detail about all the things belt did or that you
     knew it could do.
     <br><br>
-    "I'm not sure I'd be talking to you now if I was still in it," you tell her.  "I'd probably be to scared of what they could do
+    "I'm not sure I'd be talking to you now if I was still in it," you tell her.  "I'd probably be too scared of what they could do
     to me with the belt if they'd found out."
   <<elseif $ComputerChastityOwner>>
     You tell her about the chastity belts the department is testing now, and how they plan on marketing them very soon.
@@ -5757,7 +5776,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   <<elseif $JobEngineer>>
     You obviously are out of a job now too. But you should be able to [[find a new one|Part15WomensStudiesJobChange]] fairly quickly.
   <<else>>
-    Thankfully you already have a job, so you can just wait to [[see what happens with the criminals involved|Part15WomensStudiesAlreadyQuit]]
+    You can't help but pay close attention to [[see what happens with the criminals involved|Part15WomensStudiesAlreadyQuit]]
     in this whole mess.
   <</if>>
 <</nobr>>
@@ -5803,8 +5822,9 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   Most of the girls found out about the second setting the next day, when the painful punishment shock started.
-  He had set all the belts to require ten blowjobs every day to avoid painful shocks the next day,
+  He had set all the belts to require ten blowjobs every day to avoid painful shocks the next
   <<if $JobBetaTester or $JobEngineerLock or $ComputerChastityOwner>>
+    day,
     <<if setup.sexCount() and $oldBetaTestMode != "monogamous" and !$ComputerChastityOwner>>
       including yours.
     <<else>>
@@ -5812,8 +5832,11 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <</if>>
     His new settings didn't care about what 'mode' your belt was in before, everyone received the same new settings.
   <<else>>
-    His new settings didn't care about what 'mode' their belt was in before, everyone received the same new settings.
+    day. His new settings didn't care about what 'mode' their belt was in before.
+    Whether she was a virgin in 'chaste' mode, or some already sucking cock after cock every day, everyone received the same
+    new settings.
   <</if>>
+  <br><br>
   Once everyone figured out the one way to stop the punishment shocks, even the most innocent of girls, or the most ardent
   lesbian, were looking for her daily ten.
   <<if $oldBetaTestMode == "chaste">>
@@ -6271,8 +6294,8 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <br><br> 
   <</if>>
   In class a while later, she lets you all know that no one came by to confirm the stories.  "Ladies, please be more serious when responding
-  to surveys like in the future.  Gentlemen this generally goes for you as well, though you weren't part of this particular survey," she
-  tells you all.
+  to surveys like this in the future.  Gentlemen this generally goes for you as well, though you weren't part of this particular survey,"
+  she tells you all.
 <</nobr>>
 
 <<nobr>>
@@ -6915,7 +6938,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
   <<if $SororityELP>>
     you, and then the rest of your team, are pulled across the line.  You don't really mind that you lost, you had a great time.
   <<else>>
-    first player from the other team is pulled across the line.  She is followed soon after by the rest of her team.  You are
+    the first player from the other team is pulled across the line.  She is followed soon after by the rest of her team.  You are
     thrilled that your team actually won!
   <</if>>
 <</nobr>>
@@ -7236,12 +7259,25 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
   <</if>>
 <</nobr>>
 
+::Part15SororityJoustDetails
+<<nobr>>
+  <<if !$tempExplainJoust>>
+    <<set $tempExplainJoust to 1>>
+    At the party they are having a different sort of 'joust' event.  This time girls from the earlier joust are going up against guys that
+    competed for the fraternities, and they'll both be naked.  The rules of this event are quite different.  The contestants have make their
+    opponent orgasm in order to win.  You wonder if that evens out the difficulty, since most of the guys are much stronger than the most of
+    the girls.  After they win, the victor gets another 15 minutes to do whatever they want with the loser, with the crowd watching.
+    <br><br>
+  <</if>>
+<</nobr>>
+
 ::Part15SororityJoust2MinistryWinner
 <<nobr>>
   <h1>Sorority Mixed Wrestling</h1>
   <img src="Part15/Sorority10a.jpg" hspace="10" vspace="10" height="450" align="left">
 <</nobr>>
 <<nobr>>
+  <<include [[Part15SororityJoustDetails]]>>
   Since you were the winner today, they want you to compete first.  They promise they have someone that will be more of a challenge for you
   today.  When they explain that it's <i>mixed</i> wrestling and you'll be competing against a guy, it makes sense.
 <</nobr>>
@@ -7275,7 +7311,11 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 <<nobr>>
   <h1>Sorority Mixed Wrestling</h1>
   <img src="Part15/Sorority10.jpg" hspace="10" vspace="10" height="450" align="left">
-  The girl who won the competition today is going first.  You quickly realize that she'll be competing against a guy, and that they'll be naked!
+<</nobr>>
+<<nobr>>
+  At the party they are having a different sort of 'joust' event.  The girl who won the earlier joust competition today is going first.
+  You find out this event is much different.  She'll be competing against a guy, and has to pin him to the mat to win.  And that they'll
+  both be naked!
 <</nobr>>
 
 <<nobr>>
@@ -7346,6 +7386,7 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 <</nobr>>
 
 <<nobr>>
+  <<include [[Part15SororityJoustDetails]]>>
   Since you were the winner today, they want you to compete first.  They promise they have someone that will be more of a challenge for you
   today.  You are already wet with anticipation before you see your opponent.  You know, win or lose, you'll be fucking some guy, or at
   least jerking him off, right here in front of everyone.
@@ -7359,8 +7400,10 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 ::Part15SororityJoust2Loser
 <<nobr>>
   <h1>Sorority Mixed Wrestling</h1>
+  <<include [[Part15SororityJoustDetails]]>>
   <video src="Part15/Sorority9.mp4" autoplay loop muted height="600"></video>
 <</nobr>>
+
 <<nobr>>
   You watch as the girl who won faces off against her opponent.  She may have been stronger than all the other girls, but she isn't much
   of a match for him.  He overpowers her easily.  Though, you question how much of a fight she was actually putting up in the first place.
@@ -7378,8 +7421,10 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 ::Part15SororityJoust3Winner
 <<nobr>>
   <h1>Sorority Mixed Wrestling</h1>
+  <<include [[Part15SororityJoustDetails]]>>
   <video src="Part15/Sorority9.mp4" autoplay loop muted height="550"></video>
 <</nobr>>
+
 <<nobr>>
   You never had a chance to beat him wrestling, your only hope to 'win' is to get him off before you.  But he doesn't let you do that either.
   He holds you down on the mat, one hand holding both your arms down at the wrist, and the one leg over both of yours.
@@ -7409,15 +7454,17 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 ::Part15SororityJoust3Loser
 <<nobr>>
   <h1>Sorority Mixed Wrestling</h1>
-  <video src="Part15/Sorority8.webm" autoplay loop muted height="450"></video>
+  <<include [[Part15SororityJoustDetails]]>>
   <<set setup.addSex({sex:"male", anon:"wrestler", vaginal:true, noPullout:true, noCondom:true})>>
+  <video src="Part15/Sorority8.webm" autoplay loop muted height="450"></video>
 <</nobr>>
+
 <<nobr>>
   <<if $CampusMinistry>>
     Your "fight" doesn't go anything at all like the first one had.  Before long you he has your arms pinned down and your legs already apart.
     You could "tap-out" and end it, but you know everyone would be disappointed.  And more importantly, you don't want him to stop.
   <<else>>
-    Your opponent isn't a strong as the one the first girl had, but he's stronger than you.  Before long you he has your arms pinned down and
+    Your opponent isn't as strong as the one the first girl had, but he's stronger than you.  Before long you he has your arms pinned down and
     your legs already apart.  What little desire you had to "win" is gone, now you only want him inside you.  The crowd cheers when they
     hear you start begging him to fuck you.
   <</if>>
@@ -7439,16 +7486,13 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
     on top of you for a moment, clearly not minding that he just "lost".  The crowd cheers for your victory, but you care more about your orgasm
     that was so close.
     <br><br>
-    <<if $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock>>
-      <<set setup.addSex({sex:"male", anon:"wrestling spectator", vaginal:true, noPullout:true, noCondom:true})>>
-      "I can't get myself off.  Can somone please fuck me until I cum!" you beg.  You don't have to wait.  There is soon another guy on top of you.
-      You put your arms down on the mat like they were before, so he can hold them down too.
-      <br><br>
-      You were close, so you cum long before he can, the crowd errupting with cheers again.  He keeps fucking you a while longer until he too cums.
-    <<else>>
-      You quickly begin masturbating, right were he'd fucked you on the mat.  Soon you are crying out with the orgasm you had been so close to
-      reaching.  The crowd cheers again for you.
-    <</if>>
+    You think about riding the guys face, since he is yours to play with for 15 minutes.  But you want a cock right now, not a tongue.
+    "Can somone please fuck me until I cum!" you beg to the crowd.  You don't have to wait.  There is soon another guy on top of you.
+    You put your arms down on the mat like they were before, so he can hold them down too.
+    <br><br>
+    You were close, so you cum quickly after he starts, the crowd errupting with cheers again.  He keeps fucking you a while longer until he
+    too cums.
+    <<set setup.addSex({sex:"male", anon:"wrestling spectator", vaginal:true, noPullout:true, noCondom:true})>>
   <</if>>
 <</nobr>>
 
@@ -7838,7 +7882,7 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 
 <<nobr>>
   "No.  That's just the pain medicine the doctor gave you before your surgery.  It should start to wear off soon.  When you start to feel
-  any pain let me now.  I'll get you some less strong, but that should help," she tells you.
+  any pain let me know.  I'll get you some less strong, but that should help," she tells you.
 <</nobr>>
 
 <<nobr>>
@@ -7942,7 +7986,8 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
     Your doctor mentions calling the emergency number printed on the back of your chastity belt.  "They sent over the medical
     information release form you'd signed for them, so I was able to share the details of your injuries," he says.  "When you
     were unconscious, someone came by and unlocked your belt so we could take care of your injuries.  They took it with them
-    so they could analyze how it stood up to the accident.  But they said you could come by and pick it up later."
+    so they could analyze how it stood up to the accident.  But they said you should come by and they'll return it to you, after
+    any repairs or adjustments it might need."
   <<else>>
     They are recommending you take it easy until you are fully recovered.  They don't want you working, just focusing on your school work
     and on getting better.  You know your old job will be waiting for you once you are better.
@@ -7973,7 +8018,7 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
         times and talk with the engineers about what you liked, what you didn't like, and things like that.
       <</if>>
       "The belt is yours to keep," he says.  "I've set it to self-owned for now, feel free to set it however you like once
-      you are better.  Oh, and if you can stop by the office and give us a quote or two on how durable the belt is, that we can use in our
+      you are better.  Oh, and if you can stop by the office and give us a quote or two on how durable the belt is that we can use in our
       marketing, that would be wonderful."
     <<else>>
       <<if $Keyholder>>
@@ -11214,7 +11259,7 @@ TODO Another ELP charity project (be careful if had an incident last time)
   <<if $PlayerSideEffectDominant>>
     <<include [[Part15Study3Dominant]]>>
   <<elseif $PlayerSideEffectLibido > 2 or $PlayerSideEffectSubmissive > 2 or $PlayerSideEffectOral > 3 or ($PlayerChastityBelt and $JobBetaTester != "chaste")>>
-    <<if $dating.length>>
+    <<if $dating.length and !setup.areDating("Bailey")>>
       <<include [[Part15Study3HornyFaithful]]>>
     <<else>>
       <<include [[Part15Study3Horny]]>>
@@ -11427,6 +11472,9 @@ TODO Another ELP charity project (be careful if had an incident last time)
 <<nobr>>
   As you go about the [[rest of your week|Part15Week]], you wonder if he'll actually call you, or that he won't bother now that he's
   gotten what he wants.
+  <<if $DailyBJMinimum>>
+    Having him come to you each day would mean one fewer cock you need to track down each day to meet your minimum.
+  <</if>>
 <</nobr>>
 
 ::Part15Halloween

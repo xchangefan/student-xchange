@@ -140,7 +140,7 @@
 <<nobr>>
   <<if $JobBetaTester and !$tempShowedBetaTester>>
     <<include [[Part15JobBetaTester]]>>
-  <<elseif $dating.length>>
+  <<elseif $dating.length and !setup.areDating("Bailey")>>
     <<include [[Part15RelationshipInclude]]>>
   <<else>>
     <<include [[Part15BackToMain]]>>
@@ -1064,7 +1064,7 @@
   <<elseif $SchoolWeek == 7>>
     <<include [[Part15JobAthlete2]]>>
   <<elseif $SchoolWeek == 11>>
-    <<if $dating.length>>
+    <<if $dating.length and !setup.areDating("Bailey")>>
       <<include [[Part15RelationshipInclude]]>>
     <<else>>
       <<include [[Part15JobAthlete4]]>>
@@ -2452,7 +2452,7 @@
   You are happy
   <<if $JobBetaTester == "deny">>
     [[heading home|Part15Week]]
-  <<elseif ($JobBetaTester and !$tempShowedBetaTester) or $dating.length>>
+  <<elseif ($JobBetaTester and !$tempShowedBetaTester) or ($dating.length and !setup.areDating("Bailey"))>>
     [[heading home|Part15AfterMainJob]]
   <<else>>
     [[heading home|Part15Week]]
@@ -3004,11 +3004,44 @@
 <</nobr>>
 
 ::Part15JobBaristaWeek13
-TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
+<<nobr>>
+  <h1>Bring your buddy to work day</h1>
+  <img src="Part15/Buddy52.png" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  Today is "Bring your Buddy to Work Day", so you bring Bailey with you to the coffee shop.
+<</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<if setup.areDating("Bailey")>>
+    You think she's great in lots of other ways, but
+  <</if>>
+  Bailey's never done a hard day's work in her life.  And on top of that, she's not really seeing this as a real job, just a fun activity.
+  So she spends more time on her phone that she does actually making any drinks.
 <</nobr>>
+
+<<nobr>>
+  Thankfully your boss didn't figure her in when scheduling, so you still have enough people when the store gets slammed.  Though it is
+  frustrating running around like crazy preparing orders, while Bailey's laughing at some video clip.
+  <<if setup.areDating("Bailey")>>
+    You'll have to tell her to make it up to you.  Tonight [[she can do all the work|Part15JobBaristaWeek13Bailey]] while you just lie back and enjoy yourself.
+  <<else>>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
+<</nobr>>
+
+::Part15JobBaristaWeek13Bailey
+<<nobr>>
+  <h1>Making it up to you</h1>
+  <video src="Part15/Buddy53.webm" autoplay loop muted height="400"></video>
+<</nobr>>
+
+<<nobr>>
+  By your third or fourth orgasm Bailey is completely forgiven for not helping today at the shop.  Not that you were ever really mad
+  at her.  But it was certainly fun having her work hard while you enjoyed yourself for a change.
+<</nobr>>
+
+<<include [[Part15BackToMain]]>>
 
 ::Part15JobBaristaWeek13Chaste
 <<nobr>>
@@ -3249,7 +3282,7 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 <</nobr>>
 
 <<nobr>>
-  <<if $dating.length>>
+  <<if $dating.length and !setup.areDating("Bailey")>>
     You do your best to [[stall until Brian arrives|Part15JobBikiniBaristaShutdown]] to deal with the inspector.
     From the way the inspector is looking at you, and his obvious arousal, you bet he'd probably look the other
     way on his inspection if you were 'persuasive' enough.
@@ -3260,6 +3293,9 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
     You could tell the inspector it's time for your lunch break and suggest he join you so you can discuss the other measures
     your boss is taking.  At the very least, it will give Brian some time to get so he can deal with the inspecton himself.
     Perhaps you can even [[come to an arrangement|Part15JobBikiniBarista4]] with the inspector yourself.
+    <<if $dating.length>>
+      You are sure $dating[0] will understand, given the circumstances.
+    <</if>>
     <br><br>
     Or, you can just do your best to [[stall until Brian arrives|Part15JobBikiniBaristaShutdown]]
   <</if>>
@@ -3465,21 +3501,70 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 <</nobr>>
 
 <<nobr>>
-  After that the two of you take a break, and go out and get something to eat.  Several hours later you are alone again.
-  You have him take you from behind this time.
+  <<if setup.areDating("Bailey")>>
+    You let him know you have a girlfriend, so he doesn't get his hopes up about you and him being together.  "But... I'm sure
+    she'd [[love to join us|Part15JobBikiniBarista6Bailey]], so we can make today even more memorable for you."
+  <<else>>
+    After that the two of you take a break, and go out and get something to eat.  Several hours later you are alone again.
+    You have him take you from behind this time.
+    <br><br>
+    The two of you hang out quite a bit the rest of the week.  You joke with him that hopefully the "sex boot camp" you've put
+    him though this week will keep his spirits up during the real boot camp.  You see him one last time the night before
+    he leaves.  He promises to write, or email, or whatever they let him do during training.
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
+<</nobr>>
+
+<<achievement>>virgin<</achievement>>
+
+::Part15JobBikiniBarista6Bailey
+<<nobr>>
+  <h1>You and Bailey with Justin</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Barista14.mp4" autoplay loop muted height="600"></video>
+  </div>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
+  <<set setup.addSex({sex:"male", name:"Justin", vaginal:true})>>
+  <<set setup.addSex({sex:"female", name:"Bailey"})>>
+<</nobr>>
+<<nobr>>
+  When you tell Bailey about Justin, and how he was about to leave for bootcamp still a virgin, she's as eager to give him a memorable time
+  as you were.
 <</nobr>>
 
 <<nobr>>
-  The two of you hang out quite a bit the rest of the week.  You joke with him that hopefully the "sex boot camp" you've put
-  him though this week will keep his spirits up during the real boot camp.  You see him one last time the night before
-  he leaves.  He promises to write, or email, or whatever they let him do during training.
+  You and Bailey spend that evening and night taking turns sucking Justin's cock, or getting fucked by him, or pleasuring each other
+  while you wait for Justin to recover.
+<</nobr>>
+
+<<nobr>>
+  Of course, Justin doesn't ship out for another week.  So that gives you and Bailey more time to help Justin make some memories to
+  help him make it through boot camp.
 <</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-<<achievement>>virgin<</achievement>>
+<<nobr>>
+  <video src="Part13/Fundraiser2.webm" autoplay loop muted height="400"></video>
+<</nobr>>
 
 ::Part15JobCallGirl
 <<nobr>>
@@ -4285,8 +4370,7 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
   <<elseif $SchoolWeek == 11>>
     <<include [[Part15BetaTestClass]]>>
   <<else>>
-    TODO Part15JobBetaTester after that (13) (Bring your buddy to work day) <br>
-    <<include [[Part15BackToMain]]>>
+    <<include [[Part15BetaTestBuddy]]>>
   <</if>>
 <</nobr>>
 
@@ -4534,7 +4618,7 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 <<nobr>>
   You were hoping they meant they were adding 10% to whatever the small chance of an orgasm you have when giving
   blowjobs, but aren't surprised that it didn't mean that.  After all, it's not like they could have subtracted
-  50% from what it was before you had failed.
+  50% from what it was before if you had failed.
 <</nobr>>
 
 <<nobr>>
@@ -4674,15 +4758,15 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
     <br>
     Reward: Indefinite continuation of previous reward opportunity.<br>
     Opportunity for additional collar upgrade may be available later,<br>
-    with enhanced rewards, after with sufficient continous wear.<br>
+    with enhanced rewards, after sufficient time with continous wear.<br>
     <br>
     Failure: <i>0% orgasm chance</i> for 1 month.<br>
   </blockquote>
 <</nobr>>
 <<nobr>>
   You realize if you [[Accept|Part15BetaTestCollar2]], then you won't be able to avoid wearing your new collar to all of your
-  classes if you want to avoid failing the new challenge.  If you aren't going to be able to commit to wearing their new
-  collar all the time, before they even let you see it, then you'll have to [[Decline|Part15BetaTestChallengeDecline]] now.
+  classes if you want to avoid failing the new challenge.  If you aren't going to be able to commit to wearing your new
+  collar all the time, before you even see what it looks like, then you'll have to [[Decline|Part15BetaTestChallengeDecline]] now.
 <</nobr>>
 
 ::Part15BetaTestCollar2
@@ -4715,8 +4799,9 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
     Bailey helps, but she knows to have you do most of the work so you get credit for it.
   <</if>>
   After you've gotten him off he thanks you and says, "Have a nice day, and let us know if you change rooms or anything
-  else and need the key moved."  Once he's gone you try on your bikini to see you'll look now.  You'd thought about getting
-  a once piece for the pool, to hide your belt.  But now with the collar still visible, you decide not to bother.
+  else and need the key moved."  Once he's gone you try on your bikini to see how you look now with the belt and new collar.
+  You'd thought about getting a once piece for the pool, to hide your belt.  But now with the collar still visible, you
+  decide not to bother.
 <</nobr>>
 
 <<nobr>>
@@ -4859,6 +4944,135 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
   <br>
   <img src="Part15/BetaTest9.jpg" hspace="10" vspace="10" height="350">
 <</nobr>>
+
+::Part15BetaTestBuddy
+<<nobr>>
+  <h1>Bring your buddy to work day</h1>
+  You had been thinking that given the unusual nature of your 'job', Bailey wasn't going to be able to participate in the
+  "Bring your Buddy to Work Day" event. But when you asked the engineering department about it, they said they had something
+  perfect in mind...
+  <<unset $PlayerItemBuddyKey>>
+  <<unset $BuddyChastity>>
+  <<set $BuddyElectronicChastity to 1>>
+<</nobr>>
+
+<<nobr>>
+  "As you know, it's too late to late to add her to the belt trial you're in," the department head tells you.  "And obviously
+  thats much longer than a day anyway.  But we do have a 48 belt test we are looking for volunteers for.
+<</nobr>>
+
+<<nobr>>
+  "It'll be fun, the two of us belted together," Bailey says.  "Maybe they'll have some fun things for us where they sync up
+  are belts together and make us both cum at the same time!"  She's thrilled with the idea and comes to you to the Engineering
+  department to get fitted for her belt.  
+<</nobr>>
+
+<<nobr>>
+  You look out for her and check the contract she signs.  It guarantees that they'll unlock her in 48 hours.  It give her
+  the option to continue wearing it longer if she chooses too, but they can't continue it longer on their own.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Buddy55.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  After she's fitted and belted they explain the test she'll be doing.  She's disappointed to hear that her belt isn't going to
+  be synced up to yours, since that would compromise the testing you are doing.  But she's excited when she hears about what she
+  will be testing.
+<</nobr>>
+
+<<nobr>>
+  "They called it their denial optimization program," Bailey explains.  "It's supposed to get me ramped up really quickly.  They
+  are hoping by the end of my 48 hours of denial and teasing with my belt set on their program, I'll be as horny as if I'd been
+  denied for months and months.  He hasn't even activated it yet, but I got horny just hearing about it.  I can't wait to see what
+  I'll be like in two days."
+<</nobr>>
+
+<<nobr>>
+  She smiles and adds, "I made them add to my contract that when I get out of this belt, they immediately put me into your belt
+  and have me leave locked in that one.  I'll probably be so horny I'll do anything you want 48 hours from now.  Won't that be fun!"
+  She jumps for a second, then says.  "[[It's starting now!|Part15BetaTestBuddy2]]"
+<</nobr>>
+
+::Part15BetaTestBuddy2
+<<nobr>>
+  <h1>Bailey's new belt</h1>
+  Bailey is already moaning from the teasing her belt is giving her before you get home.  She spends most of day and the evening
+  on the bed, being teased by the belt and then denied.  In a brief moment between teases she has a moment of lucidity to tell you
+  what it's like.
+<</nobr>>
+
+<<nobr>>
+  "It's so much more than the regular belt you'd used with me.  This one knows how to get me so fucking close to cumming, and then
+  stop just before I can!"  Bailey tells you.  "I know you said yours could do that, but I had no idea how maddening it could be.
+  I want... no I need to cum so bad right then, and it just stops, or even gives me a little shock to cool me down."
+<</nobr>>
+
+<<nobr>>
+  She continues, "Sometimes it stops before I even get close.  You'd think that might be better, but when it does, I miss the edge
+  and it ends up being even more frustrating.  And then there's now, where it isn't doing anything, and I am aching for anything at all."
+  Her expression changes as the belt starts up again, and she starts begging out loud to her belt.  "Oh god, thank you.  Please don't
+  stop this time.  Please let me cum this time."
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Buddy54.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  She can't make it to class the next day, but the Engineering department sent an email to her professors, so she'll be allowed
+  to make up any work when she's "feeling better".  As soon as your classes are over you stop by to check up on her.  "How's it going.
+  Think you can make it one more day," you ask before laughing and adding, "Though it's not like you have another option."
+<</nobr>>
+
+<<nobr>>
+  "Not tomorrow... Out next week...  Special offer...," Bailey says between moans.  You try to get her to explain further, but it becomes
+  clearer when she points to a contract addendum.  You read that she extended her testing period of the denial optimization program by an
+  additional week in exchange for them providing her a single orgasm earlier today. 
+<</nobr>>
+
+<<nobr>>
+  "Bailey!" you say in disbelief.  "If you were horny enough to agree to that after just a day, what are you going to be like a week
+  from now?  What if three or four days from now they offer you another orgasm in exchange for a month or two in the belt, or a whole
+  semester in it?  You'd probably agree to..."
+<</nobr>>
+
+<<nobr>>
+  "Really!" Bailey interrupts.  "Will they do that?  I need another orgasm so bad right now.  Should I text to see if I can get that
+  deal you mentioned.  It'd feel so fucking good right now to cum, I really need it."
+<</nobr>>
+
+<<nobr>>
+  You try to talk her out of accepting any more extension deals, but it doesn't work.  They turn off the optimization program two weeks
+  after the last orgasm deal they offer her.  But by then she's nearly insane with need and has agreed to be in the belt for the
+  rest of the school year!
+<</nobr>>
+
+<<nobr>>
+  She's also sucking
+  <<if $DailyBJMinimum>>
+    even more cocks than you
+  <<else>>
+    many cocks
+  <</if>>
+  every day.  She does it partially to avoid the punishment shocks she'll get if she doesn't meet her daily minimum.  But really,
+  she's always well over the minimum.  She's just hoping for that random chance for an orgasm she has each time she does it.
+<</nobr>>
+
+<<nobr>>
+  In a moment of sympathy? love? madness? you
+  <<if $DailyBJMinimum>>
+    <<set $DailyBJMinimum += 2>>
+    increase your daily blowjob requirement to $DailyBJMinimum to match Bailey.  
+  <<else>>
+    <<set $DailyBJMinimum to 5>>
+    set your belt to require you to suck at least five cocks every day, just like Bailey.
+  <</if>>
+  It won't ever let either of you lower your daily requirement, but now you and her are in this together.
+<</nobr>>
+
+<<include [[Part15BackToMain]]>>
 
 ::Part15JobEngineer
 <<nobr>>
@@ -5906,7 +6120,7 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 <<nobr>>
   By the time her husband's cum fills your mouth, she's watching with intensity, now just wishing it could be her tasting his
   orgasm instead of you. She's already starting to accept that the only orgasms she'll be experiencing for a while will be his.
-  And she probably knows that she better please him, or he'll be instructor her to apply the gel again when today's eventually
+  And she probably knows that she better please him, or he'll be instructing her to apply the gel again when today's eventually
   wears off.
 <</nobr>>
 
@@ -5955,7 +6169,7 @@ TODO Part15JobBaristaWeek13 (Bring your buddy to work day)
 <</nobr>>
 
 <<nobr>>
-  After a moment you tell her partner its safe to turn up the machine.  He instructs the power like you'd instructed.
+  After a moment you tell her partner its safe to turn up the machine.  He increases the power like you'd instructed.
   His wife begins to ride harder, knowing her orgasm is moments away.
 <</nobr>>
 
