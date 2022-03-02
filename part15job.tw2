@@ -4951,6 +4951,8 @@
   You had been thinking that given the unusual nature of your 'job', Bailey wasn't going to be able to participate in the
   "Bring your Buddy to Work Day" event. But when you asked the engineering department about it, they said they had something
   perfect in mind...
+  <<set $BuddyChastityOld to $BuddyChastity>>
+  <<set $PlayerItemBuddyKeyOld to $PlayerItemBuddyKey>>
   <<unset $PlayerItemBuddyKey>>
   <<unset $BuddyChastity>>
   <<set $BuddyElectronicChastity to 1>>
@@ -4990,23 +4992,38 @@
 <</nobr>>
 
 <<nobr>>
-  She smiles and adds, "I made them add to my contract that when I get out of this belt, they immediately put me into your belt
-  and have me leave locked in that one.  I'll probably be so horny I'll do anything you want 48 hours from now.  Won't that be fun!"
+  She smiles and adds, 
+  <<if setup.areDating("Bailey")>>
+    "I made them add to my contract that when I get out of this belt, they immediately put me into your belt
+    and have me leave locked in that one.  I'll probably be so horny I'll do anything you want 48 hours from now.  Won't that be fun!"
+  <<elseif $BuddyDating>>
+    "I made them add to my contract that when I get out of this belt, they immediately put me into 
+    <<if $BuddyChastity>>the<<else>>a<</if>>
+    belt Caleb has the key for and have me leave locked in that one.  I'll probably be so horny I'll do anything he wants 48 hours
+    from now.  Won't that be fun!"
+  <<else>>
+    "I can only imagine how horny I'll be 48 hours from now.  I'm sure I'll fuck the first guy I see when I get out!"
+  <</if>>
   She jumps for a second, then says.  "[[It's starting now!|Part15BetaTestBuddy2]]"
 <</nobr>>
 
 ::Part15BetaTestBuddy2
 <<nobr>>
   <h1>Bailey's new belt</h1>
-  Bailey is already moaning from the teasing her belt is giving her before you get home.  She spends most of day and the evening
+  Bailey is already moaning from the teasing her belt is giving her before you get her home.  She spends most of day and the evening
   on the bed, being teased by the belt and then denied.  In a brief moment between teases she has a moment of lucidity to tell you
   what it's like.
 <</nobr>>
 
 <<nobr>>
-  "It's so much more than the regular belt you'd used with me.  This one knows how to get me so fucking close to cumming, and then
-  stop just before I can!"  Bailey tells you.  "I know you said yours could do that, but I had no idea how maddening it could be.
-  I want... no I need to cum so bad right then, and it just stops, or even gives me a little shock to cool me down."
+  <<if $BuddyChastityOld>>
+    "It's so much more than the regular belt you'd used with me.  This one 
+  <<else>>
+    "It
+  <</if>>
+  knows how to get me so fucking close to cumming, and then stop just before I can!"  Bailey tells you.  "I know you said yours could
+  do that, but I had no idea how maddening it could be. I want... no I need to cum so bad right then, and it just stops, or even gives
+  me a little shock to cool me down."
 <</nobr>>
 
 <<nobr>>
@@ -5023,13 +5040,13 @@
 <<nobr>>
   She can't make it to class the next day, but the Engineering department sent an email to her professors, so she'll be allowed
   to make up any work when she's "feeling better".  As soon as your classes are over you stop by to check up on her.  "How's it going.
-  Think you can make it one more day," you ask before laughing and adding, "Though it's not like you have another option."
+  Think you can make it one more day?" you ask before laughing and adding, "Though it's not like you have another option."
 <</nobr>>
 
 <<nobr>>
   "Not tomorrow... Out next week...  Special offer...," Bailey says between moans.  You try to get her to explain further, but it becomes
-  clearer when she points to a contract addendum.  You read that she extended her testing period of the denial optimization program by an
-  additional week in exchange for them providing her a single orgasm earlier today. 
+  clearer when she points to her copy of a contract addendum she signed.  You read that she extended her testing period of the denial
+  optimization program by an additional week in exchange for them providing her a single orgasm earlier today. 
 <</nobr>>
 
 <<nobr>>
@@ -5058,18 +5075,18 @@
   <</if>>
   every day.  She does it partially to avoid the punishment shocks she'll get if she doesn't meet her daily minimum.  But really,
   she's always well over the minimum.  She's just hoping for that random chance for an orgasm she has each time she does it.
-<</nobr>>
-
-<<nobr>>
-  In a moment of sympathy? love? madness? you
-  <<if $DailyBJMinimum>>
-    <<set $DailyBJMinimum += 2>>
-    increase your daily blowjob requirement to $DailyBJMinimum to match Bailey.  
-  <<else>>
-    <<set $DailyBJMinimum to 5>>
-    set your belt to require you to suck at least five cocks every day, just like Bailey.
+  <<if setup.areDating("Bailey")>>
+    <br><br>
+    In a moment of sympathy? love? madness? you
+    <<if $DailyBJMinimum>>
+      <<set $DailyBJMinimum += 2>>
+      increase your daily blowjob requirement to $DailyBJMinimum to match Bailey.  
+    <<else>>
+      <<set $DailyBJMinimum to 5>>
+      set your belt to require you to suck at least five cocks every day, just like Bailey.
+    <</if>>
+    It won't ever let either of you lower your daily requirement, but now you and her are in this together.
   <</if>>
-  It won't ever let either of you lower your daily requirement, but now you and her are in this together.
 <</nobr>>
 
 <<include [[Part15BackToMain]]>>
