@@ -5793,8 +5793,12 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   But the day after he is arrested,
-  <<if $JobBetaTester or $JobEngineerLock>>
+  <<if ($JobBetaTester or $JobEngineerLock) and $BuddyElectronicChastity>>
+    you, Bailey, and the other
+  <<elseif $JobBetaTester or $JobEngineerLock>>
     you and the other
+  <<elseif $BuddyElectronicChastity>>
+    Bailey and all the other
   <<else>>
     all the
   <</if>>
@@ -5901,8 +5905,10 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <<if !$DailyBJRecord or $DailyBJRecord < 15>>
       <<set $DailyBJRecord to 15>>
     <</if>>
-  <<else>>
-    You imagine it's a real challenge for some of them.  It's probably especially difficult for the ones that had been in
+  <<elseif $BuddyElectronicChastity>>
+    Bailey is adjusting well, sucking the cocks doesn't bother her at all.  She loves that part, and the teasing the belt gives
+    her when she does.  She really misses the chance for an orgasm for herself when he cums though.  You imagine it might
+    be a real challenge for some of the others though.  It's probably especially difficult for the ones that had been in
     'chaste' mode.  Well, at first anyway.  You doubt it will take them long to adjust.  The 'monogamous' ones are probably in for
     an adjustment too, assuming their boyfriends can't handle 10 blowjobs every day.  Though they might enjoy trying at first.
   <</if>>
@@ -11446,7 +11452,7 @@ TODO Another ELP charity project (be careful if had an incident last time)
     as you grab your bag and hurry to class.  You make it to class on time, though you would have liked to have time to clean up a bit,
     you've managed to soak your panties through while you were sucking his cock.
   <<else>>
-    <<set setup.addSex({sex: 'male', anon: 'interrupting guy', vaginal:true, noCondom: true, birthControl:'pullout'})>>
+    <<set setup.addSex({sex: 'male', anon: 'interrupting guy', vaginal:true, noCondom: true, pullout:true})>>
     <video src="Part15/Study4.mp4" autoplay loop muted height="450"></video>
     <br>
     "I have class soon, so lets skip the small talk and get right to fucking," you tell him.  He happily agrees.  Thankfully the
