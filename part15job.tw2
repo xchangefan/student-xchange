@@ -1609,7 +1609,7 @@
 <</nobr>>
 
 <<nobr>>
-  The fans will probably thing it's attached with a belt or something under your skirt.  Or at least they'll think that unless
+  The fans will probably think it's attached with a belt or something under your skirt.  Or at least they'll think that unless
   you spin or flip in a way that shows there's nothing under your skirt except the tail butt plug in your ass.  The university
   said they looked into the belt option, but decided it was likely to fall off.  And they said underwear would just get in
   the way.
@@ -1633,7 +1633,7 @@
 <<nobr>>
   <<if setup.haveGirlfriend()>>
     That night, $dating[0] and you are going out dancing.  She glances down at your skirt and tells you that you are missing
-    something.  "There's no reason to let your knew toy go to waste.  Take off your panties and wear the plug instead.  You
+    something.  "There's no reason to let your new toy go to waste.  Take off your panties and wear the plug instead.  You
     smile and go do exactly that before heading to the club.
     <br><br>
     <<include [[Part15AfterMainJob]]>>
@@ -1754,8 +1754,7 @@
   <<elseif $SchoolWeek == 11>>
     <<include [[Part15JobBartender3]]>>
   <<else>>
-    TODO Bar after that (13)  (Bring your buddy to work day)
-    <<include [[Part15BackToMain]]>>
+    <<include [[Part15JobBartender5]]>>
   <</if>>
 <</nobr>>
 
@@ -1979,7 +1978,7 @@
 
 <<nobr>>
   As soon as she finishes getting you off,
-  <<if setup.sexMaleCount() == 0 and false>>
+  <<if setup.sexMaleCount() == 0>>
     <<set setup.addSex({sex: 'female', anon: 'Bar Patron', repeat:true})>>
     you'll put on your strap-on and take her boyfriend's place fucking her.
     It won't take long until he's hard again and his cock is in her mouth while the two of you fuck her from each end.
@@ -1997,7 +1996,182 @@
     Kate doesn't mind the fun you have when she is away.  Especially since, more often than not, they'll eventually be another
     threesome.  That one will be just you, Kate, and the girl from the couple.  Her boyfriend will either be dumped by then, or
     perhaps just home jerking off to the thought of what his girlfriend is doing at that moment.
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<elseif setup.sexMaleCount() == 0 and ($PlayerSideEffectDominant or setup.isFormerNeighbour("Peter"))>>
+    Though that's [[not always the case|Part15JobBartender4]].
+  <<else>>
+    <br><br>
+    <<include [[Part15BackToMain]]>>
   <</if>>
+<</nobr>>
+
+::Part15JobBartender4
+<<nobr>>
+  <h1>Fun while her husband watches</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Bar9.mp4" autoplay loop muted height="650"></video>
+  </div>
+  <<set setup.addSexRepeat(5, {sex: 'female', anon: 'Bar Patron'})>>
+  <<set setup.addSexRepeat(10, {sex: 'female', anon: 'Bar Patron', repeat: true})>>
+  <<set $BarPatronChastity to 1>>
+<</nobr>>
+<<nobr>>
+  <<if setup.isFormerNeighbour("Peter")>>
+    You'd first learned about guys in chastity cages from your former neighbour Peter.  You'd even let him watch you and
+    the girl you were with before, while he was locked in his cage, of course.
+    <br><br>
+  <</if>>
+  You don't have any interest or use in a guy's cock, and the thought of shifting all the power in the relationship over
+  to the wife or girlfriend turns you on.    
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Bar10.jpg" hspace="10" vspace="10" height="400" align="right">
+  Not every couple is going to be interested, but you love it when you find one.  Sometimes you don't find out until you're
+  back at their place, and he strips down and reveals his cage.
+<</nobr>>
+
+<<nobr>>
+  Other times you suspect it when you first meet them.  When you see how submissive he is, catch a glimpse of the panties
+  he's wearing, or spot the key around his wife's neck, you know to ask.
+<</nobr>>
+
+<<nobr>>
+  When the the husband or boyfriend's face turns red, it's enough to confirm your suspicion before his partner even answers.
+  Though a couple times you've been wrong, and it hasn't been something they were into... yet.
+<</nobr>>
+
+<<nobr>>
+  But both times, telling him he'll only be allowed to watch you and his wife together if he's in a chastity cage was enough
+  to convince to stop by the sex store on the way back to their place.  You don't doubt he's probably fantasized about wearing
+  one before now, but has just been too embarrassed to admit it to his wife.
+<</nobr>>
+
+<<nobr>>
+  He stays locked in his cage the entire time you are there, watching as you make his wife cum again and again.  If he's
+  well behaved, you sometimes allow him to eat his wife out while her head is between your legs, with his cage still on.
+<</nobr>>
+
+<<nobr>>
+  "I recommend you don't let him out until he's at least as good as you and I were at giving orgasms," you usually say
+  to her, with him listening.  "And I recommend keeping locked after that too.  You can always get a good strap-on if
+  you ever want to give him an orgasm for some reason."
+<</nobr>>
+
+<<include [[Part15BackToMain]]>>
+
+::Part15JobBartender5
+TODO <<unset $BuddyDating>><<set setup.startDating("Bailey")>>
+<<nobr>>
+  <h1>Bring your Buddy to work day</h1>
+  At first you have Bailey helping you behind the bar on "Bring your Buddy to work day."
+  <<if setup.areDating("Bailey")>>
+    There's lots of great things about Bailey, but she's
+  <<else>>
+    But Bailey has
+  <</if>>
+  never done a honest day's work in her life, and she's mainly just in the way back there.  So send her out to have fun and "entertain the
+  guests" instead. Of course that just means for her to go out and have fun while you work.
+  <<if $BuddyDating>>
+    <br><br>
+    Of course the fact that $BuddyDating has been waiting at the bar the whole time probably explains why she was distracted, but it also
+    guarantees she has no problem jumping straight into forgetting about work and having fun.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Bar11.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  <<if setup.buddyHasGirlfriend()>>
+    <<if setup.areDating("Bailey")>>
+      You check on her as often as you can.  At first she's at a table by herself.  But the next time you check on her, she's got
+      her back to the wall with a hot freshman lesbian's tongue in her mouth.
+      <br><br>
+      You stop by for a minute to say high and get a free drink for Bailey's new friend.  The next time you stop by you mention
+      what time your shift ends, and Bailey say's the new girl is eager for then, and to
+      [[go home with the two of you|Part15JobBartender6FFF]].
+    <<else>>
+      You check on her a few times through the night, and her and $BuddyDating seem to be having a great time.  Eventually you
+      see the two of them head out together, with their hands all over each other.  Pretty soon Bailey will have her girlfriend's
+      head burried between her legs.  Meanwhile you'll still be working for several more hours.
+      <br><br>
+      <<include [[Part15BackToMain]]>>
+    <</if>>
+  <<else>>
+    <<if setup.buddyHasBoyfriend()>>
+      At first Bailey is by $BuddyDating's side.  But the next time you check on her she's got her back to the wall with one of the
+      regular's tongue in her mouth.  You have to go back to the bar to work before you can see how $BuddyDating 
+    <<else>>
+      At first Bailey is sitting at a table by herself.  But the next time you check on her, you see some bicurious girl with her
+      back to the wall and Bailey's tongue in her mouth.  You have to go back to the bar to work before you can see how the girl's
+      boyfriend
+    <</if>>
+    is going to react.  But it must have been well you assume, when you see the three of them [[leave together|Part15JobBartender6MFF]]
+    not long after.
+  <</if>>
+<</nobr>>
+
+::Part15JobBartender6FFF
+<<nobr>>
+  <h1>After work with Bailey and another freshman</h1>
+  <video src="Part15/Bar13.mp4" autoplay loop muted height="450"></video>
+  <<set setup.addSex({anon:"Freshman Lesbian", sex:"female"})>>
+  <<set setup.addSex({name:"Bailey", sex:"female"})>>
+  <<set setup.addSex({anon:"Freshman Lesbian", sex:"female", repeat:true})>>
+  <<set setup.addSex({name:"Bailey", sex:"female"})>>
+  <<set setup.addSex({anon:"Freshman Lesbian", sex:"female", repeat:true})>>
+  <<set setup.addSex({name:"Bailey", sex:"female"})>>
+  <<set setup.addSex({anon:"Freshman Lesbian", sex:"female", repeat:true})>>
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Bar14.jpg" hspace="10" vspace="10" height="350" align="right">
+  Bailey's eager new friend can't wait to get back home with you and Bailey.  She's a baby gay that just came out earlier
+  this semester.  Now she's eager to make up for lost time.
+<</nobr>>
+
+<<nobr>>
+  You, Bailey, and her all take turns pleasuring each other in every possible combination.  Eventually the three of you collapse
+  in a nake pile.
+<</nobr>>
+
+<<nobr>>
+  The next morning the freshman tells you and Bailey what a wonderful time she had.  "I hope I find someone and have a
+  relationship like the two of you do someday," she tells you.  "But not yet.  Right now, I'm having too much fun to
+  want to settle down to just one woman."
+<</nobr>>
+
+<<include [[Part15BackToMain]]>>
+
+::Part15JobBartender6MFF
+<<nobr>>
+  <h1>Hearing about Bailey's evening</h1>
+  <video src="Part15/Bar12.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  The next time you see Bailey, she let's you know how her evening went.  "It was amazing!  I don't know how many times I came that night.
+  First she ate me out, then
+  <<if $BuddyDating>>
+    $BuddyDating
+  <<else>>
+    her boyfriend
+  <</if>>
+  started taking turns fucking us.  First me, then her, then back again.  He never stayed with me long enough for me to get off, but
+  it was such a turn on.  Especially
+  <<if $BuddyDating>>
+    watching $BuddyDating cum inside her.
+  <<else>>
+    having her watch while her boyfriend came inside me.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Of course, he needed a break after that," Bailey continues.  "But her and I went right back to taking care of each other until he
+  could go again."  She pauses and adds, "Thank you so much for taking me to work with you."
 <</nobr>>
 
 <<include [[Part15BackToMain]]>>
@@ -3174,8 +3348,7 @@
   <<elseif $SchoolWeek == 11>>
     <<include [[Part15JobBikiniBarista5]]>>
   <<else>>
-    TODO Bikini Barista after that (13)  (Bring your buddy to work day)
-    <<include [[Part15BackToMain]]>>
+    <<include [[Part15JobBikiniBarista7]]>>
   <</if>>
 <</nobr>>
 
@@ -3564,6 +3737,38 @@
 
 <<nobr>>
   <video src="Part13/Fundraiser2.webm" autoplay loop muted height="400"></video>
+<</nobr>>
+
+::Part15JobBikiniBarista7
+<<nobr>>
+  <h1>Bring your Buddy to Work Day</h1>
+  <img src="Part15/Barista15.png" hspace="10" vspace="10" height="550" align="left">
+<</nobr>>
+
+<<nobr>>
+  Today is "Bring your Buddy to Work Day", so you bring Bailey with you to the coffee shop.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating("Bailey")>>
+    You think she's great in lots of other ways, but
+  <</if>>
+  Bailey's never done a hard day's work in her life.  So you are the one left doing nearly all the work.  She's more than
+  happy to flirt with the customers while you make their drinks though.  And the constant attention they are getting means
+  tips are higher than normal, though you are splitting them two ways, so it still ends up being less than normal for you.
+<</nobr>>
+
+<<nobr>>
+  Bailey ends up having a fun time, though you know she'd never want a real job here, since that would require more than
+  just flirting or flashing the customers.
+  <<if setup.areDating("Bailey")>>
+    You don't really mean it, but you give a bit of hard time for making you do all the work today.  You tell her she'll need
+    to make it up to you.  Tonight [[she can do all the work|Part15JobBaristaWeek13Bailey]] while you just lie back and enjoy
+    yourself.
+  <<else>>
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
 <</nobr>>
 
 ::Part15JobCallGirl

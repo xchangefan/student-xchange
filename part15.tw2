@@ -6320,7 +6320,6 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   act like they have no idea what you are talking about.  But once they realize you came here, not because you were upset by the
   rumors, but because you were excited about them, their tone changes.
   <<set $EngineeringGuest to 1>>
-  <<set setup.addSexRepeat(30, {sex:'male', anon:'Engineer'})>>
 <</nobr>>
 
 <<nobr>>
@@ -6331,7 +6330,13 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   <img src="Part15/Class11.jpg" hspace="10" vspace="10" height="350" align="left">
-  You eagerly wrap your lips around the penis gag he slides into your mouth, then buckles behind your head.  "Follow me," he instructs.
+  You
+  <<if setup.sexMaleCount() == 0 and !$PlayerSideEffectOral>>
+    relucantly
+  <<else>>
+    eagerly
+  <</if>>
+  wrap your lips around the penis gag he slides into your mouth, then buckles behind your head.  "Follow me," he instructs.
 <</nobr>>
 
 <<nobr>>
@@ -6359,10 +6364,25 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  You open your mouth, eager for his cock.  After he's came in your mouth, the pushes some other buttons on the control panel and
+  <<if setup.sexMaleCount() == 0>>
+    <<if $PlayerSideEffectOral>>
+      Though, thanks to your implant's side effect, you've fantasized about it many times before, you've
+    <<else>>
+      You've 
+    <</if>>
+    never sucked a cock before.  "I'll suck your cock if you let me cum," you say desperately.
+    <br><br>
+    "Suck it, and then I'll decide," he says, slapping your cheek again with his card cock.  You are in no position to
+    negotiate, and need an orgasm more than you ever have before.  You open your mouth and wait to see what your first
+    cock tastes like.
+  <<else>>
+    You open your mouth, eager for his cock.  
+  <</if>>
+  After he's came in your mouth, he pushes some other buttons on the control panel and
   the machine picks up it's movements inside you.  You feel an orgasm approaching again.  This time the machine doesn't stop
   completely when you get close, it only slows down.  It picks up again a short time later, only to slow down again when you get close
   again.  Now it's keeping you right on the edge of an orgasm, but never letting you have it.
+  <<set setup.addSexRepeat(12, {sex:'male', anon:'Engineer'})>>
 <</nobr>>
 
 <<nobr>>
@@ -6389,8 +6409,12 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  "I'll suck your cock!" you answer eagerly.  He tells you that's a given and to try again.  "You can fuck me.  Please fuck me!  Or my
-  ass.  You can fuck my ass!"  He tells you maybe next time.  You go back to "Anything!  I'll do anything you want!  Just please let me cum!"
+  "I'll suck your cock!" you answer eagerly.  He tells you that's a given and to try again.  "You can fuck me.  Please fuck me!
+  <<if setup.sexVaginalCount() == 0>>
+    I've never been fucked by a guy before!  You'll be the first one inside me!
+  <</if>>
+  Or my ass.  You can fuck my ass!"  He tells you maybe next time.  You go back to "Anything!  I'll do anything you want!  Just please
+  let me cum!"
 <</nobr>>
 
 <<nobr>>
@@ -6401,36 +6425,94 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  "That's a good slut.  Well, we are all horny as hell too, so you can cum while you blow us.  I'll turn it off and untie you once you've
-  taken care of all of us."  You orgasm finally as the first engineer is fucking your face.
+  "That's a good slut.  Well, we are all horny as hell 
+  <<if setup.sexVaginalCount() == 0>>
+    too.  We were just going to have you suck our cocks again, but I don't think you were lying about never having had a cock before.
+    I'm not going to pass up your offer [[to be the first|Part15WomenStudiesAskAbout2]].  Don't worry you won't have to wait long
+    for your second cock, or your third, or... well, you get the idea."
+  <<else>>
+    <<set setup.addSexRepeat(12, {sex:'male', anon:'Engineer', repeat: true})>>
+    too, so you can cum while you blow us.  I'll turn it off and untie you once
+    you've taken care of all of us."  He turns the machine up and slides his cock back into your mouth.  You orgasm finally as
+    he is fucking your face.
+    <br><br>
+    The machine doesn't stop then, continuing to vibrate and move inside you.  You can't squirm away from the sensations when they start
+    to overwhelm you.  All you can do is take the next cock that is offered you, and the next, and the next.  When the final one is done,
+    you are still there bound to the machine.
+    <br><br>
+    "Did you enjoy yourself, slut?" the engineer asks you.
+    <br><br>
+    "Yes, sir.  Very... oh god... much," you manage to say.
+    <br><br>
+    "Do you want to come back here again?" he asks.
+    <br><br>
+    "Yes, please sir, I want to come back" you say.
+    <br><br>
+    He hits a button on the machine and it slows its movements and then stops.  Still bound to the machine, you pant and try to catch your
+    breath.  Eventually he starts to release you from the bindings holding you to the machine.  As you start to stand, he tosses a towel over
+    to you to clean yourself up with.  "Feel free to come by for a visit any time you like," he says.  You hope to do exactly that.
+    <br><br>
+    You definitely aren't going to mention anything [[to your professor|Part15WomensStudiesReport2]] about your visit though.  Even though
+    you volunteered and had a wonderful time, she might get the wrong idea because of the restraints and everything.
+  <</if>>
+<</nobr>>
+
+::Part15WomenStudiesAskAbout2
+<<nobr>>
+  <h1>Your first dozen cocks</h1>
+  He removes you from the Sybian and binds you to some kind of a post, then he goes behind you and you feel his cock moving across
+  your lips.  Maybe it's how horny you are right now, but nothing has ever felt better than his cock does when you feel it slide into
+  you.
+  <<set setup.addSexRepeat(6, {sex:'male', anon:'Engineer', repeat: true})>>
+  <<set setup.addSexRepeat(12, {sex:'male', anon:'Engineer', vaginal: true, noPullout: true, noCondom: true})>>
+<</nobr>>
+<<nobr>>
+  <video src="Part13/Engineer6.webm" autoplay loop muted height="500"></video>
 <</nobr>>
 
 <<nobr>>
-  The machine doesn't stop then, continuing to vibrate and move inside you.  You can't squirm away from the sensations when they start to
-  overwhelm you.  All you can do is take the next cock that is offered you, and the next, and the next.  When the final one is done,
-  you are still there bound to the machine.
+  He's barely started fucking you when one of his friends comes up in front of you, and shoves his cock in your mouth.  You
+  are doing your best to suck it when you feel your first orgasm wash over you.  The engineer fucking you spanks your ass and
+  tells you what a slut you are.  A moment later you hear him grown and feel him thrust inside you and the warmth of his cum
+  spread inside you.  "That wasn't so bad after all," you think to yourself.
 <</nobr>>
 
 <<nobr>>
-  "Did you enjoy yourself, slut?" the engineer asks you.
+  You don't have much time to think about how it compared to your expectations though, because soon another engineer is behind
+  you, picking up right where the first one left off.  They keep swapping out, whenever one finishes in your mouth, or inside you,
+  another one takes his place.
 <</nobr>>
 
 <<nobr>>
-  "Yes, sir.  Very... oh god... much," you manage to say.
+  <img src="Part15/Class13.jpg" hspace="10" vspace="10" height="350" align="right">
+  You lose track of time, of how many times you've came, of how many times one of them has came inside you.  But when they finally
+  unbind you and you stand up all the way, you can feel it leaking out of you and down your leg.  You aren't as disgusted by the
+  feeling as you probably would have been if you'd thought about it a few hours ago.  Now it just gives you a little smile as it
+  makes you think of all of the orgasms you just had.
 <</nobr>>
 
 <<nobr>>
-  "Do you want to come back here again?" he asks.
+  <<if $PlayerProtectionFertile>>
+    "Oh shit!" You think, realizing that you could get pregnant.  "Every one of them came inside me, and none of them wore a condom!
+    And they warned me about how fertile I am now!"
+  <<elseif $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+    "Thank god for my implant's birth control," you think, realizing that pregnancy is a concern if you are going to let guy's fuck you.
+  <<elseif $PlayerProtectionPill>>
+    "Thank god I'm the pill," you think, realizing that pregnancy is a concern if you are going to let guy's fuck you.
+  <<else>>
+    "Oh shit!" You think, realizing that you could get pregnant.  "Every one of them came inside me, and none of them wore a condom!
+    I would have gotten on the pill if I ever thought I'd be with a guy!"
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  "Yes, please sir, I want to come back" you say.
+  You try to wipe up as best you can with the towel he hands you, and then get dressed again.  You know you'll need to change panties,
+  and maybe more, when you get home as you can still feel their cum leaking out of you.  As you finish getting dressed you wonder if
+  that's a feeling you'll ever get used to.
 <</nobr>>
 
 <<nobr>>
-  He hits a button on the machine and it slows its movements and then stops.  Still bound to the machine, you pant and try to catch your
-  breath.  Eventually he starts to release you from the bindings holding you to the machine.  As you start to stand, he tosses a towel over
-  to you to clean yourself up with.  "Feel free to come by for a visit any time you like," he says.  You hope to do exactly that.
+  "Feel free to come by for a visit any time you like," the engineer says as you are leaving.  You hope to do exactly that.
 <</nobr>>
 
 <<nobr>>

@@ -758,6 +758,23 @@ setup.haveGirlfriend = function () {
   return potentialGirlfriends.find(function(name) {return setup.areDating(name)});
 }
 
+setup.buddyIsDating = function (name) {
+ 	return State.variables.BuddyDating == name
+}
+
+setup.buddyHasGirlfriend = function () {
+  if (setup.areDating("Bailey")) {
+    return true;
+  }
+
+  var potentialGirlfriends = ["Ava", "Kelsey"];
+  return potentialGirlfriends.find(function(name) {return setup.buddyIsDating(name)});
+}
+
+setup.buddyHasBoyfriend = function () {
+  return State.variables.BuddyDating && !setup.buddyHasGirlfriend();
+}
+
 setup.isEx = function (name) {
 	return State.variables.exes.indexOf(name) >= 0
 }
