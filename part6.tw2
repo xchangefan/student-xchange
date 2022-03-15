@@ -4284,31 +4284,55 @@ do your best to make a purring sound for a bit before you fall asleep.
 
 ::Part6Cheerleader  <21000,600>
 <<nobr>>
+	<h1>Cheerleaders “A” Squad</h1>
+  It’s the day you have been preparing for the most, the football team’s match against their biggest rival.
+  The crowd gathered to watch the match is amazing.
 	<<if setup.areDating('Veronica')>>
 		<<set $FunPoints += 2>>
 	<<else>>
 		<<set $FunPoints += 1>>
 	<</if>>
-
-	<h1><<print "Cheerleaders “A” Squad">></h1>
 <</nobr>>
 
-<<print "It’s the day you have been preparing for the most, the football team’s match against their biggest rival. The crowd gathered to watch the match is amazing.">>
+<<nobr>>
+  <<if setup.areDating('Veronica')>>
+    You have been training hard with the team, especially for this day, and you can’t wait to show everyone, and especially Veronica,
+    how much your skills have improved.
+  <<else>>
+    Despite your bad relations in the beginning with the rest of the squad, through training you were able to get friendly with most of
+    the other girls on the team.  Not Veronica though, whom you always do your best to avoid. All the football players are also very
+    friendly to you, which is no surprise considering that they all got to fuck you.
+  <</if>>
+<</nobr>>
 
-<<if setup.areDating('Veronica')>><<print "You have been training hard with the team, especially for this day, and you can’t wait to show everyone, and especially Veronica, how much your skills have improved.">><<else>><<print "Despite your bad relation in the beginning with, through training you were able to get friendly with most of the other girls on the team, except Veronica, whom you always do your best to avoid. All the football players are also very friendly to you, which is no surprised considering that they all got to fuck you.">><</if>>
-<img src="Part6/Cheerleader1.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  <img src="Part6/Cheerleader1.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
 
-<<if setup.areDating('Veronica')>><<print "Cheerleading for such a big event is so much fun, especially seeing how much the audience also enjoys your dance moves.">><<else>><<print "Seeing the audience enjoy your dance move so much helps you somewhat forget some of the bad memories, but also wish it had been like this from the beginning.">><</if>>
+<<nobr>>
+  <<if setup.areDating('Veronica')>>
+    Cheerleading for such a big event is so much fun, especially seeing how much the audience also enjoys your dance moves.
+  <<else>>
+    Seeing the audience enjoy your dance move so much helps you somewhat forget some of the bad memories, but also wish it had been like
+    this from the beginning.
+  <</if>>
+<</nobr>>
 
-<<if setup.areDating('Veronica')>><<print "It is a hard match, but in the end your team narrowly wins, and you hope your efforts helped support that victory. Everyone in the stadium is extatic and you see Veronica smiling at you affectionately. You know that you will have your own kind of celebration for this victory.">><<else>><<print "It is a hard match, but in the end your team narrowly wins, the stadium extatic, and you can say that overall it was a pleasant experience for you today.">><</if>>
+<<nobr>>
+  It is a hard match, but in the end your team narrowly wins
+  <<if setup.areDating('Veronica')>>
+    wins, and you hope your efforts helped support that victory. Everyone in the stadium is extatic and you see Veronica smiling at you
+    affectionately. You know that you will have your own kind of celebration for this victory.
+  <<else>>
+    wins. Everyone in the stadium is extatic, and you can say that overall it was a pleasant experience for you today.
+  <</if>>
+<</nobr>>
 
 <<nobr>>
 	<<if $JobCallGirl or $JobCallGirlSide>>[[You have to work as a call girl.|JobCall4]]
-		<<else>><<if $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
-			<<else>><<if $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
-				<<else>>[[You join a study group.|Part6StudyGroup]]
-			<</if>>
-		<</if>>
+  <<elseif $JobPornOral or $JobPornOralSide>>[[You have to film another porn movie.|JobPornOral2]]
+  <<elseif $JobPornGang or $JobPornGangSide>>[[You have to film another porn movie.|JobPornGang2]]
+  <<else>>[[You join a study group.|Part6StudyGroup]]
 	<</if>>
 <</nobr>>
 
