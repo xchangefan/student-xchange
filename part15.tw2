@@ -2379,27 +2379,59 @@
 <</nobr>>
 
 <<nobr>>
-  When you get there you meet with the department head.  "We are meetng with all of the test subjects from your cohort, but given your special
-  circumstances, I thought it best to meet with you individually," he starts.  "You won't be participating in the same sort of testing you were
-  last year.  A new batch of incomming freshmen will be starting in your place."  You wonder if he is firing all of you then?  But then he continues,
-  "But we have another opportunity for you all.  And in your case the offer also includes having the dean lift your orgasm block."
-<</nobr>>
-
-<<nobr>>
-  "We are in the beta testing phase of an exciting product we hope to be placing on the market soon," you were already sold on participating
-  as soon as you heard that you'd get your orgasms back.  Then he starts to explain the product, "It is a computerized
-  chastity belt."  Great. So you'll be trading one form of denial for another one, you think.  "I can see your disappointment, but it's not
-  as simple as that.  This belt doesn't just deny your pleasure, it can also give you pleasure.  It all depends on the settings used, and we will
-  be using a variety of them during the beta testing.  I can guarantee you'll have more orgasms help us with this than you would staying on the
-  dean's denial list.  And obviously the belt will be yours to keep at the end of testing."
-<</nobr>>
-
-<<nobr>>
-  You'll get to keep your job, <b>and</b> orgasm again.  Of course you agree to participate in the beta testing.
-  <<if $dating.length>>
-    You hope $dating[0] isn't angry with you for agreeing without discussing it first.
+  When you get there you meet with the department head.
+  <<if $PlayerPregnant>>
+    "I want to thank you for all of the work you've done for us.  But unfortunately we won't be able to use you for testing this year,"
+    he starts.  You start to tell him that you are working on improving your grades he stops you.  "This isn't about your academic probation.
+    It's about your pregnancy.  The testing we would have had you doing this year is for a new product, but we aren't testing with
+    pregnant women.  And with the testing you did last year, we always start with a new cohort of test subjects each year."
+  <<else>>
+    "We are meeting with all of the test subjects from your cohort, but given your special circumstances, I thought it best to meet with you
+    individually," he starts.  "You won't be participating in the same sort of testing you were last year.  A new batch of incomming freshmen
+    will be starting in your place."  You wonder if he is firing all of you then?  But then he continues, "But we have another opportunity for
+    you all.  And in your case the offer also includes having the dean lift your orgasm block.  We just need to do a couple tests first"
+    <br><br>
+    The main test they appeared to be interested in was a pregnancy test, and yours came back 
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Electronic Chastity Belt Fitting', 0)>>
+    <<unset $tempJustNowPregnant>>
+    <<if $PregnancyCheck.isPregnant>>
+      <<set $PlayerSideEffectPermanent to 1>>
+      <<set $tempJustNowPregnant to 1>>
+      <<set $PlayerPregnant to 1>>
+      <<if setup.pregnantFirstTime()>>
+        <<achievement>>firsttime+pregnant<</achievement>>
+      <<else>>
+        <<achievement>>pregnant<</achievement>>
+      <</if>>
+      positive!
+      <br><br>
+      He lets you know that you won't be able to continue with testing.  They arent testing with pregnant women for tests they had
+      planned for you.  And the tests you were doing last year are being done by a whole new batch of incomming freshmen.
+    <<else>>
+      negative.  "Everything looks good!" he tells you.
+    <</if>>
   <</if>>
-  "Great, let's head over to the lab right now [[for your fitting|Part15TestSubjectBetaTest]] then," he says.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    <<set $JobChangeTestSubjectPregnant to 1>>
+    "But don't worry," he reassures you.  "If you need help [[finding a new job|Part15TestSubjectJobChange]] I'll be happy to provide a
+    reference for you.  And I can be as graphic or as vague about your... 'skills' as you would like."
+  <<else>>
+    "We are in the beta testing phase of an exciting product we hope to be placing on the market soon," you were already sold on participating
+    as soon as you heard that you'd get your orgasms back.  Then he starts to explain the product, "It is a computerized
+    chastity belt."  Great. So you'll be trading one form of denial for another one, you think.  "I can see your disappointment, but it's not
+    as simple as that.  This belt doesn't just deny your pleasure, it can also give you pleasure.  It all depends on the settings used, and we will
+    be using a variety of them during the beta testing.  I can guarantee you'll have more orgasms help us with this than you would staying on the
+    dean's denial list.  And obviously the belt will be yours to keep at the end of testing."
+    <br><br>
+    You'll get to keep your job, <b>and</b> orgasm again.  Of course you agree to participate in the beta testing.
+    <<if $dating.length>>
+      You hope $dating[0] isn't angry with you for agreeing without discussing it first.
+    <</if>>
+    "Great, let's head over to the lab right now [[for your fitting|Part15TestSubjectBetaTest]] then," he says.
+  <</if>>
 <</nobr>>
 
 ::Part15TestSubjectNeverFucked
@@ -2723,63 +2755,95 @@
   "For those wishing to sign up, you'll need to do so before you leave today.  Your testing will begin as soon as you leave the lab today.
   During your fitting you will need to sign the "Beta-tester Non-disclosure Agreement" we will provide.  On your way out we will provide a
   secure link to the documentation.  Sorry we can't just hand you a booklet right now, but this is still a pre-market product and we don't want
-  information leaking out.
+  information leaking out."
 <</nobr>>
 
 <<nobr>>
-  <<if $dating.length or $JobCallGirl or $JobCallGirlSide or $JobStripper>>
-    <<set $tempRejectBelt to 1>>
-    <<unset $tempChooseBelt>>
-  <<elseif $PlayerChastityBelt>>
-    <<set $tempChooseBelt to 1>>
-    <<unset $tempRejectBelt>>
-  <<else>>
-    <<unset $tempChooseBelt>>
-    <<unset $tempRejectBelt>>
-  <</if>>
-  So, if you wish to participare, please line up for
-  <<if $tempRejectBelt and !$tempChooseBelt>>
-    your fitting
-  <<else>>
-    [[your belt fitting|Part15TestSubjectBetaTest]]
-  <</if>>
-  over here.  For those that do not wish to participate, I'd like to thank you again for the help you provided us last year, and wish you the
-  best in the future.  If you need a recommendation to aid in your
-  <<if !$tempRejectBelt and $tempChooseBelt>>
-    search for a new job,
-  <<else>>
-    [[search for a new job|Part15TestSubjectJobChange]],
-  <</if>>
-  please let me know how explicit I should be about the nature of your work here."
-<</nobr>>
-
-<<nobr>>
-  <<if $tempChooseBelt>>
-    After you discreetly ask about the chastity belt you are already wearing he tells you, "We are especially interested in hearing from
-    a chastity enthusiast such as yourself.  I still have a copy of your key, and have discussed it with
-    <<if $Keyholder>>$Keyholder<<else>>your keyholder<</if>>.  If you wish to participate, we'll remove that belt and immediately fit you with
-    ours.  My promise of an orgasm today still applies.  And if you don't want to participate, I'll have my copy of your key sent back to
-    <<if $Keyholder>>$Keyholder<<else>>your keyholder<</if>>.
-    <br><br>
-    With the promise of an orgasm today, and many more to come, there's no way you are going to turn down their offer.
-  <<elseif $tempRejectBelt>>
-    <<if $dating.length>>
-      If you are going to be in a chastity belt, you'd want $dating[0] to have the key.  If that's not the case, then your answer is no.
-    <<elseif $JobCallGirlSide or $JobCallGirl>>
-      You couldn't very well continue working as call girl if you were wearing one of their belts.
-    <<elseif $JobStripper>>
-      You couldn't very well continue working as stripper if you were wearing one of their belts.  And you make more money doing that
-      than they were paying you as a test subject.
-    <<else>>
-      There's no way you are signing up for this.  
+  <<unset $tempJustNowPregnant>>
+  <<if true or !$PlayerPregnant>>
+    <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Electronic Chastity Belt Fitting', 0)>>
+    <<if true or $PregnancyCheck.isPregnant>>
+      <<set $PlayerSideEffectPermanent to 1>>
+      <<set $tempJustNowPregnant to 1>>
+      <<set $PlayerPregnant to 1>>
+      <<if setup.pregnantFirstTime()>>
+        <<achievement>>firsttime+pregnant<</achievement>>
+      <<else>>
+        <<achievement>>pregnant<</achievement>>
+      <</if>>
     <</if>>
-    You guess you'll just need to find a new job.
-  <<elseif !$PlayerPregnant and $PlayerProtectionTry>>
-    You suppose if you want to participate, you'll just have to wait until your testing is done before you can try to get
-    <<if $PlayerMother or $PlayerAbortion or $PlayerAdoption>>pregnant again.<<else>>pregnant.<</if>>
   <</if>>
-  <<unset $tempChooseBelt>>
-  <<unset $tempRejectBelt>>
+  "The results of the free pregnancy tests we had you all take before the meeting should be ready now.  Please speak
+  to someone to get your results before heading to your fitting."
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    <<set $JobChangeTestSubjectPregnant to 1>>
+    <<if $tempJustNowPregnant>>
+      They come back with your pregnancy test.  It's positive!
+    <<else>>
+      You didn't have any doubts what their pregnancy test was going to say, but you were surprised by why they were having everyone
+      take one.
+    <</if>>
+    They let you know that the belt tests they are doing aren't including pregnant women in this phase, so you won't be able to
+    continue as a test subject.  They do offer to help you [[search for a new job|Part15TestSubjectJobChange]].
+  <<else>>
+    They hand you your pregnancy test results.
+    <<if $PlayerProtectionTry>>Unfortunately,<<else>>Fortunately,<</if>>
+    the results are negative.
+    <<if $dating.length or $JobCallGirl or $JobCallGirlSide or $JobStripper>>
+      <<set $tempRejectBelt to 1>>
+      <<unset $tempChooseBelt>>
+    <<elseif $PlayerChastityBelt>>
+      <<set $tempChooseBelt to 1>>
+      <<unset $tempRejectBelt>>
+    <<else>>
+      <<unset $tempChooseBelt>>
+      <<unset $tempRejectBelt>>
+    <</if>>
+    So, if you wish to participare, please line up for
+    <<if $tempRejectBelt and !$tempChooseBelt>>
+      your fitting
+    <<else>>
+      [[your belt fitting|Part15TestSubjectBetaTest]]
+    <</if>>
+    over here.  For those that do not wish to participate, I'd like to thank you again for the help you provided us last year, and wish you the
+    best in the future.  If you need a recommendation to aid in your
+    <<if !$tempRejectBelt and $tempChooseBelt>>
+      search for a new job,
+    <<else>>
+      [[search for a new job|Part15TestSubjectJobChange]],
+    <</if>>
+    please let me know how explicit I should be about the nature of your work here."
+    <br><br>
+    <<if $tempChooseBelt>>
+      After you discreetly ask about the chastity belt you are already wearing he tells you, "We are especially interested in hearing from
+      a chastity enthusiast such as yourself.  I still have a copy of your key, and have discussed it with
+      <<if $Keyholder>>$Keyholder<<else>>your keyholder<</if>>.  If you wish to participate, we'll remove that belt and immediately fit you with
+      ours.  My promise of an orgasm today still applies.  And if you don't want to participate, I'll have my copy of your key sent back to
+      <<if $Keyholder>>$Keyholder<<else>>your keyholder<</if>>.
+      <br><br>
+      With the promise of an orgasm today, and many more to come, there's no way you are going to turn down their offer.
+    <<elseif $tempRejectBelt>>
+      <<if $dating.length>>
+        If you are going to be in a chastity belt, you'd want $dating[0] to have the key.  If that's not the case, then your answer is no.
+      <<elseif $JobCallGirlSide or $JobCallGirl>>
+        You couldn't very well continue working as call girl if you were wearing one of their belts.
+      <<elseif $JobStripper>>
+        You couldn't very well continue working as stripper if you were wearing one of their belts.  And you make more money doing that
+        than they were paying you as a test subject.
+      <<else>>
+        There's no way you are signing up for this.  
+      <</if>>
+      You guess you'll just need to find a new job.
+    <<elseif !$PlayerPregnant and $PlayerProtectionTry>>
+      You suppose if you want to participate, you'll just have to wait until your testing is done before you can try to get
+      <<if $PlayerMother or $PlayerAbortion or $PlayerAdoption>>pregnant again.<<else>>pregnant.<</if>>
+    <</if>>
+    <<unset $tempChooseBelt>>
+    <<unset $tempRejectBelt>>
+  <</if>>
 <</nobr>>
 
 ::Part15TestSubjectBetaTest
@@ -3157,9 +3221,14 @@
   <<unset $JobTestSubject>>
 <</nobr>>
 <<nobr>>
-  Since you aren't about to be locked into some experimental chastity belt for... you realize they never even said how long it would be.  Anyway,
-  you'll need to find a new job.  The department has helpfully provided a list of a few jobs they knew had openings, so they could provide them to
-  any test subject not interested in their beta testing program.
+  <<if $PlayerPregnant>>
+    Since you can't test this year, you need to find a new job. The department has helpfully provided a list of a few jobs they knew had
+    openings, so they could provide them to any test subject not interested in their beta testing program.
+  <<else>>
+    Since you aren't about to be locked into some experimental chastity belt for... you realize they never even said how long it would be.  Anyway,
+    you'll need to find a new job.  The department has helpfully provided a list of a few jobs they knew had openings, so they could provide them to
+    any test subject not interested in their beta testing program.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -3194,13 +3263,58 @@
 
 ::Part15TestSubjectJobChange
 <<nobr>>
-  <<if setup.areDating('Aaron')>>
+  <<if $tempJustNowPregnant>>
+    <<include [[Part15TestSubjectJobChangeNewlyPregnant]]>>
+  <<elseif setup.areDating('Aaron')>>
     <<include [[Part15TestSubjectJobChangeAllowance]]>>
   <<elseif $dating.length>>
     <<include [[Part15TestSubjectJobChangeDating]]>>
   <<else>>
     <<include [[Part15TestSubjectJobChangeNormal]]>>
   <</if>>
+<</nobr>>
+
+::Part15TestSubjectJobChangeNewlyPregnant
+<<nobr>>
+  <h1>Deciding what to do</h1>
+  <img src="PartP/PregTest2.jpg" hspace="10" vspace="10" height="500">
+  <<unset $tempJustNowPregnant>>
+<</nobr>>
+<<nobr>>
+  Before you can even think about what new job you want to apply for, you need to decide what to do about the pregnancy.
+  Are you going to [[keep it|Part15TestSubjectJobChangeNewlyPregnantKeep]] or [[terminate the pregnancy|Part15TestSubjectJobChangeNewlyPregnantTerminate]]?
+<</nobr>>
+
+::Part15TestSubjectJobChangeNewlyPregnantKeep
+<<nobr>>
+  <h1>Keeping the Baby</h1>
+  <img src="PartP/PregTest4.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  You don't mind needing to [[find a new job|Part15TestSubjectJobChange]], you are just excited you are pregnant!
+<</nobr>>
+
+::Part15TestSubjectJobChangeNewlyPregnantTerminate
+<<nobr>>
+  <h1>Terminating the Pregnancy</h1>
+  <img src="PartP/Cramps3.jpg" hspace="10" vspace="10" height="500">
+  <<unset $PlayerPregnant>>
+  <<if $PlayerAbortion>>
+    <<set $PlayerAbortion += 1>>
+  <<else>>
+    <<set $PlayerAbortion to 1>>
+  <</if>>
+  <<achievement>>childfree<</achievement>>
+<</nobr>>
+<<nobr>>
+  You tell them you don't plan on continuing the pregnancy, but it doesn't matter as far as testing.  You'll still need to
+  [[find a new job|Part15TestSubjectJobChange]].
+<</nobr>>
+
+<<nobr>>
+  After they help you with that you head by the clinic to get the pregnancy taken care of.  Later that night, you see they
+  weren't joking about the cramps from the abortion pill they gave you.  But at least when the cramping stops, you won't
+  have to worry about being pregnant.
 <</nobr>>
 
 ::Part15TestSubjectJobChangeLibrary
@@ -3482,7 +3596,76 @@
 <</nobr>>
 
 ::Part15SecondTrimester
-TODO Preg: Have second trimester visit (ultrasound), then [[Part15WeekStandard]]
+<<nobr>>
+  <h1>Medical Clinic</h1>
+	The doctor comes in and introduces himself and congratulates you. He checks your vital signs and checks you over externally.
+  They told you to have a full bladder for your appointment and so you have to concentrate to suppress the urge to pee as he press
+  around on you.  He has you put your feet into the stirrups to continue his check.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part9.5/Exam1.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+
+<<nobr>>
+	You feel very awkward, vulnerable and exposed as he checks to make sure everything is at it should be.
+  When the doctor is done looking you over he tells you. “Everything looks good so far.
+  [[You can wait here and Nancy will be in to do your ultrasound.|Part15SecondTrimester2]]  I’ll be back after that, we should have
+  your blood work finished by then.
+<</nobr>>
+
+::Part15SecondTrimester2
+<<nobr>>
+	<h1>Medical Clinic</h1>
+  <img src="Part9.5/Exam2a.jpg" hspace="10" vspace="10" height="400" align="left">
+  Nancy, the sonographer, comes in and gets you into position for your test. She sees the worried look in your eye when you see the
+  long probe next to her. “Oh, don’t worry, you’re far enough long, we shouldn’t need that one.”
+<</nobr>>
+
+<<print "She squirts some cold gel onto your stomach and begins moving the ‘normal’ wand around, checking out various parts of you. You again have to hold back on the urge to pee. Finally, she stops checking on you and moves on to the baby.">></p>
+
+<p style="clear: both;"><img src="Part9.5/Exam2b.jpg" hspace="10" vspace="10" height="300" align="left">
+
+<<print "“There we go.”, she says as you finally see a tiny image of your baby for the first time.">>
+
+<<print "You are already staring in wonder, but a few clicks later and the ">>[[image zooms in showing your baby in more detail.|Part15SecondTrimester3]]</p>
+
+::Part15SecondTrimester3
+<<nobr>>
+	<h1>Medical Clinic</h1>
+  You gasp and cover your mouth excitedly as you see your baby for the first time.
+<</nobr>>
+
+<img src="Part9.5/Exam3.jpg" hspace="10" vspace="10" height="650">
+
+<<print "Nancy clicks on various buttons on her console. Some cause images to be saved or printed, others make measurement lines appear on the image. She glances down at your chart. You hear her make a “Hmm?” sound.">>
+
+<<print "“What? Is something wrong?”, you ask worriedly.">>
+
+<<print "“No. Everything looks great.”, she says. “The doctor will be in in a moment to go over everything with you. You can take a moment to use the restroom before then if you want.”">>
+
+<<print "You quickly head to the restroom to empty your bladder and to wipe the remaining gel from your stomach before ">>[[returning to wait for the doctor.|Part15SecondTrimester4]]
+
+::Part15SecondTrimester4
+<<nobr>>
+	<h1><<print "Medical Clinic">></h1>
+<</nobr>>
+
+<<print "The doctor comes in, looking through your results.">>
+
+<img src="Part9.5/Exam4.jpg" hspace="10" vspace="10" height="650">
+
+<<print "“Well, everything looks good on the tests and on the ultrasound. It looks like you are about $PregnancyWeek weeks along.” You’re mentally trying to calculate the dates in your head when he continues.">>
+
+<<nobr>>
+	“Though with X-Change users, the speed of development can vary somewhat.  Don't worry, there's no harm to the baby.  It just means our
+  estimates aren't quite as reliable at predicting the start of the pregnancy.  It could be a week or two in either direction from my estimate.
+  But I'm confident in estimating your due date.”
+<</nobr>>
+
+<<nobr>>
+  You thank the doctor, and schedule your next visit on the way out.  Then you head [[back to campus|Part15WeekStandard]]
+<</nobr>>
 
 ::Part15ThirdTrimester
 TODO Preg: Have third trimester visit, then [[Part15WeekStandard]]
@@ -5202,7 +5385,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
 
 <<nobr>>
-  "They were paying me.  But I thought what they were doing as legitimate science," you start.  "And I'll admit it was fun,
+  "They were paying me.  But I thought what they were doing was legitimate science," you start.  "And I'll admit it was fun,
   sometimes at least."  You proceed to tell her about how they'd usually strap you down so you were bound, helpless, and
   unable to move.  Sometimes blindfolded or gagged too.  Then they'd attach things to your nipples, fuck you with machines,
   stimulate your clit.  You tell her it was different almost every time.
@@ -5242,8 +5425,9 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
         I had a birth control feature on my X-Change implant, and they turned it off - permanently, as a punishment for orgasming.
       <</if>>
       <<if $ProjectPunishmentFertile>>
-        As another punishment they changed my X-Change implant make me much more fertile than normal.  And now I can't even use birth control
-        pills!
+        As another punishment they changed my X-Change implant make me much more fertile than normal.
+        <<if $PlayerSideEffectPermanent>>Permanently!<</if>>
+        And I can't even use birth control pills!
       <</if>>
       <<if $ProjectPunishmentCorporal>>
         They punished me after they were done fucking me too.  They tied me to a post and whipped my breasts.  Then they put something on
@@ -5269,7 +5453,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <</nobr>>
     
 <<nobr>>
-  You also go over the new
+  You also go over what you know about the new
   <<if $JobBetaTester>>
     [[chastity belts|Part15WomensStudiesTalkChastity]]
   <<else>>
@@ -5327,6 +5511,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <img src="Part11/Chastity1.jpg" hspace="10" vspace="10" height="650" align="left">
   <</if>>
 <</nobr>>
+
 <<nobr>>
   <<if $JobBetaTester>>
     With all the stuff they had you put on your phone when you installed the belt's app, you don't trust that they can't
@@ -5352,6 +5537,10 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
       "I don't mind though, I love sucking <<if $JobBetaTester == "monogamous">>$dating[0]'s<</if>> cock," you say
       excitedly.
     <</if>>
+  <<elseif $JobChangeTestSubjectPregnant>>
+    "Now they are testing some sort of computer chastity belt," you tell her.  "They didn't want me for testing due to my pregnancy,
+    but I've heard about it from some of the other girls.  It makes them go insane with how horny they are all the time.  They are also...,
+    sucking every cock they can.  The belt rewards them when they do."
   <<elseif $JobBetaTesterFormer and $BrokenLegJobChange>>
     "Now they are testing some sort of computer chastity belt," you tell her.  "I was in one until my accident.  I thought I was going
     to go insane with how horny it made me all the time."  You then go into much more detail about all the things belt did or that you
@@ -7691,7 +7880,6 @@ TODO Mother in an apartment with just you and baby. And, you've noticed many of 
 [[Continue|Part15SororityDormOrNextWeek]]
 
 <<achievement>>train+threesome:FMF<</achievement>>
-
 
 ::Part15SororityChastity
 TODO Followup with just tug-of-war (chastity) [[Part15Week]] or [[Part15Dorm]]
