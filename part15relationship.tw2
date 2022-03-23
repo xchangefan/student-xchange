@@ -1,5 +1,57 @@
 ::Part15Baby
-TODO Dealing with Baby And there's also work or relationship [[Part15JobMain]]
+<<nobr>>
+  <<if $MotherHousing>>
+    <<include [[Part15BabyMotherHousing]]>>
+  <<else>>
+    <<include [[Part15BabyNormal]]>>
+  <</if>>
+<</nobr>>
+
+::Part15BabyNormal
+<<nobr>>
+  <h1>New mothers' support group</h1>
+  <img src="Part15/Mother2.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  The university is so great with all the help they provide you and the other new mothers.  Financially, the free diapers they provide and
+  the free day care, are the best.  But emotionally, you think the new mothers' support group they have is the most help.
+<</nobr>>
+
+<<nobr>>
+  There's weekly meetings where there's always a new speaker giving really useful information.  But what you enjoy even more are the
+  friends you've made, and being able to go out for brunch with $children[0].name and several other moms and their babies.
+<</nobr>>
+
+[[Continue|Part15JobMain]].
+
+::Part15BabyMotherHousing
+<<nobr>>
+  <h1>Helping each other out</h1>
+  <img src="Part15/Mother1.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set setup.addSexRepeat(10, {sex:"female", anon: "Fellow Mother"})>>
+<</nobr>>
+
+<<nobr>>
+  [[You and the other mothers|Part15BabyNormal]] in your building do whatever you can to help each other out.  Whether that's helping
+  watch each other's baby when someone has a date, loaning a few diapers if someone runs out, or just offering advice when someone is
+  struggling.
+<</nobr>>
+
+<<nobr>>
+  But you also help each other out in other ways.  Sometimes one of you is too tired to hook up with someone, but struggling with their
+  bodies needs.  Whether those needs were given to them by X-Change or their natural fluctuating hormones, doesn't matter.  The need is
+  there just the same.  Though the poor girls
+  <<if $PlayerSideEffectMasturbationBlock or $PlayerSideEffectOrgasmBlock>>like you<</if>>
+  that can't take care of the problem themselves struggle with it even more.
+<</nobr>>
+
+<<nobr>>
+  But you all are willing to stop by and give your fellow mother some quick and much needed relief.  That way she can get some rest
+  tonight.  If the baby lets her that is.
+  <<if $dating.length>>
+    Thankfully $dating[0] understands, and doesn't mind you occasionally lending or receiving a helping hand.
+  <</if>>
+<</nobr>>
 
 ::Part15Baby2
 TODO Dealing with Baby 2 then pick major [[Part15Major]]
