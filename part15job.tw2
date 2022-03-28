@@ -1940,10 +1940,6 @@
   <<if $PlayerSideEffectAnal>>
     You cum several times as he fucks your ass.  Your second orgasm pushes him over the edge and you hear him cum as
     he fills your ass with his cum.
-  <<elseif $PlayerSideEffectOrgasmBlock>>
-    You get so close to cumming as he plays with your clit and fucks your ass.  But at the last moment your implant's
-    side effect kicks in again, and you are left horny and unsatisfied as you hear him moan and feel his cock
-    filling your ass with his cum.
   <<else>>
     He fucks your ass and plays with your clit.  He times it just right, and you are crying out with your orgasm
     just as he moans and fills your ass with his cum.
@@ -1954,8 +1950,6 @@
   As you lay there
   <<if $PlayerSideEffectAnal>>
     trying to recover from your orgasms,
-  <<elseif $PlayerSideEffectOrgasmBlock>>
-    whimpering in frustration,
   <<else>>
     recovering from your orgasm,
   <</if>>
@@ -5743,7 +5737,7 @@
 
 <<nobr>>
   "Umm, thanks, I guess," you say as you start to strip.  Once you are naked he gives you some high heels to wear.  When you are
-  set you go over to his 'trap'.  It's a metal dildo attached to a pole.  It's low enough you'll have to squat a bit for it to
+  all set you go over to his 'trap'.  It's a metal dildo attached to a pole.  It's low enough you'll have to squat a bit for it to
   enter you.  And you also notice it looks like he's lubed it up for you already while you were undressing.
 <</nobr>>
 
@@ -5761,7 +5755,7 @@
 <<nobr>>
   As you squat down on it, you feel the dildo start to vibrate. "Mmmmmm", you moan after a bit.  When you do, you see a smile on
   Eric's face. As you enjoy the vibrations, you think you've figure out his plan again.  He's hoping you get greedy, either for
-  orgasms or cash, and will still be trying for one more orgasm when the times up.  Well you'll be careful to stop yourself after
+  orgasms or cash, and will still be trying for one more orgasm when the time is up.  Well you'll be careful to stop yourself after
   two.  Then you can walk out with $$40 and a big smile, and with time to spare. 
 <</nobr>>
 
@@ -5879,12 +5873,32 @@
 <<nobr>>
   You've seen the beta user reports on those belts.  You've seen how horny, frustrated, and desperate most of the testers are.  You've
   seen how many cocks they've sucked either in the hope of a single orgasm, or just to avoid being punished.  You know if you don't
-  want to become one of them you better [[start struggling to find a way out of the jacket|Part15JobEngineer3Struggle]].
+  want to become one of them you better
+  <<link "start struggling to find a way out of the jacket">>
+    <<if !$PlayerSideEffectSubmissive>>
+      <<set $PlayerSideEffectSubmissive to 0>>
+    <</if>>
+    <<if either(1,2,3,4,5) - $PlayerSideEffectSubmissive <= 1>>
+      <<set $tempStruggle to 1>>
+      <<goto [[Part15JobEngineer3Submit]]>>
+    <<else>>
+      <<goto [[Part15JobEngineer3Struggle]]>>
+    <</if>>
+  <</link>>
+  If you aren't sure if you'll be able to manage that in time, you could always just
+  [[walk out like this|Part15JobEngineer3WalkBound]] and ask for help from someone.
 <</nobr>>
 
 <<nobr>>
   But you have to admit that part of you wants to [[wait for Eric to return|Part15JobEngineer3Submit]].  You don't know where the
   urge to turn your orgasms over to him comes from, but it's hard to resist.
+<</nobr>>
+
+::Part15JobEngineer3WalkBound
+TODO Walk away in straight jacket
+
+<<nobr>>
+  <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
 ::Part15JobEngineer3Struggle
@@ -5928,8 +5942,14 @@
   <<set $ComputerChastityOwner to $dating[0]>>
   <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
   <<set setup.addSex({sex:"male", name:"Eric", vaginal:true, birthControl:"pullout-perfect"})>>
-  You pretend to struggle for a bit.  You don't really want to escape, you just know that struggling and reminding yourself
-  that you are stuck will make you even hornier.  You want to be wet and ready for Eric when he returns.
+  <<if $tempStruggle>>
+    You struggle for a bit.  But the more you do, the more it makes you feel stuck and helpless and thinking about what Eric is
+    going to do to you when he returns.  So you find yourself getting hornier and less interested in actually escaping.  Eventually
+    you give up actually trying at all and just wait for him, wet and eager to be used.
+  <<else>>
+    You pretend to struggle for a bit.  You don't really want to escape, you just know that struggling and reminding yourself
+    that you are stuck will make you even hornier.  You want to be wet and ready for Eric when he returns.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -5944,7 +5964,7 @@
 <</nobr>>
 
 <<nobr>>
-  You feel your orgasm building, but before you cum he pulls out.  "Now you are horny enough for the belt," he says with
+  You feel your orgasm building, but before you cum, he pulls out.  "Now you are horny enough for the belt," he says with
   a laugh.  You mumble 'Please fuck me' into the gag, but he ignores you.  Only once he has the belt secure locked on you
   does he remove your gag and your other restraints.
 <</nobr>>
@@ -6051,7 +6071,7 @@
 
 <<nobr>>
   But the machine doesn't stop, or even slow down.  It keeps going at the exact same level.  And now it's too much.  You
-  are soon begging Eric to make it stop.  He doesn't at least at first.  Eventually he comes over closer.  You beg him
+  are soon begging Eric to make it stop.  He doesn't, at least at first.  Eventually he comes over closer.  You beg him
   to turn off the machine.  You offer to suck his cock once he turns off the machine.
 <</nobr>>
 
@@ -6153,11 +6173,6 @@
     been finding several a day, since one can only go so many times before he gives out.  The best is when you find
     two or three guys at once, so one can pick up as soon as the other finishes.
     <br><br>
-    <<if $PlayerSideEffectOrgasmBlock>>
-      You don't know if you've gotten lucky, or if the anal effects are actually helping, but the orgasm
-      denial effects of your implant haven't triggered once since Eric used the lube on you.
-      <br><br>
-    <</if>>
     You are tempted to see if Eric could just give you enough of the lube so that you could use it all the time.
     The only reason you don't is because you need to be able to have regular orgasms too if you are going to test any
     of your creations properly.
@@ -6464,10 +6479,10 @@
 <</nobr>>
 
 <<nobr>>
-  To often your own masturbation difficulties interfere with your testing, so you have some test subjects helping you now.
+  Too often, your own masturbation difficulties interfere with your testing, so you have some test subjects helping you now.
   Today you are testing the tease functionality.  Keeping her close to an orgasm for an extended period.  Sometimes edging her
   and then backing down, sometimes keeping her as close as possible for as long as possible.  Sometimes letting her cum at
-  then end of the program, and sometimes leaving her without an orgasm.  But you quickly run into a problem, though not
+  the end of the program, and sometimes leaving her without an orgasm.  But you quickly run into a problem, though not
   with the machine itself.
 <</nobr>>
 
@@ -6533,8 +6548,8 @@
 
 <<nobr>>
   You ask the non-orgasming subjects what they think of the machine.  Most of them just tell you how bad they need to cum.
-  There's always a few of the guys nearby to help with that, or sometimes one of the girls.  Afterwards they've came they
-  always tell you how wonderful it was to finally came, and that they did enjoy the machine.
+  There's always a few of the guys nearby to help with that, or sometimes one of the girls.  After they've came they
+  always tell you how wonderful it was to finally cum, and that they did enjoy the machine and how desperately horny it made them.
 <</nobr>>
 
 <<nobr>>
@@ -6603,7 +6618,7 @@
 <</nobr>>
 
 <<nobr>>
-  You are also offering packets of the gel for purchase at half heir normal retail price, as long as they apply it right here
+  You are also offering packets of the gel for purchase at half their normal retail price, as long as they apply it right here
   and now, in the glass booth.
 <</nobr>>
 
@@ -6615,8 +6630,8 @@
 <</nobr>>
 
 <<nobr>>
-  And if a blowjob doesn't make sense for the couple in question, the dominant partner can always opt for the girl in
-  the booth to get the denial gel instead.
+  And if a blowjob doesn't make sense for the couple in question, or the dominate partner just isn't interested, the they
+  can always opt for the girl in the booth to get the denial gel instead.
 <</nobr>>
 
 <<nobr>>
@@ -6672,9 +6687,6 @@
 <<nobr>>
   The audience will eagerly watch as she feels her orgasm coming, only to feel nothing at all when it should have felt
   the best.
-  <<if $PlayerSideEffectOrgasmBlock>>
-    You've felt that same feeling many times thanks to your implants frustrating side effect.
-  <</if>>
   More than once the applicator has been thrown against the clear wall of her booth in frustration.  Of course generating
   much laughter from the crowd when it happens.
 <</nobr>>
@@ -6804,9 +6816,9 @@
 <</nobr>>
 
 <<nobr>>
-  But the orgasm never comes.  At he last moment, when she should have went crashing over the edge into an orgasm,
+  But the orgasm never comes.  At the last moment, when she should have went crashing over the edge into an orgasm,
   she feels nothing at all.  She grinds against the machine desperate for more, but it's too late, the gel has done
-  it's work.  She was just denied her last chance an orgasm for the next month or two.  She tries a bit longer on the
+  its work.  She was just denied her last chance an orgasm for the next month or two.  She tries a bit longer on the
   machine, but eventually gives up and gets off of it.
 <</nobr>>
 
@@ -6823,7 +6835,7 @@
 <<nobr>>
   <h1>Belted while they watch</h1>
   She can't see when the wheel stops on the tiny "Free Belt" space, but she can tell from the cheers of the onlooking crowd
-  that her partner's spin was a winner.  You wonder if she's as excited as he is, or just wishing you'd had one last orgasm
+  that her partner's spin was a winner.  You wonder if she's as excited as he is, or just wishing she'd had one last orgasm
   before she came to the convention today.
 <</nobr>>
 
@@ -6870,9 +6882,10 @@
 <</nobr>>
 
 <<nobr>>
-  For the lesbian winners you appologize that the cunnilingus and analingus detection isn't ready just yet, but are
-  definitely expected to be there at the official launch.  Until then their chaste partner will have to manage with just
-  her daily teasing, unless she wants her wife to branch out and try something new.
+  For the lesbian winners you appologize that the cunnilingus and analingus detection isn't ready just yet, but are definitely expected
+  to be there at the official launch.  You still have them spin the wheel, in case she lands on that 50%/week setting.  And even if the
+  chaste girl insists she's never had a cock before.  She might feel differently in a few weeks, if she knows it comes with teasing and
+  maybe a chance for an orgasm.  You still give the dominate woman the option to set a daily blow job requirement if she wants.
 <</nobr>>
 
 <<nobr>>
@@ -6884,6 +6897,13 @@
   Then you remind them, "On launch day, we'll transfer full control over to your partner, and that's when the real
   fun will start!"  Or for the women that came alone, you tell them, "On launch day, we'll automatically enroll your
   belt in one of our self-lock challenges, and that's when the real fun will start!"
+<</nobr>>
+
+<<nobr>>
+  "Or, if you want some excitement during the conference, and support a good cause, you can add your belt's control to the auction we
+  are doing.  The highest bidder will get full control over your belt, once we go live that is.  If and when they give up and return
+  control to you is up to you and them.  Well, mainly them.  The proceeds go to support our "Belts for Scholars" program, providing free
+  belts to college students like me who wouldn't be able to afford one themselves."
 <</nobr>>
 
 <<nobr>>
@@ -6938,6 +6958,37 @@
 
 ::Part15JobEngineer5Eric3
 <<nobr>>
+  <h1>Charity Auction</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Engineer66.webm" autoplay loop muted height="500"></video>
+  </div>
+<</nobr>>
+
+<<nobr>>
+  Before the [[big raffle|Part15JobEngineer5Eric4]], you have the charity auction.  Several of the single women that won a belt earlier
+  in the convention agreed to auction off full control over it to the highest bidder.  You are sure they must really care about
+  the goal of providing free belts to college students who can't afford one.  They wouldn't have agreed to it just for the free orgasm
+  you promised to give them once they signed the paperwork for the auction would they?
+<</nobr>>
+
+<<nobr>>
+  Of course then there was Jenni.  She was eager to turn over control.  Not being in control of who even would have that power over
+  her turned her on even more.  You didn't even need to offer her the bonus orgasm.  That was great, since she was hornier than any of
+  the others during the auction, and the bidding went much higher for her.
+<</nobr>>
+
+<<nobr>>
+  Control won't be transfered until the belt's public release, but you still encouraged all the belted girls and their winning bidders
+  to spend a little time to get to know each other before they leave.  "Besides just learning a bit more about each other, thanking him
+  for his generous donation to charity might help him want to give you a setting you like on release day."
+<</nobr>>
+
+<<nobr>>
+  <video src="Part14/Chastity21.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+
+::Part15JobEngineer5Eric4
+<<nobr>>
   <h1>Awarding the raffle prizes</h1>
   There were five belts still left at the end of the convention. There were more people than ever, along with media of
   various sorts taking photos and video as you draw the lucky names.  Of course they needed to be present to win, but
@@ -6963,18 +7014,20 @@
 
 <<nobr>>
   <img src="Part15/Engineer50.jpg" hspace="10" vspace="10" height="500" align="left">
-  Quietly, of to the side, you inform the lesbian winner and her spouse that the daily blowjob requirement only "activates"
-  after she gives her first blowjob wearing the belt.  So if she never gives one, then she won't be punished for it.
+  Quietly, off to the side, you inform the lesbian winner's spouse that you set the daily blowjob requirement for her to only "activate"
+  after she gives her first blowjob wearing the belt.  So if she never gives one, then she won't be punished for it.  You leave it up
+  to her whether she let's her belted wife know about the loophole you gave her, or if she has her belted wife suck a cock before they
+  leave today to 'avoid the punishment tomorrow'.
 <</nobr>>
 
 <<nobr>>
-  Though, after the convention, when you see the two of them exploring the city like you and Eric are, you recognize the
-  look in the belted ones eyes.  That look says, "Could giving a blowjob be that bad, really?  I mean there's a 60% chance
-  that it could maybe give me an orgasm, maybe I should give it a try?"
+  She opts to tell her about the loophole.  Though, after the convention, when you see the two of them exploring the city like you and
+  Eric are, you recognize the look in the belted ones eyes.  That look says, "Could giving a blowjob be that bad, really?  I mean there's
+  a 60% chance that there could be a small chance it would give me an orgasm, maybe I should give it a try?"
 <</nobr>>
 
 <<nobr>>
-  You bet one of your orgasms with Eric that she gives her first blowjob before the end of the day.  When Eric looks up
+  You bet one of your orgasms with Eric that she gives her first blowjob before the end of the day.  When Eric looks up her
   belts stats at the airport while you wait for your flight, you are pleased to have been right.  Eric doesn't make you wait
   for your prize, and moments later you are struggling not cry out as your orgasm hits in the middle of the terminal.
 <</nobr>>
@@ -6992,14 +7045,20 @@
 ::Part15Engineer8Eric
 <<nobr>>
   <h1>More marketing ideas</h1>
-  Your boss is thrilled with the results from the convention, and especially with how successful the contest you ran was.
-  "Your idea to get nearly all the women to use the denial gel was brilliant!" he tells you.  "Many of the women that
-  participated have already called to put in pre-orders for the belt.  Or rather their husband or wives have.
+  Your boss is thrilled with the results from the convention, and especially with how successful the contest and auction you ran were.
+  "Your idea to get nearly all the women to use the denial gel was brilliant!" he tells you.  "Many of the women that participated have
+  already called to put in pre-orders for the belt.  Or rather their husband or wives have.
 <</nobr>>
 
 <<nobr>>
   "And so many of them were eager to keep their submissive in denial until they could have belted, that we've decided to
   start including a special with pre-orders.  A free packet of denial gel every month until their belt arrives."
+<</nobr>>
+
+<<nobr>>
+  "And the auction was a brilliant idea too.  We'll add that to our list of options for our self-locking wearers going forward.  Maybe
+  with limited-time options as well.  We might get more willing to try a few weeks or a month under stranger's control than we would on
+  a more open-ended transfer."
 <</nobr>>
 
 <<nobr>>
@@ -7088,19 +7147,23 @@
 
 <<nobr>>
   Your boss nods and says, "Yes, that seems reasonable.  If she has a partner then they will likely be just as
-  eager, or more so, to get her in a belt.  If she is single then she might feel guilty splurging on a 'fetish' product."
+  eager, or more so, to get her in a belt.  If she is single then she might feel guilty splurging on a 'fetish' product.  Of course
+  we have the 'Belts for Scholars' program, but that's a limited demographic, and it's only ever going going to be a relatively small
+  number of girls.  And a big part of it is just to get photos out there of hot, young, college students wearing our belts to boost
+  awareness."
 <</nobr>>
 
 <<nobr>>
-  You continue, "So we offer an option to 'sign-up to be notified of promotions and discount offers' or something similar,
-  so we can get their names and addresses.  Then, a bit later if she hasn't already made a purchase, we just send her a belt."
+  You continue explaining your idea, "So we offer an option to 'sign-up to be notified of promotions and discount offers' or
+  something similar, so we can get their names and addresses.  Then, a bit later if she hasn't already made a purchase, we just send
+  her a belt."
 <</nobr>>
 
 <<nobr>>
   He's looking more skeptical as you continue.  "We'll include a letter asking her to give it a try for a while, or to
   return the belt if she isn't interested.  Obviously we already know she'll be interested.  The letter will let her
   know that the trial belt will be fully functional at first, but some functions may be disabled after the trial period.
-  We should probably be vague on exactly how long that is."
+  We should probably be vague on which functions and exactly how long the trial period is."
 <</nobr>>
 
 <<nobr>>
@@ -7148,7 +7211,8 @@
 <<nobr>>
   Your boss adds, "Or we could just have the lawyers add something to the terms and conditions authorizing us to send the
   message in advance.  People never read those things.  And it'll be a lovely surprise for her friend, and for her when he
-  or she accepts and pays for her belt."
+  or she accepts and pays for her belt."  He then adds a fourth option, "And we can also give her the auction option too,
+  though the starting bid would be the full price of the belt.  Any extra bid over that could then go to the charity."
 <</nobr>>
 
 <<nobr>>

@@ -531,6 +531,111 @@
 <</nobr>>
 
 <<nobr>>
+  <<if $PlayerSideEffectOrgasmBlock>>
+    "Oh, and [[there's another thing you'll be excited to hear|Part15ClinicOrgasmBlock]]," he says.
+  <<else>>
+    <<include [[Part15ClinicTests]]>>
+  <</if>>
+<</nobr>>
+
+::Part15ClinicOrgasmBlock
+<<nobr>>
+  <h1>Treatment for your orgasm-block side effect</h1>
+  <img src="PartP/Treatment.jpg" hspace="10" vspace="10" height="606" align="left">
+  <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
+  <<if $PlayerSideEffectLibido>>
+    <<set $PlayerSideEffectLibido to 1>>
+  <<else>>
+    <<set $PlayerSideEffectLibido += 1>>
+  <</if>>
+  <<unset $PlayerSideEffectOrgasmBlock>>
+  "There's been some new research on the "Orgasm Block" side-effect
+  that some implants, like yours, develop.  They've found a cure.  Well, a treatment technically since it never goes away and you
+  have to keep taking the treatment, one way or another."
+  <<if !setup.haveGirlfriend() and !$CampusMinistryFailSummer and ($PlayerProtectionTry or $PlayerProtectionNone)>>
+    You tell him that it didn't really seem to affect you much before your academic probation denial was activated.
+    "Well, perhaps you stumbled on the treatment on your own just having fun," he says.
+  <<else>>
+    You tell him that you very much like to hear about it, since
+    <<if $sex.length > 0>>
+      you hate when that thing triggers!
+    <<else>>
+      you'd hate to decide to have sex for the first time, only to have it end in frustration and denial.
+    <</if>>
+  <</if>>
+  <br><br>
+  "Well, the breakthrough was when one of our data guys saw the inverse correlation between reported pregnancies and complaints about
+  this particular side-effect..."  He sees your eyes start to glaze over and skips the detailed explaination.  "Anyway, it turns out it
+  is related to the "Breeder" option that some of our pills have, and that has developed on a few of the implants - not yours though."
+  <br><br>
+  "The girls that have been trying to get pregnant have had the least problems with the "Orgasm Block" effect.  Those not actively trying
+  to get pregnant, but also not using any form of birth control also have had fewer problems.  Our lesbian users have had the most issues.
+  Well, technically those trying to get off by masturbating have the most issues, but that's not going to be a factor for you."
+  <<if setup.haveGirlfriend()>>
+    You tell him you are a lesbian, worried now that the treatment won't work on you.
+  <</if>>
+  <br>
+  <br>
+  "After a bunch of testing, they found that the proteins in semen suppress the activation of the side effect, while hormonal birth
+  control greatly increases the chance of it triggering.  So if you want to avoid any issues with the side effect, you just need to
+  <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
+    <<unset $PlayerProtectionPerfect>>
+    <<unset $PlayerProtectionPermanent>>
+    <<set $PlayerProtectionNone to 1>>
+    have us deactivate your implant's birth control and continue to have otherwise unprotected sex.
+    <<if setup.haveGirlfriend()>>
+      Except with men, of course.
+    <</if>>
+  <<elseif $PlayerProtectionPill>>
+    <<unset $PlayerProtectionPill>>
+    <<set $PlayerProtectionNone to 1>>
+    stop taking your birth contorl and continue to have otherwise unprotected sex.
+    <<if setup.haveGirlfriend()>>
+      Except with men, of course.
+    <</if>>
+  <<elseif $PlayerProtectionTry or $PlayerProtectionNone>>
+    <<if setup.haveGirlfriend()>>
+      start having sex with men more often.
+    <<else>>
+      keep doing what you've doing
+    <</if>>
+  <<else>>
+    <<unset $PlayerProtectionCondoms>>
+    <<unset $PlayerProtectionWithdraw>>
+    <<set $PlayerProtectionNone to 1>>
+    stop using any form of birth control, and letting the men you sleep with cum inside you.
+  <</if>>
+  Though, oral injestion or anal absorbtion also helps suppress the effect, it doesn't do it as well, so you'll need to do much more of
+  it to have the same effect.  Regardless how you plan on taking care of it going forward, we have a treatment for you today to help
+  things along."
+<</nobr>>
+
+<<nobr>>
+  You drink down the entire glass of the "treatment" solution he gives you.  As the warm liquid flows over your tongue and down your
+  throat, it's strong scent and flavor hits you.
+  <<if setup.sexMaleCount() > 0>>
+    Judging from the taste, you think it's at least 50 percent cum.  Or at least something made to be similar to it.  
+  <<else>>
+    It tastes a bitter and slightly salty, with a bit of metallic aftertaste to it.  You think you kind of like it though.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  As you swallow the last drop, you wipe up with your finger a bit that dribbled down onto your chin, then lick your finger clean.
+  You feel a warm, pleasant, flushed feeling flow over your body.  You wonder if that means the treatment is working.  "Oh, and you
+  may notice some increased arousal effects from the treatment.  Though, that should only help with getting what you need going forward."
+<</nobr>>
+
+<<nobr>>
+  After your "treatment" is over, he sends you along to another exam room.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15ClinicTests]]>>
+<</nobr>>
+
+::Part15ClinicTests
+<<nobr>>
   Before the doctor comes in a nurse visits to take your vital signs, draw some blood samples, and to give you a cup for
   your urine sample.
   <<if $PlayerPregnant>>
@@ -6295,7 +6400,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   <<elseif $JobEngineer>>
     <img src="Part15/Class4.jpg" hspace="10" vspace="10" height="600" align="left">
     <br>
-    "I know, I still have some money left in the budget for bonus payments.  I think you've earned one," he tells you.  "You have to
+    "I know. I still have some money left in the budget for bonus payments.  I think you've earned one," he tells you.  "You have to
     promise to buy something nice for yourself though."  Then he pulls out several hundred dollar bills from his desk.
     <br><br>
     After you thank him, you do as you promised and head straight to the mall.  After spending a few hours there, you leave with several
@@ -6303,7 +6408,7 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
     <br>
     <img src="Part15/Class5.jpg" hspace="10" vspace="10" height="350">
   <<else>>
-    "I know, how about a visit to one of the testing rooms, for old times sake," he suggests.  "No restraints, no control group,
+    "I know. How about a visit to one of the testing rooms, for old times sake," he suggests.  "No restraints, no control group,
     as many orgasms as you want, stop whenever you want.  And no filming.  It'll just be you, the machines, and one tech for safety
     and to control the machines for you.  I'll even tell him not to try to take advantage of you if you get horny, unless you want
     me to tell him <i>to</i> do that."

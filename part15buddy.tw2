@@ -1828,8 +1828,32 @@
   <span id="clinic">
     <<if $PregnancyWeek and !$PlayerPregnant>>
       <<if setup.areDating('Barry')>>
+        <<unset $PlayerPregnant>>
+        <<set $tempPlayerAbortion to 1>>
+        <<set $PlayerSideEffectPermanent to 1>>
+        <<if $PlayerAbortion>>
+          <<set $PlayerAbortion += 1>>
+        <<else>>
+          <<set $PlayerAbortion to 1>>
+        <</if>>
+        <<unset $PregnancyWeek>>
+        <<achievement>>childfree<</achievement>>
         "My friend and I are both pregnant.  And we are both wanting to [[terminate the pregnancies|Part15BuddyAbortion2]]."
         You and $dating[0] had already talked about this, and neither of you want a baby right now.
+      <<elseif $PlayerChastityBelt and $Keyholder == "computer" and $ComputerChastityOwner == "Eric">>
+        <<unset $PlayerPregnant>>
+        <<set $tempPlayerAbortion to 1>>
+        <<set $PlayerSideEffectPermanent to 1>>
+        <<if $PlayerAbortion>>
+          <<set $PlayerAbortion += 1>>
+        <<else>>
+          <<set $PlayerAbortion to 1>>
+        <</if>>
+        <<unset $PregnancyWeek>>
+        <<achievement>>childfree<</achievement>>
+        "My friend and I are both pregnant.  And we are both wanting to [[terminate the pregnancies|Part15BuddyAbortion2]]."
+        You know the chastity belts the department is testing can adjust for pregnancies, but you don't want to have to deal with it.
+        Being pregnant would be stressful enough, without dealing with that too.
       <<else>>
         Bailey wants to end her pregnancy.
         And you've already decided whether you want to
