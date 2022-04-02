@@ -543,11 +543,6 @@
   <h1>Treatment for your orgasm-block side effect</h1>
   <img src="PartP/Treatment.jpg" hspace="10" vspace="10" height="606" align="left">
   <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
-  <<if $PlayerSideEffectLibido>>
-    <<set $PlayerSideEffectLibido to 1>>
-  <<else>>
-    <<set $PlayerSideEffectLibido += 1>>
-  <</if>>
   <<unset $PlayerSideEffectOrgasmBlock>>
   "There's been some new research on the "Orgasm Block" side-effect
   that some implants, like yours, develop.  They've found a cure.  Well, a treatment technically since it never goes away and you
@@ -582,6 +577,7 @@
     <<unset $PlayerProtectionPerfect>>
     <<unset $PlayerProtectionPermanent>>
     <<set $PlayerProtectionNone to 1>>
+    <<set $tempDeactivateImplantBirthControl to 1>>
     have us deactivate your implant's birth control and continue to have otherwise unprotected sex.
     <<if setup.haveGirlfriend()>>
       Except with men, of course.
@@ -589,6 +585,7 @@
   <<elseif $PlayerProtectionPill>>
     <<unset $PlayerProtectionPill>>
     <<set $PlayerProtectionNone to 1>>
+    <<set $tempDeactivatePill to 1>>
     stop taking your birth contorl and continue to have otherwise unprotected sex.
     <<if setup.haveGirlfriend()>>
       Except with men, of course.
@@ -611,13 +608,21 @@
 <</nobr>>
 
 <<nobr>>
-  You drink down the entire glass of the "treatment" solution he gives you.  As the warm liquid flows over your tongue and down your
+  <<if $tempDeactivateImplantBirthControl>>
+    After he deactivates your implant's birth control for you, you
+  <<elseif $tempDeactivatePill>>
+    After he gives you an injection to counteract the birth control pills you've been taking and trigger you to start ovulating, you
+  <<else>>
+    You
+  <</if>>
+  drink down the entire glass of the "treatment" solution he gives you.  As the warm liquid flows over your tongue and down your
   throat, it's strong scent and flavor hits you.
   <<if setup.sexMaleCount() > 0>>
-    Judging from the taste, you think it's at least 50 percent cum.  Or at least something made to be similar to it.  
+    Judging from the taste, you think it's at least 50 percent cum.  Or at least something made to be similar to it. 
   <<else>>
     It tastes a bitter and slightly salty, with a bit of metallic aftertaste to it.  You think you kind of like it though.
   <</if>>
+  You eagerly down the entire glass.
 <</nobr>>
 
 <<nobr>>
@@ -632,6 +637,40 @@
 
 <<nobr>>
   <<include [[Part15ClinicTests]]>>
+<</nobr>>
+
+<<nobr>>
+  <i>You realize you crave sex
+  <<if $PlayerSideEffectLibido>>
+    <<set $PlayerSideEffectLibido to 1>>
+  <<else>>
+    even
+    <<set $PlayerSideEffectLibido += 1>>
+  <</if>>
+  more than you did before.  You also feel a hunger for
+  <<if $PlayerSideEffectOral>>
+    <<set $PlayerSideEffectOral to 1>>
+  <<else>>
+    <<set $PlayerSideEffectOral += 1>>
+  <</if>>
+  <<if setup.sexMaleCount() > 0>>
+    the feel of a cock in your mouth, and the taste of his warm cum on your tongue.
+  <<else>>
+    the taste you had from your treatment drink.  Though you know now you'll have to suck a cock to get that wonderful
+    flavor again.
+  <</if>>
+  You also find yourself thinking
+  <<if setup.sexMaleCount() > 0>>
+    more about having a guy fuck your ass, and begging him to fill your ass with his cum.
+  <<else>>
+    what a cock would feel like in your ass, and what it would feel like to have a guy cum in your ass.
+  <</if>>
+  <<if $PlayerSideEffectAnal>>
+    <<set $PlayerSideEffectAnal to 1>>
+  <<else>>
+    <<set $PlayerSideEffectAnal += 1>>
+  <</if>>
+  </i>
 <</nobr>>
 
 ::Part15ClinicTests
@@ -789,7 +828,7 @@
 <</nobr>>
 <<nobr>>
   "Everything looks great on your tests," the doctor tells you.  "And the baby looks to be doing fine as well.  You are about $PregnancyWeek weeks
-  along now, and doing great.  You can stop by the front desk on the way out if you need a referal for an OB.  They'll also send you home with
+  along now, and doing great.  You can stop by the front desk on the way out if you need a referral for an OB.  They'll also send you home with
   some prenatal vitamins."
 <</nobr>>
 
@@ -11446,7 +11485,7 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
 
 ::Part15BabyJobsRelationships
 <<nobr>>
-  <<if $PlayerMother>>
+  <<if $PlayerMother and !$tempBabyVisited>>
     <<include [[Part15Baby]]>>
   <<else>>
     <<include [[Part15JobMain]]>>
