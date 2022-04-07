@@ -11607,26 +11607,186 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
 
 ::Part15Greek
 <<nobr>>
-  <<if $SororityDTD>>
+  <<if $SororityELP>>
+    <<include [[Part15SororityELP2]]>>
+  <<elseif $SororityDTD>>
     <<include [[Part15PartyDTD]]>>
   <<elseif $SororitySEX>>
     <<include [[Part15PartySEX]]>>
-  <<elseif $SororityELP>>
-    <<include [[Part15SororityELP2]]>>
   <<else>>
     <<include [[Part15FratParty]]>>
   <</if>>
 <</nobr>>
 
 ::Part15PartyDTD
-TODO DTD Party w/ guys, you with bf/gf if have one
+<<nobr>>
+  <h1>Party at the Delta house</h1>
+  This weekend ΔΤF is having another party, their biggest one this year.  It gets even crazier than you were expecting.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Sorority21.jpg" hspace="10" vspace="10" height="450">
+  <img src="Part15/Sorority22.gif" hspace="10" vspace="10" height="450">
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    You don't get wasted like most people there do, but you still have a fun time.  You are tempted to join the
+    other girls skinny-dipping in the pool, but decide against it.
+    <<if $PregnancyWeek < 16>>
+      The baby isn't showing yet, but you feel like you've put on a bit of weight already.
+      It's made you a bit self-conscious, so
+    <<elseif $PregnancyWeek < 24>>
+      The baby is starting to show and it's made you a bit self-conscious.  So
+    <<else>>
+      With as pregnant as you are, you know you'd really stand out, and worry you might spoil their fun.  So  
+    <</if>>
+    you just watch from a chair near the pool instead.
+    <br><br>
+    You tire out before the rest of the partygoers do though, and eventually head to bed with the party still raging.
+    At least you aren't going to be hung over tomorrow like most everyone else will be.
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<else>>
+    Like most everyone else there, you have quite a bit to drink.
+    <<if setup.haveGirlfriend()>>
+      TODO You and girlfriend in pool
+    <<elseif $dating.length>>
+      Thankfully $dating[0] helps you [[get home|Part15PartyBF]] before you hop in the pool with the other girls skinny-dipping,
+      or do anything else crazy.
+      <<if $PlayerSideEffectExhibitionist>>
+        You are a bit disappointed at missing the chance to be naked in front of everyone.  But $dating[0] promises to make it
+        worth it when you get home.
+      <</if>>
+    <<else>>
+      <<if $PlayerSideEffectExhibitionist>>
+        You are the first one to shed her clothes and jump into the swimming pool, but several of your sorority sisters soon join you.
+      <<else>>
+        You aren't the first one in the pool, but when your sorority sisters start shedding their clothes and jumping into the swimming
+        pool, you follow soon after.
+      <</if>>
+      All it takes is a seductive smile or two, and several guys are doing the same.  You are happy to see their body's reaction
+      to seeing you and your sisters naked in the pool.
+      <br><br>
+      You all have fun playing in the pool, but soon it starts to get crowded.  So when a couple of the cuter guys ask you
+      to [[head upstairs with them|Part15PartyDTD2]] instead, you eagerly exit the pool.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part15PartyBF
+<<nobr>>
+  <h1>Back home with $dating[0]</h1>
+  <video src="Part15/Sorority24.mp4" autoplay loop muted height="400"></video>
+  <<set setup.addSex({sex:"male", name:$dating[0], vaginal:true})>>
+  <<set setup.addSex({sex:"male", name:$dating[0]})>>
+  <<set setup.addSex({sex:"male", name:$dating[0], vaginal:true})>>
+<</nobr>>
+
+<<nobr>>
+  $dating[0] must have gotten turned on seeing those girl skinny-dipping in the pool at the party, because he's insatiable.  His hand
+  is in in your panties, teasing your clit most of the way home, ensuring you are dripping wet when you get there.  He tosses you onto
+  the bed and starts fucking you the moment you are through the door.
+  <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
+    Thankfully, you cum quickly and are crying out with your own orgasm even before his.
+    <br><br>
+    He lasts quite a bit longer a few minutes later
+    when he's ready to go again, getting you off twice before he cums that time.
+  <<else>>
+    He cums before you can.
+    <<if setup.areDating("Barry")>>
+      He gives your ass a swat and says, "That was great.  I needed that."
+    <br><br>
+      Thankfully a few minutes later, he is a more attentive lover, ensuring you get off too that time.
+    <<else>>
+      His skilled hands make sure you get off too though.
+      <br><br>
+      He lasts quite a bit longer a few minutes later when he's ready to go again, getting you off while he's still inside you.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<include [[Part15BackToMain]]>>
+
+::Part15PartyDTD2
+<<nobr>>
+  <h1>With some frat guys</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Sorority20.webm" autoplay loop muted height="400"></video>
+  </div>
+  <<set setup.addSex({sex:"male", anon:"Frat Guy"})>>
+  <<set setup.addSex({sex:"male", anon:"Frat Guy", vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", anon:"Frat Guy", repeat:true})>>
+  <<set setup.addSex({sex:"male", anon:"Frat Guy", vaginal:true, noPullout:true, repeat:true, noCondom:true})>>
+  <<set setup.addSex({sex:"male", anon:"Frat Guy", repeat:true})>>
+  <<set setup.addSex({sex:"male", anon:"Frat Guy", vaginal:true, noPullout:true, repeat:true, noCondom:true})>>
+<</nobr>>
+<<nobr>>
+  <<if $PlayerPregnant>>
+    With as horny as you are, 
+  <<else>>
+    With a mix of alcohol and horniness, 
+  <</if>>
+  you don't even bother picking up or putting on your clothes.  You are too eager to follow the
+  two cute guys upstairs, and head through the party completely naked until the three of you have a room to yourselves.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionCondoms>>
+    No one has any condoms with you, but none of you are want to run back downstairs, and you aren't about to stop now.
+    <br><br>
+  <</if>>
+  At first you switch back and forth between which cock you are sucking, but soon they stop having you take turns.  First one fucks you
+  while you suck the others cock.  But then they have you start riding one of their cocks, while the other guy comes behind you and
+  starts to fuck your ass.
+<</nobr>>
+
+<<nobr>>
+  He then grabs your arms, and pins them behind your back, while fucking your ass and causing you to bounce up and down on his friend's
+  cock.  You explode with an orgasm soon after that, but you are still tightly held and continue bouncing on the cock as your body clenches
+  around it.   
+<</nobr>>
+
+<<nobr>>
+  It's only a few moments later when you feel first one cock, then the other, cum inside you.
+  <<if $PlayerProtectionWithdraw>>
+    You couldn't move to get off his cock even if you'd thought about it.  And you were too caught up in the moment to even think about it.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When the three of you are done, you try to clean up a bit and then [[head back downstairs|Part15PartyDTD3]].
+<</nobr>>
+  
+::Part15PartyDTD3
+<<nobr>>
+  <h1>Hunting for your clothes</h1>
+  <img src="Part15/Sorority23.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+<<nobr>>
+  You head back down to the party forgetting where you'd left your clothes.  As you walk around, you get plenty of comments.  First
+  about your nakedness, and the just-fucked look your hair and face have.  But after you've walked a bit you also start getting
+  them about the cum leaking from you front and back.
+<</nobr>>
+
+<<nobr>>
+  Eventually you remember your clothes were out back by the pool and head there to pick them up.  You assume you wouldn't be
+  welcome in the pool in your current state, so you put your clothes back on, accepting that they'll be a bit messy, and head back
+  to enjoy the rest of the party.
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15PartySEX
-TODO SEX Party, wild, you with bf/gf if have one
+<<nobr>>
+  <h1>Party at the Sigma house</h1>
+  TODO video
+<</nobr>>
+
+TODO SEX Party, wild
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>

@@ -1783,7 +1783,7 @@
   <<else>>
     You look at your negative test with
     <<if $PlayerProtectionTry>>disappointment<<else>>relief<</if>>
-    as bailey stares at her positive test for a long time.  After a while, you hug her for support.
+    as Bailey stares at her positive test for a long time.  After a while, you hug her for support.
   <</if>>
   "Do you know how to... where to go... [[to end it|Part15BuddyAbortion]]?" Bailey asks uneasily.
 <</nobr>>
@@ -1825,6 +1825,12 @@
     "My friend is,"
   <</if>>
   you tell her.
+  <<if $PregnancyWeek and !$PlayerPregnant and ($BuddyPregnant == "Zane" or $BuddyPregnant == "Larry") and (setup.haveConceivedWith("Zane") or setup.haveConceivedWith("Larry"))>>
+    You quickly do the math, and realize that you and Bailey both got pregnant the same night, from the same guys.  You wonder if you are both
+    pregnant from the same potent guy, or if one of you was knocked up by Zane, and the other by Larry.
+    <<achievement>>twopregnant<</achievement>>
+    <br><br>
+  <</if>>
   <span id="clinic">
     <<if $PregnancyWeek and !$PlayerPregnant>>
       <<if setup.areDating('Barry')>>

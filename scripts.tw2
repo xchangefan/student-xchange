@@ -395,12 +395,16 @@ setup.haveFucked = function (name) {
 
 setup.haveFuckedMale = function (name) {
 	return State.variables.sex.filter(function(fuck) {return fuck.sex == 'male' && (fuck.name == name || fuck.anon == name)}).length > 0
-} 
+}
 
 setup.haveFuckedVaginal = function (name) {
 	// different than daddyCheck, since doesn't care about birth control
 	return State.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)}).length > 0
-} 
+}
+
+setup.haveConceivedWith = function (name) {
+  return State.variables.sex.filter(function(fuck) {return fuck.conception && (fuck.name == name || fuck.anon == name)}).length > 0
+}
 
 setup.addDetailsToRecentSex = function() {
 	if (!State.variables.sex) return;
@@ -813,6 +817,7 @@ setup.getAchievementDetails = function() {
     sisters: {text: "Three Sisters", image: "Sisters.jpg"},
     sistersForever: {text: "Sisters Forever", image: "Sisters2.png"},
 		train: {text: "Serving a Train", image: "Train.jpg"},
+    twopregnant: {text: "Two for One Deal", image: "TwoPregnant.png"},
 		underdog: {text: "Underdog Wins", image: "Underdog.jpg"},
     virgin: {text: "His first time", image: "Cherry.png"},
 
