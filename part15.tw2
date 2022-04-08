@@ -11614,7 +11614,7 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
   <<elseif $SororitySEX>>
     <<include [[Part15PartySEX]]>>
   <<else>>
-    <<include [[Part15FratParty]]>>
+    <<include [[Part15Party]]>>
   <</if>>
 <</nobr>>
 
@@ -11650,7 +11650,18 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
   <<else>>
     Like most everyone else there, you have quite a bit to drink.
     <<if setup.haveGirlfriend()>>
-      TODO You and girlfriend in pool
+      <<if $PlayerSideEffectExhibitionist>>
+        You are the first one to shed her clothes and jump into the swimming pool, but $dating[0] joins you, followed soon after by
+        several of your sorority sisters.
+      <<else>>
+        You aren't the first one in the pool, but when your sorority sisters start shedding their clothes and jumping into the swimming
+        pool, you and $dating[0] follow soon after.
+      <</if>>
+      All it takes is a seductive smile or two by your sisters, and several guys are doing the same.  You are can't help but notice their
+      body's reaction to seeing your sisters, and you and $dating[0], naked in the pool.
+      <br><br>
+      You all have fun playing in the pool, but soon it starts to get crowded.  So when $dating[0] gives you "the look" you eagerly
+      exit the pool to [[head upstairs with her|Part15PartyGF]].
     <<elseif $dating.length>>
       Thankfully $dating[0] helps you [[get home|Part15PartyBF]] before you hop in the pool with the other girls skinny-dipping,
       or do anything else crazy.
@@ -11673,6 +11684,36 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
     <</if>>
   <</if>>
 <</nobr>>
+
+::Part15PartyGF
+<<nobr>>
+  <h1>Alone with $dating[0]</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Sorority25.mp4" autoplay loop muted height="650"></video>
+  </div>
+  <<set setup.addSex({sex:"female", name:$dating[0]})>>
+  <<set setup.addSex({sex:"female", name:$dating[0]})>>
+  <<set setup.addSex({sex:"female", name:$dating[0]})>>
+<</nobr>>
+<<nobr>>
+  As soon as you and $dating[0] are alone, your hands are all over each other.  Well, to be honest, your hands were all
+  over each other well before then.  You received several cheers and hoots from guys seeing the two of you groping each other
+  on your way upstairs.  But eventually you make it upstairs.  As soon as you start shedding clothes and beginning in earnest.
+<</nobr>>
+
+<<nobr>>
+  The two of you take turns giving each other orgasm after orgasm.  It's only when you both are completely satisfied and can't
+  go on any longer, that you stop.  The two of you think about just laying there until
+  <<if $SororityDTD>>
+    morning.
+  <<else>>
+    someone comes to kick you out.
+  <</if>>
+  But eventually the two of you
+  gather enough strength get dressed again and head back out to enjoy the rest of the party.
+<</nobr>>
+
+<<include [[Part15BackToMain]]>>
 
 ::Part15PartyBF
 <<nobr>>
@@ -11782,11 +11823,38 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
 
 ::Part15PartySEX
 <<nobr>>
-  <h1>Party at the Sigma house</h1>
-  TODO video
+  <h1>Getting ready for the party at the Sigma</h1>
+  <img src="Part15/Sorority26.jpg" hspace="10" vspace="10" height="550">
+<</nobr>>
+<<nobr>>
+  There's a [[party tonight|Part15PartySEX2]] at the Sigma house.  Most of the girls are still getting ready as the party doesn't start
+  for a bit.  But you see a couple of the officers talking with the pledges, all of which are completely naked.
 <</nobr>>
 
-TODO SEX Party, wild
+::Part15PartySEX2
+<<nobr>>
+  <h1>Party at the Sigma house</h1>
+  <video src="Part15/Sorority27.mp4" autoplay loop muted height="450"></video>
+  <img src="Part15/Sorority28.jpg" hspace="10" vspace="10" height="550" align="left">
+<</nobr>>
+
+<<nobr>>
+  Later, when the party is going full steam you see the freshmen girls again.  One of them in particular is the center of attention
+  down in the basement with a dozen or more guys taking turn fucking her, getting their cocked sucked, or covering her with
+  cum.  She's clearly loving every minute of it.
+<</nobr>>
+
+<<nobr>>
+  You recognizer as one of the new participants in the X-Change trial.  You smile as you remember how much the urge to get fucked filled
+  you too when you first changed.  Though you hope she's on that guaranteed birth control option they have if she plans on changing back,
+  considering how many guys have already came inside her, and how many more are waiting their turn.
+<</nobr>>
+
+<<nobr>>
+  There's other pledges having fun too, but they are all paired off with a single guy, or girl, either off in a corner, or sneaking
+  off somewhere private.  The plan to have them all spend the entire party naked seems to have had the desired effect.  It certainly seems
+  to have help them all "open up and make new friends".
+<</nobr>>
 
 <<nobr>>
   <<include [[Part15BackToMain]]>>
@@ -11799,12 +11867,71 @@ TODO Another ELP charity project (be careful if had an incident last time)
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15FratParty
-  TODO frat party, optionally sex with your bf/gf  afterwards if have one
-  TODO set sex variable if applicable
+::Part15Party
+<<nobr>>
+  <h1>Party at the sorority house</h1>
+  You were invited to a party at one of the sororities this weekend.  It ends up getting even crazier than you were expecting.
+<</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <img src="Part15/Sorority21.jpg" hspace="10" vspace="10" height="450">
+  <img src="Part15/Sorority22.gif" hspace="10" vspace="10" height="450">
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    You don't get wasted like most people there do, but you still have a fun time.  You are tempted to join the
+    other girls skinny-dipping in the pool, but decide against it.
+    <<if $PregnancyWeek < 16>>
+      The baby isn't showing yet, but you feel like you've put on a bit of weight already.
+      It's made you a bit self-conscious, so
+    <<elseif $PregnancyWeek < 24>>
+      The baby is starting to show and it's made you a bit self-conscious.  So
+    <<else>>
+      With as pregnant as you are, you know you'd really stand out, and worry you might spoil their fun.  So  
+    <</if>>
+    you just watch from a chair near the pool instead.
+    <br><br>
+    You tire out before the rest of the partygoers do though, and eventually head home with the party still raging.
+    At least you aren't going to be hung over tomorrow like most everyone else will be.
+    <br><br>
+    <<include [[Part15BackToMain]]>>
+  <<else>>
+    Like most everyone else there, you have quite a bit to drink.
+    <<if setup.haveGirlfriend()>>
+      <<if $PlayerSideEffectExhibitionist>>
+        You are the first one to shed her clothes and jump into the swimming pool, but $dating[0] joins you, followed soon after by
+        several of the sorority girls.
+      <<else>>
+        You aren't the first one in the pool, but when the sorority girls start shedding their clothes and jumping into the swimming
+        pool, you and $dating[0] follow soon after.
+      <</if>>
+      All it takes is a seductive smile or two by the girls, and several guys are doing the same.  You are can't help but notice their
+      body's reaction to seeing your them, and you and $dating[0], naked in the pool.
+      <br><br>
+      You all have fun playing in the pool, but soon it starts to get crowded.  So when $dating[0] gives you "the look" you eagerly
+      exit the pool to [[head upstairs with her|Part15PartyGF]].
+    <<elseif $dating.length>>
+      Thankfully $dating[0] helps you [[get home|Part15PartyBF]] before you hop in the pool with the other girls skinny-dipping,
+      or do anything else crazy.
+      <<if $PlayerSideEffectExhibitionist>>
+        You are a bit disappointed at missing the chance to be naked in front of everyone.  But $dating[0] promises to make it
+        worth it when you get home.
+      <</if>>
+    <<else>>
+      <<if $PlayerSideEffectExhibitionist>>
+        You are the first one to shed her clothes and jump into the swimming pool, but several of the sorority girls soon join you.
+      <<else>>
+        You aren't the first one in the pool, but when the sorority girls start shedding their clothes and jumping into the swimming
+        pool, you follow soon after.
+      <</if>>
+      All it takes is a seductive smile or two, and several guys are doing the same.  You are happy to see their body's reaction
+      to seeing you and the other girls naked in the pool.
+      <br><br>
+      You all have fun playing in the pool, but soon it starts to get crowded.  So when a couple of the cuter guys ask you
+      to [[head upstairs with them|Part15PartyDTD2]] instead, you eagerly exit the pool.
+    <</if>>
+  <</if>>
 <</nobr>>
 
 ::Part15Study
