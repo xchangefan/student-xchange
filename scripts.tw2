@@ -239,6 +239,10 @@ setup.nextCycleWeek = function (forgetPill) {
 
 ::SexFunctions [script] <300,50>
 setup.addSex =  function (fuck) {
+  if (fuck.analAccident) {
+    fuck.noCondom = true;
+    fuck.noPullout = true;
+  }
   State.variables.sex.push(fuck)
   if (fuck.vaginal && State.variables.LoopholeVirgin) {
     State.variables.LoopholeVirgin = undefined;
@@ -369,6 +373,7 @@ setup.sexualHistoryTable = function () {
 		st += "</td><td>" + fuck.sex + "</td><td>" + (fuck.vaginal ? "Y" : "") + "</td><td>"
 			 + (fuck.vaginal ? fuck.birthControl : "")
 			 + (fuck.ovulating ? " (ovulating) " : "")
+       + (fuck.analAccident ? " (anal accident) " : "")
 			 + "</td><td>"
     if (fuck.conception) {
       if (fuck.aborted) {
@@ -380,7 +385,7 @@ setup.sexualHistoryTable = function () {
       }
     } else if (fuck.checkedForPregnancy) {
       st += "no: " + fuck.checkedForPregnancy
-    } else if (fuck.vaginal) {
+    } else if (fuck.vaginal || fuck.analAccident) {
       st += "?"
     }
     st += "</td></tr>\n"
@@ -402,6 +407,11 @@ setup.haveFuckedVaginal = function (name) {
 	return State.variables.sex.filter(function(fuck) {return fuck.vaginal && (fuck.name == name || fuck.anon == name)}).length > 0
 }
 
+setup.hadAnalAccident = function (name) {
+	return State.variables.sex.filter(function(fuck) {return fuck.analAccident && (fuck.name == name || fuck.anon == name)}).length > 0
+}
+
+
 setup.haveConceivedWith = function (name) {
   return State.variables.sex.filter(function(fuck) {return fuck.conception && (fuck.name == name || fuck.anon == name)}).length > 0
 }
@@ -410,7 +420,7 @@ setup.addDetailsToRecentSex = function() {
 	if (!State.variables.sex) return;
 
 	State.variables.sex.forEach(function(fuck) {
-		if(fuck.vaginal && !fuck.checkedForPregnancy) {
+		if((fuck.vaginal || fuck.analAccident) && !fuck.checkedForPregnancy) {
       if (!fuck.birthControl) {
         if (State.variables.PlayerPregnant) {
           fuck.birthControl = 'pregnant'
@@ -463,7 +473,7 @@ setup.getPossibleConceptions = function(hideHiddenChecked) {
   return State.variables.sex.filter(function(fuck) {
     var shouldHide = fuck.checkedForPregnancy && (fuck.checkedForPregnancy != "hidden" || hideHiddenChecked)
 
-    return fuck.vaginal &&
+    return (fuck.vaginal || fuck.analAccident) &&
       !shouldHide &&
       fuck.birthControl != 'pregnant' &&
       fuck.birthControl != 'implant-perfect' &&
@@ -492,6 +502,11 @@ setup.isFirstVaginal = function(targetFuck) {
 setup.pregnantFirstTime = function() {
   var intercourse = State.variables.sex.filter(function(fuck) {return fuck.vaginal})
   return intercourse.length && intercourse[0].conception && !intercourse[0].trying
+}
+
+setup.pregnantFromLoophole = function() {
+  var analAccidentConception = State.variables.sex.filter(function(fuck) {return fuck.analAccident && fuck.conception})
+  return analAccidentConception && (setup.sexVaginalCount() == 0)
 }
 
 setup.notPregnant = function(reason) {
@@ -812,6 +827,7 @@ setup.getAchievementDetails = function() {
     friends: {text: "Reuniting with Old Friends", image: "Friends.jpg"},
     girlpower: {text: "Choosing This Life", image: "GirlPower.png"},
     goldstar: {text: "Gold Star Lesbian", image: "GoldStar.jpg"},
+    loopholeBaby: {text: "Loophole Pregnancy", image: "LoopholeViolation.jpg"},
 		mileHigh: {text: "Mile High Club", image: "MileHigh.gif"},
 		mother: {text: "Gave Birth", image: "Baby.jpg"},
     sisters: {text: "Three Sisters", image: "Sisters.jpg"},

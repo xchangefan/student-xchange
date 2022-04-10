@@ -5250,12 +5250,15 @@ Plenty of it is spent back in your hotel room having even more fun with just you
   <h1>A little fun with Andrew</h1>
   "I'm not looking to date anyone right now", you tell Andrew.  His disappointed expression quickly changes though when you
   add, "But that doesn't mean we can't have some fun."
-  <<set setup.addSexRepeat(4, {sex:"male", name:"Andrew"})>>
+  <<set $tempAnalAccident to (Math.random() < 0.1)>>
+  <<set setup.addSexRepeat(3, {sex:"male", name:"Andrew"})>>
+  <<set setup.addSex({sex:"male", name:"Andrew", analAccident: $tempAnalAccident})>>
 <</nobr>>
 
 <<nobr>>
-  You head back to Andrew's apartment with him.  Andrew says he admires your decision to save that part of yourself for your
-  future husband, and he's more than happy to work fuck just your mouth and ass instead.  
+  You head back to Andrew's apartment with him. You've let him know that you aren't ready to go "all the way", but are eager
+  to do other things with him.  Andrew says he admires your decision to save that part of yourself for you future husband, and
+  he seems more than happy to fuck just your mouth and ass instead.  
 <</nobr>>
 
 <<nobr>>
@@ -5272,9 +5275,21 @@ Plenty of it is spent back in your hotel room having even more fun with just you
 <</nobr>>
 
 <<nobr>>
-  Eventually your fun together ends.  You really aren't looking for a relationship right now.  You know you won't be able to stay
+  Eventually your fun together ends.  You really aren't looking for a relationship right now.  You know you wouldn't be able to stay
   a virgin long if you started dating Andrew, or anyone else.  So you say goodbye, "I see you around at the next event." and
   then [[head home|Part12BackToClass]].  
+  <<if $tempAnalAccident>>
+    <br><br>
+    <img src="PartP/AnalAccident.jpg" hspace="10" vspace="10" height="600"/>
+    <br><br>
+    Later, when you are using the bathroom, you notice some of Andrew's cum between your lower lips.  He must have either missed
+    a bit, or it drained there afterwards.
+    <<if $PlayerProtectionPerfect>>
+      Thankfully, you don't have to worry about getting pregnant.
+    <<else>>
+      Hopefully that won't be a problem.
+    <</if>>
+  <</if>>
 <</nobr>>
 
 ::Part12AndrewDate <32600,11000>

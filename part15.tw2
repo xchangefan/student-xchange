@@ -744,6 +744,8 @@
     <</if>>
     <<if setup.pregnantFirstTime()>>
       <<achievement>>firsttime+pregnant<</achievement>>
+    <<elseif setup.pregnantFromLoophole()>>
+      <<achievement>>loopholeBaby+pregnant<</achievement>>
     <<else>>
       <<achievement>>pregnant<</achievement>>
     <</if>>
@@ -2904,9 +2906,9 @@
 
 <<nobr>>
   <<unset $tempJustNowPregnant>>
-  <<if true or !$PlayerPregnant>>
+  <<if !$PlayerPregnant>>
     <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - Electronic Chastity Belt Fitting', 0)>>
-    <<if true or $PregnancyCheck.isPregnant>>
+    <<if $PregnancyCheck.isPregnant>>
       <<set $PlayerSideEffectPermanent to 1>>
       <<set $tempJustNowPregnant to 1>>
       <<set $PlayerPregnant to 1>>
@@ -3666,6 +3668,8 @@
   <<else>>
     <<if setup.pregnantFirstTime()>>
       <<achievement>>firsttime+pregnant<</achievement>>
+    <<elseif setup.pregnantFromLoophole()>>
+      <<achievement>>loopholeBaby+pregnant<</achievement>>
     <<else>>
       <<achievement>>pregnant<</achievement>>
     <</if>>
@@ -8375,6 +8379,8 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
     <<unset $tempPregnantDiscovered>>
     <<if setup.pregnantFirstTime()>>
       <<achievement>>firsttime+pregnant<</achievement>>
+    <<elseif setup.pregnantFromLoophole()>>
+      <<achievement>>loopholeBaby+pregnant<</achievement>>
     <<else>>
       <<achievement>>pregnant<</achievement>>
     <</if>>

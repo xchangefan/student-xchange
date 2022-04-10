@@ -281,7 +281,9 @@
 <<nobr>>
 	<h1>With your family</h1>
   <img src="Part14/Ministry2.jpg" hspace="10" vspace="10" height="650" align="left">
-  <<set $PlayerDecidePermanent to 1>>
+  <<if !$PlayerSideEffectPermanent>>
+    <<set $PlayerDecidePermanent to 1>>
+  <</if>>
 <</nobr>>
 <<nobr>>
   Your dad has Dylan carry the boxes from your car up to your room while he sits you down to talk.  "I'd been really worried about you after your change.  There's
@@ -308,6 +310,9 @@
       stroked Andrew's cock, or how much you enjoyed making him cum.
     <<else>>
       let Andrew put his hand under your shirt, or how much you enjoyed it and wanted to do more.
+    <</if>>
+    <<if $PlayerPregnant>>
+      Or if he knew you were pregnant.
     <</if>>
     But he doesn't know about that, and
   <<else>>
@@ -6476,6 +6481,10 @@
     I was especially worried after she'd came home for Christmas.
   <</if>>
   I'd half-expected her first year to end with her pregnant, dropping out, and moving back here. But thankfully that didn't happen."
+  <<if $PlayerPregnant>>
+    <br><br>
+    "Well, most of it didn't happen anyway," you think to yourself.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -8368,7 +8377,7 @@
 
 <<nobr>>
   You continue for a while before concuding, "And again, if you are wanting to avoid temptation, I recommended you find some sort of support program that works
-  for you.  I don't think I would have done it with my mine."
+  for you.  I don't think I could have done it with my mine."
 <</nobr>>
 
 <<nobr>>
@@ -8661,6 +8670,8 @@
   <<if $PregnancyCheck.isPregnant>>
     <<if setup.pregnantFirstTime()>>
       <<achievement>>firsttime+pregnant+childfree<</achievement>>
+    <<elseif setup.pregnantFromLoophole()>>
+      <<achievement>>loopholeBaby+pregnant<</achievement>>
     <<else>>
       <<achievement>>pregnant+childfree<</achievement>>
     <</if>>

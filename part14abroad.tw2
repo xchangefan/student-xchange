@@ -1850,7 +1850,7 @@
 <</if>>
 <<nobr>>
   Once the check-in process is complete they 
-  <<if $CampusMinistry>>
+  <<if $CampusMinistry and !$BarryBribe>>
     [[direct you both to a changing room|Part14IslandCollarLie]] so you can change out of your travel clothes before entering the rest of the resort.
     "Why wouldn't we just change in our room?" you ask.  But Barry doesn't respond.
   <<else>>
@@ -2165,11 +2165,101 @@
   <<if $BarryIslandResist>>
     <<if $tempWasVirgin>>
       [[until the next morning|Part14IslandVirgin]].
+    <<elseif setup.sexVaginalCount() == 0>>
+      [[until the next morning|Part14IslandNoLoophole]].
     <<else>>
       [[until the next morning|Part14IslandObedience]].
     <</if>>
+  <<elseif setup.sexVaginalCount() == 0>>
+    [[until the next morning|Part14IslandNoLoophole]].
   <<else>>
     [[until the next morning|Part14IslandMassage]].
+  <</if>>
+<</nobr>>
+
+::Part14IslandNoLoophole
+<<nobr>>
+  <h1>In your Resort Room</h1>
+  <img src="Part14/IslandVirgin.gif" hspace="10" vspace="10" height="480">
+  <<set setup.addSex({sex: 'male', name:'Barry', vaginal: true, noCondom:true, noPullout:true})>>
+<</nobr>>
+<<nobr>>
+  "You have a busy day today, but I wanted to make sure you and I could spend some time together first," Barry says.  Then he adds.  "I want your
+  first time to be with me."  You realize he means your first time having actual sex.  He plans on fuck you, for real.  Right now.
+<</nobr>>
+
+<<nobr>>
+  You think about telling him "No" and that you still want to save that.  But you know you can't talk.  But you also know that you
+  really don't want to wait anymore.  You've been aching to get fucked for so long and now you can do it and tell yourself that
+  you didn't have any choice.
+<</nobr>>
+
+<<nobr>>
+  You are nervous, but as Barry's hands begin to explore your body, you soon forget about being nervous and just enjoy the sensations.  When he slides
+  a finger inside you, you realize how wet you are.
+  <<if $AcademicProbationDenial>>
+    It feels nice, but not even good as when you tried to play with yourself before Faith caught you.  You are guessing it's because of the denial
+    setting the dean had them activate.  But even though you can feel much, the longer he goes, the more you crave.  You want something bigger inside you,
+    something harder.  And you want it now.
+  <<else>>
+    As you are reminded how good just his finger feels, you think more and more about how good something else will feel.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Barry doesn't make you wonder long.  When he slowly slides inside you expect it to hurt, but it feels
+  <<if $AcademicProbationDenial>>
+    right.  It feels like his... penis... belongs there.  Everytime he pulls out of you, you feel a hunger for him to be back inside you.  He keeps pulling
+    out and back in and it's driving you insane, but you want more of it.  You can only imagine how good this would feel if you were actually being allowed to
+    feel it.
+  <<else>>
+    amazing.  As he begins sliding in and out you can feel the pleasure building inside you.
+  <</if>>
+  You wonder to yourself why you'd waited.  You could have been doing this all year!
+<</nobr>>
+
+<<nobr>>
+  You forget about the collar you are wearing as your body forces louder and louder moans from you.
+  <<if $AcademicProbationDenial>>
+    It's like your body knows exactly how good this is supposed to feel, but the message just isn't getting to your conscious mind.  The sounds you are making
+    mean it would have felt amazing.
+  <</if>>
+  Thankfully none of the sounds set off your collar.  Barry pulls back on your leash choking you just a bit as you cry out with an orgasm.
+  <<if $AcademicProbationDenial>>
+    You only wish you could have felt it.  Barry keeps going.
+  <<else>>
+    The pleasure washes over you for a while as Barry keeps going.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Barry, grunts and thrusts inside you a final time.  He stays there as you feel him twitch and move inside you.
+  <<if $BarryBribe>>
+    You should probably be more careful if you don't want to get pregnant again, but you were both too caught up in the moment.
+  <</if>>
+  <<if $AcademicProbationDenial>>
+    You can feel his warm cum pooled inside you, and it you feel a warmth happy glow all over.  You wonder if it's from his cum, or
+    some bit of the orgasm you were denied making it through the denial.  As the pleasant feeling
+  <<else>>
+    As the glow of your orgasm
+  <</if>>
+  lingers,
+  <<if $PlayerProtectionTry>>
+    you smile and wonder if you might get pregnant.  How wonderful it would be for it to happen on your first time.
+  <<elseif $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+    you are happy you decided to get on birth control.
+  <<elseif $BarryBribe>>
+    you smile and hope you won't have to wait too long to do this again.
+  <<else>>
+    you are too happy to worry about the lack of protection, and the possibility of getting pregnant.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "You can take a shower first," Barry says.  You wash up, washing your leg a second time as some of Barry's cum leaked out while you were washing your hair.
+  When you leave, there's someone from the hotel waiting there.  "He's here to [[take you to your first appointment|Part14IslandObedience]]," Barry tells you.
+  <<if $AcademicProbationDenial>>
+    You're a bit disappointed, you were wanting to see if Barry could do that again, you want the warm glow you felt again.
   <</if>>
 <</nobr>>
 

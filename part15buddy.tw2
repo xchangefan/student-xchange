@@ -1803,6 +1803,8 @@
 <<if $tempTestCount > 1 and $PregnancyWeek>>
   <<if setup.pregnantFirstTime()>>
     <<achievement>>firsttime+pregnant<</achievement>>
+  <<elseif setup.pregnantFromLoophole()>>
+    <<achievement>>loopholeBaby+pregnant<</achievement>>
   <<else>>
     <<achievement>>pregnant<</achievement>>
   <</if>>

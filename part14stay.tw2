@@ -465,6 +465,8 @@
   <<set $PregnancySummer to 1>>
   <<if setup.pregnantFirstTime()>>
     <<achievement>>firsttime+pregnant<</achievement>>
+  <<elseif setup.pregnantFromLoophole()>>
+    <<achievement>>loopholeBaby+pregnant<</achievement>>
   <<else>>
     <<achievement>>pregnant<</achievement>>
   <</if>>

@@ -5015,6 +5015,8 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
     You are pregnant!
     <<if setup.pregnantFirstTime()>>
       <<achievement>>firsttime+pregnant<</achievement>>
+    <<elseif setup.pregnantFromLoophole()>>
+      <<achievement>>loopholeBaby+pregnant<</achievement>>
     <<else>>
       <<achievement>>pregnant<</achievement>>
     <</if>>
@@ -5036,6 +5038,19 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
     <<elseif $PlayerProtectionTry>>
       You are ecstatic, finally you're pregnant!  You excitedly tell the doctor that you will definitely be [[carrying the baby to term|Part13CheckupKeep]].  She
       congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
+    <<elseif setup.sexVaginalCount() == 0>>
+      You can't believe this has happened - you haven't even had sex yet!  Well, not real sex, only anal and oral.
+      <<if setup.hadAnalAccident("Barry") and setup.hadAnalAccident("Andrew")>>
+        One of the times Barry's or Andrew's
+      <<elseif setup.hadAnalAccident("Barry")>>
+        That time Barry's
+      <<else>>
+        That time Andrew's
+      <</if>>
+      cum leaked out of your ass and into... well, that must have been when it happened.
+      <br><br>
+      The doctor sees you need a moment to process the news.  She says she'll give you a bit to think about [[your options|Part13CheckupPregnantLoophole]],
+      and she'll be back in a few minutes.
     <<elseif $CampusMinistry>>
       You make it clear to the doctor that you aren't going to consider anything other than [[carrying the baby to term|Part13CheckupKeep]].  She congratulates
       you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
@@ -5060,6 +5075,287 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
   <<else>>
     You are [[not pregnant|Part13CheckupNotPregnant]].
   <</if>>
+<</nobr>>
+
+::Part13CheckupPregnantLoophole
+<<nobr>>
+	<h1>Medical Clinic</h1>
+  <img src="Part13/Pregnant1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  As you consider your options, and the father, your mind can't help but imagine what your body will look like a few months from now.
+<</nobr>>
+
+<<nobr>>
+  You already know there's one option you won't consider, an abortion.  That's fine for some women, but not something you'd consider.
+  Part of you wonders even if God wanted you to become pregnant, making sure you got pregnant even when you weren't having sex that
+  should have resulted in a baby.
+<</nobr>>
+
+<<nobr>>
+  You know people probably won't believe you that you haven't ever had proper sex, and you don't really see the point in abstaining
+  anymore, at least with your baby's father.  Your 'virgin' vagina is going to have a baby passing through it in eight, or however
+  many, months anyway.  The only one you'll be honest with about it is the baby's father.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.hadAnalAccident("Barry") and setup.hadAnalAccident("Andrew")>>
+    Except you aren't sure who that is.  Obviously it can only be Barry or Andrew, but you remember a messy time or two with both of
+    them, so it could be either one.  You don't want to tell one of them he is the father and be wrong about it considering you'll
+    have a hard time convincing him it's even possible in the first place.
+    <br><br>
+    <video src="PartP/Sample.mp4" autoplay loop muted height="500"></video>
+    <<set setup.addSexRepeat(2, {sex:"male", name:"Andrew"})>>
+    <<set setup.addSexRepeat(2, {sex:"male", name:"Barry"})>>
+    <br><br>
+    You decide you'll need to get a sample for them to test so you can know and be sure.  Of course, you can't just ask for one,
+    so instead you meet up with each of them to suck their cocks.  You probably could have just met with one and done it by process
+    of elimination, but this way you'll have a test result to show whichever one it is.
+    <br><br>
+    After they cum on your face, you head to the bathroom to 'clean up'.  While you are there, you take the cum from your face and
+    capture it in a small test tube you have in your purse.  Once you are done, you head back to join him and have him fuck your
+    ass this time.
+    <br><br>
+    When you bring in the "samples" in the nurse laughs and tells you that they usually test blood or cheek swabs, but congratulates
+    you on your inventiveness.  Once she comes back with the results, she confirms that
+    <<if $PregnancyCheck.actualFather == "Barry">>
+      [[Barry is the father|Part13CheckupPregnantLoopholeBarry]].
+    <<else>>
+      [[Andrew is the father|Part13CheckupPregnantLoopholeAndrew]].
+    <</if>>
+  <<elseif setup.hadAnalAccident("Barry")>>
+    Obviously [[it could only be Barry|Part13CheckupPregnantLoopholeBarry]].  You remember the messy time when it must have happened too.
+  <<else>>
+    Obviously [[it could only be Andrew|Part13CheckupPregnantLoopholeAndrew]].  You remember the messy time when it must have happened too.
+  <</if>>
+<</nobr>>
+
+::Part13CheckupPregnantLoopholeBarry
+<<nobr>>
+  <h1>Barry - Confirmed</h1>
+  <img src="PartP/PaternityPositive.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+	When you first start to tell Barry, he doesn't believe you.  "We've never even actually fucked!" he says.  You tell him about the time
+  his cum leaked and when you must have gotten pregnant.  He's still very sceptical, but now he's surpried and annoyed that you didn't just
+  "deal with it" as soon as you found out about the pregnancy.  But when he gets past that, he's back to doubting that he is the actual
+  father.  He demands a paternity test - with him providing a cheek swab directly to the lab himself.
+  <<if setup.hadAnalAccident("Andrew")>>
+    He doesn't trust the one you obtained, "You could have labeled any guy's cum with my name.  I'll go in myself," he tells you.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When the test comes back positive, he accepts that he is the father, though he's clearly not happy about it.  "You can't fault me
+  for wanting to be sure.  I still thank it's crazy you got pregnant when I was just fucking your ass!"
+<</nobr>>
+
+<<nobr>>
+  "I hope you don't think I'm going to help you raise that thing, I'm certainly not interested in being a father yet.  You know if you
+  are having second thoughts about it, it's not too late to go back and have them get rid of it for you.  If you are concerned about
+  the cost of that, I'd be more than happy to pay it. Actually, how about I just give you
+  [[a couple thousand dollars I have saved up|Part13PregnantLoopholeBarryAbortionBribe]], and that should cover it, right?  You can
+  keep whatever extra is left."
+<</nobr>>
+
+<<nobr>>
+  "I know it's your decision though.  If you decide to keep it, don't expect me to be driving you to doctor's
+  appointments and shit.  If you plan on putting it up for adoption, then that's probably a good idea, you aren't ready to be a
+  mother yet, let me know if there's anything I need to sign to help with that."
+<</nobr>>
+
+<<nobr>>
+  "Though if you decide to keep it, I know I'll be stuck paying child support for the next 18 years.  I won't be able to afford
+  much."
+<</nobr>>
+
+<<nobr>>
+  The more you think about it the more Barry's idea sounds like a good one.  You aren't ready to be a mother.  Especially a single
+  mother with no help from the father.  And it's going to be so humiliating being pregnant, because no one is going to believe you
+  weren't slutting around to get this way.  And you feel bad "trapping" Barry when he didn't even have real sex with you.
+<</nobr>>
+
+<<nobr>>
+  You tell yourself the money isn't a factor too, but deep down you feel a little guilty because you know it is, at least a bit.
+<</nobr>>
+
+::Part13PregnantLoopholeBarryAbortionBribe
+<<nobr>>
+	<h1>Reconsidered</h1>
+	<<set $BarryBribe to 1>>
+	<<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
+	<<set $PlayerAbortion to 1>>
+	<<set $PlayerMenstruation to 1>>
+  <<set setup.addInventory('clothes', 'jeans')>>
+  <<set setup.addInventory('clothes', 'blouses')>>
+  <<set setup.addInventory('underwear', 'sexy underwear')>>
+	<img src="Part7/Jeans.gif" hspace="10" vspace="10" height="764" align="left">
+	<br>
+  Barry drives by his bank to make a withdrawal on the way to the clinic.  He hands you the money and drops you off at the clinic.  "I'm not
+	waiting around.  You have more than enough to call a ride when they are done," he tells you.  "No hard feels though.  Thanks for coming
+  around and changing your mind about this.  Give me a call whenever you need your ass fucked again.  We'll just have to be much more careful
+  from now on."
+<</nobr>>
+
+<<nobr>>
+	You wait your turn and then go in to see the doctor again.  You let her know you've thought it over and reconsidered.  After going over everything
+	in great detail with the doctor and signing a bunch of forms, the doctor gives you a pill which you take right then.  She gives you another one to
+	take tomorrow morning.  She tells you to expect bleeding and cramps, like a period, but worse.
+	<<if $PlayerProtectionTry>>
+		She starts to talk to you about birth control, but you explain that you actually want a baby, but just not with this man.
+		She understands, and wishes you luck.
+	<<elseif $PlayerProtectionPill>>
+		<<print "She also gives you a new supply of birth control pills to start with tomorrow.">>
+	<<else>>
+		<<if !$PlayerProtectionPermanent>>
+			<<if !$PlayerProtectionFertile>>
+				<<print "If you want to ">>
+				<span id="AbortSpan1">
+					<<link "start using birth control pills,">>
+						<<set $PlayerProtectionTry = 0>>
+						<<set $PlayerProtectionNone = 0>>
+						<<set $PlayerProtectionWithdraw = 0>>
+						<<set $PlayerProtectionCondoms = 0>>
+						<<set $PlayerProtectionPill = 1>>
+            <<replace "#StoryKeyFlag">>TRUE<</replace>>
+						<<replace "#AbortSpan1">>
+							<<print "start using birth control pills,">>
+						<</replace>>
+					<</link>>
+				</span>
+				<<print "she can also give you a supply of those to start with tomorrow.">>
+			<<else>>
+				<<if !$PlayerProtectionCondoms>>
+					<<print "As birth control pills don't work on you, she recomends starting to ">>
+					<span id="NotPregSpan2">
+						<<link "use condoms for protection.">>
+							<<set $PlayerProtectionTry = 0>>
+							<<set $PlayerProtectionNone = 0>>
+							<<set $PlayerProtectionWithdraw = 0>>
+							<<set $PlayerProtectionCondoms = 1>>
+              <<replace "#StoryKeyFlag">>TRUE<</replace>>
+							<<replace "#NotPregSpan2">>
+								<<print "use condoms for protection,">>
+							<</replace>>
+						<</link>>
+					</span>
+					<<print " so that you don't end up in the same situation again.">>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	Of course, there's no charge for the visit, or the pills.  All of that is covered by the X-Change people.  But you and Barry both know that's
+	not why he paid you.  You feel a small tinge of guilt, but then you tell yourself that you didn't really want to raise a kid with
+	him as the father anyway.  Then you look down at the cash he gave you, and the guilt is gone.
+<</nobr>>
+
+<<nobr>>
+	Looking at all the extra money you have, and feeling glad that you won't have a huge belly growing anytime soon, You decide to pick up something
+	nice to wear this summer before you head back to campus.  Putting on the matching bra and panties, and squeezing into your new jeans
+	puts a smile on your face.
+<</nobr>>
+
+<<nobr>>
+	Your smile doesn't last that long though, as you feel the cramps she'd warned you about start.  Thankfully the bleeding hasn't
+	started yet.  You would have hated to ruin your new underwear already.  The next morning you take the
+	[[second pill|Part13SummerPlans]] she gave you.
+<</nobr>>
+
+<<nobr>>
+  With the cramps, you aren't interested in any sex at the moment, anal or otherwise.  But since you aren't having a baby after all, you
+  decide you'll keep with your original plan to keep yourself technically a virgin until you meet your future husband.
+<</nobr>>
+
+<<achievement>>childfree<</achievement>>
+
+::Part13CheckupPregnantLoopholeAndrew
+<<nobr>>
+	<h1><<print "Telling Andrew">></h1>
+  <<set setup.startDating("Andrew")>>
+<</nobr>>
+<<nobr>>
+  Andrew is confused as to how you could be pregnant, and how he could be the father.  But you tell him about the mess he'd made when
+  he came in, on, and all around your ass when you were together.  You tell him that clearly some of his cum must have made its way
+  inside more than just your ass.  Eventually he accepts that that little mistake must have been enough.
+  <<if setup.hadAnalAccident("Barry")>>
+    You decide not to show him the DNA results you'd gathered, since that would only lead to more questions.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "I'll support you however I can, with whatever decision you make," he tells you.  You tell him you've already decided to keep the baby.
+  "That's wonderful," he tells you. "I had hoped that's what you would decide."
+<</nobr>>
+
+<<nobr>>
+  The two of you talk about the pregnancy a bit, then Andrew changes subjects.  "I know you weren't interested in a relationship before,"
+  he starts.  "I'm wondering if you've reconsidered that.  If you have, I'm certainly still interested."
+<</nobr>>
+
+<<nobr>>
+  <img src="Part12/Ministry5.jpg" hspace="10" vspace="10" height="300" align="left">
+  <img src="Part3/JobBarista1.jpg" hspace="10" vspace="10" height="300" align="right">
+<</nobr>>
+<<nobr>>
+  "I'll be honest with you," you tell Andrew.  I really wanted to date you back when you asked me out.  Heck, I wanted that even back when
+  we first met.  But I knew if I did, I wouldn't be able to resist going all the way with you."
+<</nobr>>
+
+<<nobr>>
+  You bite your lower lip as you work up the nerve to continue.  "But I don't see any reason to wait any longer.  Either on us dating, or us
+  [[going all the way|Part13LoopholeAndrew2]] together."
+<</nobr>>
+
+::Part13LoopholeAndrew2
+<<nobr>>
+  <h1>Can't wait any longer</h1>
+  Andrew has plans to make your first time extra special.  He's wanting to take you out for a romantic date, bring you home afterwards,
+  and have candles everywhere.  "I don't want to wait for all of that.  I don't want to wait any more at all," you tell him.  "I want
+  you, right now."  He doesn't need any convincing.
+  <<set setup.addSex({sex:"male", name:"Andrew", vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSex({sex:"male", name:"Andrew", vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSex({sex:"male", name:"Andrew"})>>
+  <<set setup.addSex({sex:"male", name:"Andrew"})>>
+<</nobr>>
+<<nobr>>
+  <video src="Part13/Pregnant15.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  When you feel Andrew's hard cock slide inside you, nothing has ever felt so good, so right.  You know he's the one you were saving this
+  for.  You only wish you'd realized it when you'd first met, and you could have been doing this all year.
+<</nobr>>
+
+<<nobr>>
+  When your first orgasm of the afternoon comes, and you feel your body clench around his cock as he continues to fuck you, it feels
+  so good you almost pass out.  Hearing you moan and beg for his cock pushes Andrew over the edge, and a few seconds later, you hear him
+  groan as he cums inside you.
+<</nobr>>
+
+<<nobr>>
+  Having waited so long, you are eager to go again, and again.  You and Andrew do your best to make up for lost time, but eventually
+  he's spent, at least for now.  It's only then that the two of you go out for that romantic dinner he had planned.  Afterwards, you
+  come back to his apartment.
+<</nobr>>
+
+<<nobr>>
+  Eventually, you both tire out again, and you fall asleep next to Andrew.  The next morning the two of you talk a bit more, and
+  decide to keep the news just between the two of you for now.  You both decide to let everyone know the two of you are dating,
+  and then in a month or two let them know you are pregnant.
+<</nobr>>
+
+<<nobr>>
+  When you get back to your room, Faith glares at you, knowing you spent the night at some guys house.  Her disposition changes though
+  when you tell her that you were with Andrew, and that you two are dating.  "I had a feeling about you two," she tells you.
+<</nobr>>
+
+<<nobr>>
+  You update Faith on your relationship with Andrew.  Well, letting her know the clean parts of it at least, and the
+  leaving out mention of the pregnancy.  Afterwards, you start thinking about what your [[plans for the summer|Part13SummerPlans]] are,
+  and whether recent events change those at all.
 <</nobr>>
 
 ::Part13CheckupPregnant <28600,4110>
@@ -5300,7 +5596,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 <</nobr>>
 
 <<nobr>>
-  You both decide to keep the news just between the two of you for now. Maybe after the holidays you might start thinking of telling others.
+  You both decide to keep the news just between the two of you for now. Maybe in a month or two you might start thinking of telling others.
 <</nobr>>
 
 <<nobr>>
@@ -5566,8 +5862,21 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
     <<if $CampusMinistry>>
       Barry notices you going over your summer plans and interrupts you to discuss his plans with you.
       <br><br>
-      "Heyyy, I know we haven't hung out much this year, but I'd like to change that.  It didn't sound like you had anything exciting going
-      on this summer.  And I'm sure you'd have fun doing this too," he tells you.  You are skeptical, but [[listen to his plans|Part13SummerBarryLie]].
+      "Heyyy,
+      <<if $BarryBribe>>
+        everything go well with the... you know.," he asks referring to the abortion.  You tell him it did.  "Well, I overheard and
+        it didn't sound like you had anything exciting going on this summer."  And I'm sure you'd have fun joining me this summer.
+        Then he starts to [[discuss his plans for the summer with you|Part13SummerBarry]].
+      <<elseif setup.haveFucked('Barry') and setup.sexVaginalCount() == 0>>
+        I overheard and it didn't sound like you had anything exciting going on this summer.  And I'm sure you'd have fun joining
+        me this summer." Then he starts to [[discuss his plans for the summer with you|Part13SummerBarryLie]].
+      <<elseif setup.haveFucked('Barry')>>
+        I overheard and it didn't sound like you had anything exciting going on this summer.  And I'm sure you'd have fun joining
+        me this summer." Then he starts to [[discuss his plans for the summer with you|Part13SummerBarry]].
+      <<else>>
+        I know we haven't hung out much this year, but I'd like to change that.  It didn't sound like you had anything exciting going
+        on this summer."  And I'm sure you'd have fun doing this too," he tells you.  You are skeptical, but [[listen to his plans|Part13SummerBarryLie]].
+      <</if>>
     <<else>>
       Barry notices you going over your summer plans and interrupts you to [[discuss his plans with you|Part13SummerBarry]].
       <br><br>
@@ -5637,7 +5946,13 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 <</nobr>>
 
 <<nobr>>
-  "I don't know.  Sharing a hotel room with you.  People might get the wrong idea about us," you worry.
+  "I don't know.  Sharing a hotel room with
+  <<if setup.haveFucked("Barry")>>
+    you..." You don't finish the thought.  You don't want to tell him that you are worried you might be tempted to go all the way
+    with him if you were sharing a room at some romantic resort for a week.
+  <<else>>
+    you. People might get the wrong idea about us," you worry.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -5646,8 +5961,19 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
   <<else>>
     "We've practically shared a room all year anyway.  We've been right next door, and sharing a bathroom,"
   <</if>>
-  he tries to assuage your concerns.  Your face turns red when he adds, "And it's not like I haven't seen you splayed out on my bed fucking
-  yourself with a dildo before."  He smiles and continues, "Besides, no one will care.  They are much more relaxed there about that sort
+  he tries to assuage your concerns.  Your face turns red when he adds,
+  <<if setup.haveFucked("Barry")>>
+    "And it's not like my cock hasn't been inside that
+    <<if $BodyType == 'Plus'>>
+      wonderful
+    <<else>>
+      cute, little
+    <</if>>
+    ass of yours before."
+  <<else>>
+    "And it's not like I haven't seen you splayed out on my bed fucking yourself with a dildo before."
+  <</if>>
+  He smiles and continues, "Besides, no one will care.  They are much more relaxed there about that sort
   of thing.  And people back home don't even need to know we're sharing a room."
 <</nobr>>
 
@@ -5764,7 +6090,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
   <<else>>
     "Would you like to join me for the trip?", Barry asks you.
   <</if>>
-  "It's actually cheaper with you then if I went alone.  They charge extra per night for single guys than they do for couples.  It won't cost you anything
+  "It's actually cheaper with you than if I went alone.  They charge extra per night for single guys than they do for couples.  It won't cost you anything
   except the airfare.  And I can help with that if you need it."
 <</nobr>>
 
@@ -5774,6 +6100,9 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
   <<elseif $PlayerSideEffectExhibitionist > 1>>
     You'd decided your answer as soon as you'd seen the first brochure.  Being able to walk around naked for an entire week on the beach is just too much to pass up.
     Of course you are going to go with Barry.
+  <<elseif $BarryBribe>>
+    You feel guilty for taking all that money from Barry for the abortion.  He probably wouldn't be needing you to get him the lower price
+    if he still had that money.  It sounds like fun anyway, so you decide to go.
   <<else>>
     You wonder if you should accept Barry's offer.
   <</if>>
@@ -5785,7 +6114,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
   <<if $AcademicProbationDenial>>
     <br><br>
     You wonder how madding it
-    <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1>>
+    <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1 or $BarryBribe>>
       will
     <<else>>
       would
@@ -5795,7 +6124,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
   <<if $PlanSummerAbroad>>
     <br><br>
     You realize that going to the resort with Barry
-    <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1>>
+    <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1 or $BarryBribe>>
       will
     <<else>>
       would
@@ -5805,7 +6134,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1>>
+  <<if $PlayerSideEffectSubmissive > 1 or $PlayerSideEffectExhibitionist > 1 or $BarryBribe>>
     "Of course, [[I'd love to go|Part14Island]]", you tell Barry.
     <<if $PlayerSideEffectSubmissive>>
       "I mean, 'I'd love to go, Sir'", you correct yourself.

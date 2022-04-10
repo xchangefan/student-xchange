@@ -1368,21 +1368,29 @@
 
 ::Part8Text5 <1000,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></h1>
+	<h1>Bedroom</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part8/Text5.webm" autoplay loop muted height="640"></video>
+  </div>
 <</nobr>>
 
-<<print "You continue texting with Cody that night.">>
+<<nobr>>
+  You continue texting with Cody that night.  At some point in your flirtatious exchange, he asks about your purchases at the lingerie store.
+<</nobr>>
 
-<<print "At some point in your flirtatious exchange, he asks about your purchases at the lingerie store.">>
+<<nobr>>
+  He's disappointed when you text that you're not going to tell him what you bought there.  But you were only teasing him. You plan on
+  showing him instead.
+<</nobr>>
 
-<<print "He’s disappointed when you text that you’re not going to tell him what you bought there.">>
-
-<video src="Part8/Text5.webm" autoplay loop muted height="640"></video>
-
-
-<<print "But you were only teasing him. You plan on showing him instead.">>
-
-<<print "He loves the show you give him. You know he’d love to see even more. You wonder if ">><<if $PlayerSideEffectExhibitionist or $PlayerSideEffectLibido>>[[you should continue.|Part8Text6]]<<else>>[[you should continue,|Part8Text6]]<<print " or if perhaps it’s better to ">>[[leave him wanting more instead.|Part8Arrival1]]<</if>>
+<<nobr>>
+  He loves the show you give him. You know he'd love to see even more. You wonder if
+  <<if ($PlayerSideEffectExhibitionist or $PlayerSideEffectLibido) && !$CampusMinistry>>
+    [[you should continue.|Part8Text6]]
+  <<else>>
+    [[you should continue,|Part8Text6]] or if perhaps it’s better to [[leave him wanting more instead.|Part8Arrival1]]
+  <</if>>  
+<</nobr>>
 
 ::Part8Arrival1 <0,7000>
 <<nobr>>
@@ -1418,21 +1426,32 @@
 ::Part8Text6 <1200,6750>
 <<nobr>>
 	<<set $CodySexting to 1>>
-	<h1><<print "Bedroom">></h1>
+	<h1>Bedroom</h1>
+  <img src="Part8/Text6.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 
-<<print "You do a sexy dance as Cody watches you remove the bra and panties you were just modeling for him.">>
+<<nobr>>
+  <<if $CampusMinistry>>
+    You field so naughty as you
+  <<else>>
+    You
+  <</if>>
+  do a sexy dance as Cody watches you remove the bra and panties you were just modeling for him.
+<</nobr>>
 
-<<print "You wonder if he’s stroking himself as he watches you.">>
-<img src="Part8/Text6.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  You wonder if he's stroking himself as he watches you.  You're sure that if he isn't now, then he
+  will while rewatching the video many times in the future.
+<</nobr>>
 
-<<print "You’re sure that if he isn’t now, then he will while rewatching the video many times in the future.">>
+<<nobr>>
+  Once you are nude, you dance a bit more for him.  Then you stop and tell him you want to know how
+  much he enjoyed your show.
+<</nobr>>
 
-<<print "Once you are nude, you dance a bit more for him.">>
-
-<<print "Then you stop and tell him you want to know how much he enjoyed your show.">>
-
-<<print "He starts to answer, but you say that no, ">>[[you want to *See* how much he enjoyed it.|Part8Text7]]
+<<nobr>>
+  He starts to answer, but you say that no, [[you want to *See* how much he enjoyed it.|Part8Text7]]
+<</nobr>>
 
 ::Part8TextChastity1 <800,6875>
 <<nobr>>
@@ -1616,7 +1635,7 @@
 <<if $CodyDickPick and $CampusMinistry>>
 	You return to your bed, but your thoughts won't let you sleep.
 
-	<<print "You'd planned to be a good girl on break, just like you'd promised Faith you would be.  You were just playing around earlier with Cody, just some harmless fun.  You guys were miles apart, right?  But now you can't get the thought of Cody's cock out of your mind.  Your keep imagining what it would taste like, how good it would feel inside you.  ">>[[You send him a text seeing if he'd like you to come over|Part8EveningBooty1]].
+	<<print "You'd planned to be a good girl on break, just like you'd promised Faith you would be.  You were just playing around earlier with Cody, just some harmless fun.  You guys were miles apart, right?  But now you can't get the thought of Cody's cock out of your mind.  You keep imagining what it would taste like, how good it would feel inside you.  ">>[[You send him a text seeing if he'd like you to come over|Part8EveningBooty1]].
 <<else>>		
 	<<print "On the way back you see the light on in your sisters room. ">>[[You can go talk to her for a while|Part8EveningSister1]]<<print " to see if that takes your mind off it.">>\
 	<<if !$KidnapEscape and $BrotherFlirt>><br><br><<print "You also look at your brother’s door and wonder if he’s jerking off right now, thinking of you in your hot new body. ">>[[You can peek into his room to see if you want.|Part8EveningBrother1]]<</if>>\
