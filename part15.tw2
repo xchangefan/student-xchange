@@ -9400,45 +9400,37 @@ TODO Upset after being raped [[Part15Dorm]]
     She offers to let you stay and watch then if that's all you can do.  But you know that will only make you hornier and you
     probably wouldn't be able to resist trying to join in.  "Thank you, but no.  I'll just find
     [[somewhere else to be|Part15DormStonerMinistry]] while you two have fun."
-  <<elseif $dating.length>>
-    <<if setup.haveGirlfriend()>>
-      When you tell her you have a girlfriend she says, "Oh... Well, you can [[go hook up with her|Part15DormStonerGirlfriend]] while I
-      call my friend Craig over here."
-    <<else>>
-      When you tell her you have a boyfriend she says, "Great! [[Tell him to come over here instead then!|Part15DormStonerMFF]] Or if you don't
-      want to share, you can [[go hook up with him|Par14DormStonerBoyfriend]] while I call my friend Craig over here."
-      <<if setup.sexCount() == 0>>
-        <br><br>
-        "I don't know," you tell her.  "I'm... I'm still a virgin."
-        <br><br>
-        "I can see how much you want it right now.  So why keep waiting?  Trust me high sex is amazing!", she says. "I'm sure he'll be down
-        for it either way, but I understand if you want your first time to be just the two of you."
-      <</if>>
+  <<elseif $dating.length and !setup.haveGirlfriend()>>
+    When you tell her you have a boyfriend she says, "Great! [[Tell him to come over here instead then!|Part15DormStonerMFF]] Or if you don't
+    want to share, you can [[go hook up with him|Par14DormStonerBoyfriend]] while I call my friend Craig over here."
+    <<if setup.sexCount() == 0>>
+      <br><br>
+      "I don't know," you tell her.  "I'm... I'm still a virgin."
+      <br><br>
+      "I can see how much you want it right now.  So why keep waiting?  Trust me high sex is amazing!", she says. "I'm sure he'll be down
+      for it either way, but I understand if you want your first time to be just the two of you."
     <</if>>
-  <<elseif $CampusMinistry>>
+  <<elseif $CampusMinistry or setup.sexMaleCount() == 0>>
     "I don't know," you tell her.
-    <<if $BrokenLeg>>
+    <<if $BrokenLeg and setup.sexCount() == 0>>
       "I'm... I'm still a virgin.  And look at me." You gesture towards your broken leg.
     <<elseif $BrokenLeg>>
       "I mean, look at me." You gesture towards your broken leg.
     <<elseif setup.sexCount() == 0>>
       "I'm... I'm still a virgin."
+    <<elseif setup.sexMaleCount() == 0>>
+      "I've never been with a man before."
     <</if>>
     <br><br>
     "I can tell you are as horny as I am.  Probably even more," she says. You can't deny it.  "I'll tell him to be gentle."  Then she
     picks up the phone and starts to call her friend.
     <br><br>
-    You can either stay here with her and [[wait for her friend to arrive|Part15DormStonerMFF]], or you can
-    [[tell her to have fun without you|Part15DormStonerMinistry]] and find someplace else to be while her and her friend have sex.
-  <<elseif setup.isGoldStarLesbian()>>
-    "I don't know," you tell her.  "Guys aren't usually my thing.  But don't let that stop you from having your fun."
-    <br><br>
-    She calls him and says he'll be over soon.  The more you think about how horny you are, and that you could get laid right here,
-    in just a few minutes, you start wondering if maybe you should give him a chance.
-    <br><br>
-    After all, you figure, Marissa will be there too, you could just focus on her.  [[Maybe it'll be fun|Part15DormStonerMFF]]
-    But you are wondering if maybe you should just leave and go find [[a girl to hook up with|Part15DormStonerLesbian]].  Then Marissa and her fuck-buddy
-    can have the room to themselves.
+    <<if $CampusMinistry>>
+      You can either stay here with her and [[wait for her friend to arrive|Part15DormStonerMFF]], or you can
+      [[tell her to have fun without you|Part15DormStonerMinistry]] and find someplace else to be while her and her friend have sex.
+    <<else>>
+      You are too horny to do anything other than stay here with her and [[wait for her friend to arrive|Part15DormStonerMFF]].
+    <</if>>
   <<elseif $PlayerChastityBelt>>
     "Yes! That sounds great," you tell her.  "Tell him to get his ass over here.  Or get his dick here at least."  You both start laughing
     again. You add, "Warn him about this belt I'm in.  But tell him I really want to suck his cock right now."  She smiles as she starts
@@ -10435,12 +10427,6 @@ TODO Upset after being raped [[Part15Dorm]]
   you know her and her friend are done too.  You're sure you'll share stories with her as soon as you get back to the dorm.  You are glad
   you have a more relaxed roommate [[this year|Part15Week]].
 <</nobr>>
-
-::Part15DormStonerGirlfriend
-TODO Part15DormStonerGirlfriend [[Part15Week]]
-
-::Part15DormStonerLesbian
-TODO Lesbian [[Part15Week]]
 
 ::Part15DormSlutty
 <<nobr>>
@@ -12280,6 +12266,281 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
   <<if $JobEros>>
     <<include [[ErosHalloween]]>>
   <<else>>
-    TODO Halloween [[Part15Week]]
+    <<include [[Part15HalloweenNormal]]>>
   <</if>>
 <</nobr>>
+
+::Part15HalloweenNormal
+<<nobr>>
+  <h1>Halloween</h1>
+  You are thrilled when Halloween finally arrives.
+  <<if setup.haveFucked('Remote Tester')>>
+    <br><br>
+    <table width="99%"><tr>
+      <td>
+        <div style="float:left;padding:12px;">
+          <video src="Part6/SpecialProject3.mp4" autoplay loop muted width="600"></video>
+        </div>
+        <br><br>
+        Last year you missed out on a lot of the fun while you were doing that special testing with the engineering department.
+        Well, you had your own fun there.
+      </td></tr><tr><td>
+      <<if $ProjectPunishmentCorporal>>
+        <div style="float:left;padding:12px;">
+          <video src="Part6/SpecialProject13.mp4" autoplay loop muted width="600"></video>
+        </div>
+        <br><br>
+        The punishment you received afterwards was less fun though.
+      <<elseif $SubjectOrgasmDenialGoo>>
+        <img src="Part6/SpecialProject12.jpg" hspace="10" vspace="10" width="600" align="left">
+        <br><br>
+        The weeks without an orgasm afterwards, was much less fun though.
+      <<elseif $ProjectPunishmentFertile>>
+        <div style="float:left;padding:12px;">
+          <video src="PartP/Creampie.mp4" autoplay loop muted width="600"></video>
+        </div>
+        <br><br>
+        <<if $PlayerProtectionTry>>
+          The enhanced fertility they gave you as a 'punishment' has been even more fun.
+        <<else>>
+          The enhanced fertility they gave you as a punishment though has been less fun.  Or more accurately, it's added an extra worry
+          to the fun you were going to have anyway.
+        <</if>>
+      <<elseif $ProjectPunishmentBirthControl>>
+        <div style="float:left;padding:12px;">
+          <video src="PartP/Creampie.mp4" autoplay loop muted width="600"></video>
+        </div>
+        <br><br>
+        The disabling of your birth control they did as a punishment though has been less fun.  Or more accurately, it's added an extra worry
+        to the fun you were going to have anyway.
+      <<elseif $ProjectPunishmentSemen>>
+        <img src="Part6/SpecialProject11.jpg" hspace="10" vspace="10" width="600" align="left">
+        <br><br>
+        Looking back the real cum they filled you with was even more fun.
+        <<if !$PlayerProtectionTry>>Though you seem to remember having been less enthusastic about it at the time.<</if>>
+      <<elseif $SpecialProjectMoney <= 100>>
+        <img src="Part6/SpecialProject8.jpg" hspace="10" vspace="10" width="600" align="left">
+        <br><br>
+        Looking back, you don't even mind that you barely got any of the money, even though that was the reason you had volunteered.
+      <<else>>
+        <img src="Part6/SpecialProject7.jpg" hspace="10" vspace="10" width="600" align="left">
+        <br><br>
+        Though, looking back, you wish you'd not worried as much about their punishments and just enjoyed yourself more in the moment.
+      <</if>>
+    </td></tr></table>
+    But this year is different.  This year you'll be dressing up and having more traditional fun, dressing up and going out.
+  <<else>>
+    You are really looking forward to dressing up again.
+  <</if>>
+  <table>
+    <tr>
+      <td><img src="Part15/Halloween1.jpg" hspace="10" vspace="10" width="300"></td>
+      <td><img src="Part15/Halloween3.jpg" hspace="10" vspace="10" width="300"></td>
+      <td rowspan="2"><img src="Part15/Halloween4.jpg" hspace="10" vspace="10" width="300"></td>
+    </tr>
+    <tr>
+      <td><img src="Part15/Halloween2.jpg" hspace="10" vspace="10" width="300"></td>
+      <td><img src="Part15/Halloween5.jpg" hspace="10" vspace="10" width="300"></td>
+    </tr>
+  </table>
+<</nobr>>
+<<nobr>>
+  You love how you and the other women can dress
+  <<if $CampusMinistry>>
+    a bit sexier and not get judged for it.
+  <<else>>
+    as sexy as you want and everyone loves it.
+  <</if>>
+  At first you feel a bit sorry for the guys, since their options are more limited.  But then you realize that they are probably
+  just as happy with you and the other women dressing up for halloween as you are.
+<</nobr>>
+
+<<nobr>>
+  <<if true or $PlayerChastityBelt>>
+    The only downside is that your chastity belt [[limits your costume options|Part15HalloweenChastity]].
+  <<elseif setup.areDating("Bailey")>>
+    This year you and Bailey are [[dressing up together|Part15HalloweenBailey]].
+  <<elseif setup.areDating("Kate")>>
+    Kate has [[a costume in mind for you|Part15HalloweenKate]] for this year.
+  <<elseif setup.areDating("Veronica")>>
+    This year you and Veronica are [[dressing up together|Part15HalloweenVeronica]].
+  <<elseif $dating.length>>
+    $dating[0] is already looking forward to [[seeing you in your costume|Part15HalloweenBoyfriend]] this year.
+  <<else>>
+    This year you and Bailey are [[dressing up together|Part15HalloweenBailey]].
+  <</if>>
+<</nobr>>
+
+::Part15HalloweenChastity
+TODO In a belt.  If electronic belt, then you are unable to wear anything over it at all tonight, and everyone can see it [[Part15Week]]
+
+::Part15HalloweenBaileyCoordinate
+<<nobr>>
+  both decide it'd be really fun to coordinate your costumes.  You both decide that
+  an angel and a devil would make a good pair.  Bailey wants to be a devil, so you'll be the angel.
+  <<if setup.haveInventory('costumes', 'sexy devil')>>
+    That's just as well, since you were a devil last year.
+  <</if>>
+  <br><br>
+  You both try to act your parts as well.
+<</nobr>>
+
+::Part15HalloweenBailey
+<<nobr>>
+  <h1>Coordinating costumes with Bailey</h1>
+  <img src="Part15/Halloween6.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set setup.addInventory('costumes', 'sexy angel')>>
+<</nobr>>
+<<nobr>>
+  <<if setup.areDating("Bailey") and setup.sexMaleCount() > 0>>
+    Since you and Bailey are dating, you
+    <<include [[Part15HalloweenBaileyCoordinate]]>>
+    <<if setup.sexMaleCount() > 0>>
+      Or at least at first.  As the night goes on, you both end up having [[quite a bit of naughty fun|Part15HalloweenBailey2]].
+    <<else>>
+      This devil and angel aren't enemies though.  Especially once [[you get back home|Part15HalloweenBailey3]].
+    <</if>>
+  <<elseif $CampusMinistry>>
+    Bailey doesn't have any other plans for Halloween, so you
+    <<include [[Part15HalloweenBaileyCoordinate]]>>
+    Eventually the party starts to get a little wild for your tastes, so you decide to head home.  Bailey decides
+    to stay around a bit longer.
+    <br><br>
+    <img src="Part15/Halloween10.jpg" hspace="10" vspace="10" height="400" align="right">
+    <br>
+    "Ok, you were right," Bailey tells you [[the next day|Part15Week]].  Halloween is much more fun now than it
+    was before I changed.
+    <br><br>
+    You don't know what she got up to after you left last night, but you can't help
+    some of the naughty thoughts that fill your mind imagining it.
+  <<elseif setup.buddyHasGirlfriend()>>
+    Bailey's girlfriend, $BuddyDating, has to work, so Bailey is going with you for Halloween.  You
+    <<include [[Part15HalloweenBaileyCoordinate]]>>
+    The guys are all flirting with you and Bailey, though they seem to focus more on Bailey.  You think maybe because of
+    your costumes, they subconciously assume, she's the one more likely to be interested in the kind of fun they are after
+    tonight.
+    <br><br>
+    Though, once they figure out she has a girlfriend, and you are much more interested in their advances,
+    [[things start to change|Part15HalloweenBaileyLeft]].
+  <<elseif setup.buddyHasBoyfriend()>>
+    Bailey's boyfriend, $BuddyDating, has to work, so Bailey is going with you for Halloween.  You
+    <<include [[Part15HalloweenBaileyCoordinate]]>>
+    The guys are all flirting with you and Bailey, though they seem to focus more on Bailey.  You think maybe because of
+    your costumes, they subconciously assume, she's the one more likely to be interested in the kind of fun they are after
+    tonight.
+    <br><br>
+    Though, once they figure out she has a girlfriend, they focus more on you.  Though you make them wait a bit
+    [[until Bailey's boyfriend gets off work|Part15HalloweenBailey2]].
+  <<else>>
+    Bailey doesn't have any other plans for Halloween, so you
+    <<include [[Part15HalloweenBaileyCoordinate]]>>
+    <<if setup.sexMaleCount() > 0>>
+      Or at least at first.  As the night goes on, you both end up having [[quite a bit of naughty fun|Part15HalloweenBailey2]].
+    <<else>>
+      This devil and angel aren't enemies though.  Especially once [[you get back home|Part15HalloweenBailey3]].
+    <</if>>
+  <</if>>
+<</nobr>>
+
+::Part15HalloweenBailey2
+<<nobr>>
+  <h1>Good and Evil, working together</h1>
+  <<if setup.areDating("Bailey")>>
+    Just because you and her are dating, that doesn't mean you don't want Bailey to get the full Halloween experience
+    and tell her to expect a lot of fun tonight.
+    <br><br>
+  <</if>>
+  <<if $BaileyDating>>
+    Once $BaileyDating gets off work, he joins you and Bailey.  After enjoying the party some more, the three of you,
+    plus one of the guys you've been flirting with, decide to find somewhere private.
+    <br><br>
+    There's a little competition between good and evil to see which is better at sucking cock.  You have experience
+    on your side, but Bailey has the benefit of knowing just what her boyfriend likes.  So it ends up being a tie,
+    with everyone winning.
+    <<set setup.addSex({sex:"male", anon:"Halloween Partygoer", vaginal:true})>>
+    <<set setup.addSex({sex:"male", anon:"Halloween Partygoer", repeat:true})>>
+  <<else>>
+    The guys are all flirting with you and Bailey, though they seem to focus more on Bailey.  You think maybe because of
+    your costumes, they subconciously assume, she's the one more likely to be interested in the kind of fun they are after
+    tonight.
+    <<set setup.addSex({sex:"male", anon:"Halloween Partygoer"})>>
+    <<set setup.addSex({sex:"male", anon:"Halloween Partygoer"})>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Halloween7.mp4" autoplay loop muted height="320"></video>
+<</nobr>>
+
+<<nobr>>
+  <<if $BaileyDating>>
+    After that competiton is over, it's time for the guys to have their own competition.  They are trying to see
+    whether $BaileyDating can make his horny devil orgasm before your guy can get his sweet, innocent angel moaning like
+    a wanton whore when she cums.
+    <br><br>
+    <video src="Part15/Halloween9.mp4" autoplay loop muted height="500"></video>
+    <br><br>
+    You are too busy enjoying the competition to have any idea who actual 'won'.
+    <br><br>
+    "Ok, you were right," Bailey tells you [[the next day|Part15Week]].  Halloween is much more fun now than it
+    was before I changed.
+  <<else>>
+    But a couple of lucky guys find out that good and evil can both have fun when they work together.  Though good and
+    evil can have even more fun [[once they are alone|Part15HalloweenBailey3]].
+  <</if>>
+<</nobr>>
+
+::Part15HalloweenBailey3
+<<nobr>>
+  <h1>Corrupting an angel</h1>
+  <video src="Part15/Halloween8.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  Bailey wants to pretend like she's corrupting a sweet innocent angel with her evil ways.  So she spends
+  the night trying to show you the wonderful pleasure and pain that a devil like her can offer your body.
+<</nobr>>
+
+<<nobr>>
+  Of course, once you are convinced, she shoves your head down between her legs to teach you how to provide
+  pleasure as well.
+<</nobr>>
+
+<<nobr>>
+  "Ok, you were right," Bailey tells you [[the next day|Part15Week]].  Halloween is much more fun now than it
+  was before I changed.
+<</nobr>>
+
+::Part15HalloweenBaileyLeft
+<<nobr>>
+  <h1>After Bailey leaves</h1>
+  <video src="Part15/Halloween9.mp4" autoplay loop muted height="500"></video>
+  <<set setup.addSex({sex:"male", anon:"Halloween Partygoer", vaginal:true})>>
+  <<set setup.addSex({sex:"male", anon:"Halloween Partygoer", repeat:true})>>
+  <<set setup.addSex({sex:"male", anon:"Halloween Partygoer", repeat:true})>>
+  <<set setup.addSex({sex:"male", anon:"Halloween Partygoer", vaginal:true, repeat:true})>>
+<</nobr>>
+
+<<nobr>>
+  After $BuddyDating gets off work, Bailey spends the rest of the evening with her.  Though you aren't alone for
+  very long.
+<</nobr>>
+
+<<nobr>>
+  You spend the rest of the evening with one of the guys from the party.  He enjoys pretending you are sweet, innocent
+  angel, and it's his job corrupting you.  He does a wonderful job of it.
+<</nobr>>
+
+<<nobr>>
+  Of course [[the next morning|Part15Week]] as you walk back home in your costume, it's even more obvious to everyone
+  that you never made it home last night.
+<</nobr>>
+
+::Part15HalloweenKate
+TODO Part15HalloweenKate [[Part15Week]]
+
+::Part15HalloweenVeronica
+TODO Part15HalloweenVeronica [[Part15Week]]
+
+::Part15HalloweenBoyfriend
+TODO Part15HalloweenBoyfriend [[Part15Week]]
