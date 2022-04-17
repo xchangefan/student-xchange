@@ -11615,6 +11615,8 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
     <<include [[Part15PartyDTD]]>>
   <<elseif $SororitySEX>>
     <<include [[Part15PartySEX]]>>
+  <<elseif $CampusMinistry>>
+    <<include [[Part15Week]]>>
   <<else>>
     <<include [[Part15Party]]>>
   <</if>>
@@ -12356,7 +12358,7 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
 <</nobr>>
 
 <<nobr>>
-  <<if true or $PlayerChastityBelt>>
+  <<if $PlayerChastityBelt>>
     The only downside is that your chastity belt [[limits your costume options|Part15HalloweenChastity]].
   <<elseif setup.areDating("Bailey")>>
     This year you and Bailey are [[dressing up together|Part15HalloweenBailey]].
@@ -12366,13 +12368,208 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
     This year you and Veronica are [[dressing up together|Part15HalloweenVeronica]].
   <<elseif $dating.length>>
     $dating[0] is already looking forward to [[seeing you in your costume|Part15HalloweenBoyfriend]] this year.
+  <<elseif $PregnancyWeek >= 15>>
+    Though the changes your body is going through requires you to make
+    [[some changes to your costume plans|Part15HalloweenPregnant]] as well.
   <<else>>
     This year you and Bailey are [[dressing up together|Part15HalloweenBailey]].
   <</if>>
 <</nobr>>
 
+::Part15HalloweenPregnant
+<<nobr>>
+  <h1>Showing off your growing body</h1>
+  <img src="Part15/Halloween15.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set setup.addInventory('costumes', 'mother earth')>>
+<</nobr>>
+<<nobr>>
+  <<if $PregnancyWeek < 20>>
+    It'd be difficult to hide your growing belly at this point, especially with how tight most women's Halloween costumes
+    are.  So you decide to play it up instead and make it look even more prominent. 
+  <<elseif $PregnancyWeek > 25>>
+    It'd be impossible to hide your belly at this point, so you decide to on a costume that embraces it instead.
+  <<else>>
+    It'd be pretty hard to hide your belly at this point, especially with how tight most women's Halloween costumes are.
+    So you decide to highlight it instead.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Your "Mother Earth" costume is a big hit.  The one downside though is that you aren't getting hit on like the other
+  girls are.  You don't think it is because your costume isn't sexy enough though.  It's fairly obvious that most guys
+  are just assuming you are there with someone.  Though a couple joke about wanting a peak at the South Pole  on your
+  "globe".
+<</nobr>>
+
+<<nobr>>
+  You end up leaving the party alone.  
+  <<if $PlayerSideEffectMasturbationBlock>>
+    That just gives you a [[chance to clean up|Part15HalloweenPregnant2]] before
+    trying to match with someone online instead.
+  <<else>>
+    At least that will give you a [[chance to clean up|Part15HalloweenPregnant2]].
+  <</if>>
+<</nobr>>
+
+::Part15HalloweenPregnant2
+<<nobr>>
+  <h1>Wiping away your costume</h1>
+  <video src="Part15/Halloween16.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  When you get home you head to the bath.  It takes a good bit of scrubbing, but eventually you are able to remove
+  the body paint that was the Earth in your "Mother Earth" costume.
+<</nobr>>
+
+<<nobr>>
+  Once that's done you decide to [[take care of the needs|Part15HalloweenPregnant3]] no one at the party was
+  interested in helping with.
+<</nobr>>
+
+::Part15HalloweenPregnant3Sex
+<<nobr>>
+  <h1>Finding someone online</h1>
+  <video src="Part15/Halloween18.webm" autoplay loop muted height="500"></video>
+  <<set setup.addSex({sex: "male", anon:"Online Hookup", vaginal:true})>>
+  <<set setup.addSex({sex: "male", anon:"Online Hookup", repeat:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSex({sex: "male", anon:"Online Hookup", repeat:true})>>
+  <<set setup.addSex({sex: "male", anon:"Online Hookup", vaginal:true, repeat:true, noCondom:true, noPullout:true})>>
+<</nobr>>
+<<nobr>>
+  You would have preferred leaving the party with someone, but that didn't happen.  And it'd be easier if you could just
+  take care of the need you are feeling right now yourself.  But you can't do that either.  So instead you open up the
+  app on your phone.
+<</nobr>>
+
+<<nobr>>
+  It takes a bit longer than it probably would have if you weren't pregnant.  But your profile makes it clear you are
+  just looking for some fun tonight, so eventually you find a match.
+<</nobr>>
+
+<<nobr>>
+  He's happy about not needing to wear a condom or pullout in time.  It's a bit more mess afterwards, for you at least.
+  But he's long gone soon after your fun, so he's not worrying about that either.
+<</nobr>>
+
+<<nobr>>
+  He'd gotten you off several times, and you are feeling much better now. You are able to get to sleep shortly after he
+  leaves, so you are well rested for [[tomorrow|Part15Week]].
+<</nobr>>
+
+::Part15HalloweenPregnant3Masturbate
+<<nobr>>
+  <h1>Taking care of your own needs</h1>
+  <video src="Part14/Pregnant10.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  You would have preferred leaving the party with someone, and feeling a hard cock inside you right now.  But sometimes
+  it's not easy finding a guy interested in a woman $PregnancyWeek weeks pregnant.
+<</nobr>>
+
+<<nobr>>
+  After you've gotten yourself off, you feel much better.  You are able to get to sleep shortly afterwards
+  so you are well rested for [[tomorrow|Part15Week]].
+<</nobr>>
+
+::Part15HalloweenPregnant3
+<<nobr>>
+  <<if $PlayerSideEffectMasturbationBlock>>
+    <<include [[Part15HalloweenPregnant3Sex]]>>
+  <<else>>
+    <<include [[Part15HalloweenPregnant3Masturbate]]>>
+  <</if>>
+<</nobr>>
+
 ::Part15HalloweenChastity
-TODO In a belt.  If electronic belt, then you are unable to wear anything over it at all tonight, and everyone can see it [[Part15Week]]
+<<nobr>>
+  <h1>Disguising your chastity belt</h1>
+  <img src="Part15/Halloween11.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set setup.addInventory('costumes', 'fairy slave')>>
+<</nobr>>
+<<nobr>>
+  <img src="Part15/Halloween12.jpg" hspace="10" vspace="10" height="300" align="right">
+  You had wanted to go as a fairy for Halloween this year.  But before you'd ordered the sexy costume you'd found
+  online, you realized you'd never be able to wear it over your belt.  At least not without it looking wrong
+  and possibly ripping.
+<</nobr>>
+
+<<nobr>>
+  So, instead you get creative, to see what you can do working around the belt.  You end up making your costume a
+  what you think of as a mix of the "Sci-Fi Slave Girl" costumes you've seen, and the "Sexy Fairy" you'd been thinking
+  of initially.  And it attaches right to your belt.
+<</nobr>>
+
+<<nobr>>
+  <<if $CampusMinistry>>
+    Of course, you are showing a lot of skin, but it's Halloween, so you figure it's ok.
+  <</if>>
+  Anyone looking closely at your costume will see that there's a real chastity belt making up part of your "Metal Bikini".
+  But by now people know there's a number of girls testing them.
+<</nobr>>
+
+<<nobr>>
+  <<if $CampusMinistry>>
+    The hardest part of the costume for you is actually the collar, and chain you attached to it.  Lots of guys think
+    it's fun to grab the chain and lead you around the party for a while.
+    <br><br>
+    The part that's hard about that is that every time one of them does that, all you can think of is that they could
+    just lead you somewhere private and treat you like the slave girl you are dressed as.
+    <br><br>
+    You [[head home|Part15HalloweenChastity3]] from the party before temptation overwhelms you and you ask one of
+    them to do exactly that.
+  <<else>>
+    The best part of the costume for you is actually the collar though, and the chain you attached to it.  Guys seem
+    to enjoy grabbing the chain and leading you around the party for a while.
+    <br><br>
+    Once they see how much you are enjoying it they offer to lead you [[somewhere more private|Part15HalloweenChastity2]].
+  <</if>>
+<</nobr>>
+
+::Part15HalloweenChastity2
+<<nobr>>
+  <h1>Being used as a slave girl</h1>
+  <video src="Part15/Halloween14.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  Once they have their slave girl somewhere private, they put her to work.  Of course, they'd prefer to pull off
+  your metal bikini and have you ride their cock.  You'd love that too.  But they know that's not possible.
+<</nobr>>
+
+<<nobr>>
+  So they each settle for what's available, getting a blowjob or two from you.  Then they lead you back to
+  the party until the next guy decides to grab your chain.
+<</nobr>>
+
+<<nobr>>
+  By the time the night is over, you've lost track of how many guys have enjoyed your slave girl work.
+  <<if $Keyholder == "computer">>
+    You know your belt is keeping track though.
+  <</if>>
+  You [[head home|Part15HalloweenChastity3]] wishing any or all of them could have unlocked and fucked
+  their slave girl too.
+<</nobr>>
+
+::Part15HalloweenChastity3
+<<nobr>>
+  <h1>Frustrated at home</h1>
+  <video src="Part15/Halloween13.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  Back home you can't help but claw at your belt, as the aching need beneath it overwhelms you.  Eventually you give
+  up though.  You still toss and turn though for a while before you can sleep.  The whole time you are
+  <<if $CampusMinistry>>
+    imagining all the ways men at the party might have used you as a slave girl.
+  <<else>>
+    remembering all the ways guys at the party used you as a slave girl, and imagining a more they could have used if you
+    weren't locked in this chastity belt.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Eventually though, you make it sleep.  Then it's back to normal [[tomorrow|Part15Week]].
+<</nobr>>
 
 ::Part15HalloweenBaileyCoordinate
 <<nobr>>
@@ -12543,4 +12740,91 @@ TODO Part15HalloweenKate [[Part15Week]]
 TODO Part15HalloweenVeronica [[Part15Week]]
 
 ::Part15HalloweenBoyfriend
-TODO Part15HalloweenBoyfriend [[Part15Week]]
+<<nobr>>
+  <h1>Modeling your costume for $dating[0]</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Halloween17.mp4" autoplay loop muted height="550"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  You and $dating[0] are going as Little Red Riding Hood and the Big Bad Wolf.
+  <<if $sex.length>>
+    Before you and him leave for the party, you surprise him with one aspect of your costume he wasn't expecting.
+    You lift up the hem of your dress to show him you don't have any panties on under them.
+  <<else>>
+    Your checks are turning red as you fantasize about showing him an aspect of your costume he's not expecting.
+    You imagine lifting up the hem of your dress to show him you don't have any panties on under it.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Then you let your dress fall to the floor.  You stand there, naked except for your boots and riding hood, with your
+  hands caressing you like you can see he wants to right now.  You notice his raging erection and say "What a big cock you have?"  
+<</nobr>>
+
+<<nobr>>
+  He steps toward you as he says, "The better to fuck you with!"  But before he gets to close, you put one hand out and
+  tell him that the big bad wolf will have to wait until
+  <<if $sex.length>>
+    [[after the party|Part15HalloweenBoyfriend2]] before he can eat you.
+  <<else>>
+    after the party before he can eat you.
+    <br><br>
+    Or at least that's how goes in your fantasy. In reality, your dress stays on.  And though $dating[0] does comment
+    on how beautiful you look in it, he doesn't try to devour you.  Though you are pretty sure the hungry look in
+    his eyes isn't just him trying to stay in character.
+    <br><br>
+    You know it would only take an inviting comment or two at the party and the big bad wolf would eagerly ravish
+    the innocent red riding hood the moment the [[two of you are alone|Part15HalloweenBoyfriend2]].  You know if you
+    don't, [[when tomorrow arrives|Part15Week]] you'll be wondering how much fun it would have been if you'd acted on
+    your fantasy instead of just imagining it. 
+  <</if>>
+<</nobr>>
+
+::Part15HalloweenBoyfriend2
+<<nobr>>
+  <h1>Back home with $dating[0]</h1>
+  <<if setup.areDating("Jayden")>>
+    <video src="Part15/Halloween20.webm" autoplay loop muted height="500"></video>
+  <<else>>
+    <video src="Part15/Halloween19.mp4" autoplay loop muted height="500"></video>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You are barely through the front door when the big bad wolf pounces on little red riding hood.
+  <<if !setup.areDating("Jayden")>>
+    You don't even make it to the bedroom, or even out of your costume. 
+  <</if>>
+  <<if setup.sexVaginalCount() == 0>>
+    "I don't want to wait any longer, I 
+  <<else>>
+    "I
+  <</if>>
+  need you inside me," you tell $dating[0].
+  <<if $sex.length == 0>>
+    You know you imagined waiting until your wedding night, or at least romantic candles everywhere, but
+    you can't wait any longer.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  A few moments later and $dating[0]'s head is between your legs.  Eventually he decides you are ready and finally
+  gives you what you've been begging for.
+  <<if $sex.length == 0>>
+    Feeling $dating[0] inside you feels better than you even imagined.  You don't know why you waited so long for this.
+    Now that you know how good sex with $dating[0] feels, you are going to be doing it as often as you can.
+    <<set setup.addSexRepeat(15, {sex:"male", name:$dating[0], vaginal:true})>>
+    <<set setup.addSexRepeat(15, {sex:"male", name:$dating[0]})>>
+  <</if>>
+  It doesn't take long before you are cumming for him.
+<</nobr>>
+
+<<nobr>>
+  You've both came several more times, before you finally fall asleep beside him.  Halloween is definitely your
+  favorite holiday now, but unfortunately it's just one night and [[tomorrow|Part15Week]] is just a regular day.
+  <<set setup.addSex({sex:"male", name:$dating[0]})>>
+  <<set setup.addSex({sex:"male", name:$dating[0], vaginal:true})>>
+  <<set setup.addSex({sex:"male", name:$dating[0]})>>
+  <<set setup.addSex({sex:"male", name:$dating[0], vaginal:true})>>
+<</nobr>>
