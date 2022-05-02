@@ -75,7 +75,7 @@
   <h1>There and back again</h1>
   <table>
     <tr><td style="vertical-align:center">
-      <<if true or $PlayerMenstruation or $PlayerAbortion>>
+      <<if $PlayerMenstruation or $PlayerAbortion>>
         <<set $CarBrad = 1>>
         <img src="Part8/Start4.jpg" hspace="10" vspace="10" height="350" align="left">
         You got started packing a bit late and left late too.  When you discovered your flat tire, it was too late to get it fixed.  Thankfully
@@ -143,7 +143,7 @@
       After Christmas, the rest of your visit was nice.  Your brother was a bit weird about your change, but your mom and sister were wonderful.
     </td></tr>
     <tr><td>
-      <<if true or $PlayerMenstruation or $PlayerAbortion>>
+      <<if $PlayerMenstruation or $PlayerAbortion>>
         <<set setup.addSex({sex: 'male', name: 'Brad'})>>
         <<set setup.addSex({sex: 'male', name: 'Brad'})>>
         <<set setup.addSex({sex: 'male', name: 'Mechanic'})>>

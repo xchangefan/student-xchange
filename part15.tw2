@@ -3823,7 +3823,9 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 ::Part15WeekNoAdvance
 <<nobr>>
-  <<if $AcademicProbation and ($AcademicProbationDenial or ($PlayerChastityBelt and $Keyholder == "computer")) and $SchoolWeek >= 12 and either(0,0,0,1) == 0>>
+  <<if $RapistRaped and $SchoolWeek >= 5 and!$RapistRapedFeelingBetter>>
+    <<include [[Part15RapeRecover]]>>
+  <<elseif $AcademicProbation and ($AcademicProbationDenial or ($PlayerChastityBelt and $Keyholder == "computer")) and $SchoolWeek >= 12 and either(0,0,0,1) == 0>>
     <<include [[OffProbation]]>>
   <<elseif $AcademicProbation and $AcademicProbationEndWeek and $AcademicProbationEndWeek <= $SchoolWeek>>
     <<include [[Part15OffProbation]]>>
@@ -3844,6 +3846,51 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 <<nobr>>
   <<set setup.advanceWeek()>>
   <<include [[Part15WeekNoAdvance]]>>
+<</nobr>>
+
+::Part15RapeRecover
+<<nobr>>
+  <h1>Pleasant Dreams</h1>
+  <video src="Part15/Dream.mp4" autoplay loop muted height="500"></video>
+  <<set $RapistRapedFeelingBetter to 1>>
+<</nobr>>
+<<nobr>>
+  You've been having nightmares the past few weeks, but thankfully tonight is different.  Tonight your dreams about your
+  wedding night.
+<</nobr>>
+
+<<nobr>>
+  At first it's sweet and romantic, a ceremony with all of your friends there, a handsome groom, you in a beautiful dress.
+  But soon the dream is just you and your new husband alone in your hotel room.  Feeling your husband's cock slide into
+  you that first time is the best thing you've ever felt.
+  <<if !$CampusMinistry>>
+    Well, in your dream it's your first time.  Though later when you think about it
+    you realize how ridiculous it is to imagine it'd be your wedding night and you'd not have felt him inside you before.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  He makes you cum again and again that night, and he cums inside you so many times.  Load after load of his warm cum
+  fills you, each one feeling better than the last.  Looking back on the dream you doubt any actual man could cum that
+  many times in one night and still produce so much each time.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Dream2.webm" autoplay loop muted height="350"></video>
+<</nobr>>
+<<nobr>>
+  His prodigious amount of cum must have done it's job, because your dream then jumps to months later, with you very
+  pregnant and riding his cock. You wake just as you and him both start to cum again.
+<</nobr>>
+
+<<nobr>>
+  You wake up horny and wishing you could go back to sleep and enjoy the dream some more.
+  <<if !$CampusMinistry>>
+    Or find someone eager to act it out with you in real life.
+  <</if>>
+  As you mind starts to clear a bit, you realize that maybe you'll be able to put your assault behind you and
+  move on with your life.  Or at least not to think about it as much, and focus on
+  [[enjoying life instead|Part15WeekNoAdvance]].
 <</nobr>>
 
 ::Part15OffProbation
@@ -8653,8 +8700,9 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
   <<set setup.addSex({sex:"male", anon:"Rapist", vaginal:true, noPullout:true, noCondom:true})>>
 <</nobr>>
 <<nobr>>
-  After ripping your panties off you, he shoves them in your mouth.  The he grabs your hands and put them around a post, wrapping something
-  over them and pulling it tight.  There's nothing you can do now as he pulls down your top and up your skirt.
+  After ripping your panties off you, he shoves them in your mouth.  Then he grabs your hands and put them around a post,
+  wrapping something over them and pulling it tight.  There's nothing you can do now as he pulls down your top and up your
+  skirt.
 <</nobr>>
 
 <<nobr>>
@@ -8678,8 +8726,8 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 
 <<nobr>>
   You are still there helpless, with cum starting to drip out of you as he stands behind you.  A moment later you struggle when you see him
-  come around in front of you.  "Calm down, whore," he commands.  You relax a bit when he just uses the knife to cut your hands free.
-  "Run along home now," he commands.
+  come around in front of you holding a knife.  "Calm down, whore," he commands.  You relax a bit when he just uses the knife to cut your
+  hands free. "Run along home now," he commands.
   <<if $PregnancyWeek > 12>>
     "Don't worry, I'll see you again," he adds.
   <<else>>
@@ -8842,7 +8890,18 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 <</nobr>>
 
 ::Part15DormUpset
-TODO Upset after being raped [[Part15Dorm]]
+<<nobr>>
+  <h1>Crying in your room</h1>
+  <img src="Part15/Cry.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  You try not to think about the events of the evening, but you can't help it.  You don't want to talk about
+  it with any of your friends, so you end up crying yourself to sleep that night.
+<</nobr>>
+
+<<nobr>>
+  Hopefully you'll feel better tomorrow when you [[meet your new roommate|Part15Dorm]].
+<</nobr>>
 
 ::Part15DormCalm
 <<nobr>>
@@ -10495,6 +10554,10 @@ TODO Upset after being raped [[Part15Dorm]]
       You see disappointment, and perhaps pity, on her face as you let her know that your belt prevents that too... well all of it except the
       watching part.  At least you don't think it would shock you for just watching.
     <</if>>
+  <<elseif $RapistRaped and $CampusMinistry>>
+    "I'm sure that'd be fun with the right girl," you tell her.  "But, I'm not her."
+  <<elseif $RapistRaped>>
+    "I'm sure that would be fun," you tell her.  "But I'm just not really feeling it today."
   <<elseif $CampusMinistry>>
     You know it's wrong, but you can't help but picture yourself, and her, [[in bed together|Part15DormSluttySexMinistry]] with
     <<if $dating.length>>
@@ -10518,6 +10581,8 @@ TODO Upset after being raped [[Part15Dorm]]
     Joining in with her definitely isn't an option.  But you do have a choice between
     [[letting her have her fun|Part15DormSluttyWatch]], as long as she keeps it to her side of the room or
     [[asking her to warn you|Part15DormSluttyWarn]] when she's going to have a guy over so you can stay away.
+  <<elseif $RapistRaped>>
+    You [[ask her to warn you|Part15DormSluttyWarn]] when she's going to have a guy over so you can give her some privacy.
   <<elseif $CampusMinistry>>
     As much as you keep thinking about it, you know joining in with her is wrong.  You wonder if you should
     [[let her have her fun|Part15DormSluttyWatch]], as long as she keeps it to her side of the room or
@@ -10533,7 +10598,9 @@ TODO Upset after being raped [[Part15Dorm]]
 <<nobr>>
   <h1>Coming back to your room</h1>
   <img src="Part15/Dorm14.jpg" hspace="10" vspace="10" height="500" align="left">
-  <<set $DormFriendLevel -= 1>>
+  <<if !$RapistRaped>>
+    <<set $DormFriendLevel -= 1>>
+  <</if>>
 <</nobr>>
 <<nobr>>
   "I know what I can do.  I'll leave my panties hanging on the door whenever I have a guy over.  It's not like I'll be needing them then
@@ -10571,6 +10638,16 @@ TODO Upset after being raped [[Part15Dorm]]
   her bed.  From the look of her face, he's already came once for her.  You know you should turn around and leave, but you can't take your eyes away
   as he pounds her from behind.  And if you didn't already know, the look in her face when you make eye contact makes it obvious to you that she
   doesn't mind you watching.
+  <<if $RapistRaped>>
+    <br><br>
+    Watching them go at it reminds you what sex is supposed to be like.
+    <<if $CampusMinistry>>
+      Well, maybe according to Pastor Mark, it's supposed to be between a husband and wife, but you wonder if that party
+      really matters that much, as long as both parties are happy.
+    <</if>>
+    Feeling a stiring in your panties, you realize this is the first time you've felt turned on since... well, since it
+    happened.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -10627,15 +10704,20 @@ TODO Upset after being raped [[Part15Dorm]]
 <</nobr>>
 
 <<nobr>>
-  <<if $JobBetaTester == "chaste">>
-    <<set $DormFriendLevel -= 1>>
-    You are already so horny you are beside yourself, and you can't do anything about it.  You think watching her get laid every day would drive you
-    insane with lust.  Though you certainly aren't going to tell her that's why you are angry.  Instead you demand
+  <<if (!$JobBetaTester or $JobBetaTester != "chaste") and $RapistRaped>>
+    That sounds like fun to you.  And you are feeling good right now, and would rather go out and have some fun
+    with her instead of being home alone with your thoughts.
   <<else>>
-    If you still don't want to watch her and her guys go at it, you could suggest
+    <<if $JobBetaTester == "chaste">>
+      <<set $DormFriendLevel -= 1>>
+      You are already so horny you are beside yourself, and you can't do anything about it.  You think watching her get laid every day would drive you
+      insane with lust.  Though you certainly aren't going to tell her that's why you are angry.  Instead you demand
+    <<else>>
+      If you still don't want to watch her and her guys go at it, you could suggest
+    <</if>>
+    she use a plain sock instead of her panties on the door.  No one is going to steal that.  And then this
+    <<link [[shouldn't happen again|Part15Week]]>><<set $KieraSock to 1>><</link>>
   <</if>>
-  she use a plain sock instead of her panties on the door.  No one is going to steal that.  And then this
-  <<link [[shouldn't happen again|Part15Week]]>><<set $KieraSock to 1>><</link>>
 <</nobr>>
 
 ::Part15DormSluttyWarnShop
@@ -11729,8 +11811,18 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
 <</nobr>>
 
 <<nobr>>
-  $dating[0] must have gotten turned on seeing those girl skinny-dipping in the pool at the party, because he's insatiable.  His hand
-  is in in your panties, teasing your clit most of the way home, ensuring you are dripping wet when you get there.  He tosses you onto
+  $dating[0] must have gotten turned on seeing those girls skinny-dipping in the pool at the party, because he's insatiable.
+  <<if $PlayerChastityBelt>>
+    He has your belt off and his hand in your panties,
+  <<else>>
+    His hand is in in your panties,
+  <</if>>
+  teasing your clit most of the way home, ensuring you are dripping wet when you get there.
+  <<if $PlayerItemNerdKey and setup.areDating('Peter')>>
+    You are aching for his cock the whole time, and have already handed him the key to unlock his cock on the
+    ride home, though he's still not allowed to touch it.
+  <</if>>
+  He tosses you onto
   the bed and starts fucking you the moment you are through the door.
   <<if $PlayerEasytoOrgasm or $PlayerSuperOrgasms>>
     Thankfully, you cum quickly and are crying out with your own orgasm even before his.
@@ -11738,7 +11830,7 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
     He lasts quite a bit longer a few minutes later
     when he's ready to go again, getting you off twice before he cums that time.
   <<else>>
-    He cums before you can.
+    He's too turned on though, and cums before you can.
     <<if setup.areDating("Barry")>>
       He gives your ass a swat and says, "That was great.  I needed that."
     <br><br>
@@ -12759,25 +12851,30 @@ TODO Part15HalloweenVeronica [[Part15Week]]
 
 <<nobr>>
   Then you let your dress fall to the floor.  You stand there, naked except for your boots and riding hood, with your
-  hands caressing you like you can see he wants to right now.  You notice his raging erection and say "What a big cock you have?"  
-<</nobr>>
-
-<<nobr>>
-  He steps toward you as he says, "The better to fuck you with!"  But before he gets to close, you put one hand out and
-  tell him that the big bad wolf will have to wait until
-  <<if $sex.length>>
-    [[after the party|Part15HalloweenBoyfriend2]] before he can eat you.
+  hands caressing you like you can see he wants to right now.
+  <<if $PlayerItemNerdKey and setup.areDating('Peter')>>
+    You can tell from his face that his cock is straining desperately against its cage right now.  "Maybe
+    [[after the party|Part15HalloweenBoyfriend2]], I'll uncage that beast and we can see what the big bad wolf wants
+    to do to little red riding hood." you tell him.
   <<else>>
-    after the party before he can eat you.
+    You notice his raging erection and say "What a big cock you have?"
     <br><br>
-    Or at least that's how goes in your fantasy. In reality, your dress stays on.  And though $dating[0] does comment
-    on how beautiful you look in it, he doesn't try to devour you.  Though you are pretty sure the hungry look in
-    his eyes isn't just him trying to stay in character.
-    <br><br>
-    You know it would only take an inviting comment or two at the party and the big bad wolf would eagerly ravish
-    the innocent red riding hood the moment the [[two of you are alone|Part15HalloweenBoyfriend2]].  You know if you
-    don't, [[when tomorrow arrives|Part15Week]] you'll be wondering how much fun it would have been if you'd acted on
-    your fantasy instead of just imagining it. 
+    He steps toward you as he says, "The better to fuck you with!"  But before he gets to close, you put one hand out and
+    tell him that the big bad wolf will have to wait until
+    <<if $sex.length>>
+      [[after the party|Part15HalloweenBoyfriend2]] before he can eat you.
+    <<else>>
+      after the party before he can eat you.
+      <br><br>
+      Or at least that's how goes in your fantasy. In reality, your dress stays on.  And though $dating[0] does comment
+      on how beautiful you look in it, he doesn't try to devour you.  Though you are pretty sure the hungry look in
+      his eyes isn't just him trying to stay in character.
+      <br><br>
+      You know it would only take an inviting comment or two at the party and the big bad wolf would eagerly ravish
+      the innocent red riding hood the moment the [[two of you are alone|Part15HalloweenBoyfriend2]].  You know if you
+      don't, [[when tomorrow arrives|Part15Week]] you'll be wondering how much fun it would have been if you'd acted on
+      your fantasy instead of just imagining it. 
+    <</if>>
   <</if>>
 <</nobr>>
 
@@ -12796,12 +12893,18 @@ TODO Part15HalloweenVeronica [[Part15Week]]
   <<if !setup.areDating("Jayden")>>
     You don't even make it to the bedroom, or even out of your costume. 
   <</if>>
+  <<if $PlayerItemNerdKey and setup.areDating('Peter')>>
+    After unlocking his cage, you
+  <<else>>
+    You
+  <</if>>
+  tell $dating[0],
   <<if setup.sexVaginalCount() == 0>>
     "I don't want to wait any longer, I 
   <<else>>
     "I
   <</if>>
-  need you inside me," you tell $dating[0].
+  need you inside me."
   <<if $sex.length == 0>>
     You know you imagined waiting until your wedding night, or at least romantic candles everywhere, but
     you can't wait any longer.

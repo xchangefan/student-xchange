@@ -752,14 +752,13 @@
       Peter would probably be dutifully by your side even if you told him the baby wasn't his.  But he'd probably be happier
       [[believing the baby was his|Part7Peter]].  Plus, why take the chance he wouldn't accept the baby, and you'd be left raising
       him or her by yourself.
-      <<if true or $PregnancyCheck.possibleFathers.indexOf('Peter')  < 0>>
+      <<if $PregnancyCheck.possibleFathers.indexOf('Peter')  < 0>>
         You'll just need to tell him that it must have been all that precum he's always leaking that got you pregnant, or maybe that
         ruined orgasm that got on your hand before you masturbated.  He'll want to believe, so it won't take much convincing.
       <</if>>
       <br>
 			<img src="PartP/FatherTest.png" hspace="10" vspace="10" height="300">
     <</if>>
-    
 	<<elseif setup.areDating('Paul')>>
 		<<set setup.addSex({sex: 'male', name: 'Paul'})>>
 		<<if $PregnancyCheck.actualFather == 'Paul'>>

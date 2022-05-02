@@ -2068,6 +2068,34 @@
       <br><br>
       You are tempted to hit the "request orgasm" button on your belts app, but you know it would only deny and mock you if you did.
       So you try to just focus on her story, and tell yourself you're just listening to be supportive of her.
+    <<elseif $RapistRaped>>
+      You can't help but imagine the scene she describes as she talks.  As she describes how good it feels, your thoughts
+      instead turn to your recent rape.  You know she seems to love feeling helpless and used, 
+      <<if $PlayerSideEffectSubmissive>>
+        you used to fantasize about it too,
+      <<else>>
+        maybe you would have too someday,
+      <</if>>
+      but not anymore.  At least not now.  The thought of being held down, unable to move, ...
+      <br><br>
+      "Are you ok," Bailey asks as she sees you getting upset during her story.
+      <br><br>
+      You try to regain your composure, but don't want to talk about the rape.  "I'm... I'm fine.  I'm just a claustrophobic
+      and hearing you being unable to move was making me panic a bit," you lie.
+      <br><br>
+      "Oh. Sorry.  I'll avoid those sorts of details then."  She continues on with her story.  She's clearly skipping parts of
+      it now, but it's also very clear she thoroughly enjoyed herself.
+      <<if $PlayerSideEffectSubmissive > 2>>
+        <br><br>
+        <i>You used to fantasize about being tied up and used, but the thought doesn't appeal to you as much as it did before.
+        But maybe someday, with a man you trust, it would be different.</i>
+        <<set $PlayerSideEffectSubmissive -= 2>>
+      <<elseif $PlayerSideEffectSubmissive>>
+        <br><br>
+        <i>You used to fantasize about being tied up and used, but the thought doesn't appeal to you at all anymore.
+        But maybe someday, with a man you trust, it would be different.</i>
+        <<unset $PlayerSideEffectSubmissive>>
+      <</if>>
     <<else>>
       You can't help but imagine the scene she describes as she talks.  As she describes how good it feels, you can't help but feel a bit
       of curiousity.  But you push that from your mind.
@@ -2120,7 +2148,11 @@
 <<nobr>>
   "Though, I've figured out that
   <<if $BuddyPeterChastity>>
-    Peter isn't really my type.
+    <<if setup.areDating('Peter')>>
+      Peter may be right for you, but he isn't really my type.
+    <<else>>
+      Peter isn't really my type.
+    <</if>>
   <<elseif $BuddyThreesomeGuy>>
     threesomes aren't really what I enjoy the most.
   <<else>>
@@ -2762,11 +2794,21 @@
     says.
   <</if>>
   "But that time I sure did.  Him holding my arms so I couldn't move, slapping my ass, calling me his 'dirty little whore'...
-  It all pushed me over the top."  I started seeing just Caleb not long after that.
+  <<if $RapistRaped>>
+    Oh god... I'm sorry, I'm doing it again," she says worried she's going to give you another claustrophobic panic attack.
+    <br><br>
+    "Oh it's ok," you tell her.  "My claustrophobia hasn't been bothering me as much lately.  And it clear sounds like
+    you enjoyed it."
+    <br><br>
+    "Oh, I definitely did," she confirms.  "Anyway,
+  <<else>>
+    It all pushed me over the top.
+  <</if>>
+  I started seeing just Caleb not long after that."
 <</nobr>>
 
 <<nobr>>
-  "Not just because of the sex," she adds.  "I mean we have a real connection too.  But the sex is amazing."
+  "Not just because of the sex," she adds.  "I mean the sex is amazing, but we have a real connection too."
 <</nobr>>
 
 <<nobr>>
@@ -3014,7 +3056,7 @@
 <</nobr>>
 
 <<nobr>>
-  "Then maybe after four teases, the fifth time I'll to the thing you said earlier, and let him tie me up."  She smiles, then adds,
+  "Then maybe after four teases, the fifth time I'll do the thing you said earlier, and let him tie me up."  She smiles, then adds,
   "Of course, I'll make sure to cancel some of the teases, or make him start back over, or otherwise penalize him if he doesn't
   behave perfectly."
 <</nobr>>

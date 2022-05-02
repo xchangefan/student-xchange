@@ -2036,7 +2036,7 @@
     <<include [[Part15BackToMain]]>>
     <br><br>
     <video src="Part15/Cheer13.mp4" autoplay loop muted height="600"></video>
-  <<elseif setup.buddyHasBoyfriend() and false>>
+  <<elseif setup.buddyHasBoyfriend()>>
     $BuddyDating was looking forward to having some fun with his girlfriend the 'cheerleader'.
     <br><br>
     "Oh, of course you can," you answer.  You smile as you imagine the two of them having fun later.
@@ -6016,10 +6016,12 @@
 ::Part15JobEngineer3Submit
 <<nobr>>
   <h1>No escape</h1>
-  <<set setup.startDating('Eric')>>
+  <<if !$PlayerItemNerdKey>>
+    <<set setup.startDating('Eric')>>
+  <</if>>
   <<set $PlayerChastityBelt to 1>>
   <<set $Keyholder to "computer">>
-  <<set $ComputerChastityOwner to $dating[0]>>
+  <<set $ComputerChastityOwner to 'Eric'>>
   <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
   <<set setup.addSex({sex:"male", name:"Eric", vaginal:true, birthControl:"pullout-perfect"})>>
   <<if $tempStruggle>>
@@ -6033,7 +6035,7 @@
 <</nobr>>
 
 <<nobr>>
-  When he gets back and sees you still still there he smiles and says, "I was hoping you would still be here."  Then he
+  When he gets back and sees you still there he smiles and says, "I was hoping you would still be here."  Then he
   steps out of the room for a bit and comes back holding one of the new chastity belts.  Leaving you still in your straight
   jacket and gag, he strips off your panties to put the belt on you.
 <</nobr>>
@@ -6064,7 +6066,7 @@
 <</nobr>>
 
 <<nobr>>
-  When Kyle pulls out to cum, you open your mouth wide for him, catching as much of his cum as you can.  You lick what you can
+  When Eric pulls out to cum, you open your mouth wide for him, catching as much of his cum as you can.  You lick what you can
   reach as well.  But there is nothing from your belt.  It stimulates you a bit more, but then goes quiet.  "I turned off the
   initial orgasm, if that's what you were expecting," Eric tells you.  "You just had one a little while ago, and I figured
   you didn't need another one so soon."
@@ -6112,8 +6114,53 @@
 <</nobr>>
 
 <<nobr>>
+  <<if $PlayerItemNerdKey>>
+    [[Continue|Part15JobEngineer3SubmitPeter]].
+  <<else>>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
+<</nobr>>
+
+::Part15JobEngineer3SubmitPeter
+<<nobr>>
+  <h1>Peter takes control</h1>
+  Peter quickly finds himself being unlocked much more frequently than ever before.  Several times a day you are
+  uncaging his cock, and sucking it until his cum fills your mouth.  Peter is thrilled with the new arrangement.  At
+  first, that is.
+  <<set setup.addSexRepeat(30, {sex:"male", name:"Peter"})>>
+  <<unset $PlayerItemNerdKey>>
+  <<set $ComputerChastityOwner to 'Peter'>>
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Engineer70.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  But Peter soon realizes that your need to suck his cock is much greater than his need to have it sucked, especially
+  when it's happening two or three times a day.  He tells you that you're going to leave him uncaged from now if
+  you want him to continue letting you suck his cock every day.  "Yes, sir," is all you can manage to say.  But it's
+  all you need to say, as he lets you start servicing his cock after you agree.
+<</nobr>>
+
+<<nobr>>
+  The next day Peter visits the engineering department to talk with Eric.  You aren't allowed in the room while they
+  discuss you, but at the end of it you learn that Peter is now the 'owner' of your belt, and able to unlock it, allow
+  or prevent your orgasms, punish you, or whatever else he wants to do.  Eric and the department still retain control as
+  well for testing, of course, and if they decide your job duties require you to be unbelted temporarily.
+<</nobr>>
+
+<<nobr>>
+  "Now, on your knees and thank Eric for being so understanding and handing control over to your boyfriend," Peter commands.
+  You obediently drop to your knees and unzip Eric's pants and pull out his cock, and get to work.  As Eric is getting
+  close, Peter also informs you that you'll be expected to thank Eric this way every day when you get to work as well.
+  "He may find need of other parts of your body too from time to time," Peter informs you.
+<</nobr>>
+
+<<nobr>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
+
 
 ::Part15JobEngineer4
 <<nobr>>
@@ -6231,6 +6278,26 @@
     <br><br>
     It feels so good having a cock in your ass, but you are still relieved when the effects wear off.  As good as it
     felt, you are still glad to be able to orgasm with $dating[0].
+  <<elseif $PlayerItemNerdKey and setup.areDating('Peter')>>
+    <video src="Part15/Engineer64.mp4" autoplay loop muted height="500"></video>
+    <<set setup.addSexRepeat(14, {sex:"male", name:'Peter'})>>
+    <br>
+    Peter is thrilled with the side effects from the lube since you are unlocking him every day to fuck your ass.
+    The first day, he doesn't last long.  You hadn't unlocked his cock for a while and your tight ass was too much
+    for him.  He's filling your ass with cum in a few minutes.  But the next time he lasts longer.  It's a good thing
+    too.  You told him if he came too soon again, you'd find someone else to fuck your ass instead and leave his cock
+    locked.
+    <br><br>
+    Before the effects wear off, he asks you about getting a long-term supply of the lube because he knows that would
+    mean you'd keep unlocking him every day for anal.  He asks while he's fucking your ass, knowing how good it feels for
+    you and that you are likely to agree.  You would agree, except that it interfere with testing your creations.  You
+    tell him that you'll still let him fuck your ass sometimes when you unlock him,
+    <<if $PlayerSideEffectAnal>>
+      since you'll always love how it feels.
+    <<else>>
+      now that you know how good it can feel.
+    <</if>>
+    But you'll stick to using normal lube.
   <<elseif $dating.length>>
     <video src="Part15/Engineer64.mp4" autoplay loop muted height="500"></video>
     <<set setup.addSexRepeat(3, {sex:"male", name:$dating[0]})>>
@@ -6243,7 +6310,7 @@
     it's only for his benefit as the effects haven't worn off for you yet.
     <br><br>
     Once the effects wear off, he tells you he thought about having you see if you could get a long-term supply of the lube.
-    Tha way you'd only ever want him to fuck your ass.  But he says he understands that would interfere with testing your
+    That way you'd only ever want him to fuck your ass.  But he says he understands that would interfere with testing your
     creations, so you'll just have to enjoy it with him using regular lube most of the time.
   <<else>>
     <video src="Part15/Engineer64.mp4" autoplay loop muted height="500"></video>
@@ -6639,8 +6706,8 @@
 <</nobr>>
 
 <<nobr>>
-  She leaves the engineering department, still hungry for an orgasm after your hour of teasing, but now locked in
-  a chastity belt that will keep her in that horny, desperate state for a long, long time to come.  
+  Those girls leave the engineering department, still hungry for an orgasm after your hour of teasing, but now locked in
+  a chastity belt that will keep them in that horny, desperate state for a long, long time to come.  
 <</nobr>>
 
 <<nobr>>
