@@ -2900,7 +2900,7 @@
       <br>
       To help you remember this, for the next 7 days, beginning today:<br>
       - your daily oral service requirement has been doubled<br>
-      - oral encouragement teasing has been disbled<br>
+      - oral encouragement teasing has been disabled<br>
       - punishments for failure to meet quota have been increased<br>
       <br>
     </blockquote>
@@ -3080,8 +3080,10 @@
   <h1>Teased between classes</h1>
   <img src="Part15/Chastity6.jpg" hspace="10" vspace="10" height="650" align="left">
   You feel like you are horny all the time now.  You'd tried to request an orgasm the day after you received the notification that they were
-  allowed again, and again the day after that, and several times a day after that, all the request were denied.  All of them saying it was too
-  soon since your last orgasm.
+  allowed again, and again the day after that, and several times a day after that, all the request were denied.
+  <<if !setup.haveFucked("Frat Guy")>>
+    All of them saying it was too soon since your last orgasm.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -3166,12 +3168,13 @@
 <<nobr>>
   You are left wondering what the 'reward-based' orgasms are.  You know the belts the slutty girls are in gives them orgasms for
   giving out blowjobs, but you know your belt isn't going to do that.
-  <<if setup.haveInventory('piercings', 'tongue sensor')>>
+  <<if setup.haveInventory('piercings', 'tongue sensor') or $ChastityChasteAttempts>>
     You've already had a taste of how painful giving one of those would be.
   <<else>>
     They were very clear about how painful it would be for you if you even tried to give one of those.
   <</if>>
-  Not that you would, of course.  You don't even notice your finger teasing your lips as you think about it.
+  <<if setup.sexMaleCount() == 0>>Not that you would, of course.<</if>>
+  You don't even notice your finger teasing your lips as you think about it.
 <</nobr>>
 
 <<nobr>>
@@ -7652,7 +7655,7 @@
 
 <<nobr>>
   You look around through the settings looking for settings to change.  "Global Orgasm Block" was set to on, which tells it not to let you orgasm, regardless
-  of any other setting.  That's the first thing you are going to turn off.  You hit the button and wait.  A moment later the app shows that it's been disbled.
+  of any other setting.  That's the first thing you are going to turn off.  You hit the button and wait.  A moment later the app shows that it's been disabled.
   You check the network traffic and it looks good too!  You notice your arousal ticking up on the status page.  The belt knows you are thinking you might
   be able to cum tonight.
 <</nobr>>
