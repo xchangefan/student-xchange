@@ -143,11 +143,73 @@
   <<if $JobBetaTester and !$tempShowedBetaTester>>
     <<include [[Part15JobBetaTester]]>>
   <<elseif $dating.length and !setup.areDating("Bailey")>>
-    <<include [[Part15RelationshipInclude]]>>
+    <<include [[Part15RelationshipIncludeAndShow]]>>
   <<else>>
-    <<include [[Part15BackToMain]]>>
+    <<include [[Part15General]]>>
   <</if>>
 <</nobr>>
+
+::Part15General
+<<nobr>>
+  <<if $SchoolWeek < 5>>
+    <<if $PlayerNoBodyHair>>
+      <h1>Enjoying your smooth skin</h1>
+      <img src="Part15/Grooming2.jpg" hspace="10" vspace="10" height="650" align="left">
+      <br>
+      Hearing your friends talk about what it is to shave their legs every few days, you are glad
+      you don't have to ever worry about that.  And
+      <<if $sex.length == 0>>
+        whenever you ever start having sex,
+      <</if>>
+      shaving even more sensitive parts of your body sounds downright frightening.
+      <br><br>
+      Thankfully, neither is a concern for you.
+    <<else>>
+      <h1>Shaving</h1>
+      <img src="Part15/Grooming1.jpg" hspace="10" vspace="10" height="600" align="left">
+      <br>
+      <video src="Part15/Grooming3.mp4" autoplay loop muted width="600"></video>
+      <br><br>
+      Every few days, it's the same ritual.  You know nearly every other girl has to go through it too, but that doesn't
+      make it any less of a chore shaving your legs, your arm pits, and then carefully shaving your more intimate regions.
+      <br><br>
+      <<if $sex.length == 0>>
+        You could probably skip that last part for now, but you've gotten used to it and it feels weird if you start
+        to let it grow out.
+      <<else>>
+        <<if $dating.length>>
+          $dating[0] certainly appreciates 
+        <<elseif setup.sexMaleCount() >= setup.sexFemaleCount>>
+          The guys certainly appreciate
+        <<else>>
+          The girls certainly appreciate
+        <</if>>
+        that last part.  And anything that gets you eaten out more often, is worth the trouble you suppose.
+      <</if>>
+    <</if>>
+  <<elseif $SchoolWeek < 10>>
+    <h1>Street Fair</h1>
+    <img src="Part15/General.jpg" hspace="10" vspace="10" height="600" align="left">
+    <br>
+    Not everything fun happens on campus.  Occasionally there's exciting events in town too.  Today there
+    was some kind of street fair.  No rides or facepainters like when you were a kid though.  But the food booths
+    had plenty of tasting things to try.
+  <<else>>
+    <h1>Taking a Selfie</h1>
+    <img src="Part15/Selfie.jpg" hspace="10" vspace="10" height="600" align="left">
+    <br>
+    You're getting better at it, but your selfie skills still aren't up to the level most of your female friends are.
+    But you suppose they've been practicing since they got their first phone, and it wasn't something you worried
+    that much about before you changed.
+    <br><br>
+    Though your guy friends don't seem to mind, and your photos still get plenty of likes.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15BackToMain]]>>
+<</nobr>>
+
 
 ::Part15JobYoga
 <<nobr>>
@@ -2784,7 +2846,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15AfterMainJob]]>>
+  [[Continue|Part15AfterMainJob]].
 <</nobr>>
 
 ::Part15JobBaristaWeek3ChastityStandard
@@ -3404,7 +3466,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15AfterMainJob]]>>
+  [[Continue|Part15AfterMainJob]].
 <</nobr>>
 
 ::Part15JobBaristaWeek11Chaste
@@ -3606,6 +3668,7 @@
   <<if setup.areDating("Bailey")>>
     You'll have to tell her to make it up to you.  Tonight [[she can do all the work|Part15JobBaristaWeek13Bailey]] while you just lie back and enjoy yourself.
   <<else>>
+    <br><br>
     <<include [[Part15BackToMain]]>>
   <</if>>
 <</nobr>>

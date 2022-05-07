@@ -63,13 +63,42 @@ TODO Dealing with Baby 2 then pick major [[Part15Major]]
 <<nobr>>
   <<if setup.areDating('Aaron')>>
     [[Continue|Part15LivingAaron4]].
+  <<elseif setup.haveGirlfriend()>>
+    [[Continue|Part15RelationshipGirlfriend]].
+  <<elseif setup.sexVaginalCount() == 0>>
+    [[Continue|Part15RelationshipChaste]].
   <<else>>
-    TODO Spending time with $dating[0] [[Part15Relationship]]
+    [[Continue|Part15Relationship]].
+  <</if>>
+<</nobr>>
+
+::Part15RelationshipIncludeAndShow
+<<nobr>>
+  <<if setup.areDating('Aaron')>>
+    <<include [[Part15LivingAaron4]]>>
+  <<elseif setup.haveGirlfriend()>>
+    <<include [[Part15RelationshipGirlfriend]]>>
+  <<elseif setup.sexVaginalCount() == 0>>
+    <<include [[Part15RelationshipChaste]]>>
+  <<else>>
+    <<include [[Part15Relationship]]>>
   <</if>>
 <</nobr>>
 
 ::Part15Relationship
-TODO dealing with relationship
+TODO Week 3
+TODO Week 7
+TODO dealing with relationship (normal)
+
+<<include [[Part15BackToMain]]>>
+
+::Part15RelationshipChaste
+TODO dealing with relationship (chaste)
+
+<<include [[Part15BackToMain]]>>
+
+::Part15RelationshipGirlfriend
+TODO dealing with relationship (girlfriend)
 
 <<include [[Part15BackToMain]]>>
 
