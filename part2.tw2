@@ -20,11 +20,27 @@
 <<print "Now, we are going to go over where you’ll be staying your first year here. All freshman stay on-campus in dormitories, so that makes it simpler.">>
 <img src="Part2/Start.jpg" hspace="10" vspace="10" height="650">
 
-<<print "Our dorm rooms are all mixed-gender suites. You’ll be sharing a bedroom with another female student. ">>[[She’ll be your mentor.|Mentor]]<<print " She has years of experience living with a female body and will be able to help you with any day-to-day difficulties your new body may present for you.">>
+<<print "Our dorm rooms are all mixed-gender suites. You’ll be sharing a bedroom with another female student. ">><<if $FatherSettings>>[[She’ll be your mentor.|MentorFather]]<<else>>[[She’ll be your mentor.|Mentor]]<</if>> <<print " She has years of experience living with a female body and will be able to help you with any day-to-day difficulties your new body may present for you.">>
 
 <<print "Next door will be a different bedroom with two male students. They won’t be aware of your participation the Student X-Change Program, unless you choose to tell them.">>
 
 <<print "The four of you will all share a common living room and bathroom.">>
+
+::MentorFather
+<<nobr>>
+	<h1><<print "Mentors">></h1>
+<</nobr>>
+	<<print "When you hear your name, come on up and meet your mentor. We’ll give the two of you some time to get to know each other.">>
+	<img src="Part2/Mentor.jpg" hspace="10" vspace="10" height="650">
+	
+	<<print "Your mentor will also have a gift card provided by the folks at X-Change. She’ll take you out and buy some basic hygiene and beauty products for you, along with some clothes she’ll help you pick out. And maybe even your first trip to the jewelry store at the end!">>
+	
+	<<print "Of course you’ll probably be buying lots more for yourself once you settle in and have a bit of money. This is just a gift to get you started.">>
+
+<<nobr>>
+  Most of the girls are being randomly paired with mentors.  But your father had already talked to the people running the program
+  to let them know what he thought you needed in a mentor, and they'd already arranged one for you.  Her name is [[Faith|Faith1]].
+<</nobr>>	
 
 ::Mentor <200,400>
 <<nobr>>

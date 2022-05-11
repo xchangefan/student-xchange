@@ -45,6 +45,11 @@
 				Why don’t I set you two up for a dat... a dinner meeting. So he can get to know you and see about a job for you.
 				Even if he doesn’t have a job, I’m sure you’ll have a great time. One of the dresses we bought earlier will be perfect for
 				your... meeting.
+        <<if $FatherSettings>>
+          <br><br>
+          You expect your father would approve of this job.  Though probably not for the same reason Faith seems to be
+          recommending it to you.
+        <</if>>
 	<<elseif $Mentor == 'Emily'>>
 			<<link [[Emily's Recommendation (Office Worker)|JobDecided]]>>
 				<<set $JobOffice = 1>>
@@ -119,10 +124,14 @@
 <</nobr>>
 <hr>
 <<nobr>>
-	<<link "Student Athlete">>
-		<<set $JobAthlete = 1>>
-		<<goto [[JobDecided]]>>
-	<</link>>: 
+  <<if $BodyType == "Fit" or !$FatherSettings>>
+    <<link "Student Athlete">>
+      <<set $JobAthlete = 1>>
+      <<goto [[JobDecided]]>>
+    <</link>>:
+  <<else>>
+    Student Athlete:
+  <</if>>
 	You’ll be training or competing 5 or 6 days a week. You’ll have access to state-of-the-art training facilities and the help of the university’s trainers.
 	So you’re sure to stay in peak condition.  The partial scholarship from the athletic department will free up some of the X-Change stipend that was paying
 	for tuition, so you will have some spending money available.
@@ -137,6 +146,11 @@
 	<<else>>
 		Your new body isn't as athleticly built as some of the new girls' bodies are, and so are worried you won't make the team.  The let you know that there
 		are many different sports on campus, and they aren't all looking for the same thing.  They welcome you to try out if you are interested.
+    <<if $FatherSettings>>
+      <br><br>
+      When you told him what body type you were going to choose, your father warned you not to even bother with athletics. He's much more concerned with
+      your academics.
+    <</if>>
 	<</if>>
 <</nobr>>
 <hr>
@@ -144,6 +158,17 @@
 	<<if $BodyType == "Plus">>
 		Cheerleader: You can see they are mostly looking a mainly looking for girls with a body type.  Most of the X-Change girls would probably be fine, but
 		you suspect you are a bit more curvy than what they are looking for, so you move on to the next booth.
+  <<elseif $BodyType != "Standard" and $FatherSettings>>
+    Cheerleader:
+    Your father was right.  When you told him what sort of body you were choosing, he said you'd be too
+    <<if $BodyType == "Fit">>
+      buff
+    <<elseif $BodyType == "Petite">>
+      tiny
+    <<else>>
+      differently built
+    <</if>>
+    to fit the 'cheerleader' look a big school is looking for.  So you move on to the next booth.
 	<<else>>
 		<<link "Cheerleader">>
 			<<set $JobCheerleader = 1>>
@@ -173,13 +198,24 @@
 <p style="clear: both;"><img src="Part3/JobOnCampusA.jpg" hspace="10" vspace="10" height="350" align="left">
 
 <<nobr>>
-	<<link "Campus Fitness Center Assistant">>
-		<<set $JobFitness = 1>>
-		<<goto [[JobDecided]]>>
-	<</link>>
+  <<if $FatherSettings>>
+    Campus Fitness Center Assistant
+  <<else>>
+    <<link "Campus Fitness Center Assistant">>
+      <<set $JobFitness = 1>>
+      <<goto [[JobDecided]]>>
+    <</link>>
+  <</if>>
 <</nobr>>
 
-<<print "Entry level athlete care position available. Help us keep our athletes in top condition!">></p>
+<<nobr>>
+  Entry level athlete care position available. Help us keep our athletes in top condition!
+  <<if $FatherSettings>>
+    <br><br>
+    What little faith knows about the fitness center is enough to let you know it's probably not a job your
+    father would approve of.
+  <</if>>
+<</nobr>>
 <p style="clear: both;"><img src="Part3/JobOnCampusB.jpg" hspace="10" vspace="10" height="350" align="left">
 
 <<nobr>>
@@ -189,67 +225,101 @@
 	<</link>>
 <</nobr>>
 
-<<print "Duties will include processing check outs and returns, refiling returned books.">>
+<<nobr>>
+  Duties will include processing check outs and returns, refiling returned books.
+<</nobr>>
 
-<<print "The library has an opening. You’ll be helping people check out and refiling returned books.">></p>
+<<nobr>>
+  The library has an opening. You’ll be helping people check out and refiling returned books.
+  <<if $FatherSettings>>
+    <br><br>
+    You can't imagine your father objecting to you working at a library.
+  <</if>>
+<</nobr>>
 <p style="clear: both;"><img src="Part3/JobOnCampusC.jpg" hspace="10" vspace="10" height="350" align="left">
 
 <<nobr>>
-	<<link "Engineering Department Assistant">>
-		<<set $JobEngineer = 1>>
-		<<goto [[JobDecided]]>>
-	<</link>>
+  <<if $FatherSettings>>
+    Engineering Department Assistant
+  <<else>>
+    <<link "Engineering Department Assistant">>
+      <<set $JobEngineer = 1>>
+      <<goto [[JobDecided]]>>
+    <</link>>
+  <</if>>
 <</nobr>>
 
-<<print "Multiple openings available. Technical position requires STEM major. Non-technical positions open to all.">>
+<<nobr>>
+  Multiple openings available. Technical position requires STEM major. Non-technical positions open to all.
+<</nobr>>
 
-<<print "There are a couple openings from the engineering department. One requires you to be in an STEM-field major, the other is open to anyone.">></p>
+<<nobr>>
+  There are a couple openings from the engineering department. One requires you to be in an STEM-field major, the other is open to anyone.
+  <<if $FatherSettings>>
+    <br><br>
+    Faith warns you that she's heard rumors about the engineering department and that it doesn't sound like the sorts of
+    test they do there would be something your father would approve of.
+  <</if>>
+<</nobr>>
 <p style="clear: both;"><img src="Part3/JobOnCampusD.jpg" hspace="10" vspace="10" height="350" align="left">
 
 <<nobr>>
-	<<link "Art Department Model">>
-		<<set $JobArt = 1>>
-		<<goto [[JobDecided]]>>
-	<</link>>
+  <<if $FatherSettings>>
+    Art Department Model
+  <<else>>
+  	<<link "Art Department Model">>
+	  	<<set $JobArt = 1>>
+		  <<goto [[JobDecided]]>>
+	  <</link>>
+  <</if>>
 <</nobr>>
 
-<<print "Looking for models to pose for various classes. Nudity may be required. All bodies are beautiful.">></p>
+<<nobr>>
+    Looking for models to pose for various classes. Nudity may be required. All bodies are beautiful.
+    <<if $FatherSettings>>
+      <br><br>
+      Obviously "Nutidy may be required" means this is not going to be a job your father would approve of.
+    <</if>>
+<</nobr>>
+
 <p style="clear: both;">
 
 
 <<nobr>>
-	<<print "If you have not decided on a job, then ">>
-	<<link "we can assign one for you. (Random)">>
-		<<if $BodyType != 'Plus'>>
-			<<set $PlayerRollDice to either(1,2,3,4,5,6,7)>>
-		<<else>>
-			<<set $PlayerRollDice to either(1,2,3,4,5,6)>>
-		<</if>>
-		<<switch $PlayerRollDice>>
-			<<case 1>>
-				<<set $JobAthlete = 1>>
-			<<case 2>>
-				<<set $JobEngineer = 1>>
-			<<case 3>>
-				<<set $JobFitness = 1>>
-			<<case 4>>
-				<<set $JobLibrary = 1>>
-			<<case 5>>
-				<<set $JobArt = 1>>
-			<<case 6>>
-				<<if $Mentor == 'Faith'>><<set $JobBarista = 1>><</if>>
-				<<if $Mentor == 'Emily'>><<set $JobOffice = 1>><</if>>
-				<<if $Mentor == 'Samantha'>><<set $JobBartender = 1>><</if>>
-				<<if $Mentor == 'Hannah'>><<set $JobCallGirl = 1>><</if>>
-				<<if $Mentor == 'Olivia'>><<set $JobWebModel = 1>><</if>>
-			<<case 7>>
-				<<set $JobCheerleader = 1>>
-		<</switch>>
-		<<set $PlayerRollDice to either(1,2,3)>>
-		<<if $Mentor == 'Hannah' and !$JobCallGirl and $PlayerRollDice == 1>><<set $JobCallGirlSide = 1>><</if>>
-		<<if $Mentor == 'Olivia' and !$JobWebModel and $PlayerRollDice == 1>><<set $JobWebModelSide = 1>><</if>>
-		<<goto [[JobDecided]]>>
-	<</link>>
+  <<if !$FatherSettings>>
+    <<print "If you have not decided on a job, then ">>
+    <<link "we can assign one for you. (Random)">>
+      <<if $BodyType != 'Plus'>>
+        <<set $PlayerRollDice to either(1,2,3,4,5,6,7)>>
+      <<else>>
+        <<set $PlayerRollDice to either(1,2,3,4,5,6)>>
+      <</if>>
+      <<switch $PlayerRollDice>>
+        <<case 1>>
+          <<set $JobAthlete = 1>>
+        <<case 2>>
+          <<set $JobEngineer = 1>>
+        <<case 3>>
+          <<set $JobFitness = 1>>
+        <<case 4>>
+          <<set $JobLibrary = 1>>
+        <<case 5>>
+          <<set $JobArt = 1>>
+        <<case 6>>
+          <<if $Mentor == 'Faith'>><<set $JobBarista = 1>><</if>>
+          <<if $Mentor == 'Emily'>><<set $JobOffice = 1>><</if>>
+          <<if $Mentor == 'Samantha'>><<set $JobBartender = 1>><</if>>
+          <<if $Mentor == 'Hannah'>><<set $JobCallGirl = 1>><</if>>
+          <<if $Mentor == 'Olivia'>><<set $JobWebModel = 1>><</if>>
+        <<case 7>>
+          <<set $JobCheerleader = 1>>
+      <</switch>>
+      <<set $PlayerRollDice to either(1,2,3)>>
+      <<if $Mentor == 'Hannah' and !$JobCallGirl and $PlayerRollDice == 1>><<set $JobCallGirlSide = 1>><</if>>
+      <<if $Mentor == 'Olivia' and !$JobWebModel and $PlayerRollDice == 1>><<set $JobWebModelSide = 1>><</if>>
+      <<goto [[JobDecided]]>>
+    <</link>>
+  <</if>>
 <</nobr>></p>
 
 ::JobList2 <1200,1250>
@@ -1537,21 +1607,29 @@
 ::JobLibrary2 <3600,1625>
 <<nobr>>
 	<h1><<print "Campus Library">></h1>
+  <img src="Part3/JobLibrary2.jpg" hspace="10" vspace="10" height="640" align="left">
 <</nobr>>
 
-<<print "Each day you try to push your wardrobe a bit more. You love seeing guys getting flustered when they talk to you, or if you happen to see them staring from across the room.">>
-<img src="Part3/JobLibrary2.jpg" hspace="10" vspace="10" height="640">
+<<nobr>>
+  <<if $FatherSettings>>
+    Your father thinks you have the most innocent job in the world.  And your actual job duties are.  But each
+  <<else>>
+    Each
+  <</if>>
+  day you try to push your wardrobe a bit more. You love seeing guys getting flustered when they talk to you, or if you happen to see them staring from across the room.
+<</nobr>>
 
-<<print "Your boss, on the other hand seems to be getting close to his limit. ">>[[So you wonder if you need to tone it down or risk losing your job.|JobLibrary3]]
+<<nobr>>
+  Your boss, on the other hand seems to be getting close to his limit.[[So you wonder if you need to tone it down or risk losing your job.|JobLibrary3]]
+<</nobr>>
 
 ::JobLibrary3 <3600,1875>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', name: 'Library Boss'})>>
 	<h1><<print "Campus Library - Boss Office">></h1>
   <<set setup.addInventory('tools', 'library key')>>
+  <<print "You decide making your wardrobe more boring wouldn’t be much fun.">>
 <</nobr>>
-
-<<print "You decide making your wardrobe more boring wouldn’t be much fun.">>
 
 <<print "Thankfully, you and your boss are able to come to another agreement.">>
 <img src="Part3/JobLibrary3.gif" hspace="10" vspace="10" height="650">
@@ -1988,10 +2066,9 @@
 <<nobr>>
 	<<set setup.startDating('Andrew')>>
   <<set setup.addInventory('costumes', 'barista apron')>>
-	<h1><<print "Andrew - Date">></h1>
+	<h1>Andrew - Date (Imagining)</h1>
+  <<print "As much as you wanted to go home with him that night, you decided to wait and see where it leads. That night you thought you’d be lying in bed imagining the sex you could have had. You are, but your mind also wanders to thoughts of what a life with Andrew would be like. What your children with him would look like. You, wearing a wedding dress.">>
 <</nobr>>
-
-<<print "As much as you wanted to go home with him that night, you decided to wait and see where it leads. That night you thought you’d be lying in bed imagining the sex you could have had. You are, but your mind also wanders to thoughts of what a life with Andrew would be like. What your children with him would look like. You, wearing a wedding dress.">>
 
 <video src="Part3/JobBarista4.mp4" height="640" autoplay loop muted></video>
 
@@ -2010,14 +2087,16 @@
   <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal:true})>>
   <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal:true})>>
 	<h1><<print "Andrew - Date">></h1>
+  He’s given you several orgasms already, but when you feel him finally slide into you, you know this is what you’ve wanted. You can’t imagine why you ever waited. Nothing has felt more right than this. Another orgasm is washing over you as you see his face change and feel him cum inside you. Sometime during the next several hours, hunger eventually pulls the two of you away from the bed to finally eat, before returning and spending the rest of the night in each other’s arms.
 <</nobr>>
 
-<<print "He’s given you several orgasms already, but when you feel him finally slide into you, you know this is what you’ve wanted. You can’t imagine why you ever waited. Nothing has felt more right than this. Another orgasm is washing over you as you see his face change and feel him cum inside you. Sometime during the next several hours, hunger eventually pulls the two of you away from the bed to finally eat, before returning and spending the rest of the night in each other’s arms.">>
+<<nobr>>
+  <video src="Part3/JobBarista5.mp4" height="640" autoplay loop muted></video>
+<</nobr>>
 
-<video src="Part3/JobBarista5.mp4" height="640" autoplay loop muted></video>
-
-
-<<print "Once you two make it clear that your relationship is exclusive, you vow to yourself that no matter what ‘side-effects’ this X-Change might through at you, you are going to channel ">>[[all the desires it gives you into your relationship with Andrew.|JobBaristaRomance3]]
+<<nobr>>
+  Once you two make it clear that your relationship is exclusive, you vow to yourself that no matter what ‘side-effects’ this X-Change might through at you, you are going to channel [[all the desires it gives you into your relationship with Andrew.|JobBaristaRomance3]]
+<</nobr>>
 
 ::JobBaristaRomance3 <0,2625>
 <<nobr>>	
@@ -2659,14 +2738,38 @@
 	<h1><<print "Andrew - Date">></h1>
 <</nobr>>
 
-<<print "You and Andrew talk and talk. At first it’s about the job. You relax after he offers it to you and you accept. Then you both become much more relaxed and the evening does become much more like a date.">>
-<img src="Part3/JobBarista1.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  You and Andrew talk and talk. At first it’s about the job. You relax after he offers it to you and you accept.
+  Then you both become much more relaxed and the evening does become much more like a date.
+<</nobr>>
 
-<<print "He’s much more open-minded than you expected from someone Faith set you up with. You feel like you could talk with him for hours.">>
+<<nobr>>
+  <img src="Part3/JobBarista1.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
 
-<<print "Before you realize it though, the date is ending and he’s giving you a good night kiss.">>
+<<nobr>>
+  He’s much more open-minded than you expected from someone Faith set you up with. You feel like you could talk
+  with him for hours.
+<</nobr>>
 
-<<print "You had a wonderful time, and you’re pretty sure he did too. You know he’ll jump at the chance to go home with you if you are ">>[[just looking for a night of fun.|JobBaristaFun1]]<<print " But you also think this ">>[[could be the start of something much more|JobBaristaRomance1]]<<print " if you want that.">>
+<<nobr>>
+  Before you realize it though, the date is ending and he’s giving you a good night kiss.
+<</nobr>>
+
+<<nobr>>
+  You had a wonderful time, and you’re pretty sure he did too. You know he’ll jump at the chance to go home with
+  you if you 
+  <<if $FatherSettings>>
+    were just looking for a night of fun.
+    But you don't want to prove your father right by sleeping with the first guy you date on your very first date.
+    But Andrew is looking for a relationship, then this
+    [[could be the start of something much more|JobBaristaRomance1]].
+    Surely your father isn't expecting you to go four years, or the rest of your life, without dating at all.
+  <<else>>
+    are [[just looking for a night of fun.|JobBaristaFun1]]
+    But you also think this [[could be the start of something much more|JobBaristaRomance1]] if you want that.
+  <</if>>
+<</nobr>>
 
 ::JobBaristaFun2 <200,2150>
 <<nobr>>
