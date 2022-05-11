@@ -174,8 +174,8 @@
       make it any less of a chore shaving your legs, your arm pits, and then carefully shaving your more intimate regions.
       <br><br>
       <<if $sex.length == 0>>
-        You could probably skip that last part for now, but you've gotten used to it and it feels weird if you start
-        to let it grow out.
+        You could probably skip that last part for now, at least the parts that a bikini would hide, but you've gotten used
+        to it and it feels weird if you start to let it grow out.
       <<else>>
         <<if $dating.length>>
           $dating[0] certainly appreciates 
@@ -3815,7 +3815,11 @@
   <<elseif $SchoolWeek == 7>>
     <<include [[Part15JobBikiniBarista2]]>>
   <<elseif $SchoolWeek == 11>>
-    <<include [[Part15JobBikiniBarista5]]>>
+    <<if $CampusMinistry>>
+      <<include [[Part15JobBikiniBarista5Ministry]]>>
+    <<else>>
+      <<include [[Part15JobBikiniBarista5]]>>
+    <</if>>
   <<else>>
     <<include [[Part15JobBikiniBarista7]]>>
   <</if>>
@@ -3852,7 +3856,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15AfterMainJob]]>>
+  [[Continue|Part15AfterMainJob]]
 <</nobr>>
 
 ::Part15JobBikiniBarista2
@@ -3878,7 +3882,7 @@
 <</nobr>>
 
 <<nobr>>
-  But Monique took things too far.  She gave one happy customers a full show of her masturbating, right there in the
+  But Monique took things too far.  She gave one happy customer a full show of her masturbating, right there in the
   drive-thru.  It wouldn't have been a big deal, and just meant a happy customer and a big tip, except she also let him film it.
   He shared it online, and it went viral.  And some people recognized your shop as the place in the video.  Your boss had
   to let Monique go, and pretend like it was an isolated incident due to the media coverage.
@@ -3994,13 +3998,24 @@
   Before he can suggest something else, you offer a solution.  "Do you live nearby?  Maybe we could just go there and order it
   for delivery?"  He quickly agrees and you ask to ride with him.
   <<set setup.addSex({sex:"male", name:"Health Inspector"})>>
-  <<set setup.addSex({sex:"male", name:"Health Inspector", vaginal:true, birthControl:"pullout-perfect"})>>
   <<set setup.addSex({sex:"male", name:"Health Inspector"})>>
 <</nobr>>
+
 <<nobr>>
   <video src="Part15/Barista9.mp4" autoplay loop muted height="450"></video>
 <</nobr>>
+
 <<nobr>>
+  <<if $CampusMinistry>>
+    'Oh God, am I really doing this?' you think to yourself as he drives toward his house.  Are you really about to
+    <<if $sex.length == 0>>
+      have your first time be with some health inspector
+    <<else>>
+      use your body
+    <</if>>
+    to try to keep the health inspector from shutting down your store?
+    <br><br>
+  <</if>>
   The two of you never actually bother to place any orders.  Your hand on his thigh on the drive to his house ensured it's
   not food he's thinking about when you arrive.  Not long after the two of you are in his apartment, his pants are on
   the ground and his cock is in your mouth.
@@ -4017,10 +4032,82 @@
   Brian thanks you profusely for taking care of the situation.  You wonder if he realizes exactly how you 'took care of it'.
   But the substational raise he gives you makes it clear he realizes that you went above and beyond today, and probably
   will do so again every quarter when the inspector returns.
+  <<if $CampusMinistry and setup.sexVaginalCount() == 0>>
+    <br><br>
+    'Technically, I'm still a virgin.  This doesn't count,' you tell yourself.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15AfterMainJob]]>>
+  [[Continue|Part15AfterMainJob]]
+<</nobr>>
+
+::Part15JobBikiniBarista5Ministry
+<<nobr>>
+  <h1>Veteran's Day promotion</h1>
+  <img src="Part15/Barista11.jpg" hspace="10" vspace="10" height="550" align="left">
+<</nobr>>
+<<nobr>>
+  The shop is having a promotion at the coffee shop, a free drink to any veterans or active military. All they have to do is show
+  their ID.  You'd thought Megan might want the day off today, since she's a vet herself, but when you see the tips she is getting
+  from everyone, you don't blame her for wanting to work today.
+<</nobr>>
+
+<<nobr>>
+  Tammy is also working during the busy part of the morning.  Whenever a vet does come in, unless he's in his car with his
+  wife or something, she has him park off to the side, and then delivers his drink yourself while you and Megan continue
+  working the window.
+<</nobr>>
+
+<<nobr>>
+  For some of the older guys, you wonder how many decades it has been since they had a twenty-year-old's lips around their
+  cock.  Hopefully everything still works.  Tammy says she's not taking tips.  She's not just doing it out of patriotism
+  or gratitude or something.  She's also hoping many of them will be regulars now, and she will take their tips next time.
+<</nobr>>
+
+<<nobr>>
+  Of course they aren't all old guys, they are all ages.  One is even a student, using his military benefits to go to the
+  university.  But he's not the youngest, the youngest just turned 18.  Technically he's not a veteran, but he showed Megan
+  his enlistment papers at the window, and she said he ships out next week.  That was good enough for her, and for you.
+<</nobr>>
+
+<<nobr>>
+  Seeing as he's about to leave for boot camp for however long, and who knows when he'll be with a girl again, you
+  wish Tammy was still here, but she left an hour ago.  You decide 'I've already given my mouth and ass to
+  a health inspector, is it really that bad to give a little blowjob to someone about to serve our country?'
+<</nobr>>
+
+<<nobr>>
+  You direct the young man to part off to the side.  After you make his drink you ask Megan, "Can you cover the
+  window for me?" Then you head out to his car.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Barista12.gif" hspace="10" vspace="10" height="450">
+<</nobr>>
+
+<<nobr>>
+  When you start sucking his cock, he tells you how amazing it feels.  Then he mentions that he's never had a blow job,
+  or any sex, before.  You tell him to [[drive you someplace private|Part15JobBikiniBarista6]], and you'll give him more
+  than just a blowjob.  You tell yourself that you don't want him risking his life for you, and everyone else, without ever
+  having had sex.  Maybe that's part of it,
+  <<if setup.sexVaginalCount() == 0>>
+    but you're technically a virgin too, and the thought of both of you losing your virginity together excites you.
+  <<else>>
+    but you've also never been a guy's first before, and the idea excites you a bit.
+  <</if>>
+  <<if setup.haveFucked("Peter")>>Even Peter wasn't a virgin when you'd met, though you'd assumed he was.<</if>>
+<</nobr>>
+
+<<nobr>>
+  You know if you are his first, he'll always remember you.  And he'll probably need some happy memories to keep him
+  company during boot camp, and you want them to be about you.
+<</nobr>>
+
+<<nobr>>
+  You don't stop with his blowjob, but you do take it easier.  You don't want him to get too excited before the real fun
+  starts.  
+  <<set setup.addSex({sex:"male", name:"Justin"})>>
 <</nobr>>
 
 ::Part15JobBikiniBarista5
@@ -4146,6 +4233,13 @@
   <<if setup.areDating("Bailey")>>
     You let him know you have a girlfriend, so he doesn't get his hopes up about you and him being together.  "But... I'm sure
     she'd [[love to join us|Part15JobBikiniBarista6Bailey]], so we can make today even more memorable for you."
+  <<elseif $CampusMinistry>>
+    After that the two of you take a break, and go out and get something to eat.  Several hours later you are alone again.
+    You have him take you from behind this time.
+    <br><br>
+    The two of you hang out quite a bit the rest of the week.  You joke with him that hopefully the "sex boot camp" you've put
+    him though this week will keep his spirits up during the real boot camp.  You see him
+    [[one last time|Part15JobBikiniBarista6Ministry]] the night before he leaves.
   <<else>>
     After that the two of you take a break, and go out and get something to eat.  Several hours later you are alone again.
     You have him take you from behind this time.
@@ -4159,6 +4253,9 @@
 <</nobr>>
 
 <<achievement>>virgin<</achievement>>
+
+::Part15JobBikiniBarista6Ministry
+TODO Part15JobBikiniBarista6Ministry - calls you his girlfriend: leads to Justin ending (dropping out to join him overseas, instead of flunking out)
 
 ::Part15JobBikiniBarista6Bailey
 <<nobr>>

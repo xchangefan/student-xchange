@@ -63,6 +63,59 @@ blockquote {
 }
 
 ::Start <0,0>
+<<nobr>>
+  <img src="Part1/Avatar.jpg" hspace="10" vspace="10" height="500" align="right">
+<</nobr>>
+<<nobr>>
+  This is an interactive story that follows you as you head off to college.  You briefly begin  as a young
+  man, but volunteer to be transformed into a young woman soon after your arrival at university.
+<</nobr>>
+
+<<nobr>>
+  Your character begins at age 18.  All other characters are at least that old as well.  This is an adult game
+  and even on otherwise "pure/virginal" paths you will have adult fantasies.  So you should also be at least 18
+  to proceed.
+<</nobr>>
+
+<<nobr>>
+  "X-Change" refers to the fictional gender transformation pill popularized on the
+  [[/r/xChange|https://www.reddit.com/r/xChange/]] subreddit, and elsewhere.
+<</nobr>>
+
+<<nobr>>
+  This is an interactive story, not an open-world.  Your choices at each point in the story may be limited by your prior
+  choices, your characters desires and conditions, restraints might be wearing, or other factors.  In some cases you may
+  only have one option to select.
+<</nobr>>
+
+<<nobr>>
+  For the latest version of the game, look for it on
+  [[TFGamessite|https://tfgames.site/index.php?module=viewgame&id=1521]].
+  There is also a
+  [[forum|https://www.tfgames.site/phpbb3/viewtopic.php?f=6&t=10456]]
+  there which is the best place to leave any suggestions or bug reports.
+
+  This game is officially published on TFGamessite. Visit us there for updates, discussions and walkthroughs.
+<</nobr>>
+
+[[Start Game|Start0]]
+
+<<nobr>>
+  <h2>Content warning</h2>
+  There are a large number of paths that can be followed.  Some of these may occur depending on the paths you take:
+  <ul>
+    <li>Violence (sexual and otherwise)</li>
+    <li>Human trafficking</li>
+    <li>Workplace sexual harrassment</li>
+    <li>Bondage (consensual or non-consensual)</li>
+    <li>Student/Professor relationships</li>
+    <li>Inappropriate family situations</li>
+    <li>Pregnancy along with childbirth, abortion, or miscarriage</li>
+  </ul>
+<</nobr>>
+
+
+::Start0 <50,0>
 <h1>Home</h1>
 <<nobr>>
   <<set $StoryKeysLearn to "">>
@@ -76,7 +129,10 @@ blockquote {
 	<<set $friendzone to []>>
 	<<set $female to 0>>
   <<set $inventory to {}>>
-
+  <<set $tempBabyNameBoys to ["Casey","Liam","Brandon","Wyatt","Eli"].map((name) => {return {name, sex:"male"}})>>
+  <<set $tempBabyNameGirls to ["Hope","Delilah","Emma","Sophia","Mia"].map((name) => {return {name, sex:'female'}})>>
+	<<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
+  
 	<<include [[ModeDebug]]>>
 	You are a young man, graduating high school in just a few months. You know what university you are hoping to attend, but you’ve applied to several others as well.
 <</nobr>>
