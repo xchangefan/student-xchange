@@ -4869,6 +4869,8 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
         <<include [[OffProbation]]>>
       <<elseif $WomensStudiesProfessorPublish and !$EngineeringShutdown>>
         <<include [[Part15WomensStudiesPublish]]>>
+      <<elseif setup.areDating("Justin")>>
+        <<include [[JustinGraduation]]>>
       <<else>>
         <<include [[Part15Week14]]>>
       <</if>>

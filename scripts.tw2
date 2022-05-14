@@ -80,7 +80,8 @@ function UpdateLinks() {
     } else if (NoKeyLinks.length > 0 ) {
       // to nothing
     } else {
-      var Links = $("#passages a");
+      var Links = $("#passages a.link-internal");
+      console.log(JSON.stringify(Links));
       if (Links.length === 1) {
         Links[0].id = "NextLink";
       } else if (Links.length >= 1 && Links.length <= 10) {
