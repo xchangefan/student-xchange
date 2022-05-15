@@ -1016,130 +1016,27 @@
     <<if $Spouse == "Kyle">>your husband<</if>>
     Kyle, and take care of his every need.
   <<else>>
-    <<if $Spouse == "Kate">>You are married to Kate.
-    <<elseif $Engaged == 'Kate'>>You are engaged to Kate, and living together.
-    <<elseif setup.areDating('Kate')>>You are Mistress Kate's pet and girlfriend. You live with her.
-    <<elseif $MasterKate>><br>You are Mistress Kate's pet.
-    <</if>>
-
-    <<if $Spouse == 'Ken'>>
-      <br>You are married to Ken.
-    <<elseif $MasterKen>>
-      <br><<print "Ken, the artist, is your master and you are living in his loft.">>
-    <</if>>
-
-    <<if $MasterRobert>><br><<print "You are a slave to Robert. ">><</if>>
-
-    <<if $ExSpouse>>You are divorced.<</if>>
-
-    <<if $Spouse == 'Andrew' or $Engaged == 'Andrew' or setup.areDating('Andrew')>>
-      <<if $Spouse == 'Andrew'>>
-        You are married to Andrew.
-      <<elseif $Engaged == 'Andrew'>>
-        You are engaged to Andrew, and living together.
-      <<elseif $Roommate=='Andrew'>>
-        You are in a relationship with Andrew, and living together.
+    <<if $ExSpouse>>You are divorced.<br><</if>>
+  
+    <<if $Cuckcake>>
+      <<if $Roommate == $dating[0]>>
+        $dating[0] is dating $Cuckcake and living with her.  But they let you sleep on the floor next to them.
       <<else>>
-        You are in a relationship with Andrew.
+        You are in a relationship with $dating[0], but it's $Cuckcake he fucks, not you.
       <</if>>
-    <</if>>
-
-    <<if $Spouse == 'Paul' or $Engaged == 'Paul' or setup.areDating('Paul')>>
-      <<if $Spouse == 'Paul'>>
-        <br>You are married to Paul.
-      <<elseif $Engaged == 'Paul'>>
-        <br>You are engaged to Paul, and living together.
-      <<elseif $Roommate=='Paul'>>
-        You are your boss, Paul's, girlfriend. You live with him.
-      <<else>>
-        You are your boss, Paul's, mistress. 
-      <</if>>
-    <</if>>
-
-    <<if $Spouse == 'Aaron' or $Engaged == 'Aaron' or setup.areDating('Aaron')>>
+    <<elseif $Spouse>>
       <<if $Spouse == 'Aaron'>>
-        <br>You are married to your "Daddy", Aaron.
-      <<elseif $Engaged == 'Aaron'>>
-        <br>You are engaged to your "Daddy", Aaron, and living together.
-      <<elseif $Roommate=='Aaron'>>
-        Aaron is your Daddy and you are his Baby Girl.  You live with him.
+        You are married to your "Daddy", Aaron.
+      <<elseif $Spouse == 'Mike'>>
+        You are married to your master, Mike.
+      <<elseif $Spouse == 'Dan'>>
+        You are married to Dan.<br>
+        Your are Danielle's step-mother.
       <<else>>
-        Aaron is your Daddy and you are his Baby Girl.
+        You are married to $Spouse.
       <</if>>
-    <</if>>
-
-    <<if $Spouse == 'Veronica' or $Engaged == 'Veronica' or setup.areDating('Veronica')>>
-      <<if $Spouse == 'Veronica'>>
-        You are married to Veronica.
-      <<elseif $Engaged == 'Veronica'>>
-        You are engaged to Veronica, and living together.
-      <<elseif $Roommate=='Veronica'>>
-        You are in a relationship with Veronica, and living together.
-      <<else>>
-        You are in a relationship with Veronica.
-      <</if>>
-    <</if>>
-
-    <<if $Spouse == 'Josh' or $Engaged == 'Josh' or setup.areDating('Josh')>>
-      <<if $Spouse == 'Josh'>>
-        You are married to Josh.
-      <<elseif $Engaged == 'Josh'>>
-        You are engaged to Josh, and living together.
-      <<elseif $Roommate=='Josh'>>
-        You are in a relationship with Josh, and living together.
-      <<else>>
-        You are in a relationship with Josh.
-      <</if>>
-    <</if>>
-
-    <<if $Spouse == 'Peter' or $Engaged == 'Peter' or setup.areDating('Peter')>>
-      <<if $Spouse == 'Peter'>>
-        You are married to Peter.
-      <<elseif $Engaged == 'Peter'>>
-        You are engaged to Peter, and living together.
-      <<elseif $Roommate=='Peter'>>
-        You are in a relationship with Peter, and living together.
-      <<else>>
-        You are in a relationship with Peter.
-      <</if>>
-      <<if $PlayerItemNerdKey>>You keep him locked in chastity.<</if>>
-    <</if>>
-
-    <<if $Spouse == 'Barry' or $Engaged == 'Barry' or setup.areDating('Barry')>>
-      <<if $Spouse == 'Barry'>>
-        You are married to Barry.
-      <<elseif $Engaged == 'Barry'>>
-        You are engaged to Barry, and live with him as his pet.
-      <<elseif $Roommate == 'Barry'>>
-        You live with Barry as his pet.
-      <<else>>
-        You serve Barry as his pet.
-      <</if>>
-    <</if>>
-
-    <<if $Spouse == 'Mason'>>
-      You are married to Mason.
-    <<elseif $Engaged == 'Mason'>>
-      You are engaged to Mason, but stil living at your parents house.
-    <<elseif setup.areDating('Mason')>>
-      You are in a relationship with Mason.
-    <</if>>
-
-    <<if $Spouse == 'Dan'>>
-      You are married to Dan.<br>
-      Your are Danielle's step-mother.
-    <<elseif $Engaged == 'Dan'>>
-      You are engaged to Dan. You live with him.
-    <<elseif setup.areDating('Dan') and $Roommate == 'Dan'>>
-      You are in a relationship with Dan. You live with him.
-    <<elseif setup.areDating('Dan')>>
-      You are in a relationship with Dan.
-    <</if>>
-
-    <<if $Spouse == 'Bailey'>>
-      You are married to Bailey.
-    <<elseif $Engaged == 'Bailey'>>
-      You are engaged to Bailey. You live with him.
+    <<elseif $MasterKen>>
+      Ken, the artist, is your master and you are living in his loft.
     <<elseif $BaileyKyleMarried>>
       You are married to Bailey and Kyle.
     <<elseif $BaileyKyleEngaged>>
@@ -1151,74 +1048,55 @@
       <<elseif $Roommate == 'Bailey'>>
         You live with Bailey.
       <</if>>
-    <<elseif setup.areDating('Bailey') and $Roommate == 'Bailey'>>
-      You are in a relationship with Bailey. You live with her.
-    <<elseif setup.areDating('Bailey')>>
-      You are in a relationship with Bailey.
-    <</if>>
-
-    <<if $Spouse == 'Mike'>>
-      You are married to your master, Mike.
-    <<elseif $Engaged == 'Mike'>>
-      You are engaged to your master, Mike, and living together.
+    <<elseif $Engaged>>
+      <<if $Engaged == 'Aaron'>>
+        You are engaged to your "Daddy", Aaron, and living together.
+      <<elseif $Engaged == 'Barry'>>
+        You are engaged to Barry, and live with him as his pet.
+      <<elseif $Engaged == 'Mason'>>
+        You are engaged to Mason, but stil living at your parents house.
+      <<elseif $Engaged == 'Mike'>>
+        You are engaged to your master, Mike, and living together.
+      <<elseif $Engaged == 'Justin'>>
+        You are engaged to Justin.
+      <<elseif $Engaged == 'Emmett'>>
+        You are engaged to Emmett, and spend most of your time at his house.
+      <<else>>
+        You are engaged to $Engaged, and living together.
+      <</if>>
+    <<elseif setup.areDating($Roommate)>>
+      <<if $Roommate == "Barry">>
+        You live with Barry as his pet.
+      <<elseif $Roommate=='Aaron'>>
+        Aaron is your Daddy and you are his Baby Girl.  You live with him.
+      <<elseif $Roommate=='Paul'>>
+        You are your boss, Paul's, girlfriend. You live with him.
+      <<else>>
+        You are in a relationship with $Roommate, and living together.
+      <</if>>
+    <<elseif $MasterKate>>
+      You are Mistress Kate's pet.
+    <<elseif $dating.length>>
+      <<if setup.areDating('Barry')>>
+        You serve Barry as his pet.
+      <<elseif setup.areDating('Kate')>>
+        You are Mistress Kate's pet and girlfriend. You live with her.
+      <<elseif setup.areDating('Aaron')>>
+        Aaron is your Daddy and you are his Baby Girl.
+      <<elseif setup.areDating('Paul')>>
+        You are your boss, Paul's, mistress. 
+      <<else>>
+        You are in a relationship with $dating[0].
+      <</if>>
+      <<if setup.areDating('Peter') and $PlayerItemNerdKey>>
+        You keep him locked in chastity.
+      <</if>>
     <<elseif $Dropout == 'Uncle'>>
       You are living with your master, Mike.
     <<elseif $MasterMike>>
       Mike is your master.
-    <</if>>
-
-    <<if $Spouse == 'Eric' or $Engaged == 'Eric' or setup.areDating('Eric')>>
-      <<if $Spouse == 'Eric'>>
-        You are married to Eric.
-      <<elseif $Engaged == 'Eric'>>
-        You are engaged to Eric.
-      <<elseif $Roommate=='Eric'>>
-        You live with Eric.
-      <<else>>
-        You are in a relationship with Eric.
-      <</if>>
-    <</if>>
-
-    <<if $Spouse == 'Nathan' or $Engaged == 'Nathan' or setup.areDating('Nathan')>>
-      <<if $Spouse == 'Nathan'>>
-        You are married to Nate.
-      <<elseif $Engaged == 'Nathan'>>
-        You are engaged to Nate and live together.
-      <<else>>
-        You are in a relationship with Nate.
-      <</if>>
-    <</if>>
-    
-    <<if $Spouse == 'Justin' or $Engaged == 'Justin' or setup.areDating('Justin')>>
-      <<if $Spouse == 'Justin'>>
-        You are married to Justin.
-      <<elseif $Engaged == 'Justin'>>
-        You are engaged to Justin.
-      <<elseif $Roommate=='Justin'>>
-        You live with Justin.
-      <<else>>
-        You are in a relationship with Justin.
-      <</if>>
-    <</if>>
-
-    <<if $Spouse == 'Jaylen' or $Engaged == 'Jaylen' or setup.areDating('Jaylen')>>
-      <<if $Spouse == 'Jaylen'>>
-        You are married to Jaylen.
-      <<elseif $Engaged == 'Jaylen'>>
-        You are engaged to Jaylen.
-      <<elseif $Roommate=='Jaylen'>>
-        You live with Jaylen.
-      <<else>>
-        You are in a relationship with Jaylen.
-      <</if>>
-    <</if>>
-
-    <<if $Spouse == 'Emmett'>>
-      You are married to Emmett.
-    <<elseif $Engaged == 'Emmett'>>
-      You are engaged to Emmett, and spend most of your time at his house.
-    <<elseif setup.areDating('Emmett')>>
-      You are in a relationship with Emmett.
+    <<elseif $MasterRobert>>
+      You are a slave to Robert.
     <</if>>
 
     <<if $dating.length == 0>> 
@@ -1489,7 +1367,15 @@
 ::SideBarDebug <2800,0>
 <<nobr>>
   <div style="font-size: 70%">
-    <<print "Debug: Current: ">><<print passage()>><<print " | Previous: ">><<print previous()>><<print " | ">>[[Variables List|VariablesMasterDebugger]]
+    <<if false>>
+      Debug: Current: <<print passage()>>
+      | Previous: <<print previous()>>
+      | [[Variables List|VariablesMasterDebugger]]
+    <<else>>
+      Debug: Current: <<print passage()>>
+      | Previous: <<print previous()>>
+      | [[Sexual History|SexualHistoryTable]]
+    <</if>>
   </div>
 <</nobr>>
 

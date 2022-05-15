@@ -1246,7 +1246,7 @@
   "There are belts that also prevent anal sex, but those present obvious daily hygiene issues.  And no traditional belt would prevent you from
   engaging in oral sex.  Ours can prevent 
   <<if setup.areDating('Andrew')>>
-    both. But we can set it to allow either or both when you are at your boyfriend's apartment, 
+    both. But we can set it to allow either or both when you are with your boyfriend, 
     <<if !setup.haveFucked('Andrew')>>
       should you wish to become sexually active with him,
     <</if>>
@@ -1438,7 +1438,13 @@
 <<nobr>>
   "Ok.  Well, I can also trigger manual punishments," he continues.  "Not that I would do that to you.  But it is intended for if you were doing
   something bad but that the belt couldn't detect.  One of the examples they gave was if you were drunk at some party, and getting naked in front
-  of everyone.  But, obviously you'd never do that.  And I can also trigger rewards.  The belt can
+  of everyone.
+  <<if $PlayerSideEffectExhibitionist>>
+    I know how you like to fantasize about doing stuff like that, but of course never would really do it.
+  <<else>>
+    But, obviously you'd never do that.
+  <</if>>
+  And I can also trigger rewards.  The belt can
   <<if setup.haveFucked('Andrew')>>
     stimulate you as much as I tell it to, even giving you an orgasm if I set that."
   <<else>>
@@ -9847,8 +9853,20 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
     probably wouldn't be able to resist trying to join in.  "Thank you, but no.  I'll just find
     [[somewhere else to be|Part15DormStonerMinistry]] while you two have fun."
   <<elseif $dating.length and !setup.haveGirlfriend()>>
-    When you tell her you have a boyfriend she says, "Great! [[Tell him to come over here instead then!|Part15DormStonerMFF]] Or if you don't
-    want to share, you can [[go hook up with him|Par14DormStonerBoyfriend]] while I call my friend Craig over here."
+    When you tell her you have a boyfriend she says, "Great!
+    <<if $PlayerChastityBelt>>
+      [[Tell him to come over here instead then!|Part15DormStonerMFFBFChastity]]
+    <<else>>
+      [[Tell him to come over here instead then!|Part15DormStonerMFF]]
+    <</if>>
+     Or if you don't
+    want to share, you can
+    <<if $PlayerChastityBelt>>
+      [[go hook up with him|Part14DormStonerBoyfriendChaste]]
+    <<else>>
+      [[go hook up with him|Part14DormStonerBoyfriend]]
+    <</if>>
+    while I call my friend Craig over here."
     <<if setup.sexCount() == 0>>
       <br><br>
       "I don't know," you tell her.  "I'm... I'm still a virgin."
@@ -9989,8 +10007,82 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 
 <<achievement>>threesome:FMF<</achievement>>
 
+::Part15DormStonerMFFBFChastity
+<<nobr>>
+  <h1>Watching $dating[0] make Marissa cum again and again</h1>
+  <<set setup.addSex({sex:"female", name: "Marissa"})>>
+  <<set setup.addSex({sex:"male", name:$dating[0]})>>
+  <<set setup.addSex({sex:"male", name:$dating[0]})>>
+  <<set setup.addSex({sex:"female", name: "Marissa"})>>
+  <<set $Cuckcake  to "Marissa">>
+  <<set $DormFriendLevel += 3>>
+  You don't tell $dating[0] exactly what your plans are when you call him.  You want to see his face when he
+  hears about the threesome you are proposing.  Of course, he loves the idea when he hears it.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Dorm22.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  You start of sucking $dating[0]'s cock while Marissa pleasures herself.  But soon Marissa is wet and $dating[0] is rock
+  hard. He has you focus on her clit, to make sure she can as much pleasure as possible, as you won't get any
+  <<if $JobBetaTester>>
+    unless your belt decides to reward you.
+  <<else>>
+    today.
+  <</if>>
+  You watch as your boyfriend's cock parts Marissa's glistening lips and slowly slides into her.  The ache you feel intensifies
+  as you hear her moan.  You redirect you need into pleasuring Marissa as you watch $dating[0]'s cock move faster and faster
+  into her.
+<</nobr>>
+
+<<nobr>>
+  When he cums, instead of filling Marissa, he decides to cover your face with it.  You eagerly lick his cock clean
+  after he does, still aching for it to be inside of you instead of Marissa.
+<</nobr>>
+
+<<nobr>>
+  Seeing the mess on your face, Marissa kisses you, licking some of his cum from your face as she does.  Watching the
+  two of you together soon has her friend ready to go again.  Again you can only watch in envy as he fucks her to
+  another orgasm.
+<</nobr>>
+
+<<nobr>>
+  "That was very thoughtful of you, $playerName," $dating[0] tells you.  "Understanding that I have needs, and thinking
+  of a way to satisfy them while you are still in your belt.  You really are the perfect girlfriend.  And since you
+  and Marissa are roommates, we can be doing this all the time."  He pauses a moment and adds, "If Marissa would like
+  that at least."
+<</nobr>>
+
+<<nobr>>
+  "Oh absolutely!" Marissa responds. "I'd hate for a cock as nice as that one to go unused just because your $playerName
+  decided to lock herself in a chastity belt."
+<</nobr>>
+
+<<nobr>>
+  "Wonderful," $dating[0] says.
+  <<if $JobBetaTester>>
+    "And I'll check the manual for her belt to see if I can set it to give her a little pleasure while she watches us
+    next time.  I can see from the app here how much watching turned her on even without that."
+  <<else>>
+    "And I can think we can both see how much $playerName likes that idea."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When he eventually leaves, you and Marissa clean up the mess he made, on you, on her, and on Marissa's sheets.
+  She smiles and tells you what a great rommate you are for sharing your boyfriend, and his cock, with her.
+  "I'll make sure it gets lots of use this year, don't worry," she assures you.
+<</nobr>>
+
+<<nobr>>
+  [[Continue|Part15Week]]
+<</nobr>>
+
 ::Part15DormStonerMFF
 <<nobr>>
+  TODO Change to handle if with boyfriend and in chastity - $Cuckcake
   <h1>Side-by-side with Marissa</h1>
   <<if $BrokenLeg>>
     <video src="Part15/Dorm16.mp4" autoplay loop muted height="600"></video>
@@ -10780,7 +10872,51 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
   or anywhere close to it, to have sex again.
 <</nobr>>
 
-::Par14DormStonerBoyfriend
+::Part14DormStonerBoyfriendChaste
+<<nobr>>
+  <h1><<if setup.sexCount() == 0>>Your first time with<<else>>With<</if>> $dating[0]</h1>
+  <<if setup.areDating('Jaylen')>>
+    <video src="Part15/Dorm37.webm" autoplay loop muted height="450"></video>
+  <<else>>
+    <video src="PartX/Cumslut8.webm" autoplay loop muted height="450"></video>
+  <</if>>
+  <<set setup.addSex({sex:"male", name:$dating[0]})>>
+  <<set setup.addSex({sex:"male", name:$dating[0]})>>
+<</nobr>>
+
+<<nobr>>
+  Thankfully $dating[0] is at home, and is excited to hear that you are coming over.
+  <<if $PlayerItemNerdKey and setup.areDating('Peter')>>
+    He's even more excited when you take out your key and unlock his cock.  "I want your cock in my mouth, and I want
+    all that cum you've been saving for me," you tell him.
+  <<else>>
+    He's even more excited when you lead him to the bedroom.  "I'm too horny to wait," you tell him.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You are so horny.  You want him inside you more than you ever have before.  But you can't have that, so instead you take
+  his cock into your mouth.
+<</nobr>>
+
+<<nobr>>
+  The feel of your lips around his cock feels wonderful, the taste of his cock on your tongue is so much more intense.
+  Of course, his cock between your other lips would feel even better.  When he orgasms, and his cum fills your mouth,
+  you eagerly swallow every drop. "That was amazing," he tells you.
+<</nobr>>
+
+<<nobr>>
+  "I'm still so horny though. Can I do it again when you are ready?" you ask.
+<</nobr>>
+
+<<nobr>>
+  "Of course," he says with a smile.  As he starts to kiss you, he adds "It may take a minute for all of me to
+  be ready though."
+<</nobr>>
+
+[[Continue|Part15Week]]
+
+::Part14DormStonerBoyfriend
 <<nobr>>
   <h1><<if setup.sexCount() == 0>>Your first time with<<else>>With<</if>> $dating[0]</h1>
   <<if setup.areDating('Jaylen')>>
@@ -10847,12 +10983,12 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 <</nobr>>
 
 <<nobr>>
-  "Maybe [[I can help speed that up|Par14DormStonerBoyfriend2]] for you," you tell him.
+  "Maybe [[I can help speed that up|Part14DormStonerBoyfriend2]] for you," you tell him.
   <<set setup.addSex({sex:"male", name:$dating[0]})>>
   <<set setup.addSex({sex:"male", name:$dating[0], vaginal:true})>>
 <</nobr>>
 
-::Par14DormStonerBoyfriend2
+::Part14DormStonerBoyfriend2
 <<nobr>>
   <h1>With $dating[0]</h1>
   <<if setup.areDating('Jaylen')>>
@@ -10985,7 +11121,13 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
   <<elseif $RapistRaped>>
     You [[ask her to warn you|Part15DormSluttyWarn]] when she's going to have a guy over so you can give her some privacy.
   <<elseif $CampusMinistry>>
-    As much as you keep thinking about it, you know joining in with her is wrong.  You wonder if you should
+    As much as you keep thinking about it, you
+    <<if $dating.length>>
+      keep thinking about how $dating[0] would react if you invited him over.
+    <<else>>
+      know joining in with her and some random guy is wrong.
+    <</if>>
+    You wonder if you should
     [[let her have her fun|Part15DormSluttyWatch]], as long as she keeps it to her side of the room or
     [[ask her to warn you|Part15DormSluttyWarn]] when she's going to have a guy over so you can stay away.
   <<else>>
@@ -11642,10 +11784,138 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 <</nobr>>
 
 ::Part15DormSluttyChasteSex
+<<nobr>>
+  <<if $dating.length>>
+    <<include [[Part15DormSluttyChasteSexBF]]>>
+  <<else>>
+    <<include [[Part15DormSluttyChasteSexNormal]]>>
+  <</if>>
+<</nobr>>
+
+::Part15DormSluttyChasteSexBF
+<<nobr>>
+  <h1>Watching $dating[0] make Kiera cum again and again</h1>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  <<set setup.addSex({sex:"male", name:$dating[0]})>>
+  <<set setup.addSex({sex:"male", name:$dating[0]})>>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  <<set $Cuckcake  to "Kiera">>
+  <<set $DormFriendLevel += 3>>
+  You tell Kiera that $dating[0] can't really compete side by side like she suggested, since you are in a
+  chastity belt.  But you instead see if she is interested in that threesome she mentioned.  You know $dating[0]
+  would like that.  And you want to reward him for being so understanding about your chastity belt.
+<</nobr>>
+
+<<nobr>>
+  You don't tell $dating[0] exactly what your plans are when you call him.  You want to see his face when he
+  hears about the threesome you are proposing.  Of course, he loves the idea when he hears it.
+<</nobr>>
+
+<<nobr>>
   <video src="Part15/Dorm22.mp4" autoplay loop muted height="500"></video>
-<<set setup.addSex({sex:"female", name: "Kiera"})>>
-<<set setup.addSex({sex:"male"})>>
-TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15Week]]
+<</nobr>>
+
+<<nobr>>
+  You start of sucking $dating[0]'s cock while Kiera pleasures herself.  But soon Kiera is wet and $dating[0] is rock hard.
+  He has you focus on her clit, to make sure she can as much pleasure as possible, as you won't get any
+  <<if $JobBetaTester>>
+    unless your belt decides to reward you.
+  <<else>>
+    today.
+  <</if>>
+  You watch as your boyfriend's cock parts Kiera's glistening lips and slowly slides into her.  The ache you feel intensifies
+  as you hear her moan.  You redirect you need into pleasuring Kiera as you watch $dating[0]'s cock move faster and faster
+  into her.
+<</nobr>>
+
+<<nobr>>
+  When he cums, instead of filling Kiera, he decides to cover your face with it.  You eagerly lick his cock clean
+  after he does, still aching for it to be inside of you instead of Kiera.
+<</nobr>>
+
+<<nobr>>
+  Seeing the mess on your face, Kiera kisses you, licking some of his cum from your face as she does.  Watching the
+  two of you together soon has her friend ready to go again.  Again you can only watch in envy as he fucks her to
+  another orgasm.
+<</nobr>>
+
+<<nobr>>
+  "That was very thoughtful of you, $playerName," $dating[0] tells you.  "Understanding that I have needs, and thinking
+  of a way to satisfy them while you are still in your belt.  You really are the perfect girlfriend.  And since you
+  and Kiera are roommates, we can be doing this all the time."  He pauses a moment and adds, "If Kiera would like that
+  at least."
+<</nobr>>
+
+<<nobr>>
+  "Oh absolutely!" Kiera responds. "I'd hate for a cock as nice as that one to go unused just because your $playerName
+  decided to lock herself in a chastity belt."
+<</nobr>>
+
+<<nobr>>
+  "Wonderful," $dating[0] says.
+  <<if $JobBetaTester>>
+    "And I'll check the manual for her belt to see if I can set it to give her a little pleasure while she watches us
+    next time.  I can see from the app here how much watching turned her on even without that."
+  <<else>>
+    "And I can think we can both see how much $playerName likes that idea."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When he eventually leaves, you and Kiera clean up the mess he made, on you, on her, and on Kiera's sheets.
+  She smiles and tells you what a great rommate you are for sharing your boyfriend, and his cock, with her.
+  "I'll make sure it gets lots of use this year, don't worry," she assures you.
+<</nobr>>
+
+<<nobr>>
+  [[Continue|Part15Week]]
+<</nobr>>
+
+::Part15DormSluttyChasteSexNormal
+<<nobr>>
+  <h1>Watching Kiera cum again and again</h1>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  <<set setup.addSex({sex:"male"})>>
+  <<set setup.addSex({sex:"female", name: "Kiera"})>>
+  You wonder how many guys Kiera has on call.  She messages one of them and it isn't long before he's knocking on the door
+  to your and Kiera's room.
+  <<set $DormFriendLevel += 2>>
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Dorm22.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  When he sees your chastity belt, he's a bit disappointed that his threesome isn't going to be as fun as he had hoped.
+  But when Kiera has you drop to your knees and start sucking his cock, he doesn't mind anymore.
+<</nobr>>
+
+<<nobr>>
+  Later, when he starts fucking Kiera, he has you focus on her clit.  You wonder how much is to get her off, and
+  how much is to just make you watch up close the pleasure she gets, but that you can't have.
+<</nobr>>
+
+<<nobr>>
+  When he cums, instead of filling Kiera, he decides to cover your face with it.  You eagerly lick his cock clean
+  after he does, still aching for it to be inside of you instead of Kiera.
+<</nobr>>
+
+<<nobr>>
+  Seeing the mess on your face, Kiera kisses you, licking some of his cum from your face as she does.  Watching the
+  two of you together soon has her friend ready to go again.  Again you can only watch in envy as he fucks her to
+  another orgasm.
+<</nobr>>
+
+<<nobr>>
+  When he eventually leaves, you and Kiera clean up the mess he made, on you, on her, and on Kiera's sheets.
+  You both smile and joke about a great job the university did matching you two together this year.
+<</nobr>>
+
+<<nobr>>
+  [[Continue|Part15Week]]
+<</nobr>>
 
 ::Part15DormNerdy
 <<nobr>>
@@ -11989,7 +12259,11 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
     "You knew though? And didn't warn me?" You say, upset.
     <br><br>
     "First, I assumed they emailed you too.  But I guess not," $dating[0] explains.  "And second, you hardly ever curse, except
-    when we are in bed, and their email said they've set it not to punish for dirty talk between us.  If I'd known I would have said
+    when we are in bed, and their email said they've set it not to punish for dirty talk between us.
+    <<if $Cuckcake>>
+      Or with $Cuckcake for that matter, since I've added her as an authorized sex partner for you.
+    <</if>>
+    If I'd known I would have said
     something.  Oh, and third, they said it would give you a couple warning shocks first before the bad ones started.  But I guess
     that didn't help if you didn't know why it was happening."
     <br><br>
@@ -12081,7 +12355,12 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+
+  <<if $dating.length>>
+    <<include [[Part15RelationshipInclude]]>>
+  <<else>>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
 <</nobr>>
 
 ::Part15BackToMain
@@ -12395,9 +12674,12 @@ TODO more sex variables, friendship points, Part15DormSluttyChasteSex [[Part15We
       <video src="Part15/Sorority31.mp4" autoplay loop muted height="400"></video>
     </div>
     <br><br>
-    <<if $CampusMinistry>>
+    <<if $PlayerChastityBelt>>
+      Since you are in a chastity belt, you decide against wearing a bikini like the other girls are wearing.  For you it's just
+      a white t-shirt.  Thankfully none of the contributors seem to care.
+    <<elseif $CampusMinistry>>
       Getting wet and soapy or leaning over their car is unavoidable, but you decide against wearing a bikini.  Instead you just wear
-      a t-shirt.  Thankfully none of the conrtributors seem to care.
+      a white t-shirt.  Thankfully none of the contributors seem to care.
     <<elseif $PlayerSideEffectExhibitionist>>
       You fanasize about your bikini 'accidently' getting untied and falling off while you are cleaning a car.  You don't want
       your sorority getting in trouble, or a bad reputation like some of the traditional sororities on campus have though.  So you

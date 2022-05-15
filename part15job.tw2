@@ -827,7 +827,7 @@
 <</nobr>>
 
 <<nobr>>
-    <<include [[Part15AfterMainJob]]>>
+    [[Continue|Part15AfterMainJob]]
 <</nobr>>
 
 ::Part15JobMassage5
@@ -5358,9 +5358,15 @@
     <<else>>
       times.
     <</if>>
-    Maybe this is the time to finally do it.  Given the reward and penalty, you know if you
-    [[Accept|Part15BetaTestChallengeNipple]] you'll won't chicken out this time.  If you are going to
-    [[Decline|Part15BetaTestChallengeDecline]], you know you need to do it now.
+    Maybe this is the time to finally do it.
+    <<if $dating.length>>
+      Knowing how much it'll turn on $dating[0], you [[Accept|Part15BetaTestChallengeNipple]] the challenge,
+      ensuring aren't going to back out from getting pierced.
+    <<else>>
+      Given the reward and penalty, you know if you
+      [[Accept|Part15BetaTestChallengeNipple]] you'll won't chicken out this time.  If you are going to
+      [[Decline|Part15BetaTestChallengeDecline]], you know you need to do it now.
+    <</if>>
   <<else>>
     You grab your breasts as your mind imagines how much it must hurt to get that done.
     <<if $dating.length>>
@@ -5389,7 +5395,7 @@
   Hopefully sometime soon you'll be able to orgasm.  But not like this.
 <</nobr>>
 
-<<include [[Part15AfterMainJob]]>>
+[[Continue|Part15AfterMainJob]]
 
 ::Part15BetaTestChallengeNipple
 <<nobr>>
@@ -5414,7 +5420,7 @@
 <<nobr>>
   You aren't even thinking about the fact that you are topless in front of the piercer.  Your attention is fixed on the
   needles sitting in the tray next to him.  When you feel the needle push through your sensitive nipple, you wince, but
-  you manage to to cry out in pain.
+  you manage not to to cry out in pain.
   <<if setup.areDating('Bailey')>>
     You want to be strong, so Bailey isn't scared when it's her turn next.
   <</if>> 
@@ -5434,7 +5440,7 @@
 
 <<nobr>>
   "I have a feeling removing them is not going to be an option anyway," you inform him.  You take out the app on phone
-  and click "activate" on the piercings.  You are especially surprised when you feel soft click from the piercing as
+  and click "activate" on the piercings.  You aren't especially surprised when you feel soft click from the piercing as
   something inside them locks to prevent removal.  The two pulses of vibration afterwards does surprise you a bit.
   You imagine it would have felt nice if your nipples didn't still hurt.
   <<if setup.areDating('Bailey')>>
@@ -5485,9 +5491,9 @@
 <</nobr>>
 
 <<nobr>>
-  You were hoping they meant they were adding 10% to whatever the small chance of an orgasm you have when giving
-  blowjobs, but aren't surprised that it didn't mean that.  After all, it's not like they could have subtracted
-  50% from what it was before if you had failed.
+  You know with the small chance you had already, an extra 10% isn't that much.  But it's better than nothing.
+  And really, you'd thought about getting nipple piercings so many times.  The challenge just gave you a reason
+  and made sure you didn't change your mind.
 <</nobr>>
 
 <<nobr>>
@@ -5500,7 +5506,13 @@
 
 <<nobr>>
   You don't want to waste any time though, and want to test it as soon as possible.  So it isn't long before you
-  are showing off your new hardware as you [[suck your first cock|Part15BetaTestChallengeNipple3]] with your new settings.
+  are showing off your new hardware as you
+  <<if $CampusMinistry>>
+    [[suck Andrew's cock|Part15BetaTestChallengeNipple3]] for the first time
+  <<else>>
+    [[suck your first cock|Part15BetaTestChallengeNipple3]]
+  <</if>>
+  with your new settings.
 <</nobr>>
 
 ::Part15BetaTestChallengeNipple3
@@ -5591,15 +5603,23 @@
     availability
   <</if>>
   </h1>
-  <img src="Part15/BetaTest4.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<if $dating.length>>
+    <img src="Part15/BetaTest12.jpg" hspace="10" vspace="10" height="400" align="left">
+  <<else>>
+    <img src="Part15/BetaTest4.jpg" hspace="10" vspace="10" height="600" align="left">
+  <</if>>
   <<if !$DailyBJMinimum>><<set $DailyBJMinimum to 1>><</if>>
   <<set $DailyBJMinimum *= 2>>
-  <<set setup.addSexRepeat($DailyBJMinimum * 1.5, {sex:"male"})>>
+  <<set setup.addSexRepeat($DailyBJMinimum * 1.5, {sex:"male", name:$dating[0]})>>
   <<if !$DailyBJRecord or $DailyBJRecord < $DailyBJMinimum>><<set $DailyBJRecord to $DailyBJMinimum + 2>><</if>>
   <<set setup.addInventory('sex toys', 'beta test collar 1')>>
 <</nobr>>
 <<nobr>>
-  You were relieved when you saw the choker/collar they wanted you to wear.  You had pictured everything from
+  You were relieved when you saw the choker/collar they wanted you to wear.
+  <<if $dating.length>>
+    They said $dating[0] had picked it out for you.
+  <</if>>
+  You had pictured everything from
   making you wear handcuffs all day, to them writing "Free Blowjobs" on your forehead with a permanent marker.
   After some of the things you imagined, this is a relief.
 <</nobr>>
@@ -5607,8 +5627,12 @@
 <<nobr>>
   At some other schools, people might think your collar is just a fashion choice.  But word seems to have spread,
   especially among the guys, about the source of your collar.  Many guys you don't even know have come up to you
-  asking if you needed help reaching your daily target.  You are usually excited to find a quiet place to blow them,
-  whether you've reached it or not.
+  asking if you needed help reaching your "daily target".
+  <<if $JobBetaTester == "monogamous">>
+    They are always disappointed when they find out that you are only allowed to suck $dating[0]'s cock.
+  <<else>>
+    You are usually excited to find a quiet place to blow them, whether you've reached it or not.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -5633,9 +5657,20 @@
   </blockquote>
 <</nobr>>
 <<nobr>>
-  You realize if you [[Accept|Part15BetaTestCollar2]], then you won't be able to avoid wearing your new collar to all of your
-  classes if you want to avoid failing the new challenge.  If you aren't going to be able to commit to wearing your new
-  collar all the time, before you even see what it looks like, then you'll have to [[Decline|Part15BetaTestChallengeDecline]] now.
+  <<if $dating.length>>
+    You've gotten used to the collar that $dating[0] picked out for you, and you don't want to get one that
+    <<if setup.haveGirlfriend()>>she<<else>>he<</if>> might not like, especially since you have no idea what it's
+    going to look like.
+    <br><br>
+    Not to mention, whatever they pick would probably mean even more guys coming up to you offering to 'let' you suck
+    their cocks.
+    <br><br>
+    So you [[Decline|Part15BetaTestChallengeDecline]] this challenge.
+  <<else>>
+    You realize if you [[Accept|Part15BetaTestCollar2]], then you won't be able to avoid wearing your new collar to all of your
+    classes if you want to avoid failing the new challenge.  If you aren't going to be able to commit to wearing your new
+    collar all the time, before you even see what it looks like, then you'll have to [[Decline|Part15BetaTestChallengeDecline]] now.
+  <</if>>
 <</nobr>>
 
 ::Part15BetaTestCollar2
@@ -5682,7 +5717,7 @@
   <<if setup.areDating('Bailey')>>
     <<include [[Part15BackToMain]]>>
   <<else>>
-    <<include [[Part15AfterMainJob]]>>
+    [[Continue|Part15AfterMainJob]]
   <</if>>
 <</nobr>>
 
@@ -6394,7 +6429,7 @@
 <</nobr>>
 
 <<nobr>>
-  <video src="Part15/Engineer70.mp4" autoplay loop muted height="500"></video>
+  <video src="Part15/Engineer16.mp4" autoplay loop muted height="500"></video>
 <</nobr>>
 
 <<nobr>>
@@ -8495,7 +8530,7 @@
 <<nobr>>
   <h1>Earning your orgasm</h1>
   <div style="float:left;padding:12px;">
-    <video src="Part15/Engineer16.webm" autoplay loop muted height="500"></video>
+    <video src="PartX/Cumsult8.webm" autoplay loop muted height="500"></video>
   </div>
   <<set setup.addSex({sex:"male", name:$tempLockAssist})>>
   <<if !$tempLockAssistFail>>

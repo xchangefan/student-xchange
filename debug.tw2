@@ -1,27 +1,7 @@
-::VariablesMasterDebugger <1600,0>
-<table width="100%">
-
-<tr>
-<td width="50%">
-  <u><b><span style="font-size: 125%">Core Attributes</span></b></u>
-  Mentor   $Mentor  (Former: $FormerMentor)
-  Roommate   $Roommate
-  Neighbours  $neighbours <<if $FormerNeighbours>>(Former: $FormerNeighbours)<</if>>
-  Body Type: $BodyType
-  PlayerSideEffectPermanent   $PlayerSideEffectPermanent
-  Dating: <<print JSON.stringify($dating)>>
-  Exes: <<print JSON.stringify($exes)>>
-  FWBs: <<print JSON.stringify($fwb)>>
-  Friend Zone: <<print JSON.stringify($friendZone)>>
-  Engaged: $Engaged
-  Spouse: $Spouse
-  Children: <<print JSON.stringify($children)>>
-  Keyholder	$Keyholder
-
-</td>
-<td width="50%">
-  <u><b><span style="font-size: 125%">Sexual Activity</span></b></u>
-  Sexual History [[(Details)|DebugSexualHistory]]
+::SexualHistoryTable
+<<nobr>>
+  <u><b><span style="font-size: 125%">Sexual Activity</span></b></u><br>
+  Sexual History [[(Details)|DebugSexualHistory]]<br>
   Summary:
   <table>
     <tr>
@@ -46,6 +26,31 @@
   <<if setup.sexCount() > 9000>>
     <img src="PartX/DBZ9000.jpg" hspace="10" vspace="10" height="200">
   <</if>>
+<</nobr>>
+
+::VariablesMasterDebugger <1600,0>
+<table width="100%">
+
+<tr>
+<td width="50%">
+  <u><b><span style="font-size: 125%">Core Attributes</span></b></u>
+  Mentor   $Mentor  (Former: $FormerMentor)
+  Roommate   $Roommate
+  Neighbours  $neighbours <<if $FormerNeighbours>>(Former: $FormerNeighbours)<</if>>
+  Body Type: $BodyType
+  PlayerSideEffectPermanent   $PlayerSideEffectPermanent
+  Dating: <<print JSON.stringify($dating)>>
+  Exes: <<print JSON.stringify($exes)>>
+  FWBs: <<print JSON.stringify($fwb)>>
+  Friend Zone: <<print JSON.stringify($friendZone)>>
+  Engaged: $Engaged
+  Spouse: $Spouse
+  Children: <<print JSON.stringify($children)>>
+  Keyholder	$Keyholder
+
+</td>
+<td width="50%">
+  <<include [[SexualHistoryTable]]>>
 </td>
 </tr>
 
@@ -219,6 +224,7 @@
   FaithChastity $FaithChastity
   SororityChastity  $SororityChastity
   LesbianChastity $LesbianChastity
+  Cuckcake $Cuckcake
   WomensStudiesProfessorTalk $WomensStudiesProfessorTalk
   WomensStudiesProfessorPublish $WomensStudiesProfessorPublish
   WomensStudiesProfessorReported  $WomensStudiesProfessorReported

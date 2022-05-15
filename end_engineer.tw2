@@ -1694,6 +1694,12 @@
   <</if>>
 <</nobr>>
 
+<<nobr>>
+  <<if setup.sexVaginalCount() == 0>>
+    <<achievement>>foreverVirgin<</achievement>>
+  <</if>>
+<</nobr>>
+
 ::ChasteBreakup
 <<nobr>>
   <h1>Breaking up</h1>
@@ -1701,8 +1707,11 @@
 <</nobr>>
 <<nobr>>
   "I've tried to be understanding, I really have," $dating[0] starts.  "I didn't complain that much when you
-  decided to wear that belt without talking to me first.  I said you could give other guys blowjobs when
-  that piece of shit reprogrammed your belt.
+  decided to wear that belt without talking to me first.
+  <<if $Cuckcake>>
+    Well, at least not once you introduced me to $Cuckcake.
+  <</if>>
+  I said you could give other guys blowjobs when that piece of shit reprogrammed your belt.
 <</nobr>>
 
 <<nobr>>
@@ -1711,13 +1720,19 @@
 <</nobr>>
 
 <<nobr>>
-  "But now it looks like you may never be out of that thing.  I know you don't deserve to be in that belt,
-  but I can't help that.  I can help with what I deserve.
-<</nobr>>
-
-<<nobr>>
-  "I deserve a girlfriend, and eventually a wife, that I can actually be with.  I deserve the chance to be a father someday.
-  I deserve to be with someone that is able to be faithful to me."
+  <<if $Cuckcake>>
+    "But now it looks like you may never be out of that thing.  I don't think it's fair to have to share your mouth
+    with every other guy in town.  And I don't think it's fair to $Cuckcake to keep you around."
+    <br><br>
+    "I want to be a father someday, and it's going to be with $Cuckcake. It obviously can't be with you.  I wish you
+    whatever happiness you can achieve in that thing though."
+  <<else>>
+    "But now it looks like you may never be out of that thing.  I know you don't deserve to be in that belt,
+    but I can't help that.  I can help with what I deserve.
+    <br><br>
+    "I deserve a girlfriend, and eventually a wife, that I can actually be with.  I deserve the chance to be a father someday.
+    I deserve to be with someone that is able to be faithful to me."
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -1747,7 +1762,12 @@
   <<unset $Roommate>>
 <</nobr>>
 <<nobr>>
-  You sleep on the sofa that night, and then start moving things out the next day.
+  You sleep on the sofa that night, 
+  <<if $Cuckcake>>
+    <<unset $Cuckcake>>
+    instead of on the floor next to their bed,
+  <</if>>
+  and then start moving things out the next day.
 <</nobr>>
 
 <<nobr>>
