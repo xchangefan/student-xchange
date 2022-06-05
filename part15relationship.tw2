@@ -70,7 +70,7 @@ TODO Dealing with Baby 2 then pick major [[Part15Major]]
   <<elseif setup.sexVaginalCount() == 0>>
     [[Continue|Part15RelationshipChaste]].
   <<else>>
-    [[Continue|Part15Relationship]].
+    [[Continue|Part15BackToMain]].
   <</if>>
 <</nobr>>
 
@@ -85,16 +85,9 @@ TODO Dealing with Baby 2 then pick major [[Part15Major]]
   <<elseif setup.sexVaginalCount() == 0>>
     <<include [[Part15RelationshipChaste]]>>
   <<else>>
-    <<include [[Part15Relationship]]>>
+    <<include [[Part15BackToMain]]>>
   <</if>>
 <</nobr>>
-
-::Part15Relationship
-TODO Week 3
-TODO Week 7
-TODO dealing with relationship (normal)
-
-<<include [[Part15BackToMain]]>>
 
 ::Part15Week3Cuckcake
 <<nobr>>
@@ -234,15 +227,86 @@ TODO dealing with relationship (chaste)
 <<include [[Part15BackToMain]]>>
 
 ::Part15RelationshipGirlfriend
-TODO dealing with relationship (girlfriend)
-
-<<include [[Part15BackToMain]]>>
+<<nobr>>
+  <<if setup.areDating("Kate")>>
+    <<if $SchoolWeek <= 3>>
+      <<include [[Part15BackToMain]]>>
+    <<elseif $SchoolWeek <= 7>>
+      <<include [[Part15LivingKate2]]>>
+    <<else>>
+      <<include [[Part15BackToMain]]>>
+    <</if>>
+  <<else>>
+    <<if $SchoolWeek <= 3>>
+      TODO Other girlfriend Week 2/3 [[Part15Week]]
+    <<elseif $SchoolWeek <= 7>>
+      TODO Other girlfriend Week 7 [[Part15Week]]
+    <<else>>
+      <<include [[Part15BackToMain]]>>
+    <</if>>
+  <</if>>
+<</nobr>>
 
 ::Part15LivingKate
-TODO Marriage plans
-TODO Week 2
-TODO Week ?
-TODO Living with Kate [[Part15Week]]
+<<nobr>>
+  <h1>Making wedding plans</h1>
+  <img src="Part15/Kate1.png" hspace="10" vspace="10" height="550" align="left">
+<</nobr>>
+<<nobr>>
+  You and Kate have your wedding planned for summer, so you still have many months to work out all of the details.
+  Though a few details are already locked in, like the date and the venue venue, most of the rest is still undecided.
+<</nobr>>
+
+<<nobr>>
+  But you still try to go through the books and websites you have for ideas when you have free time.  You have a lot of
+  catching up to do.  You know many girls have imagined their wedding day since they were little, and probably discussed their
+  ideas with their friends too growing up.  You've imagined what it'd be like to be a beautiful bride for years too, though you
+  were afraid to admit it to anyone until after your change last year.
+<</nobr>>
+
+<<nobr>>
+  Kate knows how excited you are about planning the wedding, so she gives her input, but lets you guide much of the
+  planning.  Though planning together is also fun, not least of all because discussion of your wedding day usually leads
+  to discussion of your wedding night.  And that discussion usually leads to a lot more.
+<</nobr>>
+
+<<nobr>>
+  [[Continue|Part15Week]]
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Kate2.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+::Part15LivingKate2
+<<nobr>>
+  <h1>Home with Kate</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Kate3.mp4" autoplay loop muted height="650"></video>
+  </div>
+<</nobr>>
+
+<<nobr>>
+  Kate likes you arriving home from work horny.  But that doesn't mean she usually gives you any relief when you
+  get there.
+<</nobr>>
+
+<<nobr>>
+  Instead she'll bury your head between her legs and have you work through your desire by giving her pleasure instead.
+  She'll often give you a little tease afterwards, seeing how close she can get you to an orgasm without going over.
+<</nobr>>
+
+<<nobr>>
+  Of course she can just have the chastity piercing she normally has you wear do that too, but she finds the personal
+  touch much more fun.  You do to, especially since this way you know there's always a chance she'll be feeling
+  generous or make a mistake, and you'll actually be able to cum.
+<</nobr>>
+
+<<nobr>>
+  Usually that's not what happens though.  What's more likely is that she'll leave you even more horny than when
+  you came home.  And by then, she'll be eager for another orgasm of her own.  Your will have to wait a bit longer.
+  Maybe she'll feel more generous [[tomorrow|Part15Week]].
+<</nobr>>
 
 ::Part15LivingVeronica
 TODO Living with Veronica [[Part15Sorority]]

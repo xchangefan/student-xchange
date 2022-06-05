@@ -2956,7 +2956,7 @@
       <<unset $tempChooseBelt>>
       <<unset $tempRejectBelt>>
     <</if>>
-    So, if you wish to participare, please line up for
+    So, if you wish to participate, please line up for
     <<if $tempRejectBelt and !$tempChooseBelt>>
       your fitting
     <<else>>
@@ -3041,13 +3041,13 @@
 <</nobr>>
 
 <<nobr>>
-  He's clearly expecting you to leave at that point.  "Ummm... he... the department head, said we'd get an orgasm," you ask meekly as
-  instinctively you already realize there's nothing you can do if they decide to change their mind.
+    He's clearly expecting you to leave at that point.  "Ummm... he... the department head, said we'd get an orgasm," you ask meekly as
+    instinctively you already realize there's nothing you can do if they decide to change their mind.
 <</nobr>>
 
 <<nobr>>
-  "Not right now.  We have quite a few girls to get fitted, and that would take forever.  But it is set to give you one sometime today," he tells you
-  quickly, eager to get on to the next fitting.
+    "Not right now.  We have quite a few girls to get fitted, and that would take forever.  But it is set to give you one sometime today," he tells you
+    quickly, eager to get on to the next fitting.
 <</nobr>>
 
 <<nobr>>
@@ -3082,6 +3082,7 @@
     <<set $JobCallGirlOld>>
   <</if>>
 <</nobr>>
+
 
 ::Part15TestSubjectBetaTest2
 <<nobr>>
@@ -7708,13 +7709,25 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
   You are so wet and eager to have him inside you
   <<if $dating.length and $PlayerProtectionCondoms>>
     that neither of you remember to have him wear a condom.
+    <<if $PlayerPregnant>>
+      Though it doesn't matter as much now, since you are already pregnant.
+    <</if>>
   <<elseif $dating.length and $PlayerProtectionWithdraw>>
     that neither of you remember until too late to be careful about where he cums.
+    <<if $PlayerPregnant>>
+      Though it doesn't matter as much now, since you are already pregnant.
+    <</if>>
   <<elseif $PlayerProtectionCondoms>>
     that you don't remember to ask him to wear a condom.
     You are out anyway.  You'll need to remember to pick some <<if !$CampusMinistry>>more<</if>> up tomorrow.
+    <<if $PlayerPregnant>>
+      Though it doesn't matter as much now, since you are already pregnant.
+    <</if>>
   <<elseif $PlayerProtectionWithdraw>>
     that you don't remember to ask him to pull out before he cums.
+    <<if $PlayerPregnant>>
+      Though it doesn't matter as much now, since you are already pregnant.
+    <</if>>
   <<elseif $CampusMinistry>>
     that it doesn't hurt like you thought it would when he enters you.
   <<else>>
@@ -12444,9 +12457,24 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
       <</if>>
       All it takes is a seductive smile or two, and several guys are doing the same.  You are happy to see their body's reaction
       to seeing you and your sisters naked in the pool.
+      <<if $PlayerChastityBelt and ($Keyholder == "computer" or $JobBetaTester)>>
+        <br><br>
+        By now, your chastity belt isn't the first most people have seen, there are quite a few girls testing them now.
+        You do get some questions about whether it's waterproof or not.  You reassure everyone that it is perfectly capable of
+        dealing with large amounts of wetness, both inside and outside the belt.
+      <<elseif $PlayerChastityBelt>>
+        <br><br>
+        You also get a few comments about your chastity belt.  But it's not the curiosity it might have been last year, since
+        there are many girl testing the new electronic chastity belts this year.
+      <</if>>
       <br><br>
       You all have fun playing in the pool, but soon it starts to get crowded.  So when a couple of the cuter guys ask you
-      to [[head upstairs with them|Part15PartyDTD2]] instead, you eagerly exit the pool.
+      to
+      <<if $PlayerChastityBelt>>
+        [[head upstairs with them|Part15PartyDTD2Chastity]], you suggest staying right here instead.
+      <<else>>
+        [[head upstairs with them|Part15PartyDTD2]], you eagerly exit the pool.
+      <</if>>
     <</if>>
   <</if>>
 <</nobr>>
@@ -12525,6 +12553,47 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 
 <<include [[Part15BackToMain]]>>
 
+::Part15PartyDTD2Chastity
+<<nobr>>
+  <h1>Putting on a show at the pool</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Sorority39.mp4" autoplay loop muted height="650"></video>
+  </div>
+  <<set setup.addSexRepeat(20, {sex:"male", anon:"Frat Guy"})>>
+<</nobr>>
+<<nobr>>
+  <<if $PlayerPregnant>>
+    With as horny as you are, 
+  <<else>>
+    With a mix of alcohol and horniness, 
+  <</if>>
+  you don't even want to bother going some place private.  You are too eager to follow the two cute guys upstairs, and
+  instead offer to suck their cocks, right here at the pool in front of everyone.
+<</nobr>>
+
+<<nobr>>
+  As soon as you swallow one load, there's a new guy, and a new hard cock ready to go.  You lose track of how many
+  cocks you suck.  
+  <<if $PlayerChastityBelt and ($Keyholder == "computer" or $JobBetaTester)>>
+    Though, you know your belt is keeping track for you.
+    Your belt teases you and keeps you close to an orgasm the entire time, encouraging you to keep going.
+    As if you needed any encouragement.
+    <br><br>
+    "We need to get a lot more girls signed up to test these belts," one of the guys says after cumming down your throat.
+    "Especially if it turns them all into horny, cocksucking sluts like this one."
+  <<else>>
+    Your belt teases you and keeps you close to an orgasm the entire time, encouraging you to keep going.
+    As if you needed any encouragement.
+    <br><br>
+    "I need to get my next girlfriend into one of these belts," one of the guys says after cumming down your throat.
+    "Especially if it'll turn her into a horny, cocksucking slut like this one."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Once there are no more cocks to suck, you enjoy the pool a bit longer before you [[head back home|Part15Week]].
+<</nobr>>
+
 ::Part15PartyDTD2
 <<nobr>>
   <h1>With some frat guys</h1>
@@ -12544,7 +12613,7 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
   <<else>>
     With a mix of alcohol and horniness, 
   <</if>>
-  you don't even bother picking up or putting on your clothes.  You are too eager to follow the
+  you don't even bother picking up or putting on your clothes.  You are too eager and follow the
   two cute guys upstairs, and head through the party completely naked until the three of you have a room to yourselves.
 <</nobr>>
 
@@ -13083,6 +13152,9 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
           The enhanced fertility they gave you as a punishment though has been less fun.  Or more accurately, it's added an extra worry
           to the fun you were going to have anyway.
         <</if>>
+        <<if $PlayerChastityBelt and $Keyholder == "computer">>
+          Or at least it did until you were locked into this chastity belt.
+        <</if>>
       <<elseif $ProjectPunishmentBirthControl>>
         <div style="float:left;padding:12px;">
           <video src="PartP/Creampie.mp4" autoplay loop muted width="600"></video>
@@ -13090,6 +13162,9 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
         <br><br>
         The disabling of your birth control they did as a punishment though has been less fun.  Or more accurately, it's added an extra worry
         to the fun you were going to have anyway.
+        <<if $PlayerChastityBelt and $Keyholder == "computer">>
+          Or at least it did until you were locked into this chastity belt.
+        <</if>>
       <<elseif $ProjectPunishmentSemen>>
         <img src="Part6/SpecialProject11.jpg" hspace="10" vspace="10" width="600" align="left">
         <br><br>
@@ -13509,7 +13584,27 @@ TODO Followup with just tug-of-war (chastity) with boyfriend [[Part15Week]] or [
 <</nobr>>
 
 ::Part15HalloweenKate
-TODO Part15HalloweenKate [[Part15Week]]
+<<nobr>>
+  <h1>Halloween without Kate</h1>
+  <img src="Part15/Kate4.png" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  Kate is out of town for Halloween, which is just as well, since you have to work at the bar anyway.  She did
+  help you pick out your costume to wear though.
+<</nobr>>
+
+<<nobr>>
+  You aren't sure if it's just your sexy bunny costume that has your tips through the roof tonight, though that's
+  certainly part of it.  It might also be that your patrons are picking up on how horny you are.  Kate wanted to make
+  sure you enjoyed your night even though she wasn't there, and she set your chastity piercing to tease you frequently
+  throughout the night.
+<</nobr>>
+
+<<nobr>>
+  You miss Kate, and are glad she'll be back [[tomorrow|Part15Week]].  But you do have a fun, if frustrating time.
+  Though, you have to keep a bar towel set aside. With the short skirt you have on, if you don't wipe your leg
+  regularly. it doesn't take long for the wetness trailing down our thigh to start showing.
+<</nobr>>
 
 ::Part15HalloweenVeronica
 TODO Part15HalloweenVeronica [[Part15Week]]
