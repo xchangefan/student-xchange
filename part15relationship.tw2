@@ -238,9 +238,19 @@ TODO dealing with relationship (chaste)
     <</if>>
   <<else>>
     <<if $SchoolWeek <= 3>>
-      TODO Other girlfriend Week 2/3 [[Part15Week]]
+      <<if $JobCheerleader>>
+        Event when Veronica and you aren't on the field, or practicing, you still spend
+      <<else>>
+        Veronica spends much of her time practicing or cheering at various events.  But when she's not busy, you and
+        her try to spend
+      <</if>>
+      [[most of your time together|Part15LivingVeronica2]].
     <<elseif $SchoolWeek <= 7>>
-      TODO Other girlfriend Week 7 [[Part15Week]]
+      <<if setup.areDating('Bailey')>>
+        TODO Bailey girlfriend Week 7 [[Part15Week]]
+      <<else>>
+        TODO Veronica girlfriend Week 7 [[Part15Week]]
+      <</if>>
     <<else>>
       <<include [[Part15BackToMain]]>>
     <</if>>
@@ -309,7 +319,35 @@ TODO dealing with relationship (chaste)
 <</nobr>>
 
 ::Part15LivingVeronica
-TODO Living with Veronica [[Part15Sorority]]
+<<nobr>>
+  <h1>"Studying" before class</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Veronica1.mp4" autoplay loop muted height="600"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  You and Veroncia study together whenever you have time.  Though it's rare for that your study sessions last too
+  long before you both get distracted and have to take a little break from studying.
+<</nobr>>
+
+<<nobr>>
+  Eventually the two of you get back to work though.  And you are both usually much more able to focus on your homework
+  at that point.  Well, for a while at least.
+<</nobr>>
+
+<<nobr>>
+ You and Veronica are also excited about the coming [[sorority competion|Part15Sorority]] between the Sigmas and the other
+ sororities.
+<</nobr>>
+
+::Part15LivingVeronica2
+<<nobr>>
+  <h1>TODO</h1>
+  <video src="Part15/Veronica2.mp4" autoplay loop muted height="450"></video>
+  <<set setup.addSexRepeat(30, {sex:"female", name:"Veronica"})>>
+<</nobr>>
+
+TODO Veronica girlfriend Week 2/3 [[Part15Week]]
 
 ::Part15LivingAaron
 <<nobr>>

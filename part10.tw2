@@ -467,8 +467,18 @@ You start trying to think of ways to earn a little extra money on the side...
     <</if>>
 
   <<else>>
-    You can [[take Hannah up on her offer|Part10CallGirlStart]] or you
-    can 
+    You can
+    <<if setup.areDating('Kate')>>
+      [[see if Kate would be ok with it|Part10CallGirlStartKate]].
+    <<elseif setup.areDating('Veronica')>>
+      [[see how Veronica would feel about it|Part10CallGirlStartVeronica]].
+    <<else>>
+      [[take Hannah up on her offer|Part10CallGirlStart]]
+      <<if $dating.length>>
+        You'll just have to make sure $dating[0] doesn't find out about it.
+      <</if>>
+    <</if>>
+    Or you can 
         <<if $JobWebModel or $JobWebModelSide or $JobPorn or $JobPornSide or $JobPornOral or $JobPornOralSide or $JobPornAnal or $JobPornAnalSide or $JobPornGang or $JobPornGangSide>>
           [[try to think of something else|Part10ExtraMoney3]].
         <<else>>
@@ -477,6 +487,67 @@ You start trying to think of ways to earn a little extra money on the side...
   <</if>>
 <</nobr>>
 
+::Part10CallGirlStartKate
+<<nobr>>
+  <h1>Discussing your job plans with Kate</h1>
+  "If you are needing money that badly, I can help out," Kate tells you when you mention your idea to start working
+  as a call girl.  But then she senses there's more to it than just the money.  "Or, is the money not really the point?"
+  <<set setup.addSexRepeat(5, {sex: 'female', name:'Kate'})>>
+<</nobr>>
+
+<<nobr>>
+  You admit that the money will be nice, but that it also turns you on, being desired and wanted like that.  To have
+  men willing to [[pay that much money just to be with you|Part10CallGirlStart]].  You also admit that being an object,
+  used for their pleasure, with no regard for your own, is also a big turn on for you too.
+<</nobr>>
+
+<<nobr>>
+  "Very well," Kate tells you.  "You can be three holes for them to use how they like, if that's what you want.  But
+  you aren't allowed to orgasm with them, is that understood."
+  <<if $PlayerSuperOrgasms or $PlayerEasytoOrgasm>>
+    You remind her how easy it is for you to orgasm.  "I know that, but you'll
+  <<else>>
+    "You'll
+  <</if>>
+  resist as much as you can, and fake your orgasms for them.  You'll tell me whenever you have a real one with them,
+  and you'll be punished for it.  Is that understood?"
+<</nobr>>
+
+<<nobr>>
+  "Yes, mistress," you tell her.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part10/Kate.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+::Part10CallGirlStartVeronica
+<<nobr>>
+  <h1>Discussing your job plans with Veronica</h1>
+  "Is your money situation that bad?" Veronica asks. "Maybe we can both get part-time jobs and you won't have to do that."
+  When you let her know how much the pay is for the call girl job, she understands better your motivation.  "Oh, well it'd
+  be pretty hard for either of us to get a part-time job that matched up with that."
+<</nobr>>
+
+<<nobr>>
+  "And it's not just the money," you confess.  "It's also quite a turn-on, thinking of being that desired, that men would
+  pay that much money just to be with me for a little while.
+<</nobr>>
+
+<<nobr>>
+  "That does sound exciting," she admits as you talk more about it.  "Maybe we might treat one of your clients to a
+  double-feature one day, if I work up the nerve."
+<</nobr>>
+
+<<nobr>>
+  <img src="Part8.5/Faithfull2.jpg" hspace="10" vspace="10" height="400"/>
+<</nobr>>
+
+<<nobr>>
+  "Ok.  If it's what you really want, then [[take the job|Part10CallGirlStart]].  Just remember though, they are just
+  renting you for a little while.  You belong to me."
+<</nobr>>
+  
 ::Part10CallGirlStart <2000,10300>
 <video src="Part10/CallGirl2.mp4" autoplay loop muted height="640"></video>
 <<nobr>>
@@ -652,7 +723,14 @@ You start trying to think of ways to earn a little extra money on the side...
   <<elseif $PlayerChastityBelt>>
     You realize you don't really have any options for extra income with the chastity belt locked on you.
   <<else>>
-    You could always change your mind and talk to Hannah about working as a [[call girl|Part10CallGirlStart]]
+    You could always change your mind and
+    <<if setup.areDating('Kate')>>
+      see if Kate would be ok with you [[working as a call girl|Part10CallGirlStartKate]].
+    <<elseif setup.areDating('Veronica')>>
+      see how Veronica would feel about you [[working as a call girl|Part10CallGirlStartVeronica]].
+    <<else>>
+      talk to Hannah about [[working as a call girl|Part10CallGirlStart]]
+    <</if>>
     <<if $Mentor == 'Olivia' or $cantWorkStore or $CampusMinistryFail>>
       .
     <<elseif $refusedBelt>>
