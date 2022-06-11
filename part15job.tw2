@@ -7,7 +7,7 @@
     <<include [[Part15JobEngineerLock]]>>
   <<elseif $JobEngineer>>
     <<include [[Part15JobEngineer]]>>
-  <<elseif $JobBarista>>
+  <<elseif false and $JobBarista>>
     <<include [[Part15JobBarista]]>>
   <<elseif $JobBikiniBarista>>
     <<include [[Part15JobBikiniBarista]]>>
@@ -129,13 +129,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $dating.length>>
-    Of course, you also spend as much of your free time
-    <<link "with $dating[0]">><<goto [[Part15Relationship]]>><</link>>
-    as you can.
-  <<else>>
-    <<include [[Part15BackToMain]]>>
-  <</if>>
+  <<include [[Part15BackToMain]]>>
 <</nobr>>
 
 ::Part15AfterMainJob
