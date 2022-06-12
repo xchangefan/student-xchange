@@ -636,10 +636,16 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 <p style="clear: both;">
 	<img src="Part1/BodyFeatureWeight.jpg" hspace="10" vspace="10" height="350" align="left">
-	<span id="WeightControl"><<print "Weight Control (not selected)">></span>
-
-	"The implant will control your metabolism. You tell us what weight to set it at, and no matter how much you eat, you won’t gain past that."
-  <<if $FatherSettings>><br>You father considered whether this one was worth the risk.  But in the end he decided you'll just need to watch your weight the old fashioned way and avoid risking more side effects.<</if>>
+  <<if $FatherSettings>>
+	  <span id="WeightControl"><<print "Weight Control (selected)">></span>
+  	"The implant will control your metabolism. You tell us what weight to set it at, and no matter how much you eat, you won’t gain past that,"
+    <br>You father considered whether this one was worth the risk.  In the end he decided it was worth the chance
+    of another side effect.  He seemed to think your future husband will appreciate it, especially after you've been together
+    for a decade or two.  You wonder if he was commenting on the few pounds your mom has put on since they first met.
+  <<else>>
+	  <span id="WeightControl"><<print "Weight Control (not selected)">></span>
+  	"The implant will control your metabolism. You tell us what weight to set it at, and no matter how much you eat, you won’t gain past that."
+  <</if>>
 </p>
 
 <p style="clear: both;">
@@ -668,7 +674,10 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 <p style="clear: both;">
 <<nobr>>
-  <<if !$FatherSettings>>
+  <<if $FatherSettings>>
+    <<set $PlayerWeightControl = 1>>
+    <<set $PlayerSideEffects++>>
+  <<else>>
     <<link "Select all of them.">>
       <<if !$PlayerNoBodyHair>><<set $PlayerSideEffects++>><</if>>
       <<if !$PlayerWeightControl>><<set $PlayerSideEffects++>><</if>>
@@ -789,8 +798,8 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <<if $FatherSettings>>
     Even rejecting all the options, based on selecting your own body type, and the experimental birth control,
     you are going to gain
-    <<if $PlayerSideEffects > 3>>
-      <<set $PlayerSideEffects to 3>>
+    <<if $PlayerSideEffects > 4>>
+      <<set $PlayerSideEffects to 4>>
     <</if>>
   <<else>>
     You will gain
@@ -1325,7 +1334,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<<nobr>>
 		<<if $PlayerSideEffectSubmissive == 1>>
       <<if $FatherSettings>>
-        Your father said this one might not even be due to the X-Change, but just how you are already before the
+        Your father said this one might not even be due to the X-Change, but just how you already are before the
         change.  "And, on top of that, many women tend toward being submissive anyway.  Just don't let the first guy
         you meet turn you into his little pet or something, and this one should be fine."
         <br><br>
@@ -1568,9 +1577,15 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<<else>>
       <<if !$PlayerSideEffectAnalPermanent and either(1,2,3,4,5,6) < 6>>
         <<set $PlayerSideEffectAnalPermanent to 1>>
-        Your need for anal sex is permanent, even if you change back.  You probably won't be able to get off unless your ass is
-        getting fucked.  So if you change back and prefer men, you'll definitely be a bottom.  But even if you prefer women, don't worry
-        there are options there too.
+        <<if $PlayerSideEffectPermanent>>
+          This side effect would be permanent even if you changed back, but since your change is permanent,
+          that doesn't really matter.
+        <<else>>
+          Your need for anal sex is permanent, even if you change back.
+          You probably won't be able to get off unless your ass is
+          getting fucked.  So if you change back and prefer men, you'll definitely be a bottom.  But even if you prefer women, don't worry
+          there are options there too.
+        <</if>>
         <br>
         <video src="Part1/SideEffectAnal2.webm" autoplay loop muted width="650"></video>
         <br><br>

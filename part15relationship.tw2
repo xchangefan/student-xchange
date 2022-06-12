@@ -312,10 +312,8 @@
     [[Continue|Part15LivingAaron4]].
   <<elseif setup.haveGirlfriend()>>
     [[Continue|Part15RelationshipGirlfriend]].
-  <<elseif setup.sexVaginalCount() == 0>>
-    [[Continue|Part15RelationshipChaste]].
   <<else>>
-    [[Continue|Part15BackToMain]].
+    <<include [[Part15BackToMain]]>>
   <</if>>
 <</nobr>>
 
@@ -327,8 +325,6 @@
     <<include [[Part15LivingAaron4]]>>
   <<elseif setup.haveGirlfriend()>>
     <<include [[Part15RelationshipGirlfriend]]>>
-  <<elseif setup.sexVaginalCount() == 0>>
-    <<include [[Part15RelationshipChaste]]>>
   <<else>>
     <<include [[Part15BackToMain]]>>
   <</if>>
@@ -465,11 +461,6 @@
   <</if>>
   <<include [[Part15BackToMain]]>>
 <</nobr>>
-
-::Part15RelationshipChaste
-TODO dealing with relationship (chaste)
-
-<<include [[Part15BackToMain]]>>
 
 ::Part15RelationshipGirlfriend
 <<nobr>>
@@ -760,4 +751,46 @@ TODO dealing with relationship (chaste)
 <</nobr>>
 
 ::Part15LivingAndrew
-TODO Living with Andrew [[Part15Week]]
+<<nobr>>
+  <<if $AndrewWeddingDate == 'Soon' and $JobBetaTester and $Keyholder != "Andrew">>
+    <<include [[Part15LivingAndrewPostponeChastity]]>>
+  <<elseif $AndrewWeddingDate == 'Soon'>>
+    <<include [[Part15LivingAndrewWeddingSoon]]>>
+  <<else>>
+    <<include [[Part15LivingAndrewGeneral]]>>
+  <</if>>
+<</nobr>>
+
+::Part15LivingAndrewGeneral
+    TODO Living with Andrew [[Part15Week]]
+
+::Part15LivingAndrewWeddingSoon
+<<nobr>>
+  <h1>Your wedding day approaches</h1>
+  <img src="Part15/WeddingPlanning.png" hspace="10" vspace="10" height="400" align="left">
+<</nobr>>
+<<nobr>>
+  You've been planning for months.  Well, for over a month at least.  You are so excited that the
+  big day is here!  You and Andrew are finally [[getting married|AndrewWedding]]!
+<</nobr>>
+
+::Part15LivingAndrewPostponeChastity
+<<nobr>>
+  <h1>Postponing the wedding</h1>
+  <video src="Part15/Andrew2.mp4" autoplay loop muted height="400"></video>
+  <<set $AndrewWeddingDate to "Later">>
+<</nobr>>
+<<nobr>>
+  You and Andrew discuss your wedding night, and how frustrating it would be not to be able to consumate your marriage.
+  You imagine the scene in detail, knowing that not being able to feel Andrew inside you would be even more difficult
+  then than it already is.
+<</nobr>>
+
+<<nobr>>
+  You both decide that it's best to wait until the summer to get married.  Hopefully then you'll have a much more exciting
+  wedding night than you could probably have now.
+<</nobr>>
+
+<<nobr>>
+  Of course that doesn't reduce your [[day to day|Part15Week]] frustration with your belt until then.
+<</nobr>>

@@ -133,50 +133,104 @@
 ::AndrewWedding <200,4310>
 <<nobr>>
   <h1>After the Ceremony</h1>
-  <img src="PartX/AndrewFamily2.jpg" hspace="10" vspace="10" height="700" align="left">
+  <<if $PlayerPregnant>>
+    <img src="PartX/AndrewFamily2.jpg" hspace="10" vspace="10" height="700" align="left">
+  <<else>>
+    <img src="PartX/AndrewFamily16.png" hspace="10" vspace="10" height="700" align="left">
+  <</if>>
   <<unset $Engaged>>
   <<set $Spouse to 'Andrew'>>
-<</nobr>>
-<<nobr>>
-  After weeks and weeks of worrying, your wedding day has finally arrived, and everything is perfect!  Your maid-of-honor, Faith, and
-  <<if $CampusMinistry>>
-    your other friends from
+  <<if $Mentor == "Faith">>
+    <<set $MaidOfHonor to "Faith">>
   <<else>>
-    her friends from
+    <<set $MaidOfHonor to "Bailey">>
   <</if>>
-  the campus ministry group decorated the church wonderfully.  You'd been worried about how you'd look in your dress this far along in your pregnancy, but
-  everyone says you look radiant.
+<</nobr>>
+<<nobr>>
+  After weeks and weeks of worrying, your wedding day has finally arrived, and everything is perfect!  Your maid-of-honor,
+  $MaidOfHonor, and your other friends from decorated the church wonderfully. 
+  <<if $PlayerPregnant>>
+    You'd been worried about how you'd look in your dress this far along in your pregnancy, but everyone says you look radiant.
+  <<else>>
+    Everyone says you look radiant in your wedding dress.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  You remember worrying early on about how your father would react to your pregnancy, and then engagement, but he's fully adjusted to having two daughters now.  He's
-  thrilled to walk you down the aisle.  As he does, you can't help but notice how handsome Andrew looks in his tuxedo.  
+  You remember worrying early on about how your father would react to your
+  <<if $PlayerPregnant>>
+    pregnancy, and then
+  <</if>>
+  engagement, but he's fully adjusted to having two daughters now.  He's thrilled to walk you down the aisle.  As he does,
+  you can't help but notice how handsome Andrew looks in his tuxedo.  
 <</nobr>>
 
 <<nobr>>
-  You do your best to keep from crying and spoiling your makeup as you listen to the beautiful words Pastor Mark gives during the ceremony.  You especially loved
-  the part where he talked about how the miracles of modern science have allowed you and Andrew to experience God's miracle of life.
+  You do your best to keep from crying and spoiling your makeup as you listen to the beautiful words Pastor Mark gives during
+  the ceremony.  You especially loved the part where he talked about how the miracles of modern science have allowed you and
+  Andrew to experience God's miracle of life.
 <</nobr>>
 
 <<nobr>>
-  Everyone has a great time at the reception.  Your legs quickly tire from dancing with Andrew and then your father
-  You decide to let Faith and Cassie take your place for most of the rest of the dances you'd normally do.  Faith is
-  thrilled when she catches your bouquet.
+  Everyone has a great time at the reception.
+  <<if $PlayerPregnant>>
+    Your legs quickly tire from dancing with Andrew and then your father
+    You decide to let $MaidOfHonor and Cassie take your place for most of the rest of the dances you'd normally do.
+  <<else>>
+    You dance first with Andrew, then your father, and then for what seems like every other guy at the reception.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $Mentor != "Faith" and $FormerMentor != "Faith">>
+    Andrew's friend
+  <</if>>
+  Faith is thrilled when she catches your bouquet.
 <</nobr>>
 
 <<nobr>>
   Your sister Cassie is clearly having a good time, you see her disappear for a while with one of Andrew's groomsmen.  They both seem happy, if a bit
-  dishevelled when they return.  Even your brother is having a good time as you see him chatting with your friend Mindy, who
+  dishevelled when they return.  Even your brother is having a good time as you see him chatting with
   <<if $JobBikiniBaristaFormer>>
-    worked with you at the bikini coffee shop.
+    your friend Mindy, who worked with you at the bikini coffee shop.
+  <<elseif $JobBarista>>
+    your friend Mindy, who worked with you at the coffee shop until she left to go to the bikini coffee shop.
   <<else>>
-    worked with you at the coffee shop until she left to go to the bikini barista shop.
+    Mindy, a friend you met through Andrew.  She used to work at his coffee shop until she left to go to that bikini coffee shop.
   <</if>>
   You know Mindy well enough to know Dylan's is going to have a fun night.
 <</nobr>>
 
 <<nobr>>
-  <<if $tempFamilySize == 'Small'>>
+  <<if $tempFamilySize == 'NoKids' and $PlayerPregnant>>
+    Obviously the original plan of no kids at all is out the window.
+    <<set $tempFamilySize to 'Small'>>
+  <</if>>
+  <<if $tempFamilySize == 'NoKids'>>
+    You and Andrew aren't planning on having kids,
+    <<if $PlayerProtectionPerfect>>
+      so you are thankful for your implant's birth control feature.
+    <<elseif $PlayerProtectionPermanent>>
+      so hopefully your implants birth control feature will help with that in the future.
+    <<elseif $PlayerProtectionPill>>
+      so hopefully your birth control will help with that in the future.
+    <<elseif $PlayerProtectionFertile>>
+      though you wonder how successful you'll be with that plan considering how fertile you are.
+      Hopefully condoms will be enough.
+      <<unset $PlayProtectionTry>>
+      <<unset $PlayerProtectionNone>>
+      <<unset $PlayerProtectionWithdraw>>
+      <<unset $PlayerProtectionPill>>
+      <<set $PlayerProtectionCondoms to 1>>
+    <<else>>
+      hopefully birth control will help with that in the future.
+      <<unset $PlayProtectionTry>>
+      <<unset $PlayerProtectionNone>>
+      <<unset $PlayerProtectionWithdraw>>
+      <<unset $PlayerProtectionCondoms>>
+      <<set $PlayerProtectionPill to 1>>
+    <</if>>
+  <<elseif $tempFamilySize == 'Small'>>
     You and Andrew aren't planning on a big family, so
     <<if $PlayerProtectionPermanent>>
       hopefully your implants birth control will be more effective in the future.
@@ -224,7 +278,11 @@
 
 <<nobr>>
   As much fun as the reception is, you're exhausted by the time it's finally over, and glad when you and Andrew can finally
-  [[escape off to your honeymoon|AndrewHoneymoon]]
+  <<if $PlayerPregnant>>
+    [[escape off to your honeymoon|AndrewHoneymoonPregnant]]
+  <<else>>
+    [[escape off to your honeymoon|AndrewHoneymoon]]
+  <</if>>
   <<if $JobBarista>>
     <<set $JobHomemaker to 1>>
     <<unset $JobBarista>>
@@ -236,7 +294,50 @@
   <<achievement>>married<</achievement>>
 <</nobr>>
 
-::AndrewHoneymoon <400,4310>
+::AndrewHoneymoon
+<<nobr>>
+  <h1>Honeymoon</h1>
+  <video src="PartX/BackHome24.mp4" autoplay loop muted height="450"></video>
+  <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal: true})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew'})>>
+  <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal: true})>>
+<</nobr>>
+
+<<nobr>>
+  TODO Thankfully, your slightly earlier wedding date made travel a little more convenient, but Andrew still kept the honeymoon plans close to home just in case.
+<</nobr>>
+
+<<nobr>>
+  It's wonderful having Andrew off work, and all to yourself for a few days.  You surprise him with a few special honeymoon outfits you'd purchases.  You were thrilled
+  when you'd seen that they'd still have something sexy for you to wear, even in your current condition.  Andrew clearly loves it too.
+<</nobr>>
+
+<<nobr>>
+  Walking too much isn't comfortable for you, so the two of you spend more time in the hotel room than you probably would on a normal vacation.
+  Though obviously, that's not the only reason.  You are pretty sure if you hadn't already been pregnant before the honeymoon, you certainly would have been after it.
+<</nobr>>
+
+<video src="PartX/BackHome25.mp4" autoplay loop muted height="450"></video>
+<video src="PartX/BackHome26.mp4" autoplay loop muted height="450"></video>
+<video src="PartX/BackHome27.mp4" autoplay loop muted height="450"></video>
+<video src="PartX/BackHome28.mp4" autoplay loop muted height="450"></video>
+
+<<nobr>>
+  Before you know it though, the trip is over and the two of you head home|AndrewProgress.
+<</nobr>>
+
+TODO Need new ending for Andrew - no kids
+
+::AndrewHoneymoonPregnant <400,4310>
 <<nobr>>
   <h1>Honeymoon</h1>
   <img src="PartX/AndrewFamily3.jpg" hspace="10" vspace="10" height="600">

@@ -1676,7 +1676,7 @@
 
 <<nobr>>
   It doesn't matter though, at least not to you.  What matters to you is that he never revealed the encryption key that would allow them
-  to unlock your belt.  An exhausted search of his cell and belongings yield nothing to help you.
+  to unlock your belt.  An exhaustive search of his cell and belongings yield nothing to help you.
 <</nobr>>
 
 <<nobr>>
@@ -1703,13 +1703,24 @@
 ::ChasteBreakup
 <<nobr>>
   <h1>Breaking up</h1>
-  <img src="Part8.5/Upset1.jpg" hspace="10" vspace="10" height="500" align="left">
+  <<if setup.areDating('Jayden')>>
+    <img src="PartX/UpsetJayden.jpg" hspace="10" vspace="10" height="450" align="left">
+  <<else>>
+    <img src="Part8.5/Upset1.jpg" hspace="10" vspace="10" height="500" align="left">
+  <</if>>
 <</nobr>>
 <<nobr>>
-  "I've tried to be understanding, I really have," $dating[0] starts.  "I didn't complain that much when you
-  decided to wear that belt without talking to me first.
-  <<if $Cuckcake>>
-    Well, at least not once you introduced me to $Cuckcake.
+  "I've tried to be understanding, I really have," $dating[0] starts.
+  <<if setup.areDating('Jayden')>>
+    "I didn't complain that you were in that belt when we met.
+    <<if $Cuckcake>>
+      And, especially not after you introduced me to $Cuckcake.
+    <</if>>
+  <<else>>
+    "I didn't complain that much when you decided to wear that belt without talking to me first.
+    <<if $Cuckcake>>
+      Well, at least not once you introduced me to $Cuckcake.
+    <</if>>
   <</if>>
   I said you could give other guys blowjobs when that piece of shit reprogrammed your belt.
 <</nobr>>
@@ -1727,8 +1738,8 @@
     "I want to be a father someday, and it's going to be with $Cuckcake. It obviously can't be with you.  I wish you
     whatever happiness you can achieve in that thing though."
   <<else>>
-    "But now it looks like you may never be out of that thing.  I know you don't deserve to be in that belt,
-    but I can't help that.  I can help with what I deserve.
+    "But now it looks like you may never be out of that thing.  I know you don't deserve to be in that belt, at least
+    not permanently.  But I can't help that.  I can help with what I deserve.
     <br><br>
     "I deserve a girlfriend, and eventually a wife, that I can actually be with.  I deserve the chance to be a father someday.
     I deserve to be with someone that is able to be faithful to me."
@@ -1738,7 +1749,8 @@
 <<nobr>>
   You've sensed this coming for a while, but it doesn't make it any easier.  You tell him you aren't mad at him, you know he's
   right, he does deserves better.  You think to yourself that you deserve better too, but you also blame yourself for ever
-  putting on the belt in the first place.
+  putting on the belt in the first place.  You also wonder, of course, if you should have just kept quiet about it and
+  not told your professor what you knew.
 <</nobr>>
 
 <<nobr>>
@@ -2166,7 +2178,11 @@
 <</nobr>>
 
 <<nobr>>
-  You probably always still long for the orgasm you know you'll never have again.  But as you drop to your knees, you think about how
+  You'll probably always still long for the orgasm you know you'll never have again.
+  <<if setup.sexVaginalCount() == 0>>
+    And you'll also probably always imagine how good a cock would have felt inside you.
+  <</if>>
+  But as you drop to your knees, you think about how
   happy you are to work for a company that is so understanding and willing to work with you.  You are sure you'll be here for a long
   time to come.
 <</nobr>>
