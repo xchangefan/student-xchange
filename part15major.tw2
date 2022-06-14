@@ -185,12 +185,14 @@
   <ul>
     <li>[[Agriculture|Part15MajorAgriculture]]</li>
     <li>[[Business|Part15MajorBusiness]]</li>
-    <<if ($dating.length or $Engaged or $Spouse) and !setup.haveGirlfriend()>>
+    <<if ($dating.length or $Engaged or $Spouse) and !setup.haveGirlfriend() and $tempFamilySize != 'NoKids'>> 
       <li>[[Child Care|Part15MajorChildCare]]</li>
     <</if>>
     <li>[[Criminal Justice|Part15MajorCCJ]]</li>
     <li>[[Education|Part15MajorEducation]]</li>
-    <li>[[Fashion Design|Part15FashionDesignClean]]</li>
+    <<if $Spouse != "Andrew">>
+      <li>[[Fashion Design|Part15FashionDesignClean]]</li>
+    <</if>>
     <li>[[Health Sciences|Part15MajorHealth]]</li>
     <li>[[Library Science|Part15MajorLibrary]]</li>
     <<if !$PlayerLazyStudent>>
@@ -206,15 +208,22 @@
         You've never really had much talent in that area.
       <</if>>
   <br><br>
-  <<if (!$dating.length and !$Engaged and !$Spouse) or setup.haveGirlfriend()>>
+  <<if (!$dating.length and !$Engaged and !$Spouse) or setup.haveGirlfriend() or $tempFamilySize == 'NoKids'>>
     Child Care:
     <<if $children.length>>
       You do this already, without a degree.  As a single mom, you need something that that pays better than this will.
+    <<elseif $tempFamilySize == 'NoKids'>>
+      You can't imagine spending all day taking care of a dozen screaming toddlers.
     <<else>>
       You've seen what child care workers make.  Maybe someday you'll want to take care of your own children, but you certainly
       are going to spend two and half more years learning how to take care of other people's kids.
     <</if>>
     Besides, you don't need a degree for this, do you?
+    <br><br>
+  <</if>>
+  <<if $Spouse == "Andrew">>
+    Fashion Design - You love wearing it, but designing isn't really your thing.  Besides you know a job in the fashion
+    industry would have you travelling all over the world, and away from Andrew.  And you don't want that.
     <br><br>
   <</if>>
   <<if !$EngineeringShutdown>>
@@ -248,6 +257,15 @@
   natural-born women studying this.
 <</nobr>>
 
+::Part15MajorChosen
+<<nobr>>
+  <<if $Spouse == "Andrew">>
+    [[Continue|AndrewNoKidsSchool2]].
+  <<else>>
+    <<include [[Part15BackToMain]]>>
+  <</if>>
+<</nobr>>
+
 ::Part15MajorAgriculture
 <<nobr>>
   <h1>Agriculture Science Major</h1>
@@ -261,29 +279,40 @@
 <</nobr>>
 
 <<nobr>>
-  Your grandfather has struggled to keep up with all the technology in farming now.  He's avoided using drones or satelites to map his fields
-  like you've talked to him about, even though you know he could use the information to choose what to plant where, and to make him more
-  money.  He certainly wasn't happy when he replaced his aging combine and his new one was "more computer than tractor".
+  <<if $Spouse == "Andrew">>
+    Before you met Andrew, you had thought about working on your grandfathers farm.  All the technology in farming now is
+    a bit overwhelming for him.  And he's looking to retire soon.  But that's no really in the cards anymore.  Andrew's
+    job is in the city, not on a small town farm.
+    <br><br>
+    Still, you can spend some time helping your grandfather bring his farm into the 21st century.  And then maybe help
+    him find someone to take over the day-to-day operations of the farm.  Either that or see if he wants to either sell
+    the farm or look to pass it on to one of his other grandchildren.
+    <br><br>
+    While working on his farm is off the table for you, there are certainly ag jobs in the city.  The Big Ag companies sometimes
+    get a bad reputation, but they're always hiring and pay well.  Plus there's plenty of small startups in that space too, and
+    you wouldn't really be worried about them going under as much since you don't really need the money.    
+    <br><br>
+    You can worry about where you'll work later.  But you've always imagined a job where you'd be helping to feed the world,
+    and that's exactly what you plan on doing after you graduate.
+  <<else>>
+    Your grandfather has struggled to keep up with all the technology in farming now.  He's avoided using drones or satelites to map his fields
+    like you've talked to him about, even though you know he could use the information to choose what to plant where, and to make him more
+    money.  He certainly wasn't happy when he replaced his aging combine and his new one was "more computer than tractor".
+    <br><br>
+    You know your grandfather has been wanting to retire for a while.  He had originally planned on passing the farm down to your dad, but
+    your dad had ended up with an office job, and no interest in farming.  When you were growing up, and much more interested in farming, he
+    had been excited.  You and him had talked about maybe helping him out on the farm after college, and then taking over once you were ready.
+    <br><br>
+    Of course, that all had been before your change.  You wonder if he's going to feel the same about his granddaughter taking over as he
+    did about his grandson.  Luckily he's more open minded than your mom's dad, so it'll probably be ok.
+    <br><br>
+    Your are glad that you are mostly done with your general classes.  You are sure you'll do much better now that your classes are in thing
+    you are actually interested in, and that you know you'll be using.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  You know your grandfather has been wanting to retire for a while.  He had originally planned on passing the farm down to your dad, but
-  your dad had ended up with an office job, and no interest in farming.  When you were growing up, and much more interested in farming, he
-  had been excited.  You and him had talked about maybe helping him out on the farm after college, and then taking over once you were ready.
-<</nobr>>
-
-<<nobr>>
-  Of course, that all had been before your change.  You wonder if he's going to feel the same about his granddaughter taking over as he
-  did about his grandson.  Luckily he's more open minded than your mom's dad, so it'll probably be ok.
-<</nobr>>
-
-<<nobr>>
-  Your are glad that you are mostly done with your general classes.  You are sure you'll do much better now that your classes are in thing
-  you are actually interested in, and that you know you'll be using.
-<</nobr>>
-
-<<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
 
 ::Part15MajorBusiness
@@ -293,7 +322,17 @@
   <<set $Major to "Business">>
 <</nobr>>
 <<nobr>>
-  <<if $JobFitnessYoga>>
+  <<if $Spouse == "Andrew">>
+    A lot of the other students in your major seem to have plans to work for one big, nameless corporation or another
+    after graduation. You plan on working on getting a job at your father-in-law's company.  Hearing Andrew talk about
+    it all the time, has you wanting to work at the head office too.
+    <br><br>
+    You know the HR rules mean you wouldn't be able to work for Andrew directly.  So you being his sexy and naughty
+    secretary will have to stay as roleplay after work.  But you'll still be able to see him often, and maybe have
+    lunch together most days.
+    <br><br>
+    Regardless, you think you'll enjoy being a part of the same company he is.
+  <<elseif $JobFitnessYoga>>
     A lot of the other students in your major seem to have plans to work for one big, nameless corporation or another
     after graduation. Though there are a few others, like you, with a more entrepreneurial mindset.  Instead of lining
     some CEO's pocket after graduation, you'll be working for yourself.
@@ -311,7 +350,7 @@
   <<else>>
     Some of your friends think working for some big corporation sounds horrible.  But they can rant all they want about
     'late-stage capitalism', or whatever.  While they are struggling to figure out what to do with their Philosophy degree,
-    you'll have a nice, steady job and paying your bills on time every month. 
+    you'll have a nice, steady job and will be paying your bills on time every month. 
     <br><br>
     <<if $dating.length == 0>>
       They also like to joke about you trying to find some rich,
@@ -328,7 +367,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
 
 ::Part15MajorChildCare
@@ -348,7 +387,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
 
 ::Part15MajorCCJ
@@ -380,7 +419,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
 
 ::Part15MajorEducation
@@ -392,7 +431,7 @@
 
 <<nobr>>
   You've always thought about being a teacher.  You aren't sure what grade level you are interested in, but you can decide that a
-  bit later.  You just know you want to teach, to be able to make an impact on a students future, to help them grow to be the
+  bit later.  You just know you want to teach, to be able to make an impact on a student's future, to help them grow to be the
   best person they can be.
   <<if setup.haveFucked('Mr. B')>>
     <br><br>
@@ -413,7 +452,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
 
 ::Part15MajorHealth
@@ -462,7 +501,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
 
 ::Part15MajorLibrary
@@ -486,7 +525,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
 
 ::Part15MajorNursing
@@ -520,7 +559,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
 
 ::Part15FashionDesignClean
@@ -541,7 +580,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
 
 ::Part15FashionDesign
@@ -699,6 +738,5 @@
 <</nobr>>
 
 <<nobr>>
-  <<include [[Part15BackToMain]]>>
+  <<include [[Part15MajorChosen]]>>
 <</nobr>>
-
