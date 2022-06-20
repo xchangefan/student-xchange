@@ -418,10 +418,9 @@
       <<unset $PlayerProtectionWithdraw>>
     <</if>>
     <br><br>
-    You know you'll have a large family eventually, but since you aren't pregnant yet, there's no urgency on the wedding date.  You and Andrew just need to decide
-    if you want a wedding in
-    <<link [[a few months|Part14StayAndrewPregnancyTest]]>><<set $AndrewWeddingDate to 'Soon'>><</link>>, or
-    <<link [[next summer|Part14StayAndrewPregnancyTest]]>><<set $AndrewWeddingDate to 'Later'>><</link>>.
+    <<set $AndrewWeddingDate to 'Soon'>>
+    You know you'll have a large family eventually, but since you aren't pregnant yet, there's no urgency on the wedding date.  You and Andrew try to decide
+    whether you want a wedding in [[a few months|Part14StayAndrewPregnancyTest]] or next summer.  You both decide you don't want to wait.
   <<elseif $PlayerPregnant>>
     <<set $AndrewWeddingDate to "Soon">>
     <<set $tempFamilySize to "Big">>
@@ -453,9 +452,9 @@
 <</nobr>>
 
 <<nobr>>
+  <<set $AndrewWeddingDate to 'Soon'>>
   The long train ride gave you and Andrew plenty of time to discuss whether the two of you wanted the wedding in
-  <<link [[a few months|Part14StayAndrewPregnancyTest]]>><<set $AndrewWeddingDate to 'Soon'>><</link>>, or
-  <<link [[next summer|Part14StayAndrewPregnancyTest]]>><<set $AndrewWeddingDate to 'Later'>><</link>>.
+  [[a few months|Part14StayAndrewPregnancyTest]], or next summer.  You both decide you don't want to wait.
 <</nobr>>
 
 ::Part14StayAndrewPregnancyTestPositive <2600,11100>
@@ -490,9 +489,6 @@
       Well, you were wanting a baby eventually.  You just weren't expecting one quite so soon.  
     <</if>>
     You can't wait to get home and [[tell Andrew the news|Part13AndrewEngaged]].
-    <<if $AndrewWeddingDate == 'Later'>>
-      You know he'll probably agree with you that pushing the wedding date up would be a good idea.  You'd rather be married before the baby is born.
-    <</if>>
   <</if>>
 <</nobr>>
 
