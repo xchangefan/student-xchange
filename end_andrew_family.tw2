@@ -639,7 +639,7 @@
 <</nobr>>
 
 <<nobr>>
-  It feels so good when you feel Andrew slide into you again after so long.  The two of you spend the next few weeks having sex at every opporunity,
+  It feels so good when you feel Andrew slide into you again after so long.  The two of you spend the next few weeks having sex at every opportunity,
   trying to make up for lost time.
 <</nobr>>
 
@@ -668,7 +668,7 @@
 
 ::AndrewOnlyChild <1425,4310>
 <div><<nobr>>
-<h1>Taking Every Opporunity</h1>
+<h1>Taking Every opportunity</h1>
 <span style="float: left;width: 40%;padding-right: 20px;">
   <video src="PartX/AndrewFamily13.webm" autoplay loop muted height="600"></video>
 </span>
@@ -953,14 +953,14 @@
     <<include [[AndrewDaydreamCCJ]]>>
   <<elseif $Major == "Education">>
     <<include [[AndrewDaydreamEducation]]>>
-  <<elseif $Major == "Health Sciences" or $Major == "Nursing">>
-    <<include [[AndrewDaydreamHealth]]>>
+  <<elseif $Major == "Nursing">>
+    <<include [[AndrewDaydreamNursing]]>>
   <<elseif $Major == "Library Science">>
     <<include [[AndrewDaydreamLibrary]]>>
   <<else>>
     <<include [[AndrewDaydreamBusiness]]>>
   <</if>>
-  <<if $Major != "Health Sciences" and $Major != "Nursing">>
+  <<if $Major != "Nursing">>
     <br><br>
     You hear the professor say your name and your attention quickly returns to the class.  You try to ignore your wet panties
     as you ask, "Sorry sir, could you repeat the question?"  In the back of your mind you make plans to discuss your fantasy
@@ -1082,7 +1082,7 @@
   amended grade.  That's only fair since this dad will be cleaning up the mess from the fun you just had.
 <</nobr>>
 
-::AndrewDaydreamHealth
+::AndrewDaydreamNursing
 <<nobr>>
   you are working at a fertility clinic.  You are in charge of helping the sperm donors provide their donations.
   Your clinic prides itself on being 'full-service'.  Here you don't just drop the guys in a room with some
@@ -1365,15 +1365,17 @@
 <<nobr>>
     You are so glad you insisted that `and to <b>obey</b>' be included in the wedding vows you made to Andrew,
     even though Cassie told you it was outdated.
-    <<if !$PlayerSideEffectSubmissive or true>>
+    <<if !$PlayerSideEffectSubmissive>>
       <<set $PlayerSideEffectSubmissive to 2>>
       Deep down you must have known about your submissive side.  You love how Andrew has slowly brought it
       to the surface since you've been married.
-    <<elseif $PlayerSideEffectSubmissive <=2 >>
+    <<elseif $PlayerSideEffectSubmissive <=2>>
       <<set $PlayerSideEffectSubmissive to 2>>
-      TODO Was a little bit submissive, now more so
+      You've always been a bit submissive, but Andrew has done a wonderful job of bringing that part of you
+      out even more since you've been married.
     <<else>>
-      TODO Already submissive enough
+      You've known you were submissive, and at first you'd worried that Andrew would judge you for it.  But
+      since you've been married, you've seen just how much he loves and enjoys that part of you.
     <</if>>
 <</nobr>>
 
@@ -2063,6 +2065,7 @@
   <<set setup.addSexRepeat(5, {sex:"male", name:"Andrew", vaginal:true})>>
   <<set $StudentYearsCompleted to 4>>
   <<set $Graduated to 1>>
+  <<unset $JobHomemaker>>
 <</nobr>>
 <<nobr>>
   You've finally done it!  You completed your degree.  Andrew is so proud of you.  Your parents are proud as well,
@@ -2082,15 +2085,13 @@
   <h1>Finding a job</h1>
   <<set setup.addSexRepeat(100, {sex:"male", name:"Andrew"})>>
   <<set setup.addSexRepeat(5, {sex:"male", name:"Andrew", vaginal:true})>>
-  <<if false and Major == "Agriculture">>
+  <<if $Major == "Agriculture">>
     <<include [[AndrewNoKidsAgJob]]>>
   <<elseif $Major == "Criminal Justice">>
     <<include [[AndrewNoKidsCCJJob]]>>
-  <<elseif true or $Major == "Education">>
+  <<elseif $Major == "Education">>
     <<include [[AndrewNoKidsEducationJob]]>>
-  <<elseif $Major == "Health Sciences">>
-    <<include [[AndrewNoKidsHealthSciencesJob]]>>
-  <<elseif  $Major == "Nursing">>
+  <<elseif $Major == "Nursing">>
     <<include [[AndrewNoKidsNursingJob]]>>
   <<elseif $Major == "Library Science">>
     <<include [[AndrewNoKidsLibraryJob]]>>
@@ -2102,6 +2103,7 @@
 ::AndrewNoKidsAgJob
 <<nobr>>
   <img src="PartX/Ag1.jpg" hspace="10" vspace="10" height="450">
+  <<set $JobOther to "a hydroponics researcher">>
 <</nobr>>
 <<nobr>>
   You'd met with several recruiters that visited your school prior to graduation.  The big Ag companies seemed
@@ -2132,6 +2134,7 @@
 ::AndrewNoKidsBusinessJob
 <<nobr>>
   <img src="Part6/Office1.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $JobOther to "a marketing assistant">>
 <</nobr>>
 <<nobr>>
   You have no trouble finding a job with your Business degree.  Andrew gets you one working for his father's
@@ -2179,6 +2182,7 @@
 ::AndrewNoKidsCCJJob
 <<nobr>>
   <img src="PartX/CCJ3.png" hspace="10" vspace="10" height="500" align="left">
+  <<set $JobOther to "a probation officer">>
 <</nobr>>
 <<nobr>>
   Earlier on you'd considered whether you wanted to take the LSAT and apply to law school.  But you decide you didn't
@@ -2294,37 +2298,148 @@
 <</nobr>>
 
 ::AndrewNoKidsEducationJob
-TODO Teacher
 <<nobr>>
-  You do what you can to make sure you don't focus too much on your new job though and still
-  [[have time to spend with Andrew|AndrewNoKidsHome5]]
+  <img src="PartX/Chaste10.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<set $JobOther to "a high school teacher">>
+<</nobr>>
+<<nobr>>
+  You and Andrew decided you don't want kids, and that's still true.  But you do enjoy working as a teacher.
+  You decided early on that you didn't want to work with younger kids, and instead wanted to be a high
+  school teacher.  It's such a joy to help foster a love of learning in young minds.
 <</nobr>>
 
-::AndrewNoKidsHealthSciencesJob
-TODO Health Sciences
 <<nobr>>
-  You do what you can to make sure you don't focus too much on your new job though and still
-  [[have time to spend with Andrew|AndrewNoKidsHome5]]
+  One problem you hadn't anticipated is how unfocused many of the boys in your classes are.  Their minds seem
+  to always be somewhere else, when you are lecturing, and especially when you are working with them 1 on 1.
+  <<if $PlayerLazyStudent>>
+    You certainly weren't the best student when you were there age either, but you don't remember being as unfocused
+    as they often are.
+  <<elseif $PlayerGoodStudent>>
+    You aren't expecting them all to be as good of a student as you were at their age, but you'd hope they'd at least
+    try to focus on the task at hand.
+  <<else>>
+    It's be nice if they could focus on the task at hand, and not whatever their minds are always wandering off to think
+    about.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You received an unexpected surprise when the X-Change people contacted you after you updated your alumni information
+  and noted that you were a high school teacher now.  They informed you that they are looking for recommendations for
+  participants in a follow up study to the implant trial you were a part of.
+<</nobr>>
+
+<<nobr>>
+  You already have a candidate in mind.  You are sure he'll eagerly accept.  Hopefully he'll be as successful in his
+  program as you were in yours.
+<</nobr>>
+
+<<nobr>>
+  While you often take work home to grade, you try not to spend too much time focusing on work when you are at home.
+  You want most of your time at home to be [[spent with Andrew|AndrewNoKidsHome5]]
 <</nobr>>
 
 ::AndrewNoKidsNursingJob
-TODO Nursing
 <<nobr>>
-  You do what you can to make sure you don't focus too much on your new job though and still
-  [[have time to spend with Andrew|AndrewNoKidsHome5]]
+  <img src="PartX/Nurse.jpg" hspace="10" vspace="10" height="400">
+  <<set $JobOther to "a nurse">>
+<</nobr>>
+
+<<nobr>>
+  You love being a nurse.  The joy you get from working with patients, and helping them get better was worth all
+  the hard work you had to put in to get her.  You especially enjoy that you get to spend so much time with your
+  patients, getting to know them, and learning more about what brought them here.  It's so much different than what
+  the doctors experience.  They only have a few minutes to spend with each patient before they have to move on to
+  the next one.
+<</nobr>>
+
+<<nobr>>
+  You'd tried being an ER nurse while you were in training, but decided that certainly wasn't for you.  The hours
+  are so long and grueling.  You were barely able to see Andrew then, and when you did you were usually to exhausted
+  to do much besides sleep.
+<</nobr>>
+
+<<nobr>>
+  Instead you found a job at medical practice with a few doctors.  The hours are usually pretty regular, so you
+  get home to see Andrew and can [[enjoy your time together|AndrewNoKidsHome5]] when you do.
 <</nobr>>
 
 ::AndrewNoKidsLibraryJob
-TODO Libray
 <<nobr>>
-  You do what you can to make sure you don't focus too much on your new job though and still
-  [[have time to spend with Andrew|AndrewNoKidsHome5]]
+  <img src="PartX/Librarian.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $JobOther to "a librarian">>
+<</nobr>>
+<<nobr>>
+  You enjoy your job as a libarian.  It's great being able to help a student find the right reference for the
+  report they are looking for, to help someone to find a book by their favorite author, or to help an older patron
+  learn how much information they can access from one of the computer stations.  You don't even mind when it's your
+  turn to read to the little kids during the group reading time.
+<</nobr>>
+
+<<nobr>>
+  The best part though is that you are home every evening at the same time, and
+  [[have plenty of time to spend with Andrew|AndrewNoKidsHome5]]
 <</nobr>>
 
 ::AndrewNoKidsHome5
+<<nobr>>
+  <h1>Mornings with Andrew</h1>
   <<set setup.addSexRepeat(100, {sex:"male", name:"Andrew"})>>
   <<set setup.addSexRepeat(5, {sex:"male", name:"Andrew", vaginal:true})>>
-TODO Finish [[AndrewNoKids]]
+  <div style="float:left;padding:12px;">
+    <video src="PartX/AndrewFamily40.webm" autoplay loop muted height="500"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  One of your favorite parts of the day is breakfast with Andrew.  His day usually starts earlier than yours, so you
+  love cooking breakfast for you and him before you get ready in the morning.
+<</nobr>>
+
+<<nobr>>
+  After he's eaten, but before he leaves, there's something else you usually do.  This time to fill your stomach, not
+  his.  Well, usually it ends up there, sometimes he likes to be a bit messier.
+<</nobr>>
+
+<<nobr>>
+  You love knowing that as he drives to work, and probably most of the day, he'll be thinking about the wonderful
+  blowjob you gave him before he left.  You almost feel bad that you have to wash up and get ready to work yourself.
+<</nobr>>
+
+<<nobr>>
+  <<if $Major == "Education">>
+    You still have to plan your [[vacations|AndrewNoKidsVacation17]] around the school year, but you and Andrew make
+    sure to take on every summer.
+  <<else>>
+    Now that you've graduated, you and Andrew don't have to plan your [[vacations|AndrewNoKidsVacation17]] around the
+    school year anymore. Now you both can travel whenever you and him want to take the time off from work.
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <img src="PartX/AndrewFamily44.jpg" hspace="10" vspace="10" height="500" align="right">
+<</nobr>>
+
+::AndrewNoKidsVacation17
+<<nobr>>
+  <h1>Travelling together</h1>
+  <img src="PartX/Vacation4.jpg" hspace="10" vspace="10" width="450">
+  <img src="PartX/Vacation1.jpg" hspace="10" vspace="10" width="450">
+<</nobr>>
+
+<<nobr>>
+  You and Andrew love the freedom that you have, with two incomes, and no committments other than work.  You take
+  every opportunity to travel and see the world together.
+<</nobr>>
+
+<<nobr>>
+  Of course, you also enjoy the freedom the two of you have to [[enjoy yourselves at home|AndrewNoKids]] whenever
+  you like too.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/Vacation2.jpg" hspace="10" vspace="10" width="450">
+  <img src="PartX/Vacation3.jpg" hspace="10" vspace="10" width="450">
+<</nobr>>
+
 
 ::AndrewFun <2000,4310>
 <<nobr>>
@@ -2384,7 +2499,7 @@ TODO Finish [[AndrewNoKids]]
 <</nobr>>
 
 <<nobr>>
-  You and Andrew will usually take the opporunity to go out for a romantic evening together, followed by a passionate evening at home.  Though sometimes you like to
+  You and Andrew will usually take the opportunity to go out for a romantic evening together, followed by a passionate evening at home.  Though sometimes you like to
   spice it up a bit more.
 <</nobr>>
 
@@ -2521,7 +2636,38 @@ TODO Finish [[AndrewNoKids]]
 <<achievement>>pregnant<</achievement>>
 
 ::AndrewNoKids
-TODO AndrewNoKids
+<<nobr>>
+  <h1>Just the two of you</h1>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/AndrewFamily41.webm" autoplay loop muted height="650"></video>
+  </div>
+  <video src="PartX/AndrewFamily42.webm" autoplay loop muted height="300"></video>
+<</nobr>>
+<<nobr>>
+  <img src="PartX/AndrewFamily43.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  It's just you and Andrew, so the two of you can enjoy being with each other whenever and wherever the
+  mood strikes.
+<</nobr>>
+
+<<nobr>>
+  That might mean riding Andrew's cock on the sofa on a Sunday afternoon.
+<</nobr>>
+
+<<nobr>>
+  Or it could mean you spending the
+  evening blindfolded with Andrew leading you around on a leash, telling you just how you can serve him. 
+<</nobr>>
+
+<<nobr>>
+  And it can also mean you waiting for him to walk through the door after work, with dinner waiting, but wearing
+  something that might make him want to wait to eat.
+<</nobr>>
+
+<<nobr>>
+  But whichever it is, you are glad it's always you and Andrew.
+<</nobr>>
 
 [[The End.|GameOverAndrewNoKids]]
 

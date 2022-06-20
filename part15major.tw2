@@ -193,7 +193,9 @@
     <<if $Spouse != "Andrew">>
       <li>[[Fashion Design|Part15FashionDesignClean]]</li>
     <</if>>
-    <li>[[Health Sciences|Part15MajorHealth]]</li>
+    <<if $Spouse != "Andrew">>
+      <li>[[Health Sciences|Part15MajorHealth]]</li>
+    <</if>>
     <li>[[Library Science|Part15MajorLibrary]]</li>
     <<if !$PlayerLazyStudent>>
       <li>[[Nursing|Part15MajorNursing]]</li>
@@ -202,11 +204,11 @@
   The university has a few more that you've decided against:
   <br><br>
   Arts: You aren't interested in being an Art major.
-      <<if $JobArtFormer>>
-        You've had enough of the art world already.
-      <<else>>
-        You've never really had much talent in that area.
-      <</if>>
+  <<if $JobArtFormer>>
+    You've had enough of the art world already.
+  <<else>>
+    You've never really had much talent in that area.
+  <</if>>
   <br><br>
   <<if (!$dating.length and !$Engaged and !$Spouse) or setup.haveGirlfriend() or $tempFamilySize == 'NoKids'>>
     Child Care:
@@ -224,6 +226,16 @@
   <<if $Spouse == "Andrew">>
     Fashion Design - You love wearing it, but designing isn't really your thing.  Besides you know a job in the fashion
     industry would have you travelling all over the world, and away from Andrew.  And you don't want that.
+    <br><br>
+    Health Sciences -
+    <<if $PlayerLazyStudent>>
+      Some people think it's a blow-off degree, but you've seen the course requirements.  It's not as bad as Nursing,
+      but you'd be spending all your time studying anatomy and what-not, and not be able to spend enough time with Andrew.
+      At at then, for what, to be a personal trainer or something?
+    <<else>>
+      If you are going to spend years studying anatomy and everything else, you'd rather go all the way and
+      get a nursing degree instead.
+    <</if>>
     <br><br>
   <</if>>
   <<if !$EngineeringShutdown>>
