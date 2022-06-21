@@ -4525,6 +4525,7 @@
     he says.  "After you've had your child."  He gives you are card his name on it.  "Give us a call next summer if you interested in joining the hunt.  You
     don't even need to be a paying guest to particpate.  As prey that is."
   <<elseif $PlayerSideEffectSubmissive >4>>
+    <<set $tempForceHunt to 1>>
     As he describes the hunt, and you imagine being stalked by horny men, you imagine them capturing you.  You imagine being taken by them and used by them.
     You think of being helpless and used, of having no say over what happens to you next, of being completely at their mercy.  The thought is irresistible
     to you. "[[Of course, I'm interested.|Part14IslandTest]]", you eagerly tell him.
@@ -4561,7 +4562,12 @@
   <</if>>
   <<if $BarryIslandTricked>>
     <br><br>
-    Or have you still [[not forgiven Barry|Part14IslandAngryEnd]] for tricking you into coming here.
+    <<if $tempForceHunt>>
+      And best of all, participating in the hunt means you won't have to fly back with Barry.  You may have discovered
+      something about yourself while you were here, but you still don't forgive him for tricking you.
+    <<else>>
+      Or have you still [[not forgiven Barry|Part14IslandAngryEnd]] for tricking you into coming here.
+    <</if>>
   <</if>>
 <</nobr>>
 
@@ -4646,6 +4652,9 @@
   <<if $PlayerSideEffectPermanent>>
     <<set $IslandAlreadyPermanent to 1>>
   <</if>>
+  <<if $BarryIslandTricked>>
+    <<set setup.breakupWith('Barry')>>
+  <</if>>
   <<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - hunt start', 0)>>
   When you tell them you plan on being one of the prey for the hunt, they send you over to the resort's medical clinic, Barry doesn't need to leave for the
   airport just yet, so he goes with you.  "There's just a few standard tests I need to do to make sure you are healthy enough to 'compete'," the doctor tells
@@ -4695,9 +4704,21 @@
     <<if $PregnancyCheck.actualFather == 'Barry'>>
       From his reaction, you know Barry wants you to prevent the pregnancy, but he hasn't said anything. The decision is up to you.
     <</if>>
-    <br><br>    
-    Do you want to [[proceed with the pregnancy|Part14IslandReturn]] and head home with Barry? Or do you want to [[prevent the pregnancy|IslandHunt]] and
-    continue with your plan to join the hunt.
+    <br><br>
+    <<if setup.isFWB('Barry')>>
+      Do you want to [[proceed with the pregnancy|Part14IslandReturn]] and head home with Barry? Or do you want to
+      [[prevent the pregnancy|IslandHunt]] and continue with your plan to join the hunt.
+    <<else>>
+      They ask you if you want to proceed with the pregnancy and head home with Barry, or if you want to
+      [[prevent the pregnancy|IslandHunt]] and continue with your plan to join the hunt.
+      You don't want to go home with Barry, and you certainly don't want to have
+      <<if $PregnancyCheck.actualFather == 'Barry'>>
+        his baby!
+      <<else>>
+        a baby he had anything to do with.
+      <</if>>
+      So you tell them to prevent the pregancy, and stick with your plan to join the 'hunt'.
+    <</if>>
     <<unset $IslandAlreadyPermanent>>
     <<if setup.pregnantFirstTime()>>
       <<achievement>>firsttime+pregnant<</achievement>>
