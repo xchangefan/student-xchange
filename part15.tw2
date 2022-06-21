@@ -3825,10 +3825,14 @@
 <</nobr>>
 
 ::Part15ThirdTrimester
-TODO Preg: Have third trimester visit, then [[Part15WeekStandard]]
+(Third trimester OB visit to be added here)
+
+[[Continue|Part15WeekStandard]]
 
 ::Part15Delivery
-TODO Preg: Having the baby now [[Part15WeekStandard]]
+(Childbirth to be added here)
+
+[[Continue|Part15WeekStandard]]
 
 ::Part15WeekNoAdvance
 <<nobr>>
@@ -7208,7 +7212,15 @@ TODO Preg: Having the baby now [[Part15WeekStandard]]
 
 <<nobr>>
   There's a number of different events going on.
-  <<if $PlayerChastityBelt>>
+  <<if $PlayerPregnant and $PregnancyWeek < 12>>
+    You are only a few weeks pregnant, so it'd probably be fine for you to partiicipate.
+  <</if>>
+  <<if $PlayerPregnant and $PregnancyWeek >= 12>>
+    Since you are pregnant and the events are fairly physical, you decide it's best to just watch.
+    <br><br>
+    You are feeling a bit nauseous after the first event, so you end up [[heading home|Part15SororityDormOrNextWeek]] and
+    skipping the awards ceremony and the party afterwards.
+  <<elseif $PlayerChastityBelt>>
     You enjoy watching many of them.  But since you are wearing your chastity belt, the only one you can join in on is the
     [[Tug-of-War|Part15SororityTug]] at the end.
   <<elseif $JobCheerleader or $JobCheerleaderFundraiser>>
