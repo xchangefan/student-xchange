@@ -792,6 +792,7 @@
   - Other Toys: <<print setup.listInventory('toys')>>
   <<if $PlayerItemNerdKey>><br><br><<print "You have Peter's Chastity Key. ">><</if>>
   <<if $PlayerItemBuddyKey>><br><br><<print "You have Bailey's Chastity Key. ">><</if>>
+  <<if $DylanChastityKey>><br><br><<print "You have Dylan's Chastity Key. ">><</if>>
 <</nobr>>
 
 ::SideBarChastity <1600,0>
@@ -1110,6 +1111,8 @@
     <</if>>
     <<if !setup.areDating('Peter') and !setup.isFriendzoned('Peter') and $PlayerItemNerdKeyStripper>><br>Peter is a regular at the strip club, you hold the key to his chastity cage.<</if>>
   <</if>>
+  <<if $DylanChastityKey>><br><<print "You have the key to Dylan's chastity cage.">><</if>>
+  <<if $PlayerItemBuddyKey>><br><<print "You have the key to Bailey's chastity belt.">><</if>>
   <<if $children and $children.length>>
     <br>
     You are the mother of

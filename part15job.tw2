@@ -2176,6 +2176,8 @@
     <<include [[Part15JobBartender2]]>>
   <<elseif $SchoolWeek == 11 and $dating.length and !setup.areDating("Kate")>>
     <<include [[Part15JobBartender3Clean]]>>
+  <<elseif $SchoolWeek == 11 and setup.isGoldStarLesbian()>>
+    <<include [[Part15JobBartender3Clean]]>>
   <<elseif $SchoolWeek == 11>>
     <<include [[Part15JobBartender3]]>>
   <<else>>

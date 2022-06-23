@@ -544,6 +544,7 @@
   <img src="PartP/Treatment.jpg" hspace="10" vspace="10" height="606" align="left">
   <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
   <<unset $PlayerSideEffectOrgasmBlock>>
+  <<set $PlayerCumTreatments to 1>>
   "There's been some new research on the "Orgasm Block" side-effect
   that some implants, like yours, develop.  They've found a cure.  Well, a treatment technically since it never goes away and you
   have to keep taking the treatment, one way or another."
@@ -1055,6 +1056,8 @@
       <<set $tempQuitJob to $tempMainJob>>
       <<set $JobBaristaOld to $JobBarista>>
       <<unset $JobBarista>>
+      <<set $JobBikiniBaristaOld to $JobBikiniBarista>>
+      <<unset $JobBikiniBarista>>
       <<set $JobAthleteFormer to $JobAthleteFormer or $JobAthlete>>
       <<unset $JobAthlete>>
       <<set $JobCheerleaderFormer to $JobCheerleaderFormer or $JobCheerleader>>
@@ -4842,7 +4845,9 @@
       <<include [[Part15BuddyPart2]]>>
     <<case 5>>
       <!-- Sept w3 -->
-      <<if $PlayerMother>>
+      <<if $DylanChastityKey and $tempDylanChastityKeyShow != 5>>
+        <<include [[Part15DylanChastityWeek5]]>>
+      <<elseif $PlayerMother>>
         <<include [[Part15Baby2]]>>
       <<else>>
         <<include [[Part15Major]]>>
@@ -4917,6 +4922,59 @@
   <<set $TO_BE_CONTINUED to 1>>
   <!-- Dec w2 -->
   <!-- to be continued week 16 -->
+<</nobr>>
+
+::Part15DylanChastityWeek5
+<<nobr>>
+  <h1>Video calling with Dylan</h1>
+  You give Dylan a call and have him point his camera at himself.  "I'm going to unlock your cage, Dylan," you tell him.
+  "But you aren't allowed to cum unless I say you can. You need to wait until then, or stop touching yourself if I tell
+  you to stop.  Do you understand?"
+  <<set $tempDylanChastityKeyShow to 5>>
+<</nobr>>
+
+<<nobr>>
+  "Yes, Mistress, I understand," he responds quickly.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Buddy56.mp4" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  You let him stroke his cock for a while.  You try to keep an close eye on him to make sure he's not getting too
+  close to cumming.  "Ok, stop for a bit," you tell him.  You let him continue when he's cooled off a bit, and
+  repeat the process several times.
+<</nobr>>
+
+<<nobr>>
+  Finally, after one of his edges, you give him a choice.  "Dylan, I'll let you cum, but one condition."
+  His face lights up, though you can see a bit of worry as he waits to hear what the condition is.
+  "You'll need to catch your cum in your hand, and then lick your hand clean.  Every drop."
+<</nobr>>
+
+<<nobr>>
+  "Yes, Mistress," he responds without a moments hesitation.  You tell him he can proceed then, and that he can
+  cum this time.
+<</nobr>>
+
+<<nobr>>
+  He moans loudly as thick spurts of cum spurt out and into his other hand.  When he stops stroking you can see
+  a look of hestiation on his face but then he takes his hand to his mouth and licks it clean, as promised.
+<</nobr>>
+
+<<nobr>>
+  "Now put your cock away," you order Dylan.  Once he does you hit the button on your phone confirming his cage
+  is locked again.
+<</nobr>>
+
+<<nobr>>
+  "You were a good boy, Dylan, so maybe we'll do this again in a few weeks."  Don't be expecting anything
+  more [[this week|Part15WeekNoAdvance]] though.
+<</nobr>>
+
+<<nobr>>
+  "Thank you, Mistress," he responds before you end the video call with him.
 <</nobr>>
 
 ::Part15Probation1
@@ -7584,13 +7642,57 @@
     You know you should leave now before you do something bad.  But then you figure a good girl wouldn't be here, dressed like this, and
     thinking the things that you are right now.  So maybe you aren't a good girl like you pretend to be.  Maybe it'd be much more fun
     [[to be a bad girl|Part15SororityFootball4Ministry]].
+  <<elseif setup.isGoldStarLesbian()>>
+    One of the other lingerie foodball players seems to have noticed your repeated glances at her. Seeing your interest, she
+    comes over and starts flirting with you.  You don't want to waste any more time.  Before long you and her are kissing,
+    getting some cheers from the actual football players watching.  You tell her, "Why don't we
+    [[go somewhere private|Part15SororityFootball4Lesbian]]."
   <<else>>
-    One of the football players seems to have noticed your repeated glances at the bulge in is pants.  Seeing your interest, he comes over
-    and starts flirting with you.  You don't want to waste any more time.  You places your hand on his bulge and feel his cock twitch at
-    the touch and strain against his pants.  You tell him, "That looks like it hurts.  Why don't we go somewhere private, and you can slip
-    into something more comfortable... [[me for instance|Part15SororityFootball4]]."
+    One of the actual football players seems to have noticed your repeated glances at the bulge in his pants.  Seeing your interest, he
+    comes over and starts flirting with you.  You don't want to waste any more time.  You places your hand on his bulge and feel his
+    cock twitch at the touch and strain against his pants.  You tell him, "That looks like it hurts.  Why don't we go somewhere
+    private, and you can slip into something more comfortable... [[me for instance|Part15SororityFootball4]]."
   <</if>>
 <</nobr>>
+
+::Part15SororityFootball4Lesbian
+<<nobr>>
+  <h1>Giving a little show before you leave</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Sorority16.webm" autoplay loop muted height="550"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  You and her [[want to be alone|Part15SororityFootball4Lesbian2]].  But you decide to give the guys, and any girls with
+  interests like yours, a little show on your way out.  It's clearly a big hit, some of the guests even take a few photos.
+  They'll probably go well with the other photos of you from earlier in the day.
+<</nobr>>
+
+::Part15SororityFootball4Lesbian2
+<<nobr>>
+  <h1>Alone with Lisa</h1>
+  <video src="Part15/Sorority17.webm" autoplay loop muted height="450"></video>
+  <<set setup.addSexRepeat(6, {sex:"female", name:"Lisa"})>>
+<</nobr>>
+<<nobr>>
+  You are barely through the door and
+  Lisa has your hands held together above your head.  "Did that excite you, my little slut, being dressed like this in front of
+  all those people?"  You nod submissively.  She pauses to remove your bra and panties before continuing.
+  <br><br>
+  "I bet you are soaking wet right now, aren't you slut?" she asks as her hand moves down your side and then back up your inner thigh.
+  After you nod, her hand passes by, not sliding into you to check as you had been expecting.  You whimper slightly with need.
+  "I asked you a question," she says firmly.
+  <br><br>
+  "Yes.  Yes, I'm a slut.  I'm your slut.  I loved being dressed like this at the party, and in front of all those people at the game.
+  I'm so wet right now.  Please, please..."
+  <br><br>
+  Her hand circles around again, but this time instead of passing by, she slides two fingers inside you.  She brings them to your
+  lips and has you taste your wetness on them.  After you've sucked them clean, her hand returns and her fingers slide into you again.
+  <br><br>
+  She gives you your first orgasm of the night right there, pressed up aginst the wall.  Though there are plenty more after that for
+  both of you before the [[night is over|Part15SororityDormOrNextWeek]].
+<</nobr>>
+
 
 ::Part15SororityFootball4Girlfriend
 <<nobr>>
@@ -7631,7 +7733,7 @@
     both of you before the [[night is over|Part15SororityDormOrNextWeek]].
   <<else>>
     $dating[0] has your hands held together above your head.  "Did that excite you, my little slut, being dressed like this in front of
-    all those people?"  You nods submissively.  She pause to remove your bra and panties before continuing.
+    all those people?"  You nod submissively.  She pauses to remove your bra and panties before continuing.
     <br><br>
     "I bet you are soaking wet right now, aren't you slut?" she asks as her hand moves down your side and then back up your inner thigh.
     After you nod, her hand passes by, not sliding into you to check as you had been expecting.  You whimper slightly with need.
@@ -7640,7 +7742,7 @@
     "Yes.  Yes, I'm a slut.  I'm your slut.  I loved being dressed like this at the party, and in front of all those people at the game.
     I'm so wet right now.  Please, please..."
     <br><br>
-    Her hand circles around again, but this time instead of passing by she slides at two fingers inside you.  She brings them to your
+    Her hand circles around again, but this time instead of passing by, she slides two fingers inside you.  She brings them to your
     lips and has you taste your wetness on them.  After you've sucked them clean, her hand returns and her fingers slide into you again.
     <br><br>
     She gives you your first orgasm of the night right there, pressed up aginst the wall.  Though there are plenty more after that for
@@ -10303,10 +10405,14 @@
     <br><br>
     He continues switching back and forth between the two of you.  Each time he comes back to you, he fucks you harder, faster,
     and deeper than before.  This time, you don't think he's holding back anymore like he was at the beginning.
-  <<elseif setup.sexCount() == 0>>
+  <<elseif setup.sexMaleCount() == 0>>
     "Start with me," Marissa instructs.  As he starts to fuck her, you feel an aching need for him to switch to you.  You feel
     your heart race as his fingers slide into you and then start playing with your clit.  "Be gentle with her," Marissa remembers to say.
-    "This is her first time."
+    <<if setup.sexCount() == 0>>
+      "This is her first time."
+    <<else>>
+      "This is her first time with a guy."
+    <</if>>
     <br><br>
     That's enough to encourage him to switch to you.  You feel his cock push against your wet lips and then part them as he slowly
     enters you.  You moan as you feel his cock, all of his cock, finally inside you.  He starts fucking you faster when he sees
@@ -10315,6 +10421,9 @@
     <<if $AcademicProbationDenial>>
       You can't feel the pleasue you know you should though, just the fullness his cock gives you.  But it feels perfect, like you are meant
       to have a cock inside you.  Maybe you are.
+    <<elseif setup.isGoldStarLesbian()>>
+      It feels so good.  You wonder why you'd avoided men for this long.  If you'd known how good this would feel, you'd
+      have been much more open to it.
     <<else>>
       It feels so good.  You wonder why you'd waited this long.  You could have been doing this for an entire year!
     <</if>>
@@ -10357,7 +10466,7 @@
     <</if>>
     He's back to fucking Marissa when he finally cums.  You can't help but be a little jealous when he grabs her hips, and plunges
     deep inside her.  You imagine the feel of his warm cum inside you as he groans and [[cums inside her|Part15DormStonerMFF2]].
-  <<elseif $CampusMinistry>>
+  <<elseif $CampusMinistry or setup.isGoldStarLesbian()>>
     He keeps going, you don't want him to ever stop.  You feel an orgasm building inside you.  But before it arrives, you
     feel him grab your hips and pull you back into him.  You feel his cock thrusting deep into you.  Then you feel it throbbing
     inside you.
@@ -11512,6 +11621,14 @@
     Hopefully it'll be you moaning in a few minutes.
     <br><br>
     By the time you finish with $dating[0] and return home, Kiera's friend is gone and you have no trouble
+    [[getting to sleep|Part15Week]].
+  <<elseif setup.isGoldStarLesbian()>>
+    Realizing your hand is down in your panties,
+    <<if $PlayerSideEffectMasturbationBlock>>for all the good it would do,<</if>>
+    you realize you need to leave.  You quickly text a girl you know and then head to meet her.
+    Hopefully it'll be you moaning in a few minutes.
+    <br><br>
+    By the time you finish with her and return home, Kiera's friend is gone and you have no trouble
     [[getting to sleep|Part15Week]].
   <<else>>
     Kiera is looking right at you as he fucks her from behind.  You can't help yourself and find yourself on your hands and knees too, kissing her on the lips.
@@ -13627,7 +13744,11 @@
     tonight.
     <br><br>
     Though, once they figure out she has a girlfriend, and you are much more interested in their advances,
-    [[things start to change|Part15HalloweenBaileyLeft]].
+    <<if setup.isGoldStarLesbian()>>
+      [[things start to change|Part15HalloweenBaileyLeftLesbian]].
+    <<else>>
+      [[things start to change|Part15HalloweenBaileyLeft]].
+    <</if>>
   <<elseif setup.buddyHasBoyfriend()>>
     Bailey's boyfriend, $BuddyDating, has to work, so Bailey is going with you for Halloween.  You
     <<include [[Part15HalloweenBaileyCoordinate]]>>
@@ -13717,6 +13838,33 @@
   was before I changed.
 <</nobr>>
 
+::Part15HalloweenBaileyLeftLesbian
+<<nobr>>
+  <h1>After Bailey leaves</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part15/Halloween22.mp4" autoplay loop muted height="600"></video>
+  </div>
+  <<set setup.addSex({sex:"female", anon:"Fallen Angel"})>>
+  <<set setup.addSex({sex:"female", anon:"Fallen Angel", repeat:true})>>
+  <<set setup.addSex({sex:"female", anon:"Fallen Angel", repeat:true})>>
+  <<set setup.addSex({sex:"female", anon:"Fallen Angel", repeat:true})>>
+<</nobr>>
+
+<<nobr>>
+  After $BuddyDating gets off work, Bailey spends the rest of the evening with her.  Though you aren't alone for
+  very long.
+<</nobr>>
+
+<<nobr>>
+  You spend the rest of the evening with a beautiful "fallen angel".  She enjoys pretending you are a sweet, innocent
+  angel, and it's her job to corrupt you.  She does a wonderful job of it.
+<</nobr>>
+
+<<nobr>>
+  Of course [[the next morning|Part15Week]] as you walk back home in your costume, it's even more obvious to everyone
+  that you never made it home last night.
+<</nobr>>
+
 ::Part15HalloweenBaileyLeft
 <<nobr>>
   <h1>After Bailey leaves</h1>
@@ -13733,8 +13881,8 @@
 <</nobr>>
 
 <<nobr>>
-  You spend the rest of the evening with one of the guys from the party.  He enjoys pretending you are sweet, innocent
-  angel, and it's his job corrupting you.  He does a wonderful job of it.
+  You spend the rest of the evening with one of the guys from the party.  He enjoys pretending you are a sweet, innocent
+  angel, and it's his job to corrupt you.  He does a wonderful job of it.
 <</nobr>>
 
 <<nobr>>
