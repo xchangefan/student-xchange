@@ -169,7 +169,14 @@
       <<if ($PlayerMenstruation or $PlayerAbortion)>>
         <<set $CarBrad = 1>>
         <<set $PlayerMoney -= 50>>
-        <<set $PlayerMoney -= 150>>
+        <<if $DadShoppingMoney>>
+          <<set setup.addInventory('tools', 'expensive makeup')>>
+        <<else>>
+          <<set $PlayerMoney -= 150>>
+        <</if>>
+        <<if $PlayerMoney < 50 and $DadShoppingMoney>>
+          <<set $PlayerMoney to 50>>
+        <</if>>
         <<set $PlayerMoney -= 50>>
         You got started packing a bit late and left late too.  When you discovered your flat tire, it was too late to get it fixed.  Thankfully
         your friend Brad was willing to give you a ride home.  You ended up giving him $50 for gas each way.
@@ -193,17 +200,24 @@
     </td></tr>
 
     <tr><td>
-      <<set $PlayerMoney -= 150>>
+        <<if !$DadShoppingMoney>>
+          <<set $PlayerMoney -= 150>>
+        <</if>>
+        <<if $PlayerMoney < 50 and $DadShoppingMoney>>
+          <<set $PlayerMoney to 50>>
+        <</if>>
       <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
-      <br><br>
-      <<if $PlayerMenstruation or $PlayerAbortion>>
-        Maybe you shouldn't have spend that money at the mall shopping with your sister.  
-      <<else>>
-        You probably shouldn't have spent the $150 with your sister at the mall.
+      <<if !$DadShoppingMoney>>
+        <br><br>
+        <<if $PlayerMenstruation or $PlayerAbortion>>
+          Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+        <<else>>
+          You probably shouldn't have spent the $150 with your sister at the mall.
+        <</if>>
+        But it was so much fun being able to shop as a girl now, and having her there to help.  She even did her best to divert
+        the attention of some guys that were hitting on you when she saw it was making you uncomfortable.
+        <br>
       <</if>>
-      But it was so much fun being able to shop as a girl now, and having her there to help.  She even did her best to divert
-      the attention of some guys that were hitting on you when she saw it was making you uncomfortable.
-      <br>
     </td></tr>
     <tr><td>
       <img src="Part8/Christmas1.jpg" hspace="10" vspace="10" height="300">
@@ -250,17 +264,26 @@
       <</if>>
     </td></tr>
     <tr><td>
-      <<set $PlayerMoney -= 150>>
-      <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
-      <br><br>
-      <<if $PlayerMenstruation or $PlayerAbortion>>
-        Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+      <<if $DadShoppingMoney>>
+        <<set setup.addInventory('tools', 'expensive makeup')>>
       <<else>>
-        You probably shouldn't have spent the $150 with your sister at the mall.
+        <<set $PlayerMoney -= 150>>
       <</if>>
-      But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
-      at the mall, even if you did tell him you weren't interested.
-      <br>
+      <<if $PlayerMoney < 50 and $DadShoppingMoney>>
+        <<set $PlayerMoney to 50>>
+      <</if>>
+      <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
+      <<if !$DadShoppingMoney>>
+        <br><br>
+        <<if $PlayerMenstruation or $PlayerAbortion>>
+          Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+        <<else>>
+          You probably shouldn't have spent the $150 with your sister at the mall.
+        <</if>>
+        But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
+        at the mall, even if you did tell him you weren't interested.
+        <br>
+      <</if>>
       <img src="Part8/Mall3.jpg" hspace="10" vspace="10" height="300">
     </td></tr>
     <tr><td>
@@ -295,7 +318,14 @@
       <<if $PlayerMenstruation or $PlayerAbortion>>
         <<set $CarBrad = 1>>
         <<set $PlayerMoney -= 50>>
-        <<set $PlayerMoney -= 150>>
+        <<if $DadShoppingMoney>>
+          <<set setup.addInventory('tools', 'expensive makeup')>>
+        <<else>>
+          <<set $PlayerMoney -= 150>>
+        <</if>>
+        <<if $PlayerMoney < 50 and $DadShoppingMoney>>
+          <<set $PlayerMoney to 50>>
+        <</if>>
         <<set $PlayerMoney -= 50>>
         You got started packing a bit late and left late too.  When you discovered your flat tire, it was too late to get it fixed.  Thankfully
         your friend Brad was willing to give you a ride home.  You ended up giving him $50 for gas each way.
@@ -312,21 +342,26 @@
         it fixed.  Then, in your hurry to get home on time after the delay, you ended up getting a speeding ticket and arrested!
         <img src="Part8/Jail.jpg" hspace="10" vspace="10" height="250">
         <<set $PlayerMoney -= 150>>
+        <<if $PlayerMoney < 50 and $DadShoppingMoney>>
+          <<set $PlayerMoney to 50>>
+        <</if>>
         <<set $PlayerMoney -= 350>>    
       <</if>>
     </td></tr>
 
     <tr><td>
-      <<set $PlayerMoney -= 150>>
       <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
-      <br><br>
-      <<if $PlayerMenstruation or $PlayerAbortion>>
-        Maybe you shouldn't have spend that money at the mall shopping with your sister.  
-      <<else>>
-        You probably shouldn't have spent the $150 with your sister at the mall.
+      <<if !$DadShoppingMoney>>
+        <<set $PlayerMoney -= 150>>
+        <br><br>
+        <<if $PlayerMenstruation or $PlayerAbortion>>
+          Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+        <<else>>
+          You probably shouldn't have spent the $150 with your sister at the mall.
+        <</if>>
+        But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
+        at the mall, even if you did tell him you weren't interested.
       <</if>>
-      But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
-      at the mall, even if you did tell him you weren't interested.
       <br>
       <img src="Part8/Mall3.jpg" hspace="10" vspace="10" height="300">
     </td></tr>
@@ -435,13 +470,22 @@
     <tr><td>
       <<set setup.addSex({sex: 'male', name: 'Cody'})>>
       <<set setup.addSex({sex: 'male', name: 'Cody', vaginal: true, birthControlOverride:'cycle'})>>
-      <<set $PlayerMoney -= 150>>
+      <<if $DadShoppingMoney>>
+        <<set setup.addInventory('tools', 'expensive makeup')>>
+      <<else>>
+        <<set $PlayerMoney -= 150>>
+      <</if>>
+      <<if $PlayerMoney < 50 and $DadShoppingMoney>>
+        <<set $PlayerMoney to 50>>
+      <</if>>
       <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
-      <br><br>
-      Maybe you shouldn't have spend that money at the mall shopping with your sister.  
-      But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
-      at the mall, especially that cute guy Cody you hooked up with later.
-      <br>
+      <<if !$DadShoppingMoney>>
+        <br><br>
+        Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+        But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
+        at the mall, especially that cute guy Cody you hooked up with later.
+        <br>
+      <</if>>
       <video src="Part8/Evening12.mp4" autoplay loop muted height="300"></video>
     </td></tr>
     <tr><td>
@@ -490,13 +534,22 @@
     <tr><td>
       <<set setup.addSex({sex: 'male', name: 'Cody'})>>
       <<set setup.addSex({sex: 'male', name: 'Cody', vaginal: true, birthControlOverride:'cycle'})>>
-      <<set $PlayerMoney -= 150>>
+      <<if $DadShoppingMoney>>
+        <<set setup.addInventory('tools', 'expensive makeup')>>
+      <<else>>
+        <<set $PlayerMoney -= 150>>
+      <</if>>
+      <<if $PlayerMoney < 50 and $DadShoppingMoney>>
+        <<set $PlayerMoney to 50>>
+      <</if>>
       <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="450" align="left">
-      <br><br>
-      Maybe you shouldn't have spend that money at the mall shopping with your sister.  
-      But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
-      at the mall, especially that cute guy Cody you hooked up with later.
-      <br>
+      <<if !$DadShoppingMoney>>
+        <br><br>
+        Maybe you shouldn't have spend that money at the mall shopping with your sister.  
+        But it was so much fun being able to shop as a girl now, and having her there to help.  It was also fun having guys hit on you
+        at the mall, especially that cute guy Cody you hooked up with later.
+        <br>
+      <</if>>
       <video src="Part8/Evening12.mp4" autoplay loop muted height="300"></video>
     </td></tr>
     <tr><td>
@@ -1151,36 +1204,81 @@
 
 ::Part8HomeMall1 <1000,6600>
 <<nobr>>
-	<<set $PlayerMoney -= 200>>
-	<<if $PlayerMoney < 0>><<set $PlayerCredit = 1>><</if>>
-	
 	<h1><<print "Shopping Mall">></h1>
+  <img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<if !$DadShoppingMoney>>
+  	<<set $PlayerMoney -= 200>>
+	  <<if $PlayerMoney < 0>><<set $PlayerCredit = 1>><</if>>
+  <</if>>
 <</nobr>>
 
-<<print "When you mention that you still need to buy gifts, Cassie excitedly suggests the two of you head to the mall. You spend around $200 buying all the gifts you need for everyone. ">><<if $PlayerCredit>><<print "Maybe you should be more careful about spending on credit, but you still think it was worth it.">><</if>>
-<img src="Part8/Mall1.jpg" hspace="10" vspace="10" height="650">
-
-<<print "But instead of heading home you keep shopping. You’re having fun, and your sister seems to really enjoy having a little sister that ">>[[she can shop with now.|Part8HomeMall2]]<<print " She really seems to love dressing you up and having you try things on.">>
-<<if $PlayerChastityBelt>><br><<print "Although due to your chastity belt some clothing options don’t work for you, but you still have fun with what you can wear.">><</if>>
+<<nobr>>
+  When you mention that you still need to buy gifts, Cassie excitedly suggests the two of you head to the mall.
+  <<if $DadShoppingMoney>>
+    She's extra excited when your mom gives you the credit card, like your father had promised you he'd do before you
+    left for school.
+    <br><br>
+    Cassie leads you from store to store.  You are having afun and your sister seems to really enjoy having a
+    little sister that [[she can shop with now.|Part8HomeMall2]] She really seems to love dressing you up and having you
+    try things on.
+  <<else>>
+    You spend around $200 buying all the gifts you need for everyone.
+    <<if $PlayerCredit>>
+      Maybe you should be more careful about spending on credit, but you still think it was worth it.
+    <</if>>
+    <br><br>
+    But instead of heading home you keep shopping. You’re having fun, and your sister seems to really enjoy having a
+    little sister that [[she can shop with now.|Part8HomeMall2]] She really seems to love dressing you up and having you
+    try things on.
+    <<if $PlayerChastityBelt>>
+      <br><br>
+      Although due to your chastity belt some clothing options don’t work for you, but you still have fun with what you
+      can wear.
+    <</if>>
+  <</if>>
+<</nobr>>
 
 ::Part8HomeMall2 <1200,6600>
 <<nobr>>
-	<h1><<print "Shopping Mall">></h1>
+	<h1>Shopping Mall</h1>
+  When your sister takes you to a cosmetics store, you are amazed and overwhelmed at how huge it is and all
+  the different options. You are also shocked at how much everything costs.
+  <<if $DadShoppingMoney>>
+    Though that's not a problem for you today.
+  <<else>>
+    She explores with you though and helps you make a list of what would work well for you, and tells to keep it
+    handy and watch for sales.
+  <</if>>
 <</nobr>>
-
-<<print "When your sister takes you to a cosmetics store, you are amazed and overwhelmed at how huge it is and all the different options. You are also shocked at how much everything costs.">>
-<img src="Part8/Mall2.jpg" hspace="10" vspace="10" height="650">
-
-<<print "She explores with you though and helps you make a list of what would work well for you, and tells to keep it handy and watch for sales.">>
-
-<<print "Your mentor taught you the basics with your makeup, but you can see there’s a lot more you can learn too. The two of you leave the store without buying anything, ">>[[but you save the list on your phone for later.|Part8HomeMall3]]
+<<nobr>>
+  <img src="Part8/Mall2.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+<<nobr>>
+  Your mentor taught you the basics with your makeup, but you can see there’s a lot more you can learn too.
+  <<if $DadShoppingMoney>>
+    <<set setup.addInventory('tools', 'expensive makeup')>>
+    Cassie has you sit while one of ladies at the makeup store does your makeup for you.  When she's finished
+    you are amazed at how beautiful you look.  You buy one of everything she used with your dad's credit card.
+    You only hope you'll be as good at applying it as the woman here was.
+    <br><br>
+    <<if $PlayerMoney < 50>>
+      <<set $PlayerMoney to 50>>
+      You'd told your sister about your money troubles and that you were so glad Dad was letting you use the card.
+      That gave her an idea.  "Why don't I buy a few things too with Dad's card.  And then I'll pay you what I would
+      have paid the store.  Dad's not going to complain about you spending too much here, especially since he knows
+      you're starting from scratch."  She seems to have thought this through.  You wonder how many times she's done
+      something similar to get money from your father.
+      <br><br>
+    <</if>>
+    You and Cassie then [[head toward the next store.|Part8HomeMall3]]
+  <<else>>
+    The two of you leave the store without buying anything, [[but you save the list on your phone for later.|Part8HomeMall3]]
+  <</if>>
+<</nobr>>
 
 ::Part8HomeMall3 <1400,6600>
 <<nobr>>
-	<h1><<print "Shopping Mall">></h1>
-<</nobr>>
-
-<<nobr>>
+	<h1>Shopping Mall</h1>
 	As you and Cassie walk from store to store, a cute guy starts flirting with you.
 	<<if $KidnapEscape>>
 		Your sister tries to get you to flirt back at him, but you don't.  She decides to flirt back with him instead.
@@ -1200,10 +1298,9 @@
 	<</if>>
 <</nobr>>
 
-
 ::Part8HomeMall4 <1600,6600>
 <<nobr>>
-	<<if !setup.areDating('Aaron')>><<set $PlayerMoney -= 150>><</if>>
+	<<if !setup.areDating('Aaron') and !$DadShoppingMoney>><<set $PlayerMoney -= 150>><</if>>
 	<<if setup.haveInventory('underwear', 'sexy underwear')>>
     <<set setup.addInventory('underwear', 'erotic underwear')>>
   <<else>>
@@ -1212,28 +1309,41 @@
   <<if $dating.length>>
     <<set setup.addInventory('sex toys', 'remote vibrator')>>
   <</if>>
-	<h1><<print "Shopping Mall">></h1>
+	<h1>Shopping Mall</h1>
+  The cute guy just watches as Cassie and you disappear into the Victoria’s Secret store.
 <</nobr>>
 
-<<print "The cute guy just watches as Cassie and you disappear into the Victoria’s Secret store.">>
-
-<<print "She helps you pick out a few things that you both think look <<if $KidnapEscape>>pretty<<else>>sexy<</if>> on you. You also help her find a couple things for herself as well. It’s an odd feeling at first, watching your sister try on lingerie, but it doesn’t take you long to adjust.">>
-<img src="Part8/Mall4.jpg" hspace="10" vspace="10" height="650">
-
 <<nobr>>
-	<<print "You are shocked as your small bag of purchases totals up to $150. (Ok, so maybe it was more than one bag. But you look so <<if $KidnapEscape>>beautiful<<else>>sexy<</if>> in them all, and you just couldn’t decide on just one.) ">>
-	<<if setup.areDating('Aaron')>>
-		<<print "“Daddy” has given you a credit card to use for purchases just like this, so you use that.">>
-		<<else>>
-		<<if $PlayerMoney < 0>>
-			<<if $PlayerCredit>>
-				<<print "You are already on credit, so spending a bit more wont't hurt, right?">>
-			<<else>>
-				<<set $PlayerCredit = 1>>
-				<<print "Maybe you should be more careful about spending on credit, but you still think it was worth it.">>
-			<</if>>
-		<</if>>
-	<</if>>
+  She helps you pick out a
+  <<if $DadShoppingMoney>>
+    bunch of
+  <<else>>
+    few
+  <</if>>
+  things that you both think look
+  <<if $KidnapEscape>>pretty<<else>>sexy<</if>>
+  on you. You also help her find a couple things for herself as well. It’s an odd feeling
+  at first, watching your sister try on lingerie, but it doesn’t take you long to adjust.
+<</nobr>>
+<img src="Part8/Mall4.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  <<if $DadShoppingMoney>>
+    You put Cassie's and your purchases on your Dad's credit card.
+  <<else>>
+    <<print "You are shocked as your small bag of purchases totals up to $150. (Ok, so maybe it was more than one bag. But you look so <<if $KidnapEscape>>beautiful<<else>>sexy<</if>> in them all, and you just couldn’t decide on just one.) ">>
+    <<if setup.areDating('Aaron')>>
+      <<print "“Daddy” has given you a credit card to use for purchases just like this, so you use that.">>
+      <<else>>
+      <<if $PlayerMoney < 0>>
+        <<if $PlayerCredit>>
+          <<print "You are already on credit, so spending a bit more wont't hurt, right?">>
+        <<else>>
+          <<set $PlayerCredit = 1>>
+          <<print "Maybe you should be more careful about spending on credit, but you still think it was worth it.">>
+        <</if>>
+      <</if>>
+    <</if>>
+  <</if>>
 <</nobr>>
 
 <<print "When you leave, <<if $KidnapEscape>>Cassie looks around and is a bit disappointed<<else>>you look around and are a bit disappointed <</if>>">> [[to see the cute guy is long gone.|Part8HomeMall5]]
@@ -1241,9 +1351,13 @@
 ::Part8HomeMall5 <1800,6600>
 <<nobr>>
 	<h1><<print "Coffee Shop">></h1>
+  <img src="Part8/Mall5.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 
-<<print "Your sister and you stop at the coffee shop near the mall before heading home. While you are there, Cassie points out the guy from earlier, at another table drinking a latte and looking at his phone.">>
+<<nobr>>
+  Your sister and you stop at the coffee shop near the mall before heading home. While you are there, Cassie points out the
+  guy from earlier, at another table drinking a latte and looking at his phone.
+<</nobr>>
 
 <<nobr>>
 	He glances up and sees the two of you looking over at him and comes over to introduce himself. 
@@ -1254,7 +1368,6 @@
 		Your sister says she is going back to the counter to pick up a drink for your mom, and invites him to take her seat.
 	<</if>>
 <</nobr>>
-<img src="Part8/Mall5.jpg" hspace="10" vspace="10" height="650">
 
 <<if !$KidnapEscape>><<print "You have a very pleasant conversation with him. When you have completely finished with your drink, you realize that your sister has been gone quite a while. When you look around the shop, you see her at another table, finished with her drink and holding your mom’s.">><</if>>
 
@@ -1265,9 +1378,14 @@
 ::Part8Home5 <0,6750>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
+  That night you think about the day and what a fun time
+    <<if $KidnapEscape>>
+      [[it was.|Part8Text1]]
+    <<else>>
+      it was.  But then you think of ways it could have been even more fun. Whichever of the ideas that flood your mind
+      excites you the most, you linger on that one, imagining it in great detail:
+    <</if>>
 <</nobr>>
-
-<<print "That night you think about the day and what a fun time <<if $KidnapEscape>>[[it was.|Part8Text1]]<<else>>it was.  But then you think of ways it could have been even more fun. Whichever of the ideas that flood your mind excites you the most, you linger on that one, imagining it in great detail:<</if>>">>
 
 <<if !$KidnapEscape>><<print "What if you’d gone home with Cody instead of your sister. What would have happened at his house.">><<if $NumberCody>><<print " What if you called him right now and asked to come over now?">><</if>><</if>>
 <<if !$KidnapEscape and !$CampusMinistry and !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><video src="Part8/Home9.mp4" autoplay loop muted height="640"></video><br><<else>><img src="Part8/Home10.jpg" hspace="10" vspace="10" height="650"><</if>>
@@ -1280,22 +1398,29 @@
 
 ::Part8Text1 <200,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></h1>
+	<h1>Bedroom</h1>
+  You have a lot of time to yourself over the next few days. [[You spend plenty of it on your phone,|Part8Text2]]
+  staying in touch with everyone that matters to you back at school.
 <</nobr>>
-
-<<print "You have a lot of time to yourself over the next few days. ">>[[You spend plenty of it on your phone,|Part8Text2]]<<print " staying in touch with everyone that matters to you back at school.">>
-<img src="Part8/Text1.jpg" hspace="10" vspace="10" height="650">
-<<if $NumberCody>><br><<print "You text quite a bit with Cody as well.">><</if>>
-<<if $KidnapEscape>><br>Spending time with family is helping you take your mind off recent events and you are feeling a bit better.<</if>>
+<<nobr>>
+  <img src="Part8/Text1.jpg" hspace="10" vspace="10" height="650">
+  <<if $NumberCody>>
+    <br>
+    You text quite a bit with Cody as well.
+    <br>
+  <</if>>
+  <<if $KidnapEscape>>
+    <br>
+    Spending time with family is helping you take your mind off recent events and you are feeling a bit better.
+  <</if>>
+<</nobr>>
 
 ::Part8Text2 <400,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></h1>
+	<h1>Bedroom</h1>
+  You snap a sexy selfie during the day.
 <</nobr>>
-
-<<print "You snap a sexy selfie during the day.">>
 <img src="Part8/Text2.jpg" hspace="10" vspace="10" height="650">
-
 <<nobr>>
 	<<if setup.areDating('Veronica')>><<print "You send your picture to Veronica, and tell her how much you miss her. ">>[[You promise to text more tonight.|Part8Text4]]
 	<<elseif setup.areDating('Andrew')>><<print "You send your picture to Andrew, and tell him how much you miss him. ">>[[You promise to text more tonight.|Part8Text4]]
@@ -1309,13 +1434,14 @@
 
 ::Part8Text3 <600,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></h1>
+	<h1>Bedroom</h1>
+  You can’t be there in person to tease him. But you know he’s back at his own parent’s house locked in chastity and
+  thinking of you. Just because he’s hundreds of miles away, that doesn’t mean you can’t still tease him.
 <</nobr>>
 
-<<print "You can’t be there in person to tease him. But you know he’s back at his own parent’s house locked in chastity and thinking of you. Just because he’s hundreds of miles away, that doesn’t mean you can’t still tease him.">>
-
-<video src="Part8/Text3.webm" autoplay loop muted height="600"></video>
-
+<<nobr>>
+  <video src="Part8/Text3.webm" autoplay loop muted height="600"></video>
+<</nobr>>
 
 <<print "You let him know the Christmas spirit has you feeling especially generous. You say that if you were there with him, you might let him out of his chastity to stroke himself to an orgasm. Or even let him fuck you as his Christmas present. Too bad for him, you’re not. (Whether it’s true or not, you still love thinking of his poor little cock, straining against its cage, when you tell him.)">>
 
@@ -1323,10 +1449,9 @@
 
 ::Part8Text4 <800,6750>
 <<nobr>>
-	<h1><<print "Bedroom">></h1>
+	<h1>Bedroom</h1>
+  You nestle the remote-controlled vibrator you brought with you inside you and against your clit. The earbuds in your ear ensure that only you can hear the sounds your would-be lover makes.
 <</nobr>>
-
-<<print "You nestle the remote-controlled vibrator you brought with you inside you and against your clit. The earbuds in your ear ensure that only you can hear the sounds your would-be lover makes.">>
 
 <<nobr>>
 	<<print "Hundreds of miles away, ">>

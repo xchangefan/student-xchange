@@ -3852,6 +3852,13 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</if>>
 	<<if !$PlayerSideEffectOral and $FunPoints < 9 and !$JobAthlete and !$JobCheerleader and !$JobCheerleaderFundraiser>>
 		Or you can decide that [[you want to be judged just on your work.|Part6Exam]]
+  <<elseif $FatherSettings and setup.sexUniqueMaleCount() <= 1>>
+    <br><br>
+    But you know your dad would think you are a slut for sucking some professor's cock for a better grade.
+    <<if $dating.length>>
+      And you're also worried $dating[0] would find out and think less of you too.
+    <</if>>
+    Maybe you should just [[be judged based on your work.|Part6Exam]]
 	<</if>>
 <</nobr>>
 
