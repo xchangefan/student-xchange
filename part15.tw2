@@ -512,21 +512,29 @@
 ::Part15Clinic
 <<nobr>>
   <h1>At the X-Change Clinic</h1>
-  <img src="Part15/Clinic1.jpg" hspace="10" vspace="10" height="550">
-<</nobr>>
-<<nobr>>
+  <<if !$PlayerChastityBelt>>
+    <img src="Part15/Clinic1.jpg" hspace="10" vspace="10" height="550">
+    <br>
+  <</if>>
   You've gotten familiar with the process, and strip down once you are in the exam room.
+  <<if $PlayerChastityBelt>>
+    At least as far as you can.  You have wait until they come in and unlock your belt for you.
+    <<if $UncleChasteBelt>>
+      Mike said he made a copy and sent it to them to use.
+    <</if>>
+    <br><br>
+  <</if>>
   <<if $PlayerSideEffectExhibitionist>>
     You don't bother with the gown.  You tell yourself it's just easier for everyone with out it.
     That's why, you aren't wearing it.  Not the small thrill you feel knowing they'll soon walk in and see you naked
     on the exam table.
   <<elseif $CampusMinistry>>
     Then you put on the gown they gave you.  You hate how naked you feel wearing it.  You know the doctor is going to
-    up close and very personal in just a moment anyway, but still you hate sitting hear with your butt hanging out of the
+    be up close and very personal in just a moment anyway, but still you hate sitting here with your butt hanging out of the
     back of the gown.
   <<else>>
     Then you put on the gown they gave you.  You aren't sure why you bother with it, your ass hangs out the back and in
-    a few minutes the doctor is going to up close and very personal anyway.  But you put it on and wait.
+    a few minutes the doctor is going to be up close and very personal anyway.  But you put it on and wait.
   <</if>>
 <</nobr>>
 
@@ -780,6 +788,15 @@
 
 <<nobr>>
   <<if $PregnancyCheck.isPregnant>>
+  <<elseif $UncleChasteBelt>>
+    The nurse secures your belt around you again.  Though you see she uses a different lock than the one it had before.
+    When you object she tells you not to worry, they'll explain it to you at the Engineering department.  You were already
+    curious about the [[meeting Mike had scheduled for you there|Part15TestSubjectBetaTestUncle]], now you are even more
+    curious about why they know about it here too.
+    <br><br>
+    Once your belt is secure, she releases the restraints that were holding your hands.  "Sorry we have to do that.  Some
+    of the chaste girls get a little rambunctious when they are unbelted.  I'm sure you wouldn't have been like that, but
+    it's standard procedure now."
   <<elseif $tempMinistryDenial>>
     There's something else the doctor wants to talk to you about.  You had mentioned to him that your level of sexual desire 
     <<if $CampusMinistry>>
@@ -1208,7 +1225,7 @@
 	<h1>At the engineering department</h1>
   <img src="Part15/TestSubject1.jpg" hspace="10" vspace="10" height="500" align="left">
   Once you arrive in the engineering department you let them know the X-Change doctor referred you here.  After having you fill out a questionnaire
-  and wait a few minutes you directed into the department head's office.
+  and wait a few minutes until you are directed into the department head's office.
 <</nobr>>
 
 <<nobr>>
@@ -1314,7 +1331,13 @@
     <video src="Part14/Chastity4.mp4" autoplay loop muted height="700"></video>
   </div>
   First he has you sign a non-disclosure agreement.  The belt is not on the market yet and they don't want any competitors finding out about it.
-  Then he sends you in to have a technician take care of your fitting.  The technician has you strip below the waist and measures you.
+  Then he sends you in to have a technician take care of your fitting.
+  <<if $PlayerChastityBelt>>
+    After you strip, he cuffs your hands over your head to a cuff and chain hanging from the ceiling.  Then he removes your
+    old belt and starts taking measurements of you.
+  <<else>>
+    The technician has you strip below the waist and measures you.
+  <</if>>
   <<if $CampusMinistryFailSummer>>
     The thoughts you have of his hands roaming your body confirm to you that you've made the right decision.
   <<else>>
@@ -1360,9 +1383,17 @@
     Your mind wanders, imagining the things Andrew might want to unlock you for.
   <<else>>
     "Oh, and if you enter into a monogamous relationship and wish to enable certain features for your boy or girlfriend, please let us know
-    as soon as possible.  After a waiting period, we will add them as a secondary/limited owner.  But that's just during testing, so they can't
+    as soon as possible.  After a waiting period,
+    <<if $UncleChasteBelt>>
+      and if approved by...", he checks your form before continuing. "It looks like his name is 'Mike'.  Then
+    <</if>>
+    we will add your boyfriend as a secondary/limited owner.  But that's just during testing, so they can't
     unlock you or alter anything that would affect the testing parameters.  Don't worry, as soon as testing is completed, we will automatically
-    convert them to a full owner with full access.  Then they'll be able to unlock you if they wish.
+    convert them to a full owner with full access.
+    <<if $UncleChasteBelt>>
+      Assuming Mike approves that is.
+    <</if>>
+    Then they'll be able to unlock you if they wish.
     <br><br>
     You start to fantasize about your wedding night, with your spouse reaching up under your dress to remove your belt, and then pushing
     you back onto the bed...
@@ -1392,6 +1423,9 @@
   <<elseif $CampusMinistryFailSummer>>
     You are tempted again when you see a hot guy jogging by, sweat glistening from his skin... But you remember your belt
     [[and keep walking home|Part15MinistryTesterFail]].
+  <<elseif $UncleChasteBelt>>
+    As you [[walk home|Part15MinistryTester4]] you realize you didn't ask about the pleasure settings.  You'll have to read
+    the manual to learn more about those you suppose.
   <<else>>
     You feel an odd sense of security knowing that your chastity is protected as you [[walk home|Part15MinistryTester4]]
   <</if>>
@@ -1830,11 +1864,22 @@
   probably not want to say exactly as that would make it easier to cheat it.  It does mention a "safeword" to yell if you are attacked and it
   will not trigger the punishment but instead call for help, "that's a nice feature," you think to yourself.  You also see it mentions how harsh
   the punishment is if they decide you've 'misused' the safeword feature.  "I guess that's understandable.", you think.
+  <<if $UncleChasteBelt>>
+    <br><br>
+    You see a section called "Observer", and see that Mike is set to be able to see everything going on with your belt.
+    You assume they would have made him your "Owner" if they weren't doing their testing stuff.  But still it lets him
+    see everything your belt sees, from when you are on your period, how turned on you are, or if you get punished for
+    trying to suck a cock or something, and everything else the belt tracks!
+  <</if>>
 <</nobr>>
 
 <<nobr>>
   Your eyes then fix on the section labled "Orgasm Request".  It says that you can request an orgasm and that occasional requests will usually be granted.
   You are still aroused from your earlier thoughts, so you decide to try it out.
+  <<if $UncleChasteBelt>>
+    Hopefully Mike won't think you are a slut for requesting one already.  After all he knows you haven't had an orgasm since
+    he put that other belt on you.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -1845,7 +1890,7 @@
 <</nobr>>
 
 <<nobr>>
-  You lie back close your eyes and start imagining your new husband begining to pleasure you.  You are expecting the belt to do someting, to give some
+  You lie back, close your eyes, and start imagining your new husband begining to pleasure you.  You are expecting the belt to do someting, to give some
   real fealing to your fantasy, but nothing happens.  You stop fantasizing and wait a bit, but nothing.  You look back at the phone thinking thinking
   something went wrong, but you see, "Request Granted". And below that, "You've been a good girl.  Enjoy your orgasm."  But still nothing is happening.
 <</nobr>>
@@ -2514,6 +2559,57 @@
   You realize you are going to have to get more creative if you want to have any chance to defeat this belt.  You decide to dig into the documents
   your boss sent over tonight.  You also want to read the email the X-Change office sent [[about their new 'Buddy' program|Part15Buddy]] so you
   can be sure to show up at the right time.
+<</nobr>>
+
+::Part15TestSubjectBetaTestUncle
+<<nobr>>
+	<h1>At the engineering department</h1>
+  <img src="Part15/TestSubject1.jpg" hspace="10" vspace="10" height="500" align="left">
+  Once you arrive in the engineering department you let them know that Mike set up an appointment for you and wait a
+  few minutes until you are directed into the department head's office.
+<</nobr>>
+
+<<nobr>>
+  "Good afternoon, Miss," he says.  "So from my conversations with your keyholder that you are trying to remain
+  chaste, is that correct?"
+<</nobr>>
+
+<<nobr>>
+  "Umm, I guess so.  Yes," you confirm.  You are probably less confident in your answer now than you would have been
+  a month or two ago, since all you can think about now is sex.  "But what does your department have to do with that?"
+<</nobr>>
+
+<<nobr>>
+  "We've developed a chastity belt, but one much more advanced than the one you are wearing now," he explains. "In fact,
+  I can assure you that this one is far more advanced than anything on the market now. It can ensure that you can never
+  succumb to your desires in a moment of weakness like you and your keyholder are worried you might."
+<</nobr>>
+
+<<nobr>>
+  "The belt you'd be testing is actually a computerized chastity belt.  With a traditional belt, most would only prevent
+  vaginal intercourse. And they present challenges during menstration, which our belt addresses."
+<</nobr>>
+
+<<nobr>>
+  "There are belts that also prevent anal sex, but those present obvious daily hygiene issues.  And no traditional belt
+  would prevent you from engaging in oral sex.  Ours can prevent both until you meet the right person.
+  It is also capable of providing you pleasure if so configured."  Suddenly you are much more interested in the new belt."
+<</nobr>>
+
+<<nobr>>
+  "Women like you, that wish to remain chaste or to maintain a monogamous relationship, are difficult to find on campus,
+  but are obviously a key demographic we want to test the belt with.  So we will be able to offer you a higher than
+  normal compensation for your participation in our beta testing program."
+<</nobr>>
+
+<<nobr>>
+  "Technically we need your consent to participate and help us test this new product," he says finally.  "Though, obivously
+  in your case your keyholder has already consented, so we just need you to sign the consent form for the file."
+<</nobr>>
+
+<<nobr>>
+  You [[sign the form|Part15MinistryTester3]] and hope that Mike has told them to configure it to give you pleasure.  But
+  even if he hasn't, you are excited that it's an option now.
 <</nobr>>
 
 ::Part15TestSubjectProbation
@@ -7554,7 +7650,7 @@
   <<else>>
     You remember that there's a party later back at the sorority house.
   <</if>>
-  <<if !$SororityFootball and !$SororityFootball and $SororityELP and false>>
+  <<if !$SororityFootball and !$SororityFootball and $SororityELP>>
   <<elseif setup.haveGirlfriend()>>
     You and $dating[0] can hardly wait for
     <<if $SororityFootball>>  
@@ -9676,7 +9772,8 @@
     <br><br>
     You decide to go by the engineering department the next day and tell them Jayden is your boyfriend now.  It may not be
     true official yet, but you know they make you wait a week to switch from "chaste" to "monogamous" mode on your belt, and
-    you want to be ready for your third date.
+    you want to be ready for your third date.  You also give Mike a call to tell him all about Jayden, to make sure he
+    approves the request.
     <br><br>
     You want it all to be a surprise for Jayden, but unfortunately they require him to come by for a meeting to explain the belt
     and the program before they'll switch your belt over.  You don't have to be there, in fact they said it should be just him.
@@ -9914,7 +10011,7 @@
 <<nobr>>
   If it were really Jayden's cock, you'd have to wait until it was ready to go some more.  But it's not, so you don't need to wait.
   You adjust it's height, and then turn around.  Now you imagine Jayden fucking you from behind.  Though he knows how much you need
-  his cock and makes you do all the work, thrusting yourself back onto it has he remains still.
+  his cock and makes you do all the work, thrusting yourself back onto it as he remains still.
 <</nobr>>
 
 <<nobr>>
@@ -9999,7 +10096,7 @@
       You don't know if you could have handled sharing a room with someone uptight all year again.
       <</if>>
     <<else>>
-      You thank her, but then do you tell her, "[[But I'll pass|Part15Week]]." Or do you [[take your turn|Part15DormStonerFriendly]].
+      You thank her, but then do you tell her, "[[Thanks, but I'll pass|Part15Week]]." Or do you [[take your turn|Part15DormStonerFriendly]].
     <</if>>
   <</if>>
 <</nobr>>

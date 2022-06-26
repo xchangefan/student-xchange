@@ -27,7 +27,13 @@
 <</nobr>>
 
 <<nobr>>
-  You've submitted to men before, obviously.  You loved it then too, but this is so much more.  Mike uses your body however he wants, of course.  You'd be disappointed if
+  <<if setup.sexUniqueMaleCount() > 2>>
+    You've submitted to men before, obviously.  You loved it then too, but this is so much more.
+  <<else>>
+    You know Dylan or any number of other men would dominate you the way you know you need to be dominated.  But it is
+    so much more with Mike.
+  <</if>>
+  Mike uses your body however he wants, of course.  You'd be disappointed if
   he didn't.  But afterwards he holds you, and strokes your hair, and tells you what a good girl you were.  You aways know how much he cares for you.
 <</nobr>>
 
@@ -192,7 +198,7 @@
         Though for now, you don't have to worry about.
       <</if>>
     <</if>>
-  <<elseif !$PlayerProtectionPerfectand and !$PlayerProtectionPermanent and !$PlayerProtectionPill>>
+  <<elseif !$PlayerProtectionPerfect and !$PlayerProtectionPermanent and !$PlayerProtectionPill>>
     <<unset $PlayerProtectionTry>>
     <<unset $PlayerProtectionCondoms>>
     <<unset $PlayerProtectionNone>>
@@ -226,7 +232,12 @@
   <<else>>
     he has a surprise for you.  He says he knows you're going to like it.
   <</if>>
-  He sets up a familiar chair in the dungeon for you.  Once he binds you to it, he activates the vibrator, on low at first, but gradually turning up the speed.
+  <<if setup.sexUniqueMaleCount() == 2>>
+    He's recreated your 'time-out' chair for you!
+  <<else>>
+    He sets up a familiar chair in the dungeon for you.
+  <</if>>
+  Once he binds you to it, he activates the vibrator, on low at first, but gradually turning up the speed.
 <</nobr>>
 
 <<nobr>>
@@ -301,7 +312,7 @@
 <</nobr>>
 
 <<nobr>>
-  He puts a gag in your mouth before he unbinds from the frame.  Then he orders you into the cage sitting on the floor.  "You can rest there and get until I'm ready
+  He puts a gag in your mouth before he unbinds from the frame.  Then he orders you into the cage sitting on the floor.  "You can rest there until I'm ready
   for more.  You should have your energy back by then," he tells you.
 <</nobr>>
 
