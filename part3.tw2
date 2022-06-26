@@ -1,4 +1,4 @@
-::Part3Start <400,1250>
+::Part3Start  <0,3000>
 <<nobr>>
 	<h1>Job/Activity Fair</h1>
 	Welcome back ladies. I hope everyone had a good first day in their new bodies.  I hope everyone took the time to get to know your mentors a bit better as well.
@@ -24,7 +24,7 @@
 
 [[Check the job booths.|JobList1]]
 
-::JobList1 <800,1250>
+::JobList1  <200,3000>
 <<nobr>>
 	<h1>Job/Activity Fair</h1>
 <</nobr>>
@@ -322,7 +322,7 @@
   <</if>>
 <</nobr>></p>
 
-::JobList2 <1200,1250>
+::JobList2  <400,3000>
 <<nobr>>
 	<<set $PlayerJobSet = 1>>
 	<h1><<print "Job/Activity Fair">></h1>
@@ -496,7 +496,7 @@
 	<</repeat>>
 <</silently>>
 
-::JobChasteBarista
+::JobChasteBarista <600,3000>
 <<nobr>>
 	<h1><<print "Barista">></h1>
   <<set setup.addInventory('costumes', 'barista apron')>>
@@ -532,7 +532,7 @@
 <</nobr>>
 
 
-::JobBarista1 <0,1625>
+::JobBarista1  <800,3000>
 <<nobr>>
 	<h1><<print "Barista - Interview">></h1>
 	<<unset $JobFitnessMassage>>
@@ -550,7 +550,7 @@
 	<</if>>
 <</nobr>>
 
-::JobOffice1 <600,1625>
+::JobOffice1  <1000,3000>
 <<nobr>>
 	<h1><<print "Office Interview">></h1>
 	<<unset $JobFitnessMassage>>
@@ -630,7 +630,7 @@
 	<</if>>
 <</nobr>>
 
-::JobCall1 <2850,2000>
+::JobCall1  <1200,3000>
 <<nobr>>
 	<h1><<print "Call Girl - First Client">></h1>
 <</nobr>>
@@ -644,7 +644,7 @@
 
 [[You finally work up your nerve again, and head back out to take care of your first client.|JobCall2]]
 
-::JobBar1 <1050,1625>
+::JobBar1  <1400,3000>
 <<nobr>>
 	<h1><<print "Bartender">></h1>
 <</nobr>>
@@ -664,7 +664,7 @@
 	<</if>>
 <</nobr>>
 
-::JobWebModel1 <2550,1250>
+::JobWebModel1  <1600,3000>
 <<nobr>>	
 	<<set $MasterRobert = 1>>
   <<set setup.addInventory('clothes', 'leather top')>>
@@ -691,7 +691,7 @@
 	<</if>>
 <</nobr>>
 
-::JobAthlete1 <2100,1500>
+::JobAthlete1  <1800,3000>
 <<nobr>>
 	<<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
 	<<if $BodyType == 'Fit'>><<set $PlayerRollDice += 12>><</if>>
@@ -776,7 +776,7 @@
 		<</nobr>>
 <</switch>>
 
-::JobCheerleader1 <1650,1625>
+::JobCheerleader1  <2000,3000>
 <<nobr>>
 	<h1><<print "Chearleaders Trials">></h1>
   <<set setup.addInventory('costumes', 'cheerleader uniform')>>
@@ -793,7 +793,7 @@
 	<</if>>
 <</nobr>>
 
-::JobFitness1 <3300,1500>
+::JobFitness1  <2200,3000>
 <<nobr>>	
 	<h1><<print "Fitness Center">></h1>
 <</nobr>>
@@ -805,7 +805,7 @@
 
 <<print "Your boss has noted all the positive comments he’s received about you from the athletes and has offered you a promotion. He lets you decide between the ">>[[Yoga Instructor|JobFitnessYoga1]]<<print " and ">>[[Massage|JobFitnessMassage1]]<<print " positions.">>
 
-::JobLibrary1 <3600,1500>
+::JobLibrary1  <2400,3000>
 <<nobr>>
 	<h1><<print "Campus Library">></h1>
 <</nobr>>
@@ -817,7 +817,7 @@
 
 [[And you love every minute of it.|JobLibrary2]]
 
-::JobEngineer1 <3000,1500>
+::JobEngineer1  <2600,3000>
 <<nobr>>
 	<<set $PlayerRollDice = $PlayerSideEffectExhibitionist>>
 	<<set $PlayerRollDice += $PlayerSideEffectSubmissive>>
@@ -949,7 +949,7 @@
 	<</repeat>>
 <</silently>>
 
-::EngineerReconsider
+::EngineerReconsider <2800,3000>
 <<nobr>>
 	<h1>In the engineering department head's office</h1>
 <</nobr>>
@@ -975,7 +975,7 @@
   Now, there's always a few late arrival subjects.  You can go make sure they strip down and [[start testing|JobEngineer2]]."
 <</nobr>>
 
-::AthleteReconsider <2100,1875>
+::AthleteReconsider  <3000,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', name: 'Coach', vaginal: true, birthControlOverride: 'vasectomy'})>>
 	<h1><<print "Coach Persuasion">></h1>
@@ -1002,7 +1002,7 @@
 
 [[Congratulations on making the team after all!|AthleteQualified]]
 
-::AthleteQualified <1950,1875>
+::AthleteQualified  <3200,3000>
 <<nobr>>	
 	<h1><<print "Athlete Training">></h1>
   <<set setup.addInventory('costume', 'athletic clothing')>>
@@ -1032,7 +1032,7 @@
 	<</if>>
 <</nobr>>
 
-::AthleteOral <400,3300>
+::AthleteOral  <3400,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', anon: 'Athlete'})>>
 	<<set setup.addSex({sex: 'male', anon: 'Athlete'})>>
@@ -1054,7 +1054,7 @@
 [[Just a bit. You know it will return soon.|AthleteChastity]]
 <<achievement>>train<</achievement>>
 
-::AthleteChastity <600,3300>
+::AthleteChastity  <3600,3000>
 <<nobr>>
 	<h1><<print "Gym">></h1>
 <</nobr>>
@@ -1116,7 +1116,7 @@
 	<</if>>
 <</nobr>>
 
-::AthletePheromones <800,3300>
+::AthletePheromones  <3800,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', anon: 'Athlete', vaginal: true})>>
 	<<set setup.addSex({sex: 'male', anon: 'Athlete', vaginal: true})>>
@@ -1171,7 +1171,7 @@
 <</nobr>>
 <<achievement>>train<</achievement>>
 
-::AthleteRelief <1000,3300>
+::AthleteRelief  <4000,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'female', anon: 'Masseuse'})>>	
 	<h1><<print "Fitness Center">></h1>
@@ -1233,7 +1233,7 @@
 	<</if>>
 <</nobr>>
 
-::JobCheerleaderA <1500,1750>
+::JobCheerleaderA  <4200,3000>
 <<nobr>><h1><<print "Chearleaders “A” Squad">></h1>
 <</nobr>>
 
@@ -1244,7 +1244,7 @@
 
 <<if !$PlayerSideEffectSubmissive>>[[You can pull yourself together,|JobCheerleaderBitch]]<<print " tell her to stop being such a bitch and worry about that giant pimple on her forehead instead. Or, ">><</if>>[[You can burst into tears,|JobCheerleaderNice1]]<<print " tell her you weren’t allowed to wear makeup growing up and ask her to help you.">>
 
-::JobCheerleaderD <1650,1750>
+::JobCheerleaderD  <4400,3000>
 <<nobr>>
 	<h1><<print "Chearleaders “D” Squad">></h1>
 <</nobr>>
@@ -1293,7 +1293,7 @@
 	<</link>>
 <</if>>
 
-::JobCheerleaderBitch <1650,1875>
+::JobCheerleaderBitch  <4600,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
 	<<set setup.addSex({sex: 'male', anon: 'Football Player', vaginal: true, noCondom: true, noPullout: true})>>
@@ -1347,7 +1347,7 @@
 <</nobr>>
 <<achievement>>train<</achievement>>
 
-::JobCheerleaderNice1 <1500,1875>
+::JobCheerleaderNice1  <4800,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'female', name: 'Veronica'})>>
 	<h1><<print "Chearleaders Hazing">></h1>
@@ -1370,7 +1370,7 @@
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>[[Continue Chearleaders practice.|JobCheerleaderNice2]]<</if>>
 <</nobr>>
 
-::JobCheerleaderNice2 <1925,2375>
+::JobCheerleaderNice2  <5000,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'female', name: 'Veronica'})>>
 	<<set setup.startDating('Veronica')>>
@@ -1388,7 +1388,7 @@
 
 <<print "You vow to yourself that no matter what ‘side-effects’ this X-Change might throw at you, you are going to channel all the desires it gives you into ">><<if $PlayerChastityBelt>>[[your relationship with Veronica.|Part5Veronica1]]<<else>>[[your relationship with Veronica.|Part5Veronica2]]<</if>><<if $JobCallGirlSide>><<set $JobCallGirlSide = 0>><<print " You also decide to stop working as a call girl.">><</if>>
 
-::JobCheerleaderFundraiser1 <1800,1625>
+::JobCheerleaderFundraiser1  <5200,3000>
 <<nobr>>
 	<<set $JobCheerleader = 0>>
 	<<set $JobCheerleaderFundraiser = 1>>
@@ -1405,7 +1405,7 @@
 
 <<print "He tells you not to try to cover yourself as room service pushes a tray in. “Don’t worry, Tony here doesn’t mind seeing a pretty girl naked, do you Tony?”, he says. Clearly this is not the first time Tony has been here for a night like this. Tony hands him a tray with small pieces of fruit from the cart, ">>[[and positions himself behind you out of sight.|JobCheerleaderFundraiser2]]
 
-::JobCheerleaderFundraiser2 <1800,1750>
+::JobCheerleaderFundraiser2  <5400,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', name: 'University Donor'})>>
 	
@@ -1421,7 +1421,7 @@
 
 <<print "You take his cock into your mouth, letting it’s taste mix with the flavor of the fruit that still lingers on your tongue. As you feel his hardness in your mouth, you want him to push you back onto the bed and ">>[[fuck you with your hands still tied behind you.|JobCheerleaderFundraiser3]]
 
-::JobCheerleaderFundraiser3 <1800,1875>
+::JobCheerleaderFundraiser3  <5600,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', anon: 'University Donor', vaginal: true})>>
 	<<set setup.addSex({sex: 'male', anon: 'University Donor', vaginal: true})>>
@@ -1458,7 +1458,7 @@
 	<</if>>
 <</nobr>>
 
-::JobFitnessYoga1 <3300,1625>
+::JobFitnessYoga1  <5800,3000>
 <<nobr>>	
 	<<set $JobFitness = 0>>
 	<<set $JobFitnessYoga = 1>>
@@ -1484,7 +1484,7 @@
 	<</if>>
 <</nobr>>
 
-::JobFitnessMassage1 <3450,1875>
+::JobFitnessMassage1  <6000,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'male', anon: 'Athlete (massage client)', vaginal:true})>>
   <<set setup.addSex({sex: 'male', anon: 'Athlete (massage client)'})>>
@@ -1522,7 +1522,7 @@
 	<</nobr>>
 <</nobr>>
 
-::JobFitnessYoga2 <3300,1875>
+::JobFitnessYoga2  <6200,3000>
 <<nobr>>	
 	<<set setup.addSex({sex: 'male', anon: 'Athlete (yoga)', vaginal: true})>>
 	<<set setup.addSex({sex: 'male', anon: 'Athlete (yoga)', vaginal: true})>>
@@ -1557,7 +1557,7 @@
 	<</nobr>>
 <</nobr>>
 
-::JobFitnessMassage2 <1600,3300>
+::JobFitnessMassage2  <6400,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', anon: 'Athlete (massage client)'})>>
 	
@@ -1582,7 +1582,7 @@
 	<</if>>
 <</nobr>>
 
-::JobFitnessMassage3 <900,4175>
+::JobFitnessMassage3  <6600,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'female', anon: 'Athlete (massage client)'})>>
 	
@@ -1604,7 +1604,7 @@
 	<</if>>
 <</nobr>>
 
-::JobLibrary2 <3600,1625>
+::JobLibrary2  <6800,3000>
 <<nobr>>
 	<h1><<print "Campus Library">></h1>
   <img src="Part3/JobLibrary2.jpg" hspace="10" vspace="10" height="640" align="left">
@@ -1623,7 +1623,7 @@
   Your boss, on the other hand seems to be getting close to his limit.[[So you wonder if you need to tone it down or risk losing your job.|JobLibrary3]]
 <</nobr>>
 
-::JobLibrary3 <3600,1875>
+::JobLibrary3  <7000,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', name: 'Library Boss'})>>
 	<h1><<print "Campus Library - Boss Office">></h1>
@@ -1651,7 +1651,7 @@
 	<</if>>
 <</nobr>><<if $JobWebModelSide>><br><br>[[For now, you have to go to also work as a Web Model.|JobWebModel3]]<</if>><<if $JobCallGirlSide>><br><br>[[For now, you have to go to also work as a Call Girl.|JobCall1]]<</if>>
 
-::JobLibrary4 <3600,2250>
+::JobLibrary4  <7200,3000>
 <<nobr>>
 	<<if !$PlayerSideEffectExhibitionist>><<set $PlayerSideEffectExhibitionist = 1>><</if>>
 	
@@ -1675,7 +1675,7 @@
 	<</link>>
 <</nobr>>
 
-::JobLibraryRestricted <3750,2250>
+::JobLibraryRestricted  <7400,3000>
 <<nobr>>
 	<<unset $PlayerChastityBelt>>
 	<<unset $Keyholder>>
@@ -1697,7 +1697,7 @@
 
 [[Spend more time in the Library.|JobLibrary4]]
 
-::JobLibrary5 <1800,3300>
+::JobLibrary5  <7600,3000>
 <<nobr>>
 	<<if setup.areDating('Josh')>>
 	  <<set setup.addSex({sex: 'male', name: 'Josh', vaginal:true})>>
@@ -1752,7 +1752,7 @@
 	<</if>>
 <</nobr>>
 
-::JobLibrary6 <2000,3300>
+::JobLibrary6  <7800,3000>
 <<nobr>>
 	<<set $AcademicPoints += 2>>
 	<<set $FunPoints += 0>>
@@ -1777,7 +1777,7 @@
 	<</if>>
 <</nobr>>
 
-::JobEngineer2 <2950,1875>
+::JobEngineer2  <8000,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'female', anon: 'Engineering Subject'})>>
 	<<set setup.addInventory('tools', 'engineering toolbox')>>
@@ -1796,7 +1796,7 @@
 	<<if !$JobWebModelSide and !$JobCallGirlSide>>[[Continue testing.|JobEngineer3]]<</if>>
 <</nobr>>
 
-::JobEngineerSubject1 <3150,1875>
+::JobEngineerSubject1  <8200,3000>
 <<nobr>>	
 	<h1><<print "Engineering Department">></h1>
 <</nobr>>
@@ -1826,7 +1826,7 @@
 	<</if>>
 <</nobr>>
 
-::JobEngineer3 <3000,2250>
+::JobEngineer3  <8400,3000>
 <<nobr>>	
 	<h1><<print "Engineering Department">></h1>
   Since you are one of the few women on the team, you get to test much of the new equipment before it’s tried on the subjects.
@@ -1881,7 +1881,7 @@
 	<</link>>
 <</nobr>>
 
-::JobEngineer4 <1200,3300>
+::JobEngineer4  <8600,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', name: 'Kyle'})>>
 	<<set setup.addSex({sex: 'male', anon: 'Engineering Coworker'})>>
@@ -1927,7 +1927,7 @@
 	<</if>>
 <</nobr>>
 
-::JobEngineer5 <500,4175>
+::JobEngineer5  <8800,3000>
 <<nobr>>
 	<h1><<print "Engineering Department">></h1>
 <</nobr>>
@@ -1953,7 +1953,7 @@
 	<</if>>
 <</nobr>>
 
-::JobEngineerSubject2 <1400,3300>
+::JobEngineerSubject2  <9000,3000>
 <<nobr>>
 	<h1><<print "Engineering Department">></h1>
 <</nobr>>
@@ -1974,7 +1974,7 @@
 	<</if>>
 <</nobr>>
 
-::JobEngineerSubject3 <700,4175>
+::JobEngineerSubject3  <9200,3000>
 <<nobr>>
 	<h1><<print "Engineering Department">></h1>
 <</nobr>>
@@ -2025,7 +2025,7 @@
 	<</if>>
 <</nobr>>
 
-::JobBaristaPro1 <300,1750>
+::JobBaristaPro1  <9400,3000>
 <<nobr>>
 	<h1><<print "Barista">></h1>
   <<set setup.addInventory('costumes', 'barista apron')>>
@@ -2046,7 +2046,7 @@
 	<</if>>
 <</nobr>>
 
-::JobBaristaFun1 <200,2000>
+::JobBaristaFun1  <9600,3000>
 <<nobr>>	
 	<<set setup.addSex({sex: 'male', name: 'Andrew', vaginal:true})>>
 	<h1><<print "Andrew - One Night Stand">></h1>
@@ -2062,7 +2062,7 @@
 
 <<print "You can feel Faith’s glare burn into you as you stumble into your dorm room disheveled ">>[[the next morning.|JobBaristaFun2]]<<print " But you don’t care. All you can think about was how much fun you had the night before.">>
 
-::JobBaristaRomance1 <0,2000>
+::JobBaristaRomance1  <9800,3000>
 <<nobr>>
 	<<set setup.startDating('Andrew')>>
   <<set setup.addInventory('costumes', 'barista apron')>>
@@ -2079,7 +2079,7 @@
 
 <<print "A few dates later, you do end up at Andrew’s apartment. The dinner he’d planned to make for you is quickly abandoned though, ">>[[as the need you both have is too much to wait.|JobBaristaRomance2]]
 
-::JobBaristaRomance2 <0,2300>
+::JobBaristaRomance2  <10000,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal:true})>>
   <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal:true})>>
@@ -2098,7 +2098,7 @@
   Once you two make it clear that your relationship is exclusive, you vow to yourself that no matter what ‘side-effects’ this X-Change might through at you, you are going to channel [[all the desires it gives you into your relationship with Andrew.|JobBaristaRomance3]]
 <</nobr>>
 
-::JobBaristaRomance3 <0,2625>
+::JobBaristaRomance3  <10200,3000>
 <<nobr>>	
 	<h1><<print "Barista - Dating Andrew">></h1>
 <</nobr>>
@@ -2116,7 +2116,7 @@
 
 <<print "You and Andrew have talked enough to know that he’d be ">>[[perfectly happy with whichever you decide.|Part5Andrew]]<<print " But, of course, all that is still years away. You and Andrew still both want to finish school first.">>
 
-::JobOfficeBlowjob1 <450,1750>
+::JobOfficeBlowjob1  <10400,3000>
 <<nobr>>
 	<<set $JobOffice = 0>>
 	<<set $JobOfficePA = 1>>
@@ -2142,7 +2142,7 @@
 	<</if>>
 <</nobr>>
 
-::JobOfficePro1 <750,1750>
+::JobOfficePro1  <10600,3000>
 <<nobr>>
 	<<set $JobOffice = 0>>
 	<<set $JobOfficeManager = 1>>
@@ -2167,7 +2167,7 @@
 	<<print " But you let her know to come to you if she ever has a problem with him.">>
 <</nobr>>
 
-::JobOfficeSub <600,1750>
+::JobOfficeSub  <10800,3000>
 <<nobr>>
 	<<set $JobOffice = 0>>
 	<<set $JobOfficeIntern = 1>>
@@ -2191,7 +2191,7 @@
 	<</if>>
 <</nobr>><<if setup.areDating('Josh')>><br><br><<print "Your submissive nature makes you ">>[[agree with him,|Part6Start1]]<<print " but you perhaps you should still ">>[[mention what happened to Josh.|JobOfficeProJosh]]<</if>>
 
-::JobOfficeBlowjob2 <0,3300>
+::JobOfficeBlowjob2  <11000,3000>
 <<nobr>>
 	<<set setup.startDating('Paul')>>
 	<<set setup.addSex({sex: 'male', name: 'Paul', vaginal:true})>>
@@ -2213,7 +2213,7 @@
 
 [[Spend some time on campus.|Part6Start1]]
 
-::JobOfficePro2 <200,3300>
+::JobOfficePro2  <11200,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', name: 'Office Coworker'})>>
 	<<set setup.addSex({sex: 'male', name: 'Office Coworker'})>>
@@ -2238,7 +2238,7 @@
 
 [[Spend some time on campus.|Part6Start1]]
 
-::JobCall2 <2850,2125>
+::JobCall2  <11400,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
   <<set setup.addSex({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true})>>
@@ -2280,7 +2280,7 @@
 	<<if $JobTestSubject>>[[Spend some time in your dormitory.|Part5Hannah1]]<</if>>
 <</nobr>>
 
-::JobCall3 <1800,3425>
+::JobCall3  <11600,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'male', anon: 'Call Girl Client'})>>
   <<set setup.addSex({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true, repeat:true})>>
@@ -2302,7 +2302,7 @@
 
 [[Spend some time on campus.|Part6Start1]]
 
-::JobCall4 <800,4325>
+::JobCall4  <11800,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'male', anon: 'Call Girl Client'})>>
   <<set setup.addSex({sex: 'male', anon: 'Call Girl Client', vaginal:true, noCondom: true, noPullout: true, repeat:true})>>
@@ -2322,7 +2322,7 @@
 
 [[You join a study group.|Part6StudyGroup]]
 
-::JobBarSub <1350,1750>
+::JobBarSub  <12000,3000>
 <<nobr>>
 	<<set $MasterKate = 1>>
 	<<set setup.addSex({sex: 'female', name: 'Kate'})>>
@@ -2345,7 +2345,7 @@
 
 <<print "You soon discovered she had far more experience at pleasuring a woman’s body than you do. But you’ve spent many days and nights since then kneeling before her, ">>[[learning what she has to teach you.|Part5Kate]]
 
-::JobBarGirl <1050,1750>
+::JobBarGirl  <12200,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'female', anon: 'Bar Patron'})>>
   <<set setup.addSex({sex: 'female', anon: 'Bar Patron'})>>
@@ -2367,7 +2367,7 @@
 
 <<print "You even love getting back to your dorm room the next morning. You know Sam will be starting with questions about who you went home with this time, ">>[[and then the two of you will be comparing notes.|Part5Samantha1]]
 
-::JobBarGuy <1200,1750>
+::JobBarGuy  <12400,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'female', anon: 'Bar Patron'})>>
   <<set setup.addSex({sex: 'male', anon: 'Bar Patron', vaginal:true})>>
@@ -2399,7 +2399,7 @@
 <<print "You know that when you get back to your dorm room the next morning ">>[[Sam will be starting with questions about who you went home with this time.|Part5Samantha1]]
 <<achievement>>threesome:FMF<</achievement>>
 
-::JobBarUnsure1 <900,1750>
+::JobBarUnsure1  <12600,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'female', anon: 'Bar Patron'})>>
 	<<set $JobBartender = 0>>
@@ -2419,7 +2419,7 @@
 
 <<print "“Not yet.”, she says, ">>[[“We’ve only answered half of the question so far.”|JobBarUnsure2]]
 
-::JobBarUnsure2 <900,1875>
+::JobBarUnsure2  <12800,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'male', name: "Sarah's Brother", vaginal:true})>>
   <<set setup.addSex({sex: 'male', name: "Sarah's Brother", vaginal:true})>>
@@ -2443,7 +2443,7 @@
 
 <<print "You give him a kiss and tell him, “I’ll be back in a few minutes. You need some time to recover, and I owe your sister an orgasm.”. Then you head back toward Sarah’s room. You know that when you get back to your dorm room the next morning ">>[[Sam will be starting with questions about who you went home with.|Part5Samantha1]]
 
-::JobWebModel2 <2550,1375>
+::JobWebModel2  <13000,3000>
 <<nobr>>
   <<set setup.addInventory('sex toys', 'collar')>>
   <<set setup.addInventory('sex toys', 'cuffs')>>
@@ -2486,7 +2486,7 @@
 	<</if>>
 <</nobr>>
 
-::JobWebModel3 <2550,2000>
+::JobWebModel3  <13200,3000>
 <<nobr>>	
 	<h1><<print "Web Model">></h1>
 <</nobr>>
@@ -2526,7 +2526,7 @@
 	<<if $JobTestSubject>>[[go home for now.|Part5Olivia1]]<</if>>
 <</nobr>>
 
-::JobWebModel4 <2200,3425>
+::JobWebModel4  <13400,3000>
 <<nobr>>
 	<<set $PlayerRollDice = 0>>
 	<<set $PlayerRollDice += $PlayerSideEffectPheromones>>
@@ -2565,7 +2565,7 @@
 	<</if>>
 <</nobr>>
 
-::JobPornOral1 <2400,3550>
+::JobPornOral1  <13600,3000>
 <<nobr>>
 	<<if $JobWebModel>><<set $JobWebModel = 0>><<set $JobPornOral = 1>>
 	<<else>><<set $JobWebModelSide = 0>><<set $JobPornGangOral = 1>><</if>>
@@ -2596,7 +2596,7 @@
 
 [[Spend some time on campus.|Part6Start1]]
 
-::JobPornAnal <2000,3550>
+::JobPornAnal  <13800,3000>
 <<nobr>>
 	<<if $JobWebModel>><<set $JobWebModel = 0>><<set $JobPornAnal = 1>>
 	<<else>><<set $JobWebModelSide = 0>><<set $JobPornAnalSide = 1>><</if>>
@@ -2627,7 +2627,7 @@
 
 [[Spend some time on campus.|Part6Start1]]
 
-::JobPornOther <2200,3550>
+::JobPornOther  <14000,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'male', anon: "Porn Costar", vaginal:true})>>
   <<set setup.addSex({sex: 'male', anon: "Porn Costar", vaginal:true})>>
@@ -2658,7 +2658,7 @@
 
 [[Spend some time on campus.|Part6Start1]]
 
-::JobPornOral2 <1000,4325>
+::JobPornOral2  <14200,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'male', anon: "Porn Costar"})>>
   <<set setup.addSex({sex: 'male', anon: "Porn Costar"})>>
@@ -2682,7 +2682,7 @@
 
 [[You join a study group.|Part6StudyGroup]]
 
-::JobPornOral3 <500,5250>
+::JobPornOral3  <14400,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'male', anon: "Porn Costar"})>>
   <<set setup.addSex({sex: 'male', anon: "Porn Costar"})>>
@@ -2703,7 +2703,7 @@
 
 [[Spend some time on campus.|Part6Frat1]]
 
-::JobDecided <1700,1250>
+::JobDecided  <14600,3000>
 <<nobr>>
 	<<set $PlayerJobSet = 1>>
 	
@@ -2733,7 +2733,7 @@
 	<</link>>
 <</nobr>>
 
-::JobBaristaDate <0,1750>
+::JobBaristaDate  <14800,3000>
 <<nobr>>
 	<h1><<print "Andrew - Date">></h1>
 <</nobr>>
@@ -2771,7 +2771,7 @@
   <</if>>
 <</nobr>>
 
-::JobBaristaFun2 <200,2150>
+::JobBaristaFun2  <15000,3000>
 <<nobr>>
 	<h1><<print "Barista">></h1>
 <</nobr>>
@@ -2781,7 +2781,7 @@
 
 <<print "You never have any interest in starting a relationship with Andrew. Of course whenever the effects of your X-Change, ">>[[or just regular horniness,|Part5Faith1]]<<print " get to much you know quick relief is never too far away. All it takes is a look and saying “Andrew, can I talk to you in your office for a moment?”">>
 
-::Part5JoshFWB <800,3450>
+::Part5JoshFWB  <15200,3000>
 <<nobr>>
 	<<set $HideJobJosh = 0>>
 	<<set setup.makeFWB('Josh')>>
@@ -2797,7 +2797,7 @@
 
 <<if $JobFitnessMassage>>[[You go to work at the fitness centre.|JobFitnessMassage2]]<<else>>[[Spend some time on campus.|Part6Start1]]<</if>>
 
-::JobOfficeProJosh <100,3450>
+::JobOfficeProJosh  <15400,3000>
 <<nobr>>
 	<<set $JobOfficePA = 0>>
 	<<set $JobOfficeIntern = 0>>
@@ -2818,7 +2818,7 @@
 
 <<achievement>>fwb:Josh<</achievement>>
 
-::JobEngineerJosh <1200,3450>
+::JobEngineerJosh  <15600,3000>
 <<nobr>>
 	<<set $HideJobJosh = 0>>
 	<<set $EngineerJosh = 1>>
@@ -2836,7 +2836,7 @@
 
 [[Spend some time on campus.|Part6Start1]]
 
-::JobFitnessYoga3 <2000,3300>
+::JobFitnessYoga3  <15800,3000>
 <<nobr>>
   <<set setup.addSex({sex: 'female', anon: "Athlete's Girlfriend (Yoga)"})>>
   <<set setup.addSex({sex: 'female', anon: "Athlete's Girlfriend (Yoga)"})>>
@@ -2875,7 +2875,7 @@
 	<</if>>
 <</nobr>>
 
-::JobAthleteReliefJosh <1000,3451>
+::JobAthleteReliefJosh  <16000,3000>
 <<nobr>>	
 	<h1><<print "Gym">></h1>
 <</nobr>>
@@ -2893,7 +2893,7 @@
 
 
 
-::JobBaristaJosh <300,3450>
+::JobBaristaJosh  <16200,3000>
 <<nobr>>
 	<h1><<print "Barista">></h1>
 <</nobr>>
@@ -2905,7 +2905,7 @@
 
 [[Spend some time on campus.|Part6Start1]]
 
-::JobPornGang1 <2600,3550>
+::JobPornGang1  <16400,3000>
 <<nobr>>
 	<<if $JobWebModel>><<set $JobWebModel = 0>><<set $JobPornGang = 1>>
 	<<else>><<set $JobWebModelSide = 0>><<set $JobPornGangSide = 1>><</if>>
@@ -2938,7 +2938,7 @@
 
 [[Spend some time on campus.|Part6Start1]]
 
-::JobPornGang2 <1200,4325>
+::JobPornGang2  <16600,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', anon: "Porn Costar"})>>
   <<set setup.addSex({sex: 'male', anon: "Porn Costar", vaginal:true})>>
@@ -2962,7 +2962,7 @@
 [[You join a study group.|Part6StudyGroup]]
 <<achievement>>threesome:MFM<</achievement>>
 
-::JobPornGang3 <700,5250>
+::JobPornGang3  <16800,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', anon: "Porn Costar"})>>
   <<set setup.addSex({sex: 'male', anon: "Porn Costar", vaginal:true})>>
@@ -2997,4 +2997,5 @@
 
 [[Spend some time on campus.|Part6Frat1]]
 <<achievement>>train<</achievement>>
+
 

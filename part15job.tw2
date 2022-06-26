@@ -1,4 +1,4 @@
-::Part15JobMain
+::Part15JobMain <0,15200>
 <<nobr>>
   <<unset $tempShowedBetaTester>>
   <<if $BrokenLeg>>
@@ -40,7 +40,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobBrokenLeg
+::Part15JobBrokenLeg <200,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobBrokenLeg1]]>>
@@ -49,7 +49,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobBrokenLeg1
+::Part15JobBrokenLeg1 <400,15200>
 <<nobr>>
   <h1>Enjoying your time off</h1>
   <img src="Part15/Bus19.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -76,7 +76,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobBrokenLeg2
+::Part15JobBrokenLeg2 <600,15200>
 <<nobr>>
   <h1>Finally getting your cast off</h1>
   <img src="Part15/Bus20.jpg" hspace="10" vspace="10" height="450">
@@ -96,7 +96,7 @@
   <</if>>
 <</nobr>>
 
-::Part15NoJob
+::Part15NoJob <800,15200>
 <<nobr>>
   <h1>Keeping up with your studies</h1>
   <img src="Part15/Class12.jpg" hspace="10" vspace="10" height="450">
@@ -132,7 +132,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15AfterMainJob
+::Part15AfterMainJob <1000,15200>
 <<nobr>>
   <<if $JobBetaTester and !$tempShowedBetaTester>>
     <<include [[Part15JobBetaTester]]>>
@@ -143,7 +143,7 @@
   <</if>>
 <</nobr>>
 
-::Part15General
+::Part15General <1200,15200>
 <<nobr>>
   <<if $SchoolWeek < 5>>
     <<if $PlayerChastityBelt>>
@@ -206,7 +206,7 @@
 <</nobr>>
 
 
-::Part15JobYoga
+::Part15JobYoga <1400,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<if $dating.length>>
@@ -219,7 +219,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobYogaJobChange
+::Part15JobYogaJobChange <1600,15200>
 <<nobr>>
   <h1>Quiting your job at the fitness center</h1>
   <<if setup.haveGirlfriend()>>
@@ -253,7 +253,7 @@
   to interest you more.
 <</nobr>>
 
-::Part15JobYogaJobChange2
+::Part15JobYogaJobChange2 <1800,15200>
 <<nobr>>
   <h1>Your new job</h1>
   <<if $BodyType == "Fit">>
@@ -287,7 +287,7 @@
   You think you are really going to [[like the new job|Part15WeekByWeek]].
 <</nobr>>
 
-::Part15JobYoga1
+::Part15JobYoga1 <2000,15200>
 <<nobr>>
   <h1>Coed yoga classes</h1>
   You started off the year with separate male and female yoga classes.  You were thinking that would make
@@ -388,7 +388,7 @@
   seems to have attracted all the new signups this year instead of yours.
 <</nobr>>
 
-::Part15JobYoga2
+::Part15JobYoga2 <2200,15200>
 <<nobr>>
   <h1>The new fad</h1>
   <div style="float:left;padding:12px;">
@@ -415,7 +415,7 @@
     <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobYogaDecide
+::Part15JobYogaDecide <2400,15200>
 <<nobr>>
   <h1>Cancelled Class</h1>
   You were right to worry, you've found out your yoga classes have been cancelled.  There just aren't enough students
@@ -472,7 +472,7 @@
   Or, should you put that off, and [[start looking for a new job|Part15JobYogaJobChange3]] instead.
 <</nobr>>
 
-::Part15JobYogaEros
+::Part15JobYogaEros <2600,15200>
 <<nobr>>
   <h1>Meeting with your Eros representative</h1>
   <img src="Part15/Eros1.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -529,7 +529,7 @@
   they'll see just how fun Eros can be and the party should really get going."
 <</nobr>>
 
-::Part15JobYogaEros2
+::Part15JobYogaEros2 <2800,15200>
 <<nobr>>
   <h1>Co-hosting your first Eros party</h1>
   <<set $JobEros to 1>>
@@ -622,7 +622,7 @@
 <<include [[Part15AfterMainJob]]>>
 
 
-::Part15JobYogaJobChange3
+::Part15JobYogaJobChange3 <3000,15200>
 <<nobr>>
   <h1>Your new job</h1>
   <<if $BodyType == "Fit">>
@@ -682,7 +682,7 @@
   You think you are really going to [[like the new job|Part15WeekByWeek]].
 <</nobr>>
 
-::Part15JobMassage
+::Part15JobMassage <3200,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobMassage2]]>>
@@ -695,7 +695,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobMassage2
+::Part15JobMassage2 <3400,15200>
 <<nobr>>
   <h1>An athletic massage</h1>
   <video src="Part15/Massage2.webm" autoplay loop muted height="450"></video>
@@ -724,7 +724,7 @@
 
 <<include [[Part15AfterMainJob]]>>
 
-::Part15JobMassage3
+::Part15JobMassage3 <3600,15200>
 <<nobr>>
   <h1>Celebrating her victory</h1>
   <<set setup.addSexRepeat(10, {sex:"male", anon:"Athlete"})>>
@@ -795,7 +795,7 @@
     
 <<include [[Part15AfterMainJob]]>>
 
-::Part15JobMassage4
+::Part15JobMassage4 <3800,15200>
 <<nobr>>
   <h1>Roleplaying being the client</h1>
   One of your clients likes roleplaying that he's the one giving you a massage.  It actually starts off with him
@@ -825,7 +825,7 @@
     [[Continue|Part15AfterMainJob]]
 <</nobr>>
 
-::Part15JobMassage5
+::Part15JobMassage5 <4000,15200>
 <<nobr>>
   <h1>Take your buddy to work day</h1>
   The buddy program wants everyone to take their buddy with work with them today, or at least the ones that don't
@@ -854,7 +854,7 @@
   about the massage anyway.  Once instinct takes over, she absolutely [[loves the job|Part15JobMassage6]].
 <</nobr>>
 
-::Part15JobMassage6
+::Part15JobMassage6 <4200,15200>
 <<nobr>>
   <h1>Take your buddy to work day</h1>
   <video src="Part15/Massage6.mp4" autoplay loop muted height="450"></video>
@@ -879,7 +879,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobModel
+::Part15JobModel <4400,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<if $PregnancyWeek > 12>>
@@ -896,7 +896,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobLibrary
+::Part15JobLibrary <4600,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobLibrary1]]>>
@@ -909,7 +909,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobLibrary1
+::Part15JobLibrary1 <4800,15200>
 <<nobr>>
   <h1>Under New Management</h1>
   <video src="Part15/Library2.webm" autoplay loop muted height="450"></video>
@@ -947,7 +947,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobLibrary2
+::Part15JobLibrary2 <5000,15200>
 <<nobr>>
   <h1>Clarifing the dress code</h1>
   <img src="Part15/Library3.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -980,7 +980,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobLibrary3
+::Part15JobLibrary3 <5200,15200>
 <<nobr>>
   <h1>Catching someone in the restricted section</h1>
   <img src="Part15/Library5.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -1027,7 +1027,7 @@
    class in the morning.  "How does [[tomorrow afternoon|Part15JobLibrary4]] sound."
 <</nobr>>
 
-::Part15JobLibrary4
+::Part15JobLibrary4 <5400,15200>
 <<nobr>>
   <h1>Offering to help</h1>
   <<if $FormerMentor == "Olivia">>
@@ -1114,7 +1114,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobLibrary5
+::Part15JobLibrary5 <5600,15200>
 <<nobr>>
   <h1>Bring your Buddy to Work Day</h1>
   <img src="Part15/Library8.jpg" hspace="10" vspace="10" height="600" align="left"><br>
@@ -1152,7 +1152,7 @@
   <img src="Part15/Library9.png" hspace="10" vspace="10" height="600" align="right"><br>
 <</nobr>>
 
-::Part15JobLibrary6FFF
+::Part15JobLibrary6FFF <5800,15200>
 <<nobr>>
   <h1>After work at the library</h1>
   <img src="Part15/Library7.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -1213,7 +1213,7 @@
   </tr></table>
 <</nobr>>
 
-::Part15JobLibrary6MF
+::Part15JobLibrary6MF <6000,15200>
 <<nobr>>
   <h1>Bailey having some fun after work</h1>
   As you are shelving books with her, you can see how distracted Bailey has become.  You've had that same look many evenings.
@@ -1253,7 +1253,7 @@
 
 <<include [[Part15AfterMainJob]]>>
 
-::Part15JobAthlete
+::Part15JobAthlete <6200,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobAthlete1]]>>
@@ -1270,7 +1270,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobAthlete1
+::Part15JobAthlete1 <6400,15200>
 <<nobr>>
   <h1>Relaxing after practice</h1>
   <img src="Part15/Athlete1.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -1316,7 +1316,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobAthlete2
+::Part15JobAthlete2 <6600,15200>
 <<nobr>>
   <h1>Maintaining your flexibility</h1>
   <video src="Part15/Athlete2.webm" autoplay loop muted height="450"></video>
@@ -1370,7 +1370,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobAthlete3
+::Part15JobAthlete3 <6800,15200>
 <<nobr>>
   <h1>A different kind of workout</h1>
   <div style="float:left;padding:12px;">
@@ -1421,7 +1421,7 @@
 
 <<include [[Part15AfterMainJob]]>>
 
-::Part15JobAthlete4
+::Part15JobAthlete4 <7000,15200>
 <<nobr>>
   <h1>Getting a massage</h1>
   <<if $PlayerChastityBelt>>
@@ -1474,7 +1474,7 @@
   <</if>>    
 <</nobr>>
 
-::Part15JobAthlete5
+::Part15JobAthlete5 <7200,15200>
 <<nobr>>
   <h1>Reaching Back</h1>
   <video src="Part15/Athlete5.mp4" autoplay loop muted height="450"></video>
@@ -1509,7 +1509,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobAthlete6
+::Part15JobAthlete6 <7400,15200>
 <<nobr>>
   <h1>A happy ending</h1>
   <<if $PlayerChastityBelt or $PlayerSideEffectSubmissive>>
@@ -1568,7 +1568,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobAthlete7
+::Part15JobAthlete7 <7600,15200>
 <<nobr>>
   <h1>His turn on the table</h1>
   <video src="Part15/Athlete7.mp4" autoplay loop muted height="450"></video>
@@ -1619,7 +1619,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobAthlete8
+::Part15JobAthlete8 <7800,15200>
 <<nobr>>
   <h1>Bring your Buddy to Work Day</h1>
   The buddy program is having a bring your buddy to work day even today.  Your "job" is mainly preparing for when it's time to compete.
@@ -1653,7 +1653,7 @@
   post-workout will make her feel much better though.
 <</nobr>>
 
-::Part15JobAthlete9FFF
+::Part15JobAthlete9FFF <8000,15200>
 <<nobr>>
   <<if setup.areDating("Bailey")>>
     <h1>Your and Bailey's massage</h1>
@@ -1706,7 +1706,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobAthlete9MF
+::Part15JobAthlete9MF <8200,15200>
 <<nobr>>
   <h1>Bailey's massage</h1>
   You'd already arranged for a visit for Bailey to the massage room after your work out.  You know the masseurs at the fitness
@@ -1746,7 +1746,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobCheer
+::Part15JobCheer <8400,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobCheer1]]>>
@@ -1759,7 +1759,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobCheer1
+::Part15JobCheer1 <8600,15200>
 <<nobr>>
   <h1>Cheering the team on at big game</h1>
   <img src="Part15/Cheer1.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -1797,7 +1797,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobCheer2
+::Part15JobCheer2 <8800,15200>
 <<nobr>>
   <h1>At their hotel room</h1>
   <img src="Part15/Cheer2.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -1824,7 +1824,7 @@
   places that probably wouldn't interest you as much.  Then all of us can meet afterwards for the rest of the tour."
 <</nobr>>
 
-::Part15JobCheer3
+::Part15JobCheer3 <9000,15200>
 <<nobr>>
   <h1>Touring the fitness center</h1>
   Logan's private tour starts at the fitness center.  You start at first showing him the impressive exercise and training facilities.
@@ -1867,7 +1867,7 @@
   worked up a bit of an appetite, we can get something to eat."  Of course, that was always your plan.
 <</nobr>>
 
-::Part15JobCheer4
+::Part15JobCheer4 <9200,15200>
 <<nobr>>
   <h1>Touring a dorm room</h1>
   <<set setup.addSex({sex: 'male', anon: 'Logan'})>>
@@ -1922,7 +1922,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobCheer5
+::Part15JobCheer5 <9400,15200>
 <<nobr>>
   <h1>Testing out a new uniform</h1>
   You guess the university has listening to some of your suggestions about sexier uniforms, but they've decided to take it
@@ -1964,7 +1964,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobCheer6
+::Part15JobCheer6 <9600,15200>
 <<nobr>>
   <h1>Taking out the plug</h1>
   After the game,
@@ -2017,7 +2017,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobCheer7
+::Part15JobCheer7 <9800,15200>
 <<nobr>>
   <h1>The new uniform without the plug</h1>
   <table>
@@ -2055,7 +2055,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobCheer8
+::Part15JobCheer8 <10000,15200>
 <<nobr>>
   <h1>Not quite ready for the big game</h1>
   <img src="Part15/Cheer12.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -2106,7 +2106,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobCheer9
+::Part15JobCheer9 <10200,15200>
 <<nobr>>
   <h1>Bailey at the game</h1>
   Bailey quite ready to show her school spirit out on the field in front of the crowd.  But she's more than qualified, and very
@@ -2128,7 +2128,7 @@
   [[the game to be over|Part15JobCheer10]]
 <</nobr>>
 
-::Part15JobCheer10
+::Part15JobCheer10 <10400,15200>
 <<nobr>>
   <h1>Bailey's visit to the locker room</h1>
   After the game, you take Bailey down to the locker room.  The coach is more than happy to let the players unwind and use up whatever
@@ -2165,7 +2165,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobBartender
+::Part15JobBartender <10600,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobBartender1]]>>
@@ -2186,7 +2186,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobBartender1
+::Part15JobBartender1 <10800,15200>
 <<nobr>>
   <h1>Karaoke night</h1>
   <div style="float:left;padding:12px;">
@@ -2223,7 +2223,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobBartender2
+::Part15JobBartender2 <11000,15200>
 <<nobr>>
   <h1>Showing her what she really wants</h1>
   Sometimes with the new X-Change girls, they still aren't quite sure what they want.  They used to like girls, so they think
@@ -2278,7 +2278,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobBartender2Dating
+::Part15JobBartender2Dating <11200,15200>
 <<nobr>>
   <h1>Watching the fun</h1>
   <img src="Part15/Bar4.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -2295,7 +2295,7 @@
   as soon as you [[get off work|Part15RelationshipIncludeAndShow]].
 <</nobr>>
 
-::Part15JobBartender2Bailey
+::Part15JobBartender2Bailey <11400,15200>
 <<nobr>>
   <h1>Having Bailey watch</h1>
   <video src="Part15/Bar2.webm" autoplay loop muted height="500"></video>
@@ -2319,7 +2319,7 @@
   your practiced tongue brings her to her first orgasm tonight.
 <</nobr>>
 
-::Part15JobBartender2Bailey2
+::Part15JobBartender2Bailey2 <11600,15200>
 <<nobr>>
   <h1>Letting Bailey join in</h1>
   <video src="Part15/Bar3.webm" autoplay loop muted height="500"></video>
@@ -2344,7 +2344,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobBartender3Clean
+::Part15JobBartender3Clean <11800,15200>
 <<nobr>>
   <h1>Telling the girls apart (imagining)</h1>
   <video src="Part15/Bar8.webm" autoplay loop muted height="500"></video>
@@ -2386,7 +2386,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobBartender3
+::Part15JobBartender3 <12000,15200>
 <<nobr>>
   <h1>Fun with a couple</h1>
   <video src="Part15/Bar8.webm" autoplay loop muted height="500"></video>
@@ -2434,7 +2434,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobBartender4
+::Part15JobBartender4 <12200,15200>
 <<nobr>>
   <h1>Fun while her husband watches</h1>
   <div style="float:left;padding:12px;">
@@ -2489,7 +2489,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobBartender5
+::Part15JobBartender5 <12400,15200>
 <<nobr>>
   <h1>Bring your Buddy to work day</h1>
   At first you have Bailey helping you behind the bar on "Bring your Buddy to work day."
@@ -2541,7 +2541,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobBartender6FFF
+::Part15JobBartender6FFF <12600,15200>
 <<nobr>>
   <h1>After work with Bailey and another freshman</h1>
   <video src="Part15/Bar13.mp4" autoplay loop muted height="450"></video>
@@ -2573,7 +2573,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobBartender6MFF
+::Part15JobBartender6MFF <12800,15200>
 <<nobr>>
   <h1>Hearing about Bailey's evening</h1>
   <video src="Part15/Bar12.webm" autoplay loop muted height="450"></video>
@@ -2603,7 +2603,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobOffice
+::Part15JobOffice <13000,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobOffice1]]>>
@@ -2616,7 +2616,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobOffice1
+::Part15JobOffice1 <13200,15200>
 <<nobr>>
   <h1>Minding the dress code</h1>
   <table width="100%">
@@ -2659,7 +2659,7 @@
   </table>
 <</nobr>>
 
-::Part15JobOffice2
+::Part15JobOffice2 <13400,15200>
 <<nobr>>
   <h1>Eating out for lunch</h1>
   <<set setup.addSex({anon:"coworker", sex:"male"})>>
@@ -2689,7 +2689,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobOffice3
+::Part15JobOffice3 <13600,15200>
 <<nobr>>
   <h1>Working to meet a deadline</h1>
   <img src="Part15/Office3.jpg" hspace="10" vspace="10" height="500">
@@ -2708,7 +2708,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobOffice4
+::Part15JobOffice4 <13800,15200>
 <<nobr>>
   <h1>Office Halloween Party</h1>
   <img src="Part15/Office4.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -2756,7 +2756,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobOffice5
+::Part15JobOffice5 <14000,15200>
 <<nobr>>
   <h1>Bring your Buddy to Work Day</h1>
   You'd told her about the dress code, but you had worried that Bailey would wear something inappropriate to work and you'd
@@ -2791,7 +2791,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobBarista
+::Part15JobBarista <14200,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<if $JobBetaTester>>
@@ -2821,7 +2821,7 @@
 <</nobr>>
 
 
-::Part15JobBaristaWeek3
+::Part15JobBaristaWeek3 <14400,15200>
 <<nobr>>
   <h1>On break at work</h1>
   <img src="Part15/Barista2.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -2846,7 +2846,7 @@
   [[Continue|Part15AfterMainJob]].
 <</nobr>>
 
-::Part15JobBaristaWeek3ChastityStandard
+::Part15JobBaristaWeek3ChastityStandard <14600,15200>
 <<nobr>>
   You wonder what it's for?
   <<if $DailyBJMinimum>>
@@ -2892,7 +2892,7 @@
     <</if>>
 <</nobr>>
 
-::Part15JobBaristaWeek3ChastityDeny
+::Part15JobBaristaWeek3ChastityDeny <14800,15200>
 <<nobr>>
   "Shit! No... darn!" you think to yourself, trying to correct your language even in your thoughts.  You realize you just set off the
   profanity filter on your belt again.
@@ -2908,7 +2908,7 @@
   look on the app [[after work|Part15ChastityLanguageDeny]] to see if you can get a list of exactly which words you shouldn't use.
 <</nobr>>
 
-::Part15JobBaristaWeek3Chastity
+::Part15JobBaristaWeek3Chastity <15000,15200>
 <<nobr>>
   <h1>On break at work</h1>
   <img src="Part15/Chastity1.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -2928,7 +2928,7 @@
 <</nobr>>
 
 
-::Part15ChastityLanguageDeny
+::Part15ChastityLanguageDeny <15200,15200>
 <<nobr>>
   <h1>Only good girls get orgasms</h1>
   <div style="float:left;padding:12px;">
@@ -2974,7 +2974,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15ChastityLanguageChaste
+::Part15ChastityLanguageChaste <15400,15200>
 <<nobr>>
   <h1>Bad girls get denied</h1>
   <div style="float:left;padding:12px;">
@@ -3040,7 +3040,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobBaristaWeek7
+::Part15JobBaristaWeek7 <15600,15200>
 <<nobr>>
   <<if $JobBikiniBaristaOld>>
     <h1>Hired as a manager</h1>
@@ -3095,7 +3095,7 @@
   after your first day in the new position.
 <</nobr>>
 
-::Part15JobBaristaWeek7Chaste
+::Part15JobBaristaWeek7Chaste <15800,15200>
 <<nobr>>
   <h1>Checking your belt between customers</h1>
   <img src="Part15/Chastity5.png" hspace="10" vspace="10" height="450">
@@ -3134,7 +3134,7 @@
   message. All you can do is accept the denial, and hope for a different answer [[tomorrow|Part15JobBaristaWeek7Chaste2]].
 <</nobr>>
 
-::Part15JobBaristaWeek7Chaste2
+::Part15JobBaristaWeek7Chaste2 <16000,15200>
 <<nobr>>
   <h1>Teased between classes</h1>
   <img src="Part15/Chastity6.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -3193,7 +3193,7 @@
   Finally, on the third day the belt you get a notification [[that a decision has been made|Part15JobBaristaWeek7Chaste3]].
 <</nobr>>
 
-::Part15JobBaristaWeek7Chaste3
+::Part15JobBaristaWeek7Chaste3 <16200,15200>
 <<nobr>>
   <h1>Addictive behavior confirmed</h1>
   <img src="Part15/Chastity7.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -3241,7 +3241,7 @@
   [[wait until tomorrow|Part15JobBaristaWeek7Chaste4]] to find out.
 <</nobr>>
 
-::Part15JobBaristaWeek7Chaste4
+::Part15JobBaristaWeek7Chaste4 <16400,15200>
 <<nobr>>
   <h1>Earning Points</h1>
   <img src="Part15/Chastity8.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -3317,7 +3317,7 @@
   every week.  You'd hate to sign up, then try and fail and get punished for it, so you skip those.
 <</nobr>>
 
-::Part15JobBaristaWeek7Chaste5
+::Part15JobBaristaWeek7Chaste5 <16600,15200>
 <<nobr>>
   <h1>Daily Affirmations</h1>
   The next morning, after getting your daily exercise requirement <<if !$PlayerNoBodyHair>>and personal grooming<</if>>
@@ -3420,7 +3420,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobBaristaWeek11
+::Part15JobBaristaWeek11 <16800,15200>
 <<nobr>>
   <h1>Enjoying your work</h1>
   <img src="Part15/Barista4.jpg" hspace="10" vspace="10" height="400">
@@ -3466,7 +3466,7 @@
   [[Continue|Part15AfterMainJob]].
 <</nobr>>
 
-::Part15JobBaristaWeek11Chaste
+::Part15JobBaristaWeek11Chaste <17000,15200>
 <<nobr>>
   <h1>Exciting notification while studying</h1>
   <img src="Part15/Chastity10.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -3523,7 +3523,7 @@
   You didn't need any more convincing.
 <</nobr>>
 
-::Part15JobBaristaWeek11Chaste2
+::Part15JobBaristaWeek11Chaste2 <17200,15200>
 <<nobr>>
   <h1>Your first training session</h1>
   <div style="float:left;padding:12px;">
@@ -3575,7 +3575,7 @@
   It then tells you to take a 15 minute rest and hydration break before you [[begin again|Part15JobBaristaWeek11Chaste3]].
 <</nobr>>
 
-::Part15JobBaristaWeek11Chaste3
+::Part15JobBaristaWeek11Chaste3 <17400,15200>
 <<nobr>>
   <h1>Finishing your first training session</h1>
   <div style="float:left;padding:12px;">
@@ -3642,7 +3642,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobBaristaWeek13
+::Part15JobBaristaWeek13 <17600,15200>
 <<nobr>>
   <h1>Bring your buddy to work day</h1>
   <img src="Part15/Buddy52.png" hspace="10" vspace="10" height="450">
@@ -3670,7 +3670,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobBaristaWeek13Bailey
+::Part15JobBaristaWeek13Bailey <17800,15200>
 <<nobr>>
   <h1>Making it up to you</h1>
   <video src="Part15/Buddy53.webm" autoplay loop muted height="400"></video>
@@ -3683,7 +3683,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobBaristaWeek13Chaste
+::Part15JobBaristaWeek13Chaste <18000,15200>
 <<nobr>>
   <h1>Practicing your other 'homework'</h1>
   <img src="Part15/Chastity13.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -3717,7 +3717,7 @@
   just wait the right number of minutes and click 'Done' on your phone for the free points.
 <</nobr>>
 
-::Part15JobBaristaWeek13Chaste2
+::Part15JobBaristaWeek13Chaste2 <18200,15200>
 <<nobr>>
   <h1>Testing your cleaning</h1>
   Today after your anal cleaning you receive a message from your belt.
@@ -3805,7 +3805,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobBikiniBarista
+::Part15JobBikiniBarista <18400,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobBikiniBarista1]]>>
@@ -3822,7 +3822,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobBikiniBarista1
+::Part15JobBikiniBarista1 <18600,15200>
 <<nobr>>
   <h1>Understaffed</h1>
   <img src="Part15/Barista6.jpg" hspace="10" vspace="10" height="550" align="left">
@@ -3856,7 +3856,7 @@
   [[Continue|Part15AfterMainJob]]
 <</nobr>>
 
-::Part15JobBikiniBarista2
+::Part15JobBikiniBarista2 <18800,15200>
 <<nobr>>
   <h1>Problem with Monique</h1>
   <div style="float:left;padding:12px;">
@@ -3891,7 +3891,7 @@
   help but feel like this is [[partially your fault|Part15JobBikiniBarista3]].
 <</nobr>>
 
-::Part15JobBikiniBarista3
+::Part15JobBikiniBarista3 <19000,15200>
 <<nobr>>
   <h1>Visit from the health inspector</h1>
   <img src="Part15/Barista8.jpg" hspace="10" vspace="10" height="400">
@@ -3944,7 +3944,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobBikiniBaristaShutdown
+::Part15JobBikiniBaristaShutdown <19200,15200>
 <<nobr>>
   <h1>Failed inspection</h1>
   You do your best to stall the inspector, talking about the new training your boss has added.  He hasn't of course, you
@@ -3987,7 +3987,7 @@
   you for having worked at Brian's shop.
 <</nobr>>
 
-::Part15JobBikiniBarista4
+::Part15JobBikiniBarista4 <19400,15200>
 <<nobr>>
   <h1>Working something out with the inspector</h1>
   He eagerly accepts your lunch invitation and suggests a restuarant nearby.  "Oh, I didn't bring any other clothes
@@ -4041,7 +4041,7 @@
   [[Continue|Part15AfterMainJob]]
 <</nobr>>
 
-::Part15JobBikiniBarista5Ministry
+::Part15JobBikiniBarista5Ministry <19600,15200>
 <<nobr>>
   <h1>Veteran's Day promotion</h1>
   <img src="Part15/Barista11.jpg" hspace="10" vspace="10" height="550" align="left">
@@ -4111,7 +4111,7 @@
   <<set setup.addSex({sex:"male", name:"Justin"})>>
 <</nobr>>
 
-::Part15JobBikiniBarista5
+::Part15JobBikiniBarista5 <19800,15200>
 <<nobr>>
   <h1>Veteran's Day promotion</h1>
   <img src="Part15/Barista11.jpg" hspace="10" vspace="10" height="550" align="left">
@@ -4173,7 +4173,7 @@
   starts.  
 <</nobr>>
 
-::Part15JobBikiniBarista6
+::Part15JobBikiniBarista6 <20000,15200>
 <<nobr>>
   <h1>His first time</h1>
   <<set setup.addSex({sex:"male", name:"Justin"})>>
@@ -4255,7 +4255,7 @@
 
 <<achievement>>virgin<</achievement>>
 
-::Part15JobBikiniBarista6Ministry
+::Part15JobBikiniBarista6Ministry <20200,15200>
 <<nobr>>
   <h1>One last visit with Justine before he leaves</h1>
   <<if $PlayerProtectionCondoms>>
@@ -4290,7 +4290,7 @@
   I won't be heartbroken or anything if it's the second one."
 <</nobr>>
 
-::Part15JobBikiniBarista6MinistryGoodbye
+::Part15JobBikiniBarista6MinistryGoodbye <20400,15200>
 <<nobr>>
   <h1>Saying goodbye to Justin</h1>
   You let Justin know that you aren't looking for a relationship right now, especially not a long-distance relationship.
@@ -4318,7 +4318,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobBikiniBarista6MinistryGirlfriend
+::Part15JobBikiniBarista6MinistryGirlfriend <20600,15200>
 <<nobr>>
   <h1>Saying goodbye to Justin</h1>
   "Of course you can think of me as your girlfriend!" you excitedly tell Justin. "I'm so glad you feel the same way I do.
@@ -4354,7 +4354,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobBikiniBarista6Bailey
+::Part15JobBikiniBarista6Bailey <20800,15200>
 <<nobr>>
   <h1>You and Bailey with Justin</h1>
   <div style="float:left;padding:12px;">
@@ -4402,7 +4402,7 @@
   <video src="Part13/Fundraiser2.webm" autoplay loop muted height="400"></video>
 <</nobr>>
 
-::Part15JobBikiniBarista7
+::Part15JobBikiniBarista7 <21000,15200>
 <<nobr>>
   <h1>Bring your Buddy to Work Day</h1>
   <img src="Part15/Barista15.png" hspace="10" vspace="10" height="550" align="left">
@@ -4434,7 +4434,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobCallGirl
+::Part15JobCallGirl <21200,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobCallGirlDominant]]>>
@@ -4447,7 +4447,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobCallGirlDominant
+::Part15JobCallGirlDominant <21400,15200>
 <<nobr>>
   <h1>Enjoying a different type of client</h1>
   <img src="Part15/CallGirl2.jpg" hspace="10" vspace="10" height="550">
@@ -4519,7 +4519,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobCallGirlDominant2
+::Part15JobCallGirlDominant2 <21600,15200>
 <<nobr>>
   <h1>Still catering to each client's desires</h1>
   <img src="Part15/CallGirl4.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -4564,7 +4564,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobCallGirlDominant3
+::Part15JobCallGirlDominant3 <21800,15200>
 <<nobr>>
   <h1>Renting out a dungeon</h1>
   <video src="Part15/CallGirl5.webm" autoplay loop muted height="500"></video>
@@ -4620,7 +4620,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobCallGirlDominantBuddy
+::Part15JobCallGirlDominantBuddy <22000,15200>
 <<nobr>>
   <h1>Bring your Buddy to Work Day</h1>
   <img src="Part15/CallGirl6.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -4670,7 +4670,7 @@
   [[for our next session|Part15JobCallGirlDominantBuddy2]].  I have a bit of a test in mind for him."
 <</nobr>>
 
-::Part15JobCallGirlDominantBuddy2
+::Part15JobCallGirlDominantBuddy2 <22200,15200>
 <<nobr>>
   <h1>Bring your Buddy to Work Day</h1>
   <video src="Part11/Peter6.webm" autoplay loop muted height="500"></video>
@@ -4707,7 +4707,7 @@
     <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobStripper
+::Part15JobStripper <22400,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobStripper1]]>>
@@ -4718,7 +4718,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobStripper1
+::Part15JobStripper1 <22600,15200>
 <<nobr>>
   <h1>Working at the strip club</h1>
   <video src="Part15/Strip3.mp4" autoplay loop muted height="500"></video>
@@ -4734,7 +4734,7 @@
   [[just how to really excite them|Part15JobStripper2]].
 <</nobr>>
 
-::Part15JobStripper2
+::Part15JobStripper2 <22800,15200>
 <<nobr>>
   <h1>Getting the girlfriend in on the performance</h1>
   <img src="Part15/Strip5.jpg" hspace="10" vspace="10" height="400" align="left">
@@ -4761,7 +4761,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobStripperFF
+::Part15JobStripperFF <23000,15200>
 <<nobr>>
   <h1>Having him watch</h1>
   <video src="Part15/Strip4.mp4" autoplay loop muted height="500"></video>
@@ -4779,7 +4779,7 @@
 
 <<include [[Part15AfterMainJob]]>>
 
-::Part15JobStripperMF
+::Part15JobStripperMF <23200,15200>
 <<nobr>>
   <h1>In the VIP Room</h1>
   <img src="Part15/Strip6.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -4822,7 +4822,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobStripper3
+::Part15JobStripper3 <23400,15200>
 <<nobr>>
   <h1>Back on stage</h1>
   <img src="Part15/Strip8.jpg" hspace="10" vspace="10" height="550" align="left">
@@ -4841,7 +4841,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobStripper4
+::Part15JobStripper4 <23600,15200>
 <<nobr>>
   <h1>Bondage Theme Night</h1>
   <img src="Part15/Strip9.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -4904,7 +4904,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobStripper4Home
+::Part15JobStripper4Home <23800,15200>
 <<nobr>>
   <h1>Home with some guy</h1>
   <video src="Part15/Strip11.webm" autoplay loop muted height="450"></video>
@@ -4944,7 +4944,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobStripper5
+::Part15JobStripper5 <24000,15200>
 <<nobr>>
   <h1>University Party</h1>
   <video src="Part15/Strip12.webm" autoplay loop muted height="450"></video>
@@ -4996,7 +4996,7 @@
 <</nobr>>
 
 
-::Part15JobStripper6Yes
+::Part15JobStripper6Yes <24200,15200>
 <<nobr>>
   <h1>In a rich, married guy's hotel room</h1>
   <div style="float:left;padding:12px;">
@@ -5029,7 +5029,7 @@
   When he was finally able to end the phone call, he [[wasn't interested in waiting|Part15JobStripper6Yes2]] any longer.
 <</nobr>>
 
-::Part15JobStripper6Yes2
+::Part15JobStripper6Yes2 <24400,15200>
 <<nobr>>
   <h1>In Vince's room</h1>
   <video src="Part15/Strip14.mp4" autoplay loop muted height="450"></video>
@@ -5093,7 +5093,7 @@
   <</if>>
 <</nobr>>
 
-::Part15NoSugarDaddy
+::Part15NoSugarDaddy <24600,15200>
 <<nobr>>
   <h1>Quitting the club</h1>
   <img src="Part15/Strip16.jpg" hspace="10" vspace="10" height="400">
@@ -5120,7 +5120,7 @@
   normal job instead.  Thankfully you know the [[coffee shop|Part15JobStripper6Quit]] near campus is hiring.
 <</nobr>>
 
-::Part15JobStripper6No
+::Part15JobStripper6No <24800,15200>
 <<nobr>>
   <h1>Only to look, and not touch</h1>
   <video src="Part15/Strip15.webm" autoplay loop muted height="450"></video>
@@ -5162,7 +5162,7 @@
 
 
 
-::Part15JobStripper6HoursCut
+::Part15JobStripper6HoursCut <25000,15200>
 <<nobr>>
   <h1>Having your hours cut</h1>
   <img src="Part15/Strip16.jpg" hspace="10" vspace="10" height="400">
@@ -5185,7 +5185,7 @@
   normal job instead.  Thankfully you know the [[coffee shop|Part15JobStripper6Quit]] near campus is hiring.
 <</nobr>>
 
-::Part15JobStripper6Quit
+::Part15JobStripper6Quit <25200,15200>
 <<nobr>>
   <h1>Starting your new job</h1>
   <img src="Part15/Barista3.jpg" hspace="10" vspace="10" height="400">
@@ -5228,7 +5228,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobBetaTester
+::Part15JobBetaTester <25400,15200>
 <<nobr>>
   <<set $tempShowedBetaTester to 1>>
   <<if $SchoolWeek == 3>>
@@ -5242,7 +5242,7 @@
   <</if>>
 <</nobr>>
 
-::Part15BetaTestLanguage
+::Part15BetaTestLanguage <25600,15200>
 <<nobr>>
   <h1>At the game</h1>
   <img src="Part15/Chastity4.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -5294,7 +5294,7 @@
   that you can look into what these "Profanity Violations" were all about.
 <</nobr>>
 
-::Part15BetaTestChallenge
+::Part15BetaTestChallenge <25800,15200>
 <<nobr>>
   <h1>Optional Testing Challenges</h1>
   <img src="Part15/BetaTest1.jpg" hspace="10" vspace="10" height="550" align="left">
@@ -5380,7 +5380,7 @@
   <</if>>
 <</nobr>>
 
-::Part15BetaTestChallengeDecline
+::Part15BetaTestChallengeDecline <26000,15200>
 <<nobr>>
   <h1>Declining the challenge</h1>
   <img src="Part15/BetaTest10.jpg" hspace="10" vspace="10" height="550" align="left">
@@ -5396,7 +5396,7 @@
 
 [[Continue|Part15AfterMainJob]]
 
-::Part15BetaTestChallengeNipple
+::Part15BetaTestChallengeNipple <26200,15200>
 <<nobr>>
   <h1>Getting Pierced</h1>
   Once you accept the challenge, it informs you that you should schedule your piercing within the next 48 hours, or
@@ -5462,7 +5462,7 @@
   [[leave the studio|Part15BetaTestChallengeNipple2]].
 <</nobr>>
 
-::Part15BetaTestChallengeNipple2
+::Part15BetaTestChallengeNipple2 <26400,15200>
 <<nobr>>
   <h1>Challenge 1 complete</h1>
   <<if setup.haveInventory('piercings', 'nipples')>>
@@ -5514,7 +5514,7 @@
   with your new settings.
 <</nobr>>
 
-::Part15BetaTestChallengeNipple3
+::Part15BetaTestChallengeNipple3 <26600,15200>
 <<nobr>>
   <h1>Finishing him</h1>
   <img src="PartX/Engineer16.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -5562,7 +5562,7 @@
   <</if>>
 <</nobr>>
 
-::Part15BetaTestChallenge2
+::Part15BetaTestChallenge2 <26800,15200>
 <<nobr>>
   <h1>Another Challenge</h1>
   <img src="Part15/BetaTest1.jpg" hspace="10" vspace="10" height="550" align="left">
@@ -5593,7 +5593,7 @@
   if they put that many disclaimers on the challenge, maybe it's safer to [[Decline|Part15BetaTestChallengeDecline]].
 <</nobr>>
 
-::Part15BetaTestCollar
+::Part15BetaTestCollar <27000,15200>
 <<nobr>>
   <h1>Advertising your
   <<if $dating.length>>
@@ -5672,7 +5672,7 @@
   <</if>>
 <</nobr>>
 
-::Part15BetaTestCollar2
+::Part15BetaTestCollar2 <27200,15200>
 <<nobr>>
   <h1>Advertising your availability</h1>
   <img src="Part15/BetaTest3.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -5721,7 +5721,7 @@
 <</nobr>>
 
 
-::Part15BetaTestClass
+::Part15BetaTestClass <27400,15200>
 <<nobr>>
   <h1>Classroom distraction</h1>
   <video src="Part15/BetaTest5.mp4" autoplay loop muted height="450"></video>
@@ -5755,7 +5755,7 @@
   <</if>>
 <</nobr>>
 
-::Part15BetaTestClass2
+::Part15BetaTestClass2 <27600,15200>
 <<nobr>>
   <h1>Orgasm in class</h1>
   <video src="Part15/BetaTest6.mp4" autoplay loop muted height="450"></video>
@@ -5801,7 +5801,7 @@
   <</if>>
 <</nobr>>
 
-::Part15BetaTestClassDreams
+::Part15BetaTestClassDreams <27800,15200>
 <<nobr>>
   <h1>Dreaming of orgasms</h1>
   <img src="Part15/BetaTest7.gif" hspace="10" vspace="10" height="650" align="left">
@@ -5848,7 +5848,7 @@
   <img src="Part15/BetaTest9.jpg" hspace="10" vspace="10" height="350">
 <</nobr>>
 
-::Part15BetaTestBuddy
+::Part15BetaTestBuddy <28000,15200>
 <<nobr>>
   <h1>Bring your buddy to work day</h1>
   You had been thinking that given the unusual nature of your 'job', Bailey wasn't going to be able to participate in the
@@ -5910,7 +5910,7 @@
   She jumps for a second, then says.  "[[It's starting now!|Part15BetaTestBuddy2]]"
 <</nobr>>
 
-::Part15BetaTestBuddy2
+::Part15BetaTestBuddy2 <28200,15200>
 <<nobr>>
   <h1>Bailey's <<if $BuddyChastityOld>>new<</if>> belt</h1>
   Bailey is already moaning from the teasing her belt is giving her before you get her home.  She spends most of day and the evening
@@ -5994,7 +5994,7 @@
 
 <<include [[Part15BackToMain]]>>
 
-::Part15JobEngineer
+::Part15JobEngineer <28400,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobEngineer1]]>>
@@ -6019,7 +6019,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineer1
+::Part15JobEngineer1 <28600,15200>
 <<nobr>>
   <h1>Testing your colleague's 'Slut Trap'</h1>
   There's a lot fewer test subjects for you and the other engineers to test on this year, most of them have been reassigned to
@@ -6090,7 +6090,7 @@
   No money, and no orgasms yet.  But at least you expect you'll have at least one when Eric [[has his fun with you|Part15JobEngineer2]].
 <</nobr>>
 
-::Part15JobEngineer2
+::Part15JobEngineer2 <28800,15200>
 <<nobr>>
   <h1>More testing with Eric</h1>
   Eric uncuffs your legs so you can dress in some shiny outfit.  You doubt it has anything to do with whatever 'test' he has
@@ -6141,7 +6141,7 @@
   waiting on your back as he looks.
 <</nobr>>
 
-::Part15JobEngineer3
+::Part15JobEngineer3 <29000,15200>
 <<nobr>>
   <h1>Final Escape?</h1>
   <<set setup.addSex({sex:"male", name:"Eric"})>>
@@ -6195,7 +6195,7 @@
   urge to turn your orgasms over to him comes from, but it's hard to resist.
 <</nobr>>
 
-::Part15JobEngineer3WalkBound
+::Part15JobEngineer3WalkBound <29200,15200>
 <<nobr>>
   <h1>Trying to walk away</h1>
   <img src="Part15/Engineer69.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -6236,7 +6236,7 @@
   slave-girl across campus.
 <</nobr>>
 
-::Part15JobEngineer3WalkBound2
+::Part15JobEngineer3WalkBound2 <29400,15200>
 <<nobr>>
   <h1>Thanking your rescuer</h1>
   <video src="Part15/Engineer68.mp4" autoplay loop muted height="450"></video>
@@ -6276,7 +6276,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobEngineer3Struggle
+::Part15JobEngineer3Struggle <29600,15200>
 <<nobr>>
   <h1>Free!</h1>
   After some struggling you manage to work the strap behind you up your back until you can get you arms over your head.
@@ -6308,7 +6308,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobEngineer3Submit
+::Part15JobEngineer3Submit <29800,15200>
 <<nobr>>
   <h1>No escape</h1>
   <<if !$PlayerItemNerdKey>>
@@ -6416,7 +6416,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineer3SubmitPeter
+::Part15JobEngineer3SubmitPeter <30000,15200>
 <<nobr>>
   <h1>Peter takes control</h1>
   Peter quickly finds himself being unlocked much more frequently than ever before.  Several times a day you are
@@ -6457,7 +6457,7 @@
 <</nobr>>
 
 
-::Part15JobEngineer4
+::Part15JobEngineer4 <30200,15200>
 <<nobr>>
   <h1>Comparing to the competition</h1>
   The automated, self-bondage saddle vibration machine you are working on will obviously need a better name before it goes to
@@ -6522,7 +6522,7 @@
   [[fuck your ass|Part15JobEngineer4Anal]].  He finds that offer acceptable.
 <</nobr>>
 
-::Part15JobEngineer4Anal
+::Part15JobEngineer4Anal <30400,15200>
 <<nobr>>
   <h1>A surprise from Eric</h1>
   Eric turns off the machine and releases you from your restraint.  Once you are free and can see the timer you'd
@@ -6557,7 +6557,7 @@
   Hopefully we aren't going to have to put a warning label on the product."
 <</nobr>>
 
-::Part15JobEngineer4Anal2
+::Part15JobEngineer4Anal2 <30600,15200>
 <<nobr>>
   <h1>Enjoying the effects while they last</h1>
   <<if setup.haveGirlfriend()>>
@@ -6631,7 +6631,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobEngineer4Eric
+::Part15JobEngineer4Eric <30800,15200>
 <<nobr>>
   <<set setup.addSexRepeat(20, {sex:"male", name:"Eric"})>>
   <h1>Finding new testers</h1>
@@ -6658,7 +6658,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineer4Faith
+::Part15JobEngineer4Faith <31000,15200>
 <<nobr>>
   <<set $FaithChastity to 1>>
   When you see 'chaste' mode on the list of recruiting targets, you get excited.  You know exactly who to talk to, Faith!
@@ -6724,7 +6724,7 @@
   [[tell Eric the good news|Part15JobEngineer4Eric2]].
 <</nobr>>
 
-::Part15JobEngineer4Sorority
+::Part15JobEngineer4Sorority <31200,15200>
 <<nobr>>
   <img src="Part15/Engineer44.jpg" hspace="10" vspace="10" height="450" align="left">
   <<set $SororityChastity to 1>>
@@ -6773,7 +6773,7 @@
   [[tell Eric the good news|Part15JobEngineer4Eric2]]
 <</nobr>>
 
-::Part15JobEngineer4Lesbian
+::Part15JobEngineer4Lesbian <31400,15200>
 <<nobr>>
   <<set $LesbianChastity to 1>>
   When you see 'paired lesbian' mode on the list of recruiting targets, you get excited.  You know exactly the two to talk to!
@@ -6862,7 +6862,7 @@
   she be happier finally having brought out her lover's dominant side.
 <</nobr>>
 
-::Part15JobEngineer4Eric2
+::Part15JobEngineer4Eric2 <31600,15200>
 <<nobr>>
   <h1>Celebrating with Eric</h1>
   <img src="Part15/Engineer45.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -6912,7 +6912,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobEngineer5
+::Part15JobEngineer5 <31800,15200>
 <<nobr>>
   <h1>Test subjects for your project</h1>
   Today your testing out the tease feature of the device you've been working on.  It's intended for the owner, or someone
@@ -6950,7 +6950,7 @@
   relevant instructions to deal with this when the product is released.
 <</nobr>>
 
-::Part15JobEngineer6
+::Part15JobEngineer6 <32000,15200>
 <<nobr>>
   <h1>Keeping her on the edge</h1>
   You can see for sure, when the machine edges the first tester after you added the restraints, that this is going
@@ -6972,7 +6972,7 @@
   [[keep observing|Part15JobEngineer7]].
 <</nobr>>
 
-::Part15JobEngineer7
+::Part15JobEngineer7 <32200,15200>
 <<nobr>>
   <h1>Happy ending to the testing session</h1>
   This testing session is ending with an orgasm for her.  After she's came, the machine finally releases her.  Once she's
@@ -7009,7 +7009,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobEngineer5Eric
+::Part15JobEngineer5Eric <32400,15200>
 <<nobr>>
   <h1>Building up buzz</h1>
   <<set setup.addSexRepeat(20, {sex:"male", name:"Eric"})>>
@@ -7096,13 +7096,13 @@
   <</link>>, or choose the option they landed on yourself)</i>
 <</nobr>>
 
-::Part15JobEngineer5EricBack
+::Part15JobEngineer5EricBack <32600,15200>
 <<nobr>>
   It's [[back to the working the booth|Part15JobEngineer5Eric]] and getting more people to sign up.  At least until the end
   of the day finally arrives, and you can spend [[some time with Eric|Part15JobEngineer5Eric2]].
 <</nobr>>
 
-::Part15JobEngineer5EricBJCommon
+::Part15JobEngineer5EricBJCommon <32800,15200>
 <<nobr>>
   No, instead you give her one of the many single-use applicator vibrators you have ready.  You pull the tab that
   activates it and the shaft immediately starts to vibrate.  She's already naked and been playing with herself by the time
@@ -7133,7 +7133,7 @@
   much laughter from the crowd when it happens.
 <</nobr>>
 
-::Part15JobEngineer5EricGel
+::Part15JobEngineer5EricGel <33000,15200>
 <<nobr>>
   <h1>Denied while they watch</h1>
 <</nobr>>
@@ -7157,7 +7157,7 @@
   <<include [[Part15JobEngineer5EricBack]]>>
 <</nobr>>
 
-::Part15JobEngineer5EricBJ
+::Part15JobEngineer5EricBJ <33200,15200>
 <<nobr>>
   <h1>Lying about their prize</h1>
 <</nobr>>
@@ -7183,7 +7183,7 @@
   [[drop to your knees|Part15JobEngineer5EricBJ2]] in front of her boyfriend.
 <</nobr>>
 
-::Part15JobEngineer5EricBJ2
+::Part15JobEngineer5EricBJ2 <33400,15200>
 <<nobr>>
   <h1>Awarding her actual prize</h1>
   With her still locked in the booth and watching you drop to your knees and take her husband or boyfriend's cock
@@ -7218,7 +7218,7 @@
   <<include [[Part15JobEngineer5EricBack]]>>
 <</nobr>>
 
-::Part15JobEngineer5EricSybian
+::Part15JobEngineer5EricSybian <33600,15200>
 <<nobr>>
   <h1>One last orgasm, maybe</h1>
   The crowd is usually disappointed when they see it land on "Sybian Orgasm" or "Sybian Tease".  They were hoping to
@@ -7273,7 +7273,7 @@
   <<include [[Part15JobEngineer5EricBack]]>>
 <</nobr>>
 
-::Part15JobEngineer5EricBelt
+::Part15JobEngineer5EricBelt <33800,15200>
 <<nobr>>
   <h1>Belted while they watch</h1>
   She can't see when the wheel stops on the tiny "Free Belt" space, but she can tell from the cheers of the onlooking crowd
@@ -7352,7 +7352,7 @@
   <<include [[Part15JobEngineer5EricBack]]>>
 <</nobr>>
 
-::Part15JobEngineer5Eric2
+::Part15JobEngineer5Eric2 <34000,15200>
 <<nobr>>
   <<set setup.addSexRepeat(20, {sex:"male", anon:"Convention Attendee"})>>
   <<set setup.addSexRepeat(20, {sex:"male", name:"Eric"})>>
@@ -7398,7 +7398,7 @@
   need your rest.
 <</nobr>>
 
-::Part15JobEngineer5Eric3
+::Part15JobEngineer5Eric3 <34200,15200>
 <<nobr>>
   <h1>Charity Auction</h1>
   <div style="float:left;padding:12px;">
@@ -7429,7 +7429,7 @@
   <video src="Part14/Chastity21.webm" autoplay loop muted height="500"></video>
 <</nobr>>
 
-::Part15JobEngineer5Eric4
+::Part15JobEngineer5Eric4 <34400,15200>
 <<nobr>>
   <h1>Awarding the raffle prizes</h1>
   There were five belts still left at the end of the convention. There were more people than ever, along with media of
@@ -7484,7 +7484,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15Engineer8Eric
+::Part15Engineer8Eric <34600,15200>
 <<nobr>>
   <h1>More marketing ideas</h1>
   Your boss is thrilled with the results from the convention, and especially with how successful the contest and auction you ran were.
@@ -7579,7 +7579,7 @@
   "Do you have [[any other ideas|Part15Engineer8Eric2]]?" he asks you eagerly.
 <</nobr>>
 
-::Part15Engineer8Eric2
+::Part15Engineer8Eric2 <34800,15200>
 <<nobr>>
   <h1>Referral Bonuses</h1>
   <div style="float:left;padding:12px;">
@@ -7622,7 +7622,7 @@
   "I love it, $playerName.  [[Anything more|Part15Engineer8Eric3]]?"
 <</nobr>>
 
-::Part15Engineer8Eric3
+::Part15Engineer8Eric3 <35000,15200>
 <<nobr>>
   <h1>Try before you buy</h1>
   You share another idea you've been thinking about.  "Obviously our belts aren't going to be cheap.  And so there's going
@@ -7706,7 +7706,7 @@
   [[let Eric know|Part15Engineer8Eric4]], when I see him, what a great help you've been."
 <</nobr>>
 
-::Part15Engineer8Eric4
+::Part15Engineer8Eric4 <35200,15200>
 <<nobr>>
   <h1>Reward from Eric</h1>
   Eric has been generous with your orgasms lately - at the convention, and then last week when you helped resolve that
@@ -7730,7 +7730,7 @@
   You quickly start undressing, but he stops you.  "[[I don't mean right now|Part15Engineer8Eric5]]," he tells you.
 <</nobr>>
 
-::Part15Engineer8Eric5
+::Part15Engineer8Eric5 <35400,15200>
 <<nobr>>
   <h1>Just Eric's orgasms for now</h1>
   "I want your next orgasm, with me inside you, to be special," Eric tells you.  "It'll be a Valentine's Day treat for you.
@@ -7763,7 +7763,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15Engineer8Bailey
+::Part15Engineer8Bailey <35600,15200>
 <<nobr>>
   <h1>Bring your buddy to work day</h1>
   Bailey has no interest in being an engineer, so you assuming she's not going to want to participate in the "Bring your Buddy to
@@ -7824,7 +7824,7 @@
   She jumps for a second, then says.  "[[It's starting now!|Part15Engineer8Bailey2]]"
 <</nobr>>
 
-::Part15Engineer8Bailey2
+::Part15Engineer8Bailey2 <35800,15200>
 <<nobr>>
   <h1>Bailey's <<if $BuddyChastityOld>>new<</if>> belt</h1>
   Bailey is already moaning from the teasing her belt is giving her before you get her home.  She spends most of day and the evening
@@ -7893,7 +7893,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobEngineerLock
+::Part15JobEngineerLock <36000,15200>
 <<nobr>>
   <<if $SchoolWeek == 3>>
     <<include [[Part15JobEngineerLock1]]>>
@@ -7904,7 +7904,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock1
+::Part15JobEngineerLock1 <36200,15200>
 <<nobr>>
   <h1>Trying to hack your belt</h1>
   <img src="Part15/Engineer7.jpg" hspace="10" vspace="10" height="450" align="left">
@@ -7983,7 +7983,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLockOrgasm
+::Part15JobEngineerLockOrgasm <36400,15200>
 <<nobr>>
   <h1>Testing the new setting</h1>
   <<if setup.haveGirlfriend()>>
@@ -8088,7 +8088,7 @@
   [[head to the engineering department|Part15JobEngineerLock2]].
 <</nobr>>
 
-::Part15JobEngineerLockUnlock
+::Part15JobEngineerLockUnlock <36600,15200>
 <<nobr>>
   <h1>Tripping the alarm</h1>
   <img src="Part15/Engineer11.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -8168,7 +8168,7 @@
   [[the engineering department|Part15JobEngineerLock2]].  Hopefully you boss gets in soon and turns them off!
 <</nobr>>
 
-::Part15JobEngineerLock2
+::Part15JobEngineerLock2 <36800,15200>
 <<nobr>>
   <h1>Explaining the problem</h1>
   <img src="Part15/Engineer10.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -8244,7 +8244,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobEngineerLock3
+::Part15JobEngineerLock3 <37000,15200>
 <<nobr>>
   <h1>Considering your options</h1>
   <img src="Part15/Engineer12.jpg" hspace="10" vspace="10" height="600" align="left">
@@ -8362,7 +8362,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock4
+::Part15JobEngineerLock4 <37200,15200>
 <<nobr>>
   <h1>Explaining your plan</h1>
   <img src="Part15/Engineer13.jpg" hspace="10" vspace="10" height="750" align="left">
@@ -8402,7 +8402,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock5
+::Part15JobEngineerLock5 <37400,15200>
 <<nobr>>
   <h1>Rewarding him for helping</h1>
   <img src="Part15/Engineer14.jpg" hspace="10" vspace="10" height="750" align="left">
@@ -8418,7 +8418,7 @@
   [[let's begin|Part15JobEngineerLock6]]."
 <</nobr>>
 
-::Part15JobEngineerLock6
+::Part15JobEngineerLock6 <37600,15200>
 <<nobr>>
   <h1>The moment of truth</h1>
   <img src="Part15/Engineer15.jpg" hspace="10" vspace="10" height="750" align="left">
@@ -8473,7 +8473,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock7
+::Part15JobEngineerLock7 <37800,15200>
 <<nobr>>
   <h1>Telling $tempLockAssist about your backup plan</h1>
   <img src="Part15/Engineer19.jpg" hspace="10" vspace="10" height="428" align="left">
@@ -8525,11 +8525,11 @@
   [[I didn't say I was going to|Part15JobEngineerLock8]]."
 <</nobr>>
 
-::Part15JobEngineerLock8
+::Part15JobEngineerLock8 <38000,15200>
 <<nobr>>
   <h1>Earning your orgasm</h1>
   <div style="float:left;padding:12px;">
-    <video src="PartX/Cumsult8.webm" autoplay loop muted height="500"></video>
+    <video src="PartX/Cumslut8.webm" autoplay loop muted height="500"></video>
   </div>
   <<set setup.addSex({sex:"male", name:$tempLockAssist})>>
   <<if !$tempLockAssistFail>>
@@ -8581,7 +8581,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock9
+::Part15JobEngineerLock9 <38200,15200>
 <<nobr>>
   <<if $tempLockAssistFail>>
     <<include [[Part15JobEngineerLock9Fail]]>>
@@ -8590,7 +8590,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock9Fail
+::Part15JobEngineerLock9Fail <38400,15200>
 <<nobr>>
   <h1>A weekend of frustration</h1>
   <img src="Part15/Engineer18.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -8623,7 +8623,7 @@
 <</nobr>>
 
 
-::Part15JobEngineerLock9Success
+::Part15JobEngineerLock9Success <38600,15200>
 <<nobr>>
   <h1>A weekend of orgasms</h1>
   <img src="Part15/Engineer18.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -8664,7 +8664,7 @@
   two of you do just that all weekend long.
 <</nobr>>
 
-::Part15JobEngineerLock9Girlfriend
+::Part15JobEngineerLock9Girlfriend <38800,15200>
 <<nobr>>
   <h1>Making do wtih $tempLockAssist</h1>
   <img src="Part15/Engineer21.jpg" hspace="10" vspace="10" height="750" align="left">
@@ -8722,7 +8722,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock7Barry
+::Part15JobEngineerLock7Barry <39000,15200>
 <<nobr>>
   <h1>Telling Barry about your backup plan</h1>
   <div style="float:left;padding:12px;">
@@ -8794,7 +8794,7 @@
   You are unable to contain your excitement. "Yes, sir!  Very much, sir!  Thank you, sir!"
 <</nobr>>
 
-::Part15JobEngineerLock8Barry
+::Part15JobEngineerLock8Barry <39200,15200>
 <<nobr>>
   <h1>Earning your orgasm</h1>
   <img src="Part15/Engineer18.jpg" hspace="10" vspace="10" height="550" align="left">
@@ -8835,7 +8835,7 @@
   each guy, how many guys live there, how long each will take, and so on.
 <</nobr>>
 
-::Part15JobEngineerLock9Barry
+::Part15JobEngineerLock9Barry <39400,15200>
 <<nobr>>
   <h1>Working hard to earn your orgasm</h1>
   <img src="Part15/Engineer20.jpg" hspace="10" vspace="10" height="700" align="left">
@@ -8879,7 +8879,7 @@
 
 <<achievement>>train<</achievement>>
 
-::Part15JobEngineerLock10
+::Part15JobEngineerLock10 <39600,15200>
 <<nobr>>
   <h1>Meeting with your boss</h1>
   <img src="Part15/Engineer3.jpg" hspace="10" vspace="10" height="700" align="left">
@@ -8981,7 +8981,7 @@
   <<include [[Part15BackToMain]]>>
 <</nobr>>
 
-::Part15JobEngineerLock11
+::Part15JobEngineerLock11 <39800,15200>
 <<nobr>>
   <h1>Waking up horny</h1>
   <img src="Part15/Engineer22.jpg" hspace="10" vspace="10" height="550">
@@ -9061,7 +9061,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock11Normal
+::Part15JobEngineerLock11Normal <40000,15200>
 <<nobr>>
   <h1>Waking up horny</h1>
   <img src="Part15/Engineer25.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -9087,7 +9087,7 @@
   [[hacking you belt again|Part15JobEngineerLock11Normal2]].  You are determined to cum again - today!
 <</nobr>>
 
-::Part15JobEngineerLock11Normal2
+::Part15JobEngineerLock11Normal2 <40200,15200>
 <<nobr>>
   <h1>Testing your hack</h1>
   After pouring through the source code you think you have figured out a flaw that will let your orgasm again and again!  It looks like you can cause
@@ -9137,7 +9137,7 @@
   You aren't going to manage 1000 this weekend, but you do plan on enjoying as many orgasms as you can between now and Monday morning.
 <</nobr>>
 
-::Part15JobEngineerLock11Normal3
+::Part15JobEngineerLock11Normal3 <40400,15200>
 <<nobr>>
   <h1>Analyzing your belt</h1>
   <img src="PartX/Engineer1.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -9178,7 +9178,7 @@
   your face. "[[I have an idea though...|Part15JobEngineerLock11Normal4]]"
 <</nobr>>
 
-::Part15JobEngineerLock11Normal4
+::Part15JobEngineerLock11Normal4 <40600,15200>
 <<nobr>>
   <h1>Release Plan</h1>
   <<unset $PlayerChastityBra>>
@@ -9221,7 +9221,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock11Unlock
+::Part15JobEngineerLock11Unlock <40800,15200>
 <<nobr>>
   <h1>Working your way to 100</h1>
   <video src="Part15/Engineer28.webm" autoplay loop muted height="500"></video>
@@ -9271,7 +9271,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobEngineerLock11Unlock2
+::Part15JobEngineerLock11Unlock2 <41000,15200>
 <<nobr>>
   <h1>Finally Free</h1>
   <video src="Part15/Engineer29.webm" autoplay loop muted height="500"></video>
@@ -9335,7 +9335,7 @@
   It's been too long since you've had a cock inside you though.  You are hardly going to [[stop at just one|Part15JobEngineerLock11Unlock3]].
 <</nobr>>
 
-::Part15JobEngineerLock11Unlock3
+::Part15JobEngineerLock11Unlock3 <41200,15200>
 <<nobr>>
   <h1>Double the fun</h1>
   <video src="Part15/Engineer30.webm" autoplay loop muted height="500"></video>
@@ -9392,7 +9392,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobEngineerLock11HopelessBailey
+::Part15JobEngineerLock11HopelessBailey <41400,15200>
 <<nobr>>
   <h1>On your knees with Bailey</h1>
   <img src="Part15/Engineer24.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -9431,7 +9431,7 @@
 
 <<achievement>>threesome:fmf<</achievement>>
 
-::Part15JobEngineerLock11HopelessBailey2
+::Part15JobEngineerLock11HopelessBailey2 <41600,15200>
 <<nobr>>
   <h1>Five minute warning</h1>
   With nothing else planned today, you are planning to spend most of the day testing your belt again.  With a whole day to focus on it, maybe you'll
@@ -9467,7 +9467,7 @@
   department head.
 <</nobr>>
 
-::Part15JobEngineerLock11Hopeless
+::Part15JobEngineerLock11Hopeless <41800,15200>
 <<nobr>>
   <h1>Five minute warning</h1>
   <video src="Part15/Engineer23.webm" autoplay loop muted height="500"></video>
@@ -9525,7 +9525,7 @@
   department head.
 <</nobr>>
 
-::Part15JobModel1Pregnant
+::Part15JobModel1Pregnant <42000,15200>
 <<nobr>>
   <h1>Maternity Modeling</h1>
     <img src="Part15/Model8.jpg" hspace="10" vspace="10" height="500" align="left">
@@ -9541,7 +9541,7 @@
   in front of the camera.  So you're always glad when your [[shoot is over for the day|Part15AfterMainJob]].
 <</nobr>>
 
-::Part15JobModel1
+::Part15JobModel1 <42200,15200>
 <<nobr>>
   <h1>Swimsuit Modeling</h1>
   <video src="Part15/Model1.webm" autoplay loop muted height="500"></video>
@@ -9635,7 +9635,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobModel2
+::Part15JobModel2 <42400,15200>
 <<nobr>>
   <h1>Fantasizing about your photographer</h1>
   <video src="Part15/Model3.mp4" autoplay loop muted height="500"></video>
@@ -9678,7 +9678,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobModel3
+::Part15JobModel3 <42600,15200>
 <<nobr>>
   <h1>Private session with the photographer</h1>
   <video src="Part15/Model4.mp4" autoplay loop muted height="500"></video>
@@ -9711,7 +9711,7 @@
   "[[We're not done yet|Part15JobModel4]]," he says as he continues to hands you a box with more toys.
 <</nobr>>
 
-::Part15JobModel4
+::Part15JobModel4 <42800,15200>
 <<nobr>>
   <h1>Private session with the photographer</h1>
   <video src="Part15/Model5.mp4" autoplay loop muted height="500"></video>
@@ -9753,7 +9753,7 @@
   to [[unbuckle his pants|Part15JobModel5]].
 <</nobr>>
 
-::Part15JobModel5
+::Part15JobModel5 <43000,15200>
 <<nobr>>
   <h1>Private session with the photographer</h1>
   <video src="Part15/Model6.mp4" autoplay loop muted height="500"></video>
@@ -9784,7 +9784,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobModel7
+::Part15JobModel7 <43200,15200>
 <<nobr>>
   <h1>Everyday Latex</h1>
   <img src="Part15/Fashion8.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -9818,7 +9818,7 @@
   <</if>>
 <</nobr>>
 
-::Part15JobModel8
+::Part15JobModel8 <43400,15200>
 <<nobr>>
   <h1>Additional features</h1>
   <img src="Part15/Fashion9.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -9871,7 +9871,7 @@
   [[other innovations|Part15JobModel9]] that they are helping you with first.
 <</nobr>>
 
-::Part15JobModel9
+::Part15JobModel9 <43600,15200>
 <<nobr>>
   <h1>Fun the next day too</h1>
   <img src="Part15/Fashion10.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -9894,7 +9894,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobModel10
+::Part15JobModel10 <43800,15200>
 <<nobr>>
   <h1>Fun at 30,000 feet</h1>
   <img src="Part15/Fashion11.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -9930,7 +9930,7 @@
   [[some ideas on how to offer certain guys|Part15JobModel11]] an option too.
 <</nobr>>
   
-::Part15JobModel11
+::Part15JobModel11 <44000,15200>
 <<nobr>>
   <h1>Clothes make the woman</h1>
   <img src="Part15/Fashion12.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -9962,7 +9962,7 @@
   a few male-bodied volunteers in your new designs, out for [[a night of fun|Part15JobModel12]].
 <</nobr>>
 
-::Part15JobModel12
+::Part15JobModel12 <44200,15200>
 <<nobr>>
   <h1>Passing the test</h1>
   <img src="Part15/Fashion13.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -9987,7 +9987,7 @@
   You tell them that you'll think on it and [[try to come up with a solution|Part15JobModel13]].
 <</nobr>>
 
-::Part15JobModel13
+::Part15JobModel13 <44400,15200>
 <<nobr>>
   <h1>Multiple solutions to the problem</h1>
   <img src="Part15/Fashion14.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -10023,7 +10023,7 @@
   For them you have another option.
 <</nobr>>
 
-::Part15JobModel14
+::Part15JobModel14 <44600,15200>
 <<nobr>>
   <h1>A Dress for the Guys</h1>
   <img src="Part15/Fashion15.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -10073,7 +10073,7 @@
   <<include [[Part15AfterMainJob]]>>
 <</nobr>>
 
-::Part15JobModel15
+::Part15JobModel15 <44800,15200>
 <<nobr>>
   <h1>Bring your buddy to work day</h1>
   For "Bring your Buddy to Work Day", you take Bailey to your studio.  She tries on a number of your creations, looking for
@@ -10105,7 +10105,7 @@
   [[basic bodysuit|Part15JobModel16]], without any of your advanced features.
 <</nobr>>
 
-::Part15JobModel16
+::Part15JobModel16 <45000,15200>
 <<nobr>>
   <h1>Bailey enjoying her bodysuit after class</h1>
   <<if !setup.areDating("Bailey")>>
@@ -10174,3 +10174,4 @@
 <</nobr>>
 
 <<include [[Part15BackToMain]]>>
+

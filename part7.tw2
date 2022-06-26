@@ -1,4 +1,4 @@
-::Part7Start1 <1200,5600>
+::Part7Start1  <0,7000>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
@@ -36,7 +36,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7Start3 <1200,5725>
+::Part7Start3  <200,7000>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
@@ -96,7 +96,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7Start4 <1000,5750>
+::Part7Start4  <400,7000>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
 	<<if $PlayerProtectionTry>>
@@ -125,7 +125,7 @@
 
 [[You write your answer and wait for a nurse to come in.|Part7Start5]]
 
-::Part7Start5 <800,5750>
+::Part7Start5  <600,7000>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
@@ -164,7 +164,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7Start6 <1200,6000>
+::Part7Start6  <800,7000>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
@@ -232,7 +232,7 @@
 
 [[You can start packing for your winter holiday.|Part7Pack1]]
 
-::Part7Preg1 <600,5750>
+::Part7Preg1  <1000,7000>
 <<nobr>>
 	<<set $PlayerPregnant to 1>>
  
@@ -284,7 +284,7 @@
 <</nobr>>
 
 
-::Part7Pack1
+::Part7Pack1 <1200,7000>
 <<nobr>>
   <<if $CampusMinistry and setup.isNeighbour('Barry')>>
     <<include [[Part7Pack1Barry]]>>
@@ -293,7 +293,7 @@
   <</if>>
 <</nobr>>
 
-::Part7Pack1Barry
+::Part7Pack1Barry <1400,7000>
 <<nobr>>
 	<h1>Tricked by Barry</h1>
   You are about to start packing for the holiday break when Barry comes in and asks for a favor.  "$playerName, I picked out a gift for
@@ -373,7 +373,7 @@
   <</if>>
 <</nobr>>
 
-::Part7Pack1Main <600,6175>
+::Part7Pack1Main  <1600,7000>
 <<nobr>>
 	<h1>Bedroom</h1>
 	<<if $PlayerProtectionTry && !$PregnancyCheck.isPregnant>>
@@ -426,7 +426,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7Pack2 <300,6200>
+::Part7Pack2  <1800,7000>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
@@ -438,7 +438,7 @@
 
 [[Once you finally finish packing your bags, you head home for winter break.|Part8Start1]]
 
-::Part7Preg3 <200,5750>
+::Part7Preg3  <2000,7000>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
@@ -692,7 +692,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7PregSample <900,6000>
+::Part7PregSample  <2200,7000>
 <video src="PartP/Sample.mp4" autoplay loop muted height="640"></video>
 
 <<nobr>>
@@ -949,7 +949,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7Preg2 <1000,6000>
+::Part7Preg2  <2400,7000>
 <<nobr>>
 	<<set $PlayerPregnant to 0>>
   <<unset $PregnancyCheck>>
@@ -1010,7 +1010,7 @@
 [[You can start packing for your winter holiday.|Part7Pack1]]
 <<achievement>>childfree<</achievement>>
 
-::Part7AndrewBoss <800,5900>
+::Part7AndrewBoss  <2600,7000>
 <<nobr>>
 	<h1><<print "Andrew">></h1>
 <</nobr>>
@@ -1072,7 +1072,7 @@
 
 <span id="AndrewBossSpan4"></span>
 
-::Part7AndrewBoyfriend <200,6025>
+::Part7AndrewBoyfriend  <2800,7000>
 <<nobr>>
 	<h1><<print "Andrew">></h1>
 <</nobr>>
@@ -1089,7 +1089,7 @@
 
 [[You can start packing for your winter holiday.|Part7Pack1]]
 
-::Part7Josh <400,5900>
+::Part7Josh  <3000,7000>
 <<nobr>>
 	<<set setup.breakupWith('Josh')>>
 	<<set setup.removeNeighbour('Josh')>>
@@ -1107,7 +1107,7 @@
 
 <<print "You find out from friends of his that he freaked out about “his life being ruined” and has left town for a different university. ">>[[You’re on your own for the pregnancy.|Part7Unknown]]<<print " You might be able to get some help with expenses afterwards if you go after him for child support though.">>
 
-::Part7OfficeBoss1 <600,5900>
+::Part7OfficeBoss1  <3200,7000>
 <<nobr>>
 	<<set $JobOfficePA = 0>>
 	<<set $JobOfficeManager = 1>>
@@ -1144,7 +1144,7 @@
 	stay silent as long as the money keeps coming though. He gives you a transfer to a new, and more professional, boss.
 <</nobr>>
 
-::Part7Aaron <0,6025>
+::Part7Aaron  <3400,7000>
 <<nobr>>
 	<h1><<print "Daddy">></h1>
 <<set $StatedFather to 'Aaron'>>
@@ -1170,7 +1170,7 @@
 
 [[You can start packing for your winter holiday.|Part7Pack1]]
 
-::Part7Barry <50,6025>
+::Part7Barry  <3600,7000>
 <<nobr>>
 	<<if $PregnancyCheck.actualFather == 'Barry'>>
 		<h1>Barry - Confirmed</h1>
@@ -1219,7 +1219,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7BarryAbortionBribe <75,6025>
+::Part7BarryAbortionBribe  <3800,7000>
 <<nobr>>
 	<h1>Reconsidered</h1>
 	<<set $BarryBribe to 1>>
@@ -1307,7 +1307,7 @@
 
 <<achievement>>childfree<</achievement>>
 
-::Part7BarryKeep <95,6025>
+::Part7BarryKeep  <4000,7000>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
 	<<set setup.breakupWith('Barry')>>
@@ -1337,7 +1337,7 @@
 [[You put off packing for your trip home until tomorrow.|Part7Pack1]]
 
 
-::Part7Peter <110,6025>
+::Part7Peter  <4200,7000>
 <<nobr>>
 	<h1><<print "Peter">></h1>
 	<<if $PlayerProtectionTry || !setup.areDating('Peter')>>
@@ -1402,7 +1402,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7PeterAfterPaul
+::Part7PeterAfterPaul <4400,7000>
 <<nobr>>
 	<h1><<print "Peter">></h1>
 	<<if $PlayerProtectionTry || !setup.areDating('Peter')>>
@@ -1441,7 +1441,7 @@
   After he finishes up with you, you send him off for the holiday still caged, while you [[start your packing for your own trip home|Part7Pack1]].
 <</nobr>>
 
-::Part7James <200,6025>
+::Part7James  <4600,7000>
 <<nobr>>
 	<<set setup.breakupWith('James')>>
 	<<if $PregnancyCheck.actualFather == 'James'>>
@@ -1483,7 +1483,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7James2 <115,6025>
+::Part7James2  <4800,7000>
 <<nobr>>
 	<h1>Attorney's Office</h1>
 	<img src="PartP/Lawyer.jpg" hspace="10" vspace="10" height="480">
@@ -1521,7 +1521,7 @@
 	[[agree with his adoption proposal|Part7James3]].
 <</nobr>>
 
-::Part7James3 <120,6025>
+::Part7James3  <5000,7000>
 <<nobr>>
 	<h1>Your Room</h1>
 	<video src="PartP/Lawyer2.mp4" autoplay loop muted height="540"></video>
@@ -1535,7 +1535,7 @@
 	have a bit of fun modeling them for $Mentor.  [[You put off packing for your trip home until tomorrow.|Part7Pack1]]
 <</nobr>>
 
-::Part7FWB <350,6025>
+::Part7FWB  <5200,7000>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
 <</nobr>>
@@ -1575,7 +1575,7 @@
 	[[You put off packing for your trip home until tomorrow.|Part7Pack1]]
 <</if>>
 
-::Part7Breakup <395,6025>
+::Part7Breakup  <5400,7000>
 <<nobr>>
 	<<if setup.areDating('Veronica')>>
 		When Veronica finds out you are pregnant, she breaks up with you for cheating on her.  Now you won't have her help, or the father's.
@@ -1600,7 +1600,7 @@
 	<</if>>
 <</nobr>>
 
-::Part7Unknown <400,6025>
+::Part7Unknown  <5600,7000>
 <<nobr>>
 	<h1><<print "Bedroom">></h1>
 	<img src="Part7/Preg10.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -1629,7 +1629,7 @@
 	[[You put off packing for your trip home until tomorrow.|Part7Pack1]]
 <</if>>
 
-::Part7AndrewBoss2 <600,6025>
+::Part7AndrewBoss2  <5800,7000>
 <<nobr>>
 	<h1><<print "Andrew’s Parents">></h1>
 <</nobr>>
@@ -1644,3 +1644,4 @@
 <<print "You and Andrew decide that you should move in with him after the holiday. You want to be close to each other, and he’ll be able to help later when you need it. You’re sure his dad can pull some strings if the university complains about the dorm requirement.">>
 
 [[You can start packing for your winter holiday.|Part7Pack1]]
+

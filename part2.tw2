@@ -1,4 +1,4 @@
-::Part2Start <0,400>
+::Part2Start  <0,2000>
 <<nobr>>
 	<<set $PlayerMentorPick = 0>>
 	
@@ -26,7 +26,7 @@
 
 <<print "The four of you will all share a common living room and bathroom.">>
 
-::MentorFather
+::MentorFather <200,2000>
 <<nobr>>
 	<h1><<print "Mentors">></h1>
 <</nobr>>
@@ -42,7 +42,7 @@
   to let them know what he thought you needed in a mentor, and they'd already arranged one for you.  Her name is [[Faith|Faith1]].
 <</nobr>>	
 
-::Mentor <200,400>
+::Mentor  <400,2000>
 <<nobr>>
 	<h1><<print "Mentors">></h1>
 <</nobr>>
@@ -105,7 +105,7 @@
 	[[Olivia,|Olivia]]<<print " a goth looking girl, she doesn’t look as friendly as the other and you’ve heard her mention the word master a couple of times, whatever that means..">></p>
 <</switch>>
 
-::Faith1 <400,400>
+::Faith1  <600,2000>
 <<nobr>>
 	<<set $Mentor to 'Faith'>>
 	<<set $Roommate to 'Faith'>>
@@ -124,7 +124,7 @@
 
 <<print "Before we go shopping, how about we go and ">>[[select our neighbours?|Neighbours]]
 
-::Faith2 <600,400>
+::Faith2  <800,2000>
 <<nobr>>
 	<<set setup.addInventory('clothes', 'long dresses')>>
 	<h1><<print "Faith">></h1>
@@ -135,7 +135,7 @@
 
 <<print "I think it’s better to look pretty, but not to show too much. I think a ">>[[nice dress|Faith3]]<<print " is perfect. Trust me, you’ll feel so beautiful wearing one. And the guys love seeing a girl wearing a nice dress too. Besides which would you rather have: a guy staring at your butt in skinny jeans imagining what your bare butt looks like, or him seeing you in a beautiful dress and thinking about taking you home to meet his family? I know which one I’d prefer.">>
 
-::Faith3 <800,400>
+::Faith3  <1000,2000>
 <<nobr>>
   <<set setup.addInventory('underwear', 'cotton underwear')>>
   <<set setup.addInventory('sleepwear', 'regular sleepwear')>>
@@ -157,7 +157,7 @@
 
 <<print "If you don’t want your ears pierced I think that would be a shame, but ">>[[we can head for home.|Neighbours2]]</p>
 
-::Emily <1000,400>
+::Emily  <1200,2000>
 <<nobr>>
 	<<set $Mentor to 'Emily'>>
 	<<set $Roommate to 'Emily'>>
@@ -175,7 +175,7 @@
 
 <<print "Oh god, I’m sorry, today’s supposed to be about getting you started, not me going on and on about my boyfriend. Let’s go ">>[[choose our other neighbour|Neighbours]]<<print ".  Since I got to pick one, my boyfriend obviously, I'll let you choose the other one.  That sounds fair, right?   After that we can head to the mall and get you setup.">>
 
-::Emily2 <1200,400>
+::Emily2  <1400,2000>
 <<nobr>>
   <<set setup.addInventory('clothes', 'jeans')>>
 	<h1><<print "Emily">></h1>
@@ -187,7 +187,7 @@
 
 <<print "And I don’t want to be like some of those other mentors I saw, and force my style on you, so I’ll just help you ">>[[get a few practical things|Emily3]]<<print " you can wear around campus. Then you can go buy whatever you want after you settle in.">>
 
-::Emily3 <1400,400>
+::Emily3  <1600,2000>
 <<nobr>>
   <<set setup.addInventory('sex toys', 'vibrator')>>
   <<set setup.addInventory('underwear', 'regular underwear')>>
@@ -200,7 +200,7 @@
 
 <<print "I know a lot of the new girls ended up with side effects that will make them horny all the time. I’ll help you pick out the perfect vibrator to take the edge off until you meet a guy (or a girl, whatever you want). If that doesn’t help for you, maybe you could talk to my boyfriend’s roommate and see if he can help out.">>
 
-::Emily4 <1600,400>
+::Emily4  <1800,2000>
 <<nobr>>
 	
 	<h1><<print "Emily">></h1>
@@ -227,7 +227,7 @@
 
 <<print "Come on, lets go. It only hurts for a second.">>
 
-::Hannah <1800,400>
+::Hannah  <2000,2000>
 <<nobr>>
 	<<set $Mentor to 'Hannah'>>
 	<<set $Roommate to 'Hannah'>>
@@ -248,7 +248,7 @@
 
 <<print "Before we go shopping, how about we go and ">>[[select our neighbours?|Neighbours]]
 
-::Hannah2 <2000,400>
+::Hannah2  <2200,2000>
 <<nobr>>
   <<set setup.addInventory('clothes', 'blouses')>>
   <<set setup.addInventory('clothes', 'skirts')>>
@@ -267,7 +267,7 @@
 
 <<print "Ha - I can see you thinking about it right now. ">>[[We’re going to make great roommates this year!|Hannah3]]
 
-::Hannah3 <2200,400>
+::Hannah3  <2400,2000>
 <<nobr>>
   <<set setup.addInventory('sleepwear', 'regular sleepwear')>>
 	<<set setup.addInventory('underwear', 'sexy underwear')>>
@@ -279,7 +279,7 @@
 
 <<print "I’d rather wear the sexy stuff every day. Even if I don’t end up going home with someone that day, it still makes me feel sexy all day wearing it. I have a bunch of Angel Rewards points saved up that I’ll use on you today, so we can splurge a bit and get you enough so you can wear ">>[[something sexy every day too.|Hannah4]]
 
-::Hannah4 <2400,400>
+::Hannah4  <2600,2000>
 <<nobr>>
   <<set setup.addInventory('piercings', 'stud earrings')>>
   <h1><<print "Hannah">></h1>
@@ -304,7 +304,7 @@
 	I’m sure we can [[find someway to make it worth his time|Hannah5]].
 <</nobr>>
 
-::Hannah5 <2500,400>
+::Hannah5  <2800,2000>
 <<nobr>>
 	<h1><<print "Hannah">></h1>
 	<<set setup.addInventory('piercings', 'clit hood')>>
@@ -361,7 +361,7 @@
 	dresses and show off their ear piercings.
 <</nobr>>
 
-::Samantha <2600,400>
+::Samantha  <3000,2000>
 <<nobr>>
 	<<set $Mentor to 'Samantha'>>
 	<<set $Roommate to 'Samantha'>>
@@ -380,7 +380,7 @@
 
 <<print "Before we go shopping, how about we go and ">>[[select our neighbours?|Neighbours]]
 
-::Samantha2 <2800,400>
+::Samantha2  <3200,2000>
 <<nobr>>
   <<set setup.addInventory('clothes', 'dresses')>>
   <<set setup.addInventory('clothes', 'jeans')>>
@@ -395,7 +395,7 @@
 
 <<print "Now you get to buy the same things again, but this time for twice the cost. You might be tempted to shop in the mens section because it’s cheaper (and from habit, I suppose). ">>[[I wouldn’t recommend it,|Samantha3]]<<print " at least at first. Even at the same size, things just don’t fit the same.">>
 
-::Samantha3 <3000,400>
+::Samantha3  <3400,2000>
 <<nobr>>
 	<<set setup.addInventory('underwear', 'sexy underwear')>>
 	<<set setup.addInventory('underwear', 'regular underwear')>>
@@ -422,7 +422,7 @@
 	<</link>>
 <</nobr>>
 
-::Olivia <3200,400>
+::Olivia  <3600,2000>
 <<nobr>>
 	<<set $Mentor to 'Olivia'>>
 	<<set $Roommate to 'Olivia'>>
@@ -441,7 +441,7 @@
 
 <<print "Before we go shopping, let’s go and ">>[[select our neighbours?|Neighbours]]
 
-::Olivia2 <3400,400>
+::Olivia2  <3800,2000>
 <<nobr>>
   <<set setup.addInventory('clothes', 'blouses')>>
   <<set setup.addInventory('clothes', 'jeans')>>
@@ -461,7 +461,7 @@
 
 <<print "Some you can technically wear to class, though it might turn a few heads. But probably no more than my collar does. Some of the others you’ll want to save for special occasions.">>
 
-::Olivia3 <3600,400>
+::Olivia3  <4000,2000>
 <<nobr>>
   <<set setup.addInventory('underwear', 'erotic underwear')>>
 	<<set setup.addInventory('underwear', 'regular underwear')>>
@@ -475,7 +475,7 @@
 
 <<print "Ok. There’s one more thing ">>[[I want you to try on.|Olivia4]]<<print " It’s not underwear really, but I think it’ll look so hot on you...">>
 
-::Olivia4 <3800,400>
+::Olivia4  <4200,2000>
 <<nobr>>
   <<set setup.addInventory('sex toys', 'chastity belt')>>
 	<<set $PlayerChastityBelt = 1>>
@@ -496,7 +496,7 @@
 
 <<print "But trust me, that’s a good thing. He’ll take very good care of you. ">>[[Well, lets go. We have one more stop to make.|Olivia5]]
 
-::Olivia5 <4000,400>
+::Olivia5  <4400,2000>
 <<nobr>>
   <<set setup.addInventory('piercings', 'stud earrings')>>
   <<set setup.addInventory('piercings', 'nipples')>>
@@ -518,4 +518,5 @@
 		you can't have. (Your implant has developed an 'Increased Libido' side effect.)</i>
 	<</if>>
 <</nobr>>
+
 

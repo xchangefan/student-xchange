@@ -1,4 +1,4 @@
-::Start1 <0,200>
+::Start1  <0,1000>
 <h1>Acceptance Letter</h1>
 <<nobr>>
   <<set $StoryKeysLearn to "">>
@@ -66,7 +66,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <span style="font-size: 50%">*Please see the enclosed disclosures regarding the risks of your participation including risks of permanency and possibility of side effects. Also enclosed are required financial disclosures regarding compensation the university receives for facilitating the trial.</span>
 <</nobr>>
 
-::StartTalkParents
+::StartTalkParents <200,1000>
 <<nobr>>
   <h1>Talking to your parents</h1>
   <img src="Part1/ParentTalk.jpg" hspace="10" vspace="10" height="550" align="left">
@@ -108,7 +108,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   [[at your orientation|Start2Father]].
 <</nobr>>
 
-::Start2Father
+::Start2Father <400,1000>
 <h1>Freshman Orientation</h1>
 <<nobr>>
 	"In a moment, you’ll be asked to sign the disclosure and consent form.  I won’t go over everything again since I’m sure you all closely read the
@@ -168,7 +168,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   wait for the others."
 <</nobr>>
 
-::Start2 <200,200>
+::Start2  <600,1000>
 <h1>Freshman Orientation</h1>
 <<nobr>>
 	"In a moment, you’ll be asked to sign the disclosure and consent form.  I won’t go over everything again since I’m sure you all closely read the
@@ -261,7 +261,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 <</nobr>>
 
-::BodyFather
+::BodyFather <800,1000>
 <<nobr>>
 	<h1>Body Type</h1>
   <<set $BodyType to 'Standard'>>
@@ -315,7 +315,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   easier to select which ones they'd be since they'd be setting your implant up to be permanent from the start.
 <</nobr>>
 
-::BodyFather2
+::BodyFather2 <1000,1000>
 <<nobr>>
 	<h1>Pregnancy Prevention</h1>
   <<set $female to 1>>
@@ -349,7 +349,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   first cycle started.  Your father did warn you it was likely to cause a side effect or two.
 <</nobr>>
 
-::BodyNaturalPackage <385,200>
+::BodyNaturalPackage  <1200,1000>
 <<nobr>>
   <h1>Natural Woman Package</h1>
   <<set $female to 1>>
@@ -388,7 +388,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   You don't have any side-effects to worry about so, you can [[head on over|EndPart1]] to meet your mentor.
 <</nobr>>
 
-::BodyAthletePackage <390,200>
+::BodyAthletePackage  <1400,1000>
 <<nobr>>
   <<set $female to 1>>
 	<<set $PlayerProtectionPill to 1>>
@@ -407,7 +407,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   over your implants [[side-effects|BodySideEffectsChoose2]] for you quickly before you head over to meet your mentor.
 <</nobr>>
 
-::BodyPartyPackage <395,200>
+::BodyPartyPackage  <1600,1000>
 <<nobr>>
   <<set $female to 1>>
 	<<set $PlayerProtectionPill to 1>>
@@ -430,7 +430,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   over your implants [[side-effects|BodySideEffectsChoose2]] for you quickly before you head over to meet your mentor.
 <</nobr>>
 
-::Body <400,200>
+::Body  <1800,1000>
 <<nobr>>
 	<<set $PlayerSideEffects = 0>>
 	<<set $PlayerRollDice = 0>>
@@ -497,7 +497,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	You probably want to talk to the athletic department they’ll put your body to use, and help you keep it fit.
 </p>
 
-::PregnancyPrevention <600,200>
+::PregnancyPrevention  <2000,1000>
 <<set $female to 1>>
 <<nobr>>
 	<<set $PlayerRollDice = 0>>
@@ -582,7 +582,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</switch>>
 <</nobr>>
 
-::BodyOptionalFeatures
+::BodyOptionalFeatures <2200,1000>
 <<nobr>>
   <<if $FatherSettings>>
     <<include [[BodyOptionalFeaturesFather]]>>
@@ -591,7 +591,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 <</nobr>>
 
-::BodyOptionalFeaturesFather
+::BodyOptionalFeaturesFather <2400,1000>
 <<nobr>>
 	<<set $PreventSideEffectCount to 0>>
   <<set $PreventSideEffectCountMax to 0>>
@@ -682,7 +682,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   negatively impact your education, or your future marriage.
 <</nobr>>
 
-::BodyOptionalFeaturesStandard <800,200>
+::BodyOptionalFeaturesStandard  <2600,1000>
 <<nobr>>
   <<if $ExperimentalPregnancyOption == 2>>
     <<set $PlayerSideEffects += either(0,0,0,0,0,1,2,3,4,5)>>
@@ -907,7 +907,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <</nobr>>
 
 
-::BodyOptionalFeatures_Updates <1000,200>
+::BodyOptionalFeatures_Updates  <2800,1000>
 <<nobr>>
 	<<silently>>
 		<<repeat 200ms>>
@@ -1020,7 +1020,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</silently>>
 <</nobr>>
 
-::ExperimentalPregnancyChoice <1190,200>
+::ExperimentalPregnancyChoice  <3000,1000>
 <<nobr>>
   <h1>Experimental Birth Control</h1>
   <img src="Part1/PregPrevent7.jpg" hspace="10" vspace="10" height="500">
@@ -1065,7 +1065,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   that's fine too. "
 <</nobr>>
 
-::ExperimentalPregnancyPerfect <1210,200>
+::ExperimentalPregnancyPerfect  <3200,1000>
 <video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
 
 <<nobr>>
@@ -1075,7 +1075,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   can deactivate it.  But once it's deactivated, they can't reactivate it.
 <</nobr>>
 
-::ExperimentalPregnancyPill <1230,200>
+::ExperimentalPregnancyPill  <3400,1000>
 <video src="Part1/ExperimentalPregnancy2.mp4" autoplay loop muted width="854"></video>
 
 <<nobr>>
@@ -1085,7 +1085,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   can deactivate it.  But once it's deactivated, they can't reactivate it.
 <</nobr>>
 
-::ExperimentalPregnancyFertile <1220,200>
+::ExperimentalPregnancyFertile  <3600,1000>
 <video src="Part1/ExperimentalPregnancy1.mp4" autoplay loop muted width="854"></video>
 
 <<nobr>>
@@ -1106,7 +1106,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   You could just not worry about it and let [[whatever happens, happen|BodyOptionalFeatures][$PlayerProtectionNone to 1]]
 <</nobr>>
 
-::ExperimentalPregnancy <1200,200>
+::ExperimentalPregnancy  <3800,1000>
 <<nobr>>
 	<<set $PlayerRollDice = either(1,2,3,4,5,6,7,8)>>
   <h1>Experimental Birth Control</h1>
@@ -1119,7 +1119,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 <</nobr>>
 
-::BodySideEffects <1400,200>
+::BodySideEffects  <4000,1000>
 <<nobr>>
   <<if $PlayerSideEffects>>
     <<include [[BodySideEffectsYes]]>>
@@ -1128,7 +1128,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 <</nobr>>
 
-::BodySideEffectsYes <1425,200>
+::BodySideEffectsYes  <4200,1000>
 <<nobr>>
   <<set $validOptionsThisRoll = []>>
   <<if !$PlayerSideEffectPermanent>>
@@ -1223,10 +1223,10 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</switch>>
 <</nobr>>
 
-::BodySideEffectFail <1600,200>
+::BodySideEffectFail  <4400,1000>
 	Actually, it looks like there weren't quite as many as I had thought.  That was [[your last side effect.|SideEffectDisclaimer]]
 
-::FatherSettingsPermanent
+::FatherSettingsPermanent <4600,1000>
 	<<nobr>>
 		<h1>Permanent Change</h1>
 		<img src="Part1/SideEffectPermanent.jpg" hspace="10" vspace="10" height="650" align="left">
@@ -1248,7 +1248,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     [[side effects|BodySideEffectSubmissive]] you'd end up getting due to you and your father's other choices.
 	<</nobr>>
 
-::BodySideEffectPermanent <1800,200>
+::BodySideEffectPermanent  <4800,1000>
 	<<nobr>>
 		<h1>Side-Effect: Permanent</h1>
 		<<set $PlayerSideEffectPermanent = 1>>
@@ -1278,7 +1278,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectOrgasmBlock <2000,200>
+::BodySideEffectOrgasmBlock  <5000,1000>
 	<<nobr>>
 		<h1>Side-Effect: Orgasm Denial</h1>
 		<<set $PlayerSideEffectOrgasmBlock += 1>>
@@ -1323,7 +1323,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <<include [[BodySideEffectNext]]>>
 	<</nobr>>
 
-::BodySideEffectMasturbationBlock <2200,200>
+::BodySideEffectMasturbationBlock  <5200,1000>
 	<<nobr>>
 		<h1>Side-Effect: Masturbation Denial</h1>
 		<<set $PlayerSideEffectMasturbationBlock += 1>>
@@ -1369,7 +1369,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <<include [[BodySideEffectNext]]>>
 	<</nobr>>
 
-::BodySideEffectNext
+::BodySideEffectNext <5400,1000>
 <<nobr>>
   <<if $tempSideEffect == 1 and $PreventSideEffectCount < $PreventSideEffectCountMax and $FatherSettings>>
     <<if $PlayerSideEffects == 0>>
@@ -1391,7 +1391,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 <</nobr>>
 
-::BodySideEffectSubmissive <2400,200>
+::BodySideEffectSubmissive  <5600,1000>
 	<<nobr>>
 		<h1>Side-Effect: Submissive</h1>
 		<<set $PlayerSideEffectSubmissive += 1>>
@@ -1447,7 +1447,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <</if>>
 	<</nobr>>
 
-::BodySideEffectExhibitionist <2600,200>
+::BodySideEffectExhibitionist  <5800,1000>
 	<<nobr>>
 		<h1>Side-Effect: Exhibitionist</h1>
 		<<set $PlayerSideEffectExhibitionist += 1>>
@@ -1504,7 +1504,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 		<</if>>
 	<</nobr>>
 
-::BodySideEffectPheromones <2800,200>
+::BodySideEffectPheromones  <6000,1000>
 	<<nobr>>
 		<h1>Side-Effect: Pheromones</h1>
 		<<set $PlayerSideEffectPheromones += 1>>
@@ -1554,7 +1554,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <<include [[BodySideEffectNext]]>>
 	<</nobr>>
 
-::BodySideEffectOral <3000,200>
+::BodySideEffectOral  <6200,1000>
 	<<nobr>>
 		<h1>Side-Effect: Oral Lover</h1>
 		<<set $PlayerSideEffectOral += 1>>
@@ -1612,7 +1612,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <</if>>
 	<</nobr>>
 
-::BodySideEffectAnal <3200,200>
+::BodySideEffectAnal  <6400,1000>
 	<<nobr>>
 		<h1>Side-Effect: Anal Lover</h1>
 		<<set $PlayerSideEffectAnal += 1>>
@@ -1683,7 +1683,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <</if>>
 	<</nobr>>
 
-::BodySideEffectLibido <3400,200>
+::BodySideEffectLibido  <6600,1000>
 	<<nobr>>
 		<h1>Side-Effect: Increased Libido</h1>
 		<<set $PlayerSideEffectLibido += 1>>
@@ -1741,7 +1741,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <<include [[BodySideEffectNext]]>>
 	<</nobr>>
 
-::BodySideEffectDreams <3600,200>
+::BodySideEffectDreams  <6800,1000>
 	<<nobr>>
 		<h1>Side-Effect: Erotic Dreams</h1>
 		<<set $PlayerSideEffectDreams += 1>>
@@ -1796,7 +1796,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <<include [[BodySideEffectNext]]>>
 	<</nobr>>
 
-::BodySideEffectSuperOrgasm <3800,200>
+::BodySideEffectSuperOrgasm  <7000,1000>
 	<<nobr>>
 		<h1>Side-Effect: Enhanced Orgasms</h1>
 		<<set $PlayerPowerfulOrgasms += 1>>
@@ -1848,7 +1848,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
     <<include [[BodySideEffectNext]]>>
 	<</nobr>>
 
-::SideEffectDisclaimer
+::SideEffectDisclaimer <7200,1000>
 <<nobr>>
   <h1>Disclaimer</h1>
   <img src="Part1/SideEffectDisclaimer.jpg" hspace="10" vspace="10" height="450">
@@ -1882,7 +1882,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 <</nobr>>
 
-::EndPart1 <4000,200>
+::EndPart1  <7400,1000>
 <h1>Freshman Orientation</h1>
 <<nobr>>
 	Now that you know all about the body you’re going to have for 
@@ -1907,3 +1907,4 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	Later in the afternoon, they’ll be booths set up for various student activities, and some on and off-campus employers.
 	But I’ll leave you to get to know one another, [[see you in a bit.|Part2Start]]
 <</nobr>>
+

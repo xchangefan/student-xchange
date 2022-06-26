@@ -1,4 +1,4 @@
-::StoryCaption <200,0>
+::StoryCaption  <0,500>
   A story by [[xChangeFan]].
 
 <<if passage()=="Start">><<elseif $MindBlank>><<include [[SideBarMindBlank]]>><<elseif $Dead>><<include [[SideBarDead]]>><<elseif $PlayerSlave>><<include [[SideBarSlave]]>><<elseif $ShowHorniness>><<include [[SideBarHorniness]]>><<elseif $female>><<include [[SideBarFemale]]>><<elseif $Purple>><<include [[SideBarPurple]]>><<else>><<include [[SideBarMale]]>><</if>>
@@ -7,7 +7,7 @@
 <<include [[SideBarDebug]]>>\
 <<include [[SideBarNavigation]]>>
 
-::xChangeFan
+::xChangeFan <200,500>
 <<nobr>>
   <h2>Me</h2>
   This is not what I look like.  Though if you work for a pharmaceutical company that has invented X-Change, contact me
@@ -38,7 +38,7 @@
   </ul>
 <</nobr>>
 
-::SideBarFemale <250,0>
+::SideBarFemale  <400,500>
 <div style="font-size: 90%">\
     <<include [[SideBarBody]]>>
     <<include [[SideBarBirthControl]]>>
@@ -55,7 +55,7 @@
     <<include [[SideBarFamily]]>>\
 </div>
 
-::SideBarPurple
+::SideBarPurple <600,500>
 <div style="font-size: 90%">\
     <<include [[SideBarBody]]>>
     [[Inventory|SideBarInventory]]\
@@ -69,7 +69,7 @@
     <<include [[SideBarFamily]]>>\
 </div>
 
-::SideBarMale <300,0>
+::SideBarMale  <800,500>
 <<nobr>>
   <<if $MaleAgain>>
     <<include [[SideBarMaleAgain]]>>
@@ -78,7 +78,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarMaleAgain
+::SideBarMaleAgain <1000,500>
 <div style="font-size: 90%">\
     <<include [[SideBarBody]]>>
     [[Inventory|SideBarInventory]]\
@@ -92,7 +92,7 @@
     <<include [[SideBarFamily]]>>\
 </div>
 
-::SideBarDead
+::SideBarDead <1200,500>
 <<nobr>>
   You were
   <<if $playerName>>$playerName, <</if>>
@@ -126,7 +126,7 @@
   Your body was never recovered.<br>
 <</nobr>>
 
-::SideBarHorniness <350,0>
+::SideBarHorniness  <1400,500>
   <div style="font-size: 90%">\
     <<include [[SideBarBody]]>>
     <<include [[SideBarBirthControl]]>>
@@ -138,13 +138,13 @@
   <<include [[SideBarMasterPartyTime]]>>\
 </div>
 
-::SideBarMindBlank <375,0>>
+::SideBarMindBlank <1600,500>
 <div style="font-size: 90%">\
   <<include [[SideBarBodyMindBlank]]>>
   You love working at the brothel.
 </div>
 
-::SideBarSlave <388,0>
+::SideBarSlave  <1800,500>
 <div style="font-size: 90%">\
   <<include [[SideBarBody]]>>
   <<include [[SideBarBirthControl]]>>
@@ -152,7 +152,7 @@
   [[Inventory|SideBarInventory]]
 </div>
 
-::SideBarBodyMindBlank <420,0>
+::SideBarBodyMindBlank  <2000,500>
 <<nobr>>
   You are Marie,
   <<if $BodyType == 'Standard'>>
@@ -172,7 +172,7 @@
   young woman.
 <</nobr>>
 
-::SideBarBody <425,0>
+::SideBarBody  <2200,500>
 <<nobr>>
   You are
   <<if $PlayerSlave > 1>>
@@ -228,7 +228,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarBodyDetail
+::SideBarBodyDetail <2400,500>
 <<nobr>>
   <<if $BrokenLeg>>
     You are still recovering from your broken leg.<br><br>
@@ -282,7 +282,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarExWifeTrapSideEffects <495,0>
+::SideBarExWifeTrapSideEffects  <2600,500>
 <h1>Implant Effects</h1>
 <ul>
 <<nobr>>
@@ -374,7 +374,7 @@
 <</nobr>>
 </ul>
 
-::SideBarSideEffects <500,0>
+::SideBarSideEffects  <2800,500>
 <h1><<if $MaleAgain>>Side Effects<<else>>Implant Effects<</if>></h1>
 <ul>
 <<nobr>>
@@ -598,7 +598,7 @@
 <</nobr>>
 </ul>
 
-::SideBarHunted <590,0>
+::SideBarHunted  <3000,500>
 <<nobr>>
   <<if $PlayerHunted>>
     <<if $HuntFinished and $HuntWinner>>
@@ -625,7 +625,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarBirthControl <600,0>
+::SideBarBirthControl  <3200,500>
 <<nobr>>
   <br>
   <<if $PlayerSlave>>
@@ -705,7 +705,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarInventory <800,0>
+::SideBarInventory  <3400,500>
 <h1>Inventory</h1>
 <<nobr>>
   <<if $JobCatgirl>>
@@ -731,7 +731,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarSexInventory
+::SideBarSexInventory <3600,500>
 <<nobr>>
   <<if $PlayerCumslut>>
     You always have hair tie handy to tie back your hair before giving a blowjob.<br>
@@ -756,7 +756,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarClothing <1000,0>
+::SideBarClothing  <3800,500>
 <<nobr>>
   Wardrobe:
 <</nobr>>
@@ -773,12 +773,12 @@
   - Costumes/Uniforms: <<print setup.listInventory('costumes')>>
 <</nobr>>
 
-::SideBarPiercing <1200,0>
+::SideBarPiercing  <4000,500>
 <<nobr>>
   Piercings: <<print setup.listInventory('piercings')>>
 <</nobr>>
 
-::SideBarToys <1400,0>
+::SideBarToys  <4200,500>
 <<nobr>>
   Equipment:\
 <</nobr>>
@@ -795,7 +795,7 @@
   <<if $DylanChastityKey>><br><br><<print "You have Dylan's Chastity Key. ">><</if>>
 <</nobr>>
 
-::SideBarChastity <1600,0>
+::SideBarChastity  <4400,500>
 <<nobr>>
   <<set $tempHaveBelt to setup.haveInventory('sex toys', 'chastity belt') or setup.haveInventory('sex toys', 'electronic chastity belt')>>
   <<set $tempHaveBra to setup.haveInventory('sex toys', 'chastity bra') or setup.haveInventory('sex toys', 'electronic chastity bra')>>
@@ -904,7 +904,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarDormFriendLevel <1795,0>
+::SideBarDormFriendLevel  <4600,500>
 <<nobr>>
   <<if $DormFriendLevel>>
     You and her
@@ -920,7 +920,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarMentor <1800,0>
+::SideBarMentor  <4800,500>
 <br>
 <<nobr>>
   <<if $DropoutCumslut || $DropoutConcubine || $IslandPet || $FatherChastity>>
@@ -978,7 +978,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarNeighbours <2000,0>
+::SideBarNeighbours  <5000,500>
 <<nobr>>
   <<if !$student || $FatherChastity>>
   <<elseif ($Spouse and $Spouse != 'Dan') or $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Veronica' or $Roommate == 'Aaron'>>
@@ -991,7 +991,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarRelationship <2200,0>
+::SideBarRelationship  <5200,500>
 <<nobr>>
   <<if $PrisonSentence>>
     <<if setup.areDating('Brenda')>><br>You are Brenda's bitch.<</if>>
@@ -1124,7 +1124,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarJob <2400,0>
+::SideBarJob  <5400,500>
 <<nobr>>
   <<if $JobSilent>>
   <<elseif $JobFreeUse>>
@@ -1231,7 +1231,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarStudentYear <2590,0>
+::SideBarStudentYear  <5600,500>
 <<nobr>>
   <<if $Major>>
     <<set $tempMajorText to " majoring in " + $Major + ".">>
@@ -1269,7 +1269,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarStudentLifeBalance <2600,0>
+::SideBarStudentLifeBalance  <5800,500>
 <<if $PlayerPointsSet>><br><br><<print "Student life balance:">><</if>>\
 <<nobr>>
 	<<if $PlayerPointsSet>>
@@ -1306,14 +1306,14 @@
 <</nobr>>\
 <<if $student && $AcademicProbation>><br>You are on academic probation.<</if>>\
 
-::SideBarFamily
+::SideBarFamily <6000,500>
 <<nobr>>
   <<if $JobCatgirl>><br>You have a loving owner who takes good care of you.
   <<elseif $JobFreeUse>>
   <<elseif $FatherDisown>><br>Your father has disowned you.<</if>>
 <</nobr>>
 
-::SideBarPartyHorninessLevel <2700,0>
+::SideBarPartyHorninessLevel  <6200,500>
 <<nobr>>
   <<if $PartyHorniness <= 0>>
     Your need is satisfied.  For the moment.
@@ -1337,7 +1337,7 @@
 <</nobr>>
 <br>
 
-::SideBarMasterPartyTime <2750,0>
+::SideBarMasterPartyTime  <6400,500>
 <<nobr>>
   <<if $PartyTime < 0>>
     The party hasn't started yet.
@@ -1356,7 +1356,7 @@
   <</if>>
 <</nobr>>
 
-::SideBarDebug <2800,0>
+::SideBarDebug  <6600,500>
 <<nobr>>
   <div style="font-size: 70%">
     <<if false>>
@@ -1371,10 +1371,10 @@
   </div>
 <</nobr>>
 
-::SideBarNavigation <2900,0>
+::SideBarNavigation  <6800,500>
 <div style="font-size: 70%">[[One-handed navigation|SideBarNavigationHelp]]</div>
 
-::SideBarNavigationHelp <3000,0>
+::SideBarNavigationHelp  <7000,500>
 <h1>One-handed Navigation</h1>
 
 In addition to the standard click navigation, the following is supported for one-handed navigation.
@@ -1403,7 +1403,7 @@ In addition to the standard click navigation, the following is supported for one
   <i>I'd ask for a round of applause for <strong>"HiEv"</strong> who provided the code for this feature, but it's hard to clap with just one hand.</i>
 <</nobr>>
 
-::SideBarAchievementLink <2950,0>
+::SideBarAchievementLink  <7200,500>
 <<nobr>>
   <<if setup.getAchievementCount() == 1>>
     [[1 Achievement Earned|SideBarAchievements]]
@@ -1413,7 +1413,7 @@ In addition to the standard click navigation, the following is supported for one
   <</if>>
 <</nobr>>
 
-::SideBarAchievements <2960,0>
+::SideBarAchievements  <7400,500>
 <<nobr>>
   <<if setup.getAchievementCount()>>
     <h1>Earned Achievements
@@ -1439,7 +1439,7 @@ In addition to the standard click navigation, the following is supported for one
   <</if>>
 <</nobr>>
 
-::SideBarClearAchievements <2970,0>
+::SideBarClearAchievements  <7600,500>
 <<nobr>>
   <h1>Warning: This will clear all of your achievements</h1>
 <</nobr>>
@@ -1456,7 +1456,7 @@ In addition to the standard click navigation, the following is supported for one
   </span>
 <</nobr>>
 
-::SideBarLoadAchievements <2980,0>
+::SideBarLoadAchievements  <7800,500>
 <<nobr>>
   <h1>Load Saved Achievements</h1>
   Paste in the achievement data that you previously saved to restore your achievements.  Then click "Load Achievements"
@@ -1484,7 +1484,7 @@ In addition to the standard click navigation, the following is supported for one
   </span>
 <</nobr>>
 
-::SideBarSaveAchievements <2990,0>
+::SideBarSaveAchievements  <8000,500>
 <<nobr>>
   <h1>Achievement Save Data</h1>
   Achievements, as well as any Saves except those that you have "saved to disk", are stored in your browser local storage.
@@ -1500,4 +1500,5 @@ In addition to the standard click navigation, the following is supported for one
     <<print setup.getAchievementSaveData()>>
   </textarea>
 <</nobr>>
+
 
