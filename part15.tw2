@@ -2170,13 +2170,56 @@
 <<nobr>>
   "Of course.  I've already cleared it with him," he says.  You realize he'd planned to allow you this other option long before you'd sucked his cock.
   He certainly wasn't going to stop you to tell you that though.  "I'll send an email over when you leave today.  You can head right over to the X-Change
-  office to get that denial setting removed as soon as [[your fitting is done|Part15EngineerProbation3]]."
+  office to get that denial setting removed as soon as
+  <<if $PlayerPregnant and $PregnancyWeek > 20>>
+    [[your fitting is done|Part15EngineerProbation3Pregnant]]."
+  <<else>>
+    [[your fitting is done|Part15EngineerProbation3]]."
+  <</if>>
 <</nobr>>
 
 <<nobr>>
   "My... fitting..," is all you can say in response.
 <</nobr>>
 
+::Part15EngineerProbation3Pregnant
+<<nobr>>
+  <h1>Too far along</h1>
+  <img src="Part15/Engineer70.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  He has you strip down until you are completely naked.  But then when he sees how obviously pregnant you are he decides
+  the 'fitting' he had planned isn't going to work.
+<</nobr>>
+
+<<nobr>>
+  "Of course, the belts we are going to be capable of handling nearly all sizes, and able to adjust during a pregnancy or
+  with other weight fluctations," he tells you. "But testing that along with the testing we were going to have you do is
+  really what we are looking for right now.  That's too many variables.
+<</nobr>>
+
+<<nobr>>
+  Unfortunately, with your academic probation, I can't let you continue in your old job either.  So, I'm sorry
+  $playerName, I'm going to have to [[let you go|Part15EngineerProbation3PregnantFired]].  Hopefully you'll have
+  more time and be able to focus on your academics a bit more and turn things around.
+<</nobr>>
+
+::Part15EngineerProbation3PregnantFired
+<<nobr>>
+  <h1>Unemployed</h1>
+  <img src="Part15/Engineer71.jpg" hspace="10" vspace="10" height="500" align="left">
+  <<unset $JobEngineer>>
+  <<set $JobEngineerOld to 1>>
+<</nobr>>
+<<nobr>>
+  After you are let go from the engineer department due to your probation, you think about getting a different job.
+  But then you decide to wait until after the baby.  The extra free time, and not needing to be on your feet all day,
+  might be good to help with your academics and with dealing with your pregnancy.
+<</nobr>>
+
+<<nobr>>
+  [[Continue|Part15Week]]
+<</nobr>>
 
 ::Part15EngineerProbation3
 <<nobr>>
@@ -2268,7 +2311,9 @@
   <<set $Keyholder to "computer">>
   <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
   "Now, lets just take a few pictures and a video or two showing your fit before you
-  <<if setup.haveGirlfriend()>>
+  <<if $PlayerPregnant>>
+    [[start your testing|Part15EngineerProbation3Abort]],"
+  <<elseif setup.haveGirlfriend()>>
     [[start your testing|Part15EngineerProbation4Girlfriend]],"
   <<else>>
     [[start your testing|Part15EngineerProbation4]],"
@@ -2303,6 +2348,32 @@
     This is the job you really want, but you did find your side job fun.  And you certainly enjoyed the extra money.  But you don't want to force your
     call girl agency to have to find clients that are ok with you being in a chastity belt.  So it looks like your side income is gone for the time being.
     All the more incentive to find some security flaws and earn a few bonuses.
+  <</if>>
+<</nobr>>
+
+::Part15EngineerProbation3Abort
+<<nobr>>
+  <h1>Terminating the Pregnancy</h1>
+  <img src="PartP/Cramps3.jpg" hspace="10" vspace="10" height="500">
+  <<unset $PlayerPregnant>>
+  <<if $PlayerAbortion>>
+    <<set $PlayerAbortion += 1>>
+  <<else>>
+    <<set $PlayerAbortion to 1>>
+  <</if>>
+  <<achievement>>childfree<</achievement>>
+<</nobr>>
+<<nobr>>
+  You don't want to have to deal with be pregnant in this belt.  You know it's size adjusts, but it's already going
+  to be difficult enough.  You don't want to add an pregnancy on top of it.
+<</nobr>>
+
+<<nobr>>
+  You need a day to recover afterwards, but then you able to
+  <<if setup.haveGirlfriend()>>
+    [[start your testing|Part15EngineerProbation4Girlfriend]].
+  <<else>>
+    [[start your testing|Part15EngineerProbation4]].
   <</if>>
 <</nobr>>
 
@@ -8503,7 +8574,7 @@
   everyone else has just seen you in lingerie that showed nearly as much. And you want to be sure it's images of
   you wearing something sexy that fills $dating[0]'s thoughts, not one of those other girls.
   And you
-  <<if $sex.length == 0>>
+  <<if !setup.haveFucked($dating[0])>>
     never get to wear it,
   <<else>>
     don't get to wear it often enough,
@@ -8682,7 +8753,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $sex.length == 0>>
+  <<if !setup.haveFucked($dating[0])>>
     You'd never imagined it would feel as good as this.
   <</if>>
   When his tongue slides across your clit, you let out a moan.  As he continues, you are soon grinding your hips into his
@@ -8699,7 +8770,7 @@
 <<nobr>>
   What you do need though, is another orgasm.  His cock is right there
   [[and you want it inside you|Part15SororityFootballBoyfriend2]].
-  <<if $sex.length == 0>>
+  <<if !setup.haveFucked($dating[0])>>
     Though, maybe your second orgasm can wait until
     <<if $PlayerSideEffectMasturbationBlock>>
       next time
@@ -8730,7 +8801,7 @@
 
 <<nobr>>
   While you are on top of him, you feel how hard he's gotten wrestling with you.
-  <<if false and $sex.length == 0>>
+  <<if !setup.haveFucked($dating[0])>>
     You are distracted, imagining how good that hard cock would feel inside you.  He sees you are distracted and
     quickly flips you over, so he's now the one pinning you down.
     <br><br>
@@ -14144,7 +14215,7 @@
     "I
   <</if>>
   need you inside me."
-  <<if $sex.length == 0>>
+  <<if !setup.haveFucked($dating[0])>>
     You know you imagined waiting until your wedding night, or at least romantic candles everywhere, but
     you can't wait any longer.
   <</if>>
@@ -14153,7 +14224,7 @@
 <<nobr>>
   A few moments later and $dating[0]'s head is between your legs.  Eventually he decides you are ready and finally
   gives you what you've been begging for.
-  <<if $sex.length == 0>>
+  <<if !setup.haveFucked($dating[0])>>
     Feeling $dating[0] inside you feels better than you even imagined.  You don't know why you waited so long for this.
     Now that you know how good sex with $dating[0] feels, you are going to be doing it as often as you can.
     <<set setup.addSexRepeat(15, {sex:"male", name:$dating[0], vaginal:true})>>
