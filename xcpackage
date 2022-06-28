@@ -1,24 +1,29 @@
 #Note: Should be ran from src directory (where .tw2 files are)
-LAST_VERSION=1.14.00
-VERSION=1.14.02
+LAST_VERSION=1.14.02
+VERSION=1.15.00
 HTML_FILENAME=student-xchange-program.html
 PREV_ZIP=student-xchange-program-$LAST_VERSION.zip
 ZIP_FILENAME=student-xchange-program-$VERSION.zip
 DIFF_FILENAME=student-xchange-program-DIFF-$LAST_VERSION-to-$VERSION.zip
+
 echo COMPILING...
 twee2 build combined.tw2 build/$HTML_FILENAME --format ./formats/sugarcube-2
-##  echo BUILDING MAIN ZIP...
-##  # zip build/$ZIP_FILENAME -j -9 build/$HTML_FILENAME
-##  cd ..
-##  # zip src/build/$ZIP_FILENAME -9 Part*/* 
-##  cp src/build/$HTML_FILENAME .
-##  zip src/build/$ZIP_FILENAME -s 500M -9 $HTML_FILENAME Part*/*
-echo BUILDING DIFFERENTIAL ZIP...
-cd build
-zip $DIFF_FILENAME -9 $HTML_FILENAME
-cd ../..
-zipinfo -1 src/build/$PREV_ZIP | sort > tempZipInfo
-ls Part*/* | sort > tempImgInfo
-comm -23 tempImgInfo tempZipInfo | xargs zip src/build/$DIFF_FILENAME -9
-rm tempZipInfo tempImgInfo
+
+echo BUILDING MAIN ZIP...
+## zip build/$ZIP_FILENAME -j -9 build/$HTML_FILENAME
+cd ..
+## zip src/build/$ZIP_FILENAME -9 Part*/* 
+cp src/build/$HTML_FILENAME .
+zip src/build/$ZIP_FILENAME -s 500M -9 $HTML_FILENAME Part*/*
+
+## echo BUILDING DIFFERENTIAL ZIP...
+## cd build
+## zip $DIFF_FILENAME -9 $HTML_FILENAME
+## cd ../..
+## zipinfo -1 src/build/$PREV_ZIP | sort > tempZipInfo
+## ls Part*/* | sort > tempImgInfo
+## comm -23 tempImgInfo tempZipInfo | xargs zip src/build/$DIFF_FILENAME -9
+## rm tempZipInfo tempImgInfo
+
 echo "** BUILD COMPLETE** "
+

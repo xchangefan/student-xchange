@@ -1,4 +1,4 @@
-::Start1  <0,1000>
+::Start1[DisableRandom]  <0,1000>
 <h1>Acceptance Letter</h1>
 <<nobr>>
   <<set $StoryKeysLearn to "">>
@@ -58,8 +58,21 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 <<nobr>>
   Of course you are going to share the good news about your admission and your scholarship with your family.
-  The only thing you aren't sure about is whether you should [[tell them both|StartTalkParents]] about the X-Change
-  trial now, or [[wait to share that news|Start2]] until after you've already changed.
+  You just aren't sure if you want to share the news about the X-Change trial with your family before you've
+  actually changed.  It's really just your dad you are worried about.  He's seemed very judgmental of you in
+  the past when you'd expressed your feminine side at all.
+<</nobr>>
+
+<<nobr>>
+  He'll probably know better than to try to tell you not to do it at all.  But he might
+  [[try to take control|StartTalkParents]] some other way, like he usually does.
+<</nobr>>
+
+<<nobr>>
+  Or, maybe it would be easier to not have that conversation now.  If they you  
+  [[wait to tell|Start2]] them about the trial until after you've already changed.  Then they'll be nothing he
+  can do.  You'll have to wait to tell your mom and siblings too then, since news this big would probably make
+  it to your father if you told anyone.
 <</nobr>>
 
 <<nobr>>
@@ -80,17 +93,20 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <<nobr>>
   "I wouldn't say I'm 'upset' either," you father tells you.  "I think we all knew you were going to be taking X-Change
   sooner or later."  You start to say something, but you know it's true.  You just hadn't realized it was obvious to
-  others how much you'd thought about taking a pink pill before.  
+  others how much you'd thought about taking a pink pill before.  He is also less upset by this than you had been
+  expecting. 
 <</nobr>>
 
 <<nobr>>
-  You get concerned when your father tells you, "I do have some concerns though."  But you are relieved as he adds, "But
-  I understand this is important to you, so I won't stand in your way as long as you promise to comport yourself as a
-  proper young lady at school."
+  But you get concerned when your father tells you, "I do have some concerns though."  But you are relieved as he
+  adds, "But I understand this is important to you, and so I won't stand in your way as long as you promise to comport
+  yourself as a proper young lady at school."
 <</nobr>>
 
 <<nobr>>
-  "Of course, I promise I will behave myself."
+  You bristle at that, finally understanding a bit more some of the complaints your sister Cassie has shared with
+  you about your father's treatment of her.  But you don't say anything and just try to be happy that he isn't trying
+  to stop you. "Of course, I promise I will behave myself."
 <</nobr>>
 
 <<nobr>>
@@ -105,7 +121,26 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 <<nobr>>
   Before your leave, your dad goes over what he discussed with the X-Change people, and what you need to do
-  [[at your orientation|Start2Father]].
+  at your orientation.  When you object to some of his choices he 'explains' why his choices were better for you than
+  what you had initially thought.
+<</nobr>>
+
+<<nobr>>
+  While you know he is trying to help, you are annoyed that he is trying to control your life.  Though you are also
+  strangely a bit happy that maybe it means he is already accepting you as a daughter, since Cassie has been
+  complaining about him treating her like this for years.
+<</nobr>>
+
+<<nobr>>
+  He tries to explain his reasons for what him and the X-Change people decided for you, but some of the 'reasons'
+  seem more for the benefit of your 'future husband' than you.  You aren't even sure if you'll be interested in men or
+  women yet!  You've heard people sometimes change that too after taking X-Change.
+<</nobr>>
+
+<<nobr>>
+  In the end, you realize it's going to be much easier if you just go along with his 'suggestions', and
+  [[do things his way|Start2Father]].  Besides, it's not like you don't like what he's planned for you.  And his promise to
+  pay for a new wardrobe to go with your new body softens the blow of giving in to his wishes as well.
 <</nobr>>
 
 ::Start2Father <400,1000>
@@ -261,7 +296,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 <</nobr>>
 
-::BodyFather <800,1000>
+::BodyFather[DisableRandom] <800,1000>
 <<nobr>>
 	<h1>Body Type</h1>
   <<set $BodyType to 'Standard'>>
@@ -497,7 +532,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	You probably want to talk to the athletic department they’ll put your body to use, and help you keep it fit.
 </p>
 
-::PregnancyPrevention  <2000,1000>
+::PregnancyPrevention[DisableRandom] <2000,1000>
 <<set $female to 1>>
 <<nobr>>
 	<<set $PlayerRollDice = 0>>
