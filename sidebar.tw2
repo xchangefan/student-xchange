@@ -37,6 +37,9 @@
     </li> 
   </ul>
 <</nobr>>
+<<nobr>>
+  version 15.0.1
+<</nobr>>
 
 ::SideBarFemale  <400,500>
 <div style="font-size: 90%">\
@@ -638,6 +641,7 @@
     <<include [[SideBarHunted]]>>
   <<elseif $PlayerPregnant>>
   <<elseif $PlayerProtectionSilent>>
+  <<elseif $PermanentChastity>>
   <<elseif $PlayerProtectionMalePill>>
     $Spouse is on the male birth control pill.
   <<elseif $PlayerProtectionPrince>>
@@ -692,7 +696,7 @@
   <<else>>
     You aren't sure what sort of birth control to use yet.
   <</if>>
-  <<if $PlayerProtectionFertile and !$PlayerProtectionPrince>>
+  <<if $PlayerProtectionFertile and !$PlayerProtectionPrince and !$PermanentChastity>>
     You are especially
     <<if $PlayerSideEffectBreeder>>
       fertile and you want men to cum inside you.
@@ -860,6 +864,9 @@
         belt and bra.
       <<else>>
         belt.
+      <</if>>
+      <<if $PermanentChastity && $BuddyPermanentlyChaste>>
+        And so is Bailey.
       <</if>>
       <<if setup.haveInventory('piercings', 'tongue sensor')>>
         You have a tongue sensor installed as well.
