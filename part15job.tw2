@@ -8314,7 +8314,7 @@
       <<if $FormerNeighbours[0] != "Peter" and $FormerNeighbours[1] != "Peter" and setup.isFWB("Peter")>>
         You are sure <<link "Peter" Part15JobEngineerLock4>><<set $tempLockAssist to "Peter">><</link>> would also be eager to help again.
       <</if>>
-    <<elseif $FormerNeighbours and $FormerNeighbours.length >= 1 and setup.haveFucked($FormerNeighbours[0]) and !setup.isEx($FormerNeighbours[0])>>
+    <<elseif $FormerNeighbours and ($FormerNeighbours.length >= 1) and setup.haveFucked($FormerNeighbours[0]) and !setup.isEx($FormerNeighbours[0])>>
       <<set $tempLockAssist to $FormerNeighbours[0]>>
       Hopefully $FormerNeighbours[0] [[will help you with your testing|Part15JobEngineerLock4]].
       It will take some of his time, but you have a pretty good idea of how to him to help.

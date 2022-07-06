@@ -435,13 +435,13 @@
   <h1>Back at School</h1>
   <img src="Part15/School1.jpg" hspace="10" vspace="10" height="550">
   <<set $SchoolWeek to 1>>
-  <<if $Roommate and !setup.areDating($Roommate)>>
-    <<unset $Roommate>>
-  <</if>>
   <<if setup.isNeighbour("Emily")>>
     <<set $FormerNeighbours to [$Roommate]>>
   <<else>>
     <<set $FormerNeighbours to $neighbours>>
+  <</if>>
+  <<if $Roommate and !setup.areDating($Roommate)>>
+    <<unset $Roommate>>
   <</if>>
   <<set $neighbours to []>>
   <<set $FormerMentor to $Mentor>>
@@ -4216,10 +4216,11 @@
 
 <<nobr>>
   <<if $TO_BE_CONTINUED>>
+  <<elseif $PlayerProtectionPerfect>>
   <<elseif $MenstrualWeek == 4>>
     <img src="PartP/PeriodSupplies.jpg" hspace="10" vspace="10" height="177"><br>
     You started your period this week.
-    <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+    <<if $PlayerProtectionPermanent or $PlayerProtectionPill>>
       It's light though thanks to your birth control
     <</if>>
   <<elseif $PregnancyWeek >= 6 and $PregnancyWeek <= 14 and Math.random() < 0.6>>
@@ -13803,7 +13804,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $CampusMinistry>>
+  <<if $CampusMinistry || $dating.length>>
     The hardest part of the costume for you is actually the collar, and chain you attached to it.  Lots of guys think
     it's fun to grab the chain and lead you around the party for a while.
     <br><br>
@@ -13854,8 +13855,14 @@
 <<nobr>>
   Back home you can't help but claw at your belt, as the aching need beneath it overwhelms you.  Eventually you give
   up though.  You still toss and turn though for a while before you can sleep.  The whole time you are
-  <<if $CampusMinistry>>
+  <<if $CampusMinistry or $dating.length>>
     imagining all the ways men at the party might have used you as a slave girl.
+    <<if $dating.length and !setup.haveGirlfriend()>>
+      <br><br>
+      But you only want $dating[0] to treat you like his slave girl.
+      <br><br>
+      <video src="Part15/Halloween14.mp4" autoplay loop muted height="500"></video>
+    <</if>>
   <<else>>
     remembering all the ways guys at the party used you as a slave girl, and imagining a more they could have used if you
     weren't locked in this chastity belt.
