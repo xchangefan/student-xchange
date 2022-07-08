@@ -141,7 +141,6 @@ $(document).on("keyup", function (e) {
 
 	// Trigger random click on ".", "`", and "r" keys
 	if (([".", "`", "r"].includes(e.key)) && (!tags().includes("DisableClick")) && (!tags().includes("DisableRandom"))) {
-    console.log(JSON.stringify(tags())); // TODO
 		e.preventDefault();
 		var Links = $("#passages a");
 		if (Links.length > 0) {
