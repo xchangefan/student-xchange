@@ -324,20 +324,83 @@
 
 [[You definitely made the right choice with this sorority.|Part9SororityEndYes]]
 
-::Part9SororityEndYes <100,10075>
+::Part9SororityEndYes
 <<nobr>>
-	<<if $SororityDTD>><h1><<print "Δ Τ F">></h1><</if>>
-	<<if $SororitySEX>><h1><<print "Σ Ε Ξ">></h1><</if>>
-	<<if $SororityELP>><h1><<print "Η Λ Ρ">></h1><</if>>
+  <<if setup.areDating('Peter') and setup.areDating('Veronica')>>
+    <<include [[Part9SororityEndYesPeter]]>>
+  <<else>>
+    <<include [[Part9SororityEndYes2]]>>
+  <</if>>
+<</nobr>>
+
+::Part9SororityEndYesPeter
+<<nobr>>
+  <h1>Breaking up with Peter</h1>
+  Of course Peter is upset when you tell him you are breaking up with him to be with Veronica, but he understands you are
+  still discovering your sexuality and what you want in a relationship.
+  <br><br>
+  And you are a bit surprised when he doesn't even argue about it when you tell him that he won't be getting his key back
+  unless he starts dating someone.  It's like he knows his cock shouldn't be free and that he shouldn't be able to decide
+  his own orgasms, and he's right.
+  <br><br>
+  He's excited when he thinks you and Veronica are going to keep the key, but he gets even more excited when he finds out
+  what you actualy plan on doing with his key.
+  <<set $PeterSigmaPet to 1>>
+  <<set setup.breakupWith('Peter')>>
+  <<unset $PlayerItemNerdKey>>
 <</nobr>>
 
 <<nobr>>
-	<<if $SororityDTD>><<print "Your sorority life is full of wild parties, and you love the time you are able to spend with all the new friends you’ve made.">><</if>>
-	<<if $SororityELP>><<print "Your sorority life is full of volunteering at a soup kitchen, and you love the time you are able to spend with all the new friends you’ve made.">><</if>>
-	<<if $SororitySEX>><<print "Your sorority life is full spending time with your new sisters, and you love the time you are able to spend with all the new friends you’ve made.">><</if>>
+  <video src="Part9/SigmaPeter1.mp4" autoplay loop muted height="500"></video>
 <</nobr>>
-<<if $SororityELP>><img src="Part9/End2.jpg" hspace="10" vspace="10" height="650"><<else>><img src="Part9/End1.jpg" hspace="10" vspace="10" height="650"><</if>>
 
+<<nobr>>
+  Of course you and Veronica will still have access to his key, but so will all of your other sorority sisters too.
+  They were talking about how everyone always needs tutoring, and you figured Peter would be perfect for that.  He
+  completely agrees.
+<</nobr>>
+
+<<nobr>>
+  You knew he'd be more than willing to make time for them known that any one of them can make use of his key if they
+  want to unwind after studying.  Though, he quickly learns that they don't always need his key for that.  Sometimes they
+  want to be sure he doesn't get them pregnant, or they are worried about him cumming too soon after not being unlocked 
+  for a while.  Others want to save unlocking him as a reward for after their grade on whatever he helped them with comes
+  back.
+<</nobr>>
+
+<<nobr>>
+  You and Veronica still get his help studying from time to time, but you don't ever unlock him.  You don't want him
+  to get the wrong idea and feel like you and him are dating again.  If he asks nice though after helping you and her,
+  you let him watch the two of you make out.  With his cage still on, of course.
+<</nobr>>
+
+<<nobr>>
+  [[Continue|Part9SororityEndYes2]]
+<</nobr>>
+
+::Part9SororityEndYes2 <100,10075>
+<<nobr>>
+	<<if $SororityDTD>>
+    <h1><<print "Δ Τ F">></h1>
+    <<print "Your sorority life is full of wild parties, and you love the time you are able to spend with all the new friends you’ve made.">>
+  <<elseif $SororitySEX>>
+    <h1><<print "Σ Ε Ξ">></h1>
+    <<print "Your sorority life is full spending time with your new sisters, and you love the time you are able to spend with all the new friends you’ve made.">>
+    <<if setup.areDating('Veronica')>>
+      <<set $Roommate to 'Veronica'>>
+    <</if>>
+  <<elseif $SororityELP>>
+    <h1><<print "Η Λ Ρ">></h1>
+    <<print "Your sorority life is full of volunteering at a soup kitchen, and you love the time you are able to spend with all the new friends you’ve made.">>
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <<if $SororityELP>>
+    <img src="Part9/End2.jpg" hspace="10" vspace="10" height="650">
+  <<else>>
+    <img src="Part9/End1.jpg" hspace="10" vspace="10" height="650">
+  <</if>>
+<</nobr>>
 <<nobr>>
 	You already know some of you will be friends for life.
 	<<if $CampusMinistryFailSorority>>
@@ -839,6 +902,7 @@
 
 ::Part9SEX2 <1050,9200>
 <<nobr>>	
+TODO <<set $SexTaskRandomLesbian = 1>><<set $SexTaskLesbian = 1>>
 	<<set $SexTaskCount = 0>>
 	<<if $PlayerSideEffectOral>><<set $SexTaskOral = 1>><<set $SexTaskCount += 1>><</if>>
 	<<if $PlayerSideEffectExhibitionist>><<set $SexTaskExhibitionist = 1>><<set $SexTaskCount += 1>><</if>>
@@ -1559,13 +1623,13 @@ care what she thinks though.  If God didn't want you having sex, why did he make
 		<<else>>
 			<<if setup.haveFucked('Football Player')>> 
 				<<if $SexTaskLesbian>>
-					<<print "You are sure Veronica would ">>
+					<<print "111You are sure Veronica would ">>
 					<<link "accept dating you, should you ask her">>
 						<<set setup.startDating('Veronica')>>
 						<<if $PlayerPregnant>>
-						<<goto [[Part9SororityPregnant]]>>
+						  <<goto [[Part9SororityPregnant]]>>
 						<<else>>
-						<<goto [[Part9SororityEndYes]]>>
+						  <<goto [[Part9SororityEndYes]]>>
 						<</if>>
 					<</link>>
 					<<print " and that the sorority would give you a room together in that case.">>
@@ -1579,7 +1643,7 @@ care what she thinks though.  If God didn't want you having sex, why did he make
 		<</if>>
 	<<else>>
 		<<if $SexTaskLesbian>>
-			<<print "You are sure Veronica would ">>
+			<<print "222You are sure Veronica would ">>
 			<<link "accept dating you, should you ask her">>
 				<<set setup.startDating('Veronica')>>
         <<if $JobOfficePA and setup.areDating('Paul')>>
@@ -1589,9 +1653,9 @@ care what she thinks though.  If God didn't want you having sex, why did he make
           <<set $JobBarista to 1>>
         <</if>>
 				<<if $PlayerPregnant>>
-				<<goto [[Part9SororityPregnant]]>>
+				  <<goto [[Part9SororityPregnant]]>>
 				<<else>>
-				<<goto [[Part9SororityEndYes]]>>
+				  <<goto [[Part9SororityEndYes]]>>
 				<</if>>
 			<</link>>
 			<<print " and that the sorority would give you a room together in that case.">>
@@ -1601,6 +1665,9 @@ care what she thinks though.  If God didn't want you having sex, why did he make
         Of course, you'd have to stop seeing your boss Paul if you started dating Veronica.  And since you are far better at sucking his cock than
         anything you are supposed to be doing there, it'd probably be easier if you just got a job somewhere else.  It shouldn't be that hard,
         you know the coffee shop is always hiring.
+      <<elseif setup.areDating('Peter')>>
+        Of course it wouldn't be fair to let Peter think he's your boyfriend still, if you start dating Veronica.  Of course there's no reason to
+        give him chastity key back though, until he finds a new girlfriend.  What use would he have for his cock until then?
       <</if>>
 		<<else>>
 			[[You are assigned a random roommate from your sisters.|Part9SororityEndYes]]

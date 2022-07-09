@@ -1203,8 +1203,13 @@ Now you can [[think about something more fun|Part10End]].
     make them stop.  But you learned your first night stripping that you can make much more money
     if [[you let them keep going|Part10StripExtras]].  If it's sometimes fun for you too, well that's a nice bonus.
   <<else>>
-    [[make them stop|Part10StripPeter]], but sometimes you [[don’t want to stop them.|Part10StripExtras]]
-    Maybe you’re too turned on and enjoy it, or maybe you’re just hoping for a nice tip at the end of your dance.
+    <<if setup.isEx("Peter")>>
+      [[make them stop|Part10End]],
+    <<else>>
+      [[make them stop|Part10StripPeter]],
+    <</if>>
+    but sometimes you [[don’t want to stop them.|Part10StripExtras]] Maybe you’re too turned on and enjoy it, or
+    maybe you’re just hoping for a nice tip at the end of your dance.
   <</if>>  
 <</nobr>>
 
@@ -1263,20 +1268,23 @@ Now you can [[think about something more fun|Part10End]].
     After he leaves, heading home to masturbate you assume, you lie there for a while with a smile on your
     face.  Thanks to your implant, you rarely have to fake an orgasm for your customers.  You wonder if the
     guys think you are faking, or if they know it was the real thing.  Either way, it's certainly real to you.
-    After you recover, you make a quick trip in back to freshen up, then you [[head back out|Part10StripPeter]].
+    After you recover, you make a quick trip in back to freshen up, then you
   <<elseif $PlayerSideEffectMasturbationBlock>>
     After he leaves, heading home to masturbate you assume, you want to sneaking off to do the same.  Of
     course you can't, thanks to your implant's side effect.  Hopefully your act convinced him.  But it didn't
     fool your body, and now you're horny as hell and unable to take care of the problem yourself.  It's
     probably for the best though.  You think the guys must pick up when you're really horny,
-    because that always sees like when you get the best tips.  So, after a quick trip in back to freshen up,
-    you [[head back out|Part10StripPeter]].
+    because that always sees like when you get the best tips. So, after a quick trip in back to freshen up, you
   <<else>>
     After he leaves, heading home to masturbate you assume, you want to sneaking off to do the same.  Hopefully
     your act convinced him.  But it didn't fool your body, and now you're horny as hell.  You decide not to
     take care of that little problem right now though.  You think the guys must pick up when you're really horny,
-    because that always sees like when you get the best tips.  So, after a quick trip in back to freshen up,
-    you [[head back out|Part10StripPeter]].
+    because that always sees like when you get the best tips. So, after a quick trip in back to freshen up, you
+  <</if>>
+  <<if setup.isEx("Peter")>>
+    [[head back out|Part10End]].
+  <<else>>
+    [[head back out|Part10StripPeter]].
   <</if>>
 <</nobr>>
 
