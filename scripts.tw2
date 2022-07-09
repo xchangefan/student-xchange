@@ -244,6 +244,9 @@ setup.addSex =  function (fuck) {
     fuck.noCondom = true;
     fuck.noPullout = true;
   }
+  if (!fuck.count) {
+    fuck.count = 1;
+  }
   variables().sex.push(fuck)
   if (fuck.vaginal && variables().LoopholeVirgin) {
     variables().LoopholeVirgin = undefined;
@@ -251,8 +254,13 @@ setup.addSex =  function (fuck) {
 }
 
 setup.addSexRepeat = function (repeatCount, fuck) {
-  for (let i = 0; i < repeatCount; i++) {
-    setup.addSex(JSON.parse(JSON.stringify(fuck)));
+  if (fuck.vaginal || fuck.anal) {
+    // could result in pregnancy, so process individually
+    for (let i = 0; i < repeatCount; i++) {
+      setup.addSex(JSON.parse(JSON.stringify(fuck)));
+    }
+  } else {
+    setup.addSex({...fuck, count: repeatCount});
   }
 }
 
@@ -295,24 +303,28 @@ setup.addMinimumBJs = function() {
   }
 }
 
+setup.sumSexCount = function(fucks) {
+  return fucks.map(fuck => fuck.count || 1).reduce((prev, next) => prev + next);
+}
+
 setup.sexCount = function () {
   if (!variables().sex) return 0;
-	return variables().sex.length
+	return setup.sumSexCount(variables().sex)
 }
 
 setup.sexMaleCount = function () {
   if (!variables().sex) return 0;
-	return variables().sex.filter(function(fuck) {return fuck.sex == 'male'}).length
+	return setup.sumSexCount(variables().sex.filter(function(fuck) {return fuck.sex == 'male'}))
 }
 
 setup.sexFemaleCount = function () {
   if (!variables().sex) return 0;
-	return variables().sex.filter(function(fuck) {return fuck.sex == 'female'}).length
+	return setup.sumSexCount(variables().sex.filter(function(fuck) {return fuck.sex == 'female'}))
 }
 
 setup.sexVaginalCount = function () {
   if (!variables().sex) return 0;
-	return variables().sex.filter(function(fuck) {return fuck.sex == 'male' && fuck.vaginal}).length
+	return setup.sumSexCount(variables().sex.filter(function(fuck) {return fuck.sex == 'male' && fuck.vaginal}))
 }
 
 setup.sexUniquePartners = function (fucks) {
@@ -327,8 +339,8 @@ setup.sexAllUniquePartners = function () {
 }
 
 setup.sexUniqueCount = function (fucks) {
-	var unnamed = fucks.filter(function(fuck) {return !fuck.name})
-	return unnamed.length + setup.sexUniquePartners(fucks).length
+	var unnamed = fucks.filter(function(fuck) {return !fuck.name && !fuck.repeat})
+	return setup.sumSexCount(unnamed) + setup.sexUniquePartners(fucks).length
 }
 
 setup.sexUniqueMaleCount = function () {
@@ -378,6 +390,9 @@ setup.sexualHistoryTable = function () {
       st += "<i>(" + partnerName + ")</i>"
     } else {
       st += partnerName
+    }
+    if (fuck.count > 1) {
+      st += ` x${fuck.count}`;
     }
 		st += "</td><td>" + fuck.sex + "</td><td>" + (fuck.vaginal ? "Y" : "") + "</td><td>"
 			 + (fuck.vaginal ? fuck.birthControl : "")
