@@ -304,6 +304,7 @@ setup.addMinimumBJs = function() {
 }
 
 setup.sumSexCount = function(fucks) {
+  if (fucks.length == 0) return 0;
   return fucks.map(fuck => fuck.count || 1).reduce((prev, next) => prev + next);
 }
 
@@ -454,6 +455,8 @@ setup.addDetailsToRecentSex = function() {
 					fuck.birthControl = 'injection'
         } else if (fuck.birthControlOverride) {
           fuck.birthControl = fuck.birthControlOverride
+        } else if (variables().HalloweenCondoms && !fuck.noCondom) {
+          fuck.birthControl = 'condom'
         } else if (variables().PlayerProtectionPermanent) {
           fuck.birthControl = 'implant-pill'
         } else if (variables().PlayerProtectionPill && !fuck.noPill) {
@@ -569,16 +572,12 @@ setup.checkForPregnancy = function (fuck, oddsBoost, ovulationOverride) {
   }
 
   var protectionFactor = 1.0
-  if (fuck.birthControl == 'implant-pill') {
-    protectionFactor = 0.02
-  } else if (fuck.birthControl == 'pill' && fuck.name == 'Aaron') {
-    protectionFactor = 0.02
-  } else if (fuck.birthControl == 'pill' && !fuck.ovulating) {
-    protectionFactor = 0.05
+  if ((fuck.birthControl == 'implant-pill' || fuck.birthControl == 'pill') && !fuck.ovulating) {
+    protectionFactor = 0.01
   } else if (fuck.birthControl == 'condom') {
-    protectionFactor = 0.1
+    protectionFactor = 0.05
   } else if (fuck.birthControl == 'pullout') {
-    protectionFactor = 0.2
+    protectionFactor = 0.1
   }
 
   var conceptionChance = baseProbability * protectionFactor;

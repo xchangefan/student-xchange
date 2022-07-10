@@ -561,6 +561,42 @@
 	<</if>>
 <</nobr>>
 
+::Part6HalloweenOvulate
+<<nobr>>
+  <<if $HalloweenOvulationNoticed>>
+    <<if $HalloweenCondoms>>
+      While you are out today, you pick up some condoms for later, just in case that cramping and spotting
+      was what you think it was.
+      <br><br>
+    <</if>>
+  <<else>>
+    <<set $HalloweenOvulationNoticed to !$PlayerProtectionPerfect and either(false, true, true, true, true)>>
+    <<if $HalloweenOvulationNoticed>>
+      This morning you feel a dull cramp on the left side of your stomach that lasts for about twenty minutes.
+      <<if !$PlayerChastityBelt>>
+        You also see a few drops of blood in your panties.
+      <</if>>
+      Your first thought is your period.  But that was only a couple weeks ago.  They did warn you yours might
+      be irregular at first, so you hope it's not starting early.  Then it occurs to you, maybe this is
+      what ovulating feels like.
+      <<if $PlayerProtectionPill>>
+        You aren't sure if you remembered to take your birth control pill every day like you were supposed to.
+      <</if>>
+      <<if $PlayerProtectionTry>>
+        You really hope that's what it is.
+      <<elseif !setup.areDating('Veronica') and !$MasterKate and (!$CampusMinistry or setup.areDating('Andrew')) and !$PlayerProtectionCondoms>>
+        You wonder if it might be a good idea to
+        <<link "pick up some condoms">>
+		      <<set $HalloweenCondoms to true>>
+		      <<goto Part6Halloween>> 			
+	      <</link>>
+        today.
+      <</if>>
+      <br><br>
+    <</if>>
+  <</if>>
+<</nobr>>
+
 ::Part6Halloween   <2200,6000>
 <<nobr>>
 	<h1>Halloween</h1>
@@ -856,7 +892,7 @@
     <br><br>
     <<if $PlayerProtectionTry>>
       That's Wonderful! I can't believe they are paying me for this,
-    <<elseif $PlayerProtectionCondoms or $PlayerProtectionWithdraw>>
+    <<elseif $PlayerProtectionCondoms or $PlayerProtectionWithdraw or $HalloweenCondoms>>
       Shit, it will be cumming inside me, with no protection, with real cum.  I could get actually get pregnant from this,
     <<elseif $PlayerProtectionPermanent or $PlayerProtectionPerfect or $PlayerProtectionPill>>
       Well, it's a good thing I'm on birth control,
@@ -1467,7 +1503,8 @@
 	<img src="Part6/Halloween6.jpg" hspace="10" vspace="10" height="650" align="left">
 	<br><br>
 	<<nobr>>
-		<<set setup.addSex({sex: 'female', name: 'Kate'})>>
+	  <<include [[Part6HalloweenOvulate]]>>
+  	<<set setup.addSex({sex: 'female', name: 'Kate'})>>
 		<<set setup.addSex({sex: 'female', name: 'Kate'})>>
 		<<set setup.addSex({sex: 'female', name: 'Kate'})>>
 		<<set setup.addSex({sex: 'female', name: 'Kate'})>>
@@ -1564,6 +1601,7 @@
 <</nobr>>
 
 <<nobr>>
+  <<include [[Part6HalloweenOvulate]]>>
 	<<if $CampusMinistry>>
 		As you look through the costume options, you quickly realize that nearly all of the women's costumes
 		are the 'sexy' version of something.  Even the sweet and innocent mouse costume you'd planned makes you
@@ -1737,7 +1775,7 @@
   orgasm, he finally cums inside you.
   <<if $PlayerProtectionWithdraw>>
     You were powerless to make him pull out, and now his seed fills your unprotected body. You wonder if he's just gotten you pregnant.
-  <<elseif $PlayerProtectionCondoms>>
+  <<elseif $PlayerProtectionCondoms or $HalloweenCondoms>>
     You were powerless to make him put on a condom, and now his seed fills your unprotected body. You wonder if he's just gotten you pregnant.
   <<elseif $PlayerProtectionNone>>
     You weren't having sex, so you weren't using any protection.  But you powerless to to stop him, and now his seed fills your unprotected
@@ -1983,7 +2021,7 @@
 	doesn't argue when you tell him.
 <</nobr>>
 <<nobr>>
-	<<if $PlayerProtectionCondoms>>
+	<<if $PlayerProtectionCondoms or $HalloweenCondoms>>
 		<img src="Part6/Halloween5C.jpg" hspace="10" vspace="10" height="540"><p/>
 
 		You are so anxious to have him inside you that you almost forgot to have him wear a condom.  Even when you remember, the thought
@@ -2011,7 +2049,7 @@
 <<nobr>>
 	He isn't able to hold back much longer, but it was just enough.  As he starts to cum, you orgasm too.  As he finishes his last
 	thrust, you feel your body still clenching and squeezing his cock until finally your orgasm passes and he pulls out of you.
-	<<if $PlayerProtectionCondoms>>
+	<<if $PlayerProtectionCondoms or $HalloweenCondoms>>
 		You pull the condom off of him and toss it in the trash can.  You lick a stray bit of cum off the end of his cock.  You giggle a
 		bit as he squirms from the sensation on his over-sensitive cock.
 	<<else>>
@@ -2092,7 +2130,7 @@
 	<<set setup.addSex({sex: 'male', name: $halloweenOtherGuy, vaginal:true, ovulating: true, noPullout:true})>>
 	<<set setup.addSex({sex: 'male', name: 'Zack'})>>
 	<<set setup.addSex({sex: 'male', name: $halloweenOtherGuy})>>
-	<<if $PlayerProtectionCondoms>>
+	<<if $PlayerProtectionCondoms or $HalloweenCondoms>>
 		After the two guys cum, you get up and grab a trash can for them to toss their condoms in.  Then you show the full box you'd grabed from Zack's nightstand
 		"And we have enough for all night," you tell them.  
 	<<else>>
@@ -2184,14 +2222,17 @@
 <<include [[Part6HalloweenNextScene]]>>
 
 ::Part6HalloweenVeronica   <7800,6000>
-<<set setup.addSex({sex: 'female', name: 'Veronica'})>>
-<<set setup.addSex({sex: 'female', name: 'Veronica'})>>
-<<set setup.addSex({sex: 'female', name: 'Veronica'})>>
-<<set setup.addSex({sex: 'female', name: 'Veronica'})>>
-<<set setup.addSex({sex: 'female', name: 'Veronica'})>>
-<<set setup.addSex({sex: 'female', name: 'Veronica'})>>
-<video src="Part6/Halloween1.mp4" autoplay loop muted height="640"></video><p/>
+<<nobr>>
+  <<set setup.addSex({sex: 'female', name: 'Veronica'})>>
+  <<set setup.addSex({sex: 'female', name: 'Veronica'})>>
+  <<set setup.addSex({sex: 'female', name: 'Veronica'})>>
+  <<set setup.addSex({sex: 'female', name: 'Veronica'})>>
+  <<set setup.addSex({sex: 'female', name: 'Veronica'})>>
+  <<set setup.addSex({sex: 'female', name: 'Veronica'})>>
+  <video src="Part6/Halloween1.mp4" autoplay loop muted height="640"></video><p/>
 	<<set setup.addInventory('costumes', 'sexy kitten')>>
+  <<include [[Part6HalloweenOvulate]]>>
+<</nobr>>
 You and Veronica have a blast in your matching 'sexy kitten' costumes.  You both love the looks you get at the party, but really
 there's only one person looking at you that you really care about.  Seeing Veronica in her costume is really turning you on, and
 you are hoping you are having the same effect on her.  You know you are when asks you, "Do kittens go into heat?"
@@ -2214,7 +2255,7 @@ her room.
 	<<set setup.addInventory('costumes', 'sexy kitten')>>
   <<set setup.addInventory('sex toys', 'kitten-tail butt plug')>>
 	<video src="Part6/Halloween2.mp4" autoplay loop muted height="540"></video><p/>
-	
+  <<include [[Part6HalloweenOvulate]]>>
 	You have a wonderful time at the Halloween party, and love the looks you get in your 'sexy kitten' costume.  But the whole time
 	all you can think about it is getting back home and having $dating[0] take it off you.
 <</nobr>>
@@ -2235,6 +2276,8 @@ do your best to make a purring sound for a bit before you fall asleep.
 ::Part6HalloweenJerk   <8200,6000>
 <img src="Part6/Halloween4.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
 <<nobr>>
+  <<include [[Part6HalloweenOvulate]]>>
+
 	<<set setup.addInventory('costumes', 'sexy kitten')>>
 	At the party Barry leads you around by your 'leash'.  When he sits on the sofa with some of his friends, he doesn't let you sit
 	beside him, you're told to curl up on the floor at his feet.
@@ -2293,6 +2336,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<<set setup.addSex({sex: 'male', name:'Peter'})>>
 	<img src="Part6/Halloween3.jpg" hspace="10" vspace="10" height="650" align="left"><p/>
 	<<set setup.addInventory('costumes', 'Star Trek crew')>>
+  <<include [[Part6HalloweenOvulate]]>>
 <</nobr>>
 
 <<nobr>>
@@ -3174,6 +3218,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 ::Part6Club1   <14800,6000>
 <<nobr>>
 	<h1>Club</h1>
+  <<unset $HalloweenCondoms>>
 <</nobr>>
 <<nobr>>
   When you get to the club and see the sign about being 21, you remember you don’t have a fake ID - not one with your new face on it anyway.
