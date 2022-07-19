@@ -1012,7 +1012,11 @@
     <br>You live with 
     <<if $Spouse == "Kyle">>your husband<</if>>
     Kyle, and take care of his every need.
-  <<else>>
+  <<elseif $JobFreeUse>>
+    <<if $Roommate == "Dylan">>
+      You share an apartment with your sister Dylan.
+    <</if>>
+  <<else>>7
     <<if $ExSpouse>>You are divorced.<br><</if>>
   
     <<if $Cuckcake>>
@@ -1096,7 +1100,8 @@
       You are a slave to Robert.
     <</if>>
 
-    <<if $dating.length == 0>> 
+    <<if $JobFreeUse>>
+    <<elseif $dating.length == 0>> 
       <<if setup.isFWB('Josh')>><br>You are friends with benefits with Josh.<</if>>
       <<if setup.isFWB('Zack')>><br>You are friends with benefits with Zack.<</if>>
       <<if setup.isFriendzoned('Peter')>>
