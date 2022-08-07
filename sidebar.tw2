@@ -54,7 +54,6 @@
     <<include [[SideBarRelationship]]>>\
     <<include [[SideBarJob]]>>\
     <<include [[SideBarStudentYear]]>>\
-    <<include [[SideBarStudentLifeBalance]]>>\
     <<include [[SideBarFamily]]>>\
 </div>
 
@@ -1283,6 +1282,9 @@
     <<if $StudentBreak>>
       You are taking a semester off.
     <</if>>
+    <<if $AcademicProbation>>
+      <br>You are on academic probation.
+    <</if>>
   <<elseif $Dropout == "Flunk">>
     <br>You have flunked out of college.
   <<elseif $Dropout>>
@@ -1291,43 +1293,6 @@
     <br>You were expelled from college.
   <</if>>
 <</nobr>>
-
-::SideBarStudentLifeBalance  <5800,500>
-<<if $PlayerPointsSet>><br><br><<print "Student life balance:">><</if>>\
-<<nobr>>
-	<<if $PlayerPointsSet>>
-		<<if $FunPoints > 10>>
-      You are a total party animal. 
-		<<elseif $FunPoints > 8>>
-      You are a the life of every party. 
-    <<elseif $FunPoints > 6>>
-      You like fun just like everyone else. 
-    <<elseif $FunPoints > 4>>
-      You like fun, but only occasionaly. 
-    <<elseif $FunPoints > 2>>
-      You are not a complete recluse. 
-    <<else>>
-      You are completely boring. 
-    <</if>>
-
-		<<if $AcademicPoints > 11>>
-      You are an excellent student.
-		<<elseif $AcademicPoints > 9>>
-      You are a good student.
-    <<elseif $AcademicPoints > 6>>
-      You are an okay student.
-    <<elseif $AcademicPoints > 4>>
-      You are an average student.
-    <<elseif $AcademicPoints > 2>>
-      You are a below average student.
-    <<elseif $AcademicPoints > 0>>
-      You are a really bad student.
-    <<else>>
-      You are the laziest student.
-    <</if>>
-	<</if>>
-<</nobr>>\
-<<if $student && $AcademicProbation>><br>You are on academic probation.<</if>>\
 
 ::SideBarFamily <6000,500>
 <<nobr>>
