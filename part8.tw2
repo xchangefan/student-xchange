@@ -1879,19 +1879,73 @@
 
 ::Part8EveningCall  <11200,8000>
 <<nobr>>
-	<h1><<print "Bedroom">></h1>
+	<h1>Bedroom</h1>
+	<<if setup.areDating('Veronica')>>
+    You text Veronica, telling her how much you miss her, how much you wish she were here. You tell her what you’d do to to her if she were here, and she texts back telling you what she would do to you.
+  <<elseif setup.areDating('Andrew')>>
+    You text Andrew, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.
+	<<elseif setup.areDating('Josh')>>
+    You text Josh, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.
+	<<elseif setup.areDating('Aaron')>>
+    You text Daddy, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.
+  <</if>>
+<</nobr>>
+<<nobr>>
+  <img src="Part8/Evening13.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    A bit later as you talk on the phone with $dating[0], you wish you could follow along as
+    <<if setup.haveGirlfriend()>>
+      she describes exactly what she would do to you if she
+    <<else>>
+      he describes exactly what he would do to you if he
+    <</if>>
+    were in the room with you, and you were unbelted.  But that's not possible.
+    <br><br>
+    Instead you can only
+  <<else>>
+    A bit later you talk on the phone with $dating[0], quietly so you can be sure your family can't hear what you are saying.
+    You follow along with your hands as
+    <<if setup.haveGirlfriend()>>
+      she describes exactly what she would do to you if she
+    <<else>>
+      he describes exactly what he would do to you if he
+    <</if>>
+    were in the room with you.
+    <<if $PlayerSideEffectOrgasmBlock or $PlayerSideEffectMasturbationBlock>>
+      You want to cum so bad, and you know if it were really $dating[0] here with you, you would have.  But the side effect from your
+      implant prevents you from orgasming.  You assume the block you have is all mental, so you'd hoped that with you just following
+      instructions, you'd still be able to cum.  But not tonight.
+    <<else>>
+      <<set $ChristmasEveOrgasm = 1>>
+      Soon you are doing the best you can not to cry out with an orgasm as $dating[0]'s instructions, and your hands following along,
+      give you the orgasm you so desperately needed.
+      <br><br>
+      Satisified, you switch roles, now you
+    <</if>>
+  <</if>>
+  have $dating[0] follow along as you describe exactly what you would do to
+  <<if setup.haveGirlfriend()>>
+    her. You tell her how you'd slide a single finger into her as you kiss her.  Then how you'd stroke her clit with your slick finger
+    as your tongue moved against hers. Then eventually you'd drop to your knees.  Her vibrator takes the place of your tongue
+    against her clit.  You yearn to be there with her as you hear her start to moan louder and louder, and finally hear her cum
+    for you.  You can picture the beautiful post-orgasm glow on her face.
+  <<else>>
+    him. You tell him how you'd wrap your hand around his cock, softly stroking it as you kissed him.  Then eventaully you'd drop to your
+    knees.  You have him cover his hand with his saliva as he strokes himself, imagining it's your lips instead of his hand.  You ache to
+    feel himside you when you eventually hear him moan.  You can almost taste his cum in your mouth.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-	<<if setup.areDating('Veronica')>><<print "You text Veronica, telling her how much you miss her, how much you wish she were here. You tell her what you’d do to to her if she were here, and she texts back telling you what she would do to you.">><</if>>
-	<<if setup.areDating('Andrew')>><<print "You text Andrew, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.">><</if>>
-	<<if setup.areDating('Josh')>><<print "You text Josh, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.">><</if>>
-	<<if setup.areDating('Aaron')>><<print "You text Daddy, telling him how much you miss him, how much you wish he were here. You tell him what you’d do to to him if he were here, and he texts back telling you what he would do to you.">><</if>>
+  <<if $ChristmasEveOrgasm>>
+    [[You go to sleep with a satisfied smile on your face,|Part8Christmas1]]
+  <<else>>
+    [[You go to sleep horny,|Part8Christmas1]]
+  <</if>>
+  your mind is filled with pleasant thoughts of your lover, and when you will be together again.
 <</nobr>>
-<img src="Part8/Evening13.jpg" hspace="10" vspace="10" height="650">
-
-<<if !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt>><br><<print "You can’t help but want to masturbate after your exchange">><<if !$PlayerEasytoOrgasm>><<print ", eventually reaching the sweat release that you crave.">><<set $ChristmasEveOrgasm = 1>><<else>><<print ", though the release of orgasm eludes you.">><</if>><br><</if>>
-<<if !$PlayerSideEffectOrgasmBlock and !$PlayerSideEffectMasturbationBlock and !$PlayerChastityBelt and $PlayerEasytoOrgasm>>[[You go to sleep with a satisfied smile on your face,|Part8Christmas1]]<<else>>[[You go to sleep horny,|Part8Christmas1]]<</if>><<print " your mind is filled with pleasant thoughts of your lover, and when you will be together again.">>
 
 ::Part8EveningBrother2  <11400,8000>
 <<nobr>>
