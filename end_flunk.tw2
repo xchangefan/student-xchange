@@ -91,12 +91,12 @@
     of figuring out how far they are willing to go to protect their study statistics from whatever you flunking out would do to them.
   <<elseif $JamesBribe>>
     <<set $DropoutContactNegotiate to 1>>
-    You know dealing with lawyers and contracts from the business with James and the pregnancy.  The university is  clearly willing
+    You know about dealing with lawyers and contracts from the business with James and the pregnancy.  The university is  clearly willing
     to offer you more than normal to withdrawal and protect the X-Change trial from looking bad.  Now it's just a matter of seeing
     how much you can get out of that.
   <<elseif $BrokenLeg or $FormerBrokenLeg>>
     <<set $DropoutContactNegotiate to 1>>
-    You know dealing with lawyers and contracts from dealing with the insurance companies over your leg.  The university is clearly
+    You know about dealing with lawyers and contracts from dealing with the insurance companies over your leg.  The university is clearly
     willing to offer you more than normal to withdrawal and protect the X-Change trial from looking bad.  Now it's just a matter of
     seeing how much you can get out of that.
   <<else>>
@@ -215,7 +215,7 @@
     <</if>>
   <<elseif !$PlayerPregnant and ($PregnancyWeek or ($PregnancyCheck and $PregnancyCheck.isPregnant))>>
     <<set $tempNewlyPregnant to 1>>
-    "Oh, I guess you've been having a fun even with your denial effect."  After pausing for a second he says,
+    "Oh, I guess you've been having fun even with your denial effect."  After pausing for a second he says,
     "You're [[pregnant|OffProbationXChangePregnant]]." 
     <br><br>
     "Great.  I'm knocked up, and I didn't even get to properly enjoy it," you grumble.
@@ -1260,7 +1260,7 @@
 ::Whore2 <4800,13400>
 <<nobr>>
   <h1>With Marcus</h1>
-  <<set setup.addSex(2, {sex:"male", name:"Marcus"})>>
+  <<set setup.addSexRepeat(2, {sex:"male", name:"Marcus"})>>
   "That's my special girl," Marcus tells you as he collects the money the men had left.  "I bet the left you all horny
   and unsatisfied though," he adds.  He slides his hand between your legs.  "Don't worry, I'll stay on the outside."
   <img src="PartX/Flunk18.gif" hspace="10" vspace="10" height="400">
@@ -1420,7 +1420,7 @@
   <<set setup.breakupWith('Veronica')>>
 <</nobr>>
 <<nobr>>
-  You'd thought the you and Veronica would last, but you know you can't expect her to leave the university, and her scholarship, just
+  You'd thought you and Veronica would last, but you know you can't expect her to leave the university, and her scholarship, just
   because you failed at yours.  You also feel like if you'd try to make it work, you'd just end up dragging her down the same path you
   ended up on.
 <</nobr>>
@@ -1697,7 +1697,26 @@
 
 ::FlunkOutNextStepInclude <7800,13400>
 <<nobr>>
-  <<if $FatherDisown>>
+
+  <<if $PlayerPregnant>>
+    <<if $FatherDisown>>
+      realize that since your father kicked you out, 
+    <<else>>
+      realize that you can't bring yourself to move back to your parents.  You can't stand the thought of how your father would treat you
+      coming home after both flunking out and getting pregnant.  He would probably make you miserable controlling your life.
+      <br><br>
+      So 
+    <</if>>
+    you know you are going to have to [[make it on your own|FlunkOutPregnant2]]. Thankfully you
+    <<if $JobCallGirl or $JobModel or $JobStripper or $JobStripperMain or $JamesBribe>>
+      have more than enough money saved up.
+    <<elseif $PlayerStudentLoan>>
+      still have some money left over from your last student loan disbursment.
+    <<else>>
+      have a little bit of money saved up.
+    <</if>>
+    So you can afford a motel room until you can get your own apartment.
+  <<elseif $FatherDisown>>
     realize that since your father kicked you out, you know you are going to have to [[make it on your own|FlunkOutAloneHitch]].
     Thankfully you
     <<if $JobCallGirl or $JobModel or $JobStripper or $JobStripperMain or $JamesBribe>>
