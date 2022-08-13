@@ -5301,8 +5301,15 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
     <<else>>
       [[Andrew is the father|Part13CheckupPregnantLoopholeAndrew]].
     <</if>>
+    <<set $tempDNATestAnal to 1>>
+  <<elseif setup.hadAnalAccident("Barry") and setup.haveFucked("Andrew")>>
+    You are certain it must be [[Barry's|Part13CheckupPregnantLoopholeBarry]].  You remember the mess he made that one time, surely
+    some of that made it inside you and that's when it happened.  You don't remember anything like that happening with Andrew.
   <<elseif setup.hadAnalAccident("Barry")>>
     Obviously [[it could only be Barry|Part13CheckupPregnantLoopholeBarry]].  You remember the messy time when it must have happened too.
+  <<elseif setup.hadAnalAccident("Andrew") and setup.haveFucked("Barry")>>
+    You are certain it must be [[Andrew's|Part13CheckupPregnantLoopholeAndrew]].  You remember the mess he made that one time, surely
+    some of that made it inside you and that's when it happened.  You don't remember anything like that happening with Barry.
   <<else>>
     Obviously [[it could only be Andrew|Part13CheckupPregnantLoopholeAndrew]].  You remember the messy time when it must have happened too.
   <</if>>
@@ -5459,7 +5466,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
   Andrew is confused as to how you could be pregnant, and how he could be the father.  But you tell him about the mess he'd made when
   he came in, on, and all around your ass when you were together.  You tell him that clearly some of his cum must have made its way
   inside more than just your ass.  Eventually he accepts that that little mistake must have been enough.
-  <<if setup.hadAnalAccident("Barry")>>
+  <<if $tempDNATestAnal>>
     You decide not to show him the DNA results you'd gathered, since that would only lead to more questions.
   <</if>>
 <</nobr>>
