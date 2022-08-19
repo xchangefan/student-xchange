@@ -1,0 +1,33 @@
+#Note: Should be ran from src directory (where .tw2 files are)
+VERSION=1.15.01
+ZIPPREFIX=zipparts/student-xchange-program-$VERSION-part
+
+echo COMPILING...
+twee2 build combined.tw2 build/$HTML_FILENAME --format ./formats/sugarcube-2
+
+echo BUILDING MAIN ZIP...
+cd ..
+mkdir zipparts
+zip ${ZIPPREFIX}1.zip Part1/*
+zip ${ZIPPREFIX}2.zip Part2/*
+zip ${ZIPPREFIX}3.zip Part3/*
+zip ${ZIPPREFIX}4.zip Part4/*
+zip ${ZIPPREFIX}5.zip Part5/*
+zip ${ZIPPREFIX}6.zip Part6/*
+zip ${ZIPPREFIX}7.zip Part7/*
+zip ${ZIPPREFIX}8.zip Part8/*
+zip ${ZIPPREFIX}8_5.zip Part8.5/*
+zip ${ZIPPREFIX}9.zip Part9/*
+zip ${ZIPPREFIX}9_5.zip Part9.5/*
+zip ${ZIPPREFIX}10.zip Part10/*
+zip ${ZIPPREFIX}11.zip Part11/*
+zip ${ZIPPREFIX}12.zip Part12/*
+zip ${ZIPPREFIX}13.zip Part13/*
+zip ${ZIPPREFIX}14.zip Part14/*
+zip ${ZIPPREFIX}15.zip Part15/*
+zip ${ZIPPREFIX}Ach.zip PartAch/*
+zip ${ZIPPREFIX}P.zip PartP/*
+zip ${ZIPPREFIX}X.zip PartX/*
+
+echo "** BUILD COMPLETE** "
+

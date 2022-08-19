@@ -16,6 +16,7 @@ zip src/build/$ZIP_FILENAME -9 $HTML_FILENAME Part*/*
 # -s 500M
 
 echo BUILDING DIFFERENTIAL ZIP...
+cp src/build/$HTML_FILENAME .
 zip $DIFF_FILENAME -9 $HTML_FILENAME
 zipinfo -1 src/build/$PREV_ZIP | sort > tempZipInfo
 ls Part*/* | sort > tempImgInfo

@@ -3598,6 +3598,10 @@ do your best to make a purring sound for a bit before you fall asleep.
 ::Part6Grades1WillFail  <17800,6000>
 <<nobr>>
   You’re going to fail, there’s no way to pull your grade up enough to pass now. [[Eventually it is time for you semester finals.|Part6Exam]]
+  <<if !$CampusMinistry and !$KidnapEscape and !$dating.length and !$PlayerChastityBelt>>
+    Though you've seen the way the professor looks at you.  Maybe it's worth a visit to his office to see if you can
+    "[[work something out|Part6Professor1Fail]]".
+  <</if>>
 <</nobr>>
 
 ::Part6Grades1   <18000,6000>
@@ -3617,7 +3621,7 @@ do your best to make a purring sound for a bit before you fall asleep.
     <<include [[Part6Grades1WillPass]]>>
   <<elseif $AcademicPoints < 5 and !$PlayerGoodStudent and ($JobAthlete or $JobCheerleader or $JobCheerleaderFundraiser)>>
     <<include [[Part6Grades1MightPass]]>>
-	<<elseif $AcademicPoints < 5 and !$PlayerGoodStudent>>
+	<<elseif true or $AcademicPoints < 5 and !$PlayerGoodStudent>>
     <<include [[Part6Grades1WillFail]]>>
 	<<elseif $KidnapEscape>>
 		You are in-between, it could go either way.  You know missing so much class didn't help.  You stop by to [[talk to the professor|Part6ProfessorRecover]]
@@ -3872,10 +3876,144 @@ do your best to make a purring sound for a bit before you fall asleep.
 	<</nobr>>
 <</if>>
 
+::Part6Professor1Fail
+<<nobr>>
+	<h1>Heading to meet with your professor</h1>
+	<img src="Part6/Professor1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You know you aren't going to pass this class based on your academic skill.  But maybe you can
+  <<if setup.sexMaleCount() > 0>>
+    use another skill you've developed
+  <<else>>
+    develop another skill
+  <</if>>
+  to persuade your professor to pass you anyway.
+<</nobr>>
+
+<<nobr>>
+  Maybe a few minutes on your knees today will be all it takes.  But even if
+  he wants you to come in ever time he has office hours until the end of the term, that still sounds far better than taking the whole
+  class over again next semester.
+<</nobr>>
+
+<<nobr>>
+  You've learned how to be flirty, and get what you want from men.  It's even easier if you are doing more than just flirt, and
+  are willing to give the guy exactly what they want too.  So when you see your professor eyeing your body up and down as you
+  walk in, you are confident you'll be able to "persuade" him to let you pass.
+<</nobr>>
+
+<<nobr>>
+  As you kneel on the floor in front of him, ostensibly to beg for a second chance, but really to make it clear what you are willing
+  to do, right now, for a passing grade, things don't go exactly like you were expecting.
+<</nobr>>
+
+<<nobr>>
+  "You've only been a woman for a few months, and you've already learned how to use
+  <<if $BodyType == "Plus">>
+    those curves of yours
+  <<elseif $BodyType == "Petite">>
+    that little body of yours
+  <<elseif $BodyType == "Fit">>
+    that tight body of yours
+  <<else>>
+    that sexy body of yours
+  <</if>>
+  to get exactly what you want from men, haven't you?" he asks, looking down at you.  "You think you can just bat an eyelash,
+  and get what you want.  Or if you get into real trouble, drop to your knees and suck your way out of your problems, don't you?"
+<</nobr>>
+
+<<nobr>>
+  You start to stand back up, but he stops you.  "No, stay there on your knees.  That's right where you belong while
+  [[we discuss your education|Part6Professor1Fail2]].
+<</nobr>>
+
+::Part6Professor1Fail2
+<<nobr>>
+  <h1>Punished by your professor</h1>
+  "So, you spend all semester missing my class, not studying for exams, and turning in assignments late or not at all.  And then
+  a few weeks before the end of the term, you think a few minutes on your knees will be all it takes to pass now?"
+<</nobr>>
+
+<<nobr>>
+  Seeing that your plan is hopeless, you start to get up again and say, "I'm sorry, sir.  I'll leave now," but again he stops you.
+<</nobr>>
+
+<<nobr>>
+  "No," he says, and you stop where you are, still kneeling in front of him.  Then he continues, "You may yet get a passing grade,
+  though it won't be quite as easy for you as you expected.  First you'll need to be punished for wasting my time, and frankly yours
+  and your classmates as well.  Now you can stand.  Then take off your panties and bend over my desk."
+<</nobr>>
+
+<<nobr>>
+  <video src="Part6/Professor8.webm" autoplay loop muted height="500"></video>
+<</nobr>>
+
+<<nobr>>
+  He then pulls a crop of some sort out of his desk, and starts spanking you with it!  You tell yourself you are going to endure
+  it so that you can pass, but you feel yourself starting to get wet even as you start to tear up from the pain.
+<</nobr>>
+
+<<nobr>>
+  You apologize through your tears as he scolds you for not putting in the work you should have been all semester.
+<</nobr>>
+
+<<nobr>>
+  By the time he's finished, red marks stripe your ass, and it throbs with pain.  "Now you can get back on your knees and
+  [[suck my cock|Part6Professor1Fail3]].  When you are done, we'll start reviewing the material you would have picked up in class."
+<</nobr>>
+
+::Part6Professor1Fail3
+<<nobr>>
+	<h1>Sucking your professor's cock</h1>
+  <img src="Part6/Professor2.jpg" hspace="10" vspace="10" height="650" align="left">
+	<<set setup.addSexRepeat(10, {sex: 'male', name:'Aaron'})>>
+	<<set $PlayerProfessorVisit = 1>>
+<</nobr>>
+<<nobr>>
+  "That's a good girl," he tells you as you work his cock.  You don't know why, but hearing his praise makes you feel so happy,
+  forgetting for a moment about the pain you still feel from your spanking.  When your work makes him start to moan, it makes
+  you even more happy.  And feeling his cock start to pulse, and then fill your mouth with his cum, makes you happiest of all.
+<</nobr>>
+
+<<nobr>>
+  After he takes a few moments to recover and pull of his pants he says, "Now, pull up a chair and we can get to work.  Or you
+  can stand if that's more comfortable. We'll start on what you should have picked up week 1, and work our way forward from there."
+<</nobr>>
+
+<<nobr>>
+  You spend the next hour with him, going over all of the first couple weeks of the material covered in class.  You suck his cock
+  again before you leave, and he instructs you to come back tomorrow during his office hours for another lesson.  You hope tomorrow's
+  lesson doesn't involve another spanking.  Well, most of you hopes that.  Part of you is hoping it does.
+<</nobr>>
+
+<<nobr>>
+  Thankfully, you aren't spanked the next day.  Your butt probably couldn't have taken it two days in a row.  You eagerly suck
+  his cock again though, both before and after your lesson.  You are to keep coming in to work with him until you are all
+  caught up.  He's confident you'll do great on the exam when it finally comes. 
+<</nobr>>
+
+<<nobr>>
+  By now though, you visit him, because you love hearing him praise you, whether it's for how well you understood something he
+  explained to you, or for how well you are sucking his cock.  Either way it gives you a warm feeling of pride and contentment
+  hearing him say it.  Of course when he slides his hand up your skirt to find your clit, he's able to encourage you in other
+  ways as well.
+<</nobr>>
+
+<<nobr>>
+  You are sure you'll want to [[continue your visits|Part6Professor5]] with him, even after you are caught up.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part6/Professor4.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+
 ::Part6Professor1   <20000,6000>
 <<nobr>>
-	<h1><<print "Classroom">></h1>
+	<h1>Classroom</h1>
 	<img src="Part6/Professor1.jpg" hspace="10" vspace="10" height="650" align="left">
+	<<set setup.addSexRepeat(10, {sex: 'male', name:'Aaron'})>>
+	<<set setup.addSexRepeat(3, {sex: 'male', name:'Aaron', vaginal:true})>>
 <</nobr>>
 
 <<nobr>>
@@ -3969,13 +4107,10 @@ do your best to make a purring sound for a bit before you fall asleep.
   <<set setup.addInventory('sex toys', 'pink collar')>>
   <<set setup.addInventory('sex toys', 'pink gag')>>
   <<set setup.addInventory('toys', 'teddy bear')>>
-	
-	<h1><<print "Professor’s House">></h1>
+	<h1>Professor’s House</h1>
+  After a while he has you stop meeting him at his office. Instead you start spending more and more time at his house.
+  He has you stop calling him “Professor” and now you call him “Daddy”, at least when you aren’t at school.
 <</nobr>>
-
-<<print "After a while he has you stop meeting him at his office. Instead you start spending more and more time at his house.">>
-
-<<print "He has you stop calling him “Professor” and now you call him “Daddy”, at least when you aren’t at school.">>
 <<if setup.areDating('Peter')>><<set setup.friendZone('Peter')>>\
 <br><<print "Eventually you tell him about the nerd next door and how you ended up with his chastity key a few months back, before your relationship with started. “I guess I should give it back now.”, you tell him.">><br><br>\
 <<print "“No, my baby doesn't have to give up her toy.”, he tells you. “Just make sure he stays in the 'friend zone' and it's fine. I'm sure he'd love for you to keep holding his key after you move in here with me. He'll love hearing about all the sex you and I have. You can even tease him a bit if you like, as long as it's 'look but don't touch'”">><br><</if>>\
@@ -3984,7 +4119,7 @@ do your best to make a purring sound for a bit before you fall asleep.
 \
 <<if setup.isFWB('David') or setup.isFWB('Josh') or setup.isFWB('James') or setup.isFWB('Zack')>><br><<print "You decide he doesn’t need to know about other guys you occasionally have fun with, especially since you plan to stop doing that from now on.">><br><</if>>\
 
-<<print "This term you have to keep your relationship secret. But once you are done with his class, and you won’t have to hide. He’s even made you your own room at his house for when you can move it. It’s all decorated in pink just for you.">>
+<<print "This term you have to keep your relationship secret. But once you are done with his class, he and you won’t have to hide. He’s even made you your own room at his house for when you can move it. It’s all decorated in pink just for you.">>
 
 <<print "Of course you’ll probably use the desk more than the bed. It’s much more fun to sleep in daddy’s bed than your own. ">>
 <img src="Part6/Professor5.jpg" hspace="10" vspace="10" height="650">
@@ -4000,15 +4135,13 @@ do your best to make a purring sound for a bit before you fall asleep.
 ::Part6Professor6   <21000,6000>
 <<nobr>>
 	<h1><<print "Professor’s House">></h1>
-<</nobr>>
-<<nobr>>
-  You try to be a good girl, but sometimes you aren’t. Sometimes you don’t do your homework, are late to class, or forget your chores.
-<</nobr>>
-
-<<nobr>>
   <div style="float:left;padding:12px;">
     <video src="Part6/Professor6.webm" autoplay loop muted height="640"></video>
   </div>
+<</nobr>>
+<<nobr>>
+  You try to be a good girl, but sometimes you aren’t. Sometimes you don’t do your homework, are late to class, or forget your chores.
+  Of course maybe you misbehave sometimes on purpose, just so you get punished.  But you'd never admit that.
 <</nobr>>
 
 <<nobr>>
@@ -4021,8 +4154,6 @@ do your best to make a purring sound for a bit before you fall asleep.
 		As you have a naughty side job, you know you need to be punished for that too. Your Daddy convinces to quit your side job.
     <br><br>
 	<</if>>
-<</nobr>>
-<<nobr>>
 	<<if $JobCheerleaderFundraiser or $JobOfficePA or $JobPornOral or $JobPornOral or $JobPornAnal or $JobPornGang or $JobPorn or $JobCallGirl>>
 		As you have a naughty job, you know you need to be punished for that too. Your Daddy convices you to quit your job and is going to give you
 		an allowance.  He says you can find another, less naughty job if you'd like, but you soon find you enjoy spending the extra time with Daddy
