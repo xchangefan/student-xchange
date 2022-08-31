@@ -833,6 +833,29 @@ setup.isFriendzoned = function(name) {
 	return variables().friendzone.indexOf(name) >= 0
 }
 
+::ChastityFunctions [script]
+setup.beltMode = function() {
+  if (variables().JobBetaTester) {
+    return variables().JobBetaTester;
+  } else if (variables().ComputerChastityMode) {
+    return variables().ComputerChastityMode;
+  } else if (variables().PlayerChastityBelt) {
+    return "Manual"
+  } else {
+    return null;
+  }
+}
+
+setup.beltOwner = function() {
+  if (variables().ComputerChastityOwner) {
+    return variables().ComputerChastityOwner;
+  } else if (variables().Keyholder) {
+    return variables().Keyholder;
+  } else {
+    return null;
+  }
+}
+
 ::EventFunctions [script] <405,50>
 $(document).on(':passagestart', function (ev) {
 	setup.addDetailsToRecentSex()

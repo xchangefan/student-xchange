@@ -340,12 +340,249 @@ TODO And $BuddyElectronicChastity ?
 TODO No longer a job, work as barista
 
 ::Part16WomensStudiesReport6Accept
-<<if $FatherDisownWomensStudiesChastity>>
-  TODO Optionally un-disowned?
-<</if>>
+<<nobr>>
+  <h1>Getting fitted with your belt</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part14/Chastity4.mp4" autoplay loop muted height="700"></video>
+  </div>
+<</nobr>>
+<<nobr>>
+  <<if $FatherDisownWomensStudiesChastity>>
+    Your father is pleased that you've reconsidered and decided to participate in the belt safety program. You and him are able to
+    reconcile, though you still aren't entirely happy with him. He may demanding and a jerk sometimes, but he's still your dad, so you
+    are glad you and him are on ok terms again.
+    <br><br>
+  <<elseif $FatherSafetyTalk>>
+    Your father is pleased that you've reconsidered and decided to participate in the belt safety program. He says he's glad you were
+    willing to listen and made the right decision in the end.
+    <br><br>
+  <</if>>
+  You head over for your appointment for your belt fitting. The technician has you strip below the waist and measures you.
+  <<if $CampusMinistry>>
+    The thoughts you have of his hands roaming your body confirm to you that you've made the right decision.  At least wearing a belt
+    like this will give you a moment of pause whenever you are feeling temptation, so hopefully you'll have time to reconsider before
+    you do something you'll regret later.
+  <<else>>
+    He's professional about it though, so it's easy for you think of it like a medical exam.
+  <</if>>
+<</nobr>>
 
+<<nobr>>
+  Then he selects a belt from the table nearby and positions it in place on you. You aren't sure why, but your heart skips a beat as
+  he clicks the belt closed around your waist.
+  <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
+  <<set $PlayerChastityBelt to 1>>
+  <<set $Keyholder to "computer">>
+<</nobr>>
+
+<<nobr>>
+  He goes over some of the physical features of the belt with you, like how remove the cleaning shield to deal with periods or other
+  hygiene issues, without needing to remove the belt.  Though it seems to you, it'll be easier if you just remove your belt entirely
+  if and when that becomes necessary.  That seems especially like a good idea when he explains how the belt will 'punish' you with
+  shocks if you keep the shield off too long or try to pleasure yourself with it off.
+<</nobr>>
+
+<<nobr>>
+  After he checks the fit and goes over the mechanical features of the belt, he sends you into the next room to
+  [[discuss the app|Part16WomensStudiesReport6Accept2]] and other technical features of the belt.
+<</nobr>>
+
+::Part16WomensStudiesReport6Accept2
+<<nobr>>
+  <h1>Discussing your belt</h1>
+  <<if setup.haveGirlfriend()>>
+    <<include [[Part16WomensStudiesReport6Accept2Lesbian]]>>
+  <<elseif $dating.length and setup.areDating('Barry') and !($FatherDisownWomensStudiesChastity or $FatherSafetyTalk)>>
+    <<include [[Part16WomensStudiesReport6Accept2OpenRelationship]]>>
+  <<elseif $dating.length>>
+    <<include [[Part16WomensStudiesReport6Accept2Monogamous]]>>
+  <<elseif $CampusMinistry and !($FatherDisownWomensStudiesChastity or $FatherSafetyTalk)>>
+    <<include [[Part16WomensStudiesReport6Accept2Chaste]]>>
+  <<else>>
+    <<include [[Part16WomensStudiesReport6Accept2Normal]]>>
+  <</if>>
+<</nobr>>
+
+::TEMP_TODO
+  <<if $dating.length and !setup.haveGirlfriend()>>
+    <<set $ComputerChastityOwner to $dating[0]>>
+    <<if setup.areDating('Barry')>>
+      <<set $ComputerChastityMode to "open-relationship">>
+    <<else>>
+      <<set $ComputerChastityMode to "monogamous">>
+    <</if>>
+    TODO Belt mode monogamous (or ?? if Barry)
+    TODO BF gets control
+  <<elseif setup.haveGirlfriend() and ($FatherDisownWomensStudiesChastity or $FatherSafetyTalk)>>
+    <<set $ComputerChastityOwner to "Your father">>
+    <<set $ComputerChastityMode to "lesbian">>
+    TODO Belt mode lesbian
+    TODO father gets control, doesn't see need for unlocking, can trigger orgasms when with girlfriend
+    TODO if sex job, have to quit?
+  <<elseif ($FatherDisownWomensStudiesChastity or $FatherSafetyTalk)>>
+    <<set $ComputerChastityOwner to "Your father">>
+    <<set $ComputerChastityMode to "normal">>
+    TODO father gets control, doesn't see need for unlocking, can trigger orgasms sometimes
+    TODO if sex job, have to quit?
+  <<elseif setup.haveGirlfriend()>>
+    <<set $ComputerChastityOwner to "self">>
+    <<set $ComputerChastityMode to "lesbian">>
+    TODO Belt mode lesbian
+    TODO self controlled - paired with girlfriends
+  <<elseif $TODO_Sex_Job>>
+    TODO Belt mode normal
+    <<set $ComputerChastityMode to "normal">>
+    <<set $ComputerChastityOwner to "self">>
+    TODO self controlled
+  <<elseif $CampusMinistry>>
+    <<set $ComputerChastityMode to "chaste">>
+    TODO Belt mode Chaste
+    TODO Chaste mode - self controlled, but can't unlock
+  <<else>>
+    TODO Belt mode normal
+    TODO self controlled
+  <</if>>
+
+TODO If un-disowned or wore with father's urging, does he get control of it?
 TODO You accept wearing it
-TODO And $JobEngineerLockFormer
+TODO if $JobEngineerLockFormer
+
+- if chaste, then locked until married, but oral/anal allowed after dating a while (you are surprised if you were already signed up as you thought it'd end when the beta test was over)
+- (not chaste) later wearer gets drunk and tries to consent to unlocking but it doesn't let her because of intoxication, she blows him
+instead and it rewards her, escalates from there
+- self-owned: belt suggests lock-out for X days, and tease to boost your pleasure, leads into slut-training of some sort
+- father-owned: leads to him giving you to a dominant friend of his?
+
+::Part16WomensStudiesReport6Accept2Lesbian
+<<nobr>>
+  TODO Img
+<</nobr>>
+
+TODO Lesbian mode instructions (including father owned)
+TODO Have to quit if have sex-related job and can't adapt
+
+::Part16WomensStudiesReport6Accept2OpenRelationship
+<<nobr>>
+  TODO Img
+<</nobr>>
+
+TODO Open relationship instructions (dating barry, but he shares you)
+
+::Part16WomensStudiesReport6Accept2Monogamous
+<<nobr>>
+  TODO Img
+<</nobr>>
+
+TODO Monangamous (including if father owned, including if dating barry and father sets it to monogamous instead of open)
+TODO Have to quit if have sex-related job and can't adapt
+
+::Part16WomensStudiesReport6Accept2Father
+
+
+::Part16WomensStudiesReport6Accept2Chaste
+<<nobr>>
+  TODO Img
+<</nobr>>
+
+TODO Chaste, ministry setting
+
+::Part16WomensStudiesReport6Accept2Normal
+<<nobr>>
+  <div style="float:left;padding:12px;">
+    <video src="Part16/Class16.mp4" autoplay loop muted height="550"></video>
+  </div>
+  <<set $ComputerChastityMode to "normal">>
+<</nobr>>
+<<nobr>>
+  In the next room a different technician starts explaining the features of your belt and the app that goes with it.  Among the
+  other explainations he tells you,  "Your belt is currently set in 'normal' mode.  That means you aren't restricted as to who you
+  engage in oral and anal sex with while wearing the belt. You will given encouragement stimulation whenever you are giving a blowjob,
+  sometimes being given an orgasm of your own once you give your partner his."
+  <<if $CampusMinistry>>
+    <br><br>
+    You try to interrupt to see if he mispoke.  You'd requested 'chaste' mode for your belt, where you would be punished if you tried
+    to do anything like that.  But he's talking quickly and seems to be reading from a checklist, and you are too embarrassed by your
+    question to interrupt.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "Now these settings can be changed by your owner," he tells you.  "And of course they can also unlock your belt if they wish."
+<</nobr>>
+
+<<nobr>>
+  <<if $CampusMinistry>>
+    You can't help but interrupt this time.
+  <<else>>
+    You quickly interrupt him.
+  <</if>>
+  "No one <b><i>owns</i></b> me," you tell him firmly.
+<</nobr>>
+
+<<nobr>>
+  "Oh, of course not," he says. You sense a hint of condescension in his voice. "You can just think of that as our shorthand for
+  'the owner of your belt' if you'd like.  In your case that would be..." He looks down at his tablet and 
+  <<if $FatherDisownWomensStudiesChastity or $FatherSafetyTalk>>
+    <<set $ComputerChastityOwner to "Your father">>
+    then says your father's name.  "That's who is listed as your owner.  Or your "belt's owner" if you prefer."
+    <br><br>
+    "But, that's my father.  Who made him my own... my belt's owner?" you ask
+    <<if $CampusMinistry>>
+      worriedly. "Also, why is my belt in 'normal' mode.  I requested 'chaste' mode.  I'm saving myself for my future husband."
+    <<else>>
+      angrily.
+    <</if>>
+    <br><br>
+    He looks around several screens on his tablet and answers.  "Well, it looks like your original appointment was canceled.  Then your
+    professor contacted us to reschedule it for you, and your father was added as owner at that time.  Is that not what you intended?
+    If it isn't then you should probably contact him, we aren't allowed to change the owner of a belt without the current owner's premission.
+    <<if $CampusMinistry>>
+      Also, there appears to be a note here from your father regarding the chaste mode."  He then shows you where to find 'Owner Messages'
+      on your app so you can view the note.
+      <br><br>
+      <blockquote>
+        $playerName,<br>
+        I'm very proud of you for asking them for 'chaste' mode on your belt.  Wanting to save yourself for marriage<br>
+        is great.  But, I think the chaste mode is too restrictive for you.  Not being able to provide any pleasure to your<br>
+        future boyfriend would make it very hard for you to find one willing to wait.<br>
+        <br>
+        With the settings I picked for you, you'll still be able to keep a boyfriend happy, while the belt will keep you from<br>
+        taking things too far.<br>
+        - Dad
+      </blockquote>
+    <</if>>
+    <br><br>
+    "I hope that cleared up the confusion for you," he says. "Now let me go over the orgasm request and messaging options with you."
+  <<else>>
+    <<set $ComputerChastityOwner to "self">>
+    continues, "Well, you. Now lets go over the teasing and orgasm functions, and the self-lockout options, and hope to transfer
+    ownership if you ever wish to do that."  
+  <</if>>
+  He then continues going over more features with you before you leave.
+<</nobr>>
+
+<<nobr>>
+  When you get back home,
+  <<if setup.areDating('Bailey')>>
+    you compare belts with Bailey.  Her's has all the same features as yours, though their physical designs are slightly different.
+  <<else>>
+    you show your new belt to
+    <<if $Roommate>>
+      $Roommate.
+    <<else>>
+      a friend.
+    <</if>>
+    <<if $Roommate == "Kiera">>
+      She's already said she's not going to get one but
+    <<else>>
+      She's not due to get hers for another couple weeks and
+    <</if>>
+    is curious what they are like.
+  <</if>>
+<</nobr>>
+
+TODO Change job if needed (if father owner and sex job you can't adapt)
+TODO Back to main path
 
 ::Part16WomensStudiesReport6Refuse
 <<nobr>>
@@ -361,6 +598,7 @@ TODO And $JobEngineerLockFormer
   <h1>A call from your father</h1>
   When you tell your professor that you want to cancel your appointment, you think that's going to be it.  You are surprised though when
   the next day you get a call from your father.
+  <<set $FatherSafetyTalk to 1>>
 <</nobr>>
 <<nobr>>
   <img src="Part16/Class10.jpg" hspace="10" vspace="10" height="500">
@@ -539,43 +777,157 @@ TODO And $JobEngineerLockFormer
 ::Part16WomensStudiesReport6Refuse3
 <<nobr>>
   <h1>Follow-up checks</h1>
-  TODO Horny, sex with partners without getting unlocked, often with only orgasm for their partner
+  You
+  <<if $CampusMinistry>>
+    are a bit embarrassed by how much you
+  <</if>>
+  enjoy hearing the stories from the belted girls with partners.  Unlike the single girls, these have all decided to give control
+  over to their partner.  Well, that's what the ones with boyfriends do.  The lesbian couples usually get belted together and usually
+  sync their belts together, making it so they can only unlock when they are together, or sometimes stay locked, but orgasm together.
 <</nobr>>
 
 <<nobr>>
-  <div style="float:left;padding:12px;">
-    <video src="Part15/Engineer16.mp4" autoplay loop muted height="450"></video>
-  </div>
+  But for the belted girls with boyfriends, they give full control over to him, letting him decide when or if she cums, as well as
+  control of all the other functions the belts have.  One of the most popular functions seems to be the "Oral Encouragement Mode",
+  which is usually enabled.  With this setting the wearer gets teased and eventually brought to the edge of an orgasm while she
+  <<if $CampusMinistry>>
+    pleasures her boyfriend with her mouth.
+  <<else>>
+    sucks her boyfriend's cock.
+  <</if>>
+  And, unless her boyfriend has changed the settings, there's a chance it'll make her orgasm too when her boyfriend does.
+<</nobr>>
 
+<<nobr>>
+  <video src="Part15/Engineer16.mp4" autoplay loop muted height="550"></video>
+<</nobr>>
+
+<<nobr>>
+  The normal setting has it random though, not every time, or even a regular frequency like every fifth time or something.  When
+  you'd asked about this, one of the engineers said it was a 'variable reward' and it makes it much more fun and addictive for the
+  wearer if it's not predictable.
+<</nobr>>
+
+<<nobr>>
+  That certainly seems to be true.  Most of the girls report offering
+  <<if $CampusMinistry>>
+    oral
+  <<else>>
+    blow jobs
+  <</if>>
+  much more frequently now, sometimes even begging to
+  <<if $CampusMinistry>>
+    pleasure her boyfriend
+  <<else>>
+    suck her boyfriend's cock
+  <</if>>
+  if she is feeling especially horny.  Most say before the belt if she did oral it was part of foreplay, for a special occasion,
+  or more frequently than not, it was her boyfriend's idea not hers.
+<</nobr>>
+
+<<nobr>>
+  They report frequently starting with oral, and planning to request to be unlocked for other sex part way through, but that
+  it rarely happens that way.  Usually they get so caught up in the moment, that they can't stop until
+  <<if $CampusMinistry>>
+    they've brought their boyfriend to completion.
+  <<else>>
+    they feel their boyfriend's cum fill their mouth.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  But even when they do engage in other forms of sex, unlocking is less frequent than you would have expected, especially for the
+  wears in cock cages.
+<</nobr>>
+
+<<nobr>>
+  When they do engage in penetrative sex, it's much more common than you would have expected for their boyfriend to keep their
+  chastity device on, and instead
+  <<if $CampusMinistry>>
+    engage in anal sex.
+  <<else>>
+    fuck their ass.
+  <</if>>
+  Orgasms from this are more common from the caged wearers, which makes sense.  Though they report that they are generally still
+  nearly as horny after their orgasm as they were before it.
+<</nobr>>
+
+<<nobr>>
   <video src="Part16/Class13.webm" autoplay loop muted height="450"></video>
   <video src="Part16/Class14.mp4" autoplay loop muted height="450"></video>
 <</nobr>>
 
 <<nobr>>
+  With both the caged and belted wearers, they report being far more eager to please their boyfriends, sexually and otherwise.
+  They see this as a positive thing, and that they feel closer to their boyfriends than they did before.
+<</nobr>>
+
+<<nobr>>
   <<if $PlayerSideEffectSubmissive and $dating.length and !setup.haveGirlfriend()>>
-    Hearing them talk about giving control over to their boyfriend, really turns you on.  Hearing them talk about begging him
+    Hearing them talk about giving control over to their boyfriends, really turns you on.  Hearing them talk about begging him
     for the chance to cum, or having him fuck them with their device still on, even more so.  It's all too much for you to resist,
     and you start to regret your decision to refuse a belt of your own.
     <br><br>
     Your professor is thrilled when she hears you've [[changed your mind|Part16WomensStudiesReport6Accept]].  And thankfully, the
     Engineering department is more than willing to squeeze in an appointment for their assistant, so you don't have to wait.
   <<else>>
-    TODO Part16WomensStudiesReport6Refuse2
+    Part of you is concerned about the changes in behavior the girls are reporting, and think perhaps you made the right
+    decision in
+    <<if setup.areDating('Bailey')>>
+      declining the belt.
+    <<else>>
+      [[declining the belt|Part16WomensStudiesReport6Refuse4]].
+    <</if>>
+    Though none of them seem to express any regrets about it, so maybe you were too harsh in judging it.
+    <br><br>
+    But you have to admit, hearing them talk about giving control over to their boyfriends, really turns you on.  Hearing them talk
+    about begging him for the chance to cum, or having him
+    <<if $CampusMinistry>>
+      have sex with
+    <<else>>
+      fuck
+    <</if>>
+    them with their device still on, even more so.  You can't help but fantasize about dropping to your knees and begging
+    <<if setup.haveGirlfriend()>>
+      some guy
+    <<elseif $dating.length>>
+      $dating[0]
+    <<else>>
+      your boyfriend
+    <</if>>
+    to let you suck
+    <<if $CampusMinistry>>
+      him,
+    <<else>>
+      his cock,
+    <</if>>
+    hoping that you can orgasm too as you do.
+    <br><br>
+    <<if setup.areDating('Bailey')>>
+      It won't be quite the same with you and Bailey as it would be with the hetero couples, but it sounds like it would still
+      be fun.  So maybe you and her should get the new belts after all.
+      <br><br>
+      You know your professor will be thrilled when you tell her you've [[changed your mind|Part16WomensStudiesReport6Accept]] and you
+      and Bailey want belts after all. And the Engineering department is more than willing to squeeze in a couple appointments for
+      their assistant and her girlfriend, so you don't even have to wait.
+    <<elseif setup.haveGirlfriend()>>
+      It wouldn't be quite the same with you and $dating[0] as it would be with the hetero couples, but it sounds like it would still
+      be fun.  So maybe you and her should get the new belts after all.
+      <br><br>
+      You know your professor would be thrilled if you tell her you've [[changed your mind|Part16WomensStudiesReport6Accept]] and you
+      and $dating[0] want belts after all. And the Engineering department would probably be willing to squeeze in a couple appointments for
+      their assistant and her girlfriend, so you wouldn't even have to wait.
+    <<elseif $dating.length>>
+      You know your professor would be thrilled if you tell her you've [[changed your mind|Part16WomensStudiesReport6Accept]] and want
+      a belt after all. And you are sure the Engineering department will be willing to squeeze in an appointment for their assistant, so
+      you wouldn't even have to wait.
+    <<else>>
+      But you don't have a boyfriend.  So it's easy to just keep those thoughts as just fantasies and stick with your decision to not
+      get one of the belts.
+    <</if>>
   <</if>>
 <</nobr>>
 
-::Part16WomensStudiesTODO
-TODO
-- they are encouraging chastity belts for all women on campus 
-- if you are already belted, stay that way
-- if you are not belted, then strongly encouraged to get that way
-- if in a relationship, you give your bf/gf control
-- if on ministry path, then chaste mode
-- if chaste, then locked until married, but oral/anal allowed after dating a while (you are surprised if you were already signed up as you thought it'd end when the beta test was over)
-- otherwise self-owned mode
-- (not chaste) later wearer gets drunk and tries to consent to unlocking but it doesn't let her because of intoxication, she blows him
-instead and it rewards her, escalates from there
-- self-owned: belt suggests lock-out for X days, and tease to boost your pleasure, leads into slut-training of some sort
-- father-owned: leads to him giving you to a dominant friend of his?
+::Part16WomensStudiesReport6Refuse4
+TODO final refusal screen and then continue back to main path
 
-TODO Have beta-testing of chastity belt end at the same time as the women's study rollout would occur? and transfer ownership if you stay locked?
