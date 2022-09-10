@@ -28,9 +28,23 @@ TODO Work this in to Part 16 flow
   Of course your thoughts turn to the discussions you and your classmates had about what the engineering department might have been
   doing to her while she was absent from class.
   <<if $JobEngineer or $JobTestSubject or $JobEngineerOld or $JobTestSubjectOld>>
-    Of course you know their guesses weren't as far-fetched as many of them thought they were.
+    Of course you know their guesses weren't as far-fetched as many of them thought they were.  They certainly have used some
+    devices during their testing similar to what they were imagining.  Though them using them to 'brainwash' your professor like some
+    of your more conspiratorially-minded classmates suggested, seems far less likely.
   <<elseif $CampusMinistry>>
-    Just remembering the ideas they had makes you blush again.
+    Just remembering the ideas they had makes you blush again.  You are ashamed to feel yourself getting wet imagining again what
+    it would be like if the Engineering department tried to 'brainwash' you with pain and pleasure like your classmates had suggested
+    they were doing to your professor.  Of course thats nonsense, like you professor just said.
+  <<else>>
+    Especially
+    <<if $PlayerSideEffectSubmissive>>
+      arousing
+    <<else>>
+      amusing
+    <</if>>
+    are the suggestions some of your more conspiratorially-minded classmates had, of the Engineering department using pain and pleasure
+    to 'brainwash' your professor.  It makes for an interesting fantasy, and an amusing discussion, but obviously it's nonsense like
+    your professor just said.
   <</if>>
 <</nobr>>
 
@@ -40,9 +54,9 @@ TODO Work this in to Part 16 flow
 
 <<nobr>>
   "My meeting with them was only a few hours shortly after our last class together.  My absence was due to a family emergency, and
-  completely unrelated," she continues. "I already appologize to the engineering department, but I also want to appologize to all of
+  completely unrelated," she continues. "I already appologized to the engineering department, but I also want to appologize to all of
   you for jumping to conclusions so quickly."  She lowers her head a bit, then looks back up and continues, "I took what were clearly
-  joke responses to my survey seriously.  A few of you clealy thought it be funny to play on the rumors that have been circulating when
+  joke responses to my survey seriously.  A few of you clearly thought it be funny to play on the rumors that have been circulating when
   filling out my survey. Let this be a lesson to all of you to always consider that survey responses are not always honest."
 <</nobr>>
 
@@ -63,7 +77,8 @@ TODO Work this in to Part 16 flow
   </div>
 <</nobr>>
 <<nobr>>
-  "Many of the toys and tests involved various forms of restraint, but all the testers I saw were consenting, and most seemed
+  "Many of the toys and tests involved various forms of restraint, often to limit the number of variables being tested by preventing
+  the subjects from moving or adding to the pleasure they were being given.  But all the testers I saw were consenting, and most seemed
   to be enjoying themselves. Some were enjoying themselves a great deal."
 <</nobr>>
 
@@ -108,7 +123,7 @@ TODO Work this in to Part 16 flow
 
 <<nobr>>
   But, she's certainly not like that.  She's much more strong willed than you'd be.  And her session was just so she could feel what
-  it was like so she'd know it was safe. You're just being silly imagining they brainwashed here or something, probably because of all
+  it was like so she'd know it was safe. You're just being silly imagining they brainwashed her or something, probably because of all
   those inside theories you and your classmates were throwing around earlier.
 <</nobr>>
 
@@ -390,7 +405,9 @@ TODO No longer a job, work as barista
 ::Part16WomensStudiesReport6Accept2
 <<nobr>>
   <h1>Discussing your belt</h1>
-  <<if setup.haveGirlfriend()>>
+  <<if setup.areDating('Kate')>>
+    <<include [[Part16WomensStudiesReport6Accept2Kate]]>>
+  <<elseif setup.haveGirlfriend()>>
     <<include [[Part16WomensStudiesReport6Accept2Lesbian]]>>
   <<elseif $dating.length and setup.areDating('Barry') and !($FatherDisownWomensStudiesChastity or $FatherSafetyTalk)>>
     <<include [[Part16WomensStudiesReport6Accept2OpenRelationship]]>>
@@ -453,13 +470,83 @@ instead and it rewards her, escalates from there
 - self-owned: belt suggests lock-out for X days, and tease to boost your pleasure, leads into slut-training of some sort
 - father-owned: leads to him giving you to a dominant friend of his?
 
-::Part16WomensStudiesReport6Accept2Lesbian
+::Part16WomensStudiesReport6Accept2Kate
 <<nobr>>
-  TODO Img
+  TODO Img - eating Kate out
 <</nobr>>
 
-TODO Lesbian mode instructions (including father owned)
-TODO Have to quit if have sex-related job and can't adapt
+<<nobr>>
+  <<set $ComputerChastityMode to "lesbian">>
+  TODO Kate
+<</nobr>>
+
+TODO Owned by Kate (unbelted) - she makes sure its her and not father owned
+
+::Part16WomensStudiesReport6Accept2Lesbian
+<<nobr>>
+  <video src="Part16/Class17.webm" autoplay loop muted height="500"></video>
+  <<if $FatherDisownWomensStudiesChastity or $FatherSafetyTalk>>
+    <<set $ComputerChastityOwner to "Your father">>
+  <<else>>
+    <<set $ComputerChastityOwner to "joint">>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  In the next room a different technician starts explaining the features of your belt and the app that goes with it.  Among the
+  other explainations he tells you,  "Your belt is currently set in
+  <<if $ComputerChastityOwner == "Your father">>
+    <<set $ComputerChastityMode to "monogamous">>
+    'monogamous' mode.  That means you can only engage in sex with $dating[0] while wearing the belt.  As you are both belted,
+    the options for either of you will be limited unless your owner unlocks one or both of you."
+    <br><br>
+    You interrupt, "But we are supposed to each other's 'owner'.  So I guess we can do that whenever we want?"
+    <br><br>
+    He checks his tablet and then says the name of the person listed as both your owner and $dating[0]'s, and it's your father,
+    not each other!  "But, that's my father.  Who made him my own... my belt's owner?" you ask angrily.
+    <br><br>
+    He looks around several screens on his tablet and answers.  "Well, it looks like your original appointment was canceled.  Then your
+    professor contacted us to reschedule it for you, and your father was added as owner at that time.  And it was noted from the beginning
+    that $dating[0] wanted her belt to have the same setting as yours, so that change was made on hers as well."
+    <br><br>
+    $dating[0]'s appointment was a few hours ago.  You guess she just didn't ask any questions or pay attention enough to realize the change
+    that was made.  He continues, "Is that not what you intended? If it isn't then you should probably contact him, we aren't allowed to
+    change the owner of a belt without the current owner's premission."
+    <br><br>
+    "I hope that cleared up the confusion for you," he says. "Now let me go over the mutual tease and orgasm setting and messaging options
+    with you."
+    <br><br>
+    You are upset at the change being made, but perk up when you hear that the belts will sometimes gently tease both you and $dating[0]
+    when you are together. And with skin-to-skin contact, the intensity will increase, sometimes giving one or both of you an orgasm.
+    When you ask what 'sometimes' means he tells you that the probability can be configured by the owner, but is currently set high.
+    You make a note to make sure you don't upset your dad and risk him lowering that or turning it off entirely.
+  <<else>>
+    <<set $ComputerChastityMode to "lesbian">>
+    'paired lesbian' mode.  That means that you and your partner... $dating[0]'s belt are linked.  They both have exactly the same settings,
+    and both of you are setup as joint owners of both belts.  The belts can only be unlocked or owner-controlled settings changed if
+    you both approve."
+    <br><br>
+    "Now let me go over the mutual tease and orgasm setting and self-lockout options with you."
+    <br><br>
+    You are excited when you hear that the belts will sometimes gently tease both you and $dating[0] when you are together. And with
+    skin-to-skin contact, the intensity will increase, sometimes giving one or both of you an orgasm. When you ask what 'sometimes' means
+    he tells you that the probability can be configured, but is currently set high.
+    He then continues going over more features with you before you leave.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When you get back home, you compare belts with $dating[0]. Her's has all the same features and settings as yours, though their
+  physical designs are slightly different.
+<</nobr>>
+
+<<nobr>>
+  <<if $ComputerChastityOwner == "Your father">>
+    <<include [[Part16WomensStudiesBeltJobIssues]]>>
+  <<else>>
+    <<include [[Part16WomensStudiesBeltBackToMain]]>>
+  <</if>>
+<</nobr>>
 
 ::Part16WomensStudiesReport6Accept2OpenRelationship
 <<nobr>>
@@ -481,10 +568,51 @@ TODO Have to quit if have sex-related job and can't adapt
 
 ::Part16WomensStudiesReport6Accept2Chaste
 <<nobr>>
-  TODO Img
+  <div style="float:left;padding:12px;">
+    <video src="Part16/Class16.mp4" autoplay loop muted height="550"></video>
+  </div>
+  <<set $ComputerChastityMode to "chaste">>
+<</nobr>>
+<<nobr>>
+  In the next room a different technician starts explaining the features of your belt and the app that goes with it.  Among the
+  other explainations he tells you,  "Your belt is currently set in 'chaste' mode.  That means you aren't allowed to engage in oral
+  or anal sex while wearing the belt.  And obviously vaginal sex is impossible while wearing it."  You blush a bit at his frank
+  discussion.
 <</nobr>>
 
-TODO Chaste, ministry setting
+<<nobr>>
+  "There were a few different transitional options for chaste mode.  The one you selected was that the setting is locked in until
+  you enter into a long term relationship.  You'll need to inform us when that happens and arrange for him to visit us.  At that
+  point we'll change your belt to limited-monogamous mode.  This will allow you to engage in oral and anal with your partner, but
+  unlocking will still be prohibited.  Once a wedding date is set, please let us know and we can coordinate on enabling full-unlock
+  access then."
+<</nobr>>
+
+<<nobr>>
+  "While unlocking is not allowed, or changing the chaste settings, there are a number of options that available to you.  Of particular
+  interest will probably be the tease and orgasm functions as well as the lockout capabilities for those.  Let me go over those and a few
+  other things with you." He then continues going over more features with you before you leave.
+<</nobr>>
+
+<<nobr>>
+  When you get back home, you show your new belt to
+  <<if $Roommate>>
+    $Roommate.
+  <<else>>
+    a friend.
+  <</if>>
+  <<if $Roommate == "Kiera">>
+    She's already said she's not going to get one but
+  <<else>>
+    She's not due to get hers for another couple weeks and
+  <</if>>
+  is curious what they are like. It's a little embarrassing at first, but you remind yourself, it's like underwear, except more secure.
+  And all the girls on campus will be wearing them soon enough.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part16WomensStudiesBeltBackToMain]]>>
+<</nobr>>
 
 ::Part16WomensStudiesReport6Accept2Normal
 <<nobr>>
@@ -555,7 +683,7 @@ TODO Chaste, ministry setting
     "I hope that cleared up the confusion for you," he says. "Now let me go over the orgasm request and messaging options with you."
   <<else>>
     <<set $ComputerChastityOwner to "self">>
-    continues, "Well, you. Now lets go over the teasing and orgasm functions, and the self-lockout options, and hope to transfer
+    continues, "Well, you. Now lets go over the teasing and orgasm functions, and the self-lockout options, and how to transfer
     ownership if you ever wish to do that."  
   <</if>>
   He then continues going over more features with you before you leave.
@@ -563,26 +691,115 @@ TODO Chaste, ministry setting
 
 <<nobr>>
   When you get back home,
-  <<if setup.areDating('Bailey')>>
-    you compare belts with Bailey.  Her's has all the same features as yours, though their physical designs are slightly different.
+  you show your new belt to
+  <<if $Roommate>>
+    $Roommate.
   <<else>>
-    you show your new belt to
-    <<if $Roommate>>
-      $Roommate.
-    <<else>>
-      a friend.
-    <</if>>
-    <<if $Roommate == "Kiera">>
-      She's already said she's not going to get one but
-    <<else>>
-      She's not due to get hers for another couple weeks and
-    <</if>>
-    is curious what they are like.
+    a friend.
+  <</if>>
+  <<if $Roommate == "Kiera">>
+    She's already said she's not going to get one but
+  <<else>>
+    She's not due to get hers for another couple weeks and
+  <</if>>
+  is curious what they are like.
+<</nobr>>
+
+<<nobr>>
+  <<if $ComputerChastityOwner == "Your father">>
+    <<include [[Part16WomensStudiesBeltJobIssues]]>>
+  <<else>>
+    <<include [[Part16WomensStudiesBeltBackToMain]]>>
   <</if>>
 <</nobr>>
 
-TODO Change job if needed (if father owner and sex job you can't adapt)
-TODO Back to main path
+::Part16WomensStudiesBeltJobIssues
+<<nobr>>
+    <<if $JobAthlete>>
+      Realizing you aren't going to be able to unlock yourself, you talk with your father.  After some discussions between him and
+      your coach, he arranges for your coach to have the ability to unlock your belt for training and competing when needed.      
+      <br><br>
+      <<include [[Part16WomensStudiesBeltBackToMain]]>>
+    <<elseif $JobCheerleader>>
+      Realizing you aren't going to be able to unlock yourself, you talk with your father.  At first he suggests you drop cheerleading.
+      But when you explain how important it is to you, and how it helps you stay in shape, and how you enjoy representing the university,
+      he changes his mind.
+      <<if setup.areDating('Veronica')>>
+        He's not willing to give unlock access over to one of the other cheerleaders though. But after some discussions between him and
+        athletic director, he gives access to the coaches for the teams you cheer for.  He does the same for Veronica's belt.
+      <<else>>
+        He's not willing to give unlock access over to one of the other cheerleaders though, even the squad leader.
+        But after some discussions between him and athletic director, he gives access to the coaches for the teams you cheer for.
+      <</if>>
+      <br><br>
+      <<include [[Part16WomensStudiesBeltBackToMain]]>>
+    <<elseif $JobCheerleaderFundraiser>>
+      <<unset $JobCheerleaderFundraiser>>
+      You had planned on unlocking yourself for all of your visits with university donors, and for when you are actually cheering too.
+      You might be able to convince your dad to unlock you for cheering, but there's no way you'll be able to talk him into letting you
+      unlock to fuck some rich guy.
+      <br><br>
+      So, you'll need to [[find a new job|Part16WomensStudiesBeltJobChange]].
+    <<elseif $JobFitnessMassage>>
+      <<unset $JobFitnessMassage>>
+      While you can certainly provide normal massages with your belt on, that's not really what your job entails most of the time.
+      He already wasn't happy about your job, and he didn't even know about the sex part of it, though he may have suspected it.
+      You know there's no way he's going to unlock you for work.
+      <br><br>
+      So, you'll need to [[find a new job|Part16WomensStudiesBeltJobChange]].
+    <<elseif $JobModel>>
+      <<unset $JobModel>>
+      You try to explain to your father that you'll need to remove your belt for modeling, he isn't willing to give you the ability
+      to unlock yourself. It doesn't seem that he was particularly happy about you modeling anyway.  He thinks photographers and others
+      might want to do more with your body than just photograph it.  Well, he's not wrong.
+      <br><br>
+      So, you'll need to [[find a new job|Part16WomensStudiesBeltJobChange]].
+    <<elseif $JobBikiniBarista>>
+      <<unset $JobBikiniBarista>>
+      Your dad knows you are a barista. You just never mentioned the part where you are in a bikini.  You know he's not going to
+      let you unlock yourself for work.  So it looks like you'll need to leave the bikini barista shop and just become
+      the [[regular barista|Part16WomensStudiesBeltJobChange]] your father already beleives you are.
+    <<elseif $JobCallGirl>>
+      <<unset $JobCallGirl>>
+      You had planned on unlocking yourself for all of your appointments.  But with your father controlling your belt, there's no way
+      you are going to be able to do that.  And you can only imagine how things would turn out if you told him you wanted out of the belt.
+      So, you'll need to [[find a new job|Part16WomensStudiesBeltJobChange]].
+    <<elseif $JobLibrary>>
+      Well, it looks like you are going to be missing out on some of your fun betweent he stacks now. It's not like your father is going to
+      be willing to unlock you for working at a library.
+      <br><br>
+      <<include [[Part16WomensStudiesBeltBackToMain]]>>
+    <<elseif $JobOffice or $JobOfficePA or $JobOfficeManager or $JobOfficeIntern>>
+      Well, it looks like you are going to be missing out on some of fun you might have at lunch or after work.  But it's not like your
+      father is going to be willing to unlock you for working at a office.
+      <br><br>
+      <<include [[Part16WomensStudiesBeltBackToMain]]>>
+    <<elseif $JobBartender or $JobBartenderGirls or $JobBartenderGuys or $JobBartenderBi or $JobBartenderSub or $JobBartenderDom>>
+      You had planned on being able to unlock for work, but it's not like your father is going to allow that.  So it looks like you'll be
+      wearing your belt at the bar.  Though soon most of the girls from campus will be too, so you won't be that out of place.
+      <br><br>
+      <<include [[Part16WomensStudiesBeltBackToMain]]>>
+    <<elseif $JobEngineer>>
+      You try to explain to your dad that you need to be unlocked to test the devices you create, but he's still not willing to give you
+      access.  He points out that your boss can probably unlock you and everyone else if he wanted to, but gives him specific permission
+      to unlock you if needed, as long as he can guarantee that none of the other engineers 'take advantage of you'.
+      <br><br>
+      What your dad is calling 'take advantage of you', is exactly what you were hoping to do.  But it looks like that isn't going to be
+      possible.  You suspect you'll be locked most of the time at work, if not all of it.
+      <br><br>
+      <<include [[Part16WomensStudiesBeltBackToMain]]>>
+    <<else>>
+      <<include [[Part16WomensStudiesBeltBackToMain]]>>
+    <</if>>
+<</nobr>>
+
+::Part16WomensStudiesBeltJobChange
+<<set $JobBarista to 1>>
+TODO Job Change to Barista
+
+<<nobr>>
+  <<include [[Part16WomensStudiesBeltBackToMain]]>>
+<</nobr>>
 
 ::Part16WomensStudiesReport6Refuse
 <<nobr>>
@@ -929,5 +1146,8 @@ TODO Back to main path
 <</nobr>>
 
 ::Part16WomensStudiesReport6Refuse4
-TODO final refusal screen and then continue back to main path
+TODO final refusal screen
+TODO [[Part16WomensStudiesBeltBackToMain]]
 
+::Part16WomensStudiesBeltBackToMain
+TODO Back to main

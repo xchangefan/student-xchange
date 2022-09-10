@@ -1,13 +1,33 @@
 ::Part9Start1 <700,8925>
 <<nobr>>
-	<h1><<print "Class">></h1>
+	<h1>Class</h1>
+  Classes have started back up and you are making an effort to study harder this term. You do still want to enjoy your time at
+  college though, and you see there’s a big recruitment event coming up for fraternities and sororities. You are considering
+  joining a sorority.
 <</nobr>>
-
-<<print "Classes have started back up and you are making an effort to study harder this term. You do still want to enjoy your time at college though, and you see there’s a big recruitment event coming up for fraternities and sororities. You are considering joining a sorority.">>
-<img src="Part9/Start1.jpeg" hspace="10" vspace="10" height="650">
-
-<<if $AcademicProbation>><<print "You failed a class last semester your GPA dropped too low and you ended up on academic probation. You find out that means you can’t join sororities, or participate in a lot of other activities on campus until you manage to pull your GPA up.">><<else>><<if $PlayerPregnant>>[[You check yourself in the mirror.|Part9Start2]]<<else>><<if $ProfessorNewJob>>[[Daddy has found some jobs you can switch to.|Part9JobSelect]]<<else>>[[Find out more about sororities.|Part9Greek1]]<</if>><</if>><</if>>
-<<if $AcademicProbation>><<print "You can either decide to ">>[[swallow you pride|Part9Prof1]]<<print " and go to the professors office to do whatever it takes to get your grade changed, or ">>[[accept that you will be on probation|Part9SororityEndNo]]<<print " and not part of any sorority.">><</if>>
+<<nobr>>
+  <img src="Part9/Start1.jpeg" hspace="10" vspace="10" height="650">
+<</nobr>>
+<<nobr>>
+  <<if $AcademicProbation>>
+    You failed a class last semester your GPA dropped too low and you ended up on academic probation. You find out that means you
+    can’t join sororities, or participate in a lot of other activities on campus until you manage to pull your GPA up.
+    <br><br>
+    <<if $JobCheerleader or $JobCheerleaderFundraiser>>
+      You don't want to get kicked off the cheerleading squad, so you [[swallow you pride|Part9Prof1]] and go the professors's office,
+      prepared to do whatever it takes to get your grade changed.
+    <<else>>
+      You can either decide to [[swallow you pride|Part9Prof1]] and go to the professor's office to do whatever it takes to get your
+      grade changed, or [[accept that you will be on probation|Part9SororityEndNo]] and not part of any sorority.
+    <</if>>
+  <<elseif $PlayerPregnant>>
+    [[You check yourself in the mirror.|Part9Start2]]
+  <<elseif $ProfessorNewJob>>
+    [[Daddy has found some jobs you can switch to.|Part9JobSelect]]
+  <<else>>
+    [[Find out more about sororities.|Part9Greek1]]
+  <</if>>
+<</nobr>>
 
 ::Part9Start2 <900,8925>
 <<nobr>>
@@ -27,15 +47,22 @@
 
 ::Part9Greek1 <1500,8950>
 <<nobr>>
-	<h1><<print "Greek Week">></h1>
+	<h1>Greek Week</h1>
+  You attend the big Greek recruitment event on campus. The slide show they give beforehand explains the benefits of fraternities
+  and sororities. Your eyes gloss over a bit as they go on and on about “networking” and “leadership opportunities”.
+<</nobr>>
+<<nobr>>
+  <img src="Part9/Greek1.png" hspace="10" vspace="10" height="640">
+<</nobr>>
+<<nobr>>
+  You are more interested later when they are talking about being able to live in the sorority house instead of the dorms. You find
+  out it costs about the same as the dorms would, so the X-Change scholarship covers it.
 <</nobr>>
 
-<<print "You attend the big Greek recruitment event on campus. The slide show they give beforehand explains the benefits of fraternities and sororities. Your eyes gloss over a bit as they go on and on about “networking” and “leadership opportunities”.">>
-<img src="Part9/Greek1.png" hspace="10" vspace="10" height="640">
-
-<<print "You are more interested later when they are talking about being able to live in the sorority house instead of the dorms. You find out it costs about the same as the dorms would, so the X-Change scholarship covers it.">>
-
-<<print "You have a couple days to check out their websites and to ask among your friends and classmates as you try to ">>[[decide what you want to do.|Part9Greek2]]
+<<nobr>>
+  You have a couple days to check out their websites and to ask among your friends and classmates as you try to
+  [[decide what you want to do.|Part9Greek2]]
+<</nobr>>
 
 ::Part9SororityEndNo <700,9950>
 <<nobr>>
@@ -65,33 +92,54 @@
 
 ::Part9Prof1 <200,8925>
 <<nobr>>
-	<h1><<print "Classroom">></h1>
+	<h1>Classroom</h1>
+  <img src="Part9/Start2.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You are retaking the class you failed again, and you have the same professor this term. You decide to pay him a
+  visit near the end of his office hours. You’ve heard the rumors about him, and are prepared to do whatever it takes to get
+  your grade changed.
 <</nobr>>
 
-<<print "You are retaking the class you failed again this term, and you have the same professor this term. You decide to pay him a visit near the end of his office hours. You’ve heard the rumors about him, and are prepared to do whatever it takes to get your grade changed.">>
-<img src="Part9/Start2.jpg" hspace="10" vspace="10" height="650">
-
-[[You prepare yourself, and head to his office.|Part9Prof2]]<<print " You expect that your pride won’t be the only thing you’ll need to swallow this afternoon.">>
+<<nobr>>
+  [[You prepare yourself, and head to his office.|Part9Prof2]] You expect that your pride won’t be the only thing you’ll need to
+  swallow this afternoon.
+<</nobr>>
 
 ::Part9Prof2 <500,8925>
 <<nobr>>
+	<h1>Professor’s Office</h1>
 	<<set $AcademicProbation = 0>>
-	
-	<h1><<print "Professor’s Office">></h1>
+  After you explain your situation and tell him you’ll ‘do whatever it takes’ to get off academic probation, you wait for his
+  response. As he thinks about your request, you notice a photo of a girl about your age on his desk. Is that his daughter? His
+  girlfriend? You are pretty sure you recognize her from somewhere...
+<</nobr>>
+<<nobr>>
+  <img src="Part9/Start3.jpg" hspace="10" vspace="10" height="650">
 <</nobr>>
 
-<<print "After you explain your situation and tell him you’ll ‘do whatever it takes’ to get off academic probation, you wait for his response. As he thinks about your request, you notice a photo of a girl about your age on his desk. Is that his daughter? His girlfriend? You are pretty sure you recognize her from somewhere...">>
-<img src="Part9/Start3.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  You are pleasantly surprised by the deal he offers. He’s not expecting any sexual favors at all! Nothing like that. You wonder
+  if the rumors about him were just a vicious lie from a bad student.
+<</nobr>>
 
-<<print "You are pleasantly surprised by the deal he offers. He’s not expecting any sexual favors at all! Nothing like that. You wonder if the rumors about him were just a vicious lie from a bad student.">>
+<<nobr>>
+  He says he’ll change your grade from last term to “Incomplete”. It won’t count against your GPA anymore, and when you pass his
+  class this term, it’ll disappear off your transcript completely. You are very thankful and promise to be a better student this
+  term. When you check online later, it’s showing you are no longer on probation!
+<</nobr>>
 
-<<print "He says he’ll change your grade from last term to “Incomplete”. It won’t count against your GPA anymore, and when you pass his class this term, it’ll disappear off your transcript completely. You are very thankful and promise to be a better student this term. When you check online later, it’s showing you are no longer on probation!">>
-
-<<if $PlayerPregnant>>[[You check yourself in the mirror.|Part9Start2]]<<else>>[[Find out more about sororities.|Part9Greek1]]<</if>>
+<<nobr>>
+  <<if $PlayerPregnant>>
+    [[You check yourself in the mirror.|Part9Start2]]
+  <<else>>
+    [[Find out more about sororities.|Part9Greek1]]
+  <</if>>
+<</nobr>>
 
 ::Part9Greek2 <1300,9075>
 <<nobr>>
-	<h1><<print "Greek Week">></h1>
+	<h1>Greek Week</h1>
 <</nobr>>
 <p style="clear: both;"><img src="Part9/Greek2.jpg" hspace="10" vspace="10" height="400" align="left">
 <<nobr>>
@@ -163,7 +211,7 @@
 <<print "Their website focuses on the people they are helping in the community. Since they don’t have a sorority house, living there wouldn’t be an option.">></p>
 <<if $CampusMinistry>>Faith says she knows several girls from this sorority, and she says they do a lot of great charity work.<<elseif $CampusMinistryFail>>It sounds like really boring.  Like the sort of sorority Faith might join.  You aren't interested.<</if>>
 
-<<print "There's a ton of other sororities on campus, but the rest either don't have any interest to you, or it was clear they weren't interested in you. ">>
+<<print "There's a ton of other sororities on campus, but the rest either don't interest you, or it was clear they weren't interested in you.">>
 
 <p style="clear: both;"><<if !setup.areDating('Veronica') and !$CampusMinistryFail>>[[Or you can decide not to pledge.|Part9SororityEndNo]]<</if>></p>
 

@@ -865,7 +865,9 @@
       <<if setup.haveInventory('piercings', 'tongue sensor')>>
         You have a tongue sensor installed as well.
       <</if>>
-      <<if $ComputerChastityOwner>>
+      <<if $ComputerChastityOwner == 'joint'>>
+        You and $dating[0] jointly control both her belt and yours.
+      <<elseif $ComputerChastityOwner>>
         $ComputerChastityOwner controls your belt.
       <</if>>
     <<else>>

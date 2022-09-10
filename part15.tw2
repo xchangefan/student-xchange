@@ -548,6 +548,15 @@
 
 ::Part15ClinicOrgasmBlock <2000,15000>
 <<nobr>>
+  <<if setup.haveGirlfriend() or $PlayerProtectionPermanent or $PlayerProtectionPerfect or $PlayerProtectionPill or $PlayerProtectionCondoms or $PlayerProtectionWithdraw>>
+    <<include [[Part15ClinicOrgasmBlockBirthControl]]>>
+  <<else>>
+    <<include [[Part15ClinicOrgasmBlockNormal]]>>
+  <</if>>
+<</nobr>>
+
+::Part15ClinicOrgasmBlockCommon
+<<nobr>>
   <h1>Treatment for your orgasm-block side effect</h1>
   <img src="PartP/Treatment.jpg" hspace="10" vspace="10" height="606" align="left">
   <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
@@ -567,73 +576,24 @@
       you'd hate to decide to have sex for the first time, only to have it end in frustration and denial.
     <</if>>
   <</if>>
-  <br><br>
+<</nobr>>
+
+<<nobr>>
   "Well, the breakthrough was when one of our data guys saw the inverse correlation between reported pregnancies and complaints about
   this particular side-effect..."  He sees your eyes start to glaze over and skips the detailed explaination.  "Anyway, it turns out it
   is related to the "Breeder" option that some of our pills have, and that has developed on a few of the implants - not yours though."
-  <br><br>
+<</nobr>>
+
+<<nobr>>
   "The girls that have been trying to get pregnant have had the least problems with the "Orgasm Block" effect.  Those not actively trying
   to get pregnant, but also not using any form of birth control also have had fewer problems.  Our lesbian users have had the most issues.
   Well, technically those trying to get off by masturbating have the most issues, but that's not going to be a factor for you."
   <<if setup.haveGirlfriend()>>
     You tell him you are a lesbian, worried now that the treatment won't work on you.
   <</if>>
-  <br>
-  <br>
-  "After a bunch of testing, they found that the proteins in semen suppress the activation of the side effect, while hormonal birth
-  control greatly increases the chance of it triggering.  So if you want to avoid any issues with the side effect, you just need to
-  <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
-    <<unset $PlayerProtectionPerfect>>
-    <<unset $PlayerProtectionPermanent>>
-    <<set $PlayerProtectionNone to 1>>
-    <<set $tempDeactivateImplantBirthControl to 1>>
-    have us deactivate your implant's birth control and continue to have otherwise unprotected sex.
-    <<if setup.haveGirlfriend()>>
-      Except with men, of course.
-    <</if>>
-  <<elseif $PlayerProtectionPill>>
-    <<unset $PlayerProtectionPill>>
-    <<set $PlayerProtectionNone to 1>>
-    <<set $tempDeactivatePill to 1>>
-    stop taking your birth contorl and continue to have otherwise unprotected sex.
-    <<if setup.haveGirlfriend()>>
-      Except with men, of course.
-    <</if>>
-  <<elseif $PlayerProtectionTry or $PlayerProtectionNone>>
-    <<if setup.haveGirlfriend()>>
-      start having sex with men more often.
-    <<else>>
-      keep doing what you've doing
-    <</if>>
-  <<else>>
-    <<unset $PlayerProtectionCondoms>>
-    <<unset $PlayerProtectionWithdraw>>
-    <<set $PlayerProtectionNone to 1>>
-    stop using any form of birth control, and letting the men you sleep with cum inside you.
-  <</if>>
-  Though, oral injestion or anal absorbtion also helps suppress the effect, it doesn't do it as well, so you'll need to do much more of
-  it to have the same effect.  Regardless how you plan on taking care of it going forward, we have a treatment for you today to help
-  things along."
 <</nobr>>
 
-<<nobr>>
-  <<if $tempDeactivateImplantBirthControl>>
-    After he deactivates your implant's birth control for you, you
-  <<elseif $tempDeactivatePill>>
-    After he gives you an injection to counteract the birth control pills you've been taking and trigger you to start ovulating, you
-  <<else>>
-    You
-  <</if>>
-  drink down the entire glass of the "treatment" solution he gives you.  As the warm liquid flows over your tongue and down your
-  throat, it's strong scent and flavor hits you.
-  <<if setup.sexMaleCount() > 0>>
-    Judging from the taste, you think it's at least 50 percent cum.  Or at least something made to be similar to it. 
-  <<else>>
-    It tastes a bitter and slightly salty, with a bit of metallic aftertaste to it.  You think you kind of like it though.
-  <</if>>
-  You eagerly down the entire glass.
-<</nobr>>
-
+::Part15ClinicOrgasmBlockCommonAfter
 <<nobr>>
   As you swallow the last drop, you wipe up with your finger a bit that dribbled down onto your chin, then lick your finger clean.
   You feel a warm, pleasant, flushed feeling flow over your body.  You wonder if that means the treatment is working.  "Oh, and you
@@ -681,6 +641,139 @@
   <</if>>
   </i>
 <</nobr>>
+
+::Part15ClinicOrgasmBlockBirthControl
+<<nobr>>
+  <<include [[Part15ClinicOrgasmBlockCommon]]>>
+<</nobr>>
+
+<<nobr>>
+  <<unset $tempNoActionNeeded>>
+  "After a bunch of testing, they found that the proteins in semen suppress the activation of the side effect, while hormonal birth
+  control greatly increases the chance of it triggering.  So if you want to avoid any issues with the side effect, you just need to
+  <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
+    <<if setup.haveGirlfriend()>>
+      have us deactivate your implant's birth control and switch to having unprotected sex, primarily with men.
+    <<else>>
+      have us [[deactivate your implant's birth control|Part15ClinicOrgasmBlockBirthControl2]] and continue to have otherwise
+      unprotected sex.
+    <</if>>
+  <<elseif $PlayerProtectionPill>>
+    <<if setup.haveGirlfriend()>>
+      stop taking your birth control and switch to having unprotected sex, primarily with men.
+    <<else>>
+      [[stop taking your birth control|Part15ClinicOrgasmBlockBirthControl2]] and continue to have otherwise unprotected sex.
+    <</if>>
+  <<else>>
+    <<if setup.haveGirlfriend()>>
+      stop using any form of birth control, and start having unprotected sex primarily with men.
+    <<else>>
+      [[stop using any form of birth control|Part15ClinicOrgasmBlockBirthControl2]], and let the men you sleep with cum inside you every
+      time.  Or at least as often as possible.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Regardless how you plan on taking care of it going forward, we have a treatment for you today to help things along."
+<</nobr>>
+
+<<nobr>>
+  <<if setup.haveGirlfriend()>>
+    It's not like you are going stop seeing $dating[0].  So you ask to [[see if you can make do|Part15ClinicOrgasmBlock2]]
+    with just the 'treatment' they are offering.
+  <<else>>
+    You can proceed with their plan to stop using any form of birth control, or you can [[ask if you can make do|Part15ClinicOrgasmBlock2]]
+    with just the 'treatment' they are offering.
+  <</if>>
+<</nobr>>
+
+::Part15ClinicOrgasmBlockBirthControl2
+<<nobr>>
+  <h1>No more birth control</h1>
+  <<if false and ($PlayerProtectionPermanent or $PlayerProtectionPerfect)>>
+    <img src="PartP/Creampie2.jpg" hspace="10" vspace="10" height="450"><br>
+    After he deactivates your implant's birth control for you, you
+    <<unset $PlayerProtectionPerfect>>
+    <<unset $PlayerProtectionPermanent>>
+    <<set $PlayerProtectionNone to 1>>
+    <<set $tempDeactivateImplantBirthControl to 1>>
+  <<elseif $PlayerProtectionPill>>
+    <img src="PartP/PillTrash.jpg" hspace="10" vspace="10" height="500"><br>
+    You toss your birth control pills in the trash.  Then he gives you an injection to counteract the ones you've already taken 
+    for this month, and to trigger you to start ovulating immediately.  Then you
+    <<unset $PlayerProtectionPill>>
+    <<set $PlayerProtectionNone to 1>>
+    <<set $tempDeactivatePill to 1>>
+  <<elseif $PlayerProtectionCondoms>>
+    <img src="PartP/CondomTrash.png" hspace="10" vspace="10" height="500" align="left"><br>
+    You toss the condoms from your purse in the trash, so you aren't tempted to use them later.  You see a large number of them
+    already in his trash can.  When he sees you look at the wastefulness of it he says, "Most of the other girls in your situation
+    have made the same decision.  And it's not like we can give them out to someone else after the box has been opened."
+    <br><br>
+    You nod then
+    <<unset $PlayerProtectionCondoms>>
+    <<set $PlayerProtectionNone to 1>>
+  <<else>>
+    <img src="PartP/Creampie2.jpg" hspace="10" vspace="10" height="450"><br>
+    You suppose your days of having
+    <<if $dating.length>>
+      $dating[0] pull out are over.  You doubt he's
+    <<else>>
+      guys are over.  You doubt they are
+    <</if>>
+    going to complain about it though.
+    <br><br>
+    You then
+    <<unset $PlayerProtectionWithdraw>>
+    <<set $PlayerProtectionNone to 1>>
+  <</if>>
+  drink down the entire glass of the "treatment" solution he gives you.  As the warm liquid flows over your tongue and down your
+  throat, it's strong scent and flavor hits you.
+  <<if setup.sexMaleCount() > 0>>
+    Judging from the taste, you think it's at least 50 percent cum.  Or at least something made to be similar to it. 
+  <<else>>
+    It tastes a bitter and slightly salty, with a bit of metallic aftertaste to it.  You think you kind of like it though.
+  <</if>>
+  You eagerly down the entire glass.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15ClinicOrgasmBlockCommonAfter]]>>
+<</nobr>>
+
+::Part15ClinicOrgasmBlockNormal
+<<nobr>>
+  <<include [[Part15ClinicOrgasmBlockCommon]]>>
+<</nobr>>
+
+<<nobr>>
+  "After a bunch of testing, they found that the proteins in semen suppress the activation of the side effect, while hormonal birth
+  control greatly increases the chance of it triggering.  So if you want to avoid any issues with the side effect, you just need to
+  stop using any form of birth control, and let the men you sleep with cum inside you.  Or at least have them do that most of the time.
+  <br><br>
+  Though, oral injestion or anal absorbtion also helps suppress the effect, it doesn't do it as well, so you'll need to do much more of
+  it to have the same effect.  Regardless how you plan on taking care of it going forward, we have a treatment for you today to help
+  things along."
+<</nobr>>
+
+<<nobr>>
+  You drink down the entire glass of the "treatment" solution he gives you.  As the warm liquid flows over your tongue and down your
+  throat, it's strong scent and flavor hits you.
+  <<if setup.sexMaleCount() > 0>>
+    Judging from the taste, you think it's at least 50 percent cum.  Or at least something made to be similar to it. 
+  <<else>>
+    It tastes a bitter and slightly salty, with a bit of metallic aftertaste to it.  You think you kind of like it though.
+  <</if>>
+  You eagerly down the entire glass.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15ClinicOrgasmBlockCommonAfter]]>>
+<</nobr>>
+
+::Part15ClinicOrgasmBlock2
+TODO cum liquid treatment continuation, also recuring later
 
 ::Part15ClinicTests <2200,15000>
 <<nobr>>
@@ -13139,7 +13232,7 @@
 <</nobr>>
 
 <<nobr>>
-  You recognizer as one of the new participants in the X-Change trial.  You smile as you remember how much the urge to get fucked filled
+  You recognize her as one of the new participants in the X-Change trial.  You smile as you remember how much the urge to get fucked filled
   you too when you first changed.  Though you hope she's on that guaranteed birth control option they have if she plans on changing back,
   considering how many guys have already came inside her, and how many more are waiting their turn.
 <</nobr>>
