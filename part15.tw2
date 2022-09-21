@@ -6984,7 +6984,7 @@ TODO cum liquid treatment continuation, also recuring later
 
 ::Part15WomensStudiesQuiet <29200,15000>
 <<nobr>>
-  <<set $tempQuietRoll to either ("main", "main", "main", "main", "main", "main", "main", "report", "report", "talk")>>
+  <<set $tempQuietRoll to either ("main", "report", "report", "talk")>>
   <<if $tempQuietRoll == "report">>
     <<include [[Part15WomensStudiesReport2]]>>
   <<elseif $tempQuietRoll == "talk">>
@@ -13038,15 +13038,20 @@ TODO cum liquid treatment continuation, also recuring later
 <</nobr>>
 
 <<nobr>>
-  The two of you take turns giving each other orgasm after orgasm.  It's only when you both are completely satisfied and can't
-  go on any longer, that you stop.  The two of you think about just laying there until
+  <<if $PlayerChastityBelt and !setup.areDating($Keyholder)>>
+    You give $dating[0] orgasm after orgasm.  She'd do the same for you if she could, but your belt prevents that.  It's only
+    when she's completely satisfied and can't go on any longer, that you stop.
+  <<else>>
+    The two of you take turns giving each other orgasm after orgasm.  It's only when you both are completely satisfied and can't
+    go on any longer, that you stop.  
+  <</if>>
+  The two of you think about just laying there until
   <<if $SororityDTD>>
     morning.
   <<else>>
     someone comes to kick you out.
   <</if>>
-  But eventually the two of you
-  gather enough strength get dressed again and head back out to enjoy the rest of the party.
+  But eventually the two of you gather enough strength get dressed again and head back out to enjoy the rest of the party.
 <</nobr>>
 
 <<include [[Part15BackToMain]]>>

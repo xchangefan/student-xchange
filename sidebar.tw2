@@ -859,7 +859,7 @@
       <<else>>
         belt.
       <</if>>
-      <<if $PermanentChastity && $BuddyPermanentlyChaste>>
+      <<if ($PermanentChastity and $BuddyPermanentlyChaste) or (!$PermanentChastity and $BuddyComputerChastity)>>
         And so is Bailey.
       <</if>>
       <<if setup.haveInventory('piercings', 'tongue sensor')>>
