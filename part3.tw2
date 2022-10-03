@@ -1624,21 +1624,33 @@
 <</nobr>>
 
 <<nobr>>
-  Your boss, on the other hand seems to be getting close to his limit.[[So you wonder if you need to tone it down or risk losing your job.|JobLibrary3]]
+  Your boss, on the other hand seems to be getting close to his limit. [[So you wonder if you need to tone it down or risk losing your job.|JobLibrary3]]
 <</nobr>>
 
 ::JobLibrary3  <7000,3000>
 <<nobr>>
 	<<set setup.addSex({sex: 'male', name: 'Library Boss'})>>
 	<h1><<print "Campus Library - Boss Office">></h1>
+  <img src="Part3/JobLibrary3.gif" hspace="10" vspace="10" height="650" align="left">
   <<set setup.addInventory('tools', 'library key')>>
-  <<print "You decide making your wardrobe more boring wouldn’t be much fun.">>
 <</nobr>>
 
-<<print "Thankfully, you and your boss are able to come to another agreement.">>
-<img src="Part3/JobLibrary3.gif" hspace="10" vspace="10" height="650">
+<<nobr>>
+  You decide making your wardrobe more boring wouldn’t be much fun.
+<</nobr>>
 
-<<print "You’re sure he’s not going to fire you for your clothes now. You’ll probably want to stop by his office every now and then to renew your agreement with him.">>
+<<nobr>>
+  Thankfully, you and your boss are able to come to another agreement.
+  <<if $FatherSettings>>
+    You are sure your father wouldn't approve, but he did pick the oral side effect as one of the ones you'd end up with.  So
+    he's partially to "blame" for why you love it so much.  Not that you are complaining though.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You’re sure your boss is not going to fire you for your clothes now. You’ll probably want to stop by his office every now and
+  then to renew your agreement with him.
+<</nobr>>
 
 <<nobr>>
 	<<print "He even gives you a copy of the library’s keys ">>
@@ -1657,17 +1669,23 @@
 
 ::JobLibrary4  <7200,3000>
 <<nobr>>
-	<<if !$PlayerSideEffectExhibitionist>><<set $PlayerSideEffectExhibitionist = 1>><</if>>
-	
-	<h1><<print "Campus Library">></h1>
+	<h1>Campus Library</h1>
+  <img src="Part3/JobLibrary5.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 
-<<print "It’s just you there after hours, well except for the occasional maintenance worker, but they don’t seem to mind. You decide there’s no reason you need to wear anything at work after the library closes">>
-<img src="Part3/JobLibrary5.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  It’s just you there after hours, well except for the occasional maintenance worker, but they don’t seem to mind. You decide there’s
+  no reason you need to wear anything at work after the library closes
+<</nobr>>
 
-<<print "You love the freedom of walking through the stacks completely naked.">>
+<<nobr>>
+  You love the freedom of walking through the stacks completely naked.
+<</nobr>>
 
-<<print "And the thrill of knowing if anyone happens to be walking by the library at 11 pm, and glances up at the big glass wall, they’ll see a beautiful, naked librarian pushing a cart of books.">>
+<<nobr>>
+  And the thrill of knowing if anyone happens to be walking by the library at 11 pm, and glances up at the big glass wall, they’ll
+  see a beautiful, naked librarian pushing a cart of books.
+<</nobr>>
 
 <<nobr>>
 	<<link "Spend time in your dormitory.">>
@@ -1677,6 +1695,11 @@
 		<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
 		<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
 	<</link>>
+  <<if !$PlayerSideEffectExhibitionist>>
+    <br><br>
+    <i>You realize you love being naked in public.</i>
+    <<set $PlayerSideEffectExhibitionist to 1>>
+  <</if>>
 <</nobr>>
 
 ::JobLibraryRestricted  <7400,3000>

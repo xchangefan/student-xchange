@@ -1,14 +1,13 @@
 ::Part7Start1  <0,7000>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
+  <img src="Part7/Start1A.jpg" hspace="10" vspace="10" height="650" align="left">
   <<unset $HalloweenCondoms>>
 <</nobr>>
 
 <<nobr>>
 	You’re all done with your classes for the semester.  You just have your check-up at the clinic today, before heading home for winter break tomorrow evening.
 <</nobr>>
-
-<img src="Part7/Start1A.jpg" hspace="10" vspace="10" height="650">
 
 <<nobr>>
 	You’ve always hated filling out forms, but checking the box labeled “Female”, makes you happier than you would have thought it would.
@@ -40,19 +39,19 @@
 ::Part7Start3  <200,7000>
 <<nobr>>
 	<h1><<print "Medical Clinic">></h1>
+	<<if setup.sexVaginalCount() == 0>>
+		<img src="Part7/Start5M.jpg" hspace="10" vspace="10" height="650" align="left">
+	<<elseif $PlayerProtectionWithdraw>>
+		<img src="Part7/Start3A.jpg" hspace="10" vspace="10" height="650" align="left">
+	<<elseif $PlayerProtectionCondoms>>
+    <img src="Part7/Start3B.jpg" hspace="10" vspace="10" height="650">
+  <<else>>
+    <img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650" align="left">
+	<</if>>
 <</nobr>>
 
-<<print "You get to the “Contraception” box and then think about what you’ve been using the past month or two.">>
 <<nobr>>
-	<<if setup.sexVaginalCount() == 0>>
-		<img src="Part7/Start5M.jpg" hspace="10" vspace="10" height="650">
-	<<elseif $PlayerProtectionWithdraw or $PlayerProtectionNone>>
-		<img src="Part7/Start3A.jpg" hspace="10" vspace="10" height="650">
-	<<else>>
-		<<if $PlayerProtectionCondoms>><img src="Part7/Start3B.jpg" hspace="10" vspace="10" height="650">
-			<<else>><img src="Part7/Start3C.jpg" hspace="10" vspace="10" height="650">
-		<</if>>
-	<</if>>
+  You get to the “Contraception” box and then think about what you’ve been using the past month or two.
 <</nobr>>
 
 <<nobr>>
