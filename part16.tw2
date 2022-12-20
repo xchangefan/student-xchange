@@ -1,9 +1,42 @@
 ::Part16 <0,16000>
 <<nobr>>
-  <h1>To be continued...</h1>
-
-  TODO [[Part16WomensStudiesReport]] or [[Part16WomensStudiesPublish]] or [[Part16WomensStudies]]
+  <<if $WomensStudiesProfessorPublish>>
+    <<include [[Part16WomensStudiesPublish]]>>
+  <<elseif $ProfessorMindControl>>
+    <<include [[Part16WomensStudiesReport]]>>
+  <<else>>
+    <<include [[Part16WomensStudies]]>>
+  <</if>>
 <</nobr>>
+
+::Part16Finals
+TODO Finals
+
+TODO Winter Break [[Part16WinterBreak]]
+
+::Part16WinterBreak
+TODO Winter Break
+TODO [[Part16Job]]
+
+::Part16Job
+TODO Job
+TODO [[Part16Relationship]]
+
+::Part16Relationship
+TODO Relationship
+TODO [[Part16WomensStudiesPart2]]
+
+::Part16WomensStudiesPart2
+<<nobr>>
+  <<if $WomensStudiesProfessorPublish>>
+    <<include [[Part16WomensStudiesPublish]]>>
+  <<elseif $ProfessorMindControl>>
+    <<include [[Part16WomensStudiesReport4]]>>
+  <<else>>
+    <<include [[Part16WomensStudies]]>>
+  <</if>>
+<</nobr>>
+
 
 ::Part16WomensStudies
 TODO If neither reported her to eng dept nor she published her report.
@@ -142,7 +175,7 @@ TODO Work this in to Part 16 flow
   <img src="PartX/Chaste24.jpg" hspace="10" vspace="10" height="600" align="left">
   "I received some unfortunate news yesterday.  It seems the remaining victim of the Engineering department was not freed prior to 
   the department head's suicide.  And his attorney has stated that only his client ever had the codes needed to unlock the belt.  The
-  attorney himself has no knowledge of what they might be, or where his client might have stored them, or even if the his client still
+  attorney himself has no knowledge of what they might be, or where his client might have stored them, or even if his client still
   had them somewhere or if he had long since deleted the unlock code for his last victim."
 <</nobr>>
 
@@ -489,7 +522,6 @@ TODO [[Part16WomensStudiesPublishPlea3]]
 TODO Back to main
 
 ::Part16WomensStudiesReport
-TODO Work this in to Part 16 flow
 <<nobr>>
   <h1>Your professor returns</h1>
   Your Women's Studies professor is finally back after missing several classes for what her assistant refered to as a family emergency
@@ -550,8 +582,8 @@ TODO Work this in to Part 16 flow
   </div>
 <</nobr>>
 <<nobr>>
-  "Many of the toys and tests involved various forms of restraint, often to limit the number of variables being tested by preventing
-  the subjects from moving or adding to the pleasure they were being given.  But all the testers I saw were consenting, and most seemed
+  "Many of the toys and tests involved various forms of restraint. As they explained to me, this is to limit the number of variables being tested
+  by preventing the subjects from moving or adding to the pleasure they were being given.  But all the testers I saw were consenting, and most seemed
   to be enjoying themselves. Some were enjoying themselves a great deal."
 <</nobr>>
 
@@ -560,9 +592,9 @@ TODO Work this in to Part 16 flow
 <</nobr>>
 
 <<nobr>>
-  There were some test subject that complained however.  The subjects that were not being brought to orgasm seemed understandably
+  "There were some test subject that complained however.  The subjects that were not being brought to orgasm seemed understandably
   frustrated by this, but they didn't appear to be in any actual discomfort though.  Still, the department head insisted that
-  I [[give it a try personally|Part16WomensStudiesReport3]] to assuage any concerns I might still have.
+  I [[give it a try personally|Part16WomensStudiesReport3]] to assuage any concerns I might still have."
 <</nobr>>
 
 ::Part16WomensStudiesReport3
@@ -579,8 +611,8 @@ TODO Work this in to Part 16 flow
 <</nobr>>
 
 <<nobr>>
-  "Actually, my recollection of the rest of my test session is a bit fuzzy now.  But I do remember orgasming many times
-  later during it.  And after it was over, I didn't have any more concerns with what the engineering department was doing."
+  "Actually, my recollection of the rest of my test session is a bit fuzzy now.  I mainly just recall how enjoyable it was.  I do remember that I
+  orgasmed many times later during it.  And after it was over, I didn't have any more concerns with what the engineering department was doing."
 <</nobr>>
 
 <<nobr>>
@@ -608,10 +640,8 @@ TODO Work this in to Part 16 flow
 
 <<nobr>>
   "So, I will be working with them in the future to ensure their test subjects are treated ethically, and offering an additional
-  woman's perspective when I can.  I'll let you all know more as things move forward."
+  woman's perspective when I can.  I'll let you all know more as things [[move forward|Part16Finals]]."
 <</nobr>>
-
-TODO (Later in the semester) [[Part16WomensStudiesReport4]]
 
 ::Part16WomensStudiesReport4
 <<nobr>>
@@ -706,14 +736,16 @@ TODO (Later in the semester) [[Part16WomensStudiesReport4]]
 <</nobr>>
 
 <<nobr>>
-  "If you are worried about some women being left out.  Don't worry.  The department has options available for everyone who identifies
-  as female, regardless of the specifics of her body.  Though, obviously the device's functionality might be more limited in some cases."
+  "If you are worried about some women being left out. Don't worry. That was going to be an issue with their original plans, but I've made sure that
+  the department has options available for everyone who identifies as female, regardless of the specifics of her body.  Though, obviously the device's
+  functionality might be slightly different in some cases.  But I've worked with them to make sure the functionality matches as much as possible."
 <</nobr>>
 
 <<nobr>>
-  "For example, the cockcage-type devices are very good at the tease and edging functions, but generally require some manual effort by the
-  wearer or her partner to provide anal stimulation in order to achieve orgasm. But regardless of her anatomy, the woman wearing it can
-  be confident that she'll have the same security available to her as everyone else."
+  "For example, the cock-cage-style devices also can detect anal activity.  The wearer can program hers to administer vibrations to enhance her
+  experience, or event to administer shocks to prevent orgasm from prostate stimulation if she wishes.  For those who want to protect themselves
+  from anal penetration entirely, belt-style devices are also available with a rear bar that prevents anal access while still allowing for bodily
+  functions with only a moderate additional amount of cleanup needed."
 <</nobr>>
 
 <<nobr>>
@@ -837,9 +869,11 @@ TODO No longer a job, work as barista
 <</nobr>>
 <<nobr>>
   <<if $FatherDisownWomensStudiesChastity>>
+    <<unset $FatherDisown>>
+    <<set $FatherDisownReconcile to 1>>
     Your father is pleased that you've reconsidered and decided to participate in the belt safety program. You and him are able to
-    reconcile, though you still aren't entirely happy with him. He may demanding and a jerk sometimes, but he's still your dad, so you
-    are glad you and him are on ok terms again.
+    reconcile, though you still aren't entirely happy with him. While he may be demanding and a jerk sometimes, he's still your
+    dad, so you are glad you and him are on ok terms again.
     <br><br>
   <<elseif $FatherSafetyTalk>>
     Your father is pleased that you've reconsidered and decided to participate in the belt safety program. He says he's glad you were
@@ -862,10 +896,16 @@ TODO No longer a job, work as barista
   <<set setup.addInventory('sex toys', 'electronic chastity belt')>>
   <<set $PlayerChastityBelt to 1>>
   <<set $Keyholder to "computer">>
+  <<if $WomensStudiesBeltAssistant>>
+    <br><br>
+    Even though you're aware of most of the features of the belt, they still insist on going over them with you now that you'll be wearing
+    one.  It's probably go though, because as soon as the belt clicks closed around your waist, all you can focus on is how fast your heart
+    is suddenly beating.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  He goes over some of the physical features of the belt with you, like how remove the cleaning shield to deal with periods or other
+  He goes over some of the physical features of the belt with you, like how to remove the cleaning shield to deal with periods or other
   hygiene issues, without needing to remove the belt.  Though it seems to you, it'll be easier if you just remove your belt entirely
   if and when that becomes necessary.  That seems especially like a good idea when he explains how the belt will 'punish' you with
   shocks if you keep the shield off too long or try to pleasure yourself with it off.
@@ -1031,11 +1071,80 @@ TODO Open relationship instructions (dating barry, but he shares you)
 
 ::Part16WomensStudiesReport6Accept2Monogamous
 <<nobr>>
-  TODO Img
+  <<if $PlayerItemNerdKey>>
+    <img src="Part16/Class24.jpg" hspace="10" vspace="10" height="400" align="left">
+    You try to tease Peter's cock through his chastity cage, even trying a couple different models, but it doesn't work. Well, it works
+    at getting Peter moaning and his cock straining against the cage.  But without your mouth around his hard cock, your belt doesn't
+    give you the encouragement vibrations it is supposed to give you.  And you are doubtful it would let you cum when he does, if you
+    managed to get him tribble out a bit of cum while caged.
+    <br><br>
+    So you eagerly unlock Peter so that you can suck his cock properly. As soon as you feel the sensations the belt begins to give
+    you with him in your mouth, you know it won't be long before you are unlocking him again.  After the fifth time unlocking him in two
+    days, you decide to not even bother relocking him again.
+    <<unset $PlayerItemNerdKey>>
+    <br><br>
+  <</if>>
+  <img src="Part16/Class23.jpg" hspace="10" vspace="10" height="500">
 <</nobr>>
 
-TODO Monangamous (including if father owned, including if dating barry and father sets it to monogamous instead of open)
+<<nobr>>
+  <<if $ComputerChastityOwner == "Your father">>
+    You wish $dating[0] was set up as your 'owner'.  Then you could ask him to have belt give you an orgasm when you need one. Or at
+    least to increase the chance you get one when you are sucking his cock.  And he'd certainly be eager to fuck you. But with your
+    father as the owner, there's no chance of that. You are ashamed enough that he knows ever time you drop to your knees for $dating[0].
+    But he doesn't seem to mind it, or you are sure he would have told you about it by now. 
+    <<set setup.addSexRepeat(50, {sex:"male", name:$dating[0]})>>
+    <<if setup.areDating('Barry')>>
+      <br><br>
+      Barry seemed a small bit disappointed when he'd heard your father set your belt to "Monangamous" mode, and he wouldn't be able
+      to share you any longer.  "I guess he's a bit old fashioned.  Oh well, more fun for just me then I guess."
+    <</if>>
+  <<else>>
+    You try to talk $dating[0] to make your belt give you an orgasm.  You know he can do it with a touch of a button.  Or at least,
+    increasing the chance that your belt gives you one while you are sucking his cock.  But he says that the default setting is supposed
+    to be the best.
+    <<if $WomensStudiesBeltAssistant>>
+      You know they told him that during his owner training, and it's probably true.
+    <</if>>
+    It certainly seems the best for making you want to suck his cock.
+    <br><br>
+    <video src="Part16/Class25.mp4" autoplay loop muted height="550"></video>
+    <br><br>
+    Though thankfully, he's still eager to fuck you frequently as well.  Though you are always bound when he does.  You know it's to
+    avoid any complaints when it's time to put your belt back on.
+    <<if !$PlayerEasytoOrgasm>>
+      But you wish you could at least use your hands to make sure you get off when you have the chance.  It's so frustrating if, just
+      before you are about to cum,
+      <<if $PlayerProtectionCondoms>>
+        you feel feel him go deep and his cock twitch inside you.  Your belt gives you an extra second or two of pleasure a few moments
+        later, when he lets you swallow the cum from the condom he filled.  But it's never enough to push you over, no matter how close
+        to an orgasm you were when he was inside you.
+      <<elseif $PlayerProtectionWithdraw>>
+        he pulls out and comes on your back or stomach.  Though if he has enough time, he'll switch to your mouth and finish there.  That's
+        what you prefer. You know that will give you a few extra seconds of pleasure, and maybe an orgasm when you swallow it down.
+      <<else>>
+        you feel feel him go deep and his cock twitch inside you.  Your clit throbs for just a bit more stimulation, but all you feel is
+        his cum slowly draining out of you.
+      <</if>>
+      <br><br>
+      If you don't get off, you always ache for him to reach down between your legs and play with your clit, just for a little bit, so you
+      can finish too. But you know they've told him it's better if you cum with him inside you, or not at all.  That doesn't make it
+      any less maddening.  But it does make you yearn to feel him inside you again, which is probably the point.
+    <</if>>
+    <<set setup.addSexRepeat(10, {sex:"male", name:$dating[0]})>>
+    <<set setup.addSexRepeat(2, {sex:"male", name:$dating[0], vaginal:true})>>
+    <<set setup.addSexRepeat(10, {sex:"male", name:$dating[0]})>>
+    <<set setup.addSexRepeat(2, {sex:"male", name:$dating[0], vaginal:true})>>
+    <<set setup.addSexRepeat(10, {sex:"male", name:$dating[0]})>>
+    <<set setup.addSexRepeat(2, {sex:"male", name:$dating[0], vaginal:true})>>
+    <<set setup.addSexRepeat(10, {sex:"male", name:$dating[0]})>>
+    <<set setup.addSexRepeat(2, {sex:"male", name:$dating[0], vaginal:true})>>
+    <<set setup.addSexRepeat(10, {sex:"male", name:$dating[0]})>>
+  <</if>>
+<</nobr>>
+
 TODO Have to quit if have sex-related job and can't adapt
+TODO [[Part16WomensStudiesBeltBackToMain]]
 
 ::Part16WomensStudiesReport6Accept2Father
 
@@ -1311,7 +1420,7 @@ TODO Job Change to Barista
     saved yourself just for him.  And besides, all the other girls on campus will be wearing them too.  Or is that you still dream of
     slutting it up around campus?"
   <<else>>
-    "Are you worried you won't be able to keep whore it up around campus anymore?"
+    "Are you worried you won't be able to keep whoring it up around campus anymore?"
   <</if>>
 <</nobr>>
 
@@ -1375,7 +1484,7 @@ TODO Job Change to Barista
 ::Part16WomensStudiesReport6RefuseNormal
 <<nobr>>
   <h1>Alternate Assignment</h1>
-  Your professor isn't happy when you decide not to wear one of the chastity belts, but she sees that she doesn't have any hope of
+  Your professor is disappointed when you decide not to wear one of the chastity belts, but she sees that she doesn't have any hope of
   convincing you.
 <</nobr>>
 
@@ -1402,7 +1511,7 @@ TODO Job Change to Barista
     when you touch their hard cocks, but it still makes you feel strange.  Though, you always feel better about it once their cages
     are secured.
   <<else>>
-    It's fun seeing all the other women naked.  You especially have fun with the ones needing cock cages when they are two hard
+    It's fun seeing all the other women naked.  You especially have fun with the ones needing cock cages when they are too hard
     for you to put their cage on them.  You usually subtly give their cock a few soft strokes with your gloved hand before you
     apply the ice pack.  Once their cages are secured, you give it a little tug.  It's not part of the fitting requirements, but
     you like seeing their cock try to get hard as it wishes for another stroke.
@@ -1424,10 +1533,10 @@ TODO Job Change to Barista
 <</nobr>>
 
 <<nobr>>
-  You expected all of the reports from the girls using the orgasm-inducing features of the belt.  They all rave about how great
-  the orgasms the belt gives them are.  The especially like the ones that the belt takes its time with, building up slowly
-  over an hour or more.  They say it's a good thing the setting locks in though once they select it, because they'd never be able
-  to resist making it hurry up, and it's always worth the wait in the end.
+  You aren't surprised by the reports from the girls using the orgasm-inducing features of the belt.  As you'd expect, they all rave
+  about how great the orgasms the belt gives them are.  They especially like the orgasms that the belt takes its time with, building
+  up slowly over an hour or more.  They say it's a good thing the setting locks in though once they select it, because they'd never
+  be able to resist making it hurry up, and according to them it's always worth the wait in the end.
 <</nobr>>
 
 <<nobr>>
@@ -1450,14 +1559,42 @@ TODO Job Change to Barista
 <</nobr>>
 
 <<nobr>>
-  They usually offer to let you, or the male engineers,
+  "The popup notification suggesting it came up when I was already horny, and I wasn't thinking very clearly," they always say. "I
+  thought it would be fun, and I guess it has been. But I didn't realize how frustrating it would be or I wouldn't have went with how
+  long a lockout as it suggested.  Please, I'll do anything for just one orgasm!"
+<</nobr>>
+
+<<nobr>>
   <<if $CampusMinistry>>
-    do unspeakable things
+    You've heard rumors that often the male engineers take advantage of their vulnerable state before telling them what can be done
+    for them.
   <<else>>
-    use them however you wish
+    You know the male engineers usually have them drop to their knees, if they aren't already on them, and suck their cock at this
+    point.  Only afterwards do they tell them what can be done for them. You would judge the guys for taking advantage of them, but
+    you've heard from the locked girls just how much they love sucking cock when they are in this state, so you suppose it's a win-win
+    for both of them.
   <</if>>
-  in exchange for just one orgasm.  Of course you have to tell them that it's not possible.  Though, you think some of the male engineers
-  might wait to tell them that until <i>after</i> they've already done some of the things they were offering.
+<</nobr>>
+
+<<nobr>>
+  When they speak with you though, you just give them the offer you are supposed to give them, without requiring anything from
+  them first.  "I'm allowed to switch your belt over to 'virtual keyholder' mode.  It'll give you an orgasm today, but it'll also
+  add an addition 5% to 50% of your original lockout onto your lockout period.  It'll also remove you ability to see how much time
+  you have left before the lockout ends.  The daily teasings will also be more variable when they happen."  They've been agreeing
+  ever since you mentioned the orgasm, but you have to finish.  "And finally, you make get additional offers for other orgasms,
+  with either actions required from you, or further time extensions required.  Those are all optional though."
+<</nobr>>
+
+<<nobr>>
+  "Yes! Yes! Please!" They always say.
+  <<if $CampusMinistry>>
+    Even if it's a bit embarrassing, you
+  <<else>>
+    You 
+  <</if>>
+  love watching them orgasm for the first time in a while, right there in front of you.  Though, you wonder how they'll feel a few
+  hours later when the joy of their pleasure has faded and the realization sets in that they'll be in this state even longer than they'd
+  planned.
 <</nobr>>
 
 <<nobr>>
@@ -1475,18 +1612,24 @@ TODO Job Change to Barista
   enjoy hearing the stories from the belted girls with partners.  Unlike the single girls, these have all decided to give control
   over to their partner.  Well, that's what the ones with boyfriends do.  The lesbian couples usually get belted together and usually
   sync their belts together, making it so they can only unlock when they are together, or sometimes stay locked, but orgasm together.
+  <<set $WomensStudiesBeltAssistant to 1>>
 <</nobr>>
 
 <<nobr>>
   But for the belted girls with boyfriends, they give full control over to him, letting him decide when or if she cums, as well as
-  control of all the other functions the belts have.  One of the most popular functions seems to be the "Oral Encouragement Mode",
-  which is usually enabled.  With this setting the wearer gets teased and eventually brought to the edge of an orgasm while she
+  control of all the other functions the belts have.  They say this is the safest, since they can't possibly be forced to unlock by
+  an attacker, went they can't unlock themselves at all.  Though you doubt that's the real reason most choose to hand control over.
+<</nobr>>
+
+<<nobr>>
+  One of the most popular functions seems to be the "Oral Encouragement Mode", which is almost always enabled by the boyfriend keyholders.
+  With this setting the wearer gets teased and eventually brought to the edge of an orgasm while she
   <<if $CampusMinistry>>
     pleasures her boyfriend with her mouth.
   <<else>>
     sucks her boyfriend's cock.
   <</if>>
-  And, unless her boyfriend has changed the settings, there's a chance it'll make her orgasm too when her boyfriend does.
+
 <</nobr>>
 
 <<nobr>>
@@ -1494,13 +1637,20 @@ TODO Job Change to Barista
 <</nobr>>
 
 <<nobr>>
-  The normal setting has it random though, not every time, or even a regular frequency like every fifth time or something.  When
-  you'd asked about this, one of the engineers said it was a 'variable reward' and it makes it much more fun and addictive for the
-  wearer if it's not predictable.
+  And, unless her boyfriend has changed the settings, there's a chance it'll make her orgasm too when her boyfriend does.  They could
+  change it to always give her one, or to never give her one.  But we are supposed to recommend they leave it at the default unpredictable
+  setting. Something about random ratio, or random reinforcement, or something like that.  It's supposed to be better at making her
+  want to
+  <<if $CampusMinistry>>
+    keep him happy while she stays locked.
+  <<else>>
+    suck his cock.
+  <</if>>
+  We are just supposed to explain to her that it's more fun that way.  Though from their reactions, that doesn't seem to be a lie.
 <</nobr>>
 
 <<nobr>>
-  That certainly seems to be true.  Most of the girls report offering
+  In fact, they do seem to love it as much as their boyfriends do. Most of the girls report offering
   <<if $CampusMinistry>>
     oral
   <<else>>
@@ -1528,7 +1678,7 @@ TODO Job Change to Barista
 
 <<nobr>>
   But even when they do engage in other forms of sex, unlocking is less frequent than you would have expected, especially for the
-  wears in cock cages.
+  wearers in cock cages.
 <</nobr>>
 
 <<nobr>>
@@ -1620,7 +1770,7 @@ TODO Job Change to Barista
 <</nobr>>
 
 ::Part16WomensStudiesReport6Refuse4
-TODO final refusal screen
+TODO final refusal screen, option to major in Psychology?
 TODO [[Part16WomensStudiesBeltBackToMain]]
 
 ::Part16WomensStudiesBeltBackToMain

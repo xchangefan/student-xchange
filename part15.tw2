@@ -5149,44 +5149,14 @@ TODO cum liquid treatment continuation, also recuring later
       <<elseif setup.areDating("Justin")>>
         <<include [[JustinGraduation]]>>
       <<else>>
-        <<include [[Part15Week14]]>>
+        <<include [[Part16]]>>
       <</if>>
-    <<case 15>>
-      <<include [[Part15Week15]]>>
-    <<case 16>>
-      <<include [[Part15Week16]]>>
     <<default>>
-      <<set $TO_BE_CONTINUED to 1>>
       <<include [[Part16]]>>
   <</switch>>
 <</nobr>>
 
-::Part15Week14 <22200,15000>
-<<nobr>>
-  <h1>To be continued...</h1>
-  <<set $TO_BE_CONTINUED to 1>>
-  <!-- Nov w4 Thanksgiving-->
-  <!-- to be continued week 14 -->
-  TODO [[Part16]]
-<</nobr>>
 
-::Part15Week15 <22400,15000>
-<<nobr>>
-  <h1>To be continued...</h1>
-  <<set $TO_BE_CONTINUED to 1>>
-  <!-- Dec w1 -->
-  <!-- to be continued week 15 -->
-  TODO [[Part16]]
-<</nobr>>
-
-::Part15Week16 <22600,15000>
-<<nobr>>
-  <h1>To be continued...</h1>
-  <<set $TO_BE_CONTINUED to 1>>
-  <!-- Dec w2 -->
-  <!-- to be continued week 16 -->
-  TODO [[Part16]]
-<</nobr>>
 
 ::Part15DylanChastityWeek5 <22800,15000>
 <<nobr>>
@@ -10661,7 +10631,7 @@ TODO cum liquid treatment continuation, also recuring later
     You can hear Mairssa aching for her turn next to you.
     <br><br>
     <<if $AcademicProbationDenial>>
-      You can't feel the pleasue you know you should though, just the fullness his cock gives you.  But it feels perfect, like you are meant
+      You can't feel the pleasure you know you should though, just the fullness his cock gives you.  But it feels perfect, like you are meant
       to have his cock inside you.  Maybe you are.
       <br><br>
     <</if>>
@@ -10685,7 +10655,7 @@ TODO cum liquid treatment continuation, also recuring later
     how much you are enjoying it.
     <br><br>
     <<if $AcademicProbationDenial>>
-      You can't feel the pleasue you know you should though, just the fullness his cock gives you.  But it feels perfect, like you are meant
+      You can't feel the pleasure you know you should though, just the fullness his cock gives you.  But it feels perfect, like you are meant
       to have a cock inside you.  Maybe you are.
     <<elseif setup.isGoldStarLesbian()>>
       It feels so good.  You wonder why you'd avoided men for this long.  If you'd known how good this would feel, you'd
@@ -12279,7 +12249,11 @@ TODO cum liquid treatment continuation, also recuring later
 ::Part15DormSluttySex <50800,15000>
 <<nobr>>
   <h1>Threesome with Kiera and <<if $dating.length>>$dating[0]<<else>>some guy<</if>></h1>
-  <video src="Part15/Dorm21.mp4" autoplay loop muted height="500"></video>
+  <<if setup.areDating('Jayden')>>
+    <video src="Part15/Bar8.webm" autoplay loop muted height="500"></video>
+  <<else>>
+    <video src="Part15/Dorm21.mp4" autoplay loop muted height="500"></video>
+  <</if>>
   <<if $dating.length>>
     <<set setup.addSex({sex:"female", name: "Kiera"})>>
     <<set setup.addSex({sex:"male", name:$dating[0]})>>
