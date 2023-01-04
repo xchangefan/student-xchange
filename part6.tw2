@@ -3621,7 +3621,7 @@ do your best to make a purring sound for a bit before you fall asleep.
     <<include [[Part6Grades1WillPass]]>>
   <<elseif $AcademicPoints < 5 and !$PlayerGoodStudent and ($JobAthlete or $JobCheerleader or $JobCheerleaderFundraiser)>>
     <<include [[Part6Grades1MightPass]]>>
-	<<elseif true or $AcademicPoints < 5 and !$PlayerGoodStudent>>
+	<<elseif $AcademicPoints < 5 and !$PlayerGoodStudent>>
     <<include [[Part6Grades1WillFail]]>>
 	<<elseif $KidnapEscape>>
 		You are in-between, it could go either way.  You know missing so much class didn't help.  You stop by to [[talk to the professor|Part6ProfessorRecover]]
@@ -4012,8 +4012,6 @@ do your best to make a purring sound for a bit before you fall asleep.
 <<nobr>>
 	<h1>Classroom</h1>
 	<img src="Part6/Professor1.jpg" hspace="10" vspace="10" height="650" align="left">
-	<<set setup.addSexRepeat(10, {sex: 'male', name:'Aaron'})>>
-	<<set setup.addSexRepeat(3, {sex: 'male', name:'Aaron', vaginal:true})>>
 <</nobr>>
 
 <<nobr>>

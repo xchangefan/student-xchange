@@ -268,11 +268,31 @@
     you, or his cock, in weeks.  You let Candy know that Peter will be feeling extra horny, and extra generous by now, and even more so once he
     knows she has his key.
   <</if>>
+  <<if setup.areDating('Bailey')>>
+    <br><br>
+    You also have a long phone call with Bailey, letting her know about your relationship with Vince.  She'd known about the occasional
+    "extras" you gave at the strip club, but this is obviously much more than that.  The two of you decide to end your relationship.  She's
+    not upset though, you suspect she's eager to try out a few new things herself, now that she's no longer in a relationship.
+    <<if $PlayerItemBuddyKey>>
+      <<set setup.breakupWith('Bailey')>>
+      <<unset $PlayerItemBuddyKey>>
+      <<set $PlayerItemBuddyKeyOld to 1>>
+      You hold on to her chastity key for a few more days, but when she gives you the name of a new guy she's met, you mail it off to him.
+      You hope the two of them have lots of fun together.
+    <</if>>
+  <<elseif $PlayerItemBuddyKey>>
+    <<unset $PlayerItemBuddyKey>>
+    <<set $PlayerItemBuddyKeyOld to 1>>
+    With you not being around anymore you have Bailey let you know who should hold her chastity key now.  You hold on to it for a few
+    more days, but when she gives you the name of a new guy she's met, you mail it off to him.  You hope the two of them have lots of
+    fun together.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
   With your phone calls and emails done, you play on your phone a bit while you wait for the furniture.  Though your mind keeps drifting off
   to thoughts of [[all the time you'll be spending with Vince|SugarBaby6]] now that you'll be here permanently.
+  <<set setup.startDating('Vince')>>
 <</nobr>>
 
 

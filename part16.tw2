@@ -39,8 +39,39 @@ TODO [[Part16WomensStudiesPart2]]
 
 
 ::Part16WomensStudies
-TODO If neither reported her to eng dept nor she published her report.
--- Occasional engineering visits if $EngineeringGuest
+<<nobr>>
+  <h1>Women's Studies Class</h1>
+  <img src="Part16/Class27.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  Your professor is out today.  Bridget, one of her TAs, is leading the class today.  "While obviously the more nefarious ideas
+  about what the Engineering department is up to were unfounded, it is true that the university lacks an IRB.  That's short for
+  'Institutional Review Board', and they should have one to review any biomedical research involving human subjects."
+<</nobr>>
+
+<<nobr>>
+  She continues, "The professor is out today, meeting with the administration to get that corrected.  Meanwhile, I'll be going
+  over what an IRB is, what sorts of research requires a review, and what that process is like..."
+<</nobr>>
+
+<<nobr>>
+  You struggle to pay attention the rest of the class.  The information Bridget is giving is extremely boring, and sounds like
+  a lot of bureaucratic red tape.  Knowing that none of this will likely be on the exam makes it even harder to pay attention.
+  But eventually the class is over, and you can
+  <<if $EngineeringGuest>>
+    finally leave.  You decide to pay a [[visit to the engineering department|Part16WomensStudiesEngineeringVisit]]. In case
+    the professors IRB meeting means an end to the 'experiments' they are doing, you want to participate one last time.
+  <<else>>
+    TODO [[finally leave]].
+  <</if>>
+<</nobr>>
+
+::Part16WomensStudiesEngineeringVisit
+<<nobr>>
+  <h1>No testing today</h1>
+  TODO receptionist has tongue piercing.  Get one if don't already have one.  If already have one get VHC or similar piercing.  Then bj or sex
+<</nobr>>
+TODO Part16WomensStudiesEngineeringVisit
 
 ::Part16WomensStudiesPublish
 TODO Work this in to Part 16 flow
@@ -813,7 +844,7 @@ TODO Back to main
   <<elseif $JobCheerleader>>
     The athletic department is requiring all of the cheerleaders to [[wear them|Part16WomensStudiesReport6Accept]].  They are even
     requiring the male cheerleaders to wear one of those cock cage ones, not just the cheerleaders that identify as female.
-    Of course, you'll all need to take them off when you perform though.
+    Of course, those of you with belts will need to take them off when you perform though.  They said the cock cages can stay on though.
   <<elseif $JobCheerleaderFundraiser>>
     The athletic department is requiring all of the cheerleaders to [[wear them|Part16WomensStudiesReport6Accept]].  Even ones like
     you who do much of the work off the field.  Though, of course, you'll need to take it off whenever you are along with a university
@@ -850,15 +881,65 @@ TODO Back to main
 ::Part16WomensStudiesReport6Already
 <<nobr>>
   <h1>Beta-testing period ending</h1>
-  TODO Img
-<</nobr>>
-<<nobr>>
-  
+  <img src="Part16/Class30.jpg" hspace="10" vspace="10" height="450" align="left">
+  You were already wearing their new chastity belt, so there wasn't any change needed for you.  Just a quick check to make sure your
+  belt was still fitting okay, and then a few taps on some screen to switch your belt from the "beta" program over to the campus-wide
+  release version.  You don't know if there's any software changes coming with that or not, he doesn't really give you any time to
+  ask questions as he has to hurry on to the fitting scheduled right after your visit.
 <</nobr>>
 
-TODO You were already wearing it
-TODO And $BuddyElectronicChastity ?
-TODO No longer a job, work as barista
+<<nobr>>
+  One benefit though is that with so many of the girls on campus wearing a belt now, you don't feel any pressure to hide yours anymore.
+  That makes choosing what to wear a lot easier than it was before.
+<</nobr>>
+
+<<nobr>>
+  <<set $ComputerChastityMode to $JobBetaTester>>
+  <<set $oldBetaTestMode to $JobBettaTester>>
+  <<unset $JobBetaTester>>
+  <<set $JobBetaTesterFormer to 1>>
+  You aren't a Beta tester anymore
+  <<if $JobBarista>>
+    but
+  <<elseif $JobBaristaOld>>
+    <<unset $JobBaristaOld>>
+    <<set $JobBarista>>
+    so you stop by the coffee shop you used to work at to see about getting your old job back.  They are happy to have you back,
+    especially since you'll be able to get right at it without much training. But
+  <<else>>
+    <<set $JobBarista>>
+    so you stop by the coffee shop near campus to see about getting a job as a barista.  After a quick interview, you are hired.
+    Hopefully it won't take you long to pick up everything you need to learn. But
+  <</if>>
+  you still have one last bit of feedback for them.  You are sending a suggestion for some sort of indicator to show what "mode"
+  you belt is in would be great.  Obviously it wouldn't be in this release, but maybe something they could add in a future hardware
+  update.
+<</nobr>>
+
+<<nobr>>
+  You suggest red for "chaste", yellow for "monogamous", and green for "normal".
+  <<if $ComputerChastityMode == "lesbian">>
+    And maybe pink for belts like yours in "lesbian" mode.  With something like that you'd maybe get fewer guys hitting on you,
+    thinking they have a chance.
+  <<elseif $ComputerChastityMode == "open-relationship">>
+    And probably green for yours too, since it's just as open to having fun as the "normal" ones are.  A green light would let guys
+    know that your boyfriend still allows you to enjoy yourself.  Well, certainly for other guys to enjoy you at least.
+  <<elseif $ComputerChastityMode == "chaste">>
+    A red light would let guys know that you aren't available for sex.  That would keep most guys away.  Though hopefully it would
+    keep away the right guy, one that would be willing to wait.
+  <<elseif $ComputerChastityMode == "monogamous">>
+    A yellow light would let guys know that you are spoke for, and that they don't have a chance.  Hopefully that would mean
+    fewer of them hitting on you.
+  <<else>>
+    <<set $ComputerChasteMode to "normal">>
+    A green light would let guys know that even though you are wearing a belt, that doesn't mean you can't enjoy yourself.  And it
+    certainly doesn't mean that they can't enjoy themselves with you.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part16WomensStudiesBeltBackToMain]]>>
+<</nobr>>
 
 ::Part16WomensStudiesReport6Accept
 <<nobr>>
@@ -913,12 +994,12 @@ TODO No longer a job, work as barista
 
 <<nobr>>
   After he checks the fit and goes over the mechanical features of the belt, he sends you into the next room to
-  [[discuss the app|Part16WomensStudiesReport6Accept2]] and other technical features of the belt.
+  discuss the app and other technical features of the belt.  Then you are [[sent on your way|Part16WomensStudiesReport6Accept2]] wearing
+  your new belt.
 <</nobr>>
 
 ::Part16WomensStudiesReport6Accept2
 <<nobr>>
-  <h1>Discussing your belt</h1>
   <<if setup.areDating('Kate')>>
     <<include [[Part16WomensStudiesReport6Accept2Kate]]>>
   <<elseif setup.haveGirlfriend()>>
@@ -986,6 +1067,7 @@ instead and it rewards her, escalates from there
 
 ::Part16WomensStudiesReport6Accept2Kate
 <<nobr>>
+  <h1>TODO Part16WomensStudiesReport6Accept2Kate</h1>
   TODO Img - eating Kate out
 <</nobr>>
 
@@ -998,6 +1080,7 @@ TODO Owned by Kate (unbelted) - she makes sure its her and not father owned
 
 ::Part16WomensStudiesReport6Accept2Lesbian
 <<nobr>>
+  <h1>TODO Part16WomensStudiesReport6Accept2Lesbian</h1>
   <video src="Part16/Class17.webm" autoplay loop muted height="500"></video>
   <<if $FatherDisownWomensStudiesChastity or $FatherSafetyTalk>>
     <<set $ComputerChastityOwner to "Your father">>
@@ -1037,10 +1120,11 @@ TODO Owned by Kate (unbelted) - she makes sure its her and not father owned
   <<else>>
     <<set $ComputerChastityMode to "lesbian">>
     'paired lesbian' mode.  That means that you and your partner... $dating[0]'s belt are linked.  They both have exactly the same settings,
-    and both of you are setup as joint owners of both belts.  The belts can only be unlocked or owner-controlled settings changed if
+    and both of you are setup as joint owners of both belts.  The belts can only be unlocked or owner-controlled settings changed, if
     you both approve."
     <br><br>
-    "Now let me go over the mutual tease and orgasm setting and self-lockout options with you."
+    "Now let me go over the mutual tease and orgasm setting and self-lockout options with you.  Those can be activated by either of you,
+    but neither of you can cancel them before the lockout period is over..."
     <br><br>
     You are excited when you hear that the belts will sometimes gently tease both you and $dating[0] when you are together. And with
     skin-to-skin contact, the intensity will increase, sometimes giving one or both of you an orgasm. When you ask what 'sometimes' means
@@ -1064,6 +1148,7 @@ TODO Owned by Kate (unbelted) - she makes sure its her and not father owned
 
 ::Part16WomensStudiesReport6Accept2OpenRelationship
 <<nobr>>
+  <h1>TODO Part16WomensStudiesReport6Accept2OpenRelationship</h1>
   TODO Img
 <</nobr>>
 
@@ -1071,6 +1156,7 @@ TODO Open relationship instructions (dating barry, but he shares you)
 
 ::Part16WomensStudiesReport6Accept2Monogamous
 <<nobr>>
+  <h1>Getting used to $dating[0] being in control</h1>
   <<if $PlayerItemNerdKey>>
     <img src="Part16/Class24.jpg" hspace="10" vspace="10" height="400" align="left">
     You try to tease Peter's cock through his chastity cage, even trying a couple different models, but it doesn't work. Well, it works
@@ -1084,7 +1170,11 @@ TODO Open relationship instructions (dating barry, but he shares you)
     <<unset $PlayerItemNerdKey>>
     <br><br>
   <</if>>
-  <img src="Part16/Class23.jpg" hspace="10" vspace="10" height="500">
+  <<if setup.areDating('Jayden')>>
+    <video src="Part16/Class28.mp4" autoplay loop muted height="360"></video>
+  <<else>>
+    <img src="Part16/Class23.jpg" hspace="10" vspace="10" height="500">
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -1100,18 +1190,26 @@ TODO Open relationship instructions (dating barry, but he shares you)
       to share you any longer.  "I guess he's a bit old fashioned.  Oh well, more fun for just me then I guess."
     <</if>>
   <<else>>
-    You try to talk $dating[0] to make your belt give you an orgasm.  You know he can do it with a touch of a button.  Or at least,
-    increasing the chance that your belt gives you one while you are sucking his cock.  But he says that the default setting is supposed
-    to be the best.
+    You sometimes try to talk $dating[0] into making your belt give you an orgasm.  You know he can do it with a touch of a button.  Or
+    at least, increasing the chance that your belt gives you one while you are sucking his cock.  But he says that the default setting is
+    supposed to be the best.
     <<if $WomensStudiesBeltAssistant>>
       You know they told him that during his owner training, and it's probably true.
     <</if>>
     It certainly seems the best for making you want to suck his cock.
     <br><br>
-    <video src="Part16/Class25.mp4" autoplay loop muted height="550"></video>
+    <<if setup.areDating('Jayden') and $PlayerProtectionWithdraw>>
+      <video src="Part16/Class29a.mp4" autoplay loop muted height="422"></video>
+    <<elseif setup.areDating('Jayden')>>
+      <video src="Part16/Class29a.mp4" autoplay loop muted height="422"></video>
+    <<else>>
+      <video src="Part16/Class25.mp4" autoplay loop muted height="550"></video>
+    <</if>>
     <br><br>
-    Though thankfully, he's still eager to fuck you frequently as well.  Though you are always bound when he does.  You know it's to
-    avoid any complaints when it's time to put your belt back on.
+    Though thankfully, he's still eager to fuck you frequently as well.  At first you are always bound when he does.  You know it's
+    because the training they game told him that it's easier that way, to avoid any complaints when it's time to put your belt back on.
+    After a while though, it becomes clear that it isn't necessary.  You always willingly, if sometimes reluctantly, put your belt back
+    on when he tells you.
     <<if !$PlayerEasytoOrgasm>>
       But you wish you could at least use your hands to make sure you get off when you have the chance.  It's so frustrating if, just
       before you are about to cum,
@@ -1151,6 +1249,7 @@ TODO [[Part16WomensStudiesBeltBackToMain]]
 
 ::Part16WomensStudiesReport6Accept2Chaste
 <<nobr>>
+  <h1>TODO Part16WomensStudiesReport6Accept2Chaste</h1>
   <div style="float:left;padding:12px;">
     <video src="Part16/Class16.mp4" autoplay loop muted height="550"></video>
   </div>
@@ -1161,6 +1260,18 @@ TODO [[Part16WomensStudiesBeltBackToMain]]
   other explainations he tells you,  "Your belt is currently set in 'chaste' mode.  That means you aren't allowed to engage in oral
   or anal sex while wearing the belt.  And obviously vaginal sex is impossible while wearing it."  You blush a bit at his frank
   discussion.
+<</nobr>>
+
+<<nobr>>
+  "I see you checked the box requesting a weekly unlocking in one of our private cleaning booths," he tells you.  You blush as you think about
+  what you'll be doing in there besides "cleaning" yourself.  He continues, "We need to update the form, as those are no longer necessary.
+  We've made sure the belt's design means you can take care of all of your hygiene needs without a weekly unlocking.  Other than for
+  medical exams, there's no need to take the belt off at all."
+<</nobr>>
+
+<<nobr>>
+  Your heart starts to race as you realize you might be wearing this belt until your wedding night.  You only realize now how much
+  comfort the thought of those weekly unlockings was giving you.
 <</nobr>>
 
 <<nobr>>
@@ -1199,6 +1310,13 @@ TODO [[Part16WomensStudiesBeltBackToMain]]
 
 ::Part16WomensStudiesReport6Accept2Normal
 <<nobr>>
+  <<if $FatherDisownWomensStudiesChastity or $FatherSafetyTalk>>
+    <<set $ComputerChastityOwner to "Your father">>
+    <h1>Discovering a mixup with your belt</h1>
+  <<else>>
+    <<set $ComputerChastityOwner to "self">>
+    <h1>Getting used to your new belt</h1>
+  <</if>>
   <div style="float:left;padding:12px;">
     <video src="Part16/Class16.mp4" autoplay loop muted height="550"></video>
   </div>
@@ -1233,8 +1351,7 @@ TODO [[Part16WomensStudiesBeltBackToMain]]
 <<nobr>>
   "Oh, of course not," he says. You sense a hint of condescension in his voice. "You can just think of that as our shorthand for
   'the owner of your belt' if you'd like.  In your case that would be..." He looks down at his tablet and 
-  <<if $FatherDisownWomensStudiesChastity or $FatherSafetyTalk>>
-    <<set $ComputerChastityOwner to "Your father">>
+  <<if $ComputerChastityOwner == "Your father">>
     then says your father's name.  "That's who is listed as your owner.  Or your "belt's owner" if you prefer."
     <br><br>
     "But, that's my father.  Who made him my own... my belt's owner?" you ask
@@ -1265,7 +1382,6 @@ TODO [[Part16WomensStudiesBeltBackToMain]]
     <br><br>
     "I hope that cleared up the confusion for you," he says. "Now let me go over the orgasm request and messaging options with you."
   <<else>>
-    <<set $ComputerChastityOwner to "self">>
     continues, "Well, you. Now lets go over the teasing and orgasm functions, and the self-lockout options, and how to transfer
     ownership if you ever wish to do that."  
   <</if>>
@@ -1290,10 +1406,78 @@ TODO [[Part16WomensStudiesBeltBackToMain]]
 
 <<nobr>>
   <<if $ComputerChastityOwner == "Your father">>
-    <<include [[Part16WomensStudiesBeltJobIssues]]>>
+    It takes you a while to work up the nerve to call your father to [[discuss the mixup|Part16WomensStudiesReport6Accept2NormalFather]]
+    they had in setting him up as your owner. But helping encourage you to get it fixed is the growing need you are feeling, and knowing
+    you'll need to get it fixed if you are going to be able to 
+    <<if $CampusMinistry>>
+      activate the orgasm option on your belt when you need it.  You certainly aren't going to want to ask your dad to trigger it.
+    <<else>>
+      take off your belt the next time you want to get fucked, or even to masturbate.
+    <</if>>
   <<else>>
     <<include [[Part16WomensStudiesBeltBackToMain]]>>
   <</if>>
+<</nobr>>
+
+::Part16WomensStudiesReport6Accept2NormalFather
+<<nobr>>
+  <h1>Talking with your father</h1>
+  <img src="Part16/Class26.png" hspace="10" vspace="10" height="650" align="left">
+  You explain to your father that they mistakenly set him as your 'owner', and that he'd have to be the one to transfer ownership to you
+  for you to have full control of your belt.  "When you called them back to let them know I'd reconsidered, they misunderstood," you tell
+  him.
+<</nobr>>
+
+<<nobr>>
+  "No, they configured it correctly," he tells you. "This way is for the best, especially with how reluctant you were to wear the
+  belt in the first place.  If you were able to take it off whenever you wanted, you'd soon not be wearing it at all.  Now we won't
+  have to worry about
+  <<if $PlayerProtectionPerfect>>
+    that."
+  <<else>>
+    that. Or about you getting yourself pregnant."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "But..." you want to insist he switch it over to you, but you know it's hopeless trying to get him to change his mind on that.
+  "But, I
+  <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+    will need it unlocked if I want to..."
+  <<else>>
+    will need it unlocked when I have my period.  And what if I want to..."
+  <</if>>
+  You trail off, too embarrassed to tell your dad you want to be able to masturbate.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+    "Girls don't have the same need to orgasm on a regular basis as guys do," he tells you.  
+  <<else>>
+    "Your belt can handle periods just fine they said," he tells you. "You can call them if you need any help with that.  About the other,
+    well, girls don't have the same need to orgasm on a regular basis as guys do."
+  <</if>>
+  You want to scream at him, but say nothing.
+  "I'm sure you have gotten used to it though, especially since you used to be a guy.  But you don't have a prostate to worry about any
+  more, and they confirmed to me that there won't be any ill effects on your body, no matter how long it goes without an orgasm."
+<</nobr>>
+
+<<nobr>>
+  You are terrified now about how long he's going to expect you to go without one.  "But they also explained that the occasional one
+  can be very effective as a motivator.  They linked up your belt's account with your school system there.  I have it set to let you
+  have one every few weeks, as long as you attend class every day, and keep your grades up."
+<</nobr>>
+
+<<nobr>>
+  "Oh, and I don't want to prevent you from meeting a guy, hopefully a future husband, while you are there.  But I know how college
+  guys are.  The belt won't stop you from doing what you need to keep his interest, while saving the rest for your wedding night.  And
+  I had them leave those 'encouragements' they said it gives, so it should be enjoyable for you too."
+<</nobr>>
+
+<<nobr>>
+  You don't know what else to say, you are already embarassed enough discussing this with your dad at all.  And besides, you know
+  nothing you could say would change anything for the better anyway, so you just say, "Yes, sir."  Then you proceed to start worrying
+  about how your [[day to day life|Part16WomensStudiesBeltJobIssues]] is going to be wearing this belt 24 hours a day.
 <</nobr>>
 
 ::Part16WomensStudiesBeltJobIssues
