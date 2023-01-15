@@ -1,5 +1,13 @@
+::Part16VariableCleanup
+<<nobr>>
+  <<if !$Weed and visited("Part15DormStonerFriendly")>>
+    <<set $Weed to 1>>
+  <</if>>
+<</nobr>>
+
 ::Part16 <0,16000>
 <<nobr>>
+  <<include [[Part16VariableCleanup]]>> 
   <<if $WomensStudiesProfessorPublish>>
     <<include [[Part16WomensStudiesPublish]]>>
   <<elseif $ProfessorMindControl>>
@@ -37,7 +45,7 @@
   <<if $dating.length>>
     Still, on Friday after the last of your finals, you and $dating[0] plan on going out to [[blow off some steam|Part16FinalsDating]].
   <<elseif $Roommate == "Kiera">>
-    You know things are a bit more uncertain for Kiera though.  You are sure she'll be bringing a guy by Friday after her
+    You know things are a bit more uncertain for Kiera though. You are sure she'll be bringing a guy by Friday after her
     last final to celebrate if she passes, or perhaps to take her mind off of it if she doesn't.  Either way, you are sure they'll
     be a lot going on on her side of the room Friday evening.
     <br><br>
@@ -53,9 +61,22 @@
       Well, it won't necessarily be just on her side of the room, of course.  She knows you'll be wanting to
       [[blow off some steam|Part16FinalsKieraJoin]] too.  Well, to blow something at least.
     <</if>>
-  <<elseif true or $Roommate == "Marissa">>
-    TODO Stoner
-    TODO Winter Break [[Part16WinterBreak]]
+  <<elseif $Roommate == "Marissa">>
+    You know things are a bit more uncertain for Marissa though. You know she'll be trying to unwind Friday, after her last
+    final, where she passes everything or not.  Of course for her, that means
+    <<if $PlayerPregnant>>
+      <<set $DormFriendLevel -= 1>>
+      lighting up.
+      <br><br>
+      That's why you've already packed up your room and are ready to [[leave campus|Part16WinterBreak]] as soon as your final is over.
+      You don't want to expose your unborn baby to that.
+    <<elseif setup.haveFucked("Marissa") or $Weed>>
+      lighting up.
+      <br><br>
+      Considering how much fun you had last time, you'll certainly [[be joining her|Part16FinalsMarissaSmoke]].
+    <<else>>
+      [[lighting up|Part16FinalsMarissaDecide]].
+    <</if>>
   <<elseif $Roommate == "Natalie">>
     You know Natalie isn't going to have any trouble with her's either.  The two of you have plans to [[go out Friday|Part16FinalsNatalie]]
     after the last of your finals to celebrate
@@ -78,6 +99,387 @@ TODO Winter Break [[Part16WinterBreak]]
 ::Part16FinalsKieraJoin
 TODO Part16FinalsKieraJoin
 TODO Winter Break [[Part16WinterBreak]]
+
+::Part16FinalsMarissaSmoke
+<<nobr>>
+  <h1>Celebrating with Marissa</h1>
+  <img src="Part16/Finals4.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $DormFriendLevel += 1>>
+<</nobr>>
+<<nobr>>
+  You are so glad you decided to relax and unwind with Marissa. It's nice to get all the thoughts of studying and finals
+  and all the stress of the past week out of your head.
+<</nobr>>
+
+<<nobr>>
+  "Now if I can just get fucked, and soon, tonight will be perfect," Marissa says.  You start giggling when you hear it because
+  it just sounded so funny the way she just blurted it out. But soon your mind is also full of thoughts of how good it would feel to
+  have a
+  <<if $CampusMinistry>>
+    man
+  <<else>>
+    nice, hard cock
+  <</if>>
+  inside you right now.
+<</nobr>>
+
+<<nobr>>
+  <<if $JobBetaTester == "chaste" or $ComputerChasteMode == "chaste">>
+    "Sorry, $playerName," Marissa says. "I know it's probably hard hearing me talk about it, with your belt and all.  I'll try not
+    to mention it again.  I'll be back in a few minutes."
+    <br><br>
+    She steps out into the hall.  A moment later you hear the faint sound of knocking on the door of the guy the next room over.
+    A minutes later you hear the sounds of a woman moaning, then of her screaming out in pleasure. You feel a familiar aching need
+    between your own legs, but you can't help but listen in.  A minute or two later and your door opens again.  Marissa comes back
+    in with her hair a mess and a big smile on her face.
+    <br><br>
+    "Now where were we?" she says before sitting back down.
+    <br><br>
+    The two of you have a fun rest of the evening, though your body aches to have had as much fun as Marissa did.
+    That night your dreams of full of thoughts of what she was doing next door.  The next morning you wake up and try to put
+    the thoughts out of your mind as you get ready to leave campus for [[Winter Break|Part16WinterBreak]]
+  <<elseif $CampusMinistry and !$PlayerChastityBelt>>
+    "I know you are saving yourself for marriage and all, but I just need a good fuck sometimes.  Especially with how horny I get when
+    I'm high," she tells you. "You don't mind if my friend Craig comes over, do you? If it bothers you, I can go over to his room, but
+    his roommate is kind of a jerk."
+    <br><br>
+    "Oh sure, I don't mind at all.  It's actually made me little sleepy, so I might be asleep by the time he gets here anyway," you lie.
+    You are maybe a little drowsy, but you're as horny as she is.  You're planning on lying in bed listening in.  With your
+    [[vibrator on low and under your covers|Part16FinalsMarissaSmokeListen]], you know they won't be able to hear over what they'll be doing.
+    Part of you though wants to just [[ask her if you can join in|Part16FinalsMarissaSmoke2]].
+  <<elseif $CampusMinistry and $PlayerChastityBelt>>
+    TODO Ministry give up then threesome [[Part16FinalsMarissaSmoke2]]
+  <<elseif setup.haveFucked('Marissa')>>
+    TODO not first time with her [[Part16FinalsMarissaSmoke2]]
+  <<elseif $PlayerChastityBelt>>
+    TODO Chastity belt - normal [[Part16FinalsMarissaSmoke2]]
+  <<else>>
+    TODO General [[Part16FinalsMarissaSmoke2]]
+  <</if>>
+<</nobr>>
+
+::Part16FinalsMarissaSmokeListen
+<<nobr>>
+  <h1>Masturbating while you listen</h1>
+  <img src="Part16/Finals5.jpg" hspace="10" vspace="10" height="550">
+<</nobr>>
+<<nobr>>
+  You were already so horny, and then you start hearing Marissa and him making out, and it gets even worse.  You can't wait any more
+  and have to get yourself off.  You turn your vibrator on low at first so they don't hear.  But after a short time you decide you need
+  more, and that they are too busy to notice anyway.
+<</nobr>>
+
+<<nobr>>
+  That was true about the noise from your vibrator, but when you start moaning you do see them look over.  You are past the point of caring
+  though and keep going. You feel like you've never needed an orgasm this bad before.
+<</nobr>>
+
+<<nobr>>
+  <<set $tempRoll to Math.floor(Math.random()*20+1)>>
+  <<if $tempRoll == 1>>
+    You've been having trouble getting off lately.  The last few times you've maturbated it's taken longer than before to get off.
+    Each time you've managed to get yourself off, always while you've imagined a guy on top of you and inside you.
+    <br><br>
+    But this time your orgasm just doesn't seem to happen.  Then your vibrator cuts off.  You shake it, and turn it off and on, but it's
+    dead.  You've been running it longer than normal when you've used it, and forgot to charge it last time.
+    <br><br>
+    <img src="Part16/Finals7.gif" hspace="10" vspace="10" height="348" align="left">
+    <br>
+    You try just using it as a dildo, but its not enough.  You need something more!
+    <br><br>
+    Craig must have heard you whimpering in frustration, because he asks if you want to join them.  You are far too horny to
+    turn down his offer, and quickly [[join them|Part16FinalsMarissaSmoke2]].
+  <<elseif $tempRoll < 5 or ($tempRoll < 10 and !$PlayerEasytoOrgasm and !$PlayerSuperOrgasms)>>
+    But just when you think you are getting close to cumming, your vibrator cuts off.  You shake it, and turn it off and on, but it's
+    dead.  You'd forgot to charge it after you'd used it last time.
+    <br><br>
+    <img src="Part16/Finals7.gif" hspace="10" vspace="10" height="348" align="left">
+    <br>
+    You try just using it as a dildo, but its not enough.  You need something more!
+    <br><br>
+    Craig must have heard you whimpering in frustration, because he asks if you want to join them.  You are far too horny to
+    turn down his offer, and quickly [[join them|Part16FinalsMarissaSmoke2]].
+  <<else>>
+    <img src="Part16/Finals6.gif" hspace="10" vspace="10" height="360" align="left">
+    <br>
+    Finally, you feel the pleasure welling up inside you and you explode with the orgasm you so desperately need.  You blush even
+    more when you see Marissa glancing over and smiling at you.
+    <br><br>
+    Having satisfied your need, you try to ignore their sounds and fall asleep.  It doesn't take long before you are sleeping.
+    Your dreams that night are influenced by the sounds you are hearing and are
+    [[filled with erotic thoughts|Part16FinalsMarissaSmokeListen2]].
+  <</if>>
+<</nobr>>
+
+::Part16FinalsMarissaSmokeListen2
+<<nobr>>
+  <h1>Erotic Dreams</h1>
+  <video src="Part16/Finals8.mp4" autoplay loop muted height="450"></video>
+  <<set $tempRoll to Math.floor(Math.random()*20+1)>>
+<</nobr>>
+<<nobr>>
+  That night your dreams of full of thoughts of what it would have been like if you had joined Marissa and Craig. You imagine
+  what it would have felt like to feel him inside you. To feel him cum inside you. Or to have him cum on you and then for Marissa
+  to lick it off. And then to watch as he fucks her from behind with her on top of you, switching back to fuck you instead whenever
+  it pleases him.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerProtectionTry or $tempRoll == 1>>
+    <img src="Part16/Finals9.jpg" hspace="10" vspace="10" height="348" align="left">
+    <br>
+    But one of your dreams stick with you much longer than the rest. That was one where Craig came inside you. You felt him throbbing
+    inside you as more and more of his cum filled you.  It did it's job as you dream you are pregnant.  Your dream doesn't last long
+    enough to experience the birth of your child, but you are left with the memory of how happy you were knowing one was growing inside
+    you.  And now thoughts of being a mother keep coming back to you.
+    <br><br>
+  <</if>>
+  <<if $PlayerProtectionTry>>
+    You want a baby so bad, but you know you should wait until you are married. Or maybe engaged. Or at least until you are dating
+    your future husband.
+    <br><br>
+    Who knows, maybe you'll meet your future husband during [[winter break|Part16WinterBreak]].
+  <<elseif $tempRoll == 1>>
+    You know you need to wait until you are married.  Or maybe engaged. Or at least until you are dating your future husband.
+    <<unset $tempVisit>>
+    <<if $PlayerProtectionCondoms>>
+      <<unset $PlayerProtectionCondoms>>
+      <<set $PlayerProtectionNone to 1>>
+      <img src="PartP/CondomTrash.png" hspace="10" vspace="10" height="174" align="right">
+      But you know you aren't going to be bothering with condoms when you finally meet him.
+    <<elseif $PlayerProtectionPill>>
+      <<unset $PlayerProtectionPill>>
+      <<set $PlayerProtectionNone to 1>>
+      <img src="PartP/PillTrash.jpg" hspace="10" vspace="10" height="174" align="right">
+      But you know you aren't going to be on the pill when you finally meet him.
+    <<elseif $PlayerProtectionPerfect or $PlayerProtectionPerfect>>
+      <<set $tempVisit to 1>>
+      But you know you don't want to be on your implants birth control when you finally meet him.
+    <<elseif $PlayerProtectionWithdraw>>
+      <img src="PartP/Creampie2.jpg" hspace="10" vspace="10" height="174" align="right">
+      But you know you'll be having him cum inside you every time once you finally do meet him.
+    <<else>>
+      <<set $PlayerProtectionNone to 1>>
+    <</if>>
+    <br><br>
+    <<if $tempVisit>>
+      You decide to make a [[visit to the X-Change Office|Part16FinalsDeactivate]] before they close for winter break.
+    <<else>>
+      Who knows, maybe you'll meet your future husband during [[winter break|Part16WinterBreak]].
+    <</if>>
+  <<else>>
+    Thankfully you'll be on [[winter break|Part16WinterBreak]] soon, because you are sure if Marissa made the same offer again
+    today, you'd be joining her and Craig.
+  <</if>>
+<</nobr>>
+
+::Part16FinalsDeactivate
+<<nobr>>
+  <h1>Deactivating your birth control</h1>
+  <img src="PartP/PregTest6.jpg" hspace="10" vspace="10" height="640" align="left">
+  <<unset $PlayerProtectionPerfect>>
+  <<unset $PlayerProtectionPermanent>>
+  <<set $PlayerProtectionNone to 1>>
+<</nobr>>
+<<nobr>>
+  Before they close for [[winter break|Part16WinterBreak]] you visit the X-Change clinic.  After letting them know of your desire
+  to get pregnant, and having you sign something to confirm it, they do some tests.  You assume it's to make sure you aren't already
+  <<if $PlayerProtectionPerfect>>
+    somehow
+  <</if>>
+  pregnant.  Not that it's possible in your case.  After everything checks out, they deactivate your implant's birth control feature.
+<</nobr>>
+
+<<nobr>>
+  They let you know that this is something they can't turn back on.  If you want to space out your children, you'll need to use more
+  traditional methods like condoms or birth control pills.  They also warn you that if you don't get pregnant right away, then you
+  should expect normal periods to start for you soon.
+<</nobr>>
+
+::Part16FinalsMarissaSmoke2
+<<nobr>>
+  <h1>Threesome with Craig and Marissa</h1>
+  <div style="float:left;padding:12px;">
+    <video src="Part16/Dorm5.mp4" autoplay loop muted height="550"></video>
+  </div>
+  <<set $DormFriendLevel += 1>>
+<</nobr>>
+<<nobr>>
+  <<if $PlayerChastityBelt>>
+    <<set setup.addSex({sex:'male', name:'Craig'})>>
+    <<set setup.addSex({sex:'female', name:'Marissa'})>>
+    <<set setup.addSex({sex:'male', name:'Craig'})>>
+    <<set setup.addSex({sex:'female', name:'Marissa'})>>
+    <<set setup.addSex({sex:'male', name:'Craig'})>>
+    <<set setup.addSex({sex:'female', name:'Marissa'})>>
+    As you watch Craig fuck Marissa, you ache to feel him inside you instead.  But instead you are only able to suck his cock.
+    <<if $JobBetaTester or $ComputerChasteMode>>
+      Your belt gives you some pleasure as work his cock, but not enough to get you off.  But it is certainly enough to encourage you
+      to keep going.  You whimper when he pulls out of your mouth to return to fucking Marissa.
+    <</if>>
+    <br><br>
+    After he cums inside her, you quickly dive between her legs to lick up every drop of his cum.  After she's clean, you focus on his cock,
+    and soon you have him hard enough to fuck her once again.
+  <<else>>
+    <<set setup.addSex({sex:'male', name:'Craig'})>>
+    <<set setup.addSex({sex:'male', name:'Craig', vaginal:true, noCondom:true, birthControl: 'pullout-perfect'})>>
+    <<set setup.addSex({sex:'female', name:'Marissa'})>>
+    <<set setup.addSex({sex:'male', name:'Craig'})>>
+    <<set setup.addSex({sex:'female', name:'Marissa'})>>
+    <<if $CampusMinistry>>
+      <<set $tempCreampie to either(0,1)>>
+      <<if $tempCreampie>>
+        <<set setup.addSex({sex:'male', name:'Craig', vaginal:true, noCondom:true, noPullout: true})>>
+      <<else>>
+        <<set setup.addSex({sex:'male', name:'Craig', vaginal:true, noCondom:true, birthControl: 'pullout-perfect'})>>
+      <</if>>
+      <<unset $CampusMinistry>>
+      <<set $CampusMinistryFailFall2 to 1>>
+      If you'd known anything could feel as good as Craig's cock does when it first slides into you, you wouldn't have been waiting
+      over a year to do this, or even considering waiting until your wedding night.  You certainly aren't going to be waiting long before
+      you do it again.
+      <br><br>
+      <<if $PlayerProtectionCondoms>>
+        You remember telling them you'd use condoms back at orientation, though that was just because you'd had to give them some answer
+        about birth control and that seems like the expected one. You hadn't actually planned on having sex until you were married and
+        probably wanting to get pregnant.  You'll probably need to actually go out and buy some now.  But in the moment tonight it doesn't
+        even occur to you. Thankfully Craig is taking turns with both you and Marissa, and it's her he cums in.
+        <br><br>
+        You feel like such a slut as you lick his cum out of her - the taste of it, hearing her moan, all of it.  You'd thought you
+        might swallow some of it in the future, to make your husband happy, but you'd never thought you'd love the taste of it.  But
+        you do, and you love how naughty it makes you feel. Hopefully he'll be ready to go again soon.
+      <<elseif $PlayerProtectionWithdraw>>
+        You remember telling them you'd have him 'pull out' back at orientation, though that was just because you'd had to give them
+        some answer about birth control and that seems like the easiest one.  They wouldn't be expecting you to buy condoms or something.
+        You hadn't actually planned on having sex until you were married and probably wanting to get pregnant. But in the moment tonight
+        it doesn't even occur to you.  Thankfully Craig is taking turns with both you and Marissa, and it's her he cums in.
+        <br><br>
+        You feel like such a slut as you lick his cum out of her - the taste of it, hearing her moan, all of it.  You'd thought you
+        might swallow some of it in the future, to make your husband happy, but you'd never thought you'd love the taste of it.  But
+        you do, and you love how naughty it makes you feel. Hopefully he'll be ready to go again soon.
+      <<elseif $PlayerProtectionPerfect or $PlayerProtectionPermanent>>
+        You'd all but forgotten about your implant's birth control.  You figured it'd just be something to discuss with your husband
+        about keeping for a while or not after you were married.  But now it's probably good that you have it, as you aren't thinking
+        about birth control, or consequences at all tonight.  But it probably wouldn't have mattered the first time though, as Craig
+        is taking turns, and it's Marissa he cums in.
+        <br><br>
+        You feel like such a slut as you lick his cum out of her - the taste of it, hearing her moan, all of it.  You'd thought you
+        might swallow some of it in the future, to make your husband happy, but you'd never thought you'd love the taste of it.  But
+        you do, and you love how naughty it makes you feel. Hopefully he'll be ready to go again soon.
+      <<elseif $PlayerProtectionTry>>
+        You remember back at orientation telling them you didn't want birth control, that you wanted to get pregnant when you have sex.
+        At the time you were thinking that'd be later, once you were married.  But it was true then, and it's true now, even if it might
+        be sooner than you'd originaly planned.  But in the moment tonight it doesn't even occur to you.  Unfortunately Craig is taking
+        turns with both you and Marissa, and it's her he cums in.
+        <br><br>
+        You feel like such a slut as you lick his cum out of her - the taste of it, hearing her moan, all of it. You'd thought you
+        might swallow some of it in the future, to make your husband happy, but you'd never thought you'd love the taste of it.  But
+        you do, and you love how naughty it makes you feel. You are tempted to to see if Craig will cum in your mouth next time, but you'd
+        rather he cum inside you.  You'd ask him to do just that, but you don't know if he'd be as eager to get you pregnant as you are,
+        so you'll just have to hope it's you he's inside when he cums the next time.
+        <<if $tempCreampie>>
+          Thankfully, it is!
+        <<else>>
+          Sadly, it's not. There's always tomorrow.
+        <</if>>
+      <<elseif $PlayerProtectionPill>>
+        It's good that you've been on the pill to help regulate your periods, because in the moment, it doesn't even occur to you
+        to think about birth control.  It turns out the first time it probably wouldn't have mattered anyway, as Craig is taking turns
+        and it's Marissa he cums inside.
+        <br><br>
+        You feel like such a slut as you lick his cum out of her - the taste of it, hearing her moan, all of it.  You'd thought you
+        might swallow some of it in the future, to make your husband happy, but you'd never thought you'd love the taste of it.  But
+        you do, and you love how naughty it makes you feel. Hopefully he'll be ready to go again soon.
+      <<else>>
+        You don't even remember what you'd told them back at orientation when they'd asked you about birth control.  You'd always figured
+        how to space out your kids would be something you and your husband would discuss years from now.  You'll probably need to figure
+        out something later.  But tonight, you are too caught up in the moment, and it doesn't even occur to you.  It probably doesn't
+        matter the first time though as Craig is taking turns and it's Marissa he cums inside.
+        <br><br>
+        You feel like such a slut as you lick his cum out of her - the taste of it, hearing her moan, all of it.  You'd thought you
+        might swallow some of it in the future, to make your husband happy, but you'd never thought you'd love the taste of it.  But
+        you do, and you love how naughty it makes you feel. Hopefully he'll be ready to go again soon.
+      <</if>>
+      <<if $tempCreampie>>
+        <br><br>
+        <img src="Part16/Finals10.jpg" hspace="10" vspace="10" height="450" align="right">
+        The second time, it's you he cums inside, with Marissa licking you clean, playing special attention to your clit as she does.
+      <</if>>
+    <<else>>
+      You and Marissa have a great time with Craig.  He knows exactly how to keep both of you moaning for him.  And Marissa knows
+      that watching you lick his cum out of her will have him hard and ready to go again in no time.
+      <<set setup.addSex({sex:'male', name:'Craig', vaginal:true})>>
+    <</if>>
+  <</if>>
+  <<set setup.addSex({sex:'male'})>>
+  <<set setup.addSex({sex:'male', vaginal:true})>>
+  <<set setup.addSex({sex:'male'})>>
+  <<set setup.addSex({sex:'male', vaginal:true})>>
+  <<if $tempRoll == 1 and !$PlayerSideEffectMasturbationBlock>>
+    <br><br>
+    <<set setup.addSex({sex:'male', vaginal:true})>>
+    <<set setup.addSex({sex:'male', vaginal:true})>>
+    <<set setup.addSex({sex:'male', vaginal:true})>>
+    <<set setup.addSex({sex:'male', vaginal:true})>>
+    <<set setup.addSex({sex:'male', vaginal:true})>>
+    You'd prefer a repeat of tonight's fun every night. But some nights it's you and your vibrator again instead.
+    Those nights ends in frustration though, as you find you can't get off.  At least not alone.  The evenings you spend
+    [[with someone else|Part16FinalsMarissaSmokeSideEffect]] end a lot happier for you.
+  <<else>>
+    <br><br>
+    You have a bit more fun the next couple nights with other guys, but those times without Marissa.  But then it's time
+    for [[winter break|Part16WinterBreak]]
+  <</if>>
+<</nobr>>
+
+::Part16FinalsMarissaSmokeSideEffect
+<<nobr>>
+  <h1>Better with a partner</h1>
+  <<if $PlayerProtectionCondoms>>
+    <video src="Part16/Finals11.mp4" autoplay loop muted height="450"></video>
+  <<else>>
+    <video src="Part16/Finals12.webm" autoplay loop muted height="450"></video>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  After experimenting with your vibrator and with various guys, you figure out that you can't seem to get yourself off anymore.  You
+  don't seem to have any trouble when you are having sex.  With a guy at least.  You haven't really tried with any girls, except
+  for the threesome with Marissa.
+<</nobr>>
+
+<<nobr>>
+  After a call to the X-Change office, it sounds like it's a side effect your implant has developed.  "We don't know if it is related
+  to marijuana use. It's not something we are controlling for. It is a very common side effect though, and most of the implant trial
+  participants are are likely users, so it's possible.  Though it also seems to be associated with frequent masturbation, and some get
+  it immediately when the implant is activated.  So I wouldn't blame yourself, $playerName.  It just happens."
+<</nobr>>
+
+<<nobr>>
+  "Most of the participants aren't much troubled by it though," he consoles you.  "They joke it saves on batteries and encourages them to
+  get out more. It sounds like you've been adjusting to it fairly well." You thank him for his time and he ends with, "Enjoy
+  [[your holiday break|Part16WinterBreak]].
+<</nobr>>
+
+<<nobr>>
+  <i>Your implant has developed a side-effect that prevents you from orgasming from masturbation.</i>
+  <<set $PlayerSideEffectMasturbationBlock to 1>>
+<</nobr>>
+
+::Part16FinalsMarissaDecide
+<<nobr>>
+  <h1>Marissa celebrating</h1>
+  <img src="Part16/Finals3.jpg" hspace="10" vspace="10" height="550" align="left">
+<</nobr>>
+<<nobr>>
+  Marissa managed to pass all her classes.  The science classes that you would have figured would be the hardest were the ones she
+  did the best in.  You suppose she was just more motivated to study for her botany classes than she was for English or math.
+<</nobr>>
+
+<<nobr>>
+  She says you are still welcome to [[join her if you want|Part16FinalsMarissaSmoke]]. "Smoking alone isn't half as fun," she says.
+  Otherwise you can just keep packing for [[winter break|Part16WinterBreak]].
+<</nobr>>
 
 ::Part16FinalsNatalie
 TODO Part16FinalsNatalie
@@ -598,7 +1000,7 @@ TODO [[Part16WomensStudiesPublishPlea3]]
   The cock in your mouth cums first, giving you the familiar taste you've grown to love so much.  A short time later, you feel the cock
   inside you start to swell.  You cum finally as he pulls your hips towards you, shoving his cock deep inside you as he cums.  You scream
   with weeks of pent up need as you feel his cock pulsate.
-  <<if $PlayerProtectionCondom>>
+  <<if $PlayerProtectionCondoms>>
     When your mind clears for a moment, you remember to ask the next guy to use a condom.
   <<elseif $PlayerProtectionWithdraw>>
     When your mind clears for a moment, you remember to ask the next guy to pull out.
