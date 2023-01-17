@@ -5802,11 +5802,13 @@ TODO cum liquid treatment continuation, also recuring later
     Since you turned down the offer, you [[don't have anything more to tell her|Part15WomensStudiesQuiet]] about them though.
     From hearing the other things the department is doing, you think you made the right decision not getting involved with them.
     You hope some of the students that know more come forward and help her get to the bottom of all this.
+    <<set $tempTellProfDoNothing to 1>>
   <<elseif $CampusMinistry or $dating.length>>
     <<set $tempWomensStudiesNothingToReport to 1>>
     You don't know about the experiments she is talking about or the belts and have [[nothing to tell her|Part15WomensStudiesQuiet]].
     But that department sounds like a real menace. You hope some of the students that know more come forward and help her get to the
     bottom of all this.
+    <<set $tempTellProfDoNothing to 1>>
   <<elseif $PlayerChastityBelt>>
     You don't know about the experiments she is talking about, though your are horny enough right now you'd be tempted to
     volunteer for that forced orgasm experiment if you could.  You certainly know about chastity belts, though not from
@@ -5827,6 +5829,7 @@ TODO cum liquid treatment continuation, also recuring later
     Despite how bad she says they are, the thought of being tied and forced to orgasm sounds amazing.
     If it weren't for your denial from being on probation, you'd go by the department and beg to be a part of it.
     Instead, you'll just [[stay out of it|Part15WomensStudiesQuiet]] and wait to see what she finds out.
+    <<set $tempTellProfDoNothing to 1>>
   <<else>>
     You don't know about the experiments she is talking about, but you can't help thinking about them.
     Despite how bad she says they are, the thought of being tied and forced to orgasm sounds
@@ -5834,6 +5837,13 @@ TODO cum liquid treatment continuation, also recuring later
     Maybe you could stop by the department and [[tell them you heard rumors|Part15WomenStudiesAskAbout]] about girls having a
     lot of fun there. You could have an exciting time and lots of orgasm, then report back what you find out.  Or you could just
     [[stay out of it|Part15WomensStudiesQuiet]] and wait to see what she finds out.
+    <<set $tempTellProfDoNothing to 1>>
+  <</if>>
+  <<if $tempTellProfDoNothing>>
+    <br><br>
+    You do wonder though if students are having a bit of fun with your professor, making up, or at least exaggerating what they put
+    in their surveys.  You've heard some of the girls talking, and clearly they've had to have made most of it up.  You could
+    [[warn your professor that it's probably nothing|Part15WomensStudiesQuietMain]] before she embarasses herself acting on their reports.
   <</if>>
 <</nobr>>
 
