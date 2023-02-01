@@ -1,0 +1,66 @@
+::Part16WinterBreak
+<<nobr>>
+  TODO Title<br>
+  TODO Image
+<</nobr>>
+<<nobr>>
+  Unlike last year, you have no big worries as you wait for your grades to post.  When they all finally do post, it's still a relief to
+  see they were what you were expecting.  Now you have several weeks before classes start up again.  But before then you have another
+  [[visit to the X-Change office|Part16WinterBreakCheckup]] to make.
+<</nobr>>
+
+::Part16WinterBreakCheckup
+TODO Checkup / Alert to pregnancy if not aware / note not pregnant if not / update on pregnancy if is
+TODO If second child delivered, drop out to focus on them.
+TODO [[Part16WinterBreak2]]
+
+::Part16WinterBreak2
+<<nobr>>
+  <<if setup.areDating('Justin')>>
+    TODO Go visit Justin
+  <<elseif $FatherDisown>>
+    <<include [[Part16WinterBreakDisowned]]>>
+  <<else>>
+    <<include [[Part16WinterBreakParents]]>>
+  <</if>>
+<</nobr>>
+
+::Part16WinterBreakDisowned
+Since you can't spend it at your parents' house like last year, there's you...
+TODO Disowned break
+TODO If have baby
+TODO If dating someone
+TODO If in chastity
+TODO [[Part16Job]]
+
+::Part16WinterBreakParents
+<<nobr>>
+  <<if $dating.length and $children.length>>
+    <<set $tempWith to "with TODO_dating and kid(s)">>
+  <<elseif $dating.length>>
+    <<set $tempWith to "with $dating[0]">>
+  <<elseif $children.length>>
+    <<set $tempWith to "with TODO_kid(s)">>
+  <<else>>
+    <<set $tempWith to "alone">>
+  <</if>>
+  <h1>Driving home $tempWith</h1>
+  <<if setup.haveGirlfriend()>>
+    TODO GF Img
+  <<elseif $dating.length>>
+    TODO BF img
+  <<elseif $children.length>>
+    TODO childseat img
+  <<elseif $PlayerPregnant and $PregnancyWeek > 20>>
+    <img src="Part16/Break1.png" hspace="10" vspace="10" height="450">
+  <<else>>
+    <img src="Part8/Return1.jpg" hspace="10" vspace="10" height="450" align="left">
+  <</if>>
+<</nobr>>
+
+TODO Drive home
+TODO Winter Break
+TODO If have baby
+TODO If dating someone, parents are ok with them staying - dad seems relived you're in a stable relationship
+TODO If in chastity
+TODO [[Part16Job]]
