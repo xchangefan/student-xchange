@@ -1,7 +1,7 @@
 ::Part16WinterBreak
 <<nobr>>
-  TODO Title<br>
-  TODO Image
+  <h1>Grades Posted</h1>
+  <img src="Part16/Finals13.png" hspace="10" vspace="10" height="350">
 <</nobr>>
 <<nobr>>
   Unlike last year, you have no big worries as you wait for your grades to post.  When they all finally do post, it's still a relief to
@@ -35,21 +35,24 @@ TODO [[Part16Job]]
 
 ::Part16WinterBreakParents
 <<nobr>>
-  <<if $dating.length and $children.length>>
-    <<set $tempWith to "with TODO_dating and kid(s)">>
+  <<if setup.haveGirlfriend()>>
+    <<include [[Part16WinterBreakParentsGF]]>>
   <<elseif $dating.length>>
-    <<set $tempWith to "with $dating[0]">>
-  <<elseif $children.length>>
+    <<include [[Part16WinterBreakParentsBF]]>>
+  <<else>>
+    <<include [[Part16WinterBreakParentsAlone]]>>
+  <</if>>
+<</nobr>>
+
+::Part16WinterBreakParentsAlone
+<<nobr>>
+  <<if $children.length>>
     <<set $tempWith to "with TODO_kid(s)">>
   <<else>>
     <<set $tempWith to "alone">>
   <</if>>
   <h1>Driving home $tempWith</h1>
-  <<if setup.haveGirlfriend()>>
-    TODO GF Img
-  <<elseif $dating.length>>
-    TODO BF img
-  <<elseif $children.length>>
+  <<if $children.length>>
     TODO childseat img
   <<elseif $PlayerPregnant and $PregnancyWeek > 20>>
     <img src="Part16/Break1.png" hspace="10" vspace="10" height="450">
@@ -58,9 +61,51 @@ TODO [[Part16Job]]
   <</if>>
 <</nobr>>
 
-TODO Drive home
 TODO Winter Break
 TODO If have baby
-TODO If dating someone, parents are ok with them staying - dad seems relived you're in a stable relationship
 TODO If in chastity
 TODO [[Part16Job]]
+
+::Part16WinterBreakParentsBF
+<<nobr>>
+  <<if $children.length>>
+    <<set $tempWith to "with TODO_dating and kid(s)">>
+  <<else>>
+    <<set $tempWith to "with $dating[0]">>
+  <</if>>
+  <h1>Driving home $tempWith</h1>
+  TODO BF img
+<</nobr>>
+
+TODO Winter Break
+TODO If have baby
+TODO parents are ok with them staying - dad seems relived you're in a stable relationship
+TODO If in chastity
+TODO [[Part16Job]]
+
+TODO [[Part16WinterBreakParentsBF2]]
+
+::Part16WinterBreakParentsBF2
+TODO Part16WinterBreakParentsBF2
+
+::Part16WinterBreakParentsGF
+<<nobr>>
+  <<if $children.length>>
+    <<set $tempWith to "with TODO_dating and kid(s)">>
+  <<else>>
+    <<set $tempWith to "with $dating[0]">>
+  <</if>>
+  <h1>Driving home $tempWith</h1>
+  TODO GF img
+<</nobr>>
+
+TODO Winter Break
+TODO If have baby
+TODO parents are ok with them staying - dad seems relived you're in a stable relationship
+TODO If in chastity
+TODO [[Part16Job]]
+TODO [[Part16WinterBreakParentsGF2]]
+
+::Part16WinterBreakParentsGF2
+TODO Part16WinterBreakParentsGF2
+
