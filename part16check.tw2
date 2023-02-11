@@ -1,0 +1,952 @@
+::TODOPart16Checkup
+TODO Checkup / Alert to pregnancy if not aware / note not pregnant if not / update on pregnancy if is
+TODO If second child delivered, drop out to focus on them.
+TODO [[Part16WinterBreak2]]
+
+::Part16Checkup
+<<nobr>>
+	<h1><<print "Medical Clinic">></h1>
+  <img src="Part7/Start1A.jpg" hspace="10" vspace="10" height="650" align="left">
+	<<set $PlayerMenstruation to 0>>
+<</nobr>>
+
+<<nobr>>
+  You've gotten used to filling out these forms now.  You no longer feel weird filling in all the questions talking about your
+  periods, number of sex partners, birth control, and all the other personal details they ask about.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant>>
+    TODO Already pregnant
+  <<elseif false and $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+    You happily fill out the "Date of Last Menstruation”.
+    <<if $PlayerProtectionPill>>
+      Thanks to your birth control,
+    <<else>>
+      Thanks to your implant, 
+    <</if>>
+    you don't usually have to worry about those.  Then you fill in the birth control section as well.
+    <<if $PlayerProtectionPill and setup.sexMaleCount() > 0>>
+      Though you try to remember if you remembered to take your pill every day at the same time like they said.  Maybe you were late
+      once or twice, or missed a day.  But everyone does that sometimes.  You are sure they take that into account when they set the
+      dosage or whatever.
+    <</if>>
+  <<else>>
+    You don't really remember exactly when your last period was.  You've been so busy lately you haven't really kept track so you just put a
+    question mark there and move on to the birth control question.
+    <<if setup.sexMaleCount() === 0>>
+      You write down 'N/A'.  There's obviously no chance you are pregnant.
+    <<elseif $PlayerProtectionTry>>
+      Obviously you aren't using any. Hopefully the pregnancy test will be positive today.
+    <<elseif $PlayerProtectionWithdraw or $PlayerProtectionCondoms>>
+      You remembering getting filled with warm cum last night. But then when you remember the face looking down at you, it was that
+      hot actor you have a crush on, and it was just a dream. You did wake up wet and dripping down there, but that wasn't
+      from him, but from your body's reaction to your dream.  You try to focus, and just write
+      <<if $PlayerProtectionCondoms>>
+        'condoms'.
+      <<else>>
+        'withdrawal'.
+      <</if>>
+    <<else>>
+      You just leave that one blank.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When you are finished, you hand the woman at the desk your form and take the cup she gives you and [[head to the restroom|Part16Checkup2]]
+<</nobr>>
+
+::Part16Checkup2
+<<nobr>>
+TODO
+<<unset $PlayerProtectionPerfect>>
+<<set setup.addSexRepeat(100, {sex:"male",name:"Jayden",vaginal:true})>>
+	<h1><<print "Medical Clinic">></h1>
+  <img src="PartP/PregTest1.jpg" hspace="10" vspace="10" height="500">
+	<<if $PlayerProtectionTry>>
+		<<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - 3rd term', 0.25)>>
+	<<else>>
+		<<set $PregnancyCheck = setup.checkForNewPregnancy('medical test - 3rd term', 0)>>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+  You hand her your sample and wait while takes it off to test it.
+  <<if $PlayerProtectionTry>>
+    You can barely sit still waiting
+  <<else>>
+    You nervously fidget in your seat as you wait
+  <</if>>
+  for the results.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.sexVaginalCount() == 0 or $PregnancyCheck.count == 0>>
+    After 
+  <<else>>
+    After what seems like an eternity, but was really only
+  <</if>>
+  a couple minutes, you are called back to talk [[speak with the doctor|Part16Checkup3]].
+  <<if setup.sexVaginalCount() !== 0 and $PregnancyCheck.count !== 0>>
+    As you head back someone who had noticed how nervous you were calls out "I hope it's the answer you're looking for".
+  <</if>>
+<</nobr>>
+
+::Part16Checkup3
+<<nobr>>
+	<h1><<print "Medical Clinic">></h1>
+  <<if $PregnancyCheck.isPregnant and $PlayerProtectionTry>>
+    <img src="PartP/PregTest4.jpg" hspace="10" vspace="10" height="650">
+  <<elseif $PregnancyCheck.isPregnant>>
+    <img src="PartP/PregTest3.jpg" hspace="10" vspace="10" height="650">
+  <<else>>
+    <img src="PartP/PregTest2.jpg" hspace="10" vspace="10" height="650">
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  The doctor comes in to deliver the news.
+<</nobr>>
+
+<<nobr>>
+  <<if $PregnancyCheck.isPregnant>>
+	  <<set $PlayerPregnant to 1>>
+    You are pregnant!
+    <<if setup.pregnantFirstTime()>>
+      <<achievement>>firsttime+pregnant<</achievement>>
+    <<elseif setup.pregnantFromLoophole()>>
+      <<achievement>>loopholeBaby+pregnant<</achievement>>
+    <<else>>
+      <<achievement>>pregnant<</achievement>>
+    <</if>>
+
+    <<if !$PlayerSideEffectPermanent>>
+    	<<set $PlayerSideEffectPermanent to 1>>
+      She also reminds you that, of course the effects of your implant are permanent now.  This will be the body you have for the rest of your life.
+    <</if>>
+    <br><br>
+    <<if setup.areDating('Kate')>>
+      You're horrified at the news. You don't want a baby right now, and you know Mistress Kate doesn't either.
+      You let the doctor know that you want to [[terminate the pregnancy|Part16CheckupAbort]].
+    <<elseif $PlayerProtectionTry>>
+      You are ecstatic!  You excitedly tell the doctor that you will definitely be [[carrying the baby to term|Part16CheckupKeep]].  She
+      congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
+    <<elseif setup.sexVaginalCount() == 0>>
+      You can't believe this has happened - you haven't even had sex yet!  Well, not real sex, only anal and oral.
+      The only thing you can think of is that cum must have leaked out of your ass and into... well, that must have been what happened.
+      <br><br>
+      The doctor sees you need a moment to process the news.  She says she'll give you a bit to think about [[your options|Part16CheckupPregnantLoophole]],
+      and she'll be back in a few minutes.
+    <<elseif $CampusMinistry>>
+      <<if $Keyholder == "computer" or $ComputerChastityOwner>>
+        You thought this belt would keep you from letting yourself get pregnant. You did do some fun butt stuff with $dating[0].  He must have
+        leaked out of you and through the belt.
+      <</if>>
+      You make it clear to the doctor that you aren't going to consider anything other than [[carrying the baby to term|Part16CheckupKeep]].  She congratulates
+      you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
+    <<else>>
+      <<if $Keyholder == "computer" or $ComputerChastityOwner>>
+        You thought this belt would keep you from letting yourself get pregnant. You did do anal of course.  You guess cum must have leaked out
+        of your ass and through the belt.
+      <</if>>
+      The doctor sees you need a moment to process the news.  She says she'll give you a bit to think about [[your options|Part16CheckupPregnant]], and she'll
+      be back in a few minutes.
+    <</if>>
+  <<elseif $PlayerDecidePermanent and !$PlayerSideEffectPermanent>>
+    You are not pregnant.  You tell the doctor that there's [[something else you want to discuss|Part16CheckupPermanent]] with her.
+  <<else>>
+    You are [[not pregnant|Part16CheckupNotPregnant]].
+  <</if>>
+<</nobr>>
+
+::Part16CheckupPregnantLoophole
+TODO
+<<nobr>>
+	<h1>Medical Clinic</h1>
+  <img src="Part16/Pregnant1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  As you consider your options, and the father, your mind can't help but imagine what your body will look like a few months from now.
+<</nobr>>
+
+<<nobr>>
+  You already know there's one option you won't consider, an abortion.  That's fine for some women, but not something you'd consider.
+  Part of you wonders even if God wanted you to become pregnant, making sure you got pregnant even when you weren't having sex that
+  should have resulted in a baby.
+<</nobr>>
+
+<<nobr>>
+  You know people probably won't believe you that you haven't ever had proper sex, and you don't really see the point in abstaining
+  anymore, at least with your baby's father.  Your 'virgin' vagina is going to have a baby passing through it in eight, or however
+  many, months anyway.  The only one you'll be honest with about it is the baby's father.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.hadAnalAccident("Barry") and setup.hadAnalAccident("Andrew")>>
+    Except you aren't sure who that is.  Obviously it can only be Barry or Andrew, but you remember a messy time or two with both of
+    them, so it could be either one.  You don't want to tell one of them he is the father and be wrong about it considering you'll
+    have a hard time convincing him it's even possible in the first place.
+    <br><br>
+    <video src="PartP/Sample.mp4" autoplay loop muted height="500"></video>
+    <<set setup.addSexRepeat(2, {sex:"male", name:"Andrew"})>>
+    <<set setup.addSexRepeat(2, {sex:"male", name:"Barry"})>>
+    <br><br>
+    You decide you'll need to get a sample for them to test so you can know and be sure.  Of course, you can't just ask for one,
+    so instead you meet up with each of them to suck their cocks.  You probably could have just met with one and done it by process
+    of elimination, but this way you'll have a test result to show whichever one it is.
+    <br><br>
+    After they cum on your face, you head to the bathroom to 'clean up'.  While you are there, you take the cum from your face and
+    capture it in a small test tube you have in your purse.  Once you are done, you head back to join him and have him fuck your
+    ass this time.
+    <br><br>
+    When you bring in the "samples" in the nurse laughs and tells you that they usually test blood or cheek swabs, but congratulates
+    you on your inventiveness.  Once she comes back with the results, she confirms that
+    <<if $PregnancyCheck.actualFather == "Barry">>
+      [[Barry is the father|Part16CheckupPregnantLoopholeBarry]].
+    <<else>>
+      [[Andrew is the father|Part16CheckupPregnantLoopholeAndrew]].
+    <</if>>
+    <<set $tempDNATestAnal to 1>>
+  <<elseif setup.hadAnalAccident("Barry") and setup.haveFucked("Andrew")>>
+    You are certain it must be [[Barry's|Part16CheckupPregnantLoopholeBarry]].  You remember the mess he made that one time, surely
+    some of that made it inside you and that's when it happened.  You don't remember anything like that happening with Andrew.
+  <<elseif setup.hadAnalAccident("Barry")>>
+    Obviously [[it could only be Barry|Part16CheckupPregnantLoopholeBarry]].  You remember the messy time when it must have happened too.
+  <<elseif setup.hadAnalAccident("Andrew") and setup.haveFucked("Barry")>>
+    You are certain it must be [[Andrew's|Part16CheckupPregnantLoopholeAndrew]].  You remember the mess he made that one time, surely
+    some of that made it inside you and that's when it happened.  You don't remember anything like that happening with Barry.
+  <<else>>
+    Obviously [[it could only be Andrew|Part16CheckupPregnantLoopholeAndrew]].  You remember the messy time when it must have happened too.
+  <</if>>
+<</nobr>>
+
+::Part16CheckupPregnantLoopholeBarry
+TODO
+<<nobr>>
+  <h1>Barry - Confirmed</h1>
+  <img src="PartP/PaternityPositive.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+	When you first start to tell Barry, he doesn't believe you.  "We've never even actually fucked!" he says.  You tell him about the time
+  his cum leaked and when you must have gotten pregnant.  He's still very sceptical, but now he's surpried and annoyed that you didn't just
+  "deal with it" as soon as you found out about the pregnancy.  But when he gets past that, he's back to doubting that he is the actual
+  father.  He demands a paternity test - with him providing a cheek swab directly to the lab himself.
+  <<if setup.hadAnalAccident("Andrew")>>
+    He doesn't trust the one you obtained, "You could have labeled any guy's cum with my name.  I'll go in myself," he tells you.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  When the test comes back positive, he accepts that he is the father, though he's clearly not happy about it.  "You can't fault me
+  for wanting to be sure.  I still thank it's crazy you got pregnant when I was just fucking your ass!"
+<</nobr>>
+
+<<nobr>>
+  "I hope you don't think I'm going to help you raise that thing, I'm certainly not interested in being a father yet.  You know if you
+  are having second thoughts about it, it's not too late to go back and have them get rid of it for you.  If you are concerned about
+  the cost of that, I'd be more than happy to pay it. Actually, how about I just give you
+  [[a couple thousand dollars I have saved up|Part16PregnantLoopholeBarryAbortionBribe]], and that should cover it, right?  You can
+  keep whatever extra is left."
+<</nobr>>
+
+<<nobr>>
+  "I know it's your decision though.  If you decide to keep it, don't expect me to be driving you to doctor's
+  appointments and shit.  If you plan on putting it up for adoption, then that's probably a good idea, you aren't ready to be a
+  mother yet, let me know if there's anything I need to sign to help with that."
+<</nobr>>
+
+<<nobr>>
+  "Though if you decide to keep it, I know I'll be stuck paying child support for the next 18 years.  I won't be able to afford
+  much."
+<</nobr>>
+
+<<nobr>>
+  The more you think about it the more Barry's idea sounds like a good one.  You aren't ready to be a mother.  Especially a single
+  mother with no help from the father.  And it's going to be so humiliating being pregnant, because no one is going to believe you
+  weren't slutting around to get this way.  And you feel bad "trapping" Barry when he didn't even have real sex with you.
+<</nobr>>
+
+<<nobr>>
+  You tell yourself the money isn't a factor too, but deep down you feel a little guilty because you know it is, at least a bit.
+<</nobr>>
+
+::Part16PregnantLoopholeBarryAbortionBribe
+TODO
+<<nobr>>
+	<h1>Reconsidered</h1>
+	<<set $BarryBribe to 1>>
+	<<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
+	<<set $PlayerAbortion to 1>>
+	<<set $PlayerMenstruation to 1>>
+  <<set setup.addInventory('clothes', 'jeans')>>
+  <<set setup.addInventory('clothes', 'blouses')>>
+  <<set setup.addInventory('underwear', 'sexy underwear')>>
+	<img src="Part7/Jeans.gif" hspace="10" vspace="10" height="764" align="left">
+	<br>
+  Barry drives by his bank to make a withdrawal on the way to the clinic.  He hands you the money and drops you off at the clinic.  "I'm not
+	waiting around.  You have more than enough to call a ride when they are done," he tells you.  "No hard feels though.  Thanks for coming
+  around and changing your mind about this.  Give me a call whenever you need your ass fucked again.  We'll just have to be much more careful
+  from now on."
+<</nobr>>
+
+<<nobr>>
+	You wait your turn and then go in to see the doctor again.  You let her know you've thought it over and reconsidered.  After going over everything
+	in great detail with the doctor and signing a bunch of forms, the doctor gives you a pill which you take right then.  She gives you another one to
+	take tomorrow morning.  She tells you to expect bleeding and cramps, like a period, but worse.
+	<<if $PlayerProtectionTry>>
+		She starts to talk to you about birth control, but you explain that you actually want a baby, but just not with this man.
+		She understands, and wishes you luck.
+	<<elseif $PlayerProtectionPill>>
+		<<print "She also gives you a new supply of birth control pills to start with tomorrow.">>
+	<<else>>
+		<<if !$PlayerProtectionPermanent>>
+			<<if !$PlayerProtectionFertile>>
+				<<print "If you want to ">>
+				<span id="AbortSpan1">
+					<<link "start using birth control pills,">>
+						<<set $PlayerProtectionTry = 0>>
+						<<set $PlayerProtectionNone = 0>>
+						<<set $PlayerProtectionWithdraw = 0>>
+						<<set $PlayerProtectionCondoms = 0>>
+						<<set $PlayerProtectionPill = 1>>
+            <<replace "#StoryKeyFlag">>TRUE<</replace>>
+						<<replace "#AbortSpan1">>
+							<<print "start using birth control pills,">>
+						<</replace>>
+					<</link>>
+				</span>
+				<<print "she can also give you a supply of those to start with tomorrow.">>
+			<<else>>
+				<<if !$PlayerProtectionCondoms>>
+					<<print "As birth control pills don't work on you, she recomends starting to ">>
+					<span id="NotPregSpan2">
+						<<link "use condoms for protection.">>
+							<<set $PlayerProtectionTry = 0>>
+							<<set $PlayerProtectionNone = 0>>
+							<<set $PlayerProtectionWithdraw = 0>>
+							<<set $PlayerProtectionCondoms = 1>>
+              <<replace "#StoryKeyFlag">>TRUE<</replace>>
+							<<replace "#NotPregSpan2">>
+								<<print "use condoms for protection,">>
+							<</replace>>
+						<</link>>
+					</span>
+					<<print " so that you don't end up in the same situation again.">>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+	Of course, there's no charge for the visit, or the pills.  All of that is covered by the X-Change people.  But you and Barry both know that's
+	not why he paid you.  You feel a small tinge of guilt, but then you tell yourself that you didn't really want to raise a kid with
+	him as the father anyway.  Then you look down at the cash he gave you, and the guilt is gone.
+<</nobr>>
+
+<<nobr>>
+	Looking at all the extra money you have, and feeling glad that you won't have a huge belly growing anytime soon, You decide to pick up something
+	nice to wear this summer before you head back to campus.  Putting on the matching bra and panties, and squeezing into your new jeans
+	puts a smile on your face.
+<</nobr>>
+
+<<nobr>>
+	Your smile doesn't last that long though, as you feel the cramps she'd warned you about start.  Thankfully the bleeding hasn't
+	started yet.  You would have hated to ruin your new underwear already.  The next morning you take the
+	[[second pill|Part16SummerPlans]] she gave you.
+<</nobr>>
+
+<<nobr>>
+  With the cramps, you aren't interested in any sex at the moment, anal or otherwise.  But since you aren't having a baby after all, you
+  decide you'll keep with your original plan to keep yourself technically a virgin until you meet your future husband.
+<</nobr>>
+
+<<achievement>>childfree<</achievement>>
+
+::Part16CheckupPregnantLoopholeAndrew
+TODO
+<<nobr>>
+	<h1><<print "Telling Andrew">></h1>
+  <<set setup.startDating("Andrew")>>
+<</nobr>>
+<<nobr>>
+  Andrew is confused as to how you could be pregnant, and how he could be the father.  But you tell him about the mess he'd made when
+  he came in, on, and all around your ass when you were together.  You tell him that clearly some of his cum must have made its way
+  inside more than just your ass.  Eventually he accepts that that little mistake must have been enough.
+  <<if $tempDNATestAnal>>
+    You decide not to show him the DNA results you'd gathered, since that would only lead to more questions.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "I'll support you however I can, with whatever decision you make," he tells you.  You tell him you've already decided to keep the baby.
+  "That's wonderful," he tells you. "I had hoped that's what you would decide."
+<</nobr>>
+
+<<nobr>>
+  The two of you talk about the pregnancy a bit, then Andrew changes subjects.  "I know you weren't interested in a relationship before,"
+  he starts.  "I'm wondering if you've reconsidered that.  If you have, I'm certainly still interested."
+<</nobr>>
+
+<<nobr>>
+  <img src="Part12/Ministry5.jpg" hspace="10" vspace="10" height="300" align="left">
+  <img src="Part3/JobBarista1.jpg" hspace="10" vspace="10" height="300" align="right">
+<</nobr>>
+<<nobr>>
+  "I'll be honest with you," you tell Andrew.  I really wanted to date you back when you asked me out.  Heck, I wanted that even back when
+  we first met.  But I knew if I did, I wouldn't be able to resist going all the way with you."
+<</nobr>>
+
+<<nobr>>
+  You bite your lower lip as you work up the nerve to continue.  "But I don't see any reason to wait any longer.  Either on us dating, or us
+  [[going all the way|Part16LoopholeAndrew2]] together."
+<</nobr>>
+
+::Part16LoopholeAndrew2
+TODO
+<<nobr>>
+  <h1>Can't wait any longer</h1>
+  Andrew has plans to make your first time extra special.  He's wanting to take you out for a romantic date, bring you home afterwards,
+  and have candles everywhere.  "I don't want to wait for all of that.  I don't want to wait any more at all," you tell him.  "I want
+  you, right now."  He doesn't need any convincing.
+  <<set setup.addSex({sex:"male", name:"Andrew", vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSex({sex:"male", name:"Andrew", vaginal:true, noCondom:true, noPullout:true})>>
+  <<set setup.addSex({sex:"male", name:"Andrew"})>>
+  <<set setup.addSex({sex:"male", name:"Andrew"})>>
+<</nobr>>
+<<nobr>>
+  <video src="Part16/Pregnant15.mp4" autoplay loop muted height="500"></video>
+<</nobr>>
+<<nobr>>
+  When you feel Andrew's hard cock slide inside you, nothing has ever felt so good, so right.  You know he's the one you were saving this
+  for.  You only wish you'd realized it when you'd first met, and you could have been doing this all year.
+<</nobr>>
+
+<<nobr>>
+  When your first orgasm of the afternoon comes, and you feel your body clench around his cock as he continues to fuck you, it feels
+  so good you almost pass out.  Hearing you moan and beg for his cock pushes Andrew over the edge, and a few seconds later, you hear him
+  groan as he cums inside you.
+<</nobr>>
+
+<<nobr>>
+  Having waited so long, you are eager to go again, and again.  You and Andrew do your best to make up for lost time, but eventually
+  he's spent, at least for now.  It's only then that the two of you go out for that romantic dinner he had planned.  Afterwards, you
+  come back to his apartment.
+<</nobr>>
+
+<<nobr>>
+  Eventually, you both tire out again, and you fall asleep next to Andrew.  The next morning the two of you talk a bit more, and
+  decide to keep the news just between the two of you for now.  You both decide to let everyone know the two of you are dating,
+  and then in a month or two let them know you are pregnant.
+<</nobr>>
+
+<<nobr>>
+  When you get back to your room, Faith glares at you, knowing you spent the night at some guy's house.  Her disposition changes though
+  when you tell her that you were with Andrew, and that you two are dating.  "I had a feeling about you two," she tells you.
+<</nobr>>
+
+<<nobr>>
+  You update Faith on your relationship with Andrew.  Well, letting her know the clean parts of it at least, and the
+  leaving out mention of the pregnancy.  Hopefully it'll be less of a shock when you mention it a month or so from now.  Afterwards,
+  you start thinking about what your [[plans for the summer|Part16SummerPlans]] are, and whether recent events change those at all.
+<</nobr>>
+
+::Part16CheckupPregnant
+<<nobr>>
+	<h1>Medical Clinic</h1>
+  <img src="Part16/Pregnant1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  As you consider your options, your mind imagines what your body will look like a few months from now.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Veronica')>>
+    It doesn't really matter to you who the father is.  You and Veronica have already discussed that this was a possibility, and she said she'd support you
+    with whatever choice you made if it happened.  You know if you carry the baby, it'll be Veronica helping you through the pregnancy.  And if you decide to
+    keep the baby after he or she is born, you know it'll be Veronica you want helping raise him or her with you.
+  <<elseif $PregnancyCheck.possibleFathers.length === 1>>
+    <<if !$PregnancyCheck.conceptionEvent.name>>
+      You know who the father must be.  Or at least when it must have happened.  You don't actually remember his name.  To you he was just
+      <<print $PregnancyCheck.actualFather.toLowerCase()>>.  He's obviously not a consideration in all this.
+    <<else>>
+      Of course, you know the father is <<print $PregnancyCheck.actualFather>>.  But this is your decision, not his.
+    <</if>>
+  <<else>>
+    You think through who the father could be:
+    <<if $PregnancyCheck.possibleFathers.length > 4>>
+      <ul>
+        <<print $PregnancyCheck.possibleFathers.slice($PregnancyCheck.possibleFathers.length - 4).map((father) => {return "<li> - " + father + "</li>"}).join("")>>
+      </ul>
+      <img src="Part16/Pregnant2.jpg" hspace="10" vspace="10" height="300" align="left">
+      You're sure you're forgetting some though. You know you shouldn't be, but you can't help that you feel ashamed that you
+      can't even remember everyone it might be.  But you dismiss your self-shaming and focus on the decision you have to make.
+    <<else>>
+      <ul>
+        <<print $PregnancyCheck.possibleFathers.map((father) => {return "<li> - " + father + "</li>"}).join("")>>
+      </ul>
+      That's the only possibilities.  But this is your decision, not theirs.
+    <</if>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  By the time the doctor returns, you are sure of your decision.
+<</nobr>>
+
+<<nobr>>
+	Do you tell her you want to [[carry the baby to term,|Part16CheckupKeep]] or that you want to [[end the pregnancy now,|Part16CheckupAbort]]?<br>
+<</nobr>>
+
+::Part16CheckupKeep
+<<nobr>>
+  <<if $Keyholder == "computer" or $ComputerChastityOwner>>
+    <<include [[Part16CheckupKeepBeltMessage]]>>
+  <<elseif $PlayerChastityBelt>>
+    <<include [[Part16CheckupKeepBeltMessageNew]]>>
+  <<else>>
+    <<include [[Part16CheckupKeepStandard]]>>
+  <</if>>
+<</nobr>>
+
+::Part16CheckupKeepBeltMessageNew
+<<nobr>>
+  <h1>Securing your new belt</h1>
+  <img src="Part16/Pregnant3.jpg" hspace="10" vspace="10" height="450">
+  <img src="Part16/Pregnant2.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  They'd removed your belt for your exam.  But now that your exam is nearly over they come in with a new belt for you.  We talked with
+  your keyholder, $Keyholder, and they agreed one of the universities new electronic belts would be better than your old belt. Thankfully,
+  the university is providing it free of charge.
+<</nobr>>
+
+<<nobr>>
+  The nurse briefly explains some of the features of your new belt, but focuses most on the safety aspects and how the university's
+  belts are designed to adjust their size as your body grows to accomidate your baby. She says the university will be following up
+  with $Keyholder to explain all the rest of the features.
+  <<set $ComputerChastityOwner to $Keyholder>>
+  <<set $Keyholder to "computer">>
+<</nobr>>
+
+<<nobr>>
+  The belt does seem much more advanced than the one you've been wearing.  Your OB will of be able to unlock it and all the local
+  hospitals have the ability as well.  Your belt is also set to automatically unlock and send out an emergency signal if your water
+  breaks outside of the hospital.  They also give you an emergency number to call if there are any other issues relating to your
+  belt and [[your pregnancy|Part16CheckupKeepStandard]].
+<</nobr>>
+
+::Part16CheckupKeepBeltMessage
+<<nobr>>
+  <h1>Resecuring your belt</h1>
+  <img src="Part16/Pregnant3.jpg" hspace="10" vspace="10" height="450">
+  <img src="Part16/Pregnant2.jpg" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  They'd removed your belt for your exam.  But now that your exam is nearly over they resecure it for you.  They confirm that
+  the university's belts are designed to adjust their size as your body grows to accomidate your baby.
+<</nobr>>
+
+<<nobr>>
+  Your OB will of course be able to unlock it and all the local hospitals have the ability as well.  Your belt is also set to
+  automatically unlock and send out an emergency signal if your water breaks outside of the hospital.  They also give you
+  an emergency number to call if there are any other issues relating to your belt and [[your pregnancy|Part16CheckupKeepStandard]].
+<</nobr>>
+
+::Part16CheckupKeepStandard
+<<nobr>>
+	<h1><<print "Medical Clinic">></h1>
+  <img src="PartP/PregTest4.jpg" hspace="10" vspace="10" height="650">
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Andrew') and $PregnancyCheck.possibleFathers.contains('Andrew')>>
+TODO
+    You can't wait to [[tell Andrew about the baby|Part16PregnantAndrew]].
+    <<if $PregnancyCheck.possibleFathers.length > 1>>
+      Based on the timing, you are pretty sure he's the father.  Regardless, you certainly aren't going to let him know if you have any doubts.
+    <</if>>
+  <<elseif setup.areDating('Aaron') and $PregnancyCheck.possibleFathers.contains('Aaron')>>
+TODO
+    You can't wait to [[tell Aaron about the baby|Part16PregnantAaron]].
+    <<if $PregnancyCheck.possibleFathers.length > 1>>
+      Based on the timing, you are pretty sure he's the father.  Regardless, you know he'd love you, and your baby, just as much either way.
+    <</if>>
+  <<elseif setup.areDating('Veronica')>>
+TODO
+    <<unset $StatedFather>>
+    You are nervous about telling Veronica about the baby.  You both knew this was a possibility, but having it actually happen is something else entirely.
+    <br><br>
+    But you've both talked about this possibility enough to know she'll be there with you through the pregnancy, and support whatever decision you make
+    about after that.  You've both already decided that father, whoever it might be, isn't part of this. It's just you, Veronica, and the baby.
+    <br><br>
+    But after you break the big news to Veronica, the decide it doesn't change your plans for [[winter break|Part16WinterBreak2]].
+  <<elseif setup.areDating('Peter') or ($PlayerItemNerdKey and setup.haveFuckedVaginal('Peter')) or setup.haveFuckedVaginal('Roger')>>
+TODO
+    <<if $PlayerProtectionTry>>
+      You can't wait to [[tell Peter about the baby|Part16PregnantPeterTrying]].
+    <<else>>
+      You wonder how [[Peter will take the news about the baby|Part16PregnantPeterAccident]].
+    <</if>>    
+  <<elseif setup.areDating('Josh')>>
+TODO
+    <<if $PlayerProtectionTry>>
+      You can't wait to [[tell Josh about the baby|Part16PregnantJosh]].  You only hope he is as excited as you are.
+    <<else>>
+      You are nervous about [[telling Josh about the baby|Part16PregnantJosh]].  Obviously you both knew this was a possibility, but having it actualy happen
+      is something else entirely.
+    <</if>>
+    <<if $PregnancyCheck.possibleFathers.length > 1>>
+      Based on the timing, you are pretty sure he's the father.  Regardless, he's the only one you'd want involved in your baby's life, so you certainly aren't
+      going to let him know if you have any doubts.
+    <</if>>
+  <<elseif setup.areDating('Jayden')>>
+    You can't wait to [[tell Jayden about the baby|Part16PregnantJayden]].
+    <<if $PregnancyCheck.possibleFathers.length > 1>>
+      Based on the timing, you are pretty sure he's the father.  Regardless, you certainly aren't going to let him know if you have any doubts.
+      Hopefully the baby comes out looking enough like him.
+    <</if>>
+  <<elseif $PregnancyCheck.possibleFathers.contains("Barry") and $PregnancyCheck.possibleFathers.length > 1>>
+TODO
+    <<unset $StatedFather>>
+    You know that Barry might be the father.  It could be someone else too.  Even if you told him he was the father he'd probably make you get tested to be sure.
+    He's seen his friends fucking you right in front of him, so of course he would.  He'd probably call you a slut the whole time too.
+    <br><br>
+    And even if he was the father, which he's probably not, is he someone you'd want to help with your child?  Of course not.  As much as you hate to admit how
+    much him degrading and punishing you turned you on, he really is an asshole most of the time.  You decide your child is better off without him.
+    <br><br>
+    You'll be managing the pregnancy, and afterwards, on you own.  You'll probably not see Barry much after the semester is over, so he may never even see you
+    visibly pregnant.  Even if he does, you'll just tell him it's not his.  He'll laugh at what a slut you are and move on.  It's probably better that way for everyone.
+    <br><br>
+    But you don't have to worry about that now though.  For now you can just think about [[your summer plans|Part16SummerPlans]].
+  <<else>>
+TODO X
+    <<unset $StatedFather>>
+    <<if $PregnancyCheck.possibleFathers.length === 1>>
+      You know the father has to be 
+      <<if $PregnancyCheck.conceptionEvent.anon>>
+        <<print $PregnancyCheck.actualFather.toLowerCase()>>, but that's not much help.  You know you'll be on your own during the pregnancy, and aftewards.
+      <<else>>
+        <<print $PregnancyCheck.actualFather>>, but you don't want to involve him.  You'll manage the pregnancy, and afterwards, without his help.
+      <</if>>
+    <<else>>
+      You aren't sure who the father is.  And even if you did, none of the possibilities would be much help anyway.  You'll manage the pregnancy, and
+      afterwards, without the father's help.
+    <</if>>
+    <br><br>
+    You don't have to worry about that now though.  For now you can just think about [[your summer plans|Part16SummerPlans]].
+  <</if>>
+<</nobr>>
+
+::Part16CheckupAbort
+<<nobr>>
+	<<set $PlayerPregnant to 0>>
+  <<unset $PregnancyCheck>>
+  <<if $PlayerAbortion>>
+  	<<set $PlayerAbortion += 1>>
+  <<else>>
+  	<<set $PlayerAbortion to 1>>
+  <</if>>
+	<<set $PlayerMenstruation to 1>>
+	<h1>Medical Clinic</h1>
+  You decide you aren’t ready for this.
+<</nobr>>
+<<nobr>>
+  <img src="PartP/PregTest5.jpg" hspace="10" vspace="10" height="600">
+<</nobr>>
+<<nobr>>
+  After going over everything in great detail with the doctor and signing a bunch of forms, the doctor gives you a pill which you take right then.
+	She also gives you another one to take tomorrow morning. She tells you to expect bleeding and cramps, like a period, but worse.
+  <<if $PlayerAbortion > 1>>
+    Of course, all this seems very familiar to you.
+  <</if>>
+	<<if $PlayerProtectionPill>>
+		She also gives you a new supply of birth control pills to start with tomorrow, and gives you a brief talk reminding you how you need to take
+    them every day if you want to avoid getting pregnant.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+  The next day you take the second pill she gave you.  You have a lot of blood just like
+  <<if $PlayerAbortion > 1>>
+    last time.
+  <<else>>
+    she'd warned you that you would.
+  <</if>>
+  But at least you aren't pregnant anymore.  You stay at home while you deal with the bleeding.  Thankful that has all subsided
+  by the time you head off for [[winter break|Part16WinterBreak2]]
+<</nobr>>
+<<achievement>>childfree<</achievement>>
+
+::Part16CheckupPermanent
+TODO
+<<nobr>>
+  <<set $PlayerSideEffectPermanent to 1>>
+  <<unset $PlayerDecidePermanent>>
+	<h1>Back Home</h1>
+  <img src="Part16/Decide1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  You let the doctor know about the decision you've made to make your change permanent.  The doctor discusses the decision with you at length, and confirms
+  that you are aware that any side effects you have will become permanent also.  When you tell her you're sure, she has you sign some forms.
+<</nobr>>
+
+<<nobr>>
+  After she's finished with the other tests that you were scheduled for, she gives you a quick injection and tells you "Congratulations!" and it's done.
+<</nobr>>
+
+<<nobr>>
+  It's not until you are sitting alone at home for a moment that it really starts to sink in.  This is who you are now.  You are a woman now, and you will be
+  for the rest of your life.  And you couldn't be happier about it.
+<</nobr>>
+
+<<nobr>>
+  Eventually your mind drifts back to the present and you start thinking about [[what you are going to do this summer|Part16SummerPlans]].
+<</nobr>>
+
+<<achievement>>girlpower<</achievement>>
+
+::Part16CheckupNotPregnant
+TODO
+<<nobr>>
+	<h1>Back Home</h1>
+  <img src="Part16/Plans1.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+  The doctor continues with the other tests you were scheduled for, and you head home.  When you get there you make something to drink and then sit down
+  to think about [[what you are going to do this summer|Part16SummerPlans]].
+<</nobr>>
+
+::Part16PregnantAaron
+TODO
+<<nobr>>
+	<h1><<print "Telling Daddy">></h1>
+  <<set $StatedFather to 'Aaron'>>
+  <img src="Part7/Preg8.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+<<nobr>>
+	<<if $PlayerProtectionTry>>
+		You and Daddy have been trying for a baby, and he's as excited as you are at the news!
+	<<elseif $PlayerProtectionNone>>
+		You and Daddy haven't been trying for this, but you also haven't been trying to avoid it either.  You both knew you wanted a child together
+		eventually, and figured you'd let nature take its course.  Nature didn't want to wait.  Daddy is as excited as you are when you tell him the news.
+	<<else>>
+    You both knew you wanted a child together eventually, this is just a little sooner than expected.  But Daddy had reminded you that this was always
+    a possibility.  Though you always picked up more excitment than worry in his voice when he'd mentioned it.  Now that you both know that you are
+    pregnant, he's as excited as you are about it.
+	<</if>>
+<</nobr>>
+
+<<nobr>>
+  You and daddy are too busy planning how to decorate the room that will soon be the nursery to worry much about
+  [[what else you are going to do this summer|Part16SummerPlans]].
+<</nobr>>
+
+::Part16PregnantAndrew
+TODO
+<<nobr>>
+	<h1><<print "Telling Andrew">></h1>
+  <<set $StatedFather to 'Andrew'>>
+  <img src="Part7/Preg6.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  You can barely contain your excitement on the way home. When you tell Andrew, he’s as excited as you are. He says that the two of you had always talked about
+  starting a family, but he’d never expected to start so soon. He places his hand on your belly, but obviously there’s nothing to feel yet.
+<</nobr>>
+
+<<nobr>>
+  You both decide to keep the news just between the two of you for now. Maybe in a month or two you might start thinking of telling others.
+<</nobr>>
+
+<<nobr>>
+  You both spend the rest of the imagining how to convert the extra bedroom into a nursery, talking about baby names, and trying to imagine what it’s going to be
+  like. Well, that’s not all you spend the day doing, a good deal of it is spent in the main bedroom too.
+<</nobr>>
+
+<<nobr>>
+  You and Andrew know what you are [[doing this summer|Part16SummerPlans]], so you don't need to think much about it.
+<</nobr>>
+
+::Part16PregnantJosh
+TODO
+<<nobr>>
+	<h1><<print "Telling Josh">></h1>
+  <<set $StatedFather to 'Josh'>>
+  <img src="Part16/Pregnant8.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  Josh is in shock when you first tell him about your pregnancy.  Once he calms down he says he'll support you no matter what you decide to do about it.  You let him
+  know that you've already thought about it and have decided to keep the baby.  You ask him how he feels about your decision.
+<</nobr>>
+
+<<nobr>>
+  "To be honest, I'm a little scared.  I don't know if I'm ready to be a father.  I guess no one ever really is, are they?  But I do know that I'll be by your side
+  through this."
+<</nobr>>
+
+<<nobr>>
+  You are so relieved.  You know Josh has matured a lot during your year together.  You wonder if he'd have taken the news as well a year, or even a few months ago.
+  But you're glad he's going to be there with you when you need him.
+<</nobr>>
+
+<<nobr>>
+  He may be there when you need him, but circumstances might make being together [[over the summer|Part16SummerPlans]] more difficult.
+<</nobr>>
+
+::Part16PregnantPeterAccident
+TODO
+<<nobr>>
+	<h1>Telling Peter</h1>
+  <video src="Part16/Pregnant6.webm" autoplay loop muted height="500"></video>
+  <<set $StatedFather to 'Peter'>>
+  <<if !setup.areDating('Peter')>>
+    <<set setup.startDating('Peter')>>
+  <</if>>
+  <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+  <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+<</nobr>>
+<<nobr>>
+  You tell Peter you have a big surprise for him, but only after he's taken care of your needs first.  You're already so close before he even gets your panties off,
+  you tell him to keep going.  As you cum you can see the expectant, hopeful look in his eyes.  "I need more than just one," you tell him as you pull off your panties.
+  You've trained him well and soon his lips are kissing their way up your thigh.
+<</nobr>>
+
+<<nobr>>
+  After you recover from your second orgasm, you have Peter sit next to you on the sofa.  As you start to tell him about your visit to the doctor, you can tell his
+  attention is on your still-nude body and not what you are saying.  When you tell him "We're going to have a baby!", you have his full attention though. 
+<</nobr>>
+
+<<nobr>>
+  "I hadn't been trying for this", you admit.  "But now that it's happened, I've decided to keep the baby.  But I'm going to need your help during the pregnancy, and afterwards.
+  Our baby needs a father, and I know you'll make a great one."
+<</nobr>>
+
+<<nobr>>
+  <<if $PregnancyCheck.possibleFathers.contains("Peter")>>
+    <<if $PregnancyCheck.possibleFathers.length > 1>>
+      "Of course we both know that it's possible that you weren't the one that got me pregnant," you tell Peter.  "It may have been you, or maybe you were there but
+      watching some other guy fuck me while your cock was safely locked away.  Or it might have been some other time, where you didn't get to watch, you only heard me tell
+      you all about it later.  But whichever it was, we both knew this might happen.  We may have let other men cum inside me, but it's only you that I want beside me.
+      I want my baby to have a father, and I want it to be you.  You want that too, don't you?"
+      <br><br>
+      When Peter tells you how much he loves you and wants to be your baby's father, you embrace him.  You both agree that from now on, on all the forms, and if anyone asks,
+      he's the father - it couldn't be anyone else.
+    <<else>>
+      "I'm going to need help these next few months.  And the baby is going to need a father.  And I know you're going to make an excellent father," you tell him.
+      "I may have fun keeping you on your knees most of the time, but I hope you know how much I'll need you at my side through all of this."
+    <</if>>
+  <<else>>
+    "Of course we both know that you weren't the one that got me pregnant," you tell Peter.  "You may have been there though, watching some other guy fuck me while
+    your cock was safely locked away.  Or it might have been some other time, where you didn't get to watch, you only heard me tell you all about it later.  But either
+    way, we both knew this might happen.  The other guy may be the one that got to be inside me, but you're the one I want beside me.  I want my baby to have a father,
+    and I want it to be you.  You want that too, don't you?"
+    <br><br>
+    When Peter tells you how much he loves you and wants to be your baby's father, you embrace him.  You both agree that from now on, on all the forms, and if anyone asks,
+    he's the father - it couldn't be anyone else.
+  <</if>>
+<</nobr>>
+
+<video src="Part16/Pregnant7.webm" autoplay loop muted height="500"></video>
+<<nobr>>
+  "All this has made me feeling very generous.  I've decided to give you a special treat."  When you see him looking at your naked body you add, "Probably not as
+  special as you are hoping, Tiger.  But it's up to you."  You cuff his hands to the bed and remove his cage.  Then you start a porn video you know he likes and begin
+  stroking his cock.  "I'll let you, or your body at least, decide your reward.
+<</nobr>>
+  
+<<nobr>>
+  If you can make it until the end of the video without cumming then I'll give you some time to recover and then I'll come back and ride your cock until you cum inside
+  me.  I know it's been a while for you, so if you don't make it that's OK too, but then that orgasm will be your reward instead."
+  <</nobr>>
+
+<<nobr>>
+  <img src="Part16/Pregnant3.jpg" hspace="10" vspace="10" height="650" align="left">
+  You'd never seen anyone try so hard to not orgasm before, but Peter doesn't even come close.  The video is barely half over before he can't hold back any longer.
+  You don't even ruin it for him this time.  You keep going a while after he cums, even licking it clean for him at the end.
+<</nobr>>
+
+<<nobr>>
+  When he's done, you give him his other surprise.  When you show him his new cage hey can see it's smaller and more secure than the previous one.  You smile and tell
+  him, "We need to keep that monster caged, now that we know what it's capable of, don't we?"
+<</nobr>>
+
+<<nobr>>
+  Once Peter's cock is caged and you've uncuffed his hands, the two of you can sit down to go over your [[plans for the summer|Part16SummerPlans]].
+<</nobr>>
+
+::Part16PregnantPeterTrying
+TODO
+<<nobr>>
+	<h1>Telling Peter</h1>
+  <<set $StatedFather to 'Peter'>>
+  <<if setup.areDating('Peter')>>
+    <<set setup.startDating('Peter')>>
+  <</if>>
+  <<set setup.addSex({sex: 'male', name: 'Peter'})>>
+  <video src="Part16/Pregnant4.webm" autoplay loop muted height="600"></video>
+<</nobr>>
+<<nobr>>
+  When you get back from your checkup, you cuff Peter the bed.  His cock springs to life the moment you remove its cage.  You start slowly sucking his cock, the first
+  attention it's had for at least a week.  You switch to stroking him with your hand as you tell him about your doctor visit, slowly building up to the big news.
+<</nobr>>
+
+<<nobr>>
+  "That's right, we're going to have a baby!", you excitedly tell him.  "And I've decided to give you a reward for finally getting the job done and putting a baby
+  inside me."
+<</nobr>>
+
+<<nobr>>
+  <<if $PregnancyCheck.possibleFathers.contains('Peter')>>
+    <<if $PregnancyCheck.possibleFathers.length > 1>>
+      "Of course, we both know that it's possible that it's someone else's.  But you let me fuck other men, sometimes right in front of you, and you loved every
+      minute of it," you tell him.
+      <br><br>
+      "I'm going to need help these next few months.  And the baby is going to need a father.  And you'd do a much better job than any of the other
+      possiblities"
+      <br><br>
+      "Unless you don't agree.  If you aren't sure you deserve this reward, if you'd rather get us tested to be sure, just say so and I'll stop..."
+      <br><br>
+      "We don't need to do that.  It's definitely my baby. I'm the baby's father!", Peter pleads.
+      <br><br>
+      "Wonderful.  After tonight, on all the forms, and if anyone asks, you're the father - it couldn't be anyone else.  I know you're going to make an excellent
+      father," you tell him before your lips return to his cock.
+    <<else>>
+      "I'm going to need help these next few months.  And the baby is going to need a father.  And I know you're going to make an excellent father," you tell him
+      before your lips return to his cock.
+    <</if>>
+  <<else>>
+    "Of course, we both know your cock was safely locked away when it happened, but I still couldn't have done it with out you.  If you hadn't let me fuck other men,
+    sometimes right in front of you even, then this never would have been possible."
+    <br><br>
+    "But I'm going to need help these next few months.  And the baby is going to need a father.  And you'd do a much better job than... whoever it was."
+    <br><br>
+    "Unless you don't agree.  If you don't think you deserve this reward, just say so and I'll stop..."
+    <br><br>
+    "It's my baby. I'm the baby's father!", Peter pleads.
+    <br><br>
+    "Wonderful.  After tonight, on all the forms, and if anyone asks, you're the father - it couldn't be anyone else.  I know you're going to make an excellent
+    father," you tell him before your lips return to his cock.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <img src="Part16/Pregnant5.jpg" hspace="10" vspace="10" height="450" align="left">
+  You keep it slow, trying to make his reward last as long as possible.  You've gotten good at knowing when he's getting close.  Most nights you'd stop now and
+  leave him frustrated, but not tonight.  You keep going until he groans and and cums in your mouth.  He's still cumming as your lips slide back off his cock.
+<</nobr>>
+
+<<nobr>>
+  You don't bother to wipe your face and move up to give him a long, passionate kiss.  When you've finished you reach over for his chastity cage.  "Let's lock
+  this beast back up.  He doesn't really have a job to do for the next nine months, does he," you smile then add, "But I might let him out to play before then."
+<</nobr>>
+
+<<nobr>>
+  Once Peter's cock is caged and you've uncuffed his hands, the two of you can sit down to go over your [[plans for the summer|Part16SummerPlans]].
+<</nobr>>
+
+::Part16PregnantJayden
+TODO Part16PregnantJayden
+TODO Checkup / Alert to pregnancy if not aware / note not pregnant if not / update on pregnancy if is
+TODO If second child delivered, drop out to focus on them.
+TODO [[Part16WinterBreak2]]
