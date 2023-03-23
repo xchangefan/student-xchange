@@ -3988,7 +3988,7 @@ TODO cum liquid treatment continuation, also recuring later
       You
     <</if>>
     know the changes to your body have just begun.  But right now what you are really hoping for is the nausea to stop.
-    It'd be much easier to [[get on with your life|Part15WeekStandard]] if you weren't forced to run to the bathroom and kneeling in
+    It'd be much easier to [[get on with your life|Part15WeekStandard]] if you weren't forced to run to the bathroom and kneel in
     front of the toilet several times a week.
     <<if !$PlayerPregnant>>
       <<set $PlayerPregnant to 1>>
@@ -3996,8 +3996,6 @@ TODO cum liquid treatment continuation, also recuring later
     <</if>>
   <</if>>
 <</nobr>>
-
-TODO look at wording above
 
 ::Part15FirstTrimesterAbort <14000,15000>
 <<nobr>>
@@ -5792,8 +5790,7 @@ TODO look at wording above
       the other things you've done during testing.
       <br><br>
     <<else>>
-      [[tell her all you know|Part15WomensStudiesTalkTesting]] about what is going on
-      in the engineering department.
+      [[tell her all you know|Part15WomensStudiesTalkTesting]] about what is going on in the engineering department.
     <</if>>
     The survey was anonymous, so she doesn't know you were one of the students working with them so you could just [[keep quiet about it|Part15WomensStudiesQuiet]].
     You could also stop by the department and [[warn the department head|Part15WomensStudiesReport]]
@@ -13956,7 +13953,11 @@ TODO look at wording above
       <br><br>
       But you only want $dating[0] to treat you like his slave girl.
       <br><br>
-      <video src="Part15/Halloween14.mp4" autoplay loop muted height="500"></video>
+      <<if setup.areDating('Jayden')>>
+        <img src="Part15/Halloween23.jpg" hspace="10" vspace="10" height="650" align="left">
+      <<else>>
+        <video src="Part15/Halloween14.mp4" autoplay loop muted height="500"></video>
+      <</if>>
     <</if>>
   <<else>>
     remembering all the ways guys at the party used you as a slave girl, and imagining a more they could have used if you

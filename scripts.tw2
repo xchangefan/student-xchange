@@ -31,6 +31,17 @@ setup.addIfNeeded = function (arr, item) {
 	}
 }
 
+setup.kidNameList = function () {
+  var kids = variables().children.map((child) => {return child.name});
+  if (kids.length == 0) {
+    return "";
+  } else if (kids.length == 1) {
+    return kids[0];
+  } else {
+    return kids.slice(0, kids.length - 1).join(", ") + " and " + kids[kids.length - 1];
+  }
+}
+
 ::AutoNav [script] <250,50>
 var IntervalID = setInterval(UpdateLinks, 300);
 
@@ -418,7 +429,6 @@ setup.sexualHistoryTable = function () {
   return st + "</table>\n"
 }
 
-
 setup.haveFucked = function (name) {
 	return variables().sex.filter(function(fuck) {return fuck.name == name || fuck.anon == name}).length > 0
 } 
@@ -435,7 +445,6 @@ setup.haveFuckedVaginal = function (name) {
 setup.hadAnalAccident = function (name) {
 	return variables().sex.filter(function(fuck) {return fuck.analAccident && (fuck.name == name || fuck.anon == name)}).length > 0
 }
-
 
 setup.haveConceivedWith = function (name) {
   return variables().sex.filter(function(fuck) {return fuck.conception && (fuck.name == name || fuck.anon == name)}).length > 0
@@ -580,7 +589,8 @@ setup.checkForPregnancy = function (fuck, oddsBoost, ovulationOverride) {
     protectionFactor = 0.1
   }
 
-  var conceptionChance = baseProbability * protectionFactor;
+  var orgasmFactor = (variables().PlayerEasytoOrgasm ? 1.25 : 1.0) * (variables().PlayerPowerfulOrgasms ? 1.25 : 1.0)  * (variables().PlayerSuperOrgasms ? 1.25 : 1.0);
+  var conceptionChance = baseProbability * protectionFactor * orgasmFactor;
   var conceptionRoll = Math.random()
   return conceptionRoll < conceptionChance;
 }

@@ -1,6 +1,6 @@
 ::TODOPart16Checkup
 TODO Checkup / Alert to pregnancy if not aware / note not pregnant if not / update on pregnancy if is
-TODO If second child delivered, drop out to focus on them.
+TODO If second child delivered, drop out to focus on them. [[Mother]]
 TODO [[Part16WinterBreak2]]
 
 ::Part16Checkup
@@ -17,8 +17,9 @@ TODO [[Part16WinterBreak2]]
 
 <<nobr>>
   <<if $PlayerPregnant>>
-    TODO Already pregnant
-  <<elseif false and $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+    Some of the questions aren't really relevant for you right now, since periods and birth control aren't something you
+    need to worry about until after the baby is born.
+  <<elseif $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
     You happily fill out the "Date of Last Menstruation”.
     <<if $PlayerProtectionPill>>
       Thanks to your birth control,
@@ -54,14 +55,51 @@ TODO [[Part16WinterBreak2]]
 <</nobr>>
 
 <<nobr>>
-  When you are finished, you hand the woman at the desk your form and take the cup she gives you and [[head to the restroom|Part16Checkup2]]
+  When you are finished, you hand the woman at the desk your form 
+  <<if $PlayerPregnant and setup.areDating('Jayden')>>
+    and wait until they call you back.  They do a few tests and confirm everything is fine with you, your implant, and the baby.
+    You then head home to get ready for winter break.  But Jayden [[has a surprise for you|Part16CheckupJaydenAlready]] before you
+    can get started with that.
+  <<elseif $PlayerPregnant>>
+    and wait until they call you back.  They do a few tests and confirm everything is fine with you, your implant, and the baby.
+    Then you [[head home to get ready for winter break|Part16WinterBreak2]].
+  <<else>>
+    and take the cup she gives you and [[head to the restroom|Part16Checkup2]]
+  <</if>>
+<</nobr>>
+
+::Part16CheckupJaydenAlready
+<<nobr>>
+  <h1>Talking about the baby with Jayden</h1>
+  <img src="Part16/Pregnant4.png" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+
+<<nobr>>
+  You weren't sure how he was going to react at first.
+  <<if setup.sexVaginalCount() == 0>>
+    Obviously neither of you were expecting a pregnancy since you'd never had sex other than anal and oral.
+    <<if $PlayerChastityBelt>>
+      You wondered if he'd suspect you cheated on him, and did something more with someone else, if you weren't wearing this belt.
+    <<else>>
+      You wondered if he suspects you cheated on him, and did something more with someone else.  If he does, he doesn't say anything,
+      or do anything else to indicate any dobuts that the baby is his.
+    <</if>>
+  <<elseif setup.sexUniqueVaginalCount() == 1>>
+    He knew that he's the only man you've ever been with, so there's was no question that he's the father.
+  <<else>>
+    He knew that he's not the first man you've been with, but he didn't question that he's the father.
+  <</if>>
+  In fact, he's was thrilled when you gave him the news he's going to be a father.
+  "I'd always wanted a child. This is sooner than I had originally planned, but it's still wonderful news!" he told you.
+<</nobr>>
+
+<<nobr>>
+  But still he was in shock at first.  Since then it's had time to sink in and him to react to it.  Today it's him with
+  the [[surprise for you|JaydenPropose]].  Of course it too was something you both had considered some day, but maybe not as soon as this.
 <</nobr>>
 
 ::Part16Checkup2
 <<nobr>>
-TODO
-<<unset $PlayerProtectionPerfect>>
-<<set setup.addSexRepeat(100, {sex:"male",name:"Jayden",vaginal:true})>>
 	<h1><<print "Medical Clinic">></h1>
   <img src="PartP/PregTest1.jpg" hspace="10" vspace="10" height="500">
 	<<if $PlayerProtectionTry>>
@@ -112,6 +150,9 @@ TODO
 <<nobr>>
   <<if $PregnancyCheck.isPregnant>>
 	  <<set $PlayerPregnant to 1>>
+    <<if !$PregnancyWeek>>
+      <<set $PregnancyWeek to $MenstrualWeek>>
+    <</if>>
     You are pregnant!
     <<if setup.pregnantFirstTime()>>
       <<achievement>>firsttime+pregnant<</achievement>>
@@ -131,7 +172,7 @@ TODO
       You let the doctor know that you want to [[terminate the pregnancy|Part16CheckupAbort]].
     <<elseif $PlayerProtectionTry>>
       You are ecstatic!  You excitedly tell the doctor that you will definitely be [[carrying the baby to term|Part16CheckupKeep]].  She
-      congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
+      congratulates you on the pregnancy and says the nurse will be in a bit to discuss prenatal care.
     <<elseif setup.sexVaginalCount() == 0>>
       You can't believe this has happened - you haven't even had sex yet!  Well, not real sex, only anal and oral.
       The only thing you can think of is that cum must have leaked out of your ass and into... well, that must have been what happened.
@@ -144,7 +185,7 @@ TODO
         leaked out of you and through the belt.
       <</if>>
       You make it clear to the doctor that you aren't going to consider anything other than [[carrying the baby to term|Part16CheckupKeep]].  She congratulates
-      you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
+      you on the pregnancy and says the nurse will be in a bit to discuss prenatal care.
     <<else>>
       <<if $Keyholder == "computer" or $ComputerChastityOwner>>
         You thought this belt would keep you from letting yourself get pregnant. You did do anal of course.  You guess cum must have leaked out
@@ -355,7 +396,7 @@ TODO
 <<nobr>>
 	Your smile doesn't last that long though, as you feel the cramps she'd warned you about start.  Thankfully the bleeding hasn't
 	started yet.  You would have hated to ruin your new underwear already.  The next morning you take the
-	[[second pill|Part16SummerPlans]] she gave you.
+	second pill she gave you.  TODO link
 <</nobr>>
 
 <<nobr>>
@@ -450,7 +491,8 @@ TODO
 <<nobr>>
   You update Faith on your relationship with Andrew.  Well, letting her know the clean parts of it at least, and the
   leaving out mention of the pregnancy.  Hopefully it'll be less of a shock when you mention it a month or so from now.  Afterwards,
-  you start thinking about what your [[plans for the summer|Part16SummerPlans]] are, and whether recent events change those at all.
+  you start thinking about what your plans for the summer are, and whether recent events change those at all.
+  TODO Link and not summer
 <</nobr>>
 
 ::Part16CheckupPregnant
@@ -557,7 +599,7 @@ TODO
 
 ::Part16CheckupKeepStandard
 <<nobr>>
-	<h1><<print "Medical Clinic">></h1>
+	<h1>Medical Clinic</h1>
   <img src="PartP/PregTest4.jpg" hspace="10" vspace="10" height="650">
 <</nobr>>
 
@@ -620,9 +662,8 @@ TODO
     You'll be managing the pregnancy, and afterwards, on you own.  You'll probably not see Barry much after the semester is over, so he may never even see you
     visibly pregnant.  Even if he does, you'll just tell him it's not his.  He'll laugh at what a slut you are and move on.  It's probably better that way for everyone.
     <br><br>
-    But you don't have to worry about that now though.  For now you can just think about [[your summer plans|Part16SummerPlans]].
+    You don't have to worry about that now though.  For now you can just think about your plans for [[winter break|Part16WinterBreak2]]
   <<else>>
-TODO X
     <<unset $StatedFather>>
     <<if $PregnancyCheck.possibleFathers.length === 1>>
       You know the father has to be 
@@ -636,7 +677,7 @@ TODO X
       afterwards, without the father's help.
     <</if>>
     <br><br>
-    You don't have to worry about that now though.  For now you can just think about [[your summer plans|Part16SummerPlans]].
+    You don't have to worry about that now though.  For now you can just think about your plans for [[winter break|Part16WinterBreak2]]
   <</if>>
 <</nobr>>
 
@@ -703,20 +744,19 @@ TODO
 <</nobr>>
 
 <<nobr>>
-  Eventually your mind drifts back to the present and you start thinking about [[what you are going to do this summer|Part16SummerPlans]].
+  Eventually your mind drifts back to the present and you start thinking about what you are going to do this summer. TODO Link and not summer
 <</nobr>>
 
 <<achievement>>girlpower<</achievement>>
 
 ::Part16CheckupNotPregnant
-TODO
 <<nobr>>
 	<h1>Back Home</h1>
-  <img src="Part16/Plans1.jpg" hspace="10" vspace="10" height="650" align="left">
+  <img src="Part13/Plans1.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 <<nobr>>
   The doctor continues with the other tests you were scheduled for, and you head home.  When you get there you make something to drink and then sit down
-  to think about [[what you are going to do this summer|Part16SummerPlans]].
+  to think about what you are going to for [[winter break|Part16WinterBreak2]].
 <</nobr>>
 
 ::Part16PregnantAaron
@@ -741,7 +781,7 @@ TODO
 
 <<nobr>>
   You and daddy are too busy planning how to decorate the room that will soon be the nursery to worry much about
-  [[what else you are going to do this summer|Part16SummerPlans]].
+  what else you are going to do this summer. TODO Link and not summer
 <</nobr>>
 
 ::Part16PregnantAndrew
@@ -766,7 +806,7 @@ TODO
 <</nobr>>
 
 <<nobr>>
-  You and Andrew know what you are [[doing this summer|Part16SummerPlans]], so you don't need to think much about it.
+  You and Andrew know what you are doing this summer, so you don't need to think much about it. TODO Link and not summer
 <</nobr>>
 
 ::Part16PregnantJosh
@@ -792,7 +832,7 @@ TODO
 <</nobr>>
 
 <<nobr>>
-  He may be there when you need him, but circumstances might make being together [[over the summer|Part16SummerPlans]] more difficult.
+  He may be there when you need him, but circumstances might make being together over the summer more difficult. TODO Link and not summer
 <</nobr>>
 
 ::Part16PregnantPeterAccident
@@ -872,7 +912,7 @@ TODO
 <</nobr>>
 
 <<nobr>>
-  Once Peter's cock is caged and you've uncuffed his hands, the two of you can sit down to go over your [[plans for the summer|Part16SummerPlans]].
+  Once Peter's cock is caged and you've uncuffed his hands, the two of you can sit down to go over your plans for the summer. TODO Link and not summer
 <</nobr>>
 
 ::Part16PregnantPeterTrying
@@ -942,11 +982,35 @@ TODO
 <</nobr>>
 
 <<nobr>>
-  Once Peter's cock is caged and you've uncuffed his hands, the two of you can sit down to go over your [[plans for the summer|Part16SummerPlans]].
+  Once Peter's cock is caged and you've uncuffed his hands, the two of you can sit down to go over your plans for the summer. TODO Link (and not summer)
 <</nobr>>
 
 ::Part16PregnantJayden
-TODO Part16PregnantJayden
-TODO Checkup / Alert to pregnancy if not aware / note not pregnant if not / update on pregnancy if is
-TODO If second child delivered, drop out to focus on them.
-TODO [[Part16WinterBreak2]]
+<<nobr>>
+  <h1>Giving Jayden the exciting news</h1>
+  <img src="Part16/Pregnant4.png" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+
+<<nobr>>
+  You aren't sure how he's going to react.
+  <<if setup.sexVaginalCount() == 0>>
+    Obviously neither of you were expecting a pregnancy since you'd never had sex other than anal and oral.
+    <<if $PlayerChastityBelt>>
+      You wonder if he'd suspect you cheated on him, and did something more with someone else, if you weren't wearing this belt.
+    <<else>>
+      You wonder if he suspects you cheated on him, and did something more with someone else.  If he does, he doesn't say anything,
+      or do anything else to indicate any dobuts that the baby is his.
+    <</if>>
+  <<elseif setup.sexUniqueVaginalCount() == 1>>
+    He knows that he's the only man you've ever been with, so there's no question that he's the father.
+  <<else>>
+    He knows that he's not the first man you've been with, but he doesn't question that he's the father.
+  <</if>>
+  In fact, he's thrilled at the news he's going to be a father.
+  "I'd always wanted a child. This is sooner than I had originally planned, but it's still wonderful news!" he tells you.
+<</nobr>>
+
+<<nobr>>
+  You surprised him today with this news.  But he [[surprises you|JaydenPropose]] a few days later, with something else that you both
+  had considered some day but may be happening much sooner now also.
+<</nobr>>

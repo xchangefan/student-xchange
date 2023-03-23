@@ -4,8 +4,9 @@
   <img src="Part16/Finals13.png" hspace="10" vspace="10" height="350">
 <</nobr>>
 <<nobr>>
-  Unlike last year, you have no big worries as you wait for your grades to post.  When they all finally do post, it's still a relief to
-  see they were what you were expecting.  Now you have several weeks before classes start up again.  But before then you have another
+  Unlike last year, you know you had nothing to worry about this year.  That didn't stop you from worrying until your grades were
+  actually posted.  When they all finally do post, it's a relief to see they were what you were expecting.  Now you have several
+  weeks before classes start up again.  But before then you have another
   [[visit to the X-Change office|Part16Checkup]] to make.
 <</nobr>>
 
@@ -42,13 +43,13 @@ TODO [[Part16Job]]
 ::Part16WinterBreakParentsAlone
 <<nobr>>
   <<if $children.length>>
-    <<set $tempWith to "with TODO_kid(s)">>
+    <<set $tempWith to "with " + setup.kidNameList()>>
   <<else>>
     <<set $tempWith to "alone">>
   <</if>>
   <h1>Driving home $tempWith</h1>
   <<if $children.length>>
-    TODO childseat img
+    <img src="Part16/Break2.jpg" hspace="10" vspace="10" height="450" align="left">
   <<elseif $PlayerPregnant and $PregnancyWeek > 20>>
     <img src="Part16/Break1.png" hspace="10" vspace="10" height="450">
   <<else>>
