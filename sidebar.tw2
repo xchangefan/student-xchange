@@ -1354,7 +1354,11 @@
     <<else>>
       Debug: Current: <<print passage()>>
       | Previous: <<print previous()>>
-      | [[Sexual History|SexualHistoryTable]]
+      | <<if $sex and $sex.length>>
+          [[Sexual History|SexualHistoryTable]]
+        <<else>>
+          (no sexual history)
+        <</if>>
     <</if>>
     TODO: SW: $SchoolWeek MW: $MenstrualWeek PW: $PregnancyWeek
   </div>

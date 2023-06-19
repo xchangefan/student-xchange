@@ -1714,18 +1714,7 @@
 <<nobr>>
   <h1>After the Baby</h1>
   <img src="PartX/BackHome41.jpg" hspace="10" vspace="10" height="700" align="left">
-  <<set $tempBabyNameBoys to ["Casey","Liam","Brandon","Wyatt"].map((name) => {return {name, sex:"male"}})>>
-  <<set $tempBabyNameGirls to ["Delilah","Emma","Sophia","Mia"].map((name) => {return {name, sex:'female'}})>>
-	<<set $tempBabyName to [$tempBabyNameBoys, $tempBabyNameGirls]>>
-  <<if $BabyBoy or $BabyGirl>>
-    <<if $BabyBoy>><<set $BabyGirl to 0>><</if>>
-  <<else>>
-    <<set $BabyGirl to either(0,1)>>
-  <</if>>
-  <<set $tempBaby to $tempBabyName[$BabyGirl].shift()>>
-  <<set $children.push($tempBaby)>>
-  <<set $PlayerMother to 1>>
-  <<unset $tempBaby>>
+  <<set $tempBabyGirl to setup.haveBaby(["Casey","Liam","Brandon","Wyatt"], ["Maisie","Delilah","Emma","Sophia","Mia"])>>
   <<set setup.addSex({sex: 'male', name:'Mason'})>>
   <<set setup.addSex({sex: 'male', name:'Mason'})>>
   <<set setup.addSex({sex: 'male', name:'Mason'})>>
@@ -1747,7 +1736,7 @@
 <</nobr>>
 <<nobr>>
   You and Mason are so happy when little $children[0].name is born.  After a few days they send you and
-  <<if $BabyGirl>>her<<else>>him<</if>> home.  Then you and Mason have to start adjusting to sleepless nights, changing diapers,
+  <<if $tempBabyGirl>>her<<else>>him<</if>> home.  Then you and Mason have to start adjusting to sleepless nights, changing diapers,
   and all the rest.
 <</nobr>>
 
@@ -1764,9 +1753,10 @@
 <<nobr>>
   Mason is so much help at home those first few weeks.  But eventually he has to go back to work, and it's just you and $children[0].name
   at home all day.  Though your mom helps out quite a bit.
-  <<unset $BabyBoy>>
-  <<unset $BabyGirl>>
+  <<unset $tempBabyGirl>>
 <</nobr>>
+
+<<achievement>>mother<</achievement>>
 
 ::MovingBackHomeMarriedLife <7800,11400>
 <<nobr>>
@@ -1875,4 +1865,210 @@
 <img src="PartX/GameOver7.jpg" hspace="10" vspace="10" height="650">
 <<achievement>>chastity<</achievement>>
 
+::BackHomeFriendsPregnant
+<<nobr>>
+  <h1>Deciding to move in with $dating[0]</h1>
+  <<set $Roommate to $dating[0]>>
+  <img src="PartX/BackHome44.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
 
+<<nobr>>
+  After talking over your plans, and your worries about how difficult it's going be at school, on your own, after the baby is born,
+  $dating[0] suggests that you
+  <<if $children.length>>
+    and <<print setup.kidNameList()>>
+  <</if>>
+  move in with him.  He talks to other guys into helping, and the four of you make a trip up to school to move you out of the dorm.
+  While they are loading all of your stuff into Jake's truck, you head over to the administration building to fill out the paperwork for
+  your [[transfer to the college|BackHomeFriendsPregnant2]] back home.  Hopefully you won't have any issues getting admitted there.
+  You also stop by X-Change office to take care of what you need there.
+  <<if $PlayerChastityBelt>>
+    You also pay a visit with $dating[0] to
+    <<if $Keyholder == 'computer'>>
+      the engineering department about your belt.  The decide given your move, and pregnancy, to remove you from the study and have
+      you return the belt.
+      <<set setup.removeInventory('sex toys', 'electronic chastity belt')>>
+    <<else>>
+      $Keyholder about your belt.  Given your new relationship, and move, they unlock your belt and wish you luck.
+      <<set setup.removeInventory('sex toys', 'chastity belt')>>
+    <</if>>
+    <<unset $PlayerChastityBelt>>
+  <</if>>
+  <<if !$JobTestSubject>>
+    You also let your boss know that you won't be returning after the new year like you'd planned.
+  <</if>>
+<</nobr>>
+
+  <<include [[UnsetAllJobs]]>>
+
+
+::BackHomeFriendsPregnant2
+<<nobr>>
+  <h1>Transfering Schools</h1>
+  <img src="PartX/BackHome9.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set setup.addSexRepeat(20, {sex:'male', name:$dating[0], vaginal: true})>>
+<</nobr>>
+
+<<nobr>>
+  Thankfully your grades are good enough to get you into the four-year state school near town as a transfer student.
+  You notice quickly that it isn't like at the first university.  Everyone seems focused on your education, not finding a
+  way to get you on your back, or on your knees.  Well, a few guys seem interested in that, but it's not everywhere like
+  at your previous school.  You know your growing belly may be part of it, but you also know something isn't normal about your
+  old school.
+<</nobr>>
+
+<<nobr>>
+  Mason is a student here too. You don't have any classes in common with him.
+  <<if setup.areDating('Mason')>>
+    The two of you hang out together as much as you can between classes though.
+  <<else>>
+    Though occasionally the two of you will grab lunch at the cafeteria together, but you try not to
+    hang out with him too much.  It's still a bit awkward between you two given that this baby could easily have been his instead.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  Your father had been far from thrilled when he learned about your pregnancy.  But he was less upset when he found out it was,
+  $dating[0], a boy he'd seen grow up as your friend, and that he liked.  And, that it wasn't some random guy from a campus party.
+  You don't mention to your dad the details of the night it happened though, obviously.  He seems to think it was a romantic summer
+  fling between you and $dating[0], and you are going to let him continue to think that.
+<</nobr>>
+
+<<nobr>>
+  Your father was also relieved you were [[moving in|BackHomeFriendsPregnant3]] with $dating[0] and that he was taking responsibility.
+  Your dad seemed to have expected, and dreaded, you showing back up at his doorstep, pregnant and wanting to move back in to your old room.
+<</nobr>>
+
+::BackHomeFriendsPregnant3
+<<nobr>>
+  <h1>Home with $dating[0]</h1>
+  <div style="float:left;padding:12px;">
+    <video src="PartX/BackHome45.webm" autoplay loop muted height="540"></video>
+  </div>
+  <<set setup.addSexRepeat(50, {sex:'male', name:$dating[0], vaginal: true})>>
+<</nobr>>
+
+<<nobr>>
+  At school, you've been working with your professors to get some of your work done ahead of schedule, knowing you are going to be gone the last
+  few weeks of the semester.  Of course they'd all be willing to give you incompletes if you didn't finish
+  [[due to the baby|BackHomeFriendsPregnant4]], but you'd much prefer to not have to worry about it at all and focus on the baby.
+<</nobr>>
+
+<<nobr>>
+  Thankfully, your dad has been helping with your tuition.  The transfer student scholarship didn't cover everything, like the X-Change
+  scholarship did, and you aren't even going to try to find a part-time job given your current condition.  Though living with $dating[0] does
+  reduce the rest of your expenses quite a bit.
+<</nobr>>
+
+<<nobr>>
+  At home with $dating[0], you do your best to keep things exciting, even as your body grows.  Luckily he seems to be turned seeing you with his
+  baby inside you, or at least does a convincing job of acting like he is.  At first you and $dating[0] find things pretty awkward with
+  <<if setup.areDating('Jake')>>
+    Ethan and Mason.
+  <<elseif setup.areDating('Ethan')>>
+    Mason and Jake.
+  <<else>>
+    Jake and Ethan.
+  <</if>>
+  But eventually everyone seems to come to an unspoken agreement to forget that night ever happened. They realize you are with $dating[0]-only now,
+  and there's not going to be a repeat of that night.
+<</nobr>>
+
+<<nobr>>
+  Everyone except the four of you think you and $dating[0] started dating over the summer, and
+  that's what you want them to think.
+<</nobr>>
+
+::BackHomeFriendsPregnant4
+<<nobr>>
+  <h1>Going into labor</h1>
+  Just a few days ahead of the "due date" the doctors had given you, you start to feel the contractions.  You'd already finished up your classes
+  early. $dating[0] is
+  <<if setup.areDating('Mason')>>
+    in class
+  <<else>>
+    at work
+  <</if>>
+  But quickly leaves as soon as he gets your text.  The contractions are still pretty far apart so you wait for him to get home.  It only takes
+  him a few minutes, you don't want to think about how fast he drove to get there.  You make sure he keeps it a safe speed on the way to the hospital
+  though.
+  <<if setup.areDating('Jake')>>
+    <<set $tempBabyGirl = setup.haveBaby(["Jack", "Casey","Liam"], ["Donna", "Delilah","Emma"])>>
+  <<elseif setup.areDating('Ethan')>>
+    <<set $tempBabyGirl = setup.haveBaby(["Nathan", "Casey","Liam",], ["Maya", "Delilah","Emma"])>>
+  <<else>>
+    <<set $tempBabyGirl = setup.haveBaby(["Casey","Liam","Brandon","Wyatt"], ["Maisie","Delilah","Sophia","Mia"])>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <img src="PartP/Labor.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+
+<<nobr>>
+  You don't know how many hours the labor takes, just that it's too many.  Though it's much less bad once they get your epidural started.  Everything
+  is worth it though once you are holding your little baby
+  <<if $tempBabyGirl>>girl,<<else>>boy,<</if>>
+  <<print $children[$children.length - 1].name>>.
+<</nobr>>
+
+<<nobr>>
+  <<if setup.areDating('Jake')>>
+    TODO [[Jake]]
+  <<elseif setup.areDating('Ethan')>>
+    TODO [[Ethan]]
+  <<else>>
+    Mason has made arrangements with his professors, though not to the degree you did.  So he's able to be with you and help out
+    [[after the baby is born|Mason]], except for a few finals he couldn't do remotely.  And your mom is able to come by and help then.
+  <</if>>
+  <<unset $tempBabyGirl>>
+<</nobr>>
+
+<<achievement>>mother<</achievement>>
+
+::Jake
+TODO College transfer [[MovingBackHome13]]
+TODO After baby, tutition less since qualify for aid
+TODO Jake ending (his house that you ended up at over summer) Was athlete in school, now works in construction?
+  <<set $StudentYearsCompleted to 2>>
+
+::Ethan
+TODO College transfer [[MovingBackHome13]]
+TODO After baby, tutition less since qualify for aid
+TODO Ethan ending involve his sister in some way (2nd base with her in HS) More bookish, works at father's store?
+TODO X-Change himself?
+  <<set $StudentYearsCompleted to 2>>
+
+::Mason
+<<nobr>>
+  <h1>Still Recovering</h1>
+  <img src="PartX/BackHome16.jpg" hspace="10" vspace="10" height="500">
+<</nobr>>
+<<nobr>>
+  Your body is still recovering after the baby, so you can't have sex for a while.  You are still really horny though.  You aren't sure if
+  that's normal or not. You suspect it's probably a result of the X-Change more than something natural.  But whatever it is, you are counting down
+  the days until you can [[have Mason's cock inside you|Mason2]] again.
+<</nobr>>
+
+<<nobr>>
+  In the meantime, you can see that he's just as horny as you are.  You suspect that's probably more natural than it is with you.  You can't do
+  much about your need, but you can help him with his.  It at least makes you feel close to him, and still desired by him.
+<</nobr>>
+
+<<nobr>>
+  And for the time being, your larger breasts makes it easy to pleasure him in other ways too.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartX/BackHome17.gif" hspace="10" vspace="10" height="400">
+<</nobr>>
+
+::Mason2
+TODO College transfer [[MovingBackHome13]]
+TODO After baby, tutition less since qualify for aid
+TODO Mason ending  similar to existing ending without chastity - he is more dominant than Jake/Ethan and is attending college
+    Mason has made arrangements with his professors, though not to the degree you did.  So he's able to be with you and help out after the baby is
+    born, except for a few finals he couldn't do remotely.  And your mom is able to come by and help then.  Over the summer, neither of you have
+    classes, so he's able to help you every step of the way.  You and him have discussed about [[next semester|Mason]] and coordinated your class
+    scheduels so that theres always someone to watch the baby.
+  <<set $StudentYearsCompleted to 2>>

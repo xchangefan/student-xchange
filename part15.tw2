@@ -1392,7 +1392,7 @@ TODO cum liquid treatment continuation, also recuring later
 
 <<nobr>>
   <<if $JobAthlete>>
-    "[[I'm sorry but I can't|Part15MinistryTesterNo]]," you tell him.  "I'm an athlete and there's now way I could compete wearing one of those
+    "[[I'm sorry but I can't|Part15MinistryTesterNo]]," you tell him.  "I'm an athlete and there's no way I could compete wearing one of those
     things. You figure you'll just have to 
     <<if setup.haveFucked('Andrew')>>
       focus all of your desires on Andrew so you can stay faithful to him.
@@ -2101,7 +2101,7 @@ TODO cum liquid treatment continuation, also recuring later
 <</nobr>>
 
 <<nobr>>
-  His moans urge you on to another orgasm.  You are grasping at his neck and sholders in the middle of your orgasm when he finally reaches yours.
+  His moans urge you on to another orgasm.  You are grasping at his neck and sholders in the middle of your orgasm when he finally reaches his.
 <</nobr>>
 
 <<nobr>>
@@ -2117,12 +2117,14 @@ TODO cum liquid treatment continuation, also recuring later
     like you to try to give him a blowjob.
     <<if $PlayerProtectionCondoms>>
       <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal:true, noCondom:true})>>
-      As an afterthought you recall that you had told them you'd have guys use condoms if you ever had sex.  Well, here your first time, and you'd already
-      forgotten about it.  Oh well, you'll just have to remember to pick some up the next time you go out.
+      As an afterthought you recall that you had told them back when you'd first changed that you'd have guys use condoms if you ever had sex.
+      Well, here you are your first time, and you'd already forgotten about it.  Oh well, you'll just have to remember to pick some up the next
+      time you go out. You certainly aren't going to wait until then to go again though.
     <<elseif $PlayerProtectionWithdraw>>
       <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal:true})>>
-      As an afterthought you recall that you had told them you'd have guys pull out if you ever had sex.  Well, here your first time, and you'd already forgotten
-      about it.  Oh well, you'll just have to remember to tell Andrew before next time.
+      As an afterthought you recall that you had told them back when you'd first changed that you'd have guys pull out if you ever had sex
+      Well, here you are your first time, and you'd already forgotten about it.  Oh well, you'll just have to remember to tell Andrew before you
+      go again.
     <<else>>
       <<set setup.addSex({sex: 'male', name: 'Andrew', vaginal:true})>>
     <</if>>
@@ -4131,7 +4133,7 @@ TODO cum liquid treatment continuation, also recuring later
   <<set $RapistRapedFeelingBetter to 1>>
 <</nobr>>
 <<nobr>>
-  You've been having nightmares the past few weeks, but thankfully tonight is different.  Tonight your dreams about your
+  You've been having nightmares the past few weeks, but thankfully tonight is different.  Tonight your dreams are about your
   wedding night.
 <</nobr>>
 
@@ -8607,7 +8609,7 @@ TODO cum liquid treatment continuation, also recuring later
     <br><br>
     He isn't complaining though, and enjoys the handjob you start giving him.  You actually have some experience
     stroking a cock, from back when you had one. When he starts to get close the crowd starts chanting for you to
-    "swallow!", "swallow!", "swallow!"  You are a bit worried about the shock you'll probably get shocked again but
+    "swallow!", "swallow!", "swallow!"  You are a bit worried that you'll probably get shocked again but
     decide to do it anyway.  Thankfully when it does shock you, it's a mild one again, like the first shock was.
     Seeing the look of happiness on his face makes you decide it was worth the moment of pain to give him the finish
     everyone wanted.
@@ -8843,7 +8845,7 @@ TODO cum liquid treatment continuation, also recuring later
 <</nobr>>
 
 <<nobr>>
-  When you cum, you cover his face with your juices.  You are embarrassed and almost appologize.  But you see how
+  When you cum, you cover his face with your juices.  You are embarrassed and almost apologize.  But you see how
   proud he seems to be about your orgasm, and decide an apology isn't needed.  
 <</nobr>>
 
@@ -9244,7 +9246,7 @@ TODO cum liquid treatment continuation, also recuring later
 <</nobr>>
 
 <<nobr>>
-  When you start to appologize to the officer for being paranoid he tells you not to be sorry.  "There's been several recent
+  When you start to apologize to the officer for being paranoid he tells you not to be sorry.  "There's been several recent
   attacks in town lately.  It's not on campus, so we can't do much about it, and the town police don't seem to be making it much
   of a priority.  Anyway, it sounds like you were lucky tonight.  Just give us a call if you need another escort."
 <</nobr>>
@@ -11581,7 +11583,7 @@ TODO cum liquid treatment continuation, also recuring later
 
 <<nobr>>
   <<if setup.haveGirlfriend()>>
-    When you mention that you have a girlfriend she appologizes.  "Oh, I'm sorry, that was a stupid assumption I made.
+    When you mention that you have a girlfriend she apologizes.  "Oh, I'm sorry, that was a stupid assumption I made.
     Still, you two can have as much fun over there as you want.  I'm not really into girls though, other than the occasional
     threesome, so I won't ask you to share."  She gives you a smile and adds, "Though if you and her ever want to have a foursome
     with me and some guy, I'm sure we'd make him the happiest guy on campus."
@@ -12045,12 +12047,21 @@ TODO cum liquid treatment continuation, also recuring later
 <<nobr>>
   <h1>Your first time</h1>
   "I've never... you know... before," you try to say.
-  <<set setup.addSex({sex:"male"})>>
-  <<set setup.addSex({sex:"male", vaginal: true, pullout: true, noCondom: true})>>
-  <<set setup.addSex({sex:"female", name:"Kiera"})>>
-  <<set setup.addSex({sex:"male"})>>
-  <<set setup.addSex({sex:"male", vaginal: true, noPullout: true, noCondom: true})>>
-  <<set setup.addSex({sex:"female", name:"Kiera"})>>
+  <<if $dating.length>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"male", name:$dating[0], vaginal: true, pullout: true, noCondom: true})>>
+    <<set setup.addSex({sex:"female", name:"Kiera"})>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"male", name:$dating[0], vaginal: true, noPullout: true, noCondom: true})>>
+    <<set setup.addSex({sex:"female", name:"Kiera"})>>
+  <<else>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"male", name:$dating[0], vaginal: true, pullout: true, noCondom: true})>>
+    <<set setup.addSex({sex:"female", name:"Kiera"})>>
+    <<set setup.addSex({sex:"male", name:$dating[0]})>>
+    <<set setup.addSex({sex:"male", name:$dating[0], vaginal: true, noPullout: true, noCondom: true})>>
+    <<set setup.addSex({sex:"female", name:"Kiera"})>>
+  <</if>>
   <<unset $CampusMinistry>>
   <<set $CampusMinistryFailFall2 to 1>>
   <<set $DormFriendLevel += 1>>
@@ -12068,7 +12079,13 @@ TODO cum liquid treatment continuation, also recuring later
     one that had to change, you were already matching the look she had in mind.
   <<else>>
     Kiera decides to a little role play fun.  You think it's partially to turn him on, and partially to calm your nerves a bit.  You
-    are already dressed for the part, but she has to make a quick wardrobe change before her friend arrives.
+    are already dressed for the part, but she has to make a quick wardrobe change before
+    <<if $dating.length>>
+      $dating[0]
+    <<else>>
+      her friend
+    <</if>>
+    arrives.
   <</if>>
 <</nobr>>
 
@@ -12076,14 +12093,22 @@ TODO cum liquid treatment continuation, also recuring later
   "My sister and I just turned 18 today," Kiera says trying to act innocent.  "Neither of us have been with a man before, so please
   be gentle with us."  You both act nervous as he takes turns removing one piece of clothing at a time from each of you, and removing
   his occassionally as well.  Well, Kiera is acting at least, the nervousness is mostly real for you.
+  <<if $dating.length>>
+    Part of you wonders what $dating[0] thinks of your first time together being like this.  At least it's not something he's likely
+    to forget.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  <video src="Part15/Dorm23.mp4" autoplay loop muted height="500"></video>
+  <<if setup.areDating('Jayden')>>
+    <img src="Part15/Dorm38.jpg" hspace="10" vspace="10" height="500" align="left">
+  <<else>>
+    <video src="Part15/Dorm23.mp4" autoplay loop muted height="500"></video>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
-  When his two virgins are down to only their pink, cotton panties his hands start to roam.  As his strong hands move over your skin
+  When his two virgins are down to only their pink, cotton panties his hands start to roam.  As his strong hands move over your skin,
   your heart races. When his hand slides into your panties you bite your lower lip in anticipation.  You can't help the moan you make
   as his finger gently slides into you.  You assume Kiera must be as wet as you are when he comments on how ready his two virgins
   are for their first time.
@@ -12096,7 +12121,11 @@ TODO cum liquid treatment continuation, also recuring later
 <</nobr>>
 
 <<nobr>>
-  <video src="Part15/Dorm21.mp4" autoplay loop muted height="500"></video>
+  <<if setup.areDating('Jayden')>>
+    <img src="Part15/Dorm39.jpg" hspace="10" vspace="10" height="500">
+  <<else>>
+    <video src="Part15/Dorm21.mp4" autoplay loop muted height="500"></video>
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -12114,8 +12143,13 @@ TODO cum liquid treatment continuation, also recuring later
   <img src="Part15/Dorm28.jpg" hspace="10" vspace="10" height="500" align="left">
 <</nobr>>
 <<nobr>>
-  You lose track of how many times you cum before Kiera's friend... you realize you never caught his name... before he leaves.
-  As he leaves, you can only lie in bed enjoying the wonderful feeling you still have after the pleasure he, and Kiera, gave you.
+  You lose track of how many times you cum before
+  <<if $dating.length>>
+    $dating[0]
+  <<else>>
+    Kiera's friend... you realize you never caught his name... before he
+  <</if>>
+  leaves. As he leaves, you can only lie in bed enjoying the wonderful feeling you still have after the pleasure he, and Kiera, gave you.
 <</nobr>>
 
 <<nobr>>
@@ -12124,9 +12158,17 @@ TODO cum liquid treatment continuation, also recuring later
 <</nobr>>
 
 <<nobr>>
-  You know you and Kiera are going have a lot of fun this year, and you want to start on it
-  [[as soon as possible|Part15DormSluttySexMinistry2]].
+  <<if $dating.length>>
+    You know you and $dating[0] are going have a lot of fun this year, and you want to start on it
+    [[as soon as possible|Part15DormSluttySexMinistry2Boyfriend]].
+  <<else>>
+    You know you and Kiera are going have a lot of fun this year, and you want to start on it
+    [[as soon as possible|Part15DormSluttySexMinistry2]].
+  <</if>>
 <</nobr>>
+
+::Part15DormSluttySexMinistry2Boyfriend
+  TODO
 
 ::Part15DormSluttySexMinistry2 <50400,15000>
 <<nobr>>

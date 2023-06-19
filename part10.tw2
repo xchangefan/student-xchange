@@ -901,63 +901,56 @@ Now you can [[think about something more fun|Part10End]].
     After hearing the other girls talk at the X-Change meetings, you’re not particularly
     shocked to find that Master Robert will require you to wear a chastity belt if you
     are going to work here.
+    <<if $PlayerChastityBelt>>
+      <br><br>
+      Robert smiles when you lift up your skirt to show the belt you already wear.  He is
+      happy that you are securely belted, but there is no way $Keyholder is going to
+      hand over the key to Robert, nor would you want $KeyholderPronounPossessive to.
+      <<set $cantWorkStore to 1>>
+    <<elseif setup.areDating('Andrew') or setup.areDating('Paul') or setup.areDating('Josh') or setup.areDating('Aaron')>>
+      <br><br>
+      If you were going to wear a chastity belt, you'd want your boyfriend to have the
+      key, not this guy.
+      <<set $cantWorkStore to 1>>
+    <<elseif setup.areDating('Veronica')>>
+      <br><br>
+      If you were going to wear a chastity belt, you'd want your Veronica to have the
+      key, not this guy.
+      <<set $cantWorkStore to 1>>
+    <<elseif $JobCallGirl or $JobCallGirlSide>>
+      <br><br>
+      You couldn't very well keep working as a call girl if you were locked in a chastity
+      belt, and that job pays much better than this one would.
+      <<set $cantWorkStore to 1>>
+    <<elseif $JobArt or $JobModel>>
+      <br><br>
+      You couldn't exactly model wearing a chastity belt, at least not the kind of modeling you do.
+      And you certanly aren't going to give up your regular job for this.
+      <<set $cantWorkStore to 1>>
+    <<else>>
+      <<set $cantWorkStore to 0>>
+    <</if>>
   <</if>>
-<</nobr>>
 
-<<nobr>>
   <<if $Keyholder == 'Robert'>>
-  <<elseif $PlayerChastityBelt>>
-    Robert smiles when you lift up your skirt to show the belt you already wear.  He is
-    happy that you are securely belted, but there is no way $Keyholder is going to
-    hand over the key to Robert, nor would you want $KeyholderPronounPossessive to.
-    <<set $cantWorkStore to 1>>
-  <<elseif setup.areDating('Andrew') or setup.areDating('Paul') or setup.areDating('Josh') or setup.areDating('Aaron')>>
-    If you were going to wear a chastity belt, you'd want your boyfriend to have the
-    key, not this guy.
-    <<set $cantWorkStore to 1>>
-  <<elseif setup.areDating('Veronica')>>
-    If you were going to wear a chastity belt, you'd want your Veronica to have the
-    key, not this guy.
-    <<set $cantWorkStore to 1>>
-  <<elseif $JobCallGirl or $JobCallGirlSide>>
-    You couldn't very well keep working as a call girl if you were locked in a chastity
-    belt, and that job pays much better than this one would.
-    <<set $cantWorkStore to 1>>
-  <<elseif $JobArt or $JobModel>>
-    You couldn't exactly model wearing a chastity belt, at least not the kind of modeling you do.
-    And you certanly aren't going to give up your regular job for this.
-    <<set $cantWorkStore to 1>>
+  <<elseif $cantWorkStore>>
+    <br><br>
+    Since this job isn't going to work for you, you'll have to [[think of something else|Part10ExtraMoney3]].
   <<else>>
-    <<set $cantWorkStore to 0>>
-  <</if>>
-<</nobr>>  
-
-<<if $Keyholder == 'Robert'>>
-<<elseif $cantWorkStore>>Since this job isn't going to work for you, you'll have to [[think of something else|Part10ExtraMoney3]].
-<<else>>
-  <<nobr>>
-    You try to negotiate, and see if it could be just a uniform at work, that you can take off
-    when you go home. But he says “No”, and tells you that you’ll be wearing it all the time.
-  <</nobr>>
-
-  <<nobr>>
-    He does make one concession though.  If your boss at your day job wants a copy of
-    the key, he’ll send him a copy after he discusses the matter with him.
-  <</nobr>>
-
-  <<nobr>>
-    But you certainly won’t have a copy of the key, or ever be left alone and unlocked.
-    He says he’ll think about letting you out for a little fun from time to time though,
-    with proper supervision of course.
-  <</nobr>>
-
-  <<nobr>>
-    He shows you the belt you’ll be wearing and you and quickly see the lock would very hard
-    to pick, and you can only imagine what kind of tools you need to get out of it without the
-    key.  
-  <</nobr>>
-
-  <<nobr>>
+    <br><br>
+      You try to negotiate, and see if it could be just a uniform at work, that you can take off
+      when you go home. But he says “No”, and tells you that you’ll be wearing it all the time.
+    <br><br>
+      He does make one concession though.  If your boss at your day job wants a copy of
+      the key, he’ll send him a copy after he discusses the matter with him.
+    <br><br>
+      But you certainly won’t have a copy of the key, or ever be left alone and unlocked.
+      He says he’ll think about letting you out for a little fun from time to time though,
+      with proper supervision of course.
+    <br><br>
+      He shows you the belt you’ll be wearing and you and quickly see the lock would very hard
+      to pick, and you can only imagine what kind of tools you need to get out of it without the
+      key.  
     <<if $MasterKate>>
       When he lets you know that Mistress Kate will have a copy of the key to use when she sees fit, your resistance disappers.
       The thought of getting horny at work all day and then begging Mistress Kate to let you out is too much to resist.
@@ -967,6 +960,7 @@ Now you can [[think about something more fun|Part10End]].
       if you backed out on the job now because you weren't willing to wear one yourself.
       You [[agree to wear the belt|Part10WebModel4]].
     <<elseif $ReconsideredLoan>>
+      <br><br>
       You stop for a moment to think about whether you want to [[agree to wear the belt|Part10WebModel4]].
       You've already decided against taking out a student loan, so your only other
       <<if $cantWorkStripper>>
@@ -979,18 +973,20 @@ Now you can [[think about something more fun|Part10End]].
         Of course, you can also just make do with what you've been earning, and [[forget about earning extra cash|Part10End]].
       <</if>>
     <<elseif $CampusMinistryFail>>
+      <br><br>
       <<set $refusedBelt to 1>>
       You've just started to enjoy your body, you're not about to let someone lock away all your fun now!
       You decline his offer and [[try to think of something else|Part10ExtraMoney3]]
     <<else>>
+      <br><br>
       You stop for a moment to think about whether you want to [[agree to wear the belt|Part10WebModel4]] or
       decline his offer and 
       <<link [[try to think of something else|Part10ExtraMoney3]]>>
         <<set $refusedBelt to 1>>
       <</link>>
     <</if>>
-  <</nobr>>
-<</if>>
+  <</if>>
+<</nobr>>  
 
 ::Part10WebModel4  <4600,10000>
 <img src="Part10/Store4.jpg" hspace="10" vspace="10" height="800" align="left" />
@@ -1002,11 +998,22 @@ Now you can [[think about something more fun|Part10End]].
   <<set $Keyholder to "Robert">>
   <<set $KeyholderPronoun to "he">>
   <<set $KeyholderPronounPossessive to "his">>
-  He says you won’t be starting work for a couple days, so you are planning on spending that time
-  <<if $PlayerSideEffectMasturbationBlock>>
-    fucking like crazy.
+
+  <<if $CampusMinistry>>
+    You are trying not to have sex, or think about sex, or anything like that anyway. Obviously working in sex shop isn't going to help
+    with the not thinking about it part. But wearing a chastity belt will help make sure you don't do anything you shouldn't in a moment
+    of weakness.
+    <br><br>
+    But, as you glance over at a rack of vibrators, you realize it will also prevent you from masturbating.  At least not without a very
+    awkward conversation with your boss first to get him to unlock you, if he will.  Hopefully $Roommate won't be home this evening.
+    You'll at least see about getting a few orgasms in before you start work in a couple days.
   <<else>>
-    fucking and masturbating as much as you can.
+    He says you won’t be starting work for a couple days, so you are planning on spending that time
+    <<if $PlayerSideEffectMasturbationBlock>>
+      fucking like crazy.
+    <<else>>
+      fucking and masturbating as much as you can.
+    <</if>>
   <</if>>
 <</nobr>>
 
@@ -1087,6 +1094,34 @@ Now you can [[think about something more fun|Part10End]].
   Before long he is moaning and filling you mouth with cum.  You realise that if you spit it out, it just be one
   more mess you'd have to clean up, so you swallow it down.  After a moment, you brush yourself off and head
   [[back to the front of the store|Part10WebModel6]].
+<</nobr>>
+
+<<nobr>>
+  <<if $CampusMinistry>>
+    You've tasted cum before, but only just a little bit, and only your own back before you changed.  This tastes so much better.
+    You don't know if it's because of changes to your body the X-Change implant made, or just because this guy's cum tastes better
+    than your old body's did.  You figure you'll find out when you can compare it to the next guy's taste.
+    <br><br>
+    How causually that thought springs it your head shocks you.
+    <<if setup.sexVaginalCount() == 0>>
+      You are still a virgin,
+    <<else>>
+      You are trying to be a good girl,
+    <</if>>
+    but you just dropped to your knees to suck some anonymous guy's cock, and are already imagining the next one.  You would be ashamed
+    about doing it for the small tip he gave, but you know you would have wrapped your lips around it just the same even if he hadn't dropped
+    a few bills through the hole first.
+    <br><br>
+    You hadn't thought wearing the belt would be a big deal, but now you wish so bad that you weren't in it.  You ache to be filled, and
+    regret the time you wasted avoiding it the first half of the year.  You know as soon as you have a chance, outside of this belt, you
+    are going to try to make up for the fun you've been missing.
+    <br><br>
+    Until then, you'll have to settle for the smaller pleasure of feeling a hard cock between your lips and on your tongue, hearing him
+    moan for you, and tasting him as his cum fills your mouth.  You sigh as your hand absentmindedly reaches between your legs as you think
+    about it, and finds the hard metal of your belt.
+    <<unset $CampusMinistry>>
+    <<set $CampusMinistryFail to 1>>
+  <</if>>
 <</nobr>>
 
 ::Part10WebModel6  <5000,10000>

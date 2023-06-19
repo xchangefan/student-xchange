@@ -746,6 +746,19 @@ setup.specialProjectPossibleImpregnated = function () {
   return projectConception.length > 0 || projectAlreadyPregnant.length > 0;
 }
 
+setup.haveBaby = function (boyNames, girlNames) {
+  // TODO Update this to make sure name is unique if they already have kids
+  var nameIndex = Math.floor(Math.random() * (boyNames.length + girlNames.length));
+  var isGirl = (nameIndex >= boyNames.length);
+  var name = (isGirl ? girlNames[nameIndex - boyNames.length] : boyNames[nameIndex]);
+  var sex = (isGirl ? 'female' : 'male');
+  variables().children.push({ name, sex });
+  variables().PlayerMother = 1;
+  variables().PlayerPregnant = 0;
+  variables().PregnancyCheck = null;
+  return isGirl;
+}
+
 ::NeighbourFunctions [script] <350,50>
 setup.addNeighbour = function (name) {
 	return variables().neighbours.push(name)

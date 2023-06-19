@@ -50,16 +50,520 @@ TODO [[Part16Job]]
   <h1>Driving home $tempWith</h1>
   <<if $children.length>>
     <img src="Part16/Break2.jpg" hspace="10" vspace="10" height="450" align="left">
+    It's a long, boring drive to your parents, but when you and $tempWith finally make it there your parents are thrilled to see
+    <<if $children.length > 1>>
+      all of you.
+      <<set $tempGrandkid to "grandchildren">>
+    <<else>>
+      you both.
+      <<set $tempGrandkid to "grandchild">>
+    <</if>>
+    They are really excited to be able to spend time with their $tempGrandkid over break.
+    <br><br>
+    "We'd love to babysit, $playerName," your mom tells you.  "Have as much fun as you want with your friends this break."
+    Your father glances at your stomach and at your baby and adds, "Well, maybe not as much fun as you want."
   <<elseif $PlayerPregnant and $PregnancyWeek > 20>>
     <img src="Part16/Break1.png" hspace="10" vspace="10" height="450">
+    <br><br>
+    It's a long, boring drive to your parents.  And needing to stop what seemed like every few minutes to pee didn't help much.
+    But when you finally make it there, your parents are thrilled to see you.  Well, your mom certainly is.  Your dad, you
+    aren't so sure about.
   <<else>>
     <img src="Part8/Return1.jpg" hspace="10" vspace="10" height="450" align="left">
+    It's a long, boring drive to your parents.  But eventually you make it there and both your parents are thrilled to see you.
+    "Hopefully you feel more at ease with your new body this time than you did last Christmas," your mom tells you.
+    <<if $UncleChristmas>>
+      <br><br>
+      "From what I heard, she seemed comfortable enough with her body last year," your father adds with a disapproving look.
+    <</if>>
   <</if>>
 <</nobr>>
 
+<<nobr>>
+  "Anyways," your mom continues.  "We don't really have any family plans until Christmas day, and Dylan won't be here until tomorrow and Cassie the day
+  after that.  So you can probably give [[some of your old friends|Part16WinterBreakFriends]] a call."
+<</nobr>>
+
+::Part16WinterBreakFriendsPregnancyCheck
+<<nobr>>
+  "We had all been drinking this past summer when we had out fun.  And I don't really remember which of you came where." You put your hand over
+  your belly and add, "So I guess any of you could be the father."
+  <<if $PregnancyCheck.possibleFathers.length > 3>>
+    You look away for a second and add, "Of course there are other possiblities too."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "There's an easy way to check though.  They took a sample of the baby's DNA for me.  And they gave me a few of these home test kits.  I just
+  scan your DNA, and it checks for a few markers and uploads the results to the website and says its a probably match or not.", you tell them, and
+  open your purse to show them a few of fancy little disposable testers they gave you.  "It's not as detailed as one of the scans they do in the office,
+  but since I didn't sleep with any of your relatives or anything, it's close enough for now."
+<</nobr>>
+
+<<nobr>>
+  The guys are still processing what you said when you tell them you just need a few drops of blood.  You can tell they seem a bit reluctant,
+  you aren't sure if it's about having their DNA scanned, or about the blood.  Whichever it is, their concerns seem to disappear when you
+  mention [[the other option|Part16WinterBreakFriendsPregnancyCheck2]] for getting a sample to test.
+<</nobr>>
+
+::Part16WinterBreakFriendsPregnancyCheck2
+<<nobr>>
+  <h1>Testing your friends</h1>
+  It was months ago, all four of you had been drinking, and you weren't keeping track of who came when or where.  So you figure it's best to test all
+  three.  You decide to test them each individually though, so you don't end up with three cocks inside you, and still no idea which one might
+  be the father.
+  <<if $PlayerChastityBelt>>
+    You sigh as your hand touches your chastity belt and you think 'Well, two cocks inside me at least.'
+  <</if>>
+  <<set setup.addSex({sex: 'male', name:'Ethan'})>>
+  <<set setup.addSex({sex: 'male', name:'Jake'})>>
+  <<set setup.addSex({sex: 'male', name:'Mason'})>>
+  <<set $tempFriendsTested to 3>>
+<</nobr>>
+
+<<nobr>>
+  <video src="Part16/Home4.webm" autoplay loop muted height="400"></video>
+<</nobr>>
+
+<<nobr>>
+  Of course, the clinic would just take a blood sample or cheek swab.  And even if they needed a sperm sample, they'd just have them jerk off into
+  a cup. But what fun would that be.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part16/Home3.webm" autoplay loop muted height="400"></video>
+<</nobr>>
+
+<<nobr>>
+  You only need a tiny bit from each of them, so you let them each leave their 'sample' whereever they want, as long as at least some of it makes it
+  somewhere you can easily collect it.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part16/Home5.webm" autoplay loop muted height="400"></video>
+<</nobr>>
+
+<<nobr>>
+  After each guy, you collect his sample, and put it into one of the scanners, and not which guy got which scanner.  You let them process
+  while you clean up and take care of the next of your friends.
+<</nobr>>
+
+<<nobr>>
+  When they are all done, and you are cleaned up after the last of them, you pair each of the scanners to your phone, and upload the data.
+  Then the three of you wait for the results to be processed.  It actually only takes a couple minutes for the emails to arrive in your inbox.
+<</nobr>>
+
+<<nobr>>
+  <<if ['Mason','Ethan','Jake'].contains($PregnancyCheck.actualFather)>>
+    "Oh," you say with a bit of excitement when the email arrives. "It's you $PregnancyCheck.actualFather. You're the father."
+    The other two guys quickly excuse themselves so you and $PregnancyCheck.actualFather [[can talk in private|Part16WinterBreakFriendFather]].
+  <<else>>
+    "Oh," you say surprised and a bit disappointed. "It's actually none of you."  The guys look relieved though.
+    <br><br>
+    "Well, in that case, can we forget about this and [[have some fun|Part16WinterBreakFriendsSex]] instead," Mason says.
+    "Not that helping you test wasn't fun too," he adds with a smile.
+  <</if>>
+<</nobr>>
+
+::Part16WinterBreakFriendFather
+<<nobr>>
+  <<set setup.startDating($PregnancyCheck.actualFather)>>
+  <h1>Talking about the situation with $dating[0]</h1>
+  <video src="Part16/Home6.webm" autoplay loop muted height="500"></video>
+  <<set setup.addSexRepeat(5, {sex:'male', name:$dating[0], vaginal: true})>>
+<</nobr>>
+
+<<nobr>>
+  Your conversation starts about the baby, but $dating[0] can see you are distracted.  He realizes that you are still horny from collecting the
+  'samples' earlier.  You got all the guys off,
+  <<if $PlayerSideEffectOral>>
+    and sucking cock always makes you wet.  Though this time you didn't get off yourself.  You were probably too distracted wondering what the
+    results would be.
+  <<else>>
+    but you didn't.
+  <</if>>
+  <<if $PlayerChastityBelt>>
+    He wishes he could give you what you are needing.  You can only close your eyes and fantasize about how good it would feel, on your back
+    with him sliding into you, it as you suck his cock again.
+  <<else>>
+    He's more than happy to give you what you are needing.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  A bit later, the two of you actually start talking. He's thrilled with the news, and you can tell he's really excited about the idea of being
+  a father.  The two of you spend the afternoon and evening talking and [[making plans|BackHomeFriendsPregnant]].  Well, you also spend quite a
+  bit of the day in his bed too.
+<</nobr>>
+
+::Part16WinterBreakFriendsMinistry
+<<nobr>>
+  "Guys...," you start.  "I know it's a bit awkward now that I'm a girl.  I probably didn't help things by flashing you guys last time I was home.
+  I remember what it was like being a guy, and I've noticed you guys looking at my butt in these jeans.  I don't mind.  But nothing's going to happen
+  from it though."
+<</nobr>>
+
+<<nobr>>
+  "I remember what we'd said we'd do to whichever of us ever tried X-Change. But that wasn't a promise or anything, just some horny fantasizing.
+  <<if $sex.length == 0>>
+    I'm still a virgin. I plan on saving myself until I meet the
+    <<if $LikeFemales>>
+      <<set $tempEthanXChangeComment to 1>>
+      right girl someday."  You smile and jokingly add, "Unless one of you have an X-Change pill in your pocket, I'm pretty sure you're not her."
+    <<elseif $LikeBoth>>
+      right guy or girl someday."
+    <<else>>
+      right guy someday."
+    <</if>>
+  <<elseif $dating.length>>
+    I'm with $dating[0], and you know I'd never cheat on someone, and certainly not with my best friends."
+  <<elseif $LikeFemales>>
+    <<set $tempEthanXChangeComment to 1>>
+    I'm only into girls."  You smile and jokingly add, "Unless one of you have an X-Change pill in your pocket, You're out of luck."
+  <<else>>
+    I'm not interested in sex right now.
+    Not with any
+    <<if $LikeBoth>>
+      guy, or any girl for that matter,
+    <<else>>
+      guy,
+    <</if>>
+    and certainly not with my best friends. I hope you guys understand."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  <<if $dating.length and !setup.haveGirlfriend()>>
+    Thankfully, all the guys seem to accept that.  The awkward tension is mostly gone for the rest of the day.  However, comments about how
+    nice your ass looks go way up.
+    <br><br>
+    You head [[home that night|Part16WinterBreakParentsDylan]] happy that your friends haven't changed a bit, even though your body has.
+  <<else>>
+    Thankfully, the guys seem to accept that.  The awkward tension is mostly gone for the rest of the day.  However, comments from Jake and
+    Mason about how nice your ass looks go way up.  It makes you happy that your friends haven't change a bit, even though your body has.
+    <br><br>
+    Ethan still seems to be acting a little funny though.  You know how guys act when they are interested in you but are afraid to say anything,
+    and this seems different than that. You ignore it, figuring he isn't saying anything, and can't help it if he has feelings.  The four of you
+    have a great day and evening together.
+    <br><br>
+    Near the end of the evening though, Ethan tells you there's [[something he needs to talk to you about|Part16WinterBreakFriendsMinistryEthan]]
+    tomorrow.  You arrange to meet with him in the morning for breakfast.
+  <</if>>
+<</nobr>>
+
+::Part16WinterBreakFriendsMinistryEthan
+<<nobr>>
+  <h1>Waiting for Ethan to arrive</h1>
+  <img src="Part16/Home7.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  Ethan texts you that he's running a few minutes late, so you go ahead and order for you both.  He still hasn't arrived by the time the
+  food arrives.
+<</nobr>>
+
+<<nobr>>
+  You are just about to call to make sure everything is ok, when
+  <<if $LikeFemales or $LikeBoth>>
+    an attractive
+  <<else>>
+    a
+  <</if>>
+  woman, about your age sits down at your table.  She's not wearing any makeup, and is wearing an ill-fitting t-shirt and sweatpants.
+  She seems quite nervous. "Is everything ok?" you ask her.
+<</nobr>>
+
+<<nobr>>
+  "It's me," she says very softly.  This gets only a confused look from you.  "It's me, Ethan," she clarifies.  You can tell he is feeling
+  very self-conscious.  This is obviously his first time trying X-Change, or at least the his first time in public on it.  You do your best
+  to calm him down.  Eventually he starts to relax a bit, and can talk calmly.
+<</nobr>>
+
+<<nobr>>
+  "You were right about Mason and Jake thinking you are hot now," he tells you. "They talked about it a lot since the last time we all hung out."
+  He pauses and then continues, "I think you are attractive too, of course.  But what I thought about a lot more since then is how much I want to BE
+  you.  Or rather, to be a woman too."
+<</nobr>>
+
+<<nobr>>
+  "I knew I couldn't talk about it with them," he goes on. "Not with them talking about... well not with the way they were talking about you.  I
+  don't know how much was just them joking and how much was them wanting you.  But whether it'd be just teasing or something else, I wasn't
+  go to tell them how I felt."
+  <<if $tempEthanXChangeComment>>
+    He adds, "And when you mentioned one of us having an X-Change in our pocket yesterday, I wondered for a moment if you already knew."
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  "I'd thought about it, about taking X-Change, many times before," Ethan tells you over breakfast.  "But then I'd hear all the stories about
+  girls turning into huge sluts after they did, or other bad things happening to them, and I'd decide against it.  But seeing you, and how
+  you are after changing, made me realize it doesn't have to be that way."
+<</nobr>>
+
+<<nobr>>
+  <<if $RapistFightBack or $RapistRaped or $RapistRun or $RapistBeltAlarm>>
+    "I'm so happy you felt you could come to me," you tell him. "We can talk as we eat, and afterwards, we can go buy you a few things and
+    hopefully help you get more comfortable in this new body. But there's
+    [[something I want to tell you about|Part16WinterBreakFriendsMinistryEthanBadStory]] first," you add seriously.
+  <<else>>
+    "I'm so happy you felt you could come to me," you tell him. "We can talk as we eat, and afterwards, we can
+    [[go buy you a few things|Part16WinterBreakFriendsMinistryEllie]] and hopefully help you get more comfortable in this new body."
+  <</if>>
+<</nobr>>
+
+::Part16WinterBreakFriendsMinistryEthanBadStory
+<<nobr>>
+  <h1>Talking to Ethan about the dangers</h1>
+  <img src="Part15/Bus11.jpg" hspace="10" vspace="10" height="400" align="left">
+  <<if $RapistRaped>>
+    "Well...," you interrupt him before he goes on. "I haven't talked about it much, or to many people, but I think you need to know about it.  It
+    hasn't been as wonderful as I've made it seem the whole time.  Mostly it has, but something bad also happened to me a few months ago."
+    <br><br>
+    You tell him about your walk home alone, and the man following you, and then how he cornered you, and then about what happened next.
+    <br><br>
+    "Oh my god, I'm so sorry that happened to you," he struggles to figure out what to say to you.
+    <br><br>
+    "I've moved passed it now, and try to forget it even happened. But I wanted you to know there's dangers to being a woman, ones you might
+    not have had to worry about as a guy. I wouldn't change back though, even if I still could."
+  <<elseif $RapistFightBack or $RapistBeltAlarm>>
+    "Well...," you interrupt him before he goes on. "I haven't talked about it much, or to many people, but I think you need to know about it.  It
+    hasn't been as wonderful as I've made it seem the whole time.  Mostly it has, but something bad also happened to me a few months ago."
+    <br><br>
+    You tell him about your walk home alone, and the man following you, and then how he cornered you, and then about what happened next.
+    <<if $RapistBeltAlarm>>
+      "If it hadn't been for the safety alarm on my belt, 
+    <<else>>
+      "If I hadn't been able to fight him off,
+    <</if>>
+    he would have raped me," you tell him.
+    <br><br>
+    "Oh my god, I'm so sorry that happened to you," he struggles to figure out what to say to you.  "But I'm glad he wasn't able to..." Ethan
+    doesn't finish his sentence.
+  <<else>>
+    "Well...," you interrupt him before he goes on. "I haven't talked about it much, or to many people, but I think you need to know about it.  I
+    think I nearly had one of those horror stories you've heard about.  You tell him about how you think you were almost raped walking back to
+    campus one night, but that you managed to run off.  You tell him about some of the stories you heard about the other girls that didn't get away
+    and were attacked by the guy you think had been following you.
+    <br><br>
+    "I'm glad that you weren't one of his victims. I'll definitely keep the dangers in mind, and try to stay safe," he assures you.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You steer the conversation back to happier topics as quickly as you can, and don't talk about the incident anymore
+  [[the rest of the day|Part16WinterBreakFriendsMinistryEllie]].
+<</nobr>>
+
+::Part16WinterBreakFriendsMinistryEllie
+<<nobr>>
+  <h1>Spending the day with <strike>Ethan</strike> Ellie</h1>
+  <img src="PartX/Kate13.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<set $EthanXChange to 1>>
+<</nobr>>
+<<nobr>>
+  You spend the day with Ethan, talking about how long he's wanted this but kept quiet about it.  You also take him shopping, helping him
+  with makeup, and with clothes that will show off his new body.  The longer the day goes on, the more confortable he seems to be in his new skin.
+  Maybe a bit too comfortable given the time of year, but he's been wanting this for years, so you suppose a little chilly weather won't stop him.
+<</nobr>>
+
+<<nobr>>
+  After you and him are done at the mall he has another stop he wants to make, and the sex shop.  You are assuming it's to buy a vibrator, but
+  he something else in mind. "There's something else I want first."  He heads towards the front of the shop to the counter. "I've been saving
+  up for a while.  I've had enough money for months, but didn't have the nerve to go through with it until today," he tells you before you
+  know what he is talking about.
+<</nobr>>
+
+<<nobr>>
+  <img src="PartP/PinkPill.jpg" hspace="10" vspace="10" height="200" align="left">
+<</nobr>>
+<<nobr>>
+  After running Ethan's debit card, the clerk takes a single, individually-packed, pink pill out of a locked case, and hands it to Ethan.  You can
+  see <i><b>"X-Change Plus"</b></i> in a familiar font written across the package.  Ethan immediately opens it and swallows the pill down.  Nothing happens that
+  you can see, but you know inside Ethan's body, something has happened, something that means he won't be changing back into his old body tomorrow,
+  or ever.  This is now the body he'll have the rest of his life.
+<</nobr>>
+
+<<nobr>>
+  "I guess I shouldn't call you 'Ethan' anymore," you say to her.  "Have you thought..."
+<</nobr>>
+
+<<nobr>>
+  "Ellie," she says immediately.  Clearly she's thought about that as well.  You can tell her heart is racing with excitement.  You lean over to give
+  her a congratulatory and hopefully reassuring hug. Ellie misinterprets your intentions and instead kisses you.
+<</nobr>>
+<<nobr>>
+  <img src="Part16/Home8.png" hspace="10" vspace="10" height="450">
+<</nobr>>
+<<nobr>>
+  <<if $dating.length>>
+    You quickly pull away.  Ellie realizes she's made a mistake and starts to apologize.  You tell her it's ok, you understand this is a very
+    exciting, and confusing time for her.  But you also make it clear that you are with $dating[0]. "You are a brilliant and wonderful person, and
+    a now a beautiful woman too. I'm sure you'll find the right girl for you in no time," you tell her.
+    <br><br>
+    Wanting to move passed the kiss and forget it ever happened, you change the subject. "And, until then, maybe we can
+    [[do a little shopping|Part16WinterBreakFriendsMinistryEllieShop]] at the store here.
+  <<else>>
+    <span id="EllieKiss">
+      <<if $LikeFemales>>
+        With this beautiful woman kissing you, your heart starts to race and you kiss back. It takes a moment for your brain to process and
+        for you to remember that this is your friend Ethan, or at least that's who she used to be.  You've
+        <<link "never thought of Ethan as someone you'd want to date">>
+          <<replace "#EllieKiss">>
+            You pull away.  Ellie realizes she's made a mistake and starts to apologize. "No, don't apologize," you reassure her. "It wasn't want
+            I was planning, but I enjoyed it. But I never thought of you that way before.  Maybe that will change over time, as I adjust to you
+            being Ellie now, but for now, lets just remain friends."  She looks disappointed, but relieved that you aren't upset.
+            <br><br>
+            Wanting to move past the kiss and forget it ever happened, you change the subject. "Now where were we.  That's right, when we came
+            in I was planning on helping you [[do a little shopping|Part16WinterBreakFriendsMinistryEllieShop]] at the store here.
+          <</replace>>
+        <</link>>
+        before. But then again, Ethan was a guy. You may not have wanted to date Ethan, but
+        <<link "dating Ellie, sounds like something worth exploring">>
+          <<replace "#EllieKiss">>
+            You passionately kiss back. You hadn't thought of Ethan as someone you'd want to date, but all that changed when he became Ellie.
+            You had planned on doing a little shopping at the store with her, but you can't focus on anything else right now.  "Do you want
+            to get out of here, and [[go somewhere to talk|Part16WinterBreakFriendsMinistryEllieDate]]," you ask her.  She bites her lower lip and nods.
+          <</replace>>
+        <</link>>
+        if she's interested too.
+      <<elseif $LikeBoth>>
+        With this beautiful woman kissing you, your heart starts to race and you kiss back. It takes a moment for your brain to process and
+        for you to remember that this is your friend Ethan, or at least that's who she used to be.  You've thought about Ethan being cute before,
+        back before he changed.  But you
+        <<link "never really gave dating him any serious consideration">>
+          <<replace "#EllieKiss">>
+            You pull away.  Ellie realizes she's made a mistake and starts to apologize. "No, don't apologize," you reassure her. "It wasn't want
+            I was planning, but I enjoyed it. But I never thought of you that way before.  I've always thought of you as a great friend, and I
+            wouldn't want to jeopardize that friendship."  She looks disappointed, but relieved that you aren't upset.
+            <br><br>
+            Wanting to move past the kiss and forget it ever happened, you change the subject. "Now where were we.  That's right, when we came
+            in I was planning on helping you [[do a little shopping|Part16WinterBreakFriendsMinistryEllieShop]] at the store here.
+          <</replace>>
+        <</link>>
+        before.  You've always just thought of him as a friend. But you can't deny the sparks you felt when Ellie kissed you.  Maybe now
+        that she can be her true self,
+        <<link "dating Ellie, might be something worth exploring">>
+          <<replace "#EllieKiss">>
+            You passionately kiss back. You hadn't thought of Ethan as someone you'd want to date, but now that the person that's been hiding inside
+            all this time can finally show herself, it's different.
+            You had planned on doing a little shopping at the store with her, but you can't focus on anything else right now.  "Do you want
+            to get out of here, and [[go somewhere to talk|Part16WinterBreakFriendsMinistryEllieDate]]," you ask her.  She bites her lower lip and nods.
+          <</replace>>
+        <</link>>
+        if she's interested too.
+      <<else>>
+        You instinctively pull away in surprise.  Ellie realizes she's made a mistake and starts to apologize.  You tell her it's ok, you understand
+        this is a very exciting, and confusing time for her.
+        <br><br>
+        You've always thought Ethan was cute, though you never really admitted it to yourself until after your change.  But you know it wasn't just
+        the body of the cute guy that no longer exists that you were attracted to.  More than that it was the person inside you were drawn to.
+        That person is just inside the body of an attractive young woman now instead.
+        <br><br>
+        Still, you wonder if it's best to
+        <<link "move on and pretend the kiss didn't happen.">>
+          <<replace "#EllieKiss">>
+            You instinctively pull away in surprise.  Ellie realizes she's made a mistake and starts to apologize.  You tell her it's ok, you understand
+            this is a very exciting, and confusing time for her.
+            <br><br>
+            You've always thought Ethan was cute, though you never really admitted it to yourself until after your change.  But you know it wasn't just
+            the body of the cute guy that no longer exists that you were attracted to.  More than that it was the person inside you were drawn to.
+            That person is just inside the body of an attractive young woman now instead.
+            <br><br>
+            Wanting to move past the kiss and forget it ever happened, you change the subject. "Now where were we.  That's right, when we came
+            in I was planning on helping you [[do a little shopping|Part16WinterBreakFriendsMinistryEllieShop]] at the store here.
+          <</replace>>
+        <</link>>
+        Though part of you wants to take a chance, and
+        <<link "kiss her again, and see where things lead.">>
+          <<replace "#EllieKiss">>
+            You instinctively pull away in surprise.  Ellie realizes she's made a mistake and starts to apologize.  You tell her it's ok, you understand
+            this is a very exciting, and confusing time for her.
+            <br><br>
+            You've always thought Ethan was cute, though you never really admitted it to yourself until after your change.  But you know it wasn't just
+            the body of the cute guy that no longer exists that you were attracted to.  More than that it was the person inside you were drawn to.
+            That person is just inside the body of an attractive young woman now instead.
+            <br><br>
+            You lean back over, this time initiating a kiss yourself.  Ellie eagerly begins to kiss you back.
+            "You just took me by surprise," you say when you both finally pull away for a moment. "I'm still getting used to your new body.  Do you want
+            to get out of here, and [[go somewhere to talk|Part16WinterBreakFriendsMinistryEllieDate]]," you ask her.  She bites her lower lip and nods.
+          <</replace>>
+        <</link>>
+      <</if>>
+    </span>
+  <</if>>
+<</nobr>>
+
+::Part16WinterBreakFriendsMinistryEllieDate
+TODO reciprocate, start dating, sex or no
+
+::Part16WinterBreakFriendsMinistryEllieShop
+<<nobr>>
+  <h1>Buy some toys for Ellie</h1>
+  <img src="Part8/Text4.jpg" hspace="10" vspace="10" height="600" align="left">
+<</nobr>>
+<<nobr>>
+  TODO vibrator for Ellie
+<</nobr>>
+
+::Part16WinterBreakFriendsStandard
+TODO Not previous had sex with them
+TODO special case if friend is father and you are pregnant?
 TODO Winter Break
 TODO If have baby
 TODO If in chastity
+TODO Dylan next day, Cassie Day after that, Family Christmas (asshole grandfather dead/in-a-home)
+TODO [[Part16WinterBreakParentsDylan]]
+
+::Part16WinterBreakFriendsSex
+TODO Previously had sex
+TODO special case if friend is father and you are pregnant?
+TODO Winter Break
+TODO If have baby
+TODO If in chastity
+TODO Dylan next day, Cassie Day after that, Family Christmas (asshole grandfather dead/in-a-home)
+TODO [[Part16WinterBreakParentsDylan]]
+
+::Part16WinterBreakFriends
+<<nobr>>
+  <h1>Out with your old friends</h1>
+  <<if $PlayerPregnant>>
+    <img src="Part16/Home2.jpg" hspace="10" vspace="10" height="600" align="left">
+  <<else>>
+    <img src="Part16/Home1.jpg" hspace="10" vspace="10" height="600" align="left">
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You and your friends have a lot of fun hanging out, but there's a definitely tension in the air between you and them.  You have a pretty good
+  idea what is causing it and finally work up the nerve to bring it up.
+<</nobr>>
+
+<<nobr>>
+  <<if $PlayerPregnant and ($PregnancyCheck.possibleFathers.contains('Mason') or $PregnancyCheck.possibleFathers.contains('Ethan') or $PregnancyCheck.possibleFathers.contains('Jake'))>>
+    <<include [[Part16WinterBreakFriendsPregnancyCheck]]>>
+  <<elseif setup.haveFucked('Mason') or setup.haveFucked('Ethan') or setup.haveFucked('Jake')>>
+    <<if $PlayerPregnant>>
+      First, I am pregnant, but the baby isn't any of yours.  There was some drinking involved when we had out fun over the summer, and I don't really
+      remember who came where.  But the math doesn't work out, so you are all in the clear.
+      <br><br>
+    <</if>>
+    <<include [[Part16WinterBreakFriendsSex]]>>
+  <<elseif $CampusMinistry>>
+    <<include [[Part16WinterBreakFriendsMinistry]]>>
+  <<else>>
+    <<include [[Part16WinterBreakFriendsStandard]]>>
+  <</if>>
+<</nobr>>
+
+::Part16WinterBreakParentsDylan
+TODO Dylan next day, 
+TODO [[Part16WinterBreakParentsCassie]]
+
+::Part16WinterBreakParentsCassie
+TODO Cassie Day after that,
+TODO [[Part16WinterBreakParentsChristmas]]
+
+::Part16WinterBreakParentsChristmas
+TODO Family Christmas (asshole grandfather dead/in-a-home)
 TODO [[Part16Job]]
 
 ::Part16WinterBreakParentsBF
