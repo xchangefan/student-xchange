@@ -772,9 +772,9 @@ setup.isFormerNeighbour = function (name) {
 	return variables().FormerNeighbours && variables().FormerNeighbours.indexOf(name) >= 0
 }
 
-
 setup.removeNeighbour = function (name) {
 	variables().neighbours = setup.removeItem(variables().neighbours, name)
+  variables().FormerNeighbours.push(name);
 }
 
 setup.otherRoommate = function (name) {
@@ -819,7 +819,7 @@ setup.areDating = function (name) {
 }
 
 setup.haveGirlfriend = function () {
-  var potentialGirlfriends = ["Kate", "Veronica", "Bailey"];
+  var potentialGirlfriends = ["Kate", "Veronica", "Bailey", "Ellie"];
   return potentialGirlfriends.find(function(name) {return setup.areDating(name)});
 }
 

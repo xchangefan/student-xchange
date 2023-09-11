@@ -257,6 +257,19 @@
     <</if>>
     <br><br>
     <<include [[SideBarExWifeTrapSideEffects]]>>
+  <<elseif $PlayerSideEffectPermanentDenial>>
+    You are unable to orgasm due to the failed attempt to disable your implant's orgasm denial side-effect.
+    <<if $PlayerSideEffectMasochist or $PlayerSideEffectExhibitionist or $PlayerSideEffectSubmissive or $PlayerSideEffectPheromones or $PlayerSideEffectOral or $PlayerSideEffectAnal or $PlayerSideEffectLibido or $PlayerSideEffectDreams>>
+      The side effects your implant gave your new body seem minor now.
+    <<elseif $PlayerNoBodyHair or $PlayerWeightControl or $PlayerReducedSleep >>
+      The features your implant has don't change that.
+    <<elseif $PlayerEasytoOrgasmFormer or $PlayerPowerfulOrgasmsFormer or $PlayerSuperOrgasmsFormer>>
+      You miss the features your implant used to have.
+    <<else>>
+      That has affected you in other ways as well.
+    <</if>>
+    <br><br>
+    <<include [[SideBarPermanentDenialSideEffects]]>>
   <<else>>
     You are
     <<if $MaleAgain>>
@@ -283,6 +296,87 @@
     <</if>>
   <</if>>
 <</nobr>>
+
+::SideBarPermanentDenialSideEffects
+<h1>Implant Effects</h1>
+<ul>
+<<nobr>>
+  <li>You are unable to orgasm, though you keep trying because there's always a chance one might happen despite your denial's side effect.</li>
+  <li>Even though you can't orgasm, you find it hard not to think about sex.  Your mind tells you that you can't cum, but your body keeps telling you to try anyway.</li>
+
+  <<if $PlayerNoBodyHair>>
+    <li>You have no body hair.</li>
+  <</if>>
+
+  <<if $PlayerWeightControl>>
+    <li>You have perfect
+    <<if $PlayerPregnant>>
+      weight, when you aren't pregnant.
+    <<else>>
+      weight.
+    <</if>>
+    </li>
+  <</if>>
+
+  <<if $PlayerReducedSleep>>
+    <li>You don't need much sleep.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectDreams>>
+    <li>Your dreams are always erotic.  Frequently you wake up horny and frustrated, even in your dreams you don't seem to be able to cum.</li>
+  <</if>>
+
+  <<if $PlayerEasytoOrgasmFormer >>
+    <li>You remember how easy it use to be for you to orgasm.  Now it's impossible.</li>
+  <</if>>
+
+  <<if $PlayerPowerfulOrgasmsFormer >>
+    <li>You remember how intense your orgasms used to be.  What you wouldn't give to feel one of those again now.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectExhibitionist >2 >>
+    <li>You crave being naked in public, you dislike wearing clothes.</li>
+  <<elseif $PlayerSideEffectExhibitionist >1 >>
+    <li>You like the thought of being naked in public, you want to wear revealing clothes.</li>
+  <<elseif $PlayerSideEffectExhibitionist>>
+    <li>You like the thought of being naked in public.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectSubmissive >>
+    <li>You are submissive in sexual situations, and most any other time as well.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectMasochist>>
+    <li>You love it when you are bent over your lover's knee to have have your ass spanked until it is red.<li>
+  <</if>>
+  
+  <<if $PlayerSideEffectPheromones >3 >>
+    <li>Being next to any man will instantly excite you.</li>
+  <<elseif $PlayerSideEffectPheromones >2 >>
+    <li>The smell of sweating men excites you, being next to multiple men will instantly excite you.</li>
+  <<elseif $PlayerSideEffectPheromones >1 >>
+    <li>The smell of sweating men excites you, regular men will excite you if you stay too long next to them.</li>
+  <<elseif $PlayerSideEffectPheromones>>
+    <li>The smell of sweating men excites you.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectLibido >2 >>
+    <li>Your libido is much higher than normal, you can never refuse sex.</li>
+  <<elseif $PlayerSideEffectLibido >1 >>
+    <li>Your libido is much higher than normal, you will often accept or suggest sex to anyone showing the slightest interest.</li>
+  <<elseif $PlayerSideEffectLibido>>
+    <li>You libido is higher than normal.  Your thoughts frequently return to sex.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectOral>>
+    <li>You love oral sex.  You love the taste of cum.  You love the way it feels at slides across your tongue and down your throat.</li>
+  <</if>>
+
+  <<if $PlayerSideEffectAnal >>
+    <li>You love anal sex and can never refuse it.</li>
+  <</if>>
+<</nobr>>
+</ul>
 
 ::SideBarExWifeTrapSideEffects  <2600,500>
 <h1>Implant Effects</h1>
@@ -335,7 +429,7 @@
   <</if>>
 
   <<if $PlayerSideEffectMasochist>>
-    <li>You it when Paul bends you over his knee and spanks your ass until it's red.<li>
+    <li>You love it when Paul bends you over his knee and spanks your ass until it's red.<li>
   <</if>>
   
   <<if $PlayerSideEffectPheromones >3 >>
@@ -593,6 +687,8 @@
 
   <<if $PlayerSideEffectBreeder>>
     <li>You have powerful orgasms.  But you can only orgasm when you are pregnant, or when someone cums inside you.</li>
+  <<elseif $PlayerSideEffectOrgasmBlockFormer and $PlayerCumTreatments == 2>>
+    <li>You take regular "treatments" of a cum-laced supplement to make sure your orgasm-preventing side effect doesn't return.</li>
   <<elseif $PlayerSideEffectOrgasmBlockFormer>>
     <li>You need a regular supply of cum or you aren't able to orgasm.</li>
   <</if>>
@@ -928,7 +1024,7 @@
 ::SideBarMentor  <4800,500>
 <br>
 <<nobr>>
-  <<if $DropoutCumslut || $DropoutConcubine || $IslandPet || $FatherChastity>>
+  <<if $DropoutCumslut || $DropoutConcubine || $IslandPet || $FatherChastity || $BackHome>>
   <<elseif $Roommate == 'Marissa'>>
     Your roommate is Marissa. <<include [[SideBarDormFriendLevel]]>>
   <<elseif $Roommate == 'Kiera'>>
@@ -985,7 +1081,7 @@
 
 ::SideBarNeighbours  <5000,500>
 <<nobr>>
-  <<if !$student || $FatherChastity>>
+  <<if !$student || $FatherChastity || $BackHome>>
   <<elseif ($Spouse and $Spouse != 'Dan') or $Roommate == 'Andrew' or $Roommate == 'Paul' or $Roommate == 'Kate' or $Roommate == 'Veronica' or $Roommate == 'Aaron'>>
   <<elseif $Roommate == 'Sorority Sister'>>
     You live with your sorority sisters.

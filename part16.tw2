@@ -929,9 +929,27 @@ TODO Work this in to Part 16 flow
 <<nobr>>
   "The DA is confident that a few months in prison and the hope of parole will be enough to convince him to release his last victim.
   Until then, let's all keep her in our thoughts."
-<</nobr>>
-
-<<nobr>>
+  <<if $PlayerChastityBelt and $Keyholder == "computer">>
+    <<unset $PlayerChastityBelt>>
+    <<unset $Keyholder>>
+    <<set setup.removeInventory('sex toys', 'electronic chastity belt')>>
+    <<set $DepartmentHeadBeltFree to 1>>
+    <br><br>
+    You would keep that poor girl in your thoughts, if your thoughts weren't full of thoughts of when you can have something long and
+    hard inside you again, and not just in your throat this time.
+    <<if setup.haveGirlfriend() or (!$dating.length && setup.sexFemaleCount() > setup.sexMaleCount)>>
+      TODO Strapon image
+    <<elseif $dating.length>>
+      TODO MF image
+    <<else>>
+      Thankfully, many of the frats and guys from other campus groups, as well as many of the local clubs off campus, have been throwing
+      'freedom parties' to help girls like you get what they've been missing.
+      <br><br>
+      <video src="Part16/Class31.mp4" autoplay loop muted height="400"></video>
+      <<set setup.addSexRepeat(40, {sex:"male"})>>
+      <<set setup.addSexRepeat(20, {sex:"male", vaginal: true, noCondom: true, noPullout: true})>>
+    <</if>>
+  <</if>>
 <</nobr>>
 
 TODO [[Part16WomensStudiesPublish3]]
@@ -940,7 +958,7 @@ TODO [[Part16WomensStudiesPublish3]]
 TODO Work this in to Part 16 flow
 <<nobr>>
   <h1>Women's Studies class</h1>
-  "First, let me apologize if the woman pictured here is one of you.  Unfortunately, the media continues to use photos of his victims
+  "First, let me apologize if the woman pictured here is one of you.  Unfortunately, the media continues to use salacious photos of his victims
   instead of the criminal himself for their stories about the Engineering department abuses here. But photo aside, I wanted to share
   the news from last night with you all."
 <</nobr>>
@@ -1004,11 +1022,31 @@ TODO Work this in to Part 16 flow
 <</nobr>>
 
 <<nobr>>
-  <br>
-  As you and the rest of the class close your eyes for a minute, you try to think about the poor helpless girl still locked in
-  that belt.  But what your mind keeps going to instead is the need you are feeling between your own legs at the moment.  You do think
-  about what it must be like for her, knowing that it can never be satisfied, but that just makes your own need grow.  Your mind also
-  keeps going to the thought of her on her knees, ten times a day, doing what she must to avoid punishment from her belt.
+  <video src="Part16/Class32.mp4" autoplay loop muted height="400"></video>
+  <br>  
+  You try to think of the girl's suffering, but instead during the moment of silence your mind is filled of thoughts of
+  <<if setup.haveGirlfriend()>>
+    you, $dating[0], and her,
+  <<else>>
+    you, her, and another girl
+  <</if>>
+  sucking cock after cock.
+  <<if $DepartmentHeadBeltFree>>
+    You can almost still feel the wondeful teasing the belt gave you when you had a cock in your mouth.  The urge to stand up and leave to go
+    find a cock to suck right now is almost overwhelming.
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  You try to stop thinking about that, but your mind keeps keeps going back to the need you are feeling between your own legs at the moment.  You
+  do think about what it must be like for her.  Unlike yours, you know her need can never be satisfied, but that just makes your own need grow.
+  And she'll never be able to forget about it either.  At least ten times a day, she'll be on her knees with a cock in her mouth, with her belt
+  teasing her, reminding her what she can't have.
+<</nobr>>
+
+<<nobr>>
+  You realize your hand has strayed into your panties.  You quickly remove it, hopefully before everyone opened their eyes again after the moment
+  of silence ends.
 <</nobr>>
 
 TODO Back to main
@@ -1669,7 +1707,7 @@ TODO Back to main
 
 <<nobr>>
   <<set $ComputerChastityMode to $JobBetaTester>>
-  <<set $oldBetaTestMode to $JobBettaTester>>
+  <<set $oldBetaTestMode to $JobBetaTester>>
   <<unset $JobBetaTester>>
   <<set $JobBetaTesterFormer to 1>>
   You aren't a Beta tester anymore

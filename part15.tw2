@@ -559,9 +559,6 @@
 <<nobr>>
   <h1>Treatment for your orgasm-block side effect</h1>
   <img src="PartP/Treatment.jpg" hspace="10" vspace="10" height="606" align="left">
-  <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
-  <<unset $PlayerSideEffectOrgasmBlock>>
-  <<set $PlayerCumTreatments to 1>>
   "There's been some new research on the "Orgasm Block" side-effect
   that some implants, like yours, develop.  They've found a cure.  Well, a treatment technically since it never goes away and you
   have to keep taking the treatment, one way or another."
@@ -593,6 +590,41 @@
   <</if>>
 <</nobr>>
 
+::Part15ClinicOrgasmBlockCommonEffects
+<<nobr>>
+  <i>You realize you crave sex
+  <<if $PlayerSideEffectLibido>>
+    <<set $PlayerSideEffectLibido to $PlayerCumTreatments>>
+  <<else>>
+    even
+    <<set $PlayerSideEffectLibido += $PlayerCumTreatments>>
+  <</if>>
+  more than you did before.  You also feel a hunger for
+  <<if $PlayerSideEffectOral>>
+    <<set $PlayerSideEffectOral to $PlayerCumTreatments>>
+  <<else>>
+    <<set $PlayerSideEffectOral += $PlayerCumTreatments>>
+  <</if>>
+  <<if setup.sexMaleCount() > 0>>
+    the feel of a cock in your mouth, and the taste of his warm cum on your tongue.
+  <<else>>
+    the taste you had from your treatment drink.  Though you know now you'll have to suck a cock to get that wonderful
+    flavor again before your next appointment.
+  <</if>>
+  You also find yourself thinking
+  <<if setup.sexMaleCount() > 0>>
+    more about having a guy fuck your ass, and begging him to fill your ass with his cum.
+  <<else>>
+    what a cock would feel like in your ass, and what it would feel like to have a guy cum in your ass.
+  <</if>>
+  <<if $PlayerSideEffectAnal>>
+    <<set $PlayerSideEffectAnal to $PlayerCumTreatments>>
+  <<else>>
+    <<set $PlayerSideEffectAnal += $PlayerCumTreatments>>
+  <</if>>
+  </i>
+<</nobr>>
+
 ::Part15ClinicOrgasmBlockCommonAfter
 <<nobr>>
   As you swallow the last drop, you wipe up with your finger a bit that dribbled down onto your chin, then lick your finger clean.
@@ -609,37 +641,7 @@
 <</nobr>>
 
 <<nobr>>
-  <i>You realize you crave sex
-  <<if $PlayerSideEffectLibido>>
-    <<set $PlayerSideEffectLibido to 1>>
-  <<else>>
-    even
-    <<set $PlayerSideEffectLibido += 1>>
-  <</if>>
-  more than you did before.  You also feel a hunger for
-  <<if $PlayerSideEffectOral>>
-    <<set $PlayerSideEffectOral to 1>>
-  <<else>>
-    <<set $PlayerSideEffectOral += 1>>
-  <</if>>
-  <<if setup.sexMaleCount() > 0>>
-    the feel of a cock in your mouth, and the taste of his warm cum on your tongue.
-  <<else>>
-    the taste you had from your treatment drink.  Though you know now you'll have to suck a cock to get that wonderful
-    flavor again.
-  <</if>>
-  You also find yourself thinking
-  <<if setup.sexMaleCount() > 0>>
-    more about having a guy fuck your ass, and begging him to fill your ass with his cum.
-  <<else>>
-    what a cock would feel like in your ass, and what it would feel like to have a guy cum in your ass.
-  <</if>>
-  <<if $PlayerSideEffectAnal>>
-    <<set $PlayerSideEffectAnal to 1>>
-  <<else>>
-    <<set $PlayerSideEffectAnal += 1>>
-  <</if>>
-  </i>
+  <<include [[Part15ClinicOrgasmBlockCommonEffects]]>>
 <</nobr>>
 
 ::Part15ClinicOrgasmBlockBirthControl
@@ -680,17 +682,20 @@
 
 <<nobr>>
   <<if setup.haveGirlfriend()>>
-    It's not like you are going stop seeing $dating[0].  So you ask to [[see if you can make do|Part15ClinicOrgasmBlock2]]
+    It's not like you are going stop seeing $dating[0].  So you ask to [[see if you can make do|Part15ClinicOrgasmBlock2Warn]]
     with just the 'treatment' they are offering.
   <<else>>
-    You can proceed with their plan to stop using any form of birth control, or you can [[ask if you can make do|Part15ClinicOrgasmBlock2]]
-    with just the 'treatment' they are offering.
+    You can proceed with their plan to stop using any form of birth control and have unprotected sex, or you can
+    [[see if there is anything else they can do|Part15ClinicOrgasmBlock2Warn]].
   <</if>>
 <</nobr>>
 
 ::Part15ClinicOrgasmBlockBirthControl2
 <<nobr>>
   <h1>No more birth control</h1>
+  <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
+  <<unset $PlayerSideEffectOrgasmBlock>>
+  <<set $PlayerCumTreatments to 1>>
   <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
     <img src="PartP/Creampie2.jpg" hspace="10" vspace="10" height="450"><br>
     After he deactivates your implant's birth control for you, you
@@ -729,7 +734,7 @@
     <<set $PlayerProtectionNone to 1>>
   <</if>>
   drink down the entire glass of the "treatment" solution he gives you.  As the warm liquid flows over your tongue and down your
-  throat, it's strong scent and flavor hits you.
+  throat, its strong scent and flavor hits you.
   <<if setup.sexMaleCount() > 0>>
     Judging from the taste, you think it's at least 50 percent cum.  Or at least something made to be similar to it. 
   <<else>>
@@ -759,7 +764,7 @@
 
 <<nobr>>
   You drink down the entire glass of the "treatment" solution he gives you.  As the warm liquid flows over your tongue and down your
-  throat, it's strong scent and flavor hits you.
+  throat, its strong scent and flavor hits you.
   <<if setup.sexMaleCount() > 0>>
     Judging from the taste, you think it's at least 50 percent cum.  Or at least something made to be similar to it. 
   <<else>>
@@ -772,8 +777,337 @@
   <<include [[Part15ClinicOrgasmBlockCommonAfter]]>>
 <</nobr>>
 
+::Part15ClinicOrgasmBlock2Warn
+<<nobr>>
+  <h1>Asking about alternate treatement options</h1>
+  <<if setup.haveGirlfriend()>>
+    <div style="float:left;padding:12px;">
+      <video src="Part15/Treatment4.mp4" autoplay loop muted height="550"></video>
+    </div>
+    <br><br>
+    The thought of guys fucking you being the only way you'd usually get off, doesn't appeal to you.  You want to get off with $dating[0]'s
+    head between your legs, or kissing as her fingers slides over your clit on their way inside you, or with her on top of you as her strap-on
+    pushes inside you.  You certainly don't want to only get off with some guy's cum filling you.
+  <<elseif setup.sexMaleCount() < setup.sexFemaleCount()>>
+    <video src="Part15/Treatment5.mp4" autoplay loop muted height="450"></video>
+    <br><br>
+    The thought of getting off with a guy inside you isn't horrifying or anything, but you'd very much prefer for that not to be your only
+    option if you want to cum too. Sex with girls would be a lot less fun, if they were the only ones that would get off, not you too.
+  <<else>>
+    <video src="Part15/Treatment5.mp4" autoplay loop muted height="450"></video>
+    <br><br>
+    Well, you certainly love clawing into
+    <<if $dating.length>>
+      $dating[0]'s
+    <<else>>
+      a guy's
+    <</if>>
+    back as you cum with him on top of you.  But you'd rather not have him cumming inside you every time, with no birth control, be the only
+    way that could happen.  You don't want to spend the rest of your life pregnant, or have to make monthly trips to get an abortion, just so
+    you can orgasm.
+  <</if>>
+  <<if !$PlayerSideEffectPermanent>>
+    Besides, you'd like to keep the option to change back some day if you want, and getting pregnant even once would mean that would no longer
+    be a choice you could make.
+  <</if>>
+  So you ask if there's any other way.
+<</nobr>>
+
+<<nobr>>
+  They tell you there is another possible treatment, but it's not very reliable, so they hadn't offered it.
+  $PlayerSideEffectOrgasmBlock
+  <<if $PlayerSideEffectOrgasmBlock > 1>>
+    "It's 50/50 whether it works or makes things worse in the best of cases.  It's even less likely to improve things when the side-effect is
+    as severe as it is in your case,"
+  <<else>>
+    "It's probably 50/50 for you whether it helps, or makes things worse.
+  <</if>>
+  he warns you.  "But we can try it if you are willing to take the risk."
+  <<if !$PlayerSideEffectPermanent>>
+    He looks at your chart again and adds, "Oh, and one thing is certain.  It will almost certainly cause your implant, along with any side-effects
+    it has or develops, to become permanent.  So you should be aware of that as well."
+  <</if>> 
+<</nobr>>
+
+<<nobr>>
+  You don't like the chance that it could make things worse for you.
+  <<if !$PlayerSideEffectPermanent>>
+    You also don't like that you'll lose your option to ever change back.
+  <</if>>
+  <<if setup.haveGirlfriend()>>
+    But, you also don't want guys to be your only option.  So you tell them you'll
+    [[go with the alternative treatement|Part15ClinicOrgasmBlock2Try]].
+  <<else>>
+    But you are glad there is at least more than one option for you.  He gives you a moment to think about whether you want to go with
+    their [[recommended, original option|Part15ClinicOrgasmBlockBirthControl2]] or to go with the
+    [[riskier, alternative treatement|Part15ClinicOrgasmBlock2Try]].
+  <</if>>
+<</nobr>>
+
+::Part15ClinicOrgasmBlock2Try
+<<nobr>>
+  <h1>Go with the alternative treatment</h1>
+  <<set $tempSuccessChance to 0.5**$PlayerSideEffectOrgasmBlock>>
+  <<set $tempSuccessChanceDisplay to Math.round(0.5**$PlayerSideEffectOrgasmBlock * 100)>>
+  <<set $tempRoll to Math.random()>>
+  <<set $tempSuccess to (1 - $tempSuccessChance) <= $tempRoll>>
+  They again warn you that they estimate only a $tempSuccessChanceDisplay% chance of success for this treatement, and go over the possible
+  negative outcomes if it fails.  But your mind is already made up. They start with giving you some sort of injection.  They explain what it is,
+  but your mind is somewhere else entirely, and you don't hear any of it.
+<</nobr>>
+  
+<<nobr>>
+  They give a few minutes for whatever the injection was to take effect, then they give you are large glass of some white liquid.  You then
+  drink down the entire glass of the "treatment" solution he gives you.  As the warm liquid flows over your tongue and down your throat, its
+  strong scent and flavor hits you.
+  <<if setup.sexMaleCount() > 0>>
+    Judging from the taste, you think it's at least 50 percent cum.  Or at least something made to be similar to it. But it tastes better
+    than it ever has before
+  <<else>>
+    It tastes a bit bitter and slightly salty, with a bit of metallic aftertaste to it.  It tastes amazing though
+  <</if>>
+  and you eagerly down the entire glass, and then start on the second one he hands you.
+<</nobr>>
+<<nobr>>
+  <img src="PartP/PregTest6.jpg" hspace="10" vspace="10" height="400" align="left">
+  <img src="PartP/Treatment.jpg" hspace="10" vspace="10" height="404" align="left">
+  <img src="Part6/Club3.jpg" hspace="10" vspace="10" height="400">
+  <<set $PlayerSideEffectPermanent to 1>>
+<</nobr>>
+<<nobr>>
+  Midway through the second glass a pleasing warmth starts to build for you.  It starts on your tongue and lips, then you feel a tingling in your
+  nipples.  Soon the feeling reaches your clit and the pleasure starts to build quickly and the feeling spreads through your entire body.  By the
+  time you reach the bottom of the second glass, you can barely focus on drinking and dribble the last bit of it down onto your shirt, making it
+  look like guy just came all over you.  You don't care though, you can only think about the pleasure still radiating out from your clit throughout
+  your body.  You barely register he's talking as the tech tells you, "It seems to be working.  It should be clear..."
+<</nobr>>
+
+<<nobr>>
+  You are shocked at your own words as you interrupt him to blurt out, <i>"Why don't you shut up and fuck me!"</i>
+<</nobr>>
+
+<<nobr>>
+  He seems unsurprised by your outburst, and ignores it and continues, "It should be clear in a few moments whether it was successful or not."
+<</nobr>>
+
+<<nobr>>
+  Your eyes are fixed on the bluge showing through his slacks.  Your request clearly had an effect on him, even if he acted like it didn't.
+  <<if setup.haveGirlfriend()>>
+    You feel a bit ashamed as you wonder why he won't just
+  <<elseif setup.sexVaginalCount() == 0>>
+    You've never had a guy inside you before, but you want nothing more than for him to just
+  <<else>>
+    Ever part of you is wishing he'd just
+  <</if>>
+  bend you over the counter and fuck you right now.  But even that thought is pushed out of your mind as the pleasure continues to build.
+<</nobr>>
+
+<<nobr>>
+  Finally, just as you think you'll go mad if the pleasure lasts any longer without you finally orgasmming, the pleasure reaches its peak.
+  <<if $tempSuccess>>
+    It seems to hover there, for what seems like a lifetime.  Then, finally, one of the most powerful orgasms you've felt crashes over you.
+    As you start to come down and begin to focus again he says, "Wonderful.  It looks like
+    <<if setup.haveGirlfriend()>>
+      [[it worked after all|Part15ClinicOrgasmBlock2Girlfriend]]."
+    <<else>>
+      [[it worked after all|Part15ClinicOrgasmBlock2]]."
+    <</if>>
+  <<else>>
+    <<set $PlayerSideEffectPermanentDenial to 1>>
+    <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
+    <<set $PlayerEasytoOrgasmFormer to $PlayerEasytoOrgasm>>
+    <<set $PlayerPowerfulOrgasmsFormer to $PlayerPowerfulOrgasms>>
+    <<set $PlayerSuperOrgasmsFormer to $PlayerSuperOrgasms>>
+    <<unset $PlayerSideEffectOrgasmBlock>>
+    <<unset $PlayerSideEffectMasturbationBlock>>
+    <<unset $PlayerEasytoOrgasm>>
+    <<unset $PlayerPowerfulOrgasms>>
+    <<unset $PlayerSuperOrgasms>>
+    You feel like you are past the point of no return and an orgasm is imminent, but you just stay there on the edge waiting for a wave of
+    pleasure to crash over you, but it doesn't seem to come.  You know if he'd only slide his hard cock into you, that would push you over the edge,
+    but he won't.
+    <<if setup.sexVaginalCount() == 0>>
+      You've never had a cock inside you, but your pussy is crying out to you right now, telling you how good it would feel.
+    <<else>>
+      Your pussy is throbbing right now, trying to remind you how good it would feel to have him inside you right now.
+    <</if>>
+    <br><br>
+    After what seems like a lifetime, you whimper as you feel your pleasure start to fade.  The pleasure dies off quickly, but the need for an orgasm
+    and the desire for his cock, for any cock, seems to remain much longer.  "Oh, that's unfortunate," he says matter-of-factly. "It looks like the
+    alternative treatement [[was unsuccessful|Denial]].
+    <br><br>
+    <i>You realize you crave sex much more than you did before.
+    <<if $PlayerSideEffectLibido>>
+      <<set $PlayerSideEffectLibido to 4>>
+    <<else>>
+      <<set $PlayerSideEffectLibido += 3>>
+    <</if>>
+    You also feel a hunger for
+    <<if $PlayerSideEffectOral>>
+      <<set $PlayerSideEffectOral to 4>>
+    <<else>>
+      <<set $PlayerSideEffectOral += 3>>
+    <</if>>
+    <<if setup.sexMaleCount() > 0>>
+      the feel of a cock in your mouth, and the taste of warm cum on your tongue.
+    <<else>>
+      the taste you had from your treatment drink.  Though you know now you'll have to suck a cock to get that wonderful
+      flavor again before your next appointment.
+    <</if>>
+    <<if setup.haveGirlfriend()>>
+      Though the taste of $dating[0] when she's aroused might be just as good.
+    <<elseif setup.sexFemaleCount() > setup.sexMaleCount()>>
+      Though the taste of a woman when she's aroused might be just as good.
+    <</if>>
+    You also find yourself thinking
+    <<if setup.sexMaleCount() > 0>>
+      more about having a guy fuck your ass, and begging him to fill your ass with his cum.
+    <<else>>
+      what a cock would feel like in your ass, and what it would feel like to have a guy cum in your ass.
+    <</if>>
+    <<if $PlayerSideEffectAnal>>
+      <<set $PlayerSideEffectAnal to 4>>
+    <<else>>
+      <<set $PlayerSideEffectAnal += 3>>
+    <</if>>
+    In fact, you can scarcely think of anything other sex right now.
+    </i>
+  <</if>>
+<</nobr>>
+
+::Part15ClinicOrgasmBlock2Girlfriend
+<<nobr>>
+  <h1>Alternate treatment success</h1>
+  <<set $PlayerCumTreatments to 2>>
+  <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
+  <<unset $PlayerSideEffectOrgasmBlock>>
+  "It's great that it worked for you.  Keep in mind, we aren't sure how effective the treatment will be without... supplemental intake.  At a
+  minimum we'll schedule you for follow-up treatments, at double the dosage during each.  I'll also give you the address of a few places where
+  you can the real thing whenever you like.  I understand, given your preferences, that may not be ideal for you, so hopefully the treatments
+  alone will be enough."
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Treatment1.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  Your mind fills with thoughts of visiting one of the places he mentioned on the way home, to get a "supplement", though you know it wouldn't
+  be necessary so soon.  But it couldn't hurt, could it?
+<</nobr>>
+
+<<nobr>>
+  He continues, "As it's for medical reasons, there's no reason your girlfriend would need to know."  Your thoughts turn to getting a more
+  effective "dose" during one of your secret visits, if you were to ever make one.  If you make sure to clean up the mess he'd leave inside you, and
+  took care of any pregnancies that might pop up, $dating[0] would never know, right?
+<</nobr>>
+
+<<nobr>>
+  <video src="Part15/Treatment2.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  You try to push the thoughts of sneaking around behind $dating[0]'s back and listen as he continues, "Though some lesbians with your side effect
+  have incorporated the occasional man into their activities to help with the problem.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Treatment3.gif" hspace="10" vspace="10" height="450"><br>
+<</nobr>>
+
+<<nobr>>
+  You can decide what's best for you and your girlfriend.  Of course, just sticking with our treatments and hoping for the best is an option as well.
+  <<if $PlayerProtectionPermanent or $PlayerProtectionPerfect>>
+    <br><br>    
+    Also, if you aren't engaging in sex with men regularly anyway, there's no reason not to disable your implant's birth control also.  That will help
+    some.  You agree.  As he is deactivating the feature, your mind can't help but be filled with thoughts of guys cumming inside you, their warm
+    cum filling you until it leaks out.  You try to push the thought away.
+    <br><br>
+    <img src="PartP/Creampie2.jpg" hspace="10" vspace="10" height="450">
+    <<unset $PlayerProtectionPerfect>>
+    <<unset $PlayerProtectionPermanent>>
+    <<set $PlayerProtectionNone to 1>>
+    <<set $tempDeactivateImplantBirthControl to 1>>
+  <<elseif $PlayerProtectionPill>>
+    <br><br>
+    Also, if you aren't engaging in sex with men regularly anyway, there's no reason to continue taking birth control pills.  Discontinuing those
+    should help some.  If you were taking them for any other reasons besides birth control, our doctor can find a subsitute medication that shouldn't
+    interfere with your treatments.  The substitute wouldn't act as a contraceptive though, obviously.
+    <br><br>
+    <img src="PartP/PillTrash.jpg" hspace="10" vspace="10" height="500">
+    <<unset $PlayerProtectionPill>>
+    <<set $PlayerProtectionNone to 1>>
+    <<set $tempDeactivatePill to 1>>
+  <<elseif $PlayerProtectionCondoms or $PlayerProtectionWithdraw>>
+    <br><br>
+    Though if you ever do engage in sex with men, avoid using any protection and be sure he cums inside you, and that should definitely help. 
+    Your mind can't help but be filled with thoughts of guys cumming inside you, their warm cum filling you until it leaks out.  You try to push the
+    thought away.
+    <br><br>
+    <img src="PartP/CondomTrash.png" hspace="10" vspace="10" height="500" align="left">
+    <img src="PartP/Creampie2.jpg" hspace="10" vspace="10" height="300"><br>
+    <<unset $PlayerProtectionCondoms>>
+    <<unset $PlayerProtectionWithdraw>>
+    <<set $PlayerProtectionNone to 1>>
+  <</if>>
+<</nobr>>
+
+<<nobr>>
+  After your "treatment" is over, he sends you along to another exam room.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15ClinicTests]]>>
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15ClinicOrgasmBlockCommonEffects]]>>
+<</nobr>>
+
 ::Part15ClinicOrgasmBlock2
-TODO cum liquid treatment continuation, also recuring later
+<<nobr>>
+  <h1>Alternate treatment success</h1>
+  <<set $PlayerCumTreatments to 2>>
+  <<set $PlayerSideEffectOrgasmBlockFormer to $PlayerSideEffectOrgasmBlock>>
+  <<unset $PlayerSideEffectOrgasmBlock>>
+  "It's great that it worked for you.  Kepp in mind, we aren't sure how effective the treatment will be without... supplemental intake.  At a
+  minimum we'll schedule you for follow-up treatments, and double the dosage during each.  I'll also give you the address of a few places where
+  you can the real thing whenever you like.
+  <br>
+  <video src="Part15/Treatment1.webm" autoplay loop muted height="450"></video>
+  <br>
+  Your mind fills with thoughts of visiting one on the way home, to get a "supplement", though you know it wouldn't be necessary so soon.  But it
+  couldn't hurt, could it?
+  <<if $PlayerProtectionPerfect or $PlayerProtectionPermanent or $PlayerProtectionPill>>
+    <br><br>
+    He continues, "Of course, it won't be as effective if you are on hormonal birth control, so you'll need to visit more often.  Or stay longer
+    for multiple guys, when you do visit.
+  <<elseif $PlayerProtectionCondoms>>
+    <br><br>
+    He continues, "Of course, vaginally would be pointless as a treatment if you require him to use a condom, but oral and anal would still help you.
+    It won't be as effective though, so you'll need to visit more often. Or stay longer for multiple guys, when you do visit.
+  <<elseif $PlayerProtectionWithdraw>>
+    <br><br>
+    He continues, "Of course, having him pull out would defeat the purpose if you were getting 'treated' vaginally.  And I'd imagine the reliability
+    of him actually doing so would be fairly low as well.  But oral and anal would still help you. It won't be as effective though, so you'll need to
+    visit more often. Or stay longer for multiple guys, when you do visit.
+  <</if>>
+  Of course, if you have a boyfriend or just a willing male friend, that would probably be more convenient for you."
+  <br>
+  <video src="Part15/Treatment2.webm" autoplay loop muted height="450"></video>
+<</nobr>>
+
+<<nobr>>
+  After your "treatment" is over, he sends you along to another exam room.
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15ClinicTests]]>>
+<</nobr>>
+
+<<nobr>>
+  <<include [[Part15ClinicOrgasmBlockCommonEffects]]>>
+<</nobr>>
 
 ::Part15ClinicTests <2200,15000>
 <<nobr>>
@@ -6583,7 +6917,7 @@ TODO cum liquid treatment continuation, also recuring later
       <<else>>
         It's not a huge challenge for you, but you wonder how the poor girls that had been in 'chaste' mode are coping
         with their new setting.  The 'monogamous' ones probably aren't faring much better.  You doubt most guys would be able to
-        handle ten blowjobs every single day.
+        handle ten blowjobs every single day. Though you suppose their belts aren't requiring them to be monogamous anymore, are they?
       <</if>>
     <<else>>
       After a day of the shocks, you quickly got over your desire to 'wait for your husband', and got to work sucking cock right now.
@@ -6623,7 +6957,7 @@ TODO cum liquid treatment continuation, also recuring later
 
 <<nobr>>
   <<if !$JobBarista and ($JobBetaTester or $JobEngineer or $JobEngineerLock)>>
-    You know you'll need to find a new job after the department shuts down.  You see the local coffee shop is hiring, so you get a job
+    You know you'll need to find a new job after the engineering department shuts down.  You see the local coffee shop is hiring, so you get a job
     there.
     <<if $Major == "Engineering">>
       And you can't really make any progress on your Engineering degree.  You think about transferring to a
@@ -14246,7 +14580,7 @@ TODO cum liquid treatment continuation, also recuring later
 <</nobr>>
 
 <<nobr>>
-  The sorority's Halloween party doesn't really get fun until later in the evening anyway, so you and Veroncia
+  The sorority's Halloween party doesn't really get fun until later in the evening anyway, so you and Veronica
   decide to go to a festival in town before then.  Wearing your costumes, of course.
 <</nobr>>
 
