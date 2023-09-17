@@ -886,6 +886,9 @@
 <</nobr>>
 <<nobr>>
   - Sex Toys: <<print setup.listInventory('sex toys')>>
+  <<if true>>
+    <i>(Most are locked away so you don't wear yourself out playing with them.)</i>
+  <</if>>
 <</nobr>>
 <<nobr>>
   - Other Toys: <<print setup.listInventory('toys')>>
@@ -968,6 +971,8 @@
       <<elseif $ComputerChastityOwner>>
         $ComputerChastityOwner controls your belt.
       <</if>>
+    <<elseif $PlayerChastityBeltSometimes>>
+      You are sometimes locked in a chastity belt, with $Keyholder having the only key.
     <<else>>
       You are currently locked in a chastity
       <<if $MaleAgain>>

@@ -142,7 +142,7 @@
     <<set setup.addSex({sex:"male", name:$dating[0]})>>
     <<set setup.addSex({sex:"male", name:$dating[0], analAccident: (Math.random < 0.1)})>>
     <h1>Helping $dating[0] unwind</h1>
-    <<if setup.areDating('Jayden')>>
+    <<if setup.isBoyfriendBlack()>>
       <img src="Part16/Finals14.jpg" hspace="10" vspace="10" height="650" align="left">
     <<else>>
       <div style="float:left;padding:12px;">
@@ -171,7 +171,7 @@
     <<set setup.addSex({sex:"male", name:$dating[0]})>>
     <<set setup.addSex({sex:"male", name:$dating[0], vaginal:true, noCondom:true, noPullout:true})>>
     <h1>Helping $dating[0] unwind</h1>
-    <<if setup.areDating('Jayden')>>
+    <<if setup.isBoyfriendBlack()>>
       <video src="Part16/Finals18.webm" autoplay loop muted height="550"></video>
     <<else>>
       <video src="Part16/Finals17.mp4" autoplay loop muted height="550"></video>
@@ -1988,7 +1988,7 @@ TODO Open relationship instructions (dating barry, but he shares you)
     <<unset $PlayerItemNerdKey>>
     <br><br>
   <</if>>
-  <<if setup.areDating('Jayden')>>
+  <<if setup.isBoyfriendBlack()>>
     <video src="Part16/Class28.mp4" autoplay loop muted height="360"></video>
   <<else>>
     <img src="Part16/Class23.jpg" hspace="10" vspace="10" height="500">
@@ -2016,9 +2016,9 @@ TODO Open relationship instructions (dating barry, but he shares you)
     <</if>>
     It certainly seems the best for making you want to suck his cock.
     <br><br>
-    <<if setup.areDating('Jayden') and $PlayerProtectionWithdraw>>
+    <<if setup.isBoyfriendBlack() and $PlayerProtectionWithdraw>>
       <video src="Part16/Class29a.mp4" autoplay loop muted height="422"></video>
-    <<elseif setup.areDating('Jayden')>>
+    <<elseif setup.isBoyfriendBlack()>>
       <video src="Part16/Class29a.mp4" autoplay loop muted height="422"></video>
     <<else>>
       <video src="Part16/Class25.mp4" autoplay loop muted height="550"></video>

@@ -818,9 +818,18 @@ setup.areDating = function (name) {
 	return variables().dating.indexOf(name) >= 0
 }
 
+setup.areDatingAny = function (names) {
+  return names.find(function(name) {return setup.areDating(name)});
+}
+
 setup.haveGirlfriend = function () {
   var potentialGirlfriends = ["Kate", "Veronica", "Bailey", "Ellie"];
-  return potentialGirlfriends.find(function(name) {return setup.areDating(name)});
+  return setup.areDatingAny(potentialGirlfriends);
+}
+
+setup.isBoyfriendBlack = function () {
+  var potentialBlackBoyfriends = ["Jayden"];
+  return setup.areDatingAny(potentialBlackBoyfriends);
 }
 
 setup.buddyIsDating = function (name) {
@@ -936,6 +945,7 @@ setup.getAchievementDetails = function() {
     cougar: {text: "Cougar", image:"Cougar.png", isEnding:true},
     cuckqueen: {text: "Cuckqueen", image:"Cuckqueen.png", isEnding:true},
 		cumslut: {text: "Cum Slut", image: "Cumslut.png", isEnding: true},
+    denial: {text: "Permanent Denial", image: "Denial.png", isEnding: true},
 		farmGirl: {text: "Country Girl", image: "FarmGirl.png", isEnding: true},
     freeUse: {text: "Free Use Woman", image:"FreeUse.jpg", isEnding:true},
     hypno: {text: "Stepford Wife", image: "Hypno.gif", isEnding:true},
