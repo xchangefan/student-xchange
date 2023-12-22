@@ -90,10 +90,10 @@
 
 ::Part16FinalsDating
 <<nobr>>
-  <<if false>>
-    TODO is both of you in chastity a possibility here?
-  <<elseif false>>
-    TODO if dating, but not having sex yet?
+  <<if $Keyholder == "computer" and $BuddyElectronicChastity>>
+    TODO Both you and Bailey in chastity
+  <<elseif $dating.length and !$sex.length>>
+    TODO if dating, but not having sex yet - can this happen here?
   <<elseif setup.haveGirlfriend()>>
     <<set setup.addSexRepeat(10, {sex:"female", name:$dating[0]})>>
     <h1>Helping $dating[0] unwind</h1>

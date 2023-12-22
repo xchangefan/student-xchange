@@ -240,10 +240,11 @@
     You can't imagine your father objecting to you working at a library.
   <</if>>
 <</nobr>>
+
 <p style="clear: both;"><img src="Part3/JobOnCampusC.jpg" hspace="10" vspace="10" height="350" align="left">
 
 <<nobr>>
-  <<if $FatherSettings>>
+  <<if $FatherSettings && !$PlayerGoodStudent>>
     Engineering Department Assistant
   <<else>>
     <<link "Engineering Department Assistant">>
@@ -263,6 +264,10 @@
     <br><br>
     Faith warns you that she's heard rumors about the engineering department and that it doesn't sound like the sorts of
     tests they do there would be something your father would approve of.
+    <<if $PlayerGoodStudent>>
+      If you are really set on going into Engineering though, this would be a great opportunity. You certainly have the academic background
+      for it. Who really cares what you are testing.  Engineering is engineering, right?
+    <</if>>
   <</if>>
 <</nobr>>
 <p style="clear: both;"><img src="Part3/JobOnCampusD.jpg" hspace="10" vspace="10" height="350" align="left">
@@ -835,7 +840,21 @@
 <</nobr>>
 
 <<nobr>>
-	<<if $PlayerSideEffectExhibitionist > 3 or ($PlayerSideEffectExhibitionist > 1 and $PlayerRollDice > 3)>>
+  <<if $FatherSettings>>
+    <<set $JobEngineer to 1>>
+    You let him know that you are. "Looking here at your transcript, I think you'll do fine here. You can
+    [[stay while I give the orientation for the new subjects|JobEngineer2]]." He speaks to the other girls gathered around and adds,
+    "For those of you here as test subjects, we'll wait while you go change."
+    <br><br>
+    <img src="Part3/JobEngineer1.jpg" hspace="10" vspace="10" height="550" align="left">
+    <br><br>
+    You are a bit shocked when you see the "Test Subject" girls return, wearing nearly nothing at all.
+    <br><br>
+    You follow the lead of the male engineers already on the team though and take one of the leashes from the table, attached it to
+    the collar of one of the test subjects, and then lead her into the next room for the orientation.
+    <br><br>
+    Faith was right though. Your father would definitely not approve. You'll just have to be very vague about your work here.
+	<<elseif $PlayerSideEffectExhibitionist > 3 or ($PlayerSideEffectExhibitionist > 1 and $PlayerRollDice > 3)>>
     <<if $PlayerLazyStudent>>
       "Though, looking here at your transcript, I'm not sure if Engineering is a good fit for you.  But you are more than
     <<else>>
@@ -1809,7 +1828,7 @@
 	<<set setup.addSex({sex: 'female', anon: 'Engineering Subject'})>>
 	<<set setup.addInventory('tools', 'engineering toolbox')>>
 	<<set setup.addInventory('tools', 'engineering projects')>>
-	<h1><<print "Engineering Department">></h1>
+	<h1>Engineering Department</h1>
 <</nobr>>
 
 <<print "Your favorite test group to administer is always the forced orgasm group. You love the need, the begging of “please, don’t stop” as they get closer to their orgasm. You love even more the frantic squirming and begging of “please, stop - it’s too much” that comes after their first orgasm, when they realize you don’t plan on letting up at all.">>
@@ -1825,7 +1844,7 @@
 
 ::JobEngineerSubject1  <8200,3000>
 <<nobr>>	
-	<h1><<print "Engineering Department">></h1>
+	<h1>Engineering Department</h1>
 <</nobr>>
 
 <<print "You feel so helpless and vulnerable as you wait for your first test. You don’t even know what it’s going to be. Are they planning on teasing you until you can’t stand it but not letting you cum? Are they going to let you cum but then make you cum again and again afterwards? Or, you hope, are they going to do something in between, and just record every detail of your orgasm with their machines?">>
@@ -1855,7 +1874,7 @@
 
 ::JobEngineer3  <8400,3000>
 <<nobr>>	
-	<h1><<print "Engineering Department">></h1>
+	<h1>Engineering Department</h1>
   Since you are one of the few women on the team, you get to test much of the new equipment before it’s tried on the subjects.
   <<if $Keyholder == "Robert">>
     <<unset $PlayerChastityBelt>>
@@ -1876,36 +1895,173 @@
 <</nobr>>
 
 <<nobr>>
-  You especially love to taunt Kyle.  He's leading a team on some special project, and always thinks he's better than everyone else.
-  You like taking him down a notch sometimes.  "The only thing my 'rocker' is missing is something for my mouth.  It'd be great to have a
-  nice, hard cock to wrap my lips around while I rode it."  When you see him shift uncomfortably as his erection strains against his jeans,
-  you smile and walk away.
-<</nobr>>
-
-<<nobr>>
-  <<if $PlayerSideEffectMasturbationBlock>>
-    While you can get a good idea of what will work during your experiments, you can't get off playing with your creations by yourself.
-    It sure feels good though.  When you are left incredibly horny at the end of one of your equipment tests, you know you are on the
-    right track.
-  <<else>>
-    After a while though, it seems to get harder and harder to get off with some of the equipment - or even just masturbating.
-    You make a visit to the health center, and after some tests they let you know that all of the masturbation you’ve been doing
-    for work (and otherwise) has activated some latent side-effect of your X-Change. You can still orgasm as well as you could before,
-    but just not with you in control.
-    <<set $PlayerSideEffectMasturbationBlock = 1>>
+  <<if $FatherSettings>>
+    Your father may have been right about what X-Change would do to you. You haven't even been here a month and you are already revelling at
+    getting the guys hard watching your masturbate. You may be a virgin, but you've fantaszied so many times about them all taking turns on you.
     <br><br>
-    <i>You are no longer able to orgasm from masturbation.</i>
+    Though, more often you've fanasized about one of your fellow engineers in particular. Kyle leads some team working on a special project of
+    some kind. He acts like it's something really important. The few other girls on the team don't seem to like him. Maybe their independent
+    personalities just clash with leadership style, but it has the opposite effect on you. You find having someone like Kyle on the team, always
+    willing to let you know the right way to do things, comforting and familiar.
+  <<else>>
+    You especially love to taunt Kyle.  He's leading a team on some special project, and always thinks he's better than everyone else.
+    You like taking him down a notch sometimes.  "The only thing my 'rocker' is missing is something for my mouth.  It'd be great to have a
+    nice, hard cock to wrap my lips around while I rode it."  When you see him shift uncomfortably as his erection strains against his jeans,
+    you smile and walk away.
   <</if>>
 <</nobr>>
 
 <<nobr>>
-	<<link "Spend time in your dormitory.">>
-		<<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
-		<<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
-		<<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
-		<<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
-		<<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
-	<</link>>
+  <<if $FatherSettings>>
+    After being on the team a while, you've started to have a problem. At first you were able to test the equipment pretty easily. The
+    machines you designed to get a subject off, got you off. The ones you designed to tease and deny you, did exactly that. Or at least
+    until it got to much and hopped off to masturbate, an option your poor test subjects don't have.
+    <br><br>
+    But recently, it's been getting harder and harder for you to orgasm. Even the machines designed to force multiple orgasms, rarely
+    can get you to even one.
+    <br><br>
+    You really value Kyle's input, and hope that he might have some insights into the problem. You blush a bit, knowing how much he enjoys
+    watching the recordings you made. You are fairly sure he'd eagerly accept an offer to [[supervise one of your sessions|JobEngineer3Kyle]]
+    and help you figure out the issue.
+  <<else>>
+    <<if $PlayerSideEffectMasturbationBlock>>
+      While you can get a good idea of what will work during your experiments, you can't get off playing with your creations by yourself.
+      It sure feels good though.  When you are left incredibly horny at the end of one of your equipment tests, you know you are on the
+      right track.
+    <<else>>
+      After a while though, it seems to get harder and harder to get off with some of the equipment - or even just masturbating.
+      You make a visit to the health center, and after some tests they let you know that all of the masturbation you’ve been doing
+      for work (and otherwise) has activated some latent side-effect of your X-Change. You can still orgasm as well as you could before,
+      but just not with you in control.
+      <<set $PlayerSideEffectMasturbationBlock = 1>>
+      <br><br>
+      <i>You are no longer able to orgasm from masturbation.</i>
+    <</if>>
+    <br><br>
+    <<link "Spend time in your dormitory.">>
+      <<if $Mentor == 'Emily'>><<goto [[Part5Emily1]]>><</if>>
+      <<if $Mentor == 'Samantha'>><<goto [[Part5Samantha1]]>><</if>>
+      <<if $Mentor == 'Faith'>><<goto [[Part5Faith1]]>><</if>>
+      <<if $Mentor == 'Olivia'>><<goto [[Part5Olivia1]]>><</if>>
+      <<if $Mentor == 'Hannah'>><<goto [[Part5Hannah1]]>><</if>>
+    <</link>>
+  <</if>>
+<</nobr>>
+
+::JobEngineer3Kyle
+<<nobr>>
+  <h1>Testing with Kyle</h1>
+  To eliminate as many variables from what could be causing your issues, you and Kyle start, not with one of your new creations, but the most
+  basic machine you have in the lab. Though, usually it is still very effective at getting any of the women that use it off. It also helps that
+  it has a vibration only attachment that lets you use it while you still have your underwear on. You know it's silly, that Kyle has seen you
+  naked on video many, many times. But this just feels different.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part3/JobEngineer9.mp4" autoplay loop muted height="540"></video>
+<</nobr>>
+
+<<nobr>>
+  You find a setting that feels good. You know a few weeks ago that it would have had you orgasming in no time. But today it feels good,
+  but you can tell it's not going to get you off.
+<</nobr>>
+
+<<nobr>>
+  When Kyle touches you, to see if it helps, it's like electricity shooting pleasure through your body. Even him just stroking your hair makes
+  the pleasure from the machine much more intense. It also makes you crave more. As you start sucking on his thumb he asks, "Would you like
+  something more than my thumb?" You nod eagerly. "Say please," he tells you.
+<</nobr>>
+
+<<nobr>>
+  "Please, [[may I suck your cock|JobEngineer3Kyle2]]?" you say, hopefully.
+<</nobr>>
+
+::JobEngineer3Kyle2
+<<nobr>>
+  <h1>Sucking Kyle's Cock</h1>
+  <<set setup.addSex({name:'Kyle', sex:'male'})>>
+  <video src="Part3/JobEngineer10.mp4" autoplay loop muted height="540"></video>
+<</nobr>>
+
+<<nobr>>
+  You are nervous and shy when you first see Kyle's cock, but once you take it into your mouth, it feels so right. The taste of him on your tongue,
+  the feel of his hardness between your lips, the soft moan he makes as you first take him into your mouth, you love all of it.
+<</nobr>>
+
+<<nobr>>
+  You still don't think the machine would get you off, but you love everything you are feeling right now. You feel like you could ride the
+  machine, with Kyle's cock in your mouth, all day. Though, you doubt Kyle would be able to last all day. Thinking of him orgasming for you
+  makes you crave the taste of his cum, wondering what it will taste like.
+<</nobr>>
+
+<<nobr>>
+  Before that happens though, Kyle tells you. "I think I know what the problem is." He stops to moan. "You can hand me controls and
+  I'll see if I'm right. Or..." He pauses to moan again.
+<</nobr>>
+
+<<nobr>>
+  You take his cock out of your mouth for a moment to say, "Does the other option involve [[you fucking me|JobEngineer3Kyle3]]?
+  Because I need you inside me."
+<</nobr>>
+
+::JobEngineer3Kyle3
+<<nobr>>
+  <h1>Cumming for Kyle</h1>
+  <<set setup.addSex({name:'Kyle', sex:'male', vaginal:true, pullout:true, noCondom:true})>>
+  <<set setup.addSex({name:'Kyle', sex:'male', vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({name:'Kyle', sex:'male', vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({name:'Kyle', sex:'male', vaginal:true, noPullout:true, noCondom:true})>>
+  <<set setup.addSex({name:'Kyle', sex:'male', vaginal:true, noPullout:true, noCondom:true})>>
+  You are worried its going to hurt your first time, but it doesn't. It feels amazing from the first moment Kyle slides into you. You
+  were already close, thanks to the machine. With Kyle's cock filling you, and with him looking down at you, telling you how beautiful you are and
+  how good you feel, it pushes you over the edge.
+<</nobr>>
+
+<<nobr>>
+  <video src="Part3/JobEngineer11.mp4" autoplay loop muted height="540"></video>
+<</nobr>>
+
+<<nobr>>
+  You cry out with an orgasm, one that feels so much better than the ones you've given yourself with any of the machines. Kyle holds your legs
+  in place though and continues fucking you. Each of this thrusts just keep your orgasm rolling over you. He doesn't last much longer than
+  you did though. He soon pulls out and cums for you, covering your chest, and face, and stomach.
+<</nobr>>
+
+<<nobr>>
+  You feel a strange mixture of pride and shame as he cums on you, but mainly you still feel the warm pleasurable afterglow of your orgasm.
+  You remember wondering what his cum tastes like so you get some on your finger and taste it. It tastes as good as you imagined it would earlier.
+<</nobr>>
+
+<<nobr>>
+  "I didn't ask if you were on birth control, so..." he starts to say
+<</nobr>>
+
+<<nobr>>
+  "Oh, I am. You can come inside me next time if you want," you say eagerly.
+<</nobr>>
+
+<<nobr>>
+  He smiles at "next time", but says. "I'll need a few minutes first. Until then, I think I know the problem you've been having.  You'll
+  need to go see the X-Change people to confirm though." He looks down at you and adds, "Not today though."
+<</nobr>>
+
+<<nobr>>
+  You and Kyle spend the rest of the day together, first at the lab, and then back at his apartment. The next day you stop by the X-Change office
+  and they confirm what Kyle had suspected. Your implant has developed a delayed side effect. It seems that you can no longer get yourself off
+  by masturbating, either by hand or with one of the machines, at least when you are controlling it.
+  <br><br>
+  They haven't fully figured out how your particular side effect works, but they tell you its mainly psychological. They think the machines in the
+  lab might still be able to get you off, but just not with you controlling them yourself. You'll have to talk to Kyle about helping you test your
+  creations then.
+<</nobr>>
+
+<<nobr>>
+  <<set $PlayerSideEffectMasturbationBlock = 1>>
+  <i>You are no longer able to orgasm from masturbation.</i>
+<</nobr>>
+
+<<nobr>>
+  [[Spend time in your dormitory|Part5Faith1Kyle]].
 <</nobr>>
 
 ::JobEngineer4  <8600,3000>
@@ -1917,7 +2073,7 @@
 	<<set setup.addSex({sex: 'male', anon: 'Engineering Coworker'})>>
 	<<set setup.addSex({sex: 'male', anon: 'Engineering Coworker'})>>
 	<<if setup.areDating('Josh')>><<set $CheatedJosh += 1>><<set $HideJobJosh = 1>><</if>>
-	<h1><<print "Engineering Department">></h1>
+	<h1>Engineering Department</h1>
   The new equipment still needs to be tested. And instead of letting the other woman on the team get all the fun, you come up with
   another way. If you are locked in, and someone else is controlling the machine, it works fine on you.
 <</nobr>>
@@ -1956,7 +2112,7 @@
 
 ::JobEngineer5  <8800,3000>
 <<nobr>>
-	<h1><<print "Engineering Department">></h1>
+	<h1>Engineering Department</h1>
 <</nobr>>
 
 <<print "This device is entirely your own creation. The computer system controls when you are released, when you are teased, when you are allowed to cum, and when you are forced to. Once you press the lock button on the remote, you are powerless.">>
@@ -1982,7 +2138,7 @@
 
 ::JobEngineerSubject2  <9000,3000>
 <<nobr>>
-	<h1><<print "Engineering Department">></h1>
+	<h1>Engineering Department</h1>
 <</nobr>>
 
 <<print "You don’t like the weeks where you get assigned to the denial tests. Those weeks, they build up your pleasure until you almost cum, and then their machines stop before you do. And then it repeats, again and again, for hours. Your begging them, offering your anything you can think of, for just a little more stimulation.">>
@@ -2003,7 +2159,7 @@
 
 ::JobEngineerSubject3  <9200,3000>
 <<nobr>>
-	<h1><<print "Engineering Department">></h1>
+	<h1>Engineering Department</h1>
 <</nobr>>
 
 <video src="Part3/JobEngineer8.mp4" autoplay loop muted height="640"></video>
@@ -2850,7 +3006,7 @@
 	<<set $HideJobJosh = 0>>
 	<<set $EngineerJosh = 1>>
 	
-	<h1><<print "Engineering Department">></h1>
+	<h1>Engineering Department</h1>
 <</nobr>>
 
 <<print "Since your male coworkers like to take advantage of you when you are helpless bound in one of your creation, you’ve started having Josh help you test instead.">>
