@@ -3328,14 +3328,19 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 <</nobr>>
 <<nobr>>
   Sometimes $dating[0] will give you the orgasm you crave as soon as you walk through the door.  But $datingPronoun loves how horny and suggestable you are
-  after work, so often $datingPronoun will make you wait.  After an hour or more of focusing only on $datingPosessivePronoun pleasure, then $datingPronoun
-  might finally give you the release you want.  It's always worth the wait.
+  after work, so often $datingPronoun will make you wait.
+  <<if setup.areDating('Kyle')>>
+    Though more often, he only teases you. Keeping you belted, and having it stimulate you until you are close to an orgasm, but not letting
+    you finish. You know whatever he decides is for the best, and that it will feel amazing when he finally lets you cum. But that doesn't
+    make it any less frustrating when you need an orgasm today!
+  <<else>>
+    After an hour or more of focusing only on $datingPosessivePronoun pleasure, then $datingPronoun might finally give you the release you want. 
+    It's always worth the wait.
+  <</if>>
   <<unset $datingPronoun>>
   <<unset $datingPosessivePronoun>>
-<</nobr>>
-
-<<nobr>>
-  <<if !$PlayerPregnant && !$PlayerCumslut>>
+  <<if !$PlayerPregnant && !$PlayerCumslut && !$FatherSettings>>
+    <br><br>
     Before you leave work, your boss mentions that he's recommended you for the university's summer abroad program.  It's a fully-funded trip to study over the summer
     in a foreign country.  There'll be a number of girls from the university there.  You don't have to decide right now, he says.  But if you think you might be interested,
     then [[go to the in-person interview|Part13AbroadEvaluation]] today.  Or if you know you're not interested you can just ignore it.

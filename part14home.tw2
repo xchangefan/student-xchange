@@ -2921,7 +2921,7 @@
 <</nobr>>
 
 <<nobr>>
-  <<if $dating.length and !setup.areDating('Peter')>>
+  <<if $dating.length and (!setup.areDating('Peter') and !setup.areDating('Kyle'))>>
     Back home she says, "You are welcome to join us this evening.
     <<if setup.haveFucked('Greg')>>
       Greg has a friend that will probably be joining us later too, so it should be even more fun than last time!"
@@ -2933,7 +2933,7 @@
     <</if>>
     <br><br>
   <</if>>
-  <<if $dating.length and !setup.areDating('Peter')>>
+  <<if $dating.length and (!setup.areDating('Peter') and !setup.areDating('Kyle'))>>
     "I feel bad [[leaving you here|Part14Home3]] while I go have fun," Cassie says. "But you'll be able to be with $dating[0] soon I hope."
   <<elseif setup.haveFucked('Greg')>>
     As much fun as you had last time, you aren't about to say no.  "Of course I want [[to go with you|Part14HomeSister3]]," you tell her.
@@ -2949,8 +2949,16 @@
 ::Part14HomeSister3  <14000,14200>
 <<nobr>>
 	<h1>At Cassie's Boyfriend's Apartment</h1>
+  <<if setup.areDating('Kyle')>>
+    "Your boyfriend won't mind," Cassie asks you on the way.
+    <br><br>
+    "No, this makes sure I won't get into too much trouble," you tell her, lifting your skirt to show your chastity belt. "Kyle might want you to
+    join us some night as payback though," you add smiling. She just smiles but doesn't say anything.
+    <br><br>
+  <</if>>
   <video src="Part14/Home27.webm" autoplay loop muted height="500"></video>
 <</nobr>>
+
 <<nobr>>
   <<if setup.haveFucked('Greg')>>
     When you walk in to her boyfriend's apartment, Cassie sees the board game he's gotten out.  "I hope you aren't planning on playing that.  At least not until
@@ -2960,7 +2968,9 @@
   <<else>>
     The evening starts off innocently.  But after a couple drinks, her boyfriend lets slip a few comments about how beautiful he thinks you both are.
     After watching the two of them kiss, you comment about how you are a bit jealous of the two of them.
-    <<if $dating.length>>
+    <<if $PlayerChastityBelt>>
+      You know he'll be inside Cassie before long, but you'll be achingly empty under your belt.
+    <<elseif $dating.length>>
       Being so far away has been hard on your relationship with $dating[0].
     <</if>>
     After a bit more awkward sexual tension, your sister says, "Why don't we forget about the board game, and move the fun to the bedroom?"

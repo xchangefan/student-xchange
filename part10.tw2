@@ -905,7 +905,9 @@ Now you can [[think about something more fun|Part10End]].
       <br><br>
       Robert smiles when you lift up your skirt to show the belt you already wear.  He is
       happy that you are securely belted, but there is no way $Keyholder is going to
-      hand over the key to Robert, nor would you want $KeyholderPronounPossessive to.
+      hand over the key to Robert, nor would you want
+      <<if $KeyholderPronoun == "he">>him<<else>>her<</if>>
+      to.
       <<set $cantWorkStore to 1>>
     <<elseif setup.areDating('Andrew') or setup.areDating('Paul') or setup.areDating('Josh') or setup.areDating('Aaron')>>
       <br><br>
