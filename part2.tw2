@@ -42,21 +42,99 @@
   to let them know what he thought you needed in a mentor, and they'd already arranged one for you.  Her name is [[Faith|Faith1]].
 <</nobr>>	
 
+::MentorRoll
+<<nobr>>
+  <<switch $PlayerRollDice>>
+    <<case 1 2 3 4 21 22 23 24>>
+      <<goto [[Faith1]]>>
+    <<case 5 6 7 8>>
+      <<goto [[Emily]]>>
+    <<case 9 10 11 12 25 26>>
+      <<goto [[Hannah]]>>
+    <<case 13 14 15 16>>
+      <<goto [[Samantha]]>>
+    <<case 17 18 19 20 27 28>>
+      <<goto [[Olivia]]>>
+  <</switch>>
+<</nobr>>
+
+::MentorAssign
+<<nobr>>
+    <img src="Part2/Mentor.jpg" hspace="10" vspace="10" height="650" align="left">
+<</nobr>>
+
+<<nobr>>
+    <<print "When you hear your name, come on up and meet your mentor. We’ll give the two of you some time to get to know each other.">>
+<</nobr>>
+
+<<nobr>>
+    <<print "Your mentor will also have a gift card provided by the folks at X-Change. She’ll take you out and buy some basic hygiene and beauty products for you, along with some clothes she’ll help you pick out. And maybe even your first trip to the jewelry store at the end!">>
+<</nobr>>
+
+<<nobr>>
+    <<print "Of course you’ll probably be buying lots more for yourself once you settle in and have a bit of money. This is just a gift to get you started.">>
+<</nobr>>
+
+<<nobr>>
+      <<print "Each of our mentors will now come up and">>
+      <<link "call out who they were paired with.">>
+        <<include [[MentorRoll]]>>			
+      <</link>>
+<</nobr>>
+
+
+
+::MentorAssignOrPick
+<<nobr>>
+  <<switch $PlayerMentorPick>> \
+    <<case 0>> \
+    <img src="Part2/Mentor.jpg" hspace="10" vspace="10" height="650" align="left">
+    <p/>    
+    <<print "When you hear your name, come on up and meet your mentor. We’ll give the two of you some time to get to know each other.">>
+    <p/>    
+    <<print "Your mentor will also have a gift card provided by the folks at X-Change. She’ll take you out and buy some basic hygiene and beauty products for you, along with some clothes she’ll help you pick out. And maybe even your first trip to the jewelry store at the end!">>
+    <p/>    
+    <<print "Of course you’ll probably be buying lots more for yourself once you settle in and have a bit of money. This is just a gift to get you started.">>
+
+    <<nobr>>
+
+    <p/>    
+      <<print "Normally, our mentors will come up and ">>
+      <<link "call out who they were paired with.">>
+        <<include [[MentorRoll]]>>			
+      <</link>>
+      <<print "However this time there are a lot quite a few extra mentors available so we can also ">>
+      <<link [[let you choose, if you want.|Mentor]]>><<set $PlayerMentorPick = 1>><</link>>
+    <</nobr>>	
+  <<case 1>>
+    <<print "We have 5 mentors, whom we think would fit you nicely, so all you have to do now is pick the one you like the most.">>
+    <p style="clear: both;"><img src="Part2/Faith1.jpg" hspace="10" vspace="10" height="350" align="left">
+    
+    
+    [[Faith,|Faith1]]<<print " a proper-looking girl who grew up in small town in the midwest. You think she might have a religious background.">></p>
+    <p style="clear: both;"><img src="Part2/Emily1.jpg" hspace="10" vspace="10" height="350" align="left">
+    
+    
+    [[Emily,|Emily]]<<print " a normal-looking girl from Denver. She’s been hanging since the moment you arrived with one guy, her boyfriend perhaps?">></p>
+    <p style="clear: both;"><img src="Part2/Hannah1.jpg" hspace="10" vspace="10" height="350" align="left">
+    
+    
+    [[Hannah,|Hannah]]<<print " a really energetic girl, whom you’ve overheard talking about guys and sex quite openly.">></p>
+    <p style="clear: both;"><img src="Part2/Samantha1.jpg" hspace="10" vspace="10" height="350" align="left">
+    
+    
+    [[Samantha,|Samantha]]<<print " whom you think looks normal, but you can swear that it looks like she’s flirting with some of the other girls.">></p>
+    <p style="clear: both;"><img src="Part2/Olivia1.jpg" hspace="10" vspace="10" height="350" align="left">
+    
+    [[Olivia,|Olivia]]<<print " a goth looking girl, she doesn’t look as friendly as the other and you’ve heard her mention the word master a couple of times, whatever that means..">></p>
+  <</switch>>
+<</nobr>>
+
 ::Mentor  <400,2000>
 <<nobr>>
-	<h1><<print "Mentors">></h1>
+	<h1>Mentors</h1>
 <</nobr>>
-<<switch $PlayerMentorPick>> \
-	<<case 0>> \
-	<<print "When you hear your name, come on up and meet your mentor. We’ll give the two of you some time to get to know each other.">>
-	<img src="Part2/Mentor.jpg" hspace="10" vspace="10" height="650">
-	
-	<<print "Your mentor will also have a gift card provided by the folks at X-Change. She’ll take you out and buy some basic hygiene and beauty products for you, along with some clothes she’ll help you pick out. And maybe even your first trip to the jewelry store at the end!">>
-	
-	<<print "Of course you’ll probably be buying lots more for yourself once you settle in and have a bit of money. This is just a gift to get you started.">>
-	
-	<<nobr>>
-		<<print "Normally, our mentors will come up and ">>
+<<nobr>>
     <<if $PlayerGoodStudent>>
       <<set $PlayerRollDice to either(1,2,3,4,5,6,7,9,10,11,13,14,15,17,18,19,21,22,23,24)>>
     <<elseif $PlayerLazyStudent>>
@@ -64,46 +142,12 @@
     <<else>>
       <<set $PlayerRollDice to either(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)>>
     <</if>>
-		<<link "call out who they were paired with.">>			
-			<<switch $PlayerRollDice>>
-				<<case 1 2 3 4 21 22 23 24>>
-					<<goto [[Faith1]]>>
-				<<case 5 6 7 8>>
-					<<goto [[Emily]]>>
-				<<case 9 10 11 12 25 26>>
-					<<goto [[Hannah]]>>
-				<<case 13 14 15 16>>
-					<<goto [[Samantha]]>>
-				<<case 17 18 19 20 27 28>>
-					<<goto [[Olivia]]>>
-			<</switch>>
-		<</link>>
-		<<print "However this time there are a lot quite a few extra mentors available so we can also ">>
-		<<link [[let you choose, if you want.|Mentor]]>><<set $PlayerMentorPick = 1>><</link>>
-	<</nobr>>	
-<<case 1>>
-	<<print "We have 5 mentors, whom we think would fit you nicely, so all you have to do now is pick the one you like the most.">>
-	<p style="clear: both;"><img src="Part2/Faith1.jpg" hspace="10" vspace="10" height="350" align="left">
-	
-	
-	[[Faith,|Faith1]]<<print " a proper-looking girl who grew up in small town in the midwest. You think she might have a religious background.">></p>
-	<p style="clear: both;"><img src="Part2/Emily1.jpg" hspace="10" vspace="10" height="350" align="left">
-	
-	
-	[[Emily,|Emily]]<<print " a normal-looking girl from Denver. She’s been hanging since the moment you arrived with one guy, her boyfriend perhaps?">></p>
-	<p style="clear: both;"><img src="Part2/Hannah1.jpg" hspace="10" vspace="10" height="350" align="left">
-	
-	
-	[[Hannah,|Hannah]]<<print " a really energetic girl, whom you’ve overheard talking about guys and sex quite openly.">></p>
-	<p style="clear: both;"><img src="Part2/Samantha1.jpg" hspace="10" vspace="10" height="350" align="left">
-	
-	
-	[[Samantha,|Samantha]]<<print " whom you think looks normal, but you can swear that it looks like she’s flirting with some of the other girls.">></p>
-	<p style="clear: both;"><img src="Part2/Olivia1.jpg" hspace="10" vspace="10" height="350" align="left">
-	
-	
-	[[Olivia,|Olivia]]<<print " a goth looking girl, she doesn’t look as friendly as the other and you’ve heard her mention the word master a couple of times, whatever that means..">></p>
-<</switch>>
+    <<if $randomSelect>>
+      <<include [[MentorAssignOrPick]]>>
+    <<else>>
+      <<include [[MentorAssign]]>>
+    <</if>>
+<</nobr>>
 
 ::Faith1  <600,2000>
 <<nobr>>

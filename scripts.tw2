@@ -1,4 +1,67 @@
 ::GeneralFunctions [script] <200,50>
+Config.saves.isAllowed = function (saveType) {
+    if (saveType === Save.Type.Auto) {
+        if (settings.autosave && !tags().includes('noreturn')){
+            return true;
+        }
+        return false;
+    }
+    else {
+        if (tags().includes('noreturn')) {
+            return false;
+        }
+        return true;
+    }
+};
+Config.saves.maxAutoSaves = 1;
+Setting.addToggle("autosave", {
+    label       : "Autosaves",
+    default     : true,
+});
+Setting.addToggle("autoname", {
+    label       : "Autoname Saves",
+    default     : true,
+});
+Setting.addToggle("abortionAllowed", {
+    label       : "Abortion Allowed",
+    default     : true,
+    desc        : "Turning off removes the option for an abortion in most cases"
+});
+Setting.addToggle("randomSelect", {
+    label       : "Random override",
+    default     : true,
+    desc        : "Can the player choose some options that would otherwise be randomly assigned"
+});
+
+
+Config.saves.descriptions = function (saveType) {
+    switch (saveType) {
+        case Save.Type.Auto: {
+            return "Autosave: " + (State.getVar("$playerName") || "New Player") + " - " + setup.getCurrentPassageSummary();
+            break;
+        }
+        default: {
+            if (settings.autoname) {
+                return (State.getVar("$playerName") || "New Player") + " - " + setup.getCurrentPassageSummary();
+            }
+            else {
+                return prompt("Enter Save Name:", State.getVar("$playerName") + " - " + setup.getCurrentPassageSummary());
+            }
+        }
+    }
+};
+
+setup.getCurrentPassageSummary = function() {
+  const text = Story.get(passage()).processText();
+  const h1MatchWithPrint = text.match(/<h1><<print "([^"]*)\">><\/h1>/)
+  const h1Match = text.match(/<h1>(.*)<\/h1>/)
+  return h1MatchWithPrint
+    ? h1MatchWithPrint[1].slice(0, 20)
+    : h1Match
+     ? h1Match[1].slice(0, 20)
+     : text.slice(0, 20);
+}
+
 
 setup.getPopularNames = function () {
   return ["Abigail","Taylor","Alyssa","Lauren","Brianna","Anna","Destiny","Jasmine","Jennifer","Julia","Isabella","Morgan"]
@@ -268,7 +331,7 @@ setup.addSexRepeat = function (repeatCount, fuck) {
   if (fuck.vaginal || fuck.anal) {
     // could result in pregnancy, so process individually
     for (let i = 0; i < repeatCount; i++) {
-      setup.addSex(JSON.parse(JSON.stringify(fuck)));
+      setup.addSex({...fuck});
     }
   } else {
     setup.addSex({...fuck, count: repeatCount});
@@ -774,7 +837,11 @@ setup.isFormerNeighbour = function (name) {
 
 setup.removeNeighbour = function (name) {
 	variables().neighbours = setup.removeItem(variables().neighbours, name)
-  variables().FormerNeighbours.push(name);
+  if (variables().FormerNeighbours) {
+    variables().FormerNeighbours.push(name);
+  } else {
+    variables().FormerNeighbours = [name]
+  }
 }
 
 setup.otherRoommate = function (name) {

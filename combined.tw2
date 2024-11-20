@@ -80,6 +80,7 @@ blockquote {
 ::Start <0,0>
 <<nobr>>
   <img src="Part1/Avatar.jpg" hspace="10" vspace="10" height="500" align="right">
+  <<include [[PreRollRandomGenerate]]>>
 <</nobr>>
 <<nobr>>
   This is an interactive story that follows you as you head off to college.  You briefly begin  as a young
@@ -138,6 +139,14 @@ blockquote {
   If anyone wants to host this game elsewhere, I have no objections.
 <</nobr>>
 
+::PreRollRandomGenerate
+<<nobr>>
+  <<set $diceRolls to []>>
+  <<for _i to 0; _i lt 1000; _i++>>
+    <<set $diceRolls.push(Math.random())>>
+  <</for>>
+<</nobr>>
+
 
 ::Start0 <50,0>
 <h1>Home</h1>
@@ -166,22 +175,44 @@ blockquote {
 	reviewed. You figure that at least it’s not a rejection, but you are really hoping for an acceptance letter soon.
 <</nobr>>
 
-As you look over the responses from the universities that have given you an answer already, you see:
-* Mostly acceptance letters. You’ve always been [[a good student|Start1][$PlayerGoodStudent to 1]].
-* Only acceptance letters from your ‘safety’ school choices. You’re [[an average student|Start1][$PlayerAverageStudent to 1]], you knew some of those others were a stretch anyway.
-* All rejection letters so far. You’ve [[never been that great of a student|Start1][$PlayerLazyStudent to 1]].  You hope to turn things around when you get to college. If you get into college, that is.
-* <<nobr>>
-	<<set $PlayerRollDice to either(1,2,3)>>
-	Or, now that you think about, you realize you haven't received any responses yet.
-	<<switch $PlayerRollDice>>
-		<<case 1>>
-			[[(Random)|Start1][$PlayerGoodStudent to 1]]
-		<<case 2>>
-			[[(Random)|Start1][$PlayerAverageStudent to 1]]
-		<<case 3>>
-			[[(Random)|Start1][$PlayerLazyStudent to 1]]
-	<</switch>>
+<<nobr>>
+  As you look over the responses from the universities that have given you an answer already, you
+  <<if $randomSelect>>
+    see:
+    <ul>
+      <li>Mostly acceptance letters. You’ve always been [[a good student|Start1][$PlayerGoodStudent to 1]].</li>
+      <li>Only acceptance letters from your ‘safety’ school choices. You’re [[an average student|Start1][$PlayerAverageStudent to 1]], you knew some of those others were a stretch anyway.</li>
+      <li>All rejection letters so far. You’ve [[never been that great of a student|Start1][$PlayerLazyStudent to 1]].  You hope to turn things around when you get to college. If you get into college, that is.</li>
+      <li><<set $PlayerRollDice to either(1,2,3)>>
+        Or, now that you think about, you realize you haven't received any responses yet.
+        <<switch $PlayerRollDice>>
+          <<case 1>>
+            [[(Random)|Start1][$PlayerGoodStudent to 1]]
+          <<case 2>>
+            [[(Random)|Start1][$PlayerAverageStudent to 1]]
+          <<case 3>>
+            [[(Random)|Start1][$PlayerLazyStudent to 1]]
+        <</switch>>
+      </li>
+    </ul>
+  <<else>>
+    <<set $PlayerRollDice to either(1,2,3)>>
+    see that
+    <<switch $PlayerRollDice>>
+      <<case 1>>
+        you've been accepted to most or all of the schools where you applied.
+        You’ve always been [[a good student|Start1][$PlayerGoodStudent to 1]].
+      <<case 2>>
+        you've been accepted to your 'safety' school choices, but turned down for the more selective schools.
+        You’re [[an average student|Start1][$PlayerAverageStudent to 1]], you knew some of those others were a stretch anyway.
+      <<case 3>>
+        you've been turned down by nearly every school you've applied to. 
+        You’ve [[never been that great of a student|Start1][$PlayerLazyStudent to 1]].
+        You hope to turn things around when you get to college. If you get into college, that is.
+    <</switch>>
+  <</if>>
 <</nobr>>
+
 <<nobr>>
   <<if false>>
     STORY MODE DISABLED FOR NOW

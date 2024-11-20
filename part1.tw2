@@ -69,7 +69,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <</nobr>>
 
 <<nobr>>
-  Or, maybe it would be easier to not have that conversation now.  If they you  
+  Or, maybe it would be easier to not have that conversation now.  Or you can  
   [[wait to tell|Start2]] them about the trial until after you've already changed.  Then they'll be nothing he
   can do.  You'll have to wait to tell your mom and siblings too then, since news this big would probably make
   it to your father if you told anyone.
@@ -504,7 +504,14 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <p style="clear: both;">
 	<img src="Part1/BodyStandard1.jpg" align="left" hspace="10" vspace="10" height="500">
 	<img src="Part1/BodyStandard2.jpg" align="right" hspace="10" vspace="10" height="500">
-	<<link [[Standard X-Change Body|PregnancyPrevention]]>><<set $BodyType to 'Standard'>><<set $PlayerSideEffects += 2>><</link>>
+	<<link [[Standard X-Change Body|PregnancyPrevention]]>>
+    <<set $BodyType to 'Standard'>>
+    <<if $randomSelect>>
+      <<set $PlayerSideEffects += 2>>
+    <<else>>
+      <<set $PlayerSideEffects += 4>>
+    <</if>>
+  <</link>>
 
 	Average to tall for a woman, the traditionally beautiful, X-Change look.
 </p>
@@ -512,7 +519,14 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <p style="clear: both;">
 	<img src="Part1/BodyCurvy1.jpg" align="left" hspace="10" vspace="10" height="500">
 	<img src="Part1/BodyCurvy2.jpg" align="right" hspace="10" vspace="10" height="500">
-	<<link [[Plus-size|PregnancyPrevention]]>><<set $BodyType to 'Plus'>><<set $PlayerSideEffects += 2>><</link>>
+	<<link [[Plus-size|PregnancyPrevention]]>>
+    <<set $BodyType to 'Plus'>>
+    <<if $randomSelect>>
+      <<set $PlayerSideEffects += 2>>
+    <<else>>
+      <<set $PlayerSideEffects += 4>>
+    <</if>>
+  <</link>>
 	
 	Heavier than the traditional X-Change look. Some people think that’s better though.
 </p>
@@ -520,7 +534,14 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <p style="clear: both;">
 	<img src="Part1/BodyPetite1.jpg" align="left" hspace="10" vspace="10" height="500">
 	<img src="Part1/BodyPetite2.jpg" align="right" hspace="10" vspace="10" height="500">
-	<<link [[Petite|PregnancyPrevention]]>><<set $BodyType to 'Petite'>><<set $PlayerSideEffects += 2>><</link>>
+	<<link [[Petite|PregnancyPrevention]]>>
+    <<set $BodyType to 'Petite'>>
+    <<if $randomSelect>>
+      <<set $PlayerSideEffects += 2>>
+    <<else>>
+      <<set $PlayerSideEffects += 4>>
+    <</if>>
+  <</link>>
 
 	Shorter and smaller chested than the the traditional look.
 	But trust me, your back will thank you.
@@ -528,7 +549,14 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 
 <p style="clear: both;">
 	<img src="Part1/BodyFit.jpg" align="left" hspace="10" vspace="10" height="500">
-	<<link [[Fit|PregnancyPrevention]]>><<set $BodyType to 'Fit'>><<set $PlayerSideEffects += 2>><</link>>
+	<<link [[Fit|PregnancyPrevention]]>>
+    <<set $BodyType to 'Fit'>>
+    <<if $randomSelect>>
+      <<set $PlayerSideEffects += 2>>
+    <<else>>
+      <<set $PlayerSideEffects += 4>>
+    <</if>>
+  <</link>>
 
 	You probably want to talk to the athletic department they’ll put your body to use, and help you keep it fit.
 </p>
@@ -579,7 +607,13 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	and
 	[[birth control pills|BodyOptionalFeatures][$PlayerProtectionPill to 1]]
 	Let us know what you choose. Make sure you are diligent about whichever you use though. One time without a condom, or a single missed pill
-	could be all it takes. If you get pregnant, of course you'll have options, but changing back to your old body won’t be one of them.
+	could be all it takes.
+  <<if $abortionAllowed>>
+    If you get pregnant, of course you'll have options, but changing back to your old body won’t be one of them.
+  <<else>>
+    Also, be warned, the law may be different where you are from, But unfortunately in this state, if you get pregnant, carrying the baby to term is the only option.
+    Of course regardless of where you, getting pregnant will remove the option of changing back to your old body in the future.
+  <</if>>
 <</nobr>>
 <img src="Part1/PregPrevent5.jpg" hspace="10" vspace="10" height="450"><img src="Part1/PregPrevent6.jpg" hspace="10" vspace="10" height="450">
 
@@ -725,7 +759,11 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 
 	<<set $PreventSideEffectCount to 0>>
-  <<set $PreventSideEffectCountMax to 2>>
+  <<if $randomSelect>>
+    <<set $PreventSideEffectCountMax to 2>>
+  <<else>>
+    <<set $PreventSideEffectCountMax to 0>>
+  <</if>>
 	<<set $PlayerSideEffectPermanent to 0>>
 	<<set $PlayerSideEffectOrgasmBlock to 0>>
 	<<set $PlayerSideEffectMasturbationBlock to 0>>
@@ -927,7 +965,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</nobr>>
 
 	<<nobr>>
-		<<if $gameMode == 'debug' and !$FatherSettings>>
+		<<if $gameMode == 'debug' and !$FatherSettings and $randomSelect>>
       <br><br>
 			There is also an experimental way that will let you
 			<<link "choose the side effects,">>
@@ -1324,7 +1362,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	
 	<<nobr>>
 		<<if $PlayerSideEffectOrgasmBlock == 1>>
-      <<if $PreventSideEffectCount >= $PreventSideEffectCountMax >>
+      <<if $PreventSideEffectCountMax and $PreventSideEffectCount >= $PreventSideEffectCountMax >>
         Except the technician says they've already rejected as many side-effects as he can.  You are stuck with this one,
         regardless of whether you or your father want you to have it.
       <</if>>

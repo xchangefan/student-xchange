@@ -804,8 +804,11 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
       a guy's
     <</if>>
     back as you cum with him on top of you.  But you'd rather not have him cumming inside you every time, with no birth control, be the only
-    way that could happen.  You don't want to spend the rest of your life pregnant, or have to make monthly trips to get an abortion, just so
-    you can orgasm.
+    way that could happen.  You don't want to spend the rest of your life pregnant,
+    <<if $abortionAllowed>>
+      or have to make monthly trips to get an abortion,
+    <</if>>
+    just so you can orgasm.
   <</if>>
   <<if !$PlayerSideEffectPermanent>>
     Besides, you'd like to keep the option to change back some day if you want, and getting pregnant even once would mean that would no longer
@@ -3874,7 +3877,7 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
     pysically located in a medical facility, and allowed while you remain there.  It is also automatically triggered should the <b><i>Wearer</i></b>'s
     water break and will be allowed until 24 hours after delivery or if brought to a medical facility, when the <b><i>Wearer</i></b> leaves said facility.
     <br><br>
-    The prevent misuse of this feature, the "Belt" portion remains locked and will monitor the <b><i>Wearer</i></b> for any signs of arousal.  And
+    To prevent misuse of this feature, the "Belt" portion remains locked and will monitor the <b><i>Wearer</i></b> for any signs of arousal.  And
     attempt to orgasm while in this mode will cause punishment shocks of increasing severity until such attempt is stopped.  Failure to resecure
     the chastity shield to the belt at the conclusion of the allowed period will also be met with punishment shocks of increasing severity until it is
     reaffixed.
@@ -4422,14 +4425,20 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
       not surprised
     <</if>>
     when you see the word "Pregnant" appear on the screen.
-    <<if setup.areDating("Barry")>>
+    <<if setup.areDating("Barry") and $abortionAllowed>>
       You don't even bother telling Barry about this.  You've both discussed this before and don't want to be
       parents.  At least not yet.  You'll make a visit to the clinic today to
       [[terminate the pregnancy|Part15FirstTrimesterAbort]].
       <br><br>
       You'll tell Barry you started your period, and he won't ask any more about it.
+    <<elseif setup.areDating("Barry")>>
+      You know Barry is adamant about not wanting to be a parent right now. He's initially upset when he gets the news about your
+      pregnancy, but quickly starts making arrangements. It's a long drive to a state where you can
+      [[get an abortion|Part15FirstTrimesterAbortOutOfState]], but he drives the entire way.
     <<elseif $PlayerProtectionTry>>
       You know you'll have to schedule a doctor visit to confirm the test, but you are confident their test will show the same thing.
+    <<elseif !$abortionAllowed>>
+      TODO
     <<else>>
       You know it's still early in the pregnancy.  So now is the time visit the clinic if you want to
       [[terminate the pregnancy|Part15FirstTrimesterAbort]].  Otherwise, you'll need to schedule a doctor visit to confirm your
@@ -4454,6 +4463,46 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
       <<set $PlayerSideEffectPermanent to 1>>
     <</if>>
   <</if>>
+<</nobr>>
+
+::Part15FirstTrimesterAbortOutOfState
+<<nobr>>
+	<h1>Motel Room</h1>
+  <img src="Part15/Barry1.jpg" hspace="10" vspace="10" height="650" align="left">
+  <<achievement>>childfree<</achievement>>
+  <<unset $PlayerPregnant>>
+  <<unset $PregnancyWeek>>
+<</nobr>>
+<<nobr>>
+  You took the first pill at the clinic, after their test confirmed that you were pregnant. They gave you another one for the next day, to take
+  at home. But you don't want to drive back to your own backwards state with that pill. You aren't sure if even having it is legal. So you and Barry
+  spend the night at a motel he rents for the night.
+<</nobr>>
+
+<<nobr>>
+  He's been so helpful with this, and you want to show him how grateful you are. You still feel ok, but they said to avoid having sex for a couple days, and that
+  you could start spotting or bleeding soon anyway.
+<</nobr>>
+
+<<nobr>>
+  So instead, you just settle for giving him a blowjob. Well, several of them that evening.
+<</nobr>>
+
+<<nobr>>
+  <img src="Part15/Barry2.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+
+<<nobr>>
+  <img src="PartP/PregTest5.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+  By morning the bleeding and cramps they'd warned you about has started. Thankfully you had picked up plenty of pads for the ride home.
+  You take the second pill and start on your way. It was worse than your worst period so far, but managable. Thought being in the car for it
+  made it that much worse. Thankfully though, it had passed by the time you and Barry arrive back home.
+<</nobr>>
+
+<<nobr>>
+  Now you just want to forget about the pregnancy and get [[back to normal|Part15WeekStandard]] like nothing happened.
 <</nobr>>
 
 ::Part15FirstTrimesterAbort <14000,15000>
@@ -13550,6 +13599,8 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
   <<set setup.addSex({sex:"male", name:$dating[0]})>>
   <<set setup.addSex({sex:"male", name:$dating[0], vaginal:true})>>
 <</nobr>>
+
+TODO Fix this for when it's the engineering belt, not the one your BF has the key for
 
 <<nobr>>
   $dating[0] must have gotten turned on seeing those girls skinny-dipping in the pool at the party, because he's insatiable.

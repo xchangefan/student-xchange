@@ -4,6 +4,15 @@
 	<img src="Part5/Neighbours0.jpg" hspace="10" vspace="10" height="400" align="left">
 <</nobr>>
 <<nobr>>
+  <<if $randomSelect>>
+    <<include [[NeighbourCanChoose]]>>
+  <<else>>
+    <<include [[NeighbourNoChoose]]>>
+  <</if>>
+<</nobr>>
+
+::NeighbourCanChoose
+<<nobr>>
 	"Most of the dorm rooms on campus are assigned randomly, but there are a few sets that haven't been assigned yet.  They said we could pick which guys would be in the room
 	next door to us if we wanted.
 <</nobr>>
@@ -27,6 +36,15 @@
 	I did ask around and get a little info on a few of them though.  [[Here are the ones I know|NeighbourSelect]]."
 <</nobr>>
 
+::NeighbourNoChoose
+<<nobr>>
+	<<if $Mentor == 'Emily'>>
+    Oh, it looks like when I just selected my boyfriend as one of the neighbors, they assumed we wanted the other one
+    [[randomly assigned for us|NeighbourAssign]].
+	<<else>>
+    It looks like they've already [[randomly assigned neighbors for us|NeighbourAssign]].
+	<</if>>
+<</nobr>>
 
 ::NeighbourSelect <325,625>
 <<nobr>>

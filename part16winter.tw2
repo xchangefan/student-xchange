@@ -154,7 +154,7 @@ TODO [[Part16Job]]
 <</nobr>>
 
 <<nobr>>
-  <<if ['Mason','Ethan','Jake'].contains($PregnancyCheck.actualFather)>>
+  <<if ['Mason','Ethan','Jake'].includes($PregnancyCheck.actualFather)>>
     "Oh," you say with a bit of excitement when the email arrives. "It's you $PregnancyCheck.actualFather. You're the father."
     The other two guys quickly excuse themselves so you and $PregnancyCheck.actualFather [[can talk in private|Part16WinterBreakFriendFather]].
   <<else>>
@@ -755,7 +755,7 @@ TODO [[Part16Job]]
     <br><br>
     <video src="Part11/Single3.mp4" autoplay loop muted height="400"></video>
     <br><br>
-    <<if $FormerNeighbours.contains('Barry')>>
+    <<if $FormerNeighbours.includes('Barry')>>
       You pause for a moment seeing a familiar item.  A dildo with a suction cup base, just like the one you 'borrowed' from Barry's room last year.
       You remember how much you enjoyed practicing with it in the bathtub.  But they have an updated version here that interests you even more.
       You focus on a more advanced model.
@@ -863,7 +863,7 @@ TODO [[Part16WinterBreakParentsDylan]]
 <</nobr>>
 
 <<nobr>>
-  <<if $PlayerPregnant and ($PregnancyCheck.possibleFathers.contains('Mason') or $PregnancyCheck.possibleFathers.contains('Ethan') or $PregnancyCheck.possibleFathers.contains('Jake'))>>
+  <<if $PlayerPregnant and ($PregnancyCheck.possibleFathers.includes('Mason') or $PregnancyCheck.possibleFathers.includes('Ethan') or $PregnancyCheck.possibleFathers.includes('Jake'))>>
     <<include [[Part16WinterBreakFriendsPregnancyCheck]]>>
   <<elseif setup.haveFucked('Mason') or setup.haveFucked('Ethan') or setup.haveFucked('Jake')>>
     <<if $PlayerPregnant>>

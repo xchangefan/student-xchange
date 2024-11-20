@@ -288,8 +288,13 @@
 <</nobr>>
 
 <<nobr>>
-	Do you want to [[end the pregnancy now,|Part7Preg2]] or do you want to [[carry the baby to term,|Part7Preg3]]?<br>
-	(If you are considering adoption, then that's something you can discuss with your obstetrician later.)
+  <<if $abortionAllowed>>
+  	Do you want to [[end the pregnancy now,|Part7Preg2]] or do you want to [[carry the baby to term,|Part7Preg3]]?<br>
+	  (If you are considering adoption, then that's something you can discuss with your obstetrician later.)
+  <<else>>
+    You may be [[excited about the news|Part7Preg3]] or [[upset by it|Part7Preg3][$tempUpset to 1]] but without an extended roadtrip to a different state, carrying the baby to term
+    is your only option. Of course, adoption will be an option later if you aren't ready to be a parent.
+  <</if>>
 <</nobr>>
 <<nobr>>
   <<if setup.pregnantFirstTime()>>
@@ -461,8 +466,18 @@
 	<h1><<print "Medical Clinic">></h1>
 <</nobr>>
 
-<<print "The initial shock has passed, and now you are excited thinking about how there is a life growing inside you. A little scared too still.">>
-<img src="PartP/PregTest4.jpg" hspace="10" vspace="10" height="650">
+<<nobr>>
+  <<if $tempUpset>>
+    You know you aren't ready for this, but you don't really have another option. Your body has already changed so much, and now it's going to change
+    even more. You try to not freak out about it all.
+    <br>
+    <img src="PartP/PregTest5.jpg" hspace="10" vspace="10" height="600">
+  <<else>>
+    The initial shock has passed, and now you are excited thinking about how there is a life growing inside you. A little scared too still.
+    <br>
+    <img src="PartP/PregTest4.jpg" hspace="10" vspace="10" height="650">
+  <</if>>
+<</nobr>>
 
 <<nobr>>
 	The doctor helps you estimate that you’re about five weeks along. But it could be a couple weeks more or less.

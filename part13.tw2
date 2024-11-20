@@ -2014,7 +2014,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 <<nobr>>
   "The planned use of this feature is for women that enjoy orgasm denial and loss of control,"  the X-Change technician explains.  "It will completely block your
   ability to feel your orgasms, and much of the pleasure leading up to them, while it is activated.  Your body will still react more-or-less normally for the
-  situation.  But it'll just be subconcious reactions, you won't feel it the way you normally would."
+  situation. You shouldn't have issues with dryness, for example.  But it'll just be subconcious reactions, you won't feel it the way you normally would."
 <</nobr>>
 
 <<nobr>>
@@ -2067,8 +2067,13 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
     <br><br>
     As the technican talks about it, your mind is filled with thoughts of men cumming inside you.  You'd be tempted to see if the technician was interested
     if the dean wasn't right here.  Then the dean interrupts your pleasant thoughts with a question, "Couldn't she just get an abortion?"  You instinctively
-    cover your belly protectively. "Not now," he clarifies.  "I mean when she gets pregnant the next time, and the time after that.  And what about when
-    she's too old to get pregnant?"
+    cover your belly protectively.
+    <<if $abortionAllowed>>
+      "Not now,"
+    <<else>>
+      "Somewhere it's legal I mean.  And not now,"
+    <</if>>
+    he clarifies.  "I mean when she gets pregnant the next time, and the time after that.  And what about when she's too old to get pregnant?"
     <br><br>
     "Termination is possible of course, but if its like with our standard Breeder pills work, then it would interfere with how it detects pregnancy and
     probable conception events.  She probably wouldn't be able to orgasm again until she was pregnant again and things were able to reset," the technician
@@ -5616,17 +5621,17 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 <</nobr>>
 
 <<nobr>>
-  <<if setup.areDating('Paul') and $PregnancyCheck.possibleFathers.contains('Paul')>>
+  <<if setup.areDating('Paul') and $PregnancyCheck.possibleFathers.includes('Paul')>>
     You can't wait to [[tell Paul about the baby|Part13PregnantPaul]].
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       Based on the timing, you are pretty sure he's the father.  Regardless, you certainly aren't going to let him know if you have any doubts.
     <</if>>
-  <<elseif setup.areDating('Andrew') and $PregnancyCheck.possibleFathers.contains('Andrew')>>
+  <<elseif setup.areDating('Andrew') and $PregnancyCheck.possibleFathers.includes('Andrew')>>
     You can't wait to [[tell Andrew about the baby|Part13PregnantAndrew]].
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       Based on the timing, you are pretty sure he's the father.  Regardless, you certainly aren't going to let him know if you have any doubts.
     <</if>>
-  <<elseif setup.areDating('Aaron') and $PregnancyCheck.possibleFathers.contains('Aaron')>>
+  <<elseif setup.areDating('Aaron') and $PregnancyCheck.possibleFathers.includes('Aaron')>>
     You can't wait to [[tell Aaron about the baby|Part13PregnantAaron]].
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       Based on the timing, you are pretty sure he's the father.  Regardless, you know he'd love you, and your baby, just as much either way.
@@ -5656,7 +5661,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
       Based on the timing, you are pretty sure he's the father.  Regardless, he's the only one you'd want involved in your baby's life, so you certainly aren't
       going to let him know if you have any doubts.
     <</if>>
-  <<elseif $PregnancyCheck.possibleFathers.contains("Barry") and $PregnancyCheck.possibleFathers.length > 1>>
+  <<elseif $PregnancyCheck.possibleFathers.includes("Barry") and $PregnancyCheck.possibleFathers.length > 1>>
     <<unset $StatedFather>>
     You know that Barry might be the father.  It could be someone else too.  Even if you told him he was the father he'd probably make you get tested to be sure.
     He's seen his friends fucking you right in front of him, so of course he would.  He'd probably call you a slut the whole time too.
@@ -5864,7 +5869,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 <</nobr>>
 
 <<nobr>>
-  <<if $PregnancyCheck.possibleFathers.contains("Peter")>>
+  <<if $PregnancyCheck.possibleFathers.includes("Peter")>>
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       "Of course we both know that it's possible that you weren't the one that got me pregnant," you tell Peter.  "It may have been you, or maybe you were there but
       watching some other guy fuck me while your cock was safely locked away.  Or it might have been some other time, where you didn't get to watch, you only heard me tell
@@ -5936,7 +5941,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 <</nobr>>
 
 <<nobr>>
-  <<if $PregnancyCheck.possibleFathers.contains('Peter')>>
+  <<if $PregnancyCheck.possibleFathers.includes('Peter')>>
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       "Of course, we both know that it's possible that it's someone else's.  But you let me fuck other men, sometimes right in front of you, and you loved every
       minute of it," you tell him.

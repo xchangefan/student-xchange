@@ -606,13 +606,13 @@ TODO
 <</nobr>>
 
 <<nobr>>
-  <<if setup.areDating('Andrew') and $PregnancyCheck.possibleFathers.contains('Andrew')>>
+  <<if setup.areDating('Andrew') and $PregnancyCheck.possibleFathers.includes('Andrew')>>
 TODO
     You can't wait to [[tell Andrew about the baby|Part16PregnantAndrew]].
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       Based on the timing, you are pretty sure he's the father.  Regardless, you certainly aren't going to let him know if you have any doubts.
     <</if>>
-  <<elseif setup.areDating('Aaron') and $PregnancyCheck.possibleFathers.contains('Aaron')>>
+  <<elseif setup.areDating('Aaron') and $PregnancyCheck.possibleFathers.includes('Aaron')>>
 TODO
     You can't wait to [[tell Aaron about the baby|Part16PregnantAaron]].
     <<if $PregnancyCheck.possibleFathers.length > 1>>
@@ -652,7 +652,7 @@ TODO
       Based on the timing, you are pretty sure he's the father.  Regardless, you certainly aren't going to let him know if you have any doubts.
       Hopefully the baby comes out looking enough like him.
     <</if>>
-  <<elseif $PregnancyCheck.possibleFathers.contains("Barry") and $PregnancyCheck.possibleFathers.length > 1>>
+  <<elseif $PregnancyCheck.possibleFathers.includes("Barry") and $PregnancyCheck.possibleFathers.length > 1>>
 TODO
     <<unset $StatedFather>>
     You know that Barry might be the father.  It could be someone else too.  Even if you told him he was the father he'd probably make you get tested to be sure.
@@ -866,7 +866,7 @@ TODO
 <</nobr>>
 
 <<nobr>>
-  <<if $PregnancyCheck.possibleFathers.contains("Peter")>>
+  <<if $PregnancyCheck.possibleFathers.includes("Peter")>>
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       "Of course we both know that it's possible that you weren't the one that got me pregnant," you tell Peter.  "It may have been you, or maybe you were there but
       watching some other guy fuck me while your cock was safely locked away.  Or it might have been some other time, where you didn't get to watch, you only heard me tell
@@ -939,7 +939,7 @@ TODO
 <</nobr>>
 
 <<nobr>>
-  <<if $PregnancyCheck.possibleFathers.contains('Peter')>>
+  <<if $PregnancyCheck.possibleFathers.includes('Peter')>>
     <<if $PregnancyCheck.possibleFathers.length > 1>>
       "Of course, we both know that it's possible that it's someone else's.  But you let me fuck other men, sometimes right in front of you, and you loved every
       minute of it," you tell him.
