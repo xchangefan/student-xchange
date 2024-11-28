@@ -1336,7 +1336,10 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
       But he'd already convinced you a permanent change was for the best anyway, so this just makes it easier.
       <br><br>
     <</if>>
-		Your change is permanent. We won’t be able to change you back after graduation. Or ever.  And this isn't a side effect that we are able to reverse.
+		Your change is permanent. We won’t be able to change you back after graduation. Or ever.
+    <<if $randomSelect>>
+      And this isn't a side effect that we are able to reverse.
+    <</if>>
 	<</nobr>>
 
 	<<nobr>>
@@ -1904,15 +1907,17 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			another orgasm during sex.  If it gets to be a problem, just tell them to hold you down and don’t
 			stop until they cum. They’ll love counting how many times they can make you cum before they do.
 			But you’ll probably need quite a while to recover after they’ve finished.
-      <br><br>
-      We don't usually have people requesting to
-      <<link [[block this side effect|BodySideEffects]]>>
-				<<set $PlayerPowerfulOrgasms -= 1>>
-				<<set $PlayerEasytoOrgasm -= 1>>
-				<<set $PlayerSuperOrgasms -= 1>>
-			<</link>>
-      but it's actually the easiest one to block.  Doing so won't even trigger any additional side effects.
-      Let me know if you want me to do that.
+      <<if $randomSelect>>
+        <br><br>
+        We don't usually have people requesting to
+        <<link [[block this side effect|BodySideEffects]]>>
+  				<<set $PlayerPowerfulOrgasms -= 1>>
+	  			<<set $PlayerEasytoOrgasm -= 1>>
+		  		<<set $PlayerSuperOrgasms -= 1>>
+			  <</link>>
+        but it's actually the easiest one to block.  Doing so won't even trigger any additional side effects.
+        Let me know if you want me to do that.
+      <</if>>
 		<</if>>
 	<</nobr>>
 

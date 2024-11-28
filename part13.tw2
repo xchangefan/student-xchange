@@ -5235,7 +5235,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
         <<print $PregnancyCheck.actualFather>>.
       <</if>>
       You don't want a baby right now, and you know Mistress Kate doesn't either.  And you certainly don't want one that is a constant reminder of your
-      mistake.  You let the doctor know that you want to [[terminate the pregnancy|Part13CheckupAbort]].
+      mistake.  You let the doctor know that you want to [[terminate the pregnancy|Part13CheckupAbort]]. TODO if abortion not allowed
     <<elseif $PlayerProtectionTry>>
       You are ecstatic, finally you're pregnant!  You excitedly tell the doctor that you will definitely be [[carrying the baby to term|Part13CheckupKeep]].  She
       congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
@@ -5390,6 +5390,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
 ::Part13PregnantLoopholeBarryAbortionBribe <30200,13000>
 <<nobr>>
 	<h1>Reconsidered</h1>
+  TODO Handle if abortion not allowed - roadtrip
 	<<set $BarryBribe to 1>>
 	<<set $PlayerPregnant to 0>>
   <<unset $PregnancyCheck>>
@@ -5600,18 +5601,26 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
       <ul>
         <<print $PregnancyCheck.possibleFathers.map((father) => {return "<li> - " + father + "</li>"}).join("")>>
       </ul>
-      That's the only possibilities.  But this is your decision, not theirs.
+      That's the only possibilities.
+      <<if $abortionAllowed>>
+        But this is your decision, not theirs.
+      <</if>>
     <</if>>
+  <</if>>
+  <<if $abortionAllowed>>
+    <br><br>
+    By the time the doctor returns, you are sure of your decision.
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  By the time the doctor returns, you are sure of your decision.
-<</nobr>>
-
-<<nobr>>
-	Do you tell her you want to [[carry the baby to term,|Part13CheckupKeep]] or that you want to [[end the pregnancy now,|Part13CheckupAbort]]?<br>
-	(If you are considering adoption, then that's something to discuss with your obstetrician later.)
+  <<if $abortionAllowed>>
+	  Do you tell her you want to [[carry the baby to term,|Part13CheckupKeep]] or that you want to [[end the pregnancy now,|Part13CheckupAbort]]?<br>
+    (If you are considering adoption, then that's something to discuss with your obstetrician later.)
+  <<else>>
+    Unfortunately the only choice you can make in this state is whether you want to put the baby up for adoption after he or she is born, or raise
+    them yourself. Either way, you'll be [[carrying the baby to term|Part13CheckupKeep]].
+  <</if>>
 <</nobr>>
 
 ::Part13CheckupKeep  <31000,13000>

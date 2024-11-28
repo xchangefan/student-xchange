@@ -52,16 +52,10 @@ Config.saves.descriptions = function (saveType) {
 };
 
 setup.getCurrentPassageSummary = function() {
-  const text = Story.get(passage()).processText();
-  const h1MatchWithPrint = text.match(/<h1><<print "([^"]*)\">><\/h1>/)
+  const text = $("#passages div")[0].outerHTML;
   const h1Match = text.match(/<h1>(.*)<\/h1>/)
-  return h1MatchWithPrint
-    ? h1MatchWithPrint[1].slice(0, 20)
-    : h1Match
-     ? h1Match[1].slice(0, 20)
-     : text.slice(0, 20);
+  return (h1Match ? h1Match[1] : text).replace(/<\/[^>]+(>|$)/g, "").slice(0, 30)
 }
-
 
 setup.getPopularNames = function () {
   return ["Abigail","Taylor","Alyssa","Lauren","Brianna","Anna","Destiny","Jasmine","Jennifer","Julia","Isabella","Morgan"]

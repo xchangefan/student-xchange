@@ -503,45 +503,74 @@ TODO
   <img src="Part16/Pregnant1.jpg" hspace="10" vspace="10" height="650" align="left">
 <</nobr>>
 <<nobr>>
-  As you consider your options, your mind imagines what your body will look like a few months from now.
-<</nobr>>
-
-<<nobr>>
-  <<if setup.areDating('Veronica')>>
-    It doesn't really matter to you who the father is.  You and Veronica have already discussed that this was a possibility, and she said she'd support you
-    with whatever choice you made if it happened.  You know if you carry the baby, it'll be Veronica helping you through the pregnancy.  And if you decide to
-    keep the baby after he or she is born, you know it'll be Veronica you want helping raise him or her with you.
-  <<elseif $PregnancyCheck.possibleFathers.length === 1>>
-    <<if !$PregnancyCheck.conceptionEvent.name>>
-      You know who the father must be.  Or at least when it must have happened.  You don't actually remember his name.  To you he was just
-      <<print $PregnancyCheck.actualFather.toLowerCase()>>.  He's obviously not a consideration in all this.
+  <<if $abortionAllowed>>
+    As you consider your options, your mind imagines what your body will look like a few months from now.
+    <br><br>
+    <<if setup.areDating('Veronica')>>
+      It doesn't really matter to you who the father is.  You and Veronica have already discussed that this was a possibility, and she said she'd support you
+      with whatever choice you made if it happened.  You know if you carry the baby, it'll be Veronica helping you through the pregnancy.  And if you decide to
+      keep the baby after he or she is born, you know it'll be Veronica you want helping raise him or her with you.
+    <<elseif $PregnancyCheck.possibleFathers.length === 1>>
+      <<if !$PregnancyCheck.conceptionEvent.name>>
+        You know who the father must be.  Or at least when it must have happened.  You don't actually remember his name.  To you he was just
+        <<print $PregnancyCheck.actualFather.toLowerCase()>>.  He's obviously not a consideration in all this.
+      <<else>>
+        Of course, you know the father is <<print $PregnancyCheck.actualFather>>.  But this is your decision, not his.
+      <</if>>
     <<else>>
-      Of course, you know the father is <<print $PregnancyCheck.actualFather>>.  But this is your decision, not his.
+      You think through who the father could be:
+      <<if $PregnancyCheck.possibleFathers.length > 4>>
+        <ul>
+          <<print $PregnancyCheck.possibleFathers.slice($PregnancyCheck.possibleFathers.length - 4).map((father) => {return "<li> - " + father + "</li>"}).join("")>>
+        </ul>
+        <img src="Part16/Pregnant2.jpg" hspace="10" vspace="10" height="300" align="left">
+        You're sure you're forgetting some though. You know you shouldn't be, but you can't help that you feel ashamed that you
+        can't even remember everyone it might be.  But you dismiss your self-shaming and focus on the decision you have to make.
+      <<else>>
+        <ul>
+          <<print $PregnancyCheck.possibleFathers.map((father) => {return "<li> - " + father + "</li>"}).join("")>>
+        </ul>
+        That's the only possibilities.  
+      <</if>>
     <</if>>
+    <br><br>
+    By the time the doctor returns, you are sure of your decision.
+	  Do you tell her you want to [[carry the baby to term,|Part16CheckupKeep]] or that you want to
+    [[end the pregnancy now,|Part16CheckupAbort]]?
   <<else>>
-    You think through who the father could be:
-    <<if $PregnancyCheck.possibleFathers.length > 4>>
-      <ul>
-        <<print $PregnancyCheck.possibleFathers.slice($PregnancyCheck.possibleFathers.length - 4).map((father) => {return "<li> - " + father + "</li>"}).join("")>>
-      </ul>
-      <img src="Part16/Pregnant2.jpg" hspace="10" vspace="10" height="300" align="left">
-      You're sure you're forgetting some though. You know you shouldn't be, but you can't help that you feel ashamed that you
-      can't even remember everyone it might be.  But you dismiss your self-shaming and focus on the decision you have to make.
+    You don't really have option but to keep the baby, at least without leaving the state. Your mind imagines what your body will look like a few
+    months from now.
+    <br><br>
+    <<if setup.areDating('Veronica')>>
+      It doesn't really matter to you who the father is.  You and Veronica have already discussed that this was a possibility, and she said she'd
+      support you with whatever choice you made if it happened.  You know she will helping you through the pregnancy.  And if you decide to
+      keep the baby after he or she is born, you know it'll be Veronica you want helping raise him or her with you.
+    <<elseif $PregnancyCheck.possibleFathers.length === 1>>
+      <<if !$PregnancyCheck.conceptionEvent.name>>
+        You know who the father must be.  Or at least when it must have happened.  You don't actually remember his name.  To you he was just
+        <<print $PregnancyCheck.actualFather.toLowerCase()>>.  He's obviously not a consideration in all this.
+      <<else>>
+        Of course, you know the father is <<print $PregnancyCheck.actualFather>>.  You wonder how he'll react to the news.
+      <</if>>
     <<else>>
-      <ul>
-        <<print $PregnancyCheck.possibleFathers.map((father) => {return "<li> - " + father + "</li>"}).join("")>>
-      </ul>
-      That's the only possibilities.  But this is your decision, not theirs.
+      You think through who the father could be:
+      <<if $PregnancyCheck.possibleFathers.length > 4>>
+        <ul>
+          <<print $PregnancyCheck.possibleFathers.slice($PregnancyCheck.possibleFathers.length - 4).map((father) => {return "<li> - " + father + "</li>"}).join("")>>
+        </ul>
+        <img src="Part16/Pregnant2.jpg" hspace="10" vspace="10" height="300" align="left">
+        You're sure you're forgetting some though. You know you shouldn't be, but you can't help that you feel ashamed that you
+        can't even remember everyone it might be.  But you dismiss your self-shaming and focus on the situation at hand.
+      <<else>>
+        <ul>
+          <<print $PregnancyCheck.possibleFathers.map((father) => {return "<li> - " + father + "</li>"}).join("")>>
+        </ul>
+        That's the only possibilities.  
+      <</if>>
     <</if>>
+    <br><br>
+    By the time the doctor returns, you've [[accepted the reality of it|Part16CheckupKeep]].
   <</if>>
-<</nobr>>
-
-<<nobr>>
-  By the time the doctor returns, you are sure of your decision.
-<</nobr>>
-
-<<nobr>>
-	Do you tell her you want to [[carry the baby to term,|Part16CheckupKeep]] or that you want to [[end the pregnancy now,|Part16CheckupAbort]]?<br>
 <</nobr>>
 
 ::Part16CheckupKeep
@@ -813,6 +842,7 @@ TODO
 
 ::Part16PregnantJosh
 TODO
+TODO Looks to be some missing images
 <<nobr>>
 	<h1><<print "Telling Josh">></h1>
   <<set $StatedFather to 'Josh'>>

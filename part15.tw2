@@ -1198,16 +1198,28 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
     <</if>>
     <br><br>
     <<if $PlayerProtectionTry>>
-      You are ecstatic, finally you're pregnant!  You excitedly tell the doctor that you will definitely be
-      [[carrying the baby to term|Part15ClinicKeep]].  He congratulates you on the pregnancy and says the the nurse will be
-      in a bit to discuss prenatal care.
+      You are ecstatic, finally you're pregnant!  You excitedly tell the doctor
+      <<if $abortionAllowed>>
+        that you will definitely be [[carrying the baby to term|Part15ClinicKeep]].
+      <<else>>
+        that you've were hoping for this news, and how excitied you are to [[be pregnant|Part15ClinicKeep]].
+      <</if>>
+      He congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
     <<elseif $CampusMinistry>>
-      You make it clear to the doctor that you aren't going to consider anything other than
-      [[carrying the baby to term|Part15ClinicKeep]].  He congratulates you on the pregnancy and says the the nurse will be
-      in a bit to discuss prenatal care.
-    <<else>>
+      <<if $abortionAllowed>>
+        You make it clear to the doctor that you aren't going to consider anything other than
+        [[carrying the baby to term|Part15ClinicKeep]].
+      <<else>>
+        You know even if you had another the option, you still would want to [[keep your baby|Part15ClinicKeep]].
+      <</if>>
+      He congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
+    <<elseif $abortionAllowed>>
       The doctor sees you need a moment to process the news.  He says he'll give you a bit to think about whether you want to
       [[keep the baby|Part15ClinicKeep]] or [[terminate the pregnancy|Part15ClinicAbort]].
+    <<else>>
+      You aren't sure what you'd do if you had the option of ending the pregnancy. But given the laws in this state, your only option
+      is to [[keep the baby|Part15ClinicKeep]].
+      The doctor congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
     <</if>>
   <<elseif $tempMinistryDenial or setup.sexCount() == 0>>
     You are not pregnant.
@@ -1615,7 +1627,7 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
     You used to be a good girl, but now you feel like you don't have control anymore.  All you think about is sex.  And even when you have it,
     you are left wanting more when you're done.
     <br><br>
-    You can't even walk across campus without a chance meeting with a few fat guys turning into much more.  Before you know it, you are back at
+    You can't even walk across campus without a chance meeting with a few frat guys turning into much more.  Before you know it, you are back at
     their frat house, letting them use you.
     <br><br>
     When they are finished, you are still unsatisfied and as horny as when you got there.  They all enjoyed using you though, and they left you
@@ -14446,12 +14458,13 @@ TODO Fix this for when it's the engineering belt, not the one your BF has the ke
 <</nobr>>
 
 <<nobr>>
-  <<if $CampusMinistry || $dating.length>>
+  <<if $CampusMinistry or $dating.length or $JobBetaTester == "chaste">>
     The hardest part of the costume for you is actually the collar, and chain you attached to it.  Lots of guys think
     it's fun to grab the chain and lead you around the party for a while.
     <br><br>
-    The part that's hard about that is that every time one of them does that, all you can think of is that they could
-    just lead you somewhere private and treat you like the slave girl you are dressed as.
+    You don't know if your mind is playing tricks on your or not, but you can swear the belt teases you a bit every time
+    one of them tugs at the collar. Whether it's real or your imagination, you are fantasizing more and more about about one
+    of them grabbing your chain and leading your somewhere private to treat you like the slave girl you are dressed as.
     <br><br>
     You [[head home|Part15HalloweenChastity3]] from the party before temptation overwhelms you and you ask one of
     them to do exactly that.
@@ -14459,7 +14472,11 @@ TODO Fix this for when it's the engineering belt, not the one your BF has the ke
     The best part of the costume for you is actually the collar though, and the chain you attached to it.  Guys seem
     to enjoy grabbing the chain and leading you around the party for a while.
     <br><br>
-    Once they see how much you are enjoying it they offer to lead you [[somewhere more private|Part15HalloweenChastity2]].
+    You don't know if your mind is playing tricks on your or not, but you can swear the belt teases you a bit every time
+    one of them tugs at the collar. Whether it's real or your imagination, you are fantasizing more and more about about one
+    of them grabbing your chain and leading your somewhere private to treat you like the slave girl you are dressed as.
+    <br><br>
+    Seeing how eager you are, it isn't long before one of them [[does exactly that|Part15HalloweenChastity2]].
   <</if>>
 <</nobr>>
 
@@ -14497,8 +14514,8 @@ TODO Fix this for when it's the engineering belt, not the one your BF has the ke
 <<nobr>>
   Back home you can't help but claw at your belt, as the aching need beneath it overwhelms you.  Eventually you give
   up though.  You still toss and turn though for a while before you can sleep.  The whole time you are
-  <<if $CampusMinistry or $dating.length>>
-    imagining all the ways men at the party might have used you as a slave girl.
+  <<if $CampusMinistry or $dating.length or $JobBetaTester == "chaste">>
+    imagining all the ways men at the party might have used you as a slave girl if it weren't for this belt.
     <<if $dating.length and !setup.haveGirlfriend()>>
       <br><br>
       But you only want $dating[0] to treat you like his slave girl.
@@ -14510,7 +14527,7 @@ TODO Fix this for when it's the engineering belt, not the one your BF has the ke
       <</if>>
     <</if>>
   <<else>>
-    remembering all the ways guys at the party used you as a slave girl, and imagining a more they could have used if you
+    remembering all the ways guys at the party used you as a slave girl, and imagining a few more ways they could have used if you
     weren't locked in this chastity belt.
   <</if>>
 <</nobr>>

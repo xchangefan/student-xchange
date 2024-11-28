@@ -1795,7 +1795,13 @@
     <<if $PlayerProtectionTry>>disappointment<<else>>relief<</if>>
     as Bailey stares at her positive test for a long time.  After a while, you hug her for support.
   <</if>>
-  "Do you know how to... where to go... [[to end it|Part15BuddyAbortion]]?" Bailey asks uneasily.
+  <<if $abortionAllowed>>
+    "Do you know how to... where to go... [[to end it|Part15BuddyAbortion]]?" Bailey asks uneasily.
+  <<else>>
+    "Do you know how to... where to go... [[to end it|Part15BuddyAbortionRoadTrip]]?" Bailey asks uneasily. "I know it's not legal any more here. But..."
+    she starts to cry.
+  <</if>>
+
 <</nobr>>
 
 <<nobr>>
@@ -1809,6 +1815,10 @@
     <br><br>
     You doubt Faith or Pastor Mark would approve, but you are committed to being here for Bailey, not pushing their beliefs on her.
   <</if>>
+  <<if !$abortionAllowed>>
+    <br><br>
+    This state and it's backwards laws be damned, you're going to help Bailey no matter what it takes.
+  <</if>>
 <</nobr>>
 <<if $tempTestCount > 1 and $PregnancyWeek>>
   <<if setup.pregnantFirstTime()>>
@@ -1820,6 +1830,94 @@
   <</if>>
 <</if>>
 <<unset $tempTestCount>>
+
+::Part15BuddyAbortionRoadTrip
+<<nobr>>
+  <h1>Roadtrip with Bailey</h1>
+  <img src="Part15/Buddy57.jpg" hspace="10" vspace="10" height="500" align="left">
+<</nobr>>
+<<nobr>>
+  "Thank you so much for helping me with this," Bailey tells you as your are checking into the hotel half way to the out-of-state abortion clinic
+  you are driving her to. "I don't know how I would have managed without you."
+<</nobr>>
+
+<<nobr>>
+  "Knowing this will be my body forever now... well it didn't upset me as much as I thought it would. But the thought of being a monther... having a
+  baby... I'm just not ready for that."
+<</nobr>>
+
+<<nobr>>
+  You and her have a few more hours of driving tomorrow before her 
+  <<if $abortionAllowed or !$PlayerPregnant or $PregnancyWeek >= 20>>
+    [[appointment at the clinic|Part15BuddyAbortion]].
+  <<else>>
+    [[appointment at the clinic|Part15BuddyAbortionOption]].
+  <</if>>
+  But tonight you are able
+  to get good nights rest at the hotel she rented with her dad's credit card. You are guessing she didn't mention the reason for this road trip to
+  him though.
+<</nobr>>
+
+::Part15BuddyAbortionOption <5800,15100>
+<<nobr>>
+  <h1>At the clinic with Bailey</h1>
+  <img src="PartP/Clinic1.jpg" hspace="10" vspace="10" height="400">
+<</nobr>>
+<<nobr>>
+    When you reach the check-in desk at the clinic the receptionist asks, "Which one of you is the patient today?"
+<</nobr>>
+
+<<nobr>>
+  "Actually we both are," you tell her.
+  <span id="clinic">
+    <<if setup.areDating('Barry')>>
+      <<unset $PlayerPregnant>>
+      <<set $tempPlayerAbortion to 1>>
+      <<set $PlayerSideEffectPermanent to 1>>
+      <<if $PlayerAbortion>>
+        <<set $PlayerAbortion += 1>>
+      <<else>>
+        <<set $PlayerAbortion to 1>>
+      <</if>>
+      <<unset $PregnancyWeek>>
+      <<achievement>>childfree<</achievement>>
+      "My friend and I are both pregnant.  And we are both wanting to [[terminate the pregnancies|Part15BuddyAbortion2]]."
+      You and $dating[0] had already talked about this, and neither of you want a baby right now.
+    <<elseif $PlayerChastityBelt and $Keyholder == "computer" and $ComputerChastityOwner == "Eric">>
+      <<unset $PlayerPregnant>>
+      <<set $tempPlayerAbortion to 1>>
+      <<set $PlayerSideEffectPermanent to 1>>
+      <<if $PlayerAbortion>>
+        <<set $PlayerAbortion += 1>>
+      <<else>>
+        <<set $PlayerAbortion to 1>>
+      <</if>>
+      <<unset $PregnancyWeek>>
+      <<achievement>>childfree<</achievement>>
+      "My friend and I are both pregnant.  And we are both wanting to [[terminate the pregnancies|Part15BuddyAbortion2]]."
+      You know the chastity belts the department is testing can adjust for pregnancies, but you don't want to have to deal with it.
+      Being pregnant would be stressful enough, without dealing with that too.
+    <<else>>
+      Bailey wants to end her pregnancy.
+      And you've had a long drive to think over your options and decided that you want to 
+      <<link "keep yours">>
+        <<replace "#clinic">>
+          <<set $tempPlayerPregnant to 1>>
+          <<set $PlayerPregnant to 1>>
+          <<set $PlayerSideEffectPermanent to 1>>
+          "My friend and I are both pregnant.  She wants to [[terminate hers|Part15BuddyAbortion2]].  I'm just here to support her."
+        <</replace>>
+      <</link>>
+      or
+      <<link "end yours also.">>
+        <<replace "#clinic">>
+          <<set $tempPlayerAbortion to 1>>
+          "My friend and I are both pregnant.  And we are both wanting to [[terminate the pregnancies|Part15BuddyAbortion2]]."
+        <</replace>>
+      <</link>>
+    <</if>>
+  </span>
+<</nobr>>
 
 ::Part15BuddyAbortion <5800,15100>
 <<nobr>>
@@ -1899,7 +1997,11 @@
 
 ::Part15BuddyAbortion2 <6000,15100>
 <<nobr>>
-	<h1>Bailey's Room</h1>
+  <<if $abortionAllowed>>
+  	<h1>Bailey's Room</h1>
+  <<else>>
+	  <h1>Hotel Room</h1>
+  <</if>>
 <</nobr>>
 <<nobr>>
   They gave
@@ -1913,12 +2015,21 @@
   <<else>>
     They warned you both
   <</if>>
-  that it was going to be very unpleasant the next day, after the second pill kicked in.  So you spend the
-  night at Bailey's so you
-  <<if $tempPlayerAbortion>>
-    could support each other.
+  that it was going to be very unpleasant the next day, after the second pill kicked in.  So
+  <<if $abortionAllowed>>
+    you spend the night at Bailey's so you
+    <<if $tempPlayerAbortion>>
+      could support each other.
+    <<else>>
+      can support her.
+    <</if>>
   <<else>>
-    can support her.
+    Bailey rented a room for the day so 
+    <<if $tempPlayerAbortion>>
+      the two of you could recover.
+    <<else>>
+      she wouldn't be miserable the trying to survive the ride home in pain.
+    <</if>>
   <</if>>
 <</nobr>>
 <img src="PartP/Cramps3.jpg" hspace="10" vspace="10" height="500">
