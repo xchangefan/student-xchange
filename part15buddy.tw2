@@ -1795,7 +1795,7 @@
     <<if $PlayerProtectionTry>>disappointment<<else>>relief<</if>>
     as Bailey stares at her positive test for a long time.  After a while, you hug her for support.
   <</if>>
-  <<if $abortionAllowed>>
+  <<if settings.abortionAllowed>>
     "Do you know how to... where to go... [[to end it|Part15BuddyAbortion]]?" Bailey asks uneasily.
   <<else>>
     "Do you know how to... where to go... [[to end it|Part15BuddyAbortionRoadTrip]]?" Bailey asks uneasily. "I know it's not legal any more here. But..."
@@ -1815,7 +1815,7 @@
     <br><br>
     You doubt Faith or Pastor Mark would approve, but you are committed to being here for Bailey, not pushing their beliefs on her.
   <</if>>
-  <<if !$abortionAllowed>>
+  <<if !settings.abortionAllowed>>
     <br><br>
     This state and it's backwards laws be damned, you're going to help Bailey no matter what it takes.
   <</if>>
@@ -1848,7 +1848,7 @@
 
 <<nobr>>
   You and her have a few more hours of driving tomorrow before her 
-  <<if $abortionAllowed or !$PlayerPregnant or $PregnancyWeek >= 20>>
+  <<if settings.abortionAllowed or !$PlayerPregnant or $PregnancyWeek >= 20>>
     [[appointment at the clinic|Part15BuddyAbortion]].
   <<else>>
     [[appointment at the clinic|Part15BuddyAbortionOption]].
@@ -1997,7 +1997,7 @@
 
 ::Part15BuddyAbortion2 <6000,15100>
 <<nobr>>
-  <<if $abortionAllowed>>
+  <<if settings.abortionAllowed>>
   	<h1>Bailey's Room</h1>
   <<else>>
 	  <h1>Hotel Room</h1>
@@ -2016,7 +2016,7 @@
     They warned you both
   <</if>>
   that it was going to be very unpleasant the next day, after the second pill kicked in.  So
-  <<if $abortionAllowed>>
+  <<if settings.abortionAllowed>>
     you spend the night at Bailey's so you
     <<if $tempPlayerAbortion>>
       could support each other.

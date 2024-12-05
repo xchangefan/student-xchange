@@ -805,7 +805,7 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
     <</if>>
     back as you cum with him on top of you.  But you'd rather not have him cumming inside you every time, with no birth control, be the only
     way that could happen.  You don't want to spend the rest of your life pregnant,
-    <<if $abortionAllowed>>
+    <<if settings.abortionAllowed>>
       or have to make monthly trips to get an abortion,
     <</if>>
     just so you can orgasm.
@@ -1199,21 +1199,21 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
     <br><br>
     <<if $PlayerProtectionTry>>
       You are ecstatic, finally you're pregnant!  You excitedly tell the doctor
-      <<if $abortionAllowed>>
+      <<if settings.abortionAllowed>>
         that you will definitely be [[carrying the baby to term|Part15ClinicKeep]].
       <<else>>
         that you've were hoping for this news, and how excitied you are to [[be pregnant|Part15ClinicKeep]].
       <</if>>
       He congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
     <<elseif $CampusMinistry>>
-      <<if $abortionAllowed>>
+      <<if settings.abortionAllowed>>
         You make it clear to the doctor that you aren't going to consider anything other than
         [[carrying the baby to term|Part15ClinicKeep]].
       <<else>>
         You know even if you had another the option, you still would want to [[keep your baby|Part15ClinicKeep]].
       <</if>>
       He congratulates you on the pregnancy and says the the nurse will be in a bit to discuss prenatal care.
-    <<elseif $abortionAllowed>>
+    <<elseif settings.abortionAllowed>>
       The doctor sees you need a moment to process the news.  He says he'll give you a bit to think about whether you want to
       [[keep the baby|Part15ClinicKeep]] or [[terminate the pregnancy|Part15ClinicAbort]].
     <<else>>
@@ -4437,7 +4437,7 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
       not surprised
     <</if>>
     when you see the word "Pregnant" appear on the screen.
-    <<if setup.areDating("Barry") and $abortionAllowed>>
+    <<if setup.areDating("Barry") and settings.abortionAllowed>>
       You don't even bother telling Barry about this.  You've both discussed this before and don't want to be
       parents.  At least not yet.  You'll make a visit to the clinic today to
       [[terminate the pregnancy|Part15FirstTrimesterAbort]].
@@ -4449,7 +4449,7 @@ TODO Adjust for Kyle / FatherSettings figure out alt ending for that and way to 
       [[get an abortion|Part15FirstTrimesterAbortOutOfState]], but he drives the entire way.
     <<elseif $PlayerProtectionTry>>
       You know you'll have to schedule a doctor visit to confirm the test, but you are confident their test will show the same thing.
-    <<elseif !$abortionAllowed>>
+    <<elseif !settings.abortionAllowed>>
       TODO
     <<else>>
       You know it's still early in the pregnancy.  So now is the time visit the clinic if you want to

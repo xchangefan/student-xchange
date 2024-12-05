@@ -2068,7 +2068,7 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
     As the technican talks about it, your mind is filled with thoughts of men cumming inside you.  You'd be tempted to see if the technician was interested
     if the dean wasn't right here.  Then the dean interrupts your pleasant thoughts with a question, "Couldn't she just get an abortion?"  You instinctively
     cover your belly protectively.
-    <<if $abortionAllowed>>
+    <<if settings.abortionAllowed>>
       "Not now,"
     <<else>>
       "Somewhere it's legal I mean.  And not now,"
@@ -5602,19 +5602,19 @@ Of course, in addition to your schoolwork and being whored out by Barry, you als
         <<print $PregnancyCheck.possibleFathers.map((father) => {return "<li> - " + father + "</li>"}).join("")>>
       </ul>
       That's the only possibilities.
-      <<if $abortionAllowed>>
+      <<if settings.abortionAllowed>>
         But this is your decision, not theirs.
       <</if>>
     <</if>>
   <</if>>
-  <<if $abortionAllowed>>
+  <<if settings.abortionAllowed>>
     <br><br>
     By the time the doctor returns, you are sure of your decision.
   <</if>>
 <</nobr>>
 
 <<nobr>>
-  <<if $abortionAllowed>>
+  <<if settings.abortionAllowed>>
 	  Do you tell her you want to [[carry the baby to term,|Part13CheckupKeep]] or that you want to [[end the pregnancy now,|Part13CheckupAbort]]?<br>
     (If you are considering adoption, then that's something to discuss with your obstetrician later.)
   <<else>>

@@ -506,7 +506,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<img src="Part1/BodyStandard2.jpg" align="right" hspace="10" vspace="10" height="500">
 	<<link [[Standard X-Change Body|PregnancyPrevention]]>>
     <<set $BodyType to 'Standard'>>
-    <<if $randomSelect>>
+    <<if settings.randomSelect>>
       <<set $PlayerSideEffects += 2>>
     <<else>>
       <<set $PlayerSideEffects += 4>>
@@ -521,7 +521,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<img src="Part1/BodyCurvy2.jpg" align="right" hspace="10" vspace="10" height="500">
 	<<link [[Plus-size|PregnancyPrevention]]>>
     <<set $BodyType to 'Plus'>>
-    <<if $randomSelect>>
+    <<if settings.randomSelect>>
       <<set $PlayerSideEffects += 2>>
     <<else>>
       <<set $PlayerSideEffects += 4>>
@@ -536,7 +536,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<img src="Part1/BodyPetite2.jpg" align="right" hspace="10" vspace="10" height="500">
 	<<link [[Petite|PregnancyPrevention]]>>
     <<set $BodyType to 'Petite'>>
-    <<if $randomSelect>>
+    <<if settings.randomSelect>>
       <<set $PlayerSideEffects += 2>>
     <<else>>
       <<set $PlayerSideEffects += 4>>
@@ -551,7 +551,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<img src="Part1/BodyFit.jpg" align="left" hspace="10" vspace="10" height="500">
 	<<link [[Fit|PregnancyPrevention]]>>
     <<set $BodyType to 'Fit'>>
-    <<if $randomSelect>>
+    <<if settings.randomSelect>>
       <<set $PlayerSideEffects += 2>>
     <<else>>
       <<set $PlayerSideEffects += 4>>
@@ -608,7 +608,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	[[birth control pills|BodyOptionalFeatures][$PlayerProtectionPill to 1]]
 	Let us know what you choose. Make sure you are diligent about whichever you use though. One time without a condom, or a single missed pill
 	could be all it takes.
-  <<if $abortionAllowed>>
+  <<if settings.abortionAllowed>>
     If you get pregnant, of course you'll have options, but changing back to your old body won’t be one of them.
   <<else>>
     Also, be warned, the law may be different where you are from, But unfortunately in this state, if you get pregnant, carrying the baby to term is the only option.
@@ -759,7 +759,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
   <</if>>
 
 	<<set $PreventSideEffectCount to 0>>
-  <<if $randomSelect>>
+  <<if settings.randomSelect>>
     <<set $PreventSideEffectCountMax to 2>>
   <<else>>
     <<set $PreventSideEffectCountMax to 0>>
@@ -965,7 +965,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 	<</nobr>>
 
 	<<nobr>>
-		<<if $gameMode == 'debug' and !$FatherSettings and $randomSelect>>
+		<<if $gameMode == 'debug' and !$FatherSettings and settings.randomSelect>>
       <br><br>
 			There is also an experimental way that will let you
 			<<link "choose the side effects,">>
@@ -1120,9 +1120,10 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 <</nobr>>
 
 <<nobr>>
-  "With either, there have been some reports of inreased sex drive.  But it's hard to determine how much of that is because of the birth control option directly,
-  and how much is just because of the freedom to have fun without the risk of pregnancy.  I'm sure it's mostly the latter.  But more importantly, both options'
-  contraceptive effects start immediately.  And after a month or two, your periods should stop or become much lighter as well."
+  "With either, there have been some reports of increased sex drive.  But it's hard to determine how much of that is because of the birth control option directly,
+  and how much is just because of the freedom to have fun without the risk of pregnancy.  I'm sure it's mostly the latter. But at any rate, it's not anything
+  users complain about, but we are required to mention it.  More importantly though, both options' contraceptive effects start immediately.  And after a month
+  or two, your periods should stop or become much lighter as well."
 <</nobr>>
 
 <<nobr>>
@@ -1337,7 +1338,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
       <br><br>
     <</if>>
 		Your change is permanent. We won’t be able to change you back after graduation. Or ever.
-    <<if $randomSelect>>
+    <<if settings.randomSelect>>
       And this isn't a side effect that we are able to reverse.
     <</if>>
 	<</nobr>>
@@ -1907,7 +1908,7 @@ The letter goes on and on for a while, your eyes skim over most of it until the 
 			another orgasm during sex.  If it gets to be a problem, just tell them to hold you down and don’t
 			stop until they cum. They’ll love counting how many times they can make you cum before they do.
 			But you’ll probably need quite a while to recover after they’ve finished.
-      <<if $randomSelect>>
+      <<if settings.randomSelect>>
         <br><br>
         We don't usually have people requesting to
         <<link [[block this side effect|BodySideEffects]]>>
