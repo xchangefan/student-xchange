@@ -77,10 +77,27 @@ blockquote {
   content: "]";
 }
 
+::TEST1
+TODO just for a caption, remove later
+<<nobr>>
+<blockquote>
+  <h2>Jacob - Reschedule Request</h2>
+  Sorry, something came up at work. Can we reschedule for next Saturday?<br>
+  <br>
+   <button style="background-color: #00ff00; color:black"><b>Yes</b></button>&nbsp;
+   <button style="background-color: #aaaaaa; color:black">Suggest different day...</button>&nbsp;
+   <button style="background-color: #aa0000">No (Unmatch)</button><br>
+  <br>
+  <i>Note: Rescheduling extends exclusive lockout until 7 days after new scheduled date.</i>
+</blockquote>
+<</nobr>>
+
 ::Start <0,0>
 <<nobr>>
   <img src="Part1/Avatar.jpg" hspace="10" vspace="10" height="500" align="right">
   <<include [[PreRollRandomGenerate]]>>
+  <<set $checked to "&#x2611;">>
+  <<set $unchecked to "&#x2610;">>
 <</nobr>>
 <<nobr>>
   This is an interactive story that follows you as you head off to college.  You briefly begin  as a young
@@ -114,6 +131,7 @@ blockquote {
 <</nobr>>
 
 [[Start Game|Start0]]
+[[Test|BeltTest]]
 
 <<nobr>>
   <h2>Content warning</h2>
@@ -287,6 +305,7 @@ end_sugar_baby.tw2
 end_uncle_sub.tw2
 debug.tw2
 debug2.tw2
+belt/belt.tw2
 
 ::ModeDebug <300,100>
 <<set $gameMode = 'debug'>>
