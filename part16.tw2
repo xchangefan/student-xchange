@@ -1049,7 +1049,7 @@ TODO Work this in to Part 16 flow
   of silence ends.
 <</nobr>>
 
-TODO Back to main
+TODO Back to main [[Part16Finals]]
 
 ::Part16WomensStudiesPublishBailey
 <<nobr>>
@@ -1598,8 +1598,15 @@ TODO Back to main
 
 <<nobr>>
   "They'll be offering it to all women on campus soon, but I was able to get all of you the privilege of being the first to be a
-  part of the [[official roll-out|Part16WomensStudiesReport6]] of the new program.
+  part of the
+  <<if $PlayerChastityBelt and $Keyholder == "computer">>
+    [[official roll-out|Part16WomensStudiesReport6Already]]
+  <<else>>
+    [[official roll-out|Part16WomensStudiesReport6]]
+  <</if>>
+  of the new program.
 <</nobr>>
+
 
 ::Part16WomensStudiesReport6
 <<nobr>>
@@ -1695,10 +1702,16 @@ TODO Back to main
 <<nobr>>
   <h1>Beta-testing period ending</h1>
   <img src="Part16/Class30.jpg" hspace="10" vspace="10" height="450" align="left">
-  You were already wearing their new chastity belt, so there wasn't any change needed for you.  Just a quick check to make sure your
-  belt was still fitting okay, and then a few taps on some screen to switch your belt from the "beta" program over to the campus-wide
-  release version.  You don't know if there's any software changes coming with that or not, he doesn't really give you any time to
-  ask questions as he has to hurry on to the fitting scheduled right after your visit.
+  <<if $JobEngineer>>
+    You were already wearing the departments new chastity belt, so there wasn't any change needed for you. The technician just does a quick check to make
+    sure your bet is still fitting okay, and then he taps on the admin screen to switch your belt from the "beta" program over to the campus-wide
+    release version.
+  <<else>>
+    You were already wearing their new chastity belt, so there wasn't any change needed for you.  Just a quick check to make sure your
+    belt was still fitting okay, and then a few taps on some screen to switch your belt from the "beta" program over to the campus-wide
+    release version.  You don't know if there's any software changes coming with that or not, he doesn't really give you any time to
+    ask questions as he has to hurry on to the fitting scheduled right after your visit.
+  <</if>>
 <</nobr>>
 
 <<nobr>>
@@ -1707,26 +1720,32 @@ TODO Back to main
 <</nobr>>
 
 <<nobr>>
-  <<set $ComputerChastityMode to $JobBetaTester>>
-  <<set $oldBetaTestMode to $JobBetaTester>>
-  <<unset $JobBetaTester>>
-  <<set $JobBetaTesterFormer to 1>>
-  You aren't a Beta tester anymore
-  <<if $JobBarista>>
-    but
-  <<elseif $JobBaristaOld>>
-    <<unset $JobBaristaOld>>
-    <<set $JobBarista>>
-    so you stop by the coffee shop you used to work at to see about getting your old job back.  They are happy to have you back,
-    especially since you'll be able to get right at it without much training. But
+  <<if $JobEngineer>>
+    The belt isn't in beta testing anymore, but with seeing so many more women wearing them now, you do have an additional suggestion.
+    It'd be great if there was some sort of indicator to let other people know what "mode" a belt was in. Obviously it wouldn't be in this
+    release, but maybe something the team could add in a future hardware update.
   <<else>>
-    <<set $JobBarista>>
-    so you stop by the coffee shop near campus to see about getting a job as a barista.  After a quick interview, you are hired.
-    Hopefully it won't take you long to pick up everything you need to learn. But
+    <<set $ComputerChastityMode to $JobBetaTester>>
+    <<set $oldBetaTestMode to $JobBetaTester>>
+    <<unset $JobBetaTester>>
+    <<set $JobBetaTesterFormer to 1>>
+    You aren't a Beta tester anymore
+    <<if $JobBarista>>
+      but
+    <<elseif $JobBaristaOld>>
+      <<unset $JobBaristaOld>>
+      <<set $JobBarista>>
+      so you stop by the coffee shop you used to work at to see about getting your old job back.  They are happy to have you back,
+      especially since you'll be able to get right at it without much training. But
+    <<else>>
+      <<set $JobBarista>>
+      so you stop by the coffee shop near campus to see about getting a job as a barista.  After a quick interview, you are hired.
+      Hopefully it won't take you long to pick up everything you need to learn. But
+    <</if>>
+    you still have one last bit of feedback for them.  You are sending a suggestion for some sort of indicator to show what "mode"
+    you belt is in would be great.  Obviously it wouldn't be in this release, but maybe something they could add in a future hardware
+    update.
   <</if>>
-  you still have one last bit of feedback for them.  You are sending a suggestion for some sort of indicator to show what "mode"
-  you belt is in would be great.  Obviously it wouldn't be in this release, but maybe something they could add in a future hardware
-  update.
 <</nobr>>
 
 <<nobr>>
@@ -1756,59 +1775,60 @@ TODO Back to main
 <</nobr>>
 
 <<nobr>>
-  When you are back home you look over the app to see what might be different now that it is out of beta mode.
-  You see that the "Unlock" button is still disabled for you.
-  <<if $ComputerChastityMode == "open-relationship">>
-    But it seems that anyone other than you can unlock your belt it since you are in "open-relationship" mode. They just need to install
-    the app if they don't have it already. You expect most students will have it installed soon, if they don't already.
-  <<elseif $ComputerChastityOwner == "Your father">>
-    Your father has full "Owner" permissions now, and can unlock you whenever he wants. You doubt there's much chance of that happening.
-  <<elseif $ComputerChastityOwner == "self" and $ComputerChastityMode != "chaste" and $ComputerChasteMode != "lesbian" >>
-    It says that while your belt is "self-owned" there is an initial "breaking-in" period for the belt that is preventing unlocking at the moment.
-    <<if $dating.length>>
-      It says that if you transfer control to $dating[0], the break-in period doesn't apply though.
-      <br><br>
-      You quickly do that without even really thinking it through. After a single confirmation box box it changes to a "Pending" status.
-      Then a few minutes later, after $dating[0] has accepted the ownership from their phone, it shows that now $dating[0] is now your "Owner".
-      You make a note to talk to them about rewording that, as your <b>belt's</b> owner.
-      <<set $ComputerChastityOwner to $dating[0]>>
-    <<else>>
-      It says if you assign an owner, the break-in period does not apply though. You start thinking who you can trust enough to assign control to,
-      or maybe it'd be better to just wait out the break-in period.
-    <</if>>
-  <<elseif $ComputerChastityOwner != "self" and $ComputerChastityOwner>>
-    But now $ComputerChastityOwner has full "Owner" permissions, so could unlock it whenever they want to.
-  <<elseif $ComputerChastityMode == "monogamous">>
-    <<if $dating.length>>
-      It says that if you transfer control to $dating[0] though, they'll have full control.
-      <br><br>
-      You quickly do that without even really thinking it through. After a single confirmation box box it changes to a "Pending" status.
-      Then a few minutes later, after $dating[0] has accepted the ownership from their phone, it shows that now $dating[0] is now your "Owner".
-      You make a note to talk to them about rewording that, as your <b>belt's</b> owner.
-      <<set $ComputerChastityOwner to $dating[0]>>
-    <<else>>
-      When looking at the owner options, you let it know you aren't in a relationship. It looks like when you are you can add that person as
-      an owner and they can unlock your belt. Though it looks like there's a waiting period between. You guess that's to prevent people from adding
-      every one night stand they meet. Your belt is still in "monogamous" mode after all.
-    <</if>>
-  <<elseif $ComputerChastityMode == "chaste">>
-    And it'll probably stay that way until you get married. Though you also have the option to switch it to "monogamous" mode. You can do some
-    stuff right away with your boyfriend then... you imagine what is cum will taste like the first time... But you have to wait six months before
-    he'll be able to unlock you if you aren't married. It seemed reasonable when they explained it, you wouldn't want to just meet a guy and give
-    your belt over to him in a moment of horniness, would you?
-  <<elseif $dating.length>>
-    It says that you need to setup an owner first.
-    <br><br>
-    You quickly do that without even really thinking it through. After a single confirmation box box it changes to a "Pending" status.
-    Then a few minutes later, after $dating[0] has accepted the ownership from their phone, it shows that now $dating[0] is now your "Owner".
-    You make a note to talk to them about rewording that, as your <b>belt's</b> owner.
-    <<set $ComputerChastityOwner to $dating[0]>>
+  <<if $JobEngineer>>
   <<else>>
-    It says that you need to setup an owner first. You start thinking who you can trust enough to assign control to.
+    When you are back home you look over the app to see what might be different now that it is out of beta mode.
+    You see that the "Unlock" button is still disabled for you.
+    <<if $ComputerChastityMode == "open-relationship">>
+      But it seems that anyone other than you can unlock your belt it since you are in "open-relationship" mode. They just need to install
+      the app if they don't have it already. You expect most students will have it installed soon, if they don't already.
+    <<elseif $ComputerChastityOwner == "Your father">>
+      Your father has full "Owner" permissions now, and can unlock you whenever he wants. You doubt there's much chance of that happening.
+    <<elseif $ComputerChastityOwner == "self" and $ComputerChastityMode != "chaste" and $ComputerChasteMode != "lesbian" >>
+      It says that while your belt is "self-owned" there is an initial "breaking-in" period for the belt that is preventing unlocking at the moment.
+      <<if $dating.length>>
+        It says that if you transfer control to $dating[0], the break-in period doesn't apply though.
+        <br><br>
+        You quickly do that without even really thinking it through. After a single confirmation box box it changes to a "Pending" status.
+        Then a few minutes later, after $dating[0] has accepted the ownership from their phone, it shows that now $dating[0] is now your "Owner".
+        You make a note to talk to them about rewording that, as your <b>belt's</b> owner.
+        <<set $ComputerChastityOwner to $dating[0]>>
+      <<else>>
+        It says if you assign an owner, the break-in period does not apply though. You start thinking who you can trust enough to assign control to,
+        or maybe it'd be better to just wait out the break-in period.
+      <</if>>
+    <<elseif $ComputerChastityOwner != "self" and $ComputerChastityOwner>>
+      But now $ComputerChastityOwner has full "Owner" permissions, so could unlock it whenever they want to.
+    <<elseif $ComputerChastityMode == "monogamous">>
+      <<if $dating.length>>
+        It says that if you transfer control to $dating[0] though, they'll have full control.
+        <br><br>
+        You quickly do that without even really thinking it through. After a single confirmation box box it changes to a "Pending" status.
+        Then a few minutes later, after $dating[0] has accepted the ownership from their phone, it shows that now $dating[0] is now your "Owner".
+        You make a note to talk to them about rewording that, as your <b>belt's</b> owner.
+        <<set $ComputerChastityOwner to $dating[0]>>
+      <<else>>
+        When looking at the owner options, you let it know you aren't in a relationship. It looks like when you are you can add that person as
+        an owner and they can unlock your belt. Though it looks like there's a waiting period between. You guess that's to prevent people from adding
+        every one night stand they meet. Your belt is still in "monogamous" mode after all.
+      <</if>>
+    <<elseif $ComputerChastityMode == "chaste">>
+      And it'll probably stay that way until you get married. Though you also have the option to switch it to "monogamous" mode. You can do some
+      stuff right away with your boyfriend then... you imagine what is cum will taste like the first time... But you have to wait six months before
+      he'll be able to unlock you if you aren't married. It seemed reasonable when they explained it, you wouldn't want to just meet a guy and give
+      your belt over to him in a moment of horniness, would you?
+    <<elseif $dating.length>>
+      It says that you need to setup an owner first.
+      <br><br>
+      You quickly do that without even really thinking it through. After a single confirmation box box it changes to a "Pending" status.
+      Then a few minutes later, after $dating[0] has accepted the ownership from their phone, it shows that now $dating[0] is now your "Owner".
+      You make a note to talk to them about rewording that, as your <b>belt's</b> owner.
+      <<set $ComputerChastityOwner to $dating[0]>>
+    <<else>>
+      It says that you need to setup an owner first. You start thinking who you can trust enough to assign control to.
+    <</if>>
+    <br><br>
   <</if>>
-<</nobr>>
-
-<<nobr>>
   <<include [[Part16WomensStudiesBeltBackToMain]]>>
 <</nobr>>
 
